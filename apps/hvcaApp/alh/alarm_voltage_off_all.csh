@@ -1,0 +1,28 @@
+#!/bin/tcsh
+alarm_voltage_off.csh B_hv_CC_S4_15_L
+alarm_voltage_off.csh B_hv_CC_S6_16_R
+alarm_voltage_off.csh B_hv_EC_S1_UO36
+alarm_voltage_off.csh B_hv_EC_S4_VI02
+alarm_voltage_off.csh B_hv_EC_S5_VI02
+alarm_voltage_off.csh B_hv_EC_S6_WI02
+alarm_voltage_off.csh B_hv_EC_S6_VO01
+alarm_voltage_off.csh B_hv_EC_S6_WO01
+alarm_voltage_off.csh B_hv_SC_S1_16_R
+alarm_voltage_off.csh B_hv_TAC_1_R_TOP
+alarm_voltage_off.csh B_hv_TAC_2_L_TOP
+alarm_voltage_off.csh B_hv_TAC_3_R_BOT
+alarm_voltage_off.csh B_hv_TAC_4_L_BOT
+alarm_voltage_off.csh B_hv_BM_DS_TOP
+alarm_voltage_off.csh B_hv_BM_DS_NOR
+alarm_voltage_off.csh B_hv_BM_DS_BOT
+alarm_voltage_off.csh B_hv_BM_DS_SOU
+alarm_voltage_off.csh B_hv_BM_PB_GLASS
+alarm_voltage_off.csh B_hv_BM_MOLLER_L
+alarm_voltage_off.csh B_hv_BM_MOLLER_R
+alarm_voltage_off.csh B_hv_TA_t_47R
+alarm_voltage_off.csh B_hv_TA_t_55R
+exit
+# pair spectrometer
+# photofission
+# start_counter
+# tagger_E

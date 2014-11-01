@@ -1,0 +1,915 @@
+record(bo, "B/HVON_SET_01_01") {
+   field(DTYP,"CAEN_HV")
+   field(ZNAM,"HV/OFF")
+   field(DESC,"binary output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S2048")
+   field(ONAM,"HV/ON")
+   field(OMSL,"supervisory")
+}
+record(bi, "B/HVVALID_01_01") {
+   field(DTYP,"CAEN_HV")
+   field(ZNAM,"NOT VALID")
+   field(DESC,"binary input record ")
+   field(ZSV,"MAJOR")
+   field(SCAN,"2 second")
+   field(OSV,"NO_ALARM")
+   field(ONAM,"VALID")
+   field(INP,"#C1 S32768")
+}
+record(bi, "B/HVALARM_01_01") {
+   field(DTYP,"CAEN_HV")
+   field(ZNAM,"enabled")
+   field(DESC,"binary input record")
+   field(ZSV,"NO_ALARM")
+   field(SCAN,"2 second")
+   field(OSV,"MAJOR")
+   field(ONAM,"disabled")
+   field(INP,"#C1 S33280")
+}
+record(bi, "B/HVSTATUS_01_01") {
+   field(DTYP,"CAEN_HV")
+   field(ZNAM,"HV/OFF")
+   field(DESC,"binary input record")
+   field(SCAN,"2 second")
+   field(ONAM,"HV/ON")
+   field(INP,"#C1 S33024")
+}
+record(calc, "B/HVOC_01_01") {
+   field(LOLO,"-0.1")
+   field(CALC,"ABS(A-B)")
+   field(LLSV,"MAJOR")
+   field(HIHI,"0.1")
+   field(SCAN,"1 second")
+   field(HHSV,"MAJOR")
+   field(INPA,"B/HVSTATUS_01_01 NPP NMS")
+   field(LSV,"MAJOR")
+   field(LOW,"-0.1")
+   field(INPB,"B/HVON_SET_01_01 NPP NMS")
+   field(HIGH,"0.1")
+   field(HSV,"MAJOR")
+}
+record(bo, "B_hv_t1520_09_CE") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(ZNAM,"OFF")
+   field(DESC,"binary output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S264")
+   field(ONAM,"ON")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_09_DV") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S520")
+   field(PREC,"3")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_09_RDN") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S776")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_09_RUP") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1032")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_09_TC") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1288")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_09_MVDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1544")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_09_MCDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1800")
+   field(OMSL,"supervisory")
+}
+record(bigsub, "B_hv_t1520_09_property") {
+   field(PRIO,"LOW")
+   field(DESC,"big subroutine record")
+   field(SCAN,"2 second")
+   field(INPA,"01")
+   field(SNAM,"ScanChannel")
+   field(PREC,"3")
+   field(INAM,"InitChannel")
+   field(INPB,"00")
+   field(HIGH,"10")
+   field(INPC,"08")
+   field(HSV,"MAJOR")
+}
+record(bo, "B_hv_t1520_12_CE") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(ZNAM,"OFF")
+   field(DESC,"binary output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S267")
+   field(ONAM,"ON")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_12_DV") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S523")
+   field(PREC,"3")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_12_RDN") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S779")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_12_RUP") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1035")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_12_TC") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1291")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_12_MVDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1547")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_12_MCDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1803")
+   field(OMSL,"supervisory")
+}
+record(bigsub, "B_hv_t1520_12_property") {
+   field(PRIO,"LOW")
+   field(DESC,"big subroutine record")
+   field(SCAN,"2 second")
+   field(INPA,"01")
+   field(SNAM,"ScanChannel")
+   field(PREC,"3")
+   field(INAM,"InitChannel")
+   field(INPB,"00")
+   field(HIGH,"10")
+   field(INPC,"11")
+   field(HSV,"MAJOR")
+}
+record(bo, "B_hv_t1520_03_CE") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(ZNAM,"OFF")
+   field(DESC,"binary output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S258")
+   field(ONAM,"ON")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_03_DV") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S514")
+   field(PREC,"3")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_03_RDN") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S770")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_03_RUP") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1026")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_03_TC") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1282")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_03_MVDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1538")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_03_MCDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1794")
+   field(OMSL,"supervisory")
+}
+record(bigsub, "B_hv_t1520_03_property") {
+   field(PRIO,"LOW")
+   field(DESC,"big subroutine record")
+   field(SCAN,"2 second")
+   field(INPA,"01")
+   field(SNAM,"ScanChannel")
+   field(PREC,"3")
+   field(INAM,"InitChannel")
+   field(INPB,"00")
+   field(HIGH,"10")
+   field(INPC,"02")
+   field(HSV,"MAJOR")
+}
+record(bo, "B_hv_t1520_08_CE") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(ZNAM,"OFF")
+   field(DESC,"binary output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S263")
+   field(ONAM,"ON")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_08_DV") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S519")
+   field(PREC,"3")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_08_RDN") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S775")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_08_RUP") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1031")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_08_TC") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1287")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_08_MVDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1543")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_08_MCDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1799")
+   field(OMSL,"supervisory")
+}
+record(bigsub, "B_hv_t1520_08_property") {
+   field(PRIO,"LOW")
+   field(DESC,"big subroutine record")
+   field(SCAN,"2 second")
+   field(INPA,"01")
+   field(SNAM,"ScanChannel")
+   field(PREC,"3")
+   field(INAM,"InitChannel")
+   field(INPB,"00")
+   field(HIGH,"10")
+   field(INPC,"07")
+   field(HSV,"MAJOR")
+}
+record(bo, "B_hv_t1520_06_CE") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(ZNAM,"OFF")
+   field(DESC,"binary output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S261")
+   field(ONAM,"ON")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_06_DV") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S517")
+   field(PREC,"3")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_06_RDN") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S773")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_06_RUP") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1029")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_06_TC") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1285")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_06_MVDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1541")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_06_MCDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1797")
+   field(OMSL,"supervisory")
+}
+record(bigsub, "B_hv_t1520_06_property") {
+   field(PRIO,"LOW")
+   field(DESC,"big subroutine record")
+   field(SCAN,"2 second")
+   field(INPA,"01")
+   field(SNAM,"ScanChannel")
+   field(PREC,"3")
+   field(INAM,"InitChannel")
+   field(INPB,"00")
+   field(HIGH,"10")
+   field(INPC,"05")
+   field(HSV,"MAJOR")
+}
+record(bo, "B_hv_t1520_11_CE") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(ZNAM,"OFF")
+   field(DESC,"binary output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S266")
+   field(ONAM,"ON")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_11_DV") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S522")
+   field(PREC,"3")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_11_RDN") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S778")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_11_RUP") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1034")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_11_TC") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1290")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_11_MVDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1546")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_11_MCDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1802")
+   field(OMSL,"supervisory")
+}
+record(bigsub, "B_hv_t1520_11_property") {
+   field(PRIO,"LOW")
+   field(DESC,"big subroutine record")
+   field(SCAN,"2 second")
+   field(INPA,"01")
+   field(SNAM,"ScanChannel")
+   field(PREC,"3")
+   field(INAM,"InitChannel")
+   field(INPB,"00")
+   field(HIGH,"10")
+   field(INPC,"10")
+   field(HSV,"MAJOR")
+}
+record(bo, "B_hv_t1520_10_CE") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(ZNAM,"OFF")
+   field(DESC,"binary output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S265")
+   field(ONAM,"ON")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_10_DV") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S521")
+   field(PREC,"3")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_10_RDN") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S777")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_10_RUP") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1033")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_10_TC") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1289")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_10_MVDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1545")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_10_MCDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1801")
+   field(OMSL,"supervisory")
+}
+record(bigsub, "B_hv_t1520_10_property") {
+   field(PRIO,"LOW")
+   field(DESC,"big subroutine record")
+   field(SCAN,"2 second")
+   field(INPA,"01")
+   field(SNAM,"ScanChannel")
+   field(PREC,"3")
+   field(INAM,"InitChannel")
+   field(INPB,"00")
+   field(HIGH,"10")
+   field(INPC,"09")
+   field(HSV,"MAJOR")
+}
+record(bo, "B_hv_t1520_02_CE") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(ZNAM,"OFF")
+   field(DESC,"binary output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S257")
+   field(ONAM,"ON")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_02_DV") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S513")
+   field(PREC,"3")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_02_RDN") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S769")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_02_RUP") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1025")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_02_TC") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1281")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_02_MVDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1537")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_02_MCDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1793")
+   field(OMSL,"supervisory")
+}
+record(bigsub, "B_hv_t1520_02_property") {
+   field(PRIO,"LOW")
+   field(DESC,"big subroutine record")
+   field(SCAN,"2 second")
+   field(INPA,"01")
+   field(SNAM,"ScanChannel")
+   field(PREC,"3")
+   field(INAM,"InitChannel")
+   field(INPB,"00")
+   field(HIGH,"10")
+   field(INPC,"01")
+   field(HSV,"MAJOR")
+}
+record(bo, "B_hv_t1520_07_CE") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(ZNAM,"OFF")
+   field(DESC,"binary output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S262")
+   field(ONAM,"ON")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_07_DV") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S518")
+   field(PREC,"3")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_07_RDN") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S774")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_07_RUP") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1030")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_07_TC") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1286")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_07_MVDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1542")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_07_MCDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1798")
+   field(OMSL,"supervisory")
+}
+record(bigsub, "B_hv_t1520_07_property") {
+   field(PRIO,"LOW")
+   field(DESC,"big subroutine record")
+   field(SCAN,"2 second")
+   field(INPA,"01")
+   field(SNAM,"ScanChannel")
+   field(PREC,"3")
+   field(INAM,"InitChannel")
+   field(INPB,"00")
+   field(HIGH,"10")
+   field(INPC,"06")
+   field(HSV,"MAJOR")
+}
+record(bo, "B_hv_t1520_05_CE") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(ZNAM,"OFF")
+   field(DESC,"binary output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S260")
+   field(ONAM,"ON")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_05_DV") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S516")
+   field(PREC,"3")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_05_RDN") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S772")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_05_RUP") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1028")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_05_TC") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1284")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_05_MVDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1540")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_05_MCDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1796")
+   field(OMSL,"supervisory")
+}
+record(bigsub, "B_hv_t1520_05_property") {
+   field(PRIO,"LOW")
+   field(DESC,"big subroutine record")
+   field(SCAN,"2 second")
+   field(INPA,"01")
+   field(SNAM,"ScanChannel")
+   field(PREC,"3")
+   field(INAM,"InitChannel")
+   field(INPB,"00")
+   field(HIGH,"10")
+   field(INPC,"04")
+   field(HSV,"MAJOR")
+}
+record(bo, "B_hv_t1520_01_CE") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(ZNAM,"OFF")
+   field(DESC,"binary output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S256")
+   field(ONAM,"ON")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_01_DV") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S512")
+   field(PREC,"3")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_01_RDN") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S768")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_01_RUP") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1024")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_01_TC") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1280")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_01_MVDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1536")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_01_MCDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1792")
+   field(OMSL,"supervisory")
+}
+record(bigsub, "B_hv_t1520_01_property") {
+   field(PRIO,"LOW")
+   field(DESC,"big subroutine record")
+   field(SCAN,"2 second")
+   field(INPA,"01")
+   field(SNAM,"ScanChannel")
+   field(PREC,"3")
+   field(INAM,"InitChannel")
+   field(INPB,"00")
+   field(HIGH,"10")
+   field(INPC,"00")
+   field(HSV,"MAJOR")
+}
+record(bo, "B_hv_t1520_04_CE") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(ZNAM,"OFF")
+   field(DESC,"binary output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S259")
+   field(ONAM,"ON")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_04_DV") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S515")
+   field(PREC,"3")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_04_RDN") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S771")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_04_RUP") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1027")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_04_TC") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1283")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_04_MVDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1539")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_t1520_04_MCDZ") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"#C1 S1795")
+   field(OMSL,"supervisory")
+}
+record(bigsub, "B_hv_t1520_04_property") {
+   field(PRIO,"LOW")
+   field(DESC,"big subroutine record")
+   field(SCAN,"2 second")
+   field(INPA,"01")
+   field(SNAM,"ScanChannel")
+   field(PREC,"3")
+   field(INAM,"InitChannel")
+   field(INPB,"00")
+   field(HIGH,"10")
+   field(INPC,"03")
+   field(HSV,"MAJOR")
+}
