@@ -121,7 +121,7 @@ dbLoadRecords("db/scan.db","motor_name=hps_collimator,start_at=18,end_at=58.0,st
 dbLoadRecords("db/radiators.db")
 dbLoadRecords("db/convertors.db")
 dbLoadRecords("db/collimators.db")
-q
+
 
 
 # Load IOC status records
