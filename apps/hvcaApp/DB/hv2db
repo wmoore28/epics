@@ -1,0 +1,344 @@
+#!/bin/env perl
+open(INPUT, "$ARGV[0].dat");
+open(OUTPUT,">$ARGV[0].db");
+open(CONFIG,">$ARGV[0].card_config");
+$nmf = 0;
+$ncard = 0;
+$nrec = 0;
+while ($line=<INPUT>) {
+  $nrec++;
+  if ($nrec == 501) {
+    close(OUTPUT);
+    open(OUTPUT,">$ARGV[0]_2.db");
+  }
+  chop($line);
+  @field = split(/\s+/,$line);
+  $label = @field[0];
+  $group = @field[1];
+  $enable = @field[2];
+  $arcnet = &pad(@field[3], 2);
+  $mainframe = &pad(@field[4], 2);
+  $slot = &pad(@field[5], 2);
+  $sub = &pad(@field[6], 2);
+  $channel = &pad(@field[7], 2);
+  $demand_voltage = @field[8];
+#  print "$label $group $enable $mainframe $slot $sub $channel\n";
+#  $pv = "B_hv_".$arcnet."_".$mainframe."_".$slot."_".$sub."_".$channel;
+  $pv = "B_hv_$label";
+#  print "pv = $pv\n";
+  $inpout = "#R".$mainframe." L".$slot." U".$sub." H".$channel;
+  print OUTPUT "record(hiv, \"$pv\") {\n";
+  print OUTPUT "  field(SCAN, \"1 second\")\n";
+  print OUTPUT "  field(DTYP, \"CEBAF HiVrec L1458\")\n";
+  print OUTPUT "  field(CDVO, \"301\")\n";
+  print OUTPUT "  field(CRUO, \"302\")\n";
+  print OUTPUT "  field(CRDO, \"303\")\n";
+  print OUTPUT "  field(CTCO, \"304\")\n";
+  print OUTPUT "  field(CCEO, \"305\")\n";
+  print OUTPUT "  field(CVZO, \"306\")\n";
+  print OUTPUT "  field(CCZO, \"307\")\n";
+  print OUTPUT "  field(INP, \"$inpout\")\n";
+  print OUTPUT "  field(OUT, \"$inpout\")\n";
+  print OUTPUT "}\n";
+#
+# deal with mainframe list
+#
+  $found = 0;
+  $mf = 0;
+  while ($mf < $nmf) {
+#      print "looking for mainframe match, mf = $mf\n";
+      if ($arcnet == $arclist[$mf] && $mainframe == $mflist[$mf]) {
+	  $found = 1;
+          $mfi = $mf + 1;
+      }
+      $mf++;
+  }
+  if (!$found) {
+    $arclist[$nmf] = $arcnet;
+    $mflist[$nmf] = $mainframe;
+    $nmf++;
+    $mfi = $nmf;
+  }
+#  print "nmf = $nmf, mflist = @mflist\n";
+#
+# deal with card list
+#
+  $newcard = 1;
+  $card = 0;
+  while ($card < $ncard) {
+#      print "looking for card match, card = $card\n";
+      if ($mainframe == $mf_card[$card] && $slot == $slot_card[$card]) {
+	  $newcard = 0;
+      }
+      $card++;
+  }
+  if ($newcard) {
+#      print "new card found in file: mainframe = $mainframe, slot = $slot\n";
+      $mfi_card[$ncard] = $mfi;
+      $mf_card[$ncard] = $mainframe;
+      $slot_card[$ncard] = $slot;
+      $type_card[$ncard] = "1461";
+      if ($demand_voltage > 0) {
+	  $pol_card[$ncard] = 1;
+      }
+      else {
+	  $pol_card[$ncard] = -1;
+      }
+      $ncard++;
+  }
+}
+#
+# write out mainframe records
+#
+$mf = 0;
+#print "just before writing mainframe records: nmf = $nmf\n";
+while ($mf < $nmf) {
+#  print "working on mainframe $mf\n";
+  $arcnet = &pad($arclist[$mf], 2);
+  $mainframe = &pad($mflist[$mf], 2);
+  &mfout($arcnet, $mainframe);
+  $mf++
+}
+#
+# write out config file
+#
+# mf index, mf id, slot, card type, polarity
+$card = 0;
+while ($card < $ncard) {
+    print CONFIG "$mfi_card[$card] $mf_card[$card] $slot_card[$card] "
+                ."$type_card[$card] $pol_card[$card]\n" ;
+    $card++;
+}
+#
+close(INPUT);
+close(OUTPUT);
+close(CONFIG);
+
+sub pad {
+    local($number, $length) = @_;
+    $nl = length($number);
+    $i = 0;
+    $zeros = "";
+    while ($i<$length-$nl) {
+	$zeros = $zeros."0";
+        ++$i;
+    }
+    $zeros.$number;
+}
+
+sub mfout {
+    local ($arc, $mf) = @_;
+    print OUTPUT "record(ai, \"B/BATTERY_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O418\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/EEPROM_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O417\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/FRTPANELREMOT_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O416\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/HVSETLCK_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O414\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/HVSLLCK_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O415\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/HVSTATUS_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O401\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/PANICOFF_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O422\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/PWDUPST_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O420\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/PWRLSTRES_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O406\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/PWRSTACD_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O404\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/PWRSTAERR_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O405\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/SERBAUDRATE_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O423\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/SERDATABITES_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O424\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/SERECHO_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O427\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/SERPARITY_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O426\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/SERSTOPBITS_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O425\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/SYSDEF_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O407\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/SoftWareState_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O431\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/TIMESTP_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O413\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ai, \"B/VOLTST_mon_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog input record\")\n";
+    print OUTPUT "  field(SCAN, \"10 second\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(INP, \" #R$mf L0 U0 H0 O419\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "  field(ASLO, \"0\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ao, \"B/CONFIG_set_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog output record\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(OUT, \" #R$mf L0 U0 H0 O506\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ao, \"B/HVOFF_set_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog output record\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(OUT, \" #R$mf L0 U0 H0 O503\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ao, \"B/HVON_set_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog output record\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(OUT, \" #R$mf L0 U0 H0 O502\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ao, \"B/HVSTATUS_set_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog output record\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(OUT, \" #R$mf L0 U0 H0 O501\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ao, \"B/IMOFF_set_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog output record\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(OUT, \" #R$mf L0 U0 H0 O504\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ao, \"B/PUPSTATUS_set_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog output record\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(OUT, \" #R$mf L0 U0 H0 O505\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(ao, \"B/SYSDEF_set_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DESC, \"analog output record\")\n";
+    print OUTPUT "  field(DTYP, \"CEBAF LeCroy1458\")\n";
+    print OUTPUT "  field(OUT, \" #R$mf L0 U0 H0 O507\")\n";
+    print OUTPUT "  field(EGU, \" volts\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(stringout, \"B/ChanDBRecType_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DTYP, \"Soft Channel\")\n";
+    print OUTPUT "  field(VAL, \" HVREC\")\n";
+    print OUTPUT "  field(OUT, \" Soft.VAL  NPP NMS\")\n";
+    print OUTPUT "}\n";
+    print OUTPUT "record(stringout, \"B_ApplicationName_$arc"."_$mf\") {\n";
+    print OUTPUT "  field(DTYP, \"Soft Channel\")\n";
+    print OUTPUT "  field(VAL, \" real\")\n";
+    print OUTPUT "  field(OUT, \" Soft.VAL  NPP NMS\")\n";
+    print OUTPUT "}\n";
+
+}

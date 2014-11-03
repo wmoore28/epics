@@ -1,14 +1,14 @@
 
 file {
-	name="/home/clasrun/strip_charts.adl"
+	name="/home/stepanya/epics/app/general/medm/strip_charts.adl"
 	version=030101
 }
 display {
 	object {
-		x=86
-		y=217
+		x=1511
+		y=314
 		width=350
-		height=250
+		height=150
 	}
 	clr=14
 	bclr=4
@@ -176,139 +176,6 @@ text {
 	}
 	textix="Magnet Current Strip Chart"
 }
-text {
-	object {
-		x=47
-		y=64
-		width=245
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Cerenkov Strip Charts"
-}
-text {
-	object {
-		x=47
-		y=89
-		width=245
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Cryotarget Strip Charts"
-}
-"shell command" {
-	object {
-		x=22
-		y=64
-		width=20
-		height=20
-	}
-	command[0] {
-		label="Cerenkov Gas Pressure"
-		name="StripTool"
-		args="$APP/general/strip/cc_pressures.stc &"
-	}
-	clr=14
-	bclr=4
-}
-"shell command" {
-	object {
-		x=22
-		y=89
-		width=20
-		height=20
-	}
-	command[0] {
-		label="Cryotarget"
-		name="StripTool"
-		args="$APP/general/strip/cryotarget.stc &"
-	}
-	clr=14
-	bclr=4
-}
-text {
-	object {
-		x=47
-		y=114
-		width=245
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Drift Chamber Gas Strip Charts"
-}
-"shell command" {
-	object {
-		x=22
-		y=114
-		width=20
-		height=20
-	}
-	command[0] {
-		label="Chamber Pressures"
-		name="StripTool"
-		args="$APP/general/strip/chamber_pressures.stc &"
-	}
-	command[1] {
-		label="Argon/CO2 Ratios"
-		name="StripTool"
-		args="$APP/general/strip/arco2_ratios.stc &"
-	}
-	command[2] {
-		label="Input Flows"
-		name="StripTool"
-		args="$APP/general/strip/input_flows.stc &"
-	}
-	clr=14
-	bclr=4
-}
-"shell command" {
-	object {
-		x=22
-		y=141
-		width=20
-		height=20
-	}
-	command[0] {
-		label="Buffer Dewar"
-		name="StripTool"
-		args="$APP/general/strip/buffer_dewar.stc &"
-	}
-	command[1] {
-		label="Torus Service Module"
-		name="StripTool"
-		args="$APP/general/strip/torus_sm.stc &"
-	}
-	command[2] {
-		label="Torus Coil Temps"
-		name="StripTool"
-		args="$APP/general/strip/torus_coil_temps.stc &"
-	}
-	command[3] {
-		label="Torus Cool Down"
-		name="StripTool"
-		args="$APP/general/strip/cdgraph.stc"
-	}
-	clr=14
-	bclr=4
-}
-text {
-	object {
-		x=47
-		y=142
-		width=245
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Cryo Recovery Strip Charts"
-}
 "shell command" {
 	object {
 		x=329
@@ -331,8 +198,8 @@ text {
 }
 "shell command" {
 	object {
-		x=22
-		y=169
+		x=21
+		y=67
 		width=20
 		height=20
 	}
@@ -351,8 +218,8 @@ text {
 }
 text {
 	object {
-		x=48
-		y=168
+		x=47
+		y=66
 		width=245
 		height=20
 	}
@@ -360,36 +227,4 @@ text {
 		clr=14
 	}
 	textix="Machine Parameters Strip Charts"
-}
-"shell command" {
-	object {
-		x=22
-		y=202
-		width=20
-		height=20
-	}
-	command[0] {
-		label="RTPC Gas System"
-		name="StripTool"
-		args="$APP/general/strip/rtpc_gas.stc &"
-	}
-	command[1] {
-		label="RTPC Target"
-		name="StripTool"
-		args="$APP/general/strip/rtpc_tgt.stc &"
-	}
-	clr=14
-	bclr=4
-}
-text {
-	object {
-		x=48
-		y=201
-		width=245
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="RTPC Strip Charts"
 }

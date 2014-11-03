@@ -1,0 +1,44 @@
+#!/bin/env perl
+{open(INPUT, "$ARGV[0].dat");
+ open(OUTPUT,">$ARGV[0].req");
+# print OUTPUT "database($ARGV[0])";
+ print OUTPUT "NAME:     hv\n";
+ print OUTPUT "DESC:     High voltage study\n";
+ print OUTPUT "ACT:      always\n";
+ print OUTPUT "INACT:    never\n";
+ print OUTPUT "SAMPLE:   periodic 00:10:00\n";
+ print OUTPUT "OUTPUT:   set:txt\n";
+ print OUTPUT "%endHeader%\n";
+ while ($line=<INPUT>) {
+   chop($line);
+   @field = split(/\s+/,$line);
+   $label = @field[0];
+   $group = @field[1];
+   $enable = @field[2];
+   $arcnet = &pad(@field[3], 2);
+   $mainframe = &pad(@field[4], 2);
+   $slot = &pad(@field[5], 2);
+   $sub = &pad(@field[6], 2);
+   $channel = &pad(@field[7], 2);
+   $demand_voltage = @field[8];
+   $pv = "B_hv_"."$label";
+   if ($channel==0){
+       print OUTPUT "$pv";
+       $i=1;
+       if ($i>=1){
+           print OUTPUT ".MVI\n";}
+       print OUTPUT "$pv";
+       print OUTPUT ".MCI\n";}}
+#  print "pv = $pv\n";}
+}
+sub pad {
+    local($number, $length) = @_;
+    $nl = length($number);
+    $i = 0;
+    $zeros = "";
+    while ($i<$length-$nl) {
+	$zeros = $zeros."0";
+        ++$i;
+    }
+    $zeros.$number;
+}
