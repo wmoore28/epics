@@ -47,7 +47,7 @@ DBD += classc6.dbd
 ##classc6_DBD += dbSubExample.dbd
 ##classc6_DBD += classc6Hello.dbd
 ##classc6_DBD += initTrace.dbd
-classc6_DBD += sixty_hzSupport.dbd
+##classc6_DBD += sixty_hzSupport.dbd
 classc6_DBD += btaSupport.dbd
 classc6_DBD += devIocStats.dbd
 
@@ -85,7 +85,7 @@ classc6_LIBS += devIocStats
 
 classc6_LIBS += seqDev seq pv 
 
-classc6_LIBS += sixty_hzSupport
+##classc6_LIBS += sixty_hzSupport
 classc6_LIBS += btaSupport
 
 

@@ -61,28 +61,48 @@ assign motor_name to "name_{motor_name}.VAL";
 /* scaler records...need to macro this so "any" scaler record can
    be used.  */
 
-long scaler_data[16];
-assign scaler_data[0] to "scaler.S1";
-assign scaler_data[1] to "scaler.S2";
-assign scaler_data[2] to "scaler.S3";
-assign scaler_data[3] to "scaler.S4";
-assign scaler_data[4] to "scaler.S5";
-assign scaler_data[5] to "scaler.S6";
-assign scaler_data[6] to "scaler.S7";
-/*  Replaced the unused scaler values with primex scalers
-* assign scaler_data[7] to "scaler.S8";
-* assign scaler_data[8] to "scaler.S9";
-* assign scaler_data[9] to "scaler.S10";
-*/
-assign scaler_data[7] to "pspec_logic_1";
-assign scaler_data[8] to "pspec_logic_2";
-assign scaler_data[9] to "pspec_logic_3";
-assign scaler_data[10] to "scaler.S11";
-assign scaler_data[11] to "scaler.S12";
-assign scaler_data[12] to "scaler.S13";
-assign scaler_data[13] to "scaler.S14";
-assign scaler_data[14] to "scaler.S15";
-assign scaler_data[15] to "scaler.S16";
+/* long scaler_data[16]; */
+/* ================================================================ */
+
+long scaler_datasc1[16];
+long scaler_datasc4[16];
+
+assign scaler_datasc1[0] to "scaler.S1";
+assign scaler_datasc1[1] to "scalerS2b.VAL";
+assign scaler_datasc1[2] to "scaler.S3";
+assign scaler_datasc1[3] to "scaler.S4";
+assign scaler_datasc1[4] to "scaler.S5";
+assign scaler_datasc1[5] to "scaler.S6";
+assign scaler_datasc1[6] to "scaler.S7";
+assign scaler_datasc1[7] to "scaler.S8";
+assign scaler_datasc1[8] to "scaler.S9";
+assign scaler_datasc1[9] to "scaler.S10";
+assign scaler_datasc1[10] to "scaler.S11";
+assign scaler_datasc1[11] to "scaler.S12";
+assign scaler_datasc1[12] to "scaler.S13";
+assign scaler_datasc1[13] to "scaler.S14";
+assign scaler_datasc1[14] to "scaler.S15";
+assign scaler_datasc1[15] to "scaler.S16";
+
+assign scaler_datasc4[0] to "scaler_c.S1";
+assign scaler_datasc4[1] to "scaler_cS2b.VAL";
+assign scaler_datasc4[2] to "scaler_c.S3";
+assign scaler_datasc4[3] to "scaler_c.S4";
+assign scaler_datasc4[4] to "scaler_c.S5";
+assign scaler_datasc4[5] to "scaler_c.S6";
+assign scaler_datasc4[6] to "scaler_c.S7";
+assign scaler_datasc4[7] to "scaler_c.S8";
+assign scaler_datasc4[8] to "scaler_c.S9";
+assign scaler_datasc4[9] to "scaler_c.S10";
+assign scaler_datasc4[10] to "scaler_c.S11";
+assign scaler_datasc4[11] to "scaler_c.S12";
+assign scaler_datasc4[12] to "scaler_c.S13";
+assign scaler_datasc4[13] to "scaler_c.S14";
+assign scaler_datasc4[14] to "scaler_c.S15";
+assign scaler_datasc4[15] to "scaler_c.S16";
+
+
+/* ================================================================ */
 
 float scaler_tp;
 assign scaler_tp to "scaler.TP";
@@ -265,10 +285,33 @@ ss harp_scan_snc {
      when (scaler_cnt == DONE && harp_position > position_a && harp_position < position_b) {
        pvGet(rmp);
        fdprintf(fd,"%f ", harp_position);
-       for (i=0;i<16;i++) {
-          pvGet(scaler_data[i]);
-          fdprintf(fd,"%d ", scaler_data[i]);
+
+/* ========================================== */
+
+       if(  ( ! (strcmp(cmotor_name,"harp_2c21"))) ||  ( ! (strcmp(cmotor_name,"harp_tagger"))) )
+       {
+	       for (i=0;i<16;i++) {
+	          pvGet(scaler_datasc1[i]);
+	          fdprintf(fd,"%d ", scaler_datasc1[i]);
+	       }
        }
+       if(  ( ! (strcmp(cmotor_name,"harp_2h03"))) )
+       {
+	       for (i=0;i<16;i++) {
+	          pvGet(scaler_datasc4[i]);
+	          fdprintf(fd,"%d ", scaler_datasc4[i]);
+	       }
+       }
+
+/*
+       for (i=0;i<16;i++) {
+          pvGet(scaler_datasc1[i]);
+          fdprintf(fd,"%d ", scaler_datasc1[i]);
+       }
+*/
+
+/* ========================================== */
+
        fdprintf(fd,"%f ", rmp);
        fdprintf(fd,"\n");
 
@@ -406,7 +449,11 @@ int open_file(char *fname, char *motor_name, char *shortname)
     strcat(shortname, fname);
     strcat(shortname, ".txt" );
 
-    strcpy(thename, "/home/epics/data/e_scans/");
+/*    strcpy(thename, "/home/epics/data/e_scans/"); */
+    strcpy(thename, "/home/epics/data/HARP_SCANS/");
+    strcat(thename, motor_name);
+    strcat(thename, "/");
+
     strcat(thename, shortname);
 
 

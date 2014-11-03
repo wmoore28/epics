@@ -146,10 +146,10 @@ cd startup
 iocInit
 
 # set some initial values:
-dbpf "fcup_offset","0"
-dbpf "fcup_slope","9256"
+##dbpf "fcup_offset","0"
+##dbpf "fcup_slope","9256"
 #dbpf "fcup_slope","9267"
-dbpf "moller_accumulate","1"
+##dbpf "moller_accumulate","1"
 #dbpf "scaler.CNT","1"
 #dbpf "scaler_d.CNT","1"
 #dbpf "scaler_d_mode.VAL","1"
@@ -173,6 +173,6 @@ seq &harp_scan_generic, "name=h_tagger_scan, motor_name=harp_tagger"
 
 ##seq &reset_motor, "name=collimator_reset, motor_name=collimator"
 
-seq &scaler_restart
+#seq &scaler_restart
 #seq &scaler_d_restart
 #seq &scaler_e_restart

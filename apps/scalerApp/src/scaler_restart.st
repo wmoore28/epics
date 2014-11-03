@@ -6,6 +6,7 @@ option +c;
 #define SLEEP_TIME_WRONG_MODE     300  /* 5 minutes */
 #define DEFAULT_DISPLAY_MODE        2  /* 1=hertz 2=norm 0=raw */
 
+
 short sc_CNT;
 assign sc_CNT to "{scaler}scaler.CNT";
 monitor sc_CNT;
@@ -16,11 +17,6 @@ assign sc_mode to "{scaler}scaler_mode.VAL";
 short sc_display_mode;
 assign sc_display_mode to "{scaler}display_mode.VAL";
 monitor sc_display_mode;
-
-short sc_scan_mode;
-assign sc_scan_mode to "{scaler}scan_flag.VAL";
-monitor sc_scan_mode;
-
 float sc_rate;
 assign sc_rate to "{scaler}scaler.RATE";
 
@@ -28,18 +24,18 @@ float sc_TP;
 assign sc_TP to "{scaler}scaler.TP";
 
 /*--------------------------------------------------------------*/
-/* This is to automatically restart the scaler if it is idle   */
+/* This is to automatically restart the scaler if it is iddle   */
 /* for more than SLEEP_TIME seconds                             */
 /*--------------------------------------------------------------*/
 ss scaler_restart
 {
   state wait
   {
-    when(sc_CNT==0 && sc_scan_mode == 0)
+    when(sc_CNT==0)
     {
       ;
     } state restart_scaler_stopped
-    when( sc_display_mode != DEFAULT_DISPLAY_MODE && sc_scan_mode == 0)
+    when( sc_display_mode != DEFAULT_DISPLAY_MODE)
     {
     ;
     } state restart_wrong_mode

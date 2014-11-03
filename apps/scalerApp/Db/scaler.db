@@ -1,10 +1,8 @@
 grecord(scaler,"scaler")
 {
-#	field(DTYP,"Joerger VS")
-	field(DTYP,"Joerger VSC8/16")
 	#field(SCAN,"I/O Intr")
+	field(DTYP,"Joerger VSC8/16")
 	field(FLNK,"scaler_calc1.PROC PP MS")
-#	field(FLNK,"scaler_wait.PROC PP MS")
 	field(FREQ,"10000000")
 	field(OUT,"#C0 S0 @")
 	field(TP,"1")
@@ -13,67 +11,21 @@ grecord(scaler,"scaler")
 	field(NM1,"Clock") 	# Channel 1 : clock
 }
 
-#
-# For the Rastering display string
-#
-
-#
-# The command interface
-#
-record(ao,"scaler_command"    ) { }
-record(ao,"fcup_slope"    ) { }
-record(ao,"fcup_offset"    ) { }
-record(ao,"slm_slope"    ) { }
-record(ao,"slm_offset"    ) { }
-
-#
-# Sampling parameters
-#
-record(ao,"scaler_delay"      ) {field(DOL,"5000")  }
-record(ao,"scaler_Samples"    ) {field(DOL,"4200")  }
-record(ao,"scaler_Out_Samples") {field(DOL,"256" )  }
-
-record(mbboDirect,"scaler_chanel_2_fft") {}
-
-
-#
-#....
-#
 grecord(bo,"scaler_mode")
 {
 	field(ZNAM,"ONESHOT")
 	field(ONAM,"CONTINUOUS")
-	field(VAL,"1")
 }
 
-grecord(ao,"scalerS1o" ){}
-grecord(ao,"scalerS2o" ){}
-grecord(ao,"scalerS3o" ){}
-grecord(ao,"scalerS4o" ){}
-grecord(ao,"scalerS5o" ){}
-grecord(ao,"scalerS6o" ){}
-grecord(ao,"scalerS7o" ){}
-grecord(ao,"scalerS8o" ){}
-grecord(ao,"scalerS9o" ){}
-grecord(ao,"scalerS10o"){}
-grecord(ao,"scalerS11o"){}
-grecord(ao,"scalerS12o"){}
-grecord(ao,"scalerS13o"){}
-grecord(ao,"scalerS14o"){}
-grecord(ao,"scalerS15o"){}
-grecord(ao,"scalerS16o"){}
+grecord(ao,"scalerS2a"){}
+grecord(ao,"scalerS3a"){}
+grecord(ao,"scalerS4a"){}
+grecord(ao,"scalerS5a"){}
 
-
-
-grecord(ao,"scalerS2a" ){}
-grecord(ao,"scalerS3a" ){}
-grecord(ao,"scalerS4a" ){}
-grecord(ao,"scalerS5a" ){}
-
-grecord(ao,"scalerS6a" ){}
-grecord(ao,"scalerS7a" ){}
-grecord(ao,"scalerS8a" ){}
-grecord(ao,"scalerS9a" ){}
+grecord(ao,"scalerS6a"){}
+grecord(ao,"scalerS7a"){}
+grecord(ao,"scalerS8a"){}
+grecord(ao,"scalerS9a"){}
 
 grecord(ao,"scalerS10a"){}
 grecord(ao,"scalerS11a"){}
@@ -84,15 +36,15 @@ grecord(ao,"scalerS14a"){}
 grecord(ao,"scalerS15a"){}
 grecord(ao,"scalerS16a"){}
 
-grecord(ao,"scalerS2b" ){}
-grecord(ao,"scalerS3b" ){}
-grecord(ao,"scalerS4b" ){}
-grecord(ao,"scalerS5b" ){}
+grecord(ao,"scalerS2b"){}
+grecord(ao,"scalerS3b"){}
+grecord(ao,"scalerS4b"){}
+grecord(ao,"scalerS5b"){}
 
-grecord(ao,"scalerS6b" ){}
-grecord(ao,"scalerS7b" ){}
-grecord(ao,"scalerS8b" ){}
-grecord(ao,"scalerS9b" ){}
+grecord(ao,"scalerS6b"){}
+grecord(ao,"scalerS7b"){}
+grecord(ao,"scalerS8b"){}
+grecord(ao,"scalerS9b"){}
 
 grecord(ao,"scalerS10b"){}
 grecord(ao,"scalerS11b"){}
@@ -103,11 +55,9 @@ grecord(ao,"scalerS14b"){}
 grecord(ao,"scalerS15b"){}
 grecord(ao,"scalerS16b"){}
 
+
 grecord(bo,"scaler_restart")
 {
-#  if DISV = SDIS record processing is disabled.  scaler_mode.VAL==0
-#  means the scaler is in ONE SHOT
-
 	field(DISV,"0")
 	field(SDIS,"scaler_mode.VAL NPP NMS")
 	field(OMSL,"closed_loop")
@@ -141,61 +91,20 @@ grecord(mbbo,"display_mode")
 	field(ZRVL,"0"  )
 	field(ONVL,"1"  )
 	field(TWVL,"2"  )
-
-	field(VAL,"2")
 }
 
 # Faraday cup
 grecord(calc,"scaler_calc1")
 {
-	field(FLNK,"scaler_calc2.PROC PP MS")
+	field(FLNK,"scaler_cts1.PROC PP MS")
 	field(CALC,"(b/f-d)/MAX(e,1.0)")
 	field(INPB,"scaler.S16 NPP NMS")
 	field(INPD,"fcup_offset NPP NMS")
 	field(INPE,"fcup_slope NPP NMS")
 	field(INPF,"scaler.T NPP NMS")
-	field(PREC,"4")
-}
-# SLM
-grecord(calc,"scaler_calc2")
-{
-	field(FLNK,"slm_fcup_ratio.PROC PP MS")
-	field(CALC,"(b/f-d)/MAX(e,1.0)")
-	field(INPB,"scaler.S12 NPP NMS")
-	field(INPD,"slm_offset NPP NMS")
-	field(INPE,"slm_slope NPP NMS")
-	field(INPF,"scaler.T NPP NMS")
-	field(PREC,"4")
-}
-grecord(calc,"slm_fcup_ratio")
-{
-	field(FLNK,"scaler_sum.PROC PP MS")
-	field(CALC,"a>0.1?b/a:1.0")
-	field(INPA,"scaler_calc2 NPP NMS")
-	field(INPB,"scaler_calc1 NPP NMS")
-	field(PREC,"4")
+	field(PREC,"3")
 }
 
-# upstream Sum
-grecord(calc,"scaler_sum")
-{
-	field(FLNK,"scaler_warning.PROC PP MS")
-	field(CALC,"c+d")
-	field(INPA,"scalerS2b  NPP NMS")
-	field(INPB,"scalerS3b  NPP NMS")
-	field(INPC,"scalerS4b  NPP NMS")
-	field(INPD,"scalerS5b  NPP NMS")
-}
-
-
-# Warning
-grecord(calc,"scaler_warning")
-{
-	field(FLNK,"scaler_cts1.PROC PP MS")
-	field(CALC,"(f>0.1)? a/f:a")
-	field(INPA,"scaler_sum.VAL     NPP NMS")
-	field(INPF,"scaler_calc1.VAL   NPP NMS")
-}
 
 
 # Frequency 2-5
@@ -278,25 +187,25 @@ grecord(transform,"scaler_cts3")
 	field(PREC,"3")
 }
 
-# Frequency 14-16
+# Frequency 14-15
 grecord(transform,"scaler_cts4")
 {
 	field(FLNK,"scaler_cts5.PROC PP MS")
 
-	field(CLCG,"(a=1)?b/f:b")
 	field(CLCH,"(a=1)?c/f:c")
 	field(CLCI,"(a=1)?d/f:d")
+	field(CLCJ,"(a=1)?e/(10*f):e")
 
 	field(INPA,"display_mode.RVAL NPP NMS")
 	field(INPF,"scaler.T NPP NMS")
 
-	field(INPB,"scaler.S14 NPP NMS")
-	field(INPC,"scaler.S15 NPP NMS")
-	field(INPD,"scaler.S16 NPP NMS")
+	field(INPC,"scaler.S14 NPP NMS")
+	field(INPD,"scaler.S15 NPP NMS")
+	field(INPE,"scaler.S16 NPP NMS")
 
-	field(OUTG,"scalerS14a.VAL PP MS")
-	field(OUTH,"scalerS15a.VAL PP MS")
-	field(OUTI,"scalerS16a.VAL PP MS")
+	field(OUTH,"scalerS14a.VAL PP MS")
+	field(OUTI,"scalerS15a.VAL PP MS")
+	field(OUTJ,"scalerS16a.VAL PP MS")
 
 	field(PREC,"3")
 }
@@ -306,13 +215,13 @@ grecord(transform,"scaler_cts5")
 {
 	field(FLNK,"scaler_cts6.PROC PP MS")
 
-	field(CLCG,"(a=2 && f>0.010)?(b/k)/f:b")
-	field(CLCH,"(a=2 && f>0.010)?(c/k)/f:c")
-	field(CLCI,"(a=2 && f>0.010)?(d/k)/f:d")
-	field(CLCJ,"(a=2 && f>0.010)?(e/k)/f:e")
+	field(CLCG,"(a=2 && f>0.010)?b/k/f:b")
+	field(CLCH,"(a=2 && f>0.010)?c/k/f:c")
+	field(CLCI,"(a=2 && f>0.010)?d/k/f:d")
+	field(CLCJ,"(a=2 && f>0.010)?e/k/f:e")
 
 	field(INPA,"display_mode.RVAL NPP NMS")
-	field(INPF,"scaler_calc1.VAL NPP NMS")
+	field(INPF,"HLB:bta_main_cur.VAL NPP NMS")
 	field(INPK,"scaler.T NPP NMS")
 
 	field(INPB,"scalerS2a.VAL NPP NMS")
@@ -334,13 +243,13 @@ grecord(transform,"scaler_cts6")
 {
 	field(FLNK,"scaler_cts7.PROC PP MS")
 
-	field(CLCG,"(a=2 && f>0.010)?(b/k)/f:b")
-	field(CLCH,"(a=2 && f>0.010)?(c/k)/f:c")
-	field(CLCI,"(a=2 && f>0.010)?(d/k)/f:d")
-	field(CLCJ,"(a=2 && f>0.010)?(e/k)/f:e")
+	field(CLCG,"(a=2 && f>0.010)?b/f/k:b")
+	field(CLCH,"(a=2 && f>0.010)?c/f/k:c")
+	field(CLCI,"(a=2 && f>0.010)?d/f/k:d")
+	field(CLCJ,"(a=2 && f>0.010)?e/f/k:e")
 
 	field(INPA,"display_mode.RVAL NPP NMS")
-	field(INPF,"scaler_calc1.VAL NPP NMS")
+	field(INPF,"HLB:bta_main_cur.VAL NPP NMS")
 	field(INPK,"scaler.T NPP NMS")
 
 	field(INPB,"scalerS6a.VAL NPP NMS")
@@ -357,19 +266,18 @@ grecord(transform,"scaler_cts6")
 	field(PREC,"3")
 }
 
-
 # Normalise 10-13
 grecord(transform,"scaler_cts7")
 {
 	field(FLNK,"scaler_cts8.PROC PP MS")
 
-	field(CLCG,"(a=2 && f>0.010)?(b/k)/f:b")
-	field(CLCH,"(a=2 && f>0.010)?(c/k)/f:c")
-	field(CLCI,"(a=2 && f>0.010)?(d/k)/f:d")
-	field(CLCJ,"(a=2 && f>0.010)?(e/k)/f:e")
+	field(CLCG,"(a=2 && f>0.010)?b/f/k:b")
+	field(CLCH,"(a=2 && f>0.010)?c/f/k:c")
+	field(CLCI,"(a=2 && f>0.010)?d/f/k:d")
+	field(CLCJ,"(a=2 && f>0.010)?e/f/k:e")
 
 	field(INPA,"display_mode.RVAL NPP NMS")
-	field(INPF,"scaler_calc1.VAL NPP NMS")
+	field(INPF,"HLB:bta_main_cur.VAL NPP NMS")
 	field(INPK,"scaler.T NPP NMS")
 
 	field(INPB,"scalerS10a.VAL NPP NMS")
@@ -382,85 +290,41 @@ grecord(transform,"scaler_cts7")
 	field(OUTI,"scalerS12b.VAL PP MS")
 	field(OUTJ,"scalerS13b.VAL PP MS")
 
-
 	field(PREC,"3")
 }
 
 
-# Normalise 14-16
+# Normalise 14-15
 grecord(transform,"scaler_cts8")
 {
-	field(FLNK,"scaler_copy_1.PROC PP MS")
+	field(FLNK,"scaler_wait.PROC PP MS")
 
-	field(CLCG,"(a=2 && f>0.010)?(b/k)/f:b")
-	field(CLCH,"(a=2 && f>0.010)?(c/k)/f:c")
-	field(CLCI,"(a=2 && f>0.010)?(d/k)/f:d")
+	field(CLCH,"(a=2 && f>0.010)?c/f/k:c")
+	field(CLCI,"(a=2 && f>0.010)?d/f/k:d")
+	field(CLCJ,"(a=2 && f>0.010)?e/f/k:e")
 
 	field(INPA,"display_mode.RVAL NPP NMS")
-	field(INPF,"scaler_calc1.VAL NPP NMS")
+	field(INPF,"HLB:bta_main_cur.VAL NPP NMS")
 	field(INPK,"scaler.T NPP NMS")
 
-	field(INPB,"scalerS14a.VAL NPP NMS")
-	field(INPC,"scalerS15a.VAL NPP NMS")
-	field(INPD,"scalerS16a.VAL NPP NMS")
+	field(INPC,"scalerS14a.VAL NPP NMS")
+	field(INPD,"scalerS15a.VAL NPP NMS")
+	field(INPE,"scalerS16a.VAL NPP NMS")
 
-	field(OUTG,"scalerS14b.VAL PP MS")
-	field(OUTH,"scalerS15b.VAL PP MS")
-	field(OUTI,"scalerS16b.VAL PP MS")
-
-	field(PREC,"3")
-}
-
-
-grecord(seq,"scaler_copy_1")
-{
-	field(FLNK,"scaler_copy_2.PROC PP MS")
-	
-	field(DOL1,"scaler.S1  NPP NMS")
-	field(DOL2,"scaler.S2  NPP NMS")
-	field(DOL3,"scaler.S3  NPP NMS")
-	field(DOL4,"scaler.S4  NPP NMS")
-	field(DOL5,"scaler.S5  NPP NMS")
-	field(DOL6,"scaler.S6  NPP NMS")
-	field(DOL7,"scaler.S7  NPP NMS")
-	field(DOL8,"scaler.S8  NPP NMS")		
-	field(DOL9,"scaler.S9  NPP NMS")
-	field(DOLA,"scaler.S10 NPP NMS")
-
-
-	field(LNK1,"scalerS1o  PP MS")
-	field(LNK2,"scalerS2o  PP MS")
-	field(LNK3,"scalerS3o  PP MS")
-	field(LNK4,"scalerS4o  PP MS")
-	field(LNK5,"scalerS5o  PP MS")
-	field(LNK6,"scalerS6o  PP MS")
-	field(LNK7,"scalerS7o  PP MS")
-	field(LNK8,"scalerS8o  PP MS")		
-	field(LNK9,"scalerS9o  PP MS")
-	field(LNKA,"scalerS10o PP MS")
+	field(OUTH,"scalerS14b.VAL PP MS")
+	field(OUTI,"scalerS15b.VAL PP MS")
+	field(OUTJ,"scalerS16b.VAL PP MS")
 
 	field(PREC,"3")
 }
 
-grecord(seq,"scaler_copy_2")
-{
-	field(FLNK,"scaler_wait.PROC PP MS")
-	
-	field(DOL1,"scaler.S11 NPP NMS")
-	field(DOL2,"scaler.S12 NPP NMS")
-	field(DOL3,"scaler.S13 NPP NMS")
-	field(DOL4,"scaler.S14 NPP NMS")
-	field(DOL5,"scaler.S15 NPP NMS")
-	field(DOL6,"scaler.S16 NPP NMS")
 
-	field(LNK1,"scalerS11o PP MS")
-	field(LNK2,"scalerS12o PP MS")
-	field(LNK3,"scalerS13o PP MS")
-	field(LNK4,"scalerS14o PP MS")
-	field(LNK5,"scalerS15o PP MS")
-	field(LNK6,"scalerS16o PP MS")
 
-	field(PREC,"3")
-}
+
+
+
+
+
+
 
 

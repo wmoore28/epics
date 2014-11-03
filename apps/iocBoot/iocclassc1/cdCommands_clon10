@@ -1,0 +1,16 @@
+putenv("ENGINEER=epics")
+putenv("LOCATION=Space Frame Level Alcove")
+startup = "$IOC_root_classc1/iocBoot/iocclassc1"
+putenv("ARCH=$IOC_arch_classc1")
+putenv("IOC=iocclassc1")
+top = "$IOC_root_classc1"
+putenv("TOP=$IOC_root_classc1")
+topbin = "$IOC_root_classc1/bin/$IOC_arch_classc1"
+self = "$IOC_root_classc1"
+putenv("SELF=$IOC_root_classc1")
+selfbin = "$IOC_root_classc1/bin/$IOC_arch_classc1"
+putenv("EPICS_SYNAPPS=/usr/local/clas12/release/0.1/R3.14.12.3/synApps/synApps_5_5/support")
+a = malloc(1024)
+strcpy(a,"STREAM_PROTOCOL_PATH=/usr/local/clas12/release/0.1/R3.14.12.3/synApps/synApps_5_5/support")
+strcat(a,"/asyn-4-13/templates/streamSCPI/_NAME_Sup/dev_NAME_.proto")
+putenv(a)
