@@ -191,7 +191,7 @@ seq &reset_motor, "name=viewer_reset, motor_name=viewer"
 seq &reset_motor, "name=hps_collimator_reset, motor_name=hps_collimator"
 seq &harp_scan_generic, "name=hps_collimator_scan, motor_name=hps_collimator"
 
-#seq &sixtyHz
+seq &sixtyHz
 #seq &scaler_frwd_restart
 #seq &scaler_c_restart
 
