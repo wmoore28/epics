@@ -1,0 +1,761 @@
+###################################################################### # Author:   Krister bruhwel
+#--------------------------------------------------------------------# 
+# An alarm handler that monitors key signals and pages the oncall
+# in the event of an alarm.  The handler uses two scripts:
+#	pageOnCall.pl   - a perl script that does the paging
+#	alhKeepAlive.pl - a perl script that makes sure this alarm
+#                     handler is always running.  Polled via cron.
+######################################################################
+
+GROUP NULL ON_CALL_PAGER
+$COMMAND  netscape "$APP/general/alh/oncall_pager/On_Call_List_03_Rev_2.html" >> /dev/null
+#$COMMAND  acroread $APP/general/alh/oncall_pager/On_Call_List_03_Rev_2.xls.pdf  >> /dev/null
+
+$GUIDANCE
+This alarm handler monitors signals of interest and pages 
+oncall personnel if there is a problem.  Please do not close this
+handler.  If in the event it is closed, a cron job will start it
+back up.
+$END
+
+#--------------------------------------------------------------------
+# BUFFER_DEWER GROUP
+#--------------------------------------------------------------------
+#GROUP ON_CALL_PAGER BUFFER_DEWER
+#CHANNEL BUFFER_DEWER hallb_CTD8541
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=hallb_CTD8541" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "Cryo" -sig "hallb_CTD8541" -m "hallb_CTD8541 LOLO" >> /dev/null 
+#$STATCOMMAND LOW  pageOnCall.pl -grp "Cryo" -sig "hallb_CTD8541" -m "hallb_CTD8541 LOW" >> /dev/null 
+#$STATCOMMAND HIGH pageOnCall.pl -grp "Cryo" -sig "hallb_CTD8541" -m "hallb_CTD8541 HIGH" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "Cryo" -sig "hallb_CTD8541" -m "hallb_CTD8541 HIHI" >> /dev/null
+#$GUIDANCE
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#This is a signal from the Cryo Groups IOC.
+#$END
+#
+#
+#CHANNEL BUFFER_DEWER LL8210
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=LL8210" aiaocalc_alarm.adl >> /dev/null  
+#$STATCOMMAND LOLO pageOnCall.pl -grp "Target" -sig "LL8210" -m "LL8210 LOLO" >> /dev/null 
+#$STATCOMMAND LOW  pageOnCall.pl -grp "Target" -sig "LL8210" -m "LL8210 LOW" >> /dev/null 
+#$STATCOMMAND HIGH pageOnCall.pl -grp "Target" -sig "LL8210" -m "LL8210 HIGH" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "Target" -sig "LL8210" -m "LL8210 HIHI" >> /dev/null 
+#$GUIDANCE
+#Buffer Tank He level.
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#CHANNEL BUFFER_DEWER PI8210
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=PI8210" aiaocalc_alarm.adl >> /dev/null  
+#$STATCOMMAND LOLO pageOnCall.pl -grp "Target" -sig "PI8210" -m "PI8210 LOLO" >> /dev/null 
+#$STATCOMMAND LOW  pageOnCall.pl -grp "Target" -sig "PI8210" -m "PI8210 LOW" >> /dev/null 
+#$STATCOMMAND HIGH pageOnCall.pl -grp "Target" -sig "PI8210" -m "PI8210 HIGH" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "Target" -sig "PI8210" -m "PI8210 HIHI" >> /dev/null 
+#$GUIDANCE
+#Buffer Tank He pressure.
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+
+#--------------------------------------------------------------------
+# CLAS_GAS GROUP
+#--------------------------------------------------------------------
+#GROUP ON_CALL_PAGER CLAS_GAS
+##CHANNEL CLAS_GAS analog_fc_s11 
+##$ALARMCOUNTFILTER 9999999999 300
+##$COMMAND  medm -x -attach -cmap -macro "sig=analog_fc_s11" aiaocalc_alarm.adl >> /dev/null 
+##$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "analog_fc_s11" -m "He Gas Bag:analog_fc_s11 HIHI" >> /dev/null 
+##$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "analog_fc_s11" -m "He Gas Bag:analog_fc_s11 LOLO" >> /dev/null 
+##$GUIDANCE
+##Downstream He Gas Bag.
+##If there is an alarm, the Engineering oncall
+##will be automatically paged.  If you do not 
+##receive a response from the
+##oncall, please call at  584-5245.
+##$END
+#
+## 3/17/04: cc_sectorX_pres sigs are not used right now
+##CHANNEL CLAS_GAS cc_sector1_pres 
+##$ALARMCOUNTFILTER 9999999999 300
+##$COMMAND  medm -x -attach -cmap -macro "sig=cc_sector1_pres" aiaocalc_alarm.adl >> /dev/null 
+##$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "cc_sector1_pres" -m "cc_sector1_pres LOLO" >> /dev/null 
+##$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "cc_sector1_pres" -m "cc_sector1_pres HIHI" >> /dev/null 
+##$GUIDANCE
+##If there is an alarm, the Engineering oncall
+##will be automatically paged.  If you do not 
+##receive a response from the
+##oncall, please call at  584-5245.
+##$END
+##
+##CHANNEL CLAS_GAS cc_sector2_pres 
+##$ALARMCOUNTFILTER 9999999999 300
+##$COMMAND  medm -x -attach -cmap -macro "sig=cc_sector2_pres" aiaocalc_alarm.adl >> /dev/null 
+##$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "cc_sector2_pres" -m "cc_sector2_pres LOLO" >> /dev/null 
+##$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "cc_sector2_pres" -m "cc_sector2_pres HIHI" >> /dev/null 
+##$GUIDANCE
+##If there is an alarm, the Engineering oncall
+##will be automatically paged.  If you do not 
+##receive a response from the
+##oncall, please call at  584-5245.
+##$END
+##
+##CHANNEL CLAS_GAS cc_sector3_pres 
+##$ALARMCOUNTFILTER 9999999999 300
+##$COMMAND  medm -x -attach -cmap -macro "sig=cc_sector3_pres" aiaocalc_alarm.adl >> /dev/null 
+##$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "cc_sector3_pres" -m "cc_sector3_pres LOLO" >> /dev/null 
+##$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "cc_sector3_pres" -m "cc_sector3_pres HIHI" >> /dev/null 
+##$GUIDANCE
+##If there is an alarm, the Engineering oncall
+##will be automatically paged.  If you do not 
+##receive a response from the
+##oncall, please call at  584-5245.
+##$END
+##
+##CHANNEL CLAS_GAS cc_sector4_pres 
+##$ALARMCOUNTFILTER 9999999999 300
+##$COMMAND  medm -x -attach -cmap -macro "sig=cc_sector4_pres" aiaocalc_alarm.adl >> /dev/null 
+##$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "cc_sector4_pres" -m "cc_sector4_pres LOLO" >> /dev/null 
+##$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "cc_sector4_pres" -m "cc_sector4_pres HIHI" >> /dev/null 
+##$GUIDANCE
+##If there is an alarm, the Engineering oncall
+##will be automatically paged.  If you do not 
+##receive a response from the
+##oncall, please call at  584-5245.
+##$END
+##
+##CHANNEL CLAS_GAS cc_sector5_pres 
+##$ALARMCOUNTFILTER 9999999999 300
+##$COMMAND  medm -x -attach -cmap -macro "sig=cc_sector5_pres" aiaocalc_alarm.adl >> /dev/null 
+##$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "cc_sector5_pres" -m "cc_sector5_pres LOLO" >> /dev/null 
+##$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "cc_sector5_pres" -m "cc_sector5_pres HIHI" >> /dev/null 
+##$GUIDANCE
+##If there is an alarm, the Engineering oncall
+##will be automatically paged.  If you do not 
+##receive a response from the
+##oncall, please call at  584-5245.
+##$END
+##
+##CHANNEL CLAS_GAS cc_sector6_pres 
+##$ALARMCOUNTFILTER 9999999999 300
+##$COMMAND  medm -x -attach -cmap -macro "sig=cc_sector6_pres" aiaocalc_alarm.adl >> /dev/null 
+##$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "cc_sector6_pres" -m "cc_sector6_pres LOLO" >> /dev/null 
+##$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "cc_sector6_pres" -m "cc_sector6_pres HIHI" >> /dev/null 
+##$GUIDANCE
+##If there is an alarm, the Engineering oncall
+##will be automatically paged.  If you do not 
+##receive a response from the
+##oncall, please call at  584-5245.
+##$END
+#
+#CHANNEL CLAS_GAS dc_r1out_pres 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=dc_r1out_pres" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r1out_pres" -m "dc_r1out_pres LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r1out_pres" -m "dc_r1out_pres HIHI" >> /dev/null 
+#$GUIDANCE
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#CHANNEL CLAS_GAS dc_r2out_pres 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=dc_r2out_pres" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r2out_pres" -m "dc_r2out_pres LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r2out_pres" -m "dc_r2out_pres HIHI" >> /dev/null 
+#$GUIDANCE
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#CHANNEL CLAS_GAS dc_r3out_pres 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=dc_r3out_pres" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r3out_pres" -m "dc_r3out_pres LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r3out_pres" -m "dc_r3out_pres HIHI" >> /dev/null 
+#$GUIDANCE
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+##CHANNEL CLAS_GAS dc_arco2_ratio1 
+##$ALARMCOUNTFILTER 9999999999 300
+##$COMMAND  medm -x -attach -cmap -macro "sig=dc_arco2_ratio1" aiaocalc_alarm.adl >> /dev/null 
+##$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "dc_arco2_ratio1" -m "dc_arco2_ratio1 LOLO" >> /dev/null 
+##$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "dc_arco2_ratio1" -m "dc_arco2_ratio1 HIHI" >> /dev/null 
+##$GUIDANCE
+##If there is an alarm, the Engineering oncall
+###will be automatically paged.  If you do not 
+##receive a response from the
+##oncall, please call at  584-5245.
+##$END
+##
+##CHANNEL CLAS_GAS dc_arco2_ratio2 
+##$ALARMCOUNTFILTER 9999999999 300
+##$COMMAND  medm -x -attach -cmap -macro "sig=dc_arco2_ratio2" aiaocalc_alarm.adl >> /dev/null 
+##$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "dc_arco2_ratio2" -m "dc_arco2_ratio2 LOLO" >> /dev/null 
+##$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "dc_arco2_ratio2" -m "dc_arco2_ratio2 HIHI" >> /dev/null 
+##$GUIDANCE
+##If there is an alarm, the Engineering oncall
+##will be automatically paged.  If you do not 
+##receive a response from the
+##oncall, please call at  584-5245.
+##$END
+#
+##CHANNEL CLAS_GAS dc_r1in_flow 
+##$ALARMCOUNTFILTER 9999999999 300
+##$COMMAND  medm -x -attach -cmap -macro "sig=dc_r1in_flow" aiaocalc_alarm.adl >> /dev/null 
+##$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r1in_flow" -m "dc_r1in_flow LOLO" >> /dev/null 
+##$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r1in_flow" -m "dc_r1in_flow HIHI" >> /dev/null 
+##$GUIDANCE
+##If there is an alarm, the Engineering oncall
+##will be automatically paged.  If you do not 
+##receive a response from the
+##oncall, please call at  584-5245.
+##$END
+#
+#CHANNEL CLAS_GAS dc_r2in_flow 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=dc_r2in_flow" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r2in_flow" -m "dc_r2in_flow LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r2in_flow" -m "dc_r2in_flow HIHI" >> /dev/null 
+#$GUIDANCE
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#CHANNEL CLAS_GAS dc_r3in_flow 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=dc_r3in_flow" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r3in_flow" -m "dc_r3in_flow LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r3in_flow" -m "dc_r3in_flow HIHI" >> /dev/null 
+#$GUIDANCE
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#CHANNEL CLAS_GAS dc_r1_bypass 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=dc_r1_bypass" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r1_bypass" -m "dc_r1_bypass LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r1_bypass" -m "dc_r1_bypass HIHI" >> /dev/null 
+#$GUIDANCE
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#CHANNEL CLAS_GAS dc_r2_bypass 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=dc_r2_bypass" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r2_bypass" -m "dc_r2_bypass LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r2_bypass" -m "dc_r2_bypass HIHI" >> /dev/null 
+#$GUIDANCE
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#CHANNEL CLAS_GAS dc_r3_bypass 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=dc_r3_bypass" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r3_bypass" -m "dc_r3_bypass LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r3_bypass" -m "dc_r3_bypass HIHI" >> /dev/null 
+#$GUIDANCE
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#CHANNEL CLAS_GAS dc_r1out_o2 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=dc_r1out_o2" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r1out_o2" -m "dc_r1out_o2 LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r1out_o2" -m "dc_r1out_o2 HIHI" >> /dev/null 
+#$GUIDANCE
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#CHANNEL CLAS_GAS dc_r2out_o2 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=dc_r2out_o2" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r2out_o2" -m "dc_r2out_o2 LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r2out_o2" -m "dc_r2out_o2 HIHI" >> /dev/null 
+#$GUIDANCE
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#CHANNEL CLAS_GAS dc_r3out_o2 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=dc_r3out_o2" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r3out_o2" -m "dc_r3out_o2 LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "CLAS_GAS" -sig "dc_r3out_o2" -m "dc_r3out_o2 HIHI" >> /dev/null 
+#$GUIDANCE
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#--------------------------------------------------------------------
+# IOC_STATUS GROUP
+#--------------------------------------------------------------------
+GROUP ON_CALL_PAGER IOC_STATUS
+#CHANNEL IOC_STATUS classc1:heartbeat
+#$ALARMCOUNTFILTER 9999999999 600
+#$SEVRCOMMAND UP_ANY pageOnCall.pl -grp "IOC" -sig "classc1:heartbeat" -m "IOC classc1 is dead" >> /dev/null 
+#$GUIDANCE
+#classc1 ioc is not responding.  When this fault is 
+#triggered, the Engineering oncall will automatically
+#be paged.  If you do not receive a response from the
+#oncall, please call at  584-5245.
+#This ioc may be rebooted without any addition steps afterward.
+#$END
+
+CHANNEL IOC_STATUS classc3:heartbeat
+$ALARMCOUNTFILTER 9999999999 600
+$SEVRCOMMAND UP_ANY pageOnCall.pl -grp "IOC" -sig "classc3:heartbeat" -m "IOC classc3 is dead" >> /dev/null 
+$GUIDANCE
+classc3 ioc is not responding.  When this fault is 
+triggered, the Engineering oncall will automatically
+be paged.  If you do not receive a response from the
+oncall, please call at  584-5245.
+This ioc may be rebooted without any addition steps afterward.
+$END
+
+CHANNEL IOC_STATUS iocptarg:heartbeat
+$ALARMCOUNTFILTER 9999999999 600
+$SEVRCOMMAND UP_ANY pageOnCall.pl -grp "IOC" -sig "iocptarg:heartbeat" -m "IOC iocptarg is dead" >> /dev/null 
+$GUIDANCE
+iocptarg is not responding.  When this fault is 
+triggered, the Engineering oncall will automatically
+be paged.  If you do not receive a response from the
+oncall, please call at  584-5245.
+This ioc will need a restore after reboot.
+$END
+
+CHANNEL IOC_STATUS ioctorus1:heartbeat
+$ALARMCOUNTFILTER 9999999999 600
+$SEVRCOMMAND UP_ANY pageOnCall.pl -grp "IOC" -sig "ioctorus1:heartbeat" -m "IOC ioctorus1 is dead" >> /dev/null 
+$GUIDANCE
+ioctorus1 ioc is not responding.  When this fault is 
+triggered, the Engineering oncall will automatically
+be paged.  If you do not receive a response from the
+oncall, please call at  584-5245.
+This ioc will need a restore after reboot.
+$END
+
+CHANNEL IOC_STATUS iocesr:heartbeat
+$ALARMCOUNTFILTER 9999999999 600
+$SEVRCOMMAND UP_ANY pageOnCall.pl -grp "IOC" -sig "iocesr:heartbeat" -m "IOC iocesr is dead" >> /dev/null 
+$GUIDANCE
+iocesr ioc is not responding.  When this fault is 
+triggered, the Engineering oncall will automatically
+be paged.  If you do not receive a response from the
+oncall, please call at  584-5245.
+This is not a Hall B ioc, call Cryo.
+$END
+
+#--------------------------------------------------------------------
+# HALL_WEATHER GROUP
+#--------------------------------------------------------------------
+GROUP ON_CALL_PAGER HALL_WEATHER
+CHANNEL HALL_WEATHER hallb_l3_temp
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_l3_temp" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND LOLO pageOnCall.pl -grp "Weather" -sig "hallb_l3_temp" -m "hallb_l3_temp LOLO" >> /dev/null 
+$STATCOMMAND LOW  pageOnCall.pl -grp "Weather" -sig "hallb_l3_temp" -m "hallb_l3_temp LOW" >> /dev/null 
+$STATCOMMAND HIGH pageOnCall.pl -grp "Weather" -sig "hallb_l3_temp" -m "hallb_l3_temp HIGH" >> /dev/null 
+$STATCOMMAND HIHI pageOnCall.pl -grp "Weather" -sig "hallb_l3_temp" -m "hallb_l3_temp HIHI" >> /dev/null 
+$GUIDANCE
+Space Frame Level Three temperature.
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+CHANNEL HALL_WEATHER hallb_l2_temp
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_l2_temp" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND LOLO pageOnCall.pl -grp "Weather" -sig "hallb_l2_temp" -m "hallb_l2_temp LOLO" >> /dev/null 
+$STATCOMMAND LOW  pageOnCall.pl -grp "Weather" -sig "hallb_l2_temp" -m "hallb_l2_temp LOW" >> /dev/null 
+$STATCOMMAND HIGH pageOnCall.pl -grp "Weather" -sig "hallb_l2_temp" -m "hallb_l2_temp HIGH" >> /dev/null 
+$STATCOMMAND HIHI pageOnCall.pl -grp "Weather" -sig "hallb_l2_temp" -m "hallb_l2_temp HIHI" >> /dev/null 
+$GUIDANCE
+Space Frame Level Two temperature.
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+#--------------------------------------------------------------------
+# TARGET GROUP
+#--------------------------------------------------------------------
+#GROUP ON_CALL_PAGER TARGET
+#
+#CHANNEL TARGET fv-cvs
+#$ALARMCOUNTFILTER 9999999999 10
+#$COMMAND  medm -x -attach -cmap -macro "sig=fv-cvs" bibo_alarm.adl >> /dev/null  
+#$SEVRCOMMAND UP_MAJOR pageOnCall.pl -grp "Target" -sig "fv-cvs" -m "fv-cvs CLOSED" >> /dev/null 
+#$GUIDANCE
+#Target Vacuum Valve.
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#
+#--------------------------------------------------------------------
+# TORUS GROUP
+#--------------------------------------------------------------------
+GROUP ON_CALL_PAGER TORUS
+CHANNEL TORUS PI1022
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=PI1022" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND LOLO pageOnCall.pl -grp "Torus" -sig "PI1022" -m "PI1022 LOLO" >> /dev/null 
+$STATCOMMAND LOW  pageOnCall.pl -grp "Torus" -sig "PI1022" -m "PI1022 LOW" >> /dev/null 
+$STATCOMMAND HIGH pageOnCall.pl -grp "Torus" -sig "PI1022" -m "PI1022 HIGH" >> /dev/null
+$STATCOMMAND HIHI pageOnCall.pl -grp "Torus" -sig "PI1022" -m "PI1022 HIHI" >> /dev/null
+$GUIDANCE
+Torus He Reserve Tank pressure (1.2 ata).
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+CHANNEL TORUS PI1028
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=PI1028" aiaocalc_alarm.adl >> /dev/null  
+$STATCOMMAND LOLO pageOnCall.pl -grp "Torus" -sig "PI1028" -m "PI1028 LOLO" >> /dev/null 
+$STATCOMMAND LOW  pageOnCall.pl -grp "Torus" -sig "PI1028" -m "PI1028 LOW" >> /dev/null 
+$STATCOMMAND HIGH pageOnCall.pl -grp "Torus" -sig "PI1028" -m "PI1028 HIGH" >> /dev/null 
+$STATCOMMAND HIHI pageOnCall.pl -grp "Torus" -sig "PI1028" -m "PI1028 HIHI" >> /dev/null 
+$GUIDANCE
+Torus He Buffer Tank pressure (2.8 ata)
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+CHANNEL TORUS PG3031
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=PG3031" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND LOLO pageOnCall.pl -grp "Torus" -sig "PG3031" -m "PG3031 LOLO" >> /dev/null 
+$STATCOMMAND LOW  pageOnCall.pl -grp "Torus" -sig "PG3031" -m "PG3031 LOW" >> /dev/null 
+$STATCOMMAND HIGH pageOnCall.pl -grp "Torus" -sig "PG3031" -m "PG3031 HIGH" >> /dev/null 
+$STATCOMMAND HIHI pageOnCall.pl -grp "Torus" -sig "PG3031" -m "PG3031 HIHI" >> /dev/null 
+$GUIDANCE
+Torus Service Module vacuum.
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+CHANNEL TORUS LL1130
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=LL1130" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND LOLO pageOnCall.pl -grp "Torus" -sig "LL1130" -m "LL1130 LOLO" >> /dev/null 
+$STATCOMMAND LOW  pageOnCall.pl -grp "Torus" -sig "LL1130" -m "LL1130 LOW" >> /dev/null 
+$STATCOMMAND HIGH pageOnCall.pl -grp "Torus" -sig "LL1130" -m "LL1130 HIGH" >> /dev/null 
+$STATCOMMAND HIHI pageOnCall.pl -grp "Torus" -sig "LL1130" -m "LL1130 HIHI" >> /dev/null 
+$GUIDANCE
+Torus Service Module He Tank Level.
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+CHANNEL TORUS LL2003
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=LL2003" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND LOLO pageOnCall.pl -grp "Torus" -sig "LL2003" -m "LL2003 LOLO" >> /dev/null 
+$STATCOMMAND LOW  pageOnCall.pl -grp "Torus" -sig "LL2003" -m "LL2003 LOW" >> /dev/null 
+$STATCOMMAND HIGH pageOnCall.pl -grp "Torus" -sig "LL2003" -m "LL2003 HIGH" >> /dev/null 
+$STATCOMMAND HIHI pageOnCall.pl -grp "Torus" -sig "LL2003" -m "LL2003 HIHI" >> /dev/null 
+$GUIDANCE
+Torus Service Module N2 Tank Level.
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+CHANNEL TORUS TP2070
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=TP2070" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND HIHI pageOnCall.pl -grp "Torus" -sig "TP2070" -m "TP2070 HIHI" >> /dev/null 
+$GUIDANCE
+Torus N2 Screen Out temperature 
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+#--------------------------------------------------------------------
+# VESDA GROUP
+#--------------------------------------------------------------------
+GROUP ON_CALL_PAGER VESDA
+CHANNEL VESDA hallb_vesda1
+
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_vesda1" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND HIHI pageOnCall.pl -default -pgNum "584-6391" -grp "Vesda" -sig "hallb_vesda1" -m "hallb_vesda1 HIHI" >> /dev/null
+$GUIDANCE
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+CHANNEL VESDA hallb_vesda2
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_vesda2" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND HIHI pageOnCall.pl -default -pgNum "584-6391" -grp "Vesda" -sig "hallb_vesda2" -m "hallb_vesda2 HIHI" >> /dev/null
+$GUIDANCE
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+CHANNEL VESDA hallb_vesda3
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_vesda3" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND HIHI pageOnCall.pl -default -pgNum "584-6391" -grp "Vesda" -sig "hallb_vesda3" -m "hallb_vesda3 HIHI" >> /dev/null
+$GUIDANCE
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+CHANNEL VESDA hallb_vesda4
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_vesda4" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND HIHI pageOnCall.pl -default -pgNum "584-6391" -grp "Vesda" -sig "hallb_vesda4" -m "hallb_vesda4 HIHI" >> /dev/null
+$GUIDANCE
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+#--------------------------------------------------------------------
+# MINI TORUS 
+#--------------------------------------------------------------------
+#GROUP ON_CALL_PAGER MINI_T
+#CHANNEL MINI_T minit_t_v_LCW_OUT 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=minit_t_v_LCW_OUT" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "miniTorus" -sig "minit_t_v_LCW_OUT" -m "Mini-T_LCW LOLO" >> /dev/null 
+#$STATCOMMAND LOW  pageOnCall.pl -grp "miniTorus" -sig "minit_t_v_LCW_OUT" -m "Mini-T_LCW LOW" >> /dev/null 
+#$STATCOMMAND HIGH pageOnCall.pl -grp "miniTorus" -sig "minit_t_v_LCW_OUT" -m "Mini-T_LCW HIGH" >> /dev/null
+#$STATCOMMAND HIHI pageOnCall.pl -grp "miniTorus" -sig "minit_t_v_LCW_OUT" -m "Mini-T_LCW HIHI" >> /dev/null
+#$GUIDANCE
+#Mini Torus LCW alarm.  If HIHI please ensure 
+#the magnet is ramping down (do it manually if 
+#necessary).
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#--------------------------------------------------------------------
+# DEHUMIDIFIER 
+#--------------------------------------------------------------------
+#GROUP ON_CALL_PAGER DEHUMID
+#CHANNEL DEHUMID dehumid_t1 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=dehumid_t1" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "dehumid" -sig "dehumid_t1" -m "dehumid_t1 LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "dehumid" -sig "dehumid_t1" -m "dehumid_t1 HIHI" >> /dev/null
+#$GUIDANCE
+#Dehumidifier alarm.  
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#CHANNEL DEHUMID dehumid_t2 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=dehumid_t2" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "dehumid" -sig "dehumid_t2" -m "dehumid_t2 LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "dehumid" -sig "dehumid_t2" -m "dehumid_t2 HIHI" >> /dev/null
+#$GUIDANCE
+#Dehumidifier alarm.  
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#CHANNEL DEHUMID dehumid_t3 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=dehumid_t3" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "dehumid" -sig "dehumid_t3" -m "dehumid_t3 LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "dehumid" -sig "dehumid_t3" -m "dehumid_t3 HIHI" >> /dev/null
+#$GUIDANCE
+#Dehumidifier alarm.  
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#CHANNEL DEHUMID dehumid_t4 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=dehumid_t4" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "dehumid" -sig "dehumid_t4" -m "dehumid_t4 LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "dehumid" -sig "dehumid_t4" -m "dehumid_t4 HIHI" >> /dev/null
+#$GUIDANCE
+#Dehumidifier alarm.  
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#CHANNEL DEHUMID dehumid_t5 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=dehumid_t5" aiaocalc_alarm.adl >> /dev/null 
+##$STATCOMMAND LOLO pageOnCall.pl -grp "dehumid" -sig "dehumid_t5" -m "dehumid_t5 LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "dehumid" -sig "dehumid_t5" -m "dehumid_t5 HIHI" >> /dev/null
+#$GUIDANCE
+#Dehumidifier alarm.  
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#CHANNEL DEHUMID dehumid_h1 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=dehumid_h1" aiaocalc_alarm.adl >> /dev/null #$STATCOMMAND LOLO pageOnCall.pl -grp "dehumid" -sig "dehumid_h1" -m "dehumid_h1 LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "dehumid" -sig "dehumid_h1" -m "dehumid_h1 HIHI" >> /dev/null
+#$GUIDANCE
+#Dehumidifier alarm.  
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+#
+#CHANNEL DEHUMID dehumid_h2 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=dehumid_h2" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "dehumid" -sig "dehumid_h2" -m "dehumid_h2 LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "dehumid" -sig "dehumid_h2" -m "dehumid_h2 HIHI" >> /dev/null
+#$GUIDANCE
+#Dehumidifier alarm.  
+#If there is an alarm, the Engineering oncall
+##will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+##
+#--------------------------------------------------------------------
+# HYCAL 
+#--------------------------------------------------------------------
+#GROUP ON_CALL_PAGER HYCAL
+#CHANNEL HYCAL hallb_PRIMTEMP25 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=hallb_PRIMTEMP25" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "primex_temp" -sig "hallb_PRIMTEMP25" -m "hallb_PRIMTEMP25 LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "primex_temp" -sig "hallb_PRIMTEMP25" -m "hallb_PRIMTEMP25 HIHI" >> /dev/null
+#$GUIDANCE
+#HyCal Center Voltage Divider Temp Alarm (in the Test Lab) 
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+
+#CHANNEL HYCAL hallb_PRIMTEMP17 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=hallb_PRIMTEMP17" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "primex_temp" -sig "hallb_PRIMTEMP17" -m "hallb_PRIMTEMP17 LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "primex_temp" -sig "hallb_PRIMTEMP17" -m "hallb_PRIMTEMP17 HIHI" >> /dev/null
+#$GUIDANCE
+#HyCal PBW Center Crystal Temp Alarm (in the Test Lab)  
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+
+#CHANNEL HYCAL hallb_PRIMTEMP16 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=hallb_PRIMTEMP16" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "primex_temp" -sig "hallb_PRIMTEMP16" -m "hallb_PRIMTEMP16 LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pageOnCall.pl -grp "primex_temp" -sig "hallb_PRIMTEMP16" -m "hallb_PRIMTEMP16 HIHI" >> /dev/null
+#$GUIDANCE
+#HyCal PBW Upper Crystal Temp Alarm (in the Test Lab) 
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+
+#--------------------------------------------------------------------
+# DVCS GROUP
+#--------------------------------------------------------------------
+#GROUP ON_CALL_PAGER DVCS
+#CHANNEL DVCS LL8301 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=LL8301" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pageOnCall.pl -grp "DVCS" -sig "LL8301" -m "LL8301 LOLO" >> /dev/null 
+#$GUIDANCE
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#This is a signal from the Cryo Groups IOC.
+#$END
+
+#--------------------------------------------------------------------
+# SILENCE PAGER GROUP
+#--------------------------------------------------------------------
+GROUP ON_CALL_PAGER SILENCE_PAGER 
+$COMMAND  touch "/tmp/auto_bail" >>/dev/null; medm -x -attach -cmap "$APP/general/alh/oncall_pager/auto_bail_msg.adl" >> /dev/null 
+$GUIDANCE
+Pressing P will silence the pager for 15 minutes
+$END

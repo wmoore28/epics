@@ -1,0 +1,1106 @@
+
+file {
+	name="/home/bruhwel/epics/app/general/medm/mbb_io_calc_alarm.adl"
+	version=020306
+}
+display {
+	object {
+		x=79
+		y=31
+		width=680
+		height=500
+	}
+	clr=8
+	bclr=1
+	cmap=""
+	gridSpacing=5
+	gridOn=1
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+polyline {
+	object {
+		x=-19
+		y=21
+		width=699
+		height=0
+	}
+	"basic attribute" {
+		clr=14
+	}
+	points {
+		(-19,21)
+		(680,21)
+	}
+}
+text {
+	object {
+		x=4
+		y=2
+		width=159
+		height=13
+	}
+	"basic attribute" {
+		clr=23
+	}
+	textix="ALARM INFORMATION FOR $(sig)"
+}
+text {
+	object {
+		x=30
+		y=34
+		width=90
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="$(sig)"
+	}
+	textix="Present Values"
+}
+polyline {
+	object {
+		x=28
+		y=47
+		width=92
+		height=0
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="$(sig)"
+	}
+	points {
+		(28,47)
+		(120,47)
+	}
+}
+rectangle {
+	object {
+		x=29
+		y=59
+		width=625
+		height=400
+	}
+	"basic attribute" {
+		clr=4
+		fill="outline"
+	}
+	"dynamic attribute" {
+		chan="$(sig).LOLO"
+	}
+}
+text {
+	object {
+		x=37
+		y=60
+		width=66
+		height=16
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="$(sig) :"
+}
+"text update" {
+	object {
+		x=216
+		y=82
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).ZRVL"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=36
+		y=82
+		width=132
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Bit 0    Value (ZRVL):"
+}
+"related display" {
+	object {
+		x=630
+		y=469
+		width=22
+		height=22
+	}
+	display[0] {
+		label="Change Values"
+		name="aiaocalc_alarm_set.adl"
+		args="sig=$(sig)"
+	}
+	clr=20
+	bclr=20
+}
+polyline {
+	object {
+		x=29
+		y=74
+		width=625
+		height=0
+	}
+	"basic attribute" {
+		clr=4
+		fill="outline"
+	}
+	"dynamic attribute" {
+		chan="$(sig).LOLO"
+	}
+	points {
+		(29,74)
+		(654,74)
+	}
+}
+text {
+	object {
+		x=91
+		y=102
+		width=114
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Severity (ZRSV):"
+}
+"text update" {
+	object {
+		x=216
+		y=102
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).ZRSV"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=37
+		y=121
+		width=132
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Bit 1    Value (ONVL):"
+}
+"text update" {
+	object {
+		x=216
+		y=121
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).ONVL"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=216
+		y=141
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).ONSV"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=92
+		y=141
+		width=114
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Severity (ONSV):"
+}
+text {
+	object {
+		x=38
+		y=162
+		width=132
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Bit 2    Value (TWVL):"
+}
+"text update" {
+	object {
+		x=216
+		y=162
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).TWVL"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=216
+		y=182
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).TWSV"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=93
+		y=182
+		width=114
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Severity (TWSV):"
+}
+text {
+	object {
+		x=38
+		y=202
+		width=132
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Bit 3    Value (THVL):"
+}
+"text update" {
+	object {
+		x=216
+		y=202
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).THVL"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=216
+		y=222
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).THSV"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=93
+		y=222
+		width=114
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Severity (THSV):"
+}
+text {
+	object {
+		x=39
+		y=240
+		width=132
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Bit 4    Value (FRVL):"
+}
+"text update" {
+	object {
+		x=216
+		y=240
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).FRVL"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=216
+		y=260
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).FRSV"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=94
+		y=260
+		width=114
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Severity (FRSV):"
+}
+text {
+	object {
+		x=40
+		y=279
+		width=132
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Bit 5    Value (FVVL):"
+}
+"text update" {
+	object {
+		x=216
+		y=279
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).FVVL"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=216
+		y=299
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).FVSV"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=95
+		y=299
+		width=114
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Severity (FVSV):"
+}
+text {
+	object {
+		x=40
+		y=321
+		width=132
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Bit 6    Value (SXVL):"
+}
+"text update" {
+	object {
+		x=216
+		y=321
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).ZRVL"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=216
+		y=341
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).SXSV"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=95
+		y=341
+		width=114
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Severity (SXSV):"
+}
+text {
+	object {
+		x=39
+		y=359
+		width=132
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Bit 7    Value (SVVL):"
+}
+"text update" {
+	object {
+		x=216
+		y=359
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).SVVL"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=216
+		y=379
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).SVSV"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=94
+		y=379
+		width=114
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Severity (SVSV):"
+}
+"text update" {
+	object {
+		x=545
+		y=85
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).EIVL"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=365
+		y=85
+		width=132
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Bit 8    Value (EIVL):"
+}
+text {
+	object {
+		x=420
+		y=105
+		width=114
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Severity (EISV):"
+}
+"text update" {
+	object {
+		x=545
+		y=105
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).EISV"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=366
+		y=124
+		width=132
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Bit 9    Value (NIVL):"
+}
+"text update" {
+	object {
+		x=545
+		y=124
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).NIVL"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=545
+		y=144
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).NISV"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=421
+		y=144
+		width=114
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Severity (NISV):"
+}
+text {
+	object {
+		x=367
+		y=165
+		width=132
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Bit 10   Value (TEVL):"
+}
+"text update" {
+	object {
+		x=545
+		y=165
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).TEVL"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=545
+		y=185
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).TESV"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=422
+		y=185
+		width=114
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Severity (TESV):"
+}
+text {
+	object {
+		x=367
+		y=205
+		width=132
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Bit 11    Value (ELVL):"
+}
+"text update" {
+	object {
+		x=545
+		y=205
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).ELVL"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=545
+		y=225
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).ELSV"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=422
+		y=225
+		width=114
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Severity (ELSV):"
+}
+text {
+	object {
+		x=368
+		y=243
+		width=132
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Bit 12   Value (TVVL):"
+}
+"text update" {
+	object {
+		x=545
+		y=243
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).TVVL"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=545
+		y=263
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).TVSV"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=423
+		y=263
+		width=114
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Severity (TVSV):"
+}
+text {
+	object {
+		x=369
+		y=282
+		width=132
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Bit 13   Value (TTVL):"
+}
+"text update" {
+	object {
+		x=545
+		y=282
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).TTVL"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=545
+		y=302
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).TTSV"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=424
+		y=302
+		width=114
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Severity (TTSV):"
+}
+text {
+	object {
+		x=369
+		y=324
+		width=132
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Bit 14   Value (FTVL):"
+}
+"text update" {
+	object {
+		x=545
+		y=324
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).FTVL"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=545
+		y=344
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).FTSV"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=424
+		y=344
+		width=114
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Severity (FTSV):"
+}
+text {
+	object {
+		x=368
+		y=362
+		width=132
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Bit 15   Value (FFVL):"
+}
+"text update" {
+	object {
+		x=545
+		y=362
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).FFVL"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=545
+		y=382
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).FFSV"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=423
+		y=382
+		width=114
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Severity (FFSV):"
+}

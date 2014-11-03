@@ -1,0 +1,631 @@
+
+file {
+	name="/home/freyberg/EPICS.OLD/app/general/medm/aiaocalc_alarm_set.adl"
+	version=020306
+}
+display {
+	object {
+		x=105
+		y=193
+		width=300
+		height=315
+	}
+	clr=45
+	bclr=30
+	cmap=""
+	gridSpacing=5
+	gridOn=1
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+polyline {
+	object {
+		x=2
+		y=16
+		width=250
+		height=0
+	}
+	"basic attribute" {
+		clr=14
+	}
+	points {
+		(2,16)
+		(252,16)
+	}
+}
+text {
+	object {
+		x=4
+		y=2
+		width=159
+		height=13
+	}
+	"basic attribute" {
+		clr=23
+	}
+	textix="ALARM INFORMATION FOR $(sig)"
+}
+text {
+	object {
+		x=10
+		y=20
+		width=90
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="$(sig)"
+	}
+	textix="Present Values"
+}
+polyline {
+	object {
+		x=10
+		y=35
+		width=92
+		height=0
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="$(sig)"
+	}
+	points {
+		(10,35)
+		(102,35)
+	}
+}
+text {
+	object {
+		x=4
+		y=113
+		width=75
+		height=14
+	}
+	"basic attribute" {
+		clr=33
+	}
+	"dynamic attribute" {
+		chan="$(sig).LOLO"
+	}
+	textix="Alarm Limits:"
+}
+text {
+	object {
+		x=3
+		y=210
+		width=90
+		height=14
+	}
+	"basic attribute" {
+		clr=33
+	}
+	"dynamic attribute" {
+		chan="$(sig).LOLO"
+	}
+	textix="Alarm Severity (MAJOR, MINOR, NO_ALARM)"
+}
+rectangle {
+	object {
+		x=3
+		y=41
+		width=290
+		height=65
+	}
+	"basic attribute" {
+		clr=4
+		fill="outline"
+	}
+	"dynamic attribute" {
+		chan="$(sig).LOLO"
+	}
+}
+text {
+	object {
+		x=7
+		y=47
+		width=66
+		height=16
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="$(sig) :"
+}
+"text update" {
+	object {
+		x=209
+		y=68
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).SEVR"
+		clr=12
+		bclr=1
+	}
+	clrmod="alarm"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=194
+		y=49
+		width=90
+		height=14
+	}
+	monitor {
+		chan="$(sig)"
+		clr=11
+		bclr=1
+	}
+	format="engr. notation"
+	limits {
+	}
+}
+text {
+	object {
+		x=7
+		y=68
+		width=132
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Alarm Severity (SEVR):"
+}
+"text update" {
+	object {
+		x=209
+		y=87
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).STAT"
+		clr=12
+		bclr=1
+	}
+	clrmod="alarm"
+	limits {
+	}
+}
+text {
+	object {
+		x=7
+		y=87
+		width=132
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Alarm Severity (STAT):"
+}
+"text update" {
+	object {
+		x=103
+		y=127
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).HIHI"
+		clr=11
+		bclr=1
+	}
+	format="exponential"
+	limits {
+	}
+}
+text {
+	object {
+		x=38
+		y=127
+		width=72
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="HIHI:"
+}
+"text entry" {
+	object {
+		x=190
+		y=126
+		width=78
+		height=16
+	}
+	control {
+		chan="$(sig).HIHI"
+		clr=11
+		bclr=50
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=103
+		y=148
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).HIGH"
+		clr=11
+		bclr=1
+	}
+	format="exponential"
+	limits {
+	}
+}
+text {
+	object {
+		x=38
+		y=148
+		width=72
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="HIGH:"
+}
+"text entry" {
+	object {
+		x=190
+		y=147
+		width=78
+		height=16
+	}
+	control {
+		chan="$(sig).HIGH"
+		clr=11
+		bclr=50
+	}
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=190
+		y=168
+		width=78
+		height=16
+	}
+	control {
+		chan="$(sig).LOW"
+		clr=11
+		bclr=50
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=38
+		y=169
+		width=72
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="LOW:"
+}
+"text update" {
+	object {
+		x=103
+		y=169
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).LOW"
+		clr=11
+		bclr=1
+	}
+	format="exponential"
+	limits {
+	}
+}
+text {
+	object {
+		x=38
+		y=190
+		width=72
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="LOLO:"
+}
+"text update" {
+	object {
+		x=103
+		y=190
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).LOLO"
+		clr=11
+		bclr=1
+	}
+	format="exponential"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=190
+		y=189
+		width=78
+		height=16
+	}
+	control {
+		chan="$(sig).LOLO"
+		clr=11
+		bclr=50
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=103
+		y=228
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).HHSV"
+		clr=11
+		bclr=1
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=18
+		y=228
+		width=72
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="HIHI (HHSV):"
+}
+"text entry" {
+	object {
+		x=190
+		y=227
+		width=78
+		height=16
+	}
+	control {
+		chan="$(sig).HHSV"
+		clr=11
+		bclr=50
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=103
+		y=249
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).HSV"
+		clr=11
+		bclr=1
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=18
+		y=249
+		width=72
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="HIGH (HSV):"
+}
+"text entry" {
+	object {
+		x=190
+		y=248
+		width=78
+		height=16
+	}
+	control {
+		chan="$(sig).HSV"
+		clr=11
+		bclr=50
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=103
+		y=270
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).LSV"
+		clr=11
+		bclr=1
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=18
+		y=270
+		width=72
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="LOW (LSV):"
+}
+"text entry" {
+	object {
+		x=190
+		y=269
+		width=78
+		height=16
+	}
+	control {
+		chan="$(sig).LSV"
+		clr=11
+		bclr=50
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=103
+		y=291
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).LLSV"
+		clr=11
+		bclr=1
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=18
+		y=291
+		width=72
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="LOLO (LLSV):"
+}
+"text entry" {
+	object {
+		x=190
+		y=290
+		width=78
+		height=16
+	}
+	control {
+		chan="$(sig).LLSV"
+		clr=11
+		bclr=50
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=190
+		y=107
+		width=75
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Modify"
+	align="horiz. centered"
+}

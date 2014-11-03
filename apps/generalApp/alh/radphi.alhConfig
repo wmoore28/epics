@@ -1,0 +1,85 @@
+          GROUP NULL RADPHI
+$SEVRCOMMAND UP_INVALID remsh clon00 "error_msg alh epics alh alarm 2 ERROR 0 \"ALH reporting INVALID for radphi\""
+$SEVRCOMMAND UP_MAJOR remsh clon00 "error_msg alh epics alhalarm 2 ERROR 0 \"ALH reporting ALARM for radphi\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "error_msg alh epics alh alarm 0 INFO 0 \"ALH reporting alarms cleared for radphi\""
+               $GUIDANCE
+               For info on beam related items see: http://clasweb.jlab.org
+	       $END
+		    CHANNEL RADPHI tagger_input_a_temp
+		         $GUIDANCE
+                         This alarms signals that the input temperature of the hall LCW
+                         (Low Conductivity Water) system is out of range.  If the temperature
+                         is low, then the LCW system has shut off.  If the temperature is 
+                         high then the load on the LCW system is too high and needs to 
+                         be reduced.  Your best bet for a persistent alarm is the call
+                         the engineering on call pager.
+		         $END
+		    CHANNEL RADPHI tagger_input_b_temp
+		         $GUIDANCE
+                         This alarms signals that the input temperature of the hall LCW
+                         (Low Conductivity Water) system is out of range.  If the temperature
+                         is low, then the LCW system has shut off.  If the temperature is 
+                         high then the load on the LCW system is too high and needs to 
+                         be reduced.  Your best bet for a persistent alarm is the call
+                         the engineering on call pager.
+		         $END
+		    CHANNEL RADPHI tagger_output_a_temp
+		         $GUIDANCE
+                         This alarms signals that the LCW output temperature on the tagger magnet
+                         s out of range.  If the temperature
+                         is low, then the LCW system has shut off.  If the temperature is 
+                         high then the load on the LCW system is too high and needs to 
+                         be reduced.  This can be accomplished by lowering the current on 
+                         tagger magnet. Your best bet for a persistent alarm is the call
+                         the engineering on call pager.
+		         $END
+		    CHANNEL RADPHI tagger_output_b_temp
+		         $GUIDANCE
+                         This alarms signals that the LCW output temperature on the tagger magnet
+                         s out of range.  If the temperature
+                         is low, then the LCW system has shut off.  If the temperature is 
+                         high then the load on the LCW system is too high and needs to 
+                         be reduced.  This can be accomplished by lowering the current on 
+                         tagger magnet. Your best bet for a persistent alarm is the call
+                         the engineering on call pager.
+		         $END
+                    CHANNEL RADPHI hallb_l1_temp
+                         $GUIDANCE
+                         The temperature in the hall is above 73F (level 1).  
+                         Check the temperature trend via the timelines
+                         at http://clasweb.jlab.org/cgi-bin/epics_history/epics.pl.  If the trend shows a rapid increase
+                         in temperature take the following actions,  stop the run, ramp the mini-torus down to 0,
+                         page the engineering on call pager.  You may need to go into the hall to shut off
+                         power supplies.....
+		         $END
+                    CHANNEL RADPHI hallb_l2_temp
+                         $GUIDANCE
+                         The temperature in the hall is above 75F (level 2).  
+                         Check the temperature trend via the timelines
+                         at http://clasweb.jlab.org/cgi-bin/epics_history/epics.pl.  If the trend shows a rapid increase
+                         in temperature take the following actions,  stop the run, ramp the mini-torus down to 0,
+                         page the engineering on call pager.  You may need to go into the hall to shut off
+                         power supplies.....
+		         $END
+                    CHANNEL RADPHI hallb_l3_temp
+                         $GUIDANCE
+                         The temperature in the hall is above 75F (level 3).  
+                         Check the temperature trend via the timelines
+                         at http://clasweb.jlab.org/cgi-bin/epics_history/epics.pl.  If the trend shows a rapid increase
+                         in temperature take the following actions,  stop the run, ramp the mini-torus down to 0,
+                         page the engineering on call pager.  You may need to go into the hall to shut off
+                         power supplies.....
+		         $END
+                    CHANNEL RADPHI He_bag_pressure
+                         $GUIDANCE
+                         The pressure in the He bag on the beamline is out of range.  Call the Hall B technical
+                         staff to resolve the problem.
+		         $END
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+GROUP    NULL                         HPS
+$SEVRCOMMAND  UP_INVALID remsh clon00 "error_msg alh epics alh alarm 2 ERROR 0 \"ALH reporting INVALID for HPS\""
+$SEVRCOMMAND  UP_MAJOR remsh clon00 "error_msg alh epics alhalarm 2 ERROR 0 \"ALH reporting ALARM for HPS\""
+$SEVRCOMMAND  DOWN_NO_ALARM remsh clon00 "error_msg alh epics alh alarm 0 INFO 0 \"ALH reporting alarms cleared for HPS\""
+$GUIDANCE
+    For info on target-related items, please contact HPS Experts
+$END
+
+#  ---------------------
+#  SVT LCW
+#  ---------------------
+
+GROUP  HPS  SVT
+
+CHANNEL SVT minit_t_v_LCW_IN
+$COMMAND  medm -x -attach -cmap -macro "sig=minit_t_v_LCW_IN" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that the Inlet LCW for SVT is out of specifications.
+           Contact the engineering on-call for further guidance.
+$END
+
+CHANNEL SVT minit_t_v_LCW_OUT
+$COMMAND  medm -x -attach -cmap -macro "sig=minit_t_v_LCW_OUT" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that the Outlet LCW for SVT is out of specifications.
+           Contact the engineering on-call for further guidance.
+$END
+
+#  ---------------------
+#  ECAL temperatures
+#  ---------------------
+
+GROUP  HPS ECAL
+
+CHANNEL ECAL tempSensorH
+$COMMAND  medm -x -attach -cmap -macro "sig=tempSensorH" aiaocalc_alarm.adl >> /dev/null
+$GUIDANCE
+           This signifies that the TOP plate coolant temperature is out of specifications.
+           Contact the engineering on-call for further guidance.
+$END
+CHANNEL ECAL tempSensorPc
+$COMMAND  medm -x -attach -cmap -macro "sig=tempSensorPc" aiaocalc_alarm.adl >> /dev/null
+$GUIDANCE
+           This signifies that the BOTTOM plate coolant temperature is out of specifications.
+           Contact the engineering on-call for further guidance.
+$END

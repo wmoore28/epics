@@ -1,0 +1,51 @@
+GROUP    NULL                 Torus_Alarms                       
+$SEVRCOMMAND  UP_INVALID remsh clon00 "error_msg alh epics alh alarm 2 ERROR 0 \"ALH reporting INVALID for torus\""
+$SEVRCOMMAND  UP_MAJOR remsh clon00 "error_msg alh epics alhalarm 2 ERROR 0 \"ALH reporting ALARM for torus\""
+$SEVRCOMMAND  DOWN_NO_ALARM remsh clon00 "error_msg alh epics alh alarm 0 INFO 0 \"ALH reporting alarms cleared for torus\""
+$GUIDANCE
+For general assistance with this alarm handler please call 
+Krister Bruhwel at x7868.  For any questions on alarm values 
+and actions based on those alarm values, please page the 
+engineering on-call at 875-3504.
+$END
+CHANNEL  Torus_Alarms                        VI3038i                     
+$ALIAS  Cryo Fridge Out 
+$GUIDANCE
+This indicates a cryo refrigerator outage.
+Many alarms will follow as He pressure and
+flow drop.
+Contact on call personnel at 875-3504.
+$END
+CHANNEL  Torus_Alarms                        PI1022                      
+$COMMAND  medm -x -attach -cmap -macro "sig=PI1022" $APP/torus/medm/alarmHandlerGeneral.adl >> /dev/null 
+$ALIAS  HE Buffer Pressure      (PI1022)
+$ALARMCOUNTFILTER 0 60
+$GUIDANCE
+Buffer Pressure of the He Tank.  
+This will cause a rundown of the Torus if the value reaches
+a fault condition.  If this alarm handler is
+continually warning, please contact the cryogen oncall.
+The gate guard at x5822 will contact their oncall, and have
+the problem addressed.
+$END
+CHANNEL  Torus_Alarms                        PI1028                      
+$COMMAND  medm -x -attach -cmap -macro "sig=PI1028" $APP/torus/medm/alarmHandlerGeneral.adl >> /dev/null
+$ALIAS  HE Reserve Pressure   (PI1028)
+$GUIDANCE
+If the tanks relief blows (~1.7ata) for an extended
+period of time, damage may result.
+Contact on call personnel at 875-3504.
+$END
+CHANNEL  Torus_Alarms                        LL2014                      
+$COMMAND  `medm -local -attach -cmap -x -macro "sig=LL2014" $APP/torus/medm/alarmHandlerGeneral.adl >> /dev/null &`  
+$ALIAS  N2 Tank Level             (LL2014)
+$GUIDANCE
+N2 tank level has dropped.
+If the tank level is below 40% and the magnet has
+not ramped down automatically, please do it manually.
+Go to the Power Supply Screen of the Torus and input
+a current setting of zero.
+Contact on call personnel at 875-3504.
+$END
+
+

@@ -1,0 +1,31 @@
+GROUP NULL BUFFERDEWAR
+
+$SEVRCOMMAND UP_INVALID remsh clon00 "error_msg alh epics alh alarm 2 ERROR 0 \"ALH reporting INVALID for buffer_dewar\""
+$SEVRCOMMAND UP_MAJOR remsh clon00 "error_msg alh epics alhalarm 2 ERROR 0 \"ALH reporting ALARM for buffer_dewar\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "error_msg alh epics alh alarm 0 INFO 0 \"ALH reporting alarms cleared for buffer_dewar\""
+
+
+	$GUIDANCE
+	For info on the operation of the LHe buffer dewar,
+	consult the Polarized Target User's Manual,
+	or the Cryogenic Target Manual.
+	$END
+
+CHANNEL BUFFERDEWAR LL8210
+	$GUIDANCE
+	This alarm indicates that the Lhe level in
+	the buffer dewar is outside its prescribed limits.
+	Check that the cascading PID loop on the Supply JT Valve
+	EV8210 is enabled and that the parameters are properly
+	set.  If you do not know how to do this, or if the problem
+	persists, page Engineering-On-Call.
+	$END
+CHANNEL BUFFERDEWAR PI8210
+        $GUIDANCE
+        This alarm indicates that the pressure in
+        the buffer dewar is outside its prescribed limits.
+        Check that the PID loop on the Pressure Regulating Valve
+        EV8210BP is enabled and that the parameters are properly
+        set.  If you do not know how to do this, or if the problem
+        persists, page Engineering-On-Call.
+        $END

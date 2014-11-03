@@ -1,0 +1,642 @@
+
+file {
+	name="/u/home/bruhwel/epics/app/general/medm/magnet_ps_currents.adl"
+	version=020306
+}
+display {
+	object {
+		x=80
+		y=21
+		width=730
+		height=601
+	}
+	clr=14
+	bclr=4
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+rectangle {
+	object {
+		x=595
+		y=450
+		width=100
+		height=95
+	}
+	"basic attribute" {
+		clr=1
+	}
+	"dynamic attribute" {
+		chan="PSPECIRBCK"
+	}
+}
+rectangle {
+	object {
+		x=195
+		y=450
+		width=110
+		height=95
+	}
+	"basic attribute" {
+		clr=1
+	}
+	"dynamic attribute" {
+		chan="PSPECIRBCK"
+	}
+}
+rectangle {
+	object {
+		x=550
+		y=450
+		width=36
+		height=95
+	}
+	"basic attribute" {
+		clr=1
+	}
+	"dynamic attribute" {
+		chan="PSPECIRBCK"
+	}
+}
+rectangle {
+	object {
+		x=148
+		y=450
+		width=36
+		height=95
+	}
+	"basic attribute" {
+		clr=1
+	}
+	"dynamic attribute" {
+		chan="PSPECIRBCK"
+	}
+}
+"strip chart" {
+	object {
+		x=15
+		y=23
+		width=700
+		height=400
+	}
+	plotcom {
+		title="Magnet Power Supplies"
+		xlabel="Time (S)"
+		ylabel="Amps"
+		clr=14
+		bclr=0
+	}
+	period=1800.000000
+	pen[0] {
+		chan="Rclas1s"
+		clr=14
+		limits {
+			loprSrc="default"
+			loprDefault=-6500
+			hoprSrc="default"
+			hoprDefault=6500
+		}
+	}
+	pen[1] {
+		chan="TMIRBCK"
+		clr=20
+		limits {
+			loprSrc="default"
+			loprDefault=-6500
+			hoprSrc="default"
+			hoprDefault=6500
+		}
+	}
+	pen[2] {
+		chan="MTIRBCK"
+		clr=25
+		limits {
+			loprSrc="default"
+			loprDefault=-6500
+			hoprSrc="default"
+			hoprDefault=6500
+		}
+	}
+	pen[3] {
+		chan="PSPECIRBCK"
+		clr=34
+		limits {
+			loprSrc="default"
+			loprDefault=-6500
+			hoprSrc="default"
+			hoprDefault=6500
+		}
+	}
+	pen[4] {
+		chan="hallb_sf_xy560_0_14"
+		clr=39
+		limits {
+			loprSrc="default"
+			loprDefault=-6500
+			hoprSrc="default"
+			hoprDefault=6500
+		}
+	}
+	pen[5] {
+		chan="hallb_sf_xy560_0_18"
+		clr=19
+		limits {
+			loprSrc="default"
+			loprDefault=-6500
+			hoprSrc="default"
+			hoprDefault=6500
+		}
+	}
+}
+rectangle {
+	object {
+		x=15
+		y=435
+		width=698
+		height=128
+	}
+	"basic attribute" {
+		clr=0
+		width=2
+	}
+}
+"text update" {
+	object {
+		x=203
+		y=450
+		width=100
+		height=25
+	}
+	monitor {
+		chan="Rclas1s"
+		clr=14
+		bclr=1
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=41
+		y=486
+		width=75
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Tagger:"
+}
+"text update" {
+	object {
+		x=202
+		y=485
+		width=100
+		height=25
+	}
+	monitor {
+		chan="TMIRBCK"
+		clr=20
+		bclr=1
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=41
+		y=519
+		width=95
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Mini-Torus:"
+}
+"text update" {
+	object {
+		x=203
+		y=520
+		width=100
+		height=25
+	}
+	monitor {
+		chan="MTIRBCK"
+		clr=25
+		bclr=1
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=327
+		y=452
+		width=95
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Pair-Spec:"
+}
+"text update" {
+	object {
+		x=605
+		y=450
+		width=75
+		height=25
+	}
+	monitor {
+		chan="PSPECIRBCK"
+		clr=34
+		bclr=1
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=327
+		y=484
+		width=190
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Moller Upstream Quad:"
+}
+"text update" {
+	object {
+		x=605
+		y=485
+		width=75
+		height=25
+	}
+	monitor {
+		chan="hallb_sf_xy560_0_14"
+		clr=39
+		bclr=1
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=327
+		y=520
+		width=215
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Moller Downstream Quad:"
+}
+"text update" {
+	object {
+		x=605
+		y=520
+		width=75
+		height=25
+	}
+	monitor {
+		chan="hallb_sf_xy560_0_18"
+		clr=19
+		bclr=1
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=152
+		y=455
+		width=21
+		height=15
+	}
+	"basic attribute" {
+		clr=16
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="Rclas1s"
+	}
+	textix="ON"
+}
+text {
+	object {
+		x=152
+		y=455
+		width=29
+		height=15
+	}
+	"basic attribute" {
+		clr=21
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="Rclas1s"
+	}
+	textix="OFF"
+}
+text {
+	object {
+		x=152
+		y=489
+		width=21
+		height=15
+	}
+	"basic attribute" {
+		clr=16
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="TMPSONRBCK"
+	}
+	textix="ON"
+}
+text {
+	object {
+		x=152
+		y=489
+		width=29
+		height=15
+	}
+	"basic attribute" {
+		clr=21
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="TMPSONRBCK"
+	}
+	textix="OFF"
+}
+text {
+	object {
+		x=152
+		y=521
+		width=21
+		height=15
+	}
+	"basic attribute" {
+		clr=16
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="MTPSONRBCK"
+	}
+	textix="ON"
+}
+text {
+	object {
+		x=152
+		y=521
+		width=29
+		height=15
+	}
+	"basic attribute" {
+		clr=21
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="MTPSONRBCK"
+	}
+	textix="OFF"
+}
+text {
+	object {
+		x=553
+		y=453
+		width=21
+		height=15
+	}
+	"basic attribute" {
+		clr=16
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="PSPECR.B1"
+	}
+	textix="ON"
+}
+text {
+	object {
+		x=553
+		y=453
+		width=29
+		height=15
+	}
+	"basic attribute" {
+		clr=21
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="PSPECR.B1"
+	}
+	textix="OFF"
+}
+text {
+	object {
+		x=553
+		y=489
+		width=21
+		height=15
+	}
+	"basic attribute" {
+		clr=16
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="DYNABPSON"
+	}
+	textix="ON"
+}
+text {
+	object {
+		x=553
+		y=489
+		width=29
+		height=15
+	}
+	"basic attribute" {
+		clr=21
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="DYNABPSON"
+	}
+	textix="OFF"
+}
+text {
+	object {
+		x=553
+		y=524
+		width=21
+		height=15
+	}
+	"basic attribute" {
+		clr=16
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="DYNACPSON"
+	}
+	textix="ON"
+}
+text {
+	object {
+		x=553
+		y=524
+		width=29
+		height=15
+	}
+	"basic attribute" {
+		clr=21
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="DYNACPSON"
+	}
+	textix="OFF"
+}
+"related display" {
+	object {
+		x=564
+		y=572
+		width=150
+		height=20
+	}
+	display[0] {
+		label="Torus"
+		name="mpsu.adl"
+	}
+	display[1] {
+		label="Tagger"
+		name="tagger.adl"
+	}
+	display[2] {
+		label="Mini-Torus"
+		name="minitorus.adl"
+	}
+	display[3] {
+		label="Pair-Spec"
+		name="pspec.adl"
+	}
+	display[4] {
+		label="Moller's"
+		name="moller_setup.adl"
+	}
+	clr=14
+	bclr=0
+	label="Go to a Power Supply"
+}
+text {
+	object {
+		x=690
+		y=7
+		width=18
+		height=10
+	}
+	"basic attribute" {
+		clr=8
+	}
+	textix="KBB"
+}
+text {
+	object {
+		x=41
+		y=455
+		width=70
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Torus:"
+}
+text {
+	object {
+		x=18
+		y=5
+		width=221
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Power Supply Current (Amps) Summary"
+}
