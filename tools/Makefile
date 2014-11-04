@@ -1,4 +1,4 @@
-TOOLDIRS := LogEntry procServMgr 
+TOOLDIRS := LogEntry procServMgr harp_analyzer
 
 .PHONY: all clean distclean install uninstall 
 
