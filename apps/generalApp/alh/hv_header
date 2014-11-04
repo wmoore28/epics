@@ -1,0 +1,15 @@
+GROUP   NULL  HV
+$SEVRCOMMAND UP_INVALID remsh clon00 "error_msg alh clonalarm alh epics 2 ERROR 300 \"ALH reporting INVALID for HV\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "error_msg alh clonalarm alh epics 0 INFO 300 \"ALH reporting alarms cleared for HV\""
+
+
+GROUP   HV    HV_mf 
+$SEVRCOMMAND UP_MAJOR remsh clon00 "epics_alarm HV_mf 2 ERROR -1 \"ALH reporting ALARM for group HV_mf\"" 
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "epics_alarm HV_mf 0 INFO -1 \"ALH reporting alarms cleared for group HV_mf\"" 
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half. 
+Something must be wrong with one of the HV mainframes. 
+Read the guidance and act accordingly.
+$END
+
+

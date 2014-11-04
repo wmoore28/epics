@@ -1,0 +1,364 @@
+
+file {
+	name="/misc/home/rafopar/work/EPICS/general/medm/bibo_alarm.adl"
+	version=030108
+}
+display {
+	object {
+		x=776
+		y=186
+		width=400
+		height=200
+	}
+	clr=8
+	bclr=1
+	cmap=""
+	gridSpacing=5
+	gridOn=1
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+polyline {
+	object {
+		x=2
+		y=16
+		width=400
+		height=0
+	}
+	"basic attribute" {
+		clr=14
+	}
+	points {
+		(2,16)
+		(402,16)
+	}
+}
+text {
+	object {
+		x=4
+		y=2
+		width=159
+		height=13
+	}
+	"basic attribute" {
+		clr=23
+	}
+	textix="ALARM INFORMATION FOR $(sig)"
+}
+text {
+	object {
+		x=11
+		y=25
+		width=90
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="$(sig)"
+	}
+	textix="Present Values"
+}
+polyline {
+	object {
+		x=9
+		y=38
+		width=92
+		height=0
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="$(sig)"
+	}
+	points {
+		(9,38)
+		(101,38)
+	}
+}
+rectangle {
+	object {
+		x=17
+		y=52
+		width=364
+		height=120
+	}
+	"basic attribute" {
+		clr=4
+		fill="outline"
+	}
+	"dynamic attribute" {
+		chan="$(sig).LOLO"
+	}
+}
+text {
+	object {
+		x=22
+		y=54
+		width=66
+		height=16
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="$(sig) :"
+}
+"text update" {
+	object {
+		x=221
+		y=55
+		width=100
+		height=14
+	}
+	monitor {
+		chan="$(sig)"
+		clr=11
+		bclr=1
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=221
+		y=96
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).ZSV"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=22
+		y=97
+		width=174
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Alarm Severity on Zero (ZSV):"
+}
+"text update" {
+	object {
+		x=221
+		y=115
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).OSV"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=23
+		y=115
+		width=168
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Alarm Severity on One  (OSV):"
+}
+"related display" {
+	object {
+		x=374
+		y=176
+		width=22
+		height=22
+	}
+	display[0] {
+		label="Change Values"
+		name="bibo_alarm_set.adl"
+		args="sig=$(sig)"
+	}
+	clr=20
+	bclr=20
+}
+"text update" {
+	object {
+		x=221
+		y=130
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).ZNAM"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=22
+		y=131
+		width=168
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Signal Zero Name      (ZNAM):"
+}
+"text update" {
+	object {
+		x=221
+		y=146
+		width=75
+		height=14
+	}
+	monitor {
+		chan="$(sig).ONAM"
+		clr=12
+		bclr=1
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+text {
+	object {
+		x=23
+		y=147
+		width=168
+		height=14
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="Signal One Name       (ONAM):"
+}
+polyline {
+	object {
+		x=20
+		y=92
+		width=363
+		height=0
+	}
+	"basic attribute" {
+		clr=4
+		fill="outline"
+	}
+	"dynamic attribute" {
+		chan="$(sig).LOLO"
+	}
+	points {
+		(20,92)
+		(383,92)
+	}
+}
+text {
+	object {
+		x=21
+		y=73
+		width=66
+		height=16
+	}
+	"basic attribute" {
+		clr=11
+	}
+	textix="$(sig) :"
+}
+"text update" {
+	object {
+		x=220
+		y=74
+		width=100
+		height=14
+	}
+	monitor {
+		chan="$(sig).SEVR"
+		clr=11
+		bclr=1
+	}
+	limits {
+	}
+}

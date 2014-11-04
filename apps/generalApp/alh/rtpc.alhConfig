@@ -1,0 +1,122 @@
+
+GROUP NULL RTPC
+$SEVRCOMMAND UP_INVALID remsh clon00 "error_msg alh epics alh alarm 2 ERROR 0 \"ALH reporting INVALID for RTPC\""
+$SEVRCOMMAND UP_MAJOR remsh clon00 "error_msg alh epics alhalarm 2 ERROR 0 \"ALH reporting ALARM for RTPC\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "error_msg alh epics alh alarm 0 INFO 0 \"ALH reporting alarms cleared for RTPC\""
+$GUIDANCE 
+For info on RTPC operations, please consult the RTPC Users Guide.
+$END
+
+CHANNEL RTPC mks1_c1_val_chk
+$GUIDANCE
+This alarm indicates that pressure in the Ne/DME line measured in Pa 
+is outside its prescribed limits.
+If the level continues to be off limit, then page RTPC Expert.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=mks1_c1_val_chk" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL RTPC mks1_c2_val_chk
+$GUIDANCE
+This alarm indicates that flow of DME measured in sccm
+is outside its prescribed limits.
+If the level continues to be off limit, then page RTPC Expert.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=mks1_c2_val_chk" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL RTPC mks1_c3_val_chk
+$GUIDANCE
+This alarm indicates that flow of neon measured in sccm
+is outside its prescribed limits.
+If the level continues to be off limit, then page RTPC Expert.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=mks1_c3_val_chk" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL RTPC mks1_c4_val_chk
+$GUIDANCE
+This alarm indicates that the flow of helium measured in sccm
+is outside its prescribed limits.
+If the level continues to be off limit, then page RTPC Expert.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=mks1_c4_val_chk" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL RTPC rtpc_nedme_flo_meas
+$GUIDANCE
+This alarm indicates that total flow of DME and neon measured
+ in sccm is outside its prescribed limits.
+If the level continues to be off limit, then page RTPC Expert.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=rtpc_nedme_flo_meas" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL RTPC HPI86BT01
+$GUIDANCE
+This reads the pressure just after gas bottle for RTPC target.
+If the level continues to be off limit, then page RTPC Expert.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=HPI86BT01" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL RTPC HPI86BT42
+$GUIDANCE
+This reads the pressure just before the buffer for RTPC target.
+If the level continues to be off limit, then page RTPC Expert.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=HPI86BT42" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL RTPC HPI86BT44
+$GUIDANCE
+This reads the pressure just before the RTPC target.
+If the level continues to be off limit, then page RTPC Expert.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=HPI86BT44" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL RTPC acs_c0_val_chk
+$GUIDANCE
+This alarm set for Helium solenoid valve current measured in Amps.
+If the level continues to be off limit, then page RTPC Expert.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=acs_c0_val_chk" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL RTPC acs_c1_val_chk
+$GUIDANCE
+This alarm set for Ne/DME soleoid valve current measured in Amps.
+If the level continues to be off limit, then page RTPC Expert.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=acs_c1_val_chk" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL RTPC r_udin_0_1
+$GUIDANCE
+This is alarm is set for the relay  switch for Ne/DME gas line.
+If the level continues to be off limit, then page RTPC Expert.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=r_udin_0_1" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL RTPC r_udin_0_4
+$GUIDANCE
+This alarm is set for the relay  switch for helium gas line.
+If the level continues to be off limit, then page RTPC Expert.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=r_udin_0_4" aiaocalc_alarm.adl >> /dev/null
+
+
+CHANNEL RTPC rtpc_hv_com_clc
+$GUIDANCE
+This alarm indicates that there is no communication between EPICS and RTPC HV power supply script. 
+If this persists for  a few minutes, then page RTPC Expert.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=rtpc_hv_com_clc" aiaocalc_alarm.adl >> /dev/null
+
+
+CHANNEL RTPC rtpc_hv_cath
+$GUIDANCE
+This alarm indicates that high voltage on RTPC cathode is  outside the prescribed limits . 
+If the level continues to be off limit, then page RTPC Expert.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=rtpc_hv_cath" aiaocalc_alarm.adl >> /dev/null
+
+
+CHANNEL RTPC rtpc_hv_gem 
+$GUIDANCE
+This alarm indicates that high voltage on RTPC GEMs is  outside the prescribed limits . 
+If the level continues to be off limit, then page RTPC Expert.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=rtpc_hv_gem" aiaocalc_alarm.adl >> /dev/null
+

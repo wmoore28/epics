@@ -1,0 +1,12 @@
+#!/bin/sh
+
+EPICS_CA_ADDR_LIST="129.57.255.4 129.57.255.5"
+export EPICS_CA_ADDR_LIST
+
+EPICS_CA_AUTO_ADDR_LIST=NO
+export EPICS_CA_AUTO_ADDR_LIST
+
+EPICS_DISPLAY_PATH=http///opweb.acc.jlab.org/internal/medm
+export EPICS_DISPLAY_PATH
+
+medm_http -x monticello.adl tools/GEN_O_overview.adl

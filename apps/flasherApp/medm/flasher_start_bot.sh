@@ -1,0 +1,8 @@
+#!/bin/sh
+
+
+caput B_HPS_ECAL_FLASHER_BOT:GET_LEDS.SCAN ".5 second"
+caput GET_SEQUENCE.SCAN ON
+caput B_HPS_ECAL_FLASHER_BOT:SEQ_START START
+
+exit

@@ -9,6 +9,7 @@ include $(TOP)/configure/CONFIG
 
 #----------------------------------------------------
 DB_INSTALLS += $(AUTOSAVE)/asApp/Db/save_restoreStatus.db
+DB_INSTALLS += $(DEVIOCSTATS)/db/iocAdminSoft.db
 
 DB    += anova.db
 PROTO += anova.proto

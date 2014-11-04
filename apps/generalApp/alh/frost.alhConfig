@@ -1,0 +1,191 @@
+
+GROUP NULL FROST
+$SEVRCOMMAND UP_INVALID remsh clon00 "error_msg alh epics alh alarm 2 ERROR 0 \"ALH reporting INVALID for frost\""
+$SEVRCOMMAND UP_MAJOR remsh clon00 "error_msg alh epics alhalarm 2 ERROR 0 \"ALH reporting ALARM for frost\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "error_msg alh epics alh alarm 0 INFO 0 \"ALH reporting alarms cleared for frost\""
+$GUIDANCE 
+For info on g9-FROST Target operations, please consult the FROST
+Users Guide. http://clasweb.jlab.org/shift/g9/Frozen%20Spin%20Target%20Operating%20Procedure.pdf
+$END
+$COMMAND http://clasweb.jlab.org/shift/g9/Frozen%20Spin%20Target%20Operating%20Procedure.pdf
+
+CHANNEL FROST TI_Mixer_1
+    $ALARMCOUNTFILTER  10 10
+#    $STATCOMMAND LOLO $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_Mixer_1" -m "TI_Mixer_1 LOLO" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND LOW  $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_Mixer_1" -m "TI_Mixer_1 LOW"  -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND HIGH $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_Mixer_1" -m "TI_Mixer_1 HIGH" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND HIHI $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_Mixer_1" -m "TI_Mixer_1 HIHI" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+    $GUIDANCE
+    This alarm indicates that the the temperature in the mixing chamber
+    is outside its prescribed limits.  
+    Page Polarized Target On-Call.
+    $END
+    $COMMAND  medm -x -attach -cmap -macro "sig=TI_Mixer_1" aiaocalc_alarm.adl >> /dev/null 
+
+CHANNEL FROST TI_Mixer_2
+    $ALARMCOUNTFILTER  10 10
+#    $STATCOMMAND LOLO $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_Mixer_2" -m "TI_Mixer_2 LOLO" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND LOW  $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_Mixer_2" -m "TI_Mixer_2 LOW"  -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND HIGH $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_Mixer_2" -m "TI_Mixer_2 HIGH" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND HIHI $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_Mixer_2" -m "TI_Mixer_2 HIHI" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+    $GUIDANCE
+    This alarm indicates that the the temperature in the mixing chamber
+    is outside its prescribed limits.  
+    Page Polarized Target On-Call.
+    $END
+    $COMMAND  medm -x -attach -cmap -macro "sig=TI_Mixer_2" aiaocalc_alarm.adl >> /dev/null 
+
+CHANNEL FROST TI_HX
+    $ALARMCOUNTFILTER  10 10
+#    $STATCOMMAND LOLO $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_HX" -m "TI_HX LOLO" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND LOW  $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_HX" -m "TI_HX LOW"  -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND HIGH $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_HX" -m "TI_HX HIGH" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND HIHI $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_HX" -m "TI_HX HIHI" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+    $GUIDANCE
+    This alarm indicates that the the temperature of the Mixer HX
+    is outside its prescribed limits.  
+    Page Polarized Target On-Call.
+    $END
+    $COMMAND  medm -x -attach -cmap -macro "sig=TI_HX" aiaocalc_alarm.adl >> /dev/null 
+
+CHANNEL FROST TI_Still_Lower
+    $ALARMCOUNTFILTER  3 3
+#    $STATCOMMAND LOLO $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_Still_Lower" -m "TI_Still_Lower LOLO" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND LOW  $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_Still_Lower" -m "TI_Still_Lower LOW"  -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND HIGH $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_Still_Lower" -m "TI_Still_Lower HIGH" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND HIHI $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_Still_Lower" -m "TI_Still_Lower HIHI" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+    $GUIDANCE
+    This alarm indicates that the tempearture in the Still
+    is outside its prescribed limits.  
+    Page Polarized Target On-Call.
+    $END
+    $COMMAND  medm -x -attach -cmap -macro "sig=TI_Still_Lower" aiaocalc_alarm.adl >> /dev/null 
+
+CHANNEL FROST PI_Manometer
+    $ALARMCOUNTFILTER  3 3
+    $STATCOMMAND LOLO $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "PI_Manometer" -m "PI_Manometer LOLO" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+    $STATCOMMAND LOW  $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "PI_Manometer" -m "PI_Manometer LOW"  -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+    $STATCOMMAND HIGH $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "PI_Manometer" -m "PI_Manometer HIGH" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+    $STATCOMMAND HIHI $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "PI_Manometer" -m "PI_Manometer HIHI" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+    $GUIDANCE
+    This alarm indicates that the circulation pressure 
+    in the pumping tube
+    is outside its prescribed limits.  
+    Page Polarized Target On-Call.
+    $END
+    $COMMAND  medm -x -attach -cmap -macro "sig=PI_Manometer" aiaocalc_alarm.adl >> /dev/null 
+
+CHANNEL FROST PI_Condensation
+    $ALARMCOUNTFILTER  3 3
+ #   $STATCOMMAND LOLO $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "PI_Condensation" -m "PI_Condensation LOLO" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+ #   $STATCOMMAND LOW  $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "PI_Condensation" -m "PI_Condensation LOW"  -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+ #   $STATCOMMAND HIGH $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "PI_Condensation" -m "PI_Condensation HIGH" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+ #   $STATCOMMAND HIHI $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "PI_Condensation" -m "PI_Condensation HIHI" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+    $GUIDANCE
+    This alarm indicates that the Condensation pressure
+    is outside its prescribed limits.  
+    Page Polarized Target On-Call.
+    $END
+    $COMMAND  medm -x -attach -cmap -macro "sig=PI_Condensation" aiaocalc_alarm.adl >> /dev/null 
+
+CHANNEL FROST FI_He3_mmoles
+    $ALARMCOUNTFILTER  3 3
+#    $STATCOMMAND LOLO $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "FI_He3_mmoles" -m "FI_He3_mmoles LOLO" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND LOW  $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "FI_He3_mmoles" -m "FI_He3_mmoles LOW"  -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND HIGH $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "FI_He3_mmoles" -m "FI_He3_mmoles HIGH" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND HIHI $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "FI_He3_mmoles" -m "FI_He3_mmoles HIHI" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+    $GUIDANCE
+    This alarm indicates that the He3 flow
+    is outside its prescribed limits.
+    Page Polarized Target On-Call.
+    $END
+    $COMMAND  medm -x -attach -cmap -macro "sig=FI_He3_mmoles" aiaocalc_alarm.adl >> /dev/null 
+
+CHANNEL FROST TI_1K_Pot
+    $ALARMCOUNTFILTER  3 3
+#    $STATCOMMAND LOLO $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_1K_Pot" -m "TI_1K_Pot LOLO" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND LOW  $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_1K_Pot" -m "TI_1K_Pot LOW"  -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND HIGH $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_1K_Pot" -m "TI_1K_Pot HIGH" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND HIHI $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_1K_Pot" -m "TI_1K_Pot HIHI" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+    $GUIDANCE
+    This alarm indicates that the temperature of 1K Pot
+    is outside its prescribed limits.
+    Page Polarized Target On-Call.
+    $END
+    $COMMAND  medm -x -attach -cmap -macro "sig=TI_1K_Pot" aiaocalc_alarm.adl >> /dev/null 
+
+CHANNEL FROST TI_4K_Pot
+    $ALARMCOUNTFILTER  3 3
+#    $STATCOMMAND LOLO $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_4K_Pot" -m "TI_4K_Pot LOLO" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND LOW  $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_4K_Pot" -m "TI_4K_Pot LOW"  -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND HIGH $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_4K_Pot" -m "TI_4K_Pot HIGH" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND HIHI $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_4K_Pot" -m "TI_4K_Pot HIHI" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+    $GUIDANCE
+    This alarm indicates that the temperature of 4K Pot
+    is outside its prescribed limits.
+    Page Polarized Target On-Call.
+    $END
+    $COMMAND  medm -x -attach -cmap -macro "sig=TI_4K_Pot" aiaocalc_alarm.adl >> /dev/null 
+
+CHANNEL FROST LL_4KPot
+    $ALARMCOUNTFILTER  3 3
+    $GUIDANCE
+    This alarm indicates that the helium level in 4K Pot
+    is outside its prescribed limits.
+    Increase the precooler and/or Heat Shield flows by 5 slpm.  
+    Input boxes are in lower right corner of FROST.adl
+    $END
+    $COMMAND  medm -x -attach -cmap -macro "sig=LL_4KPot" aiaocalc_alarm.adl >> /dev/null 
+
+CHANNEL FROST LL_1KPot
+    $ALARMCOUNTFILTER  3 3
+ #   $STATCOMMAND LOLO $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "LL_1KPot" -m "LL_1KPot LOLO" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+ #   $STATCOMMAND LOW  $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "LL_1KPot" -m "LL_1KPot LOW"  -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+ #   $STATCOMMAND HIGH $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "LL_1KPot" -m "LL_1KPot HIGH" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+ #   $STATCOMMAND HIHI $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "LL_1KPot" -m "LL_1KPot HIHI" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+    $GUIDANCE
+    This alarm indicates that the helium level in 1K Pot
+    is outside its prescribed limits.
+    Page Chris Keith (5845878).
+    $END
+    $COMMAND  medm -x -attach -cmap -macro "sig=LL_1KPot" aiaocalc_alarm.adl >> /dev/null 
+
+CHANNEL FROST TI_Coil_Downstream
+    $ALARMCOUNTFILTER  3 3
+#    $STATCOMMAND LOLO $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_Coil_Downstream" -m "TI_Coil_Downstream LOLO" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND LOW  $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_Coil_Downstream" -m "TI_Coil_Downstream LOW"  -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND HIGH $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_Coil_Downstream" -m "TI_Coil_Downstream HIGH" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#   $STATCOMMAND HIHI $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "TI_Coil_Downstream" -m "TI_Coil_Downstream HIHI" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+    $GUIDANCE
+    This alarm indicates that the temperature of the holding coil
+    is outside its prescribed limits.
+    Page Polarized Target On-Call.
+    $END
+    $COMMAND  medm -x -attach -cmap -macro "sig=TI_Coil_Downstream" aiaocalc_alarm.adl >> /dev/null 
+
+CHANNEL FROST frost_Pol_LF
+    $ALARMCOUNTFILTER  3 3
+#    $STATCOMMAND LOLO $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "frost_Pol_LF" -m "frost_Pol_LF LOLO" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND LOW  $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "frost_Pol_LF" -m "frost_Pol_LF LOW"  -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND HIGH $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "frost_Pol_LF" -m "frost_Pol_LF HIGH" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#    $STATCOMMAND HIHI $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "frost_Pol_LF" -m "frost_Pol_LF HIHI" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+    $GUIDANCE
+    This alarm indicates that the target polarization
+    is outside its prescribed limits.
+    Page Polarized Target On-Call.
+    $END
+    $COMMAND  medm -x -attach -cmap -macro "sig=frost_Pol_LF" aiaocalc_alarm.adl >> /dev/null 
+
+CHANNEL FROST frost_Amps_LF
+    $ALARMCOUNTFILTER  3 3
+#   $STATCOMMAND LOLO $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "frost_Amps_LF" -m "frost_Amps_LF LOLO" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#   $STATCOMMAND LOW  $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "frost_Amps_LF" -m "frost_Amps_LF LOW"  -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#   $STATCOMMAND HIGH $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "frost_Amps_LF" -m "frost_Amps_LF HIGH" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+#   $STATCOMMAND HIHI $APP/general/alh/oncall_pager/pageOnCall.pl -grp "FROST" -sig "frost_Amps_LF" -m "frost_Amps_LF HIHI" -pgNum "5845878" -l /home/epics/log/oncall_pager/frost_pager_alarm_log >> /dev/null
+    $GUIDANCE
+    This alarm indicates that the current in the holding magnet
+    is outside its prescribed limits.
+    Page Polarized Target On-Call.
+    $END
+    $COMMAND  medm -x -attach -cmap -macro "sig=frost_Amps_LF" aiaocalc_alarm.adl >> /dev/null 
+

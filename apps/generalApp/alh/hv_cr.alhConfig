@@ -1,0 +1,1699 @@
+GROUP   NULL  HV_CR
+$SEVRCOMMAND UP_INVALID remsh clon00 "error_msg alh clonalarm alh epics 2 ERROR 300 \"ALH reporting INVALID for HV\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "error_msg alh clonalarm alh epics 0 INFO 300 \"ALH reporting alarms cleared for HV\""
+
+
+GROUP HV_CR    HV_mf 
+$SEVRCOMMAND UP_MAJOR remsh clon00 "epics_alarm HV_mf 2 ERROR -1 \"ALH reporting ALARM for group HV_mf\"" 
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "epics_alarm HV_mf 0 INFO -1 \"ALH reporting alarms cleared for group HV_mf\"" 
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half. 
+Something must be wrong with one of the HV mainframes. 
+Read the guidance and act accordingly.
+$END
+
+
+CHANNEL  HV_mf   B/HVVALID_99_02 
+$GUIDANCE
+Mainframe 02 for unknown detector is not respoding. Call detector expert !
+$END
+CHANNEL  HV_mf   B/HVOC_99_02 
+$GUIDANCE
+Status of HV mainframe 02 for unknown detector is different from what is set in EPICS GUI.
+It may have tripped or its status was changed. Try to turn it ON or OFF in HV GUI. 
+If it does not help, call detector expert !
+$END
+CHANNEL  HV_mf   B/HVVALID_99_04 
+$GUIDANCE
+Mainframe 04 for unknown detector is not respoding. Call detector expert !
+$END
+CHANNEL  HV_mf   B/HVOC_99_04 
+$GUIDANCE
+Status of HV mainframe 04 for unknown detector is different from what is set in EPICS GUI.
+It may have tripped or its status was changed. Try to turn it ON or OFF in HV GUI. 
+If it does not help, call detector expert !
+$END
+CHANNEL  HV_mf   B/HVVALID_99_05 
+$GUIDANCE
+Mainframe 05 for unknown detector is not respoding. Call detector expert !
+$END
+CHANNEL  HV_mf   B/HVOC_99_05 
+$GUIDANCE
+Status of HV mainframe 05 for unknown detector is different from what is set in EPICS GUI.
+It may have tripped or its status was changed. Try to turn it ON or OFF in HV GUI. 
+If it does not help, call detector expert !
+$END
+CHANNEL  HV_mf   B/HVVALID_99_07 
+$GUIDANCE
+Mainframe 07 for unknown detector is not respoding. Call detector expert !
+$END
+CHANNEL  HV_mf   B/HVOC_99_07 
+$GUIDANCE
+Status of HV mainframe 07 for unknown detector is different from what is set in EPICS GUI.
+It may have tripped or its status was changed. Try to turn it ON or OFF in HV GUI. 
+If it does not help, call detector expert !
+$END
+GROUP HV_CR    HV_CR_2
+$SEVRCOMMAND UP_MAJOR remsh clon00 "epics_alarm HV_cr_mf 2 ERROR 1 \"ALH reporting ALARM for group HV_CR_2\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "epics_alarm HV_cr_mf 0 INFO 1 \"ALH reporting alarms cleared for group HV_CR_2\""
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half.  Track down RED/tripped channels and enable them
+$END
+CHANNEL    HV_CR_2        B_hv_CR2_00_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_00_00,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_00_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_00_01,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_00_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_00_02,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_00_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_00_03,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_00_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_00_04,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_00_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_00_05,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_00_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_00_06,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_00_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_00_07,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_00_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_00_08,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_00_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_00_09,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_00_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_00_10,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_00_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_00_11,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_01_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_01_00,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_01_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_01_01,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_01_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_01_02,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_01_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_01_03,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_01_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_01_04,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_01_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_01_05,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_01_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_01_06,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_01_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_01_07,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_01_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_01_08,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_01_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_01_09,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_01_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_01_10,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_01_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_01_11,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_02_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_02_00,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_02_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_02_01,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_02_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_02_02,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_02_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_02_03,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_02_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_02_04,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_02_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_02_05,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_02_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_02_06,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_02_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_02_07,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_02_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_02_08,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_02_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_02_09,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_02_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_02_10,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_02_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_02_11,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_03_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_03_00,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_03_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_03_01,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_03_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_03_02,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_03_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_03_03,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_03_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_03_04,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_03_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_03_05,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_03_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_03_06,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_03_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_03_07,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_03_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_03_08,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_03_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_03_09,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_03_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_03_10,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_03_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_03_11,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_04_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_04_00,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_04_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_04_01,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_04_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_04_02,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_04_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_04_03,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_04_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_04_04,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_04_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_04_05,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_04_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_04_06,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_04_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_04_07,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_04_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_04_08,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_04_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_04_09,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_04_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_04_10,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_04_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_04_11,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_05_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_05_00,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_05_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_05_01,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_05_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_05_02,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_05_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_05_03,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_05_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_05_04,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_05_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_05_05,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_05_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_05_06,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_05_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_05_07,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_05_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_05_08,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_05_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_05_09,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_05_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_05_10,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_05_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_05_11,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_06_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_06_00,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_06_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_06_01,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_06_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_06_02,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_06_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_06_03,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_06_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_06_04,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_06_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_06_05,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_06_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_06_06,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_06_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_06_07,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_06_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_06_08,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_06_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_06_09,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_06_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_06_10,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_06_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_06_11,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_07_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_07_00,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_07_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_07_01,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_07_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_07_02,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_07_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_07_03,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_07_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_07_04,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_07_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_07_05,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_07_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_07_06,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_07_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_07_07,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_07_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_07_08,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_07_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_07_09,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_07_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_07_10,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_07_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_07_11,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_08_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_08_00,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_08_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_08_01,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_08_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_08_02,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_08_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_08_03,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_08_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_08_04,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_08_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_08_05,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_08_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_08_06,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_08_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_08_07,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_08_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_08_08,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_08_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_08_09,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_08_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_08_10,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_2        B_hv_CR2_08_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR2_08_11,group_number=1" hv_generic.adl >> /dev/null 
+GROUP HV_CR    HV_CR_4
+$SEVRCOMMAND UP_MAJOR remsh clon00 "epics_alarm HV_cr_mf 2 ERROR 4 \"ALH reporting ALARM for group HV_CR_4\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "epics_alarm HV_cr_mf 0 INFO 4 \"ALH reporting alarms cleared for group HV_CR_4\""
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half.  Track down RED/tripped channels and enable them
+$END
+CHANNEL    HV_CR_4        B_hv_CR4_02_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_02_00,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_02_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_02_01,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_02_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_02_02,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_02_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_02_03,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_02_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_02_04,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_02_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_02_05,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_02_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_02_06,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_02_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_02_07,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_02_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_02_08,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_02_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_02_09,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_02_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_02_10,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_02_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_02_11,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_03_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_03_00,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_03_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_03_01,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_03_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_03_02,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_03_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_03_03,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_03_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_03_04,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_03_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_03_05,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_03_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_03_06,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_03_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_03_07,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_03_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_03_08,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_03_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_03_09,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_03_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_03_10,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_4        B_hv_CR4_03_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR4_03_11,group_number=4" hv_generic.adl >> /dev/null 
+GROUP HV_CR    HV_CR_5
+$SEVRCOMMAND UP_MAJOR remsh clon00 "epics_alarm HV_cr_mf 2 ERROR 2 \"ALH reporting ALARM for group HV_CR_5\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "epics_alarm HV_cr_mf 0 INFO 2 \"ALH reporting alarms cleared for group HV_CR_5\""
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half.  Track down RED/tripped channels and enable them
+$END
+CHANNEL    HV_CR_5        B_hv_CR5_00_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_00_00,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_00_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_00_01,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_00_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_00_02,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_00_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_00_03,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_00_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_00_04,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_00_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_00_05,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_00_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_00_06,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_00_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_00_07,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_00_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_00_08,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_00_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_00_09,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_00_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_00_10,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_00_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_00_11,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_01_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_01_00,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_01_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_01_01,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_01_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_01_02,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_01_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_01_03,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_01_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_01_04,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_01_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_01_05,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_01_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_01_06,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_01_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_01_07,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_01_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_01_08,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_01_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_01_09,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_01_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_01_10,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_5        B_hv_CR5_01_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR5_01_11,group_number=2" hv_generic.adl >> /dev/null 
+GROUP HV_CR    HV_CR_7
+$SEVRCOMMAND UP_MAJOR remsh clon00 "epics_alarm HV_cr_mf 2 ERROR 3 \"ALH reporting ALARM for group HV_CR_7\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "epics_alarm HV_cr_mf 0 INFO 3 \"ALH reporting alarms cleared for group HV_CR_7\""
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half.  Track down RED/tripped channels and enable them
+$END
+CHANNEL    HV_CR_7        B_hv_CR7_01_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_01_00,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_01_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_01_01,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_01_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_01_02,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_01_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_01_03,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_01_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_01_04,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_01_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_01_05,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_01_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_01_06,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_01_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_01_07,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_01_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_01_08,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_01_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_01_09,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_01_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_01_10,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_01_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_01_11,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_02_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_02_00,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_02_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_02_01,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_02_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_02_02,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_02_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_02_03,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_02_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_02_04,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_02_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_02_05,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_02_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_02_06,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_02_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_02_07,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_02_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_02_08,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_02_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_02_09,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_02_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_02_10,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_02_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_02_11,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_03_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_03_00,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_03_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_03_01,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_03_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_03_02,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_03_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_03_03,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_03_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_03_04,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_03_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_03_05,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_03_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_03_06,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_03_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_03_07,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_03_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_03_08,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_03_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_03_09,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_03_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_03_10,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_03_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_03_11,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_04_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_04_00,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_04_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_04_01,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_04_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_04_02,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_04_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_04_03,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_04_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_04_04,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_04_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_04_05,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_04_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_04_06,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_04_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_04_07,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_04_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_04_08,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_04_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_04_09,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_04_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_04_10,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_04_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_04_11,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_05_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_05_00,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_05_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_05_01,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_05_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_05_02,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_05_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_05_03,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_05_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_05_04,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_05_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_05_05,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_05_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_05_06,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_05_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_05_07,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_05_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_05_08,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_05_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_05_09,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_05_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_05_10,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_05_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_05_11,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_06_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_06_00,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_06_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_06_01,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_06_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_06_02,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_06_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_06_03,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_06_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_06_04,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_06_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_06_05,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_06_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_06_06,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_06_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_06_07,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_06_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_06_08,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_06_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_06_09,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_06_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_06_10,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_06_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_06_11,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_07_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_07_00,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_07_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_07_01,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_07_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_07_02,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_07_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_07_03,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_07_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_07_04,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_07_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_07_05,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_07_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_07_06,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_07_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_07_07,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_07_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_07_08,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_07_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_07_09,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_07_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_07_10,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_07_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_07_11,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_08_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_08_00,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_08_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_08_01,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_08_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_08_02,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_08_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_08_03,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_08_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_08_04,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_08_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_08_05,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_08_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_08_06,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_08_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_08_07,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_08_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_08_08,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_08_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_08_09,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_08_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_08_10,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_08_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_08_11,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_09_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_09_00,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_09_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_09_01,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_09_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_09_02,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_09_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_09_03,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_09_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_09_04,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_09_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_09_05,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_09_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_09_06,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_09_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_09_07,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_09_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_09_08,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_09_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_09_09,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_09_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_09_10,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_09_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_09_11,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_10_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_10_00,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_10_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_10_01,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_10_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_10_02,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_10_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_10_03,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_10_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_10_04,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_10_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_10_05,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_10_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_10_06,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_10_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_10_07,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_10_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_10_08,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_10_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_10_09,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_10_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_10_10,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_10_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_10_11,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_11_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_11_00,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_11_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_11_01,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_11_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_11_02,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_11_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_11_03,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_11_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_11_04,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_11_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_11_05,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_11_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_11_06,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_11_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_11_07,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_11_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_11_08,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_11_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_11_09,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_11_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_11_10,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_11_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_11_11,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_12_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_12_00,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_12_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_12_01,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_12_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_12_02,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_12_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_12_03,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_12_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_12_04,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_12_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_12_05,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_12_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_12_06,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_12_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_12_07,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_12_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_12_08,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_12_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_12_09,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_12_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_12_10,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_12_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_12_11,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_13_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_13_00,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_13_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_13_01,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_13_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_13_02,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_13_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_13_03,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_13_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_13_04,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_13_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_13_05,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_13_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_13_06,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_13_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_13_07,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_13_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_13_08,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_13_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_13_09,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_13_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_13_10,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_13_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_13_11,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_14_00_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_14_00,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_14_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_14_01,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_14_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_14_02,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_14_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_14_03,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_14_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_14_04,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_14_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_14_05,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_14_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_14_06,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_14_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_14_07,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_14_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_14_08,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_14_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_14_09,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_14_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_14_10,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_CR_7        B_hv_CR7_14_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=CR7_14_11,group_number=3" hv_generic.adl >> /dev/null 

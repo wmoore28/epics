@@ -1,0 +1,29 @@
+GROUP NULL PRIMEX
+GROUP PRIMEX TRANSPORTER
+CHANNEL TRANSPORTER hallb_ptrans_x_diff
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_ptrans_x_diff" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+PrimEx transporter x difference
+     Alarm is on the difference between the stepper motor record and
+the digital encoder for the horizontal direction. These should agree
+to about 1 mm.
+     If they do not agree, call a PrimEx Transporter Expert.
+$END
+CHANNEL TRANSPORTER hallb_ptrans_y_diff
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_ptrans_y_diff" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+PrimEx transporter y difference
+     Alarm is on the difference between the stepper motor record and
+the north digital encoder for the vertical direction. These should
+agree to about 1 mm.
+     If they do not agree, call a PrimEx Transporter Expert.
+$END
+CHANNEL TRANSPORTER hallb_ptrans_y_enc_diff
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_ptrans_y_enc_diff" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+PrimEx transporter y encoder difference
+     Alarm is on the difference between the north digital encoder and
+the south digital encoder for the vertical direction. These should
+agree to about 1 mm.
+     If they do not agree, call a PrimEx Transporter Expert.
+$END

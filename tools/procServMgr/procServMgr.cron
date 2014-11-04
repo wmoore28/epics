@@ -1,0 +1,5 @@
+Add the following lines to /etc/crontab.  This will ensure that softIOCs are up
+and running.
+
+# Added <date> by <author>
+5,20,35,50 * * * * epics /misc/clas12/hps/prod/epics/tools/procServMgr/procServMgr check >> /misc/clas12/hps/prod/epics/apps/iocBoot/softioc_`hostname`.log 2>&1

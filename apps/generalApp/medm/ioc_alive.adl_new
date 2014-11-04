@@ -1,0 +1,1028 @@
+
+file {
+	name="/home/hovanes/EPICS_ALL/app/general/medm/ioc_alive.adl"
+	version=020306
+}
+display {
+	object {
+		x=116
+		y=59
+		width=215
+		height=343
+	}
+	clr=14
+	bclr=4
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+text {
+	object {
+		x=19
+		y=5
+		width=130
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="White or static dot means ioc is dead,"
+}
+text {
+	object {
+		x=18
+		y=19
+		width=130
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CLICK RED button to reboot IOC"
+}
+text {
+	object {
+		x=167
+		y=43
+		width=42
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="STATS"
+}
+oval {
+	object {
+		x=98
+		y=175
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="((A%2) = 0)"
+		chan="classc6:heartbeat"
+	}
+}
+oval {
+	object {
+		x=100
+		y=293
+		width=11
+		height=12
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="((A%2) = 0)"
+		chan="ioctorus1:heartbeat"
+	}
+}
+oval {
+	object {
+		x=100
+		y=316
+		width=11
+		height=12
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="((A%2) = 0)"
+		chan="camac2:heartbeat"
+	}
+}
+oval {
+	object {
+		x=100
+		y=270
+		width=11
+		height=12
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="((A%2) = 0)"
+		chan="iocptarg:heartbeat"
+	}
+}
+oval {
+	object {
+		x=100
+		y=246
+		width=11
+		height=12
+	}
+	"basic attribute" {
+		clr=35
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(((A+1)%2) = 0)"
+		chan="clasgas:heartbeat"
+	}
+}
+oval {
+	object {
+		x=99
+		y=223
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=35
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(((A+1)%2) = 0)"
+		chan="classc12:heartbeat"
+	}
+}
+oval {
+	object {
+		x=99
+		y=200
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=35
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(((A+1)%2) = 0)"
+		chan="classc8:heartbeat"
+	}
+}
+oval {
+	object {
+		x=98
+		y=154
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=35
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(((A+1)%2) = 0)"
+		chan="classc5:heartbeat"
+	}
+}
+oval {
+	object {
+		x=98
+		y=131
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=35
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(((A+1)%2) = 0)"
+		chan="classc4:heartbeat"
+	}
+}
+oval {
+	object {
+		x=98
+		y=108
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=35
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(((A+1)%2) = 0)"
+		chan="classc3:heartbeat"
+	}
+}
+oval {
+	object {
+		x=98
+		y=85
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=35
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(((A+1)%2) = 0)"
+		chan="classc2:heartbeat"
+	}
+}
+text {
+	object {
+		x=15
+		y=59
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="classc1"
+}
+"shell command" {
+	object {
+		x=128
+		y=61
+		width=15
+		height=15
+	}
+	command[0] {
+		label="reboot classc1"
+		name="xterm"
+		args="-T clasgas -e $EPICS_SCRIPTS/remote_reset.tcl classc1 &"
+	}
+	clr=0
+	bclr=20
+}
+text {
+	object {
+		x=15
+		y=82
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="classc2"
+}
+"shell command" {
+	object {
+		x=128
+		y=84
+		width=15
+		height=15
+	}
+	command[0] {
+		label="reboot classc2"
+		name="xterm"
+		args="-T classc2 -e $EPICS_SCRIPTS/remote_reset.tcl classc2 &"
+	}
+	clr=0
+	bclr=20
+}
+text {
+	object {
+		x=15
+		y=105
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="classc3"
+}
+"shell command" {
+	object {
+		x=128
+		y=107
+		width=15
+		height=15
+	}
+	command[0] {
+		label="reboot classc3"
+		name="xterm"
+		args="-T classc3 -e $EPICS_SCRIPTS/remote_reset.tcl classc3 &"
+	}
+	clr=0
+	bclr=20
+}
+text {
+	object {
+		x=15
+		y=128
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="classc4"
+}
+"shell command" {
+	object {
+		x=128
+		y=130
+		width=15
+		height=15
+	}
+	command[0] {
+		label="reboot classc4"
+		name="xterm"
+		args="-T classc4 -e $EPICS_SCRIPTS/remote_reset.tcl classc4 &"
+	}
+	clr=0
+	bclr=20
+}
+text {
+	object {
+		x=15
+		y=151
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="classc5"
+}
+"shell command" {
+	object {
+		x=128
+		y=153
+		width=15
+		height=15
+	}
+	command[0] {
+		label="reboot classc5"
+		name="xterm"
+		args="-T classc5 -e $EPICS_SCRIPTS/remote_reset.tcl classc5 &"
+	}
+	clr=0
+	bclr=20
+}
+text {
+	object {
+		x=16
+		y=197
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="classc8"
+}
+"shell command" {
+	object {
+		x=128
+		y=199
+		width=15
+		height=15
+	}
+	command[0] {
+		label="reboot classc8"
+		name="xterm"
+		args="-T classc8 -e $EPICS_SCRIPTS/remote_reset.tcl classc8 &"
+	}
+	clr=0
+	bclr=20
+}
+text {
+	object {
+		x=16
+		y=220
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="classc12"
+}
+"shell command" {
+	object {
+		x=128
+		y=222
+		width=15
+		height=15
+	}
+	command[0] {
+		label="reboot classc12"
+		name="xterm"
+		args="-T classc12 -e $EPICS_SCRIPTS/remote_reset.tcl classc12 &"
+	}
+	clr=0
+	bclr=20
+}
+text {
+	object {
+		x=16
+		y=243
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="clasgas"
+}
+"shell command" {
+	object {
+		x=128
+		y=245
+		width=14
+		height=15
+	}
+	command[0] {
+		label="reboot clasgas"
+		name="xterm"
+		args="-T clasgas -e $EPICS_SCRIPTS/remote_reset.tcl clasgas &"
+	}
+	clr=0
+	bclr=20
+}
+oval {
+	object {
+		x=98
+		y=62
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="((A%2) = 0)"
+		chan="classc1:heartbeat"
+	}
+}
+oval {
+	object {
+		x=98
+		y=62
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=35
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(((A+1)%2) = 0)"
+		chan="classc1:heartbeat"
+	}
+}
+oval {
+	object {
+		x=98
+		y=85
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="((A%2) = 0)"
+		chan="classc2:heartbeat"
+	}
+}
+oval {
+	object {
+		x=98
+		y=108
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="((A%2) = 0)"
+		chan="classc3:heartbeat"
+	}
+}
+oval {
+	object {
+		x=98
+		y=131
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="((A%2) = 0)"
+		chan="classc4:heartbeat"
+	}
+}
+oval {
+	object {
+		x=98
+		y=154
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="((A%2) = 0)"
+		chan="classc5:heartbeat"
+	}
+}
+oval {
+	object {
+		x=99
+		y=200
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="((A%2) = 0)"
+		chan="classc8:heartbeat"
+	}
+}
+oval {
+	object {
+		x=99
+		y=223
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="((A%2) = 0)"
+		chan="classc12:heartbeat"
+	}
+}
+oval {
+	object {
+		x=100
+		y=246
+		width=11
+		height=12
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="((A%2) = 0)"
+		chan="clasgas:heartbeat"
+	}
+}
+text {
+	object {
+		x=112
+		y=43
+		width=42
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="REBOOT"
+}
+oval {
+	object {
+		x=100
+		y=270
+		width=11
+		height=12
+	}
+	"basic attribute" {
+		clr=35
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(((A+1)%2) = 0)"
+		chan="iocptarg:heartbeat"
+	}
+}
+text {
+	object {
+		x=16
+		y=267
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocptarg"
+}
+"shell command" {
+	object {
+		x=128
+		y=269
+		width=14
+		height=15
+	}
+	command[0] {
+		label="reboot iocptarg"
+		name="xterm"
+		args="-T clasgas -e $EPICS_SCRIPTS/remote_reset.tcl iocptarg &"
+	}
+	clr=0
+	bclr=20
+}
+oval {
+	object {
+		x=100
+		y=293
+		width=11
+		height=12
+	}
+	"basic attribute" {
+		clr=35
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(((A+1)%2) = 0)"
+		chan="ioctorus1:heartbeat"
+	}
+}
+text {
+	object {
+		x=16
+		y=290
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ioctorus1"
+}
+"shell command" {
+	object {
+		x=128
+		y=292
+		width=14
+		height=15
+	}
+	command[0] {
+		label="reboot ioctorus1"
+		name="xterm"
+		args="-T clasgas -e $EPICS_SCRIPTS/remote_reset.tcl ioctorus1 &"
+	}
+	clr=0
+	bclr=20
+}
+oval {
+	object {
+		x=100
+		y=316
+		width=11
+		height=12
+	}
+	"basic attribute" {
+		clr=35
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(((A+1)%2) = 0)"
+		chan="camac2:heartbeat"
+	}
+}
+text {
+	object {
+		x=16
+		y=313
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="camac2"
+}
+"shell command" {
+	object {
+		x=128
+		y=315
+		width=14
+		height=15
+	}
+	command[0] {
+		label="reboot camac2"
+		name="xterm"
+		args="-T clasgas -e $EPICS_SCRIPTS/remote_reset.tcl camac2 &"
+	}
+	clr=0
+	bclr=20
+}
+
+
+
+oval {
+	object {
+		x=98
+		y=175
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=35
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(((A+1)%2) = 0)"
+		chan="classc6:heartbeat"
+	}
+}
+text {
+	object {
+		x=15
+		y=172
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="classc6"
+}
+"shell command" {
+	object {
+		x=128
+		y=174
+		width=15
+		height=15
+	}
+	command[0] {
+		label="reboot classc6"
+		name="xterm"
+		args="-T classc6 -e $EPICS_SCRIPTS/remote_reset.tcl classc6 &"
+	}
+	clr=0
+	bclr=20
+}
+"related display" {
+	object {
+		x=170
+		y=61
+		width=23
+		height=15
+	}
+	display[0] {
+		label="IOC stats"
+		name="HallSystems.adl"
+		args="ioc=classc1"
+	}
+	clr=14
+	bclr=4
+}
+"related display" {
+	object {
+		x=170
+		y=84
+		width=23
+		height=15
+	}
+	display[0] {
+		label="IOC stats"
+		name="HallSystems.adl"
+		args="ioc=classc2"
+	}
+	clr=14
+	bclr=4
+}
+"related display" {
+	object {
+		x=170
+		y=107
+		width=23
+		height=15
+	}
+	display[0] {
+		label="IOC stats"
+		name="HallSystems.adl"
+		args="ioc=classc3"
+	}
+	clr=14
+	bclr=4
+}
+"related display" {
+	object {
+		x=170
+		y=130
+		width=23
+		height=15
+	}
+	display[0] {
+		label="IOC stats"
+		name="HallSystems.adl"
+		args="ioc=classc4"
+	}
+	clr=14
+	bclr=4
+}
+"related display" {
+	object {
+		x=170
+		y=153
+		width=23
+		height=15
+	}
+	display[0] {
+		label="IOC stats"
+		name="HallSystems.adl"
+		args="ioc=classc5"
+	}
+	clr=14
+	bclr=4
+}
+"related display" {
+	object {
+		x=170
+		y=199
+		width=23
+		height=15
+	}
+	display[0] {
+		label="IOC stats"
+		name="HallSystems.adl"
+		args="ioc=classc8"
+	}
+	clr=14
+	bclr=4
+}
+"related display" {
+	object {
+		x=170
+		y=222
+		width=23
+		height=15
+	}
+	display[0] {
+		label="IOC stats"
+		name="HallSystems.adl"
+		args="ioc=classc12"
+	}
+	clr=14
+	bclr=4
+}
+"related display" {
+	object {
+		x=170
+		y=245
+		width=22
+		height=15
+	}
+	display[0] {
+		label="IOC stats"
+		name="HallSystems.adl"
+		args="ioc=clasgas"
+	}
+	clr=14
+	bclr=4
+}
+"related display" {
+	object {
+		x=170
+		y=269
+		width=22
+		height=15
+	}
+	display[0] {
+		label="IOC stats"
+		name="HallSystems.adl"
+		args="ioc=iocptarg"
+	}
+	clr=14
+	bclr=4
+}
+"related display" {
+	object {
+		x=170
+		y=292
+		width=22
+		height=15
+	}
+	display[0] {
+		label="IOC stats"
+		name="HallSystems.adl"
+		args="ioc=ioctorus1"
+	}
+	clr=14
+	bclr=4
+}
+"related display" {
+	object {
+		x=170
+		y=315
+		width=22
+		height=15
+	}
+	display[0] {
+		label="IOC stats"
+		name="HallSystems.adl"
+		args="ioc=camac2"
+	}
+	clr=14
+	bclr=4
+}
+"related display" {
+	object {
+		x=170
+		y=174
+		width=23
+		height=15
+	}
+	display[0] {
+		label="IOC stats"
+		name="HallSystems.adl"
+		args="ioc=classc6"
+	}
+	clr=14
+	bclr=4
+}

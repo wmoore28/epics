@@ -1,0 +1,164 @@
+GROUP    NULL                         GAS                         
+$SEVRCOMMAND  UP_INVALID remsh clon00 "error_msg alh clonalarm alh epics 2 ERROR 100 \"ALH reporting INVALID for gas\""
+$SEVRCOMMAND  DOWN_NO_ALARM remsh clon00 "error_msg alh clonalarm alh epics 0 INFO 100 \"ALH reporting alarms cleared for gas\""
+$SEVRCOMMAND  UP_MAJOR remsh clon00 "error_msg alh clonalarm alh epics 2 ERROR 101 \"ALH reporting ALARM for gas\""
+$SEVRCOMMAND  DOWN_NO_ALARM remsh clon00 "error_msg alh clonalarm alh epics 0 INFO 101 \"ALH reporting alarms cleared for gas\""
+$SEVRCOMMAND  UP_MINOR $APP/general/alh/gas_error.csh
+$SEVRCOMMAND  UP_MAJOR $APP/general/alh/gas_error.csh
+CHANNEL  GAS                          dc_ratio1_alarm             
+$COMMAND  medm -x -attach -cmap -macro "sig=dc_ratio1_alarm" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  30 30
+$GUIDANCE
+		The Ar to CO2 flow ratio to the buffer tank for Region I and III drift 
+		chambers is outside acceptable limits.  Call the on-call person for Power
+		Outage & Gas Systems. 
+$END
+CHANNEL  GAS                          dc_ratio2_alarm             
+$COMMAND  medm -x -attach -cmap -macro "sig=dc_ratio2_alarm" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  30 30
+$GUIDANCE
+		The Ar to CO2 flow ratio to the buffer tank for Region II drift chambers 
+		is outside acceptable limits. Call the on-call person for Power Outage & 
+		Gas Systems.
+$END
+CHANNEL  GAS                          dc_r1in_flow                
+$COMMAND  medm -x -attach -cmap -macro "sig=dc_r1in_flow" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  30 30
+$GUIDANCE
+		The input flow to Region I drift chambers is outside acceptable limits.  
+		Follow the instructions below. 
+		MAJOR (RED): Call the on-call person for Power Outage & Gas Systems.
+		Do not operate high voltage on chambers for more than four hours after flow
+		has stopped.		
+		MINOR (YELLOW): Call the on-call person for Power Outage & Gas Systems and 
+		watch for MAJOR alarm status.
+$END
+CHANNEL  GAS                          dc_r1out_pres               
+$COMMAND  medm -x -attach -cmap -macro "sig=dc_r1out_pres" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  30 30
+$GUIDANCE
+		The pressure in the Region I drift chambers is outside acceptable limits.  
+		Follow the instructions below.
+		MAJOR (RED): Call the on-call person for Power Outage & Gas Systems. Watch 
+		input flow status and do not operate high voltage on chambers for more than 
+		four hours after flow has stopped.
+		MINOR (YELLOW): Call the on-call person for Power Outage & Gas Systems and 
+		watch for MAJOR alarm status.
+$END
+CHANNEL  GAS                          dc_r2in_flow                
+$COMMAND  medm -x -attach -cmap -macro "sig=dc_r2in_flow" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  30 30
+$GUIDANCE
+		The input flow to Region II drift chambers is outside acceptable limits.  
+		Follow the instructions below. 
+		MAJOR (RED): Call the on-call person for Power Outage & Gas Systems.
+		Do not operate high voltage on chambers for more than four hours after flow
+		has stopped.		
+		MINOR (YELLOW): Call the on-call person for Power Outage & Gas Systems and 
+		watch for MAJOR alarm status.			
+$END
+CHANNEL  GAS                          dc_r2out_pres               
+$COMMAND  medm -x -attach -cmap -macro "sig=dc_r2out_pres" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  30 30
+$GUIDANCE
+		The pressure in the Region II drift chambers is outside acceptable limits.  
+		Follow the instructions below.
+		MAJOR (RED): Call the on-call person for Power Outage & Gas Systems. Watch 
+		input flow status and do not operate high voltage on chambers for more than 
+		four hours after flow has stopped.
+		MINOR (YELLOW): Call the on-call person for Power Outage & Gas Systems and 
+		watch for MAJOR alarm status.		
+$END
+CHANNEL  GAS                          dc_r3in_flow                
+$COMMAND  medm -x -attach -cmap -macro "sig=dc_r3in_flow" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  30 30
+$GUIDANCE
+		The input flow to Region III drift chambers is outside acceptable limits.  
+		Follow the instructions below. 
+		MAJOR (RED): Call the on-call person for Power Outage & Gas Systems.
+		Do not operate high voltage on chambers for more than four hours after flow
+		has stopped.		
+		MINOR (YELLOW): Call the on-call person for Power Outage & Gas Systems and 
+		watch for MAJOR alarm status.			
+$END
+CHANNEL  GAS                          dc_r3out_pres               
+$COMMAND  medm -x -attach -cmap -macro "sig=dc_r3out_pres" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  30 30
+$GUIDANCE
+		The pressure in the Region III drift chambers is outside acceptable limits.  
+		Follow the instructions below.
+		MAJOR (RED): Call the on-call person for Power Outage & Gas Systems. Watch 
+		input flow status and do not operate high voltage on chambers for more than 
+		four hours after flow has stopped.
+		MINOR (YELLOW): Call the on-call person for Power Outage & Gas Systems and 
+		watch for MAJOR alarm status.		
+$END
+CHANNEL  GAS                          dc_r1_bypass                
+$COMMAND  medm -x -attach -cmap -macro "sig=dc_r1_bypass" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  30 30
+$GUIDANCE
+		The Region I by-pass has tripped.  
+		Call the on-call person for Power Outage & Gas Systems.
+		Do not operate high voltage on chambers for more than four hours after 
+		chambers have been bypassed.
+$END
+CHANNEL  GAS                          dc_r2_bypass                
+$COMMAND  medm -x -attach -cmap -macro "sig=dc_r2_bypass" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  30 30
+$GUIDANCE
+		The Region II by-pass has tripped.
+		Call the on-call person for Power Outage & Gas Systems.
+		Do not operate high voltage on chambers for more than four hours after 
+		chambers have been bypassed.		
+$END
+CHANNEL  GAS                          dc_r3_bypass                
+$COMMAND  medm -x -attach -cmap -macro "sig=dc_r3_bypass" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  30 30
+$GUIDANCE
+		The Region III by-pass has tripped.  
+		Call the on-call person for Power Outage & Gas Systems.
+		Do not operate high voltage on chambers for more than four hours after 
+		chambers have been bypassed.		
+$END
+CHANNEL  GAS                          cc_sector1_pres             
+$COMMAND  medm -x -attach -cmap -macro "sig=cc_sector1_pres" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  30 30
+$GUIDANCE
+		The pressure in the Sector 1 Cerenkov counter is outside acceptable limits. 
+		Call the on-call person for Power Outage & Gas Systems.
+$END
+CHANNEL  GAS                          cc_sector2_pres             
+$COMMAND  medm -x -attach -cmap -macro "sig=cc_sector2_pres" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  30 30
+$GUIDANCE
+		The pressure in the Sector 2 Cerenkov counter is outside acceptable limits. 
+		Call the on-call person for Power Outage & Gas Systems.
+$END
+CHANNEL  GAS                          cc_sector3_pres             
+$COMMAND  medm -x -attach -cmap -macro "sig=cc_sector3_pres" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  30 30
+$GUIDANCE
+		The pressure in the Sector 3 Cerenkov counter is outside acceptable limits. 
+		Call the on-call person for Power Outage & Gas Systems.
+$END
+CHANNEL  GAS                          cc_sector4_pres             
+$COMMAND  medm -x -attach -cmap -macro "sig=cc_sector4_pres" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  30 30
+$GUIDANCE
+		The pressure in the Sector 4 Cerenkov counter is outside acceptable limits. 
+		Call the on-call person for Power Outage & Gas Systems.
+$END
+CHANNEL  GAS                          cc_sector5_pres             
+$COMMAND  medm -x -attach -cmap -macro "sig=cc_sector5_pres" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  30 30
+$GUIDANCE
+		The pressure in the Sector 5 Cerenkov counter is outside acceptable limits. 
+		Call the on-call person for Power Outage & Gas Systems.
+$END
+CHANNEL  GAS                          cc_sector6_pres             
+$COMMAND  medm -x -attach -cmap -macro "sig=cc_sector6_pres" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  30 30
+$GUIDANCE
+		The pressure in the Sector 6 Cerenkov counter is outside acceptable limits. 
+		Call the on-call person for Power Outage & Gas Systems.
+$END

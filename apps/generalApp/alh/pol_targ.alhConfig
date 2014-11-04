@@ -1,0 +1,113 @@
+
+GROUP NULL POLTAR
+$SEVRCOMMAND UP_INVALID remsh clon00 "error_msg alh epics alh alarm 2 ERROR 0 \"ALH reporting INVALID for pol_targ\""
+$SEVRCOMMAND UP_MAJOR remsh clon00 "error_msg alh epics alhalarm 2 ERROR 0 \"ALH reporting ALARM for pol_targ\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "error_msg alh epics alh alarm 0 INFO 0 \"ALH reporting alarms cleared for pol_targ\""
+$GUIDANCE 
+For info on Polarized Target operations, please consult the Polarized Target
+Users Guide.
+$END
+
+CHANNEL POLTAR LL8220
+$ALARMCOUNTFILTER  10 10
+$GUIDANCE
+This alarm indicates that the LHe level in the Magnet Reservoir
+is outside its prescribed limits.  
+Check that the PID loops on the Magnet Fill Valve EV8215
+are enabled and properly set.  If the level continues outside limits, 
+page Target On-Call.
+Magnet will begin automatic ramp down at 15%.  
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=LL8220" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL POLTAR LL8230
+$ALARMCOUNTFILTER  10 10
+$GUIDANCE
+This alarm indicates that the LHe level in the
+separator is outside its prescribed limits.
+From the VALVE CONTROL screen, check that 
+the Separator Throttle Valve EV8232 is in PID mode,
+and that parameters are properly set (access from pull-down
+menu labelled "Status").  
+If the level continues outside limits, page Target On-Call.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=LL8230" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL POLTAR LL8240
+$ALARMCOUNTFILTER  10 10
+$GUIDANCE
+This alarm indicates that the LHe level in the
+Banjo is outside its prescribed limits.
+Check that the PID Loop on  
+the refrigerator RUN Valve EV8231 is ENABLED and
+parameters properly set.  If level continues outside limits,
+page Target On-Call.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=LL8240" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL POLTAR PI8220
+$ALARMCOUNTFILTER  3 3
+$GUIDANCE
+This alarm indicates that the pressure in the Magnet
+Reservoir is outside its prescribed limits.
+Check that the PID Loop on  
+the magnet fill Valve EV8215 is ENABLED and
+parameters properly set.  Page Target On-Call
+if the level continues outside its prescribed limits.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=PI8220" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL POLTAR PI8252A
+$ALARMCOUNTFILTER  3 3
+$GUIDANCE
+This alarm indicates that the vacuum pressure in the OVC
+(Outer Vacuum Chamber) is outside its prescribed limits.  
+Page Target On-Call.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=PI8252A" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL POLTAR FI8223D
+$ALARMCOUNTFILTER  3 3
+$GUIDANCE
+This alarm indicates that the helium flow from the
+magnet exhaust is outside its prescribed limits.
+Check that the PID loops for the Magnet Fill Valve are
+properly set and enabled.  If problem persists,
+page Target on-call.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=FI8223D" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL POLTAR FI8233R
+$ALARMCOUNTFILTER  3 3
+$GUIDANCE
+This alarm indicates that the helium flow from the
+separator is outside is prescribed limits.
+From the VALVE CONTROL screen, check that 
+the Separator Throttle Valve EV8232 is in PID mode,
+and that parameters are properly set (access from pull-down
+menu labelled "Status").  Check that the Vapor Shield throttle
+valve EV8231S is set between 1% and 4%.
+If flow continues outside limits, page Target On-Call.
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=FI8233R" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL POLTAR FI8267B
+$ALARMCOUNTFILTER  3 3
+$GUIDANCE
+This alarm indicates that the helium flow from the
+refrigerator is outside is prescribed limits.
+This may normally occur during transients
+associated with polarizing the target.  If
+the flow appears to oscillate wildly (more than +/- 20 lpm)
+means that the controlling PID loop has suspended.
+To restart the PID loop, reboot the target IOC using 
+the yellow "ReBootControls" button on the target's EPICS screens.
+If flow continues outside limits, page Target On-Call.
+
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND  medm -x -attach -cmap -macro "sig=FI8267B" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL POLTAR hallbptpol
+$COMMAND  medm -x -attach -cmap -macro "sig=hallbptpol" aiaocalc_alarm.adl >> /dev/null
+

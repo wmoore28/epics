@@ -1,0 +1,50 @@
+#These records are for a single channel whole board
+#See flasherchan.template for the whole board commands
+
+#For those which are for single channels on the board.
+# % macro, PORT, Asyn port name
+# % macro, P   , prefix eg. B_FT_FLASHER
+
+#Now these are the records for the channels (as opposed to the individual channels)
+#Approximately in the order written in the wiki at:
+#wiki.ge.infn.it/g3wiki/index.php/Monitoring_system
+
+#Read channel amplitude
+record(ai, "$(P):GET_AMPL_$(CH)"){
+  field(DTYP, "stream")
+  field(INP,  "@flasher.proto getAmpChan($(CH)) $(PORT)")
+}
+
+#Set channel amplitude to value
+record(ao, "$(P):SET_AMPL_$(CH)"){
+  field(DESC,"SET_AMPL_$(CH) x=$(X), y=$(Y)")
+  field(DTYP, "stream")
+  field(OUT,  "@flasher.proto setAmpChan($(CH)) $(PORT)")
+  field(FLNK, "$(P):GET_AMPL_$(CH).PROC")
+}
+
+#Read channel width
+record(ai, "$(P):GET_WIDTH_$(CH)"){
+  field(DTYP, "stream")
+  field(INP,  "@flasher.proto getWidthChan($(CH)) $(PORT)")
+}
+
+#Set channel width to value
+record(ao, "$(P):SET_WIDTH_$(CH)"){
+  field(DESC,"SET_WIDTH_($CH) x=$(X), y=$(Y)")
+  field(DTYP, "stream")
+  field(OUT,  "@flasher.proto setWidthChan($(CH)) $(PORT)")
+  field(FLNK, "$(P):GET_WIDTH_$(CH).PROC")
+}
+
+#scalers - sim for now
+record(ai, "$(P):SCALER_$(CH)"){
+  field(DESC,"SET_WIDTH_($CH) x=$(X), y=$(Y)")
+  field(PREC,"0")
+}
+
+#ChanID - to allow each channel a numeric ID value
+record(ao, "$(P):CHAN_ID$(CH)"){
+  field(VAL,"$(CH)")
+}
+
