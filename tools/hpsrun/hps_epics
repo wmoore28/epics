@@ -5,9 +5,9 @@
 # This script is installed from /misc/clas12/hps/prod/tools/
 #
 
-ADL_PATH=/misc/clas12/hps/prod/epics/apps/medm
-ADL_FILE=hps_epics.adl
+ADL_PATH=/misc/clas12/hps/prod/apps/medm
+ADL_FILE=HPS_EPICS.adl
 
 cd $ADL_PATH
-xterm -title "HPS MEDM" -e medm -x -cmap -cleanup $ADL_FILE &
+xterm -iconic -title "HPS MEDM" -e medm -x -cmap -cleanup $ADL_FILE &
 exit
