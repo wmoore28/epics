@@ -1,4 +1,4 @@
-TOOLDIRS := procServMgr
+TOOLDIRS := harp_analyzer hpsrun LogEntry procServMgr
 
 .PHONY: all clean distclean install uninstall 
 
@@ -13,5 +13,3 @@ clean:
 
 uninstall:
 	-@for dir in $(TOOLDIRS); do cd $$dir && make uninstall ; cd .. ; done
-
-distclean: clean
