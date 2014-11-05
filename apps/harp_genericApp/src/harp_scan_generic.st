@@ -295,7 +295,7 @@ ss harp_scan_snc {
 	          fdprintf(fd,"%d ", scaler_datasc1[i]);
 	       }
        }
-       if(  ( ! (strcmp(cmotor_name,"harp_2h03"))) )
+       if(  ( ! (strcmp(cmotor_name,"harp_2H02A"))) )
        {
 	       for (i=0;i<16;i++) {
 	          pvGet(scaler_datasc4[i]);

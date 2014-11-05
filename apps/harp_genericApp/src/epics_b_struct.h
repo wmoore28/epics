@@ -10,6 +10,7 @@ struct epics_rec {
   char epics_name[24];
   char real_name[50];
 } hallb_string[] = {
+  {"IPM2C21A.VAL"       ,  "2C21 Current (nA)"},
   {"IPM2C24A.VAL"       ,  "2C24 Current (nA)"},
   {"IPM2H00.VAL"        ,  "2H00 Current (nA)"},
   {"IPM2H01.VAL"        ,  "2H01 Current (nA)"},

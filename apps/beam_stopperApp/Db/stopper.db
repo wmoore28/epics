@@ -5,7 +5,7 @@ record(bo,"beam_stop_on_axis") {
 	field(ONAM,"move started")
 }
 record(ao, "beam_stop_beam") {
-	field(VAL, "-8.2")
+	field(VAL, "68.0")
 	field(OUT, "beam_stop.VAL")
 	field(FLNK, "beam_stop_proc")
 }
@@ -33,7 +33,7 @@ record(calc, "beam_stop_at_home") {
 record(calc, "beam_stop_at_beam") {
         field(INPA, "beam_stop.RBV")
         field(SCAN, ".2 second")
-        field(CALC, "ABS(A+8.2)<0.1?1:0")
+        field(CALC, "ABS(A-68.0)<0.1?1:0")
 }
 
 
