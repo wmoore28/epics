@@ -1,6 +1,6 @@
 
 file {
-	name="/home/wmoore/workspaces/epics-develop/apps/tempSensApp/medm/tempSensors.adl"
+	name="/misc/clas12/hps/master/epics/apps/tempSensApp/medm/./tempSensors.adl"
 	version=030108
 }
 display {
@@ -95,7 +95,7 @@ rectangle {
 		height=40
 	}
 	"basic attribute" {
-		clr=53
+		clr=28
 	}
 }
 text {
@@ -4936,4 +4936,25 @@ text {
 	}
 	limits {
 	}
+}
+"related display" {
+	object {
+		x=825
+		y=8
+		width=60
+		height=23
+	}
+	display[0] {
+		label="Autosave"
+		name="/misc/clas12/hpsautosave.adl"
+		args="P=ioctempSens:"
+	}
+	display[1] {
+		label="Comm (asyn)"
+		name="/misc/clas12/hps/proasynRecord.adl"
+		args="P=tempSensor:,R=ASYN"
+	}
+	clr=14
+	bclr=4
+	label="Expert"
 }

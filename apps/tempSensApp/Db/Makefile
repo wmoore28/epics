@@ -13,6 +13,7 @@ include $(TOP)/configure/CONFIG
 DB    += tempSens.template
 DB    += tempSens.substitutions
 
+DB_INSTALLS += $(ASYN)/db/asynRecord.db
 DB_INSTALLS += $(AUTOSAVE)/asApp/Db/save_restoreStatus.db
 DB_INSTALLS += $(DEVIOCSTATS)/db/iocAdminSoft.db
 
