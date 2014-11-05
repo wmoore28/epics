@@ -86,8 +86,11 @@ dc.dat: $(DCDATA)
 	cat $(DCDATA) > dc.dat
 dc_by_loc.dat: dc.dat
 	dc_by_loc.pl
-ecal.dat: ecal.pl
-	$^ > $@
+
+# configuration in ecal.pl is outdated already, primary source is ecal.dat
+#ecal.dat: ecal.pl
+#	$^ > $@
+
 test_mf: test_mf.db ../medm/adl/test_mf.adl
 #
 cr_mf_cleaning: 
