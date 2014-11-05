@@ -1,6 +1,6 @@
 
 file {
-	name="/misc/clas12/hps/prod/epics/apps/generalApp/medm/hps_epics.adl"
+	name="/misc/clas12/hps/prod/apps/generalApp/medm/HPS_EPICS.adl"
 	version=030108
 }
 display {
@@ -8,7 +8,7 @@ display {
 		x=3
 		y=49
 		width=240
-		height=460
+		height=480
 	}
 	clr=14
 	bclr=4
@@ -111,7 +111,7 @@ image {
 rectangle {
 	object {
 		x=0
-		y=426
+		y=425
 		width=240
 		height=20
 	}
@@ -229,6 +229,14 @@ text {
 		label="Lakeshore 450 (Gaussmeters)"
 		name="lakeshore450_menu.adl"
 	}
+	display[2] {
+		label="Keithley 6221"
+		name="keithley6221.adl"
+	}
+	display[3] {
+		label="Harps"
+		name="harps.adl"
+	}
 	clr=14
 	bclr=57
 }
@@ -247,7 +255,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=427
+		y=449
 		width=20
 		height=20
 	}
@@ -265,7 +273,7 @@ text {
 text {
 	object {
 		x=70
-		y=431
+		y=453
 		width=150
 		height=15
 	}
@@ -296,4 +304,30 @@ text {
 		clr=0
 	}
 	textix="Subsystems"
+}
+"related display" {
+	object {
+		x=19
+		y=426
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Harps"
+		name="harps.adl"
+	}
+	clr=14
+	bclr=57
+}
+text {
+	object {
+		x=69
+		y=431
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Harps"
 }
