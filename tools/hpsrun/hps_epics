@@ -6,7 +6,7 @@
 #
 
 ADL_PATH=/misc/clas12/hps/prod/epics/apps/medm
-ADL_FILE=ioc_hps_health.adl
+ADL_FILE=hps_epics.adl
 
 cd $ADL_PATH
 xterm -title "HPS MEDM" -e medm -x -cmap -cleanup $ADL_FILE &
