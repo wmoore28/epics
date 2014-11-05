@@ -12,7 +12,7 @@ PROD_SRCS += make_snap.c
 PROD_SRCS += menu_gui.c
 
 USR_INCLUDES += -I$(TOP)/adl_genApp
-PROD_OBJS += $(TOP)/adl_genApp/O.$(T_A)/adl_gen
+PROD_OBJS += $(TOP)/bin/$(T_A)/adl_gen
 
 # FIXME: this will try to instal into non-existing directory 
 # and because it will fail, the executable will stay in the right place 
@@ -22,4 +22,9 @@ PROD_HOST = hv_adl
 #PROD_HOST = $(TOP)/hvca/bin/$(T_A)/hv_adl
 
 include $(TOP)/configure/RULES
+
+
+hv_adl.c: $(TOP)/adl_genApp/adl_gen.h
+$(TOP)/adl_genApp/adl_gen.h:
+	$(MAKE) -C $(TOP)/adl_genApp TOP=..
 
