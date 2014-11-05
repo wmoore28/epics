@@ -1,14 +1,14 @@
 
 file {
-	name="/home/stepanya/epics/app/general/medm/misc_screens.adl"
-	version=030101
+	name="/misc/clas12/hps/prod/epics/apps/generalApp/medm/hps_epics.adl"
+	version=030108
 }
 display {
 	object {
-		x=280
-		y=176
-		width=300
-		height=310
+		x=3
+		y=49
+		width=240
+		height=460
 	}
 	clr=14
 	bclr=4
@@ -87,10 +87,53 @@ display {
 		1a7309,
 	}
 }
+rectangle {
+	object {
+		x=0
+		y=0
+		width=240
+		height=85
+	}
+	"basic attribute" {
+		clr=14
+	}
+}
+image {
+	object {
+		x=0
+		y=0
+		width=200
+		height=85
+	}
+	type="gif"
+	"image name"="HPS_logo.gif"
+}
+rectangle {
+	object {
+		x=0
+		y=426
+		width=240
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=380
+		width=240
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
 "related display" {
 	object {
-		x=50
-		y=40
+		x=20
+		y=97
 		width=200
 		height=200
 	}
@@ -114,28 +157,27 @@ display {
 		label="ECal Temperature"
 		name="hps_ecal_temp.adl"
 	}
-	clr=20
+	clr=14
 	bclr=1
 	visual="a column of buttons"
 }
 text {
 	object {
-		x=50
-		y=10
-		width=200
+		x=152
+		y=38
+		width=100
 		height=18
 	}
 	"basic attribute" {
-		clr=14
+		clr=57
 	}
-	textix="Misc. Screens"
-	align="horiz. centered"
+	textix="HPS Main Menu"
 }
 "shell command" {
 	object {
-		x=65
-		y=264
-		width=150
+		x=20
+		y=307
+		width=200
 		height=30
 	}
 	command[0] {
@@ -145,4 +187,113 @@ text {
 	clr=20
 	bclr=1
 	label="Work Alone Pager"
+}
+"related display" {
+	object {
+		x=20
+		y=380
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Health"
+		name="ioc_hps_health.adl"
+	}
+	clr=14
+	bclr=57
+}
+text {
+	object {
+		x=70
+		y=385
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="IOCs"
+}
+"related display" {
+	object {
+		x=20
+		y=403
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Omegabus D5000s"
+		name="tempSensors.adl"
+	}
+	display[1] {
+		label="Lakeshore 450 (Gaussmeters)"
+		name="lakeshore450_menu.adl"
+	}
+	clr=14
+	bclr=57
+}
+text {
+	object {
+		x=70
+		y=408
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Device Diagnostics"
+}
+"shell command" {
+	object {
+		x=20
+		y=427
+		width=20
+		height=20
+	}
+	command[0] {
+		label="StripTool"
+		name="StripTool &"
+	}
+	command[1] {
+		label="Probe"
+		name="probe &"
+	}
+	clr=14
+	bclr=55
+}
+text {
+	object {
+		x=70
+		y=431
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Tools"
+}
+rectangle {
+	object {
+		x=0
+		y=354
+		width=300
+		height=25
+	}
+	"basic attribute" {
+		clr=58
+	}
+}
+text {
+	object {
+		x=15
+		y=359
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Subsystems"
 }
