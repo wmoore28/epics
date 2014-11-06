@@ -362,8 +362,8 @@ text {
 	}
 	command[0] {
 		label="Analyze Scans"
-		name="/home/nerses/java/$EPICS_HOST_ARCH/jdk1.6.0_20/bin/java -jar $APP/harp_generic/scripts/HarpScanGUI.jar /home/epics/DATA/E_SCANS/`ls -rt /home/epics/DATA/E_SCANS/ | tail -1`"
-		args=" &"
+		name="/misc/clas12/hps/v0.2.2/tools/harp_analyzer/bin/runHarpScan.sh $(motor_name) &"
+		args=" "
 	}
 	command[1] {
 		args=" "

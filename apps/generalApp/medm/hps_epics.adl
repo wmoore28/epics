@@ -1,19 +1,19 @@
 
 file {
-	name="/misc/clas12/hps/prod/apps/generalApp/medm/HPS_EPICS.adl"
-	version=030108
+	name="/home/stepanya/epics/app/general/medm/hps_epics.adl"
+	version=030101
 }
 display {
 	object {
-		x=3
-		y=49
-		width=240
-		height=760
+		x=1895
+		y=89
+		width=220
+		height=500
 	}
 	clr=14
-	bclr=4
+	bclr=1
 	cmap=""
-	gridSpacing=5
+	gridSpacing=12
 	gridOn=0
 	snapToGrid=0
 }
@@ -87,208 +87,44 @@ display {
 		1a7309,
 	}
 }
-rectangle {
-	object {
-		x=0
-		y=0
-		width=240
-		height=85
-	}
-	"basic attribute" {
-		clr=14
-	}
-}
-image {
-	object {
-		x=0
-		y=0
-		width=200
-		height=85
-	}
-	type="gif"
-	"image name"="HPS_logo.gif"
-}
-rectangle {
-	object {
-		x=0
-		y=679
-		width=240
-		height=20
-	}
-	"basic attribute" {
-		clr=3
-	}
-}
-rectangle {
-	object {
-		x=0
-		y=634
-		width=240
-		height=20
-	}
-	"basic attribute" {
-		clr=3
-	}
-}
-text {
-	object {
-		x=152
-		y=38
-		width=100
-		height=18
-	}
-	"basic attribute" {
-		clr=57
-	}
-	textix="HPS Main Menu"
-}
 "related display" {
 	object {
-		x=20
-		y=634
-		width=20
-		height=20
+		x=-95
+		y=169
+		width=30
+		height=30
 	}
 	display[0] {
-		label="IOC Health"
-		name="ioc_hps_health.adl"
-	}
-	clr=14
-	bclr=57
-}
-text {
-	object {
-		x=70
-		y=639
-		width=150
-		height=15
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="IOCs"
-}
-"related display" {
-	object {
-		x=20
-		y=657
-		width=20
-		height=20
-	}
-	display[0] {
-		label="Omegabus D5000s"
-		name="tempSensors.adl"
+		label="scaler"
+		name="scaler.adl"
 	}
 	display[1] {
-		label="Lakeshore 450 (Gaussmeters)"
-		name="lakeshore450_menu.adl"
+		label="minitorus"
+		name="minitorus.adl"
 	}
 	display[2] {
-		label="Keithley 6221"
-		name="keithley6221.adl"
+		label="forward_scaler"
+		name="frwd_scaler.adl"
 	}
 	display[3] {
-		label="Harps"
-		name="harps.adl"
+		label="minitorus"
+		name="minitorus.adl"
 	}
-	clr=14
-	bclr=57
+	display[4] {
+		label="Faraday cup viewer"
+		name="fcup.adl"
+	}
+	display[5] {
+		label="help"
+		name="help.adl"
+	}
+	clr=48
+	bclr=4
 }
 text {
 	object {
-		x=70
-		y=662
-		width=150
-		height=15
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Device Diagnostics"
-}
-"shell command" {
-	object {
-		x=20
-		y=703
-		width=20
-		height=20
-	}
-	command[0] {
-		label="StripTool"
-		name="StripTool &"
-	}
-	command[1] {
-		label="Probe"
-		name="probe &"
-	}
-	clr=14
-	bclr=55
-}
-text {
-	object {
-		x=70
-		y=707
-		width=150
-		height=15
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Tools"
-}
-rectangle {
-	object {
-		x=0
-		y=608
-		width=300
-		height=25
-	}
-	"basic attribute" {
-		clr=58
-	}
-}
-text {
-	object {
-		x=15
-		y=613
-		width=150
-		height=15
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="Subsystems"
-}
-"related display" {
-	object {
-		x=20
-		y=680
-		width=20
-		height=20
-	}
-	display[0] {
-		label="Harps"
-		name="harps.adl"
-	}
-	clr=14
-	bclr=57
-}
-text {
-	object {
-		x=70
-		y=685
-		width=150
-		height=15
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Harps"
-}
-text {
-	object {
-		x=63
-		y=230
+		x=75
+		y=134
 		width=75
 		height=18
 	}
@@ -300,8 +136,8 @@ text {
 }
 "related display" {
 	object {
-		x=149
-		y=139
+		x=161
+		y=43
 		width=50
 		height=20
 	}
@@ -315,8 +151,8 @@ text {
 }
 "related display" {
 	object {
-		x=149
-		y=169
+		x=161
+		y=73
 		width=50
 		height=20
 	}
@@ -330,8 +166,8 @@ text {
 }
 "shell command" {
 	object {
-		x=149
-		y=199
+		x=161
+		y=103
 		width=50
 		height=20
 	}
@@ -345,8 +181,8 @@ text {
 }
 text {
 	object {
-		x=63
-		y=200
+		x=75
+		y=104
 		width=75
 		height=18
 	}
@@ -358,8 +194,8 @@ text {
 }
 text {
 	object {
-		x=63
-		y=290
+		x=75
+		y=194
 		width=75
 		height=18
 	}
@@ -371,8 +207,8 @@ text {
 }
 "related display" {
 	object {
-		x=149
-		y=229
+		x=161
+		y=133
 		width=50
 		height=20
 	}
@@ -386,8 +222,8 @@ text {
 }
 text {
 	object {
-		x=63
-		y=260
+		x=75
+		y=164
 		width=75
 		height=18
 	}
@@ -399,8 +235,8 @@ text {
 }
 "related display" {
 	object {
-		x=149
-		y=259
+		x=161
+		y=163
 		width=50
 		height=20
 	}
@@ -414,8 +250,8 @@ text {
 }
 "related display" {
 	object {
-		x=149
-		y=289
+		x=161
+		y=193
 		width=50
 		height=20
 	}
@@ -429,8 +265,8 @@ text {
 }
 text {
 	object {
-		x=63
-		y=140
+		x=75
+		y=44
 		width=75
 		height=18
 	}
@@ -442,8 +278,8 @@ text {
 }
 text {
 	object {
-		x=63
-		y=170
+		x=75
+		y=74
 		width=75
 		height=18
 	}
@@ -455,8 +291,8 @@ text {
 }
 "related display" {
 	object {
-		x=148
-		y=107
+		x=160
+		y=11
 		width=50
 		height=20
 	}
@@ -470,8 +306,8 @@ text {
 }
 text {
 	object {
-		x=62
-		y=108
+		x=74
+		y=12
 		width=75
 		height=18
 	}
@@ -483,8 +319,8 @@ text {
 }
 composite {
 	object {
-		x=57
-		y=488
+		x=69
+		y=392
 		width=138
 		height=82
 	}
@@ -492,8 +328,8 @@ composite {
 	children {
 		"choice button" {
 			object {
-				x=57
-				y=508
+				x=69
+				y=412
 				width=135
 				height=16
 			}
@@ -507,8 +343,8 @@ composite {
 		}
 		text {
 			object {
-				x=58
-				y=488
+				x=70
+				y=392
 				width=135
 				height=14
 			}
@@ -520,8 +356,8 @@ composite {
 		}
 		"choice button" {
 			object {
-				x=59
-				y=554
+				x=71
+				y=458
 				width=135
 				height=16
 			}
@@ -535,8 +371,8 @@ composite {
 		}
 		text {
 			object {
-				x=60
-				y=532
+				x=72
+				y=436
 				width=135
 				height=14
 			}
@@ -550,8 +386,8 @@ composite {
 }
 "related display" {
 	object {
-		x=148
-		y=346
+		x=160
+		y=250
 		width=50
 		height=20
 	}
@@ -566,8 +402,8 @@ composite {
 }
 text {
 	object {
-		x=62
-		y=317
+		x=74
+		y=221
 		width=75
 		height=18
 	}
@@ -579,8 +415,8 @@ text {
 }
 "related display" {
 	object {
-		x=148
-		y=316
+		x=160
+		y=220
 		width=50
 		height=20
 	}
@@ -594,8 +430,8 @@ text {
 }
 text {
 	object {
-		x=62
-		y=347
+		x=74
+		y=251
 		width=75
 		height=18
 	}
@@ -607,8 +443,8 @@ text {
 }
 text {
 	object {
-		x=62
-		y=403
+		x=74
+		y=307
 		width=75
 		height=18
 	}
@@ -620,8 +456,8 @@ text {
 }
 "related display" {
 	object {
-		x=148
-		y=402
+		x=160
+		y=306
 		width=50
 		height=20
 	}
@@ -635,8 +471,8 @@ text {
 }
 "related display" {
 	object {
-		x=148
-		y=374
+		x=160
+		y=278
 		width=50
 		height=20
 	}
@@ -650,8 +486,8 @@ text {
 }
 text {
 	object {
-		x=61
-		y=429
+		x=73
+		y=333
 		width=75
 		height=18
 	}
@@ -663,8 +499,8 @@ text {
 }
 "related display" {
 	object {
-		x=147
-		y=428
+		x=159
+		y=332
 		width=50
 		height=20
 	}
@@ -681,8 +517,8 @@ text {
 }
 text {
 	object {
-		x=45
-		y=376
+		x=57
+		y=280
 		width=90
 		height=18
 	}

@@ -1,14 +1,14 @@
 
 file {
-	name="/home/stepanya/epics/app/general/medm/misc_screens.adl"
+	name="/home/stepanya/epics/app/general/medm/hv_screens.adl"
 	version=030101
 }
 display {
 	object {
-		x=280
-		y=176
-		width=300
-		height=310
+		x=1214
+		y=185
+		width=200
+		height=200
 	}
 	clr=14
 	bclr=4
@@ -89,60 +89,38 @@ display {
 }
 "related display" {
 	object {
-		x=50
-		y=40
-		width=200
-		height=200
+		x=25
+		y=30
+		width=140
+		height=140
 	}
 	display[0] {
-		label="VESDA"
-		name="vesda2.adl"
+		label="SVT"
+		name="cc.adl"
 	}
 	display[1] {
-		label="Beamline Vacuum"
-		name="vacuum.adl"
+		label="ECal HV"
+		name="ec.adl"
 	}
 	display[2] {
-		label="Tagger Dump Lamp"
-		name="tagger_dump_lamp.adl"
-	}
-	display[3] {
-		label="Weather"
-		name="hallBenv.adl"
-	}
-	display[4] {
-		label="ECal Temperature"
-		name="hps_ecal_temp.adl"
+		label="Beav HV"
+		name="bm.adl"
 	}
 	clr=20
-	bclr=1
+	bclr=2
+	label="abd"
 	visual="a column of buttons"
 }
 text {
 	object {
-		x=50
-		y=10
-		width=200
-		height=18
+		x=18
+		y=7
+		width=153
+		height=25
 	}
 	"basic attribute" {
-		clr=14
+		clr=48
 	}
-	textix="Misc. Screens"
+	textix="Voltages"
 	align="horiz. centered"
-}
-"shell command" {
-	object {
-		x=65
-		y=264
-		width=150
-		height=30
-	}
-	command[0] {
-		label="Work Alone Pager"
-		name="$EPICSB/scripts/workAlonePager.pl &"
-	}
-	clr=20
-	bclr=1
-	label="Work Alone Pager"
 }
