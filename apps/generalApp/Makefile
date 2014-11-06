@@ -6,5 +6,6 @@ DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard *db*))
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard *Db*))
 #DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard *alh*))
 #DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard *ar*))
+DIRS := $(DIRS) strip
 include $(TOP)/configure/RULES_DIRS
 
