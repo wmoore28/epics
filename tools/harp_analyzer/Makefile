@@ -2,7 +2,7 @@
 
 
 all:
-	ant
+	ant;
 
 clean:
 	ant clean

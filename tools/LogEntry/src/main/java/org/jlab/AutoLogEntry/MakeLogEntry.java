@@ -21,6 +21,7 @@ public class MakeLogEntry
     String img_path;     // Path of the Image, that will be submited to logbook
     String file_name = "NO FILENAME";           // An .adl file nemae without ".adl", e.g. tagger_dump_lamp or hiv_alarm etc
     String fit_parameters = "";
+    String AdditionalText = "";
     String PV_list = ""; // List of Process Variables
     String medm_dir = "";
     String elog_Title = "";
@@ -203,7 +204,7 @@ public class MakeLogEntry
 	
     }
     
-    public String getTimeStamp()
+    public static String getTimeStamp()
     {
 	Date date = new Date();
 	
@@ -221,8 +222,8 @@ public class MakeLogEntry
 
     public void SubmitElog()
     {
-	//LogEntry entry = new LogEntry("", "TLOG");
-	LogEntry entry = new LogEntry("", "HBLOG");
+	LogEntry entry = new LogEntry("", "TLOG");
+	//LogEntry entry = new LogEntry("", "HBLOG");
 	//entry.setEmailNotify("rafopar@jlab.org");
 	
         try {
@@ -230,7 +231,7 @@ public class MakeLogEntry
 	    System.out.println("The title is: " + elog_Title);
 	    entry.setTitle(elog_Title);	
 	    String Setaratition_line = "\n ================= PVs ==================== \n";
-	    entry.setBody("[figure:1] \n" + comments_to_submit + Setaratition_line + PV_list);
+	    entry.setBody("[figure:1] \n" + comments_to_submit + Setaratition_line + AdditionalText + "\n \n" + PV_list);
 	    
 	    System.out.println("The PV list is " + PV_list);
 	    
@@ -336,6 +337,13 @@ public class MakeLogEntry
     	}
     }
     
+    
+    public void AddAdditionalText(String a)
+    {
+	AdditionalText = AdditionalText + a;
+	System.out.println("Additional text is \n" + a);
+    }
+
 
     private static class ScrollablePanel extends JPanel implements Scrollable{
         public Dimension getPreferredScrollableViewportSize() {
