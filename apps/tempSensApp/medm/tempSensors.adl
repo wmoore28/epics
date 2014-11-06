@@ -1,6 +1,6 @@
 
 file {
-	name="/misc/clas12/hps/master/epics/apps/tempSensApp/medm/./tempSensors.adl"
+	name="/misc/clas12/hps/prod/apps/tempSensApp/medm/tempSensors.adl"
 	version=030108
 }
 display {
@@ -4946,12 +4946,12 @@ text {
 	}
 	display[0] {
 		label="Autosave"
-		name="/misc/clas12/hpsautosave.adl"
+		name="autosave.adl"
 		args="P=ioctempSens:"
 	}
 	display[1] {
 		label="Comm (asyn)"
-		name="/misc/clas12/hps/proasynRecord.adl"
+		name="asynRecord.adl"
 		args="P=tempSensor:,R=ASYN"
 	}
 	clr=14
