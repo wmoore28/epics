@@ -24,6 +24,9 @@ EPICS_BASE=${CLAS}/R${EPICS_VER}/base
 EPICS_SUPPORT=${CLAS}/R${EPICS_VER}/support
 EPICS_SYNAPPS=${CLAS}/R${EPICS_VER}/synApps/synApps_5_5/support
 
+## Path to data storage (autosave, etc)
+IOCDATA=/misc/clas12/hps/DATA
+
 ## Used by hvCaenApp
 EPICS_DRIVERS=${EPICSB_DRIVERS}
 

@@ -34,8 +34,8 @@ On github, navigate to your repository with the changes you want to submit.
 Add a remote to the official repository (view remotes with 'git remote -v')
 ```
 git remote add hps-epics https://github.com/wmoore28/epics
-# get updates from remote branch, most likely master
-git pull hps-epics <branch-name>
+# get updates from remote branch, most likely master or develop
+git pull hps-epics master
 # if everything looks good...push changes to your repo
 git push origin master
 ```

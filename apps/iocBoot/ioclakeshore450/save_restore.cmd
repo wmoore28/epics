@@ -7,7 +7,7 @@
   save_restoreSet_SeqPeriodInSeconds(30)
 
   ## Specify paths
-  set_savefile_path("sav")
+  set_savefile_path("$(IOCDATA)/autosave/$(IOC)")
   set_requestfile_path(".")
   set_requestfile_path("../../req")
 
