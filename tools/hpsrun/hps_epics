@@ -9,5 +9,5 @@ ADL_PATH=/misc/clas12/hps/prod/apps/medm
 ADL_FILE=HPS_EPICS.adl
 
 cd $ADL_PATH
-xterm -iconic -title "HPS MEDM" -e medm -x -cmap -cleanup $ADL_FILE &
+APP="/misc/clas12/hps/prod/apps" xterm -title "HPS MEDM" -e medm -x -cmap -cleanup $ADL_FILE &
 exit
