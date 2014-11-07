@@ -15,14 +15,16 @@ tempSens_registerRecordDeviceDriver(pdbbase)
 
 ## Setup port
 drvAsynIPPortConfigure("SER1", "hallb-moxa1:4001")
+asynOctetSetOutputEos("SER1", 0, "\r")
 
 ## Debugging
 #asynSetTraceMask("SER1",-1,0x09)
 #asynSetTraceIOMask("SER1",-1,0x2)
 
 ## Load record instances
-dbLoadTemplate("db/iocAdminSoft.db", "IOC=${IOC}")
+dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC}")
 dbLoadRecords("db/save_restoreStatus.db", "P=${IOC}:")
+dbLoadRecords("db/asynRecord.db", "P=tempSensor:,R=ASYN,PORT=SER1,ADDR=,IMAX=80,OMAX=80")
 dbLoadTemplate("db/tempSens.substitutions")
 
 cd ${TOP}/iocBoot/${IOC}

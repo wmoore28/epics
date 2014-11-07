@@ -31,7 +31,7 @@ dbLoadRecords("db/lakeshore450.db", "P=HPS:, R=LS450_2:, PORT=SER4")
 cd ${TOP}/iocBoot/${IOC}
 
 ## Autosave settings/restore sets
-#< save_restore.cmd
+< save_restore.cmd
 
 dbl > lakeshore450_pv.list
 iocInit
@@ -40,5 +40,5 @@ iocInit
 makeAutosaveFiles()
 create_monitor_set("info_positions.req", 5, "P=${IOC}:")
 create_monitor_set("info_settings.req", 30, "P=${IOC}:")
-#create_monitor_set("lakeshore_settings.req", 30)
+create_monitor_set("lakeshore_settings.req", 30)
 

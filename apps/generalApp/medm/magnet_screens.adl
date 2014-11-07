@@ -7,8 +7,8 @@ display {
 	object {
 		x=359
 		y=119
-		width=203
-		height=400
+		width=160
+		height=130
 	}
 	clr=14
 	bclr=4
@@ -89,42 +89,30 @@ display {
 }
 "related display" {
 	object {
-		x=15
-		y=50
-		width=167
-		height=284
+		x=14
+		y=41
+		width=131
+		height=70
 	}
 	display[0] {
 		label="Tagger"
 		name="tagger.adl"
 	}
 	display[1] {
-		label="Torus"
-		name="mpsu_quick.adl"
-	}
-	display[2] {
-		label="Mini-Torus"
+		label="Frascati Magnets"
 		name="minitorus.adl"
 	}
-	display[3] {
-		label="Pair-Spec"
+	display[2] {
+		label="Analyzing Magnet"
 		name="pspec.adl"
 	}
-	display[4] {
-		label="Upstream Quad"
-		name="dynab.adl"
-	}
 	display[5] {
-		label="Downstream Quad"
 		name="dynac.adl"
+		policy="replace display"
 	}
 	display[6] {
-		label="Helmholtz Coils"
 		name="kepco.adl"
-	}
-	display[7] {
-		label="DVCS"
-		name="DVCS_general.adl"
+		policy="replace display"
 	}
 	clr=14
 	bclr=55
@@ -135,7 +123,7 @@ text {
 	object {
 		x=12
 		y=6
-		width=150
+		width=116
 		height=22
 	}
 	"basic attribute" {
@@ -143,29 +131,4 @@ text {
 	}
 	textix="Magnet Screens"
 	align="horiz. centered"
-}
-"related display" {
-	object {
-		x=15
-		y=330
-		width=167
-		height=105
-	}
-	display[0] {
-		label="Raster "
-		name="rastB.adl"
-	}
-	display[1] {
-		label="Frascati Magnets"
-		name="dynad.adl"
-	}
-	display[2] {
-		label="q"
-		name="q"
-		policy="replace display"
-	}
-	clr=14
-	bclr=55
-	label="Raster"
-	visual="a column of buttons"
 }

@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas/devel/R3.14.8.2/EPICS/app/general/medm/misc_screens.adl"
+	name="/home/stepanya/epics/app/general/medm/misc_screens.adl"
 	version=030101
 }
 display {
@@ -8,7 +8,7 @@ display {
 		x=280
 		y=176
 		width=300
-		height=500
+		height=310
 	}
 	clr=14
 	bclr=4
@@ -92,7 +92,7 @@ display {
 		x=50
 		y=40
 		width=200
-		height=360
+		height=200
 	}
 	display[0] {
 		label="VESDA"
@@ -103,51 +103,15 @@ display {
 		name="vacuum.adl"
 	}
 	display[2] {
-		label="CryoTarget"
-		name="paramTarget.adl"
+		label="Tagger Dump Lamp"
+		name="tagger_dump_lamp.adl"
 	}
 	display[3] {
 		label="Weather"
 		name="hallBenv.adl"
 	}
 	display[4] {
-		label="DVCS Temperature"
-		name="rtds_all.adl"
-	}
-	display[5] {
-		label="EG2 Targets"
-		name="eg2_target.adl"
-	}
-	display[6] {
-		label="Tagger Dump Lamp"
-		name="tagger_dump_lamp.adl"
-	}
-	display[7] {
-		label="Hodoscope"
-		name="hodoscope_temp_hv.adl"
-	}
-	display[8] {
-		label="DVCS magnet "
-		name="MSS.adl"
-	}
-	display[9] {
-		label="DVCS IC scalers"
-		name="dvcs_all.adl"
-	}
-	display[10] {
-		label="FROST Expert"
-		name="FROST.adl"
-	}
-	display[11] {
-		label="FROST Shift taker"
-		name="FROST_ShiftDisplay.adl"
-	}
-	display[12] {
-		label="HPS SVT Temperatures"
-		name="hps_svt_temp.adl"
-	}
-	display[13] {
-		label="HPS ECal Temperatures"
+		label="ECal Temperature"
 		name="hps_ecal_temp.adl"
 	}
 	clr=20
@@ -169,8 +133,8 @@ text {
 }
 "shell command" {
 	object {
-		x=75
-		y=460
+		x=65
+		y=264
 		width=150
 		height=30
 	}
