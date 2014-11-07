@@ -16,6 +16,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -60,8 +61,8 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
     private Properties analyzerProperties    = new Properties();
     private String     harpScanAnalyzerType  = "tagger";
     private String     propertiesFileName    = "";
-    
-    String[] wireNames = new String[]{"Upstream Left","UpstreamRight",
+    private List fileHeader;  
+    String[] counterNames = new String[]{"Upstream Left","UpstreamRight",
 				      "Tagger Left", "Tagger Right","Tagger Top",
             "Downstream Left","Downstream Right",
             "Downstream Top", "Downstream Bottom",
@@ -202,11 +203,14 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
     }
     
     public String getTempImagePath(){
+        String time_stamp = MakeLogEntry.getTimeStamp();
         StringBuilder str = new StringBuilder();
         if(System.getenv("SCRIPT_DIR")!=null){
-            str.append(System.getenv("SCRIPT_DIR"));
-            str.append("/../fit_Image/temptorary_image_scan.png");
+            //str.append(System.getenv("SCRIPT_DIR"));
+            //str.append("/../fit_Image/temptorary_image_scan.png");
             //str.append("/../etc/temp/temptorary_image_scan.png");
+            str.append("/home/hpsrun/screenshots/" + this_harp_dir +"_"+ time_stamp + ".png");
+                        
             return str.toString();
         }
         return null;
@@ -223,7 +227,7 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
 //            for(int loop = 0; harpAnalyzer.functions.size() >= loop;loop++){
               for(int loop = 0; harpAnalyzer.getHarpFuncs().size() > loop;loop++){ 
                   System.out.println("Loop = " + loop);
-                String[] labels = harpAnalyzer.getLegend(loop);
+                String[] labels = harpAnalyzer.getLegend(loop, this_harp_dir);
                 for(String text : labels) {
                     str.append(text);
                     str.append("\n");
@@ -231,17 +235,25 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
                 
                 if( loop == 2 )
                 {
-                   String[] alphaAB =  harpAnalyzer.getLegendAlphaAB();
+                   String[] alphaAB =  harpAnalyzer.getLegendAlphaAB(this_harp_dir);
                     for(String text : alphaAB) {
                         str.append(text);
                         str.append("\n");
                     }
                 }
             }
+            
             log.setFitParameters(str.toString());
             //log.setFitParameters(" ");
             //log.setImgPath(picpath);
             log.setImgPath(imagePath);
+            
+            String str_file_header = "";
+            for(  Object text : fileHeader )
+            {
+                str_file_header = str_file_header + text + "\n";
+            }
+                log.AddAdditionalText(str_file_header);
 //log.getRunNumber();                                                                        
             log.addComments();
         }
@@ -276,7 +288,7 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
         Box boxWR = Box.createHorizontalBox();
         boxWR.add(new JLabel("Refit Data : "));
        
-        comboWire = new JComboBox(wireNames);
+        comboWire = new JComboBox(counterNames);
         comboWire.setSelectedIndex(11);
         boxWR.add(comboWire);
         vertical.add(boxWR);
@@ -300,7 +312,8 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
         table.readFile(filename);
         
         table.show();
-
+       
+        fileHeader = table.getHeader();
         this.harpWireToFit = comboWire.getSelectedIndex() + 2;
         System.err.println("SWITHC WIRE TO " + this.harpWireToFit);
 
@@ -328,16 +341,17 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
         }
         
         for(int loop =0; loop < ngraphs; loop++){
-            String[] legend = harpAnalyzer.getLegend(loop);
+            String[] legend = harpAnalyzer.getLegend(loop, this_harp_dir);
             canvas.addLegend(loop, 0.04, 0.02, legend);
         }
         
         if( ngraphs == 3 )
         {
-            String[] legend = harpAnalyzer.getLegendAlphaAB();
+            String[] legend = harpAnalyzer.getLegendAlphaAB(this_harp_dir);
             canvas.addLegend(0, 0.65, 0.05, legend);
         }
-        
+        String[] counter_name = {"counter:  " + counterNames[comboWire.getSelectedIndex()]};
+        canvas.addLegend(0, 0.65, 0.4, counter_name);
     }
     
     public void loadData(){
@@ -425,7 +439,7 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
             //table.readFile("/misc/home/epics/DATA/HARP_SCANS/harp_2c21/harp_2c21_test1.txt");
             table.readFile(currentFilePath);
 	    System.out.println("Viewing file " + currentFilePath);
-            DataViewDialog dialog = new DataViewDialog(table,2,this.wireNames);
+            DataViewDialog dialog = new DataViewDialog(table,2,this.counterNames);
             dialog.setVisible(true);
         }
         //System.err.println("action command = " + e.getActionCommand());
