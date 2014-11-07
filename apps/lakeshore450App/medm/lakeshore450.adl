@@ -1,6 +1,6 @@
 
 file {
-	name="/home/wmoore/workspaces/epics-develop/apps/lakeshore450App/medm/lakeshore450.adl"
+	name="/misc/clas12/hps/prod/apps/lakeshore450App/medm/lakeshore450.adl"
 	version=030108
 }
 display {
@@ -578,7 +578,7 @@ text {
 	display[0] {
 		label="Comm (Asyn)"
 		name="asynRecord.adl"
-		args="P=$(P):,R=ASYN"
+		args="P=$(P),R=ASYN"
 	}
 	display[1] {
 		label="IOC Stats"

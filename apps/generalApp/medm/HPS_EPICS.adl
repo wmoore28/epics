@@ -108,7 +108,7 @@ rectangle {
 	control {
 		chan="hallb_access"
 		clr=14
-		bclr=51
+		bclr=50
 	}
 	clrmod="discrete"
 	stacking="column"
@@ -286,11 +286,7 @@ text {
 	}
 	command[0] {
 		label="StripTool"
-		name="cd /misc/clas12/hps/prod/apps/generalApp/strip; StripTool &"
-	}
-	command[1] {
-		label="Probe"
-		name="probe &"
+		name="cd $APP/generalApp/strip; StripTool &"
 	}
 	clr=14
 	bclr=50
@@ -549,7 +545,7 @@ text {
 	control {
 		chan="mcc_harp_access"
 		clr=14
-		bclr=51
+		bclr=50
 	}
 	clrmod="discrete"
 	stacking="column"
@@ -569,7 +565,7 @@ text {
 }
 "related display" {
 	object {
-		x=43
+		x=41
 		y=550
 		width=20
 		height=20
@@ -742,7 +738,7 @@ text {
 		width=20
 		height=20
 	}
-	command[1] {
+	command[0] {
 		label="Probe"
 		name="probe &"
 	}
