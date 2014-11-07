@@ -10,7 +10,7 @@ export PATH
 
 
 all:
-	ant
+	ant;
 
 clean:
 	ant clean

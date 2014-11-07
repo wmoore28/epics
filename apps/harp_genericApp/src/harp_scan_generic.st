@@ -173,7 +173,26 @@ ss harp_scan_snc {
    
    state init {
      when () {
-	harp_relative_move = 0.0;
+
+/* ========================================================= */
+
+   if(  ( ! (strcmp(motor_name,"harp_2c21"))) ||  ( ! (strcmp(motor_name,"harp_tagger"))) )
+   {
+
+   }
+   if(  ( ! (strcmp(motor_name,"harp_2H02A"))) )
+   {
+       pvAssign(scaler_tp, "scaler_c.TP"); 
+       pvAssign(scaler_cnt, "scaler_c.CNT"); 
+       pvAssign(scaler_mode, "scaler_c_mode.VAL"); 
+       pvAssign(display_mode, "display_c_mode.VAL"); 
+   }
+
+/* ========================================================= */
+
+
+
+        harp_relative_move = 0.0;
         pvPut(harp_relative_move);
        pvGet(motor_name);
 	for (tmp_int = 0;  (get_e_rec(tmp_int,tmp_rec)); tmp_int++) {
@@ -192,6 +211,24 @@ ss harp_scan_snc {
 
         scan_flag = 1;
         pvPut(scan_flag);
+
+
+/* ========================================================= */
+
+   if(  ( ! (strcmp(motor_name,"harp_2c21"))) ||  ( ! (strcmp(motor_name,"harp_tagger"))) )
+   {
+
+   }
+   if(  ( ! (strcmp(motor_name,"harp_2H02A"))) )
+   {
+       pvAssign(scaler_tp, "scaler_c.TP"); 
+       pvAssign(scaler_cnt, "scaler_c.CNT"); 
+       pvAssign(scaler_mode, "scaler_c_mode.VAL"); 
+       pvAssign(display_mode, "display_c_mode.VAL"); 
+   }
+
+/* ========================================================= */
+
 
 /* store old values so the hardware can be restored post scan  */
         pvGet(harp_speed);
@@ -221,7 +258,7 @@ ss harp_scan_snc {
 	pvPut(harp_speed);
 
 	harp_absolute_move = -5.;
-        pvPut(harp_absolute_move);
+   pvPut(harp_absolute_move);
 	command = 0;
         pvPut(command);
      } state wait_lls
@@ -295,18 +332,17 @@ ss harp_scan_snc {
 	          fdprintf(fd,"%d ", scaler_datasc1[i]);
 	       }
        }
-       if(  ( ! (strcmp(cmotor_name,"harp_2h03"))) )
+       if(  ( ! (strcmp(cmotor_name,"harp_2H02A"))) )
        {
 	       for (i=0;i<16;i++) {
 	          pvGet(scaler_datasc4[i]);
 	          fdprintf(fd,"%d ", scaler_datasc4[i]);
 	       }
        }
-
 /*
        for (i=0;i<16;i++) {
-          pvGet(scaler_datasc1[i]);
-          fdprintf(fd,"%d ", scaler_datasc1[i]);
+          pvGet(scaler_data[i]);
+          fdprintf(fd,"%d ", scaler_data[i]);
        }
 */
 
@@ -380,7 +416,7 @@ ss harp_scan_snc {
 /* ---------------------------------------------------------------------- */
 
 %%#include <time.h>
-%%#include "vxWorks.h"
+%%#include <vxWorks.h>
 %%#include <stdio.h>
 %%#include <string.h>
 %%#include <bootLib.h>
@@ -450,7 +486,7 @@ int open_file(char *fname, char *motor_name, char *shortname)
     strcat(shortname, ".txt" );
 
 /*    strcpy(thename, "/home/epics/data/e_scans/"); */
-    strcpy(thename, "/home/epics/data/HARP_SCANS/");
+    strcpy(thename, "/home/epics/DATA/HARP_SCANS/");
     strcat(thename, motor_name);
     strcat(thename, "/");
 
@@ -498,7 +534,7 @@ scp_clon01(char *harpscan_file, int sleep_time)
   /* Set local user to the same as remote user*/
   iam(ruser,NULL);
 
-  printf("host = %s  user = %s     cmd = %s\n",rhost,ruser,rstring); 
+  printf("host = %s  user = %s     cmd = %s\n",rhost,ruser,rstring);
 
   /* Issue the remote command */
   rfd = rcmd(rhost,EGR_HOST_DEFAULT_PORT,ruser,ruser,rstring,0);
