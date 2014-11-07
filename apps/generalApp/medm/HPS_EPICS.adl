@@ -5,7 +5,7 @@ file {
 }
 display {
 	object {
-		x=5
+		x=3
 		y=49
 		width=240
 		height=705
@@ -405,8 +405,8 @@ text {
 	}
 	command[0] {
 		label="Launch JTABS"
-		name="xterm -title "ACC JTABS""
-		args="-e "ssh opsl00 jtabs" &"
+		name="xterm -title JTabs -e"
+		args="$APP/generalApp/scripts/jtabs_launcher.sh &"
 	}
 	clr=14
 	bclr=50
