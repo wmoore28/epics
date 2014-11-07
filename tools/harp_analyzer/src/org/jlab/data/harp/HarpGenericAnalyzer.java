@@ -44,7 +44,7 @@ public class HarpGenericAnalyzer {
         harpData.clear();
         java.util.List<DataVector> clusters = peak.getClusters();
         for(DataVector vec : clusters){
-            if(vec.getSize()>5){
+            if(vec.getSize()>9){
                 double mean = vec.geatMean();
                 double rms  = vec.getRMS();
                 double xmin = mean - graphCutSigmas*rms;
@@ -198,6 +198,8 @@ public class HarpGenericAnalyzer {
        }
        
        Harp3ScanTranslator translate = new Harp3ScanTranslator( sigma_45, sigma_X, sigma_Y);
+//Harp3ScanTranslator translate = new Harp3ScanTranslator( 0.18360, 0.15867, 0.28318);
+
        legend[0] = String.format( "%-12s  %8.5f", "Alpha", translate.getAlpha() );
        legend[1] = String.format( "%-12s  %8.5f", "A", translate.getA() );
        legend[2] = String.format( "%-12s  %8.5f", "B", translate.getB() );

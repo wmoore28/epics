@@ -62,7 +62,7 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
     private String     harpScanAnalyzerType  = "tagger";
     private String     propertiesFileName    = "";
     private List fileHeader;  
-    String[] wireNames = new String[]{"Upstream Left","UpstreamRight",
+    String[] counterNames = new String[]{"Upstream Left","UpstreamRight",
 				      "Tagger Left", "Tagger Right","Tagger Top",
             "Downstream Left","Downstream Right",
             "Downstream Top", "Downstream Bottom",
@@ -288,7 +288,7 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
         Box boxWR = Box.createHorizontalBox();
         boxWR.add(new JLabel("Refit Data : "));
        
-        comboWire = new JComboBox(wireNames);
+        comboWire = new JComboBox(counterNames);
         comboWire.setSelectedIndex(11);
         boxWR.add(comboWire);
         vertical.add(boxWR);
@@ -350,7 +350,8 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
             String[] legend = harpAnalyzer.getLegendAlphaAB(this_harp_dir);
             canvas.addLegend(0, 0.65, 0.05, legend);
         }
-        
+        String[] counter_name = {"counter:  " + counterNames[comboWire.getSelectedIndex()]};
+        canvas.addLegend(0, 0.65, 0.4, counter_name);
     }
     
     public void loadData(){
@@ -438,7 +439,7 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
             //table.readFile("/misc/home/epics/DATA/HARP_SCANS/harp_2c21/harp_2c21_test1.txt");
             table.readFile(currentFilePath);
 	    System.out.println("Viewing file " + currentFilePath);
-            DataViewDialog dialog = new DataViewDialog(table,2,this.wireNames);
+            DataViewDialog dialog = new DataViewDialog(table,2,this.counterNames);
             dialog.setVisible(true);
         }
         //System.err.println("action command = " + e.getActionCommand());

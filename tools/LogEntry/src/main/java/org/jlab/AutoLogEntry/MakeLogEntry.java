@@ -222,8 +222,8 @@ public class MakeLogEntry
 
     public void SubmitElog()
     {
-	LogEntry entry = new LogEntry("", "TLOG");
-	//LogEntry entry = new LogEntry("", "HBLOG");
+	//LogEntry entry = new LogEntry("", "TLOG");
+	LogEntry entry = new LogEntry("", "HBLOG");
 	//entry.setEmailNotify("rafopar@jlab.org");
 	
         try {
