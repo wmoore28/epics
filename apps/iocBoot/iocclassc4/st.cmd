@@ -109,8 +109,8 @@ dbLoadRecords("db/sixty_hz_macro.db", "FIFO=4096, HALF_FIFO=2048, CHAN=31")
 dbLoadRecords("db/motor.db","motor_name=beam_stop, card=0, slot=0, srev=2000, urev=5.08, direction=Pos, velo=2.5, accl=0.1")
 
 
-dbLoadRecords("db/motor.db","motor_name=harp_2H02A, card=0, slot=2, srev=2000, urev=2.54, direction=Neg, velo=5.0, accl=0.1")
-dbLoadRecords("db/scan.db","motor_name=harp_2H02A, start_at=25, end_at=60.0, start_speed=5.0, scan_speed=0.5, acq_time=0.1")
+dbLoadRecords("db/motor.db","motor_name=harp_2H02A, card=0, slot=2, srev=2000, urev=2.54, direction=Pos, velo=0.5, accl=0.01")
+dbLoadRecords("db/scan.db","motor_name=harp_2H02A, start_at=3.0, end_at=9.5, start_speed=0.5, scan_speed=0.04, acq_time=0.1")
 
 dbLoadRecords("db/motor.db","motor_name=viewer, card=0, slot=1,srev=2000,urev=2.54,direction=Neg,velo=0.5,accl=0.01")
 
