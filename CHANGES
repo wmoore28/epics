@@ -1,0 +1,50 @@
+Version 0.2.3:
+ - Symlink apps/general -> apps/generalApp to fake out old medm screens
+ - Adding bumpversion.sh for managing releases
+ - Moved softIOCs to clonsl1
+ - Minor medm updates
+ - Merge branch 'levon-merge' of https://github.com/wmoore28/epics into hotfix-v0.2.3
+ - Merged updates for beam_stopper, harp_generic, and scaler
+ - Merge pull request #11 from levon-hakobyan/master
+ - Minor fixes on adls
+ - Merged in updates from wmoore28/master
+ - Updated harp_generic with motor settings and motor mapping to generic display
+ - Updated beam_stopper with changes from stepanya
+ - Added JTabs launcher for ACC control screens
+ - Merge pull request #10 from wmoore28/rafo-merge
+ - Added ignore for generated fit image
+ - Merge pull request #9 from rafopar/master
+ - Updated HPS_EPICS.adl
+ - .gitignore for StripTool symlinks
+ - now it submits log entry in HBLog logbook, and in the harp_analyzer counter name is added into the canvas
+ - Updated hps_epics to use APP env variable so old screens work
+ - Updated generalApp to build the StripTool symlinks
+ - Changed StripTool link to cd to strip/ first
+ - Added comments to explain forced condition
+ - Updated adls from stepanya, changed Makefile to link to old medm as well
+ - Fixed tempSensors.adl links
+ - Realigned text
+ - wire x, y, and 45 deg names were corrected, and when logEntry is called, it prints the snapshot in the hpsrun/snapshots directory
+ - Added harps to hps main menu
+ - Fixed procServMgr paths after prod/ rework
+ - Fix tools Makefile after an incorrect merge
+ - Merged feature-tools
+ - Merge branch 'feature-tools' of https://github.com/wmoore28/epics into feature-tools
+ - Ignore java generated files
+ - Minor updates for hps_epics script
+ - Fixed Makefiles to use new-ish version of java and ant
+ - Updated motor name and calibration
+ - Now starts up hps_epics.adl, the hps main menu
+ - Fix variable usage
+ - Updated hpsrun installation path
+ - Install creates directory if needed and added comments
+ - Added tools/hpsrun/README
+ - Initial hpsrun scripts
+ - harp_analyzer is added
+ - harp_analyzer is deleted
+ - harp_analyzer was added
+ - MakeLogEntry was added under the tools directory
+ - Merge branch 'master' of https://github.com/wmoore28/epics
+ - Delete test.smi
+ - This is just a testing...
+
