@@ -1,7 +1,7 @@
 
 file {
-	name="/home/stepanya/epics/app/general/medm/misc_screens.adl"
-	version=030101
+	name="/misc/clas12/hps/prod/apps/generalApp/medm/misc_screens.adl"
+	version=030108
 }
 display {
 	object {
@@ -87,10 +87,21 @@ display {
 		1a7309,
 	}
 }
+rectangle {
+	object {
+		x=0
+		y=0
+		width=300
+		height=30
+	}
+	"basic attribute" {
+		clr=34
+	}
+}
 "related display" {
 	object {
 		x=50
-		y=40
+		y=50
 		width=200
 		height=200
 	}
@@ -114,8 +125,8 @@ display {
 		label="ECal Temperature"
 		name="hps_ecal_temp.adl"
 	}
-	clr=20
-	bclr=1
+	clr=14
+	bclr=4
 	visual="a column of buttons"
 }
 text {
@@ -126,16 +137,16 @@ text {
 		height=18
 	}
 	"basic attribute" {
-		clr=14
+		clr=30
 	}
 	textix="Misc. Screens"
 	align="horiz. centered"
 }
 "shell command" {
 	object {
-		x=65
+		x=50
 		y=264
-		width=150
+		width=200
 		height=30
 	}
 	command[0] {
@@ -143,6 +154,6 @@ text {
 		name="$EPICSB/scripts/workAlonePager.pl &"
 	}
 	clr=20
-	bclr=1
+	bclr=2
 	label="Work Alone Pager"
 }

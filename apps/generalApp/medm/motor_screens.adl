@@ -1,12 +1,12 @@
 
 file {
-	name="/home/stepanya/epics/app/general/medm/motor_screens.adl"
-	version=030101
+	name="/misc/clas12/hps/prod/apps/generalApp/medm/motor_screens.adl"
+	version=030108
 }
 display {
 	object {
-		x=1289
-		y=500
+		x=302
+		y=302
 		width=180
 		height=250
 	}
@@ -87,10 +87,21 @@ display {
 		1a7309,
 	}
 }
+rectangle {
+	object {
+		x=0
+		y=0
+		width=180
+		height=30
+	}
+	"basic attribute" {
+		clr=24
+	}
+}
 "related display" {
 	object {
 		x=10
-		y=35
+		y=46
 		width=160
 		height=190
 	}
@@ -114,7 +125,7 @@ display {
 		label="SVT Collimator"
 		name="hps_collimator.adl"
 	}
-	clr=20
+	clr=14
 	bclr=1
 	label="Motors & Obstructors"
 	visual="a column of buttons"
@@ -127,8 +138,8 @@ text {
 		height=22
 	}
 	"basic attribute" {
-		clr=14
+		clr=0
 	}
 	textix="Motors"
-	align="horiz. right"
+	align="horiz. centered"
 }

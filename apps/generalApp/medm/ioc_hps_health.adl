@@ -1,6 +1,6 @@
 
 file {
-	name="/home/wmoore/workspaces/epics-develop/apps/generalApp/medm/ioc_hps_health.adl"
+	name="/misc/clas12/hps/prod/apps/generalApp/medm/ioc_hps_health.adl"
 	version=030108
 }
 display {
@@ -92,7 +92,7 @@ rectangle {
 		x=859
 		y=215
 		width=425
-		height=135
+		height=110
 	}
 	"basic attribute" {
 		clr=5
@@ -1221,109 +1221,6 @@ text {
 	bclr=8
 	label="Reboot..."
 }
-rectangle {
-	object {
-		x=10
-		y=321
-		width=1270
-		height=20
-	}
-	"basic attribute" {
-		clr=3
-	}
-}
-"text update" {
-	object {
-		x=193
-		y=323
-		width=150
-		height=20
-	}
-	monitor {
-		chan="classc8:HOSTNAME"
-		clr=0
-		bclr=29
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=345
-		y=323
-		width=150
-		height=20
-	}
-	monitor {
-		chan="classc8:UPTIME"
-		clr=0
-		bclr=29
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=497
-		y=323
-		width=100
-		height=20
-	}
-	monitor {
-		chan="classc8:HEARTBEAT"
-		clr=0
-		bclr=29
-	}
-	align="horiz. right"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=707
-		y=323
-		width=150
-		height=20
-	}
-	monitor {
-		chan="classc8:STARTTOD"
-		clr=0
-		bclr=29
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=15
-		y=322
-		width=160
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="iocclassc8"
-}
-"related display" {
-	object {
-		x=626
-		y=321
-		width=75
-		height=20
-	}
-	display[0] {
-		label="Reboot"
-		name="ioc_stats_reboot_confirm.adl"
-		args="ioc=classc8"
-	}
-	clr=14
-	bclr=8
-	label="Reboot..."
-}
 text {
 	object {
 		x=859
@@ -1494,21 +1391,6 @@ text {
 		label="IOC Stats"
 		name="ioc_stats_vxworks.adl"
 		args="ioc=classc6"
-	}
-	clr=14
-	bclr=8
-}
-"related display" {
-	object {
-		x=601
-		y=322
-		width=20
-		height=20
-	}
-	display[0] {
-		label="IOC Stats"
-		name="ioc_stats_vxworks.adl"
-		args="ioc=classc8"
 	}
 	clr=14
 	bclr=8
