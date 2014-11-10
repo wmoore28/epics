@@ -25,11 +25,16 @@ public class HarpGenericAnalyzer {
    
     private ArrayList<DataSetXY>  harpData = new ArrayList<DataSetXY>();
     private ArrayList<F1D>        harpFunc = new ArrayList<F1D>();
-    
-    private Double  graphCutSigmas  = 5.0;
+    private String                harpName = "harp_tagger";
+
+    private Double  graphCutSigmas  = 15.0;
     
     public HarpGenericAnalyzer(){        
     
+    }
+    
+    public void setName(String name){
+	harpName = name;
     }
     
     public void init(DataTable table, int column){
@@ -50,6 +55,18 @@ public class HarpGenericAnalyzer {
                 double xmin = mean - graphCutSigmas*rms;
                 double xmax = mean + graphCutSigmas*rms;
                 DataSetXY dataset = table.getDataSet(0, column, 0, xmin, xmax);
+
+		if(harpName.compareTo("harp_tagger")==0){
+		    if(harpData.size()>0){
+			dataset.getDataX().mult(Math.sqrt(2.0)/2.0);
+		    }
+		}
+
+		if(harpName.compareTo("harp_2c21")==0){
+		    dataset.getDataX().mult(Math.sqrt(2.0)/2.0);
+		}
+
+
                 harpData.add(dataset);
             }
         }
@@ -57,6 +74,7 @@ public class HarpGenericAnalyzer {
     }
     
     public void fitData(){
+
         harpFunc.clear();
         for(int loop = 0; loop < harpData.size(); loop++){
             F1D func = new F1D("gaus+p1",
