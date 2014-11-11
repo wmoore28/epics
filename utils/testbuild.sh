@@ -72,9 +72,9 @@ for test in "${tests[@]}"; do
   	printBreak
   	sleep 5
   	$test
- 
+	result=$? 
   	printBreak
-  	if [ $? -eq 0 ]; then
+  	if [ $result -eq 0 ]; then
 		passFail 0 "$test"
   	else 
 		passFail 1 "$test"
