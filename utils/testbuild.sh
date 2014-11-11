@@ -5,6 +5,9 @@
 # Test build system for HPS EPICS.  On success, things will be fully compiled, 
 # but no tools installed.
 # 
+# Options:
+#   -e: test environmental variables only
+# 
 # Returns:
 # 0=success
 # 1=failure
@@ -112,10 +115,10 @@ for target in "${targets[@]}"; do
   	printBreak
   	sleep 5
   	$target
- 
+	result=$? 
   	printBreak
-  	if [ $? -eq 0 ]; then
-		passFail 0 "$target"
+  	if [ $result -eq 0 ]; then
+		passFail 0 "$test"
   	else 
 		passFail 1 "$target"
     	exit 1
