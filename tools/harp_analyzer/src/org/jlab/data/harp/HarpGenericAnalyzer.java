@@ -49,7 +49,7 @@ public class HarpGenericAnalyzer {
         harpData.clear();
         java.util.List<DataVector> clusters = peak.getClusters();
         for(DataVector vec : clusters){
-            if(vec.getSize()>9){
+            if(vec.getSize()>5){
                 double mean = vec.geatMean();
                 double rms  = vec.getRMS();
                 double xmin = mean - graphCutSigmas*rms;
