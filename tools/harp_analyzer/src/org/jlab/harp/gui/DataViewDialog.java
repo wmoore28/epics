@@ -27,7 +27,7 @@ public class DataViewDialog extends JDialog {
         for(int loop = 0; loop < names.length; loop++){
             DataSetXY  data = tbl.getDataSet(0, c+loop);
             chartCanvas.addLine(loop, data.getDataX().getArray(),
-                    data.getDataY().getArray(),4);
+                    data.getDataY().getArray(),2);
             String[] legend = new String[1];
             legend[0] = names[loop];
             chartCanvas.addLegend(loop, 0.01, 0.01, legend);

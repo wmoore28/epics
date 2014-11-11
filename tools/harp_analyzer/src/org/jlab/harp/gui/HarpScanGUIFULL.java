@@ -62,7 +62,8 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
     private String     harpScanAnalyzerType  = "tagger";
     private String     propertiesFileName    = "";
     private List fileHeader;  
-    String[] counterNames = new String[]{"Upstream Left","UpstreamRight",
+    String[] counterNames = new String[]{"F Cup",
+        "Upstream Left","UpstreamRight",
 				      "Tagger Left", "Tagger Right","Tagger Top",
             "Downstream Left","Downstream Right",
             "Downstream Top", "Downstream Bottom",
@@ -103,6 +104,10 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
         //this.initializeDirectory();
     }
     
+    public void setHarpType(String harptype){
+	this.this_harp_dir = harptype;
+	harpAnalyzer.setName(harptype);
+    }
     public void initializeEnvironment(String harStyle){
         all_harps_dir = System.getenv("HARPFILE_DIR");
         
@@ -289,7 +294,7 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
         boxWR.add(new JLabel("Refit Data : "));
        
         comboWire = new JComboBox(counterNames);
-        comboWire.setSelectedIndex(11);
+        comboWire.setSelectedIndex(5);
         boxWR.add(comboWire);
         vertical.add(boxWR);
         
@@ -327,10 +332,14 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
         canvas.divide(1, ngraphs);
         canvas.repaint();
         for(int loop =0; loop < ngraphs; loop++){
+	    canvas.setLogY(loop,true);
             DataSetXY data = harpData.get(loop);
+            //canvas.addPoints(loop, 
+            //        data.getDataX().getArray(), 
+            //        data.getDataY().getArray(),4);
             canvas.addPoints(loop, 
                     data.getDataX().getArray(), 
-                    data.getDataY().getArray(),4);
+                    data.getDataY().getArray(),4,1,4,3);
         }
         
         for(int loop =0; loop < ngraphs; loop++){
@@ -413,7 +422,8 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
         }*/
         
         HarpScanGUIFULL harp = new HarpScanGUIFULL(wireScanType,limits);
-	harp.this_harp_dir = harp_dir;
+	//harp.this_harp_dir = harp_dir;
+	harp.setHarpType(harp_dir);
         harp.harpWireToFit = wiretofit;
         harp.setSize(windowSizeX,windowSizeY);
 	harp.initializeEnvironment(wireScanType);
