@@ -1,7 +1,13 @@
-.PHONY: all install clean distclean rebuild todo tools clean-tools install-tools uninstall-tools tar
+.PHONY: all install clean distclean rebuild \
+	tools clean-tools install-tools uninstall-tools \
+	test test-all test-env \
+	hps tar todo
 
-## apps/
-all:
+## HPS - build epics apps and tools
+hps: all tools		# Build all EPICS Apps and Tools
+
+## EPICS Only (apps/)
+all: test-env
 	(cd apps; make all)
 
 install:
@@ -15,11 +21,7 @@ distclean:
 
 rebuild: clean install
 
-todo:
-	@find apps -type f -exec egrep -HIn TODO \{\} \; 2> /dev/null
-	@find apps -type f -exec egrep -HIn FIXME \{\} \; 2> /dev/null
-
-## tools/
+## Tools Only (tools/)
 tools:
 	(cd tools; make all)
 
@@ -32,6 +34,19 @@ install-tools:
 uninstall-tools:
 	(cd tools; make uninstall)
 
+## Test Builds
+test: test-all
+
+test-all:  ## Check env and run all targets, except installs
+	@./utils/testbuild.sh
+
+test-env:	## Check env variables only
+	@./utils/testbuild.sh -e
+
 ## misc
 tar: distclean
 	@cd ../ && tar czf hps-epics-`date +%Y.%m.%d`.tgz epics
+
+todo:
+	@find apps -type f -exec egrep -HIn TODO \{\} \; 2> /dev/null
+	@find apps -type f -exec egrep -HIn FIXME \{\} \; 2> /dev/null
