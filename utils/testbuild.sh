@@ -127,7 +127,7 @@ for target in "${targets[@]}"; do
 	result=$? 
   	printBreak
   	if [ $result -eq 0 ]; then
-		passFail 0 "$test"
+		passFail 0 "$target"
   	else 
 		passFail 1 "$target"
     	exit 1
