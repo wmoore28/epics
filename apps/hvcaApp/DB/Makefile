@@ -29,7 +29,7 @@ TPE_DB = tpe.db
 #PCAL_DB = pcalhv.db
 
 
-.PHONY : alh cr_mf_cleaning all
+.PHONY : alh cr_mf_cleaning all distclean realclean
 .SUFFIXES : .dat .db .database .adl .req
 #all: $(BM_DB) $(BMTASC_DB) $(CCECS_DB) $(CCECN_DB) $(SCF_DB) $(LAC_DB)  $(DC_DB) \
 #	$(EC_CAEN_DB) $(TPE_DB) \
@@ -100,7 +100,7 @@ caen:    caen.db   ../medm/adl/caen.adl
 #
 caen102:    caen102.db   ../medm/adl/caen102.adl
 #
-clean: 
+clean:
 	$(RM) -f ../medm/adl/*.csh *.db *.database ../req/*.req
 	$(RM) -f ../medm/alh/*.alhConfig* ../medm/adl/*.alarm
 	$(RM) -f ../medm/adl/*.adl
@@ -115,6 +115,9 @@ clean:
 	$(RM) -f lac.dat
 	$(RM) -f dc.dat
 	$(RM) -f default.sdrSum
+
+realclean: clean
+distclean: realclean
 
 %.files:
 	$(MAKE) $*.db
