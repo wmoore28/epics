@@ -1,0 +1,25 @@
+#
+# File: .setup-hps
+#
+
+setenv CLAS /usr/local/clas12/release/0.2
+
+if ( ($OSTYPE == "Linux") && ($MACHINE == "i686" || $MACHINE == "x86_64" || $MACHINE == "i686_vme") ) then
+  setenv EPICS_HOST_ARCH linux-x86
+endif
+
+setenv EPICS_VER 3.14.12.3
+setenv EPICS_BASE $CLAS/R$EPICS_VER/base
+setenv EPICS_EXTENSIONS $CLAS/R$EPICS_VER/extensions
+
+set -f path=($path:q "$EPICS_BASE/bin/$EPICS_HOST_ARCH")
+set -f path=($path:q "$EPICS_BASE/bin/$EPICS_HOST_ARCH")
+set -f path=($path:q "$EPICS_EXTENSIONS/bin/$EPICS_HOST_ARCH")
+
+if ( ! $?LD_LIBRARY_PATH ) then
+  setenv LD_LIBRARY_PATH "$EPICS_EXTENSIONS/lib/$EPICS_HOST_ARCH":"$EPICS_EXTENSIONS/lib/$EPICS_HOST_ARCH"
+else
+  setenv LD_LIBRARY_PATH "$LD_LIBRARY_PATH":"$EPICS_EXTENSIONS/lib/$EPICS_HOST_ARCH":"$EPICS_EXTENSIONS/lib/$EPICS_HOST_ARCH"
+endif
+
+setenv EPICSB_DRIVERS "$CLAS/epics/drivers"

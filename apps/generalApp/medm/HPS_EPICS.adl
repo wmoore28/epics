@@ -1,14 +1,14 @@
 
 file {
-	name="/misc/clas12/hps/prod/epics/apps/generalApp/medm/hps_epics.adl"
+	name="/misc/clas12/hps/prod/apps/generalApp/medm/HPS_EPICS.adl"
 	version=030108
 }
 display {
 	object {
-		x=3
-		y=49
+		x=0
+		y=0
 		width=240
-		height=460
+		height=705
 	}
 	clr=14
 	bclr=4
@@ -90,6 +90,101 @@ display {
 rectangle {
 	object {
 		x=0
+		y=612
+		width=300
+		height=25
+	}
+	"basic attribute" {
+		clr=11
+	}
+}
+"choice button" {
+	object {
+		x=140
+		y=648
+		width=80
+		height=16
+	}
+	control {
+		chan="hallb_access"
+		clr=14
+		bclr=50
+	}
+	clrmod="discrete"
+	stacking="column"
+}
+"related display" {
+	object {
+		x=41
+		y=437
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Health"
+		name="ioc_hps_health.adl"
+	}
+	clr=14
+	bclr=50
+}
+rectangle {
+	object {
+		x=0
+		y=340
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=286
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=230
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=175
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=574
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
 		y=0
 		width=240
 		height=85
@@ -111,59 +206,17 @@ image {
 rectangle {
 	object {
 		x=0
-		y=426
+		y=521
 		width=240
-		height=20
+		height=26
 	}
 	"basic attribute" {
 		clr=3
 	}
-}
-rectangle {
-	object {
-		x=0
-		y=380
-		width=240
-		height=20
-	}
-	"basic attribute" {
-		clr=3
-	}
-}
-"related display" {
-	object {
-		x=20
-		y=97
-		width=200
-		height=200
-	}
-	display[0] {
-		label="VESDA"
-		name="vesda2.adl"
-	}
-	display[1] {
-		label="Beamline Vacuum"
-		name="vacuum.adl"
-	}
-	display[2] {
-		label="Tagger Dump Lamp"
-		name="tagger_dump_lamp.adl"
-	}
-	display[3] {
-		label="Weather"
-		name="hallBenv.adl"
-	}
-	display[4] {
-		label="ECal Temperature"
-		name="hps_ecal_temp.adl"
-	}
-	clr=14
-	bclr=1
-	visual="a column of buttons"
 }
 text {
 	object {
-		x=152
+		x=139
 		y=38
 		width=100
 		height=18
@@ -171,42 +224,14 @@ text {
 	"basic attribute" {
 		clr=57
 	}
-	textix="HPS Main Menu"
-}
-"shell command" {
-	object {
-		x=20
-		y=307
-		width=200
-		height=30
-	}
-	command[0] {
-		label="Work Alone Pager"
-		name="$EPICSB/scripts/workAlonePager.pl &"
-	}
-	clr=20
-	bclr=1
-	label="Work Alone Pager"
-}
-"related display" {
-	object {
-		x=20
-		y=380
-		width=20
-		height=20
-	}
-	display[0] {
-		label="IOC Health"
-		name="ioc_hps_health.adl"
-	}
-	clr=14
-	bclr=57
+	textix="Main Menu"
+	align="horiz. centered"
 }
 text {
 	object {
 		x=70
-		y=385
-		width=150
+		y=442
+		width=120
 		height=15
 	}
 	"basic attribute" {
@@ -217,7 +242,7 @@ text {
 "related display" {
 	object {
 		x=20
-		y=403
+		y=464
 		width=20
 		height=20
 	}
@@ -229,66 +254,452 @@ text {
 		label="Lakeshore 450 (Gaussmeters)"
 		name="lakeshore450_menu.adl"
 	}
+	display[2] {
+		label="Keithley 6221"
+		name="keithley6221.adl"
+	}
+	display[3] {
+		label="Harps"
+		name="harps.adl"
+	}
 	clr=14
-	bclr=57
+	bclr=50
 }
 text {
 	object {
 		x=70
-		y=408
-		width=150
-		height=15
+		y=469
+		width=120
+		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Device Diagnostics"
+	textix="Devices"
 }
 "shell command" {
 	object {
 		x=20
-		y=427
+		y=550
 		width=20
 		height=20
 	}
 	command[0] {
 		label="StripTool"
-		name="StripTool &"
-	}
-	command[1] {
-		label="Probe"
-		name="probe &"
+		name="cd $APP/generalApp/strip; StripTool &"
 	}
 	clr=14
-	bclr=55
+	bclr=50
 }
 text {
 	object {
 		x=70
-		y=431
-		width=150
-		height=15
+		y=555
+		width=120
+		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Tools"
+	textix="StripTool(s)"
 }
 rectangle {
 	object {
 		x=0
-		y=354
+		y=409
 		width=300
 		height=25
 	}
 	"basic attribute" {
-		clr=58
+		clr=11
 	}
 }
 text {
 	object {
 		x=15
-		y=359
+		y=414
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Diagnostics"
+}
+"related display" {
+	object {
+		x=20
+		y=233
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Harps"
+		name="harps.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=238
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Harps"
+}
+text {
+	object {
+		x=70
+		y=182
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Beam"
+}
+"related display" {
+	object {
+		x=20
+		y=437
+		width=20
+		height=20
+	}
+	display[0] {
+		label="REBOOT IOC"
+		name="ioc_alive.adl"
+	}
+	clr=14
+	bclr=50
+}
+"related display" {
+	object {
+		x=20
+		y=524
+		width=20
+		height=20
+	}
+	display[0] {
+		label="alh launcher"
+		name="alh_launch_hps.adl"
+	}
+	clr=14
+	bclr=50
+}
+"shell command" {
+	object {
+		x=20
+		y=117
+		width=20
+		height=20
+	}
+	command[0] {
+		label="Launch JTABS"
+		name="xterm -title JTabs -e"
+		args="$APP/generalApp/scripts/jtabs_launcher.sh &"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=119
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ACC Screens (JTabs)"
+}
+text {
+	object {
+		x=70
+		y=293
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Voltages"
+}
+"related display" {
+	object {
+		x=20
+		y=178
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Beam Screens"
+		name="beam_screens.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=265
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Magnets"
+}
+"related display" {
+	object {
+		x=20
+		y=261
+		width=20
+		height=20
+	}
+	display[0] {
+		label="magnet screens"
+		name="magnet_screens.adl"
+	}
+	clr=14
+	bclr=50
+}
+"related display" {
+	object {
+		x=20
+		y=289
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Voltages"
+		name="voltages.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=526
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Alarm Handlers"
+}
+"related display" {
+	object {
+		x=20
+		y=91
+		width=20
+		height=20
+	}
+	display[0] {
+		label="PAGE EXPERT"
+		name="notify_expert.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=93
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Page Experts"
+}
+text {
+	object {
+		x=20
+		y=650
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="IOC access"
+}
+"choice button" {
+	object {
+		x=140
+		y=672
+		width=80
+		height=16
+	}
+	control {
+		chan="mcc_harp_access"
+		clr=14
+		bclr=50
+	}
+	clrmod="discrete"
+	stacking="column"
+}
+text {
+	object {
+		x=20
+		y=672
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="MCC Harp Control"
+	align="horiz. centered"
+}
+"related display" {
+	object {
+		x=41
+		y=550
+		width=20
+		height=20
+	}
+	display[0] {
+		label="adsfasd"
+		name="strip_charts.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=320
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Motors"
+}
+"related display" {
+	object {
+		x=20
+		y=316
+		width=20
+		height=20
+	}
+	display[0] {
+		label="motor screens"
+		name="motor_screens.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=383
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Miscellaneous"
+}
+"related display" {
+	object {
+		x=20
+		y=379
+		width=20
+		height=20
+	}
+	display[0] {
+		label="misc screens"
+		name="misc_screens.adl"
+	}
+	clr=14
+	bclr=50
+}
+"related display" {
+	object {
+		x=20
+		y=205
+		width=20
+		height=20
+	}
+	display[0] {
+		label="DAQ Status"
+		name="daq_status.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=347
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Trigger"
+}
+"related display" {
+	object {
+		x=20
+		y=343
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Photon Trigger"
+		name="ts_bits.adl"
+	}
+	display[1] {
+		label="DVCS Trigger"
+		name="dvcs_trigger.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=208
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="DAQ Status"
+}
+rectangle {
+	object {
+		x=0
+		y=148
+		width=300
+		height=25
+	}
+	"basic attribute" {
+		clr=11
+	}
+}
+text {
+	object {
+		x=15
+		y=153
 		width=150
 		height=15
 	}
@@ -296,4 +707,65 @@ text {
 		clr=0
 	}
 	textix="Subsystems"
+}
+rectangle {
+	object {
+		x=0
+		y=494
+		width=300
+		height=25
+	}
+	"basic attribute" {
+		clr=11
+	}
+}
+text {
+	object {
+		x=15
+		y=499
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Tools"
+}
+"shell command" {
+	object {
+		x=20
+		y=578
+		width=20
+		height=20
+	}
+	command[0] {
+		label="Probe"
+		name="probe &"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=583
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Probe"
+}
+text {
+	object {
+		x=15
+		y=617
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Access Controls"
 }
