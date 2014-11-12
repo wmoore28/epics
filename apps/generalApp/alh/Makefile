@@ -25,4 +25,7 @@ $(HV_CLAS): hv_header $(HV_CLAS_MF) $(HV_CLAS_CONFIG)
 clean:
 	$(RM) hv.alhConfig
 
+$(HV_CLAS_MF) $(HV_CLAS_CONFIG): ../../hvcaApp/DB/Makefile
+	$(MAKE) -C ../../hvcaApp/DB
+
 # end of makefile
