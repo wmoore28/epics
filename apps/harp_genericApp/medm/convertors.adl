@@ -95,7 +95,7 @@ display {
 		height=29
 	}
 	control {
-		chan="harp_2h03.VAL"
+		chan="harp_2H02A.VAL"
 		clr=14
 		bclr=4
 	}
@@ -111,7 +111,7 @@ display {
 		height=29
 	}
 	control {
-		chan="harp_2h03.VAL"
+		chan="harp_2H02A.VAL"
 		clr=14
 		bclr=4
 	}
@@ -126,7 +126,7 @@ display {
 		height=29
 	}
 	control {
-		chan="harp_2h03.VAL"
+		chan="harp_2H02A.VAL"
 		clr=14
 		bclr=4
 	}
@@ -141,7 +141,7 @@ display {
 		height=29
 	}
 	control {
-		chan="harp_2h03.VAL"
+		chan="harp_2H02A.VAL"
 		clr=14
 		bclr=4
 	}
@@ -161,7 +161,7 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="harp_2h03_at_home"
+		chan="harp_2H02A_at_home"
 	}
 }
 rectangle {
@@ -176,7 +176,7 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="harp_2h03_at_a"
+		chan="harp_2H02A_at_a"
 	}
 }
 rectangle {
@@ -191,7 +191,7 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="harp_2h03_at_b"
+		chan="harp_2H02A_at_b"
 	}
 }
 rectangle {
@@ -206,7 +206,7 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="harp_2h03_at_c"
+		chan="harp_2H02A_at_c"
 	}
 }
 text {
@@ -273,7 +273,7 @@ text {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="harp_2h03.DMOV"
+		chan="harp_2H02A.DMOV"
 	}
 	textix="done"
 	align="horiz. centered"
@@ -286,7 +286,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="harp_2h03.RBV"
+		chan="harp_2H02A.RBV"
 		clr=14
 		bclr=51
 	}
@@ -306,7 +306,7 @@ text {
 	}
 	"dynamic attribute" {
 		vis="if zero"
-		chan="harp_2h03.DMOV"
+		chan="harp_2H02A.DMOV"
 	}
 	textix="moving"
 	align="horiz. centered"
@@ -334,7 +334,7 @@ text {
 	display[0] {
 		label="expert"
 		name="motor_expert.adl"
-		args="motor_name=harp_2h03"
+		args="motor_name=harp_2H02A"
 	}
 	clr=19
 	bclr=60
@@ -349,7 +349,7 @@ text {
 		height=29
 	}
 	control {
-		chan="harp_2h03.VAL"
+		chan="harp_2H02A.VAL"
 		clr=14
 		bclr=4
 	}
@@ -368,7 +368,7 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="harp_2h03_at_d"
+		chan="harp_2H02A_at_d"
 	}
 }
 "message button" {
@@ -379,7 +379,7 @@ rectangle {
 		height=90
 	}
 	control {
-		chan="harp_2h03_at_c"
+		chan="harp_2H02A_at_c"
 		clr=14
 		bclr=4
 	}
@@ -398,7 +398,7 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="harp_2h03_at_c"
+		chan="harp_2H02A_at_c"
 	}
 }
 "message button" {
@@ -409,7 +409,7 @@ rectangle {
 		height=29
 	}
 	control {
-		chan="harp_2h03.VAL"
+		chan="harp_2H02A.VAL"
 		clr=14
 		bclr=4
 	}
@@ -428,7 +428,7 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="harp_2h03_at_e"
+		chan="harp_2H02A_at_e"
 	}
 }
 text {

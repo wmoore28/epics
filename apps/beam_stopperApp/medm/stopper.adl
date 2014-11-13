@@ -1,12 +1,12 @@
 
 file {
-	name="/home/epics/R3.13.4_standalone/epicsB/release-7-12/app/beam_stopper/medm/stopper.adl"
-	version=020306
+	name="/home/stepanya/epics/app/beam_stopper/medm/stopper.adl"
+	version=030101
 }
 display {
 	object {
-		x=90
-		y=1984
+		x=759
+		y=189
 		width=200
 		height=180
 	}
@@ -211,7 +211,7 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="beam_stop_home"
+		chan="beam_stop_at_beam"
 	}
 }
 rectangle {

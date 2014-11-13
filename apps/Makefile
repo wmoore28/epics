@@ -21,6 +21,9 @@ classc4App_DEPEND_DIRS += $(filter %App,$(DIRS))
 classc6App_DEPEND_DIRS += $(filter %App,$(DIRS))
 classc8App_DEPEND_DIRS += $(filter %App,$(DIRS))
 
+hvcaApp_DEPEND_DIRS    += adl_genApp
+generalApp_DEPEND_DIRS += hvcaApp
+
 include $(TOP)/configure/RULES_TOP
 
 

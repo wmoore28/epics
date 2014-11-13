@@ -1,7 +1,7 @@
 
 file {
-	name="/usr/clas/devel/R3.14.8.2/EPICS/app/general/medm/ioc_alive.adl"
-	version=030101
+	name="/misc/home/levon/github/epics/apps/medm/ioc_alive.adl"
+	version=030108
 }
 display {
 	object {
@@ -179,13 +179,18 @@ text {
 	clr=14
 	bclr=4
 }
+<<<<<<< HEAD
 composite {
+=======
+oval {
+>>>>>>> 3d0ad1d1455f4b23b41a328a6363365451ad93bf
 	object {
 		x=105
 		y=200
 		width=12
 		height=12
 	}
+<<<<<<< HEAD
 	"composite name"=""
 	children {
 		oval {
@@ -220,6 +225,31 @@ composite {
 				chan="classc6:heartbeat"
 			}
 		}
+=======
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="((A%2) = 0)"
+		chan="classc6:HEARTBEAT"
+	}
+}
+oval {
+	object {
+		x=105
+		y=200
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=35
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(((A+1)%2) = 0)"
+		chan="classc6:HEARTBEAT"
+>>>>>>> 3d0ad1d1455f4b23b41a328a6363365451ad93bf
 	}
 }
 text {
@@ -349,13 +379,18 @@ text {
 	clr=14
 	bclr=4
 }
+<<<<<<< HEAD
 composite {
+=======
+oval {
+>>>>>>> 3d0ad1d1455f4b23b41a328a6363365451ad93bf
 	object {
 		x=105
 		y=150
 		width=12
 		height=12
 	}
+<<<<<<< HEAD
 	"composite name"=""
 	children {
 		oval {
@@ -390,6 +425,15 @@ composite {
 				chan="classc4:heartbeat"
 			}
 		}
+=======
+	"basic attribute" {
+		clr=35
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(((A+1)%2) = 0)"
+		chan="classc4:HEARTBEAT"
+>>>>>>> 3d0ad1d1455f4b23b41a328a6363365451ad93bf
 	}
 }
 text {
@@ -604,13 +648,18 @@ text {
 	clr=14
 	bclr=4
 }
+<<<<<<< HEAD
 composite {
+=======
+oval {
+>>>>>>> 3d0ad1d1455f4b23b41a328a6363365451ad93bf
 	object {
 		x=105
 		y=75
 		width=12
 		height=12
 	}
+<<<<<<< HEAD
 	"composite name"=""
 	children {
 		oval {
@@ -645,6 +694,31 @@ composite {
 				chan="classc1:heartbeat"
 			}
 		}
+=======
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="((A%2) = 0)"
+		chan="classc1:HEARTBEAT"
+	}
+}
+oval {
+	object {
+		x=105
+		y=75
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=35
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(((A+1)%2) = 0)"
+		chan="classc1:HEARTBEAT"
+>>>>>>> 3d0ad1d1455f4b23b41a328a6363365451ad93bf
 	}
 }
 text {
@@ -1412,3 +1486,33 @@ composite {
 		}
 	}
 }
+<<<<<<< HEAD
+=======
+composite {
+	object {
+		x=105
+		y=150
+		width=12
+		height=12
+	}
+	"composite name"=""
+	children {
+		oval {
+			object {
+				x=105
+				y=150
+				width=12
+				height=12
+			}
+			"basic attribute" {
+				clr=60
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="((A%2) = 0)"
+				chan="classc4:HEARTBEAT"
+			}
+		}
+	}
+}
+>>>>>>> 3d0ad1d1455f4b23b41a328a6363365451ad93bf

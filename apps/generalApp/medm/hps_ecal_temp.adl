@@ -1,0 +1,1295 @@
+
+file {
+	name="/misc/clas12/hps/prod/apps/generalApp/medm/hps_ecal_temp.adl"
+	version=030108
+}
+display {
+	object {
+		x=624
+		y=230
+		width=562
+		height=400
+	}
+	clr=20
+	bclr=4
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=0
+		width=562
+		height=30
+	}
+	"basic attribute" {
+		clr=19
+	}
+}
+text {
+	object {
+		x=0
+		y=8
+		width=562
+		height=20
+	}
+	"basic attribute" {
+		clr=30
+	}
+	textix="ECAL Temperatures"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=251
+		y=52
+		width=25
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Chan"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=222
+		y=75
+		width=97
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=222
+		y=102
+		width=97
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="2"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=222
+		y=131
+		width=97
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="3"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=222
+		y=162
+		width=97
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="4"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=222
+		y=190
+		width=97
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="5"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=222
+		y=221
+		width=97
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="6"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=222
+		y=249
+		width=97
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="7"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=222
+		y=280
+		width=97
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="8"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=449
+		y=52
+		width=41
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Bottom"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=426
+		y=75
+		width=75
+		height=20
+	}
+	monitor {
+		chan="tempSensorIc"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=426
+		y=105
+		width=75
+		height=20
+	}
+	monitor {
+		chan="tempSensorJc"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=426
+		y=131
+		width=75
+		height=20
+	}
+	monitor {
+		chan="tempSensorKc"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=426
+		y=162
+		width=75
+		height=20
+	}
+	monitor {
+		chan="tempSensorLc"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=426
+		y=190
+		width=75
+		height=20
+	}
+	monitor {
+		chan="tempSensorMc"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=426
+		y=221
+		width=75
+		height=20
+	}
+	monitor {
+		chan="tempSensorNc"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=426
+		y=249
+		width=75
+		height=20
+	}
+	monitor {
+		chan="tempSensorOc"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=426
+		y=280
+		width=75
+		height=20
+	}
+	monitor {
+		chan="tempSensorPc"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=319
+		y=52
+		width=41
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Top"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=296
+		y=75
+		width=77
+		height=20
+	}
+	monitor {
+		chan="tempSensorA"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=296
+		y=102
+		width=77
+		height=20
+	}
+	monitor {
+		chan="tempSensorB"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=296
+		y=131
+		width=77
+		height=20
+	}
+	monitor {
+		chan="tempSensorC"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=296
+		y=162
+		width=77
+		height=20
+	}
+	monitor {
+		chan="tempSensorD"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=296
+		y=190
+		width=77
+		height=20
+	}
+	monitor {
+		chan="tempSensorE"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=296
+		y=221
+		width=77
+		height=20
+	}
+	monitor {
+		chan="tempSensorF"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=296
+		y=249
+		width=77
+		height=20
+	}
+	monitor {
+		chan="tempSensorG"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=296
+		y=280
+		width=77
+		height=20
+	}
+	monitor {
+		chan="tempSensorH"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"shell command" {
+	object {
+		x=262
+		y=361
+		width=140
+		height=25
+	}
+	command[0] {
+		label="Temperatures"
+		name="StripTool"
+		args="$APP/hodoscope/strip/hps_ecal_temp_top.stc &"
+	}
+	clr=14
+	bclr=7
+	label="Strip Charts Top"
+}
+"shell command" {
+	object {
+		x=405
+		y=361
+		width=140
+		height=25
+	}
+	command[0] {
+		label="Temperatures"
+		name="StripTool"
+		args="$APP/hodoscope/strip/hps_ecal_temp_bottom.stc &"
+	}
+	clr=14
+	bclr=7
+	label="Strip Charts Bottom"
+}
+polygon {
+	object {
+		x=42
+		y=144
+		width=176
+		height=56
+	}
+	"basic attribute" {
+		clr=30
+	}
+	points {
+		(42,200)
+		(42,200)
+		(43,166)
+		(42,144)
+		(218,144)
+		(218,200)
+		(168,200)
+		(168,191)
+		(136,191)
+		(136,200)
+		(42,200)
+	}
+}
+polygon {
+	object {
+		x=43
+		y=215
+		width=176
+		height=56
+	}
+	"basic attribute" {
+		clr=40
+	}
+	points {
+		(43,215)
+		(43,215)
+		(43,247)
+		(43,271)
+		(219,271)
+		(219,215)
+		(168,215)
+		(168,222)
+		(136,222)
+		(136,215)
+		(43,215)
+	}
+}
+text {
+	object {
+		x=149
+		y=177
+		width=6
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+}
+text {
+	object {
+		x=83
+		y=185
+		width=6
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+}
+text {
+	object {
+		x=45
+		y=162
+		width=6
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="3"
+}
+text {
+	object {
+		x=188
+		y=184
+		width=6
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="4"
+}
+text {
+	object {
+		x=209
+		y=158
+		width=6
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="5"
+}
+text {
+	object {
+		x=76
+		y=145
+		width=6
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="6"
+}
+text {
+	object {
+		x=186
+		y=145
+		width=6
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="7"
+}
+polyline {
+	object {
+		x=42
+		y=139
+		width=175
+		height=0
+	}
+	"basic attribute" {
+		clr=20
+	}
+	points {
+		(42,139)
+		(217,139)
+	}
+}
+text {
+	object {
+		x=81
+		y=130
+		width=6
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="8"
+}
+rectangle {
+	object {
+		x=44
+		y=71
+		width=170
+		height=50
+	}
+	"basic attribute" {
+		clr=30
+	}
+}
+polyline {
+	object {
+		x=41
+		y=64
+		width=175
+		height=0
+	}
+	"basic attribute" {
+		clr=20
+	}
+	points {
+		(41,64)
+		(216,64)
+	}
+}
+text {
+	object {
+		x=83
+		y=55
+		width=6
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="8"
+}
+text {
+	object {
+		x=82
+		y=95
+		width=6
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="6"
+}
+text {
+	object {
+		x=45
+		y=83
+		width=6
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="3"
+}
+text {
+	object {
+		x=93
+		y=96
+		width=6
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+}
+text {
+	object {
+		x=146
+		y=84
+		width=6
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+}
+text {
+	object {
+		x=186
+		y=71
+		width=6
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="7"
+}
+text {
+	object {
+		x=176
+		y=71
+		width=6
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="4"
+}
+text {
+	object {
+		x=206
+		y=83
+		width=6
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="5"
+}
+polyline {
+	object {
+		x=129
+		y=72
+		width=7
+		height=48
+	}
+	"basic attribute" {
+		clr=54
+		style="dash"
+	}
+	points {
+		(129,72)
+		(136,120)
+	}
+}
+polyline {
+	object {
+		x=153
+		y=70
+		width=8
+		height=50
+	}
+	"basic attribute" {
+		clr=54
+		style="dash"
+	}
+	points {
+		(161,70)
+		(153,120)
+	}
+}
+rectangle {
+	object {
+		x=46
+		y=291
+		width=170
+		height=50
+	}
+	"basic attribute" {
+		clr=40
+	}
+}
+polyline {
+	object {
+		x=44
+		y=277
+		width=175
+		height=0
+	}
+	"basic attribute" {
+		clr=20
+	}
+	points {
+		(44,277)
+		(219,277)
+	}
+}
+text {
+	object {
+		x=86
+		y=268
+		width=6
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="8"
+}
+polyline {
+	object {
+		x=46
+		y=348
+		width=175
+		height=0
+	}
+	"basic attribute" {
+		clr=20
+	}
+	points {
+		(46,348)
+		(221,348)
+	}
+}
+text {
+	object {
+		x=88
+		y=339
+		width=6
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="8"
+}
+polyline {
+	object {
+		x=135
+		y=291
+		width=8
+		height=50
+	}
+	"basic attribute" {
+		clr=54
+		style="dash"
+	}
+	points {
+		(143,291)
+		(135,341)
+	}
+}
+polyline {
+	object {
+		x=165
+		y=291
+		width=7
+		height=48
+	}
+	"basic attribute" {
+		clr=54
+		style="dash"
+	}
+	points {
+		(165,291)
+		(172,339)
+	}
+}
+"text update" {
+	object {
+		x=426
+		y=308
+		width=75
+		height=20
+	}
+	monitor {
+		chan="tempSensorTc"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=290
+		y=75
+		width=5
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="tempSensorA:RAW.STAT"
+	}
+}
+text {
+	object {
+		x=283
+		y=52
+		width=25
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Comm"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=290
+		y=102
+		width=5
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="tempSensorB:RAW.STAT"
+	}
+}
+rectangle {
+	object {
+		x=290
+		y=131
+		width=5
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="tempSensorC:RAW.STAT"
+	}
+}
+rectangle {
+	object {
+		x=290
+		y=162
+		width=5
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="tempSensorD:RAW.STAT"
+	}
+}
+rectangle {
+	object {
+		x=290
+		y=190
+		width=5
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="tempSensorE:RAW.STAT"
+	}
+}
+rectangle {
+	object {
+		x=290
+		y=221
+		width=5
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="tempSensorF:RAW.STAT"
+	}
+}
+rectangle {
+	object {
+		x=290
+		y=248
+		width=5
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="tempSensorG:RAW.STAT"
+	}
+}
+rectangle {
+	object {
+		x=290
+		y=280
+		width=5
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="tempSensorH:RAW.STAT"
+	}
+}
+rectangle {
+	object {
+		x=420
+		y=75
+		width=5
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="tempSensorI:RAW.STAT"
+	}
+}
+rectangle {
+	object {
+		x=420
+		y=105
+		width=5
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="tempSensorJ:RAW.STAT"
+	}
+}
+rectangle {
+	object {
+		x=420
+		y=131
+		width=5
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="tempSensorK:RAW.STAT"
+	}
+}
+rectangle {
+	object {
+		x=420
+		y=162
+		width=5
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="tempSensorL:RAW.STAT"
+	}
+}
+rectangle {
+	object {
+		x=420
+		y=190
+		width=5
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="tempSensorM:RAW.STAT"
+	}
+}
+rectangle {
+	object {
+		x=420
+		y=221
+		width=5
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="tempSensorN:RAW.STAT"
+	}
+}
+rectangle {
+	object {
+		x=420
+		y=249
+		width=5
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="tempSensorO:RAW.STAT"
+	}
+}
+rectangle {
+	object {
+		x=420
+		y=280
+		width=5
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="tempSensorP:RAW.STAT"
+	}
+}
+rectangle {
+	object {
+		x=420
+		y=308
+		width=5
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="tempSensorT:RAW.STAT"
+	}
+}
+"text update" {
+	object {
+		x=296
+		y=312
+		width=120
+		height=16
+	}
+	monitor {
+		chan="tempSensorT:RAW.DESC"
+		clr=14
+		bclr=4
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="string"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=491
+		y=6
+		width=65
+		height=20
+	}
+	display[0] {
+		label="Omegabus D5311"
+		name="tempSensors.adl"
+	}
+	clr=14
+	bclr=7
+	label="Expert"
+}
