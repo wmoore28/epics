@@ -1,0 +1,564 @@
+
+file {
+	name="/home/freyberg/EPICS/app/general/medm/radphi_epics.adl"
+	version=020305
+}
+display {
+	object {
+		x=590
+		y=96
+		width=228
+		height=801
+	}
+	clr=14
+	bclr=4
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+rectangle {
+	object {
+		x=2
+		y=490
+		width=226
+		height=90
+	}
+	"basic attribute" {
+		clr=55
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=302
+		width=228
+		height=115
+	}
+	"basic attribute" {
+		clr=1
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=220
+		width=228
+		height=80
+	}
+	"basic attribute" {
+		clr=35
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=28
+		width=228
+		height=80
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+text {
+	object {
+		x=-5
+		y=109
+		width=234
+		height=18
+	}
+	"basic attribute" {
+		clr=30
+	}
+	textix="BEAM"
+	align="horiz. centered"
+}
+"related display" {
+	object {
+		x=9
+		y=127
+		width=213
+		height=90
+	}
+	display[0] {
+		label="Scalers"
+		name="scaler_radphi.adl"
+	}
+	display[1] {
+		label="BPM"
+		name="bpm1nA_BPM1Hz.adl"
+	}
+	clr=0
+	bclr=20
+	visual="a column of buttons"
+}
+"related display" {
+	object {
+		x=-143
+		y=169
+		width=46
+		height=30
+	}
+	display[0] {
+		label="scaler"
+		name="scaler.adl"
+	}
+	display[1] {
+		label="minitorus"
+		name="minitorus.adl"
+	}
+	display[2] {
+		label="forward_scaler"
+		name="frwd_scaler.adl"
+	}
+	display[3] {
+		label="minitorus"
+		name="minitorus.adl"
+	}
+	display[4] {
+		label="Faraday cup viewer"
+		name="fcup.adl"
+	}
+	display[5] {
+		label="help"
+		name="help.adl"
+	}
+	clr=48
+	bclr=4
+}
+text {
+	object {
+		x=11
+		y=221
+		width=213
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Magnet Supplies"
+}
+text {
+	object {
+		x=29
+		y=307
+		width=167
+		height=18
+	}
+	"basic attribute" {
+		clr=39
+	}
+	textix="High Voltage"
+}
+text {
+	object {
+		x=52
+		y=490
+		width=137
+		height=18
+	}
+	"basic attribute" {
+		clr=20
+	}
+	textix="MOTORS"
+}
+"related display" {
+	object {
+		x=9
+		y=244
+		width=213
+		height=40
+	}
+	display[0] {
+		label="Tagger"
+		name="tagger.adl"
+	}
+	clr=14
+	bclr=30
+	label="Tagger"
+	visual="a column of buttons"
+}
+"related display" {
+	object {
+		x=8
+		y=330
+		width=213
+		height=80
+	}
+	display[0] {
+		label="Cerenkov HV"
+		name="cc.adl"
+	}
+	display[1] {
+		label="Forward Cal HV"
+		name="ec.adl"
+	}
+	display[2] {
+		label="TOF HV"
+		name="sc.adl"
+	}
+	display[3] {
+		label="tagger & beam HV"
+		name="bmta.adl"
+	}
+	clr=48
+	bclr=4
+	label="abd"
+	visual="a column of buttons"
+}
+"related display" {
+	object {
+		x=9
+		y=448
+		width=213
+		height=40
+	}
+	display[0] {
+		label="DC Gas System"
+		name="GAS_SYSTEM.adl"
+	}
+	display[1] {
+		label="Cerenkov GAS"
+		name="cerenkov.adl"
+	}
+	clr=48
+	bclr=55
+	visual="a column of buttons"
+}
+"related display" {
+	object {
+		x=9
+		y=507
+		width=213
+		height=70
+	}
+	display[0] {
+		label="harp/radiator"
+		name="harp.adl"
+	}
+	display[1] {
+		label="collimator"
+		name="collimator.adl"
+	}
+	display[2] {
+		label="Gamma Profiler"
+		name="pg_motor.adl"
+	}
+	clr=20
+	bclr=1
+	visual="a column of buttons"
+}
+"related display" {
+	object {
+		x=6
+		y=602
+		width=213
+		height=140
+	}
+	display[0] {
+		label="Tagger/LCW temp"
+		name="tagger_temp.adl"
+	}
+	display[1] {
+		label="VESDA"
+		name="vesda2.adl"
+	}
+	display[2] {
+		label="Beamline Vacuum"
+		name="vacuum.adl"
+	}
+	display[3] {
+		label="Helium Buffer Dewar"
+		name="hbptarg.adl"
+	}
+	display[4] {
+		label="Weather"
+		name="hallBenv.adl"
+	}
+	display[5] {
+		label="RADPHI_EPICS"
+		name="radphi_epics.adl"
+	}
+	clr=20
+	bclr=1
+	visual="a column of buttons"
+}
+text {
+	object {
+		x=9
+		y=31
+		width=216
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ALARM HANDLERS"
+}
+"shell command" {
+	object {
+		x=11
+		y=50
+		width=23
+		height=15
+	}
+	command[1] {
+		label="VESDA Alarm Handler"
+		name="alh"
+		args="$APP/general/alh/vesda.alhConfig > /dev/null 2>&1 &"
+	}
+	clr=1
+	bclr=20
+}
+text {
+	object {
+		x=38
+		y=49
+		width=61
+		height=16
+	}
+	"basic attribute" {
+		clr=20
+	}
+	textix="Vesda"
+}
+"shell command" {
+	object {
+		x=3
+		y=11
+		width=23
+		height=15
+	}
+	command[0] {
+		label="reboot clasgas"
+		name="xterm"
+		args="-T clasgas -e $EPICS_SCRIPTS/remote_reset.tcl clasgas &"
+	}
+	command[1] {
+		label="reboot classc3"
+		name="xterm"
+		args="-T classc3 -e $EPICS_SCRIPTS/remote_reset.tcl classc3 &"
+	}
+	command[2] {
+		label="reboot classc4"
+		name="xterm"
+		args="-T classc4 -e $EPICS_SCRIPTS/remote_reset.tcl classc4 &"
+	}
+	command[3] {
+		label="reboot classc8"
+		name="xterm "
+		args="-T classc8 -e $EPICS_SCRIPTS/remote_reset.tcl classc8 &"
+	}
+	command[4] {
+		label="reboot classc12"
+		name="xterm"
+		args="-T classc12 -e $EPICS_SCRIPTS/remote_reset.tcl classc12 &"
+	}
+	clr=0
+	bclr=24
+}
+text {
+	object {
+		x=43
+		y=12
+		width=181
+		height=16
+	}
+	"basic attribute" {
+		clr=24
+	}
+	textix="reboot IOCs"
+}
+"shell command" {
+	object {
+		x=11
+		y=72
+		width=23
+		height=15
+	}
+	command[2] {
+		label="Gas Alarm Handler"
+		name="alh"
+		args="$APP/general/alh/gas.alhConfig > /dev/null 2>&1 &"
+	}
+	clr=6
+	bclr=54
+}
+text {
+	object {
+		x=44
+		y=71
+		width=46
+		height=16
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Gas"
+}
+"shell command" {
+	object {
+		x=112
+		y=50
+		width=23
+		height=15
+	}
+	command[2] {
+		label="Radphi Alarm Handler"
+		name="alh"
+		args="$APP/general/alh/radphi.alhConfig > /dev/null 2>&1 &"
+	}
+	clr=6
+	bclr=64
+}
+text {
+	object {
+		x=147
+		y=49
+		width=46
+		height=16
+	}
+	"basic attribute" {
+		clr=64
+	}
+	textix="radphi"
+}
+composite {
+	object {
+		x=35
+		y=424
+		width=167
+		height=18
+	}
+	"composite name"=""
+	vis="static"
+	chan=""
+	children {
+		text {
+			object {
+				x=35
+				y=424
+				width=167
+				height=18
+			}
+			"basic attribute" {
+				clr=48
+			}
+			textix="Gas Systems"
+		}
+	}
+}
+"related display" {
+	object {
+		x=6
+		y=582
+		width=213
+		height=20
+	}
+	display[0] {
+		label="adsfasd"
+		name="strip_charts.adl"
+	}
+	clr=54
+	bclr=4
+	label="Strip Charts"
+	visual="a column of buttons"
+}
+"shell command" {
+	object {
+		x=9
+		y=753
+		width=30
+		height=20
+	}
+	command[0] {
+		label="g profile"
+		name="/home/epics/medm/medm_solaris_2.2.5"
+		args="-x -cmap -local g_profile.adl 2>&1 /dev/null &"
+	}
+	clr=49
+	bclr=20
+}
+text {
+	object {
+		x=46
+		y=752
+		width=169
+		height=23
+	}
+	"basic attribute" {
+		clr=20
+	}
+	textix="gamma profile"
+}

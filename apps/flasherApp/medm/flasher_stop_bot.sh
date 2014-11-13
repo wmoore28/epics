@@ -1,0 +1,7 @@
+#!/bin/sh
+
+caput B_HPS_ECAL_FLASHER_BOT:SEQ_START STOP
+caput B_HPS_ECAL_FLASHER_BOT:GET_LEDS.SCAN "Passive"
+caput GET_SEQUENCE.SCAN OFF
+
+exit

@@ -1,0 +1,2727 @@
+GROUP   NULL  HV
+$SEVRCOMMAND UP_INVALID remsh clon00 "error_msg alh clonalarm alh epics 2 ERROR 300 \"ALH reporting INVALID for HV\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "error_msg alh clonalarm alh epics 0 INFO 300 \"ALH reporting alarms cleared for HV\""
+
+
+GROUP   HV    HV_mf 
+$SEVRCOMMAND UP_MAJOR remsh clon00 "epics_alarm HV_mf 2 ERROR -1 \"ALH reporting ALARM for group HV_mf\"" 
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "epics_alarm HV_mf 0 INFO -1 \"ALH reporting alarms cleared for group HV_mf\"" 
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half. 
+Something must be wrong with one of the HV mainframes. 
+Read the guidance and act accordingly.
+$END
+
+
+CHANNEL  HV_mf   B/HVVALID_12_01 
+$GUIDANCE
+Mainframe 01 for PHOTON is not respoding. Call detector expert !
+$END
+CHANNEL  HV_mf   B/HVOC_12_01 
+$GUIDANCE
+Status of HV mainframe 01 for PHOTON is different from what is set in EPICS GUI.
+It may have tripped or its status was changed. Try to turn it ON or OFF in HV GUI. 
+If it does not help, call detector expert !
+$END
+CHANNEL  HV_mf   B/HVVALID_12_02 
+$GUIDANCE
+Mainframe 02 for PHOTON is not respoding. Call detector expert !
+$END
+CHANNEL  HV_mf   B/HVOC_12_02 
+$GUIDANCE
+Status of HV mainframe 02 for PHOTON is different from what is set in EPICS GUI.
+It may have tripped or its status was changed. Try to turn it ON or OFF in HV GUI. 
+If it does not help, call detector expert !
+$END
+CHANNEL  HV_mf   B/HVVALID_12_07 
+$GUIDANCE
+Mainframe 07 for TAGGER is not respoding. Call detector expert !
+$END
+CHANNEL  HV_mf   B/HVOC_12_07 
+$GUIDANCE
+Status of HV mainframe 07 for TAGGER is different from what is set in EPICS GUI.
+It may have tripped or its status was changed. Try to turn it ON or OFF in HV GUI. 
+If it does not help, call detector expert !
+$END
+CHANNEL  HV_mf   B/HVVALID_12_08 
+$GUIDANCE
+Mainframe 08 for TAGGER is not respoding. Call detector expert !
+$END
+CHANNEL  HV_mf   B/HVOC_12_08 
+$GUIDANCE
+Status of HV mainframe 08 for TAGGER is different from what is set in EPICS GUI.
+It may have tripped or its status was changed. Try to turn it ON or OFF in HV GUI. 
+If it does not help, call detector expert !
+$END
+CHANNEL  HV_mf   B/HVVALID_01_02 
+$GUIDANCE
+Mainframe 02 for BEAM is not respoding. Call detector expert !
+$END
+CHANNEL  HV_mf   B/HVOC_01_02 
+$GUIDANCE
+Status of HV mainframe 02 for BEAM is different from what is set in EPICS GUI.
+It may have tripped or its status was changed. Try to turn it ON or OFF in HV GUI. 
+If it does not help, call detector expert !
+$END
+GROUP   HV    HV_beam_counter
+$SEVRCOMMAND UP_MAJOR remsh clon00 "epics_alarm HV_bm 2 ERROR 1 \"ALH reporting ALARM for group HV_beam_counter\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "epics_alarm HV_bm 0 INFO 1 \"ALH reporting alarms cleared for group HV_beam_counter\""
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half.  Track down RED/tripped channels and enable them
+$END
+CHANNEL    HV_beam_counter        B_hv_BM_DS_TOP_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BM_DS_TOP,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_BM_DS_NOR_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BM_DS_NOR,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_BM_DS_BOT_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BM_DS_BOT,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_BM_DS_SOU_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BM_DS_SOU,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_BM_US_TOP_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BM_US_TOP,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_BM_US_BOT_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BM_US_BOT,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_BM_US_SOU_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BM_US_SOU,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_BM_US_NOR_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BM_US_NOR,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_BM_TAG_Rght_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BM_TAG_Rght,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_BM_TAG_Top_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BM_TAG_Top,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_BM_TAG_Left_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BM_TAG_Left,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_SLM_HV_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=SLM_HV,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_OTR_SIGNAL_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=OTR_SIGNAL,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_UPSTRM_OTR_HV_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=UPSTRM_OTR_HV,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_BOM_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BOM,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_BM_MOLLER_L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BM_MOLLER_L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_BM_MOLLER_R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BM_MOLLER_R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_BM_TAC_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BM_TAC,group_number=1" hv_generic.adl >> /dev/null 
+GROUP   HV    HV_tagger_E_1
+$SEVRCOMMAND UP_MAJOR remsh clon00 "epics_alarm HV_ta 2 ERROR 4 \"ALH reporting ALARM for group HV_tagger_E_1\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "epics_alarm HV_ta 0 INFO 4 \"ALH reporting alarms cleared for group HV_tagger_E_1\""
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half.  Track down RED/tripped channels and enable them
+$END
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_1_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_1,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_2_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_2,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_3_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_3,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_4_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_4,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_5_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_5,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_6_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_6,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_7_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_7,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_8_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_8,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_9_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_9,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_10,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_11,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_12_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_12,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_13_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_13,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_14_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_14,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_15_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_15,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_16_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_16,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_17_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_17,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_18_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_18,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_19_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_19,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_20_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_20,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_21_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_21,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_22_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_22,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_23_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_23,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_24_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_24,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_25_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_25,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_26_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_26,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_27_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_27,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_28_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_28,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_29_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_29,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_30_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_30,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_31_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_31,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_32_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_32,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_33_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_33,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_34_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_34,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_35_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_35,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_36_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_36,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_37_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_37,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_38_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_38,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_39_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_39,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_40_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_40,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_41_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_41,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_42_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_42,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_43_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_43,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_44_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_44,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_45_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_45,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_46_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_46,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_47_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_47,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_48_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_48,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_49_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_49,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_50_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_50,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_51_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_51,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_52_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_52,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_53_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_53,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_54_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_54,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_55_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_55,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_56_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_56,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_57_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_57,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_58_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_58,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_59_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_59,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_60_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_60,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_61_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_61,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_62_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_62,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_63_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_63,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_64_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_64,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_65_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_65,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_66_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_66,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_67_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_67,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_68_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_68,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_69_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_69,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_70_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_70,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_71_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_71,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_72_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_72,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_73_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_73,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_74_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_74,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_75_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_75,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_76_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_76,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_77_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_77,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_78_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_78,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_79_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_79,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_80_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_80,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_81_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_81,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_82_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_82,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_83_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_83,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_84_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_84,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_85_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_85,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_86_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_86,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_87_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_87,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_88_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_88,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_89_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_89,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_90_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_90,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_91_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_91,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_92_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_92,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_93_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_93,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_94_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_94,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_95_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_95,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_96_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_96,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_97_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_97,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_98_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_98,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_99_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_99,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_100_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_100,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_101_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_101,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_102_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_102,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_103_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_103,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_104_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_104,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_105_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_105,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_106_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_106,group_number=4" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_1        B_hv_TA_e_107_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_107,group_number=4" hv_generic.adl >> /dev/null 
+GROUP   HV    HV_tagger_E_2
+$SEVRCOMMAND UP_MAJOR remsh clon00 "epics_alarm HV_ta 2 ERROR 5 \"ALH reporting ALARM for group HV_tagger_E_2\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "epics_alarm HV_ta 0 INFO 5 \"ALH reporting alarms cleared for group HV_tagger_E_2\""
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half.  Track down RED/tripped channels and enable them
+$END
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_108_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_108,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_109_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_109,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_110_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_110,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_111_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_111,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_112_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_112,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_113_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_113,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_114_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_114,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_115_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_115,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_116_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_116,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_117_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_117,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_118_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_118,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_119_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_119,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_120_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_120,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_121_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_121,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_122_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_122,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_123_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_123,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_124_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_124,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_125_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_125,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_126_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_126,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_127_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_127,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_128_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_128,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_129_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_129,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_130_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_130,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_131_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_131,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_132_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_132,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_133_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_133,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_134_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_134,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_135_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_135,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_136_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_136,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_137_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_137,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_138_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_138,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_139_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_139,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_140_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_140,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_141_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_141,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_142_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_142,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_143_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_143,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_144_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_144,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_145_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_145,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_146_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_146,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_147_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_147,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_148_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_148,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_149_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_149,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_150_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_150,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_151_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_151,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_152_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_152,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_153_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_153,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_154_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_154,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_155_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_155,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_156_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_156,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_157_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_157,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_158_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_158,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_159_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_159,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_160_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_160,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_161_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_161,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_162_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_162,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_163_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_163,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_164_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_164,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_165_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_165,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_166_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_166,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_167_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_167,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_168_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_168,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_169_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_169,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_170_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_170,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_171_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_171,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_172_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_172,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_173_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_173,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_174_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_174,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_175_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_175,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_176_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_176,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_177_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_177,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_178_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_178,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_179_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_179,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_180_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_180,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_181_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_181,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_182_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_182,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_183_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_183,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_184_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_184,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_185_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_185,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_186_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_186,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_187_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_187,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_188_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_188,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_189_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_189,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_190_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_190,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_191_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_191,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_192_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_192,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_193_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_193,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_194_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_194,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_195_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_195,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_196_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_196,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_197_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_197,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_198_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_198,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_199_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_199,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_200_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_200,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_201_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_201,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_202_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_202,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_203_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_203,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_204_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_204,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_205_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_205,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_206_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_206,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_207_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_207,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_208_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_208,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_209_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_209,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_210_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_210,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_211_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_211,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_212_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_212,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_213_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_213,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_214_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_214,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_215_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_215,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_216_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_216,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_217_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_217,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_218_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_218,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_219_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_219,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_220_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_220,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_221_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_221,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_222_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_222,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_223_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_223,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_224_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_224,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_225_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_225,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_226_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_226,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_227_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_227,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_228_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_228,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_229_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_229,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_230_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_230,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_231_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_231,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_232_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_232,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_233_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_233,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_234_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_234,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_235_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_235,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_236_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_236,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_237_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_237,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_238_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_238,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_239_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_239,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_240_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_240,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_241_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_241,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_242_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_242,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_243_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_243,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_244_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_244,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_245_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_245,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_246_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_246,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_247_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_247,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_248_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_248,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_249_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_249,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_250_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_250,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_251_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_251,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_252_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_252,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_253_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_253,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_254_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_254,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_255_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_255,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_256_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_256,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_257_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_257,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_258_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_258,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_259_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_259,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_260_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_260,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_261_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_261,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_262_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_262,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_263_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_263,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_264_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_264,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_265_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_265,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_266_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_266,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_267_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_267,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_268_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_268,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_269_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_269,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_270_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_270,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_271_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_271,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_272_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_272,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_273_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_273,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_274_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_274,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_275_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_275,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_276_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_276,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_277_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_277,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_278_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_278,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_279_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_279,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_280_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_280,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_281_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_281,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_282_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_282,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_283_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_283,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_284_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_284,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_285_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_285,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_286_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_286,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_287_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_287,group_number=5" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_2        B_hv_TA_e_288_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_288,group_number=5" hv_generic.adl >> /dev/null 
+GROUP   HV    HV_tagger_E_3
+$SEVRCOMMAND UP_MAJOR remsh clon00 "epics_alarm HV_ta 2 ERROR 6 \"ALH reporting ALARM for group HV_tagger_E_3\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "epics_alarm HV_ta 0 INFO 6 \"ALH reporting alarms cleared for group HV_tagger_E_3\""
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half.  Track down RED/tripped channels and enable them
+$END
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_289_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_289,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_290_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_290,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_291_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_291,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_292_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_292,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_293_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_293,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_294_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_294,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_295_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_295,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_296_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_296,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_297_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_297,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_298_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_298,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_299_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_299,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_300_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_300,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_301_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_301,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_302_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_302,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_303_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_303,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_304_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_304,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_305_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_305,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_306_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_306,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_307_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_307,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_308_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_308,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_309_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_309,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_310_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_310,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_311_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_311,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_312_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_312,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_313_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_313,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_314_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_314,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_315_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_315,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_316_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_316,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_317_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_317,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_318_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_318,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_319_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_319,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_320_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_320,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_321_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_321,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_322_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_322,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_323_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_323,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_324_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_324,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_325_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_325,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_326_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_326,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_327_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_327,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_328_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_328,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_329_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_329,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_330_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_330,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_331_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_331,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_332_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_332,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_333_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_333,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_334_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_334,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_335_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_335,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_336_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_336,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_337_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_337,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_338_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_338,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_339_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_339,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_340_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_340,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_341_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_341,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_342_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_342,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_343_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_343,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_344_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_344,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_345_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_345,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_346_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_346,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_347_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_347,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_348_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_348,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_349_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_349,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_350_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_350,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_351_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_351,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_352_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_352,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_353_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_353,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_354_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_354,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_355_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_355,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_356_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_356,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_357_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_357,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_358_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_358,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_359_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_359,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_360_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_360,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_361_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_361,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_362_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_362,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_363_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_363,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_364_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_364,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_365_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_365,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_366_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_366,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_367_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_367,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_368_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_368,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_369_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_369,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_370_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_370,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_371_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_371,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_372_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_372,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_373_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_373,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_374_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_374,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_375_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_375,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_376_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_376,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_377_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_377,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_378_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_378,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_379_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_379,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_380_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_380,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_381_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_381,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_382_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_382,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_383_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_383,group_number=6" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_E_3        B_hv_TA_e_384_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_e_384,group_number=6" hv_generic.adl >> /dev/null 
+GROUP   HV    HV_tagger_T_1
+$SEVRCOMMAND UP_MAJOR remsh clon00 "epics_alarm HV_ta 2 ERROR 1 \"ALH reporting ALARM for group HV_tagger_T_1\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "epics_alarm HV_ta 0 INFO 1 \"ALH reporting alarms cleared for group HV_tagger_T_1\""
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half.  Track down RED/tripped channels and enable them
+$END
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_01L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_01L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_01R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_01R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_02L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_02L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_02R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_02R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_03L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_03L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_03R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_03R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_04L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_04L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_04R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_04R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_05L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_05L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_05R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_05R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_06L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_06L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_06R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_06R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_07L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_07L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_07R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_07R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_08L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_08L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_08R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_08R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_09L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_09L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_09R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_09R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_10L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_10L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_10R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_10R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_11L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_11L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_11R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_11R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_12L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_12L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_12R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_12R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_13L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_13L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_13R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_13R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_14L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_14L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_14R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_14R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_15L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_15L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_15R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_15R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_16L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_16L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_16R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_16R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_17L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_17L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_17R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_17R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_18L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_18L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_18R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_18R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_19L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_19L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_19R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_19R,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_20L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_20L,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_1        B_hv_TA_t_20R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_20R,group_number=1" hv_generic.adl >> /dev/null 
+GROUP   HV    HV_tagger_T_2
+$SEVRCOMMAND UP_MAJOR remsh clon00 "epics_alarm HV_ta 2 ERROR 2 \"ALH reporting ALARM for group HV_tagger_T_2\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "epics_alarm HV_ta 0 INFO 2 \"ALH reporting alarms cleared for group HV_tagger_T_2\""
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half.  Track down RED/tripped channels and enable them
+$END
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_21L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_21L,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_21R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_21R,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_22L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_22L,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_22R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_22R,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_23L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_23L,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_23R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_23R,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_24L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_24L,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_24R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_24R,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_25L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_25L,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_25R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_25R,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_26L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_26L,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_26R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_26R,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_27L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_27L,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_27R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_27R,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_28L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_28L,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_28R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_28R,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_29L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_29L,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_29R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_29R,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_30L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_30L,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_30R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_30R,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_31L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_31L,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_31R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_31R,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_32L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_32L,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_32R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_32R,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_33L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_33L,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_33R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_33R,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_34L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_34L,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_34R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_34R,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_35L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_35L,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_35R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_35R,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_36L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_36L,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_36R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_36R,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_37L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_37L,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_37R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_37R,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_38L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_38L,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_2        B_hv_TA_t_38R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_38R,group_number=2" hv_generic.adl >> /dev/null 
+GROUP   HV    HV_tagger_T_3
+$SEVRCOMMAND UP_MAJOR remsh clon00 "epics_alarm HV_ta 2 ERROR 3 \"ALH reporting ALARM for group HV_tagger_T_3\""
+$SEVRCOMMAND DOWN_NO_ALARM remsh clon00 "epics_alarm HV_ta 0 INFO 3 \"ALH reporting alarms cleared for group HV_tagger_T_3\""
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half.  Track down RED/tripped channels and enable them
+$END
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_39L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_39L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_39R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_39R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_40L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_40L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_40R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_40R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_41L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_41L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_41R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_41R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_42L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_42L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_42R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_42R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_43L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_43L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_43R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_43R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_44L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_44L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_44R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_44R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_45L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_45L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_45R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_45R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_46L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_46L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_46R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_46R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_47L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_47L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_47R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_47R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_48L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_48L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_48R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_48R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_49L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_49L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_49R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_49R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_50L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_50L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_50R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_50R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_51L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_51L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_51R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_51R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_52L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_52L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_52R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_52R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_53L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_53L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_53R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_53R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_54L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_54L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_54R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_54R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_55L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_55L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_55R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_55R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_56L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_56L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_56R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_56R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_57L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_57L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_57R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_57R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_58L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_58L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_58R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_58R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_59L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_59L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_59R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_59R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_60L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_60L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_60R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_60R,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_61L_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_61L,group_number=3" hv_generic.adl >> /dev/null 
+CHANNEL    HV_tagger_T_3        B_hv_TA_t_61R_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=TA_t_61R,group_number=3" hv_generic.adl >> /dev/null 

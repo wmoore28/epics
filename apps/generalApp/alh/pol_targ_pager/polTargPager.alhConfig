@@ -1,0 +1,148 @@
+###################################################################### # Author:   Krister bruhwel
+#--------------------------------------------------------------------# 
+# An alarm handler that monitors key signals and pages the oncall
+# in the event of an alarm.  The handler uses two scripts:
+#	pagePolTarg.pl   - a perl script that does the paging
+#	alhKeepAlive.pl - a perl script that makes sure this alarm
+#                     handler is always running.  Polled via cron.
+######################################################################
+
+GROUP NULL POL_TARG_PAGER
+$COMMAND  netscape "$APP/general/alh/pol_targ_pager/On_Call_List_03_Rev_2.html" >> /dev/null
+#$COMMAND  acroread $APP/general/alh/pol_targ_pager/On_Call_List_03_Rev_2.xls.pdf  >> /dev/null
+
+$GUIDANCE
+This alarm handler monitors signals of interest and pages 
+oncall personnel if there is a problem.  Please do not close this
+handler.  If in the event it is closed, a cron job will start it
+back up.
+$END
+
+#--------------------------------------------------------------------
+# IOC_STATUS GROUP
+#--------------------------------------------------------------------
+GROUP POL_TARG_PAGER IOC_STATUS
+
+CHANNEL IOC_STATUS iocptarg:heartbeat
+$ALARMCOUNTFILTER 9999999999 600
+$SEVRCOMMAND UP_ANY pagePolTarg.pl -grp "IOC" -sig "iocptarg:heartbeat" -m "IOC iocptarg is dead" >> /dev/null 
+$GUIDANCE
+iocptarg is not responding.  When this fault is 
+triggered, the Engineering oncall will automatically
+be paged.  If you do not receive a response from the
+oncall, please call at  584-5245.
+This ioc will need a restore after reboot.
+$END
+
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_l2_temp" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND LOLO pagePolTarg.pl -grp "Weather" -sig "hallb_l2_temp" -m "hallb_l2_temp LOLO" >> /dev/null 
+
+#--------------------------------------------------------------------
+# POL_TARG GROUP
+#--------------------------------------------------------------------
+GROUP POL_TARG_PAGER POL_TARG
+CHANNEL POL_TARG LL8220 
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=LL8220" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND LOLO pagePolTarg.pl -grp "POL_TARG" -sig "LL8220" -m "LL8220 LOLO" >> /dev/null 
+$STATCOMMAND HIHI pagePolTarg.pl -grp "POL_TARG" -sig "LL8220" -m "LL8220 HIHI" >> /dev/null
+$GUIDANCE
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+CHANNEL POL_TARG LL8230 
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=LL8230" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND LOLO pagePolTarg.pl -grp "POL_TARG" -sig "LL8230" -m "LL8230 LOLO" >> /dev/null 
+$STATCOMMAND HIHI pagePolTarg.pl -grp "POL_TARG" -sig "LL8230" -m "LL8230 HIHI" >> /dev/null
+$GUIDANCE
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+CHANNEL POL_TARG LL8240 
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=LL8240" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND LOLO pagePolTarg.pl -grp "POL_TARG" -sig "LL8240" -m "LL8240 LOLO" >> /dev/null 
+$STATCOMMAND HIHI pagePolTarg.pl -grp "POL_TARG" -sig "LL8240" -m "LL8240 HIHI" >> /dev/null
+$GUIDANCE
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+CHANNEL POL_TARG FI8223D 
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=FI8223D" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND LOLO pagePolTarg.pl -grp "POL_TARG" -sig "FI8223D" -m "FI8223D LOLO" >> /dev/null 
+$STATCOMMAND HIHI pagePolTarg.pl -grp "POL_TARG" -sig "FI8223D" -m "FI8223D HIHI" >> /dev/null
+$GUIDANCE
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+CHANNEL POL_TARG FI8233R 
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=FI8233R" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND LOLO pagePolTarg.pl -grp "POL_TARG" -sig "FI8233R" -m "FI8233R LOLO" >> /dev/null 
+$STATCOMMAND HIHI pagePolTarg.pl -grp "POL_TARG" -sig "FI8233R" -m "FI8233R HIHI" >> /dev/null
+$GUIDANCE
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+CHANNEL POL_TARG PI8220 
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=PI8220" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND LOLO pagePolTarg.pl -grp "POL_TARG" -sig "PI8220" -m "PI8220 LOLO" >> /dev/null 
+$STATCOMMAND HIHI pagePolTarg.pl -grp "POL_TARG" -sig "PI8220" -m "PI8220 HIHI" >> /dev/null
+$GUIDANCE
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+CHANNEL POL_TARG PI8252A 
+$ALARMCOUNTFILTER 9999999999 300
+$COMMAND  medm -x -attach -cmap -macro "sig=PI8252A" aiaocalc_alarm.adl >> /dev/null 
+$STATCOMMAND LOLO pagePolTarg.pl -grp "POL_TARG" -sig "PI8252A" -m "PI8252A LOLO" >> /dev/null 
+$STATCOMMAND HIHI pagePolTarg.pl -grp "POL_TARG" -sig "PI8252A" -m "PI8252A HIHI" >> /dev/null
+$GUIDANCE
+If there is an alarm, the Engineering oncall
+will be automatically paged.  If you do not 
+receive a response from the
+oncall, please call at  584-5245.
+$END
+
+#CHANNEL POL_TARG TP1013 
+#$ALARMCOUNTFILTER 9999999999 300
+#$COMMAND  medm -x -attach -cmap -macro "sig=TP1013" aiaocalc_alarm.adl >> /dev/null 
+#$STATCOMMAND LOLO pagePolTarg.pl -grp "POL_TARG" -sig "TP1013" -m "TP1013 LOLO" >> /dev/null 
+#$STATCOMMAND HIHI pagePolTarg.pl -grp "POL_TARG" -sig "TP1013" -m "TP1013 HIHI" >> /dev/null
+#$GUIDANCE
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not 
+#receive a response from the
+#oncall, please call at  584-5245.
+#$END
+
+#--------------------------------------------------------------------
+# SILENCE PAGER GROUP
+#--------------------------------------------------------------------
+GROUP POL_TARG_PAGER SILENCE_PAGER 
+$COMMAND  touch "/tmp/auto_bail" >>/dev/null; medm -x -attach -cmap "$APP/general/alh/pol_targ_pager/auto_bail_msg.adl" >> /dev/null 
+$GUIDANCE
+Pressing P will silence the pager for 15 minutes
+$END

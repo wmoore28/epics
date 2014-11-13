@@ -1,0 +1,26 @@
+# network stuff
+hostAdd "hallb-rtrb","129.57.160.1"
+hostAdd "clon00","129.57.167.5"
+hostAdd "clon01","129.57.167.1"
+hostAdd "clon10","129.57.167.14"
+hostAdd "site-rtr","129.57.32.1"
+hostAdd "opshgw","129.57.255.5"
+hostAdd "ioctorus1","129.57.96.7"
+#hostAdd "casa-apf1","129.57.13.87"
+#hostAdd "casa-apf3","129.57.13.35"
+#hostAdd "primex-lms","129.57.57.188"
+
+#
+routeNetAdd "ioctorus1","hallb-rtrb"
+routeNetAdd "clon00","hallb-rtrb"
+routeNetAdd "clon01","hallb-rtrb"
+routeNetAdd "clon10","hallb-rtrb"
+routeNetAdd "site-rtr","hallb-rtrb"
+routeNetAdd "opshgw","hallb-rtrb"
+#routeNetAdd "casa-apf1","hallb-rtrb"
+#routeNetAdd "casa-apf3","hallb-rtrb"
+#routeNetAdd "primex-lms","hallb-rtrb"
+#
+###routeAdd "0.0.0.0","129.57.160.1"
+routeAdd "129.57.4.0","129.57.160.1"
+#end of network defs

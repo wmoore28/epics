@@ -1,0 +1,202 @@
+GROUP    NULL                         TARGET                       
+$SEVRCOMMAND  UP_INVALID remsh clon00 "error_msg alh epics alh alarm 2 ERROR 0 \"ALH reporting INVALID for target\""
+$SEVRCOMMAND  UP_MAJOR remsh clon00 "error_msg alh epics alhalarm 2 ERROR 0 \"ALH reporting ALARM for target\""
+$SEVRCOMMAND  DOWN_NO_ALARM remsh clon00 "error_msg alh epics alh alarm 0 INFO 0 \"ALH reporting alarms cleared for target\""
+$GUIDANCE
+    For info on target-related items, please contact HDice Target Expert
+    (phone numbers for primary and secondary experts for target
+     subsystems listed on call sheet by CLAS worker area)
+$END
+
+#  ---------------------
+#  DILUTION FRIDGE GROUP
+#  ---------------------
+
+GROUP  TARGET  DIL_FRIDGE
+
+CHANNEL  DIL_FRIDGE  hdice:temp_mix1           
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:temp_mix1" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that the IBC mixing chamber is above nominal temperature.  
+           Contact the HDice target expert for further guidance.
+$END
+
+CHANNEL  DIL_FRIDGE  hdice:temp_mix2
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:temp_mix2" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that the IBC mixing chamber is above nominal temperature.
+           Contact the HDice target expert for further guidance.
+$END
+
+CHANNEL  DIL_FRIDGE  hdice:temp_still
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:temp_still" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that the IBC still is above above normal temperature.
+           Contact the HDice target expert for further guidance.
+$END
+         
+CHANNEL  DIL_FRIDGE  hdice:flow_He3
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:flow_He3" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+     The flow of He-3/4 mixture in the IBC dilution fridge is outside the nominal range.
+       If flow value momentarily spikes and trips the MINOR ALARM but returns to normal,
+       then clear the alarm and note the event in shift log.
+     Otherwise, notify HDice target expert for further guidance.
+$END
+
+CHANNEL  DIL_FRIDGE  hdice:IGH_G2G1
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:IGH_G2G1" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that the difference in pressure of the He-3/4 mixture across
+           the cold trap for the IBC dilution fridge is outside the nominal range.
+           Contact the HDice target expert for further guidance.
+$END
+
+#  ---------------------
+#  1K-POT GROUP
+#  ---------------------
+GROUP    TARGET                         1K_POT
+
+CHANNEL  1K_POT  hdice:pres_1Kpot
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:pres_1Kpot" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+     The pressure of the IBC 1K-pot exhaust line is outside the nominal range.
+       If the pressure momentarily spikes and trips the MINOR ALARM but returns to normal,
+       then clear the alarm and note the event in shift log.
+     Otherwise, notify HDice target expert for further guidance.
+$END
+
+CHANNEL  1K_POT  hdice:temp_1Kpot
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:temp_1Kpot" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+     The temperature of the IBC 1K-pot is outside the nominal range.
+       If the temperature momentarily spikes and trips the MINOR ALARM but returns to normal,
+       then clear the alarm and note the event in shift log.
+     Otherwise, notify HDice target expert for further guidance.
+$END
+
+CHANNEL  1K_POT  hdice:temp_1KHXin
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:temp_1KHXin" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+     The temperature at the inlet of the IBC 1K-pot heat exchanger is outside the nominal range.
+       If the temperature momentarily spikes and trips the MINOR ALARM but returns to normal,
+       then clear the alarm and note the event in shift log.
+     Otherwise, notify HDice target expert for further guidance.
+$END
+
+CHANNEL  1K_POT  hdice:level_1Kpot
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:level_1Kpot" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+     The level of liquid helium in the IBC 1K-pot is outside normal values.
+       If liquid level momentarily spikes and trips the MINOR ALARM but returns to normal,
+       then clear the alarm and note the event in shift log.
+     Otherwise, notify HDice target expert for further guidance.
+$END
+
+CHANNEL  1K_POT  hdice:flow_1Kpot
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:flow_1Kpot" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+     The flow rate of the IBC 1K-pot exhaust is not within normal values.
+       If the flow rate momentarily spikes and trips the MINOR ALARM but returns to normal,
+       then clear the alarm and note the event in shift log.
+     Otherwise, notify HDice target expert for further guidance.
+$END
+
+#  ------------------
+#  He4 CRYOSTAT GROUP
+#  ------------------
+
+GROUP  TARGET  CRYOSTAT
+
+CHANNEL  CRYOSTAT  hdice:pres_bath
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:pres_bath" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 120
+$GUIDANCE
+     The pressure of the liquid helium bath in the IBC is not within normal values.
+       If the pressure momentarily spikes and trips the MINOR ALARM but returns to normal,
+       then clear the alarm and note the event in shift log.
+     Otherwise, notify HDice target expert for further guidance.
+$END
+
+CHANNEL  CRYOSTAT  hdice:level_bath
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:level_bath" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+     The level of liquid helium in the IBC bath is outside normal range.
+       If the liquid level momentarily spikes and trips the MINOR ALARM but returns to normal,
+       then clear the alarm and note the event in shift log.
+     Otherwise, notify HDice target expert for further guidance.
+$END
+
+CHANNEL  CRYOSTAT  hdice:level_LN2
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:level_LN2" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+     This signifies that the level of liquid nitrogen in the IBC cold trap is low.
+  MINOR ALARM indicates that the level is below 50%; normal automatic filling has begun.
+     --> shift worker should monitor LN2 until level is above 60% to ensure normal filling.
+  MAJOR ALARM indicates that the level is below 30%.
+     --> contact the HDice target expert (CRYOSTAT/DILUTION FRIDGE) for further guidance.
+$END
+
+#  ------------------
+#  MAGNETS GROUP
+#  ------------------
+
+GROUP  TARGET  MAGNETS
+
+CHANNEL  MAGNETS  hdice:field_main 
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:field_main" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that the field strength of the IBC main solenoid is outside normal range.
+           Contact the HDice target expert (MAGNETS) for further guidance.
+$END
+
+CHANNEL  MAGNETS  hdice:volt_mainposabs
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:volt_mainposabs" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that the voltage difference across the warm and cold ends of the 
+           IBC main solenoid positive lead is outside of the nominal range.
+           Contact the HDice target expert (MAGNETS) for further guidance.
+$END
+
+CHANNEL  MAGNETS  hdice:volt_mainnegabs
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:volt_mainnegabs" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that the voltage difference across the warm and cold ends of the 
+           IBC main solenoid negative lead is outside of the nominal range.
+           Contact the HDice target expert (MAGNETS) for further guidance.
+$END
+
+CHANNEL  MAGNETS  hdice:current_backup
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:current_backup" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that the current in the IBC backup coil is outside normal range.
+           Contact the HDice target expert (MAGNETS) for further guidance.
+$END
+
+CHANNEL  MAGNETS  hdice:volt_backup
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:volt_backup" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that the voltage on the IBC backup coil is outside normal range.
+           Contact the HDice target expert (MAGNETS) for further guidance.
+$END
+
+CHANNEL  MAGNETS  hdice:temp_backupcoil
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:temp_backupcoil" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that the coolant temperature for the IBC backup coil is outside normal range.
+           Contact the HDice target expert (MAGNETS) for further guidance.
+$END
+
+#  -----------------
+#  NETWORK GROUP
+#  -----------------
+
+GROUP  TARGET  NETWORK
+
+CHANNEL NETWORK hdice:labview_comstat
+$COMMAND  medm -x -attach -cmap -macro "sig=hdice:labview_comstat" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that the iocptarg is not receiving the the EPICS signal for the IBC liquid helium bath level.
+           If the alarm staus return to normal within a few seconds, then reset the alarm and note the event in the eLog;
+           Otherwise, contact the HDice target expert and the Run Coordinator / DAQ expert for further guidance.
+$END

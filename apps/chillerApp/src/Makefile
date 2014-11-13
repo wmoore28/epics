@@ -20,12 +20,10 @@ DBD += chiller.dbd
 
 # chiller.dbd will be made up from these files:
 chiller_DBD += base.dbd
-#chiller_DBD += sCalcoutRecord.dbd
 chiller_DBD += drvAsynSerialPort.dbd
 chiller_DBD += stream.dbd
-#chiller_DBD += streamSynApps.dbd
 chiller_DBD += asSupport.dbd
-#chiller_DBD += devIocStats.dbd
+chiller_DBD += devIocStats.dbd
 
 # chiller_registerRecordDeviceDriver.cpp derives from chiller.dbd
 chiller_SRCS += chiller_registerRecordDeviceDriver.cpp
@@ -35,9 +33,8 @@ chiller_SRCS_DEFAULT += chillerMain.cpp
 chiller_SRCS_vxWorks += -nil-
 
 chiller_LIBS += autosave
-#chiller_LIBS += calc sscan
 chiller_LIBS += stream streamSynApps
-#chiller_LIBS += devIocStats
+chiller_LIBS += devIocStats
 chiller_LIBS += asyn
 
 # Finally link to the EPICS Base libraries
@@ -48,4 +45,3 @@ chiller_LIBS += $(EPICS_BASE_IOC_LIBS)
 include $(TOP)/configure/RULES
 #----------------------------------------
 #  ADD RULES AFTER THIS LINE
-

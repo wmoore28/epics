@@ -7,8 +7,6 @@
 
 InTerminator  = "";   # differs for several readbacks...
 OutTerminator = CR;
-PREFIX     = ;
-Separator  = ",";
 ReadTimeout = 1000;
 ReplyTimeout = 1000;
 
@@ -18,7 +16,6 @@ ReplyTimeout = 1000;
 getVersion {
     out "version";
     in  "version\rFirmware Version: %s\r\n\r";
-#    in "version\r%s\_\r\n\r";
 }
 
 getStatus {
@@ -58,7 +55,6 @@ clear {
 # Settings Commands
 #######################################
 getTemp {
-#    InTerminator = "";
     out "get temp setting";
     in  "get temp setting\r %f\r";
 }
@@ -69,7 +65,6 @@ setTemp {
 }
 
 getHighLimit {
-#    InTerminator = LF CR;
     out "get highlimit setting";
     in  "get highlimit setting\r%f\n\r";
 }
@@ -81,7 +76,6 @@ setHighLimit {
 }
 
 getLowLimit {
-#    InTerminator = LF CR;
     out "get lowlimit setting";
     in  "get lowlimit setting\r%f\n\r";
 }
