@@ -22,36 +22,43 @@
 TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 EPICS_BASE=${CLAS}/R${EPICS_VER}/base
 EPICS_SUPPORT=${CLAS}/R${EPICS_VER}/support
+EPICS_EXTENSIONS=${CLAS}/R${EPICS_VER}/extensions
 EPICS_SYNAPPS=${CLAS}/R${EPICS_VER}/synApps/synApps_5_5/support
+#LOCAL_SUPPORT=${APP}/../support
 
-## Path to data storage (autosave, etc)
-IOCDATA=/misc/clas12/hps/DATA
-
-## Used by hvCaenApp
 EPICS_DRIVERS=${EPICSB_DRIVERS}
 
-## synApps
-ASYN=$(EPICS_SYNAPPS)/asyn-4-13
-AUTOSAVE=$(EPICS_SYNAPPS)/autosave-4-6
-BUSY=$(EPICS_SYNAPPS)/busy-1-3
-CALC=$(EPICS_SYNAPPS)/calc-2-8
+DEVSNMP=$(EPICS_SUPPORT)/snmp-nscl-1.0.RC6
+
 IPAC=$(EPICS_SYNAPPS)/ipac-2-11
-MCA=$(EPICS_SYNAPPS)/mca-s55
-MOTOR=$(EPICS_SYNAPPS)/motor-6-5
+SEQ=$(EPICS_SYNAPPS)/seq-2-0-12
 SNCSEQ=$(EPICS_SYNAPPS)/seq-2-0-12
+ASYN=$(EPICS_SYNAPPS)/asyn-4-13
+BUSY=$(EPICS_SYNAPPS)/busy-1-3
+MOTOR=$(EPICS_SYNAPPS)/motor-6-5
+#MOTOR=$(EPICS_SYNAPPS)/motorR6-8-pco
+STREAM=$(EPICS_SYNAPPS)/stream-2-4-1
+
 SSCAN=$(EPICS_SYNAPPS)/sscan-2-6-6
 STD=$(EPICS_SYNAPPS)/std-2-8
-STREAM=$(EPICS_SYNAPPS)/stream-2-4-1
-VME=$(EPICS_SYNAPPS)/vme-2-7
-
-## Other external support
-DEVIOCSTATS=$(EPICS_SUPPORT)/devIocStats-3.1.12
-DEVSNMP=$(EPICS_SUPPORT)/snmp-nscl-1.0.RC6
+AUTOSAVE=$(EPICS_SYNAPPS)/autosave-4-6
+CALC=$(EPICS_SYNAPPS)/calc-2-8
+MCA=$(EPICS_SYNAPPS)/mca-s55
 
 SELF=$(TOP)
 
+#SUPPORT=/misc/home/kliv/epics/support
+#SYNAPPS=/usr/clas/clas12/R3.14.12.3/synApps_5_5
+#/misc/home/kliv/epics/support/synApps_5_5
+#ASYN=/misc/home/kliv/epics/support/asyn-4-13
+#ASYN=/usr/clas/clas12/R3.14.12.3/synApps_5_5/support/asyn-4-13
+#STREAM=/misc/home/kliv/epics/support/stream-2-4-1
+
+# If using the sequencer, point SNCSEQ at its top directory:
+#SNCSEQ=$(EPICS_BASE)/../modules/soft/seq
+
 # EPICS_BASE usually appears last so other apps can override stuff:
-EPICS_BASE=${CLAS}/R${EPICS_VER}/base
+#EPICS_BASE=/usr/local/clas/clas12/R3.14.12.3/base
 
 # Set RULES here if you want to take build rules from somewhere
 # other than EPICS_BASE:

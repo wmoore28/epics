@@ -1,4 +1,4 @@
-all: arSet arData
+install: arSet arData
 
 ar%:
 	test -h $@ || ln -s /apps/epics/ar/$@ $@
