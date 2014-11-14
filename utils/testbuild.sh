@@ -113,7 +113,7 @@ if [ $ENV_ONLY -eq 1 ]; then # We're done
 fi
 
 # Since env is good, build all targets for testing.
-declare -a targets=("make distclean" "make install" "make rebuild" "make clean-tools" "make tools")
+declare -a targets=("make distclean" "make rebuild" "make clean-tools" "make tools")
 
 printf "\nBuilding targets:\n"
 for target in "${targets[@]}"; do
