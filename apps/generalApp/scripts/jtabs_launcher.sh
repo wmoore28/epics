@@ -3,8 +3,8 @@
 # Wrap this with xterm -e for use from MEDM.  Set remote hostname below.
 #
 
-host=opsl00
-user=`whoami`
+host=hlbl00
+user=hbops
 
 echo "Running JTabs from $host..."
 read -p "Enter your username [$user]: " INPUT_STRING
