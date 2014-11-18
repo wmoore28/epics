@@ -1,17 +1,17 @@
 
 file {
-	name="/misc/clas12/hps/prod/apps/generalApp/medm/hps_ecal_temp.adl"
+	name="/usr/clas12/hps/prod/apps/medm/hps_ecal_temp.adl"
 	version=030108
 }
 display {
 	object {
 		x=624
 		y=230
-		width=562
-		height=400
+		width=560
+		height=370
 	}
 	clr=20
-	bclr=4
+	bclr=12
 	cmap=""
 	gridSpacing=5
 	gridOn=0
@@ -87,30 +87,6 @@ display {
 		1a7309,
 	}
 }
-rectangle {
-	object {
-		x=0
-		y=0
-		width=562
-		height=30
-	}
-	"basic attribute" {
-		clr=19
-	}
-}
-text {
-	object {
-		x=0
-		y=8
-		width=562
-		height=20
-	}
-	"basic attribute" {
-		clr=30
-	}
-	textix="ECAL Temperatures"
-	align="horiz. centered"
-}
 text {
 	object {
 		x=251
@@ -119,7 +95,7 @@ text {
 		height=18
 	}
 	"basic attribute" {
-		clr=14
+		clr=50
 	}
 	textix="Chan"
 	align="horiz. centered"
@@ -132,7 +108,7 @@ text {
 		height=20
 	}
 	"basic attribute" {
-		clr=14
+		clr=50
 	}
 	textix="1"
 	align="horiz. centered"
@@ -145,7 +121,7 @@ text {
 		height=20
 	}
 	"basic attribute" {
-		clr=14
+		clr=50
 		style="dash"
 	}
 	textix="2"
@@ -159,7 +135,7 @@ text {
 		height=20
 	}
 	"basic attribute" {
-		clr=14
+		clr=50
 		style="dash"
 	}
 	textix="3"
@@ -173,7 +149,7 @@ text {
 		height=20
 	}
 	"basic attribute" {
-		clr=14
+		clr=50
 		style="dash"
 	}
 	textix="4"
@@ -187,7 +163,7 @@ text {
 		height=20
 	}
 	"basic attribute" {
-		clr=14
+		clr=50
 		style="dash"
 	}
 	textix="5"
@@ -201,7 +177,7 @@ text {
 		height=20
 	}
 	"basic attribute" {
-		clr=14
+		clr=50
 		style="dash"
 	}
 	textix="6"
@@ -215,7 +191,7 @@ text {
 		height=20
 	}
 	"basic attribute" {
-		clr=14
+		clr=50
 		style="dash"
 	}
 	textix="7"
@@ -229,7 +205,7 @@ text {
 		height=20
 	}
 	"basic attribute" {
-		clr=14
+		clr=50
 		style="dash"
 	}
 	textix="8"
@@ -237,13 +213,13 @@ text {
 }
 text {
 	object {
-		x=449
+		x=426
 		y=52
-		width=41
+		width=77
 		height=18
 	}
 	"basic attribute" {
-		clr=14
+		clr=50
 	}
 	textix="Bottom"
 	align="horiz. centered"
@@ -257,8 +233,8 @@ text {
 	}
 	monitor {
 		chan="tempSensorIc"
-		clr=15
-		bclr=12
+		clr=0
+		bclr=13
 	}
 	clrmod="alarm"
 	align="horiz. centered"
@@ -274,8 +250,8 @@ text {
 	}
 	monitor {
 		chan="tempSensorJc"
-		clr=15
-		bclr=12
+		clr=0
+		bclr=13
 	}
 	clrmod="alarm"
 	align="horiz. centered"
@@ -291,8 +267,8 @@ text {
 	}
 	monitor {
 		chan="tempSensorKc"
-		clr=15
-		bclr=12
+		clr=0
+		bclr=13
 	}
 	clrmod="alarm"
 	align="horiz. centered"
@@ -308,8 +284,8 @@ text {
 	}
 	monitor {
 		chan="tempSensorLc"
-		clr=15
-		bclr=12
+		clr=0
+		bclr=13
 	}
 	clrmod="alarm"
 	align="horiz. centered"
@@ -325,8 +301,8 @@ text {
 	}
 	monitor {
 		chan="tempSensorMc"
-		clr=15
-		bclr=12
+		clr=0
+		bclr=13
 	}
 	clrmod="alarm"
 	align="horiz. centered"
@@ -342,8 +318,8 @@ text {
 	}
 	monitor {
 		chan="tempSensorNc"
-		clr=15
-		bclr=12
+		clr=0
+		bclr=13
 	}
 	clrmod="alarm"
 	align="horiz. centered"
@@ -359,8 +335,8 @@ text {
 	}
 	monitor {
 		chan="tempSensorOc"
-		clr=15
-		bclr=12
+		clr=0
+		bclr=13
 	}
 	clrmod="alarm"
 	align="horiz. centered"
@@ -376,8 +352,8 @@ text {
 	}
 	monitor {
 		chan="tempSensorPc"
-		clr=15
-		bclr=12
+		clr=0
+		bclr=13
 	}
 	clrmod="alarm"
 	align="horiz. centered"
@@ -386,13 +362,13 @@ text {
 }
 text {
 	object {
-		x=319
+		x=296
 		y=52
-		width=41
+		width=77
 		height=18
 	}
 	"basic attribute" {
-		clr=14
+		clr=50
 	}
 	textix="Top"
 	align="horiz. centered"
@@ -406,8 +382,8 @@ text {
 	}
 	monitor {
 		chan="tempSensorA"
-		clr=15
-		bclr=12
+		clr=0
+		bclr=13
 	}
 	clrmod="alarm"
 	align="horiz. centered"
@@ -423,8 +399,8 @@ text {
 	}
 	monitor {
 		chan="tempSensorB"
-		clr=15
-		bclr=12
+		clr=0
+		bclr=13
 	}
 	clrmod="alarm"
 	align="horiz. centered"
@@ -440,8 +416,8 @@ text {
 	}
 	monitor {
 		chan="tempSensorC"
-		clr=15
-		bclr=12
+		clr=0
+		bclr=13
 	}
 	clrmod="alarm"
 	align="horiz. centered"
@@ -457,8 +433,8 @@ text {
 	}
 	monitor {
 		chan="tempSensorD"
-		clr=15
-		bclr=12
+		clr=0
+		bclr=13
 	}
 	clrmod="alarm"
 	align="horiz. centered"
@@ -474,8 +450,8 @@ text {
 	}
 	monitor {
 		chan="tempSensorE"
-		clr=15
-		bclr=12
+		clr=0
+		bclr=13
 	}
 	clrmod="alarm"
 	align="horiz. centered"
@@ -491,8 +467,8 @@ text {
 	}
 	monitor {
 		chan="tempSensorF"
-		clr=15
-		bclr=12
+		clr=0
+		bclr=13
 	}
 	clrmod="alarm"
 	align="horiz. centered"
@@ -508,8 +484,8 @@ text {
 	}
 	monitor {
 		chan="tempSensorG"
-		clr=15
-		bclr=12
+		clr=0
+		bclr=13
 	}
 	clrmod="alarm"
 	align="horiz. centered"
@@ -525,8 +501,8 @@ text {
 	}
 	monitor {
 		chan="tempSensorH"
-		clr=15
-		bclr=12
+		clr=0
+		bclr=13
 	}
 	clrmod="alarm"
 	align="horiz. centered"
@@ -535,34 +511,34 @@ text {
 }
 "shell command" {
 	object {
-		x=262
-		y=361
-		width=140
+		x=42
+		y=295
+		width=176
 		height=25
 	}
 	command[0] {
 		label="Temperatures"
 		name="StripTool"
-		args="$APP/hodoscope/strip/hps_ecal_temp_top.stc &"
+		args="$APP/generalApp/strip/hps_ecal_temp_top.stc &"
 	}
 	clr=14
-	bclr=7
+	bclr=51
 	label="Strip Charts Top"
 }
 "shell command" {
 	object {
-		x=405
-		y=361
-		width=140
+		x=42
+		y=322
+		width=176
 		height=25
 	}
 	command[0] {
 		label="Temperatures"
 		name="StripTool"
-		args="$APP/hodoscope/strip/hps_ecal_temp_bottom.stc &"
+		args="$APP/generalApp/strip/hps_ecal_temp_bottom.stc &"
 	}
 	clr=14
-	bclr=7
+	bclr=51
 	label="Strip Charts Bottom"
 }
 polygon {
@@ -587,30 +563,6 @@ polygon {
 		(136,191)
 		(136,200)
 		(42,200)
-	}
-}
-polygon {
-	object {
-		x=43
-		y=215
-		width=176
-		height=56
-	}
-	"basic attribute" {
-		clr=40
-	}
-	points {
-		(43,215)
-		(43,215)
-		(43,247)
-		(43,271)
-		(219,271)
-		(219,215)
-		(168,215)
-		(168,222)
-		(136,222)
-		(136,215)
-		(43,215)
 	}
 }
 text {
@@ -878,114 +830,17 @@ polyline {
 		(153,120)
 	}
 }
-rectangle {
-	object {
-		x=46
-		y=291
-		width=170
-		height=50
-	}
-	"basic attribute" {
-		clr=40
-	}
-}
-polyline {
-	object {
-		x=44
-		y=277
-		width=175
-		height=0
-	}
-	"basic attribute" {
-		clr=20
-	}
-	points {
-		(44,277)
-		(219,277)
-	}
-}
-text {
-	object {
-		x=86
-		y=268
-		width=6
-		height=15
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="8"
-}
-polyline {
-	object {
-		x=46
-		y=348
-		width=175
-		height=0
-	}
-	"basic attribute" {
-		clr=20
-	}
-	points {
-		(46,348)
-		(221,348)
-	}
-}
-text {
-	object {
-		x=88
-		y=339
-		width=6
-		height=15
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="8"
-}
-polyline {
-	object {
-		x=135
-		y=291
-		width=8
-		height=50
-	}
-	"basic attribute" {
-		clr=54
-		style="dash"
-	}
-	points {
-		(143,291)
-		(135,341)
-	}
-}
-polyline {
-	object {
-		x=165
-		y=291
-		width=7
-		height=48
-	}
-	"basic attribute" {
-		clr=54
-		style="dash"
-	}
-	points {
-		(165,291)
-		(172,339)
-	}
-}
 "text update" {
 	object {
 		x=426
-		y=308
+		y=320
 		width=75
 		height=20
 	}
 	monitor {
 		chan="tempSensorTc"
-		clr=15
-		bclr=12
+		clr=0
+		bclr=13
 	}
 	clrmod="alarm"
 	align="horiz. centered"
@@ -1015,7 +870,7 @@ text {
 		height=18
 	}
 	"basic attribute" {
-		clr=14
+		clr=50
 	}
 	textix="Comm"
 	align="horiz. centered"
@@ -1248,7 +1103,7 @@ rectangle {
 rectangle {
 	object {
 		x=420
-		y=308
+		y=320
 		width=5
 		height=20
 	}
@@ -1262,15 +1117,15 @@ rectangle {
 }
 "text update" {
 	object {
-		x=296
-		y=312
-		width=120
+		x=247
+		y=324
+		width=160
 		height=16
 	}
 	monitor {
 		chan="tempSensorT:RAW.DESC"
-		clr=14
-		bclr=4
+		clr=50
+		bclr=12
 	}
 	clrmod="discrete"
 	align="horiz. centered"
@@ -1292,4 +1147,40 @@ rectangle {
 	clr=14
 	bclr=7
 	label="Expert"
+}
+rectangle {
+	object {
+		x=240
+		y=313
+		width=284
+		height=34
+	}
+	"basic attribute" {
+		clr=4
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=0
+		width=560
+		height=30
+	}
+	"basic attribute" {
+		clr=11
+	}
+}
+text {
+	object {
+		x=0
+		y=8
+		width=562
+		height=20
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="ECAL Temperatures"
+	align="horiz. centered"
 }
