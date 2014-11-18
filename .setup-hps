@@ -15,6 +15,7 @@ setenv EPICS_EXTENSIONS $CLAS/R$EPICS_VER/extensions
 set -f path=($path:q "$EPICS_BASE/bin/$EPICS_HOST_ARCH")
 set -f path=($path:q "$EPICS_BASE/bin/$EPICS_HOST_ARCH")
 set -f path=($path:q "$EPICS_EXTENSIONS/bin/$EPICS_HOST_ARCH")
+set -f path=($path:q ".")
 
 if ( ! $?LD_LIBRARY_PATH ) then
   setenv LD_LIBRARY_PATH "$EPICS_BASE/lib/$EPICS_HOST_ARCH":"$EPICS_EXTENSIONS/lib/$EPICS_HOST_ARCH"
