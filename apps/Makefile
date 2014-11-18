@@ -26,4 +26,15 @@ generalApp_DEPEND_DIRS += hvcaApp
 
 include $(TOP)/configure/RULES_TOP
 
+.PHONY: install clean
+install:
+	@$(ECHO) "Making symlinks for old adl files..."
+	linkmaker.sh
 
+clean:
+	@$(ECHO) "Removing any symlinks created for old adl files..."
+	@if [ -a linkmaker.txt ]; \
+	then \
+		$(RM) `cat linkmaker.txt`; \
+		$(RM) linkmaker.txt; \
+	fi
