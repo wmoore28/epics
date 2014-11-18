@@ -1,3 +1,25 @@
+Version 0.2.5:
+ - Merge branch 'hotfix-v0.2.5' of https://github.com/wmoore28/epics
+ - Updated .gitignore for generated striptool links
+ - Updated links to ECal HV screen
+ - Added comments for .gitignore updates
+ - Merge branch 'master' of https://github.com/rafopar/epics into develop
+ - .setup-hps: further improvements to creating correct environment
+ - RELEASE: updated IOCDATA path and added EPICS_EXTENSIONS used by some apps
+ - Added ECalHVStatus screens from mckinnon
+ - the screeenshot directory has changed from /misc/home/hpsrun/screenshots into /home/hpsrun/screenshots
+ - hps_ecal_temp.adl: scheme change and imported striptool config files
+ - scaler_hps.adl: updated FCUP scaler pv
+ - Updated paths from /misc/clas12/ /usr/clas12/
+ - Adjusted adl_genApp makefile to work cleanly on various build targets
+ - Removed redundant test in utils/testbuild.sh
+ - Added apps/linkmaker.sh to generate symlinks used by old adl files, adj'd makefile to call it
+ - Minor cleanup: adl_genApp/Makefile works cleanly with make clean|distclean|realclean used by epics build system
+ - Fix: corrected alhConfig filename for ecal mainframe
+ - Fix typo utils/testbuild.sh
+ - vector size cut ischanged (not it is vec_size > 5), FC cup added in the Data View
+ - modified data viewer
+
 Version 0.2.4:
  - Updated testbuild.sh to check for EPICS variable used by hvcaApp
  - Merged master with develop for compatibility testing
