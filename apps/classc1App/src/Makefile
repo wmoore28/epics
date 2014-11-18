@@ -19,7 +19,8 @@ classc1_DBD += harp_genericSupport.dbd
 classc1_DBD += scalerSupport.dbd
 classc1_DBD += scaler_dSupport.dbd
 classc1_DBD += scaler_eSupport.dbd
-classc1_DBD += asymSupport.dbd
+##classc1_DBD += asymSupport.dbd
+classc1_DBD += bomSupport.dbd
 classc1_DBD += devIocStats.dbd
 ##classc1_DBD += xy240.dbd
 
@@ -35,7 +36,8 @@ classc1_LIBS += harp_genericSupport
 classc1_LIBS += scalerSupport
 classc1_LIBS += scaler_dSupport
 classc1_LIBS += scaler_eSupport
-classc1_LIBS += asymSupport
+##classc1_LIBS += asymSupport
+classc1_LIBS += bomSupport
 
 classc1_LIBS += mca
 classc1_LIBS += calc
