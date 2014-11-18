@@ -128,7 +128,7 @@ public class MakeLogEntry
 	    //System.out.println("cur_dir = " + cur_dir);
 	    
 	    //System.out.println("winid = " + winid);
-	    String snapshot_dir = "/misc/home/hpsrun/screenshots";
+	    String snapshot_dir = "/home/hpsrun/screenshots";
 	    String[] cmd_convert = {"/bin/sh", "-c", "xwd -id " + winid + " | convert - " + snapshot_dir + "/" + file_name+"_"+time_stamp+".gif"};
 	    //System.out.println("Convert cmd = " + cmd_convert[2]);
 	    //p = Runtime.getRuntime().exec("xwd -id " + winid + " | convert -" + file_name+".gif" );
