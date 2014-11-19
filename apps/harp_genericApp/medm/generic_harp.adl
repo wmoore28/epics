@@ -1,7 +1,7 @@
 
 file {
-	name="/usr/clas/devel/R3.14.8.2/EPICS/app/harp_generic/medm/generic_harp.adl"
-	version=030101
+	name="/usr/clas12/hps/prod/apps/medm/generic_harp.adl"
+	version=030108
 }
 display {
 	object {
@@ -362,7 +362,7 @@ text {
 	}
 	command[0] {
 		label="Analyze Scans"
-		name="/misc/clas12/hps/prod/tools/harp_analyzer/bin/runHarpScan.sh $(motor_name) &"
+		name="/usr/clas12/hps/prod/tools/harp_analyzer/bin/runHarpScan.sh $(motor_name) &"
 		args=" "
 	}
 	command[1] {
