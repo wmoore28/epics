@@ -78,7 +78,7 @@ dbLoadRecords("db/scan.db","motor_name=harp_tagger, start_at=18, end_at=58.0, st
 
 ##dbLoadRecords("db/motor.db","motor_name=collimator, card=0, slot=3, srev=2000, urev=0.2, direction=Pos, velo=0.2, accl=0.5")
 
-#dbLoadRecords("db/radiators.db")
+dbLoadRecords("db/radiators.db")
 #dbLoadRecords("db/convertors.db")
 #dbLoadRecords("db/hps_collimators.db")
 
