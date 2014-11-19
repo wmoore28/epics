@@ -1,13 +1,13 @@
 
 file {
-	name="/home/stepanya/epics/app/harp_generic/medm/collimator.adl"
-	version=030101
+	name="/home/nerses/github_test/epics/apps/harp_genericApp/medm/hps_collimator.adl"
+	version=030108
 }
 display {
 	object {
-		x=813
-		y=266
-		width=450
+		x=307
+		y=92
+		width=670
 		height=110
 	}
 	clr=14
@@ -99,8 +99,8 @@ display {
 		clr=14
 		bclr=4
 	}
-	label="12.7 mm"
-	press_msg="2.965"
+	label="Wire"
+	press_msg="-113.284"
 	clrmod="discrete"
 }
 "message button" {
@@ -115,8 +115,8 @@ display {
 		clr=14
 		bclr=4
 	}
-	label="8.6 mm"
-	press_msg="7.051"
+	label="3mm no foil"
+	press_msg="-128.016"
 }
 "message button" {
 	object {
@@ -131,8 +131,8 @@ display {
 		bclr=4
 	}
 	label="Retract"
-	press_msg="-2"
-	release_msg="-2"
+	press_msg="-100"
+	release_msg="-100"
 }
 rectangle {
 	object {
@@ -161,7 +161,7 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="hps_collimator_at_a"
+		chan="hps_collimator_at_wire"
 	}
 }
 rectangle {
@@ -176,7 +176,7 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="hps_collimator_at_b"
+		chan="hps_collimator_at_collim1"
 	}
 }
 text {
@@ -189,7 +189,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="0.0"
+	textix="-100"
 	align="horiz. centered"
 }
 text {
@@ -202,7 +202,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="2.965"
+	textix="-113.284"
 	align="horiz. centered"
 }
 "text update" {
@@ -260,7 +260,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="7.051"
+	textix="-128.016"
 	align="horiz. centered"
 }
 "message button" {
@@ -275,8 +275,8 @@ text {
 		clr=14
 		bclr=4
 	}
-	label="6.4 mm"
-	press_msg="11.110"
+	label="3mm 10E-4 r.l."
+	press_msg="-141.732"
 }
 rectangle {
 	object {
@@ -290,7 +290,7 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="hps_collimator_at_d"
+		chan="hps_collimator_at_collim2"
 	}
 }
 text {
@@ -303,7 +303,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="11.160"
+	textix="-141.732"
 }
 text {
 	object {
@@ -332,4 +332,89 @@ text {
 		chan="hps_collimator.DMOV"
 	}
 	textix="moving"
+}
+"message button" {
+	object {
+		x=457
+		y=4
+		width=92
+		height=24
+	}
+	control {
+		chan="hps_collimator.VAL"
+		clr=14
+		bclr=4
+	}
+	label="2mm no foil"
+	press_msg="-157.48"
+}
+rectangle {
+	object {
+		x=450
+		y=0
+		width=107
+		height=34
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="hps_collimator_at_collim3"
+	}
+}
+text {
+	object {
+		x=470
+		y=36
+		width=56
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="-157.48"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=566
+		y=4
+		width=92
+		height=24
+	}
+	control {
+		chan="hps_collimator.VAL"
+		clr=14
+		bclr=4
+	}
+	label="Gold foil"
+	press_msg="-172.212"
+}
+rectangle {
+	object {
+		x=560
+		y=0
+		width=107
+		height=34
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="hps_collimator_at_foil"
+	}
+}
+text {
+	object {
+		x=583
+		y=35
+		width=56
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="-172.212"
 }

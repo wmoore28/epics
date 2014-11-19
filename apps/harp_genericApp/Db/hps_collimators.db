@@ -1,30 +1,30 @@
 record(calc, "hps_collimator_at_home") {
 	field(INPA, "hps_collimator.RBV")
 	field(SCAN, ".2 second")
-	field(CALC, "ABS(A-0.0)<0.1?1:0")
+	field(CALC, "ABS(A+100)<0.1?1:0")
 }
-record(calc, "hps_collimator_at_a") {
+record(calc, "hps_collimator_at_wire") {
 	field(INPA, "hps_collimator.RBV")
 	field(SCAN, ".2 second")
-	field(CALC, "ABS(A-2.965)<0.01?1:0")
+	field(CALC, "ABS(A+113.284)<0.1?1:0")
 }
-record(calc, "hps_collimator_at_b") {
+record(calc, "hps_collimator_at_collim1") {
 	field(INPA, "hps_collimator.RBV")
 	field(SCAN, ".2 second")
-	field(CALC, "ABS(A-7.051)<0.01?1:0")
+	field(CALC, "ABS(A+128.016)<0.1?1:0")
 }
-record(calc, "hps_collimator_at_c") {
+record(calc, "hps_collimator_at_collim2") {
 	field(INPA, "hps_collimator.RBV")
 	field(SCAN, ".2 second")
-	field(CALC, "ABS(A-10.178)<0.01?1:0")
+	field(CALC, "ABS(A+141.732)<0.1?1:0")
 }
-record(calc, "hps_collimator_at_d") {
+record(calc, "hps_collimator_at_collim3") {
 	field(INPA, "hps_collimator.RBV")
 	field(SCAN, ".2 second")
-	field(CALC, "ABS(A-11.160)<0.01?1:0")
+	field(CALC, "ABS(A+157.48)<0.1?1:0")
 }
-record(calc, "hps_collimator_at_e") {
+record(calc, "hps_collimator_at_foil") {
 	field(INPA, "hps_collimator.RBV")
 	field(SCAN, ".2 second")
-	field(CALC, "ABS(A-3.425)<0.01?1:0")
+	field(CALC, "ABS(A+172.212)<0.1?1:0")
 }
