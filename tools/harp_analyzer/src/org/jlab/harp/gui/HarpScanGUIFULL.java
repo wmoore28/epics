@@ -7,6 +7,8 @@
 package org.jlab.harp.gui;
 
 import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -29,7 +31,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
+import javax.swing.JTextArea;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.*;
 import org.jlab.AutoLogEntry.MakeLogEntry;
 import org.jlab.data.graph.DataSetXY;
 import org.jlab.data.graph.DataTable;
@@ -50,6 +54,7 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
     private JComboBox comboWire = null; 
     private DataTable   dataTable = new DataTable();
     private ScChartCanvas canvas  = null;
+    private JTextArea jta1 = null;
     private String   currentFileName         = "";
     private String   currentFilePath         = "";
     private String   currentHarpFilesDir     = ".";
@@ -76,11 +81,11 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
         super(type);
         
         
-        
         this.setSize(1200, 800);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         splitPane = new JSplitPane();
         splitPane.setDividerLocation(400);
+        //JSplitPane split_pan2 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, splitPane);
         
         
         JPanel leftPanel = new JPanel();
@@ -91,7 +96,7 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
         leftPanel.add(buttonPanel);
         
         splitPane.setLeftComponent(leftPanel);
-        
+               
         canvas = new ScChartCanvas(500,500,1,1);
         splitPane.setRightComponent(canvas);
         splitPane.addComponentListener(canvas);
@@ -229,6 +234,7 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
             MakeLogEntry log = new MakeLogEntry();
             log.setTitle("Scan of " + this_harp_dir);
             StringBuilder str = new StringBuilder();
+                str.append("Harp File: " + currentHarpFilesDir + "/" + currentFileName + "\n");
 //            for(int loop = 0; harpAnalyzer.functions.size() >= loop;loop++){
               for(int loop = 0; harpAnalyzer.getHarpFuncs().size() > loop;loop++){ 
                   System.out.println("Loop = " + loop);
@@ -329,6 +335,7 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
         ArrayList<DataSetXY>  harpData = harpAnalyzer.getHarpData();
         int ngraphs = harpData.size();
         System.err.println(" HARP SCAN DATA SIZE = " + ngraphs);
+        
         canvas.divide(1, ngraphs);
         canvas.repaint();
         for(int loop =0; loop < ngraphs; loop++){
@@ -360,7 +367,11 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
             canvas.addLegend(0, 0.65, 0.05, legend);
         }
         String[] counter_name = {"counter:  " + counterNames[comboWire.getSelectedIndex()]};
-        canvas.addLegend(0, 0.65, 0.4, counter_name);
+        String file_stamp = currentFileName;
+        file_stamp = file_stamp.replace(".txt", "");
+        String[] str_filename = {file_stamp};
+        canvas.addLegend(1, 0.6, 0.25, counter_name);
+	canvas.addLegend(1, 0.6, 0.15, str_filename);
     }
     
     public void loadData(){
