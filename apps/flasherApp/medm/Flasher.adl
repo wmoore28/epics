@@ -806,7 +806,7 @@ composite {
 			}
 			command[0] {
 				label="Start"
-				name="/misc/clas12/release/0.1/epics/apps/iocBoot/iocFlasher/medm/start_seq_bot.sh &"
+				name="/usr/clas12/hps/prod/apps/flasherApp/medm/flasher_start_bot.sh &"
 			}
 			clr=14
 			bclr=2
@@ -821,7 +821,7 @@ composite {
 			}
 			command[0] {
 				label="Stop"
-				name="/misc/clas12/release/0.1/epics/apps/iocBoot/iocFlasher/medm/stop_seq_bot.sh &"
+				name="/usr/clas12/hps/prod/apps/flasherApp/medm/flasher_stop_bot.sh &"
 			}
 			clr=14
 			bclr=2
@@ -1028,7 +1028,7 @@ composite {
 					}
 					command[0] {
 						label="Start"
-						name="/misc/clas12/release/0.1/epics/apps/iocBoot/iocFlasher/medm/start_seq_top.sh &"
+						name="/usr/clas12/hps/prod/apps/flasherApp/medm/flasher_start_top.sh &"
 					}
 					clr=14
 					bclr=2
@@ -1043,7 +1043,7 @@ composite {
 					}
 					command[0] {
 						label="Stop"
-						name="/misc/clas12/release/0.1/epics/apps/iocBoot/iocFlasher/medm/stop_seq_top.sh &"
+						name="/usr/clas12/hps/prod/apps/flasherApp/medm/flasher_stop_top.sh &"
 					}
 					clr=14
 					bclr=2
