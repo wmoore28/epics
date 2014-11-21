@@ -1,17 +1,17 @@
 
 file {
-	name="/usr/clas/devel/R3.14.8.2/EPICS/app/general/medm/notify_expert.adl"
+	name="/usr/clas12/hps/v0.2.5/apps/generalApp/medm/notify_expert.adl"
 	version=030101
 }
 display {
 	object {
-		x=65
-		y=232
+		x=380
+		y=722
 		width=200
-		height=420
+		height=245
 	}
 	clr=14
-	bclr=55
+	bclr=12
 	cmap=""
 	gridSpacing=5
 	gridOn=0
@@ -87,259 +87,155 @@ display {
 		1a7309,
 	}
 }
-"shell command" {
+text {
 	object {
-		x=10
-		y=10
-		width=180
-		height=20
+		x=42
+		y=214
+		width=119
+		height=19
 	}
-	command[0] {
-		label="PAGE NOW"
-		name="$APP/general/scripts/notify_expert.pl"
-		args="beamline"
+	"basic attribute" {
+		clr=30
 	}
-	clr=14
-	bclr=50
-	label="Page BEAMLINE"
+	textix="Page Experts"
+	align="horiz. centered"
 }
-"shell command" {
+composite {
 	object {
-		x=10
-		y=35
+		x=11
+		y=7
 		width=180
-		height=20
+		height=195
 	}
-	command[0] {
-		label="PAGE NOW"
-		name="$APP/general/scripts/notify_expert.pl"
-		args="cc"
+	"composite name"=""
+	children {
+		"shell command" {
+			object {
+				x=11
+				y=57
+				width=180
+				height=20
+			}
+			command[0] {
+				label="PAGE NOW"
+				name="$APP/general/scripts/notify_expert.pl"
+				args="daq"
+			}
+			clr=14
+			bclr=50
+			label="Page DAQ"
+		}
+		"shell command" {
+			object {
+				x=11
+				y=32
+				width=180
+				height=20
+			}
+			command[0] {
+				label="PAGE NOW"
+				name="$APP/general/scripts/notify_expert.pl"
+				args="pdl"
+			}
+			clr=14
+			bclr=50
+			label="Page PDL"
+		}
+		"shell command" {
+			object {
+				x=11
+				y=82
+				width=180
+				height=20
+			}
+			command[0] {
+				label="PAGE NOW"
+				name="$APP/general/scripts/notify_expert.pl"
+				args="ecal_expert"
+			}
+			clr=14
+			bclr=50
+			label="Page ECal"
+		}
+		"shell command" {
+			object {
+				x=11
+				y=7
+				width=180
+				height=20
+			}
+			command[0] {
+				label="PAGE NOW"
+				name="$APP/general/scripts/notify_expert.pl"
+				args="run_coordinator"
+			}
+			clr=14
+			bclr=50
+			label="Page RUN COORDINATOR"
+		}
+		"shell command" {
+			object {
+				x=11
+				y=107
+				width=180
+				height=20
+			}
+			command[0] {
+				label="PAGE NOW"
+				name="$APP/general/scripts/notify_expert.pl"
+				args="slowcont_expert"
+			}
+			clr=14
+			bclr=50
+			label="Page EPICS/Slow Controls"
+		}
+		"shell command" {
+			object {
+				x=11
+				y=132
+				width=180
+				height=20
+			}
+			command[0] {
+				label="PAGE NOW"
+				name="$APP/general/scripts/notify_expert.pl"
+				args="svt_expert"
+			}
+			clr=14
+			bclr=50
+			label="Page SVT"
+		}
+		"shell command" {
+			object {
+				x=11
+				y=182
+				width=180
+				height=20
+			}
+			command[0] {
+				label="PAGE NOW"
+				name="$APP/general/scripts/notify_expert.pl"
+				args="engineering"
+			}
+			clr=14
+			bclr=50
+			label="Page ENGINEERING"
+		}
+		"shell command" {
+			object {
+				x=11
+				y=157
+				width=180
+				height=20
+			}
+			command[0] {
+				label="PAGE NOW"
+				name="$APP/general/scripts/notify_expert.pl"
+				args="beamline_expert"
+			}
+			clr=14
+			bclr=50
+			label="Page BEAMLINE"
+		}
 	}
-	clr=14
-	bclr=50
-	label="Page CC"
-}
-"shell command" {
-	object {
-		x=10
-		y=60
-		width=180
-		height=20
-	}
-	command[0] {
-		label="PAGE NOW"
-		name="$APP/general/scripts/notify_expert.pl"
-		args="daq"
-	}
-	clr=14
-	bclr=50
-	label="Page DAQ"
-}
-"shell command" {
-	object {
-		x=10
-		y=85
-		width=180
-		height=20
-	}
-	command[0] {
-		label="PAGE NOW"
-		name="$APP/general/scripts/notify_expert.pl"
-		args="dc"
-	}
-	clr=14
-	bclr=50
-	label="Page DC"
-}
-"shell command" {
-	object {
-		x=9
-		y=110
-		width=180
-		height=20
-	}
-	command[0] {
-		label="PAGE NOW"
-		name="$APP/general/scripts/notify_expert.pl"
-		args="ec"
-	}
-	clr=14
-	bclr=50
-	label="Page EC"
-}
-"shell command" {
-	object {
-		x=9
-		y=135
-		width=180
-		height=20
-	}
-	command[0] {
-		label="PAGE NOW"
-		name="$APP/general/scripts/notify_expert.pl"
-		args="engineering"
-	}
-	clr=14
-	bclr=50
-	label="Page ENGINEERING"
-}
-"shell command" {
-	object {
-		x=9
-		y=160
-		width=180
-		height=20
-	}
-	command[0] {
-		label="PAGE NOW"
-		name="$APP/general/scripts/notify_expert.pl"
-		args="epics"
-	}
-	clr=14
-	bclr=50
-	label="Page EPICS"
-}
-"shell command" {
-	object {
-		x=9
-		y=185
-		width=180
-		height=20
-	}
-	command[0] {
-		label="PAGE NOW"
-		name="$APP/general/scripts/notify_expert.pl"
-		args="ic"
-	}
-	clr=14
-	bclr=50
-	label="Page IC"
-}
-"shell command" {
-	object {
-		x=10
-		y=209
-		width=180
-		height=20
-	}
-	command[0] {
-		label="PAGE NOW"
-		name="$APP/general/scripts/notify_expert.pl"
-		args="lac"
-	}
-	clr=14
-	bclr=50
-	label="Page LAC"
-}
-"shell command" {
-	object {
-		x=10
-		y=234
-		width=180
-		height=20
-	}
-	command[0] {
-		label="PAGE NOW"
-		name="$APP/general/scripts/notify_expert.pl"
-		args="nmr"
-	}
-	clr=14
-	bclr=50
-	label="Page NMR"
-}
-"shell command" {
-	object {
-		x=10
-		y=259
-		width=180
-		height=20
-	}
-	command[0] {
-		label="PAGE NOW"
-		name="$APP/general/scripts/notify_expert.pl"
-		args="pdl"
-	}
-	clr=14
-	bclr=50
-	label="Page PDL"
-}
-"shell command" {
-	object {
-		x=9
-		y=283
-		width=180
-		height=20
-	}
-	command[0] {
-		label="PAGE NOW"
-		name="$APP/general/scripts/notify_expert.pl"
-		args="run_coordinator"
-	}
-	clr=14
-	bclr=50
-	label="Page RUN COORDINATOR"
-}
-"shell command" {
-	object {
-		x=9
-		y=308
-		width=180
-		height=20
-	}
-	command[0] {
-		label="PAGE NOW"
-		name="$APP/general/scripts/notify_expert.pl"
-		args="sc"
-	}
-	clr=14
-	bclr=50
-	label="Page SC"
-}
-"shell command" {
-	object {
-		x=9
-		y=333
-		width=180
-		height=20
-	}
-	command[0] {
-		label="PAGE NOW"
-		name="$APP/general/scripts/notify_expert.pl"
-		args="st"
-	}
-	clr=14
-	bclr=50
-	label="Page ST"
-}
-"shell command" {
-	object {
-		x=9
-		y=358
-		width=180
-		height=20
-	}
-	command[0] {
-		label="PAGE NOW"
-		name="$APP/general/scripts/notify_expert.pl"
-		args="tagger"
-	}
-	clr=14
-	bclr=50
-	label="Page TAGGER"
-}
-"shell command" {
-	object {
-		x=10
-		y=381
-		width=180
-		height=20
-	}
-	command[0] {
-		label="PAGE NOW"
-		name="$APP/general/scripts/notify_expert.pl"
-		args="target"
-	}
-	clr=14
-	bclr=50
-	label="Page TARGET"
 }

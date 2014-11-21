@@ -1,0 +1,412 @@
+
+file {
+	name="/misc/clas/devel/R3.14.8.2/EPICS/app/hvca/medm/hv_generic.adl"
+	version=030101
+}
+display {
+	object {
+		x=76
+		y=442
+		width=775
+		height=75
+	}
+	clr=14
+	bclr=4
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+text {
+	object {
+		x=11
+		y=9
+		width=110
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Channel Name"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=131
+		y=9
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Group#"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=338
+		y=9
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Measured V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=416
+		y=9
+		width=80
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Demand V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=516
+		y=9
+		width=80
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Input V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=638
+		y=9
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Measured I"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=716
+		y=9
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Status"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=16
+		y=34
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(channel_name)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=136
+		y=34
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(group_number)"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=196
+		y=34
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_$(channel_name)_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+}
+oval {
+	object {
+		x=236
+		y=38
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_$(channel_name)_property.K"
+	}
+}
+"message button" {
+	object {
+		x=268
+		y=34
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_$(channel_name)_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=316
+		y=34
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_$(channel_name)_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=416
+		y=34
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_$(channel_name)_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=516
+		y=34
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_$(channel_name)_DV"
+		clr=14
+		bclr=50
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=34
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_$(channel_name)_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=716
+		y=34
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_$(channel_name)_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+composite {
+	object {
+		x=120
+		y=50
+		width=70
+		height=20
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=120
+				y=50
+				width=20
+				height=20
+			}
+			monitor {
+				chan="B_hv_$(channel_name)_property.INPA"
+				clr=14
+				bclr=57
+			}
+			clrmod="discrete"
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=145
+				y=50
+				width=20
+				height=20
+			}
+			monitor {
+				chan="B_hv_$(channel_name)_property.INPB"
+				clr=14
+				bclr=57
+			}
+			clrmod="discrete"
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=170
+				y=50
+				width=20
+				height=20
+			}
+			monitor {
+				chan="B_hv_$(channel_name)_property.INPC"
+				clr=14
+				bclr=57
+			}
+			clrmod="discrete"
+			align="horiz. centered"
+			limits {
+			}
+		}
+	}
+}
+text {
+	object {
+		x=10
+		y=50
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="(Mf, Slot, Chan):"
+}

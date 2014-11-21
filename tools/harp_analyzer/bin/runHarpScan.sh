@@ -1,7 +1,7 @@
 #!/bin/sh -f
 
 SCRIPT_DIR=`dirname $0` ; export SCRIPT_DIR
-HARPFILE_DIR=/misc/home/epics/DATA/HARP_SCANS; export HARPFILE_DIR
+HARPFILE_DIR=/home/epics/DATA/HARP_SCANS; export HARPFILE_DIR
 echo +-------------------------------------------------------------------------
 echo "|                       Starting HARP SCAN PROGRAM                      |"
 echo +-------------------------------------------------------------------------

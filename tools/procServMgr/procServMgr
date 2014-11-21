@@ -31,7 +31,7 @@ SCRIPT_NAME=procServMgr
 # Data File Locations
 #-----------------------------------------------------------------------
 #CONFIG_DIR=~wmoore/workspaces/hps-epics/apps/iocBoot
-CONFIG_DIR=/misc/clas12/hps/prod/apps/iocBoot
+CONFIG_DIR=/usr/clas12/hps/prod/apps/iocBoot
 APP_DIR=${EPICS_EXTENSIONS}/bin/linux-x86
 IOC_DIR=$CONFIG_DIR
 DIR_LIST="$APP_DIR $CONFIG_DIR $IOC_DIR"

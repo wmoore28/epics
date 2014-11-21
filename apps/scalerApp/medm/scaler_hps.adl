@@ -1,0 +1,2760 @@
+
+file {
+	name="/home/stepanya/hps/epics/general/medm/scaler_hps.adl"
+	version=030108
+}
+display {
+	object {
+		x=250
+		y=250
+		width=1268
+		height=925
+	}
+	clr=14
+	bclr=4
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=1
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+oval {
+	object {
+		x=722
+		y=460
+		width=35
+		height=32
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="scaler_eS2b.VAL"
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=627
+		width=120
+		height=24
+	}
+	"basic attribute" {
+		clr=55
+	}
+}
+arc {
+	object {
+		x=168
+		y=129
+		width=400
+		height=250
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=3
+	}
+	begin=0
+	path=5760
+}
+polyline {
+	object {
+		x=191
+		y=129
+		width=999
+		height=3
+	}
+	"basic attribute" {
+		clr=14
+		width=3
+	}
+	points {
+		(192,130)
+		(1188,130)
+	}
+}
+text {
+	object {
+		x=726
+		y=100
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Torus"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=538
+		y=261
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Tagger Dump"
+	align="horiz. centered"
+}
+arc {
+	object {
+		x=185
+		y=301
+		width=397
+		height=220
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=3
+	}
+	begin=0
+	path=5760
+}
+arc {
+	object {
+		x=203
+		y=686
+		width=397
+		height=250
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=3
+	}
+	begin=0
+	path=5760
+}
+"related display" {
+	object {
+		x=1190
+		y=880
+		width=72
+		height=25
+	}
+	display[0] {
+		label="JOERGER SETUP"
+		name="scaler_control.adl"
+	}
+	display[1] {
+		label="BOM SETUP"
+		name="bom_scaler_setup.adl"
+	}
+	display[2] {
+		label="ST SETUP"
+		name="st_scaler_setup.adl"
+	}
+	clr=14
+	bclr=30
+	label="Setup"
+}
+text {
+	object {
+		x=1100
+		y=880
+		width=80
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Scaler Setup"
+}
+composite {
+	object {
+		x=870
+		y=870
+		width=200
+		height=38
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=870
+				y=890
+				width=200
+				height=18
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Menu Execute -> Make Log Entry"
+		}
+		text {
+			object {
+				x=870
+				y=870
+				width=200
+				height=18
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="To make a log entry right click:"
+		}
+	}
+}
+"text update" {
+	object {
+		x=440
+		y=200
+		width=75
+		height=18
+	}
+	monitor {
+		chan="scalerS5b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=570
+		y=200
+		width=75
+		height=18
+	}
+	monitor {
+		chan="scalerS7b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=500
+		y=170
+		width=75
+		height=18
+	}
+	monitor {
+		chan="scalerS6b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=846
+		y=100
+		width=71
+		height=18
+	}
+	monitor {
+		chan="scaler_cS8b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=889
+		y=121
+		width=71
+		height=18
+	}
+	monitor {
+		chan="scaler_cS11b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=846
+		y=145
+		width=71
+		height=18
+	}
+	monitor {
+		chan="scaler_cS10b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=800
+		y=121
+		width=71
+		height=18
+	}
+	monitor {
+		chan="scaler_cS9b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=1065
+		y=85
+		width=30
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="HPS-L"
+}
+"text update" {
+	object {
+		x=1040
+		y=140
+		width=75
+		height=18
+	}
+	monitor {
+		chan="scaler_cS13b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1041
+		y=103
+		width=75
+		height=18
+	}
+	monitor {
+		chan="scaler_cS12b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=1065
+		y=159
+		width=30
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="HPS-R"
+}
+"text update" {
+	object {
+		x=1130
+		y=105
+		width=75
+		height=18
+	}
+	monitor {
+		chan="scaler_cS14b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=1150
+		y=85
+		width=30
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="HPS-T"
+}
+text {
+	object {
+		x=520
+		y=150
+		width=30
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="TAG-T"
+}
+text {
+	object {
+		x=455
+		y=180
+		width=30
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="TAG-L"
+}
+text {
+	object {
+		x=595
+		y=180
+		width=30
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="TAG-T"
+}
+arc {
+	object {
+		x=220
+		y=471
+		width=370
+		height=250
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=3
+	}
+	begin=0
+	path=5760
+}
+image {
+	object {
+		x=5
+		y=5
+		width=205
+		height=115
+	}
+	type="gif"
+	"image name"="heavy_photon_logo.gif"
+}
+composite {
+	object {
+		x=230
+		y=5
+		width=125
+		height=20
+	}
+	"composite name"=""
+	children {
+		rectangle {
+			object {
+				x=230
+				y=5
+				width=125
+				height=20
+			}
+			"basic attribute" {
+				clr=50
+			}
+		}
+		text {
+			object {
+				x=230
+				y=8
+				width=125
+				height=15
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Beam PMTs"
+			align="horiz. centered"
+		}
+	}
+}
+composite {
+	object {
+		x=230
+		y=30
+		width=125
+		height=20
+	}
+	"composite name"=""
+	children {
+		rectangle {
+			object {
+				x=230
+				y=30
+				width=125
+				height=20
+			}
+			"basic attribute" {
+				clr=35
+			}
+		}
+		text {
+			object {
+				x=230
+				y=33
+				width=125
+				height=15
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="ECal rates"
+			align="horiz. centered"
+		}
+	}
+}
+composite {
+	object {
+		x=310
+		y=80
+		width=75
+		height=43
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=310
+				y=105
+				width=75
+				height=18
+			}
+			monitor {
+				chan="scalerS4b.VAL"
+				clr=14
+				bclr=50
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=335
+				y=80
+				width=30
+				height=15
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="UPS-L"
+		}
+	}
+}
+composite {
+	object {
+		x=310
+		y=135
+		width=75
+		height=39
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=310
+				y=135
+				width=75
+				height=18
+			}
+			monitor {
+				chan="scalerS3b.VAL"
+				clr=14
+				bclr=50
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=330
+				y=159
+				width=30
+				height=15
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="UPS-R"
+		}
+	}
+}
+composite {
+	object {
+		x=77
+		y=125
+		width=53
+		height=22
+	}
+	"composite name"=""
+	children {
+		rectangle {
+			object {
+				x=77
+				y=125
+				width=50
+				height=15
+			}
+			"basic attribute" {
+				clr=55
+			}
+		}
+		text {
+			object {
+				x=80
+				y=125
+				width=50
+				height=22
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="RATES"
+		}
+	}
+}
+composite {
+	object {
+		x=6
+		y=170
+		width=193
+		height=72
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=119
+				y=194
+				width=80
+				height=20
+			}
+			monitor {
+				chan="HLB:bta_dty_fctr"
+				clr=14
+				bclr=50
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=6
+				y=196
+				width=100
+				height=16
+			}
+			"basic attribute" {
+				clr=14
+			}
+			"dynamic attribute" {
+				chan="scaler_dS6b.VAL"
+			}
+			textix="Duty Cycle (%)"
+			align="horiz. right"
+		}
+		"text update" {
+			object {
+				x=119
+				y=222
+				width=80
+				height=20
+			}
+			monitor {
+				chan="HLB:bta_60hz_rms"
+				clr=14
+				bclr=50
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=6
+				y=224
+				width=100
+				height=16
+			}
+			"basic attribute" {
+				clr=14
+			}
+			"dynamic attribute" {
+				chan="HLB:bta_60hz_rms"
+			}
+			textix="Max RMS (%)"
+			align="horiz. right"
+		}
+		"text update" {
+			object {
+				x=119
+				y=170
+				width=80
+				height=20
+			}
+			monitor {
+				chan="frwd_scalerS15b"
+				clr=14
+				bclr=50
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=6
+				y=170
+				width=100
+				height=16
+			}
+			"basic attribute" {
+				clr=14
+			}
+			"dynamic attribute" {
+				chan="scaler_dS6b.VAL"
+			}
+			textix="RF Rate (Hz)"
+			align="horiz. right"
+		}
+	}
+}
+polyline {
+	object {
+		x=194
+		y=302
+		width=1004
+		height=3
+	}
+	"basic attribute" {
+		clr=14
+		width=3
+	}
+	points {
+		(195,303)
+		(1196,303)
+	}
+}
+text {
+	object {
+		x=57
+		y=312
+		width=110
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X Abs Pos (mm)"
+}
+text {
+	object {
+		x=57
+		y=337
+		width=110
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Y Abs Pos (mm)"
+}
+text {
+	object {
+		x=57
+		y=364
+		width=114
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="scaler_calc1.VAL"
+	}
+	textix="Current (nA)"
+}
+composite {
+	object {
+		x=0
+		y=280
+		width=170
+		height=20
+	}
+	"composite name"=""
+	children {
+		rectangle {
+			object {
+				x=0
+				y=280
+				width=170
+				height=20
+			}
+			"basic attribute" {
+				clr=55
+			}
+		}
+		text {
+			object {
+				x=6
+				y=282
+				width=155
+				height=18
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Beam Position Monitors"
+		}
+	}
+}
+text {
+	object {
+		x=1090
+		y=285
+		width=80
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Faraday Cup"
+}
+"text update" {
+	object {
+		x=1090
+		y=310
+		width=75
+		height=18
+	}
+	monitor {
+		chan="scaler_c_calc1"
+		clr=0
+		bclr=25
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=186
+		y=310
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hallb_IPM2C21A_CUR"
+		clr=0
+		bclr=25
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=186
+		y=330
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hallb_IPM2C21A_XPOS"
+		clr=1
+		bclr=54
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=207
+		y=285
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2C21A"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=186
+		y=351
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hallb_IPM2C21A_YPOS"
+		clr=1
+		bclr=54
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=307
+		y=310
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hallb_IPM2C24A_CUR"
+		clr=0
+		bclr=25
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=306
+		y=330
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hallb_IPM2C24A_XPOS"
+		clr=1
+		bclr=54
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=318
+		y=285
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2C24A"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=306
+		y=351
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hallb_IPM2C24A_YPOS"
+		clr=1
+		bclr=54
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=657
+		y=310
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hallb_IPM2H01_CUR"
+		clr=0
+		bclr=25
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=668
+		y=285
+		width=45
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2H01"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=567
+		y=310
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hallb_IPM2H00_CUR"
+		clr=0
+		bclr=25
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=566
+		y=330
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hallb_IPM2H00_XPOS"
+		clr=1
+		bclr=54
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=578
+		y=285
+		width=45
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2H00"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=566
+		y=351
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hallb_IPM2H00_YPOS"
+		clr=1
+		bclr=54
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=932
+		y=310
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hallb_IPM2H02_CUR"
+		clr=0
+		bclr=25
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=943
+		y=285
+		width=45
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2H02"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=5
+		y=430
+		width=120
+		height=24
+	}
+	"basic attribute" {
+		clr=55
+	}
+}
+text {
+	object {
+		x=11
+		y=434
+		width=100
+		height=22
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Moving Devices"
+}
+polyline {
+	object {
+		x=137
+		y=472
+		width=1049
+		height=3
+	}
+	"basic attribute" {
+		clr=14
+		width=3
+	}
+	points {
+		(138,473)
+		(1184,473)
+	}
+}
+text {
+	object {
+		x=317
+		y=452
+		width=110
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Tagger Harp (2C24)"
+}
+text {
+	object {
+		x=192
+		y=452
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Harp 2C21"
+}
+polyline {
+	object {
+		x=145
+		y=687
+		width=1049
+		height=3
+	}
+	"basic attribute" {
+		clr=14
+		width=3
+	}
+	points {
+		(146,688)
+		(1192,688)
+	}
+}
+text {
+	object {
+		x=370
+		y=662
+		width=75
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Tagger"
+	align="horiz. centered"
+}
+oval {
+	object {
+		x=382
+		y=701
+		width=16
+		height=15
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="TMPSONRBCK"
+	}
+}
+oval {
+	object {
+		x=382
+		y=701
+		width=16
+		height=15
+	}
+	"basic attribute" {
+		clr=61
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="TMPSONRBCK"
+	}
+}
+"text update" {
+	object {
+		x=379
+		y=728
+		width=80
+		height=18
+	}
+	monitor {
+		chan="TMIRBCK"
+		clr=1
+		bclr=53
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=471
+		y=730
+		width=11
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="A"
+}
+text {
+	object {
+		x=8
+		y=630
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Magnet Settings"
+}
+text {
+	object {
+		x=209
+		y=752
+		width=75
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="gauss-cm"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=145
+		y=698
+		width=61
+		height=18
+	}
+	monitor {
+		chan="MBC2C21H.BDL"
+		clr=34
+		bclr=0
+	}
+	align="horiz. centered"
+	format="truncated"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=145
+		y=723
+		width=61
+		height=18
+	}
+	monitor {
+		chan="MBC2C21V.BDL"
+		clr=34
+		bclr=0
+	}
+	align="horiz. centered"
+	format="truncated"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=230
+		y=697
+		width=61
+		height=18
+	}
+	monitor {
+		chan="MBC2C22H.BDL"
+		clr=34
+		bclr=0
+	}
+	align="horiz. centered"
+	format="truncated"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=255
+		y=720
+		width=61
+		height=18
+	}
+	monitor {
+		chan="MBC2C23V.BDL"
+		clr=34
+		bclr=0
+	}
+	align="horiz. centered"
+	format="truncated"
+	limits {
+	}
+}
+composite {
+	object {
+		x=147
+		y=647
+		width=159
+		height=37
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=229
+				y=647
+				width=50
+				height=16
+			}
+			"basic attribute" {
+				clr=34
+			}
+			textix="2C22H"
+		}
+		text {
+			object {
+				x=149
+				y=648
+				width=50
+				height=16
+			}
+			"basic attribute" {
+				clr=34
+			}
+			textix="2C21H"
+		}
+		text {
+			object {
+				x=147
+				y=668
+				width=50
+				height=16
+			}
+			"basic attribute" {
+				clr=34
+			}
+			textix="2C21V"
+		}
+		text {
+			object {
+				x=256
+				y=666
+				width=50
+				height=16
+			}
+			"basic attribute" {
+				clr=34
+			}
+			textix="2C23V"
+		}
+	}
+}
+"text update" {
+	object {
+		x=380
+		y=752
+		width=80
+		height=20
+	}
+	monitor {
+		chan="Hac_TGR_LS450:FLD_DATA"
+		clr=0
+		bclr=26
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=470
+		y=752
+		width=11
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="T"
+}
+text {
+	object {
+		x=574
+		y=830
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Tagger Dump"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=455
+		y=790
+		width=140
+		height=38
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=455
+				y=810
+				width=140
+				height=18
+			}
+			monitor {
+				chan="tagger_dump_temp"
+				clr=1
+				bclr=53
+			}
+			limits {
+			}
+		}
+		text {
+			object {
+				x=455
+				y=790
+				width=140
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Tagger Dump Temperature"
+		}
+	}
+}
+text {
+	object {
+		x=545
+		y=415
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Tagger Dump"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=545
+		y=600
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Tagger Dump"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=932
+		y=330
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hallb_IPM2H02_XPOS"
+		clr=1
+		bclr=54
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=932
+		y=352
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hallb_IPM2H02_YPOS"
+		clr=1
+		bclr=54
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=656
+		y=330
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hallb_IPM2H01_XPOS"
+		clr=1
+		bclr=54
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=656
+		y=351
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hallb_IPM2H01_YPOS"
+		clr=1
+		bclr=54
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1090
+		y=376
+		width=75
+		height=18
+	}
+	monitor {
+		chan="tempSensorV"
+		clr=0
+		bclr=25
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1090
+		y=355
+		width=75
+		height=18
+	}
+	monitor {
+		chan="tempSensorU"
+		clr=0
+		bclr=25
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=1080
+		y=340
+		width=110
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="FC Tempratures (F)"
+}
+"text update" {
+	object {
+		x=1125
+		y=140
+		width=75
+		height=18
+	}
+	monitor {
+		chan="scaler_cS15b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=1150
+		y=159
+		width=30
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="HPS-SC"
+}
+text {
+	object {
+		x=195
+		y=480
+		width=40
+		height=13
+	}
+	"basic attribute" {
+		clr=22
+		fill="outline"
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="harp_2c21.MOVN"
+	}
+	textix="Moving"
+}
+text {
+	object {
+		x=335
+		y=480
+		width=40
+		height=13
+	}
+	"basic attribute" {
+		clr=21
+		fill="outline"
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="harp_tagger.MOVN"
+	}
+	textix="Moving"
+}
+text {
+	object {
+		x=610
+		y=670
+		width=50
+		height=16
+	}
+	"basic attribute" {
+		clr=34
+	}
+	textix="2H00H"
+}
+text {
+	object {
+		x=500
+		y=671
+		width=50
+		height=16
+	}
+	"basic attribute" {
+		clr=34
+	}
+	textix="MQA2H00"
+}
+text {
+	object {
+		x=515
+		y=691
+		width=50
+		height=16
+	}
+	"basic attribute" {
+		clr=34
+	}
+	textix="MQA2H00A"
+}
+text {
+	object {
+		x=635
+		y=689
+		width=50
+		height=16
+	}
+	"basic attribute" {
+		clr=34
+	}
+	textix="2H00V"
+}
+"text update" {
+	object {
+		x=543
+		y=667
+		width=61
+		height=18
+	}
+	monitor {
+		chan="MQA2H00"
+		clr=34
+		bclr=0
+	}
+	align="horiz. centered"
+	format="truncated"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=565
+		y=690
+		width=61
+		height=18
+	}
+	monitor {
+		chan="MQA2H00A"
+		clr=34
+		bclr=0
+	}
+	align="horiz. centered"
+	format="truncated"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=642
+		y=667
+		width=61
+		height=18
+	}
+	monitor {
+		chan="MBD2H00H.BDL"
+		clr=34
+		bclr=0
+	}
+	align="horiz. centered"
+	format="truncated"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=665
+		y=692
+		width=61
+		height=18
+	}
+	monitor {
+		chan="MBD2H00V.BDL"
+		clr=34
+		bclr=0
+	}
+	align="horiz. centered"
+	format="truncated"
+	limits {
+	}
+}
+image {
+	object {
+		x=905
+		y=623
+		width=325
+		height=120
+	}
+	type="gif"
+	"image name"="hps_view.gif"
+}
+oval {
+	object {
+		x=1010
+		y=594
+		width=16
+		height=15
+	}
+	"basic attribute" {
+		clr=20
+	}
+}
+polyline {
+	object {
+		x=945
+		y=608
+		width=57
+		height=78
+	}
+	"basic attribute" {
+		clr=14
+	}
+	points {
+		(945,686)
+		(1002,608)
+	}
+}
+polyline {
+	object {
+		x=1137
+		y=600
+		width=40
+		height=45
+	}
+	"basic attribute" {
+		clr=14
+	}
+	points {
+		(1177,645)
+		(1137,600)
+	}
+}
+"text update" {
+	object {
+		x=1030
+		y=588
+		width=100
+		height=18
+	}
+	monitor {
+		chan="hallb_sf_xy560_0_14"
+		clr=1
+		bclr=53
+	}
+	limits {
+	}
+}
+oval {
+	object {
+		x=1010
+		y=594
+		width=16
+		height=15
+	}
+	"basic attribute" {
+		clr=61
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="DYNABPSON"
+	}
+}
+text {
+	object {
+		x=1134
+		y=583
+		width=11
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="A"
+}
+"text update" {
+	object {
+		x=1030
+		y=608
+		width=100
+		height=18
+	}
+	monitor {
+		chan="HPS:LS450_1:FIELD"
+		clr=1
+		bclr=53
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=1135
+		y=605
+		width=11
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="T"
+}
+"text update" {
+	object {
+		x=1030
+		y=750
+		width=100
+		height=20
+	}
+	monitor {
+		chan="PSPECIRBCK"
+		clr=0
+		bclr=53
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=1131
+		y=753
+		width=11
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="A"
+}
+"text update" {
+	object {
+		x=1040
+		y=775
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS:LS450_2:FIELD"
+		clr=0
+		bclr=26
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=1123
+		y=777
+		width=11
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="T"
+}
+text {
+	object {
+		x=1025
+		y=813
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=37
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="PSPECr.B3"
+	}
+	textix="Positive Polarity"
+}
+text {
+	object {
+		x=1035
+		y=798
+		width=100
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="PSPECR.B1"
+	}
+	textix="Main Power On"
+}
+text {
+	object {
+		x=1025
+		y=813
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=37
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="PSPECr.B3"
+	}
+	textix="Negative Polarity"
+}
+text {
+	object {
+		x=1035
+		y=798
+		width=100
+		height=14
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="PSPECR.B1"
+	}
+	textix="Main Power Off"
+}
+composite {
+	object {
+		x=770
+		y=667
+		width=116
+		height=43
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=770
+				y=670
+				width=50
+				height=16
+			}
+			"basic attribute" {
+				clr=34
+			}
+			textix="2H02H"
+		}
+		text {
+			object {
+				x=795
+				y=689
+				width=50
+				height=16
+			}
+			"basic attribute" {
+				clr=34
+			}
+			textix="2H02V"
+		}
+		"text update" {
+			object {
+				x=802
+				y=667
+				width=61
+				height=18
+			}
+			monitor {
+				chan="MBD2H02H.BDL"
+				clr=34
+				bclr=0
+			}
+			align="horiz. centered"
+			format="truncated"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=825
+				y=692
+				width=61
+				height=18
+			}
+			monitor {
+				chan="MBD2H02V.BDL"
+				clr=34
+				bclr=0
+			}
+			align="horiz. centered"
+			format="truncated"
+			limits {
+			}
+		}
+	}
+}
+text {
+	object {
+		x=825
+		y=455
+		width=90
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="HPS Collimator"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=846
+		y=475
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=54
+		fill="outline"
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="hps_collimator.MOVN"
+	}
+	textix="Moving"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=850
+		y=489
+		width=50
+		height=14
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="hps_collimator_at_home"
+	}
+}
+text {
+	object {
+		x=855
+		y=489
+		width=40
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="display1.ONSV"
+	}
+	textix="OUT"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=893
+		y=515
+		width=2
+		height=2
+	}
+	monitor {
+		clr=14
+		bclr=4
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=850
+		y=504
+		width=50
+		height=16
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="hps_collimator_at_a"
+	}
+}
+text {
+	object {
+		x=853
+		y=504
+		width=40
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="display1.THSV"
+	}
+	textix="Wire"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=838
+		y=513
+		width=2
+		height=2
+	}
+	monitor {
+		chan="display1.THSV"
+		clr=60
+		bclr=4
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=838
+		y=513
+		width=2
+		height=2
+	}
+	monitor {
+		chan="display1.THSV"
+		clr=60
+		bclr=4
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=850
+		y=540
+		width=50
+		height=17
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="hps_collimator_at_c"
+	}
+}
+text {
+	object {
+		x=853
+		y=543
+		width=40
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="display1.THSV"
+	}
+	textix="3 mm/Au"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=850
+		y=522
+		width=50
+		height=17
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="hps_collimator_at_b"
+	}
+}
+text {
+	object {
+		x=853
+		y=523
+		width=40
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="display1.THSV"
+	}
+	textix="3 mm"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=850
+		y=559
+		width=50
+		height=17
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="hps_collimator_at_d"
+	}
+}
+"text update" {
+	object {
+		x=852
+		y=563
+		width=2
+		height=2
+	}
+	monitor {
+		clr=14
+		bclr=4
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=856
+		y=560
+		width=40
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="display1.THSV"
+	}
+	textix="2 mm"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=900
+		y=572
+		width=2
+		height=2
+	}
+	monitor {
+		clr=14
+		bclr=4
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=850
+		y=578
+		width=50
+		height=17
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="hps_collimator_at_d"
+	}
+}
+text {
+	object {
+		x=859
+		y=578
+		width=40
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="display1.THSV"
+	}
+	textix="Au"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=901
+		y=592
+		width=2
+		height=2
+	}
+	monitor {
+		clr=14
+		bclr=4
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=950
+		y=480
+		width=40
+		height=13
+	}
+	"basic attribute" {
+		clr=54
+		fill="outline"
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="harp_2H02A.MOVN"
+	}
+	textix="Moving"
+}
+rectangle {
+	object {
+		x=950
+		y=494
+		width=27
+		height=16
+	}
+	"basic attribute" {
+		clr=50
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="harp_2H02A_at_home"
+	}
+}
+text {
+	object {
+		x=955
+		y=495
+		width=24
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="harp_2H02A_at_home"
+	}
+	textix="OUT"
+}
+text {
+	object {
+		x=935
+		y=455
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Harp 2H02A"
+}
+text {
+	object {
+		x=1045
+		y=480
+		width=40
+		height=13
+	}
+	"basic attribute" {
+		clr=54
+		fill="outline"
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="beam_stop.MOVN"
+	}
+	textix="Moving"
+}
+rectangle {
+	object {
+		x=1045
+		y=494
+		width=27
+		height=16
+	}
+	"basic attribute" {
+		clr=50
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="beam_stop_at_home"
+	}
+}
+text {
+	object {
+		x=1050
+		y=495
+		width=24
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="beam_stop_at_home"
+	}
+	textix="OUT"
+}
+text {
+	object {
+		x=1035
+		y=455
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=19
+	}
+	textix="Beam blocker"
+}
+composite {
+	object {
+		x=1100
+		y=480
+		width=110
+		height=54
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=1110
+				y=516
+				width=75
+				height=18
+			}
+			monitor {
+				chan="tempSensorX"
+				clr=0
+				bclr=25
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=1110
+				y=495
+				width=75
+				height=18
+			}
+			monitor {
+				chan="tempSensorW"
+				clr=0
+				bclr=25
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=1100
+				y=480
+				width=110
+				height=18
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="BB Tempratures (F)"
+		}
+	}
+}
+text {
+	object {
+		x=195
+		y=495
+		width=40
+		height=14
+	}
+	"basic attribute" {
+		clr=29
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="ABS(A<0.1)"
+		chan="harp_2c21.RBV"
+	}
+	textix="OUT"
+}
+text {
+	object {
+		x=195
+		y=510
+		width=60
+		height=14
+	}
+	"basic attribute" {
+		clr=34
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="ABS(A>0.1)"
+		chan="harp_2c21.RBV"
+	}
+	textix="In Beam"
+}
+text {
+	object {
+		x=335
+		y=495
+		width=40
+		height=14
+	}
+	"basic attribute" {
+		clr=29
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		calc="A=1"
+		chan="rad_at_home"
+	}
+	textix="OUT"
+}
+text {
+	object {
+		x=335
+		y=510
+		width=60
+		height=14
+	}
+	"basic attribute" {
+		clr=34
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="rad_at_home"
+	}
+	textix="In Beam"
+}
+rectangle {
+	object {
+		x=1045
+		y=515
+		width=27
+		height=16
+	}
+	"basic attribute" {
+		clr=50
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="beam_stop_at_beam"
+	}
+}
+text {
+	object {
+		x=1050
+		y=516
+		width=24
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="beam_stop_at_beam"
+	}
+	textix="IN"
+}

@@ -1,0 +1,9 @@
+harp_analyzer (2014-11-20):
+  apps/medm needs write access from hpsrun (chmod a+w medm) so that saveFile.png
+  can be written.  We will look at upated the code to make the temporary file in
+  /tmp instead of the current working directory.
+
+medm (2014-11-20):
+  Get purged list of required screens.
+  Copy those external screens into appropiate areas of the hps tree.
+

@@ -2,7 +2,7 @@
 
 # this script notifies expert and makes an entry in the operator log
 
-use OPLOG;
+#use OPLOG;
 use DBI; 
 use Tk;
 
