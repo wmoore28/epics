@@ -6,25 +6,25 @@ record(calc, "hps_collimator_at_home") {
 record(calc, "hps_collimator_at_a") {
 	field(INPA, "hps_collimator.RBV")
 	field(SCAN, ".2 second")
-	field(CALC, "ABS(A-2.965)<0.01?1:0")
+	field(CALC, "ABS(A-4.52)<0.01?1:0")
 }
 record(calc, "hps_collimator_at_b") {
 	field(INPA, "hps_collimator.RBV")
 	field(SCAN, ".2 second")
-	field(CALC, "ABS(A-7.051)<0.01?1:0")
+	field(CALC, "ABS(A-5.11)<0.01?1:0")
 }
 record(calc, "hps_collimator_at_c") {
 	field(INPA, "hps_collimator.RBV")
 	field(SCAN, ".2 second")
-	field(CALC, "ABS(A-10.178)<0.01?1:0")
+	field(CALC, "ABS(A-5.7)<0.01?1:0")
 }
 record(calc, "hps_collimator_at_d") {
 	field(INPA, "hps_collimator.RBV")
 	field(SCAN, ".2 second")
-	field(CALC, "ABS(A-11.160)<0.01?1:0")
+	field(CALC, "ABS(A-6.29)<0.01?1:0")
 }
 record(calc, "hps_collimator_at_e") {
 	field(INPA, "hps_collimator.RBV")
 	field(SCAN, ".2 second")
-	field(CALC, "ABS(A-3.425)<0.01?1:0")
+	field(CALC, "ABS(A-6.88)<0.01?1:0")
 }
