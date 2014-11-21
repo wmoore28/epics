@@ -44,3 +44,12 @@ $GUIDANCE
            This signifies that the BOTTOM plate coolant temperature is out of specifications.
            Contact the engineering on-call for further guidance.
 $END
+
+CHANNEL ECAL tempSensorA
+$COMMAND  medm -x -attach -cmap -macro "sig=tempSensorA" aiaocalc_alarm.adl >> /dev/null
+$GUIDANCE
+	Some temperature sensor on ECAL is out of specs.
+	Hope somebody will put more meaningfull explanations here.
+$END
+$SEVRCOMMAND UP_MAJOR echo "The body of text like tempSensorA went out of specs" | mail nerses@jlab.org  -s "MAJOR limit was hit for tempSensorA"
+$SEVRCOMMAND UP_MINOR echo "MINOR limit was hit"
