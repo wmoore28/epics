@@ -32,7 +32,7 @@ epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES", "5000000")
 ## Run this to trace the stages of iocInit
 #traceIocInit
 
-dbLoadRecords("db/scaler_c.db")
+dbLoadRecords("db/scaler.db")
 dbLoadRecords("db/frwd_scaler.db")
 dbLoadRecords("db/stopper.db")
 ##dbLoadRecords("db/fcup_gain.db")
@@ -124,7 +124,7 @@ dbLoadRecords("db/motor.db","motor_name=viewer, card=0, slot=1,srev=2000,urev=2.
 
 
 dbLoadRecords("db/motor.db","motor_name=hps_collimator,card=0,slot=3,srev=2000,urev=0.2,direction=Pos,velo=0.2,accl=0.5")
-dbLoadRecords("db/scan.db","motor_name=hps_collimator,start_at=18,end_at=58.0,start_speed=5.0,scan_speed=0.5,acq_time=0.07")
+dbLoadRecords("db/scan.db","motor_name=hps_collimator,start_at=4.22,end_at=4.82,start_speed=5.0,scan_speed=0.5,acq_time=0.07")
 
 #dbLoadRecords("db/radiators.db")
 dbLoadRecords("db/convertors.db")
@@ -204,5 +204,5 @@ seq &harp_scan_generic, "name=hps_collimator_scan, motor_name=hps_collimator"
 
 seq &sixtyHz
 #seq &frwd_scaler_restart
-#seq &scaler_c_restart
+#seq &scaler_restart
 

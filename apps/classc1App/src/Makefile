@@ -16,7 +16,7 @@ DBD += classc1.dbd
 
 # classc1.dbd will be made up from these files:
 classc1_DBD += harp_genericSupport.dbd
-classc1_DBD += scalerSupport.dbd
+classc1_DBD += scaler_cSupport.dbd
 classc1_DBD += scaler_dSupport.dbd
 classc1_DBD += scaler_eSupport.dbd
 ##classc1_DBD += asymSupport.dbd
@@ -33,7 +33,7 @@ classc1_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
 # Link in the code from the support library
 classc1_LIBS += harp_genericSupport
-classc1_LIBS += scalerSupport
+classc1_LIBS += scaler_cSupport
 classc1_LIBS += scaler_dSupport
 classc1_LIBS += scaler_eSupport
 ##classc1_LIBS += asymSupport

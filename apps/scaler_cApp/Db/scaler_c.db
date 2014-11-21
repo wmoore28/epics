@@ -4,18 +4,12 @@ grecord(scaler,"scaler_c")
 	field(DTYP,"Joerger VSC8/16")
 	field(FLNK,"scaler_c_calc1.PROC PP MS")
 	field(FREQ,"10000000")
-	field(OUT,"#C1 S0 @")
+	field(OUT,"#C0 S0 @")
 	field(TP,"2")
 	field(PREC,"3")
 	field(G1,"1") 		# The gate 1 is a preset gate
 	field(NM1,"Clock") 	# Channel 1 : clock
 }
-
-record(ao,"scaler_c_command"    ) { }
-record(ao,"fcup_slope"    ) { }
-record(ao,"fcup_offset"    ) { }
-record(ao,"slm_slope"    ) { }
-record(ao,"slm_offset"    ) { }
 
 grecord(bo,"scaler_c_mode")
 {
@@ -104,8 +98,7 @@ grecord(calc,"scaler_c_calc1")
 {
 	field(FLNK,"scaler_c_cts1.PROC PP MS")
 	field(CALC,"(b/f-d)/MAX(e,1.0)")
-#	field(INPB,"scaler_c.S16 NPP NMS")
-	field(INPB,"scaler_c.S2 NPP NMS")
+	field(INPB,"scaler_c.S16 NPP NMS")
 	field(INPD,"fcup_offset NPP NMS")
 	field(INPE,"fcup_slope NPP NMS")
 	field(INPF,"scaler_c.T NPP NMS")

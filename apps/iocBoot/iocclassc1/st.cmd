@@ -82,7 +82,7 @@ dbLoadRecords("db/radiators.db")
 #dbLoadRecords("db/convertors.db")
 #dbLoadRecords("db/hps_collimators.db")
 
-dbLoadRecords("db/scaler.db")
+dbLoadRecords("db/scaler_c.db")
 dbLoadRecords("db/scaler_d.db")
 dbLoadRecords("db/scaler_e.db")
 
@@ -181,6 +181,6 @@ seq &harp_scan_generic, "name=h_tagger_scan, motor_name=harp_tagger"
 
 ##seq &reset_motor, "name=collimator_reset, motor_name=collimator"
 
-#seq &scaler_restart
+#seq &scaler_c_restart
 #seq &scaler_d_restart
 #seq &scaler_e_restart
