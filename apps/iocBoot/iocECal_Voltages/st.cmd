@@ -11,7 +11,8 @@ ioccaen_registerRecordDeviceDriver(pdbbase)
 Init_CAEN()
 
 # hvhps1
-Start_CAEN(1,  "129.57.167.100") 
+#Start_CAEN(1,  "129.57.167.100") 
+Start_CAEN(1,  "129.57.167.80") 
 ## hvecal1
 #Start_CAEN(2,  "129.57.167.53") 
 # hvecal4
