@@ -17,7 +17,7 @@ DBD += classc4.dbd
 # classc4.dbd will be made up from these files:
 classc4_DBD += harp_genericSupport.dbd
 classc4_DBD += sixty_hzSupport.dbd
-classc4_DBD += scaler_cSupport.dbd
+classc4_DBD += scalerSupport.dbd
 classc4_DBD += frwd_scalerSupport.dbd
 classc4_DBD += devIocStats.dbd
 
@@ -33,7 +33,7 @@ classc4_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 # Link in the code from the support library
 classc4_LIBS += harp_genericSupport
 classc4_LIBS += sixty_hzSupport
-classc4_LIBS += scaler_cSupport
+classc4_LIBS += scalerSupport
 classc4_LIBS += frwd_scalerSupport
 
 classc4_LIBS += mca

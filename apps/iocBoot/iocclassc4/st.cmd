@@ -20,6 +20,8 @@ cd top
 dbLoadDatabase "dbd/classc4.dbd"
 classc4_registerRecordDeviceDriver pdbbase
 
+epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES", "5000000")
+
 ## Load record instances
 ##dbLoadTemplate "db/user.substitutions"
 ##dbLoadRecords "db/dbSubExample.db", "user=levon"
@@ -30,44 +32,50 @@ classc4_registerRecordDeviceDriver pdbbase
 ## Run this to trace the stages of iocInit
 #traceIocInit
 
-dbLoadRecords("db/scaler_c.db")
+dbLoadRecords("db/scaler.db")
 dbLoadRecords("db/frwd_scaler.db")
 dbLoadRecords("db/stopper.db")
 ##dbLoadRecords("db/fcup_gain.db")
 
 
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=0")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=1")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=2")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=3")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=4")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=5")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=6")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=7")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=8")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=9")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=10")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=11")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=12")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=13")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=14")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=15")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=16")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=17")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=18")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=19")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=20")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=21")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=22")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=23")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=24")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=25")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=26")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=27")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=28")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=29")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=30")
-dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=31")
+##dbLoadRecords("db/bom_scaler.db", "scaler=bom_sc,slot=1,FIFO=16")
+##dbLoadRecords("db/bom_stop_start.db", "scaler=bom_sc")
+##dbLoadRecords("db/bom_read_control.db", "scaler=bom_sc")
+##dbLoadRecords("db/bom_sum.db", "scaler=bom_sc")
+
+
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=0")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=1")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=2")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=3")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=4")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=5")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=6")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=7")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=8")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=9")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=10")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=11")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=12")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=13")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=14")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=15")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=16")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=17")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=18")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=19")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=20")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=21")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=22")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=23")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=24")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=25")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=26")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=27")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=28")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=29")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=30")
+##dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=31")
 
 dbLoadRecords("db/sixty_hz_common.db", "FIFO=4096, HALF_FIFO=2048")
 dbLoadRecords("db/sixty_hz_macro.db", "FIFO=4096, HALF_FIFO=2048, CHAN=0")
@@ -116,10 +124,10 @@ dbLoadRecords("db/motor.db","motor_name=viewer, card=0, slot=1,srev=2000,urev=2.
 
 
 dbLoadRecords("db/motor.db","motor_name=hps_collimator,card=0,slot=3,srev=2000,urev=0.2,direction=Pos,velo=0.2,accl=0.5")
-dbLoadRecords("db/scan.db","motor_name=hps_collimator,start_at=18,end_at=58.0,start_speed=5.0,scan_speed=0.5,acq_time=0.07")
+dbLoadRecords("db/scan.db","motor_name=hps_collimator,start_at=4.22,end_at=4.82,start_speed=5.0,scan_speed=0.5,acq_time=0.07")
 
 #dbLoadRecords("db/radiators.db")
-#dbLoadRecords("db/convertors.db")
+dbLoadRecords("db/convertors.db")
 dbLoadRecords("db/hps_collimators.db")
 
 
@@ -142,8 +150,8 @@ drvSTR7201Debug = 0
 ###
 
 STR7201Setup(2, 0x08000000, 221, 6)
-STR7201Config(0,32,4096)
-STR7201Config(1,32,32768)
+STR7201Config(0,32,4096,1,1)
+STR7201Config(1,32,16,1,1)
 
 ##recScalerdebug=0
 ##devScalerdebug=0
@@ -178,6 +186,9 @@ omsSetup(2, 0x8000, 180, 5, 10)
 cd startup
 iocInit
 
+dbpf "fcup_offset","144.46"
+dbpf "fcup_slope","9071"
+
 ## Start any sequence programs
 #seq &sncExample, "user=levon"
 seq &reset_motor, "name=beam_stop_reset, motor_name=beam_stop"
@@ -192,6 +203,6 @@ seq &reset_motor, "name=hps_collimator_reset, motor_name=hps_collimator"
 seq &harp_scan_generic, "name=hps_collimator_scan, motor_name=hps_collimator"
 
 seq &sixtyHz
-#seq &scaler_frwd_restart
-#seq &scaler_c_restart
+#seq &frwd_scaler_restart
+#seq &scaler_restart
 
