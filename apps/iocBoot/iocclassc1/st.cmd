@@ -20,40 +20,47 @@ cd top
 dbLoadDatabase "dbd/classc1.dbd"
 classc1_registerRecordDeviceDriver pdbbase
 
+##epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES", "5000000")
+
 ## Load record instances
 ##dbLoadTemplate "db/user.substitutions"
 ##dbLoadRecords "db/dbSubExample.db", "user=levon"
 
+dbLoadRecords("db/bom_scaler.db", "scaler=bom_sc,slot=0,FIFO=16")
+dbLoadRecords("db/bom_stop_start.db", "scaler=bom_sc")
+dbLoadRecords("db/bom_read_control.db", "scaler=bom_sc")
+dbLoadRecords("db/bom_sum.db", "scaler=bom_sc")
 
-dbLoadRecords "db/asym_scaler_common.db"
 
-dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=0")
-dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=3")
-dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=5")
-dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=6")
-dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=7")
-dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=8")
-dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=9")
-dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=10")
-dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=11")
-dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=16")
-dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=20")
-dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=24")
-dbLoadRecords("db/asym_scaler_macro_sums.db","CHAN=0")
-dbLoadRecords("db/asym_scaler_macro_sums.db","CHAN=7")
-dbLoadRecords("db/asym_scaler_macro_sums.db","CHAN=8")
-dbLoadRecords("db/asym_scaler_macro_sums.db","CHAN=9")
-dbLoadRecords("db/asym_scaler_macro_sums.db","CHAN=10")
-dbLoadRecords("db/asym_scaler_macro_sums.db","CHAN=11")
-dbLoadRecords("db/asym_scaler_macro_sums.db","CHAN=16")
-dbLoadRecords("db/asym_scaler_macro_sums.db","CHAN=20")
-dbLoadRecords("db/asym_scaler_macro_sums.db","CHAN=24")
+##dbLoadRecords "db/asym_scaler_common.db"
 
-dbLoadRecords("db/asym_fdbk.db")
-dbLoadRecords("db/polarization.db")
+##dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=0")
+##dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=3")
+##dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=5")
+##dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=6")
+##dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=7")
+##dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=8")
+##dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=9")
+##dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=10")
+##dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=11")
+##dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=16")
+##dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=20")
+##dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768, CHAN=24")
+##dbLoadRecords("db/asym_scaler_macro_sums.db","CHAN=0")
+##dbLoadRecords("db/asym_scaler_macro_sums.db","CHAN=7")
+##dbLoadRecords("db/asym_scaler_macro_sums.db","CHAN=8")
+##dbLoadRecords("db/asym_scaler_macro_sums.db","CHAN=9")
+##dbLoadRecords("db/asym_scaler_macro_sums.db","CHAN=10")
+##dbLoadRecords("db/asym_scaler_macro_sums.db","CHAN=11")
+##dbLoadRecords("db/asym_scaler_macro_sums.db","CHAN=16")
+##dbLoadRecords("db/asym_scaler_macro_sums.db","CHAN=20")
+##dbLoadRecords("db/asym_scaler_macro_sums.db","CHAN=24")
 
-#dbLoadRecords("db/moller_setup.db")
-#dbLoadRecords("db/moeller_target.db")
+##dbLoadRecords("db/asym_fdbk.db")
+##dbLoadRecords("db/polarization.db")
+
+##dbLoadRecords("db/moller_setup.db")
+##dbLoadRecords("db/moeller_target.db")
 
 
 #cd dbLoadRecords("db/motor.db","motor_name=hps, card=0, slot=3, srev=2000, urev=0.2, direction=Pos, velo=0.2, accl=0.5")
@@ -71,11 +78,11 @@ dbLoadRecords("db/scan.db","motor_name=harp_tagger, start_at=18, end_at=58.0, st
 
 ##dbLoadRecords("db/motor.db","motor_name=collimator, card=0, slot=3, srev=2000, urev=0.2, direction=Pos, velo=0.2, accl=0.5")
 
-#dbLoadRecords("db/radiators.db")
+dbLoadRecords("db/radiators.db")
 #dbLoadRecords("db/convertors.db")
 #dbLoadRecords("db/hps_collimators.db")
 
-dbLoadRecords("db/scaler.db")
+dbLoadRecords("db/scaler_c.db")
 dbLoadRecords("db/scaler_d.db")
 dbLoadRecords("db/scaler_e.db")
 
@@ -93,7 +100,8 @@ devSTR7201Debug = 0
 drvSTR7201Debug = 0
 #ppc
 STR7201Setup(1, 0x08000000, 220, 6)
-STR7201Config(0,32,32768,0)
+##STR7201Config(0,32,16,1,1)
+STR7201Config(0,32,16,0,1)
 
 #
 # Scaler debug switches
@@ -146,8 +154,8 @@ cd startup
 iocInit
 
 # set some initial values:
-##dbpf "fcup_offset","0"
-##dbpf "fcup_slope","9256"
+##dbpf "fcup_offset","144.46"
+##dbpf "fcup_slope","9071"
 #dbpf "fcup_slope","9267"
 ##dbpf "moller_accumulate","1"
 #dbpf "scaler.CNT","1"
@@ -158,7 +166,7 @@ iocInit
 ## Start any sequence programs
 #seq &sncExample, "user=levon"
 
-seq &asym
+##seq &asym
 #seq &moller_setup
 #seq &moeller_target
 
@@ -173,6 +181,6 @@ seq &harp_scan_generic, "name=h_tagger_scan, motor_name=harp_tagger"
 
 ##seq &reset_motor, "name=collimator_reset, motor_name=collimator"
 
-#seq &scaler_restart
+#seq &scaler_c_restart
 #seq &scaler_d_restart
 #seq &scaler_e_restart

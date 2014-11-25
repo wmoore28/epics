@@ -44,6 +44,7 @@ test-env:	## Check env variables only
 	@./utils/testbuild.sh -e
 
 ## misc
+# TODO (wmoore): fix hard-coded path for making tar file).
 tar: distclean
 	@cd ../ && tar czf hps-epics-`date +%Y.%m.%d`.tgz epics
 

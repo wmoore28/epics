@@ -298,9 +298,9 @@ ss sixtyHz_calc {
                     peak_to_peak = 100.*(max_val - min_val)/(2.*average);
 /*		    printf("------ debug NFIFO = %d sum = %f average = %f sumsum = %f ", NFIFO, sum, average, sumsum);
 		    printf("sumsum/NFIFO = %f average^2 = %f ", sumsum/NFIFO, average*average); */
-		    printf("delta = %f ", sumsum/NFIFO - average*average); 
+/*		    printf("delta = %f ", sumsum/NFIFO - average*average); 
 %%                  rms = 100.*sqrt(fabs(sumsum/NFIFO - average*average))/average;
-		    printf("rms = %f\n", rms);
+		    printf("rms = %f\n", rms); */
                   } else {
                     peak_to_peak = 0.0;
                     rms = 0.0;

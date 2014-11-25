@@ -1,8 +1,0 @@
-include "base.dbd"
-
-include "/home/epics/R3.14.4/epicsB/baseB/dbd/bigsubRecord.dbd"
-
-device(ao,VME_IO,devAoCAEN,"CAEN_HV")
-device(bo,VME_IO,devBoCAEN,"CAEN_HV")
-device(bi,VME_IO,devBiCAEN,"CAEN_HV")
-
