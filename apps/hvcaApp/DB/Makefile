@@ -13,7 +13,7 @@ BMDATA = bm.dat
 EC_CAEN_DATA = ec_caen.dat
 
 ECAL_DB = ecal_01.db
-BM_DB = bm_02.db
+BM_DB = bm_01.db bm_02.db
 BMTASC_DB = bmtasc_01.db bmtasc_02.db bmtasc_03.db bmtasc_04.db bmtasc_06.db bmtasc_07.db bmtasc_08.db
 CCECS_DB = ccecs_03.db ccecs_04.db ccecs_05.db ccecs_07.db
 CCECN_DB = ccecn_01.db ccecn_02.db ccecn_06.db ccecn_08.db
@@ -131,6 +131,7 @@ $(CCECN_DB): ccecn.dat
 	./dat2db.pl ccecn
 $(BM_DB): bm.dat
 	./dat2db.pl bm
+	cp -f $(BM_DB) $(TOP)/db
 $(BMTASC_DB): bmtasc.dat
 	./dat2db.pl bmtasc
 $(SCF_DB): scf.dat
@@ -143,6 +144,7 @@ $(EC_CAEN_DB): ec_caen.dat
 	./dat2db.pl ec_caen
 $(ECAL_DB): ecal.dat
 	./dat2db.pl ecal
+	cp -f $@ $(TOP)/db
 %.db: %.dat
 	./dat2db.pl $*
 ../medm/adl/%.adl : %.dat
