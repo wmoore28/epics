@@ -1,4 +1,4 @@
-program scaler_frwd_restart
+program frwd_scaler_restart
 
 option +c;
 
@@ -27,7 +27,7 @@ assign sc_TP to "{frwd_scaler}frwd_scaler.TP";
 /* This is to automatically restart the scaler if it is iddle   */
 /* for more than SLEEP_TIME seconds                             */
 /*--------------------------------------------------------------*/
-ss scaler_frwd_restart
+ss frwd_scaler_restart
 {
   state wait
   {

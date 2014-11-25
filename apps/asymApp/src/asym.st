@@ -19,9 +19,9 @@ short   harp_2c21_scan_flag;
 assign  harp_2c21_scan_flag  to "harp_2c21_scan_flag.VAL";
 monitor harp_2c21_scan_flag;
 
-short   harp_2h00_scan_flag;
-assign  harp_2h00_scan_flag  to "harp_2h00_scan_flag.VAL";
-monitor harp_2h00_scan_flag;
+short   harp_2H02A_scan_flag;
+assign  harp_2H02A_scan_flag  to "harp_2H02A_scan_flag.VAL";
+monitor harp_2H02A_scan_flag;
 
 long current_cut;
 assign current_cut to "HB:Q_THRESHOLD";
