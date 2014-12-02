@@ -1,6 +1,6 @@
 
 file {
-	name="/misc/clas12/hps/prod/apps/generalApp/medm/HPS_EPICS.adl"
+	name="/usr/clas12/hps/v0.2.7/apps/generalApp/medm/HPS_EPICS.adl"
 	version=030108
 }
 display {
@@ -261,6 +261,10 @@ text {
 	display[3] {
 		label="Harps"
 		name="harps.adl"
+	}
+	display[4] {
+		label="Flasher"
+		name="Flasher.adl"
 	}
 	clr=14
 	bclr=50
