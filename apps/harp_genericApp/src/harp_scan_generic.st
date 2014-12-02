@@ -67,55 +67,55 @@ assign motor_name to "name_{motor_name}.VAL";
 long scaler_datasc1[16];
 long scaler_datasc4[16];
 
-assign scaler_datasc1[0] to "scaler.S1";
-assign scaler_datasc1[1] to "scalerS2b.VAL";
-assign scaler_datasc1[2] to "scaler.S3";
-assign scaler_datasc1[3] to "scaler.S4";
-assign scaler_datasc1[4] to "scaler.S5";
-assign scaler_datasc1[5] to "scaler.S6";
-assign scaler_datasc1[6] to "scaler.S7";
-assign scaler_datasc1[7] to "scaler.S8";
-assign scaler_datasc1[8] to "scaler.S9";
-assign scaler_datasc1[9] to "scaler.S10";
-assign scaler_datasc1[10] to "scaler.S11";
-assign scaler_datasc1[11] to "scaler.S12";
-assign scaler_datasc1[12] to "scaler.S13";
-assign scaler_datasc1[13] to "scaler.S14";
-assign scaler_datasc1[14] to "scaler.S15";
-assign scaler_datasc1[15] to "scaler.S16";
+assign scaler_datasc1[0] to "scaler_c.S1";
+assign scaler_datasc1[1] to "scaler_cS2b.VAL";
+assign scaler_datasc1[2] to "scaler_c.S3";
+assign scaler_datasc1[3] to "scaler_c.S4";
+assign scaler_datasc1[4] to "scaler_c.S5";
+assign scaler_datasc1[5] to "scaler_c.S6";
+assign scaler_datasc1[6] to "scaler_c.S7";
+assign scaler_datasc1[7] to "scaler_c.S8";
+assign scaler_datasc1[8] to "scaler_c.S9";
+assign scaler_datasc1[9] to "scaler_c.S10";
+assign scaler_datasc1[10] to "scaler_c.S11";
+assign scaler_datasc1[11] to "scaler_c.S12";
+assign scaler_datasc1[12] to "scaler_c.S13";
+assign scaler_datasc1[13] to "scaler_c.S14";
+assign scaler_datasc1[14] to "scaler_c.S15";
+assign scaler_datasc1[15] to "scaler_c.S16";
 
-assign scaler_datasc4[0] to "scaler_c.S1";
-assign scaler_datasc4[1] to "scaler_cS2b.VAL";
-assign scaler_datasc4[2] to "scaler_c.S3";
-assign scaler_datasc4[3] to "scaler_c.S4";
-assign scaler_datasc4[4] to "scaler_c.S5";
-assign scaler_datasc4[5] to "scaler_c.S6";
-assign scaler_datasc4[6] to "scaler_c.S7";
-assign scaler_datasc4[7] to "scaler_c.S8";
-assign scaler_datasc4[8] to "scaler_c.S9";
-assign scaler_datasc4[9] to "scaler_c.S10";
-assign scaler_datasc4[10] to "scaler_c.S11";
-assign scaler_datasc4[11] to "scaler_c.S12";
-assign scaler_datasc4[12] to "scaler_c.S13";
-assign scaler_datasc4[13] to "scaler_c.S14";
-assign scaler_datasc4[14] to "scaler_c.S15";
-assign scaler_datasc4[15] to "scaler_c.S16";
+assign scaler_datasc4[0] to "scaler.S1";
+assign scaler_datasc4[1] to "scalerS2b.VAL";
+assign scaler_datasc4[2] to "scaler.S3";
+assign scaler_datasc4[3] to "scaler.S4";
+assign scaler_datasc4[4] to "scaler.S5";
+assign scaler_datasc4[5] to "scaler.S6";
+assign scaler_datasc4[6] to "scaler.S7";
+assign scaler_datasc4[7] to "scaler.S8";
+assign scaler_datasc4[8] to "scaler.S9";
+assign scaler_datasc4[9] to "scaler.S10";
+assign scaler_datasc4[10] to "scaler.S11";
+assign scaler_datasc4[11] to "scaler.S12";
+assign scaler_datasc4[12] to "scaler.S13";
+assign scaler_datasc4[13] to "scaler.S14";
+assign scaler_datasc4[14] to "scaler.S15";
+assign scaler_datasc4[15] to "scaler.S16";
 
 
 /* ================================================================ */
 
 float scaler_tp;
-assign scaler_tp to "scaler.TP";
+assign scaler_tp to "scaler_c.TP";
 
 short scaler_cnt;
-assign scaler_cnt to "scaler.CNT";
+assign scaler_cnt to "scaler_c.CNT";
 monitor scaler_cnt;
 
 short scaler_mode;
-assign scaler_mode to "scaler_mode.VAL";
+assign scaler_mode to "scaler_c_mode.VAL";
 
 short display_mode;
-assign display_mode to "display_mode.VAL";
+assign display_mode to "display_c_mode.VAL";
 
 /* scan specific records */
 
@@ -182,10 +182,10 @@ ss harp_scan_snc {
    }
    if(  ( ! (strcmp(motor_name,"harp_2H02A"))) )
    {
-       pvAssign(scaler_tp, "scaler_c.TP"); 
-       pvAssign(scaler_cnt, "scaler_c.CNT"); 
-       pvAssign(scaler_mode, "scaler_c_mode.VAL"); 
-       pvAssign(display_mode, "display_c_mode.VAL"); 
+       pvAssign(scaler_tp, "scaler.TP"); 
+       pvAssign(scaler_cnt, "scaler.CNT"); 
+       pvAssign(scaler_mode, "scaler_mode.VAL"); 
+       pvAssign(display_mode, "display_mode.VAL"); 
    }
 
 /* ========================================================= */
@@ -221,10 +221,10 @@ ss harp_scan_snc {
    }
    if(  ( ! (strcmp(motor_name,"harp_2H02A"))) )
    {
-       pvAssign(scaler_tp, "scaler_c.TP"); 
-       pvAssign(scaler_cnt, "scaler_c.CNT"); 
-       pvAssign(scaler_mode, "scaler_c_mode.VAL"); 
-       pvAssign(display_mode, "display_c_mode.VAL"); 
+       pvAssign(scaler_tp, "scaler.TP"); 
+       pvAssign(scaler_cnt, "scaler.CNT"); 
+       pvAssign(scaler_mode, "scaler_mode.VAL"); 
+       pvAssign(display_mode, "display_mode.VAL"); 
    }
 
 /* ========================================================= */

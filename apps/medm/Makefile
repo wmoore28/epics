@@ -9,6 +9,8 @@ OLD_FILES_WITH_PATH = $(shell find /usr/local/clas/devel/R3.14.8.2/EPICS/app/med
 ADL_FILES_WITH_PATH = $(shell find ../*App/medm/ -name "*.adl" -type f)
 GIF_FILES_WITH_PATH = $(shell find ../*App/medm/ -name "*.gif" -type f)
 SH_FILES_WITH_PATH  = $(shell find ../*App/medm/ -name "*.sh"  -type f)
+# Special files needed by flasher scripts
+DAT_FILES_WITH_PATH = $(shell find ../flasherApp/medm/ -name "*.dat" -type f)
 
 OLD_LINKS_COMMAND = $(foreach file_with_path, \
         $(OLD_FILES_WITH_PATH), \
@@ -17,7 +19,10 @@ OLD_LINKS_COMMAND = $(foreach file_with_path, \
 
 # This uses -f to overwrite old screens from clas...
 SOFT_LINK_COMMAND = $(foreach file_with_path, \
-	$(ADL_FILES_WITH_PATH) $(GIF_FILES_WITH_PATH) $(SH_FILES_WITH_PATH), \
+	$(ADL_FILES_WITH_PATH) \
+	$(GIF_FILES_WITH_PATH) \
+	$(SH_FILES_WITH_PATH) \
+	$(DAT_FILES_WITH_PATH), \
 	ln -sf $(file_with_path) $(notdir $(file_with_path)) ; )
 
 MEDM_HTTP_COMMAND = $(foreach file_with_path, \
@@ -35,6 +40,7 @@ http:
 
 clean:
 	$(RM) *.adl
+	$(RM) *.dat
 	$(RM) *.gif
 	$(RM) *.sh
 
