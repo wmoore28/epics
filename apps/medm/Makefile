@@ -40,6 +40,7 @@ http:
 
 clean:
 	$(RM) *.adl
+	$(RM) *.dat
 	$(RM) *.gif
 	$(RM) *.sh
 
