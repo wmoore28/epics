@@ -37,13 +37,13 @@ fi
 
 # Setup/Run TOP
 caput ${TOP}:SET_COLOR $COLOR
-caput ${TOP}:DATA_FILE_LOAD HPSFlasher1${COLOR}Channels.dat
+caput -S ${TOP}:DATA_FILE_LOAD HPSFlasher1${COLOR}Channels.dat
 ./flasher_load_chan_file.sh "$TOP"
 ./flasher_start_top.sh
 	
 # Setup/Run BOT
 caput ${BOT}:SET_COLOR $COLOR
-caput ${BOT}:DATA_FILE_LOAD HPSFlasher2${COLOR}Channels.dat
+caput -S ${BOT}:DATA_FILE_LOAD HPSFlasher2${COLOR}Channels.dat
 ./flasher_load_chan_file.sh "$BOT"
 ./flasher_start_bot.sh
 
