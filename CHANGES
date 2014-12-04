@@ -1,3 +1,22 @@
+Version 0.2.8:
+ - Merge branch 'hotfix-v0.2.8' of https://github.com/wmoore28/epics into develop
+ - scalerApp: fixes for scaler_hps.adl
+ - bomApp: moved from iocclassc4 to iocclassc1
+ - harp_genericApp: finalized hps_target motor
+ - testbuild.sh: removed check for EPICS env variable, no longer needed
+ - hvcaApp: last commit missed a .gitignore update
+ - hvcaApp: added .gitignore files for generated files/folders
+ - hvcaApp: added .gitignore files for generated files/folders
+ - flasherApp: fixed a handful of scripts for start/stop sequences
+ - TODO: added flasherApp cleanup
+ - flasherApp: added flasher_stop_all.sh for stopping all sequences
+ - flasherApp: added script for setting all LEDs off or on
+ - flasherApp: updated order of operations in scripts
+ - harp_genericApp: added motor channel for hps target (per stepanya, levon)
+ - apps/.gitignore: updated for new wave2rootApp
+ - HPS_EPICS.adl: added link for Flasher.adl
+ - flasher_start_color_seq: fix for setting string pvs
+
 Version 0.2.7:
  - Merge branch 'develop'
  - medm/Makefile: fix for removing .dat files
