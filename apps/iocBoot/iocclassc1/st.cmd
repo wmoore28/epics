@@ -26,11 +26,11 @@ classc1_registerRecordDeviceDriver pdbbase
 ##dbLoadTemplate "db/user.substitutions"
 ##dbLoadRecords "db/dbSubExample.db", "user=levon"
 
+
 dbLoadRecords("db/bom_scaler.db", "scaler=bom_sc,slot=0,FIFO=16")
 dbLoadRecords("db/bom_stop_start.db", "scaler=bom_sc")
 dbLoadRecords("db/bom_read_control.db", "scaler=bom_sc")
 dbLoadRecords("db/bom_sum.db", "scaler=bom_sc")
-
 
 ##dbLoadRecords "db/asym_scaler_common.db"
 
@@ -100,8 +100,8 @@ devSTR7201Debug = 0
 drvSTR7201Debug = 0
 #ppc
 STR7201Setup(1, 0x08000000, 220, 6)
-##STR7201Config(0,32,16,1,1)
-STR7201Config(0,32,16,0,1)
+STR7201Config(0,32,16,1,1)
+
 
 #
 # Scaler debug switches

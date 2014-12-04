@@ -181,8 +181,11 @@ omsSetup(2, 0x8000, 180, 5, 10)
 cd startup
 iocInit
 
-dbpf "fcup_offset","144.46"
-dbpf "fcup_slope","9071"
+##dbpf "fcup_offset","144.46"
+##dbpf "fcup_slope","9071"
+dbpf "fcup_offset","63.08"
+dbpf "fcup_slope","905.937"
+
 
 ## Start any sequence programs
 #seq &sncExample, "user=levon"
@@ -191,8 +194,8 @@ seq &reset_motor, "name=beam_stop_reset, motor_name=beam_stop"
 seq &reset_motor, "name=harp_2H02A_reset, motor_name=harp_2H02A"
 seq &harp_scan_generic, "name=harp_2H02A_scan, motor_name=harp_2H02A"
 
-seq &reset_motor, "name=viewer_reset, motor_name=viewer"
-
+##seq &reset_motor, "name=viewer_reset, motor_name=viewer"
+seq &reset_motor, "name=hps_target_reset, motor_name=hps_target"
 
 seq &reset_motor, "name=hps_collimator_reset, motor_name=hps_collimator"
 seq &harp_scan_generic, "name=hps_collimator_scan, motor_name=hps_collimator"
