@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/v0.2.7/apps/flasher/medm/Flasher.adl"
+	name="/usr/local/clas12/hps/prod/apps/flasher/medm/Flasher.adl"
 	version=030108
 }
 display {
@@ -204,83 +204,72 @@ text {
 	textix="Driver     1      2      3      4"
 	align="horiz. centered"
 }
-composite {
+"text update" {
 	object {
 		x=711
 		y=339
-		width=175
+		width=40
 		height=20
 	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=711
-				y=339
-				width=40
-				height=20
-			}
-			monitor {
-				chan="B_HPS_ECAL_FLASHER_TOP:LED_ID1"
-				clr=14
-				bclr=2
-			}
-			align="horiz. centered"
-			format="string"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=756
-				y=339
-				width=40
-				height=20
-			}
-			monitor {
-				chan="B_HPS_ECAL_FLASHER_TOP:LED_ID2"
-				clr=14
-				bclr=2
-			}
-			align="horiz. centered"
-			format="string"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=801
-				y=339
-				width=40
-				height=20
-			}
-			monitor {
-				chan="B_HPS_ECAL_FLASHER_TOP:LED_ID3"
-				clr=14
-				bclr=2
-			}
-			align="horiz. centered"
-			format="string"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=846
-				y=339
-				width=40
-				height=20
-			}
-			monitor {
-				chan="B_HPS_ECAL_FLASHER_TOP:LED_ID4"
-				clr=14
-				bclr=2
-			}
-			align="horiz. centered"
-			format="string"
-			limits {
-			}
-		}
+	monitor {
+		chan="B_HPS_ECAL_FLASHER_TOP:LED_ID1"
+		clr=14
+		bclr=2
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=756
+		y=339
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_HPS_ECAL_FLASHER_TOP:LED_ID2"
+		clr=14
+		bclr=2
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=801
+		y=339
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_HPS_ECAL_FLASHER_TOP:LED_ID3"
+		clr=14
+		bclr=2
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=846
+		y=339
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_HPS_ECAL_FLASHER_TOP:LED_ID4"
+		clr=14
+		bclr=2
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
 	}
 }
 composite {
@@ -1396,7 +1385,7 @@ text {
 }
 text {
 	object {
-		x=142
+		x=75
 		y=119
 		width=90
 		height=20
@@ -1409,7 +1398,7 @@ text {
 }
 text {
 	object {
-		x=182
+		x=115
 		y=146
 		width=50
 		height=20
@@ -1422,7 +1411,7 @@ text {
 }
 text {
 	object {
-		x=182
+		x=115
 		y=171
 		width=50
 		height=20
@@ -1435,7 +1424,7 @@ text {
 }
 text {
 	object {
-		x=254
+		x=187
 		y=119
 		width=60
 		height=20
@@ -1447,7 +1436,7 @@ text {
 }
 text {
 	object {
-		x=330
+		x=263
 		y=119
 		width=60
 		height=20
@@ -1471,7 +1460,7 @@ text {
 }
 menu {
 	object {
-		x=330
+		x=263
 		y=165
 		width=80
 		height=20
@@ -1484,7 +1473,7 @@ menu {
 }
 menu {
 	object {
-		x=330
+		x=263
 		y=141
 		width=80
 		height=20
@@ -1523,7 +1512,7 @@ rectangle {
 }
 "text update" {
 	object {
-		x=254
+		x=187
 		y=141
 		width=60
 		height=20
@@ -1539,7 +1528,7 @@ rectangle {
 }
 "text update" {
 	object {
-		x=254
+		x=187
 		y=165
 		width=60
 		height=20
@@ -1567,4 +1556,48 @@ rectangle {
 	clr=30
 	bclr=22
 	label="Stop All Seq"
+}
+"text update" {
+	object {
+		x=347
+		y=141
+		width=60
+		height=20
+	}
+	monitor {
+		chan="B_HPS_ECAL_FLASHER_TOP:GET_FREQ"
+		clr=14
+		bclr=2
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=347
+		y=165
+		width=60
+		height=20
+	}
+	monitor {
+		chan="B_HPS_ECAL_FLASHER_BOT:GET_FREQ"
+		clr=14
+		bclr=2
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=347
+		y=119
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=32
+	}
+	textix="Rdbk (Hz)"
 }

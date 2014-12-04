@@ -11,7 +11,7 @@ for P in $TOP $BOT
 do
 	caput ${P}:SEQ_START 0
 	caput ${P}:GET_LEDS.SCAN 0
-	caput ${P}:GET_SEQUENCE.SCAN 0
+	caput ${P}:GET_SEQUENCE 0
 done
 
 exit 0
