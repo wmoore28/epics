@@ -1,6 +1,6 @@
 
 file {
-	name="/home/wmoore/workspaces/epics-develop/apps/flasherApp/medm/Flasher.adl"
+	name="/usr/clas12/hps/v0.2.7/apps/flasher/medm/Flasher.adl"
 	version=030108
 }
 display {
@@ -1552,4 +1552,19 @@ rectangle {
 	align="horiz. centered"
 	limits {
 	}
+}
+"shell command" {
+	object {
+		x=614
+		y=151
+		width=155
+		height=20
+	}
+	command[0] {
+		label="Stop"
+		name="flasher_stop_all.sh"
+	}
+	clr=30
+	bclr=22
+	label="Stop All Seq"
 }
