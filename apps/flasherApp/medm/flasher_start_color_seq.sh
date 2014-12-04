@@ -35,16 +35,19 @@ else
 	usage
 fi
 
-# Setup/Run TOP
+# Setup TOP
 caput ${TOP}:SET_COLOR $COLOR
 caput -S ${TOP}:DATA_FILE_LOAD HPSFlasher1${COLOR}Channels.dat
 ./flasher_load_chan_file.sh "$TOP"
-./flasher_start_top.sh
+
 	
-# Setup/Run BOT
+# Setup BOT
 caput ${BOT}:SET_COLOR $COLOR
 caput -S ${BOT}:DATA_FILE_LOAD HPSFlasher2${COLOR}Channels.dat
 ./flasher_load_chan_file.sh "$BOT"
+
+#START TOP AND BOT
+./flasher_start_top.sh
 ./flasher_start_bot.sh
 
 exit 0
