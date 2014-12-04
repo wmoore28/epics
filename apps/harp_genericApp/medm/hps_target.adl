@@ -1,6 +1,6 @@
 
 file {
-	name="/home/stepanya/hps/epics/hps_target/medm/hps_target.adl"
+	name="/usr/local/clas12/hps/prod/apps/harp_generic/medm/hps_target.adl"
 	version=030108
 }
 display {
@@ -8,7 +8,7 @@ display {
 		x=857
 		y=110
 		width=350
-		height=130
+		height=110
 	}
 	clr=14
 	bclr=55
@@ -100,7 +100,7 @@ display {
 		bclr=4
 	}
 	label="5 um Pt"
-	press_msg="22.98"
+	press_msg="48.01"
 	clrmod="discrete"
 }
 "message button" {
@@ -116,7 +116,7 @@ display {
 		bclr=4
 	}
 	label="1.5 um Pt"
-	press_msg="10.7"
+	press_msg="60.294"
 }
 "message button" {
 	object {
@@ -131,8 +131,8 @@ display {
 		bclr=4
 	}
 	label="Retract"
-	press_msg="71"
-	release_msg="71"
+	press_msg="-0.5"
+	release_msg="-0.5"
 }
 rectangle {
 	object {
@@ -189,7 +189,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="70.99"
+	textix="0.0"
 	align="horiz. centered"
 }
 text {
@@ -202,7 +202,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="22.98"
+	textix="48.01"
 	align="horiz. centered"
 }
 text {
@@ -215,7 +215,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="10.7"
+	textix="60.294"
 	align="horiz. centered"
 }
 "text update" {
@@ -278,35 +278,4 @@ text {
 		chan="hps_target.DMOV"
 	}
 	textix="Motor is       moving"
-}
-"message button" {
-	object {
-		x=218
-		y=94
-		width=92
-		height=24
-	}
-	control {
-		chan="hps_target.VAL"
-		clr=14
-		bclr=4
-	}
-	label="Calibrate at 0"
-	press_msg="-1"
-	clrmod="discrete"
-}
-rectangle {
-	object {
-		x=208
-		y=90
-		width=107
-		height=34
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="if not zero"
-		chan="hps_target_at_c"
-	}
 }
