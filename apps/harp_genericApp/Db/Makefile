@@ -17,6 +17,7 @@ include $(TOP)/configure/CONFIG
 ##DB += userHost.substitutions
 
 DB += hps_collimators.db
+DB += hps_target.db
 DB += convertors.db
 DB += motor.db
 DB += motorlong.db
