@@ -1,12 +1,12 @@
 
 file {
-	name="/home/stepanya/epics/app/general/medm/motor_screens.adl"
-	version=030101
+	name="/home/stepanya/hps/epics/general/medm/motor_screens.adl"
+	version=030108
 }
 display {
 	object {
-		x=1289
-		y=500
+		x=376
+		y=827
 		width=180
 		height=250
 	}
@@ -113,6 +113,10 @@ display {
 	display[4] {
 		label="SVT Collimator"
 		name="hps_collimator.adl"
+	}
+	display[5] {
+		label="HPS target"
+		name="hps_target.adl"
 	}
 	clr=20
 	bclr=1
