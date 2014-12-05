@@ -40,6 +40,8 @@ public class HarpGenericAnalyzer {
     public void init(DataTable table, int column){
         harpData.clear();
         DataSetXY dataFull = table.getDataSet(0, column);
+        
+       
         DataSetXY dataNorm = dataFull.getDataSetRieman(100);
         //System.err.println(dataNorm.toString());
         //dataNorm.show();
@@ -65,6 +67,14 @@ public class HarpGenericAnalyzer {
 		if(harpName.compareTo("harp_2c21")==0){
 		    dataset.getDataX().mult(Math.sqrt(2.0)/2.0);
 		}
+                else if( harpName.compareTo("harp_2H02A")==0 )
+                    {
+                        dataset.getDataX().mult(10.);
+                       if(harpData.size()!=2) // Size here means the wire number :-)
+                       {
+                           dataset.getDataX().mult(Math.sqrt(2.0)/2.0);
+                       }
+                    }
 
 
                 harpData.add(dataset);
@@ -95,7 +105,7 @@ public class HarpGenericAnalyzer {
         
         
         for(int loop = 0; loop < harpData.size(); loop++){
-            DataFitter.fit(harpData.get(loop), harpFunc.get(loop));            
+            DataFitter.fit(harpData.get(loop), harpFunc.get(loop));
         }
         
         for(int loop = 0; loop < harpData.size(); loop++){
@@ -162,11 +172,11 @@ public class HarpGenericAnalyzer {
             {
                 if(index == 1)
                 {
-                 legend[4] = String.format("Ypos         %8.5f", harpFunc.get(index).parameter(1).value()/Math.sqrt(2.));
+                 legend[4] = String.format("Motor pos    %8.5f", harpFunc.get(index).parameter(1).value()*Math.sqrt(2.));
                 }
                 else if(index == 2)
                 {
-                    legend[4] = String.format("Xpos         %8.5f", harpFunc.get(index).parameter(1).value()/Math.sqrt(2.));
+                    legend[4] = String.format("Motor pos     %8.5f", harpFunc.get(index).parameter(1).value()*Math.sqrt(2.));
                 }
                 else
                 {
@@ -177,11 +187,11 @@ public class HarpGenericAnalyzer {
             {
                 if(index == 0)
                 {
-                 legend[4] = String.format("Xpos         %8.5f", harpFunc.get(index).parameter(1).value()/Math.sqrt(2.));
+                 legend[4] = String.format("Motor pos    %8.5f", harpFunc.get(index).parameter(1).value()*Math.sqrt(2.));
                 }
                 else if(index == 1)
                 {
-                    legend[4] = String.format("Ypos         %8.5f", harpFunc.get(index).parameter(1).value()/Math.sqrt(2.));
+                    legend[4] = String.format("Motor pos    %8.5f", harpFunc.get(index).parameter(1).value()*Math.sqrt(2.));
                 }
                 else
                 {
@@ -215,7 +225,7 @@ public class HarpGenericAnalyzer {
            return legend;
        }
        
-       Harp3ScanTranslator translate = new Harp3ScanTranslator( sigma_45, sigma_X, sigma_Y);
+       Harp3ScanTranslator translate = new Harp3ScanTranslator( sigma_45, sigma_X*Math.sqrt(2.), sigma_Y*Math.sqrt(2.));
 //Harp3ScanTranslator translate = new Harp3ScanTranslator( 0.18360, 0.15867, 0.28318);
 
        legend[0] = String.format( "%-12s  %8.5f", "Alpha", translate.getAlpha() );
