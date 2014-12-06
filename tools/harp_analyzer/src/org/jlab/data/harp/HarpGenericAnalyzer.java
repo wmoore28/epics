@@ -135,7 +135,7 @@ public class HarpGenericAnalyzer {
         {
            wireName[0] = "Wire X";
            wireName[1] = "Wire Y";
-           n_leg_entries = 4;
+           n_leg_entries = 5;               // It was 4 before
         }
         else if( n_wire == 3 )
         {
@@ -152,7 +152,7 @@ public class HarpGenericAnalyzer {
             wireName[1] = "Wire Y";
             wireName[2] = "Wire 45 deg";
             }
-           n_leg_entries = 5;
+           n_leg_entries = 6;
         }
         
         String[] legend = new String[n_leg_entries];
@@ -166,8 +166,16 @@ public class HarpGenericAnalyzer {
                 harpFunc.get(index).getChiSquare(harpData.get(index))/
                 harpFunc.get(index).getNDF(harpData.get(index))
                 );
+        
+        double pol0 = harpFunc.get(index).parameter(3).value();
+        double pol1 = harpFunc.get(index).parameter(4).value();
+        double bgr_val = pol0 + pol1*harpFunc.get(index).parameter(1).value();      // Bgr value at under the peak
+        double peak_val = harpFunc.get(index).parameter(0).value();
+        legend[4] = String.format("bgr/peak    %2.3e", bgr_val/peak_val);
+                
         if( n_wire == 3 )
         {
+            legend[5] = String.format("bgr/peak    %2.3e", bgr_val/peak_val);
             if( harp_name.compareTo("harp_tagger") == 0 )
             {
                 if(index == 1)
@@ -226,6 +234,7 @@ public class HarpGenericAnalyzer {
        }
        
        Harp3ScanTranslator translate = new Harp3ScanTranslator( sigma_45, sigma_X*Math.sqrt(2.), sigma_Y*Math.sqrt(2.));
+      // Harp3ScanTranslator translate = new Harp3ScanTranslator( sigma_45, sigma_X*Math.sqrt(2.), sigma_Y*Math.sqrt(2.));
 //Harp3ScanTranslator translate = new Harp3ScanTranslator( 0.18360, 0.15867, 0.28318);
 
        legend[0] = String.format( "%-12s  %8.5f", "Alpha", translate.getAlpha() );
