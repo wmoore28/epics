@@ -52,7 +52,7 @@ public class HarpGenericAnalyzer {
         java.util.List<DataVector> clusters = peak.getClusters();
         for(DataVector vec : clusters){
             if(vec.getSize()>5){
-                double mean = vec.geatMean();
+                double mean = vec.getMean();
                 double rms  = vec.getRMS();
                 double xmin = mean - graphCutSigmas*rms;
                 double xmax = mean + graphCutSigmas*rms;
@@ -94,7 +94,7 @@ public class HarpGenericAnalyzer {
             
             func.parameter(0).set(harpData.get(loop).getDataY().getMax(), 
                     0.0, harpData.get(loop).getDataY().getMax()*10.0);
-            func.parameter(1).setValue(harpData.get(loop).getDataX().geatMean());
+            func.parameter(1).setValue(harpData.get(loop).getDataX().getMean());
             func.parameter(2).set(harpData.get(loop).getDataX().getRMS()*0.1,
                     0.0,harpData.get(loop).getDataX().getRMS()*3.0);
             func.parameter(3).set(0.0, -100, 100);
