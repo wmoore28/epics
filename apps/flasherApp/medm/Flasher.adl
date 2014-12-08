@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/local/clas12/hps/prod/apps/flasher/medm/Flasher.adl"
+	name="/usr/clas12/hps/v0.2.8/apps/flasherApp/medm/Flasher.adl"
 	version=030108
 }
 display {
@@ -122,7 +122,7 @@ text {
 	}
 	command[0] {
 		label="Initialise"
-		name="/home/hpsrun/CSS-Workspaces/Default/CLAS/scripts/initFlasher.sh &"
+		name="initFlasher.sh &"
 	}
 	clr=14
 	bclr=2
