@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=784
-		y=379
+		x=240
+		y=146
 		width=1268
 		height=925
 	}
@@ -277,7 +277,7 @@ composite {
 		height=18
 	}
 	monitor {
-		chan="scalerS5b.VAL"
+		chan="scaler_cS5b.VAL"
 		clr=14
 		bclr=50
 	}
@@ -293,7 +293,7 @@ composite {
 		height=18
 	}
 	monitor {
-		chan="scalerS7b.VAL"
+		chan="scaler_cS7b.VAL"
 		clr=14
 		bclr=50
 	}
@@ -309,7 +309,7 @@ composite {
 		height=18
 	}
 	monitor {
-		chan="scalerS6b.VAL"
+		chan="scaler_cS6b.VAL"
 		clr=14
 		bclr=50
 	}
@@ -325,7 +325,7 @@ composite {
 		height=18
 	}
 	monitor {
-		chan="scaler_cS8b.VAL"
+		chan="scalerS8b.VAL"
 		clr=14
 		bclr=50
 	}
@@ -341,7 +341,7 @@ composite {
 		height=18
 	}
 	monitor {
-		chan="scaler_cS11b.VAL"
+		chan="scalerS11b.VAL"
 		clr=14
 		bclr=50
 	}
@@ -357,7 +357,7 @@ composite {
 		height=18
 	}
 	monitor {
-		chan="scaler_cS10b.VAL"
+		chan="scalerS10b.VAL"
 		clr=14
 		bclr=50
 	}
@@ -373,7 +373,7 @@ composite {
 		height=18
 	}
 	monitor {
-		chan="scaler_cS9b.VAL"
+		chan="scalerS9b.VAL"
 		clr=14
 		bclr=50
 	}
@@ -401,7 +401,7 @@ text {
 		height=18
 	}
 	monitor {
-		chan="scaler_cS13b.VAL"
+		chan="scalerS13b.VAL"
 		clr=14
 		bclr=50
 	}
@@ -417,7 +417,7 @@ text {
 		height=18
 	}
 	monitor {
-		chan="scaler_cS12b.VAL"
+		chan="scalerS12b.VAL"
 		clr=14
 		bclr=50
 	}
@@ -445,7 +445,7 @@ text {
 		height=18
 	}
 	monitor {
-		chan="scaler_cS14b.VAL"
+		chan="scalerS14b.VAL"
 		clr=14
 		bclr=50
 	}
@@ -596,83 +596,61 @@ composite {
 		}
 	}
 }
-composite {
+"text update" {
 	object {
 		x=310
-		y=80
+		y=105
 		width=75
-		height=43
+		height=18
 	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=310
-				y=105
-				width=75
-				height=18
-			}
-			monitor {
-				chan="scalerS4b.VAL"
-				clr=14
-				bclr=50
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=335
-				y=80
-				width=30
-				height=15
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="UPS-L"
-		}
+	monitor {
+		chan="scaler_cS4b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
 	}
 }
-composite {
+text {
+	object {
+		x=335
+		y=80
+		width=30
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UPS-L"
+}
+"text update" {
 	object {
 		x=310
 		y=135
 		width=75
-		height=39
+		height=18
 	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=310
-				y=135
-				width=75
-				height=18
-			}
-			monitor {
-				chan="scalerS3b.VAL"
-				clr=14
-				bclr=50
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=330
-				y=159
-				width=30
-				height=15
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="UPS-R"
-		}
+	monitor {
+		chan="scaler_cS3b.VAL"
+		clr=14
+		bclr=50
 	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=330
+		y=159
+		width=30
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UPS-R"
 }
 composite {
 	object {
@@ -834,7 +812,7 @@ polyline {
 text {
 	object {
 		x=57
-		y=312
+		y=330
 		width=110
 		height=18
 	}
@@ -846,7 +824,7 @@ text {
 text {
 	object {
 		x=57
-		y=337
+		y=350
 		width=110
 		height=18
 	}
@@ -858,7 +836,7 @@ text {
 text {
 	object {
 		x=57
-		y=364
+		y=310
 		width=114
 		height=18
 	}
@@ -1515,44 +1493,6 @@ text {
 	textix="Tagger Dump"
 	align="horiz. centered"
 }
-composite {
-	object {
-		x=455
-		y=790
-		width=140
-		height=38
-	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=455
-				y=810
-				width=140
-				height=18
-			}
-			monitor {
-				chan="tagger_dump_temp"
-				clr=1
-				bclr=53
-			}
-			limits {
-			}
-		}
-		text {
-			object {
-				x=455
-				y=790
-				width=140
-				height=20
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Tagger Dump Temperature"
-		}
-	}
-}
 text {
 	object {
 		x=545
@@ -1695,7 +1635,7 @@ text {
 		height=18
 	}
 	monitor {
-		chan="scaler_cS15b.VAL"
+		chan="scalerS15b.VAL"
 		clr=14
 		bclr=50
 	}
