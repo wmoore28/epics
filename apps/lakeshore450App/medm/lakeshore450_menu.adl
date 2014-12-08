@@ -1,6 +1,6 @@
 
 file {
-	name="/home/wmoore/workspaces/epics/apps/lakeshore450App/medm/lakeshore450_menu.adl"
+	name="/usr/clas12/hps/prod/apps/lakeshore450App/medm/lakeshore450_menu.adl"
 	version=030108
 }
 display {
@@ -111,10 +111,10 @@ rectangle {
 }
 text {
 	object {
-		x=61
+		x=10
 		y=97
 		width=105
-		height=21
+		height=20
 	}
 	"basic attribute" {
 		clr=14
@@ -160,7 +160,7 @@ text {
 }
 "related display" {
 	object {
-		x=310
+		x=361
 		y=92
 		width=25
 		height=25
@@ -175,10 +175,10 @@ text {
 }
 text {
 	object {
-		x=61
+		x=10
 		y=126
 		width=105
-		height=21
+		height=20
 	}
 	"basic attribute" {
 		clr=14
@@ -187,7 +187,7 @@ text {
 }
 "text update" {
 	object {
-		x=176
+		x=227
 		y=122
 		width=105
 		height=25
@@ -203,7 +203,7 @@ text {
 }
 "related display" {
 	object {
-		x=310
+		x=361
 		y=121
 		width=25
 		height=25
@@ -218,7 +218,7 @@ text {
 }
 "text update" {
 	object {
-		x=281
+		x=332
 		y=122
 		width=25
 		height=25
@@ -234,7 +234,7 @@ text {
 }
 text {
 	object {
-		x=176
+		x=227
 		y=72
 		width=130
 		height=15
@@ -247,7 +247,7 @@ text {
 }
 text {
 	object {
-		x=310
+		x=361
 		y=72
 		width=25
 		height=15
@@ -260,7 +260,7 @@ text {
 }
 "text update" {
 	object {
-		x=176
+		x=227
 		y=93
 		width=105
 		height=25
@@ -276,7 +276,7 @@ text {
 }
 "text update" {
 	object {
-		x=281
+		x=332
 		y=93
 		width=25
 		height=25
@@ -285,6 +285,63 @@ text {
 		chan="HPS:LS450_1:UNITS"
 		clr=15
 		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=89
+		y=93
+		width=130
+		height=25
+	}
+	monitor {
+		chan="HPS:LS450_1:FIELD.DESC"
+		clr=14
+		bclr=5
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=89
+		y=73
+		width=130
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Desc"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=10
+		y=74
+		width=130
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel"
+}
+"text update" {
+	object {
+		x=89
+		y=122
+		width=130
+		height=25
+	}
+	monitor {
+		chan="HPS:LS450_2:FIELD.DESC"
+		clr=14
+		bclr=5
 	}
 	align="horiz. centered"
 	limits {
