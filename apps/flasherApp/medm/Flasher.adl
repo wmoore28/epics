@@ -1458,32 +1458,6 @@ text {
 	}
 	textix="Start Color Sequence"
 }
-menu {
-	object {
-		x=263
-		y=165
-		width=80
-		height=20
-	}
-	control {
-		chan="B_HPS_ECAL_FLASHER_BOT:SET_FREQ_MENU"
-		clr=14
-		bclr=2
-	}
-}
-menu {
-	object {
-		x=263
-		y=141
-		width=80
-		height=20
-	}
-	control {
-		chan="B_HPS_ECAL_FLASHER_TOP:SET_FREQ_MENU"
-		clr=14
-		bclr=2
-	}
-}
 "shell command" {
 	object {
 		x=441
@@ -1557,38 +1531,6 @@ rectangle {
 	bclr=22
 	label="Stop All Seq"
 }
-"text update" {
-	object {
-		x=347
-		y=141
-		width=60
-		height=20
-	}
-	monitor {
-		chan="B_HPS_ECAL_FLASHER_TOP:GET_FREQ"
-		clr=14
-		bclr=2
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=347
-		y=165
-		width=60
-		height=20
-	}
-	monitor {
-		chan="B_HPS_ECAL_FLASHER_BOT:GET_FREQ"
-		clr=14
-		bclr=2
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
 text {
 	object {
 		x=347
@@ -1600,4 +1542,92 @@ text {
 		clr=32
 	}
 	textix="Rdbk (Hz)"
+}
+composite {
+	object {
+		x=263
+		y=165
+		width=144
+		height=20
+	}
+	"composite name"=""
+	children {
+		menu {
+			object {
+				x=263
+				y=165
+				width=80
+				height=20
+			}
+			control {
+				chan="B_HPS_ECAL_FLASHER_BOT:SET_FREQ_MENU"
+				clr=14
+				bclr=2
+			}
+		}
+		"text update" {
+			object {
+				x=347
+				y=165
+				width=60
+				height=20
+			}
+			monitor {
+				chan="B_HPS_ECAL_FLASHER_BOT:GET_FREQ"
+				clr=14
+				bclr=2
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="B_HPS_ECAL_FLASHER_BOT:GET_CLOCK"
+	}
+}
+composite {
+	object {
+		x=263
+		y=141
+		width=144
+		height=20
+	}
+	"composite name"=""
+	children {
+		menu {
+			object {
+				x=263
+				y=141
+				width=80
+				height=20
+			}
+			control {
+				chan="B_HPS_ECAL_FLASHER_TOP:SET_FREQ_MENU"
+				clr=14
+				bclr=2
+			}
+		}
+		"text update" {
+			object {
+				x=347
+				y=141
+				width=60
+				height=20
+			}
+			monitor {
+				chan="B_HPS_ECAL_FLASHER_TOP:GET_FREQ"
+				clr=14
+				bclr=2
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="B_HPS_ECAL_FLASHER_TOP:GET_CLOCK"
+	}
 }
