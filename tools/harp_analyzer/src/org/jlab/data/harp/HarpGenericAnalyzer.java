@@ -45,7 +45,7 @@ public class HarpGenericAnalyzer {
         DataSetXY dataNorm = dataFull.getDataSetRieman(100);
         //System.err.println(dataNorm.toString());
         //dataNorm.show();
-        PeakFinder peak = new PeakFinder(2.);
+        PeakFinder peak = new PeakFinder(2);
         peak.doClustering(dataNorm);
         
         harpData.clear();
@@ -93,10 +93,13 @@ public class HarpGenericAnalyzer {
             );
             
             func.parameter(0).set(harpData.get(loop).getDataY().getMax(), 
-                    0.0, harpData.get(loop).getDataY().getMax()*10.0);
+                    harpData.get(loop).getDataY().getMax()*0.6, harpData.get(loop).getDataY().getMax()*1.4);            // It shouldn't be haigher than Maximum, and if bgr is not that high 
+                                                                                 // min limit values shouldn't be too low 
             func.parameter(1).setValue(harpData.get(loop).getDataX().getMean());
+            //func.parameter(1).set(harpData.get(loop).getDataX().getMean(), harpData.get(loop).getDataX().getMean()*0.8, 
+              //      harpData.get(loop).getDataX().getMean()*1.2);
             func.parameter(2).set(harpData.get(loop).getDataX().getRMS()*0.1,
-                    0.0,harpData.get(loop).getDataX().getRMS()*3.0);
+                    harpData.get(loop).getDataX().getRMS()*0.001,harpData.get(loop).getDataX().getRMS()*3);
             func.parameter(3).set(0.0, -100, 100);
             func.parameter(4).set(0.0, -100, 100);
             func.show();
@@ -238,10 +241,42 @@ public class HarpGenericAnalyzer {
 //Harp3ScanTranslator translate = new Harp3ScanTranslator( 0.18360, 0.15867, 0.28318);
 
        legend[0] = String.format( "%-12s  %8.5f", "Alpha", translate.getAlpha() );
-       legend[1] = String.format( "%-12s  %8.5f", "A", translate.getA() );
-       legend[2] = String.format( "%-12s  %8.5f", "B", translate.getB() );
+       legend[1] = String.format( "%-12s  %8.5f", "A", translate.getA()/Math.sqrt(2.));
+       legend[2] = String.format( "%-12s  %8.5f", "B", translate.getB()/Math.sqrt(2.));
        
        return legend;
+    }
+    
+    public String[] getBeamXY_legend(String harp_name)
+    {
+        String[] legend = new String[2];
+        double x_nominal_2H02A = 45.33/Math.sqrt(2.);
+        double y_nominal_2H02A = 68.92/Math.sqrt(2.);
+        double x_nominal_tagger = 52.37/Math.sqrt(2.);
+        double y_nominal_tagger = 31.67/Math.sqrt(2.);
+        
+        
+        if( harp_name.compareTo("harp_tagger") == 0 )
+        {
+            double x_from_scan = harpFunc.get(2).parameter(1).value();
+            double y_from_scan = harpFunc.get(1).parameter(1).value();
+            double x_beam = x_from_scan - x_nominal_tagger;
+            double y_beam = y_nominal_tagger - y_from_scan;
+            legend[0] = String.format("%-12s  %4.5f mm", "beam X", x_beam);
+            legend[1] = String.format("%-12s  %4.5f mm", "beam Y", y_beam);
+        }
+        else if(harp_name.compareTo("harp_2H02A") == 0)
+        {
+            double x_from_scan = harpFunc.get(0).parameter(1).value();
+            double y_from_scan = harpFunc.get(1).parameter(1).value();
+            double x_beam = x_nominal_2H02A - x_from_scan;
+            double y_beam = y_nominal_2H02A - y_from_scan;
+            legend[0] = String.format("%-12s  %4.5f mm", "beam X", x_beam);
+            legend[1] = String.format("%-12s  %4.5f mm", "beam Y", y_beam);
+        }
+               
+        
+        return legend;
     }
     
 }
