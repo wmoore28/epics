@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/lakeshore450/medm/lakeshore450.adl"
+	name="/usr/clas12/hps/prod/apps/lakeshore450App/medm/lakeshore450.adl"
 	version=030108
 }
 display {
@@ -212,22 +212,6 @@ menu {
 		bclr=4
 	}
 }
-"text update" {
-	object {
-		x=151
-		y=85
-		width=105
-		height=25
-	}
-	monitor {
-		chan="$(P)FIELD"
-		clr=15
-		bclr=12
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
 text {
 	object {
 		x=40
@@ -382,22 +366,6 @@ menu {
 		chan="$(P)AUTO_RANGE:SET"
 		clr=14
 		bclr=4
-	}
-}
-"text update" {
-	object {
-		x=256
-		y=85
-		width=25
-		height=25
-	}
-	monitor {
-		chan="$(P)UNITS"
-		clr=15
-		bclr=12
-	}
-	align="horiz. centered"
-	limits {
 	}
 }
 text {
@@ -833,4 +801,36 @@ text {
 		clr=14
 	}
 	textix="Description"
+}
+"text update" {
+	object {
+		x=151
+		y=85
+		width=105
+		height=25
+	}
+	monitor {
+		chan="$(P)FIELD"
+		clr=15
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=256
+		y=85
+		width=25
+		height=25
+	}
+	monitor {
+		chan="$(P)UNITS"
+		clr=15
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+	}
 }
