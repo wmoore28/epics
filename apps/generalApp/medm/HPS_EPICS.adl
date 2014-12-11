@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v0.2.7/apps/generalApp/medm/HPS_EPICS.adl"
+	name="/home/wmoore/workspaces/chiller/apps/generalApp/medm/HPS_EPICS.adl"
 	version=030108
 }
 display {
 	object {
-		x=0
-		y=0
+		x=10
+		y=10
 		width=240
 		height=705
 	}
@@ -265,6 +265,10 @@ text {
 	display[4] {
 		label="Flasher"
 		name="Flasher.adl"
+	}
+	display[5] {
+		label="Chiller"
+		name="chiller_thermo.adl"
 	}
 	clr=14
 	bclr=50
