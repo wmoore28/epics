@@ -2,7 +2,8 @@
 
 ## The following is needed if your board support package doesn't at boot time
 ## automatically cd to the directory containing its startup script
-cd "$IOC_root_classc4/iocBoot/iocclassc4"
+#cd "$IOC_root_classc4/iocBoot/iocclassc4"
+cd "$IOC_root_classc4"
 
 < cdCommands
 #< ../nfsCommands

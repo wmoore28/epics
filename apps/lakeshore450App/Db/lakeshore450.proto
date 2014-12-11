@@ -60,8 +60,7 @@ getField {
 
 getFieldM {
     out "FIELDM?";
-    in  "%s";
-	@mismatch { in " "; }
+    in  "%{u|m|k| }";
 }
 
 getFilt {
