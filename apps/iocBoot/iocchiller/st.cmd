@@ -25,7 +25,7 @@ drvAsynIPPortConfigure("SER5", "hallb-moxa1:4005")
 dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC}")
 dbLoadRecords("db/save_restoreStatus.db", "P=${IOC}:")
 # dbLoadRecords("db/anova.db", "P=CHILL:,R=,PROTO=anova.proto,PORT=SER8")
-dbLoadRecords("db/thermoSci.db", "P=HPS:,R=CHILLER:,PORT=SER5")
+dbLoadRecords("db/thermoSci.db", "P=HPS_ECAL:,R=CHILLER:,PORT=SER5")
 
 cd ${TOP}/iocBoot/${IOC}
 

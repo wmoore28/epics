@@ -130,7 +130,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS:CHILLER:TEMP"
+		chan="HPS_ECAL:CHILLER:TEMP"
 		clr=15
 		bclr=11
 	}
@@ -148,7 +148,7 @@ text {
 	display[0] {
 		label="Comm (asyn)"
 		name="asynRecord.adl"
-		args="P=HPS:CHILLER:,R=ASYN"
+		args="P=HPS_ECAL:CHILLER:,R=ASYN"
 	}
 	display[1] {
 		label="IOC Stats"
@@ -158,7 +158,7 @@ text {
 	display[2] {
 		label="Status Details"
 		name="chiller_thermo_status.adl"
-		args="P=HPS:CHILLER:,ioc=iocchiller"
+		args="P=HPS_ECAL:CHILLER:,ioc=iocchiller"
 	}
 	clr=14
 	bclr=4
@@ -183,7 +183,7 @@ byte {
 		height=165
 	}
 	monitor {
-		chan="HPS:CHILLER:STATUS4"
+		chan="HPS_ECAL:CHILLER:STATUS4"
 		clr=15
 		bclr=19
 	}
@@ -210,7 +210,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS:CHILLER:TEMP:RD_SP"
+		chan="HPS_ECAL:CHILLER:TEMP:RD_SP"
 		clr=14
 		bclr=5
 	}
@@ -334,7 +334,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS:CHILLER:LOW_LIMIT"
+		chan="HPS_ECAL:CHILLER:LOW_LIMIT"
 		clr=15
 		bclr=11
 	}
@@ -363,7 +363,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS:CHILLER:HIGH_LIMIT"
+		chan="HPS_ECAL:CHILLER:HIGH_LIMIT"
 		clr=15
 		bclr=11
 	}
@@ -463,7 +463,7 @@ rectangle {
 	display[0] {
 		label="Status Details"
 		name="chiller_thermo_status.adl"
-		args="P=HPS:CHILLER:,ioc=iocchiller"
+		args="P=HPS_ECAL:CHILLER:,ioc=iocchiller"
 	}
 	clr=14
 	bclr=4
@@ -516,7 +516,7 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="HPS:CHILLER:STATUS1"
+		chan="HPS_ECAL:CHILLER:STATUS1"
 	}
 }
 rectangle {
@@ -532,7 +532,7 @@ rectangle {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A!=8"
-		chan="HPS:CHILLER:STATUS2"
+		chan="HPS_ECAL:CHILLER:STATUS2"
 	}
 }
 rectangle {
@@ -548,7 +548,7 @@ rectangle {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A>7"
-		chan="HPS:CHILLER:STATUS3"
+		chan="HPS_ECAL:CHILLER:STATUS3"
 	}
 }
 rectangle {
@@ -564,6 +564,6 @@ rectangle {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A<8&&A>0"
-		chan="HPS:CHILLER:STATUS3"
+		chan="HPS_ECAL:CHILLER:STATUS3"
 	}
 }
