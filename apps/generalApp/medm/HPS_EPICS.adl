@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=10
-		y=10
+		x=3
+		y=49
 		width=240
-		height=705
+		height=725
 	}
 	clr=14
 	bclr=4
@@ -85,6 +85,17 @@ display {
 		3cb420,
 		289315,
 		1a7309,
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=705
+		width=240
+		height=20
+	}
+	"basic attribute" {
+		clr=8
 	}
 }
 rectangle {
@@ -776,4 +787,17 @@ text {
 		clr=0
 	}
 	textix="Access Controls"
+}
+text {
+	object {
+		x=0
+		y=709
+		width=240
+		height=16
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Release: vXXX"
+	align="horiz. centered"
 }
