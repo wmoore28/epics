@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=3
-		y=50
+		x=5
+		y=92
 		width=240
 		height=785
 	}
@@ -801,8 +801,17 @@ text {
 		height=18
 	}
 	display[0] {
-		label="Developement"
+		label="Production (refresh)"
+		name="HPS_EPICS_refresh.adl"
+		policy="replace display"
+	}
+	display[1] {
+		label="Development"
 		name="/usr/clas12/hps/dev/apps/medm/HPS_EPICS.adl"
+	}
+	display[2] {
+		label="Rollback"
+		name="/usr/clas12/hps/rollback/apps/medm/HPS_EPICS.adl"
 	}
 	clr=14
 	bclr=50
@@ -832,15 +841,15 @@ text {
 }
 text {
 	object {
-		x=189
+		x=165
 		y=769
-		width=25
+		width=50
 		height=16
 	}
 	"basic attribute" {
 		clr=0
 	}
-	textix="Dev"
+	textix="Versions"
 }
 "shell command" {
 	object {
