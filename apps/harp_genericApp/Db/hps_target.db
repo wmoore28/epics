@@ -6,11 +6,11 @@ record(calc, "hps_target_at_home") {
 record(calc, "hps_target_at_a") {
 	field(INPA, "hps_target.RBV")
 	field(SCAN, ".2 second")
-	field(CALC, "ABS(A-48.01)<0.01?1:0")
+	field(CALC, "ABS(A-54.5)<0.01?1:0")
 }
 record(calc, "hps_target_at_b") {
 	field(INPA, "hps_target.RBV")
 	field(SCAN, ".2 second")
-	field(CALC, "ABS(A-60.29)<0.01?1:0")
+	field(CALC, "ABS(A-65.5)<0.01?1:0")
 }
 
