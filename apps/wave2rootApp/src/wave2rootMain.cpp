@@ -1,5 +1,5 @@
 /*
- * pxirootMain.cpp
+ * wave2rootMain.cpp
  *
  *  Created on: Mar 25, 2014
  *      Author: yqiang
