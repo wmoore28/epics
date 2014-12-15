@@ -1,3 +1,38 @@
+Version 0.3.0:
+ - sixtyHzApp: fix, uncommented rms calc (levon,hovanes)
+ - hvcaApp: moved new ecal screens to generalApp
+ - procServ: added iocwave2root
+ - hvcaApp/generalApp: moved new ecal hv screens to generalApp, hvcaApp is all generated adl's
+ - Merge branch 'develop' of https://github.com/wmoore28/epics
+ - Merged hotfix-v0.2.9 and chiller-dev
+ - ecal: updated dsc2 and fadc
+ - ecal: gitignore for compiled libs
+ - TODO: harp_analyzer ToDo done
+ - tools/hps_epics: updated to include arg for which tree is desired, used by HPS_EPICS.adl
+ - Merge pull request #22 from hovanes-egiyan/master
+ - tested wave2root with sixty herz, now can write ROOT files
+ - generalApp: HPS_EPICS.adl, added access to other versions and refresh production version
+ - generalApp: ECalHVStatus.adl, added ramp up/down for HV
+ - generalApp: HPS_EPICS.adl updates for tools, etc
+ - scalerApp: adl, added hps target (stepanya)
+ - harp_genericApp: updated HPS target positions
+ - hvcaApp: added ecalRampCtrl.sh, created cleaner versions of generated adls
+ - EcalScalerGui: added app and startup scripts for use by HPS_EPICS.adl
+ - Merge branch 'hotfix-v0.2.9' of https://github.com/wmoore28/epics into chiller-dev
+ - chillerApp: renamed PVs to HPS_ECAL:CHILLER:
+ - HPS_EPICS.adl: trying out a way to add the git tag to the adl
+ - harp_analyzer: updated to prevent creation of tmp image file (rafopar,gagik)
+ - flasherApp: new fastSeq scripts (baltzell)
+ - chillerApp: added support for Thermo Scientific chiller (readbacks-only)
+ - lakeshoreApp: fix for MULT readback. Now handles autoscaling correctly and converts to G or T.
+ - btaApp: minor medm update
+ - scalerApp: updated PV names on scaler_hps.adl (stepanya)
+ - flasherApp: medm, updated clock settings to show only if using internal clock
+ - flasherApp: added scripts and updated adl to use initFlasher.sh (celentan)
+ - lakeshore450App: updated screens to show .DESC, :RAW, and :MULT PVs
+ - lakeshore450App: fixed PREC for calculated field, solving issue with some autoscale values
+ - vme iocs: fixed st.cmd to properly run from production version, not home directories
+
 Version 0.2.8:
  - Merge branch 'hotfix-v0.2.8' of https://github.com/wmoore28/epics into develop
  - scalerApp: fixes for scaler_hps.adl
