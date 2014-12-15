@@ -120,7 +120,7 @@ dbLoadRecords("db/motor.db","motor_name=hps_target, card=0, slot=1,srev=2000,ure
 
 
 dbLoadRecords("db/motor.db","motor_name=hps_collimator,card=0,slot=3,srev=2000,urev=0.2,direction=Pos,velo=0.2,accl=0.5")
-dbLoadRecords("db/scan.db","motor_name=hps_collimator,start_at=4.22,end_at=4.82,start_speed=5.0,scan_speed=0.5,acq_time=0.07")
+dbLoadRecords("db/scan.db","motor_name=hps_collimator,start_at=4.22,end_at=4.82,start_speed=0.2,scan_speed=0.02,acq_time=0.07")
 
 #dbLoadRecords("db/radiators.db")
 dbLoadRecords("db/convertors.db")
