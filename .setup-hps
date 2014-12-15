@@ -18,9 +18,9 @@ set -f path=($path:q "/apps/root/5.34.21/bin")
 set -f path=($path:q ".")
 
 if ( ! $?LD_LIBRARY_PATH ) then
-  setenv LD_LIBRARY_PATH "$EPICS_BASE/lib/$EPICS_HOST_ARCH":"$EPICS_EXTENSIONS/lib/$EPICS_HOST_ARCH:/apps/root/5.34.21/lib"
+  setenv LD_LIBRARY_PATH "$EPICS_BASE/lib/$EPICS_HOST_ARCH":"$EPICS_EXTENSIONS/lib/$EPICS_HOST_ARCH":"/apps/root/5.34.21/lib"
 else
-  setenv LD_LIBRARY_PATH "$LD_LIBRARY_PATH":"$EPICS_BASE/lib/$EPICS_HOST_ARCH":"$EPICS_EXTENSIONS/lib/$EPICS_HOST_ARCH:/apps/root/5.34.21/lib"
+  setenv LD_LIBRARY_PATH "$LD_LIBRARY_PATH":"$EPICS_BASE/lib/$EPICS_HOST_ARCH":"$EPICS_EXTENSIONS/lib/$EPICS_HOST_ARCH":"/apps/root/5.34.21/lib"
 endif
 
 setenv EPICSB_DRIVERS "$CLAS/epics/drivers"
