@@ -1,6 +1,6 @@
 
 file {
-	name="/home/wmoore/workspaces/chiller/apps/generalApp/medm/ioc_hps_health.adl"
+	name="/usr/clas12/hps/v0.3.1/apps/generalApp/medm/ioc_hps_health.adl"
 	version=030108
 }
 display {
@@ -8,7 +8,7 @@ display {
 		x=488
 		y=290
 		width=1300
-		height=375
+		height=395
 	}
 	clr=3
 	bclr=4
@@ -92,10 +92,21 @@ rectangle {
 		x=859
 		y=53
 		width=425
-		height=155
+		height=175
 	}
 	"basic attribute" {
 		clr=5
+	}
+}
+rectangle {
+	object {
+		x=10
+		y=203
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=2
 	}
 }
 rectangle {
@@ -112,7 +123,7 @@ rectangle {
 rectangle {
 	object {
 		x=859
-		y=227
+		y=273
 		width=425
 		height=110
 	}
@@ -324,7 +335,7 @@ text {
 text {
 	object {
 		x=10
-		y=227
+		y=273
 		width=105
 		height=15
 	}
@@ -809,7 +820,7 @@ text {
 text {
 	object {
 		x=345
-		y=250
+		y=296
 		width=150
 		height=15
 	}
@@ -822,7 +833,7 @@ text {
 text {
 	object {
 		x=193
-		y=250
+		y=296
 		width=150
 		height=15
 	}
@@ -835,7 +846,7 @@ text {
 rectangle {
 	object {
 		x=10
-		y=267
+		y=313
 		width=1270
 		height=20
 	}
@@ -846,7 +857,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=250
+		y=296
 		width=160
 		height=15
 	}
@@ -859,7 +870,7 @@ text {
 "text update" {
 	object {
 		x=193
-		y=269
+		y=315
 		width=150
 		height=20
 	}
@@ -875,7 +886,7 @@ text {
 "text update" {
 	object {
 		x=345
-		y=269
+		y=315
 		width=150
 		height=20
 	}
@@ -891,7 +902,7 @@ text {
 "text update" {
 	object {
 		x=497
-		y=269
+		y=315
 		width=100
 		height=20
 	}
@@ -907,7 +918,7 @@ text {
 "text update" {
 	object {
 		x=707
-		y=269
+		y=315
 		width=150
 		height=20
 	}
@@ -923,7 +934,7 @@ text {
 text {
 	object {
 		x=15
-		y=268
+		y=314
 		width=160
 		height=20
 	}
@@ -935,7 +946,7 @@ text {
 text {
 	object {
 		x=626
-		y=250
+		y=296
 		width=75
 		height=15
 	}
@@ -948,7 +959,7 @@ text {
 text {
 	object {
 		x=862
-		y=250
+		y=296
 		width=60
 		height=15
 	}
@@ -961,7 +972,7 @@ text {
 text {
 	object {
 		x=707
-		y=250
+		y=296
 		width=150
 		height=15
 	}
@@ -974,7 +985,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=267
+		y=313
 		width=75
 		height=20
 	}
@@ -990,7 +1001,7 @@ text {
 text {
 	object {
 		x=496
-		y=250
+		y=296
 		width=100
 		height=15
 	}
@@ -1003,7 +1014,7 @@ text {
 text {
 	object {
 		x=924
-		y=250
+		y=296
 		width=130
 		height=15
 	}
@@ -1016,7 +1027,7 @@ text {
 text {
 	object {
 		x=1056
-		y=250
+		y=296
 		width=200
 		height=15
 	}
@@ -1029,7 +1040,7 @@ text {
 rectangle {
 	object {
 		x=10
-		y=289
+		y=335
 		width=1270
 		height=20
 	}
@@ -1040,7 +1051,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=291
+		y=337
 		width=150
 		height=20
 	}
@@ -1056,7 +1067,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=291
+		y=337
 		width=150
 		height=20
 	}
@@ -1072,7 +1083,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=291
+		y=337
 		width=100
 		height=20
 	}
@@ -1088,7 +1099,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=291
+		y=337
 		width=150
 		height=20
 	}
@@ -1104,7 +1115,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=290
+		y=336
 		width=160
 		height=20
 	}
@@ -1116,7 +1127,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=289
+		y=335
 		width=75
 		height=20
 	}
@@ -1132,7 +1143,7 @@ text {
 rectangle {
 	object {
 		x=10
-		y=311
+		y=357
 		width=1270
 		height=20
 	}
@@ -1143,7 +1154,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=313
+		y=359
 		width=150
 		height=20
 	}
@@ -1159,7 +1170,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=313
+		y=359
 		width=150
 		height=20
 	}
@@ -1175,7 +1186,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=313
+		y=359
 		width=100
 		height=20
 	}
@@ -1191,7 +1202,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=313
+		y=359
 		width=150
 		height=20
 	}
@@ -1207,7 +1218,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=312
+		y=358
 		width=160
 		height=20
 	}
@@ -1219,7 +1230,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=311
+		y=357
 		width=75
 		height=20
 	}
@@ -1235,7 +1246,7 @@ text {
 text {
 	object {
 		x=859
-		y=233
+		y=279
 		width=425
 		height=15
 	}
@@ -1321,7 +1332,7 @@ text {
 text {
 	object {
 		x=601
-		y=250
+		y=296
 		width=20
 		height=15
 	}
@@ -1364,7 +1375,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=267
+		y=313
 		width=20
 		height=20
 	}
@@ -1379,7 +1390,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=289
+		y=335
 		width=20
 		height=20
 	}
@@ -1394,7 +1405,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=312
+		y=358
 		width=20
 		height=20
 	}
@@ -1506,6 +1517,113 @@ text {
 	}
 	monitor {
 		chan="iocchiller:STARTTOD"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=204
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocwave2root"
+}
+"text update" {
+	object {
+		x=193
+		y=205
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocwave2root:HOSTNAME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=205
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocwave2root:UPTIME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=205
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocwave2root:HEARTBEAT"
+		clr=0
+		bclr=27
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=601
+		y=203
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocwave2root"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=626
+		y=203
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocwave2root"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+"text update" {
+	object {
+		x=707
+		y=205
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocwave2root:STARTTOD"
 		clr=0
 		bclr=27
 	}
