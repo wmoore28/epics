@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/v0.2.8/apps/generalApp/medm/HPS_EPICS.adl"
+	name="/usr/clas12/hps/prod/apps/generalApp/medm/HPS_EPICS.adl"
 	version=030108
 }
 display {
 	object {
-		x=5
-		y=92
+		x=1
+		y=84
 		width=240
-		height=785
+		height=805
 	}
 	clr=14
 	bclr=4
@@ -86,6 +86,30 @@ display {
 		289315,
 		1a7309,
 	}
+}
+rectangle {
+	object {
+		x=0
+		y=765
+		width=240
+		height=40
+	}
+	"basic attribute" {
+		clr=11
+	}
+}
+text {
+	object {
+		x=113
+		y=790
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Versions >"
+	align="horiz. right"
 }
 rectangle {
 	object {
@@ -805,32 +829,13 @@ text {
 		name="HPS_EPICS_refresh.adl"
 		policy="replace display"
 	}
-	display[1] {
-		label="Development"
-		name="/usr/clas12/hps/dev/apps/medm/HPS_EPICS.adl"
-	}
-	display[2] {
-		label="Rollback"
-		name="/usr/clas12/hps/rollback/apps/medm/HPS_EPICS.adl"
-	}
 	clr=14
 	bclr=50
-}
-rectangle {
-	object {
-		x=0
-		y=765
-		width=240
-		height=20
-	}
-	"basic attribute" {
-		clr=11
-	}
 }
 text {
 	object {
 		x=20
-		y=769
+		y=779
 		width=130
 		height=16
 	}
@@ -838,18 +843,6 @@ text {
 		clr=0
 	}
 	textix="Release: v0.2.8"
-}
-text {
-	object {
-		x=165
-		y=769
-		width=50
-		height=16
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="Versions"
 }
 "shell command" {
 	object {
@@ -865,6 +858,11 @@ text {
 	command[1] {
 		label="ECAL FADC GUI"
 		name="/usr/clas12/hps/prod/tools/ecal/runEcalFADCScalerGui.sh &"
+	}
+	command[2] {
+		label="ECAL Diag GUI (solaris-only)"
+		name="xterm -title 'ECAL FADC Diag GUI' -e "
+		args="/usr/clas12/hps/prod/tools/ecal/runEcalDiagGui.sh &"
 	}
 	clr=14
 	bclr=50
@@ -906,4 +904,35 @@ text {
 		clr=14
 	}
 	textix="Screenshots Folder"
+}
+"shell command" {
+	object {
+		x=216
+		y=787
+		width=20
+		height=18
+	}
+	command[1] {
+		label="Development"
+		name="hps_epics dev &"
+	}
+	command[2] {
+		label="Rollback"
+		name="hps_epics rollback &"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=113
+		y=769
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Refresh >"
+	align="horiz. right"
 }
