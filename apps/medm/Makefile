@@ -39,7 +39,7 @@ all: clean
 	$(SOFT_LINK_COMMAND)
 	$(RM) HPS_EPICS.adl
 	cp $(HPS_MAIN_WITH_PATH) .
-	sed -i 's/vXXX/$(GIT_TAG)/' HPS_EPICS.adl
+	sed -i 's/v[0-999].[0-999].[0-999]/$(GIT_TAG)/' HPS_EPICS.adl
 
 http:
 	$(RM) /u/group/clas/www/clasweb/html/medm/*.adl
