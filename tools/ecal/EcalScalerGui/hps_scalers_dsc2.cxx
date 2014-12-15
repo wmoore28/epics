@@ -308,8 +308,11 @@ void hps_scalers_dsc2_app::button_Save()
     TGWindow* win = 0;
 
     TTimeStamp tt;
-    TString tstub=tt.AsString("s");
+    TString tstub=tt.AsString("lc");
     tstub.ReplaceAll(" ","_");
+    gPad->SaveAs(Form("%s/screenshots/ECALSCALERS_%s.png",
+                gSystem->Getenv("HOME"),tstub.Data()));
+    return;
 
     static TString dir("printouts");
     TGFileInfo fi;
@@ -385,7 +388,10 @@ hps_scalers_dsc2_app::hps_scalers_dsc2_app(const TGWindow *p, UInt_t w, UInt_t h
     pH->GetYaxis()->SetTickLength(0);
     pH->GetYaxis()->SetTitleOffset(0.5);
     pH->Draw("COLZTEXT");
+    TText tt;
+    tt.DrawTextNDC(0.4,0.92,"ECAL DCS2 SCALERS");
 
+    gPad->SetLogz(1);
     gPad->SetGrid(1,1);
     gPad->SetLeftMargin(0.05);
     gStyle->SetGridStyle(1);
@@ -405,7 +411,7 @@ hps_scalers_dsc2_app::hps_scalers_dsc2_app(const TGWindow *p, UInt_t w, UInt_t h
     if(connect_to_server() < 0) DoExit();
     if(get_crate_map() < 0) DoExit();
 
-    SetWindowName("HPS DSC2 SCALERS");
+    SetWindowName("ECAL DSC2 SCALERS");
     MapSubwindows();
     Resize();
     MapWindow();

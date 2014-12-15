@@ -23,7 +23,7 @@
 
 struct totalrates_t
 {
-    int top,bottom,left,right,total;
+    int top,bottom,left,right,total,max;
 };
 
 class hps_scalers_fadc_app : public TGMainFrame
@@ -183,6 +183,7 @@ void hps_scalers_fadc_app::draw_scalers()
     static TPaveText tt2(0.7,0.91,0.9,0.99,"NDC");
     static TPaveText ttT(-22+13+0.05,6-5,-22+22,7-5-0.05);
     static TPaveText ttB(-22+13+0.05,4-5+0.05,-22+22,5-5);
+    static TPaveText ttM(-22+0+0.05,5-5+0.05,-22+13,6-5);
     static TBox bb;
     static TLine ll;
 
@@ -201,8 +202,12 @@ void hps_scalers_fadc_app::draw_scalers()
         ttB.SetBorderSize(0);
         ttT.SetFillColor(kWhite);
         ttB.SetFillColor(kWhite);
+        ttM.SetBorderSize(0);
+        ttM.SetFillColor(kWhite);
+        ttM.SetTextColor(kRed);
     }
 
+    unsigned int max=0;
     pH->SetMinimum(0);
     pH->Reset();
     for(int x = -23; x <= 23; x++)
@@ -213,8 +218,16 @@ void hps_scalers_fadc_app::draw_scalers()
 
             if(ch >= 0)
             {
-                pH->Fill(x, y, hpsfadc_crate_slot_scalers[0][ch/16][ch%16]);
-                pH->Fill(x, -y, hpsfadc_crate_slot_scalers[1][ch/16][ch%16]);
+                pH->Fill(x, y, (float)hpsfadc_crate_slot_scalers[0][ch/16][ch%16]/1000);
+                pH->Fill(x, -y, (float)hpsfadc_crate_slot_scalers[1][ch/16][ch%16]/1000);
+
+                if (y<3 && (x>=-11 || x<=1))
+                {
+                    if (hpsfadc_crate_slot_scalers[0][ch/16][ch%16] > max) 
+                        max=hpsfadc_crate_slot_scalers[0][ch/16][ch%16];
+                    if (hpsfadc_crate_slot_scalers[1][ch/16][ch%16] > max) 
+                        max=hpsfadc_crate_slot_scalers[1][ch/16][ch%16];
+                }
             }
         }
     }
@@ -250,14 +263,17 @@ void hps_scalers_fadc_app::draw_scalers()
     tt2.Clear();
     ttT.Clear();
     ttB.Clear();
+    ttM.Clear();
     tt1.AddText(Form("Total:  %.1E Hz",(float)rr.total));
-    tt2.AddText(Form("Total:  %.1f kHz",(float)rr.total/1000));
-    ttT.AddText(Form("%.2f kHz",(float)rr.top/1000));
-    ttB.AddText(Form("%.2f kHz",(float)rr.bottom/1000));
+    tt2.AddText(Form("Total:  %.2f MHz",(float)rr.total/1e6));
+    ttT.AddText(Form("%.3f MHz",(float)rr.top/1e6));
+    ttB.AddText(Form("%.3f MHz",(float)rr.bottom/1e6));
+    ttM.AddText(Form("MAX SINGLE CRYSTAL = %.2f kHz",(float)max/1000));
     tt1.Draw();
     tt2.Draw();
     ttT.Draw();
     ttB.Draw();
+    ttM.Draw();
     pCanvas->GetCanvas()->Modified();
     pCanvas->GetCanvas()->Update();
 }
@@ -313,9 +329,14 @@ void hps_scalers_fadc_app::button_Save()
     TGWindow* win = 0;
 
     TTimeStamp tt;
-    TString tstub=tt.AsString("s");
+    TString tstub=tt.AsString("lc");
     tstub.ReplaceAll(" ","_");
-    
+
+    gPad->SaveAs(Form("%s/screenshots/ECALSCALERS_%s.png",
+                gSystem->Getenv("HOME"),tstub.Data()));
+    std::cerr<<"AL:SFHDLA"<<std::endl;
+    return;
+
     static TString dir("printouts");
     TGFileInfo fi;
     const char *myfiletypes[] = 
@@ -391,7 +412,13 @@ hps_scalers_fadc_app::hps_scalers_fadc_app(const TGWindow *p, UInt_t w, UInt_t h
     pH->GetYaxis()->SetTickLength(0);
     pH->GetYaxis()->SetTitleOffset(0.5);
     pH->Draw("COLZTEXT");
-    
+    TText tt;
+    tt.DrawTextNDC(0.4,0.92,"ECAL FADC SCALERS");
+    tt.SetTextAngle(90);
+    tt.DrawText(25.5,0,"kHz");
+    tt.SetTextAngle(0);
+   
+    gPad->SetLogz(1);
     gPad->SetGrid(1,1);
     gPad->SetLeftMargin(0.05);
     gStyle->SetGridStyle(1);
@@ -411,7 +438,7 @@ hps_scalers_fadc_app::hps_scalers_fadc_app(const TGWindow *p, UInt_t w, UInt_t h
     if(connect_to_server() < 0) DoExit();
     if(get_crate_map() < 0) DoExit();
 
-    SetWindowName("HPS FADC SCALERS");
+    SetWindowName("ECAL FADC SCALERS");
     MapSubwindows();
     Resize();
     MapWindow();
