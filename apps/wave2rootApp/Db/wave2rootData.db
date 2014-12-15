@@ -1,30 +1,30 @@
 # Record that carries output tree name
-record(stringin,"$(IOC):data:$(PXI_CHAN):tree")
+record(stringin,"$(IOC):data:$(SRC_CHAN):tree")
 {
-	field(VAL ,"$(PXI_CHAN)")
+	field(VAL ,"$(SRC_CHAN)")
 	field(PINI,"1") 
 	field(DTYP,"Soft Channel")
 	field(SCAN,"Passive")
 }
 
 # aSub record to get the values of the array from PXI CaServer
-record(aSub,"$(IOC):data:$(PXI_CHAN)")
+record(aSub,"$(IOC):data:$(SRC_CHAN)")
 {
-    field(INAM,"pxirootDataInit")
-    field(SNAM,"pxirootDataProcess")
+    field(INAM,"wave2rootDataInit")
+    field(SNAM,"wave2rootDataProcess")
     field(SCAN,"Passive")
     field(EFLG,"ALWAYS")
-    field(TSEL,"$(PXI_IOC):$(PXI_CHAN).TIME")
+    field(TSEL,"$(SRC_PREF)$(SRC_CHAN).TIME")
 #
     field(FTA ,"FLOAT")
     field(FTVA,"FLOAT")
     field(NOA ,"$(NELM)")
     field(NOVA,"$(NELM)")
-    field(INPA,"$(PXI_IOC):$(PXI_CHAN) CPP")
+    field(INPA,"$(SRC_PREF)$(SRC_CHAN) CPP")
 #
 	field(FTB ,"STRING")
     field(NOB ,"1")
-	field(INPB,"$(IOC):data:$(PXI_CHAN):tree NPP")
+	field(INPB,"$(IOC):data:$(SRC_CHAN):tree NPP")
 #
     field(FTC ,"ENUM")
     field(NOC ,"1")

@@ -1,44 +1,25 @@
-file db/pxirootData.db {
-        pattern { IOC, NELM, PXI_IOC, PXI_CHAN }
+file db/wave2rootData.db {
+        pattern { IOC, NELM, SRC_PREF, SRC_CHAN }
 #
-        { pxiroot, 5000, halld-pxi:array, vtt3 }
-        { pxiroot, 5000, halld-pxi:array, vtt4 }
-        { pxiroot, 5000, halld-pxi:array, vtt5 }
-        { pxiroot, 5000, halld-pxi:array, vtt6 }
-        { pxiroot, 5000, halld-pxi:array, vtt7 }
-        { pxiroot, 5000, halld-pxi:array, vtt8 }
-        { pxiroot, 5000, halld-pxi:array, vtt9 }
-        { pxiroot, 5000, halld-pxi:array, vtt10 }
-        { pxiroot, 5000, halld-pxi:array, vtt11 }
-        { pxiroot, 5000, halld-pxi:array, vtt12 }
-        { pxiroot, 5000, halld-pxi:array, vtt13 }
-        { pxiroot, 5000, halld-pxi:array, vtt14 }
-        { pxiroot, 5000, halld-pxi:array, vtt15 }
-        { pxiroot, 5000, halld-pxi:array, vtt16 }
-        { pxiroot, 5000, halld-pxi:array, vtt17 }
-        { pxiroot, 5000, halld-pxi:array, vtt18 }
-        { pxiroot, 5000, halld-pxi:array, vtt19 }
-        { pxiroot, 5000, halld-pxi:array, vtt20 }
-        { pxiroot, 5000, halld-pxi:array, vtt21 }
-#
-        { pxiroot, 5000, halld-pxi:array, v_pc1u }
-        { pxiroot, 5000, halld-pxi:array, v_pc1d }
-        { pxiroot, 5000, halld-pxi:array, v_pc2u }
-        { pxiroot, 5000, halld-pxi:array, v_pc2d }
-        { pxiroot, 5000, halld-pxi:array, v_pc3u }
-        { pxiroot, 5000, halld-pxi:array, v_pc3d }
-        { pxiroot, 5000, halld-pxi:array, v_pc4u }
-        { pxiroot, 5000, halld-pxi:array, v_pc4d }
-#
-        { pxiroot, 5000, halld-pxi:array, v_mps }
-        { pxiroot, 5000, halld-pxi:array, i_sol }
-        { pxiroot, 5000, halld-pxi:array, i_shunt }
-        { pxiroot, 5000, halld-pxi:array, b_field }
-		{ pxiroot, 5000, halld-pxi:array, det_qd }
-        { pxiroot, 5000, halld-pxi:array, det_gfd }
+        { wave2root, 2048,         "", sixtyHz_raw_0 }
+        { wave2root, 2048, 	   "", sixtyHz_raw_1 }
+        { wave2root, 2048,         "", sixtyHz_raw_2 }
+        { wave2root, 2048,         "", sixtyHz_raw_3 }
+        { wave2root, 2048,         "", sixtyHz_raw_4 }
+        { wave2root, 2048,         "", sixtyHz_raw_5 }
+        { wave2root, 2048,         "", sixtyHz_raw_6 }
+        { wave2root, 2048,         "", sixtyHz_raw_7 }
+        { wave2root, 2048,         "", sixtyHz_raw_8 }
+        { wave2root, 2048,         "", sixtyHz_raw_9 }
+        { wave2root, 2048,         "", sixtyHz_raw_10 }
+        { wave2root, 2048,         "", sixtyHz_raw_11 }
+        { wave2root, 2048,         "", sixtyHz_raw_12 }
+        { wave2root, 2048,         "", sixtyHz_raw_13 }
+        { wave2root, 2048,         "", sixtyHz_raw_14 }
+        { wave2root, 2048,         "", sixtyHz_raw_15 }
 }
 
-file db/pxirootCtrl.db {
+file db/wave2rootCtrl.db {
 		pattern { IOC }
-		{ pxiroot }
+		{ wave2root }
 }

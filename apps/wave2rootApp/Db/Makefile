@@ -16,8 +16,9 @@ DB += wave2rootData.db
 DB += wave2rootCtrl.db
 
 #Install the IOC status reporting DB
-DEVIOCSTAT_LOC=$(DEVIOCSTATS)/db
-DB += $(DEVIOCSTAT_LOC)/iocAdminSoft.db
+DB_INSTALLS += $(DEVIOCSTATS)/db/iocAdminSoft.db
+DB_INSTALLS += $(AUTOSAVE)/asApp/Db/save_restoreStatus.db
+
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add

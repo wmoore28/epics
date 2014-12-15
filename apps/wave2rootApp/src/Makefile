@@ -19,6 +19,7 @@ DBD += wave2root.dbd
 
 # pxi.dbd will be made up from these files:
 wave2root_DBD += base.dbd
+wave2root_DBD += asSupport.dbd
 wave2root_DBD += devIocStats.dbd
 wave2root_DBD += wave2rootSub.dbd
 
@@ -37,6 +38,7 @@ wave2root_SRCS_vxWorks += -nil-
 
 # Link in the code from the support library
 wave2root_LIBS += devIocStats
+wave2root_LIBS += autosave
 wave2root_LDFLAGS += -L$(shell root-config --libdir)
 wave2root_SYS_LIBS += Core Cint RIO Net Hist Graf Graf3d Gpad Tree Rint Postscript Matrix Physics MathCore Thread
 wave2root_SYS_LIBS += m dl 

@@ -78,7 +78,7 @@ static long wave2rootDAQProcess(aSubRecord *record) {
 		printf("DAQ state is %d, directory is %s \n", daqStatReq, file_dir);
 
 	if (record != NULL && daqStatReq == 0) {
-		StartRootDAQ(file_dir, "pxi_", "", ((long*) record->d)[0]);
+		StartRootDAQ(file_dir, "w2r_", "", ((long*) record->d)[0]);
 		if (wave2rootDebug > 0)
 			printf("Start recording ROOT files ...\n");
 	} else if (record != NULL && daqStatReq == 1) {
@@ -91,7 +91,7 @@ static long wave2rootDAQProcess(aSubRecord *record) {
 }
 
 /*
- * Initialize records to save PXI data
+ * Initialize records to save waveform data
  */
 static long wave2rootDataInit(aSubRecord *record) {
 	if (wave2rootDebug > 2)
@@ -101,7 +101,7 @@ static long wave2rootDataInit(aSubRecord *record) {
 }
 
 /*
- * Process records to save PXI data
+ * Process records to save waveform data
  */
 static long wave2rootDataProcess(aSubRecord *record) {
 
@@ -132,10 +132,10 @@ static long wave2rootDataProcess(aSubRecord *record) {
 				&tsLocal);
 		char nsTime[64];
 		sprintf(nsTime, "%ld", posixTime.tv_nsec);
-		if (strcmp(record->b, "halld-pxi:array:vtt4") == 0)
-			printf("%s : %s.%s   %8.5f   %8.5f \n", (char*) record->b,
-					timeString, nsTime, ((float*) record->a)[5000 - 1],
-					((float*) record->vala)[5000 - 1]);
+/* 		if (strcmp(record->b, "halld-pxi:array:vtt4") == 0) */
+/* 			printf("%s : %s.%s   %8.5f   %8.5f \n", (char*) record->b, */
+/* 					timeString, nsTime, ((float*) record->a)[5000 - 1], */
+/* 					((float*) record->vala)[5000 - 1]); */
 	}
 
 	// update file name and size
