@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=488
-		y=290
+		x=211
+		y=306
 		width=1300
 		height=395
 	}
@@ -92,7 +92,7 @@ rectangle {
 		x=859
 		y=53
 		width=425
-		height=175
+		height=180
 	}
 	"basic attribute" {
 		clr=5
@@ -1641,7 +1641,7 @@ text {
 	monitor {
 		chan="iocchiller:SR_status"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. centered"
 	limits {
@@ -1657,7 +1657,7 @@ text {
 	monitor {
 		chan="iocchiller:SR_statusStr"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. centered"
 	limits {
@@ -1673,7 +1673,7 @@ text {
 	monitor {
 		chan="iocchiller:SR_recentlyStr"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. centered"
 	limits {
@@ -1690,6 +1690,69 @@ text {
 		label="Autosave"
 		name="autosave.adl"
 		args="P=iocchiller:"
+	}
+	clr=14
+	bclr=6
+}
+"text update" {
+	object {
+		x=862
+		y=205
+		width=60
+		height=20
+	}
+	monitor {
+		chan="iocwave2root:SR_status"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=924
+		y=205
+		width=130
+		height=20
+	}
+	monitor {
+		chan="iocwave2root:SR_statusStr"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1056
+		y=205
+		width=200
+		height=20
+	}
+	monitor {
+		chan="iocwave2root:SR_recentlyStr"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=1260
+		y=205
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Autosave"
+		name="autosave.adl"
+		args="P=iocwave2root:"
 	}
 	clr=14
 	bclr=6
