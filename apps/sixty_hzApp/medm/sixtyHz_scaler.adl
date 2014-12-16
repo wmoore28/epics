@@ -1,7 +1,7 @@
 
 file {
-	name="/misc/clas/devel/R3.14.8.2/EPICS/app/sixty_hz/medm/sixtyHz_scaler.adl"
-	version=030101
+	name="/home/hovanes/HPS/epics/latest/apps/sixty_hzApp/medm/sixtyHz_scaler.adl"
+	version=030108
 }
 display {
 	object {
@@ -2299,4 +2299,31 @@ text {
 	}
 	clr=0
 	bclr=25
+}
+"related display" {
+	object {
+		x=326
+		y=950
+		width=75
+		height=18
+	}
+	display[0] {
+		label="ROOT DAQ Control"
+		name="wave2root.adl"
+	}
+	clr=0
+	bclr=25
+}
+text {
+	object {
+		x=169
+		y=950
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Waveform DAQ Control"
+	align="horiz. right"
 }
