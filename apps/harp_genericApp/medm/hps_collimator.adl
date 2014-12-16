@@ -1,13 +1,13 @@
 
 file {
-	name="/home/stepanya/epics/app/harp_generic/medm/collimator.adl"
-	version=030101
+	name="/usr/local/clas12/hps/prod/apps/harp_generic/medm/hps_collimator.adl"
+	version=030108
 }
 display {
 	object {
 		x=813
 		y=266
-		width=450
+		width=670
 		height=110
 	}
 	clr=14
@@ -99,8 +99,8 @@ display {
 		clr=14
 		bclr=4
 	}
-	label="12.7 mm"
-	press_msg="2.965"
+	label="Wire"
+	press_msg="4.445"
 	clrmod="discrete"
 }
 "message button" {
@@ -115,8 +115,8 @@ display {
 		clr=14
 		bclr=4
 	}
-	label="8.6 mm"
-	press_msg="7.051"
+	label="3 mm"
+	press_msg="5.025"
 }
 "message button" {
 	object {
@@ -202,7 +202,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="2.965"
+	textix="4.445"
 	align="horiz. centered"
 }
 "text update" {
@@ -260,7 +260,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="7.051"
+	textix="5.025"
 	align="horiz. centered"
 }
 "message button" {
@@ -275,12 +275,71 @@ text {
 		clr=14
 		bclr=4
 	}
-	label="6.4 mm"
-	press_msg="11.110"
+	label="3 mm / Au"
+	press_msg="5.615"
 }
 rectangle {
 	object {
 		x=341
+		y=1
+		width=107
+		height=34
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="hps_collimator_at_c"
+	}
+}
+text {
+	object {
+		x=364
+		y=36
+		width=56
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="5.615"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=150
+		y=86
+		width=130
+		height=17
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="hps_collimator.DMOV"
+	}
+	textix="Motor is       moving"
+}
+"message button" {
+	object {
+		x=457
+		y=5
+		width=92
+		height=24
+	}
+	control {
+		chan="hps_collimator.VAL"
+		clr=14
+		bclr=4
+	}
+	label="2 mm"
+	press_msg="6.205"
+}
+rectangle {
+	object {
+		x=451
 		y=1
 		width=107
 		height=34
@@ -295,7 +354,7 @@ rectangle {
 }
 text {
 	object {
-		x=364
+		x=474
 		y=36
 		width=56
 		height=12
@@ -303,33 +362,66 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="11.160"
+	textix="6.205"
+	align="horiz. centered"
 }
-text {
+"message button" {
 	object {
-		x=150
-		y=86
-		width=76
-		height=17
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Motor is:"
-}
-text {
-	object {
-		x=240
-		y=86
+		x=566
+		y=5
 		width=92
-		height=17
+		height=24
+	}
+	control {
+		chan="hps_collimator.VAL"
+		clr=14
+		bclr=4
+	}
+	label="Au"
+	press_msg="6.8"
+}
+rectangle {
+	object {
+		x=560
+		y=1
+		width=107
+		height=34
 	}
 	"basic attribute" {
-		clr=14
+		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		chan="hps_collimator.DMOV"
+		vis="if not zero"
+		chan="hps_collimator_at_e"
 	}
-	textix="moving"
+}
+text {
+	object {
+		x=583
+		y=36
+		width=56
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="6.8"
+	align="horiz. centered"
+}
+"related display" {
+	object {
+		x=500
+		y=60
+		width=100
+		height=20
+	}
+	display[0] {
+		label="SVT Coll. Wire"
+		name="generic_harp.adl"
+		args="motor_name=hps_collimator"
+	}
+	clr=19
+	bclr=60
+	label="Wire scan"
+	visual="a column of buttons"
 }

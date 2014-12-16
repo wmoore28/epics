@@ -76,10 +76,10 @@ ifneq ($(SNCSEQ),)
 ##    sncExample_SNCFLAGS += +r
 ##    frwd_scaler_DBD += sncExample.dbd
 ##    frwd_scalerSupport_SRCS += sncExample.stt
-#    scaler_frwd_restart_SNCFLAGS += +r
+#    frwd_scaler_restart_SNCFLAGS += +r
     frwd_scalerSupport_DBD += frwd_scalerSNC.dbd
-    frwd_scalerSupport_SRCS += scaler_frwd_restart.st
-    frwd_scaler_SRCS += scaler_frwd_restart.st
+    frwd_scalerSupport_SRCS += frwd_scaler_restart.st
+    frwd_scaler_SRCS += frwd_scaler_restart.st
     frwd_scalerSupport_LIBS += seq pv
 ##    frwd_scaler_LIBS += seq pv
 

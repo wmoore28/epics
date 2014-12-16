@@ -38,8 +38,8 @@ $GUIDANCE
            This signifies that the TOP plate coolant temperature is out of specifications.
            Contact the engineering on-call for further guidance.
 $END
-CHANNEL ECAL tempSensorPc
-$COMMAND  medm -x -attach -cmap -macro "sig=tempSensorPc" aiaocalc_alarm.adl >> /dev/null
+CHANNEL ECAL tempSensorP
+$COMMAND  medm -x -attach -cmap -macro "sig=tempSensorP" aiaocalc_alarm.adl >> /dev/null
 $GUIDANCE
            This signifies that the BOTTOM plate coolant temperature is out of specifications.
            Contact the engineering on-call for further guidance.

@@ -1,0 +1,224 @@
+Version 0.3.1:
+ - hotfix-v0.2.9: last min changes from old hotfix
+ - harp_genericApp/scalerApp: last min updates (stepanya)
+ - ecal: added launcher for DiagGUI
+ - hps_collimator (iocclassc4): fix for scan speeds
+
+Version 0.3.0:
+ - sixtyHzApp: fix, uncommented rms calc (levon,hovanes)
+ - hvcaApp: moved new ecal screens to generalApp
+ - procServ: added iocwave2root
+ - hvcaApp/generalApp: moved new ecal hv screens to generalApp, hvcaApp is all generated adl's
+ - Merge branch 'develop' of https://github.com/wmoore28/epics
+ - Merged hotfix-v0.2.9 and chiller-dev
+ - ecal: updated dsc2 and fadc
+ - ecal: gitignore for compiled libs
+ - TODO: harp_analyzer ToDo done
+ - tools/hps_epics: updated to include arg for which tree is desired, used by HPS_EPICS.adl
+ - Merge pull request #22 from hovanes-egiyan/master
+ - tested wave2root with sixty herz, now can write ROOT files
+ - generalApp: HPS_EPICS.adl, added access to other versions and refresh production version
+ - generalApp: ECalHVStatus.adl, added ramp up/down for HV
+ - generalApp: HPS_EPICS.adl updates for tools, etc
+ - scalerApp: adl, added hps target (stepanya)
+ - harp_genericApp: updated HPS target positions
+ - hvcaApp: added ecalRampCtrl.sh, created cleaner versions of generated adls
+ - EcalScalerGui: added app and startup scripts for use by HPS_EPICS.adl
+ - Merge branch 'hotfix-v0.2.9' of https://github.com/wmoore28/epics into chiller-dev
+ - chillerApp: renamed PVs to HPS_ECAL:CHILLER:
+ - HPS_EPICS.adl: trying out a way to add the git tag to the adl
+ - harp_analyzer: updated to prevent creation of tmp image file (rafopar,gagik)
+ - flasherApp: new fastSeq scripts (baltzell)
+ - chillerApp: added support for Thermo Scientific chiller (readbacks-only)
+ - lakeshoreApp: fix for MULT readback. Now handles autoscaling correctly and converts to G or T.
+ - btaApp: minor medm update
+ - scalerApp: updated PV names on scaler_hps.adl (stepanya)
+ - flasherApp: medm, updated clock settings to show only if using internal clock
+ - flasherApp: added scripts and updated adl to use initFlasher.sh (celentan)
+ - lakeshore450App: updated screens to show .DESC, :RAW, and :MULT PVs
+ - lakeshore450App: fixed PREC for calculated field, solving issue with some autoscale values
+ - vme iocs: fixed st.cmd to properly run from production version, not home directories
+
+Version 0.2.8:
+ - Merge branch 'hotfix-v0.2.8' of https://github.com/wmoore28/epics into develop
+ - scalerApp: fixes for scaler_hps.adl
+ - bomApp: moved from iocclassc4 to iocclassc1
+ - harp_genericApp: finalized hps_target motor
+ - testbuild.sh: removed check for EPICS env variable, no longer needed
+ - hvcaApp: last commit missed a .gitignore update
+ - hvcaApp: added .gitignore files for generated files/folders
+ - hvcaApp: added .gitignore files for generated files/folders
+ - flasherApp: fixed a handful of scripts for start/stop sequences
+ - TODO: added flasherApp cleanup
+ - flasherApp: added flasher_stop_all.sh for stopping all sequences
+ - flasherApp: added script for setting all LEDs off or on
+ - flasherApp: updated order of operations in scripts
+ - harp_genericApp: added motor channel for hps target (per stepanya, levon)
+ - apps/.gitignore: updated for new wave2rootApp
+ - HPS_EPICS.adl: added link for Flasher.adl
+ - flasher_start_color_seq: fix for setting string pvs
+
+Version 0.2.7:
+ - Merge branch 'develop'
+ - medm/Makefile: fix for removing .dat files
+ - flasherApp: added automated scripts for running blue|red sequences
+ - IOC directory for saving waveforms to ROOT files
+ - wave2root application derived from Hall D pxiroot application
+ - Merge branch 'hotfix-v0.2.6' of https://github.com/wmoore28/epics into hotfix-v0.2.7
+ - Merge branch 'hotfix-v0.2.6' of https://github.com/wmoore28/epics into hotfix-v0.2.6
+ - Lingering updates to hotfix-v0.2.6
+
+Version 0.2.6:
+ - Merge branch 'hotfix-v0.2.6' of https://github.com/wmoore28/epics into hotfix-v0.2.6
+ - Added TODO to toplevel Makefile
+ - hvcaApp: updated db makefile (per nerses)
+ - Removed old general symlink, it gets created with the others
+ - iocecalVoltages: updated for new CAEN_HV paths and other minor mods
+ - Updated build system for CAEN_HV
+ - Added new draft version of CAEN_HV driver
+ - Removed drivers/CAEN_HV, moving to apps/
+ - Updated apps/.gitignore after updates to VME apps
+ - Merge branch 'master' of https://github.com/levon-hakobyan/epics into hotfix-v0.2.6
+ - tempSensApp: added alarm pvs to adl's and autosave
+ - Updated tempSensorP pv name for alh
+ - Merge branch 'master' of https://github.com/wmoore28/epics
+ - Updated harp positions and added positions to gui
+ - Scaler swap: scaler and scaler_c swapped iocs
+ - Updated temperature PV names for ECAL bottom stripchart
+ - Merge branch 'hotfix-v0.2.6' of https://github.com/wmoore28/epics into hotfix-v0.2.6
+ - Merge branch 'master' of https://github.com/rafopar/epics into hotfix-v0.2.6
+ - Added .gitignore for adl_genApp
+ - scaler_hps.adl: fixed x,y window coordinates
+ - Flasher.adl: updated script paths (mckinnon)
+ - Time stamp and the full path of the harp file is added
+ - ECalHVStatus.adl: updated per mckinnon
+ - Started TODO list for future action items
+ - notify_expert: mckinnon updated and tested
+ - scaler_hps.adl: updated
+ - iocclassc4: added convertors.db
+ - iocclassc1: added radiators.db
+ - Added iocecalVoltages as a draft, paths will need update
+ - Updated hvcaApp for HPS components (per Nerses)
+ - Removed unused apps/generalApp/ar (per Nerses)
+ - frwd_scaler_restart.st: fixed filename
+ - Merge branch 'hotfix-v0.2.6' of https://github.com/wmoore28/epics into hotfix-v0.2.6
+ - generic_harp.adl: path update for runHarpScan.sh
+ - Merge branch 'master' of https://github.com/rafopar/epics into hotfix-v0.2.6
+ - directory name for harp files /misc/home/hpics/DATA/HARP_SCANS changed to /home/epics/DATA/HARP_SCANS/
+ - Working version of .setup-hps, removed duplicate line
+ - jtabs_launcher.sh: updated per baltzell
+ - Tweak for .setup-hps so hvcaApp build can find scripts in cwd
+ - bomApp: added for use on iocclassc1
+ - sixty_hzApp: Fixed makefile typo
+ - sixtyHz.st: commented out debug print statements
+ - asym.st: updated harp 2H00 -> 2H02A
+ - scaler_c.db: added PVs for fcup
+ - iocclassc4: removed svt_scan_scalers and updated struck config
+ - classc1: rm asymApp and added bomApp
+ - harp_genericApp: removed collimators.db and updated adl
+
+Version 0.2.5:
+ - Merge branch 'hotfix-v0.2.5' of https://github.com/wmoore28/epics
+ - Updated .gitignore for generated striptool links
+ - Updated links to ECal HV screen
+ - Added comments for .gitignore updates
+ - Merge branch 'master' of https://github.com/rafopar/epics into develop
+ - .setup-hps: further improvements to creating correct environment
+ - RELEASE: updated IOCDATA path and added EPICS_EXTENSIONS used by some apps
+ - Added ECalHVStatus screens from mckinnon
+ - the screeenshot directory has changed from /misc/home/hpsrun/screenshots into /home/hpsrun/screenshots
+ - hps_ecal_temp.adl: scheme change and imported striptool config files
+ - scaler_hps.adl: updated FCUP scaler pv
+ - Updated paths from /misc/clas12/ /usr/clas12/
+ - Adjusted adl_genApp makefile to work cleanly on various build targets
+ - Removed redundant test in utils/testbuild.sh
+ - Added apps/linkmaker.sh to generate symlinks used by old adl files, adj'd makefile to call it
+ - Minor cleanup: adl_genApp/Makefile works cleanly with make clean|distclean|realclean used by epics build system
+ - Fix: corrected alhConfig filename for ecal mainframe
+ - Fix typo utils/testbuild.sh
+ - vector size cut ischanged (not it is vec_size > 5), FC cup added in the Data View
+ - modified data viewer
+
+Version 0.2.4:
+ - Updated testbuild.sh to check for EPICS variable used by hvcaApp
+ - Merged master with develop for compatibility testing
+ - Removed generalApp/alh/hv.alhConfig that gets cleaned up from make clean
+ - Edited Makefile to removed installed files
+ - Fixed dependencies between adl_genApp/generalApp/hvcaApp
+ - Updated clean so EPICS distclean will work
+ - Commented out ecal_mf_01_13.alhConfig_mf, it's not being generated by hvcaApp/DB
+ - Merge branch 'master' of https://github.com/nerses73/epics into develop
+ - Fixed conflict with testbuild.sh
+ - Updated main Makefile and testbuild.sh to run tests
+ - Merge branch 'hotfix-v0.2.4' of https://github.com/wmoore28/epics into hotfix-v0.2.4
+ - Fix testbuild.sh: check against test result was incorrect
+ - Fix testbuild.sh: check against 0 was incorrect
+ - Added symlink for correct version of bta_config_rc.pl
+ - Updated version of harp_analyzer
+ - Added updated scaler_hps.adl from stepanya
+ - Merge branch 'levon-merge' of https://github.com/wmoore28/epics into hotfix-v0.2.4
+ - apps gitignore for app symlinks used to fake out old medm screens
+ - Added stripped down (t)csh file for setting env variables
+ - Added testbuild.sh for testing various makefile options
+ - Merge pull request #12 from levon-hakobyan/master
+ - replaced collimator by hps_collimator
+ - Merge tag 'v0.2.2' into develop
+ - Modified the Makefiles to execute them in required order.
+ - Merge branch 'nerses-merge' of https://github.com/wmoore28/epics into develop
+ - Resolved conflicts merging nerses73:master
+ - Added the general directory. Cleaned up not all but a lot of clas6 era files. Copied adl files from Stepan's directory into medm directory.
+ - Added hvcaApp. Here are a lot of stale files from clas6 era those left as is just in case HPS will need those.
+ - Added adl_gen library. Modified configure/RELEASE to add EPICS_EXTENSIONS in the list.
+
+Version 0.2.3:
+ - bumpversion.sh goes live
+ - Version bump to 0.2.3
+ - Symlink apps/general -> apps/generalApp to fake out old medm screens
+ - Adding bumpversion.sh for managing releases
+ - Moved softIOCs to clonsl1
+ - Minor medm updates
+ - Merge branch 'levon-merge' of https://github.com/wmoore28/epics into hotfix-v0.2.3
+ - Merged updates for beam_stopper, harp_generic, and scaler
+ - Merge pull request #11 from levon-hakobyan/master
+ - Minor fixes on adls
+ - Merged in updates from wmoore28/master
+ - Updated harp_generic with motor settings and motor mapping to generic display
+ - Updated beam_stopper with changes from stepanya
+ - Added JTabs launcher for ACC control screens
+ - Merge pull request #10 from wmoore28/rafo-merge
+ - Added ignore for generated fit image
+ - Merge pull request #9 from rafopar/master
+ - Updated HPS_EPICS.adl
+ - .gitignore for StripTool symlinks
+ - now it submits log entry in HBLog logbook, and in the harp_analyzer counter name is added into the canvas
+ - Updated hps_epics to use APP env variable so old screens work
+ - Updated generalApp to build the StripTool symlinks
+ - Changed StripTool link to cd to strip/ first
+ - Added comments to explain forced condition
+ - Updated adls from stepanya, changed Makefile to link to old medm as well
+ - Fixed tempSensors.adl links
+ - Realigned text
+ - wire x, y, and 45 deg names were corrected, and when logEntry is called, it prints the snapshot in the hpsrun/snapshots directory
+ - Added harps to hps main menu
+ - Fixed procServMgr paths after prod/ rework
+ - Fix tools Makefile after an incorrect merge
+ - Merged feature-tools
+ - Merge branch 'feature-tools' of https://github.com/wmoore28/epics into feature-tools
+ - Ignore java generated files
+ - Minor updates for hps_epics script
+ - Fixed Makefiles to use new-ish version of java and ant
+ - Updated motor name and calibration
+ - Now starts up hps_epics.adl, the hps main menu
+ - Fix variable usage
+ - Updated hpsrun installation path
+ - Install creates directory if needed and added comments
+ - Added tools/hpsrun/README
+ - Initial hpsrun scripts
+ - harp_analyzer is added
+ - harp_analyzer is deleted
+ - harp_analyzer was added
+ - MakeLogEntry was added under the tools directory
+ - Merge branch 'master' of https://github.com/wmoore28/epics
+ - Delete test.smi
+ - This is just a testing...
+

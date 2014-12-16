@@ -67,55 +67,55 @@ assign motor_name to "name_{motor_name}.VAL";
 long scaler_datasc1[16];
 long scaler_datasc4[16];
 
-assign scaler_datasc1[0] to "scaler.S1";
-assign scaler_datasc1[1] to "scalerS2b.VAL";
-assign scaler_datasc1[2] to "scaler.S3";
-assign scaler_datasc1[3] to "scaler.S4";
-assign scaler_datasc1[4] to "scaler.S5";
-assign scaler_datasc1[5] to "scaler.S6";
-assign scaler_datasc1[6] to "scaler.S7";
-assign scaler_datasc1[7] to "scaler.S8";
-assign scaler_datasc1[8] to "scaler.S9";
-assign scaler_datasc1[9] to "scaler.S10";
-assign scaler_datasc1[10] to "scaler.S11";
-assign scaler_datasc1[11] to "scaler.S12";
-assign scaler_datasc1[12] to "scaler.S13";
-assign scaler_datasc1[13] to "scaler.S14";
-assign scaler_datasc1[14] to "scaler.S15";
-assign scaler_datasc1[15] to "scaler.S16";
+assign scaler_datasc1[0] to "scaler_c.S1";
+assign scaler_datasc1[1] to "scaler_cS2b.VAL";
+assign scaler_datasc1[2] to "scaler_c.S3";
+assign scaler_datasc1[3] to "scaler_c.S4";
+assign scaler_datasc1[4] to "scaler_c.S5";
+assign scaler_datasc1[5] to "scaler_c.S6";
+assign scaler_datasc1[6] to "scaler_c.S7";
+assign scaler_datasc1[7] to "scaler_c.S8";
+assign scaler_datasc1[8] to "scaler_c.S9";
+assign scaler_datasc1[9] to "scaler_c.S10";
+assign scaler_datasc1[10] to "scaler_c.S11";
+assign scaler_datasc1[11] to "scaler_c.S12";
+assign scaler_datasc1[12] to "scaler_c.S13";
+assign scaler_datasc1[13] to "scaler_c.S14";
+assign scaler_datasc1[14] to "scaler_c.S15";
+assign scaler_datasc1[15] to "scaler_c.S16";
 
-assign scaler_datasc4[0] to "scaler_c.S1";
-assign scaler_datasc4[1] to "scaler_cS2b.VAL";
-assign scaler_datasc4[2] to "scaler_c.S3";
-assign scaler_datasc4[3] to "scaler_c.S4";
-assign scaler_datasc4[4] to "scaler_c.S5";
-assign scaler_datasc4[5] to "scaler_c.S6";
-assign scaler_datasc4[6] to "scaler_c.S7";
-assign scaler_datasc4[7] to "scaler_c.S8";
-assign scaler_datasc4[8] to "scaler_c.S9";
-assign scaler_datasc4[9] to "scaler_c.S10";
-assign scaler_datasc4[10] to "scaler_c.S11";
-assign scaler_datasc4[11] to "scaler_c.S12";
-assign scaler_datasc4[12] to "scaler_c.S13";
-assign scaler_datasc4[13] to "scaler_c.S14";
-assign scaler_datasc4[14] to "scaler_c.S15";
-assign scaler_datasc4[15] to "scaler_c.S16";
+assign scaler_datasc4[0] to "scaler.S1";
+assign scaler_datasc4[1] to "scalerS2b.VAL";
+assign scaler_datasc4[2] to "scaler.S3";
+assign scaler_datasc4[3] to "scaler.S4";
+assign scaler_datasc4[4] to "scaler.S5";
+assign scaler_datasc4[5] to "scaler.S6";
+assign scaler_datasc4[6] to "scaler.S7";
+assign scaler_datasc4[7] to "scaler.S8";
+assign scaler_datasc4[8] to "scaler.S9";
+assign scaler_datasc4[9] to "scaler.S10";
+assign scaler_datasc4[10] to "scaler.S11";
+assign scaler_datasc4[11] to "scaler.S12";
+assign scaler_datasc4[12] to "scaler.S13";
+assign scaler_datasc4[13] to "scaler.S14";
+assign scaler_datasc4[14] to "scaler.S15";
+assign scaler_datasc4[15] to "scaler.S16";
 
 
 /* ================================================================ */
 
 float scaler_tp;
-assign scaler_tp to "scaler.TP";
+assign scaler_tp to "scaler_c.TP";
 
 short scaler_cnt;
-assign scaler_cnt to "scaler.CNT";
+assign scaler_cnt to "scaler_c.CNT";
 monitor scaler_cnt;
 
 short scaler_mode;
-assign scaler_mode to "scaler_mode.VAL";
+assign scaler_mode to "scaler_c_mode.VAL";
 
 short display_mode;
-assign display_mode to "display_mode.VAL";
+assign display_mode to "display_c_mode.VAL";
 
 /* scan specific records */
 
@@ -173,7 +173,26 @@ ss harp_scan_snc {
    
    state init {
      when () {
-	harp_relative_move = 0.0;
+
+/* ========================================================= */
+
+   if(  ( ! (strcmp(motor_name,"harp_2c21"))) ||  ( ! (strcmp(motor_name,"harp_tagger"))) )
+   {
+
+   }
+   if(  ( ! (strcmp(motor_name,"harp_2H02A"))) )
+   {
+       pvAssign(scaler_tp, "scaler.TP"); 
+       pvAssign(scaler_cnt, "scaler.CNT"); 
+       pvAssign(scaler_mode, "scaler_mode.VAL"); 
+       pvAssign(display_mode, "display_mode.VAL"); 
+   }
+
+/* ========================================================= */
+
+
+
+        harp_relative_move = 0.0;
         pvPut(harp_relative_move);
        pvGet(motor_name);
 	for (tmp_int = 0;  (get_e_rec(tmp_int,tmp_rec)); tmp_int++) {
@@ -192,6 +211,24 @@ ss harp_scan_snc {
 
         scan_flag = 1;
         pvPut(scan_flag);
+
+
+/* ========================================================= */
+
+   if(  ( ! (strcmp(motor_name,"harp_2c21"))) ||  ( ! (strcmp(motor_name,"harp_tagger"))) )
+   {
+
+   }
+   if(  ( ! (strcmp(motor_name,"harp_2H02A"))) )
+   {
+       pvAssign(scaler_tp, "scaler.TP"); 
+       pvAssign(scaler_cnt, "scaler.CNT"); 
+       pvAssign(scaler_mode, "scaler_mode.VAL"); 
+       pvAssign(display_mode, "display_mode.VAL"); 
+   }
+
+/* ========================================================= */
+
 
 /* store old values so the hardware can be restored post scan  */
         pvGet(harp_speed);
@@ -221,7 +258,7 @@ ss harp_scan_snc {
 	pvPut(harp_speed);
 
 	harp_absolute_move = -5.;
-        pvPut(harp_absolute_move);
+   pvPut(harp_absolute_move);
 	command = 0;
         pvPut(command);
      } state wait_lls
@@ -295,18 +332,17 @@ ss harp_scan_snc {
 	          fdprintf(fd,"%d ", scaler_datasc1[i]);
 	       }
        }
-       if(  ( ! (strcmp(cmotor_name,"harp_2h03"))) )
+       if(  ( ! (strcmp(cmotor_name,"harp_2H02A"))) )
        {
 	       for (i=0;i<16;i++) {
 	          pvGet(scaler_datasc4[i]);
 	          fdprintf(fd,"%d ", scaler_datasc4[i]);
 	       }
        }
-
 /*
        for (i=0;i<16;i++) {
-          pvGet(scaler_datasc1[i]);
-          fdprintf(fd,"%d ", scaler_datasc1[i]);
+          pvGet(scaler_data[i]);
+          fdprintf(fd,"%d ", scaler_data[i]);
        }
 */
 
@@ -380,7 +416,7 @@ ss harp_scan_snc {
 /* ---------------------------------------------------------------------- */
 
 %%#include <time.h>
-%%#include "vxWorks.h"
+%%#include <vxWorks.h>
 %%#include <stdio.h>
 %%#include <string.h>
 %%#include <bootLib.h>
@@ -450,7 +486,7 @@ int open_file(char *fname, char *motor_name, char *shortname)
     strcat(shortname, ".txt" );
 
 /*    strcpy(thename, "/home/epics/data/e_scans/"); */
-    strcpy(thename, "/home/epics/data/HARP_SCANS/");
+    strcpy(thename, "/home/epics/DATA/HARP_SCANS/");
     strcat(thename, motor_name);
     strcat(thename, "/");
 
@@ -498,7 +534,7 @@ scp_clon01(char *harpscan_file, int sleep_time)
   /* Set local user to the same as remote user*/
   iam(ruser,NULL);
 
-  printf("host = %s  user = %s     cmd = %s\n",rhost,ruser,rstring); 
+  printf("host = %s  user = %s     cmd = %s\n",rhost,ruser,rstring);
 
   /* Issue the remote command */
   rfd = rcmd(rhost,EGR_HOST_DEFAULT_PORT,ruser,ruser,rstring,0);

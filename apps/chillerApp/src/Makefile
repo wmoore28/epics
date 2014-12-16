@@ -21,6 +21,7 @@ DBD += chiller.dbd
 # chiller.dbd will be made up from these files:
 chiller_DBD += base.dbd
 chiller_DBD += drvAsynSerialPort.dbd
+chiller_DBD += drvAsynIPPort.dbd
 chiller_DBD += stream.dbd
 chiller_DBD += asSupport.dbd
 chiller_DBD += devIocStats.dbd

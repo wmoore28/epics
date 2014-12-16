@@ -1,7 +1,7 @@
 
 file {
-	name="/usr/clas/devel/R3.14.8.2/EPICS/app/harp_generic/medm/generic_harp.adl"
-	version=030101
+	name="/usr/clas12/hps/prod/apps/medm/generic_harp.adl"
+	version=030108
 }
 display {
 	object {
@@ -362,8 +362,8 @@ text {
 	}
 	command[0] {
 		label="Analyze Scans"
-		name="/home/nerses/java/$EPICS_HOST_ARCH/jdk1.6.0_20/bin/java -jar $APP/harp_generic/scripts/HarpScanGUI.jar /home/epics/DATA/E_SCANS/`ls -rt /home/epics/DATA/E_SCANS/ | tail -1`"
-		args=" &"
+		name="/usr/clas12/hps/prod/tools/harp_analyzer/bin/runHarpScan.sh $(motor_name) &"
+		args=" "
 	}
 	command[1] {
 		args=" "

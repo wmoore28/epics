@@ -259,6 +259,20 @@ record(ai, "$(P):GET_FREQ"){
   field(INP,  "@flasher.proto getFreq $(PORT)")
 }
 
+record(mbbo, "$(P):SET_FREQ_MENU") {
+	field(DTYP, "stream")
+	field(OUT, "@flasher.proto setFreq $(PORT)")
+	field(FLNK, "$(P):GET_FREQ")
+	field(ZRST, "8 kHz")
+	field(ONST, "4 kHz")
+	field(TWST, "2 kHz")
+	field(THST, "1 kHz")
+	field(FRST, "500 Hz")
+	field(FVST, "250 Hz")
+	field(SXST, "125 Hz")
+	field(SVST, "62.5 Hz")
+}
+
 ##Advanced Configuration commands
 record(stringout, "$(P):SET_SERVER_IP") {
   field(DTYP, "stream")

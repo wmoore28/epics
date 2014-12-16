@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas/devel/R3.14.8.2/EPICS/app/general/medm/motor_screens.adl"
-	version=030101
+	name="/home/stepanya/hps/epics/general/medm/motor_screens.adl"
+	version=030108
 }
 display {
 	object {
-		x=555
-		y=383
+		x=376
+		y=827
 		width=180
-		height=355
+		height=250
 	}
 	clr=14
 	bclr=4
@@ -103,28 +103,20 @@ display {
 		name="harps.adl"
 	}
 	display[2] {
-		label="Converters"
-		name="convertors.adl"
+		label="Beam Blocker"
+		name="stopper.adl"
 	}
 	display[3] {
-		label="Radiators"
-		name="radiators.adl"
+		label="Downstream viewer"
+		name="viewer.adl"
 	}
 	display[4] {
-		label="Gamma Profiler"
-		name="gp_motor.adl"
+		label="SVT Collimator"
+		name="hps_collimator.adl"
 	}
 	display[5] {
-		label="Collimators"
-		name="collimator.adl"
-	}
-	display[6] {
-		label="Moeller"
-		name="moeller_target.adl"
-	}
-	display[7] {
-		label="TAC"
-		name="tac.adl"
+		label="HPS target"
+		name="hps_target.adl"
 	}
 	clr=20
 	bclr=1
@@ -143,35 +135,4 @@ text {
 	}
 	textix="Motors"
 	align="horiz. right"
-}
-"related display" {
-	object {
-		x=10
-		y=219
-		width=160
-		height=125
-	}
-	display[0] {
-		label="Beam Stopper"
-		name="stopper.adl"
-	}
-	display[1] {
-		label="Radiators Long"
-		name="radiator_long.adl"
-	}
-	display[2] {
-		label="Spear"
-	}
-	display[3] {
-		label="TPE lepton blocker"
-		name="leptonBlocker.adl"
-	}
-	display[4] {
-		label="TPE calorimeter & DFM"
-		name="tpe_cal_motor.adl"
-	}
-	clr=20
-	bclr=1
-	label="Beam Stopper"
-	visual="a column of buttons"
 }

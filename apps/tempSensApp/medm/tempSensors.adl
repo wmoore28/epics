@@ -1,6 +1,6 @@
 
 file {
-	name="/home/wmoore/workspaces/epics-develop/apps/tempSensApp/medm/tempSensors.adl"
+	name="/home/wmoore/workspaces/develop/apps/tempSensApp/medm/tempSensors.adl"
 	version=030108
 }
 display {
@@ -95,7 +95,7 @@ rectangle {
 		height=40
 	}
 	"basic attribute" {
-		clr=53
+		clr=28
 	}
 }
 text {
@@ -126,7 +126,7 @@ text {
 }
 text {
 	object {
-		x=263
+		x=270
 		y=55
 		width=105
 		height=21
@@ -139,7 +139,7 @@ text {
 }
 text {
 	object {
-		x=393
+		x=400
 		y=55
 		width=105
 		height=21
@@ -152,7 +152,7 @@ text {
 }
 text {
 	object {
-		x=527
+		x=534
 		y=55
 		width=105
 		height=21
@@ -165,7 +165,7 @@ text {
 }
 text {
 	object {
-		x=661
+		x=668
 		y=55
 		width=105
 		height=21
@@ -178,7 +178,7 @@ text {
 }
 text {
 	object {
-		x=773
+		x=780
 		y=55
 		width=105
 		height=21
@@ -4137,13 +4137,13 @@ text {
 	object {
 		x=100
 		y=55
-		width=105
+		width=160
 		height=21
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Scale"
+	textix="Description"
 	align="horiz. centered"
 }
 rectangle {
@@ -4936,4 +4936,29 @@ text {
 	}
 	limits {
 	}
+}
+"related display" {
+	object {
+		x=825
+		y=8
+		width=60
+		height=23
+	}
+	display[0] {
+		label="Autosave"
+		name="autosave.adl"
+		args="P=ioctempSens:"
+	}
+	display[1] {
+		label="Comm (asyn)"
+		name="asynRecord.adl"
+		args="P=tempSensor:,R=ASYN"
+	}
+	display[2] {
+		label="Alarm Settings"
+		name="tempSensors_alarms.adl"
+	}
+	clr=14
+	bclr=4
+	label="Expert"
 }

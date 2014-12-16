@@ -1,0 +1,938 @@
+
+file {
+	name="/home/wmoore/workspaces/master/apps/generalApp/medm/HPS_EPICS.adl"
+	version=030108
+}
+display {
+	object {
+		x=1
+		y=84
+		width=240
+		height=805
+	}
+	clr=14
+	bclr=4
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=765
+		width=240
+		height=40
+	}
+	"basic attribute" {
+		clr=11
+	}
+}
+text {
+	object {
+		x=113
+		y=790
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Versions >"
+	align="horiz. right"
+}
+rectangle {
+	object {
+		x=0
+		y=629
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=664
+		width=300
+		height=25
+	}
+	"basic attribute" {
+		clr=11
+	}
+}
+"choice button" {
+	object {
+		x=140
+		y=701
+		width=80
+		height=16
+	}
+	control {
+		chan="hallb_access"
+		clr=14
+		bclr=50
+	}
+	clrmod="discrete"
+	stacking="column"
+}
+"related display" {
+	object {
+		x=41
+		y=437
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Health"
+		name="ioc_hps_health.adl"
+	}
+	clr=14
+	bclr=50
+}
+rectangle {
+	object {
+		x=0
+		y=340
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=286
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=230
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=175
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=574
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=0
+		width=240
+		height=85
+	}
+	"basic attribute" {
+		clr=14
+	}
+}
+image {
+	object {
+		x=0
+		y=0
+		width=200
+		height=85
+	}
+	type="gif"
+	"image name"="HPS_logo.gif"
+}
+rectangle {
+	object {
+		x=0
+		y=521
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+text {
+	object {
+		x=139
+		y=38
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=57
+	}
+	textix="Main Menu"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=70
+		y=442
+		width=120
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="IOCs"
+}
+"related display" {
+	object {
+		x=20
+		y=464
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Omegabus D5000s"
+		name="tempSensors.adl"
+	}
+	display[1] {
+		label="Lakeshore 450 (Gaussmeters)"
+		name="lakeshore450_menu.adl"
+	}
+	display[2] {
+		label="Keithley 6221"
+		name="keithley6221.adl"
+	}
+	display[3] {
+		label="Harps"
+		name="harps.adl"
+	}
+	display[4] {
+		label="Flasher"
+		name="Flasher.adl"
+	}
+	display[5] {
+		label="Chiller (ECAL)"
+		name="chiller_thermo.adl"
+		args="DESC=ECAL"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=469
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Devices"
+}
+"shell command" {
+	object {
+		x=20
+		y=606
+		width=20
+		height=20
+	}
+	command[0] {
+		label="StripTool"
+		name="cd $APP/generalApp/strip; StripTool &"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=611
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="StripTool(s)"
+}
+rectangle {
+	object {
+		x=0
+		y=409
+		width=300
+		height=25
+	}
+	"basic attribute" {
+		clr=11
+	}
+}
+text {
+	object {
+		x=15
+		y=414
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Diagnostics"
+}
+"related display" {
+	object {
+		x=20
+		y=233
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Harps"
+		name="harps.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=238
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Harps"
+}
+text {
+	object {
+		x=70
+		y=182
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Beam"
+}
+"related display" {
+	object {
+		x=20
+		y=437
+		width=20
+		height=20
+	}
+	display[0] {
+		label="REBOOT IOC"
+		name="ioc_alive.adl"
+	}
+	clr=14
+	bclr=50
+}
+"related display" {
+	object {
+		x=20
+		y=524
+		width=20
+		height=20
+	}
+	display[0] {
+		label="alh launcher"
+		name="alh_launch_hps.adl"
+	}
+	display[1] {
+		label="(under development)"
+		name="Aalh_launch_hps.adl"
+	}
+	clr=14
+	bclr=50
+}
+"shell command" {
+	object {
+		x=20
+		y=117
+		width=20
+		height=20
+	}
+	command[0] {
+		label="Launch JTABS"
+		name="xterm -title JTabs -e"
+		args="$APP/generalApp/scripts/jtabs_launcher.sh &"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=119
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ACC Screens (JTabs)"
+}
+text {
+	object {
+		x=70
+		y=293
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Voltages"
+}
+"related display" {
+	object {
+		x=20
+		y=178
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Beam Screens"
+		name="beam_screens.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=265
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Magnets"
+}
+"related display" {
+	object {
+		x=20
+		y=261
+		width=20
+		height=20
+	}
+	display[0] {
+		label="magnet screens"
+		name="magnet_screens.adl"
+	}
+	clr=14
+	bclr=50
+}
+"related display" {
+	object {
+		x=20
+		y=289
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Voltages"
+		name="voltages.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=526
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Alarm Handlers"
+}
+"related display" {
+	object {
+		x=20
+		y=91
+		width=20
+		height=20
+	}
+	display[0] {
+		label="PAGE EXPERT"
+		name="notify_expert.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=93
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Page Experts"
+}
+text {
+	object {
+		x=20
+		y=703
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="IOC access"
+}
+"choice button" {
+	object {
+		x=140
+		y=725
+		width=80
+		height=16
+	}
+	control {
+		chan="mcc_harp_access"
+		clr=14
+		bclr=50
+	}
+	clrmod="discrete"
+	stacking="column"
+}
+text {
+	object {
+		x=20
+		y=725
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="MCC Harp Control"
+	align="horiz. centered"
+}
+"related display" {
+	object {
+		x=41
+		y=606
+		width=20
+		height=20
+	}
+	display[0] {
+		label="adsfasd"
+		name="strip_charts.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=320
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Motors"
+}
+"related display" {
+	object {
+		x=20
+		y=316
+		width=20
+		height=20
+	}
+	display[0] {
+		label="motor screens"
+		name="motor_screens.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=383
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Miscellaneous"
+}
+"related display" {
+	object {
+		x=20
+		y=379
+		width=20
+		height=20
+	}
+	display[0] {
+		label="misc screens"
+		name="misc_screens.adl"
+	}
+	clr=14
+	bclr=50
+}
+"related display" {
+	object {
+		x=20
+		y=205
+		width=20
+		height=20
+	}
+	display[0] {
+		label="DAQ Status"
+		name="daq_status.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=347
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Trigger"
+}
+"related display" {
+	object {
+		x=20
+		y=343
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Photon Trigger"
+		name="ts_bits.adl"
+	}
+	display[1] {
+		label="DVCS Trigger"
+		name="dvcs_trigger.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=208
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="DAQ Status"
+}
+rectangle {
+	object {
+		x=0
+		y=148
+		width=300
+		height=25
+	}
+	"basic attribute" {
+		clr=11
+	}
+}
+text {
+	object {
+		x=15
+		y=153
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Subsystems"
+}
+rectangle {
+	object {
+		x=0
+		y=494
+		width=300
+		height=25
+	}
+	"basic attribute" {
+		clr=11
+	}
+}
+text {
+	object {
+		x=15
+		y=499
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Tools"
+}
+"shell command" {
+	object {
+		x=20
+		y=634
+		width=20
+		height=20
+	}
+	command[0] {
+		label="Probe"
+		name="probe &"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=639
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Probe"
+}
+text {
+	object {
+		x=15
+		y=670
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Access Controls"
+}
+"related display" {
+	object {
+		x=216
+		y=767
+		width=20
+		height=18
+	}
+	display[0] {
+		label="Production (refresh)"
+		name="HPS_EPICS_refresh.adl"
+		policy="replace display"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=20
+		y=779
+		width=130
+		height=16
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Release: v0.2.8"
+}
+"shell command" {
+	object {
+		x=20
+		y=550
+		width=20
+		height=20
+	}
+	command[0] {
+		label="ECAL DSC2 GUI"
+		name="/usr/clas12/hps/prod/tools/ecal/runEcalDSC2ScalerGui.sh &"
+	}
+	command[1] {
+		label="ECAL FADC GUI"
+		name="/usr/clas12/hps/prod/tools/ecal/runEcalFADCScalerGui.sh &"
+	}
+	command[2] {
+		label="ECAL Diag GUI (solaris-only)"
+		name="xterm -title 'ECAL FADC Diag GUI' -e "
+		args="/usr/clas12/hps/prod/tools/ecal/runEcalDiagGui.sh &"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=555
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL Scaler GUIs"
+}
+"shell command" {
+	object {
+		x=20
+		y=577
+		width=20
+		height=20
+	}
+	command[0] {
+		label="hpsrun screenshots"
+		name="konqueror ~hpsrun/screenshots &"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=582
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Screenshots Folder"
+}
+"shell command" {
+	object {
+		x=216
+		y=787
+		width=20
+		height=18
+	}
+	command[1] {
+		label="Development"
+		name="hps_epics dev &"
+	}
+	command[2] {
+		label="Rollback"
+		name="hps_epics rollback &"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=113
+		y=769
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Refresh >"
+	align="horiz. right"
+}

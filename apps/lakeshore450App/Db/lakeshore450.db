@@ -97,7 +97,7 @@ record(mbbi, "$(P)$(R)FIELD:MULT") {
     field(ZRST, "u")
     field(ONST, "m")
     field(TWST, "k")
-    field(THST, "_")
+    field(THST, " ")
     field(FLNK, "$(P)$(R)FIELD")
 }
 
@@ -106,7 +106,7 @@ record(sub, "$(P)$(R)FIELD") {
     field(INPA, "$(P)$(R)FIELD:RAW")
     field(INPB, "$(P)$(R)FIELD:MULT")
     field(INPC, "$(P)$(R)UNITS")
-    field(PREC, "4")
+    field(PREC, "6")
 }
 
 record(bi, "$(P)$(R)UNITS") {

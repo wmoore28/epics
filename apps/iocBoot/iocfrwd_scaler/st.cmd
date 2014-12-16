@@ -38,4 +38,4 @@ iocInit
 ## Start any sequence programs
 #seq &sncxxx, "user=levon"
 
-#seq &scaler_frwd_restart
+#seq &frwd_scaler_restart

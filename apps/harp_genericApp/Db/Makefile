@@ -16,13 +16,14 @@ include $(TOP)/configure/CONFIG
 ##DB += user.substitutions
 ##DB += userHost.substitutions
 
-DB += collimators.db
+DB += hps_collimators.db
 DB += convertors.db
 DB += motor.db
 DB += motorlong.db
 DB += radiator_long.db
 DB += radiators.db
 DB += scan.db
+DB += hps_target.db
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
