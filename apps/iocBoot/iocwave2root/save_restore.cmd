@@ -8,12 +8,11 @@
 
   ## Specify paths
   set_savefile_path("$(IOCDATA)/autosave/$(IOC)")
-  set_requestfile_path(".")
+  set_requestfile_path("$(TOP)/iocBoot/$(IOC)")
   set_requestfile_path("$(TOP)/req")
 
+  ## Specify restore files
   set_pass0_restoreFile("info_positions.sav")
   set_pass0_restoreFile("info_settings.sav")
-
   set_pass1_restoreFile("info_settings.sav")
-  ## set_pass1_restoreFile("anova_settings.sav")
   

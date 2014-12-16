@@ -10,15 +10,11 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------------------
 # Create and install (or just install)
 # databases, templates, substitutions like this
-##DB += dbExample1.db
-##DB += dbExample2.db
-##DB += dbSubExample.db
-##DB += user.substitutions
-##DB += userHost.substitutions
-
 DB += sixty_hz_common.db
 DB += sixty_hz.db
 DB += sixty_hz_macro.db
+
+REQ += sixty_hz_settings.req
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add

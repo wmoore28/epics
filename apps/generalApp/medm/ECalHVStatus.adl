@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/v0.2.8/apps/generalApp/medm/ECalHVStatus.adl"
+	name="/usr/clas12/hps/prod/apps/generalApp/medm/ECalHVStatus.adl"
 	version=030108
 }
 display {
@@ -134,14 +134,10 @@ text {
 		height=30
 	}
 	display[0] {
-		label="ECal HV All"
-		name="ecal.adl"
-	}
-	display[1] {
 		label="ECal HV Top"
 		name="ecal_ECAL_TOP.adl"
 	}
-	display[2] {
+	display[1] {
 		label="ECal HV Bot"
 		name="ecal_ECAL_BOTTOM.adl"
 	}

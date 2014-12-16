@@ -1,6 +1,6 @@
 
 file {
-	name="/home/wmoore/workspaces/master/apps/generalApp/medm/HPS_EPICS.adl"
+	name="/usr/clas12/hps/v0.3.1/apps/generalApp/medm/HPS_EPICS.adl"
 	version=030108
 }
 display {
@@ -842,7 +842,7 @@ text {
 	"basic attribute" {
 		clr=0
 	}
-	textix="Release: v0.2.8"
+	textix="Release: v0.3.1"
 }
 "shell command" {
 	object {
@@ -887,7 +887,11 @@ text {
 		height=20
 	}
 	command[0] {
-		label="hpsrun screenshots"
+		label="Take screenshot..."
+		name="xterm -title 'Take screenshot' -e screenshot &"
+	}
+	command[1] {
+		label="Open screenshots folder"
 		name="konqueror ~hpsrun/screenshots &"
 	}
 	clr=14
@@ -903,7 +907,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Screenshots Folder"
+	textix="Screenshots"
 }
 "shell command" {
 	object {

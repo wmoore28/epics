@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/hvcaApp/medm/adl/ecal_ECAL_BOTTOM.adl"
+	name="/usr/clas12/hps/prod/apps/generalApp/medm/ecal_ECAL_BOTTOM.adl"
 	version=030108
 }
 display {
@@ -4383,4 +4383,31 @@ oval {
 	align="horiz. centered"
 	limits {
 	}
+}
+"related display" {
+	object {
+		x=740
+		y=14
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Parameters"
+		name="ecal_ECAL_BOTTOM_param.adl"
+	}
+	clr=14
+	bclr=5
+}
+text {
+	object {
+		x=632
+		y=18
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Parameters"
+	align="horiz. right"
 }
