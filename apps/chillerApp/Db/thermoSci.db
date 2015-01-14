@@ -18,6 +18,25 @@ record(asyn, "$(P)$(R)ASYN") {
 }
 
 #######################################
+# Control Commands
+#######################################
+record(bo, "$(P)$(R)ONOFF") {
+	field(DTYP, "stream")
+	field(OUT,  "@thermoSci.proto setOnOff $(PORT)")
+	field(ZNAM, "Off")
+	field(ONAM, "On")
+}
+
+# ASLO set to multiply setpoint by 10 before sending to chiller.
+record(ao, "$(P)$(R)TEMP:SP") {
+	field(DTYP, "stream")
+	field(OUT,  "@thermoSci.proto SetSetpt $(PORT)")
+	field(ASLO, "0.1")
+	field(EGU,  "C")
+	field(PREC, "1")
+}
+
+#######################################
 # Status Commands
 #######################################
 record(mbbi, "$(P)$(R)STATUS1") {
