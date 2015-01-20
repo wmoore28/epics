@@ -5,7 +5,7 @@ file {
 }
 display {
 	object {
-		x=1
+		x=3
 		y=84
 		width=240
 		height=805
@@ -114,9 +114,9 @@ text {
 rectangle {
 	object {
 		x=0
-		y=629
+		y=616
 		width=240
-		height=26
+		height=20
 	}
 	"basic attribute" {
 		clr=3
@@ -209,9 +209,9 @@ rectangle {
 rectangle {
 	object {
 		x=0
-		y=574
+		y=571
 		width=240
-		height=26
+		height=20
 	}
 	"basic attribute" {
 		clr=3
@@ -243,7 +243,7 @@ rectangle {
 		x=0
 		y=521
 		width=240
-		height=26
+		height=22
 	}
 	"basic attribute" {
 		clr=3
@@ -324,7 +324,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=606
+		y=593
 		width=20
 		height=20
 	}
@@ -338,7 +338,7 @@ text {
 text {
 	object {
 		x=70
-		y=611
+		y=598
 		width=120
 		height=16
 	}
@@ -614,7 +614,7 @@ text {
 "related display" {
 	object {
 		x=41
-		y=606
+		y=593
 		width=20
 		height=20
 	}
@@ -782,7 +782,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=634
+		y=616
 		width=20
 		height=20
 	}
@@ -796,7 +796,7 @@ text {
 text {
 	object {
 		x=70
-		y=639
+		y=621
 		width=120
 		height=16
 	}
@@ -847,7 +847,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=550
+		y=547
 		width=20
 		height=20
 	}
@@ -870,7 +870,7 @@ text {
 text {
 	object {
 		x=70
-		y=555
+		y=552
 		width=120
 		height=16
 	}
@@ -882,7 +882,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=577
+		y=570
 		width=20
 		height=20
 	}
@@ -900,7 +900,7 @@ text {
 text {
 	object {
 		x=70
-		y=582
+		y=575
 		width=120
 		height=16
 	}
@@ -939,4 +939,31 @@ text {
 	}
 	textix="Refresh >"
 	align="horiz. right"
+}
+"shell command" {
+	object {
+		x=20
+		y=639
+		width=20
+		height=20
+	}
+	command[0] {
+		label="Wave2Root Reader"
+		name="xterm -title 'Wave2Root Reader' -geometry 80x70 -e"
+		args="/usr/clas12/hps/prod/apps/medm/wave2rootReader.sh"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=644
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Wave2Root Reader"
 }

@@ -3295,7 +3295,7 @@ rectangle {
 	}
 	command[0] {
 		label="Ramp Up"
-		name="ecalRampCtrl.sh 1 &"
+		name="$APP/medm/ecalRampCtrl.sh 1 &"
 	}
 	clr=17
 	bclr=2
@@ -3310,7 +3310,7 @@ rectangle {
 	}
 	command[0] {
 		label="Ramp Down"
-		name="ecalRampCtrl 0 &"
+		name="$APP/medm/ecalRampCtrl 0 &"
 	}
 	clr=20
 	bclr=2

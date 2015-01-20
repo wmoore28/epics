@@ -39,10 +39,11 @@ wave2root_SRCS_vxWorks += -nil-
 # Link in the code from the support library
 wave2root_LIBS += devIocStats
 wave2root_LIBS += autosave
-wave2root_LDFLAGS += -L$(shell root-config --libdir)
-wave2root_SYS_LIBS += Core Cint RIO Net Hist Graf Graf3d Gpad Tree Rint Postscript Matrix Physics MathCore Thread
-wave2root_SYS_LIBS += m dl 
-wave2root_LDFLAGS += -pthread  -rdynamic
+##wave2root_LDFLAGS += -L$(shell root-config --libdir)
+wave2root_LDFLAGS += $(shell root-config --libs)
+##wave2root_SYS_LIBS += Core Cint RIO Net Hist Graf Graf3d Gpad Tree Rint Postscript Matrix Physics MathCore Thread
+##wave2root_SYS_LIBS += m dl 
+##wave2root_LDFLAGS += -pthread -rdynamic
 #wave2root_LDFLAGS += -L$(ROOTSPY)/lib
 #wave2root_LDFLAGS += -L$(CMSGROOT)/lib
 #wave2root_SYS_LIBS += RootSpy
@@ -53,6 +54,15 @@ wave2root_LDFLAGS += -pthread  -rdynamic
 wave2root_LIBS += $(EPICS_BASE_IOC_LIBS)
 
 #=============================
+PROD_Linux = Read_60Hz
+
+Read_60Hz_LDFLAGS += $(shell root-config --cflags)
+Read_60Hz_LDFLAGS += $(shell root-config --libs)
+
+Read_60Hz_SRCS    += Read_60Hz.cc
+
+#=============================
+
 
 include $(TOP)/configure/RULES
 #----------------------------------------

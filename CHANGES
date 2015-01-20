@@ -1,3 +1,34 @@
+Version 0.3.2:
+ - chillerApp: added on/off ctrl and setpoint adjustment
+ - generalApp: fixed path to ecalRampCtrl.sh
+ - generalApp: temp fix for launching alarm handlers
+ - wave2rootApp: added reader for 60Hz root files (wmoore, rafopar)
+ - classc4App: added autosave, but had issues overwriting existing sav files
+ - sixty_hzApp: install req file
+ - gitignore for autosave generated req files
+ - sixty_hzApp: created autosave req file, currently unused
+ - wave2rootApp: added autosave
+ - chillerApp: added comm status to adl's
+ - Merge branch 'master' of https://github.com/hovanes-egiyan/HPS_EPICS into develop
+ - added a button to launch the screen for controling the scaler waveform conversion to ROOT trees
+ - Merge branch 'master' of https://github.com/hovanes-egiyan/HPS_EPICS into develop
+ - small program to look at a single channel of a ROOT tree written from a waveform
+ - changed the string names for the enum for DAQ status
+ - screen to control writing to DAQ
+ - tools/ecal: removed generated library files from repo
+ - tools/hps_epics: update so refresh will work across releases
+ - tools: installer for screenshot
+ - medm/Makefile: update to HPS_EPICS.adl release tag
+ - .setup-hps: fix typo on LD_LIBRARY_PATH
+ - tools: added take screenshot
+ - ecal stripTools: minor config changes
+ - generalApp: ecal minor screen updates
+ - generalApp: added iocchiller autosave status
+ - generalApp: added iocwave2root to ioc_hps_health.adl
+ - chillerApp: fixed autosave path
+ - HPS_EPICS.adl: updated release number, vXXX was overwritten along the way
+ - wave2rootApp: fix, needed root libs in LD_LIBRARY_PATH
+
 Version 0.3.1:
  - hotfix-v0.2.9: last min changes from old hotfix
  - harp_genericApp/scalerApp: last min updates (stepanya)
