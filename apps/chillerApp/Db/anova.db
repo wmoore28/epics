@@ -6,16 +6,7 @@
 #   [Macros]
 #   P     - standard record prefix
 #   R     - standard record prefix
-#   PROTO - streams protocol file name
 #   PORT  - asyn port name
-#
-#   [Protocols]
-#   Some of the ao records use bo protocols.  This is due to the STAC5 not 
-#   accepting floating point values for things like step positions.  The generic
-#   protocol file uses %f for ai/ao and %d for bi/bo.  There is also special 
-#   "No Init" protocols.  More details available within the protocol file.  The 
-#   parameters passed to the protocol are the actual STAC5 commands to be sent. 
-#   See the manual for all the gory details.  
 #
 # Author: Wesley Moore
 # Date:   June 2014
