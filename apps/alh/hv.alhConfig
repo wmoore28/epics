@@ -1,0 +1,407 @@
+GROUP   NULL  HV
+
+GROUP   HV    HV_mf 
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half. 
+Something must be wrong with one of the HV mainframes. 
+Read the guidance and act accordingly.
+$END
+
+
+#CHANNEL  HV_mf   B_HVVALID_01_01 
+#$GUIDANCE
+#Mainframe 01 for EC CAEN is not respoding. Call detector expert !
+#$END
+#CHANNEL  HV_mf   B_HVOC_01_01 
+#$GUIDANCE
+#Status of HV mainframe 01 for EC CAEN is different from what is set in EPICS GUI.
+#It may have tripped or its status was changed. Try to turn it ON or OFF in HV GUI. 
+#If it does not help, call detector expert !
+#$END
+#CHANNEL  HV_mf   B_HVVALID_13_01 
+#$GUIDANCE
+#Mainframe 01 for unknown detector is not respoding. Call detector expert !
+#$END
+#CHANNEL  HV_mf   B_HVOC_13_01 
+#$GUIDANCE
+#Status of HV mainframe 01 for unknown detector is different from what is set in EPICS GUI.
+#It may have tripped or its status was changed. Try to turn it ON or OFF in HV GUI. 
+#If it does not help, call detector expert !
+#$END
+#CHANNEL  HV_mf   B_HVVALID_13_02 
+#$GUIDANCE
+#Mainframe 02 for unknown detector is not respoding. Call detector expert !
+#$END
+#CHANNEL  HV_mf   B_HVOC_13_02 
+#$GUIDANCE
+#Status of HV mainframe 02 for unknown detector is different from what is set in EPICS GUI.
+#It may have tripped or its status was changed. Try to turn it ON or OFF in HV GUI. 
+#If it does not help, call detector expert !
+#$END
+GROUP   HV    HV_ECAL_TOP
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half.  Track down RED/tripped channels and enable them
+$END
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_01,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_02,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_03,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_04,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_05,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_06,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_07,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_08,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_09,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_10,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_11,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_12_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_12,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_13_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_13,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_14_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_14,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_15_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_15,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_16_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_16,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_17_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_17,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_18_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_18,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_19_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_19,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_20_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_20,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_21_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_21,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_22_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_22,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_23_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_23,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_24_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_24,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_25_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_25,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_TOP        B_hv_ECAL_TOP_26_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_TOP_26,group_number=1" hv_generic.adl >> /dev/null 
+GROUP   HV    HV_ECAL_BOTTOM
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half.  Track down RED/tripped channels and enable them
+$END
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_01_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_01,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_02_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_02,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_03_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_03,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_04_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_04,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_05_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_05,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_06_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_06,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_07_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_07,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_08_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_08,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_09_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_09,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_10_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_10,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_11_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+#$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_11,group_number=2" hv_generic.adl >> /dev/null 
+#CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_12_property
+#$GUIDANCE
+#Use the "P" button to bring up control window for the tripped channel
+#$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_12,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_13_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_13,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_14_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_14,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_15_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_15,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_16_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_16,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_17_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_17,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_18_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_18,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_19_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_19,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_20_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_20,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_21_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_21,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_22_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_22,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_23_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_23,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_24_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_24,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_25_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_25,group_number=2" hv_generic.adl >> /dev/null 
+CHANNEL    HV_ECAL_BOTTOM        B_hv_ECAL_BOT_26_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECAL_BOT_26,group_number=2" hv_generic.adl >> /dev/null 
+GROUP   HV    HV_beam_counter
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half.  Track down RED/tripped channels and enable them
+$END
+CHANNEL    HV_beam_counter        B_hv_Upstream_left_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=Upstream_left,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_Upstream_right_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=Upstream_right,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_Tagger_left_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=Tagger_left,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_Tagger_right_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=Tagger_right,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_HPS_left_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=HPS_left,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_HPS_right_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=HPS_right,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_ECal_cosm1_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECal_cosm1,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_ECal_cosm2_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECal_cosm2,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_ECal_cosm3_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECal_cosm3,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_ECal_cosm4_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECal_cosm4,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_ECal_cosm5_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=ECal_cosm5,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_DS_halo_bottom_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=DS_halo_bottom,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_DS_halo_top_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=DS_halo_top,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_DS_halo_left_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=DS_halo_left,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_DS_halo_right_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=DS_halo_right,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_BLM1_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BLM1,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_BLM2_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BLM2,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_BLM3_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BLM3,group_number=1" hv_generic.adl >> /dev/null 
+CHANNEL    HV_beam_counter        B_hv_BLM4_property
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "channel_name=BLM4,group_number=1" hv_generic.adl >> /dev/null 

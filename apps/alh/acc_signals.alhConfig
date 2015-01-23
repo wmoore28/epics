@@ -1,0 +1,27 @@
+#===============================================================================
+# ACC Signals Alarm Config
+#===============================================================================
+
+GROUP    NULL                         ACC_SIGNALS                 
+
+#=======================================
+# Channels
+#=======================================
+
+CHANNEL  ACC_SIGNALS                  frwd_scalerS15b             
+$COMMAND  medm -x -attach -cmap -macro "sig=frwd_scalerS15b" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+		The accelerator RF signal is out of specification.  This is a serious problem.
+		The rate for this pulse is 499MHz/40 = 12.475MHz.  Check the rate via the "P" button or 
+                the EPICS scaler screen.  Make sure that the "frwd_scaler" EPICS scaler is in HERTZ mode via
+ 		the scaler setup button at the bottom of the EPICS scaler GUI.
+                Page TOF or EPICS pager for further guidance.  
+$END
+
+CHANNEL  ACC_SIGNALS                  scaler_dS5b                 
+$COMMAND  medm -x -attach -cmap -macro "sig=scaler_dS5b" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+		The injector 15Hz helicity "sync" rate is no longer 15Hz.  Make sure that the "scaler_d" 
+                epics scaler is in Hertz mode via the scaler setup button at the bottom of the EPICS
+                scaler GUI.  Page the EPICS pager for further guidance.
+$END
