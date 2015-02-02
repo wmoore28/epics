@@ -53,12 +53,12 @@ ss bta
      } state check_reset
   } 
 
- state connect
+ state connect_pvs
   {
     when ( pvAssignCount() !=  pvConnectCount() )
      {
       printf("Some channels are not connected \n");
-     } state connect
+     } state connect_pvs
 
     when ( pvAssignCount() == pvConnectCount() )
      {

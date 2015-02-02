@@ -1,0 +1,274 @@
+#
+#  Basic PVs for a Wiener crate monitor
+#
+#  Macros required:
+#     P,R   : PV prefixes
+#     CRATE : SNMP host IP address (dotted decimal)
+#  Environment variable required (set in st.cmd):
+#     WCR_PREF="guru WIENER-CRATE-MIB::"
+#   
+#
+
+record(longout, "$(P)$(R)SupplyControl")
+{
+    field(DESC, "Supply off/on control")
+    field(DTYP, "Snmp")
+    field(OUT,  "@$(CRATE) %(WCR_PREF)sysMainSwitch.0 ( 100 i")
+    field(LOPR, "0")
+    field(DRVL, "0")
+    field(HOPR, "1")
+    field(DRVH, "1")
+}
+record(longin, "$(P)$(R)SupplyStatus")
+{
+    field(DESC, "Supply off/on status")
+    field(SCAN, "2 second")
+    field(DTYP, "Snmp")
+    field(INP,  "@$(CRATE) %(WCR_PREF)sysMainSwitch.0 ( 100 i")
+    field(LOPR, "0")
+    field(HOPR, "1")
+}
+#
+# SNMP support doesn't proved binary-out records, and we want th
+# momentary action provided by the binary-out .HIGH field, so use
+# two records
+#
+record(bo, "$(P)$(R)sysVMEreset")
+{
+    field(DESC, "Strobe VME bus SYSRESET*")
+    field(OUT,  "$(P)$(R)sysVMEreset__")
+    field(HIGH, "1.2")
+    field(ZNAM, "")
+    field(ONAM, "Reset")
+    field(FLNK, "$(P)$(R)sysVMEreset__")
+}
+record(longout, "$(P)$(R)sysVMEreset__")
+{
+    field(DESC, "Control VME bus SYSRESET* line")
+    field(DTYP, "Snmp")
+    field(OUT,  "@$(CRATE) %(WCR_PREF)sysVmeSysReset.0 INTEGER: 100 i")
+    field(LOPR, "0")
+    field(HOPR, "1")
+}
+
+record(fanout, "$(P)$(R)Vreadback")
+{
+    field(DESC, "Read crate voltages")
+    field(SCAN, "2 second")
+    field(LNK1, "$(P)$(R)VP3")
+    field(LNK2, "$(P)$(R)VP5")
+    field(LNK3, "$(P)$(R)VP12")
+    field(LNK4, "$(P)$(R)VM12")
+}
+record(ai, "$(P)$(R)VP3")
+{
+    field(DESC, "+3.3V supply")
+    field(DTYP, "Snmp")
+    field(INP,  "@$(CRATE) %(WCR_PREF)outputMeasurementSenseVoltage.u0 Float: 100")
+    field(EGU,  "V")
+    field(PREC, "3")
+    field(LOPR, "0")
+    field(HOPR, "5")
+    field(LOLO, "2.97")
+    field(LOW,  "3.135")
+    field(HIGH, "3.465")
+    field(HIHI, "3.63")
+    field(LLSV, "MAJOR")
+    field(LSV,  "MINOR")
+    field(HSV,  "MINOR")
+    field(HHSV, "MAJOR")
+    field(HYST, "0.033")
+}
+record(ai, "$(P)$(R)VP5")
+{
+    field(DESC, "+5V supply")
+    field(DTYP, "Snmp")
+    field(INP,  "@$(CRATE) %(WCR_PREF)outputMeasurementSenseVoltage.u1 Float: 100")
+    field(EGU,  "V")
+    field(PREC, "3")
+    field(LOPR, "0")
+    field(HOPR, "5")
+    field(LOLO, "4.5")
+    field(LOW,  "4.75")
+    field(HIGH, "5.25")
+    field(HIHI, "5.5")
+    field(LLSV, "MAJOR")
+    field(LSV,  "MINOR")
+    field(HSV,  "MINOR")
+    field(HHSV, "MAJOR")
+    field(HYST, "0.05")
+}
+record(ai, "$(P)$(R)VP12")
+{
+    field(DESC, "+12V supply")
+    field(DTYP, "Snmp")
+    field(INP,  "@$(CRATE) %(WCR_PREF)outputMeasurementSenseVoltage.u2 Float: 100")
+    field(EGU,  "V")
+    field(PREC, "3")
+    field(LOPR, "0")
+    field(HOPR, "12")
+    field(LOLO, "10.8")
+    field(LOW,  "11.4")
+    field(HIGH, "12.6")
+    field(HIHI, "13.2")
+    field(LLSV, "MAJOR")
+    field(LSV,  "MINOR")
+    field(HSV,  "MINOR")
+    field(HHSV, "MAJOR")
+    field(HYST, "0.12")
+}
+record(ai, "$(P)$(R)VM12")
+{
+    field(DESC, "-12V supply")
+    field(DTYP, "Snmp")
+    field(INP,  "@$(CRATE) %(WCR_PREF)outputMeasurementSenseVoltage.u3 Float: 100")
+    field(EGU,  "V")
+    field(PREC, "3")
+    field(LOPR, "0")
+    field(HOPR, "12")
+    field(LOLO, "-13.2")
+    field(LOW,  "-12.6")
+    field(HIGH, "-11.4")
+    field(HIHI, "-10.8")
+    field(LLSV, "MAJOR")
+    field(LSV,  "MINOR")
+    field(HSV,  "MINOR")
+    field(HHSV, "MAJOR")
+    field(HYST, "-0.12")
+}
+
+record(fanout, "$(P)$(R)Ireadback")
+{
+    field(DESC, "Read crate currents")
+    field(SCAN, "2 second")
+    field(LNK1, "$(P)$(R)IP3")
+    field(LNK2, "$(P)$(R)IP5")
+    field(LNK3, "$(P)$(R)IP12")
+    field(LNK4, "$(P)$(R)IM12")
+}
+record(ai, "$(P)$(R)IP3")
+{
+    field(DESC, "+3.3V supply current")
+    field(DTYP, "Snmp")
+    field(INP,  "@$(CRATE) %(WCR_PREF)outputMeasurementCurrent.u0 Float: 100")
+    field(EGU,  "A")
+    field(PREC, "3")
+    field(LOPR, "0")
+    field(HOPR, "33")
+}
+record(ai, "$(P)$(R)IP5")
+{
+    field(DESC, "+5V supply current")
+    field(DTYP, "Snmp")
+    field(INP,  "@$(CRATE) %(WCR_PREF)outputMeasurementCurrent.u1 Float: 100")
+    field(EGU,  "A")
+    field(PREC, "3")
+    field(LOPR, "0")
+    field(HOPR, "33")
+}
+record(ai, "$(P)$(R)IP12")
+{
+    field(DESC, "+12V supply current")
+    field(DTYP, "Snmp")
+    field(INP,  "@$(CRATE) %(WCR_PREF)outputMeasurementCurrent.u2 Float: 100")
+    field(EGU,  "A")
+    field(PREC, "3")
+    field(LOPR, "0")
+    field(HOPR, "6")
+}
+record(ai, "$(P)$(R)IM12")
+{
+    field(DESC, "-12V supply current")
+    field(DTYP, "Snmp")
+    field(INP,  "@$(CRATE) %(WCR_PREF)outputMeasurementCurrent.u3 Float: 100")
+    field(EGU,  "A")
+    field(PREC, "3")
+    field(LOPR, "0")
+    field(HOPR, "1.5")
+}
+
+record(fanout, "$(P)$(R)Treadback")
+{
+    field(DESC, "Read crate temperatures")
+    field(SCAN, "2 second")
+    field(LNK1, "$(P)$(R)Temp1")
+    field(LNK2, "$(P)$(R)Temp2")
+    field(LNK3, "$(P)$(R)Temp3")
+}
+record(ai, "$(P)$(R)Temp1")
+{
+    field(DESC, "Temperarature sensor 1")
+    field(DTYP, "Snmp")
+    field(INP,  "@$(CRATE) %(WCR_PREF)sensorTemperature.temp1 INTEGER: 100")
+    field(EGU,  "degrees C")
+    field(PREC, "3")
+    field(LOPR, "0")
+    field(HOPR, "100")
+}
+record(ai, "$(P)$(R)Temp2")
+{
+    field(DESC, "Temperarature sensor 2")
+    field(DTYP, "Snmp")
+    field(INP,  "@$(CRATE) %(WCR_PREF)sensorTemperature.temp2 INTEGER: 100")
+    field(EGU,  "degrees C")
+    field(PREC, "3")
+    field(LOPR, "0")
+    field(HOPR, "100")
+}
+record(ai, "$(P)$(R)Temp3")
+{
+    field(DESC, "Temperarature sensor 3")
+    field(DTYP, "Snmp")
+    field(INP,  "@$(CRATE) %(WCR_PREF)sensorTemperature.temp3 INTEGER: 100")
+    field(EGU,  "degrees C")
+    field(PREC, "3")
+    field(LOPR, "0")
+    field(HOPR, "100")
+}
+
+
+record(fanout, "$(P)$(R)Freadback")
+{
+    field(DESC, "Read fan speeds")
+    field(SCAN, "2 second")
+    field(LNK1, "$(P)$(R)FanSpeed1")
+}
+record(ai, "$(P)$(R)FanSpeed1")
+{
+    field(DESC, "Fan 1 speed")
+    field(DTYP, "Snmp")
+    field(INP,  "@$(CRATE) %(WCR_PREF)fanSpeed.1 INTEGER: 100")
+    field(EGU,  "RPM")
+    field(PREC, "3")
+    field(LOPR, "0")
+    field(HOPR, "10000")
+}
+record(longout, "$(P)$(R)SetFanSpeed")
+{
+    field(DESC, "Set speed of all fans")
+    field(DTYP, "Snmp")
+    field(OUT,  "@$(CRATE) %(WCR_PREF)fanNominalSpeed.0 INTEGER: 100 i")
+    field(EGU,  "RPM")
+    field(LOPR, "1200")
+    field(DRVL, "1200")
+    field(HOPR, "3600")
+    field(DRVH, "3600")
+}
+
+record(longin, "$(P)$(R)SupplyOnTime")
+{
+    field(DESC, "Supply on time")
+    field(SCAN, "2 second")
+    field(DTYP, "Snmp")
+    field(INP,  "@$(CRATE) %(WCR_PREF)psOperatingTime.0 INTEGER: 100 i")
+    field(EGU,  "seconds")
+}
+record(longin, "$(P)$(R)FanOnTime")
+{
+    field(DESC, "Fan on time")
+    field(SCAN, "2 second")
+    field(DTYP, "Snmp")
+    field(INP,  "@$(CRATE) %(WCR_PREF)fanOperatingTime.0 INTEGER: 100 i")
+    field(EGU,  "seconds")
+}
+
