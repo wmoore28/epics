@@ -106,15 +106,15 @@ ss bta
      {
         Reset_Flag = 0;
 	pvPut( Reset_Flag );
-     } state connect
+     } state connect_pvs
   } 
 
- state connect
+ state connect_pvs
   {
     when ( pvAssignCount() !=  pvConnectCount() )
      {
       printf("Some channels are not connected \n");
-     } state connect
+     } state connect_pvs
 
     when ( pvAssignCount() == pvConnectCount() )
      {
