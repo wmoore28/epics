@@ -1,0 +1,138 @@
+# 
+# Presto Temperature Control System - Models A80(t), W80(t)
+# 
+# 
+# Notes:
+#   [Macros]
+#   P     - standard record prefix
+#   R     - standard record prefix
+#   PORT  - asyn port name
+#
+#
+# Author: Wesley Moore
+# Date:   Jan 2015
+#
+
+record(asyn, "$(P)$(R)ASYN") {
+    field(PORT, "$(PORT)")
+    field(OEOS, "\r")
+    field(IEOS, "\r\n")
+}
+
+#######################################
+# Status Commands
+#######################################
+
+record(stringin, "$(P)$(R)VERSION") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getVersion $(PORT)")
+    field(VAL,  "")
+    field(PINI, "1")
+}
+
+record(stringin, "$(P)$(R)STATUS") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getStatus $(PORT)")
+    field(VAL,  "")
+    field(SCAN, "1 second")
+}
+
+record(ai, "$(P)$(R)TEMP") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getAiEgu(pv_00,sp_11) $(PORT)")
+    field(PREC, "1")
+    field(SCAN, "1 second")
+}
+
+record(ai, "$(P)$(R)HTR_PWR") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getAi(pv_01) $(PORT)")
+    field(EGU,  "%")
+    field(PREC, "2")
+    field(SCAN, "1 second")
+}
+
+record(ai, "$(P)$(R)TEMP:HILIM") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getAi(pv_03) $(PORT)")
+    field(PREC, "1")
+    field(SCAN, "5 second")
+}
+
+record(ai, "$(P)$(R)TEMP:LWLIM") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getAi(pv_04) $(PORT)")
+    field(PREC, "1")
+    field(SCAN, "5 second")
+}
+
+record(ai, "$(P)$(R)PUMP_PRES") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getAiEgu(pv_05,sp_12) $(PORT)")
+    field(PREC, "2")
+    field(SCAN, "1 second")
+}
+
+record(ai, "$(P)$(R)FLOW") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getAiEgu(pv_09,sp_13) $(PORT)")
+    field(PREC, "2")
+    field(SCAN, "5 second")
+}
+
+record(ai, "$(P)$(R)TEMP:RD_SP") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getAi(sp_00) $(PORT)")
+    field(PREC, "1")
+    field(SCAN, "1 second")
+}
+
+record(ai, "$(P)$(R)FLOW:RD_SP") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getAi(sp_08) $(PORT)")
+    field(PREC, "2")
+    field(SCAN, "1 second")
+}
+
+record(ai, "$(P)$(R)PUMP_PRES:RD_SP") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getAi(sp_09) $(PORT)")
+    field(PREC, "2")
+    field(SCAN, "1 second")
+}
+
+record(bi, "$(P)$(R)START_STOP") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getInt(mode_05) $(PORT)")
+    field(ZNAM, "Stop")
+    field(ONAM, "Start")
+    field(SCAN, "1 second")
+}
+
+########################################
+# Control Commands
+########################################
+record(bo, "$(P)$(R)START_STOP:SP") {
+    field(DTYP, "stream")
+    field(OUT,  "@presto.proto setBo(mode_05) $(PORT)")
+    field(ZNAM, "Stop")
+    field(ONAM, "Start")
+}
+
+record(ao, "$(P)$(R)TEMP:SP") {
+    field(DTYP, "stream")
+    field(OUT,  "@presto.proto setAo(sp_00) $(PORT)")
+    field(PREC, "1")
+}
+
+record(ao, "$(P)$(R)FLOW:SP") {
+    field(DTYP, "stream")
+    field(OUT,  "@presto.proto setAo(sp_08) $(PORT)")
+    field(PREC, "2")
+}
+
+record(ao, "$(P)$(R)PUMP_PRES:SP") {
+    field(DTYP, "stream")
+    field(OUT,  "@presto.proto setAo(sp_09) $(PORT)")
+    field(PREC, "2")
+}
