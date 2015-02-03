@@ -23,16 +23,15 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 #EPICS_BASE=${CLAS}/R${EPICS_VER}/base
 EPICS_BASE=/usr/local/clas12/release/0.2/R3.14.12.3/base
 EPICS_SUPPORT=${CLAS}/R${EPICS_VER}/support
-#EPICS_SYNAPPS=${CLAS}/R${EPICS_VER}/synApps/synApps_5_5/support
 EPICS_SYNAPPS=/usr/clas12/R3.14.12.3/synApps/synApps_5_7/support
 EPICS_EXTENSIONS=${CLAS}/R${EPICS_VER}/extensions
 
 ## Path to data storage (autosave, etc)
 IOCDATA=/usr/clas12/hps/DATA
 
-## Used by hvCaenApp
-#EPICS_DRIVERS=${EPICSB_DRIVERS}
+## Path to local drivers
 EPICS_DRIVERS=$(TOP)/../drivers
+
 
 ## synApps
 include $(EPICS_SYNAPPS)/configure/RELEASE
