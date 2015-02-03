@@ -1,0 +1,99 @@
+# Database for radiator positions
+#
+# V.K.  July 16, 2012
+# Macro paramters:
+#   $(P)        - XPS Controller name 
+#   $(R)        - Motor (R=m1)
+
+alias("$(P)$(R)","$(pref)hd:radiator:motor")
+
+record(ao,"$(pref)hd:radiator:motionCondit"){
+  field(DTYP,"Soft Channel")
+  field(VAL,"0.1")
+  field(SCAN, "Passive")
+}
+record(ao,"$(pref)hd:radiator:home"){
+  field(DTYP,"Soft Channel")
+  field(VAL,"0.")
+  field(PINI, "YES")
+  field(SCAN, "Passive")
+}
+record(ao,"$(pref)hd:radiator:home:proc"){
+  field(DTYP,"Soft Channel")
+  field(DOL,"$(pref)hd:radiator:home")
+  field(OMSL,"closed_loop")
+  field(OUT,"$(P)$(R).VAL PP NMS")
+  field(SCAN, "Passive")
+}
+record(calc, "$(pref)hd:radiator_at_home") {
+  field(INPA, "$(P)$(R).RBV")
+  field(INPB, "$(pref)hd:radiator:home")
+  field(INPC, "$(P)$(R).DMOV")
+  field(INPE, "$(pref)hd:radiator:motionCondit")
+  field(SCAN, ".2 second")
+  field(CALC, "(ABS(A-B)<E)&&(C=1)?1:0")
+}
+record(ao,"$(pref)hd:radiator:a"){
+  field(DTYP,"Soft Channel")
+  field(VAL,"135.948")
+  field(PINI, "YES")
+  field(SCAN, "Passive")
+}
+record(ao,"$(pref)hd:radiator:a:proc"){
+  field(DTYP,"Soft Channel")
+  field(DOL,"$(pref)hd:radiator:a")
+  field(OMSL,"closed_loop")
+  field(OUT,"$(P)$(R).VAL PP NMS")
+  field(SCAN, "Passive")
+}
+record(calc, "$(pref)hd:radiator_at_a") {
+  field(INPA, "$(P)$(R).RBV")
+  field(INPB, "$(pref)hd:radiator:a")
+  field(INPC, "$(P)$(R).DMOV")
+  field(INPE, "$(pref)hd:radiator:motionCondit")
+  field(SCAN, ".2 second")
+  field(CALC, "(ABS(A-B)<E)&&(C=1)?1:0")
+}
+record(ao,"$(pref)hd:radiator:b"){
+  field(DTYP,"Soft Channel")
+  field(VAL,"166.095")
+  field(PINI, "YES")
+  field(SCAN, "Passive")
+}
+record(ao,"$(pref)hd:radiator:b:proc"){
+  field(DTYP,"Soft Channel")
+  field(DOL,"$(pref)hd:radiator:b")
+  field(OMSL,"closed_loop")
+  field(OUT,"$(P)$(R).VAL PP NMS")
+  field(SCAN, "Passive")
+}
+record(calc, "$(pref)hd:radiator_at_b") {
+  field(INPA, "$(P)$(R).RBV")
+  field(INPB, "$(pref)hd:radiator:b")
+  field(INPC, "$(P)$(R).DMOV")
+  field(INPE, "$(pref)hd:radiator:motionCondit")
+  field(SCAN, ".2 second")
+  field(CALC, "(ABS(A-B)<E)&&(C=1)?1:0")
+}
+record(ao,"$(pref)hd:radiator:c"){
+  field(DTYP,"Soft Channel")
+  field(VAL,"196.262")
+  field(PINI, "YES")
+  field(SCAN, "Passive")
+}
+record(ao,"$(pref)hd:radiator:c:proc"){
+  field(DTYP,"Soft Channel")
+  field(DOL,"$(pref)hd:radiator:c")
+  field(OMSL,"closed_loop")
+  field(OUT,"$(P)$(R).VAL PP NMS")
+  field(SCAN, "Passive")
+}
+record(calc, "$(pref)hd:radiator_at_c") {
+  field(INPA, "$(P)$(R).RBV")
+  field(INPB, "$(pref)hd:radiator:c")
+  field(INPC, "$(P)$(R).DMOV")
+  field(INPE, "$(pref)hd:radiator:motionCondit")
+  field(SCAN, ".2 second")
+  field(CALC, "(ABS(A-B)<E)&&(C=1)?1:0")
+}
+

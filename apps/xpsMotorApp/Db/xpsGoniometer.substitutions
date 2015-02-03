@@ -1,0 +1,23 @@
+file "db/basic_asyn_motor.db"
+{
+pattern
+{P,	    N,   M,	  DTYP,         PORT,  ADDR,     DESC,          EGU,    DIR,   VELO,  VBAS,  ACCL, BDST, BVEL,  BACC,   MRES,    PREC,  DHLM,    DLLM, INIT}
+#{T1-7-BOT:, 6, "m$(N)",	"asynMotor",  T1-7-BOT,  5,   	"Amorphous" ,    mm,    Pos,    300,    0.,   2.0,   0,  100,     2,    0.0001,   4,  23000,      0,  ""}
+{T1-7-BOT:, 6, "m$(N)",	"asynMotor",  T1-7-BOT,  5,   	"Amorphous" ,    mm,    Pos,      2,    0.,   1.0,   0,  1,     0.5,   0.007936508,   4,  181,      0,  ""}
+}
+
+
+
+file "db/XPS_extra.db"
+{
+pattern
+{P,           R,     PORT,       ADDR}
+{T1-7-BOT:,  m6,   T1-7-BOT,      5}
+}
+
+file "db/XPS_PCO.template"
+{
+pattern
+{P,	      R,    PORT,     ADDR, MINPOS, MAXPOS, POSSTEP, PREC, TIMEOUT}
+{T1-7-BOT:,  m6,   T1-7-BOT,    5,   1,	      2,      0.01,     3,    10}
+}

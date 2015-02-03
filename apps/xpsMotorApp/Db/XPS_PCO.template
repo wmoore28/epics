@@ -1,0 +1,261 @@
+# Database for Distance Spaced Pulses (PCO-Position Compare Output) for XPS  with asynMotor
+#
+#    Vanik Kakoyan
+#    July 02, 2012
+#
+#
+# Macro paramters:
+#   $(P)        - PV name prefix
+#   $(R)        - PV base record name
+#   $(PORT)     - asyn port for this controller
+#   $(MINPOS)   - Minimum position for pulses
+#   $(MAXPOS)   - Maximum position for pulses
+#   $(POSSTEP)  - Position step for pulses
+#   $(TIMEOUT)  - asyn timeout
+#   $(PREC)     - Precision for this axis
+#
+#------------------------------------------------
+# PVs controlling the min, max positions and step of output pulses
+
+record(ao,"$(P)$(R)PCOMinPosition") {
+    field(DESC, "min position for pulses")
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_MIN_POSITION")
+    field(VAL,  "$(MINPOS)")
+    field(PREC, "$(PREC)")
+}
+record(ao,"$(P)$(R)PCOMaxPosition") {
+    field(DESC, "max position for pulses")
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_MAX_POSITION")
+    field(VAL,  "$(MAXPOS)")
+    field(PREC, "$(PREC)")
+}
+record(ao,"$(P)$(R)PCOPositionStep") {
+    field(DESC, "position step for pulses")
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_POSITION_STEP")
+    field(VAL,  "$(POSSTEP)")
+    field(PREC, "$(PREC)")
+}
+#
+# PVs for the Actual (seted) min, max positions and step of output pulses
+#
+record(ai,"$(P)$(R)PCOMinPositionActual") {
+    field(DESC, "Actual min position for pulses")
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_MIN_POSITION_ACTUAL")
+    field(PREC, "$(PREC)")
+    field(VAL,  "0")
+    field(SCAN, "I/O Intr")
+}
+record(ai,"$(P)$(R)PCOMaxPositionActual") {
+    field(DESC, "Actual max position for pulses")
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_MAX_POSITION_ACTUAL")
+    field(PREC, "$(PREC)")
+    field(VAL,  "0")
+    field(SCAN, "I/O Intr")
+}
+record(ai,"$(P)$(R)PCOPositionStepActual") {
+    field(DESC, "Actual step for pulses")
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_POSITION_STEP_ACTUAL")
+    field(PREC, "$(PREC)")
+    field(VAL,  "0")
+    field(SCAN, "I/O Intr")
+}
+#
+# PVs for the  PCO PulseWidth and EncoderSettlingTime 
+#
+record(mbbo,"$(P)$(R)PCOPulseWidth") {
+    field(DESC, "PCO pulse width")
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PULSE_WIDTH")
+    field(ZRVL, "0")
+    field(ZRST, "0.2 usec")
+    field(ONVL, "1")
+    field(ONST, "1 usec")
+    field(TWVL, "2")
+    field(TWST, "2.5 usec")
+    field(THVL, "3")
+    field(THST, "10 usec")
+}
+record(mbbo,"$(P)$(R)EncoderSettlingTime") {
+    field(DESC, "Encoder Settling Time")
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ENCODER_SETTLING_TIME")
+    field(ZRVL, "0")
+    field(ZRST, "0.075 usec")
+    field(ONVL, "1")
+    field(ONST, "1 usec")
+    field(TWVL, "2")
+    field(TWST, "4 usec")
+    field(THVL, "3")
+    field(THST, "12 usec")
+}
+#
+# PVs for the Actual (seted)  PCOPulseWidth and EncoderSettlingTime 
+#
+record(ai,"$(P)$(R)PCOPulseWidthActual") {
+    field(DESC, "Actual PCO pulse width")
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PULSE_WIDTH_ACTUAL")
+    field(PREC, "$(PREC)")
+    field(SCAN, "I/O Intr")
+}
+record(ai,"$(P)$(R)EncoderSettlingTimeActual") {
+    field(DESC, "Actual Encoder Settling Time")
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ENCODER_SETTLING_TIME_ACTUAL")
+    field(PREC, "$(PREC)")
+    field(SCAN, "I/O Intr")
+}
+#
+# PCO Enable/Disable State
+#
+record(mbbi,"$(P)$(R)PCOEnableDisableState") {
+    field(DESC, "Position Compare State")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ENABLE_DISABLE_STATE")
+    field(ZRVL, "0")
+    field(ZRST, "Disable")
+    field(ONVL, "1")
+    field(ONST, "Enable")
+    field(TWVL, "2")
+    field(TWST, "Undefined")
+    field(VAL,  "2")
+    field(SCAN, "I/O Intr")
+}
+#
+# Common Message 
+#
+record(waveform,"$(P)$(R)PCOMessage") {
+    field(DESC, "PCO message")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_MESSAGE")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    field(SCAN, "I/O Intr")
+}
+#
+# Positioner name 
+#
+record(stringin, "$(P)$(R)PositionerName") {
+    field(DESC, "XPS PCO positioner name")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_POSITIONER_NAME")
+    field(SCAN, "I/O Intr")
+}
+#
+# PVs for PositionerPositionCompareSet() command to Set the PCO
+#
+record(busy,"$(P)$(R)PCOSet") {
+    field(DESC,"Set:PositionerPositionCompareSet")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_SET")
+    field(ZNAM, "Done")
+    field(ONAM, "Enable")
+}
+record(mbbi,"$(P)$(R)PCOSetStatus") {
+    field(DESC,"PCO Set status")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_SET_STATUS")
+    field(ZRVL, "0")
+    field(ZRST, "Undefined")
+    field(ZRSV, "INVALID")
+    field(ONVL, "1")
+    field(ONST, "Success")
+    field(ONSV, "NO_ALARM")
+    field(TWVL, "2")
+    field(TWST, "Failure")
+    field(TWSV, "MAJOR")
+    field(SCAN, "I/O Intr")
+}
+record(waveform,"$(P)$(R)PCOSetMessage") {
+    field(DESC, "PCO Set command message")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_SET_MESSAGE")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    field(SCAN, "I/O Intr")
+}
+record(waveform,"$(P)$(R)PCOGetMessage") {
+    field(DESC, "PCO Get command message")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GET_MESSAGE")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    field(SCAN, "I/O Intr")
+}
+#
+# PVs for PositionerPositionCompareEnable() command to Enable the PCO
+#
+record(busy,"$(P)$(R)PCOEnable") {
+    field(DESC,"Enable:PositionerPositionCompareEnable")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ENABLE")
+    field(ZNAM, "Done")
+    field(ONAM, "Enable")
+}
+record(mbbi,"$(P)$(R)PCOEnableStatus") {
+    field(DESC,"PCO Enable status")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ENABLE_STATUS")
+    field(ZRVL, "0")
+    field(ZRST, "Undefined")
+    field(ZRSV, "INVALID")
+    field(ONVL, "1")
+    field(ONST, "Success")
+    field(ONSV, "NO_ALARM")
+    field(TWVL, "2")
+    field(TWST, "Failure")
+    field(TWSV, "MAJOR")
+    field(SCAN, "I/O Intr")
+}
+record(waveform,"$(P)$(R)PCOEnableMessage") {
+    field(DESC, "PCO Enable command message")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ENABLE_MESSAGE")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    field(SCAN, "I/O Intr")
+}
+#
+# PVs for PositionerPositionCompareDisable() command to Disable  the PCO
+#
+record(busy,"$(P)$(R)PCODisable") {
+    field(DESC,"Disable:PositionerPositionCompareDisable")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_DISABLE")
+    field(ZNAM, "Done")
+    field(ONAM, "Enable")
+}
+record(mbbi,"$(P)$(R)PCODisableStatus") {
+    field(DESC,"PCO Disable status")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_DISABLE_STATUS")
+    field(ZRVL, "0")
+    field(ZRST, "Undefined")
+    field(ZRSV, "INVALID")
+    field(ONVL, "1")
+    field(ONST, "Success")
+    field(ONSV, "NO_ALARM")
+    field(TWVL, "2")
+    field(TWST, "Failure")
+    field(TWSV, "MAJOR")
+    field(SCAN, "I/O Intr")
+}
+record(waveform,"$(P)$(R)PCODisableMessage") {
+    field(DESC, "PCO Disable command message")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_DISABLE_MESSAGE")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    field(SCAN, "I/O Intr")
+}
