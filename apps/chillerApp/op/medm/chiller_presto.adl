@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=1058
-		y=414
+		x=821
+		y=419
 		width=310
-		height=400
+		height=475
 	}
 	clr=14
 	bclr=4
@@ -111,22 +111,6 @@ text {
 	textix="Julabo Presto Chiller"
 	align="horiz. centered"
 }
-"text update" {
-	object {
-		x=133
-		y=130
-		width=120
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:CHILLER:TEMP"
-		clr=15
-		bclr=11
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
 "related display" {
 	object {
 		x=273
@@ -150,19 +134,7 @@ text {
 text {
 	object {
 		x=25
-		y=134
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Current Temp"
-}
-text {
-	object {
-		x=25
-		y=158
+		y=111
 		width=80
 		height=16
 	}
@@ -173,14 +145,14 @@ text {
 }
 "text update" {
 	object {
-		x=216
-		y=154
-		width=75
+		x=210
+		y=109
+		width=80
 		height=20
 	}
 	monitor {
 		chan="HPS_SVT:CHILLER:TEMP:RD_SP"
-		clr=15
+		clr=0
 		bclr=11
 	}
 	align="horiz. centered"
@@ -190,57 +162,42 @@ text {
 text {
 	object {
 		x=27
-		y=213
+		y=175
 		width=80
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Limits (Low/High)"
+	textix="High Limit"
 }
 "text update" {
 	object {
-		x=133
-		y=209
-		width=75
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:CHILLER:TEMP:LWLIM"
-		clr=15
-		bclr=11
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=216
-		y=209
-		width=75
+		x=210
+		y=171
+		width=80
 		height=20
 	}
 	monitor {
 		chan="HPS_SVT:CHILLER:TEMP:HILIM"
-		clr=15
+		clr=0
 		bclr=11
 	}
+	clrmod="alarm"
 	align="horiz. centered"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=133
-		y=33
+		x=130
+		y=35
 		width=160
 		height=15
 	}
 	monitor {
 		chan="HPS_SVT:CHILLER:TEMP.STAT"
-		clr=15
+		clr=0
 		bclr=11
 	}
 	clrmod="alarm"
@@ -251,7 +208,7 @@ text {
 text {
 	object {
 		x=25
-		y=32
+		y=34
 		width=80
 		height=16
 	}
@@ -263,7 +220,7 @@ text {
 text {
 	object {
 		x=25
-		y=77
+		y=224
 		width=80
 		height=16
 	}
@@ -274,8 +231,8 @@ text {
 }
 "choice button" {
 	object {
-		x=133
-		y=75
+		x=130
+		y=222
 		width=100
 		height=20
 	}
@@ -288,8 +245,8 @@ text {
 }
 "text entry" {
 	object {
-		x=133
-		y=154
+		x=130
+		y=109
 		width=75
 		height=20
 	}
@@ -303,8 +260,8 @@ text {
 }
 text {
 	object {
-		x=133
-		y=98
+		x=130
+		y=245
 		width=80
 		height=16
 	}
@@ -316,7 +273,7 @@ text {
 text {
 	object {
 		x=25
-		y=48
+		y=51
 		width=80
 		height=16
 	}
@@ -327,43 +284,14 @@ text {
 }
 "text update" {
 	object {
-		x=133
-		y=49
+		x=130
+		y=52
 		width=160
 		height=15
 	}
 	monitor {
 		chan="HPS_SVT:CHILLER:STATUS"
-		clr=15
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=22
-		y=380
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Firmware Version"
-}
-"text update" {
-	object {
-		x=133
-		y=381
-		width=160
-		height=15
-	}
-	monitor {
-		chan="HPS_SVT:CHILLER:VERSION"
-		clr=15
+		clr=0
 		bclr=11
 	}
 	clrmod="alarm"
@@ -374,7 +302,36 @@ text {
 text {
 	object {
 		x=25
-		y=254
+		y=454
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Firmware Version"
+}
+"text update" {
+	object {
+		x=130
+		y=455
+		width=160
+		height=15
+	}
+	monitor {
+		chan="HPS_SVT:CHILLER:VERSION"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=328
 		width=80
 		height=16
 	}
@@ -385,24 +342,25 @@ text {
 }
 "text update" {
 	object {
-		x=133
-		y=250
+		x=130
+		y=324
 		width=120
 		height=20
 	}
 	monitor {
 		chan="HPS_SVT:CHILLER:FLOW"
-		clr=15
+		clr=0
 		bclr=11
 	}
+	clrmod="alarm"
 	align="horiz. centered"
 	limits {
 	}
 }
 "text entry" {
 	object {
-		x=133
-		y=274
+		x=130
+		y=348
 		width=75
 		height=20
 	}
@@ -417,7 +375,7 @@ text {
 text {
 	object {
 		x=25
-		y=278
+		y=352
 		width=80
 		height=16
 	}
@@ -428,16 +386,17 @@ text {
 }
 "text update" {
 	object {
-		x=216
-		y=274
-		width=75
+		x=210
+		y=348
+		width=80
 		height=20
 	}
 	monitor {
 		chan="HPS_SVT:CHILLER:FLOW:RD_SP"
-		clr=15
+		clr=0
 		bclr=11
 	}
+	clrmod="alarm"
 	align="horiz. centered"
 	limits {
 	}
@@ -445,7 +404,7 @@ text {
 rectangle {
 	object {
 		x=25
-		y=237
+		y=311
 		width=265
 		height=3
 	}
@@ -455,16 +414,17 @@ rectangle {
 }
 "text update" {
 	object {
-		x=241
-		y=75
-		width=50
+		x=235
+		y=222
+		width=55
 		height=20
 	}
 	monitor {
 		chan="HPS_SVT:CHILLER:START_STOP"
-		clr=15
+		clr=0
 		bclr=11
 	}
+	clrmod="alarm"
 	align="horiz. centered"
 	limits {
 	}
@@ -472,7 +432,7 @@ rectangle {
 rectangle {
 	object {
 		x=25
-		y=117
+		y=271
 		width=265
 		height=3
 	}
@@ -483,7 +443,7 @@ rectangle {
 rectangle {
 	object {
 		x=25
-		y=303
+		y=377
 		width=265
 		height=3
 	}
@@ -494,7 +454,7 @@ rectangle {
 text {
 	object {
 		x=25
-		y=320
+		y=394
 		width=80
 		height=16
 	}
@@ -505,24 +465,25 @@ text {
 }
 "text update" {
 	object {
-		x=133
-		y=316
+		x=130
+		y=390
 		width=120
 		height=20
 	}
 	monitor {
 		chan="HPS_SVT:CHILLER:PUMP_PRES"
-		clr=15
+		clr=0
 		bclr=11
 	}
+	clrmod="alarm"
 	align="horiz. centered"
 	limits {
 	}
 }
 "text entry" {
 	object {
-		x=133
-		y=340
+		x=130
+		y=414
 		width=75
 		height=20
 	}
@@ -537,7 +498,7 @@ text {
 text {
 	object {
 		x=25
-		y=344
+		y=418
 		width=80
 		height=16
 	}
@@ -548,16 +509,17 @@ text {
 }
 "text update" {
 	object {
-		x=216
-		y=340
-		width=75
+		x=210
+		y=414
+		width=80
 		height=20
 	}
 	monitor {
 		chan="HPS_SVT:CHILLER:PUMP_PRES:RD_SP"
-		clr=15
+		clr=0
 		bclr=11
 	}
+	clrmod="alarm"
 	align="horiz. centered"
 	limits {
 	}
@@ -565,7 +527,7 @@ text {
 rectangle {
 	object {
 		x=25
-		y=370
+		y=444
 		width=265
 		height=3
 	}
@@ -575,24 +537,8 @@ rectangle {
 }
 "text update" {
 	object {
-		x=251
-		y=130
-		width=40
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:CHILLER:TEMP.EGU"
-		clr=15
-		bclr=11
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=251
-		y=250
+		x=250
+		y=324
 		width=40
 		height=20
 	}
@@ -607,8 +553,8 @@ rectangle {
 }
 "text update" {
 	object {
-		x=251
-		y=316
+		x=250
+		y=390
 		width=40
 		height=20
 	}
@@ -623,16 +569,17 @@ rectangle {
 }
 "text update" {
 	object {
-		x=133
-		y=179
+		x=130
+		y=283
 		width=120
 		height=20
 	}
 	monitor {
 		chan="HPS_SVT:CHILLER:HTR_PWR"
-		clr=15
+		clr=0
 		bclr=11
 	}
+	clrmod="alarm"
 	align="horiz. centered"
 	limits {
 	}
@@ -640,7 +587,7 @@ rectangle {
 text {
 	object {
 		x=25
-		y=183
+		y=287
 		width=80
 		height=16
 	}
@@ -651,8 +598,8 @@ text {
 }
 "text update" {
 	object {
-		x=251
-		y=179
+		x=250
+		y=283
 		width=40
 		height=20
 	}
@@ -662,6 +609,121 @@ text {
 		bclr=11
 	}
 	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=130
+		y=86
+		width=120
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:CHILLER:TEMP"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=90
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Current Temp"
+}
+"text update" {
+	object {
+		x=250
+		y=86
+		width=40
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:CHILLER:TEMP.EGU"
+		clr=15
+		bclr=11
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=27
+		y=150
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Low Limit"
+}
+"text update" {
+	object {
+		x=210
+		y=146
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:CHILLER:TEMP:LWLIM"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=25
+		y=206
+		width=265
+		height=3
+	}
+	"basic attribute" {
+		clr=6
+	}
+}
+"text entry" {
+	object {
+		x=130
+		y=146
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:CHILLER:LWLIM:SP"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=130
+		y=171
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:CHILLER:HILIM:SP"
+		clr=14
+		bclr=4
+	}
 	limits {
 	}
 }

@@ -125,6 +125,18 @@ record(ao, "$(P)$(R)TEMP:SP") {
     field(PREC, "1")
 }
 
+record(ao, "$(P)$(R)HILIM:SP") {
+    field(DTYP, "stream")
+    field(OUT,  "@presto.proto setAo(sp_03) $(PORT)")
+    field(PREC, "1")
+}
+
+record(ao, "$(P)$(R)LWLIM:SP") {
+    field(DTYP, "stream")
+    field(OUT,  "@presto.proto setAo(sp_04) $(PORT)")
+    field(PREC, "1")
+}
+
 record(ao, "$(P)$(R)FLOW:SP") {
     field(DTYP, "stream")
     field(OUT,  "@presto.proto setAo(sp_08) $(PORT)")
