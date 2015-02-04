@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/v0.3.1/apps/generalApp/medm/HPS_EPICS.adl"
+	name="/home/wmoore/workspaces/svt/apps/generalApp/medm/HPS_EPICS.adl"
 	version=030108
 }
 display {
@@ -305,6 +305,16 @@ text {
 		label="Chiller (ECAL)"
 		name="chiller_thermo.adl"
 		args="DESC=ECAL"
+	}
+	display[6] {
+		label="Chiller (SVT)"
+		name="chiller_presto.adl"
+		args="DESC=SVT"
+	}
+	display[7] {
+		label="Chiller (FE Boards)"
+		name="chiller_anova.adl"
+		args="DESC=FE_Boards"
 	}
 	clr=14
 	bclr=50

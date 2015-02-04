@@ -212,10 +212,9 @@ text {
 	}
 	monitor {
 		chan="HPS_ECAL:CHILLER:TEMP:RD_SP"
-		clr=0
+		clr=15
 		bclr=11
 	}
-	clrmod="alarm"
 	align="horiz. centered"
 	limits {
 	}
@@ -739,4 +738,16 @@ text {
 	}
 	limits {
 	}
+}
+text {
+	object {
+		x=5
+		y=8
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=30
+	}
+	textix="$(DESC)"
 }
