@@ -1,14 +1,14 @@
 
 file {
-	name="/home/wmoore/hallb/epics/apps/chillerApp/opi/medm/chiller.adl"
+	name="/home/wmoore/workspaces/svt/apps/chillerApp/op/medm/chiller_anova.adl"
 	version=030108
 }
 display {
 	object {
-		x=2928
-		y=365
-		width=370
-		height=550
+		x=189
+		y=418
+		width=310
+		height=385
 	}
 	clr=14
 	bclr=4
@@ -89,41 +89,6 @@ display {
 }
 rectangle {
 	object {
-		x=10
-		y=363
-		width=350
-		height=150
-	}
-	"basic attribute" {
-		clr=5
-		width=1
-	}
-}
-rectangle {
-	object {
-		x=10
-		y=340
-		width=80
-		height=25
-	}
-	"basic attribute" {
-		clr=5
-	}
-}
-text {
-	object {
-		x=28
-		y=346
-		width=60
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Settings"
-}
-rectangle {
-	object {
 		x=0
 		y=0
 		width=400
@@ -137,27 +102,28 @@ text {
 	object {
 		x=0
 		y=8
-		width=370
+		width=310
 		height=16
 	}
 	"basic attribute" {
 		clr=0
 	}
-	textix="ANOVA A Series Chiller - HPS Test Area"
+	textix="ANOVA A-Series Chiller"
 	align="horiz. centered"
 }
 "text update" {
 	object {
-		x=135
-		y=42
-		width=160
-		height=40
+		x=130
+		y=84
+		width=120
+		height=20
 	}
 	monitor {
-		chan="CHILL:TEMP"
+		chan="HPS_FE:CHILLER:TEMP"
 		clr=0
-		bclr=29
+		bclr=11
 	}
+	clrmod="alarm"
 	align="horiz. centered"
 	limits {
 	}
@@ -165,19 +131,19 @@ text {
 text {
 	object {
 		x=25
-		y=423
+		y=111
 		width=60
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Requested Temp (C)"
+	textix="Setpoint"
 }
 text {
 	object {
 		x=25
-		y=460
+		y=176
 		width=60
 		height=16
 	}
@@ -189,7 +155,7 @@ text {
 text {
 	object {
 		x=25
-		y=485
+		y=150
 		width=60
 		height=16
 	}
@@ -201,73 +167,75 @@ text {
 text {
 	object {
 		x=25
-		y=525
+		y=358
 		width=60
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Firmware"
+	textix="Firmware Version"
 }
 "text update" {
 	object {
-		x=177
-		y=521
-		width=165
-		height=20
+		x=130
+		y=359
+		width=160
+		height=15
 	}
 	monitor {
-		chan="CHILL:VERSION"
+		chan="HPS_FE:CHILLER:VERSION"
 		clr=0
-		bclr=29
+		bclr=11
 	}
+	clrmod="alarm"
 	align="horiz. centered"
 	limits {
 	}
 }
 "message button" {
 	object {
-		x=177
-		y=196
+		x=130
+		y=214
 		width=80
-		height=26
+		height=20
 	}
 	control {
-		chan="CHILL:START.PROC"
+		chan="HPS_FE:CHILLER:START.PROC"
 		clr=14
-		bclr=51
+		bclr=4
 	}
 	label="Start"
 	release_msg="1"
 }
 "message button" {
 	object {
-		x=257
-		y=196
+		x=210
+		y=214
 		width=80
-		height=26
+		height=20
 	}
 	control {
-		chan="CHILL:STOP.PROC"
+		chan="HPS_FE:CHILLER:STOP.PROC"
 		clr=14
-		bclr=51
+		bclr=4
 	}
 	label="Stop"
 	release_msg="1"
 }
 "text update" {
 	object {
-		x=135
-		y=88
+		x=130
+		y=52
 		width=160
-		height=40
+		height=15
 	}
 	monitor {
-		chan="CHILL:STATUS"
+		chan="HPS_FE:CHILLER:STATUS"
 		clr=0
-		bclr=29
+		bclr=11
 	}
+	clrmod="alarm"
 	align="horiz. centered"
 	limits {
 	}
@@ -280,39 +248,44 @@ text {
 		height=20
 	}
 	display[0] {
-		label="Asyn"
+		label="Comm (asyn)"
 		name="asynRecord.adl"
-		args="P=CHILL:,R=ASYN"
+		args="P=HPS_FE:CHILLER:,R=ASYN"
+	}
+	display[1] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocchiller:"
 	}
 	clr=14
-	bclr=51
+	bclr=4
 }
 "message button" {
 	object {
-		x=177
-		y=279
-		width=160
-		height=26
+		x=179
+		y=281
+		width=110
+		height=20
 	}
 	control {
-		chan="CHILL:DEFAULT.PROC"
+		chan="HPS_FE:CHILLER:DEFAULT.PROC"
 		clr=14
-		bclr=51
+		bclr=4
 	}
 	label="Load Defaults"
 	release_msg="1"
 }
 "message button" {
 	object {
-		x=177
-		y=241
-		width=160
-		height=26
+		x=179
+		y=256
+		width=110
+		height=20
 	}
 	control {
-		chan="CHILL:CLEAR.PROC"
+		chan="HPS_FE:CHILLER:CLEAR.PROC"
 		clr=14
-		bclr=51
+		bclr=4
 	}
 	label="Clear Errors"
 	release_msg="1"
@@ -320,7 +293,7 @@ text {
 text {
 	object {
 		x=25
-		y=381
+		y=326
 		width=60
 		height=16
 	}
@@ -332,7 +305,7 @@ text {
 text {
 	object {
 		x=25
-		y=66
+		y=90
 		width=80
 		height=16
 	}
@@ -344,7 +317,7 @@ text {
 text {
 	object {
 		x=25
-		y=112
+		y=52
 		width=80
 		height=16
 	}
@@ -353,57 +326,22 @@ text {
 	}
 	textix="Status"
 }
-rectangle {
-	object {
-		x=10
-		y=154
-		width=80
-		height=25
-	}
-	"basic attribute" {
-		clr=5
-	}
-}
-rectangle {
-	object {
-		x=10
-		y=177
-		width=350
-		height=150
-	}
-	"basic attribute" {
-		clr=5
-		width=1
-	}
-}
 text {
 	object {
-		x=28
-		y=160
+		x=25
+		y=218
 		width=60
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Controls"
+	textix="Chiller Ctrl"
 }
 text {
 	object {
 		x=25
-		y=206
-		width=60
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="System"
-}
-text {
-	object {
-		x=25
-		y=251
+		y=260
 		width=60
 		height=16
 	}
@@ -415,7 +353,7 @@ text {
 text {
 	object {
 		x=25
-		y=289
+		y=285
 		width=60
 		height=16
 	}
@@ -426,108 +364,208 @@ text {
 }
 menu {
 	object {
-		x=171
-		y=374
-		width=165
-		height=23
-	}
-	control {
-		chan="CHILL:PUMPSPD_MENU"
-		clr=14
-		bclr=51
-	}
-	clrmod="discrete"
-}
-"text entry" {
-	object {
-		x=171
-		y=419
-		width=80
+		x=130
+		y=322
+		width=160
 		height=20
 	}
 	control {
-		chan="CHILL:TEMP_SETPT"
+		chan="HPS_FE:CHILLER:PUMPSPD_MENU"
 		clr=14
-		bclr=51
+		bclr=4
+	}
+}
+"text entry" {
+	object {
+		x=130
+		y=107
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_FE:CHILLER:TEMP_SETPT"
+		clr=14
+		bclr=4
 	}
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=257
-		y=419
+		x=210
+		y=107
 		width=80
 		height=20
 	}
 	monitor {
-		chan="CHILL:TEMP_REQD"
+		chan="HPS_FE:CHILLER:TEMP_REQD"
 		clr=0
-		bclr=29
+		bclr=11
 	}
+	clrmod="alarm"
 	align="horiz. centered"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=257
-		y=456
+		x=210
+		y=172
 		width=80
 		height=20
 	}
 	monitor {
-		chan="CHILL:HIGHLIMIT"
+		chan="HPS_FE:CHILLER:HIGHLIMIT"
 		clr=0
-		bclr=29
+		bclr=11
 	}
+	clrmod="alarm"
 	align="horiz. centered"
 	limits {
 	}
 }
 "text entry" {
 	object {
-		x=171
-		y=456
-		width=80
+		x=130
+		y=172
+		width=75
 		height=20
 	}
 	control {
-		chan="CHILL:HIGHLIMIT_SETPT"
+		chan="HPS_FE:CHILLER:HIGHLIMIT_SETPT"
 		clr=14
-		bclr=51
+		bclr=4
 	}
 	limits {
 	}
 }
 "text entry" {
 	object {
-		x=171
-		y=481
-		width=80
+		x=130
+		y=146
+		width=75
 		height=20
 	}
 	control {
-		chan="CHILL:LOWLIMIT_SETPT"
+		chan="HPS_FE:CHILLER:LOWLIMIT_SETPT"
 		clr=14
-		bclr=51
+		bclr=4
 	}
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=257
-		y=481
+		x=210
+		y=146
 		width=80
 		height=20
 	}
 	monitor {
-		chan="CHILL:LOWLIMIT"
+		chan="HPS_FE:CHILLER:LOWLIMIT"
 		clr=0
-		bclr=29
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=250
+		y=84
+		width=40
+		height=20
+	}
+	monitor {
+		chan="HPS_FE:CHILLER:TEMP.EGU"
+		clr=15
+		bclr=11
 	}
 	align="horiz. centered"
 	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=35
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="COMM"
+}
+"text update" {
+	object {
+		x=130
+		y=35
+		width=160
+		height=15
+	}
+	monitor {
+		chan="HPS_FE:CHILLER:TEMP.STAT"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=25
+		y=203
+		width=265
+		height=3
+	}
+	"basic attribute" {
+		clr=6
+	}
+}
+"related display" {
+	object {
+		x=273
+		y=5
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Comm (asyn)"
+		name="asynRecord.adl"
+		args="P=HPS_SVT:CHILLER:,R=ASYN"
+	}
+	display[1] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocchiller"
+	}
+	clr=14
+	bclr=4
+}
+rectangle {
+	object {
+		x=25
+		y=312
+		width=265
+		height=3
+	}
+	"basic attribute" {
+		clr=6
+	}
+}
+rectangle {
+	object {
+		x=25
+		y=348
+		width=265
+		height=3
+	}
+	"basic attribute" {
+		clr=6
 	}
 }
