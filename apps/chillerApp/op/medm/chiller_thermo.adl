@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/chillerApp/medm/chiller_thermo.adl"
+	name="/home/wmoore/workspaces/svt/apps/chillerApp/op/medm/chiller_thermo.adl"
 	version=030108
 }
 display {
 	object {
-		x=698
-		y=49
+		x=505
+		y=419
 		width=310
 		height=400
 	}
@@ -124,16 +124,17 @@ text {
 }
 "text update" {
 	object {
-		x=133
+		x=130
 		y=65
-		width=160
+		width=120
 		height=20
 	}
 	monitor {
 		chan="HPS_ECAL:CHILLER:TEMP"
-		clr=15
+		clr=0
 		bclr=11
 	}
+	clrmod="alarm"
 	align="horiz. centered"
 	limits {
 	}
@@ -173,7 +174,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Current Temp (C)"
+	textix="Current Temp"
 }
 byte {
 	object {
@@ -200,20 +201,21 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Setpoint (C)"
+	textix="Setpoint"
 }
 "text update" {
 	object {
-		x=216
+		x=210
 		y=89
-		width=75
+		width=80
 		height=20
 	}
 	monitor {
 		chan="HPS_ECAL:CHILLER:TEMP:RD_SP"
-		clr=15
+		clr=0
 		bclr=11
 	}
+	clrmod="alarm"
 	align="horiz. centered"
 	limits {
 	}
@@ -317,72 +319,60 @@ text {
 text {
 	object {
 		x=27
-		y=150
+		y=130
 		width=80
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Limits"
+	textix="Low Limit"
 }
 "text update" {
 	object {
-		x=133
-		y=146
-		width=75
+		x=210
+		y=126
+		width=80
 		height=20
 	}
 	monitor {
 		chan="HPS_ECAL:CHILLER:LOW_LIMIT"
-		clr=15
+		clr=0
 		bclr=11
 	}
+	clrmod="alarm"
 	align="horiz. centered"
 	limits {
 	}
 }
-text {
-	object {
-		x=133
-		y=129
-		width=75
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Low"
-	align="horiz. centered"
-}
 "text update" {
 	object {
-		x=216
-		y=146
-		width=75
+		x=210
+		y=151
+		width=80
 		height=20
 	}
 	monitor {
 		chan="HPS_ECAL:CHILLER:HIGH_LIMIT"
-		clr=15
+		clr=0
 		bclr=11
 	}
+	clrmod="alarm"
 	align="horiz. centered"
 	limits {
 	}
 }
 text {
 	object {
-		x=216
-		y=129
+		x=27
+		y=155
 		width=75
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="High"
-	align="horiz. centered"
+	textix="High Limit"
 }
 rectangle {
 	object {
@@ -569,14 +559,14 @@ rectangle {
 }
 "text update" {
 	object {
-		x=133
+		x=130
 		y=33
 		width=160
 		height=15
 	}
 	monitor {
 		chan="HPS_ECAL:CHILLER:TEMP.STAT"
-		clr=15
+		clr=0
 		bclr=11
 	}
 	clrmod="alarm"
@@ -679,7 +669,7 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=133
+		x=130
 		y=89
 		width=75
 		height=20
@@ -703,4 +693,50 @@ text {
 		clr=12
 	}
 	textix="*Reads off after reboot*"
+}
+"text update" {
+	object {
+		x=250
+		y=65
+		width=40
+		height=20
+	}
+	monitor {
+		chan="HPS_ECAL:CHILLER:TEMP.EGU"
+		clr=15
+		bclr=11
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=130
+		y=126
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_ECAL:CHILLER:LOW_LIMIT:SP"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=130
+		y=151
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_ECAL:CHILLER:HIGH_LIMIT:SP"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
 }
