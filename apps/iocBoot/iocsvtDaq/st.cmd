@@ -10,6 +10,7 @@ dbLoadDatabase "dbd/svtDaq.dbd"
 svtDaq_registerRecordDeviceDriver(pdbbase)
 
 ## Load record instances
+dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC}")
 #dbLoadRecords "db/hybLV.db"
 #dbLoadRecords "db/dbSubExample.db", "user=trackerHost"
 dbLoadRecords "db/dbHybT.db"

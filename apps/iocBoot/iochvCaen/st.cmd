@@ -45,7 +45,8 @@ dbLoadRecords "db/dbFebSwitch.db"
 dbLoadRecords "db/dbHVSwitch.db"
 dbLoadRecords "db/dbHVset.db"
 
-
+## Load devIocStats
+dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC}")
 
 cd ${TOP}/iocBoot/${IOC}
 iocInit

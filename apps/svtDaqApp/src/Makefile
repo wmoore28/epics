@@ -46,6 +46,7 @@ DBD += svtDaq.dbd
 # svtDaq.dbd will be made up from these files:
 svtDaq_DBD += base.dbd
 svtDaq_DBD += dbSubSvtDaq.dbd
+svtDaq_DBD += devIocStats.dbd
 
 # svtDaq_registerRecordDeviceDriver.cpp derives from svtDaq.dbd
 svtDaq_SRCS += svtDaq_registerRecordDeviceDriver.cpp
@@ -56,6 +57,8 @@ svtDaq_SRCS_vxWorks += -nil-
 
 # Link in the code from the support library
 svtDaq_LIBS += svtDaqSupport
+svtDaq_LIBS += devIocStats
+
 xml2_DIR += /usr/lib  
 xml2_LIBS += xml2  
 svtDaq_LIBS += xml2
