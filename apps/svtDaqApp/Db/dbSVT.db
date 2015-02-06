@@ -1,0 +1,207 @@
+record(sub, SVT:poll_stat) {
+    field(SCAN,"Passive")
+    field(INAM,"subPollStatInit")
+    field(SNAM,"subPollStatProcess")
+    field(FLNK,"SVT:hb_check")
+}
+
+record(sub,SVT:poll_xml)
+{
+    field(SCAN,"5 second")
+    field(INAM,"subPollInit")
+    field(SNAM,"subPollProcess")
+    field(FLNK,"SVT:poll_stat")
+    #field(INPA, "SVT:poll_xml_ip")
+    #field(INPB, "SVT:poll_xml_port")
+}
+
+
+record(stringin, SVT:poll_xml_ip) {
+    field(VAL,"localhost")
+}
+
+record(longin, SVT:poll_xml_port) {
+    field(VAL,"8090")
+}
+
+record(ai, SVT:hb_check) {
+  field(INP, "SVT:poll_stat")
+  field(DTYP,"Soft Channel")
+  field(FLNK,"SVT:process")
+}
+
+
+record(fanout, SVT:process)
+{
+  field(LNK1,"SVT:temp:fe:0:axixadc:t_rd")
+  field(LNK2,"SVT:lv:0:0:dvdd:i_rd")
+  field(LNK3,"SVT:lv:0:0:stat")
+  field(LNK4,"SVT:temp:hyb:0:0:temp0:t_rd")
+  field(LNK5,"SVT:daqmap:fanout")
+}
+
+record(fanout, SVT:daqmap:fanout)
+{
+  field(SCAN,"Passive")
+  field(LNK1,"SVT:lv:0:0:sync:sync_rd")
+  field(LNK2,"SVT:lv:0:0:dpm:dpm_rd")
+  #field(LNK3,"SVT:daq:map:l1t:febid")
+  field(LNK3,"SVT:daq:map:0:layer")
+}
+
+
+record(fanout, SVT:daqmap:febid:fanout)
+{
+  field(SCAN,"Passive")
+  field(LNK1,"SVT:daqmap_sub:1")
+  field(LNK2,"SVT:daqmap_sub:2")
+  field(LNK3,"SVT:daqmap_sub:3")
+  field(LNK4,"SVT:daqmap_sub:4")
+
+}
+
+record(fanout, SVT:daqmap:febch:fanout)
+{
+  field(SCAN,"Passive")
+  field(LNK1,"SVT:daqmap_sub:febch:1")
+  field(LNK2,"SVT:daqmap_sub:febch:2")
+  field(LNK3,"SVT:daqmap_sub:febch:3")
+  field(LNK4,"SVT:daqmap_sub:febch:4")
+
+}
+
+
+record(sub, SVT:daqmap_sub:1) {
+    field(SCAN,"Passive")
+    field(INAM,"subPollDaqMapInit")
+    field(SNAM,"subPollDaqMapProcess")
+    field(INPA, "SVT:daq:map:bot:0 PP")
+    field(INPB, "SVT:daq:map:bot:1 PP")
+    field(INPC, "SVT:daq:map:bot:2 PP")
+    field(INPD, "SVT:daq:map:bot:3 PP")
+    field(INPE, "SVT:daq:map:bot:4 PP")
+    field(INPF, "SVT:daq:map:bot:5 PP")
+    field(INPG, "SVT:daq:map:bot:6 PP")
+    field(INPH, "SVT:daq:map:bot:7 PP")
+    field(INPI, "SVT:daq:map:bot:8 PP")
+
+}
+
+record(sub, SVT:daqmap_sub:2) {
+    field(SCAN,"Passive")
+    field(INAM,"subPollDaqMapInit")
+    field(SNAM,"subPollDaqMapProcess")
+    field(INPA, "SVT:daq:map:bot:9 PP")
+    field(INPB, "SVT:daq:map:bot:10 PP")
+    field(INPC, "SVT:daq:map:bot:11 PP")
+    field(INPD, "SVT:daq:map:bot:12 PP")
+    field(INPE, "SVT:daq:map:bot:13 PP")
+    field(INPF, "SVT:daq:map:bot:14 PP")
+    field(INPG, "SVT:daq:map:bot:15 PP")
+    field(INPH, "SVT:daq:map:bot:16 PP")
+    field(INPI, "SVT:daq:map:bot:17 PP")
+
+}
+
+record(sub, SVT:daqmap_sub:3) {
+    field(SCAN,"Passive")
+    field(INAM,"subPollDaqMapInit")
+    field(SNAM,"subPollDaqMapProcess")
+    field(INPA, "SVT:daq:map:top:0 PP")
+    field(INPB, "SVT:daq:map:top:1 PP")
+    field(INPC, "SVT:daq:map:top:2 PP")
+    field(INPD, "SVT:daq:map:top:3 PP")
+    field(INPE, "SVT:daq:map:top:4 PP")
+    field(INPF, "SVT:daq:map:top:5 PP")
+    field(INPG, "SVT:daq:map:top:6 PP")
+    field(INPH, "SVT:daq:map:top:7 PP")
+    field(INPI, "SVT:daq:map:top:8 PP")
+
+}
+
+record(sub, SVT:daqmap_sub:4) {
+    field(SCAN,"Passive")
+    field(INAM,"subPollDaqMapInit")
+    field(SNAM,"subPollDaqMapProcess")
+    field(INPA, "SVT:daq:map:top:9 PP")
+    field(INPB, "SVT:daq:map:top:10 PP")
+    field(INPC, "SVT:daq:map:top:11 PP")
+    field(INPD, "SVT:daq:map:top:12 PP")
+    field(INPE, "SVT:daq:map:top:13 PP")
+    field(INPF, "SVT:daq:map:top:14 PP")
+    field(INPG, "SVT:daq:map:top:15 PP")
+    field(INPH, "SVT:daq:map:top:16 PP")
+    field(INPI, "SVT:daq:map:top:17 PP")
+
+}
+
+
+
+
+record(sub, SVT:daqmap_sub:febch:1) {
+    field(SCAN,"Passive")
+    field(INAM,"subPollDaqMapInit")
+    field(SNAM,"subPollDaqMapProcess")
+    field(INPA, "SVT:daq:map:bot:0:febch PP")
+    field(INPB, "SVT:daq:map:bot:1:febch PP")
+    field(INPC, "SVT:daq:map:bot:2:febch PP")
+    field(INPD, "SVT:daq:map:bot:3:febch PP")
+    field(INPE, "SVT:daq:map:bot:4:febch PP")
+    field(INPF, "SVT:daq:map:bot:5:febch PP")
+    field(INPG, "SVT:daq:map:bot:6:febch PP")
+    field(INPH, "SVT:daq:map:bot:7:febch PP")
+    field(INPI, "SVT:daq:map:bot:8:febch PP")
+
+}
+
+record(sub, SVT:daqmap_sub:febch:2) {
+    field(SCAN,"Passive")
+    field(INAM,"subPollDaqMapInit")
+    field(SNAM,"subPollDaqMapProcess")
+    field(INPA, "SVT:daq:map:bot:9:febch PP")
+    field(INPB, "SVT:daq:map:bot:10:febch PP")
+    field(INPC, "SVT:daq:map:bot:11:febch PP")
+    field(INPD, "SVT:daq:map:bot:12:febch PP")
+    field(INPE, "SVT:daq:map:bot:13:febch PP")
+    field(INPF, "SVT:daq:map:bot:14:febch PP")
+    field(INPG, "SVT:daq:map:bot:15:febch PP")
+    field(INPH, "SVT:daq:map:bot:16:febch PP")
+    field(INPI, "SVT:daq:map:bot:17:febch PP")
+
+}
+
+
+record(sub, SVT:daqmap_sub:febch:3) {
+    field(SCAN,"Passive")
+    field(INAM,"subPollDaqMapInit")
+    field(SNAM,"subPollDaqMapProcess")
+    field(INPA, "SVT:daq:map:top:0:febch PP")
+    field(INPB, "SVT:daq:map:top:1:febch PP")
+    field(INPC, "SVT:daq:map:top:2:febch PP")
+    field(INPD, "SVT:daq:map:top:3:febch PP")
+    field(INPE, "SVT:daq:map:top:4:febch PP")
+    field(INPF, "SVT:daq:map:top:5:febch PP")
+    field(INPG, "SVT:daq:map:top:6:febch PP")
+    field(INPH, "SVT:daq:map:top:7:febch PP")
+    field(INPI, "SVT:daq:map:top:8:febch PP")
+
+}
+
+record(sub, SVT:daqmap_sub:febch:4) {
+    field(SCAN,"Passive")
+    field(INAM,"subPollDaqMapInit")
+    field(SNAM,"subPollDaqMapProcess")
+    field(INPA, "SVT:daq:map:top:9:febch PP")
+    field(INPB, "SVT:daq:map:top:10:febch PP")
+    field(INPC, "SVT:daq:map:top:11:febch PP")
+    field(INPD, "SVT:daq:map:top:12:febch PP")
+    field(INPE, "SVT:daq:map:top:13:febch PP")
+    field(INPF, "SVT:daq:map:top:14:febch PP")
+    field(INPG, "SVT:daq:map:top:15:febch PP")
+    field(INPH, "SVT:daq:map:top:16:febch PP")
+    field(INPI, "SVT:daq:map:top:17:febch PP")
+
+}
+
+
+
