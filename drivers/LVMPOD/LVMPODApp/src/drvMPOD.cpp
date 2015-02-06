@@ -174,6 +174,8 @@ map<string,string> drvMPOD::initBoardFileNameMap() {
 	map<string,string> boardNames;
 	boardNames["EHS_201p-F-K"] = "ehs_f_201pf.db";
 	boardNames["EHS_205p-F"]   = "ehs_f_205pf.db";
+        boardNames["EHS_210p-F"]   = "ehs_f_210pf.db";
+        boardNames["MPV_8008"]     = "mpv_8008.db";
 	boardNames["MPV_8008L"]    = "mpv_8008l.db";
 	boardNames["MPV_8030"]     = "mpv_8030.db";
 	boardNames["MPV_8030L"]    = "mpv_8030l.db";
