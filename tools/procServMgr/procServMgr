@@ -290,7 +290,7 @@ function checkuser {
 #-----------------------------------------------------------------------
 # Process Options
 #-----------------------------------------------------------------------
-while getopts ":hc:i:" opt
+while getopts ":hc:i:p:" opt
 do
     case $opt in
     c) 
@@ -307,7 +307,17 @@ do
     h) 
         OPT_HELP=1
            ;;
-       \?)
+    p)
+    # TODO (wmoore): add/doc this functionality for test setups
+    	CONFIG_DIR=$OPTARG
+		IOC_DIR=$CONFIG_DIR
+		DIR_LIST="$APP_DIR $CONFIG_DIR $IOC_DIR"
+		CONFIG_FILE="$CONFIG_DIR/procServ.conf"
+		FILE_LIST="$CONFIG_FILE"
+		echo $CONFIG_PATH
+		echo $CONFIG_FILE
+		;;
+    \?)
         OPT_UNKNOWN=$OPTARG  
         ;;
     *) 
