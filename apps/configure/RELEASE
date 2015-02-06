@@ -23,6 +23,10 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 #EPICS_BASE=${CLAS}/R${EPICS_VER}/base
 EPICS_BASE=/usr/local/clas12/release/0.2/R3.14.12.3/base
 EPICS_SUPPORT=${CLAS}/R${EPICS_VER}/support
+#
+# Modified version of synApps_5_7
+#  Uses older mca-s55 and has dxp and xxx removed.
+#
 EPICS_SYNAPPS=/usr/clas12/R3.14.12.3/synApps/synApps_5_7/support
 EPICS_EXTENSIONS=${CLAS}/R${EPICS_VER}/extensions
 
