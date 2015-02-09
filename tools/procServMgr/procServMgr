@@ -1,13 +1,12 @@
 #!/bin/ksh
 
-#@(#) procServMgr 2.60 2013/08/29 cuffe@jlab.org 
-#
 # procServMgr is desgined to be run from the command line and the cron
 # facility.  It is intended to be a control script for running "soft" 
 # iocs with procServ
 #-----------------------------------------------------------------------
 # Version History
 #-----------------------------------------------------------------------
+# 2.62 2015/02/09 wmoore@jlab.org - added alternative path option
 # 2.61 2014/10/23 wmoore@jlab.org - modified for HPS usage
 # 2.60 2013/08/29 cuffe@jlab.org - rewrite to change IFS for config file
 #                                  added test option
@@ -30,7 +29,6 @@ SCRIPT_NAME=procServMgr
 #-----------------------------------------------------------------------
 # Data File Locations
 #-----------------------------------------------------------------------
-#CONFIG_DIR=~wmoore/workspaces/hps-epics/apps/iocBoot
 CONFIG_DIR=/usr/clas12/hps/prod/apps/iocBoot
 APP_DIR=${EPICS_EXTENSIONS}/bin/linux-x86
 IOC_DIR=$CONFIG_DIR
@@ -54,10 +52,12 @@ BINARY_LIST="$HOSTNAME $ID $APP_EXE"
 # Global Functions
 #-----------------------------------------------------------------------
 function usage {
-    echo "usage: $SCRIPT_NAME [-h] [-i iocname] start|stop|restart|check|status|test"
+    echo "usage: $SCRIPT_NAME [-h] [-p iocpath] [-c alt_config] [-i iocname] start|stop|restart|check|status|test"
     echo ""
+    echo "[-p] Specify the iocBoot path (default: $CONFIG_DIR)."
+    echo "     Config file will come from this new path (default: procServ.conf)."
     echo "[-i] Specify the ioc. If not specified, the script assumes all iocs"
-    echo "[-c] Specify the configuration file."
+    echo "[-c] Specify the configuration file (default: $CONFIG_FILE)."
     echo "[-h] Print Help"
     echo ""
     echo "start      - start iocs specified in config file"
@@ -71,6 +71,7 @@ function usage {
     echo "$SCRIPT_NAME start  - start all iocs enabled in the config file"
     echo "$SCRIPT_NAME stop   - stop all iocs enabled in the config file"
     echo "$SCRIPT_NAME status - show status for all iocs"
+    echo "$SCRIPT_NAME -p /usr/clas12/hps/dev/apps/iocBoot status - use alternate path/config"
     echo "$SCRIPT_NAME -c /tmp/testconfig.conf check - use alternate config file"
     echo "$SCRIPT_NAME -i iocsofthrt start - start ioc iocsofthrt only"
     echo "$SCRIPT_NAME -i iocsofthrt test - show  start command for iocsofthrt"
@@ -294,29 +295,26 @@ while getopts ":hc:i:p:" opt
 do
     case $opt in
     c) 
-         CONFIG_FILE=$OPTARG    
-           FILE_LIST="$CONFIG_FILE"
-           for FILE in $FILE_LIST     
-           do
-               checkfile $FILE
-           done    
-           ;;   
+        CONFIG_FILE=$OPTARG    
+        FILE_LIST="$CONFIG_FILE"
+        for FILE in $FILE_LIST     
+        do
+            checkfile $FILE
+        done    
+        ;;   
     i) 
         OPT_IOC=$OPTARG
-           ;;    
+        ;;    
     h) 
         OPT_HELP=1
-           ;;
-    p)
-    # TODO (wmoore): add/doc this functionality for test setups
-    	CONFIG_DIR=$OPTARG
-		IOC_DIR=$CONFIG_DIR
-		DIR_LIST="$APP_DIR $CONFIG_DIR $IOC_DIR"
-		CONFIG_FILE="$CONFIG_DIR/procServ.conf"
-		FILE_LIST="$CONFIG_FILE"
-		echo $CONFIG_PATH
-		echo $CONFIG_FILE
-		;;
+        ;;
+    p)  # Override default path, for usage with development directories
+        CONFIG_DIR=$OPTARG
+        IOC_DIR=$CONFIG_DIR
+        DIR_LIST="$APP_DIR $CONFIG_DIR $IOC_DIR"
+        CONFIG_FILE="$CONFIG_DIR/procServ.conf"
+        FILE_LIST="$CONFIG_FILE"
+        ;;
     \?)
         OPT_UNKNOWN=$OPTARG  
         ;;
