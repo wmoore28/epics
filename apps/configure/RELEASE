@@ -33,25 +33,20 @@ EPICS_EXTENSIONS=${CLAS}/R${EPICS_VER}/extensions
 ## Path to data storage (autosave, etc)
 IOCDATA=/usr/clas12/hps/DATA
 
-## Path to local drivers
-EPICS_DRIVERS=$(TOP)/../drivers
-
-
 ## synApps
 include $(EPICS_SYNAPPS)/configure/RELEASE
 
-## Other external support
+## External modules
+EPICS_DRIVERS=$(TOP)/../drivers
+ETHER_IP=$(EPICS_DRIVERS)/ether_ip-2-26
 HVCAENx527=$(EPICS_DRIVERS)/HVCAENx527
 jlabVMEBoard=$(EPICS_DRIVERS)/jlabVMEBoard
 LVMPOD=$(EPICS_DRIVERS)/LVMPOD
-#snmp-nscl-1-0-RC9=$(EPICS_DRIVERS)/snmp-nscl-1-0-RC9
 DEVSNMP=$(EPICS_DRIVERS)/snmp-nscl-1-0-RC9
-
 v450=$(EPICS_DRIVERS)/v450
 v450_PRB=$(EPICS_DRIVERS)/v450_PRB
 
 # EPICS_BASE usually appears last so other apps can override stuff:
-#EPICS_BASE=${CLAS}/R${EPICS_VER}/base
 EPICS_BASE=/usr/local/clas12/release/0.2/R3.14.12.3/base
 
 
