@@ -3,6 +3,7 @@ TOP = .
 include $(TOP)/configure/CONFIG
 
 ## Define modules to build
+MODULES += ether_ip-2-26
 MODULES += HVCAENx527
 MODULES += jlabVMEBoard
 MODULES += LVMPOD
