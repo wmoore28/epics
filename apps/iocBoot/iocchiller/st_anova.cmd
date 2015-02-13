@@ -12,30 +12,29 @@ chiller_registerRecordDeviceDriver(pdbbase)
 
 epicsEnvSet("STREAM_PROTOCOL_PATH","${TOP}/proto")
 
-drvAsynIPPortConfigure("SER2", "hallb-moxa2:4002")
-## Set terminators for using asyn directly
-asynOctetSetInputEos( "SER2", 0, "\r")
-asynOctetSetOutputEos("SER2", 0, "\r\n")
+# 9600 8-N-1, No Flow Ctrl
+drvAsynIPPortConfigure("SER1","hallb-moxa2:4001")
 
 ## debugging...
-# Presto
-#asynSetTraceMask("SER2",-1,0x09)
-#asynSetTraceIOMask("SER2",-1,0x2)
+# Anova
+asynSetTraceMask("SER1",-1,0x09)
+asynSetTraceIOMask("SER1",-1,0x2)
 
 ## Load record instances
-dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC}-svt")
-dbLoadRecords("db/save_restoreStatus.db", "P=${IOC}-svt:")
-dbLoadRecords("db/presto.db", "P=HPS_SVT:,R=CHILLER:,PORT=SER2")
+dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC}")
+dbLoadRecords("db/save_restoreStatus.db", "P=${IOC}:")
+dbLoadRecords("db/anova.db", "P=HPS_FE:,R=CHILLER:,PROTO=anova.proto,PORT=SER1")
 
 cd ${TOP}/iocBoot/${IOC}
 
 ## autosave setup
-< save_restore_presto.cmd
+#< save_restore.cmd
 
+#dbl > pv.list
 iocInit
 
 ## autosave startup
-create_monitor_set("presto_settings.req", 30, "P=HPS_SVT:,R=CHILLER:")
+#create_monitor_set("anova_settings.req", 30, "P=CHILL:,R=")
 
 ## Handle autosave 'commands' contained in loaded databases.
 #makeAutosaveFiles()

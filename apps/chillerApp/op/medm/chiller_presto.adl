@@ -1,6 +1,6 @@
 
 file {
-	name="/home/wmoore/workspaces/svt/apps/chillerApp/op/medm/chiller_presto.adl"
+	name="/usr/clas12/hps/svt-devel/apps/chillerApp/op/medm/chiller_presto.adl"
 	version=030108
 }
 display {
@@ -8,7 +8,7 @@ display {
 		x=821
 		y=419
 		width=310
-		height=475
+		height=685
 	}
 	clr=14
 	bclr=4
@@ -126,7 +126,12 @@ text {
 	display[1] {
 		label="IOC Stats"
 		name="ioc_stats_soft.adl"
-		args="ioc=iocchiller"
+		args="ioc=iocchiller-svt"
+	}
+	display[2] {
+		label="Autosave"
+		name="autosave.adl"
+		args="P=iocchiller-svt:"
 	}
 	clr=14
 	bclr=4
@@ -155,6 +160,7 @@ text {
 		clr=0
 		bclr=11
 	}
+	clrmod="alarm"
 	align="horiz. centered"
 	limits {
 	}
@@ -170,23 +176,6 @@ text {
 		clr=14
 	}
 	textix="High Limit"
-}
-"text update" {
-	object {
-		x=210
-		y=171
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:CHILLER:TEMP:HILIM"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
 }
 "text update" {
 	object {
@@ -237,7 +226,7 @@ text {
 		height=20
 	}
 	control {
-		chan="HPS_SVT:CHILLER:START_STOP:SP"
+		chan="HPS_SVT:CHILLER:START_STOP:CTRL"
 		clr=14
 		bclr=4
 	}
@@ -302,29 +291,28 @@ text {
 text {
 	object {
 		x=25
-		y=454
+		y=632
 		width=80
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Firmware Version"
+	textix="Firmware"
 }
 "text update" {
 	object {
-		x=130
-		y=455
-		width=160
+		x=26
+		y=650
+		width=265
 		height=15
 	}
 	monitor {
 		chan="HPS_SVT:CHILLER:VERSION"
-		clr=0
+		clr=15
 		bclr=11
 	}
-	clrmod="alarm"
-	align="horiz. centered"
+	format="string"
 	limits {
 	}
 }
@@ -443,7 +431,7 @@ rectangle {
 rectangle {
 	object {
 		x=25
-		y=377
+		y=432
 		width=265
 		height=3
 	}
@@ -454,7 +442,7 @@ rectangle {
 text {
 	object {
 		x=25
-		y=394
+		y=449
 		width=80
 		height=16
 	}
@@ -466,12 +454,12 @@ text {
 "text update" {
 	object {
 		x=130
-		y=390
+		y=445
 		width=120
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:CHILLER:PUMP_PRES"
+		chan="HPS_SVT:CHILLER:PRES"
 		clr=0
 		bclr=11
 	}
@@ -483,12 +471,12 @@ text {
 "text entry" {
 	object {
 		x=130
-		y=414
+		y=491
 		width=75
 		height=20
 	}
 	control {
-		chan="HPS_SVT:CHILLER:PUMP_PRES:SP"
+		chan="HPS_SVT:CHILLER:PUMP_STAGE:SP"
 		clr=14
 		bclr=4
 	}
@@ -498,24 +486,24 @@ text {
 text {
 	object {
 		x=25
-		y=418
+		y=495
 		width=80
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Setpoint"
+	textix="Pump Stage (1-4)"
 }
 "text update" {
 	object {
 		x=210
-		y=414
+		y=491
 		width=80
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:CHILLER:PUMP_PRES:RD_SP"
+		chan="HPS_SVT:CHILLER:PUMP_STAGE"
 		clr=0
 		bclr=11
 	}
@@ -527,7 +515,7 @@ text {
 rectangle {
 	object {
 		x=25
-		y=444
+		y=622
 		width=265
 		height=3
 	}
@@ -554,12 +542,12 @@ rectangle {
 "text update" {
 	object {
 		x=250
-		y=390
+		y=445
 		width=40
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:CHILLER:PUMP_PRES.EGU"
+		chan="HPS_SVT:CHILLER:PRES.EGU"
 		clr=15
 		bclr=11
 	}
@@ -669,23 +657,6 @@ text {
 	}
 	textix="Low Limit"
 }
-"text update" {
-	object {
-		x=210
-		y=146
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:CHILLER:TEMP:LWLIM"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
 rectangle {
 	object {
 		x=25
@@ -738,4 +709,347 @@ text {
 		clr=30
 	}
 	textix="$(DESC)"
+}
+"text update" {
+	object {
+		x=26
+		y=665
+		width=265
+		height=15
+	}
+	monitor {
+		chan="HPS_SVT:CHILLER:VERSION2"
+		clr=15
+		bclr=11
+	}
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=146
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:CHILLER:TEMP:LIM_LW"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=171
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:CHILLER:TEMP:LIM_HI"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=529
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Warning (Low)"
+}
+"text entry" {
+	object {
+		x=130
+		y=525
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:CHILLER:PRES:WARN_LW:SP"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=525
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:CHILLER:PRES:WARN_LW"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=552
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Warning (High)"
+}
+"text entry" {
+	object {
+		x=130
+		y=548
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:CHILLER:PRES:WARN_HI:SP"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=548
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:CHILLER:PRES:WARN_HI"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=575
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Alarm (5s)"
+}
+"text entry" {
+	object {
+		x=130
+		y=571
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:CHILLER:PRES:ALM_5S:SP"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=571
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:CHILLER:PRES:ALM_5S"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=598
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Alarm (1s)"
+}
+"text entry" {
+	object {
+		x=130
+		y=594
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:CHILLER:PRES:ALM_1S:SP"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=594
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:CHILLER:PRES:ALM_1S"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=383
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Warning (Low)"
+}
+"text entry" {
+	object {
+		x=130
+		y=379
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:CHILLER:FLOW:WARN_LW:SP"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=379
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:CHILLER:FLOW:WARN_LW"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=406
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Warning (High)"
+}
+"text entry" {
+	object {
+		x=130
+		y=402
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:CHILLER:FLOW:WARN_HI:SP"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=402
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:CHILLER:FLOW:WARN_HI"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=472
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Pump Control"
+}
+"text update" {
+	object {
+		x=130
+		y=468
+		width=160
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:CHILLER:PUMP_CTRL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
 }

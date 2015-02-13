@@ -15,8 +15,6 @@
 
 record(asyn, "$(P)$(R)ASYN") {
     field(PORT, "$(PORT)")
-    field(OEOS, "\r")
-    field(IEOS, "\r\n")
 }
 
 #######################################
@@ -25,9 +23,11 @@ record(asyn, "$(P)$(R)ASYN") {
 
 record(stringin, "$(P)$(R)VERSION") {
     field(DTYP, "stream")
-    field(INP,  "@presto.proto getVersion $(PORT)")
+    field(INP,  "@presto.proto getVersion($(P)$(R)VERSION2) $(PORT)")
     field(VAL,  "")
     field(PINI, "1")
+}
+record(stringin, "$(P)$(R)VERSION2") {
 }
 
 record(stringin, "$(P)$(R)STATUS") {
@@ -37,53 +37,108 @@ record(stringin, "$(P)$(R)STATUS") {
     field(SCAN, "1 second")
 }
 
+# Read EGU from different channel and write back to .EGU
+# - uses :EGU and :CONV_EGU
 record(ai, "$(P)$(R)TEMP") {
     field(DTYP, "stream")
-    field(INP,  "@presto.proto getAiEgu(pv_00,sp_11) $(PORT)")
-    field(PREC, "1")
+    field(INP,  "@presto.proto getAi(pv_00) $(PORT)")
+    field(PREC, "2")
     field(SCAN, "1 second")
+	field(FLNK, "$(P)$(R)TEMP:EGU")
+}
+record(bi, "$(P)$(R)TEMP:EGU") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getInt(sp_11) $(PORT)")
+    field(ZNAM, "C")
+    field(ONAM, "F")
+    field(SCAN, "1 second")
+    field(FLNK, "$(P)$(R)TEMP:CONV_EGU")
+}
+record(stringout, "$(P)$(R)TEMP:CONV_EGU") {
+    field(DOL,  "$(P)$(R)TEMP:EGU")
+    field(OMSL, "closed_loop")
+    field(OUT,  "$(P)$(R)TEMP.EGU")
 }
 
 record(ai, "$(P)$(R)HTR_PWR") {
     field(DTYP, "stream")
     field(INP,  "@presto.proto getAi(pv_01) $(PORT)")
     field(EGU,  "%")
-    field(PREC, "2")
+    field(PREC, "0")
     field(SCAN, "1 second")
 }
 
-record(ai, "$(P)$(R)TEMP:HILIM") {
+record(ai, "$(P)$(R)TEMP:LIM_HI") {
     field(DTYP, "stream")
-    field(INP,  "@presto.proto getAi(pv_03) $(PORT)")
-    field(PREC, "1")
-    field(SCAN, "5 second")
-}
-
-record(ai, "$(P)$(R)TEMP:LWLIM") {
-    field(DTYP, "stream")
-    field(INP,  "@presto.proto getAi(pv_04) $(PORT)")
-    field(PREC, "1")
-    field(SCAN, "5 second")
-}
-
-record(ai, "$(P)$(R)PUMP_PRES") {
-    field(DTYP, "stream")
-    field(INP,  "@presto.proto getAiEgu(pv_05,sp_12) $(PORT)")
-    field(PREC, "2")
+    field(INP,  "@presto.proto getAi(sp_03) $(PORT)")
+    field(PREC, "0")
     field(SCAN, "1 second")
 }
 
+record(ai, "$(P)$(R)TEMP:LIM_LW") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getAi(sp_04) $(PORT)")
+    field(PREC, "0")
+    field(SCAN, "1 second")
+}
+
+# Read EGU from different channel and write back to .EGU
+# - uses :EGU and :CONV_EGU
+record(ai, "$(P)$(R)PRES") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getAi(pv_05) $(PORT)")
+    field(PREC, "2")
+    field(SCAN, "1 second")
+    field(FLNK, "$(P)$(R)PRES:EGU")
+}
+record(bi, "$(P)$(R)PRES:EGU") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getInt(sp_12) $(PORT)")
+    field(ZNAM, "bar")
+    field(ONAM, "psi")
+    field(FLNK, "$(P)$(R)PRES:CONV_EGU")
+}
+record(stringout, "$(P)$(R)PRES:CONV_EGU") {
+    field(DOL,  "$(P)$(R)PRES:EGU")
+    field(OMSL, "closed_loop")
+    field(OUT,  "$(P)$(R)PRES.EGU")
+}
+
+# TODO (wmoore): remove flow readback
+# Read EGU from different channel and write back to .EGU
+# - uses :EGU and :CONV_EGU
 record(ai, "$(P)$(R)FLOW") {
     field(DTYP, "stream")
-    field(INP,  "@presto.proto getAiEgu(pv_09,sp_13) $(PORT)")
+    field(INP,  "@presto.proto getAi(pv_09) $(PORT)")
     field(PREC, "2")
-    field(SCAN, "5 second")
+#    field(SCAN, "1 second")
+    field(FLNK, "$(P)$(R)FLOW:EGU")
+}
+record(bi, "$(P)$(R)FLOW:EGU") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getInt(sp_13) $(PORT)")
+    field(ZNAM, "l/min")
+    field(ONAM, "gpm")
+    field(SCAN, "1 second")
+    field(FLNK, "$(P)$(R)FLOW:CONV_EGU")
+}
+record(stringout, "$(P)$(R)FLOW:CONV_EGU") {
+    field(DOL,  "$(P)$(R)FLOW:EGU")
+    field(OMSL, "closed_loop")
+    field(OUT,  "$(P)$(R)FLOW.EGU")
 }
 
 record(ai, "$(P)$(R)TEMP:RD_SP") {
     field(DTYP, "stream")
     field(INP,  "@presto.proto getAi(sp_00) $(PORT)")
-    field(PREC, "1")
+    field(PREC, "2")
+    field(SCAN, "1 second")
+}
+
+record(ai, "$(P)$(R)PUMP_STAGE") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getAi(sp_07) $(PORT)")
+    field(PREC, "0")
     field(SCAN, "1 second")
 }
 
@@ -94,9 +149,51 @@ record(ai, "$(P)$(R)FLOW:RD_SP") {
     field(SCAN, "1 second")
 }
 
-record(ai, "$(P)$(R)PUMP_PRES:RD_SP") {
+#record(ai, "$(P)$(R)PRES:RD_SP") {
+#    field(DTYP, "stream")
+#    field(INP,  "@presto.proto getAi(sp_09) $(PORT)")
+#    field(PREC, "2")
+#    field(SCAN, "1 second")
+#}
+
+record(ai, "$(P)$(R)PRES:WARN_HI") {
     field(DTYP, "stream")
-    field(INP,  "@presto.proto getAi(sp_09) $(PORT)")
+    field(INP,  "@presto.proto getAi(sp_14) $(PORT)")
+    field(PREC, "2")
+    field(SCAN, "1 second")
+}
+
+record(ai, "$(P)$(R)PRES:WARN_LW") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getAi(sp_15) $(PORT)")
+    field(PREC, "2")
+    field(SCAN, "1 second")
+}
+
+record(ai, "$(P)$(R)PRES:ALM_5S") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getAi(sp_16) $(PORT)")
+    field(PREC, "2")
+    field(SCAN, "1 second")
+}
+
+record(ai, "$(P)$(R)PRES:ALM_1S") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getAi(sp_17) $(PORT)")
+    field(PREC, "2")
+    field(SCAN, "1 second")
+}
+
+record(ai, "$(P)$(R)FLOW:WARN_HI") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getAi(sp_18) $(PORT)")
+    field(PREC, "2")
+    field(SCAN, "1 second")
+}
+
+record(ai, "$(P)$(R)FLOW:WARN_LW") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getAi(sp_19) $(PORT)")
     field(PREC, "2")
     field(SCAN, "1 second")
 }
@@ -109,12 +206,20 @@ record(bi, "$(P)$(R)START_STOP") {
     field(SCAN, "1 second")
 }
 
+record(bi, "$(P)$(R)PUMP_CTRL") {
+    field(DTYP, "stream")
+    field(INP,  "@presto.proto getInt(mode_09) $(PORT)")
+    field(ZNAM, "Stage Control")
+    field(ONAM, "Pressure Control")
+    field(SCAN, "1 second")
+}
+
 ########################################
 # Control Commands
 ########################################
-record(bo, "$(P)$(R)START_STOP:SP") {
+record(bo, "$(P)$(R)START_STOP:CTRL") {
     field(DTYP, "stream")
-    field(OUT,  "@presto.proto setBo(mode_05) $(PORT)")
+    field(OUT,  "@presto.proto setInt(mode_05) $(PORT)")
     field(ZNAM, "Stop")
     field(ONAM, "Start")
 }
@@ -122,19 +227,27 @@ record(bo, "$(P)$(R)START_STOP:SP") {
 record(ao, "$(P)$(R)TEMP:SP") {
     field(DTYP, "stream")
     field(OUT,  "@presto.proto setAo(sp_00) $(PORT)")
-    field(PREC, "1")
+    field(PREC, "2")
 }
 
 record(ao, "$(P)$(R)HILIM:SP") {
     field(DTYP, "stream")
     field(OUT,  "@presto.proto setAo(sp_03) $(PORT)")
-    field(PREC, "1")
+    field(PREC, "0")
 }
 
 record(ao, "$(P)$(R)LWLIM:SP") {
     field(DTYP, "stream")
     field(OUT,  "@presto.proto setAo(sp_04) $(PORT)")
-    field(PREC, "1")
+    field(PREC, "0")
+}
+
+record(ao, "$(P)$(R)PUMP_STAGE:SP") {
+    field(DTYP, "stream")
+    field(OUT,  "@presto.proto setInt(sp_07) $(PORT)")
+    field(PREC, "0")
+    field(DRVL, "1")
+    field(DRVH, "4")
 }
 
 record(ao, "$(P)$(R)FLOW:SP") {
@@ -143,8 +256,44 @@ record(ao, "$(P)$(R)FLOW:SP") {
     field(PREC, "2")
 }
 
-record(ao, "$(P)$(R)PUMP_PRES:SP") {
+record(ao, "$(P)$(R)PRES:SP") {
     field(DTYP, "stream")
     field(OUT,  "@presto.proto setAo(sp_09) $(PORT)")
+    field(PREC, "2")
+}
+
+record(ao, "$(P)$(R)PRES:WARN_HI:SP") {
+    field(DTYP, "stream")
+    field(OUT,  "@presto.proto setAo(sp_14) $(PORT)")
+    field(PREC, "2")
+}
+
+record(ao, "$(P)$(R)PRES:WARN_LW:SP") {
+    field(DTYP, "stream")
+    field(OUT,  "@presto.proto setAo(sp_15) $(PORT)")
+    field(PREC, "2")
+}
+
+record(ao, "$(P)$(R)PRES:ALM_5S:SP") {
+    field(DTYP, "stream")
+    field(OUT,  "@presto.proto setAo(sp_16) $(PORT)")
+    field(PREC, "2")
+}
+
+record(ao, "$(P)$(R)PRES:ALM_1S:SP") {
+    field(DTYP, "stream")
+    field(OUT,  "@presto.proto setAo(sp_17) $(PORT)")
+    field(PREC, "2")
+}
+
+record(ao, "$(P)$(R)FLOW:WARN_HI:SP") {
+    field(DTYP, "stream")
+    field(OUT,  "@presto.proto setAo(sp_18) $(PORT)")
+    field(PREC, "2")
+}
+
+record(ao, "$(P)$(R)FLOW:WARN_LW:SP") {
+    field(DTYP, "stream")
+    field(OUT,  "@presto.proto setAo(sp_19) $(PORT)")
     field(PREC, "2")
 }

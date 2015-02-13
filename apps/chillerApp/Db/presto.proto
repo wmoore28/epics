@@ -10,55 +10,47 @@
 #   refers to pv|sp|mode|par|hil as seen in the protocol described on pg. 96 of
 #   Julabo_User_interface.pdf.
 #
+# TODO (wmoore): EGU are returned as 0|1, not C|F, etc.
+#
 # Author: Wesley Moore
 # Date:   Jan 2015
 #
 
-InTerminator  = "CRLF";
-OutTerminator = "CR";
+InTerminator  = CR LF;
+OutTerminator = CR;
 
 
 #######################################
 # Input Commands/Types (in_pv_[00-99])
 #######################################
 getVersion {
-	out "version";
-	in  "%s";
+    out "version";
+    in  "%39c%(\$1)39c";
 }
 
 getStatus {
-	out "status";
-	in  "%s";
+    out "status";
+    in  "%39c";
 }
 
 getAi {
-	out "in_\$1";
-	in  "%f";
-}
-
-# EGU fields are returned by seperate requests, so we want to process those too.
-#   $1 - ID for variable of interest
-#   $2 - ID for associated EGU
-getAiEgu {
-	out "in_\$1";
-	in  "%f";
-	out "in_\$2";
-	in  "%(EGU)s";
+    out "in_\$1";
+    in  "%f";
 }
 
 # Used for decimal and binary in.
 getInt {
-	out "in_\$1";
-	in  "%d";
+    out "in_\$1";
+    in  "%d";
 }
 
 #######################################
 # Output Commands/Types
 #######################################
 setAo {
-	out "out_\$1 %f";
+    out "out_\$1 %f";
 }
 
-setBo {
-	out "out_\$1 %d";
+setInt {
+    out "out_\$1 %d";
 }

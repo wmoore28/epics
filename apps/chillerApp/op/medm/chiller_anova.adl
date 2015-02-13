@@ -1,6 +1,6 @@
 
 file {
-	name="/home/wmoore/workspaces/svt/apps/chillerApp/op/medm/chiller_anova.adl"
+	name="/usr/clas12/hps/svt-devel/apps/iocBoot/iocchiller/../../chillerApp/medm/chiller_anova.adl"
 	version=030108
 }
 display {
@@ -383,7 +383,7 @@ menu {
 		height=20
 	}
 	control {
-		chan="HPS_FE:CHILLER:TEMP_SETPT"
+		chan="HPS_FE:CHILLER:TEMP:SP"
 		clr=14
 		bclr=4
 	}
@@ -398,7 +398,7 @@ menu {
 		height=20
 	}
 	monitor {
-		chan="HPS_FE:CHILLER:TEMP_REQD"
+		chan="HPS_FE:CHILLER:TEMP:RD_SP"
 		clr=0
 		bclr=11
 	}
@@ -432,7 +432,7 @@ menu {
 		height=20
 	}
 	control {
-		chan="HPS_FE:CHILLER:HIGHLIMIT_SETPT"
+		chan="HPS_FE:CHILLER:HIGHLIMIT:SP"
 		clr=14
 		bclr=4
 	}
@@ -447,7 +447,7 @@ menu {
 		height=20
 	}
 	control {
-		chan="HPS_FE:CHILLER:LOWLIMIT_SETPT"
+		chan="HPS_FE:CHILLER:LOWLIMIT:SP"
 		clr=14
 		bclr=4
 	}
@@ -537,7 +537,7 @@ rectangle {
 	display[0] {
 		label="Comm (asyn)"
 		name="asynRecord.adl"
-		args="P=HPS_SVT:CHILLER:,R=ASYN"
+		args="P=HPS_FE:CHILLER:,R=ASYN"
 	}
 	display[1] {
 		label="IOC Stats"
