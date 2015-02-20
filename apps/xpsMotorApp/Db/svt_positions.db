@@ -1,0 +1,108 @@
+# Database for SVT positions
+
+
+
+
+
+record(calc, "$(pref)hps:svt:top:si") {
+  field(DESC, "SVT Top Silicon position")
+  field(PINI, "YES")
+  field(CALC, "A*B+C")
+  field(INPA, "$(pref)hps:svt_top:motor.RBV CPP")
+  field(INPB, "-0.391")
+  field(INPC, "7.38")
+  field(SCAN, "Passive")
+  field(CALC, "B*A+C")
+  field(PREC, "3")
+  field(EGU , "mm" )
+}
+
+record(calc, "$(pref)hps:svt:top:wire") {
+  field(DESC, "SVT Top wire positions")
+  field(PINI, "YES")
+  field(CALC, "A*B+C")
+  field(INPA, "$(pref)hps:svt_top:motor.RBV CPP")
+  field(INPB, "-0.482")
+  field(INPC, "1.109")
+  field(SCAN, "Passive")
+  field(CALC, "B*A+C")
+  field(PREC, "3")
+  field(EGU , "mm" )
+}
+
+
+
+
+record(calc, "$(pref)hps:svt:bot:si") {
+  field(DESC, "SVT Bottom Silicon position")
+  field(PINI, "YES")
+  field(CALC, "A*B+C")
+  field(INPA, "$(pref)hps:svt_bot:motor.RBV CPP")
+  field(INPB, "-0.363")
+  field(INPC, "7.46")
+  field(SCAN, "Passive")
+  field(CALC, "B*A+C")
+  field(PREC, "3")
+  field(EGU , "mm" )
+}
+
+record(calc, "$(pref)hps:svt:bot:wire") {
+  field(DESC, "SVT BOTTOM wire positions")
+  field(PINI, "YES")
+  field(CALC, "A*B+C")
+  field(INPA, "$(pref)hps:svt_bot:motor.RBV CPP")
+  field(INPB, "-0.463")
+  field(INPC, "1.51")
+  field(SCAN, "Passive")
+  field(CALC, "B*A+C")
+  field(PREC, "3")
+  field(EGU , "mm" )
+}
+
+
+
+
+record(calcout, "$(pref)hps:svt:top:si_calcout") {
+  field(DESC, "Desired SVT top silicon position")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(CALC, "A*B+C")
+  field(INPA, "$(pref)hps:svt:top:si_desired CPP")
+  field(INPB, "-2.556")
+  field(INPC, "18.87")
+  field(OUT, "$(pref)hps:svt_top:motor.VAL PP")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+  field(OCAL, "1")
+}
+
+
+
+record(calcout, "$(pref)hps:svt:bot:si_calcout") {
+  field(DESC, "Desired SVT bottom silicon position")
+  field(SCAN, "Passive")
+  field(PINI, "NO")
+  field(CALC, "A*B+C")
+  field(INPA, "$(pref)hps:svt:bot:si_desired CPP")
+  field(INPB, "-2.755")
+  field(INPC, "20.56")
+  field(OUT, "$(pref)hps:svt_top:motor.VAL PP")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+  field(OCAL, "1")
+}
+
+
+record( ai, "$(pref)hps:svt:top:si_desired" ) {
+  field( EGU , "mm" )
+  field( SCAN, "Passive" )
+  field( DESC, "Desired value for top Si" )
+  field(PREC, "3")
+}
+
+record( ai, "$(pref)hps:svt:bot:si_desired" ) {
+  field( EGU , "mm" )
+  field( SCAN, "Passive" )
+  field( DESC, "Desired value for bot Si" )
+  field(PREC, "3")
+}
