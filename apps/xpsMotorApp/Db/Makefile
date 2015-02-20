@@ -13,6 +13,8 @@ include $(TOP)/configure/CONFIG
 #DB += xxx.db
 DB += xpsHallB.substitutions
 DB += targets.db
+DB += svt_positions.db
+DB += hpsMotorAliases.db
 DB += beamCheck4scan.db
 
 

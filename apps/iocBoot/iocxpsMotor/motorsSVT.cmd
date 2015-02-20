@@ -14,8 +14,9 @@ xpsMotor_registerRecordDeviceDriver(pdbbase)
 epicsEnvSet("PREFIX","")
 ### Motors
 dbLoadTemplate "db/xpsHallB.substitutions"
+dbLoadRecords "db/hpsMotorAliases.db", "P=HPS-XPS:, pref=${PREFIX}"
 dbLoadRecords "db/targets.db", "P=HPS-XPS:, R=m1, pref=${PREFIX}"
-
+dbLoadRecords "db/svt_positions.db", "pref=${PREFIX}"
 
 #epicsEnvSet("COLL_MOTOR","$(PREFIX)US1-2-BOT:m1")
 #epicsEnvSet("CONV_MOTOR","$(PREFIX)US1-2-BOT:m2")
@@ -33,7 +34,9 @@ XPSCreateController("HPS-XPS", "hpsxps", 5001, 8, 10, 500, 0, 500)
 # XPS asyn port,  axis, groupName.positionerName, stepSize(1/0.00215 mm)
 # for MRES=0.0127mm  stepSize=1/0.0127
 # for integer number for stepSize , MRES = 0.012658228, stepSize = 79
-XPSCreateAxis("HPS-XPS", 0, "S.TestSVT",   "79")
+XPSCreateAxis("HPS-XPS", 0, "SVT_TOP.Y",	"79")
+XPSCreateAxis("HPS-XPS", 1, "SVT_BOT.Y",   	"79")
+XPSCreateAxis("HPS-XPS", 2, "HPS_TARGET.Y",	"79")
 
 cd ${TOP}/iocBoot/${IOC}
 #asSetFilename("ca_security.txt")

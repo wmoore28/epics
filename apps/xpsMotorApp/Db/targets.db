@@ -5,7 +5,7 @@
 #   $(P)        - XPS Controller name 
 #   $(R)        - Motor (R=m1)
 
-alias("$(P)$(R)","$(pref)hps:target:motor")
+#alias("$(P)$(R)","$(pref)hps:target:motor")
 
 record(ao,"$(pref)hps:target:motionCondit"){
   field(DTYP,"Soft Channel")
