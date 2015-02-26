@@ -33,4 +33,17 @@ int getHybTrimValue(xmlDocPtr doc, const char* type, int index, int hyb);
 void getHybTrimCmd(int value, int feb_id, int hyb_id, char *ch_name, char* cmd, const int MAX);
 
 
+void getHybSync(xmlDocPtr doc, int index, int datapath, char* syncStr);
+
+int getHybSyncFromDpmValue(xmlDocPtr doc, int hyb);
+
+int getFebFromDpmValue(xmlDocPtr doc, int hyb);
+xmlXPathObjectPtr getFebFromDpm(xmlDocPtr doc);
+
+xmlXPathObjectPtr getHybridFromDpm(xmlDocPtr doc);
+void getHybridFromDpmValues(xmlDocPtr doc, int** hybrids);
+xmlXPathObjectPtr getHybridFromDpm(xmlDocPtr doc);
+
+
+
 #endif

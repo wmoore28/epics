@@ -1,11 +1,11 @@
 
 file {
-	name="/u1/epics/dev/svt-epics/svt-medm/svtTemp.adl"
+	name="/u1/epics/svt-epics/svt-medm/svtTemp.adl"
 	version=030108
 }
 display {
 	object {
-		x=1696
+		x=847
 		y=140
 		width=370
 		height=570
@@ -831,7 +831,8 @@ oval {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
+		vis="calc"
+		calc="(!A)&1"
 		chan="SVT:hb_check"
 	}
 }
@@ -877,7 +878,8 @@ oval {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
+		vis="calc"
+		calc="A&1"
 		chan="SVT:hb_check"
 	}
 }

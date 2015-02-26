@@ -2319,161 +2319,189 @@ record(bo, SVT:lv:9:3:v125:switch)
 
 
 
-record(dfanout,SVT:lv:hyb:0:all:switch_fanout)
+record(dfanout,SVT:lv:0:all:switch_fanout)
 {
-    field(OUTA,"SVT:lv:hyb:0:0:all:switch.VAL PP")
-    field(OUTB,"SVT:lv:hyb:0:1:all:switch.VAL PP")
-    field(OUTC,"SVT:lv:hyb:0:2:all:switch.VAL PP")
-    field(OUTD,"SVT:lv:hyb:0:3:all:switch.VAL PP")
+    field(OUTA,"SVT:lv:0:0:all:switch.VAL PP") 
+    field(OUTB,"SVT:lv:0:1:all:switch.VAL PP") 
+    field(OUTC,"SVT:lv:0:2:all:switch.VAL PP") 
+    field(OUTD,"SVT:lv:0:3:all:switch.VAL PP") 
 }
 
-record(bo, SVT:lv:hyb:0:all:switch) 
+ record(bo, SVT:lv:0:all:switch)
 {
-  field(OUT, "SVT:lv:hyb:0:all:switch_fanout PP")
-  field(ZNAM, "Off")
-  field(ONAM, "On")
+
+	field(OUT, "SVT:lv:0:all:switch_fanout PP")
+	field(ZNAM, "Off")
+	field(ONAM, "On")
 }
 
-
-record(dfanout,SVT:lv:hyb:1:all:switch_fanout)
+record(dfanout,SVT:lv:1:all:switch_fanout)
 {
-    field(OUTA,"SVT:lv:hyb:1:0:all:switch.VAL PP")
-    field(OUTB,"SVT:lv:hyb:1:1:all:switch.VAL PP")
-    field(OUTC,"SVT:lv:hyb:1:2:all:switch.VAL PP")
-    field(OUTD,"SVT:lv:hyb:1:3:all:switch.VAL PP")
+    field(OUTA,"SVT:lv:1:0:all:switch.VAL PP") 
+    field(OUTB,"SVT:lv:1:1:all:switch.VAL PP") 
+    field(OUTC,"SVT:lv:1:2:all:switch.VAL PP") 
+    field(OUTD,"SVT:lv:1:3:all:switch.VAL PP") 
 }
 
-record(bo, SVT:lv:hyb:1:all:switch) 
+ record(bo, SVT:lv:1:all:switch)
 {
-  field(OUT, "SVT:lv:hyb:1:all:switch_fanout PP")
-  field(ZNAM, "Off")
-  field(ONAM, "On")
+
+	field(OUT, "SVT:lv:1:all:switch_fanout PP")
+	field(ZNAM, "Off")
+	field(ONAM, "On")
 }
 
-
-record(dfanout,SVT:lv:hyb:2:all:switch_fanout)
+record(dfanout,SVT:lv:2:all:switch_fanout)
 {
-    field(OUTA,"SVT:lv:hyb:2:0:all:switch.VAL PP")
-    field(OUTB,"SVT:lv:hyb:2:1:all:switch.VAL PP")
-    field(OUTC,"SVT:lv:hyb:2:2:all:switch.VAL PP")
-    field(OUTD,"SVT:lv:hyb:2:3:all:switch.VAL PP")
+    field(OUTA,"SVT:lv:2:0:all:switch.VAL PP") 
+    field(OUTB,"SVT:lv:2:1:all:switch.VAL PP") 
 }
 
-record(bo, SVT:lv:hyb:2:all:switch) 
+ record(bo, SVT:lv:2:all:switch)
 {
-  field(OUT, "SVT:lv:hyb:2:all:switch_fanout PP")
-  field(ZNAM, "Off")
-  field(ONAM, "On")
+
+	field(OUT, "SVT:lv:2:all:switch_fanout PP")
+	field(ZNAM, "Off")
+	field(ONAM, "On")
 }
 
-
-record(dfanout,SVT:lv:hyb:3:all:switch_fanout)
+record(dfanout,SVT:lv:3:all:switch_fanout)
 {
-    field(OUTA,"SVT:lv:hyb:3:0:all:switch.VAL PP")
-    field(OUTB,"SVT:lv:hyb:3:1:all:switch.VAL PP")
-    field(OUTC,"SVT:lv:hyb:3:2:all:switch.VAL PP")
-    field(OUTD,"SVT:lv:hyb:3:3:all:switch.VAL PP")
+    field(OUTA,"SVT:lv:3:0:all:switch.VAL PP") 
+    field(OUTB,"SVT:lv:3:1:all:switch.VAL PP") 
+    field(OUTC,"SVT:lv:3:2:all:switch.VAL PP") 
+    field(OUTD,"SVT:lv:3:3:all:switch.VAL PP") 
 }
 
-record(bo, SVT:lv:hyb:3:all:switch) 
+ record(bo, SVT:lv:3:all:switch)
 {
-  field(OUT, "SVT:lv:hyb:3:all:switch_fanout PP")
-  field(ZNAM, "Off")
-  field(ONAM, "On")
+
+	field(OUT, "SVT:lv:3:all:switch_fanout PP")
+	field(ZNAM, "Off")
+	field(ONAM, "On")
 }
 
-
-record(dfanout,SVT:lv:hyb:4:all:switch_fanout)
+record(dfanout,SVT:lv:4:all:switch_fanout)
 {
-    field(OUTA,"SVT:lv:hyb:4:0:all:switch.VAL PP")
-    field(OUTB,"SVT:lv:hyb:4:1:all:switch.VAL PP")
-    field(OUTC,"SVT:lv:hyb:4:2:all:switch.VAL PP")
-    field(OUTD,"SVT:lv:hyb:4:3:all:switch.VAL PP")
+    field(OUTA,"SVT:lv:4:0:all:switch.VAL PP") 
+    field(OUTB,"SVT:lv:4:1:all:switch.VAL PP") 
+    field(OUTC,"SVT:lv:4:2:all:switch.VAL PP") 
+    field(OUTD,"SVT:lv:4:3:all:switch.VAL PP") 
 }
 
-record(bo, SVT:lv:hyb:4:all:switch) 
+ record(bo, SVT:lv:4:all:switch)
 {
-  field(OUT, "SVT:lv:hyb:4:all:switch_fanout PP")
-  field(ZNAM, "Off")
-  field(ONAM, "On")
+
+	field(OUT, "SVT:lv:4:all:switch_fanout PP")
+	field(ZNAM, "Off")
+	field(ONAM, "On")
 }
 
-
-record(dfanout,SVT:lv:hyb:5:all:switch_fanout)
+record(dfanout,SVT:lv:5:all:switch_fanout)
 {
-    field(OUTA,"SVT:lv:hyb:5:0:all:switch.VAL PP")
-    field(OUTB,"SVT:lv:hyb:5:1:all:switch.VAL PP")
-    field(OUTC,"SVT:lv:hyb:5:2:all:switch.VAL PP")
-    field(OUTD,"SVT:lv:hyb:5:3:all:switch.VAL PP")
+    field(OUTA,"SVT:lv:5:0:all:switch.VAL PP") 
+    field(OUTB,"SVT:lv:5:1:all:switch.VAL PP") 
+    field(OUTC,"SVT:lv:5:2:all:switch.VAL PP") 
+    field(OUTD,"SVT:lv:5:3:all:switch.VAL PP") 
 }
 
-record(bo, SVT:lv:hyb:5:all:switch) 
+ record(bo, SVT:lv:5:all:switch)
 {
-  field(OUT, "SVT:lv:hyb:5:all:switch_fanout PP")
-  field(ZNAM, "Off")
-  field(ONAM, "On")
+
+	field(OUT, "SVT:lv:5:all:switch_fanout PP")
+	field(ZNAM, "Off")
+	field(ONAM, "On")
 }
 
-
-record(dfanout,SVT:lv:hyb:6:all:switch_fanout)
+record(dfanout,SVT:lv:6:all:switch_fanout)
 {
-    field(OUTA,"SVT:lv:hyb:6:0:all:switch.VAL PP")
-    field(OUTB,"SVT:lv:hyb:6:1:all:switch.VAL PP")
-    field(OUTC,"SVT:lv:hyb:6:2:all:switch.VAL PP")
-    field(OUTD,"SVT:lv:hyb:6:3:all:switch.VAL PP")
+    field(OUTA,"SVT:lv:6:0:all:switch.VAL PP") 
+    field(OUTB,"SVT:lv:6:1:all:switch.VAL PP") 
+    field(OUTC,"SVT:lv:6:2:all:switch.VAL PP") 
+    field(OUTD,"SVT:lv:6:3:all:switch.VAL PP") 
 }
 
-record(bo, SVT:lv:hyb:6:all:switch) 
+ record(bo, SVT:lv:6:all:switch)
 {
-  field(OUT, "SVT:lv:hyb:6:all:switch_fanout PP")
-  field(ZNAM, "Off")
-  field(ONAM, "On")
+
+	field(OUT, "SVT:lv:6:all:switch_fanout PP")
+	field(ZNAM, "Off")
+	field(ONAM, "On")
 }
 
-
-record(dfanout,SVT:lv:hyb:7:all:switch_fanout)
+record(dfanout,SVT:lv:7:all:switch_fanout)
 {
-    field(OUTA,"SVT:lv:hyb:7:0:all:switch.VAL PP")
-    field(OUTB,"SVT:lv:hyb:7:1:all:switch.VAL PP")
-    field(OUTC,"SVT:lv:hyb:7:2:all:switch.VAL PP")
-    field(OUTD,"SVT:lv:hyb:7:3:all:switch.VAL PP")
+    field(OUTA,"SVT:lv:7:0:all:switch.VAL PP") 
+    field(OUTB,"SVT:lv:7:1:all:switch.VAL PP") 
+    field(OUTC,"SVT:lv:7:2:all:switch.VAL PP") 
+    field(OUTD,"SVT:lv:7:3:all:switch.VAL PP") 
 }
 
-record(bo, SVT:lv:hyb:7:all:switch) 
+ record(bo, SVT:lv:7:all:switch)
 {
-  field(OUT, "SVT:lv:hyb:7:all:switch_fanout PP")
-  field(ZNAM, "Off")
-  field(ONAM, "On")
+
+	field(OUT, "SVT:lv:7:all:switch_fanout PP")
+	field(ZNAM, "Off")
+	field(ONAM, "On")
 }
 
-
-record(dfanout,SVT:lv:hyb:8:all:switch_fanout)
+record(dfanout,SVT:lv:8:all:switch_fanout)
 {
-    field(OUTA,"SVT:lv:hyb:8:0:all:switch.VAL PP")
-    field(OUTB,"SVT:lv:hyb:8:1:all:switch.VAL PP")
-    field(OUTC,"SVT:lv:hyb:8:2:all:switch.VAL PP")
-    field(OUTD,"SVT:lv:hyb:8:3:all:switch.VAL PP")
+    field(OUTA,"SVT:lv:8:0:all:switch.VAL PP") 
+    field(OUTB,"SVT:lv:8:1:all:switch.VAL PP") 
+    field(OUTC,"SVT:lv:8:2:all:switch.VAL PP") 
+    field(OUTD,"SVT:lv:8:3:all:switch.VAL PP") 
 }
 
-record(bo, SVT:lv:hyb:8:all:switch) 
+ record(bo, SVT:lv:8:all:switch)
 {
-  field(OUT, "SVT:lv:hyb:8:all:switch_fanout PP")
-  field(ZNAM, "Off")
-  field(ONAM, "On")
+
+	field(OUT, "SVT:lv:8:all:switch_fanout PP")
+	field(ZNAM, "Off")
+	field(ONAM, "On")
 }
 
-
-record(dfanout,SVT:lv:hyb:9:all:switch_fanout)
+record(dfanout,SVT:lv:9:all:switch_fanout)
 {
-    field(OUTA,"SVT:lv:hyb:9:0:all:switch.VAL PP")
-    field(OUTB,"SVT:lv:hyb:9:1:all:switch.VAL PP")
-    field(OUTC,"SVT:lv:hyb:9:2:all:switch.VAL PP")
-    field(OUTD,"SVT:lv:hyb:9:3:all:switch.VAL PP")
+    field(OUTA,"SVT:lv:9:0:all:switch.VAL PP") 
+    field(OUTB,"SVT:lv:9:1:all:switch.VAL PP") 
 }
 
-record(bo, SVT:lv:hyb:9:all:switch) 
+ record(bo, SVT:lv:9:all:switch)
 {
-  field(OUT, "SVT:lv:hyb:9:all:switch_fanout PP")
+
+	field(OUT, "SVT:lv:9:all:switch_fanout PP")
+	field(ZNAM, "Off")
+	field(ONAM, "On")
+}
+
+record(dfanout,SVT:lv:hyb:all:switch_fanout)
+{
+    field(OUTA,"SVT:lv:hyb:all:switch_fanout1.VAL PP")
+    field(OUTB,"SVT:lv:hyb:all:switch_fanout2.VAL PP")
+}
+
+record(dfanout,SVT:lv:hyb:all:switch_fanout1)
+{
+    field(OUTA,"SVT:lv:0:all:switch.VAL PP")
+    field(OUTB,"SVT:lv:1:all:switch.VAL PP")
+    field(OUTC,"SVT:lv:2:all:switch.VAL PP")
+    field(OUTD,"SVT:lv:3:all:switch.VAL PP")
+    field(OUTE,"SVT:lv:4:all:switch.VAL PP")
+}
+
+record(dfanout,SVT:lv:hyb:all:switch_fanout2)
+{
+    field(OUTA,"SVT:lv:5:all:switch.VAL PP")
+    field(OUTB,"SVT:lv:6:all:switch.VAL PP")
+    field(OUTC,"SVT:lv:7:all:switch.VAL PP")
+    field(OUTD,"SVT:lv:8:all:switch.VAL PP")
+    field(OUTE,"SVT:lv:9:all:switch.VAL PP")
+}
+
+record(bo, SVT:lv:hyb:all:switch) 
+{
+field(OUT, "SVT:lv:hyb:all:switch_fanout PP")
   field(ZNAM, "Off")
   field(ONAM, "On")
 }

@@ -1,3 +1,6 @@
+#ifndef COMMONSOCKET_H
+#define COMMONSOCKET_H
+
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <unistd.h>
@@ -5,10 +8,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "socket.h"
 #include "commonConstants.h"
 
 
+int close_socket(int socketfd) {
+    return close(socketfd);
+}
 
 void socket_error(const char *msg)
 {
@@ -68,6 +73,7 @@ int open_socket(char* hostname, int portno) {
     return socketfd;
 }
 
-int close_socket(int socketfd) {
-    return close(socketfd);
-}
+
+
+
+#endif

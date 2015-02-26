@@ -8,33 +8,14 @@ include $(TOP)/configure/CONFIG
 #DB_OPT = YES
 
 #----------------------------------------------------
-# Create and install (or just install)
+# Create and install (or just install) into <top>/db
 # databases, templates, substitutions like this
-#DB += dbExample1.db
-#DB += dbExample2.db
-#DB += dbSubExample.db
-#DB += user.substitutions
-#DB += userHost.substitutions
-#DB += hybLV.db
-DB += dbHybT.db
-DB += dbHybLV.db
-DB += dbHybLVStat.db
-DB += dbHybSwitch.db
-DB += dbFebTemp.db
-DB += dbSVT.db
-DB += dbDpmMap.db
-DB += dbDataDpm.db
-DB += dbDataDpmFebNum.db
-DB += dbDataDpmHybNum.db
-DB += dbDataDpmLink.db
-DB += dbDataDtm.db
-DB += dbFebLayer.db
-DB += dbHybSync.db
-#DB += dbSVTtest.db
+#DB += xxx.db
+#DB += dbDpm0.db
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
-# <anyname>_TEMPLATE = <templatename>
+# <anyname>_template = <templatename>
 
 include $(TOP)/configure/RULES
 #----------------------------------------
