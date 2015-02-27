@@ -17,14 +17,20 @@ ypos = 0
 xinc = 510
 yinc = 120
 lines = 8
+
 color = "-bg green -fg black -sb -sl 5000"
 geometry  = "-geometry 70x" + str(lines)
+#targetDir = '/u1/epics/svt-epics/svt-daq-epics/example/iocBoot/iocsvtDaqDpm0'
+#targetCntrlDpmDir = '/u1/epics/svt-epics/svt-daq-epics/example/iocBoot/iocmyexampleApp'
 
-targetDir = "./../apps/iocBoot/iocsvtDaqDpm"
-targetCntrlDpmDir = "./../apps/iocBoot/iocsvtDaq"
+# print IOC status
+ioc_status_cmd = "procServMgr -p /usr/clas12/hps/dev/apps/iocBoot status"
+subprocess.call(ioc_status_cmd)
 
 #ypos = yinc
-for dpm_index in range (0, 15):
+for dpm_index in range (0, 1):
+    ioc_name = "iocchiller"
+    #ioc_name = "iocsvtDaqDpm%d" % (dpm_index)
 	ix = dpm_index % 3
 	iy = math.floor(dpm_index/3)
 	xpos = ix*xinc
@@ -38,30 +44,29 @@ for dpm_index in range (0, 15):
 	title = "-T DPM" + str(dpm_index)
 	exeName = "svtDaqDpm" + str(dpm_index) + ".cmd"
 	command = "xterm " + title + " " + color + " " + position
-	command += " -e 'pushd " + targetDir+ ";./" + exeName + ";bash'" 
+	command += " -e 'softioc_console " + iocname + ";bash'" 
 	print command
-	subprocess.Popen(command + "&", shell=True)
-
+	#subprocess.Popen(command + "&", shell=True)
+    continue
 	if dpm_index == 0 or dpm_index == 1:
 		xpos = (dpm_index+1)*510
 		ypos = 0
 		dtm = "dtm" + str(dpm_index)
-		title = "-T DTM" + str(dpm_index)
+		title = "-T DTM" + str(dpm_index) + "IOC"
 		position = geometry + "+" + str(int(xpos)) + "+" + str(int(ypos))
 		exeName = "svtDaqDtm" + str(dpm_index) + ".cmd"
-		command = "xterm " + title + " " + color.replace("green","blue") + " " + position
+		command = "xterm " + title + " " + color + " " + position
 		command += " -e 'pushd " + targetDir+ ";./" + exeName + ";bash'" 		
-		print command
+		#print command
 		subprocess.Popen(command + "&", shell=True)
 	if dpm_index == 0:
 		xpos = 0
 		ypos = 0
 		dtm = "cntrldpm"
-		title = "-T CntrlDPM"
+		title = "-T CntrlDpmIOC"
 		position = geometry + "+" + str(int(xpos)) + "+" + str(int(ypos))
 		exeName = "st.cmd"
-		command = "xterm " + title + " " + color.replace("green","yellow") + " " + position
+		command = "xterm " + title + " " + color + " " + position
 		command += " -e 'pushd " + targetCntrlDpmDir + ";./" + exeName + ";bash'" 		
-		print command
+		#print command
 		subprocess.Popen(command + "&", shell=True)
-	
