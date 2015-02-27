@@ -119,6 +119,14 @@ static long subSyncInit(aSubRecord *precord) {
   return 0;
 }
 
+static long subSyncBaseInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subSyncBaseInit ]: %d Record %s called subSyncBaseInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
 static long subDnaInit(aSubRecord *precord) {
   process_order++;
   if (mySubDebug) {
@@ -910,19 +918,31 @@ static long subSyncProcess(aSubRecord *precord) {
     feb = getIntFromEpicsName(precord->name,2);      
     datapath = getIntFromEpicsName(precord->name,3);      
     getStringFromEpicsName(precord->name,action,5);    
-    if(strcmp(action,"sync_rd_asub")==0) {           
-      getHybridSync(feb, datapath, sync);
-      if (mySubDebug) printf("[ subSyncProcess ]: got sync %s.\n",sync);
-      strcpy(precord->vala, sync);  
-      if (mySubDebug>2) printf("[ subSyncProcess ]: done memcpy\n");
-    } else {
-      printf("[ subSyncProcess ]: [ ERROR ]: wrong action \"%s\"!\n",action);
-      exit(1);
-    }     
+    getHybridSync(feb, datapath, action, sync);
+    //getHybridSync(feb, datapath, sync);
+    if (mySubDebug) printf("[ subSyncProcess ]: got sync %s.\n",sync);
+    strcpy(precord->vala, sync);  
+    if (mySubDebug>2) printf("[ subSyncProcess ]: done memcpy\n");
   } else {
     printf("[ subSyncProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",precord->name);    
     exit(1);
   }
+  return 0;
+}
+
+
+static long subSyncBaseProcess(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subSyncBaseProcess ]: %d Record %s called subSyncBaseProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  
+  char val[256];
+
+  getSync(precord->name, val); 
+
+  strcpy(precord->vala, val);
+
   return 0;
 }
 
@@ -1456,3 +1476,5 @@ epicsRegisterFunction(subLayerInit);
 epicsRegisterFunction(subLayerProcess);
 epicsRegisterFunction(subSyncInit);
 epicsRegisterFunction(subSyncProcess);
+epicsRegisterFunction(subSyncBaseInit);
+epicsRegisterFunction(subSyncBaseProcess);

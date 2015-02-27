@@ -86,6 +86,7 @@ getnodeset (xmlDocPtr doc, xmlChar *xpath) {
 void getSubStrFromName(char name[],const int i, char board_type[], const int MAX) {
     char buf[MAX];
     strcpy(buf,name);
+    strcpy(board_type,"");
     int idx;
     char* pch;
     memset(board_type,'\0',MAX);
@@ -715,3 +716,135 @@ void getDpmXmlDoc(int sockfd, int dpm, xmlDoc** dpm_doc_ptrptr) {
 
 
 
+
+
+void getSyncProcess(char* pname, xmlDoc* doc, char* value) {
+  int val;
+  int ifeb;
+  int idp;
+  int iapv;
+  char str1[256];
+  char str5[256];
+  char action[256];
+  char tmp[256];
+  xmlXPathObjectPtr result;
+  xmlNodePtr node;
+  val = -1;
+  ifeb = -1;
+  idp = -1;
+  
+  getStringFromEpicsName(pname,str1,1);
+  
+  if(strcmp(str1,"daq")==0) {
+    
+    getStringFromEpicsName(pname,str5,5);
+    
+    if(strcmp(str5,"syncbase_rd_asub")==0) {      
+      ifeb = getIntFromEpicsName(pname,2);  
+      idp = getIntFromEpicsName(pname,3);  
+      iapv = getIntFromEpicsName(pname,4);        
+      sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/HybridSyncStatus[@index=\"%d\"]/Base%d", ifeb, idp, iapv);      
+    } else if(strcmp(str5,"syncpeak_rd_asub")==0) {
+      ifeb = getIntFromEpicsName(pname,2);  
+      idp = getIntFromEpicsName(pname,3);  
+      iapv = getIntFromEpicsName(pname,4);        
+      sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/HybridSyncStatus[@index=\"%d\"]/Peak%d", ifeb, idp, iapv);      
+    } else {
+      strcpy(tmp,""); 
+    }
+    
+    if(strcmp(tmp,"")!=0) {
+      if(DEBUG>2) 
+	printf("[ getSyncProcess ] : xpath \"%s\"\n",tmp);
+      result =  getnodeset(doc, (xmlChar*) tmp);
+      if(result!=NULL) {
+	if(DEBUG>0) printf("[ getSyncProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
+	if(result->nodesetval->nodeNr==1) {
+	  node = result->nodesetval->nodeTab[0];
+	  if(node!=NULL) {
+	    getStrValue(doc,node,value);
+	    if(DEBUG>0) printf("[ getSyncProcess ]: got val %tmp2.\n",value);      
+	  } else {
+	    printf("[ getSyncProcess ] : [ WARNING ] no Sync nodes found\n");
+	    strcpy(value,"no nodes");
+	  }
+	} else {
+	  printf("[ getSyncProcess ] : [ WARNING ] %d Sync nodes found, should be exactly 1\n", result->nodesetval->nodeNr);
+	  strcpy(value,"too many nodes");	  
+	}	  
+      } else {
+	if(DEBUG>1)
+	  printf("[ getSyncProcess ] : [ WARNING ] no results found\n");
+	strcpy(value,"no result");	  	
+      }  
+    } else {
+      printf("[ getSyncProcess ]: [ ERROR ]: wrong action \"%s\"!\n",action);
+      strcpy(value,"wrong action");
+    }     
+  } else {
+    printf("[ getSyncProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);   
+    strcpy(value, "record");
+  }
+
+  return;
+}
+
+
+
+
+
+
+
+void flushSocket(int socketfd) {
+   int read_total = 0;
+   int read_n;
+   int dt;
+   int n_endings;
+   char buf_loop[1024];
+   time_t cur_time;
+   time_t timer;
+   
+   if(DEBUG>0) printf("[ flushSocket ]: start flush\n");
+   
+   time(&timer);   
+   n_endings=0;
+   dt=0;
+   
+   while(n_endings<1) {      
+     
+     time(&cur_time);
+     dt = difftime(cur_time,timer);
+     
+     if(dt>2) break;
+     
+     if(DEBUG>1) printf("[ flushSocket ]: Read %d from socket\n",read_n);
+     
+     // Read from socket
+     read_n = read(socketfd,buf_loop,1023);
+     buf_loop[1023] = '\0';
+     if(DEBUG>1) printf("[ flushSocket ]: Flushed %d chars\n",read_n);
+     //printf("\n----\n\"%s\"\n----\n",buf_loop);
+     if (read_n < 0) {
+       printf("[ flushSocket ]: [ ERROR ]: read %d from socket\n",read_n);
+       exit(1);
+     }         
+     
+     if(read_n>0) {
+       // search for xml endings in this buffer
+       char* pch = strchr(buf_loop,'\f'); 
+       if(pch!=NULL) { 
+	 if(DEBUG>0) printf("[ flushSocket ]: found ending at %p (array index %d) in this buf!\n",pch,pch-buf_loop); 
+	 n_endings++; 
+       } 
+     }
+     
+     read_total += read_n;               
+     
+   }
+   
+   if(DEBUG>0) printf("[ flushSocket ]: Done flushing socket, found %d endings and flushed %d in total in dt=%ds.\n",n_endings,read_total,dt);
+   
+   return;
+   
+
+}

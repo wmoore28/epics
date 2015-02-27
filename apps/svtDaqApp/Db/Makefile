@@ -30,6 +30,7 @@ DB += dbDataDpmLink.db
 DB += dbDataDtm.db
 DB += dbFebLayer.db
 DB += dbHybSync.db
+DB += dbHybSyncBase.db
 #DB += dbSVTtest.db
 
 #----------------------------------------------------

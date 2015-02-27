@@ -25,6 +25,8 @@ def buildEpics():
     printRecords(recs,"dbDpmMap")
     recs = utils.buildHybSync()
     printRecords(recs,"dbHybSync")
+    recs = utils.buildHybSyncBase()
+    printRecords(recs,"dbHybSyncBase")
     recs = utils.buildLayer()
     printRecords(recs,"dbFebLayer")
     #recs = utils.buildDpmState()

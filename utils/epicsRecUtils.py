@@ -723,6 +723,43 @@ record(stringin, SVT:lv:FEBID:HYBID:sync:sync_rd) {
     return records
 
 
+def buildHybSyncBase():
+
+    s = """
+record(aSub,SVT:daq:$(FEB):$(HYB):$(APV):syncbase_rd_asub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:$(FEB):$(HYB):$(APV):syncbase_rd PP")
+    field(FTVA,"STRING")
+}
+
+record(stringin, SVT:daq:$(FEB):$(HYB):$(APV):syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+record(aSub,SVT:daq:$(FEB):$(HYB):$(APV):syncpeak_rd_asub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:$(FEB):$(HYB):$(APV):syncpeak_rd PP")
+    field(FTVA,"STRING")
+}
+
+record(stringin, SVT:daq:$(FEB):$(HYB):$(APV):syncpeak_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+"""
+    return s
+
+
 
 
 def buildDpmMap():

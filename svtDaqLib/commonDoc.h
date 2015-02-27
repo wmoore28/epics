@@ -5,6 +5,7 @@
 #include <libxml/parser.h>
 
 
+
 xmlDoc* dpm_doc[N_DPM] = {NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL};
 
 

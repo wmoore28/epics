@@ -453,85 +453,6 @@ xmlNode* retrieveElement(xmlDoc* doc, xmlNode* node, char* tag) {
 
 
 
-
-void flushSocket(int socketfd) {
-   int read_total = 0;
-   int read_n;
-   int dt;
-   int n_endings;
-   char buf_loop[1024];
-   time_t cur_time;
-   time_t timer;
-
-   if(DEBUG>0) printf("[ flushSocket ]: start flush\n");
-      
-   
-   time(&timer);   
-   n_endings=0;
-   dt=0;
-   
-      
-      
-      while(n_endings<1) {      
-
-         time(&cur_time);
-         dt = difftime(cur_time,timer);
-
-         if(dt>2) break;
-         
-         if(DEBUG>1) printf("[ flushSocket ]: Read %d from socket\n",read_n);
-         
-         // Read from socket
-         read_n = read(socketfd,buf_loop,1023);
-         buf_loop[1023] = '\0';
-         if(DEBUG>1) printf("[ flushSocket ]: Flushed %d chars\n",read_n);
-         //printf("\n----\n\"%s\"\n----\n",buf_loop);
-         if (read_n < 0) {
-            printf("[ flushSocket ]: [ ERROR ]: read %d from socket\n",read_n);
-            exit(1);
-         }         
-         
-         if(read_n>0) {
-            // search for xml endings in this buffer
-            char* pch = strchr(buf_loop,'\f'); 
-            while(pch!=NULL) { 
-               if(DEBUG>0) printf("[ flushSocket ]: found ending at %p (array index %d) in this buf!\n",pch,pch-buf_loop); 
-               n_endings++; 
-               pch = strchr(pch+1,'\f'); 
-            } 
-            
-         }
-         
-         read_total += read_n;               
-         
-         // reset and check that something is still available on the socket.
-         //read_n = 0;
-         //ioctl(socketfd, FIONREAD, &read_n);
-         
-      }
-      
-      
-      if(DEBUG>0) printf("[ flushSocket ]: Found %d endings\n",n_endings);
-
-//       if(n_endings>1) {
-//          if(DEBUG>-1) printf("[ flushSocket ]: Found enough endings. break out\n");         
-//       } else {
-//          if(DEBUG>-1) printf("[ flushSocket ]: sleep before trying again (dt=%d)\n",dt);
-//          sleep(1);
-//       }
-      
-
-   //}
-   
-      if(DEBUG>0) printf("[ flushSocket ]: Done flushing socket, found %d endings and flushed %d in total in dt=%ds.\n",n_endings,read_total,dt);
-
-   return;
-
-
-}
-
-
-
 void pollXmlString(int socketfd) {
     char* buf = NULL;
     char* buf_loop = NULL;
@@ -1098,18 +1019,32 @@ double getHybridSwitch(int index, int hyb) {
    return val; 
 }
 
-void getHybridSync(int index, int datapath, char* syncStr) {
+void getHybridSync(int index, int datapath, char* action, char* syncStr) {
   if(DEBUG>1)
     printf("[ getHybridSync ]: get sync for feb %d datapath %d \n", index, datapath);  
   if(getXmlDocStatus()==0) {      
     if(DEBUG>1)
       printf("[ getHybridSync ]: xml ok\n");
-    getHybSync(doc, index, datapath, syncStr);
+    getHybSync(doc, index, datapath, action, syncStr);
     if(DEBUG>1)
       printf("[ getHybridSync ]: got val %s\n", syncStr);
   } else {
     if(DEBUG>1) printf("[ getHybridSync ]: [ WARNING ]: the dpm xml doc status is invalid\n");    
     strcpy(syncStr, "no xml");
+  }
+}
+
+
+void getSync(char* pname, char* value) {
+  if(getXmlDocStatus()==0) {      
+    if(DEBUG>1)
+      printf("[ getSync ]: xml ok\n");
+    getSyncProcess(pname, doc, value);
+    if(DEBUG>1)
+      printf("[ getSync ]: got val %s\n", value);
+  } else {
+    if(DEBUG>1) printf("[ getSync ]: [ WARNING ]: the xml doc status is invalid\n");    
+    strcpy(value, "no xml");
   }
 }
 

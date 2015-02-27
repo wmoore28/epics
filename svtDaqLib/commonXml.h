@@ -29,11 +29,17 @@ int getFebNumProcess(char* pname, xmlDoc* doc);
 
 int getLinkProcess(char* pname, xmlDoc* doc);
 
+
+void getSyncProcess(char* pname, xmlDoc* doc, char* value);
+
 int findSystemStr(char* buf, const int MAX, char** start);
 
 void pollDpmXmlString(int socketfd, char** xml_string_out, int* len_out);
 
 void getDpmXmlDoc(int sockfd, int dpm, xmlDoc** dpm_doc_ptrptr);
+
+void flushSocket(int socketfd);
+
 
 
 #endif

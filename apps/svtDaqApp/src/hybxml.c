@@ -113,19 +113,28 @@ double getHybTValue(xmlDocPtr doc, const char* type, int index, int hyb) {
 
 
 
-void getHybSync(xmlDocPtr doc, int index, int datapath, char* syncStr) {
+void getHybSync(xmlDocPtr doc, int index, int datapath, char* action, char* syncStr) {
   xmlXPathObjectPtr result;
   xmlNodeSetPtr nodeset;
   char tmp[256];
   //sprintf(tmp,"/system/status/ControlDpm/FebFpga/FebCore/HybridSyncStatus/SyncDetected");
-  sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/HybridSyncStatus[@index=\"%d\"]/SyncDetected", index, datapath);
+  if(strcmp(action,"sync_asub")) {
+     sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/HybridSyncStatus[@index=\"%d\"]/SyncDetected", index, datapath);
+  }
+  else if(strcmp(action,"syncbase_asub")) {
+     sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/HybridSyncStatus[@index=\"%d\"]/Base0", index, datapath);
+  } 
+  else {
+    printf("[ getHybSync ] : [ ERROR ] wrong action \"%s\"\n",action);    
+  }
+  
   if(DEBUG>1) 
-    printf("[ getHybSyncs ] : xpath \"%s\"\n",tmp);
+    printf("[ getHybSync ] : xpath \"%s\"\n",tmp);
   result = getnodeset(doc, (xmlChar*) tmp);
   if(result!=NULL) {
     nodeset = result->nodesetval;
     if(DEBUG>1) 
-      printf("[ getHybSyncs ] : got %d nodes\n", nodeset->nodeNr);
+      printf("[ getHybSync ] : got %d nodes\n", nodeset->nodeNr);
     if(nodeset->nodeNr==1) {
       getStrValue(doc,nodeset->nodeTab[0],(xmlChar*)syncStr);
     } else {
@@ -133,7 +142,7 @@ void getHybSync(xmlDocPtr doc, int index, int datapath, char* syncStr) {
     }
   } else {
     if(DEBUG>1)
-      printf("[ getHybSwitchNode ] : no nodes found\n");
+      printf("[ getHybSync ] : no nodes found\n");
     strcpy(syncStr, "no results");
   }
   
