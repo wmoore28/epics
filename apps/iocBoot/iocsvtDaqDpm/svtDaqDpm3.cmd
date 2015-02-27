@@ -8,6 +8,11 @@ cd ${TOP}
 dbLoadDatabase "dbd/svtDaqDpm.dbd"
 svtDaqDpm_registerRecordDeviceDriver pdbbase
 
+
+
+## Load record instances
+dbLoadRecords("db/iocAdminSoft.db", "IOC=iocsvtDaqDpm3")
+
 ## Load record instances
 #dbLoadRecords("db/xxx.db","user=trackerHost")
 dbLoadRecords("db/dbDataDpm.db","DPM=3")

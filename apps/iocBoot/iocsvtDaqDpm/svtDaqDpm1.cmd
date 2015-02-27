@@ -9,6 +9,11 @@ cd ${TOP}
 dbLoadDatabase "dbd/svtDaqDpm.dbd"
 svtDaqDpm_registerRecordDeviceDriver pdbbase
 
+
+
+## Load record instances
+dbLoadRecords("db/iocAdminSoft.db", "IOC=iocsvtDaqDpm1")
+
 ## Load record instances
 dbLoadRecords("db/dbDataDpm.db","DPM=1")
 dbLoadRecords("db/dbDataDpmLink.db","DPM=1,DP=0")
