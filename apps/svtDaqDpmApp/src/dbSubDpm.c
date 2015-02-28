@@ -30,6 +30,7 @@ static long subPollProcess(subRecord *precord) {
   if (mySubDebug>-1)
     printf("[ subPollProcess ]: %d Record %s called subPollProcess(%p)\n",process_order, precord->name, (void*) precord);
   
+
   // find dpm nr
   int idpm;
   char str0[256];
@@ -50,18 +51,26 @@ static long subPollProcess(subRecord *precord) {
     sprintf(host,"dtm%d",idpm);    
   }
 
+
+
+
+  if(xmldoc!=NULL) {
+    printf("[ subPollProcess ]: dpm doc is not null(%p). Clean up.\n", xmldoc);
+    xmlFreeDoc(xmldoc);
+    xmlCleanupParser();      
+    xmldoc = NULL;
+  }
+
+
+
   socketFD = open_socket(host,8090);
-  
-  
+
+
+
+
   if(socketFD>0) {
     printf("[ subPollProcess ]: successfully opened socket at %d\n", socketFD);
 
-    if(xmldoc!=NULL) {
-      printf("[ subPollProcess ]: dpm doc is not null(%p). Clean up.\n", xmldoc);
-      xmlFreeDoc(xmldoc);
-      xmlCleanupParser();      
-      xmldoc = NULL;
-    }
 
     if (mySubDebug>-1)
       printf("[ subPollProcess ]: get the xml doc\n");
@@ -71,29 +80,19 @@ static long subPollProcess(subRecord *precord) {
     
     if (mySubDebug>-1)
       printf("[ subPollProcess ]: found xml doc at %p\n", xmldoc);
-    
-    
-    
-/*     if(xmldoc!=NULL) {       */
-/*       if (mySubDebug>-1) */
-/* 	printf("[ subPollProcess ]: clean up dpm doc (%p)\n", xmldoc); */
-/*       xmlFreeDoc(xmldoc); */
-/*       xmlCleanupParser();       */
-/*       xmldoc = NULL; */
-/*    } */
-    
+        
   } else {
     printf("[ subPollProcess ]: [ WARNING ]: failed to open socket\n");
   }
 
-
-  
 
 
   if(socketFD>0) {
     printf("[ subPollProcess ]: close socket %d\n", socketFD);
     socketFD = close_socket(socketFD);
   }
+
+
 
   return 0;
 }
