@@ -15,7 +15,7 @@ epicsEnvSet("PREFIX","")
 ### Motors
 dbLoadTemplate "db/xpsHallB.substitutions"
 dbLoadRecords "db/hpsMotorAliases.db", "P=HPS-XPS:, pref=${PREFIX}"
-dbLoadRecords "db/targets.db", "P=HPS-XPS:, R=m1, pref=${PREFIX}"
+dbLoadRecords "db/hps_targets.db", "P=HPS-XPS:, R=m1, pref=${PREFIX}"
 dbLoadRecords "db/svt_positions.db", "pref=${PREFIX}"
 
 #epicsEnvSet("COLL_MOTOR","$(PREFIX)US1-2-BOT:m1")

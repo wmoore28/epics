@@ -12,7 +12,7 @@ include $(TOP)/configure/CONFIG
 # databases, templates, substitutions like this
 #DB += xxx.db
 DB += xpsHallB.substitutions
-DB += targets.db
+DB += hps_targets.db
 DB += svt_positions.db
 DB += hpsMotorAliases.db
 DB += beamCheck4scan.db
