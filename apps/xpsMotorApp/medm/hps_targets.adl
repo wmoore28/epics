@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=31
-		y=703
+		x=35
+		y=839
 		width=600
 		height=110
 	}
@@ -99,7 +99,7 @@ display {
 		clr=14
 		bclr=4
 	}
-	label="4 um Pt"
+	label="4 um W"
 	press_msg="0"
 	clrmod="discrete"
 }
@@ -254,7 +254,7 @@ rectangle {
 		clr=14
 		bclr=4
 	}
-	label="8 um Pt"
+	label="8 um W"
 	press_msg="0"
 	clrmod="discrete"
 }
@@ -271,86 +271,6 @@ rectangle {
 	"dynamic attribute" {
 		vis="if not zero"
 		chan="hps:target_at_b"
-	}
-}
-"text update" {
-	object {
-		x=500
-		y=40
-		width=55
-		height=15
-	}
-	monitor {
-		chan="hps:target:d"
-		clr=14
-		bclr=55
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=382
-		y=40
-		width=55
-		height=15
-	}
-	monitor {
-		chan="hps:target:c"
-		clr=14
-		bclr=55
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=40
-		width=55
-		height=15
-	}
-	monitor {
-		chan="hps:target:b"
-		clr=14
-		bclr=55
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=146
-		y=40
-		width=55
-		height=15
-	}
-	monitor {
-		chan="hps:target:a"
-		clr=14
-		bclr=55
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=22
-		y=40
-		width=55
-		height=15
-	}
-	monitor {
-		chan="hps:target:home"
-		clr=14
-		bclr=55
-	}
-	align="horiz. centered"
-	limits {
 	}
 }
 composite {
@@ -389,6 +309,97 @@ composite {
 				clr=14
 			}
 			textix="Motor is at:"
+		}
+	}
+}
+composite {
+	object {
+		x=22
+		y=35
+		width=533
+		height=15
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=500
+				y=35
+				width=55
+				height=15
+			}
+			monitor {
+				chan="hps:target:d"
+				clr=14
+				bclr=55
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=382
+				y=35
+				width=55
+				height=15
+			}
+			monitor {
+				chan="hps:target:c"
+				clr=14
+				bclr=55
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=264
+				y=35
+				width=55
+				height=15
+			}
+			monitor {
+				chan="hps:target:b"
+				clr=14
+				bclr=55
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=146
+				y=35
+				width=55
+				height=15
+			}
+			monitor {
+				chan="hps:target:a"
+				clr=14
+				bclr=55
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=22
+				y=35
+				width=55
+				height=15
+			}
+			monitor {
+				chan="hps:target:home"
+				clr=14
+				bclr=55
+			}
+			align="horiz. centered"
+			limits {
+			}
 		}
 	}
 }
