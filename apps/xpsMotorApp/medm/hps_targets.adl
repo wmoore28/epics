@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=35
-		y=839
+		x=1307
+		y=92
 		width=600
-		height=110
+		height=180
 	}
 	clr=14
 	bclr=55
@@ -87,319 +87,359 @@ display {
 		1a7309,
 	}
 }
-"message button" {
-	object {
-		x=133
-		y=5
-		width=92
-		height=24
-	}
-	control {
-		chan="hps:target:a:proc"
-		clr=14
-		bclr=4
-	}
-	label="4 um W"
-	press_msg="0"
-	clrmod="discrete"
-}
-"message button" {
-	object {
-		x=10
-		y=5
-		width=92
-		height=24
-	}
-	control {
-		chan="hps:target:home:proc"
-		clr=14
-		bclr=4
-	}
-	label="Retract"
-	press_msg="0"
-	release_msg="0"
-}
-rectangle {
-	object {
-		x=5
-		y=1
-		width=107
-		height=34
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="if not zero"
-		chan="hps:target_at_home"
-	}
-}
-rectangle {
-	object {
-		x=123
-		y=1
-		width=107
-		height=34
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="if not zero"
-		chan="hps:target_at_a"
-	}
-}
-"related display" {
-	object {
-		x=480
-		y=65
-		width=82
-		height=22
-	}
-	display[0] {
-		label="expert"
-		name="motor_expert.adl"
-		args="motor_name=hps:target:motor"
-	}
-	clr=19
-	bclr=60
-	label="expert"
-	visual="a column of buttons"
-}
-text {
-	object {
-		x=19
-		y=85
-		width=130
-		height=17
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="if zero"
-		chan="hps:target:motor.DMOV"
-	}
-	textix="Motor is       moving"
-}
-"message button" {
-	object {
-		x=363
-		y=5
-		width=92
-		height=24
-	}
-	control {
-		chan="hps:target:c:proc"
-		clr=14
-		bclr=4
-	}
-	label="Carbon"
-	press_msg="0"
-}
-rectangle {
-	object {
-		x=355
-		y=1
-		width=107
-		height=34
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="if not zero"
-		chan="hps:target_at_c"
-	}
-}
-"message button" {
-	object {
-		x=480
-		y=5
-		width=92
-		height=24
-	}
-	control {
-		chan="hps:target:d:proc"
-		clr=14
-		bclr=4
-	}
-	label="Plastic"
-	press_msg="0"
-}
-rectangle {
-	object {
-		x=472
-		y=1
-		width=107
-		height=34
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="if not zero"
-		chan="hps:target_at_d"
-	}
-}
-"message button" {
-	object {
-		x=248
-		y=5
-		width=92
-		height=24
-	}
-	control {
-		chan="hps:target:b:proc"
-		clr=14
-		bclr=4
-	}
-	label="8 um W"
-	press_msg="0"
-	clrmod="discrete"
-}
-rectangle {
-	object {
-		x=238
-		y=1
-		width=107
-		height=34
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="if not zero"
-		chan="hps:target_at_b"
-	}
-}
 composite {
 	object {
-		x=19
-		y=60
-		width=182
-		height=19
+		x=5
+		y=40
+		width=574
+		height=101
 	}
 	"composite name"=""
 	children {
-		"text update" {
+		"message button" {
 			object {
-				x=109
-				y=60
+				x=133
+				y=44
 				width=92
-				height=19
+				height=24
 			}
-			monitor {
-				chan="hps:target:motor.RBV"
+			control {
+				chan="hps:target:a:proc"
 				clr=14
-				bclr=51
+				bclr=4
 			}
-			align="horiz. centered"
-			limits {
+			label="4 um W"
+			press_msg="0"
+			clrmod="discrete"
+		}
+		"message button" {
+			object {
+				x=10
+				y=44
+				width=92
+				height=24
 			}
+			control {
+				chan="hps:target:home:proc"
+				clr=14
+				bclr=4
+			}
+			label="Retract"
+			press_msg="0"
+			release_msg="0"
+		}
+		rectangle {
+			object {
+				x=5
+				y=40
+				width=107
+				height=34
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="hps:target_at_home"
+			}
+		}
+		rectangle {
+			object {
+				x=123
+				y=40
+				width=107
+				height=34
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="hps:target_at_a"
+			}
+		}
+		"related display" {
+			object {
+				x=420
+				y=109
+				width=150
+				height=25
+			}
+			display[0] {
+				label="Motor Expert GUI"
+				name="motor_expert.adl"
+				args="motor_name=hps:target:motor"
+			}
+			display[1] {
+				label="Target Scan GUI"
+				name="/usr/clas12/R3.14.12.3/synApps/synApps_5_7/support/sscan-2-9/sscanApp/op/adl/scan_full.adl"
+				args="P=hps:target:motor:,S=scan1"
+			}
+			clr=14
+			bclr=30
+			label="Expert Screens"
 		}
 		text {
 			object {
 				x=19
-				y=60
-				width=76
+				y=124
+				width=130
 				height=17
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if zero"
+				chan="hps:target:motor.DMOV"
+			}
+			textix="Motor is       moving"
+		}
+		"message button" {
+			object {
+				x=363
+				y=44
+				width=92
+				height=24
+			}
+			control {
+				chan="hps:target:c:proc"
+				clr=14
+				bclr=4
+			}
+			label="Carbon"
+			press_msg="0"
+		}
+		rectangle {
+			object {
+				x=355
+				y=40
+				width=107
+				height=34
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="hps:target_at_c"
+			}
+		}
+		"message button" {
+			object {
+				x=480
+				y=44
+				width=92
+				height=24
+			}
+			control {
+				chan="hps:target:d:proc"
+				clr=14
+				bclr=4
+			}
+			label="Plastic"
+			press_msg="0"
+		}
+		rectangle {
+			object {
+				x=472
+				y=40
+				width=107
+				height=34
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="hps:target_at_d"
+			}
+		}
+		"message button" {
+			object {
+				x=248
+				y=44
+				width=92
+				height=24
+			}
+			control {
+				chan="hps:target:b:proc"
+				clr=14
+				bclr=4
+			}
+			label="8 um W"
+			press_msg="0"
+			clrmod="discrete"
+		}
+		rectangle {
+			object {
+				x=238
+				y=40
+				width=107
+				height=34
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="hps:target_at_b"
+			}
+		}
+		composite {
+			object {
+				x=19
+				y=99
+				width=182
+				height=20
+			}
+			"composite name"=""
+			children {
+				"text update" {
+					object {
+						x=109
+						y=99
+						width=92
+						height=20
+					}
+					monitor {
+						chan="hps:target:motor.RBV"
+						clr=14
+						bclr=51
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				text {
+					object {
+						x=19
+						y=99
+						width=76
+						height=18
+					}
+					"basic attribute" {
+						clr=14
+					}
+					textix="Motor is at:"
+				}
+			}
+		}
+		composite {
+			object {
+				x=22
+				y=74
+				width=533
+				height=15
+			}
+			"composite name"=""
+			children {
+				"text update" {
+					object {
+						x=500
+						y=74
+						width=55
+						height=15
+					}
+					monitor {
+						chan="hps:target:d"
+						clr=14
+						bclr=55
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=382
+						y=74
+						width=55
+						height=15
+					}
+					monitor {
+						chan="hps:target:c"
+						clr=14
+						bclr=55
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=264
+						y=74
+						width=55
+						height=15
+					}
+					monitor {
+						chan="hps:target:b"
+						clr=14
+						bclr=55
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=146
+						y=74
+						width=55
+						height=15
+					}
+					monitor {
+						chan="hps:target:a"
+						clr=14
+						bclr=55
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=22
+						y=74
+						width=55
+						height=15
+					}
+					monitor {
+						chan="hps:target:home"
+						clr=14
+						bclr=55
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+			}
+		}
+		text {
+			object {
+				x=205
+				y=102
+				width=35
+				height=20
 			}
 			"basic attribute" {
 				clr=14
 			}
-			textix="Motor is at:"
+			textix="mm"
 		}
 	}
 }
-composite {
+text {
 	object {
-		x=22
-		y=35
-		width=533
-		height=15
+		x=172
+		y=10
+		width=268
+		height=25
 	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=500
-				y=35
-				width=55
-				height=15
-			}
-			monitor {
-				chan="hps:target:d"
-				clr=14
-				bclr=55
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=382
-				y=35
-				width=55
-				height=15
-			}
-			monitor {
-				chan="hps:target:c"
-				clr=14
-				bclr=55
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=264
-				y=35
-				width=55
-				height=15
-			}
-			monitor {
-				chan="hps:target:b"
-				clr=14
-				bclr=55
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=146
-				y=35
-				width=55
-				height=15
-			}
-			monitor {
-				chan="hps:target:a"
-				clr=14
-				bclr=55
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=22
-				y=35
-				width=55
-				height=15
-			}
-			monitor {
-				chan="hps:target:home"
-				clr=14
-				bclr=55
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
+	"basic attribute" {
+		clr=14
 	}
+	textix="HPS TARGET CONTROL"
+	align="horiz. centered"
 }

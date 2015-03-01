@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=102
-		y=393
+		x=40
+		y=497
 		width=400
 		height=500
 	}
@@ -230,20 +230,24 @@ text {
 }
 "related display" {
 	object {
-		x=280
+		x=250
 		y=189
-		width=82
+		width=120
 		height=25
 	}
 	display[0] {
-		label="expert"
+		label="Motor Expert GUI"
 		name="motor_expert.adl"
 		args="motor_name=hps:svt_top:motor"
 	}
-	clr=19
-	bclr=60
-	label="expert"
-	visual="a column of buttons"
+	display[1] {
+		label="SVT TOP Scan GUI"
+		name="/usr/clas12/R3.14.12.3/synApps/synApps_5_7/support/sscan-2-9/sscanApp/op/adl/scan_full.adl"
+		args="P=hps:svt_top:motor:,S=scan1"
+	}
+	clr=14
+	bclr=30
+	label="Expert Screens"
 }
 rectangle {
 	object {
@@ -456,23 +460,6 @@ text {
 	}
 	textix="Move Layer-1 to"
 }
-"related display" {
-	object {
-		x=280
-		y=418
-		width=82
-		height=25
-	}
-	display[0] {
-		label="expert"
-		name="motor_expert.adl"
-		args="motor_name=hps:svt_bot:motor"
-	}
-	clr=19
-	bclr=60
-	label="expert"
-	visual="a column of buttons"
-}
 rectangle {
 	object {
 		x=5
@@ -579,4 +566,25 @@ text {
 		clr=14
 	}
 	textix="Distance (mm)"
+}
+"related display" {
+	object {
+		x=250
+		y=418
+		width=120
+		height=25
+	}
+	display[0] {
+		label="Motor Expert GUI"
+		name="motor_expert.adl"
+		args="motor_name=hps:svt_bot:motor"
+	}
+	display[1] {
+		label="SVT BOTTOM Scan GUI"
+		name="/usr/clas12/R3.14.12.3/synApps/synApps_5_7/support/sscan-2-9/sscanApp/op/adl/scan_full.adl"
+		args="P=hps:svt_bot:motor:,S=scan1"
+	}
+	clr=14
+	bclr=30
+	label="Expert Screens"
 }
