@@ -1041,4 +1041,29 @@ record(longin, SVT:daq:dpm:$(DPM):$(DP):TYPE) {
     return records
 
 
+def buildDpmEventCount():
+
+    records = []
+    s = """
+
+record(sub,SVT:daq:dpm:$(DPM):eventcount_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDpmEventCountLinkInit")
+    field(SNAM,"subDpmEventCountLinkProcess")
+}
+
+record(longin, SVT:daq:dpm:$(DPM):eventcount) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dpm:$(DPM):eventcount_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+"""	
+    records.append(s)
+    return records
+
+
 

@@ -15,6 +15,7 @@ svtDaqDpm_registerRecordDeviceDriver pdbbase
 dbLoadRecords("db/iocAdminSoft.db", "IOC=iocsvtDaqDpm2")
 
 ## Load record instances
+dbLoadRecords("db/dbDataDpmEventCount.db","DPM=2")
 dbLoadRecords("db/dbDataDpm.db","DPM=2")
 dbLoadRecords("db/dbDataDpmLink.db","DPM=2,DP=0")
 dbLoadRecords("db/dbDataDpmLink.db","DPM=2,DP=1")

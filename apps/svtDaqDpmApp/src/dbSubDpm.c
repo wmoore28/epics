@@ -175,6 +175,30 @@ static long subDpmLinkProcess(subRecord *precord) {
 }
 
 
+static long subDpmEventCountInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subEventCountInit ]: %d Record %s called subDpmEventCountInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subDpmEventCountProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDpmEventCountProcess ]: %d Record %s called subDpmEventCountProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int val = -1;
+
+  val = getEventCountProcess(precord->name, xmldoc);
+
+  precord->val = val;
+
+  
+  return 0;
+}
+
+
 
 
 /* Register these symbols for use by IOC code: */
@@ -188,3 +212,5 @@ epicsRegisterFunction(subDpmFebNumInit);
 epicsRegisterFunction(subDpmFebNumProcess);
 epicsRegisterFunction(subDpmLinkInit);
 epicsRegisterFunction(subDpmLinkProcess);
+epicsRegisterFunction(subDpmEventCountInit);
+epicsRegisterFunction(subDpmEventCountProcess);

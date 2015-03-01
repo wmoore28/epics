@@ -41,6 +41,8 @@ def buildEpics():
     printRecords(recs,"dbDataDpmHybNum")
     recs = utils.buildDpmLink()
     printRecords(recs,"dbDataDpmLink")
+    recs = utils.buildDpmEventCount()
+    printRecords(recs,"dbDataDpmEventCount")
     
 
 

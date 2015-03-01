@@ -1,14 +1,14 @@
 
 file {
-	name="/home/wmoore/workspaces/svt-devel/apps/generalApp/medm/ioc_hps_health.adl"
+	name="/usr/clas12/hps/svt-devel/apps/generalApp/medm/ioc_hps_health.adl"
 	version=030108
 }
 display {
 	object {
 		x=211
-		y=306
+		y=45
 		width=1300
-		height=450
+		height=800
 	}
 	clr=3
 	bclr=4
@@ -89,10 +89,21 @@ display {
 }
 rectangle {
 	object {
+		x=0
+		y=0
+		width=1300
+		height=40
+	}
+	"basic attribute" {
+		clr=29
+	}
+}
+rectangle {
+	object {
 		x=859
-		y=53
+		y=21
 		width=425
-		height=245
+		height=570
 	}
 	"basic attribute" {
 		clr=5
@@ -101,7 +112,7 @@ rectangle {
 rectangle {
 	object {
 		x=10
-		y=247
+		y=215
 		width=1270
 		height=20
 	}
@@ -112,7 +123,7 @@ rectangle {
 rectangle {
 	object {
 		x=10
-		y=203
+		y=171
 		width=1270
 		height=20
 	}
@@ -123,7 +134,7 @@ rectangle {
 rectangle {
 	object {
 		x=10
-		y=181
+		y=149
 		width=1270
 		height=20
 	}
@@ -134,9 +145,9 @@ rectangle {
 rectangle {
 	object {
 		x=859
-		y=330
+		y=655
 		width=425
-		height=110
+		height=130
 	}
 	"basic attribute" {
 		clr=5
@@ -145,7 +156,7 @@ rectangle {
 text {
 	object {
 		x=345
-		y=76
+		y=44
 		width=150
 		height=15
 	}
@@ -158,7 +169,7 @@ text {
 text {
 	object {
 		x=193
-		y=76
+		y=44
 		width=150
 		height=15
 	}
@@ -171,7 +182,7 @@ text {
 rectangle {
 	object {
 		x=10
-		y=93
+		y=61
 		width=1270
 		height=20
 	}
@@ -182,7 +193,7 @@ rectangle {
 text {
 	object {
 		x=10
-		y=53
+		y=21
 		width=105
 		height=15
 	}
@@ -190,17 +201,6 @@ text {
 		clr=14
 	}
 	textix="softIOCs (linux)"
-}
-rectangle {
-	object {
-		x=0
-		y=0
-		width=1300
-		height=40
-	}
-	"basic attribute" {
-		clr=29
-	}
 }
 text {
 	object {
@@ -218,7 +218,7 @@ text {
 text {
 	object {
 		x=15
-		y=76
+		y=44
 		width=160
 		height=15
 	}
@@ -231,7 +231,7 @@ text {
 "text update" {
 	object {
 		x=193
-		y=95
+		y=63
 		width=150
 		height=20
 	}
@@ -247,7 +247,7 @@ text {
 "text update" {
 	object {
 		x=345
-		y=95
+		y=63
 		width=150
 		height=20
 	}
@@ -263,7 +263,7 @@ text {
 "text update" {
 	object {
 		x=497
-		y=95
+		y=63
 		width=100
 		height=20
 	}
@@ -279,7 +279,7 @@ text {
 "text update" {
 	object {
 		x=707
-		y=95
+		y=63
 		width=150
 		height=20
 	}
@@ -295,7 +295,7 @@ text {
 text {
 	object {
 		x=15
-		y=94
+		y=62
 		width=160
 		height=20
 	}
@@ -307,7 +307,7 @@ text {
 text {
 	object {
 		x=626
-		y=76
+		y=44
 		width=75
 		height=15
 	}
@@ -320,7 +320,7 @@ text {
 text {
 	object {
 		x=862
-		y=76
+		y=44
 		width=60
 		height=15
 	}
@@ -333,7 +333,7 @@ text {
 text {
 	object {
 		x=707
-		y=76
+		y=44
 		width=150
 		height=15
 	}
@@ -346,7 +346,7 @@ text {
 text {
 	object {
 		x=10
-		y=330
+		y=655
 		width=105
 		height=15
 	}
@@ -358,7 +358,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=93
+		y=61
 		width=75
 		height=20
 	}
@@ -374,7 +374,7 @@ text {
 text {
 	object {
 		x=496
-		y=76
+		y=44
 		width=100
 		height=15
 	}
@@ -387,7 +387,7 @@ text {
 text {
 	object {
 		x=924
-		y=76
+		y=44
 		width=130
 		height=15
 	}
@@ -400,7 +400,7 @@ text {
 text {
 	object {
 		x=1056
-		y=76
+		y=44
 		width=200
 		height=15
 	}
@@ -413,7 +413,7 @@ text {
 text {
 	object {
 		x=859
-		y=59
+		y=27
 		width=425
 		height=15
 	}
@@ -426,7 +426,7 @@ text {
 rectangle {
 	object {
 		x=10
-		y=115
+		y=83
 		width=1270
 		height=20
 	}
@@ -437,7 +437,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=117
+		y=85
 		width=150
 		height=20
 	}
@@ -453,7 +453,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=117
+		y=85
 		width=150
 		height=20
 	}
@@ -469,7 +469,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=117
+		y=85
 		width=100
 		height=20
 	}
@@ -485,7 +485,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=117
+		y=85
 		width=150
 		height=20
 	}
@@ -501,7 +501,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=116
+		y=84
 		width=160
 		height=20
 	}
@@ -513,7 +513,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=115
+		y=83
 		width=75
 		height=20
 	}
@@ -529,7 +529,7 @@ text {
 rectangle {
 	object {
 		x=10
-		y=137
+		y=105
 		width=1270
 		height=20
 	}
@@ -540,7 +540,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=139
+		y=107
 		width=150
 		height=20
 	}
@@ -556,7 +556,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=139
+		y=107
 		width=150
 		height=20
 	}
@@ -572,7 +572,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=139
+		y=107
 		width=100
 		height=20
 	}
@@ -588,7 +588,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=139
+		y=107
 		width=150
 		height=20
 	}
@@ -604,7 +604,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=138
+		y=106
 		width=160
 		height=20
 	}
@@ -616,7 +616,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=137
+		y=105
 		width=75
 		height=20
 	}
@@ -632,7 +632,7 @@ text {
 "text update" {
 	object {
 		x=862
-		y=139
+		y=107
 		width=60
 		height=20
 	}
@@ -648,7 +648,7 @@ text {
 "text update" {
 	object {
 		x=924
-		y=139
+		y=107
 		width=130
 		height=20
 	}
@@ -664,7 +664,7 @@ text {
 "text update" {
 	object {
 		x=1056
-		y=139
+		y=107
 		width=200
 		height=20
 	}
@@ -680,7 +680,7 @@ text {
 rectangle {
 	object {
 		x=10
-		y=159
+		y=127
 		width=1270
 		height=20
 	}
@@ -691,7 +691,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=161
+		y=129
 		width=150
 		height=20
 	}
@@ -707,7 +707,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=161
+		y=129
 		width=150
 		height=20
 	}
@@ -723,7 +723,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=161
+		y=129
 		width=100
 		height=20
 	}
@@ -739,7 +739,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=161
+		y=129
 		width=150
 		height=20
 	}
@@ -755,7 +755,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=160
+		y=128
 		width=160
 		height=20
 	}
@@ -767,7 +767,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=159
+		y=127
 		width=75
 		height=20
 	}
@@ -783,7 +783,7 @@ text {
 "text update" {
 	object {
 		x=862
-		y=161
+		y=129
 		width=60
 		height=20
 	}
@@ -799,7 +799,7 @@ text {
 "text update" {
 	object {
 		x=924
-		y=161
+		y=129
 		width=130
 		height=20
 	}
@@ -815,7 +815,7 @@ text {
 "text update" {
 	object {
 		x=1056
-		y=161
+		y=129
 		width=200
 		height=20
 	}
@@ -831,7 +831,7 @@ text {
 text {
 	object {
 		x=345
-		y=353
+		y=678
 		width=150
 		height=15
 	}
@@ -844,7 +844,7 @@ text {
 text {
 	object {
 		x=193
-		y=353
+		y=678
 		width=150
 		height=15
 	}
@@ -857,7 +857,7 @@ text {
 rectangle {
 	object {
 		x=10
-		y=370
+		y=695
 		width=1270
 		height=20
 	}
@@ -868,7 +868,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=353
+		y=678
 		width=160
 		height=15
 	}
@@ -881,7 +881,7 @@ text {
 "text update" {
 	object {
 		x=193
-		y=372
+		y=697
 		width=150
 		height=20
 	}
@@ -897,7 +897,7 @@ text {
 "text update" {
 	object {
 		x=345
-		y=372
+		y=697
 		width=150
 		height=20
 	}
@@ -913,7 +913,7 @@ text {
 "text update" {
 	object {
 		x=497
-		y=372
+		y=697
 		width=100
 		height=20
 	}
@@ -929,7 +929,7 @@ text {
 "text update" {
 	object {
 		x=707
-		y=372
+		y=697
 		width=150
 		height=20
 	}
@@ -945,7 +945,7 @@ text {
 text {
 	object {
 		x=15
-		y=371
+		y=696
 		width=160
 		height=20
 	}
@@ -957,7 +957,7 @@ text {
 text {
 	object {
 		x=626
-		y=353
+		y=678
 		width=75
 		height=15
 	}
@@ -970,7 +970,7 @@ text {
 text {
 	object {
 		x=862
-		y=353
+		y=678
 		width=60
 		height=15
 	}
@@ -983,7 +983,7 @@ text {
 text {
 	object {
 		x=707
-		y=353
+		y=678
 		width=150
 		height=15
 	}
@@ -996,7 +996,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=370
+		y=695
 		width=75
 		height=20
 	}
@@ -1012,7 +1012,7 @@ text {
 text {
 	object {
 		x=496
-		y=353
+		y=678
 		width=100
 		height=15
 	}
@@ -1025,7 +1025,7 @@ text {
 text {
 	object {
 		x=924
-		y=353
+		y=678
 		width=130
 		height=15
 	}
@@ -1038,7 +1038,7 @@ text {
 text {
 	object {
 		x=1056
-		y=353
+		y=678
 		width=200
 		height=15
 	}
@@ -1051,7 +1051,7 @@ text {
 rectangle {
 	object {
 		x=10
-		y=392
+		y=717
 		width=1270
 		height=20
 	}
@@ -1062,7 +1062,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=394
+		y=719
 		width=150
 		height=20
 	}
@@ -1078,7 +1078,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=394
+		y=719
 		width=150
 		height=20
 	}
@@ -1094,7 +1094,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=394
+		y=719
 		width=100
 		height=20
 	}
@@ -1110,7 +1110,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=394
+		y=719
 		width=150
 		height=20
 	}
@@ -1126,7 +1126,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=393
+		y=718
 		width=160
 		height=20
 	}
@@ -1138,7 +1138,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=392
+		y=717
 		width=75
 		height=20
 	}
@@ -1154,7 +1154,7 @@ text {
 rectangle {
 	object {
 		x=10
-		y=414
+		y=739
 		width=1270
 		height=20
 	}
@@ -1165,7 +1165,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=416
+		y=741
 		width=150
 		height=20
 	}
@@ -1181,7 +1181,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=416
+		y=741
 		width=150
 		height=20
 	}
@@ -1197,7 +1197,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=416
+		y=741
 		width=100
 		height=20
 	}
@@ -1213,7 +1213,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=416
+		y=741
 		width=150
 		height=20
 	}
@@ -1229,7 +1229,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=415
+		y=740
 		width=160
 		height=20
 	}
@@ -1241,7 +1241,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=414
+		y=739
 		width=75
 		height=20
 	}
@@ -1257,7 +1257,7 @@ text {
 text {
 	object {
 		x=859
-		y=336
+		y=661
 		width=425
 		height=15
 	}
@@ -1270,7 +1270,7 @@ text {
 "related display" {
 	object {
 		x=1260
-		y=159
+		y=127
 		width=20
 		height=20
 	}
@@ -1285,7 +1285,7 @@ text {
 "related display" {
 	object {
 		x=1260
-		y=137
+		y=105
 		width=20
 		height=20
 	}
@@ -1300,7 +1300,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=93
+		y=61
 		width=20
 		height=20
 	}
@@ -1315,7 +1315,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=115
+		y=83
 		width=20
 		height=20
 	}
@@ -1330,7 +1330,7 @@ text {
 text {
 	object {
 		x=601
-		y=76
+		y=44
 		width=20
 		height=15
 	}
@@ -1343,7 +1343,7 @@ text {
 text {
 	object {
 		x=601
-		y=353
+		y=678
 		width=20
 		height=15
 	}
@@ -1356,7 +1356,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=138
+		y=106
 		width=20
 		height=20
 	}
@@ -1371,7 +1371,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=160
+		y=128
 		width=20
 		height=20
 	}
@@ -1386,7 +1386,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=370
+		y=695
 		width=20
 		height=20
 	}
@@ -1401,7 +1401,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=392
+		y=717
 		width=20
 		height=20
 	}
@@ -1416,7 +1416,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=415
+		y=740
 		width=20
 		height=20
 	}
@@ -1431,7 +1431,7 @@ text {
 text {
 	object {
 		x=15
-		y=182
+		y=150
 		width=160
 		height=20
 	}
@@ -1443,7 +1443,7 @@ text {
 "text update" {
 	object {
 		x=193
-		y=183
+		y=151
 		width=150
 		height=20
 	}
@@ -1459,7 +1459,7 @@ text {
 "text update" {
 	object {
 		x=345
-		y=183
+		y=151
 		width=150
 		height=20
 	}
@@ -1475,7 +1475,7 @@ text {
 "text update" {
 	object {
 		x=497
-		y=183
+		y=151
 		width=100
 		height=20
 	}
@@ -1491,7 +1491,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=181
+		y=149
 		width=20
 		height=20
 	}
@@ -1506,7 +1506,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=181
+		y=149
 		width=75
 		height=20
 	}
@@ -1522,7 +1522,7 @@ text {
 "text update" {
 	object {
 		x=707
-		y=183
+		y=151
 		width=150
 		height=20
 	}
@@ -1538,7 +1538,7 @@ text {
 text {
 	object {
 		x=15
-		y=204
+		y=172
 		width=160
 		height=20
 	}
@@ -1550,7 +1550,7 @@ text {
 "text update" {
 	object {
 		x=193
-		y=205
+		y=173
 		width=150
 		height=20
 	}
@@ -1566,7 +1566,7 @@ text {
 "text update" {
 	object {
 		x=345
-		y=205
+		y=173
 		width=150
 		height=20
 	}
@@ -1582,7 +1582,7 @@ text {
 "text update" {
 	object {
 		x=497
-		y=205
+		y=173
 		width=100
 		height=20
 	}
@@ -1598,7 +1598,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=203
+		y=171
 		width=20
 		height=20
 	}
@@ -1613,7 +1613,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=203
+		y=171
 		width=75
 		height=20
 	}
@@ -1629,7 +1629,7 @@ text {
 "text update" {
 	object {
 		x=707
-		y=205
+		y=173
 		width=150
 		height=20
 	}
@@ -1645,7 +1645,7 @@ text {
 "text update" {
 	object {
 		x=862
-		y=182
+		y=150
 		width=60
 		height=20
 	}
@@ -1661,7 +1661,7 @@ text {
 "text update" {
 	object {
 		x=924
-		y=182
+		y=150
 		width=130
 		height=20
 	}
@@ -1677,7 +1677,7 @@ text {
 "text update" {
 	object {
 		x=1056
-		y=182
+		y=150
 		width=200
 		height=20
 	}
@@ -1693,7 +1693,7 @@ text {
 "related display" {
 	object {
 		x=1260
-		y=181
+		y=149
 		width=20
 		height=20
 	}
@@ -1708,7 +1708,7 @@ text {
 "text update" {
 	object {
 		x=862
-		y=205
+		y=173
 		width=60
 		height=20
 	}
@@ -1724,7 +1724,7 @@ text {
 "text update" {
 	object {
 		x=924
-		y=205
+		y=173
 		width=130
 		height=20
 	}
@@ -1740,7 +1740,7 @@ text {
 "text update" {
 	object {
 		x=1056
-		y=205
+		y=173
 		width=200
 		height=20
 	}
@@ -1756,7 +1756,7 @@ text {
 "related display" {
 	object {
 		x=1260
-		y=203
+		y=171
 		width=20
 		height=20
 	}
@@ -1771,7 +1771,7 @@ text {
 rectangle {
 	object {
 		x=10
-		y=225
+		y=193
 		width=1270
 		height=20
 	}
@@ -1782,7 +1782,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=227
+		y=195
 		width=150
 		height=20
 	}
@@ -1798,7 +1798,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=227
+		y=195
 		width=150
 		height=20
 	}
@@ -1814,7 +1814,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=227
+		y=195
 		width=100
 		height=20
 	}
@@ -1830,7 +1830,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=227
+		y=195
 		width=150
 		height=20
 	}
@@ -1846,7 +1846,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=226
+		y=194
 		width=160
 		height=20
 	}
@@ -1858,7 +1858,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=225
+		y=193
 		width=75
 		height=20
 	}
@@ -1874,7 +1874,7 @@ text {
 "text update" {
 	object {
 		x=862
-		y=227
+		y=195
 		width=60
 		height=20
 	}
@@ -1890,7 +1890,7 @@ text {
 "text update" {
 	object {
 		x=924
-		y=227
+		y=195
 		width=130
 		height=20
 	}
@@ -1906,7 +1906,7 @@ text {
 "text update" {
 	object {
 		x=1056
-		y=227
+		y=195
 		width=200
 		height=20
 	}
@@ -1922,7 +1922,7 @@ text {
 "related display" {
 	object {
 		x=1260
-		y=225
+		y=193
 		width=20
 		height=20
 	}
@@ -1937,7 +1937,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=226
+		y=194
 		width=20
 		height=20
 	}
@@ -1952,7 +1952,7 @@ text {
 rectangle {
 	object {
 		x=10
-		y=269
+		y=237
 		width=1270
 		height=20
 	}
@@ -1963,7 +1963,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=249
+		y=217
 		width=150
 		height=20
 	}
@@ -1979,7 +1979,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=249
+		y=217
 		width=150
 		height=20
 	}
@@ -1995,7 +1995,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=249
+		y=217
 		width=100
 		height=20
 	}
@@ -2011,7 +2011,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=249
+		y=217
 		width=150
 		height=20
 	}
@@ -2027,7 +2027,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=248
+		y=216
 		width=160
 		height=20
 	}
@@ -2039,7 +2039,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=247
+		y=215
 		width=75
 		height=20
 	}
@@ -2055,7 +2055,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=248
+		y=216
 		width=20
 		height=20
 	}
@@ -2070,7 +2070,7 @@ text {
 text {
 	object {
 		x=15
-		y=270
+		y=238
 		width=160
 		height=20
 	}
@@ -2082,7 +2082,7 @@ text {
 "text update" {
 	object {
 		x=193
-		y=271
+		y=239
 		width=150
 		height=20
 	}
@@ -2098,7 +2098,7 @@ text {
 "text update" {
 	object {
 		x=345
-		y=271
+		y=239
 		width=150
 		height=20
 	}
@@ -2114,7 +2114,7 @@ text {
 "text update" {
 	object {
 		x=497
-		y=271
+		y=239
 		width=100
 		height=20
 	}
@@ -2130,7 +2130,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=269
+		y=237
 		width=20
 		height=20
 	}
@@ -2145,7 +2145,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=269
+		y=237
 		width=75
 		height=20
 	}
@@ -2161,12 +2161,2180 @@ text {
 "text update" {
 	object {
 		x=707
-		y=271
+		y=239
 		width=150
 		height=20
 	}
 	monitor {
 		chan="iocsvtDaq:STARTTOD"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=10
+		y=761
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+"text update" {
+	object {
+		x=193
+		y=763
+		width=150
+		height=20
+	}
+	monitor {
+		chan="classc6:HOSTNAME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=763
+		width=150
+		height=20
+	}
+	monitor {
+		chan="classc6:UPTIME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=763
+		width=100
+		height=20
+	}
+	monitor {
+		chan="classc6:HEARTBEAT"
+		clr=0
+		bclr=29
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=707
+		y=763
+		width=150
+		height=20
+	}
+	monitor {
+		chan="classc6:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=762
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocclassc6"
+}
+"related display" {
+	object {
+		x=626
+		y=761
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=classc6"
+	}
+	clr=14
+	bclr=8
+	label="Reboot..."
+}
+"related display" {
+	object {
+		x=601
+		y=762
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_vxworks.adl"
+		args="ioc=classc6"
+	}
+	clr=14
+	bclr=8
+}
+rectangle {
+	object {
+		x=10
+		y=391
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=10
+		y=347
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+rectangle {
+	object {
+		x=10
+		y=325
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+rectangle {
+	object {
+		x=10
+		y=259
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+"text update" {
+	object {
+		x=193
+		y=261
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm0:HOSTNAME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=261
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm0:UPTIME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=261
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm0:HEARTBEAT"
+		clr=0
+		bclr=27
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=707
+		y=261
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm0:STARTTOD"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=260
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqDpm0"
+}
+"related display" {
+	object {
+		x=626
+		y=259
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqDpm0"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+rectangle {
+	object {
+		x=10
+		y=281
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+"text update" {
+	object {
+		x=193
+		y=283
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm1:HOSTNAME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=283
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm1:UPTIME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=283
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm1:HEARTBEAT"
+		clr=0
+		bclr=29
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=707
+		y=283
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm1:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=282
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqDpm1"
+}
+"related display" {
+	object {
+		x=626
+		y=281
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqDpm1"
+	}
+	clr=14
+	bclr=8
+	label="Reboot..."
+}
+rectangle {
+	object {
+		x=10
+		y=303
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+"text update" {
+	object {
+		x=193
+		y=305
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm2:HOSTNAME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=305
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm2:UPTIME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=305
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm2:HEARTBEAT"
+		clr=0
+		bclr=29
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=707
+		y=305
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm2:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=304
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqDpm2"
+}
+"related display" {
+	object {
+		x=626
+		y=303
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqDpm2"
+	}
+	clr=14
+	bclr=8
+	label="Reboot..."
+}
+"related display" {
+	object {
+		x=601
+		y=259
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqDpm0"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=601
+		y=282
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqDpm1"
+	}
+	clr=14
+	bclr=8
+}
+"related display" {
+	object {
+		x=601
+		y=304
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqDpm2"
+	}
+	clr=14
+	bclr=8
+}
+text {
+	object {
+		x=15
+		y=326
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqDpm3"
+}
+"text update" {
+	object {
+		x=193
+		y=327
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm3:HOSTNAME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=327
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm3:UPTIME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=327
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm3:HEARTBEAT"
+		clr=0
+		bclr=27
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=601
+		y=325
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqDpm3"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=626
+		y=325
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqDpm3"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+"text update" {
+	object {
+		x=707
+		y=327
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm3:STARTTOD"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=348
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqDpm4"
+}
+"text update" {
+	object {
+		x=193
+		y=349
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm4:HOSTNAME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=349
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm4:UPTIME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=349
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm4:HEARTBEAT"
+		clr=0
+		bclr=27
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=601
+		y=347
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqDpm4"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=626
+		y=347
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqDpm4"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+"text update" {
+	object {
+		x=707
+		y=349
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm4:STARTTOD"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=10
+		y=369
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+"text update" {
+	object {
+		x=193
+		y=371
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm5:HOSTNAME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=371
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm5:UPTIME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=371
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm5:HEARTBEAT"
+		clr=0
+		bclr=29
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=707
+		y=371
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm5:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=370
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqDpm5"
+}
+"related display" {
+	object {
+		x=626
+		y=369
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqDpm5"
+	}
+	clr=14
+	bclr=8
+	label="Reboot..."
+}
+"related display" {
+	object {
+		x=601
+		y=370
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqDpm5"
+	}
+	clr=14
+	bclr=8
+}
+rectangle {
+	object {
+		x=10
+		y=413
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+"text update" {
+	object {
+		x=193
+		y=393
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm6:HOSTNAME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=393
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm6:UPTIME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=393
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm6:HEARTBEAT"
+		clr=0
+		bclr=29
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=707
+		y=393
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm6:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=392
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqDpm6"
+}
+"related display" {
+	object {
+		x=626
+		y=391
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqDpm6"
+	}
+	clr=14
+	bclr=8
+	label="Reboot..."
+}
+"related display" {
+	object {
+		x=601
+		y=392
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqDpm6"
+	}
+	clr=14
+	bclr=8
+}
+text {
+	object {
+		x=15
+		y=414
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqDpm7"
+}
+"text update" {
+	object {
+		x=193
+		y=415
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm7:HOSTNAME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=415
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm7:UPTIME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=415
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm7:HEARTBEAT"
+		clr=0
+		bclr=27
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=601
+		y=413
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqDpm7"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=626
+		y=413
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqDpm7"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+"text update" {
+	object {
+		x=707
+		y=415
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm7:STARTTOD"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=10
+		y=567
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=10
+		y=523
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+rectangle {
+	object {
+		x=10
+		y=501
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+rectangle {
+	object {
+		x=10
+		y=435
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+"text update" {
+	object {
+		x=193
+		y=437
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm8:HOSTNAME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=437
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm8:UPTIME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=437
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm8:HEARTBEAT"
+		clr=0
+		bclr=27
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=707
+		y=437
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm8:STARTTOD"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=436
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqDpm8"
+}
+"related display" {
+	object {
+		x=626
+		y=435
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqDpm8"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+rectangle {
+	object {
+		x=10
+		y=457
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+"text update" {
+	object {
+		x=193
+		y=459
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm9:HOSTNAME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=459
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm9:UPTIME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=459
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm9:HEARTBEAT"
+		clr=0
+		bclr=29
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=707
+		y=459
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm9:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=458
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqDpm9"
+}
+"related display" {
+	object {
+		x=626
+		y=457
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqDpm9"
+	}
+	clr=14
+	bclr=8
+	label="Reboot..."
+}
+rectangle {
+	object {
+		x=10
+		y=479
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+"text update" {
+	object {
+		x=193
+		y=481
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm10:HOSTNAME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=481
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm10:UPTIME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=481
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm10:HEARTBEAT"
+		clr=0
+		bclr=29
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=707
+		y=481
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm10:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=480
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqDpm10"
+}
+"related display" {
+	object {
+		x=626
+		y=479
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqDpm10"
+	}
+	clr=14
+	bclr=8
+	label="Reboot..."
+}
+"related display" {
+	object {
+		x=601
+		y=435
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqDpm8"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=601
+		y=458
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqDpm9"
+	}
+	clr=14
+	bclr=8
+}
+"related display" {
+	object {
+		x=601
+		y=480
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqDpm10"
+	}
+	clr=14
+	bclr=8
+}
+text {
+	object {
+		x=15
+		y=502
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqDpm11"
+}
+"text update" {
+	object {
+		x=193
+		y=503
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm11:HOSTNAME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=503
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm11:UPTIME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=503
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm11:HEARTBEAT"
+		clr=0
+		bclr=27
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=601
+		y=501
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqDpm11"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=626
+		y=501
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqDpm11"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+"text update" {
+	object {
+		x=707
+		y=503
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm11:STARTTOD"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=524
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqDpm12"
+}
+"text update" {
+	object {
+		x=193
+		y=525
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm12:HOSTNAME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=525
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm12:UPTIME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=525
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm12:HEARTBEAT"
+		clr=0
+		bclr=27
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=601
+		y=523
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqDpm12"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=626
+		y=523
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqDpm12"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+"text update" {
+	object {
+		x=707
+		y=525
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm12:STARTTOD"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=10
+		y=545
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+"text update" {
+	object {
+		x=193
+		y=547
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm13:HOSTNAME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=547
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm13:UPTIME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=547
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm13:HEARTBEAT"
+		clr=0
+		bclr=29
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=707
+		y=547
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm13:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=546
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqDpm13"
+}
+"related display" {
+	object {
+		x=626
+		y=545
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqDpm13"
+	}
+	clr=14
+	bclr=8
+	label="Reboot..."
+}
+"related display" {
+	object {
+		x=601
+		y=546
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqDpm13"
+	}
+	clr=14
+	bclr=8
+}
+"text update" {
+	object {
+		x=193
+		y=569
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm14:HOSTNAME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=569
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm14:UPTIME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=569
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm14:HEARTBEAT"
+		clr=0
+		bclr=29
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=707
+		y=569
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDpm14:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=568
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqDpm14"
+}
+"related display" {
+	object {
+		x=626
+		y=567
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqDpm14"
+	}
+	clr=14
+	bclr=8
+	label="Reboot..."
+}
+"related display" {
+	object {
+		x=601
+		y=568
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqDpm14"
+	}
+	clr=14
+	bclr=8
+}
+rectangle {
+	object {
+		x=5
+		y=16
+		width=190
+		height=2
+	}
+	"basic attribute" {
+		clr=29
+	}
+}
+rectangle {
+	object {
+		x=5
+		y=670
+		width=190
+		height=2
+	}
+	"basic attribute" {
+		clr=29
+	}
+}
+rectangle {
+	object {
+		x=5
+		y=650
+		width=190
+		height=2
+	}
+	"basic attribute" {
+		clr=29
+	}
+}
+rectangle {
+	object {
+		x=5
+		y=36
+		width=190
+		height=2
+	}
+	"basic attribute" {
+		clr=29
+	}
+}
+rectangle {
+	object {
+		x=10
+		y=611
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+rectangle {
+	object {
+		x=10
+		y=589
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+text {
+	object {
+		x=15
+		y=590
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqDtm0"
+}
+"text update" {
+	object {
+		x=193
+		y=591
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDtm0:HOSTNAME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=591
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDtm0:UPTIME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=591
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDtm0:HEARTBEAT"
+		clr=0
+		bclr=27
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=601
+		y=589
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqDtm0"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=626
+		y=589
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqDtm0"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+"text update" {
+	object {
+		x=707
+		y=591
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDtm0:STARTTOD"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=612
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqDtm1"
+}
+"text update" {
+	object {
+		x=193
+		y=613
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDtm1:HOSTNAME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=613
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDtm1:UPTIME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=613
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDtm1:HEARTBEAT"
+		clr=0
+		bclr=27
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=601
+		y=611
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqDtm1"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=626
+		y=611
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqDtm1"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+"text update" {
+	object {
+		x=707
+		y=613
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDtm1:STARTTOD"
 		clr=0
 		bclr=27
 	}

@@ -1,14 +1,14 @@
 
 file {
-	name="/u1/epics/svt-epics/svt-daq-epics/example/../../svt-medm/svtDpmStatus.adl"
+	name="/usr/clas12/hps/dev/apps/svtDaqApp/medm/svtDpmStatus.adl"
 	version=030108
 }
 display {
 	object {
-		x=2105
-		y=136
-		width=500
-		height=500
+		x=830
+		y=223
+		width=495
+		height=499
 	}
 	clr=14
 	bclr=12
@@ -87,271 +87,547 @@ display {
 		1a7309,
 	}
 }
-composite {
+text {
 	object {
 		x=10
+		y=32
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="Data DPM"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=12
+		y=55
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="0"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=12
+		y=80
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="1"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=12
+		y=105
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="2"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=12
+		y=130
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="3"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=12
+		y=155
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="4"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=12
+		y=180
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="5"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=12
+		y=205
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="6"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=12
+		y=230
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="(cntrl) dpm7"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=12
+		y=254
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="7"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=12
+		y=279
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="8"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=12
+		y=304
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="9"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=12
+		y=329
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="10"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=12
+		y=354
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="11"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=12
+		y=379
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="12"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=12
+		y=463
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="1"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=12
+		y=438
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="0"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=10
+		y=418
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="DTM"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=205
 		y=10
-		width=347
-		height=474
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=15
+	}
+	textix="DPM Status"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=115
+		y=32
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="Run State"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=221
+		y=32
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="Status"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=303
+		y=32
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="Event Count"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=115
+		y=418
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="Run State"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=90
+		y=55
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:0:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=90
+		y=80
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:1:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=90
+		y=105
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:2:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=90
+		y=130
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:3:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=90
+		y=155
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:4:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=90
+		y=180
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:5:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=90
+		y=205
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:6:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=90
+		y=230
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:7:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=90
+		y=254
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:8:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=90
+		y=279
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:9:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=90
+		y=304
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:10:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=90
+		y=329
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:11:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=90
+		y=354
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:12:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=90
+		y=379
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:13:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+composite {
+	object {
+		x=303
+		y=55
+		width=100
+		height=344
 	}
 	"composite name"=""
 	children {
-		text {
-			object {
-				x=10
-				y=32
-				width=50
-				height=18
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="Data DPM"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=12
-				y=55
-				width=46
-				height=20
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="0"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=12
-				y=80
-				width=46
-				height=20
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="1"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=12
-				y=105
-				width=46
-				height=20
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="2"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=12
-				y=130
-				width=46
-				height=20
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="3"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=12
-				y=155
-				width=46
-				height=20
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="4"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=12
-				y=180
-				width=46
-				height=20
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="5"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=12
-				y=205
-				width=46
-				height=20
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="6"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=12
-				y=230
-				width=46
-				height=20
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="(cntrl) dpm7"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=12
-				y=255
-				width=46
-				height=20
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="7"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=12
-				y=280
-				width=46
-				height=20
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="8"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=12
-				y=305
-				width=46
-				height=20
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="9"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=12
-				y=330
-				width=46
-				height=20
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="10"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=12
-				y=355
-				width=46
-				height=20
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="11"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=12
-				y=380
-				width=46
-				height=20
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="12"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=12
-				y=464
-				width=46
-				height=20
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="1"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=12
-				y=439
-				width=46
-				height=20
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="0"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=10
-				y=419
-				width=50
-				height=18
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="DTM"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=206
-				y=10
-				width=100
-				height=18
-			}
-			"basic attribute" {
-				clr=15
-			}
-			textix="DPM Status"
-			align="horiz. centered"
-		}
 		"text update" {
 			object {
-				x=90
+				x=303
 				y=55
 				width=100
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:0:state"
+				chan="SVT:daq:dpm:0:eventcount"
 				clr=31
 				bclr=14
 			}
@@ -361,13 +637,13 @@ composite {
 		}
 		"text update" {
 			object {
-				x=90
+				x=303
 				y=80
 				width=100
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:1:state"
+				chan="SVT:daq:dpm:1:eventcount"
 				clr=31
 				bclr=14
 			}
@@ -377,13 +653,13 @@ composite {
 		}
 		"text update" {
 			object {
-				x=90
+				x=303
 				y=105
 				width=100
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:2:state"
+				chan="SVT:daq:dpm:2:eventcount"
 				clr=31
 				bclr=14
 			}
@@ -393,13 +669,13 @@ composite {
 		}
 		"text update" {
 			object {
-				x=90
+				x=303
 				y=130
 				width=100
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:3:state"
+				chan="SVT:daq:dpm:3:eventcount"
 				clr=31
 				bclr=14
 			}
@@ -409,13 +685,13 @@ composite {
 		}
 		"text update" {
 			object {
-				x=90
+				x=303
 				y=155
 				width=100
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:4:state"
+				chan="SVT:daq:dpm:4:eventcount"
 				clr=31
 				bclr=14
 			}
@@ -425,13 +701,13 @@ composite {
 		}
 		"text update" {
 			object {
-				x=90
+				x=303
 				y=180
 				width=100
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:5:state"
+				chan="SVT:daq:dpm:5:eventcount"
 				clr=31
 				bclr=14
 			}
@@ -441,13 +717,13 @@ composite {
 		}
 		"text update" {
 			object {
-				x=90
+				x=303
 				y=205
 				width=100
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:6:state"
+				chan="SVT:daq:dpm:6:eventcount"
 				clr=31
 				bclr=14
 			}
@@ -457,13 +733,13 @@ composite {
 		}
 		"text update" {
 			object {
-				x=90
-				y=230
+				x=303
+				y=229
 				width=100
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:7:state"
+				chan="SVT:daq:dpm:7:eventcount"
 				clr=31
 				bclr=14
 			}
@@ -473,13 +749,13 @@ composite {
 		}
 		"text update" {
 			object {
-				x=90
-				y=255
+				x=303
+				y=254
 				width=100
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:8:state"
+				chan="SVT:daq:dpm:8:eventcount"
 				clr=31
 				bclr=14
 			}
@@ -489,13 +765,13 @@ composite {
 		}
 		"text update" {
 			object {
-				x=90
-				y=280
+				x=303
+				y=279
 				width=100
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:9:state"
+				chan="SVT:daq:dpm:9:eventcount"
 				clr=31
 				bclr=14
 			}
@@ -503,28 +779,15 @@ composite {
 			limits {
 			}
 		}
-		text {
-			object {
-				x=115
-				y=32
-				width=50
-				height=18
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="Run State"
-			align="horiz. centered"
-		}
 		"text update" {
 			object {
-				x=90
-				y=305
+				x=303
+				y=304
 				width=100
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:10:state"
+				chan="SVT:daq:dpm:10:eventcount"
 				clr=31
 				bclr=14
 			}
@@ -534,13 +797,13 @@ composite {
 		}
 		"text update" {
 			object {
-				x=90
-				y=330
+				x=303
+				y=329
 				width=100
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:11:state"
+				chan="SVT:daq:dpm:11:eventcount"
 				clr=31
 				bclr=14
 			}
@@ -550,13 +813,13 @@ composite {
 		}
 		"text update" {
 			object {
-				x=90
-				y=355
+				x=303
+				y=354
 				width=100
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:12:state"
+				chan="SVT:daq:dpm:12:eventcount"
 				clr=31
 				bclr=14
 			}
@@ -566,13 +829,13 @@ composite {
 		}
 		"text update" {
 			object {
-				x=90
-				y=380
+				x=303
+				y=379
 				width=100
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:13:state"
+				chan="SVT:daq:dpm:13:eventcount"
 				clr=31
 				bclr=14
 			}
@@ -580,10 +843,21 @@ composite {
 			limits {
 			}
 		}
+	}
+}
+composite {
+	object {
+		x=90
+		y=438
+		width=100
+		height=45
+	}
+	"composite name"=""
+	children {
 		"text update" {
 			object {
 				x=90
-				y=464
+				y=463
 				width=100
 				height=20
 			}
@@ -599,7 +873,7 @@ composite {
 		"text update" {
 			object {
 				x=90
-				y=439
+				y=438
 				width=100
 				height=20
 			}
@@ -611,45 +885,6 @@ composite {
 			align="horiz. centered"
 			limits {
 			}
-		}
-		text {
-			object {
-				x=222
-				y=32
-				width=50
-				height=18
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="Status"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=307
-				y=32
-				width=50
-				height=18
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="Event Count"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=115
-				y=419
-				width=50
-				height=18
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="Run State"
-			align="horiz. centered"
 		}
 	}
 }

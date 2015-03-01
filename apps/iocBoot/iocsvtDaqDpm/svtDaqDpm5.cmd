@@ -18,6 +18,7 @@ dbLoadRecords("db/iocAdminSoft.db", "IOC=iocsvtDaqDpm5")
 
 ## Load record instances
 #dbLoadRecords("db/xxx.db","user=trackerHost")
+dbLoadRecords("db/dbDataDpmEventCount.db","DPM=5")
 dbLoadRecords("db/dbDataDpm.db","DPM=5")
 dbLoadRecords("db/dbDataDpmLink.db","DPM=5,DP=0")
 dbLoadRecords("db/dbDataDpmLink.db","DPM=5,DP=1")
