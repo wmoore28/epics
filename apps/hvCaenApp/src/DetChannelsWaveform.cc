@@ -160,8 +160,10 @@ static long init_record_waveform_det( waveformRecord *prec)
 					k++;
 					sprintf(channel, "%s%s:%s", prefix.c_str(), items_it->second.c_str(), "enable");
 					dbNameToAddr(channel, &dpvt->paddr[k]);
-					printf(__FILE__":%s:%d: channel name to connect from WF = %s, %d, 0x%x record name = %s\n",
-							__FUNCTION__, __LINE__, channel, strlen(channel), (unsigned int)&dpvt->paddr[k], dpvt->paddr[k].precord->name);
+					//printf(__FILE__":%s:%d: channel name to connect from WF = %s, %d, 0x%x record name = %s\n",
+					       //					       __FUNCTION__, __LINE__, channel, strlen(channel), reinterpret_cast<unsigned int>(&dpvt->paddr[k]), dpvt->paddr[k].precord->name);
+					printf(__FILE__":%s:%d: channel name to connect from WF = %s, %d, %p record name = %s\n",
+					       __FUNCTION__, __LINE__, channel, strlen(channel), &dpvt->paddr[k], dpvt->paddr[k].precord->name);
 					k++;
 				}
 				//				}
@@ -213,7 +215,8 @@ static long read_waveform_det( waveformRecord *prec)
 		}
 		nRequest =  MAX_NELM;
 		if ( dbPutField(dpvt->paddr_x, DBR_FLOAT, data, nRequest) ) {
-			printf("Error in %s: Can't put data from 0x%x \n", __FUNCTION__, (unsigned int)dpvt->paddr_x );
+		  //			printf("Error in %s: Can't put data from 0x%x \n", __FUNCTION__, (unsigned int)dpvt->paddr_x );
+			printf("Error in %s: Can't put data from %p \n", __FUNCTION__, dpvt->paddr_x );
 		}
 	}
 
@@ -235,7 +238,7 @@ static long read_waveform_det( waveformRecord *prec)
 		}
 	}
 	if ( status != 0 ) {
-		printf("Error in %s: Can't get data from 0x%x \n", __FUNCTION__, (unsigned int)&paddr[i] );
+		printf("Error in %s: Can't get data from %p \n", __FUNCTION__, &paddr[i] );
 		prec->val = 0;
 	}
 

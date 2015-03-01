@@ -1,0 +1,102 @@
+
+record(bo, SVT:bias:switch) 
+{
+  field(OUT, "SVT:bias:switch_fanout PP")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+}
+
+record(dfanout, SVT:bias:switch_fanout) 
+{
+  field(OUTA, "SVT:bias:top:switch.VAL PP")
+  field(OUTB, "SVT:bias:bot:switch.VAL PP")
+}
+
+record(bo, SVT:bias:top:switch) 
+{
+  field(OUT, "SVT:bias:top:switch_fanout PP")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+}
+
+record(dfanout, SVT:bias:top:switch_fanout) 
+{
+  field(OUTA, "SVT:bias:top:switch_fanout1 PP")
+  field(OUTB, "SVT:bias:top:switch_fanout2 PP")
+  field(OUTC, "SVT:bias:top:switch_fanout3 PP")
+}
+
+record(dfanout, SVT:bias:top:switch_fanout1) 
+{
+  field(OUTA, "SVT:bias:top:0:switch.VAL PP")
+  field(OUTB, "SVT:bias:top:1:switch.VAL PP")
+  field(OUTC, "SVT:bias:top:2:switch.VAL PP")
+  field(OUTD, "SVT:bias:top:3:switch.VAL PP")
+  field(OUTE, "SVT:bias:top:4:switch.VAL PP")
+  field(OUTF, "SVT:bias:top:5:switch.VAL PP")
+}
+
+record(dfanout, SVT:bias:top:switch_fanout2) 
+{
+  field(OUTA, "SVT:bias:top:6:switch.VAL PP")
+  field(OUTB, "SVT:bias:top:7:switch.VAL PP")
+  field(OUTC, "SVT:bias:top:8:switch.VAL PP")
+  field(OUTD, "SVT:bias:top:9:switch.VAL PP")
+  field(OUTE, "SVT:bias:top:10:switch.VAL PP")
+  field(OUTF, "SVT:bias:top:11:switch.VAL PP")
+}
+
+record(dfanout, SVT:bias:top:switch_fanout3) 
+{
+  field(OUTA, "SVT:bias:top:12:switch.VAL PP")
+  field(OUTB, "SVT:bias:top:13:switch.VAL PP")
+  field(OUTC, "SVT:bias:top:14:switch.VAL PP")
+  field(OUTD, "SVT:bias:top:15:switch.VAL PP")
+  field(OUTE, "SVT:bias:top:16:switch.VAL PP")
+  field(OUTF, "SVT:bias:top:17:switch.VAL PP")
+}
+
+record(bo, SVT:bias:bot:switch) 
+{
+  field(OUT, "SVT:bias:bot:switch_fanout PP")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+}
+
+record(dfanout, SVT:bias:bot:switch_fanout) 
+{
+  field(OUTA, "SVT:bias:bot:switch_fanout1 PP")
+  field(OUTB, "SVT:bias:bot:switch_fanout2 PP")
+  field(OUTC, "SVT:bias:bot:switch_fanout3 PP")
+}
+
+record(dfanout, SVT:bias:bot:switch_fanout1) 
+{
+  field(OUTA, "SVT:bias:bot:20:switch.VAL PP")
+  field(OUTB, "SVT:bias:bot:21:switch.VAL PP")
+  field(OUTC, "SVT:bias:bot:22:switch.VAL PP")
+  field(OUTD, "SVT:bias:bot:23:switch.VAL PP")
+  field(OUTE, "SVT:bias:bot:24:switch.VAL PP")
+  field(OUTF, "SVT:bias:bot:25:switch.VAL PP")
+}
+
+record(dfanout, SVT:bias:bot:switch_fanout2) 
+{
+  field(OUTA, "SVT:bias:bot:26:switch.VAL PP")
+  field(OUTB, "SVT:bias:bot:27:switch.VAL PP")
+  field(OUTC, "SVT:bias:bot:28:switch.VAL PP")
+  field(OUTD, "SVT:bias:bot:29:switch.VAL PP")
+  field(OUTE, "SVT:bias:bot:30:switch.VAL PP")
+  field(OUTF, "SVT:bias:bot:31:switch.VAL PP")
+}
+
+record(dfanout, SVT:bias:bot:switch_fanout3) 
+{
+  field(OUTA, "SVT:bias:bot:32:switch.VAL PP")
+  field(OUTB, "SVT:bias:bot:33:switch.VAL PP")
+  field(OUTC, "SVT:bias:bot:34:switch.VAL PP")
+  field(OUTD, "SVT:bias:bot:35:switch.VAL PP")
+  field(OUTE, "SVT:bias:bot:36:switch.VAL PP")
+  field(OUTF, "SVT:bias:bot:37:switch.VAL PP")
+}
+

@@ -194,7 +194,9 @@ string MpodCrate::GetModuleType(int slot){
       Mnam += "201p-F-K";
     } else if (MaxVoltage == 500.0){
       Mnam += "205p-F";
-    }
+    } else if (MaxVoltage == 1000.0){
+      Mnam += "210p-F";
+    }      
   } else {
     if ((MaxVoltage == 8.0) && (MaxCurrent == 5.0)){
       Mnam += "8008L";

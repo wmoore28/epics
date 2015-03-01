@@ -18,6 +18,7 @@ hvCaen_DBD += HVCAENx527.dbd
 hvCaen_DBD += asyn.dbd
 hvCaen_DBD += devSnmp.dbd
 hvCaen_DBD += LVMPODSupport.dbd
+hvCaen_DBD += devIocStats.dbd
 
 # hvCaen_registerRecordDeviceDriver.cpp derives from hvCaen.dbd
 hvCaen_SRCS += hvCaen_registerRecordDeviceDriver.cpp
@@ -47,6 +48,7 @@ hvCaen_LIBS += QtSql
 hvCaen_LIBS += std
 hvCaen_LIBS += busy
 hvCaen_LIBS += calc autosave
+hvCaen_LIBS += devIocStats
 hvCaen_LIBS += sscan
 hvCaen_LIBS += asyn
 hvCaen_LIBS += seq pv
