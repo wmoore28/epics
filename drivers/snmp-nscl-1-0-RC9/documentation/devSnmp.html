@@ -1,0 +1,561 @@
+<HTML>
+
+<HEAD>
+<TITLE>EPICS SNMP Device Support Module (NSCL/FRIB)</TITLE>
+</HEAD>
+
+<BODY>
+<H1>EPICS SNMP Device Support Module (NSCL/FRIB)</H1>
+<B>Release 1.0.0</B><br>
+<B>by John Priller</B><br>
+<B>September 24, 2014</B><br>
+
+<h2><u>Contents</u></h2>
+<ul>
+  <li><a href="#Introduction">Introduction & Acknowledgments</a></li>
+  <li><a href="#Requirements">Requirements</a>
+    <ul>
+      <li><a href="#NETSNMP">NET-SNMP</a></li>
+      <li><a href="#MIBfiles">MIB files for SNMP target devices</a></li>
+    </ul>
+  </li>
+  <li><a href="#Usage">Usage</a>
+    <ul>
+      <li><a href="#RecordTypes">Supported record types</a></li>
+      <li><a href="#RecordSpec">Record specification</a></li>
+      <li><a href="#Using">Adding this support module to an application</a></li>
+      <li><a href="#IocshCmds">IOC shell commands</a></li>
+    </ul>
+  </li>
+  <li><a href="#Gotchas">'Gotchas'</a>
+    <ul>
+      <li><a href="#gotcha_FieldLen">INP/OUT fields exceeding the maximum field length EPICS allows</a></li>
+      <li><a href="#gotcha_FewerVar">Devices that quietly return fewer variables than requested</a></li>
+      <li><a href="#gotcha_DiffVar">Devices that return different variables than the ones requested</a></li>
+      <li><a href="#gotcha_DiffVal">Devices that return different data than requested</a></li>
+    </ul>
+  </li>
+  <li><a href="#Download">Download</a></li>
+  <li><a href="#Support">Support</a></li>
+</ul>
+
+<h2 id="Introduction"><u>Introduction & Acknowledgments</u></h2>
+
+<p>This module provides EPICS device-layer support for hardware devices
+that communicate via SNMP (Simple Network Management Protocol). Its
+development was primarily focused on Wiener ISEG/MPOD power supply
+crates, but it should work just as well with any SNMP-aware devices the
+user can obtain MIB definition files for.</p>
+
+<p>Other SNMP device-support modules exist for EPICS. This module was
+originally based on the SNMP support module by Richard Dabney (formerly
+of LANL) and later Albert Kagarmanov of DESY, which can be found
+<A HREF="http://www-mks2.desy.de/content/e4/e40/e41/e12212/index_ger.html">here</A>.
+At the time (~2006) this module did not support setting but only reading
+and this was the impetus for NSCL to develop its own EPICS device
+support module based loosely on the DESY code. Another EPICS SNMP device
+support module developed by Sheng Peng, which also adds setting support,
+is available
+<A HREF="http://controls.diamond.ac.uk/downloads/other/files/">here</A>.</p>
+
+<h2 id="Requirements"><u>Requirements</u></h2>
+<p>
+<h4 id="NETSNMP">NET-SNMP</h4>
+<p>This module uses the net-snmp library for access to SNMP-based
+devices. The home web page for this library is
+<A HREF="http://www.net-snmp.org/">here</A>.
+NET-SNMP also includes a number of useful utilities such as snmpget and
+snmpset for reading and writing SNMP variables, and snmpwalk for
+listing what variables a host makes available.</p>
+
+<p>NET-SNMP source code and binaries are available for a number of
+platforms, including Linux and Windows. This module has only been tested
+on Linux thus far, but in theory it should work on any platform EPICS
+and the NET-SNMP source code can be compiled for.</p>
+
+<h4 id="MIBfiles">MIB files for SNMP target devices</h4>
+
+<p>SNMP variables within devices are referenced by their object ID (or
+&quotOID&quot). In their raw form these appear to a human as a long and
+bewildering string of numbers and dots. In order to refer to these in
+more human-readable terms, MIB (Management Information Base) files
+provide a translation into text identifiers (which are also long, in
+fact longer, but are usually not as bewildering).</p>
+
+<p>MIB files need to be copied to a directory where NET-SNMP can find
+them. On a Linux system this is typically /usr/local/share/snmp/mibs/ or
+/usr/share/mibs/.  A colon-separated list of directories can be added
+to the search path by adding a command such as
+     <pre>epicsEnvSet("MIBDIRS", "+$(TOP)/mibs:/some/other/directory")</pre>
+to the startup command file.  The leading '+' character indicates the the following
+directory, or list of directories, is to be added to the default list and
+not to replace it.</p>
+
+<p>MIB files can often be obtained from the manufacturer of the device,
+typically on the software and documentation CD shipped with it, or can be
+downloaded from the manufacturer's support web pages. A MIB file for
+Wiener/ISEG/MPOD systems, the focus of this module, can be found in the
+'mibs' subdirectory of the distribution.<p>
+
+<h2 id="Usage"><u>Usage</u></h2>
+
+<h3 id="RecordTypes">Supported record types</h3>
+
+The following EPICS record types are supported:
+<dl>
+  <dt>Input</dt>
+    <dd>ai</dd>
+    <dd>longin</dd>
+    <dd>stringin</dd>
+    <dd>waveform (DBF_STRING, DBF_CHAR, DBF_UCHAR)</dd>
+  <dt>Output
+    <dd>ao</dd>
+    <dd>longout</dd>
+    <dd>stringout</dd>
+</dl>
+
+<h3 id="RecordSpec">Record specification</h3>
+
+For demonstration purposes an example input and output record are listed below:
+<pre>
+   record(ai, "$(DEV):VoltageRead")
+   {
+     field(DESC, "SNMP channel")
+     field(DTYP, "Snmp")
+     field(SCAN, ".2 second")
+     field(PREC, "3")
+     field(INP, "@$(HOST) guru WIENER-CRATE-MIB::outputMeasurementSenseVoltage.$(CHAN) Float: 100")
+   }
+
+   record(ao, "$(DEV):VoltageSet")
+   {
+     field(DESC, "SNMP channel")
+     field(DTYP, "Snmp")
+     field(SCAN, "Passive")
+     field(PREC, "3")
+     field(OUT, "@$(HOST) guru WIENER-CRATE-MIB::outputVoltage.$(CHAN) Float: 100 F")
+   }
+</pre>
+
+The format of the INP/OUT fields is:
+<pre>   @host community OIDname mask dataLength [set_type[special_flags]]</pre>
+
+<table border="1" cellpadding="10">
+  <tr><td>host</td>
+      <td><p>The SNMP host device to communicate with, either an
+          IP address or a node name that the IOC's DNS server can
+          resolve.</p>
+      </td>
+  <tr>
+  <tr><td>community</td>
+      <td><p>The SNMP community name to use when accessing the desired
+          variable. SNMP hosts often have multiple communities, a
+          read-only community (generally named 'public') and a separate
+          read-write community (in the case of Wiener/ISEG/MPODs this
+          defaults to 'guru').</p>
+          <p>Note that we use the same community for both the voltage
+          read and the voltage write PVs above, this allows the module
+          to pack requests to read both OIDs into the same SNMP poll request
+          whenever possible rather than having to issue two separate
+          poll requests.</p>
+      </td>
+  <tr><td>OIDname</td>
+      <td><p>The name of the SNMP variable to either read or set. A list
+          of the variables an SNMP host makes available can be retrieved
+          with the NET-SNMP snmpwalk utility.</p>
+      </td>
+  <tr><td>mask</td>
+      <td><p>The substring in the returned variable value string that directly
+          proceeds the value we actually wish to obtain. For example the SNMP
+          host may return this text for the value of the floating-point
+          variable we're reading:</p>
+          <pre>   Opaque: Float: 349.9885 V</pre>
+          <p>The mask in our example PVs above specifies that our
+          variable value follows the text 'Float:'. </p>
+          <p>Underscores can be used as wildcards in a mask string, and
+          will match any character including a space. The mask
+          'Opaque:_Float:' would work in the above example.</p>
+          <p>Sometimes some care needs to be used in configuring the mask, for
+          example the on/off status string returned by a Wiener ISEG power supply
+          looks like one of these:
+<pre>
+   INTEGER: On(1)
+   INTEGER: Off(0)
+</pre>
+          <p>We might have been tempted to use INTEGER: as the mask as the value
+          being returned is an integer, but "On(1)" and "Off(0)" don't parse as
+          integers.  The mask we'd use to get at the integer being passed back
+          is '(' without the quotes, like so:</p>
+          <pre>    field(INP,  "@$(HOST) guru WIENER-CRATE-MIB::outputSwitch.$(OID) ( 100 i")</pre>
+          <p>If in any doubt about the mask to use, examine the reply strings the remote
+          device returns to the NET-SNMP snmpget or snmpwalk utilities.</p>
+      </td>
+  <tr><td>dataLength</td>
+      <td><p>How many bytes of buffer should be allocated to hold the reply
+          string from the SNMP host for the given variable. 100 bytes as
+          used in the example is generally more than adequate. If the data length
+          size specified is too small the returned string will be
+          truncated to fit in the buffer space specified.</p>
+          <p>Note that this is NOT the number of bytes that the given data type would
+          take up once converted, it's the number of bytes needed to hold the device's
+          entire reply string for the given OID.
+          For example a device might return this reply:
+          <pre>    Float: +3.1415926536E+00 A</pre>
+          <p>A "float" data variable is only 4 bytes once converted, but the buffer length
+          needed to hold the above reply is 27 bytes (26 chars + null terminator).</p>
+      </td>
+  <tr><td>set_type</td>
+      <td><p><u>Required</u> for output records, and required for input
+          records if they need any special flags to be defined (see
+          below). Set type is a single character specifying what data
+          type to use in setting the SNMP variable.</p>
+          <ul>
+          <li>'s' for string</li>
+          <li>'i' for integer</li>
+          <li>'F' for floating-point</li>
+          </ul>
+          <p>Note that 's' and 'i' are lowercase and 'F' is uppercase.
+          These are the same type specifiers used by the NET-SNMP
+          snmpset utility.</p>
+      </td>
+  <tr><td>special_flags</td>
+      <td><p>Optional/experimental.  In the future this will be a place
+          to specify any configuration flags that might be needed to
+          parse the return string for the given variable. At present a
+          few flags are defined for testing and exploratory
+          purposes:</p>
+          <ul>
+    <li>'p' squeezes all whitespace out of the returned string</li>
+    <li>'h' signals parsing hex-encoded bytes separated by spaces, '01 4e 7f' for example</li>
+    <li>'r' signals that the bit order of an integer should be inverted (host device annoyingly returns it as LSB...MSB)</li>
+    <li>'n' use the native/opaque data type returned by the host if an appropriate one is returned
+            (useful for obtaining higher precision of floats/doubles than string representation allows)</li>
+          </ul>
+    <p>The 'h' and 'r' flags are useful for parsing BITS variables from
+       Wiener/ISEG/MPODs. A better solution for these devices would be
+       to enable the &quotreturn BITS as INTEGER&quot option via the USB
+       configuration utility, but that's getting beyond our scope here.</p>
+      </td>
+</table>
+
+<h3 id="Using">Adding this support module to an application</h3>
+In addition to the EPICS standard procedure of adding devSnmp.dbd to <i>appName</i>_DBD and
+devSnmp to <i>appName</i>_LIBS in the application Makefile the following three lines
+must be added to the Makefile following the initial include statement:
+<pre>
+  USR_CFLAGS += `net-snmp-config --cflags`
+  USR_LDFLAGS += `net-snmp-config --libs`
+  PROD_LDLIBS += `net-snmp-config --libs`
+</pre>
+As of snmp-nscl-1.0.RC6.tgz the following were added to the snmpApp/src Makefile:
+<pre>
+  USR_CFLAGS += $(shell $(PERL) ../getNetSNMPversion.pl)
+  USR_CPPFLAGS += $(shell $(PERL) ../getNetSNMPversion.pl)
+</pre>
+These are to provide a numeric NetSNMP version define for the C/C++ compiler so
+the devSnmp code can do conditional compilation where necessary.  Unfortunately
+the NetSNMP headers only seem to provide PACKAGE_VERSION which is a character
+string like "5.7.1" and rather difficult to do #if tests with.  Thus the need
+for a helpful little perl script which provides a numeric definition such as:
+<pre>
+  -DdevSnmp_NETSNMP_VERSION=50701
+</pre>
+
+
+<h3 id="IocshCmds">IOC shell commands</h3>
+
+<p>A number of IOC shell commands are provided to configure module
+   parameters and help diagnose problems, these are detailed below.</p>
+
+<dl>
+  <dt id="devSnmpSetDebug"><b>devSnmpSetDebug(level)</b></dt>
+  <dd>
+  <p>Deprecated, devSnmpSetParam with DebugLevel parameter should be
+  used instead. Provided for compatibility with earlier versions of the
+  SNMP device support module.</p>
+  </dd>
+
+  <dt id="devSnmpSetParam"><b>devSnmpSetParam(parameter,value)</b></dt>
+  <dd>
+  <p>Sets a given module paramater, identified by a text string, to the
+  given integer value. Invoking this function without any arguments
+  displays the current values of all configurable parameters.</p>
+  <p>Unless specifically noted in their description, parameters can be
+     changed at any time.</p>
+  <p>The following parameters are provided:</p>
+  <table border="1" cellpadding="10">
+    <tr><th>Parameter</th><th>Default</th><th>Description</th><tr>
+
+    <tr>
+      <td>DebugLevel</td>
+      <td align="right">0</td>
+      <td><p>Debugging message level. The higher the level the more
+          debug messages will be generated.</p></td>
+    </tr>
+
+    <tr>
+      <td>DataStaleTimeoutMSec</td>
+      <td align="right">20000</td>
+      <td><p>How long in milliseconds data remains valid if no valid
+          response can be obtained from the SNMP device. This is to
+          prevent there being no READ error flagged in PVs should the
+          'read' thread of the module, responsible for SNMP
+          communications, crash or hang up unexpectedly.</p></td>
+    </tr>
+
+    <tr>
+      <td>MaxOidCompFailures</td>
+      <td align="right">10</td>
+      <td><p>How many consecutive times an SNMP variable returned can
+          fail to match the OID of the SNMP variable requested before a
+          READ error is flagged for the effected PV(s). The default is
+          made generous to overcome issues observed with older
+          Wiener/ISEG/MPOD firmware, where replies sporadically arrive
+          with requested OIDs missing and other OIDs returned in their
+          place. This is detailed further in the <a href="#gotcha_DiffVar">'gotchas'</a>
+          section.</p></td>
+    </tr>
+
+    <tr>
+      <td>MaxTopPollWeight</td>
+      <td align="right">20</td>
+      <td><p>To provide better responsiveness for OIDs/PVs with faster
+          scan rates the module maintains a sorted list of what items
+          are most in need of being polled, so that high scan-rate items
+          are polled more often than low scan-rate ones. When a poll is
+          being assembled the determination of which items to poll is
+          based on a calculated &quotpoll weight&quot, that being the number of
+          milliseconds before a given item is due to be polled. A
+          negative weight indicates that a poll of the item is overdue,
+          a positive one that it is not yet due (but will be in
+          pollWeight milliseconds).</p>
+          <p>MaxTopPollWeight is the weight that the most-poll-needy
+          item must be at or below for a poll to be generated on the
+          current loop of the module's 'send' thread. If no item meets
+          this threshold no poll will be assembled and sent during this
+          loop &#8211 there is nothing the module sees the need to poll and
+          so it doesn't waste bandwidth doing so. If the most-needy item
+          is at or below this level, then a poll will be generated for
+          the most-needy item and for the not-quite-as-needy items
+          following it, until either the poll request is full or an item
+          whose poll weight is DoNotPollWeight or higher (see below) is
+          encountered.</p></td>
+    </tr>
+
+    <tr>
+      <td>DoNotPollWeight</td>
+      <td align="right">1000</td>
+      <td><p>The poll weight (see MaxTopPollWeight parameter above for an
+          explanation) at or above which an item will not be polled on
+          the current pass through the send loop.</p></td>
+    </tr>
+
+    <tr>
+      <td>PassivePollMSec</td>
+      <td align="right">2000</td>
+      <td><p>How often to poll OIDs for PVs whose scan rate is Passive.</p></td>
+    </tr>
+
+    <tr>
+      <td>SetSkipReadbackMSec</td>
+      <td align="right">4000</td>
+      <td><p>How long after a setting has been made to a scan-Passive PV
+          that the module is allowed to update the read value of the PV
+          with the value read back from the SNMP device. This is to
+          prevent annoying value flicker when a setting is made by the
+          user but the device has not yet updated its variables and the
+          former value is still being returned by queries.</p></td>
+    </tr>
+
+    <tr>
+      <td>ReadStarvationMSec</td>
+      <td align="right">1000</td>
+      <td><p>For better responsiveness the module gives outgoing
+          settings messages a priority over polls for readings in its
+          communication with SNMP host devices. If a large number of
+          settings are being made, for example during an IOC restore of
+          saved values, we still want polls to occur and not be
+          starved of data by the flurry of outgoing settings. If a
+          queued poll request becomes ReadStarvationMSec milliseconds
+          old without being sent out then outgoing settings are no
+          longer given priority over it.</p></td>
+    </tr>
+
+    <tr>
+      <td>ThreadSleepMSec</td>
+      <td align="right">20</td>
+      <td><p>How long the read or send threads sleep at the end of each
+          pass through their loops. Adjusting this may require re-tuning
+          of other timing parameters listed here.</p></td>
+    </tr>
+
+    <tr>
+      <td>SessionTimeout</td>
+      <td align="right">1000000</td>
+      <td><p>Timeout value to use for underlying SNMP reads.  Units are
+          in microseconds.<br><br>
+          This is a newly-exposed parameter as of release 1.0.RC8, it is
+          unknown whether adjusting it after remote-host communications have
+          begun will have any effect.  Feedback appreciated.</p></td>
+    </tr>
+
+    <tr>
+      <td>SessionRetries</td>
+      <td align="right">5</td>
+      <td><p>Number of retries to use for underlying SNMP reads.<br><br>
+          This is a newly-exposed parameter as of release 1.0.RC8, it is
+          unknown whether adjusting it after remote-host communications have
+          begun will have any effect.  Feedback appreciated.</p></td>
+    </tr>
+
+  </table>
+  </dd>
+
+  <dt id="devSnmpSetMaxOidsPerReq"><br><b>devSnmpSetMaxOidsPerReq(hostname,maxoids)</b></dt>
+  <dd>
+  <p>Sets the maximum number of OIDs that a given SNMP host device can
+     accept in a read request. The default is 32. Wiener/ISEG/MPOD hosts
+     can handle 50.
+
+  <p>Increasing this limit for a host can increase polling efficiency,
+     but some devices (see the <a href="#gotcha_FewerVar">'gotchas'</a>
+     section) are known to return no error when their maximum OID query
+     limit is exceeded &#8211 they simply return only the number
+     variables they can accept. The module code does a sanity-check on
+     returned variable lists and prints a warning message should this
+     occur.</p>
+
+    <p>This function can be called anywhere in IOC startup, either
+       before or after iocInit() or interactively while the IOC is
+       running.</p>
+  </dd>
+
+  <dt id="epicsSnmpInit"><b>epicsSnmpInit</b></dt>
+  <dd>
+  <p>Deprecated, no longer necessary as module initialization takes place via callbacks from initHooks.</p>
+  </dd>
+
+  <dt id="devSnmpSetSnmpVersion"><b>devSnmpSetSnmpVersion(hostname,snmpVersionString)</b></dt>
+  <dd>
+  <p>Sets the SNMP version to use in communicating with a given SNMP
+     host. The following versions are supported:<p>
+  <pre>
+    SNMP_VERSION_1
+    SNMP_VERSION_2c
+    SNMP_VERSION_3</pre>
+  <p>The default is SNMP_VERSION_2c. SNMP host behavior is unpredictable
+     if the version set is higher than it supports.</p>
+  <p>This function should be called in IOC startup scripts <u>before</u>
+     any record definitions referencing the given host are loaded.</p>
+  </dd>
+
+  <dt id="snmpr"><b>snmpr(level,match)</b></dt>
+  <dd>
+  <p>Outputs a report with the given level of detail. Currently levels
+     0..2 are supported. This command also initiates a brief 2-second
+     sanity test of the module's two threads, 'read' and 'send', to
+     verify that their loop counters are still incrementing and thus
+     have not exited or hung up.</p>
+  <p>If 'match' is specified then only the hosts, groups and PVs/OIDs
+     which have a PV or OID containing the given text will be displayed.</p>
+  </dd>
+
+  <dt id="snmpz"><b>snmpz</b></dt>
+  <dd>
+  <p>Zeroes applicable counters used in reports by snmpr (see above).</p>
+  </dd>
+
+  <dt id="snmpzr"><b>snmpzr(level)</b></dt>
+  <dd>
+  <p>Calls snmpz, waits 10 seconds and then calls snmpr with the given level.</p>
+  </dd>
+
+</dl>
+
+<h2 id="Gotchas"><u>'Gotchas'</u></h2>
+
+<p>This section collects problematic issues discovered either in using this module or in communicating with certain SNMP target devices. It is by no means necessarily complete, it contains only those issues we have encountered thus far ourselves or have heard reliable reports of from others. Reports of issues encountered by others are of course always welcome.</p>
+
+<dl>
+  <dt id="gotcha_FieldLen"><b>INP/OUT fields exceeding the maximum field length EPICS allows</b></dt>
+  <dd>
+  <p>SNMP OID strings can be LONG. The maximum field length EPICS will
+     tolerate, however, is 80 characters as of R3.14.12.2 and INP/OUT
+     fields with long OID names can easily exceed this limit. The device support
+     itself expands strings such as %(FOO) or %{FOO} to the value of the FOO
+     environment variable so this can be used (%(W) for WIENER-CRATE-MIB::
+     for example) to work around this limit.  Note that expansion of macros
+     of the form $(M) or ${M} will not work since these are expaneded too
+     early and the resulting string will still not fit into 80 characters.
+     Another option is simply
+     patching EPICS base code with a larger field length limit and
+     recompiling base. This patch can be made in dbStaticLib.c in
+     routine dbPutString()'s handling of DBF_INLINK/DBF_OUTLINK fields.</p>
+  </dd>
+
+  <dt id="gotcha_FewerVar"><b>Devices that quietly return fewer variables than requested</b></dt>
+  <dd>
+  <p>Some varieties of MOXA single-port terminal servers have been
+     observed to do this, rather than return an error when too many
+     variables are requested they simply return the number they can
+     support with no error of any kind flagged. The module code protects
+     itself against this by sanity-checking the number of variables
+     returned against the number it requested when a reply to a poll is
+     received. To avoid this issue the <a href="#devSnmpSetMaxOidsPerReq">devSnmpSetMaxOidsPerReq</a> IOC shell
+     call can be used to limit how many variables a given host will be
+     asked for per request, adjust the number downwards until the module
+     stops issuing warnings.</p>
+  </dd>
+
+  <dt id="gotcha_DiffVar"><b>Devices that return different variables than the ones requested</b></dt>
+  <dd>
+  <p>Some Wiener/ISEG/MPOD units have been observed to do this,
+     especially when the crate has a higher number of cards and more
+     channels are being polled. The module protects itself against this
+     by comparing the OIDs of the variables returned with the OIDs that
+     were requested. Brief bouts of mismatches are tolerated to avoid
+     endless READ errors being generated, the MaxOidCompFailures
+     parameter (described above under the <a href="#devSnmpSetParam">devSnmpSetParam</a> IOC shell
+     call) specifies how tolerant to be.</p>
+  </dd>
+
+  <dt id="gotcha_DiffVal"><b>Devices that return different data than requested</b></dt>
+  <dd>
+  <p>Some Wiener/ISEG/MPOD units have been observed to do this, return a
+     variable with the same OID that was requested but with data that
+     comes from some other OID in the system. There is no good way for
+     the module to protect itself against this, the best that can be
+     done if you suspect this is happening is to carefully document the
+     issue (making sure the problem is not, for example, due to a bug in
+     this module! or due to a bad cable causing the variable value to truly
+     drop in and out) and then seek support from the manufacturer.
+     Wiener is said to have a firmware upgrade that (mostly) allieviates
+     this.</p>
+  </dd>
+
+  <dt><b>snmpwalk times-out or exits before returning complete variable listing</b></dt>
+  <dd>
+  <p>Slow or busy SNMP hosts sometimes confound the NET-SNMP snmpwalk
+     utility. Adjusting the timeout and retry-count arguments can be
+     helpful. I find this set of options almost always works to retrieve
+     the complete list, though it can take a longish while:</p>
+     <pre>   snmpwalk -m ALL -Cc -r 4 -t 15 (followed by host/community/etc arguments afterward)</pre>
+   <p>An example querying a Wiener/ISEG/MPOD would be:</p>
+     <pre>   snmpwalk -m ALL -Cc -r 4 -t 15 -c public 192.168.54.62 crate</pre>
+  </dd>
+</dl>
+
+<h2 id="Download"><u>Download</u></h2>
+
+The most recent version of the EPICS SNMP device support module can be
+downloaded from the NSCL/FRIB Control Software Group's website at:
+<A HREF="https://groups.nscl.msu.edu/controls/">https://groups.nscl.msu.edu/controls/</A>
+
+<h2 id="Support"><u>Support</u></h2>
+
+<p>For questions, comments, suggestions for improvement or for anything
+else related to this module, please feel free to contact John Priller at
+<A HREF="mailto:priller@frib.msu.edu">priller@frib.msu.edu</A></p>
+
+</body>
+</html>
