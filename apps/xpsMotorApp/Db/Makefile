@@ -19,6 +19,8 @@ DB += beamCheck4scan.db
 
 
 REQ += hpsTargetScan.req
+REQ += hpsSvtTopScan.req
+REQ += hpsSvtBotScan.req
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add

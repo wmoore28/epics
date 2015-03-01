@@ -14,16 +14,10 @@ xpsMotor_registerRecordDeviceDriver(pdbbase)
 epicsEnvSet("PREFIX","")
 ### Motors
 dbLoadTemplate "db/xpsHallB.substitutions"
-dbLoadRecords "db/hpsMotorAliases.db", "P=HPS-XPS:, pref=${PREFIX}"
-dbLoadRecords "db/hps_targets.db", "P=HPS-XPS:, R=m1, pref=${PREFIX}"
-dbLoadRecords "db/svt_positions.db", "pref=${PREFIX}"
+dbLoadRecords "db/hpsMotorAliases.db"	, "P=HPS-XPS:, pref=${PREFIX}"
+dbLoadRecords "db/hps_targets.db"	, "pref=${PREFIX}"
+dbLoadRecords "db/svt_positions.db"	, "pref=${PREFIX}"
 
-#epicsEnvSet("COLL_MOTOR","$(PREFIX)US1-2-BOT:m1")
-#epicsEnvSet("CONV_MOTOR","$(PREFIX)US1-2-BOT:m2")
-# Load DB for scan using sscan EPICS record
-#dbLoadRecords("db/standardScans.db","P=$(CONV_MOTOR):,MAXPTS1=2000,MAXPTS2=1000,MAXPTS3=1000,MAXPTS4=10,MAXPTSH=2000")
-#dbLoadRecords("db/saveData.db","P=$(CONV_MOTOR):")
-#dbLoadRecords("db/scanProgress.db","P=$(CONV_MOTOR):scanProgress:")
 
 # asyn port, IP address, IP port, number of axes, 
 # active poll period (ms), idle poll period (ms), 
@@ -41,23 +35,10 @@ XPSCreateAxis("HPS-XPS", 2, "HPS_TARGET.Y",	"79")
 cd ${TOP}/iocBoot/${IOC}
 #asSetFilename("ca_security.txt")
 
-#< motorsHallD_save_restore.cmd
-
-#set_pass0_restoreFile("motorsHallD.sav")
-#set_pass1_restoreFile("motorsHallD.sav")
 
 #
 iocInit
-# autosave startup
-#create_monitor_set("motorsHallD.req", 30, "PREF=${PREFIX}")
-
-# Handle autosave 'commands' contained in loaded databases.
-#makeAutosaveFiles()
-#create_monitor_set("info_positions.req", 5, "P=xxx:")
-#create_monitor_set("info_settings.req", 30, "P=xxx:")
 
 # Launch sequencer for to do scan progress and save data
 cd ${TOP}/iocBoot/iocxpsMotor
-#saveData_Init("saveData.req", "P=$(CONV_MOTOR):")
-#seq &scanProgress, "S=$(CONV_MOTOR):,P=$(CONV_MOTOR):scanProgress:" 
 

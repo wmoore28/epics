@@ -8,7 +8,7 @@ include $(TOP)/configure/CONFIG
 #=============================
 # Build the IOC application
 
-PROD_IOC = xpsMotor
+PROD_IOC_Linux = xpsMotor
 # xpsMotor.dbd will be created and installed
 DBD += xpsMotor.dbd
 
