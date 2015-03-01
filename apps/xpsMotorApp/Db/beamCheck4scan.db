@@ -22,7 +22,7 @@ grecord(bi,"$(PREF)$(R):beamCheckDummy")
 #
 grecord(calcout, "$(PREF)$(R):beamCheckCalc")
 {
-        field(DESC,"Check if bean is present $(PREF)$(R)" )
+        field(DESC,"Check beam  present" )
         field(SCAN,".1 second") 
         field(CALC,"A>E?1:0")
         field(INPA,"scaler_calc1")
