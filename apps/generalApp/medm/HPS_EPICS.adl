@@ -1,6 +1,6 @@
 
 file {
-	name="/home/wmoore/workspaces/svt/apps/generalApp/medm/HPS_EPICS.adl"
+	name="/home/wmoore/workspaces/develop/apps/generalApp/medm/HPS_EPICS.adl"
 	version=030108
 }
 display {
@@ -8,7 +8,7 @@ display {
 		x=3
 		y=84
 		width=240
-		height=805
+		height=835
 	}
 	clr=14
 	bclr=4
@@ -90,7 +90,18 @@ display {
 rectangle {
 	object {
 		x=0
-		y=765
+		y=461
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=795
 		width=240
 		height=40
 	}
@@ -101,7 +112,7 @@ rectangle {
 text {
 	object {
 		x=113
-		y=790
+		y=820
 		width=100
 		height=16
 	}
@@ -114,7 +125,7 @@ text {
 rectangle {
 	object {
 		x=0
-		y=616
+		y=645
 		width=240
 		height=20
 	}
@@ -125,7 +136,7 @@ rectangle {
 rectangle {
 	object {
 		x=0
-		y=664
+		y=693
 		width=300
 		height=25
 	}
@@ -136,7 +147,7 @@ rectangle {
 "choice button" {
 	object {
 		x=140
-		y=701
+		y=730
 		width=80
 		height=16
 	}
@@ -209,7 +220,7 @@ rectangle {
 rectangle {
 	object {
 		x=0
-		y=571
+		y=600
 		width=240
 		height=20
 	}
@@ -241,7 +252,7 @@ image {
 rectangle {
 	object {
 		x=0
-		y=521
+		y=550
 		width=240
 		height=22
 	}
@@ -334,7 +345,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=593
+		y=622
 		width=20
 		height=20
 	}
@@ -348,7 +359,7 @@ text {
 text {
 	object {
 		x=70
-		y=598
+		y=627
 		width=120
 		height=16
 	}
@@ -435,7 +446,7 @@ text {
 "related display" {
 	object {
 		x=20
-		y=524
+		y=553
 		width=20
 		height=20
 	}
@@ -546,7 +557,7 @@ text {
 text {
 	object {
 		x=70
-		y=526
+		y=555
 		width=120
 		height=16
 	}
@@ -584,7 +595,7 @@ text {
 text {
 	object {
 		x=20
-		y=703
+		y=732
 		width=100
 		height=16
 	}
@@ -596,7 +607,7 @@ text {
 "choice button" {
 	object {
 		x=140
-		y=725
+		y=754
 		width=80
 		height=16
 	}
@@ -611,7 +622,7 @@ text {
 text {
 	object {
 		x=20
-		y=725
+		y=754
 		width=100
 		height=16
 	}
@@ -624,7 +635,7 @@ text {
 "related display" {
 	object {
 		x=41
-		y=593
+		y=622
 		width=20
 		height=20
 	}
@@ -769,7 +780,7 @@ text {
 rectangle {
 	object {
 		x=0
-		y=494
+		y=523
 		width=300
 		height=25
 	}
@@ -780,7 +791,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=499
+		y=528
 		width=150
 		height=15
 	}
@@ -792,7 +803,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=616
+		y=645
 		width=20
 		height=20
 	}
@@ -806,7 +817,7 @@ text {
 text {
 	object {
 		x=70
-		y=621
+		y=650
 		width=120
 		height=16
 	}
@@ -818,7 +829,7 @@ text {
 text {
 	object {
 		x=15
-		y=670
+		y=699
 		width=150
 		height=15
 	}
@@ -830,7 +841,7 @@ text {
 "related display" {
 	object {
 		x=216
-		y=767
+		y=797
 		width=20
 		height=18
 	}
@@ -845,7 +856,7 @@ text {
 text {
 	object {
 		x=20
-		y=779
+		y=809
 		width=130
 		height=16
 	}
@@ -857,7 +868,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=547
+		y=576
 		width=20
 		height=20
 	}
@@ -880,7 +891,7 @@ text {
 text {
 	object {
 		x=70
-		y=552
+		y=581
 		width=120
 		height=16
 	}
@@ -892,7 +903,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=570
+		y=599
 		width=20
 		height=20
 	}
@@ -910,7 +921,7 @@ text {
 text {
 	object {
 		x=70
-		y=575
+		y=604
 		width=120
 		height=16
 	}
@@ -922,7 +933,7 @@ text {
 "shell command" {
 	object {
 		x=216
-		y=787
+		y=817
 		width=20
 		height=18
 	}
@@ -940,7 +951,7 @@ text {
 text {
 	object {
 		x=113
-		y=769
+		y=799
 		width=100
 		height=16
 	}
@@ -953,7 +964,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=639
+		y=668
 		width=20
 		height=20
 	}
@@ -968,7 +979,7 @@ text {
 text {
 	object {
 		x=70
-		y=644
+		y=673
 		width=120
 		height=16
 	}
@@ -976,4 +987,41 @@ text {
 		clr=14
 	}
 	textix="Wave2Root Reader"
+}
+"related display" {
+	object {
+		x=19
+		y=491
+		width=20
+		height=20
+	}
+	display[0] {
+		label="HPS Harp"
+		name="harpScanData.adl"
+		args="P=HPS_SVT:SCAN"
+	}
+	display[1] {
+		label="HB Wire (tagger)"
+		name="wireScanData.adl"
+		args="P=HB_BEAM:SCAN:tagger"
+	}
+	display[2] {
+		label="HB Wire (2H02A)"
+		name="wireScanData.adl"
+		args="P=HB_BEAM:SCAN:2H02A"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=69
+		y=496
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Mya Scan Data"
 }
