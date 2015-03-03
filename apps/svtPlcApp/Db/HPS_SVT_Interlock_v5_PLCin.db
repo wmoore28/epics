@@ -9,8 +9,10 @@ record( bi, "$(IOC):dummyNonExistantTag" )
 record( bi, "$(IOC):EPICS_Bypass" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) EPICS_Bypass" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -18,8 +20,10 @@ record( bi, "$(IOC):EPICS_Bypass" )
 record( bi, "$(IOC):EPICS_MPOD_Fault" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) EPICS_MPOD_Fault" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -27,8 +31,10 @@ record( bi, "$(IOC):EPICS_MPOD_Fault" )
 record( bi, "$(IOC):Flow_FE-Value" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Flow_FE.Value" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -36,8 +42,10 @@ record( bi, "$(IOC):Flow_FE-Value" )
 record( bi, "$(IOC):Flow_FE-Enable" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Flow_FE.Enable" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -45,8 +53,10 @@ record( bi, "$(IOC):Flow_FE-Enable" )
 record( bi, "$(IOC):Flow_FE-Good_Value" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Flow_FE.Good_Value" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -54,8 +64,10 @@ record( bi, "$(IOC):Flow_FE-Good_Value" )
 record( bi, "$(IOC):Flow_FE-Alarm" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Flow_FE.Alarm" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -63,8 +75,10 @@ record( bi, "$(IOC):Flow_FE-Alarm" )
 record( bi, "$(IOC):Flow_SVT-Value" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Flow_SVT.Value" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -72,8 +86,10 @@ record( bi, "$(IOC):Flow_SVT-Value" )
 record( bi, "$(IOC):Flow_SVT-Enable" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Flow_SVT.Enable" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -81,8 +97,10 @@ record( bi, "$(IOC):Flow_SVT-Enable" )
 record( bi, "$(IOC):Flow_SVT-Good_Value" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Flow_SVT.Good_Value" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -90,8 +108,10 @@ record( bi, "$(IOC):Flow_SVT-Good_Value" )
 record( bi, "$(IOC):Flow_SVT-Alarm" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Flow_SVT.Alarm" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -99,8 +119,10 @@ record( bi, "$(IOC):Flow_SVT-Alarm" )
 record( bi, "$(IOC):MPOD_Enable" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) MPOD_Enable" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -108,8 +130,10 @@ record( bi, "$(IOC):MPOD_Enable" )
 record( bi, "$(IOC):Power_FE_Chiller" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Power_FE_Chiller" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -117,8 +141,10 @@ record( bi, "$(IOC):Power_FE_Chiller" )
 record( bi, "$(IOC):Power_SVT_Chiller" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Power_SVT_Chiller" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -136,8 +162,10 @@ record( ai, "$(IOC):RTD_FE_Return-Value" )
 record( bi, "$(IOC):RTD_FE_Return-Enable" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) RTD_FE_Return.Enable" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -165,8 +193,10 @@ record( ai, "$(IOC):RTD_FE_Return-Limit_HIGH" )
 record( bi, "$(IOC):RTD_FE_Return-Alarm" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) RTD_FE_Return.Alarm" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -184,8 +214,10 @@ record( ai, "$(IOC):RTD_FE_Supply-Value" )
 record( bi, "$(IOC):RTD_FE_Supply-Enable" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) RTD_FE_Supply.Enable" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -213,8 +245,10 @@ record( ai, "$(IOC):RTD_FE_Supply-Limit_HIGH" )
 record( bi, "$(IOC):RTD_FE_Supply-Alarm" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) RTD_FE_Supply.Alarm" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -232,8 +266,10 @@ record( ai, "$(IOC):RTD_SVT_Return-Value" )
 record( bi, "$(IOC):RTD_SVT_Return-Enable" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) RTD_SVT_Return.Enable" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -261,8 +297,10 @@ record( ai, "$(IOC):RTD_SVT_Return-Limit_HIGH" )
 record( bi, "$(IOC):RTD_SVT_Return-Alarm" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) RTD_SVT_Return.Alarm" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -280,8 +318,10 @@ record( ai, "$(IOC):RTD_SVT_Supply-Value" )
 record( bi, "$(IOC):RTD_SVT_Supply-Enable" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) RTD_SVT_Supply.Enable" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -309,8 +349,10 @@ record( ai, "$(IOC):RTD_SVT_Supply-Limit_HIGH" )
 record( bi, "$(IOC):RTD_SVT_Supply-Alarm" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) RTD_SVT_Supply.Alarm" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -328,8 +370,10 @@ record( ai, "$(IOC):Vacuum-Value" )
 record( bi, "$(IOC):Vacuum-Enable" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Vacuum.Enable" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -357,8 +401,10 @@ record( ai, "$(IOC):Vacuum-Limit_HIGH" )
 record( bi, "$(IOC):Vacuum-Alarm" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Vacuum.Alarm" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -366,8 +412,10 @@ record( bi, "$(IOC):Vacuum-Alarm" )
 record( bi, "$(IOC):Valve_FE-Enabled" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Valve_FE.Enabled" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -375,8 +423,10 @@ record( bi, "$(IOC):Valve_FE-Enabled" )
 record( bi, "$(IOC):Valve_FE-Shutdown" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Valve_FE.Shutdown" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -384,8 +434,10 @@ record( bi, "$(IOC):Valve_FE-Shutdown" )
 record( bi, "$(IOC):Valve_SVT-Enabled" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Valve_SVT.Enabled" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -393,8 +445,10 @@ record( bi, "$(IOC):Valve_SVT-Enabled" )
 record( bi, "$(IOC):Valve_SVT-Shutdown" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Valve_SVT.Shutdown" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -402,8 +456,10 @@ record( bi, "$(IOC):Valve_SVT-Shutdown" )
 record( bi, "$(IOC)::MainProgram-Flow_Fault" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Program:MainProgram.Flow_Fault" ) 
+  field(ONAM, "1" ) 
 } 
  
  
@@ -411,7 +467,9 @@ record( bi, "$(IOC)::MainProgram-Flow_Fault" )
 record( bi, "$(IOC)::MainProgram-Temp_Fault" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Program:MainProgram.Temp_Fault" ) 
+  field(ONAM, "1" ) 
 } 
  

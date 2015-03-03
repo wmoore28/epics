@@ -9,7 +9,9 @@ record( bo, "$(IOC):dummyNonExistantTag" )
 record( bo, "$(IOC):EPICS_Bypass" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) EPICS_Bypass S 1" ) 
 } 
  
@@ -18,7 +20,9 @@ record( bo, "$(IOC):EPICS_Bypass" )
 record( bo, "$(IOC):EPICS_MPOD_Fault" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) EPICS_MPOD_Fault S 1" ) 
 } 
  
@@ -27,7 +31,9 @@ record( bo, "$(IOC):EPICS_MPOD_Fault" )
 record( bo, "$(IOC):Flow_FE-Value" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) Flow_FE.Value S 1" ) 
 } 
  
@@ -36,7 +42,9 @@ record( bo, "$(IOC):Flow_FE-Value" )
 record( bo, "$(IOC):Flow_FE-Enable" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) Flow_FE.Enable S 1" ) 
 } 
  
@@ -45,7 +53,9 @@ record( bo, "$(IOC):Flow_FE-Enable" )
 record( bo, "$(IOC):Flow_FE-Good_Value" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) Flow_FE.Good_Value S 1" ) 
 } 
  
@@ -54,7 +64,9 @@ record( bo, "$(IOC):Flow_FE-Good_Value" )
 record( bo, "$(IOC):Flow_FE-Alarm" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) Flow_FE.Alarm S 1" ) 
 } 
  
@@ -63,7 +75,9 @@ record( bo, "$(IOC):Flow_FE-Alarm" )
 record( bo, "$(IOC):Flow_SVT-Value" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) Flow_SVT.Value S 1" ) 
 } 
  
@@ -72,7 +86,9 @@ record( bo, "$(IOC):Flow_SVT-Value" )
 record( bo, "$(IOC):Flow_SVT-Enable" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) Flow_SVT.Enable S 1" ) 
 } 
  
@@ -81,7 +97,9 @@ record( bo, "$(IOC):Flow_SVT-Enable" )
 record( bo, "$(IOC):Flow_SVT-Good_Value" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) Flow_SVT.Good_Value S 1" ) 
 } 
  
@@ -90,7 +108,9 @@ record( bo, "$(IOC):Flow_SVT-Good_Value" )
 record( bo, "$(IOC):Flow_SVT-Alarm" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) Flow_SVT.Alarm S 1" ) 
 } 
  
@@ -99,7 +119,9 @@ record( bo, "$(IOC):Flow_SVT-Alarm" )
 record( bo, "$(IOC):MPOD_Enable" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) MPOD_Enable S 1" ) 
 } 
  
@@ -108,7 +130,9 @@ record( bo, "$(IOC):MPOD_Enable" )
 record( bo, "$(IOC):Power_FE_Chiller" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) Power_FE_Chiller S 1" ) 
 } 
  
@@ -117,7 +141,9 @@ record( bo, "$(IOC):Power_FE_Chiller" )
 record( bo, "$(IOC):Power_SVT_Chiller" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) Power_SVT_Chiller S 1" ) 
 } 
  
@@ -136,7 +162,9 @@ record( ao, "$(IOC):RTD_FE_Return-Value" )
 record( bo, "$(IOC):RTD_FE_Return-Enable" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) RTD_FE_Return.Enable S 1" ) 
 } 
  
@@ -165,7 +193,9 @@ record( ao, "$(IOC):RTD_FE_Return-Limit_HIGH" )
 record( bo, "$(IOC):RTD_FE_Return-Alarm" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) RTD_FE_Return.Alarm S 1" ) 
 } 
  
@@ -184,7 +214,9 @@ record( ao, "$(IOC):RTD_FE_Supply-Value" )
 record( bo, "$(IOC):RTD_FE_Supply-Enable" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) RTD_FE_Supply.Enable S 1" ) 
 } 
  
@@ -213,7 +245,9 @@ record( ao, "$(IOC):RTD_FE_Supply-Limit_HIGH" )
 record( bo, "$(IOC):RTD_FE_Supply-Alarm" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) RTD_FE_Supply.Alarm S 1" ) 
 } 
  
@@ -232,7 +266,9 @@ record( ao, "$(IOC):RTD_SVT_Return-Value" )
 record( bo, "$(IOC):RTD_SVT_Return-Enable" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) RTD_SVT_Return.Enable S 1" ) 
 } 
  
@@ -261,7 +297,9 @@ record( ao, "$(IOC):RTD_SVT_Return-Limit_HIGH" )
 record( bo, "$(IOC):RTD_SVT_Return-Alarm" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) RTD_SVT_Return.Alarm S 1" ) 
 } 
  
@@ -280,7 +318,9 @@ record( ao, "$(IOC):RTD_SVT_Supply-Value" )
 record( bo, "$(IOC):RTD_SVT_Supply-Enable" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) RTD_SVT_Supply.Enable S 1" ) 
 } 
  
@@ -309,7 +349,9 @@ record( ao, "$(IOC):RTD_SVT_Supply-Limit_HIGH" )
 record( bo, "$(IOC):RTD_SVT_Supply-Alarm" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) RTD_SVT_Supply.Alarm S 1" ) 
 } 
  
@@ -328,7 +370,9 @@ record( ao, "$(IOC):Vacuum-Value" )
 record( bo, "$(IOC):Vacuum-Enable" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) Vacuum.Enable S 1" ) 
 } 
  
@@ -357,7 +401,9 @@ record( ao, "$(IOC):Vacuum-Limit_HIGH" )
 record( bo, "$(IOC):Vacuum-Alarm" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) Vacuum.Alarm S 1" ) 
 } 
  
@@ -366,7 +412,9 @@ record( bo, "$(IOC):Vacuum-Alarm" )
 record( bo, "$(IOC):Valve_FE-Enabled" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) Valve_FE.Enabled S 1" ) 
 } 
  
@@ -375,7 +423,9 @@ record( bo, "$(IOC):Valve_FE-Enabled" )
 record( bo, "$(IOC):Valve_FE-Shutdown" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) Valve_FE.Shutdown S 1" ) 
 } 
  
@@ -384,7 +434,9 @@ record( bo, "$(IOC):Valve_FE-Shutdown" )
 record( bo, "$(IOC):Valve_SVT-Enabled" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) Valve_SVT.Enabled S 1" ) 
 } 
  
@@ -393,7 +445,9 @@ record( bo, "$(IOC):Valve_SVT-Enabled" )
 record( bo, "$(IOC):Valve_SVT-Shutdown" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) Valve_SVT.Shutdown S 1" ) 
 } 
  
@@ -402,7 +456,9 @@ record( bo, "$(IOC):Valve_SVT-Shutdown" )
 record( bo, "$(IOC)::MainProgram-Flow_Fault" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) Program:MainProgram.Flow_Fault S 1" ) 
 } 
  
@@ -411,7 +467,9 @@ record( bo, "$(IOC)::MainProgram-Flow_Fault" )
 record( bo, "$(IOC)::MainProgram-Temp_Fault" ) 
 { 
   field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
   field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
   field(OUT, "@$(PLCID) Program:MainProgram.Temp_Fault S 1" ) 
 } 
  
