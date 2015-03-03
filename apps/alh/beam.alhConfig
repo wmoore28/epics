@@ -1,0 +1,20 @@
+#===============================================================================
+# Beam Alarm Config
+#===============================================================================
+
+GROUP    NULL                         BEAM                        
+
+$GUIDANCE
+    For info on beam related items see: http://clasweb.jlab.org
+$END
+
+#=======================================
+# Subsystems
+#=======================================
+
+INCLUDE BEAM /usr/clas12/hps/prod/apps/alh/acc_signals.alhConfig
+INCLUDE BEAM /usr/clas12/hps/prod/apps/alh/beam_curr.alhConfig
+INCLUDE BEAM /usr/clas12/hps/prod/apps/alh/beam_pos.alhConfig
+INCLUDE BEAM /usr/clas12/hps/prod/apps/alh/hall_temp.alhConfig
+INCLUDE BEAM /usr/clas12/hps/prod/apps/alh/rms.alhConfig
+INCLUDE BEAM /usr/clas12/hps/prod/apps/alh/vacuum.alhConfig

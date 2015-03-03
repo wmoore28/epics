@@ -129,7 +129,7 @@ text {
 "related display" {
 	object {
 		x=28
-		y=450
+		y=370
 		width=200
 		height=30
 	}
@@ -3339,4 +3339,53 @@ text {
 		clr=4
 	}
 	textix="Disable"
+}
+"shell command" {
+	object {
+		x=28
+		y=525
+		width=98
+		height=25
+	}
+	command[0] {
+		label="Save Top"
+		name="$APP/hvcaApp/scripts/save_hv_4_grp.pl"
+		args="ECAL ECAL_TOP &"
+	}
+	command[1] {
+		label="Save Bottom"
+		name="$APP/hvcaApp/scripts/save_hv_4_grp.pl"
+		args="ECAL ECAL_BOT &"
+	}
+	clr=14
+	bclr=2
+	label="Save"
+}
+"shell command" {
+	object {
+		x=130
+		y=525
+		width=98
+		height=25
+	}
+	command[0] {
+		label="Restore"
+		name="$APP/hvcaApp/scripts/restore_hv.pl"
+		args="ECAL &"
+	}
+	clr=14
+	bclr=2
+	label="Restore"
+}
+text {
+	object {
+		x=30
+		y=506
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=4
+	}
+	textix="Save/Restore HV Settings"
 }

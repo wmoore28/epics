@@ -1,0 +1,17 @@
+GROUP    NULL                         RMS                         
+CHANNEL  RMS                          HLB:bta_60hz_rms            
+$COMMAND  medm -x -attach -cmap -macro "sig=HLB:bta_60hz_rms" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  90 90
+$GUIDANCE
+            The sixty Hz RMS for either SLM or PMT 1 is too high. This means 
+            that the current is fluctuating with time. Check RMS 
+            for these two signals. Let MCC know that RMS is out of spec.
+$END
+CHANNEL  RMS                          sixtyHz_rms_1               
+$COMMAND  medm -x -attach -cmap -macro "sig=sixtyHz_rms_1" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER  90 90
+$GUIDANCE
+            The sixty Hz RMS for  SLM is too high. This means 
+            that the current is fluctuating with time. Check RMS 
+            for this signals. Let MCC know that RMS is out of spec.
+$END
