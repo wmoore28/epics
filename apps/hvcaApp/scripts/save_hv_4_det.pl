@@ -28,15 +28,9 @@ elsif ( @ARGV > 1 )
 $det2save = $ARGV[0] ;
 $det2save =~ tr/a-z/A-Z/ ;
 
-$SnapDir = "/home/epics/burt/HV/" ;
-
-#@DetectorNames = ( "EC",  "CC", "SC", "BM", "TA", "LAC", "CR_MF", "PHOTON" );
-#
-#foreach $det ( @DetectorNames )
-#  {
-#    $det_dirs{$det} = $SnapDir.$det ;
-#  }
-#&SelectBackupFile( $det2save, $det_dirs{$det2save} ) ;
+# Detector name will be capitalized and added to the path
+# (ex. ecal -> /usr/clas12/hps/DATA/ECAL/)
+$SnapDir = "/usr/clas12/hps/DATA/";
 
 &SelectBackupFile( $det2save, $SnapDir.$det2save ) ;
 
