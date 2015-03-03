@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/v0.3.1/apps/generalApp/medm/ioc_hps_health.adl"
+	name="/usr/clas12/hps/prod/apps/generalApp/medm/ioc_hps_health.adl"
 	version=030108
 }
 display {
@@ -92,7 +92,7 @@ rectangle {
 		x=859
 		y=53
 		width=425
-		height=180
+		height=200
 	}
 	"basic attribute" {
 		clr=5
@@ -1682,7 +1682,7 @@ text {
 "related display" {
 	object {
 		x=1260
-		y=180
+		y=181
 		width=20
 		height=20
 	}
@@ -1745,7 +1745,7 @@ text {
 "related display" {
 	object {
 		x=1260
-		y=205
+		y=203
 		width=20
 		height=20
 	}
@@ -1756,4 +1756,185 @@ text {
 	}
 	clr=14
 	bclr=6
+}
+rectangle {
+	object {
+		x=10
+		y=225
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+"text update" {
+	object {
+		x=193
+		y=227
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocecalVoltages:HOSTNAME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=227
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocecalVoltages:UPTIME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=227
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocecalVoltages:HEARTBEAT"
+		clr=0
+		bclr=29
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=707
+		y=227
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocecalVoltages:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=226
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocecalVoltages"
+}
+"related display" {
+	object {
+		x=626
+		y=225
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocecalVoltages"
+	}
+	clr=14
+	bclr=8
+	label="Reboot..."
+}
+"text update" {
+	object {
+		x=862
+		y=227
+		width=60
+		height=20
+	}
+	monitor {
+		chan="iocecalVoltages:SR_status"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=924
+		y=227
+		width=130
+		height=20
+	}
+	monitor {
+		chan="iocecalVoltages:SR_statusStr"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1056
+		y=227
+		width=200
+		height=20
+	}
+	monitor {
+		chan="iocecalVoltages:SR_recentlyStr"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=1260
+		y=225
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Autosave"
+		name="autosave.adl"
+		args="P=iocecalVoltages:"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=601
+		y=226
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocecalVoltages"
+	}
+	clr=14
+	bclr=8
 }
