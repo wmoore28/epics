@@ -17,20 +17,22 @@ drvEtherIP_init()
 drvEtherIP_define_PLC("${PREF}", "hpsplc", 0)
 
 ## Load record instances
-# dbLoadRecords("db/iocAdminSoft.db","IOC=iocsvtPlc")
+dbLoadRecords("db/iocAdminSoft.db","IOC=iocsvtPlc")
+dbLoadRecords("db/save_restoreStatus.db", "P=${IOC}:")
 dbLoadRecords("db/HPS_SVT_Interlock_v5_PLCin.db","IOC=${PREF}:i,PLCID=${PREF}")
 dbLoadRecords("db/HPS_SVT_Interlock_v5_PLCout.db","IOC=${PREF}:o,PLCID=${PREF}")
 
 cd ${TOP}/iocBoot/${IOC}
 
-# < save_restore.cmd
+## autosave setup
+< save_restore.cmd
 
 iocInit
 
 # autosave startup
-# create_monitor_set("HPS_SVT_Interlock_v5_PLC.req", 30, "IOC=${PREF}:i")
+create_monitor_set("HPS_SVT_Interlocks.req", 30, "PREF=${PREF}")
 
 # Handle autosave 'commands' contained in loaded databases.
-# makeAutosaveFiles()
-# create_monitor_set("info_positions.req", 5, "P=xxx:")
-# create_monitor_set("info_settings.req", 30, "P=xxx:")
+makeAutosaveFiles()
+create_monitor_set("info_positions.req", 5, "P=xxx:")
+create_monitor_set("info_settings.req", 30, "P=xxx:")

@@ -45,18 +45,9 @@ plc2epics_LIBS += devIocStats
 # in the <top>/configure/RELEASE file
 
 ifneq ($(SNCSEQ),)
-#    # Build sncExample into solenoidSupport
-#    sncExample_SNCFLAGS += +r
-#    solenoidSupport_LIBS += seq pv
-#    solenoid_LIBS += seq pv
-
-    # Build sncProgram as a standalone program
-#    PROD_HOST += sncProgram
-#    sncProgram_SNCFLAGS += +m
     plc2epics_DBD  += snc4plc.dbd
     plc2epics_SRCS += sncSmallTest.st
     plc2epics_LIBS += seq pv
-#    plc2epics_LIBS += $(EPICS_BASE_HOST_LIBS)
 endif
 
 # Finally link to the EPICS Base libraries

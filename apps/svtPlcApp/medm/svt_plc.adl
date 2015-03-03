@@ -1,6 +1,6 @@
 
 file {
-	name="/home/wmoore/workspaces/svt-devel/apps/svtPlcApp/medm/svt_plc.adl"
+	name="/home/wmoore/workspaces/develop/apps/svtPlcApp/medm/svt_plc.adl"
 	version=030108
 }
 display {
@@ -131,771 +131,10 @@ text {
 	clr=14
 	bclr=4
 }
-text {
-	object {
-		x=25
-		y=298
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="SVT Return RTD High Lim"
-}
-"text entry" {
-	object {
-		x=171
-		y=294
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:o:RTD_SVT_Supply-Limit_HIGH"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=251
-		y=294
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Limit_HIGH"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=25
-		y=323
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="SVT Return RTD Alarm"
-}
-"text update" {
-	object {
-		x=251
-		y=319
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Alarm"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=25
-		y=348
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="SVT Supply RTD"
-}
-"text update" {
-	object {
-		x=251
-		y=344
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Value"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=25
-		y=373
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="SVT Supply RTD Enable"
-}
-"text entry" {
-	object {
-		x=171
-		y=369
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:PRES:ALM_1S:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=251
-		y=369
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Enable"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=25
-		y=123
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="SVT Flow Enable"
-}
-text {
-	object {
-		x=25
-		y=98
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="SVT Flow"
-}
-"text entry" {
-	object {
-		x=171
-		y=94
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:LWLIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=171
-		y=119
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:HILIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=251
-		y=94
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:Flow_SVT-Value"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=251
-		y=119
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:Flow_SVT-Enable"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=25
-		y=148
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="SVT Flow Good"
-}
-"text entry" {
-	object {
-		x=171
-		y=144
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:LWLIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=251
-		y=144
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:Flow_SVT-Good_Value"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=251
-		y=169
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:Flow_SVT-Alarm"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=25
-		y=173
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="SVT Flow Alarm"
-}
-text {
-	object {
-		x=25
-		y=198
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="SVT Chiller Pwr"
-}
-"text entry" {
-	object {
-		x=171
-		y=194
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:LWLIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=251
-		y=194
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:Power_SVT_Chiller"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=25
-		y=223
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="SVT Return RTD"
-}
-"text update" {
-	object {
-		x=251
-		y=219
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Value"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=25
-		y=248
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="SVT Return RTD Enable"
-}
-"text entry" {
-	object {
-		x=171
-		y=244
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:LWLIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=251
-		y=244
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Enable"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=251
-		y=269
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Limit_LOW"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=171
-		y=269
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:o:RTD_SVT_Return-Limit_LOW"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-text {
-	object {
-		x=25
-		y=273
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="SVT Return RTD Low Lim"
-}
-text {
-	object {
-		x=25
-		y=423
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="SVT Supply RTD High Lim"
-}
-text {
-	object {
-		x=25
-		y=398
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="SVT Supply RTD Low Lim"
-}
-"text entry" {
-	object {
-		x=171
-		y=394
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:o:RTD_SVT_Supply-Limit_LOW"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=171
-		y=419
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:0:RTD_SVT_Supply-Limit-HIGH"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=251
-		y=394
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Limit_LOW"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=251
-		y=419
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Limit_HIGH"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=25
-		y=448
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="SVT Supply RTD Alarm"
-}
-"text update" {
-	object {
-		x=251
-		y=444
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Alarm"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=375
-		y=497
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FE Valve Shutdown"
-}
-text {
-	object {
-		x=375
-		y=472
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FE Valve Enabled"
-}
-"text entry" {
-	object {
-		x=521
-		y=468
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:LWLIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=521
-		y=493
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:HILIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=468
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:Valve_FE-Enabled"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=493
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:Valve_FE-Shutdown"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=25
-		y=473
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="SVT Valve Enabled"
-}
-"text entry" {
-	object {
-		x=171
-		y=469
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:LWLIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=251
-		y=469
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:Valve_SVT-Enabled"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=251
-		y=494
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:Valve_SVT-Shutdown"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=171
-		y=494
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:HILIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-text {
-	object {
-		x=25
-		y=498
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="SVT Valve Shutdown"
-}
 rectangle {
 	object {
 		x=375
-		y=58
+		y=45
 		width=305
 		height=3
 	}
@@ -906,7 +145,7 @@ rectangle {
 text {
 	object {
 		x=375
-		y=64
+		y=51
 		width=200
 		height=16
 	}
@@ -915,566 +154,10 @@ text {
 	}
 	textix="Frontend Board (FE) Chiller"
 }
-text {
-	object {
-		x=375
-		y=98
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FE Flow"
-}
-"text entry" {
-	object {
-		x=521
-		y=94
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:HILIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=94
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:Flow_FE-Value"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=375
-		y=123
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FE Flow Enable"
-}
-"text entry" {
-	object {
-		x=521
-		y=119
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:LWLIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=119
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:Flow_FE-Enable"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=144
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:Flow_FE-Good_Value"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=521
-		y=144
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:HILIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-text {
-	object {
-		x=375
-		y=148
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FE Flow Good"
-}
-text {
-	object {
-		x=375
-		y=198
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FE Chiller Pwr"
-}
-"text entry" {
-	object {
-		x=521
-		y=194
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:HILIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=194
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:Power_FE_Chiller"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=219
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_FE_Return-Value"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=375
-		y=223
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FE Return RTD"
-}
-text {
-	object {
-		x=375
-		y=273
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FE Return RTD Low Lim"
-}
-text {
-	object {
-		x=375
-		y=248
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FE Return RTD Enable"
-}
-"text entry" {
-	object {
-		x=521
-		y=244
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:LWLIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=521
-		y=269
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:o:RTD_FE_Return-Limit_LOW"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=244
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_FE_Return-Enable"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=269
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_FE_Return-Limit_LOW"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=375
-		y=298
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FE Return RTD High Lim"
-}
-"text entry" {
-	object {
-		x=521
-		y=294
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:o:RTD_FE_Return-Limit_HIGH"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=294
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_FE_Return-Limit_HIGH"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=319
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_FE_Return-Alarm"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=375
-		y=323
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FE Return RTD Alarm"
-}
-text {
-	object {
-		x=375
-		y=373
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FE Supply RTD Enable"
-}
-text {
-	object {
-		x=375
-		y=348
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FE Supply RTD"
-}
-"text entry" {
-	object {
-		x=521
-		y=369
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:HILIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=344
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Value"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=369
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Enable"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=375
-		y=397
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FE Supply RTD Low Lim"
-}
-"text entry" {
-	object {
-		x=521
-		y=393
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:o:RTD_FE_Supply-Limit_LOW"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=393
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Limit_LOW"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=418
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Limit_HIGH"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=521
-		y=418
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:o:RTD_FE_Supply-Limit_HIGH"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-text {
-	object {
-		x=375
-		y=422
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FE Supply RTD High Lim"
-}
-text {
-	object {
-		x=375
-		y=447
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FE Supply RTD Alarm"
-}
-"text update" {
-	object {
-		x=601
-		y=443
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Alarm"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
 rectangle {
 	object {
 		x=25
-		y=58
+		y=45
 		width=305
 		height=3
 	}
@@ -1485,7 +168,7 @@ rectangle {
 text {
 	object {
 		x=25
-		y=64
+		y=51
 		width=200
 		height=16
 	}
@@ -1494,39 +177,10 @@ text {
 	}
 	textix="SVT Chiller"
 }
-"text update" {
-	object {
-		x=601
-		y=169
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:Flow_FE-Alarm"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=375
-		y=173
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FE Flow Alarm"
-}
 rectangle {
 	object {
 		x=375
-		y=82
+		y=69
 		width=305
 		height=3
 	}
@@ -1537,7 +191,7 @@ rectangle {
 rectangle {
 	object {
 		x=25
-		y=82
+		y=69
 		width=305
 		height=3
 	}
@@ -1578,22 +232,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="EPICS MPOD Fault"
-}
-"text entry" {
-	object {
-		x=171
-		y=563
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:LWLIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
+	textix="EPICS MPOD Enable"
 }
 "text update" {
 	object {
@@ -1603,7 +242,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:EPICS_MPOD_Fault"
+		chan="HPS_SVT:PLC:i:EPICS_MPOD_Fault.RVAL"
 		clr=0
 		bclr=11
 	}
@@ -1624,21 +263,6 @@ text {
 	}
 	textix="MPOD Enable"
 }
-"text entry" {
-	object {
-		x=171
-		y=588
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:LWLIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
 "text update" {
 	object {
 		x=251
@@ -1647,7 +271,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:MPOD_Enable"
+		chan="HPS_SVT:PLC:i:MPOD_Enable.RVAL"
 		clr=0
 		bclr=11
 	}
@@ -1685,138 +309,6 @@ text {
 	}
 	textix="Vacuum"
 }
-text {
-	object {
-		x=375
-		y=617
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Vacuum Low Lim"
-}
-text {
-	object {
-		x=375
-		y=592
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Vacuum Enable"
-}
-"text entry" {
-	object {
-		x=521
-		y=588
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:LWLIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=521
-		y=613
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:HILIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=588
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:Vacuum-Enable"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=613
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:Vacuum-Limit_LOW"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=375
-		y=642
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Vacuum High Lim"
-}
-"text entry" {
-	object {
-		x=521
-		y=638
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:LWLIM:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=638
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:Vacuum-Limit_HIGH"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
 "text update" {
 	object {
 		x=601
@@ -1825,7 +317,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:Vacuum-Alarm"
+		chan="HPS_SVT:PLC:i:Vacuum-Alarm.RVAL"
 		clr=0
 		bclr=11
 	}
@@ -1844,7 +336,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Vacuum Alarm"
+	textix="Vacuum Alarm Status"
 }
 text {
 	object {
@@ -1891,92 +383,1499 @@ rectangle {
 		clr=24
 	}
 }
-composite {
+text {
+	object {
+		x=25
+		y=667
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="EPICS Bypass"
+}
+"text update" {
+	object {
+		x=251
+		y=663
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:EPICS_Bypass.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
 	object {
 		x=25
 		y=623
-		width=306
-		height=60
+		width=305
+		height=3
 	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=25
-				y=667
-				width=80
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="EPICS Bypass"
-		}
-		"text entry" {
-			object {
-				x=171
-				y=663
-				width=75
-				height=20
-			}
-			control {
-				chan="HPS_SVT:PLC:o:EPICS_Bypass"
-				clr=14
-				bclr=4
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=251
-				y=663
-				width=80
-				height=20
-			}
-			monitor {
-				chan="HPS_SVT:PLC:i:EPICS_Bypass"
-				clr=0
-				bclr=11
-			}
-			clrmod="alarm"
-			align="horiz. centered"
-			limits {
-			}
-		}
-		rectangle {
-			object {
-				x=25
-				y=623
-				width=305
-				height=3
-			}
-			"basic attribute" {
-				clr=32
-			}
-		}
-		text {
-			object {
-				x=25
-				y=629
-				width=200
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Interlock Bypass"
-		}
-		rectangle {
-			object {
-				x=25
-				y=647
-				width=305
-				height=3
-			}
-			"basic attribute" {
-				clr=32
-			}
-		}
+	"basic attribute" {
+		clr=32
 	}
+}
+text {
+	object {
+		x=25
+		y=629
+		width=200
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Interlock Bypass"
+}
+rectangle {
+	object {
+		x=25
+		y=647
+		width=305
+		height=3
+	}
+	"basic attribute" {
+		clr=32
+	}
+}
+"choice button" {
+	object {
+		x=171
+		y=563
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:EPICS_MPOD_Fault"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
+}
+"choice button" {
+	object {
+		x=146
+		y=663
+		width=100
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:EPICS_Bypass"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=25
+		y=216
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Supply RTD"
+}
+"text update" {
+	object {
+		x=251
+		y=212
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Value"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=316
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Supply RTD Alarm Status"
+}
+"text update" {
+	object {
+		x=251
+		y=312
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Alarm.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=216
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Supply RTD"
+}
+"text update" {
+	object {
+		x=601
+		y=212
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Value"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=315
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Supply RTD Alarm Status"
+}
+"text update" {
+	object {
+		x=601
+		y=311
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Alarm.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=441
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Return RTD Alarm Status"
+}
+"text update" {
+	object {
+		x=251
+		y=437
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Alarm.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=341
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Return RTD"
+}
+"text update" {
+	object {
+		x=251
+		y=337
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Value"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=601
+		y=337
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_FE_Return-Value"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=341
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Return RTD"
+}
+"text update" {
+	object {
+		x=601
+		y=437
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_FE_Return-Alarm.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=441
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Return RTD Alarm Status"
+}
+text {
+	object {
+		x=25
+		y=85
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="AC Power Enable"
+}
+"choice button" {
+	object {
+		x=171
+		y=81
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:Power_SVT_Chiller"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=251
+		y=81
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Power_SVT_Chiller.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=85
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="AC Power Enable"
+}
+"text update" {
+	object {
+		x=601
+		y=81
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Power_FE_Chiller.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=116
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Flow"
+}
+"text update" {
+	object {
+		x=251
+		y=112
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Flow_SVT-Value.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=251
+		y=187
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Flow_SVT-Alarm.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=191
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Flow Alarm Status"
+}
+text {
+	object {
+		x=375
+		y=116
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Flow"
+}
+"text update" {
+	object {
+		x=601
+		y=112
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Flow_FE-Value.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=601
+		y=187
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Flow_FE-Alarm.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=191
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Flow Alarm Status"
+}
+text {
+	object {
+		x=375
+		y=497
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Valve Shutdown"
+}
+text {
+	object {
+		x=375
+		y=472
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Valve Enabled"
+}
+"text update" {
+	object {
+		x=601
+		y=468
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Valve_FE-Enabled.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=601
+		y=493
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Valve_FE-Shutdown.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=473
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Valve Enabled"
+}
+"text update" {
+	object {
+		x=251
+		y=469
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Valve_SVT-Enabled.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=251
+		y=494
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Valve_SVT-Shutdown.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=498
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Valve Shutdown"
+}
+"choice button" {
+	object {
+		x=171
+		y=469
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:Valve_SVT-Enabled"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=25
+		y=291
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Supply RTD Intlck Enable"
+}
+"choice button" {
+	object {
+		x=171
+		y=287
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:RTD_SVT_Supply-Enable"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=251
+		y=287
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Enable.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=291
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Supply RTD Intlck Enable"
+}
+"choice button" {
+	object {
+		x=521
+		y=287
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:RTD_FE_Supply-Enable"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=601
+		y=287
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Enable.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=266
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Supply RTD High Lim"
+}
+text {
+	object {
+		x=25
+		y=241
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Supply RTD Low Lim"
+}
+"text entry" {
+	object {
+		x=171
+		y=237
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:RTD_SVT_Supply-Limit_LOW"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=171
+		y=262
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:RTD_SVT_Return-Limit_HIGH"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=251
+		y=237
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Limit_LOW"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=251
+		y=262
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Limit_HIGH"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=240
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Supply RTD Low Lim"
+}
+"text entry" {
+	object {
+		x=521
+		y=236
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:RTD_FE_Supply-Limit_LOW"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=601
+		y=236
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Limit_LOW"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=601
+		y=261
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Limit_HIGH"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=521
+		y=261
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:RTD_FE_Supply-Limit_HIGH"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=265
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Supply RTD High Lim"
+}
+text {
+	object {
+		x=25
+		y=166
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Flow Intlck Enable"
+}
+"text update" {
+	object {
+		x=251
+		y=162
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Flow_SVT-Enable.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=166
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Flow Intlck Enable"
+}
+"text update" {
+	object {
+		x=601
+		y=162
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Flow_FE-Enable.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=171
+		y=162
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:Flow_SVT-Enable"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
+}
+"choice button" {
+	object {
+		x=171
+		y=137
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:Flow_SVT-Good_Value"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=25
+		y=141
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Flow Good Value"
+}
+"text update" {
+	object {
+		x=251
+		y=137
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Flow_SVT-Good_Value.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=601
+		y=137
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Flow_FE-Good_Value.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=141
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Flow Good Value"
+}
+text {
+	object {
+		x=25
+		y=416
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Return RTD Intlck Enable"
+}
+"choice button" {
+	object {
+		x=171
+		y=412
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:RTD_SVT_Return-Enable"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=251
+		y=412
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Enable.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=416
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Return RTD Intlck Enable"
+}
+"text update" {
+	object {
+		x=601
+		y=412
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_FE_Return-Enable.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=391
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Return RTD High Lim"
+}
+"text entry" {
+	object {
+		x=171
+		y=387
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:RTD_SVT_Return-Limit_HIGH"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=251
+		y=387
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Limit_HIGH"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=251
+		y=362
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Limit_LOW"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=171
+		y=362
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:RTD_SVT_Return-Limit_LOW"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=366
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Return RTD Low Lim"
+}
+text {
+	object {
+		x=375
+		y=366
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Return RTD Low Lim"
+}
+"text entry" {
+	object {
+		x=521
+		y=362
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:RTD_FE_Return-Limit_LOW"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=601
+		y=362
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_FE_Return-Limit_LOW"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=391
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Return RTD High Lim"
+}
+"text entry" {
+	object {
+		x=521
+		y=387
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:RTD_FE_Return-Limit_HIGH"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=601
+		y=387
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_FE_Return-Limit_HIGH"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=642
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Vacuum Intlck Enable"
+}
+"text update" {
+	object {
+		x=601
+		y=638
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Vacuum-Enable.RVAL"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=592
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Vacuum Low Lim"
+}
+"text update" {
+	object {
+		x=601
+		y=588
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Vacuum-Limit_LOW"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=617
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Vacuum High Lim"
+}
+"text update" {
+	object {
+		x=601
+		y=613
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Vacuum-Limit_HIGH"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=521
+		y=81
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:Power_FE_Chiller"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
+}
+"choice button" {
+	object {
+		x=521
+		y=137
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:Flow_FE-Good_Value"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
+}
+"choice button" {
+	object {
+		x=521
+		y=162
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:Flow_FE-Enable"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
+}
+"choice button" {
+	object {
+		x=521
+		y=469
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:Valve_FE-Enabled"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
+}
+"choice button" {
+	object {
+		x=521
+		y=412
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:RTD_FE_Return-Enable"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
+}
+"text entry" {
+	object {
+		x=521
+		y=588
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:Vacuum-Limit_LOW"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=521
+		y=613
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:Vacuum-Limit_HIGH"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=521
+		y=638
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:Vacuum-Enable"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
 }
