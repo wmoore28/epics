@@ -14,7 +14,7 @@ include $(TOP)/configure/CONFIG
 # Scan data for Mya archiving
 DB  += harpScanData.db
 DB  += wireScanData.db
-REQ += harpScanData.req harpScanDataAll.req
+REQ += harpScanData.req
 REQ += wireScanData.req
 
 #----------------------------------------------------

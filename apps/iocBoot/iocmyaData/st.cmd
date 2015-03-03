@@ -12,6 +12,7 @@ myaData_registerRecordDeviceDriver pdbbase
 dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC}")
 dbLoadRecords("db/save_restoreStatus.db", "P=${IOC}:")
 
+dbLoadRecords("db/harpScanData.db", "P=HB_BEAM:SCAN:,R=2c21:")
 dbLoadRecords("db/harpScanData.db", "P=HB_BEAM:SCAN:,R=tagger:")
 dbLoadRecords("db/harpScanData.db", "P=HB_BEAM:SCAN:,R=2H02A:")
 dbLoadRecords("db/wireScanData.db", "P=HPS_SVT:SCAN:,R=")

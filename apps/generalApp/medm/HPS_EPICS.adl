@@ -996,19 +996,24 @@ text {
 		height=20
 	}
 	display[0] {
-		label="HPS Harp"
+		label="HB Harp (2c21)"
 		name="harpScanData.adl"
-		args="P=HPS_SVT:SCAN"
+		args="P=HB_BEAM:SCAN:2c21"
 	}
 	display[1] {
-		label="HB Wire (tagger)"
-		name="wireScanData.adl"
+		label="HB Harp (tagger)"
+		name="harpScanData.adl"
 		args="P=HB_BEAM:SCAN:tagger"
 	}
 	display[2] {
-		label="HB Wire (2H02A)"
-		name="wireScanData.adl"
+		label="HB Harp (2H02A)"
+		name="harpScanData.adl"
 		args="P=HB_BEAM:SCAN:2H02A"
+	}
+	display[3] {
+		label="HPS Wire Scanner"
+		name="wireScanData.adl"
+		args="P=HPS_SVT:SCAN"
 	}
 	clr=14
 	bclr=50
