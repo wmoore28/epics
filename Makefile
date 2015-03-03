@@ -8,15 +8,19 @@ hps: all tools		# Build all EPICS Apps and Tools
 
 ## EPICS Only (apps/)
 all: test-env
+	(cd drivers; make all)
 	(cd apps; make all)
 
 install:
+	(cd drivers; make install)
 	(cd apps; make install)
 
 clean:
+	(cd drivers; make clean)
 	(cd apps; make clean)
 
 distclean:
+	(cd drivers; make distclean)
 	(cd apps; make distclean)
 
 rebuild: clean install
@@ -49,5 +53,7 @@ tar: distclean
 	@cd ../ && tar czf hps-epics-`date +%Y.%m.%d`.tgz epics
 
 todo:
+	@find drivers -type f -exec egrep -HIn TODO \{\} \; 2> /dev/null
+	@find drivers -type f -exec egrep -HIn FIXME \{\} \; 2> /dev/null
 	@find apps -type f -exec egrep -HIn TODO \{\} \; 2> /dev/null
 	@find apps -type f -exec egrep -HIn FIXME \{\} \; 2> /dev/null

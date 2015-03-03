@@ -20,39 +20,34 @@
 # CONFIG_SITE file.
 
 TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
-EPICS_BASE=${CLAS}/R${EPICS_VER}/base
+#EPICS_BASE=${CLAS}/R${EPICS_VER}/base
+EPICS_BASE=/usr/local/clas12/release/0.2/R3.14.12.3/base
 EPICS_SUPPORT=${CLAS}/R${EPICS_VER}/support
-EPICS_SYNAPPS=${CLAS}/R${EPICS_VER}/synApps/synApps_5_5/support
+#
+# Modified version of synApps_5_7
+#  Uses older mca-s55 and has dxp and xxx removed.
+#
+EPICS_SYNAPPS=/usr/clas12/R3.14.12.3/synApps/synApps_5_7/support
 EPICS_EXTENSIONS=${CLAS}/R${EPICS_VER}/extensions
 
 ## Path to data storage (autosave, etc)
 IOCDATA=/usr/clas12/hps/DATA
 
-## Used by hvCaenApp
-EPICS_DRIVERS=${EPICSB_DRIVERS}
-
 ## synApps
-ASYN=$(EPICS_SYNAPPS)/asyn-4-13
-AUTOSAVE=$(EPICS_SYNAPPS)/autosave-4-6
-BUSY=$(EPICS_SYNAPPS)/busy-1-3
-CALC=$(EPICS_SYNAPPS)/calc-2-8
-IPAC=$(EPICS_SYNAPPS)/ipac-2-11
-MCA=$(EPICS_SYNAPPS)/mca-s55
-MOTOR=$(EPICS_SYNAPPS)/motor-6-5
-SNCSEQ=$(EPICS_SYNAPPS)/seq-2-0-12
-SSCAN=$(EPICS_SYNAPPS)/sscan-2-6-6
-STD=$(EPICS_SYNAPPS)/std-2-8
-STREAM=$(EPICS_SYNAPPS)/stream-2-4-1
-VME=$(EPICS_SYNAPPS)/vme-2-7
+include $(EPICS_SYNAPPS)/configure/RELEASE
 
-## Other external support
-DEVIOCSTATS=$(EPICS_SUPPORT)/devIocStats-3.1.12
-DEVSNMP=$(EPICS_SUPPORT)/snmp-nscl-1.0.RC6
-
-SELF=$(TOP)
+## External modules
+EPICS_DRIVERS=$(TOP)/../drivers
+HVCAENx527=$(EPICS_DRIVERS)/HVCAENx527
+jlabVMEBoard=$(EPICS_DRIVERS)/jlabVMEBoard
+LVMPOD=$(EPICS_DRIVERS)/LVMPOD
+DEVSNMP=$(EPICS_DRIVERS)/snmp-nscl-1-0-RC9
+v450=$(EPICS_DRIVERS)/v450
+v450_PRB=$(EPICS_DRIVERS)/v450_PRB
 
 # EPICS_BASE usually appears last so other apps can override stuff:
-EPICS_BASE=${CLAS}/R${EPICS_VER}/base
+EPICS_BASE=/usr/local/clas12/release/0.2/R3.14.12.3/base
+
 
 # Set RULES here if you want to take build rules from somewhere
 # other than EPICS_BASE:

@@ -1,0 +1,4214 @@
+
+file {
+	name="/u1/epics/svt-epics/svt-medm/svtDaqMap.adl"
+	version=030108
+}
+display {
+	object {
+		x=1469
+		y=101
+		width=900
+		height=1018
+	}
+	clr=14
+	bclr=12
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+text {
+	object {
+		x=17
+		y=450
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT TOP 15"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=476
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT TOP 16"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=502
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT TOP 17"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=11
+		y=8
+		width=121
+		height=18
+	}
+	"basic attribute" {
+		clr=51
+	}
+	textix="Hybrid"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=1
+		y=519
+		width=55
+		height=18
+	}
+	"basic attribute" {
+		clr=15
+	}
+	textix="Bottom"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=1
+		y=38
+		width=55
+		height=18
+	}
+	"basic attribute" {
+		clr=15
+	}
+	textix="Top"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=539
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT BOT 0"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=565
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT BOT 1"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=591
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT BOT 2"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=617
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT BOT 3"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=643
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT BOT 4"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=669
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT BOT 5"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=695
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT BOT 6"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=721
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT BOT 7"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=747
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT BOT 8"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=774
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT BOT 9"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=800
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT BOT 10"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=826
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT BOT 11"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=852
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT BOT 12"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=878
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT BOT 13"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=904
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT BOT 14"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=930
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT BOT 15"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=956
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT BOT 16"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=17
+		y=982
+		width=110
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="SVT BOT 17"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=360
+		y=8
+		width=51
+		height=994
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=366
+				y=23
+				width=40
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Channel"
+			align="horiz. centered"
+		}
+		"text entry" {
+			object {
+				x=360
+				y=57
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:0:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=83
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:1:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=109
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:2:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=135
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:3:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=161
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:4:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=187
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:5:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=213
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:6:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=239
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:7:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=265
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:8:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=291
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:9:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=317
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:10:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=343
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:11:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=369
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:12:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=395
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:13:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=421
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:14:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=450
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:15:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=476
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:16:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=502
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:17:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		text {
+			object {
+				x=367
+				y=39
+				width=40
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Set"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=367
+				y=8
+				width=40
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="DAQ FEB"
+			align="horiz. centered"
+		}
+		"text entry" {
+			object {
+				x=360
+				y=539
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:0:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=565
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:1:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=591
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:2:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=617
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:3:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=643
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:4:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=669
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:5:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=695
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:6:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=721
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:7:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=747
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:8:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=774
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:9:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=800
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:10:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=826
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:11:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=852
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:12:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=878
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:13:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=904
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:14:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=930
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:15:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=956
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:16:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=360
+				y=982
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:17:febch"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+	}
+}
+"text update" {
+	object {
+		x=140
+		y=539
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:bot:0"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=140
+		y=565
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:bot:1"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=140
+		y=591
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:bot:2"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=140
+		y=617
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:bot:3"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=140
+		y=643
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:bot:4"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=140
+		y=669
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:bot:5"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=140
+		y=695
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:bot:6"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=140
+		y=721
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:bot:7"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=140
+		y=747
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:bot:8"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=140
+		y=774
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:bot:9"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=140
+		y=800
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:bot:10"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=140
+		y=826
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:bot:11"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=140
+		y=852
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:bot:12"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=140
+		y=878
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:bot:13"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=140
+		y=904
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:bot:14"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=140
+		y=930
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:bot:15"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=140
+		y=956
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:bot:16"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=140
+		y=982
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:bot:17"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+composite {
+	object {
+		x=212
+		y=9
+		width=51
+		height=994
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=223
+				y=9
+				width=30
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="DAQ FEB CH"
+			align="horiz. centered"
+		}
+		"text update" {
+			object {
+				x=212
+				y=58
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:0:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=84
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:1:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=110
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:2:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=136
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:3:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=162
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:4:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=188
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:5:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=214
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:6:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=240
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:7:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=266
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:8:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=292
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:9:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=318
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:10:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=344
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:11:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=370
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:12:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=396
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:13:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=422
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:14:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=451
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:15:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=477
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:16:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=503
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:17:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=540
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:bot:0:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=566
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:bot:1:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=592
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:bot:2:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=618
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:bot:3:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=644
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:bot:4:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=670
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:bot:5:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=696
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:bot:6:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=722
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:bot:7:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=748
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:bot:8:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=775
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:bot:9:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=801
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:bot:10:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=827
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:bot:11:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=853
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:bot:12:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=879
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:bot:13:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=905
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:bot:14:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=931
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:bot:15:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=957
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:bot:16:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=212
+				y=983
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:bot:17:febch"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=290
+		y=7
+		width=51
+		height=994
+	}
+	"composite name"=""
+	children {
+		"text entry" {
+			object {
+				x=290
+				y=56
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:0"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=82
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:1"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=108
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:2"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=134
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:3"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=160
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:4"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=186
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:5"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=212
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:6"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=238
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:7"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=264
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:8"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=290
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:9"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=316
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:10"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=342
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:11"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=368
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:12"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=394
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:13"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=420
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:14"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=449
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:15"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=475
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:16"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=501
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:top:17"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		text {
+			object {
+				x=297
+				y=22
+				width=40
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Set"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=297
+				y=7
+				width=40
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="DAQ FEB"
+			align="horiz. centered"
+		}
+		"text entry" {
+			object {
+				x=290
+				y=538
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:0"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=564
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:1"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=590
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:2"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=616
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:3"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=642
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:4"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=668
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:5"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=694
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:6"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=720
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:7"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=746
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:8"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=773
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:9"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=799
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:10"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=825
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:11"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=851
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:12"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=877
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:13"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=903
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:14"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=929
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:15"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=955
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:16"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=290
+				y=981
+				width=51
+				height=20
+			}
+			control {
+				chan="SVT:daq:map:bot:17"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=140
+		y=8
+		width=51
+		height=514
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=151
+				y=8
+				width=30
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="DAQ FEB"
+			align="horiz. centered"
+		}
+		"text update" {
+			object {
+				x=140
+				y=57
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:0"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=140
+				y=83
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:1"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=140
+				y=109
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:2"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=140
+				y=135
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:3"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=140
+				y=161
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:4"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=140
+				y=187
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:5"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=140
+				y=213
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:6"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=140
+				y=239
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:7"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=140
+				y=265
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:8"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=140
+				y=291
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:9"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=140
+				y=317
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:10"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=140
+				y=343
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:11"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=140
+				y=369
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:12"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=140
+				y=395
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:13"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=140
+				y=421
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:14"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=140
+				y=450
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:15"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=140
+				y=476
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:16"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=140
+				y=502
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:top:17"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+	}
+}
+text {
+	object {
+		x=633
+		y=8
+		width=30
+		height=18
+	}
+	"basic attribute" {
+		clr=51
+	}
+	textix="DAQ FEB"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=622
+		y=57
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:0"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=622
+		y=83
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:1"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=622
+		y=109
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:2"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=622
+		y=135
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:3"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=622
+		y=161
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:4"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=622
+		y=187
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:5"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=622
+		y=213
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:6"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=622
+		y=239
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:7"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=622
+		y=265
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:8"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=622
+		y=291
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:9"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=622
+		y=317
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:10"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=622
+		y=343
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:11"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=622
+		y=369
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:12"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=622
+		y=395
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:13"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=622
+		y=421
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:14"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+composite {
+	object {
+		x=17
+		y=57
+		width=110
+		height=384
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=17
+				y=57
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT TOP 0"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=17
+				y=83
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT TOP 1"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=17
+				y=109
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT TOP 2"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=17
+				y=135
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT TOP 3"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=17
+				y=161
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT TOP 4"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=17
+				y=187
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT TOP 5"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=17
+				y=213
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT TOP 6"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=17
+				y=239
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT TOP 7"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=17
+				y=265
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT TOP 8"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=17
+				y=291
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT TOP 9"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=17
+				y=317
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT TOP 10"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=17
+				y=343
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT TOP 11"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=17
+				y=369
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT TOP 12"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=17
+				y=395
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT TOP 13"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=17
+				y=421
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT TOP 14"
+			align="horiz. centered"
+		}
+	}
+}
+composite {
+	object {
+		x=511
+		y=57
+		width=110
+		height=384
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=511
+				y=57
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="DATA DPM 0"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=511
+				y=83
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="DATA DPM 1"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=511
+				y=109
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="DATA DPM 2"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=511
+				y=135
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="DATA DPM 3"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=511
+				y=161
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="DATA DPM 4"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=511
+				y=187
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="DATA DPM 5"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=511
+				y=213
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="DATA DPM 6"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=511
+				y=239
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="DATA DPM 7"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=511
+				y=265
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="DATA DPM 8"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=511
+				y=291
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="DATA DPM 9"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=511
+				y=317
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="DATA DPM 10"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=511
+				y=343
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="DATA DPM 11"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=511
+				y=369
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="DATA DPM 12"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=511
+				y=395
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="DATA DPM 13"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=511
+				y=421
+				width=110
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="DATA DPM 14"
+			align="horiz. centered"
+		}
+	}
+}
+text {
+	object {
+		x=691
+		y=8
+		width=30
+		height=18
+	}
+	"basic attribute" {
+		clr=51
+	}
+	textix="DAQ FEB"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=680
+		y=57
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:0"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=680
+		y=83
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:1"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=680
+		y=109
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:2"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=680
+		y=135
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:3"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=680
+		y=161
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:4"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=680
+		y=187
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:5"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=680
+		y=213
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:6"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=680
+		y=239
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:7"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=680
+		y=265
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:8"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=680
+		y=291
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:9"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=680
+		y=317
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:10"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=680
+		y=343
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:11"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=680
+		y=369
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:12"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=680
+		y=395
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:13"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=680
+		y=421
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:dpm:14"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+composite {
+	object {
+		x=740
+		y=8
+		width=51
+		height=433
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=751
+				y=8
+				width=30
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="DAQ FEB"
+			align="horiz. centered"
+		}
+		"text update" {
+			object {
+				x=740
+				y=57
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:0"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=740
+				y=83
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:1"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=740
+				y=109
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:2"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=740
+				y=135
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:3"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=740
+				y=161
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:4"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=740
+				y=187
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:5"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=740
+				y=213
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:6"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=740
+				y=239
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:7"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=740
+				y=265
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:8"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=740
+				y=291
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:9"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=740
+				y=317
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:10"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=740
+				y=343
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:11"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=740
+				y=369
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:12"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=740
+				y=395
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:13"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=740
+				y=421
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:14"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=801
+		y=8
+		width=51
+		height=433
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=812
+				y=8
+				width=30
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="DAQ FEB"
+			align="horiz. centered"
+		}
+		"text update" {
+			object {
+				x=801
+				y=57
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:0"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=801
+				y=83
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:1"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=801
+				y=109
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:2"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=801
+				y=135
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:3"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=801
+				y=161
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:4"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=801
+				y=187
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:5"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=801
+				y=213
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:6"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=801
+				y=239
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:7"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=801
+				y=265
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:8"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=801
+				y=291
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:9"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=801
+				y=317
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:10"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=801
+				y=343
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:11"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=801
+				y=369
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:12"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=801
+				y=395
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:13"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=801
+				y=421
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:map:dpm:14"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+	}
+}

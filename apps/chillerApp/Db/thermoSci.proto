@@ -59,9 +59,19 @@ getLowLim {
 	in  "\${ADDR}\x40\x03\x00%0.2r%*2c";
 }
 
+setLowLim {
+	out "\${ADDR}\xC0\x02%.2r%2<notsum>";
+	@init { getLowLim; }
+}
+
 getHighLim {
     out "\${ADDR}\x60\x00%2.1<notsum>";
 	in  "\${ADDR}\x60\x03\x01%0.2r%*2c";
+}
+
+setHighLim {
+	out "\${ADDR}\xE0\x02%.2r%2<notsum>";
+	@init { getHighLim; }
 }
 
 getHeatP {

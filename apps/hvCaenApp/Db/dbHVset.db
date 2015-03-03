@@ -1,0 +1,98 @@
+
+
+record(ao, SVT:bias:v_set) 
+{
+  field(OUT, "SVT:bias:v_set:fanout PP")
+}
+
+record(dfanout, SVT:bias:v_set:fanout) 
+{
+  field(OUTA, "SVT:bias:top:v_set.VAL PP")
+  field(OUTB, "SVT:bias:bot:v_set.VAL PP")
+}
+
+record(ao, SVT:bias:top:v_set) 
+{
+  field(OUT, "SVT:bias:top:v_set:fanout PP")
+}
+
+record(dfanout, SVT:bias:top:v_set:fanout) 
+{
+  field(OUTA, "SVT:bias:top:v_set:fanout1 PP")
+  field(OUTB, "SVT:bias:top:v_set:fanout2 PP")
+  field(OUTC, "SVT:bias:top:v_set:fanout3 PP")
+}
+
+record(dfanout, SVT:bias:top:v_set:fanout1) 
+{
+  field(OUTA, "SVT:bias:top:0:v_set.VAL PP")
+  field(OUTB, "SVT:bias:top:1:v_set.VAL PP")
+  field(OUTC, "SVT:bias:top:2:v_set.VAL PP")
+  field(OUTD, "SVT:bias:top:3:v_set.VAL PP")
+  field(OUTE, "SVT:bias:top:4:v_set.VAL PP")
+  field(OUTF, "SVT:bias:top:5:v_set.VAL PP")
+}
+
+record(dfanout, SVT:bias:top:v_set:fanout2) 
+{
+  field(OUTA, "SVT:bias:top:6:v_set.VAL PP")
+  field(OUTB, "SVT:bias:top:7:v_set.VAL PP")
+  field(OUTC, "SVT:bias:top:8:v_set.VAL PP")
+  field(OUTD, "SVT:bias:top:9:v_set.VAL PP")
+  field(OUTE, "SVT:bias:top:10:v_set.VAL PP")
+  field(OUTF, "SVT:bias:top:11:v_set.VAL PP")
+}
+
+record(dfanout, SVT:bias:top:v_set:fanout3) 
+{
+  field(OUTA, "SVT:bias:top:12:v_set.VAL PP")
+  field(OUTB, "SVT:bias:top:13:v_set.VAL PP")
+  field(OUTC, "SVT:bias:top:14:v_set.VAL PP")
+  field(OUTD, "SVT:bias:top:15:v_set.VAL PP")
+  field(OUTE, "SVT:bias:top:16:v_set.VAL PP")
+  field(OUTF, "SVT:bias:top:17:v_set.VAL PP")
+}
+
+
+record(ao, SVT:bias:bot:v_set) 
+{
+  field(OUT, "SVT:bias:bot:v_set:fanout PP")
+}
+
+
+record(dfanout, SVT:bias:bot:v_set:fanout) 
+{
+  field(OUTA, "SVT:bias:bot:v_set:fanout1 PP")
+  field(OUTB, "SVT:bias:bot:v_set:fanout2 PP")
+  field(OUTC, "SVT:bias:bot:v_set:fanout3 PP")
+}
+
+record(dfanout, SVT:bias:bot:v_set:fanout1) 
+{
+  field(OUTA, "SVT:bias:bot:20:v_set.VAL PP")
+  field(OUTB, "SVT:bias:bot:21:v_set.VAL PP")
+  field(OUTC, "SVT:bias:bot:22:v_set.VAL PP")
+  field(OUTD, "SVT:bias:bot:23:v_set.VAL PP")
+  field(OUTE, "SVT:bias:bot:24:v_set.VAL PP")
+  field(OUTF, "SVT:bias:bot:25:v_set.VAL PP")
+}
+
+record(dfanout, SVT:bias:bot:v_set:fanout2) 
+{
+  field(OUTA, "SVT:bias:bot:26:v_set.VAL PP")
+  field(OUTB, "SVT:bias:bot:27:v_set.VAL PP")
+  field(OUTC, "SVT:bias:bot:28:v_set.VAL PP")
+  field(OUTD, "SVT:bias:bot:29:v_set.VAL PP")
+  field(OUTE, "SVT:bias:bot:30:v_set.VAL PP")
+  field(OUTF, "SVT:bias:bot:31:v_set.VAL PP")
+}
+
+record(dfanout, SVT:bias:bot:v_set:fanout3) 
+{
+  field(OUTA, "SVT:bias:bot:32:v_set.VAL PP")
+  field(OUTB, "SVT:bias:bot:33:v_set.VAL PP")
+  field(OUTC, "SVT:bias:bot:34:v_set.VAL PP")
+  field(OUTD, "SVT:bias:bot:35:v_set.VAL PP")
+  field(OUTE, "SVT:bias:bot:36:v_set.VAL PP")
+  field(OUTF, "SVT:bias:bot:37:v_set.VAL PP")
+}

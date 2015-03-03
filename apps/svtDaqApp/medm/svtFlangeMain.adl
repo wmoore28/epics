@@ -1,0 +1,2440 @@
+
+file {
+	name="/home/tracker/pelle/epics/svt-medm/hps_svt_FLLV_all.adl"
+	version=030108
+}
+display {
+	object {
+		x=1313
+		y=344
+		width=1560
+		height=250
+	}
+	clr=14
+	bclr=12
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+text {
+	object {
+		x=17
+		y=223
+		width=133
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	textix="ALL SVT FLANGES"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=276
+		y=223
+		width=48
+		height=18
+	}
+	"basic attribute" {
+		clr=51
+	}
+	textix="LV On/Off"
+	align="horiz. centered"
+}
+"choice button" {
+	object {
+		x=180
+		y=217
+		width=67
+		height=20
+	}
+	control {
+		chan="SVT:lv:fl:switch"
+		clr=55
+		bclr=12
+	}
+	stacking="column"
+}
+composite {
+	object {
+		x=100
+		y=8
+		width=1443
+		height=177
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=100
+				y=23
+				width=67
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Slot"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=100
+				y=42
+				width=67
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Channel"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=100
+				y=8
+				width=67
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Crate"
+			align="horiz. centered"
+		}
+		"text update" {
+			object {
+				x=100
+				y=101
+				width=67
+				height=20
+			}
+			monitor {
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=100
+				y=136
+				width=67
+				height=20
+			}
+			monitor {
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=100
+				y=69
+				width=67
+				height=20
+			}
+			monitor {
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=100
+				y=165
+				width=67
+				height=20
+			}
+			monitor {
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		composite {
+			object {
+				x=175
+				y=8
+				width=67
+				height=177
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=189
+						y=23
+						width=32
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Sense"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=189
+						y=8
+						width=32
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Measured"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=189
+						y=42
+						width=32
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Voltage"
+					align="horiz. centered"
+				}
+				"text update" {
+					object {
+						x=175
+						y=101
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:1:v_sens"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=175
+						y=136
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:2:v_sens"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=175
+						y=69
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:0:v_sens"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=175
+						y=165
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:3:v_sens"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+			}
+		}
+		composite {
+			object {
+				x=255
+				y=8
+				width=67
+				height=177
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=270
+						y=23
+						width=32
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Terminal"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=270
+						y=8
+						width=32
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Measured"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=270
+						y=42
+						width=32
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Voltage"
+					align="horiz. centered"
+				}
+				"text update" {
+					object {
+						x=255
+						y=101
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:1:v_term"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=255
+						y=136
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:2:v_term"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=255
+						y=69
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:0:v_term"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=255
+						y=165
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:3:v_term"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+			}
+		}
+		composite {
+			object {
+				x=335
+				y=8
+				width=67
+				height=177
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=348
+						y=23
+						width=32
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Setpoint"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=348
+						y=8
+						width=32
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Voltage"
+					align="horiz. centered"
+				}
+				"text entry" {
+					object {
+						x=335
+						y=101
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:1:v_set"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=335
+						y=136
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:2:v_set"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=335
+						y=69
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:0:v_set"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=335
+						y=165
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:3:v_set"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+			}
+		}
+		composite {
+			object {
+				x=415
+				y=8
+				width=67
+				height=177
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=428
+						y=23
+						width=32
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Setpoint"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=428
+						y=8
+						width=32
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Voltage"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=428
+						y=42
+						width=32
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Readback"
+					align="horiz. centered"
+				}
+				"text update" {
+					object {
+						x=415
+						y=101
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:1:v_set:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=415
+						y=136
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:2:v_set:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=415
+						y=69
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:0:v_set:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=415
+						y=165
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:3:v_set:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+			}
+		}
+		composite {
+			object {
+				x=490
+				y=8
+				width=67
+				height=177
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=499
+						y=23
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="On/Off"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=499
+						y=8
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="LV"
+					align="horiz. centered"
+				}
+				"choice button" {
+					object {
+						x=490
+						y=101
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:1:switch"
+						clr=55
+						bclr=12
+					}
+					stacking="column"
+				}
+				"choice button" {
+					object {
+						x=490
+						y=136
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:2:switch"
+						clr=55
+						bclr=12
+					}
+					stacking="column"
+				}
+				"choice button" {
+					object {
+						x=490
+						y=69
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:0:switch"
+						clr=55
+						bclr=12
+					}
+					stacking="column"
+				}
+				"choice button" {
+					object {
+						x=490
+						y=165
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:3:switch"
+						clr=55
+						bclr=12
+					}
+					stacking="column"
+				}
+			}
+		}
+		composite {
+			object {
+				x=555
+				y=8
+				width=48
+				height=177
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=555
+						y=23
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Status"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=555
+						y=8
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Channel"
+					align="horiz. centered"
+				}
+				rectangle {
+					object {
+						x=569
+						y=101
+						width=20
+						height=20
+					}
+					"basic attribute" {
+						clr=20
+					}
+					"dynamic attribute" {
+						vis="if zero"
+						chan="SVT:lv:fl:1:stat"
+					}
+				}
+				rectangle {
+					object {
+						x=568
+						y=101
+						width=20
+						height=20
+					}
+					"basic attribute" {
+						clr=15
+					}
+					"dynamic attribute" {
+						vis="if not zero"
+						chan="SVT:lv:fl:1:stat"
+					}
+				}
+				rectangle {
+					object {
+						x=569
+						y=136
+						width=20
+						height=20
+					}
+					"basic attribute" {
+						clr=20
+					}
+					"dynamic attribute" {
+						vis="if zero"
+						chan="SVT:lv:fl:2:stat"
+					}
+				}
+				rectangle {
+					object {
+						x=568
+						y=136
+						width=20
+						height=20
+					}
+					"basic attribute" {
+						clr=15
+					}
+					"dynamic attribute" {
+						vis="if not zero"
+						chan="SVT:lv:fl:2:stat"
+					}
+				}
+				rectangle {
+					object {
+						x=569
+						y=69
+						width=20
+						height=20
+					}
+					"basic attribute" {
+						clr=20
+					}
+					"dynamic attribute" {
+						vis="if zero"
+						chan="SVT:lv:fl:0:stat"
+					}
+				}
+				rectangle {
+					object {
+						x=568
+						y=69
+						width=20
+						height=20
+					}
+					"basic attribute" {
+						clr=15
+					}
+					"dynamic attribute" {
+						vis="if not zero"
+						chan="SVT:lv:fl:0:stat"
+					}
+				}
+				rectangle {
+					object {
+						x=569
+						y=165
+						width=20
+						height=20
+					}
+					"basic attribute" {
+						clr=20
+					}
+					"dynamic attribute" {
+						vis="if zero"
+						chan="SVT:lv:fl:3:stat"
+					}
+				}
+				rectangle {
+					object {
+						x=568
+						y=165
+						width=20
+						height=20
+					}
+					"basic attribute" {
+						clr=15
+					}
+					"dynamic attribute" {
+						vis="if not zero"
+						chan="SVT:lv:fl:3:stat"
+					}
+				}
+			}
+		}
+		composite {
+			object {
+				x=605
+				y=8
+				width=67
+				height=177
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=611
+						y=23
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Current"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=611
+						y=8
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Measured"
+					align="horiz. centered"
+				}
+				"text update" {
+					object {
+						x=605
+						y=101
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:1:i_rd"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=605
+						y=136
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:2:i_rd"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=605
+						y=69
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:0:i_rd"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=605
+						y=165
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:3:i_rd"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+			}
+		}
+		composite {
+			object {
+				x=685
+				y=8
+				width=67
+				height=177
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=693
+						y=23
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Current"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=693
+						y=42
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Setpoint"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=693
+						y=8
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Max"
+					align="horiz. centered"
+				}
+				"text entry" {
+					object {
+						x=685
+						y=101
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:1:i_set"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=685
+						y=136
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:2:i_set"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=685
+						y=69
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:0:i_set"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=685
+						y=165
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:3:i_set"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+			}
+		}
+		composite {
+			object {
+				x=765
+				y=8
+				width=67
+				height=177
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=773
+						y=23
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Current"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=773
+						y=42
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Readback"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=773
+						y=8
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Max"
+					align="horiz. centered"
+				}
+				"text update" {
+					object {
+						x=765
+						y=101
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:1:i_set:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=765
+						y=136
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:2:i_set:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=765
+						y=69
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:0:i_set:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=765
+						y=165
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:3:i_set:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+			}
+		}
+		composite {
+			object {
+				x=845
+				y=8
+				width=67
+				height=177
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=854
+						y=23
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Current"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=854
+						y=42
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Setpoint"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=854
+						y=8
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Trip"
+					align="horiz. centered"
+				}
+				"text entry" {
+					object {
+						x=845
+						y=101
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:1:i_max_sup"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=845
+						y=136
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:2:i_max_sup"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=845
+						y=69
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:0:i_max_sup"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=845
+						y=165
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:3:i_max_sup"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+			}
+		}
+		composite {
+			object {
+				x=925
+				y=8
+				width=67
+				height=177
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=932
+						y=23
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Current"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=932
+						y=42
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Readback"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=932
+						y=8
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Trip"
+					align="horiz. centered"
+				}
+				"text update" {
+					object {
+						x=925
+						y=101
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:1:i_max_sup:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=925
+						y=136
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:2:i_max_sup:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=925
+						y=69
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:0:i_max_sup:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=925
+						y=165
+						width=67
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:3:i_max_sup:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+			}
+		}
+		composite {
+			object {
+				x=1000
+				y=8
+				width=67
+				height=177
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=1005
+						y=23
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Voltage"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=1005
+						y=42
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Setpoint"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=1005
+						y=8
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Max Sens"
+					align="horiz. centered"
+				}
+				"text entry" {
+					object {
+						x=1000
+						y=101
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:1:v_max_sens_sup"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=1000
+						y=136
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:2:v_max_sens_sup"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=1000
+						y=69
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:0:v_max_sens_sup"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=1000
+						y=165
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:3:v_max_sens_sup"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+			}
+		}
+		composite {
+			object {
+				x=1075
+				y=8
+				width=48
+				height=177
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=1075
+						y=23
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Voltage"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=1075
+						y=42
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Readback"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=1075
+						y=8
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Max Sens"
+					align="horiz. centered"
+				}
+				"text update" {
+					object {
+						x=1075
+						y=101
+						width=48
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:1:v_max_sens_sup:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1075
+						y=136
+						width=48
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:2:v_max_sens_sup:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1075
+						y=69
+						width=48
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:0:v_max_sens_sup:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1075
+						y=165
+						width=48
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:3:v_max_sens_sup:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+			}
+		}
+		composite {
+			object {
+				x=1135
+				y=8
+				width=67
+				height=177
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=1141
+						y=23
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Voltage"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=1141
+						y=42
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Setpoint"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=1141
+						y=8
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Max Term"
+					align="horiz. centered"
+				}
+				"text entry" {
+					object {
+						x=1135
+						y=101
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:1:v_max_term_sup"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=1135
+						y=136
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:2:v_max_term_sup"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=1135
+						y=69
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:0:v_max_term_sup"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=1135
+						y=165
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:3:v_max_term_sup"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+			}
+		}
+		composite {
+			object {
+				x=1215
+				y=8
+				width=48
+				height=177
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=1215
+						y=23
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Voltage"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=1215
+						y=42
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Readback"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=1215
+						y=8
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Max Term"
+					align="horiz. centered"
+				}
+				"text update" {
+					object {
+						x=1215
+						y=101
+						width=48
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:1:v_max_term_sup:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1215
+						y=136
+						width=48
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:2:v_max_term_sup:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1215
+						y=69
+						width=48
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:0:v_max_term_sup:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1215
+						y=165
+						width=48
+						height=20
+					}
+					monitor {
+						chan="SVT:lv:fl:3:v_max_term_sup:fbk"
+						clr=31
+						bclr=14
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+			}
+		}
+		composite {
+			object {
+				x=1275
+				y=8
+				width=67
+				height=177
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=1283
+						y=23
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Rate"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=1283
+						y=42
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Setpoint"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=1283
+						y=8
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Ramp Up"
+					align="horiz. centered"
+				}
+				"text entry" {
+					object {
+						x=1275
+						y=101
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:1:vrise"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=1275
+						y=136
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:2:vrise"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=1275
+						y=69
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:0:vrise"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=1275
+						y=165
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:3:vrise"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+			}
+		}
+		text {
+			object {
+				x=1355
+				y=23
+				width=48
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Rate"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=1355
+				y=42
+				width=48
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Readback"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=1355
+				y=8
+				width=48
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Ramp Up"
+			align="horiz. centered"
+		}
+		"text update" {
+			object {
+				x=1355
+				y=101
+				width=48
+				height=20
+			}
+			monitor {
+				chan="SVT:lv:fl:1:vrise:fbk"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=1355
+				y=136
+				width=48
+				height=20
+			}
+			monitor {
+				chan="SVT:lv:fl:2:vrise:fbk"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=1355
+				y=69
+				width=48
+				height=20
+			}
+			monitor {
+				chan="SVT:lv:fl:0:vrise:fbk"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=1355
+				y=165
+				width=48
+				height=20
+			}
+			monitor {
+				chan="SVT:lv:fl:3:vrise:fbk"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		composite {
+			object {
+				x=1415
+				y=8
+				width=67
+				height=177
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=1415
+						y=23
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Rate"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=1415
+						y=42
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Setpoint"
+					align="horiz. centered"
+				}
+				text {
+					object {
+						x=1415
+						y=8
+						width=48
+						height=18
+					}
+					"basic attribute" {
+						clr=51
+					}
+					textix="Ramp Down"
+					align="horiz. centered"
+				}
+				"text entry" {
+					object {
+						x=1415
+						y=101
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:1:vfall"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=1415
+						y=136
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:2:vfall"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=1415
+						y=69
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:0:vfall"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+				"text entry" {
+					object {
+						x=1415
+						y=165
+						width=67
+						height=20
+					}
+					control {
+						chan="SVT:lv:fl:3:vfall"
+						clr=14
+						bclr=0
+					}
+					limits {
+					}
+				}
+			}
+		}
+		text {
+			object {
+				x=1495
+				y=23
+				width=48
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Rate"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=1495
+				y=42
+				width=48
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Readback"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=1495
+				y=8
+				width=48
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Ramp Down"
+			align="horiz. centered"
+		}
+		"text update" {
+			object {
+				x=1495
+				y=136
+				width=48
+				height=20
+			}
+			monitor {
+				chan="SVT:lv:fl:2:vfall:fbk"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=1495
+				y=101
+				width=48
+				height=20
+			}
+			monitor {
+				chan="SVT:lv:fl:1:vfall:fbk"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=1495
+				y=165
+				width=48
+				height=20
+			}
+			monitor {
+				chan="SVT:lv:fl:3:vfall:fbk"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=1495
+				y=69
+				width=48
+				height=20
+			}
+			monitor {
+				chan="SVT:lv:fl:0:vfall:fbk"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=1
+		y=8
+		width=100
+		height=179
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=6
+				y=69
+				width=88
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT FLANGE 0"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=6
+				y=102
+				width=88
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT FLANGE 1"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=6
+				y=136
+				width=88
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT FLANGE 2"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=6
+				y=167
+				width=88
+				height=20
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="SVT FLANGE 3"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=1
+				y=23
+				width=99
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Name"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=2
+				y=8
+				width=99
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Channel"
+			align="horiz. centered"
+		}
+	}
+}

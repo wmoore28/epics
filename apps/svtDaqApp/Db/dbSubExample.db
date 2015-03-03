@@ -1,0 +1,34 @@
+record(sub,"$(user):subExample")
+{
+    field(INAM,"mySubInit")
+    field(SNAM,"mySubProcess")
+#    field(SCAN,"5 second")
+    field(FLNK,"$(user):subExampleTemp")
+    #field(FLNK,"$(user):subExampleCalDelay")
+    
+}
+
+record(aSub,"$(user):aSubExample")
+{
+    field(INAM,"myAsubInit")
+    field(SNAM,"myAsubProcess")
+    field(FTA,"DOUBLE")
+    field(NOA,"10")
+    #field(INPA,"$(user):compressExample CPP")
+}
+
+
+record(ai, SVT:temp) {
+  field(INP, "$(user):subExampleTemp CP")
+  field(DTYP,"Soft Channel")
+}
+
+record(ai, SVT:CalDelay) {
+  field(INP, "$(user):subExampleCalDelay CP")
+  field(DTYP,"Soft Channel")
+}
+
+record(ao, SVT:CalDelaySet) {
+  field(OUT, "$(user):subExampleCalDelay.A CPP")
+  field(DTYP,"Soft Channel")
+}

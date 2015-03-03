@@ -1,0 +1,583 @@
+
+file {
+	name="/usr/clas12/hps/svt-devel/apps/iocBoot/iocchiller/../../chillerApp/medm/chiller_anova.adl"
+	version=030108
+}
+display {
+	object {
+		x=1137
+		y=419
+		width=310
+		height=385
+	}
+	clr=14
+	bclr=4
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=0
+		width=400
+		height=30
+	}
+	"basic attribute" {
+		clr=29
+	}
+}
+text {
+	object {
+		x=0
+		y=8
+		width=310
+		height=16
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="ANOVA A-Series Chiller"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=130
+		y=86
+		width=120
+		height=20
+	}
+	monitor {
+		chan="HPS_FE:CHILLER:TEMP"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=111
+		width=60
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Setpoint"
+}
+text {
+	object {
+		x=25
+		y=176
+		width=60
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="High Limit (C)"
+}
+text {
+	object {
+		x=25
+		y=150
+		width=60
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Low Limit (C)"
+}
+text {
+	object {
+		x=25
+		y=358
+		width=60
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Firmware Version"
+}
+"text update" {
+	object {
+		x=130
+		y=359
+		width=160
+		height=15
+	}
+	monitor {
+		chan="HPS_FE:CHILLER:VERSION"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"message button" {
+	object {
+		x=130
+		y=221
+		width=80
+		height=20
+	}
+	control {
+		chan="HPS_FE:CHILLER:START.PROC"
+		clr=14
+		bclr=4
+	}
+	label="Start"
+	release_msg="1"
+}
+"message button" {
+	object {
+		x=210
+		y=221
+		width=80
+		height=20
+	}
+	control {
+		chan="HPS_FE:CHILLER:STOP.PROC"
+		clr=14
+		bclr=4
+	}
+	label="Stop"
+	release_msg="1"
+}
+"text update" {
+	object {
+		x=130
+		y=52
+		width=160
+		height=15
+	}
+	monitor {
+		chan="HPS_FE:CHILLER:STATUS"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=340
+		y=5
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Comm (asyn)"
+		name="asynRecord.adl"
+		args="P=HPS_FE:CHILLER:,R=ASYN"
+	}
+	display[1] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocchiller:"
+	}
+	clr=14
+	bclr=4
+}
+"message button" {
+	object {
+		x=179
+		y=281
+		width=110
+		height=20
+	}
+	control {
+		chan="HPS_FE:CHILLER:DEFAULT.PROC"
+		clr=14
+		bclr=4
+	}
+	label="Load Defaults"
+	release_msg="1"
+}
+"message button" {
+	object {
+		x=179
+		y=256
+		width=110
+		height=20
+	}
+	control {
+		chan="HPS_FE:CHILLER:CLEAR.PROC"
+		clr=14
+		bclr=4
+	}
+	label="Clear Errors"
+	release_msg="1"
+}
+text {
+	object {
+		x=25
+		y=326
+		width=60
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Pump Speed"
+}
+text {
+	object {
+		x=25
+		y=90
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Current Temp (C)"
+}
+text {
+	object {
+		x=25
+		y=52
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Status"
+}
+text {
+	object {
+		x=25
+		y=225
+		width=60
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Chiller Ctrl"
+}
+text {
+	object {
+		x=25
+		y=260
+		width=60
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Clear stops from errors"
+}
+text {
+	object {
+		x=25
+		y=285
+		width=60
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Set rate and pump speed"
+}
+menu {
+	object {
+		x=130
+		y=322
+		width=160
+		height=20
+	}
+	control {
+		chan="HPS_FE:CHILLER:PUMPSPD_MENU"
+		clr=14
+		bclr=4
+	}
+}
+"text entry" {
+	object {
+		x=130
+		y=109
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_FE:CHILLER:TEMP:SP"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=109
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_FE:CHILLER:TEMP:RD_SP"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=172
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_FE:CHILLER:HIGHLIMIT"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=130
+		y=172
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_FE:CHILLER:HIGHLIMIT:SP"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=130
+		y=146
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_FE:CHILLER:LOWLIMIT:SP"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=146
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_FE:CHILLER:LOWLIMIT"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=250
+		y=86
+		width=40
+		height=20
+	}
+	monitor {
+		chan="HPS_FE:CHILLER:TEMP.EGU"
+		clr=15
+		bclr=11
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=35
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="COMM"
+}
+"text update" {
+	object {
+		x=130
+		y=35
+		width=160
+		height=15
+	}
+	monitor {
+		chan="HPS_FE:CHILLER:TEMP.STAT"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=25
+		y=205
+		width=265
+		height=3
+	}
+	"basic attribute" {
+		clr=6
+	}
+}
+"related display" {
+	object {
+		x=273
+		y=5
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Comm (asyn)"
+		name="asynRecord.adl"
+		args="P=HPS_FE:CHILLER:,R=ASYN"
+	}
+	display[1] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocchiller"
+	}
+	clr=14
+	bclr=4
+}
+rectangle {
+	object {
+		x=25
+		y=312
+		width=265
+		height=3
+	}
+	"basic attribute" {
+		clr=6
+	}
+}
+rectangle {
+	object {
+		x=25
+		y=348
+		width=265
+		height=3
+	}
+	"basic attribute" {
+		clr=6
+	}
+}
+text {
+	object {
+		x=5
+		y=8
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=30
+	}
+	textix="$(DESC)"
+}

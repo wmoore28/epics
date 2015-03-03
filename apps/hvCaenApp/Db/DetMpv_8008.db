@@ -1,0 +1,395 @@
+#
+# Detector wise Records for board MPV.8008l
+#
+record( bi, "$(DETch):enable")
+{
+	field( DESC, "Channel enabled in GUIes")
+	field( SCAN, "Passive")
+	field( ZNAM, "Disabled")
+	field( ONAM, "Enabled")
+	field( PINI, "YES")
+	field( VAL,  "1")
+}
+record( mbbi, "$(DETch):alarm")
+{
+	field( DESC, "Alarm Status")
+	field( SCAN, "Passive")
+	field( PINI, "YES")
+	field( ZRVL, "0")	field( ZRST, "NO_ALARM")
+	field( ONVL, "1")	field( ONST, "Alarmed")
+	field( VAL,  "0")
+}
+
+record(stringin, "$(DETch):name:fbk")
+{
+	field( INP, "$(PORT):$(CH):name:fbk CPP")
+	field( SCAN, "Passive")
+	field( PINI, "YES")
+	field( VAL, "$(DETch)")
+}
+
+record(longin, "$(DETch):group")
+{
+  	field(DESC, "Channel Group Number")
+	field( INP, "$(PORT):$(CH):group CPP")
+	field( SCAN, "Passive")
+
+}
+
+#record(longout, "$(DETch):switch")
+record(bo, "$(DETch):switch")
+{
+  field(DESC, "Turn ON and OFF switch")
+  field(SCAN, "Passive")
+  field(OUT,  "$(PORT):$(CH):switch PP")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+}
+
+#record(longin, "$(DETch):switch:fbk")
+record(bi, "$(DETch):switch:fbk")
+{
+  field(DESC, "Turn ON and OFF switch")
+  field(SCAN, "Passive")
+  field(INP,  "$(PORT):$(CH):switch:fbk CPP")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+}
+
+record(longin, "$(DETch):stat")
+{
+  field(DESC, "Channel Status")
+  field(SCAN, "Passive")
+  field(INP,  "$(PORT):$(CH):stat CPP")
+}
+
+record(stringin, "$(DETch):stat_string")
+{
+  field(DESC, "Channel Status in String")
+  field(SCAN, "Passive")
+  field(INP,  "$(PORT):$(CH):stat_string CPP")
+}
+
+record(ai, "$(DETch):i_rd")
+{
+  field(DESC, "Current Readback")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(INP,  "$(PORT):$(CH):i_rd CPP")
+  field(ADEL, "1.0")  
+}
+
+record(ao, "$(DETch):i_set")
+{
+  field(DESC, "Current Setpoint")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(OUT,  "$(PORT):$(CH):i_set PP")
+  field(ADEL, "1.0")
+}
+record(ai, "$(DETch):i_set:fbk")
+{
+  field(DESC, "Current Setpoint")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(INP,  "$(PORT):$(CH):i_set:fbk CPP")
+}
+
+
+record(ao, "$(DETch):i_max_sup")
+{
+  field(DESC, "Supervision Maximum Currrent")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(OUT,  "$(PORT):$(CH):i_max_sup PP")
+  field(ADEL, "1.0")
+}
+record(ai, "$(DETch):i_max_sup:fbk")
+{
+  field(DESC, "Supervision Maximum Currrent")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(INP,  "$(PORT):$(CH):i_max_sup:fbk CPP")
+}
+
+record(ao, "$(DETch):i_max_cfg")
+{
+  field(DESC, "Config Maximum Currrent")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(OUT,  "$(PORT):$(CH):i_max_cfg PP")
+  field(ADEL, "1.0")
+}
+record(ai, "$(DETch):i_max_cfg:fbk")
+{
+  field(DESC, "Config Maximum Currrent")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(INP,  "$(PORT):$(CH):i_max_cfg:fbk CPP")
+}
+
+#record(ai, "$(DETch):i_lim_hw")
+#{
+#  field(DESC, "Hardware Limit for Currrent")
+#  field(SCAN, "Passive")
+#  field(PREC, "3")
+#  field(EGU,  "")
+#  field(INP,  "$(PORT):$(CH):i_lim_hw CPP")
+#  field(ADEL, "1.0")
+#}
+
+
+record(longout, "$(DETch):i_trip_time")
+{
+  field(DESC, "Span for Time out Function.")
+  field(SCAN, "Passive")
+  field(EGU,  "")
+  field(OUT,  "$(PORT):$(CH):i_trip_time PP")
+  field(ADEL, "1")
+}
+record(longin, "$(DETch):i_trip_time:fbk")
+{
+  field(DESC, "Span for Time out Function.")
+  field(SCAN, "Passive")
+  field(EGU,  "")
+  field(INP,  "$(PORT):$(CH):i_trip_time:fbk CPP")
+}
+
+
+record(ao, "$(DETch):vrise")
+{
+  field(DESC, "Voltage  RampUp Rate")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(OUT,  "$(PORT):$(CH):vrise PP")
+  field(ADEL, "1.0")
+}
+record(ai, "$(DETch):vrise:fbk")
+{
+  field(DESC, "Voltage  RampUp Rate")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(INP,  "$(PORT):$(CH):vrise:fbk CPP")
+}
+
+
+record(ao, "$(DETch):vfall")
+{
+  field(DESC, "Voltage RampDown Rate")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(OUT,  "$(PORT):$(CH):vfall PP")
+  field(ADEL, "1.0")
+}
+record(ai, "$(DETch):vfall:fbk")
+{
+  field(DESC, "Voltage RampDown Rate")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(INP,  "$(PORT):$(CH):vfall:fbk CPP")
+}
+
+
+record(ai, "$(DETch):v_sens")
+{
+  field(DESC, "Voltage Sensor Readback")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(INP,  "$(PORT):$(CH):v_sens CPP")
+  field(ADEL, "1.0")
+}
+
+record(ai, "$(DETch):v_term")
+{
+  field(DESC, "Voltage Terminal Readback")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(INP,  "$(PORT):$(CH):v_term CPP")
+  field(ADEL, "1.0")
+}
+
+record(ao, "$(DETch):v_set")
+{
+  field(DESC, "Voltage Setpoint")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(OUT,  "$(PORT):$(CH):v_set PP")
+  field(ADEL, "1.0")
+}
+record(ai, "$(DETch):v_set:fbk")
+{
+  field(DESC, "Voltage Setpoint")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(INP,  "$(PORT):$(CH):v_set:fbk CPP")
+}
+
+
+record(ao, "$(DETch):v_min_sens_sup")
+{
+  field(DESC, "Supervision Minimum Sensor Voltage")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(OUT,  "$(PORT):$(CH):v_min_sens_sup PP")
+  field(ADEL, "1.0")
+}
+record(ai, "$(DETch):v_min_sens_sup:fbk")
+{
+  field(DESC, "Supervision Minimum Sensor Voltage")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(INP,  "$(PORT):$(CH):v_min_sens_sup:fbk CPP")
+}
+
+record(ao, "$(DETch):v_max_sens_sup")
+{
+  field(DESC, "Supervision Maximum Sensor Voltage")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(OUT,  "$(PORT):$(CH):v_max_sens_sup PP")
+  field(ADEL, "1.0")
+}
+record(ai, "$(DETch):v_max_sens_sup:fbk")
+{
+  field(DESC, "Supervision Maximum Sensor Voltage")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(INP,  "$(PORT):$(CH):v_max_sens_sup:fbk CPP")
+}
+
+
+record(ao, "$(DETch):v_max_term_sup")
+{
+  field(DESC, "Supervision Maximum Terminal Voltage")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(OUT,  "$(PORT):$(CH):v_max_term_sup PP")
+  field(ADEL, "1.0")
+}
+record(ai, "$(DETch):v_max_term_sup:fbk")
+{
+  field(DESC, "Supervision Maximum Terminal Voltage")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(INP,  "$(PORT):$(CH):v_max_term_sup:fbk CPP")
+}
+
+record(ao, "$(DETch):v_max_sens_cfg")
+{
+  field(DESC, "Config Maximum Sensor Voltage")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(OUT,  "$(PORT):$(CH):v_max_sens_cfg PP")
+  field(ADEL, "1.0")
+}
+record(ai, "$(DETch):v_max_sens_cfg:fbk")
+{
+  field(DESC, "Config Maximum Sensor Voltage")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(INP,  "$(PORT):$(CH):v_max_sens_cfg:fbk CPP")
+}
+
+
+record(ao, "$(DETch):v_max_term_cfg")
+{
+  field(DESC, "Config Maximum Terminal Voltage")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(OUT,  "$(PORT):$(CH):v_max_term_cfg PP")
+  field(ADEL, "1.0")
+}
+record(ai, "$(DETch):v_max_term_cfg:fbk")
+{
+  field(DESC, "Config Maximum Terminal Voltage")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(EGU,  "")
+  field(INP,  "$(PORT):$(CH):v_max_term_cfg:fbk CPP")
+}
+
+
+#record(ai, "$(DETch):v_lim_hw")
+#{
+#  field(DESC, "Hardware Limit for Voltage")
+#  field(SCAN, "Passive")
+#  field(PREC, "3")
+#  field(EGU,  "")
+#  field(INP,  "$(PORT):$(CH):v_lim_hw CPP")
+#  field(ADEL, "1.0")
+#}
+
+
+record(longin, "$(DETch):temp")
+{
+  field(DESC, "Hotspot Temperature")
+  field(SCAN, "Passive")
+  field(INP,  "$(PORT):$(CH):temp CPP")
+}
+
+#record(longin, "$(DETch):max_temp_cfg")
+#{
+#  field(DESC, "Config Maximum Temperature")
+#  field(SCAN, "Passive")
+#  field(INP,  "$(PORT):$(CH):max_temp_cfg CPP")
+#}
+
+
+
+#record(longout, "$(DETch):regul")
+#{
+#  field(DESC, "Turn ON and OFF switch")
+#  field(SCAN, "Passive")
+#  field(EGU,  "")
+#  field(OUT,  "$(PORT):$(CH):regul PP")
+#  field(ADEL, "1")
+#}
+
+
+record(longout, "$(DETch):sup_behavior")
+{
+  field(DESC, "Supervision Behavior")
+  field(SCAN, "Passive")
+  field(EGU,  "")
+  field(OUT,  "$(PORT):$(CH):sup_behavior PP")
+  field(ADEL, "1")
+  field(VAL,  "17684")
+  field(PINI, "YES")
+}
+record(longin, "$(DETch):sup_behavior:fbk")
+{
+  field(DESC, "Supervision Behavior")
+  field(SCAN, "Passive")
+  field(EGU,  "")
+  field(INP,  "$(PORT):$(CH):sup_behavior:fbk CPP")
+  field(VAL,  "17684")
+  field(PINI, "YES")
+}
+
+
+
+

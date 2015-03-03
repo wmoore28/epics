@@ -1,0 +1,90 @@
+
+record(bo, SVT:lv:fe:digi:switch) 
+{
+  field(OUT, "SVT:lv:fe:digi:switch_fanout PP")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+}
+
+record(dfanout, SVT:lv:fe:digi:switch_fanout) 
+{
+  field(OUTA, "SVT:lv:fe:digi:switch_fanout1 PP")
+  field(OUTB, "SVT:lv:fe:digi:switch_fanout2 PP")
+}
+
+record(dfanout, SVT:lv:fe:digi:switch_fanout1) {
+  field(OUTA, "SVT:lv:fe:0:digi:switch.VAL PP")
+  field(OUTB, "SVT:lv:fe:1:digi:switch.VAL PP")
+  field(OUTC, "SVT:lv:fe:2:digi:switch.VAL PP")
+  field(OUTD, "SVT:lv:fe:3:digi:switch.VAL PP")
+  field(OUTE, "SVT:lv:fe:4:digi:switch.VAL PP")
+}
+
+record(dfanout, SVT:lv:fe:digi:switch_fanout2) {
+  field(OUTA, "SVT:lv:fe:5:digi:switch.VAL PP")
+  field(OUTB, "SVT:lv:fe:6:digi:switch.VAL PP")
+  field(OUTC, "SVT:lv:fe:7:digi:switch.VAL PP")
+  field(OUTD, "SVT:lv:fe:8:digi:switch.VAL PP")
+  field(OUTE, "SVT:lv:fe:9:digi:switch.VAL PP")
+}
+
+
+record(bo, SVT:lv:fe:anap:switch) 
+{
+  field(OUT, "SVT:lv:fe:anap:switch_fanout PP")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+}
+
+record(dfanout, SVT:lv:fe:anap:switch_fanout) 
+{
+  field(OUTA, "SVT:lv:fe:anap:switch_fanout1 PP")
+  field(OUTB, "SVT:lv:fe:anap:switch_fanout2 PP")
+}
+
+record(dfanout, SVT:lv:fe:anap:switch_fanout1) {
+  field(OUTA, "SVT:lv:fe:0:anap:switch.VAL PP")
+  field(OUTB, "SVT:lv:fe:1:anap:switch.VAL PP")
+  field(OUTC, "SVT:lv:fe:2:anap:switch.VAL PP")
+  field(OUTD, "SVT:lv:fe:3:anap:switch.VAL PP")
+  field(OUTE, "SVT:lv:fe:4:anap:switch.VAL PP")
+}
+
+record(dfanout, SVT:lv:fe:anap:switch_fanout2) {
+  field(OUTA, "SVT:lv:fe:5:anap:switch.VAL PP")
+  field(OUTB, "SVT:lv:fe:6:anap:switch.VAL PP")
+  field(OUTC, "SVT:lv:fe:7:anap:switch.VAL PP")
+  field(OUTD, "SVT:lv:fe:8:anap:switch.VAL PP")
+  field(OUTE, "SVT:lv:fe:9:anap:switch.VAL PP")
+}
+
+
+
+record(bo, SVT:lv:fe:anan:switch) 
+{
+  field(OUT, "SVT:lv:fe:anan:switch_fanout PP")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+}
+
+record(dfanout, SVT:lv:fe:anan:switch_fanout) 
+{
+  field(OUTA, "SVT:lv:fe:anan:switch_fanout1 PP")
+  field(OUTB, "SVT:lv:fe:anan:switch_fanout2 PP")
+}
+
+record(dfanout, SVT:lv:fe:anan:switch_fanout1) {
+  field(OUTA, "SVT:lv:fe:0:anan:switch.VAL PP")
+  field(OUTB, "SVT:lv:fe:1:anan:switch.VAL PP")
+  field(OUTC, "SVT:lv:fe:2:anan:switch.VAL PP")
+  field(OUTD, "SVT:lv:fe:3:anan:switch.VAL PP")
+  field(OUTE, "SVT:lv:fe:4:anan:switch.VAL PP")
+}
+
+record(dfanout, SVT:lv:fe:anan:switch_fanout2) {
+  field(OUTA, "SVT:lv:fe:5:anan:switch.VAL PP")
+  field(OUTB, "SVT:lv:fe:6:anan:switch.VAL PP")
+  field(OUTC, "SVT:lv:fe:7:anan:switch.VAL PP")
+  field(OUTD, "SVT:lv:fe:8:anan:switch.VAL PP")
+  field(OUTE, "SVT:lv:fe:9:anan:switch.VAL PP")
+}

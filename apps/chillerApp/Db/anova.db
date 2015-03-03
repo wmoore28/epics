@@ -6,16 +6,7 @@
 #   [Macros]
 #   P     - standard record prefix
 #   R     - standard record prefix
-#   PROTO - streams protocol file name
 #   PORT  - asyn port name
-#
-#   [Protocols]
-#   Some of the ao records use bo protocols.  This is due to the STAC5 not 
-#   accepting floating point values for things like step positions.  The generic
-#   protocol file uses %f for ai/ao and %d for bi/bo.  There is also special 
-#   "No Init" protocols.  More details available within the protocol file.  The 
-#   parameters passed to the protocol are the actual STAC5 commands to be sent. 
-#   See the manual for all the gory details.  
 #
 # Author: Wesley Moore
 # Date:   June 2014
@@ -78,17 +69,17 @@ record(bo, "$(P)$(R)CLEAR") {
 #######################################
 # Settings Commands
 #######################################
-record(ai, "$(P)$(R)TEMP_REQD") {
-    field(DTYP, "stream")
-    field(INP, "@anova.proto getTemp $(PORT)")
-    field(PREC, "2")
-    field(SCAN, "1 second")
+record(ai, "$(P)$(R)TEMP:RD_SP") {
+	field(DTYP, "stream")
+	field(INP, "@anova.proto getTemp $(PORT)")
+	field(PREC, "2")
+	field(SCAN, "1 second")
 }
 
-record(ao, "$(P)$(R)TEMP_SETPT") {
-    field(DTYP, "stream")
-    field(OUT, "@anova.proto setTemp $(PORT)")
-    field(PREC, "2")
+record(ao, "$(P)$(R)TEMP:SP") {
+	field(DTYP, "stream")
+	field(OUT, "@anova.proto setTemp $(PORT)")
+	field(PREC, "2")
 }
 
 record(ai, "$(P)$(R)HIGHLIMIT") {
@@ -98,11 +89,11 @@ record(ai, "$(P)$(R)HIGHLIMIT") {
     field(SCAN, "10 second")
 }
 
-record(ao, "$(P)$(R)HIGHLIMIT_SETPT") {
+record(ao, "$(P)$(R)HIGHLIMIT:SP") {
     field(DTYP, "stream")
     field(OUT, "@anova.proto setHighLimit $(PORT)")
     field(PREC, "2")
-    field(FLNK, "$(P)$(R)HIGHLIMIT.PROC")
+	field(FLNK, "$(P)$(R)HIGHLIMIT.PROC")
 }
 
 record(ai, "$(P)$(R)LOWLIMIT") {
@@ -112,22 +103,22 @@ record(ai, "$(P)$(R)LOWLIMIT") {
     field(SCAN, "10 second")
 }
 
-record(ao, "$(P)$(R)LOWLIMIT_SETPT") {
+record(ao, "$(P)$(R)LOWLIMIT:SP") {
     field(DTYP, "stream")
     field(OUT, "@anova.proto setLowLimit $(PORT)")
     field(PREC, "2")
-    field(FLNK, "$(P)$(R)LOWLIMIT.PROC")
+	field(FLNK, "$(P)$(R)LOWLIMIT.PROC")
 }
 
 record(mbbo, "$(P)$(R)PUMPSPD_MENU") {
     field(DTYP, "stream")
     field(OUT, "@anova.proto setPumpSpd $(PORT)")
     field(ZRST, "Auto")
-    field(ZRVL, "0")
-    field(ONST, "Low")
-    field(ONVL, "1")
-    field(TWST, "Med")
-    field(TWVL, "2")
-    field(THST, "Hig")
-    field(THVL, "3")
+	field(ZRVL, "0")
+	field(ONST, "Low")
+	field(ONVL, "1")
+	field(TWST, "Med")
+	field(TWVL, "2")
+	field(THST, "Hig")
+	field(THVL, "3")
 } 

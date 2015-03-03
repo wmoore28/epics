@@ -1,0 +1,159 @@
+# Database for GroupInitialize, GroupKill, GroupMotionEnable, GroupMotionDisable for XPS  with asynMotor
+# 
+
+#
+#
+# Macro paramters:
+#   $(P)        - PV name prefix
+#   $(G)        - PV base record name
+#   $(PORT)     - asyn port for this controller
+#   $(TIMEOUT)  - asyn timeout
+#
+#------------------------------------------------
+#
+# Group name (comment this record when using profileMoveControllerXPS.template )
+#
+#record(stringout, "$(P)$(G)GroupName") {
+#    field(DESC, "Group name")
+#    field(PINI, "YES")
+#    field(DTYP, "asynOctetWrite")
+#    field(OUT,  "@asyn($(PORT),0,$(TIMEOUT))XPS_PROFILE_GROUP_NAME")
+#    field(VAL,  "Target")
+#}
+#
+# PVs for GroupInitialize() command 
+#
+record(busy,"$(P)$(G)groupInitialize") {
+    field(DESC,"Group Initialize")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),0,$(TIMEOUT))GROUP_INITIALIZE")
+    field(ZNAM, "Done")
+    field(ONAM, "GroupInitialize")
+}
+record(mbbi,"$(P)$(G)groupInitializeStatus") {
+    field(DESC,"group Initialize status")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),0,$(TIMEOUT))GROUP_INITIALIZE_STATUS")
+    field(ZRVL, "0")
+    field(ZRST, "Undefined")
+    field(ZRSV, "INVALID")
+    field(ONVL, "1")
+    field(ONST, "Success")
+    field(ONSV, "NO_ALARM")
+    field(TWVL, "2")
+    field(TWST, "Failure")
+    field(TWSV, "MAJOR")
+    field(SCAN, "I/O Intr")
+}
+#
+# PVs for GroupKill() command 
+#
+record(busy,"$(P)$(G)groupKill") {
+    field(DESC,"Group Kill")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),0,$(TIMEOUT))GROUP_KILL")
+    field(ZNAM, "Done")
+    field(ONAM, "GroupKill")
+}
+record(mbbi,"$(P)$(G)groupKillStatus") {
+    field(DESC,"group Kill status")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),0,$(TIMEOUT))GROUP_KILL_STATUS")
+    field(ZRVL, "0")
+    field(ZRST, "Undefined")
+    field(ZRSV, "INVALID")
+    field(ONVL, "1")
+    field(ONST, "Success")
+    field(ONSV, "NO_ALARM")
+    field(TWVL, "2")
+    field(TWST, "Failure")
+    field(TWSV, "MAJOR")
+    field(SCAN, "I/O Intr")
+}
+#
+# PVs for GroupHomeSearch() command 
+#
+record(busy,"$(P)$(G)groupHomeSearch") {
+    field(DESC,"Group Home Search")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),0,$(TIMEOUT))GROUP_HOME_SEARCH")
+    field(ZNAM, "Done")
+    field(ONAM, "GroupHomeSearch")
+}
+record(mbbi,"$(P)$(G)groupHomeSearchStatus") {
+    field(DESC,"group HomeSearch status")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),0,$(TIMEOUT))GROUP_HOME_SEARCH_STATUS")
+    field(ZRVL, "0")
+    field(ZRST, "Undefined")
+    field(ZRSV, "INVALID")
+    field(ONVL, "1")
+    field(ONST, "Success")
+    field(ONSV, "NO_ALARM")
+    field(TWVL, "2")
+    field(TWST, "Failure")
+    field(TWSV, "MAJOR")
+    field(SCAN, "I/O Intr")
+#    field(SCAN, ".2 second")
+}
+#
+# PVs for GroupMotionEnable() command 
+#
+record(busy,"$(P)$(G)groupMotionEnable") {
+    field(DESC,"GroupMotionEnable")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),0,$(TIMEOUT))GROUP_MOTION_ENABLE")
+    field(ZNAM, "Done")
+    field(ONAM, "GroupMotionEnable")
+}
+record(mbbi,"$(P)$(G)groupMotionEnableStatus") {
+    field(DESC,"groupMotion Enable status")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),0,$(TIMEOUT))GROUP_MOTION_ENABLE_STATUS")
+    field(ZRVL, "0")
+    field(ZRST, "Undefined")
+    field(ZRSV, "INVALID")
+    field(ONVL, "1")
+    field(ONST, "Success")
+    field(ONSV, "NO_ALARM")
+    field(TWVL, "2")
+    field(TWST, "Failure")
+    field(TWSV, "MAJOR")
+    field(SCAN, "I/O Intr")
+}
+#
+# PVs for GroupMotionDisable() command 
+#
+record(busy,"$(P)$(G)groupMotionDisable") {
+    field(DESC,"GroupMotionDisable")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),0,$(TIMEOUT))GROUP_MOTION_DISABLE")
+    field(ZNAM, "Done")
+    field(ONAM, "GroupMotionDisable")
+}
+record(mbbi,"$(P)$(G)groupMotionDisableStatus") {
+    field(DESC,"groupMotion Disable status")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),0,$(TIMEOUT))GROUP_MOTION_DISABLE_STATUS")
+    field(ZRVL, "0")
+    field(ZRST, "Undefined")
+    field(ZRSV, "INVALID")
+    field(ONVL, "1")
+    field(ONST, "Success")
+    field(ONSV, "NO_ALARM")
+    field(TWVL, "2")
+    field(TWST, "Failure")
+    field(TWSV, "MAJOR")
+    field(SCAN, "I/O Intr")
+}
+#
+# group operations Message
+#
+record(waveform,"$(P)$(G)groupMessage") {
+    field(DESC, "group Operations message")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),0,$(TIMEOUT))GROUP_MESSAGE")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    field(SCAN, "I/O Intr")
+}

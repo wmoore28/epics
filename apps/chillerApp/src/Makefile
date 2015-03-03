@@ -22,6 +22,7 @@ DBD += chiller.dbd
 chiller_DBD += base.dbd
 chiller_DBD += drvAsynSerialPort.dbd
 chiller_DBD += drvAsynIPPort.dbd
+chiller_DBD += sCalcoutRecord.dbd
 chiller_DBD += stream.dbd
 chiller_DBD += asSupport.dbd
 chiller_DBD += devIocStats.dbd
@@ -34,7 +35,8 @@ chiller_SRCS_DEFAULT += chillerMain.cpp
 chiller_SRCS_vxWorks += -nil-
 
 chiller_LIBS += autosave
-chiller_LIBS += stream streamSynApps
+chiller_LIBS += calc
+chiller_LIBS += stream
 chiller_LIBS += devIocStats
 chiller_LIBS += asyn
 
