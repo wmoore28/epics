@@ -1,6 +1,6 @@
-###!/bin/tcsh
+#####!/bin/tcsh
 
-source ./setup_epics.csh
+#source ./setup_epics.csh
 echo "Start SVT DAQ Setup GUI"
 set cmd = ""
 if($#argv == 0) then
@@ -15,13 +15,16 @@ else
 	#set cmd = ""
     #endif
     echo $cmd
-    medm $cmd svtDaqMap.adl &
+    medm $cmd svtMap.adl &
+    medm $cmd svtDpmStatus.adl &
+    medm $cmd svtDpmLinkStatus.adl &    
     medm $cmd svtDaqSocketSetup.adl &
     medm $cmd svtTemp.adl &
     medm $cmd svtHybrid.adl &    
-    medm $cmd svtFebMain.adl &
-    medm $cmd svtFlangeMain.adl &
-    medm $cmd svtBiasMain.adl &
+    medm $cmd svtHybSync.adl &    
+    #medm $cmd svtFebMain.adl &
+    #medm $cmd svtFlangeMain.adl &
+    #medm $cmd svtBiasMain.adl &
     echo "Done"
 endif
 

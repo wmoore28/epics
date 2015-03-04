@@ -8,7 +8,7 @@ xmlNodePtr getFebTempNode(xmlDocPtr doc, const char* type, int index);
 double getFebTempValue(xmlDocPtr doc, const char* type, int index);
 xmlXPathObjectPtr getFebDna(xmlDocPtr doc);
 xmlNodePtr getFebDnaNode(xmlDocPtr doc, int index);
-long int getFebDnaValue(xmlDocPtr doc,int index);
+void getFebDnaValue(xmlDocPtr doc,int index, xmlChar* dna);
 
 
 #endif

@@ -17,6 +17,10 @@ LIBRARY_IOC_Linux += svtDaqSupport
 #USR_INCLUDES += -I/root/daq/include
 USR_INCLUDES += -I/usr/include/libxml2
 
+#SVT DAQ STUFF
+#SVTDAQDIR = $(TOP)/../svtDaqLib
+USR_INCLUDES += -I$(SVTDAQDIR)
+
 # Compile and add the code to the support library
 #svtDaqSupport_SRCS += xxxRecord.c
 #svtDaqSupport_SRCS += devXxxSoft.c
@@ -62,6 +66,11 @@ svtDaq_LIBS += devIocStats
 xml2_DIR += /usr/lib  
 xml2_LIBS += xml2  
 svtDaq_LIBS += xml2
+
+#SVT DAQ EXTERNAL LIB
+svtDaqExt_DIR += $(SVTDAQDIR)  
+svtDaqExt_LIBS += svtDaqExt  
+svtDaq_LIBS += svtDaqExt
 
 # Finally link to the EPICS Base libraries
 svtDaq_LIBS += $(EPICS_BASE_IOC_LIBS)

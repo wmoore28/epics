@@ -5,40 +5,162 @@
 #include <subRecord.h>
 #include <aSubRecord.h>
 #include <epicsExport.h>
+//#include <tcpipExample.h>
 #include <stringinRecord.h>
 #include <longinRecord.h>
 #include <dbAccess.h>
-#include "constants.h"
+#include "commonConstants.h"
+#include "commonXml.h"
 #include "daqmap.h"
 #include "client_util.h"
 #include "socket.h"
 
 int mySubDebug = 0;
+const int DO_DATA_DPM = 0;
 int process_order = 0;
 const int BUF_SIZE = 256;
-char* hostNameDef = "192.168.1.17"; //"localhost"; //"134.79.229.141";
-char hostName[256];
-int portDef = 8090;
-int port;
+char* hostNameControlDpm = "dpm7"; //192.168.1.17";
 static int hybToFeb[N_HALVES][N_HYBRIDS];
 static int hybToFebCh[N_HALVES][N_HYBRIDS];
+static double hybPowerStat[N_FEB][4];
+static double hybToDpm[N_FEB][4];
+static char febDna[N_FEB][256];
+static char febDnaMapKey[N_FEB][256];
+static char febDnaMapVal[N_FEB][256];
 //int sockfd = 0;
 int counter = 0;
 int status_poll_flag=0;
 int status_flag=0;
+int status_flag_val=10;
 const double def_hyb_v = -999.9;
 const double def_hyb_i = -999.9;
 const double def_hyb_t = -999.9;
 const double def_AxiXadcTemp = -999.9;
+int initPowerMap = 0; 
+
+
+
+static void resetPowerStat() {
+  int ifeb;
+  int ihyb;
+  for(ifeb=0;ifeb<N_FEB;++ifeb) {
+    for(ihyb=0;ihyb<4;++ihyb) {
+      hybPowerStat[ifeb][ihyb] = -1.0;
+    }
+  }
+}
+static void resetHybToDpmMap() {
+  int ifeb;
+  int ihyb;
+  for(ifeb=0;ifeb<N_FEB;++ifeb) {
+    for(ihyb=0;ihyb<4;++ihyb) {
+      hybToDpm[ifeb][ihyb] = -9;
+    }
+  }
+}
+
 
 static long subLVInit(subRecord *precord) {
   process_order++;
   if (mySubDebug) {
     printf("[ subLVInit ]: %d Record %s called subLVInit(%p)\n", process_order, precord->name, (void*) precord);
   }
+  if(initPowerMap!=0) {
+    resetPowerStat();
+    resetHybToDpmMap();
+    initPowerMap++;
+  } 
+  return 0;
+}
+
+
+
+
+static void getHostNameDataDpm(int i, char* hostname) {
+  char str[10];
+  sprintf(str,"dpm%d",i);
+  strcpy(hostname,str);
+}
+
+static void getPhysLayer(char* dna, char* layer) {
+  int ifeb;
+  strcpy(layer,"");
+  if(dna!=NULL) {
+    if(strlen(dna)>0) {
+      if (mySubDebug)  printf("[ getPhysLayer ]: get phys layer from dna %s\n", dna);
+      for(ifeb=0;ifeb<N_FEB;++ifeb) {
+	if(mySubDebug>1) printf("[ getPhysLayer ]: dna \"%s\" <-> layer \"%s\"\n", febDnaMapKey[ifeb], febDnaMapVal[ifeb]);
+      }
+      for(ifeb=0;ifeb<N_FEB;++ifeb) {
+	if(mySubDebug>1) printf("[ getPhysLayer ]: feb %d -> dna \"%s\n", ifeb, febDnaMapKey[ifeb]);
+	if(strcmp(febDnaMapKey[ifeb],dna)==0) {
+	  if (mySubDebug)  printf("[ getPhysLayer ]: found it at ifeb=%d and it's \"%s\"\n", ifeb, febDnaMapVal[ifeb]);	  
+	  strcpy(layer, febDnaMapVal[ifeb]);
+	  break;
+	}
+      } //i
+    } else {
+      strcpy(layer,"dna zero len");
+    }
+  } else {
+    strcpy(layer,"invalid dna");
+  }
+
+  if(strlen(layer)==0) strcpy(layer,"no feb found");
+  
+}
+
+
+static long subSyncInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subSyncInit ]: %d Record %s called subSyncInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subSyncBaseInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subSyncBaseInit ]: %d Record %s called subSyncBaseInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subDnaInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDnaInit ]: %d Record %s called subDnaInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  
+  
+  int feb;  
+  char str[256];
+  feb = getIntFromEpicsName(precord->name,3);      
+  if(feb>=0 && feb<N_FEB) {
+    sprintf(str,"dna%d",feb);
+    strcpy(febDnaMapKey[feb],str);
+    sprintf(str,"layer%d",feb);
+    strcpy(febDnaMapVal[feb],str);    
+    if (mySubDebug) printf("[ subDnaInit ]: Feb %s <-> Dna %s\n", febDnaMapKey[feb], febDnaMapVal[feb]);  
+  } else {
+    printf("[ subDnaInit ]: [ ERROR ]: %d is an invalid feb nr (%s)\n", feb, precord->name);
+    exit(1);
+  }
+  return 0;
+}
+
+
+
+static long subLayerInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subLayerInit ]: %d Record %s called subLayerInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
 
   return 0;
 }
+
 
 static long subTempInit(subRecord *precord) {
    process_order++;
@@ -286,7 +408,7 @@ static void setFebFromRecord(subRecord* precord, int (*map)[N_HYBRIDS]) {
 
 
  
-static int setupSocket(subRecord *precord) {
+static int setupSocket(subRecord *precord, char* hostName, int port) {
   process_order++;
   if (mySubDebug>1) {
     printf("[ setupSocket ]: %d Record %s called setupSocket(%p)\n", process_order, precord->name, (void*) precord);
@@ -301,24 +423,19 @@ static int setupSocket(subRecord *precord) {
   int j=0;
   
   // get a valid socket
-  while(socketfd<=0 && dt<5) {
-     if (mySubDebug>0) printf("[ setupSocket ]: try to setup socket (%ds)\n",dt);
-     
-     printf("[ setupSocket ]: Use defaults\n");        
-     strcpy(hostName,hostNameDef);
-     port = portDef;
-     
+  //while(socketfd<=0 && dt<1) {
+     if (mySubDebug>0) printf("[ setupSocket ]: try to setup socket %s:%d (%ds)\n", hostName,port,dt);
      
      //try a set of ports if failing
      j=0;
      int port_start = port;
-     while(j<10 && socketfd<0) {
+     while(j<2 && socketfd<0) {
         port = port_start+j;
         if (mySubDebug>0) printf("[ setupSocket ]: Trying %s:%d\n",hostName,port);        
         socketfd = open_socket(hostName,port);
         if(socketfd<0) {
            printf("[ setupSocket ]: %s:%d failed\n",hostName,port);                
-           sleep(0.5);
+           //usleep(0.01);
         } else {
            printf("[ setupSocket ]: %s:%d open at %d\n",hostName,port, socketfd);                
         }
@@ -326,104 +443,17 @@ static int setupSocket(subRecord *precord) {
      }
      
      if(socketfd<=0) {
-        if (mySubDebug>0) printf("[ subPollProcess ]: couldn't get socket, sleep 1s before retrying\n");	
-        sleep(1);
-        // reset
-        strcpy(hostName,"");
-        port = -1;
+        if (mySubDebug>0) printf("[ setupSocket ]: couldn't get socket\n");	
+        //usleep(0.05);
      }
-     
      dt++;
-  }
-  
+     //}
   
   if (mySubDebug>1) printf("[ setupSocket ]: Returning with socket %d\n",socketfd);
   
   return socketfd;
   
 }
-
-
-/*
-static int setupSocket(subRecord *precord) {
-  process_order++;
-  if (mySubDebug>1) {
-    printf("[ setupSocket ]: %d Record %s called setupSocket(%p)\n", process_order, precord->name, (void*) precord);
-  }
-  
-  // Setup a socket based on EPICS DB info
-  // If there is no info then use a default hostname and port
-  // If not found step through a couple of ports
-  // repeat after waiting
-  char host[40];
-  int p;
-  
-  int sockfd = -1;
-  int dt = 0;
-  int j=0;
-  
-  // get a valid socket
-  while(sockfd<=0 && dt<5) {
-     if (mySubDebug>0) printf("[ subPollProcess ]: try to setup socket (%ds)\n",dt);
-     
-     
-     // only setup socket from DB if it's the poll record?
-     if(strcmp(precord->name,"SVT:poll_xml")==0) {    
-        // look for host name and port in DB
-        if (mySubDebug>1) printf("[ setupSocket ]: look for host name and port in DB\n");
-        getIpFromRecord(precord,host,40);
-        p = getPortFromRecord(precord);
-        if(strlen(host)>0 && p>0) {
-           strcpy(hostName,host);
-           port = p;
-        }        
-        else {
-           printf("[ setupSocket ]: [ WARNING ]: Couldn't get hostname or port from EPICS db.\n");        
-        }
-     }
-     
-     if(strlen(hostName)<=0 || port<0) {
-        printf("[ setupSocket ]: Use defaults\n");        
-        strcpy(hostName,hostNameDef);
-        port = portDef;
-     }
-     
-     //try a set of ports if failing
-     j=0;
-     int port_start = port;
-     while(j<10 && sockfd<0) {
-        port = port_start+j;
-        if (mySubDebug>0) printf("[ setupSocket ]: Trying %s:%d\n",hostName,port);        
-        sockfd = open_socket(hostName,port);
-        if(sockfd<0) {
-           printf("[ setupSocket ]: %s:%d failed\n",hostName,port);                
-           sleep(0.5);
-        } else {
-           printf("[ setupSocket ]: %s:%d open at %d\n",hostName,port, sockfd);                
-        }
-        j++;
-     }
-     
-     if(sockfd<=0) {
-        if (mySubDebug>0) printf("[ subPollProcess ]: couldn't get socket, sleep 1s before retrying\n");	
-        sleep(1);
-        // reset
-        strcpy(hostName,"");
-        port = -1;
-     }
-     
-     dt++;
-  }
-  
-  
-  if (mySubDebug>1) printf("[ setupSocket ]: Returning with socket %d\n",sockfd);
-  
-  return sockfd;
-  
-}
-*/
-
-
 
 
 
@@ -508,6 +538,15 @@ static long subPollInit(subRecord *precord) {
   return 0;
 }
 
+static long subPollDpmInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subPollDpmInit ] %d Record %s called subPollDpmInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+
+  return 0;
+}
+
 
 static long subPollStatInit(subRecord *precord) {
   process_order++;
@@ -525,17 +564,17 @@ static long subPollStatInit(subRecord *precord) {
   if(mySubDebug) printf("[ writeHybrid ]: Record %s called writeHybrid %s with val %f for feb_id= %d  id=%d ch_name=%s\n", precord->name,action,precord->val,feb_id,id,ch_name);
   
   int socketfd;
-
+  
   
   if (mySubDebug) printf("[ writeHybrid ]: Opening socket\n");    
 
-  socketfd = setupSocket(precord);
+  socketfd = setupSocket(precord, hostNameControlDpm, 8090);
   
   if (mySubDebug) printf("[ writeHybrid ]: Opened socket : %d\n",socketfd);            
   
   
   if(socketfd<=0) {
-     printf("[ writeHybrid ]: [ ERROR ]: Failed to open socket in writeHybrid (host %s:%d) \n",hostName,port);        
+     printf("[ writeHybrid ]: [ ERROR ]: Failed to open socket in writeHybrid \n");        
      return;
   }
   
@@ -726,10 +765,17 @@ static long subPollStatInit(subRecord *precord) {
     printf("[ readHybrid ]: Record %s called readHybrid %s for feb_id= %d  id=%d ch_name=%s\n", precord->name,action,feb_id,id,ch_name);
   }
 
+  double powered;
   double val;
   double constant;
+  int dpm;
   constant = 1.;
-  
+  powered = hybPowerStat[feb_id][id];
+  dpm = -1;
+  if(powered>0.) {
+    dpm = hybToDpm[feb_id][id];
+  }
+
   if(strcmp(action,"i_rd_sub")==0) {
      val = getHybridI(feb_id, id, ch_name);
      precord->val = val*constant;
@@ -753,18 +799,25 @@ static long subPollStatInit(subRecord *precord) {
   else if(strcmp(action,"stat_sub")==0) {
      val = getHybridSwitch(feb_id, id);
      precord->val = val*constant;
+     hybPowerStat[feb_id][id] = val; 
   } 
   else if(strcmp(action,"dpm_rd_sub")==0) {
-     val = getDpm(feb_id, id);
-     precord->val = val*constant;
+    if(powered > 0.) {
+      val = getDpm(feb_id, id);
+      precord->val = val*constant;
+      hybToDpm[feb_id][id] = val;
+    } else {
+      if (mySubDebug) printf("[ readHybrid ]: skip getting dpm since it's not powered\n");
+    }
   } 
   else if(strcmp(action,"datapath_rd_sub")==0) {
-     val = getDatapath(feb_id, id);
-     precord->val = val*constant;
-  } 
-  else if(strcmp(action,"sync_rd_sub")==0) {
-     val = getHybridSync(feb_id, id);
-     precord->val = val*constant;
+    if(powered > 0.) {
+      val = getDatapath(feb_id, id, dpm);
+      precord->val = val*constant;
+    } else {
+      if (mySubDebug) printf("[ readHybrid ]: skip getting datapath since it's not powered\n");
+    }
+
   } 
   else {
      printf("[ readHybrid ]: [ ERROR]: wrong action for readHybrid \"%s\"\n",action);
@@ -790,14 +843,6 @@ static void readFeb(subRecord* precord,char action[], int feb_id, char ch_name[]
       }
       precord->val = v;      
    
-   } else if(strcmp(action,"layer_sub")==0) {
-      v = (double)getFebDeviceDna(feb_id);
-      if (mySubDebug) {
-         printf("[ readFeb ]: Got value=%f\n",v);
-      }
-      //sprintf(dna,"%f",v);
-      //strcpy(precord->val,dna);      
-      precord->val = v;
    } 
    else {
       printf("[ readFeb ]: [ ERROR ]: No such action %s implemented for readFeb!\n",action);
@@ -814,6 +859,133 @@ static void readFeb(subRecord* precord,char action[], int feb_id, char ch_name[]
 
 
 
+static long subDnaProcess(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDnaProcess ]: %d Record %s called subDnaProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+
+  int feb;
+  char str1[BUF_SIZE];
+  char str2[BUF_SIZE];
+  char action[BUF_SIZE];
+  char dna[40];
+  precord->val = -1.0;  
+  strcpy(precord->vala,"default");
+  if (mySubDebug>2) printf("[ subDnaProcess ]: done memcpy\n");
+  getStringFromEpicsName(precord->name,str1,1);
+  getStringFromEpicsName(precord->name,str2,2);
+  if(strcmp(str1,"daq")==0 && strcmp(str2,"map")==0) {    
+    feb = getIntFromEpicsName(precord->name,3);      
+    getStringFromEpicsName(precord->name,action,4);    
+    if(strcmp(action,"dna_asub")==0) {           
+      getFebDeviceDna(feb,dna);
+      strcpy(febDna[feb],dna);      
+      if (mySubDebug) printf("[ subDnaProcess ]: got dna %s.\n",dna);
+      strcpy(precord->vala, dna);  
+      if (mySubDebug>2) printf("[ subDnaProcess ]: done memcpy\n");
+    } else {
+      printf("[ subDnaProcess ]: [ ERROR ]: wrong action \"%s\"!\n",action);
+      exit(1);
+    }     
+  } else {
+    printf("[ subDnaProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",precord->name);    
+    exit(1);
+  }
+  return 0;
+}
+
+
+
+static long subSyncProcess(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subSyncProcess ]: %d Record %s called subSyncProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  
+  int feb;
+  int datapath;
+  char str1[BUF_SIZE];
+  char str2[BUF_SIZE];
+  char action[BUF_SIZE];
+  char sync[40];
+  precord->val = -1.0;  
+  strcpy(precord->vala,"default");
+  if (mySubDebug>2) printf("[ subSyncProcess ]: done memcpy\n");
+  getStringFromEpicsName(precord->name,str1,1);
+  getStringFromEpicsName(precord->name,str2,4);
+  if(strcmp(str1,"lv")==0 && strcmp(str2,"sync")==0) {    
+    feb = getIntFromEpicsName(precord->name,2);      
+    datapath = getIntFromEpicsName(precord->name,3);      
+    getStringFromEpicsName(precord->name,action,5);    
+    getHybridSync(feb, datapath, action, sync);
+    //getHybridSync(feb, datapath, sync);
+    if (mySubDebug) printf("[ subSyncProcess ]: got sync %s.\n",sync);
+    strcpy(precord->vala, sync);  
+    if (mySubDebug>2) printf("[ subSyncProcess ]: done memcpy\n");
+  } else {
+    printf("[ subSyncProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",precord->name);    
+    exit(1);
+  }
+  return 0;
+}
+
+
+static long subSyncBaseProcess(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subSyncBaseProcess ]: %d Record %s called subSyncBaseProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  
+  char val[256];
+
+  getSync(precord->name, val); 
+
+  strcpy(precord->vala, val);
+
+  return 0;
+}
+
+
+
+static long subLayerProcess(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subLayerProcess ]: %d Record %s called subLayerProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  
+  int feb;
+  char str1[BUF_SIZE];
+  char str2[BUF_SIZE];
+  char action[BUF_SIZE];
+  char layer[40];
+  getStringFromEpicsName(precord->name,str1,1);
+  getStringFromEpicsName(precord->name,str2,2);
+  precord->val = -1.0;  
+  strcpy(precord->vala, "default");
+  //memcpy(precord->vala, (const void*) "default", 7);  
+  if(strcmp(str1,"daq")==0 && strcmp(str2,"map")==0) {        
+    feb = getIntFromEpicsName(precord->name,3);      
+    getStringFromEpicsName(precord->name,action,4);        
+    if(strcmp(action,"layer_asub")==0) {           
+      if(febDna[feb]!=NULL) {
+	if(mySubDebug) printf("[ subLayerProcess ]: Get physical layer for feb %d and dna %s\n",feb, febDna[feb]);
+	getPhysLayer(febDna[feb],layer);
+	if(mySubDebug) printf("[ subLayerProcess ]: Got phys layer=%s from dna=%s on feb=%d\n",layer, febDna[feb], feb);
+	strcpy(precord->vala, layer);      
+      } else {
+	if(mySubDebug) printf("[ subLayerProcess ]: no dna found for feb %d\n",feb);
+      } 
+    } else {
+      printf("[ subLayerProcess ]: [ ERROR ]: wrong action \"%s\"!\n",action);
+      exit(1);
+    }     
+  } else {
+    printf("[ subLayerProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",precord->name);    
+    exit(1);
+  }
+  return 0;
+}
 
 
 static long subLVProcess(subRecord *precord) {
@@ -1018,13 +1190,12 @@ static long subTempProcess(subRecord *precord) {
 
 static void updatePollStatusFlag() {
    // get the status from the client utils
-   int status;
-   status= getXmlPollStatus();
+  status_flag_val = getXmlPollStatus();
   // flip the status flag if xml poll was ok.
   if (mySubDebug) 
-     printf("[ updatePollStatusFlag ] : start status_poll_flag = %d and status = %d\n",status_poll_flag, status);
+     printf("[ updatePollStatusFlag ] : start status_poll_flag = %d and status_flag_val = %d\n",status_poll_flag, status_flag_val);
   
-  if(status==1) {
+  if(status_flag_val==0) {
     if(status_poll_flag==0) {
       status_poll_flag = 1;
     } else {
@@ -1032,7 +1203,7 @@ static void updatePollStatusFlag() {
     }
   }
   if (mySubDebug) 
-     printf("[ updatePollStatusFlag ] : end status_poll_flag = %d\n",status_poll_flag);
+    printf("[ updatePollStatusFlag ] : end status_poll_flag = %d\n",status_poll_flag);
 }
 
 
@@ -1041,12 +1212,13 @@ static long subPollProcess(subRecord *precord) {
   int socketfd;
 
   process_order++;
+
   if (mySubDebug>0) {
     printf("[ subPollProcess ]: %d Record %s called subPollProcess(%p)\n",process_order, precord->name, (void*) precord);
   }
  
   
-  socketfd = setupSocket(precord);
+  socketfd = setupSocket(precord, hostNameControlDpm, 8090);
   
   if(socketfd<=0) {
      printf("[ subPollProcess ]: [ WARNING ]: couldn't open a socket.\n");
@@ -1095,87 +1267,86 @@ static long subPollProcess(subRecord *precord) {
   if (mySubDebug) printf("[ subPollProcess ]: after update status_poll_flag = %d\n", status_poll_flag);
 
 
+
   return 0;
 }
 
 
 
-/*
-static long subPollProcess(subRecord *precord) {
-  time_t cur_time;
-  int dt;
-  time_t timer;
+
+
+
+static long subPollDpmProcess(subRecord *precord) {
+  //int socketfd;
 
   process_order++;
+
   if (mySubDebug>0) {
-    printf("[ subPollProcess ]: %d Record %s called subPollProcess(%p)\n",process_order, precord->name, (void*) precord);
+    printf("[ subPollDpmProcess ]: %d Record %s called subPollDpmProcess(%p)\n",process_order, precord->name, (void*) precord);
   }
+ 
+  /*
   
-  // check that the socket is available
-  dt=0;
-  time(&timer);
-  if(sockfd>0) {
-    if (mySubDebug>0) printf("[ subPollProcess ]: socket %d is already open, wait for it to close\n", sockfd);    
-    while(sockfd>0 && dt<6) {
-      time(&cur_time);
-      dt = difftime(cur_time, timer);
-      if (mySubDebug>0) printf("[ subPollProcess ]: socket %d is still open (%ds)\n", sockfd, dt);    
-      sleep(1);
-    }    
-  }
-  
-  if(sockfd>0) {    
-     printf("[ subPollProcess ]: [ WARNING ]: socket %d was still open after %ds, don't do anything\n", sockfd, dt); 
-     return 0;
-  }else {
-     
-     if (mySubDebug>0) printf("[ subPollProcess ]: socket is available now (socket %d after %ds)\n", sockfd, dt); 
-     
-     sockfd = setupSocket(precord);
-     
-  }
-  
-  
-  
-  if(sockfd<=0) {
-     printf("[ subPollProcess ]: [ WARNING ]: couldn't open a socket (tried over %ds period). Check host and port?\n",dt);
-     return 0;
-  }
-  
-  // poll the xml string
-  
-  if (mySubDebug) printf("[ subPollProcess] : Poll xml string\n");
-  
-  getXmlDoc(sockfd,0,0);
-  
-  if (mySubDebug) printf("[ subPollProcess ]: Poll XML done. Close socket if needed\n");
-  if(sockfd>0) {
-    sockfd = close_socket(sockfd);
-  } 
+  if(DO_DATA_DPM!=0) {
 
-  if(mySubDebug>1) {
-    char * s = NULL;
-    int len;
-    getXmlDocStrFormat(&s, &len);
-    printf("[ subPollProcess ]: got XML with len %d\n", len);
-    if(len>0) printf("\n%s\n",s);
-    if(s!=NULL) {
-      printf("[ subPollProcess ]: free string at %p\n",s);      
-      free(s);
-      printf("[ subPollProcess ]: done free string at %p\n",s);      
-    }
+     // Data DPM's
+
+     if (mySubDebug>0) {
+        printf("[ subPollDpmProcess ]: Read status from data dpm's\n");
+     } 
+  
+     int dpm;
+     int idpm;
+     char ip[256];
+     for(idpm=0;idpm<N_DPM;++idpm) {
+
+       dpm = getDataDpmId(idpm);
+       
+       getHostNameDataDpm(dpm,ip);
+     
+        if (mySubDebug>0) {
+	  printf("[ subPollDpmProcess ]: Read from dpm %d (idpm=%d) at ip %s)\n",dpm,idpm,ip);
+        } 
+     
+        socketfd = setupSocket(precord, ip, 8090);
+     
+        if(socketfd>0) {
+        
+           if (mySubDebug) printf("[ subPollDpmProcess] : Flush socket.\n");
+        
+           flushSocket(socketfd);
+        
+        
+           if (mySubDebug) printf("[ subPollDpmProcess] : Done flushing socket.\n");
+        
+           // poll the xml string
+        
+           if (mySubDebug) printf("[ subPollDpmProcess] : Poll xml string\n");
+        
+           getDpmXmlDoc(socketfd,idpm);
+        
+           if (mySubDebug)  printf("[ subPollDpmProcess ]: Poll XML done (xml status= %d). Close socket\n",getDpmXmlDocStatus(idpm));
+	     
+        
+           if(socketfd>0) {
+              socketfd = close_socket(socketfd);
+           } else {
+              printf("[ subPollDpmProcess ]: [ ERROR ]: the socket should be open here!? Exit.\n");
+              exit(1);
+           }
+        
+        } else {
+	  printf("[ subPollDpmProcess ]: [ WARNING ]: couldn't open a socket.\n");
+        }
+     
+     } //dpm
   }
 
-  if (mySubDebug) printf("[ subPollProcess ]: before update status_poll_flag = %d\n", status_poll_flag);
-  
-  updatePollStatusFlag();
-  
-  if (mySubDebug) printf("[ subPollProcess ]: after update status_poll_flag = %d\n", status_poll_flag);
-
+*/
 
   return 0;
 }
-*/
+
 
 
 
@@ -1242,29 +1413,38 @@ static long subPollDaqMapProcess(subRecord *precord) {
 
 static long subPollStatProcess(subRecord *precord) {
   process_order++;
-  if (mySubDebug>0) {
+  if (mySubDebug) {
     printf("[ subPollStatProcess ]: %d Record %s called subPollStatProcess(%p)\n",process_order, precord->name, (void*) precord);
     printf("[ subPollStatProcess ]: status_flag: %d\n",status_flag);
     printf("[ subPollStatProcess ]: status_poll_flag: %d\n",status_poll_flag);
+    printf("[ subPollStatProcess ]: status_flag_val: %d\n",status_flag_val);
   }    
-  
+
+  //Set the record value
   if(status_flag==status_poll_flag) {
-    if (mySubDebug>0) {
-      printf("[ subPollStatProcess ]: same flag: no update was done\n");
+    if (mySubDebug) {
+      printf("[ subPollStatProcess ]: same flag: no update was done, set to %d\n", status_flag_val);
     }    
-    precord->val = 0;
+
+    // use the actual error value for debug
+    precord->val = status_flag_val;
+
   } else {
-    if (mySubDebug>0) {
+    if (mySubDebug) {
       printf("[ subPollStatProcess ]: diff flag: update was done, flip the status_flag\n");
     }    
-    precord->val = 1;
-    // update status_flag
+
+    // jsut set it to 0 to indicate success
+    precord->val = 0;
+
+    // now update status_flag for next iteration
     if(status_flag==1) {
       status_flag = 0;
     } else {
       status_flag = 1;
     }
   }
+  
   
   
   return 0;
@@ -1284,7 +1464,17 @@ epicsRegisterFunction(subTempInit);
 epicsRegisterFunction(subTempProcess);
 epicsRegisterFunction(subPollInit);
 epicsRegisterFunction(subPollProcess);
+epicsRegisterFunction(subPollDpmInit);
+epicsRegisterFunction(subPollDpmProcess);
 epicsRegisterFunction(subPollStatInit);
 epicsRegisterFunction(subPollStatProcess);
 epicsRegisterFunction(subPollDaqMapInit);
 epicsRegisterFunction(subPollDaqMapProcess);
+epicsRegisterFunction(subDnaInit);
+epicsRegisterFunction(subDnaProcess);
+epicsRegisterFunction(subLayerInit);
+epicsRegisterFunction(subLayerProcess);
+epicsRegisterFunction(subSyncInit);
+epicsRegisterFunction(subSyncProcess);
+epicsRegisterFunction(subSyncBaseInit);
+epicsRegisterFunction(subSyncBaseProcess);
