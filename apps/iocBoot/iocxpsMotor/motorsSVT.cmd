@@ -9,7 +9,7 @@ dbLoadDatabase("dbd/xpsMotor.dbd")
 xpsMotor_registerRecordDeviceDriver(pdbbase)
 
 # Load IOC status records
-#dbLoadRecords("db/iocAdminSoft.db","IOC=HPSXPS")
+dbLoadRecords("db/iocAdminSoft.db","IOC=${IOC}")
 
 epicsEnvSet("PREFIX","")
 ### Motors
