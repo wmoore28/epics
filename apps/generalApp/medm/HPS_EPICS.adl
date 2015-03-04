@@ -1,6 +1,6 @@
 
 file {
-	name="/home/wmoore/workspaces/develop/apps/generalApp/medm/HPS_EPICS.adl"
+	name="/usr/clas12/hps/develop/apps/generalApp/medm/HPS_EPICS.adl"
 	version=030108
 }
 display {
@@ -169,6 +169,10 @@ rectangle {
 	display[0] {
 		label="IOC Health"
 		name="ioc_hps_health.adl"
+	}
+	display[1] {
+		label="IOC Health (SVT DAQ)"
+		name="ioc_hps_svt_health.adl"
 	}
 	clr=14
 	bclr=50
