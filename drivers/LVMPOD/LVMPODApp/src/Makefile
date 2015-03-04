@@ -11,7 +11,7 @@ USR_LDFLAGS += `net-snmp-config --libs`
 PROD_LDLIBS += `net-snmp-config --libs`
 
 USR_CFLAGS += $(shell $(PERL) $(DEVSNMP)/snmpApp/src/getNetSNMPversion.pl)
-USR_CPPFLAGS += $(shell $(PERL) $(DEVSNMP)/snmpApp/src//getNetSNMPversion.pl)
+USR_CPPFLAGS += $(shell $(PERL) $(DEVSNMP)/snmpApp/src/getNetSNMPversion.pl)
 
 
 #=============================
