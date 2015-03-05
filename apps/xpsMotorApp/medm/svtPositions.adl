@@ -5,9 +5,9 @@ file {
 }
 display {
 	object {
-		x=40
-		y=497
-		width=400
+		x=65
+		y=447
+		width=600
 		height=500
 	}
 	clr=14
@@ -89,7 +89,7 @@ display {
 }
 text {
 	object {
-		x=100
+		x=200
 		y=5
 		width=200
 		height=30
@@ -116,41 +116,9 @@ text {
 	limits {
 	}
 }
-"text update" {
-	object {
-		x=199
-		y=99
-		width=83
-		height=18
-	}
-	monitor {
-		chan="hps:svt:top:wire"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=293
-		y=99
-		width=83
-		height=18
-	}
-	monitor {
-		chan="hps:svt:top:si"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
 "text entry" {
 	object {
-		x=115
+		x=110
 		y=142
 		width=60
 		height=20
@@ -172,7 +140,7 @@ text {
 	}
 	control {
 		chan="hps:svt_top:motor.SPMG"
-		clr=14
+		clr=30
 		bclr=20
 	}
 	stacking="column"
@@ -192,32 +160,6 @@ text {
 }
 text {
 	object {
-		x=206
-		y=78
-		width=70
-		height=12
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Wire-to-Beam"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=290
-		y=80
-		width=100
-		height=12
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Layer1-to-Beam"
-	align="horiz. centered"
-}
-text {
-	object {
 		x=10
 		y=146
 		width=100
@@ -230,8 +172,8 @@ text {
 }
 "related display" {
 	object {
-		x=250
-		y=189
+		x=450
+		y=195
 		width=120
 		height=25
 	}
@@ -253,7 +195,7 @@ rectangle {
 	object {
 		x=5
 		y=30
-		width=385
+		width=580
 		height=213
 	}
 	"basic attribute" {
@@ -263,7 +205,7 @@ rectangle {
 }
 text {
 	object {
-		x=150
+		x=230
 		y=41
 		width=123
 		height=17
@@ -276,53 +218,7 @@ text {
 }
 text {
 	object {
-		x=321
-		y=142
-		width=40
-		height=13
-	}
-	"basic attribute" {
-		clr=54
-		fill="outline"
-	}
-	"dynamic attribute" {
-		vis="if not zero"
-		chan="hps:svt_top:motor.MOVN"
-	}
-	textix="Moving"
-}
-text {
-	object {
-		x=320
-		y=142
-		width=40
-		height=13
-	}
-	"basic attribute" {
-		clr=54
-		fill="outline"
-	}
-	"dynamic attribute" {
-		vis="if not zero"
-		chan="hps:svt_top:motor.DMOV"
-	}
-	textix="Done"
-}
-text {
-	object {
-		x=265
-		y=142
-		width=60
-		height=15
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Motor is"
-}
-text {
-	object {
-		x=180
+		x=175
 		y=144
 		width=30
 		height=20
@@ -341,38 +237,6 @@ text {
 	}
 	monitor {
 		chan="hps:svt_bot:motor.RBV"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=199
-		y=328
-		width=83
-		height=18
-	}
-	monitor {
-		chan="hps:svt:bot:wire"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=293
-		y=328
-		width=83
-		height=18
-	}
-	monitor {
-		chan="hps:svt:bot:si"
 		clr=14
 		bclr=50
 	}
@@ -404,7 +268,7 @@ text {
 	}
 	control {
 		chan="hps:svt_bot:motor.SPMG"
-		clr=14
+		clr=30
 		bclr=20
 	}
 	stacking="column"
@@ -424,32 +288,6 @@ text {
 }
 text {
 	object {
-		x=206
-		y=307
-		width=70
-		height=12
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Wire-to-Beam"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=290
-		y=309
-		width=100
-		height=12
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Layer1-to-Beam"
-	align="horiz. centered"
-}
-text {
-	object {
 		x=10
 		y=375
 		width=100
@@ -464,7 +302,7 @@ rectangle {
 	object {
 		x=5
 		y=259
-		width=385
+		width=580
 		height=213
 	}
 	"basic attribute" {
@@ -474,7 +312,7 @@ rectangle {
 }
 text {
 	object {
-		x=150
+		x=230
 		y=270
 		width=123
 		height=17
@@ -484,52 +322,6 @@ text {
 	}
 	textix="SVT BOT"
 	align="horiz. centered"
-}
-text {
-	object {
-		x=321
-		y=371
-		width=40
-		height=13
-	}
-	"basic attribute" {
-		clr=54
-		fill="outline"
-	}
-	"dynamic attribute" {
-		vis="if not zero"
-		chan="hps:svt_bot:motor.MOVN"
-	}
-	textix="Moving"
-}
-text {
-	object {
-		x=320
-		y=371
-		width=40
-		height=13
-	}
-	"basic attribute" {
-		clr=54
-		fill="outline"
-	}
-	"dynamic attribute" {
-		vis="if not zero"
-		chan="hps:svt_bot:motor.DMOV"
-	}
-	textix="Done"
-}
-text {
-	object {
-		x=265
-		y=371
-		width=60
-		height=15
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Motor is"
 }
 text {
 	object {
@@ -569,8 +361,8 @@ text {
 }
 "related display" {
 	object {
-		x=250
-		y=418
+		x=450
+		y=425
 		width=120
 		height=25
 	}
@@ -587,4 +379,472 @@ text {
 	clr=14
 	bclr=30
 	label="Expert Screens"
+}
+composite {
+	object {
+		x=450
+		y=142
+		width=96
+		height=15
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=506
+				y=142
+				width=40
+				height=13
+			}
+			"basic attribute" {
+				clr=54
+				fill="outline"
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="hps:svt_top:motor.MOVN"
+			}
+			textix="Moving"
+		}
+		text {
+			object {
+				x=505
+				y=142
+				width=40
+				height=13
+			}
+			"basic attribute" {
+				clr=54
+				fill="outline"
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="hps:svt_top:motor.DMOV"
+			}
+			textix="Done"
+		}
+		text {
+			object {
+				x=450
+				y=142
+				width=60
+				height=15
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Motor is"
+		}
+	}
+}
+composite {
+	object {
+		x=450
+		y=371
+		width=96
+		height=15
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=506
+				y=371
+				width=40
+				height=13
+			}
+			"basic attribute" {
+				clr=54
+				fill="outline"
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="hps:svt_bot:motor.MOVN"
+			}
+			textix="Moving"
+		}
+		text {
+			object {
+				x=505
+				y=371
+				width=40
+				height=13
+			}
+			"basic attribute" {
+				clr=54
+				fill="outline"
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="hps:svt_bot:motor.DMOV"
+			}
+			textix="Done"
+		}
+		text {
+			object {
+				x=450
+				y=371
+				width=60
+				height=15
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Motor is"
+		}
+	}
+}
+composite {
+	object {
+		x=350
+		y=80
+		width=100
+		height=37
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=353
+				y=99
+				width=83
+				height=18
+			}
+			monitor {
+				chan="hps:svt:top:si"
+				clr=14
+				bclr=50
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=350
+				y=80
+				width=100
+				height=12
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Layer1-to-Beam"
+			align="horiz. centered"
+		}
+	}
+}
+composite {
+	object {
+		x=230
+		y=78
+		width=83
+		height=39
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=230
+				y=99
+				width=83
+				height=18
+			}
+			monitor {
+				chan="hps:svt:top:wire"
+				clr=14
+				bclr=50
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=237
+				y=78
+				width=70
+				height=12
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Wire-to-Beam"
+			align="horiz. centered"
+		}
+	}
+}
+text {
+	object {
+		x=190
+		y=100
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="mm"
+}
+text {
+	object {
+		x=315
+		y=100
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="mm"
+}
+text {
+	object {
+		x=438
+		y=100
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="mm"
+}
+"message button" {
+	object {
+		x=263
+		y=137
+		width=125
+		height=24
+	}
+	control {
+		chan="hps:svt_top:home:proc"
+		clr=14
+		bclr=55
+	}
+	label="Retract Stage"
+	press_msg="0"
+	release_msg="0"
+}
+rectangle {
+	object {
+		x=250
+		y=133
+		width=150
+		height=34
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="hps:svt_top_at_home"
+	}
+}
+"text update" {
+	object {
+		x=353
+		y=328
+		width=83
+		height=18
+	}
+	monitor {
+		chan="hps:svt:bot:si"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=350
+		y=309
+		width=100
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Layer1-to-Beam"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=230
+		y=328
+		width=83
+		height=18
+	}
+	monitor {
+		chan="hps:svt:bot:wire"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=237
+		y=307
+		width=70
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Wire-to-Beam"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=315
+		y=330
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="mm"
+}
+text {
+	object {
+		x=438
+		y=330
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="mm"
+}
+text {
+	object {
+		x=190
+		y=330
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="mm"
+}
+"message button" {
+	object {
+		x=260
+		y=369
+		width=125
+		height=24
+	}
+	control {
+		chan="hps:svt_bot:home:proc"
+		clr=14
+		bclr=55
+	}
+	label="Retract Stage"
+	press_msg="0"
+	release_msg="0"
+}
+rectangle {
+	object {
+		x=250
+		y=365
+		width=150
+		height=34
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="hps:svt_bot_at_home"
+	}
+}
+"text update" {
+	object {
+		x=478
+		y=99
+		width=83
+		height=18
+	}
+	monitor {
+		chan="hps:svt:top:angle"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=475
+		y=80
+		width=100
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Angle"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=478
+		y=328
+		width=83
+		height=18
+	}
+	monitor {
+		chan="hps:svt:bot:angle"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=475
+		y=309
+		width=100
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Angle"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=563
+		y=100
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="deg"
+}
+text {
+	object {
+		x=563
+		y=330
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="deg"
 }
