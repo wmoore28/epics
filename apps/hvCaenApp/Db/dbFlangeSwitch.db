@@ -1,0 +1,13 @@
+
+record(bo, SVT:lv:fl:switch) {
+  field(OUT, "SVT:lv:fl:switch_fanout PP")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+}
+
+record(dfanout, SVT:lv:fl:switch_fanout) {
+  field(OUTA, "SVT:lv:fl:0:switch.VAL PP")
+  field(OUTB, "SVT:lv:fl:1:switch.VAL PP")
+  field(OUTC, "SVT:lv:fl:2:switch.VAL PP")
+  field(OUTD, "SVT:lv:fl:3:switch.VAL PP")
+}

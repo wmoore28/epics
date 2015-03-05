@@ -1,0 +1,102 @@
+
+
+record(sub,SVT:daq:dpm:$(DPM):$(DP):rxphyready_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDpmLinkInit")
+    field(SNAM,"subDpmLinkProcess")
+}
+
+record(longin, SVT:daq:dpm:$(DPM):$(DP):rxphyready) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dpm:$(DPM):$(DP):rxphyready_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(sub,SVT:daq:dpm:$(DPM):$(DP):rxframecount_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDpmLinkInit")
+    field(SNAM,"subDpmLinkProcess")
+}
+
+record(longin, SVT:daq:dpm:$(DPM):$(DP):rxframecount) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dpm:$(DPM):$(DP):rxframecount_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(sub,SVT:daq:dpm:$(DPM):$(DP):rxframeerrorcount_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDpmLinkInit")
+    field(SNAM,"subDpmLinkProcess")
+}
+
+record(longin, SVT:daq:dpm:$(DPM):$(DP):rxframeerrorcount) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dpm:$(DPM):$(DP):rxframeerrorcount_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(sub,SVT:daq:dpm:$(DPM):$(DP):rxcellerrorcount_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDpmLinkInit")
+    field(SNAM,"subDpmLinkProcess")
+}
+
+record(longin, SVT:daq:dpm:$(DPM):$(DP):rxcellerrorcount) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dpm:$(DPM):$(DP):rxcellerrorcount_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(sub,SVT:daq:dpm:$(DPM):$(DP):rxlinkerrorcount_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDpmLinkInit")
+    field(SNAM,"subDpmLinkProcess")
+}
+
+record(longin, SVT:daq:dpm:$(DPM):$(DP):rxlinkerrorcount) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dpm:$(DPM):$(DP):rxlinkerrorcount_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(sub,SVT:daq:dpm:$(DPM):$(DP):rxlinkdowncount_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDpmLinkInit")
+    field(SNAM,"subDpmLinkProcess")
+}
+
+record(longin, SVT:daq:dpm:$(DPM):$(DP):rxlinkdowncount) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dpm:$(DPM):$(DP):rxlinkdowncount_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+
+

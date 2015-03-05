@@ -1,0 +1,184 @@
+GROUP    NULL    MAGNETS                       
+
+$GUIDANCE
+    For info on beam related items see: http://clasweb.jlab.org
+$END
+
+
+GROUP    MAGNETS  FRASCATI
+CHANNEL  FRASCATI MTDACRBCK
+$COMMAND medm -x -attach -cmap -macro "sig=MTDACRBCK" aiaocalc_alarm.adl >> /dev/null 
+
+
+GROUP    MAGNETS                         TORUS_CURRENT               
+CHANNEL  TORUS_CURRENT                Rclas1M           
+$COMMAND  medm -x -attach -cmap -macro "sig=Rclas1M" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that CLAS main torus is below 1500Amps.  It is usually not a 
+           good idea to take data with the CLAS torus off.  Check the torus status 
+           on the torus screen in the rack room.  Then page the torus pager for
+           further guidance.
+$END
+CHANNEL  TORUS_CURRENT                hallb_sf_xy560_0_5  
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_sf_xy560_0_5" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that CLAS main torus is below 1400Amps.  It is usually not a 
+           good idea to take data with the CLAS torus off.  Check the torus status 
+           on the torus screen in the rack room.  Then page the torus pager for
+           further guidance.
+$END
+CHANNEL  TORUS_CURRENT                hallb_sf_xy560_0_6  
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_sf_xy560_0_6" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that CLAS main torus He buffer pressure (ATM) is out of specs.  
+	   Monitor this via Slow Controls time histories web page.
+	   If there is no sign to recover page the Engineering On-Call.
+$END
+CHANNEL  TORUS_CURRENT                hallb_sf_xy560_0_7
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_sf_xy560_0_7" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that CLAS main torus He tank pressure (ATM) is out of specs.  
+	   Monitor this via Slow Controls time histories web page.
+	   If there is no sign to recover page the Engineering On-Call.
+$END
+CHANNEL  TORUS_CURRENT                hallb_sf_xy560_0_11
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_sf_xy560_0_11" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that CLAS main torus He tank level (%) is low.  
+	   Monitor this via Slow Controls time histories web page.
+	   If there is no sign to recover page the Engineering On-Call.
+$END
+GROUP    MAGNETS                         PS_MAGNET               
+CHANNEL   PS_MAGNET               PSPECIRBCK          
+$COMMAND  medm -x -attach -cmap -macro "sig=PSPECIRBCK" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This alarm means that the Pair Spectrometer current is out of limits. Check if the 
+           setpoint for PS power supply reflects the run requirements. If not, turn PS 
+           magnet power supply ON (if it is OFF), then try ONCE to set the proper current value.
+           If this does not work page engineer on call. 
+$END
+CHANNEL   PS_MAGNET               Hac_PS_LS450:FLD_DATA          
+$COMMAND  medm -x -attach -cmap -macro "sig=Hac_PS_LS450:FLD_DATA" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This alarm means that the Pair Spectrometer field is out of limits. First check if the 
+           Hall probe units are set to "Tesla". This can be done by opening the Hall Probe Screen 
+           from the PS magnet main GUI. If it is set to Tesla, check 
+           if the setpoint for PS power supply reflects the run requirements. If not, turn PS 
+           magnet power supply ON (if it is OFF), then try ONCE to set the proper current value.
+           If this does not work page EPICS expert. 
+$END
+#CHANNEL   PS_MAGNET               HLB:bta_type_alrm          
+#$COMMAND  medm -x -attach -cmap -macro "sig=HLB:bta_type_alrm" aiaocalc_alarm.adl >> /dev/null 
+#$GUIDANCE
+#           This alarm indicates that there is a mismatch between expected beam type and the 
+#           magnetic field on the beam line. Check the Pair Spectrometer dipole and the Tagger magnet 
+#           current settings to make sure that they match the expected beam type. Otherwise set  
+#           the expected beam type in the Beam Time Accounting GUI. For more help contact Run Coordinator.
+#$END
+#
+#GROUP    MAGNETS                  FRASCATI
+#CHANNEL  FRASCATI               hallb_sf_xy560_0_14
+#$COMMAND  medm -x -attach -cmap -macro "sig=hallb_sf_xy560_0_14" aiaocalc_alarm.adl >> /dev/null 
+#$GUIDANCE
+#           This alarm means that the current for Frascati magnets is out of limits. Check if the 
+#           setpoint for PS power supply reflects the run requirements. If not, turn PS 
+#           magnet power supply ON (if it is OFF), then try ONCE to set the proper current value.
+#           If this does not work page engineer on call. 
+#$END
+#CHANNEL   FRASCATI             Hac_FRST2_LS450:FLD_DATA
+#$COMMAND  medm -x -attach -cmap -macro "sig=Hac_FRST2_LS450:FLD_DATA" aiaocalc_alarm.adl >> /dev/null 
+#$GUIDANCE
+#           This alarm means that the Frascati Magnet 1 field is out of limits. First check if the 
+#           Hall probe units are set to "Tesla". This can be done by opening the Hall Probe Screen 
+#           from the PS magnet main GUI. If it is set to Tesla, check 
+#           if the setpoint for PS power supply reflects the run requirements. If not, turn PS 
+#           magnet power supply ON (if it is OFF), then try ONCE to set the proper current value.
+#           If this does not work page EPICS expert. 
+#$END
+#CHANNEL   FRASCATI             Hac_FRST1_LS450:FLD_DATA
+#$COMMAND  medm -x -attach -cmap -macro "sig=Hac_FRST1_LS450:FLD_DATA" aiaocalc_alarm.adl >> /dev/null 
+#$GUIDANCE
+#           This alarm means that the Frascati Magnet 2 field is out of limits. First check if the 
+#           Hall probe units are set to "Tesla". This can be done by opening the Hall Probe Screen 
+#           from the PS magnet main GUI. If it is set to Tesla, check 
+#           if the setpoint for PS power supply reflects the run requirements. If not, turn PS 
+#           magnet power supply ON (if it is OFF), then try ONCE to set the proper current value.
+#           If this does not work page EPICS expert. 
+#$END
+#
+GROUP     MAGNETS                         TAGGER
+CHANNEL   TAGGER                HLB:bta_type_alrm          
+$COMMAND  medm -x -attach -cmap -macro "sig=HLB:bta_type_alrm" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This alarm indicates that there is a mismatch between expected beam type and the 
+           magnetic field on the beam line. Check the Pair Spectrometer dipole and the Tagger magnet 
+           current settings to make sure that they match the expected beam type. Otherwise set  
+           the expected beam type in the Beam Time Accounting GUI. For more help contact Run Coordinator.
+$END  
+
+##--------------------------------------------------------------------
+## RASTER MAGNET GROUP
+##--------------------------------------------------------------------
+#
+GROUP     MAGNETS                         RASTER
+#
+#CHANNEL   RASTER                fv-cvs          
+#$COMMAND  medm -x -attach -cmap -macro "sig=fv-cvs" aiaocalc_alarm.adl >> /dev/null 
+#$GUIDANCE
+#This alarm indicates that the Raster Magnet Klyxons are in a fault condition.
+#The Magnets are in an over temperature state.
+#$END  
+#
+CHANNEL   RASTER                raster_sum_x          
+$COMMAND  medm -x -attach -cmap -macro "sig=raster_sum_x" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+This alarm indicates that the magnet bending in horizontal direction is off.
+Immediatly call MCC and ask them to take the beam away. 
+Check the raster settings in clas_epics -> Magnets -> Raster.
+If correct and driver is running, check the lights on power supplies on video camera.
+If unsure page Beam-Line expert pager.
+$END  
+
+CHANNEL   RASTER                raster_sum_y
+$COMMAND  medm -x -attach -cmap -macro "sig=raster_sum_y" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+This alarm indicates that the magnet bending in vertical direction is off.
+Immediatly call MCC and ask them to take the beam away. 
+Check the raster settings in clas_epics -> Magnets -> Raster.
+If correct and driver is running, check the lights on power supplies on video camera.
+If unsure page Beam-Line expert pager.
+$END  
+
+##--------------------------------------------------------------------
+## DVCS GROUP
+##--------------------------------------------------------------------
+#
+#GROUP MAGNETS DVCS
+#
+#CHANNEL DVCS LL8301
+#$COMMAND  medm -x -attach -cmap -macro "sig=LL8301" aiaocalc_alarm.adl >> /dev/null
+#$GUIDANCE
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not
+#receive a response from the
+#oncall, please call at  584-5245.
+#This is a signal from the Cryo Groups IOC.
+#$END
+#
+#CHANNEL DVCS DP8310BPF
+#$COMMAND  medm -x -attach -cmap -macro "sig=DP8310BPF" aiaocalc_alarm.adl >> /dev/null
+#$GUIDANCE
+#If there is an alarm, the Engineering oncall
+#will be automatically paged.  If you do not
+#receive a response from the
+#oncall, please call at  584-5245.
+#This is a signal from the Cryo Groups IOC.
+#$END
+#
+#CHANNEL  DVCS                MSL2H01M           
+#$COMMAND  medm -x -attach -cmap -macro "sig=MSL2H01M" aiaocalc_alarm.adl >> /dev/null 
+#$GUIDANCE
+#This signifies that DVCS current is out of range and during a run it 
+#should be very close to it's set value.
+#$END
+

@@ -98,17 +98,17 @@ dbLoadRecords("db/motor.db","motor_name=beam_stop, card=0, slot=0, srev=2000, ur
 dbLoadRecords("db/motor.db","motor_name=harp_2H02A, card=0, slot=2, srev=2000, urev=2.54, direction=Pos, velo=0.5, accl=0.01")
 dbLoadRecords("db/scan.db","motor_name=harp_2H02A, start_at=3.0, end_at=9.5, start_speed=0.5, scan_speed=0.04, acq_time=0.1")
 
-##dbLoadRecords("db/motor.db","motor_name=viewer, card=0, slot=1,srev=2000,urev=2.54,direction=Neg,velo=0.5,accl=0.01")
-dbLoadRecords("db/motor.db","motor_name=hps_target, card=0, slot=1,srev=2000,urev=2.54,direction=Neg,velo=0.5,accl=0.01")
+dbLoadRecords("db/motor.db","motor_name=viewer, card=0, slot=1,srev=2000,urev=2.54,direction=Neg,velo=0.05,accl=0.01")
+##dbLoadRecords("db/motor.db","motor_name=hps_target, card=0, slot=1,srev=2000,urev=2.54,direction=Neg,velo=0.5,accl=0.01")
 
 
 dbLoadRecords("db/motor.db","motor_name=hps_collimator,card=0,slot=3,srev=2000,urev=0.2,direction=Pos,velo=0.2,accl=0.5")
 dbLoadRecords("db/scan.db","motor_name=hps_collimator,start_at=4.22,end_at=4.82,start_speed=0.2,scan_speed=0.02,acq_time=0.07")
 
 #dbLoadRecords("db/radiators.db")
-dbLoadRecords("db/convertors.db")
+dbLoadRecords("db/viewer.db")
 dbLoadRecords("db/hps_collimators.db")
-dbLoadRecords("db/hps_target.db")
+#$dbLoadRecords("db/hps_target.db")
 
 
 # Load IOC status records
@@ -185,8 +185,8 @@ seq &reset_motor, "name=beam_stop_reset, motor_name=beam_stop"
 seq &reset_motor, "name=harp_2H02A_reset, motor_name=harp_2H02A"
 seq &harp_scan_generic, "name=harp_2H02A_scan, motor_name=harp_2H02A"
 
-##seq &reset_motor, "name=viewer_reset, motor_name=viewer"
-seq &reset_motor, "name=hps_target_reset, motor_name=hps_target"
+seq &reset_motor, "name=viewer_reset, motor_name=viewer"
+##seq &reset_motor, "name=hps_target_reset, motor_name=hps_target"
 
 seq &reset_motor, "name=hps_collimator_reset, motor_name=hps_collimator"
 seq &harp_scan_generic, "name=hps_collimator_scan, motor_name=hps_collimator"

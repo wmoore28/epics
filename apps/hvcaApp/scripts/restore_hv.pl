@@ -32,16 +32,10 @@ print "Make sure You know what you are doing ! \n" ;
 
 #print "Will Restore HV values for $det_nam \n"; 
 
-$SnapDir = "/home/epics/burt/HV/" ;
-
-#@DetectorNames = ( "EC",  "CC", "SC", "BM", "TA", "LAC", "CR_MF", "PHOTON" );
-#
-#foreach $det ( @DetectorNames )
-#  {
-#    $det_dirs{$det} = $SnapDir.$det ;
-#  }
-#
-#$det_dirs{$det2restore} = $SnapDir.$det2restore;
+#$SnapDir = "/home/epics/burt/HV/" ;
+# Detector name will be capitalized and added to the path
+# (ex. ecal -> /usr/clas12/hps/DATA/ECAL/)
+$SnapDir = "/usr/clas12/hps/DATA/";
 
 &SelectBackupFile( $det2restore, $SnapDir.$det2restore ) ;
 

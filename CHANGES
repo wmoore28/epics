@@ -1,3 +1,16 @@
+Version 0.3.3:
+ - Merge remote-tracking branch 'origin/hotfix-v0.3.3'
+ - procServ.conf: added iocecalVoltages and moved all to clonioc2 after svtDaq issues on clonioc1
+ - ioc health: added iocecalVoltages
+ - harp_genericApp: added viewer.db (stepanya)
+ - hvcaApp: updates to save/restore scripts
+ - iocecalVoltages: updated to use IPs instead of hostnames, don't recall the issue
+ - generalApp: added save/restore to ecal hv adl
+ - flasherApp: update to scripts
+ - chillerApp: strictly formatting
+ - screenshot: swapped ':' in produced filenames due to scp issues (baltzell)
+ - alh: added alhConfig files to git
+
 Version 0.3.2:
  - chillerApp: added on/off ctrl and setpoint adjustment
  - generalApp: fixed path to ecalRampCtrl.sh

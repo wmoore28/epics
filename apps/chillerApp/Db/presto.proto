@@ -1,0 +1,56 @@
+#
+# Presto Temperature Control System - Models A80(t), W80(t)
+# 
+#
+# Notes: 
+#   Since commands only vary by a PV identifier, so input and output commands 
+#   are mostly overloaded.
+#   
+#   The arguments are paired by type and ID number.  What I'm calling 'type' 
+#   refers to pv|sp|mode|par|hil as seen in the protocol described on pg. 96 of
+#   Julabo_User_interface.pdf.
+#
+# TODO (wmoore): EGU are returned as 0|1, not C|F, etc.
+#
+# Author: Wesley Moore
+# Date:   Jan 2015
+#
+
+InTerminator  = CR LF;
+OutTerminator = CR;
+
+
+#######################################
+# Input Commands/Types (in_pv_[00-99])
+#######################################
+getVersion {
+    out "version";
+    in  "%39c%(\$1)39c";
+}
+
+getStatus {
+    out "status";
+    in  "%39c";
+}
+
+getAi {
+    out "in_\$1";
+    in  "%f";
+}
+
+# Used for decimal and binary in.
+getInt {
+    out "in_\$1";
+    in  "%d";
+}
+
+#######################################
+# Output Commands/Types
+#######################################
+setAo {
+    out "out_\$1 %f";
+}
+
+setInt {
+    out "out_\$1 %d";
+}

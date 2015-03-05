@@ -1,0 +1,61 @@
+
+record(sub,SVT:poll_xml)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subPollInit")
+    field(SNAM,"subPollProcess")
+    #field(FLNK,"SVT:poll_dpm_xml")
+    field(FLNK,"SVT:poll_stat")
+    #field(INPA, "SVT:poll_xml_ip")
+    #field(INPB, "SVT:poll_xml_port")
+}
+
+record(sub,SVT:poll_dpm_xml)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subPollDpmInit")
+    field(SNAM,"subPollDpmProcess")
+    field(FLNK,"SVT:poll_stat")
+}
+
+
+record(sub, SVT:poll_stat) {
+    field(SCAN,"Passive")
+    field(INAM,"subPollStatInit")
+    field(SNAM,"subPollStatProcess")
+    field(FLNK,"SVT:hb_check")
+}
+
+record(stringin, SVT:poll_xml_ip) {
+    field(VAL,"localhost")
+}
+
+record(longin, SVT:poll_xml_port) {
+    field(VAL,"8090")
+}
+
+record(ai, SVT:hb_check) {
+  field(INP, "SVT:poll_stat")
+  field(DTYP,"Soft Channel")
+  field(FLNK,"SVT:process")
+}
+
+record(fanout, SVT:process)
+{
+  field(LNK1,"SVT:temp:fe:0:axixadc:t_rd")
+  field(LNK2,"SVT:lv:0:0:dvdd:i_rd")
+  field(LNK3,"SVT:lv:0:0:stat")
+  field(LNK4,"SVT:temp:hyb:0:0:temp0:t_rd")
+  field(LNK5,"SVT:daqmap:fanout")
+}
+
+record(fanout, SVT:daqmap:fanout)
+{
+  field(SCAN,"Passive")
+  field(LNK1,"SVT:lv:0:0:sync:sync_rd_asub")
+  #field(LNK2,"SVT:daq:dpm:0:state_asub")
+  #field(LNK2,"SVT:lv:0:0:dpm:dpm_rd")
+}
+
+
+

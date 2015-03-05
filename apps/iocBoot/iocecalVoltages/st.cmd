@@ -11,8 +11,8 @@ ioccaen_registerRecordDeviceDriver(pdbbase)
 Init_CAEN()
 
 # call to run sy1527Start(), sy1527GetMap(), sy1527PrintMap()
-Start_CAEN(1, "hvhps1")
-Start_CAEN(2, "hvecal4")
+Start_CAEN(1, "129.57.160.80")
+Start_CAEN(2, "129.57.167.190")
 
 ## Load record instances
 dbLoadRecords("db/ecal_01.db")

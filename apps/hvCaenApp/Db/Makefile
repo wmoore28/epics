@@ -23,12 +23,17 @@ DB += readConfigChassisMPOD.db
 DB += mpod_chassis.db
 DB += readConfigBoardsMPOD.db
 DB += mpv_8008l.db
+DB += mpv_8008.db
 DB += mpv_8030.db
+DB += mpv_8030l.db
+DB += ehs_f_210pf.db
 DB += ehs_f_205pf.db
 DB += ehs_f_201pf.db
+DB += DetEhs_f_210pf.db
 DB += DetEhs_f_205pf.db
 DB += DetEhs_f_201pf.db
 DB += DetMpv_8008l.db
+DB += DetMpv_8008.db
 DB += DetMpv_8030l.db
 DB += DetMpv_8030.db
 DB += DetWF.db
@@ -39,6 +44,10 @@ DB += hybLV.db
 DB += svtChanOnOff.db
 DB += svtOnOff.db
 DB += svtBiasSetpoints.db  
+DB += dbFlangeSwitch.db  
+DB += dbFebSwitch.db  
+DB += dbHVSwitch.db  
+DB += dbHVset.db  
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add

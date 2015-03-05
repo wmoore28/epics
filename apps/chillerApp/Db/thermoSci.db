@@ -36,6 +36,24 @@ record(ao, "$(P)$(R)TEMP:SP") {
 	field(PREC, "1")
 }
 
+# ASLO set to multiply setpoint by 10 before sending to chiller.
+record(ao, "$(P)$(R)LOW_LIMIT:SP") {
+	field(DTYP, "stream")
+	field(OUT,  "@thermoSci.proto SetLowLim $(PORT)")
+	field(ASLO, "0.1")
+	field(EGU,  "C")
+	field(PREC, "1")
+}
+
+# ASLO set to multiply setpoint by 10 before sending to chiller.
+record(ao, "$(P)$(R)HIGH_LIMIT:SP") {
+	field(DTYP, "stream")
+	field(OUT,  "@thermoSci.proto SetHighLim $(PORT)")
+	field(ASLO, "0.1")
+	field(EGU,  "C")
+	field(PREC, "1")
+}
+
 #######################################
 # Status Commands
 #######################################
@@ -63,6 +81,7 @@ record(ai, "$(P)$(R)TEMP") {
     field(INP, "@thermoSci.proto getTemp $(PORT)")
     field(PINI, "1")
     field(ASLO, "0.1")
+    field(EGU,  "C")
     field(PREC, "1")
     field(SCAN, "1 second")
 }
