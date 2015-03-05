@@ -1,14 +1,14 @@
 
 file {
-	name="/misc/clas12/hps/prod/apps/generalApp/medm/ioc_hps_health.adl"
+	name="/usr/clas12/hps/v0.3.1/apps/generalApp/medm/ioc_hps_health.adl"
 	version=030108
 }
 display {
 	object {
-		x=488
-		y=290
+		x=211
+		y=306
 		width=1300
-		height=375
+		height=395
 	}
 	clr=3
 	bclr=4
@@ -90,9 +90,9 @@ display {
 rectangle {
 	object {
 		x=859
-		y=215
+		y=53
 		width=425
-		height=110
+		height=180
 	}
 	"basic attribute" {
 		clr=5
@@ -100,10 +100,32 @@ rectangle {
 }
 rectangle {
 	object {
+		x=10
+		y=203
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+rectangle {
+	object {
+		x=10
+		y=181
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+rectangle {
+	object {
 		x=859
-		y=53
+		y=273
 		width=425
-		height=135
+		height=110
 	}
 	"basic attribute" {
 		clr=5
@@ -313,7 +335,7 @@ text {
 text {
 	object {
 		x=10
-		y=215
+		y=273
 		width=105
 		height=15
 	}
@@ -798,7 +820,7 @@ text {
 text {
 	object {
 		x=345
-		y=238
+		y=296
 		width=150
 		height=15
 	}
@@ -811,7 +833,7 @@ text {
 text {
 	object {
 		x=193
-		y=238
+		y=296
 		width=150
 		height=15
 	}
@@ -824,7 +846,7 @@ text {
 rectangle {
 	object {
 		x=10
-		y=255
+		y=313
 		width=1270
 		height=20
 	}
@@ -835,7 +857,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=238
+		y=296
 		width=160
 		height=15
 	}
@@ -848,7 +870,7 @@ text {
 "text update" {
 	object {
 		x=193
-		y=257
+		y=315
 		width=150
 		height=20
 	}
@@ -864,7 +886,7 @@ text {
 "text update" {
 	object {
 		x=345
-		y=257
+		y=315
 		width=150
 		height=20
 	}
@@ -880,7 +902,7 @@ text {
 "text update" {
 	object {
 		x=497
-		y=257
+		y=315
 		width=100
 		height=20
 	}
@@ -896,7 +918,7 @@ text {
 "text update" {
 	object {
 		x=707
-		y=257
+		y=315
 		width=150
 		height=20
 	}
@@ -912,7 +934,7 @@ text {
 text {
 	object {
 		x=15
-		y=256
+		y=314
 		width=160
 		height=20
 	}
@@ -924,7 +946,7 @@ text {
 text {
 	object {
 		x=626
-		y=238
+		y=296
 		width=75
 		height=15
 	}
@@ -937,7 +959,7 @@ text {
 text {
 	object {
 		x=862
-		y=238
+		y=296
 		width=60
 		height=15
 	}
@@ -950,7 +972,7 @@ text {
 text {
 	object {
 		x=707
-		y=238
+		y=296
 		width=150
 		height=15
 	}
@@ -963,7 +985,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=255
+		y=313
 		width=75
 		height=20
 	}
@@ -979,7 +1001,7 @@ text {
 text {
 	object {
 		x=496
-		y=238
+		y=296
 		width=100
 		height=15
 	}
@@ -992,7 +1014,7 @@ text {
 text {
 	object {
 		x=924
-		y=238
+		y=296
 		width=130
 		height=15
 	}
@@ -1005,7 +1027,7 @@ text {
 text {
 	object {
 		x=1056
-		y=238
+		y=296
 		width=200
 		height=15
 	}
@@ -1018,7 +1040,7 @@ text {
 rectangle {
 	object {
 		x=10
-		y=277
+		y=335
 		width=1270
 		height=20
 	}
@@ -1029,7 +1051,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=279
+		y=337
 		width=150
 		height=20
 	}
@@ -1045,7 +1067,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=279
+		y=337
 		width=150
 		height=20
 	}
@@ -1061,7 +1083,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=279
+		y=337
 		width=100
 		height=20
 	}
@@ -1077,7 +1099,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=279
+		y=337
 		width=150
 		height=20
 	}
@@ -1093,7 +1115,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=278
+		y=336
 		width=160
 		height=20
 	}
@@ -1105,7 +1127,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=277
+		y=335
 		width=75
 		height=20
 	}
@@ -1121,7 +1143,7 @@ text {
 rectangle {
 	object {
 		x=10
-		y=299
+		y=357
 		width=1270
 		height=20
 	}
@@ -1132,7 +1154,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=301
+		y=359
 		width=150
 		height=20
 	}
@@ -1148,7 +1170,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=301
+		y=359
 		width=150
 		height=20
 	}
@@ -1164,7 +1186,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=301
+		y=359
 		width=100
 		height=20
 	}
@@ -1180,7 +1202,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=301
+		y=359
 		width=150
 		height=20
 	}
@@ -1196,7 +1218,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=300
+		y=358
 		width=160
 		height=20
 	}
@@ -1208,7 +1230,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=299
+		y=357
 		width=75
 		height=20
 	}
@@ -1224,7 +1246,7 @@ text {
 text {
 	object {
 		x=859
-		y=221
+		y=279
 		width=425
 		height=15
 	}
@@ -1310,7 +1332,7 @@ text {
 text {
 	object {
 		x=601
-		y=238
+		y=296
 		width=20
 		height=15
 	}
@@ -1353,7 +1375,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=255
+		y=313
 		width=20
 		height=20
 	}
@@ -1368,7 +1390,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=277
+		y=335
 		width=20
 		height=20
 	}
@@ -1383,7 +1405,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=300
+		y=358
 		width=20
 		height=20
 	}
@@ -1394,4 +1416,344 @@ text {
 	}
 	clr=14
 	bclr=8
+}
+text {
+	object {
+		x=15
+		y=182
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocchiller"
+}
+"text update" {
+	object {
+		x=193
+		y=183
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocchiller:HOSTNAME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=183
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocchiller:UPTIME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=183
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocchiller:HEARTBEAT"
+		clr=0
+		bclr=27
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=601
+		y=181
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocchiller"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=626
+		y=181
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocchiller"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+"text update" {
+	object {
+		x=707
+		y=183
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocchiller:STARTTOD"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=204
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocwave2root"
+}
+"text update" {
+	object {
+		x=193
+		y=205
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocwave2root:HOSTNAME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=205
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocwave2root:UPTIME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=205
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocwave2root:HEARTBEAT"
+		clr=0
+		bclr=27
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=601
+		y=203
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocwave2root"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=626
+		y=203
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocwave2root"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+"text update" {
+	object {
+		x=707
+		y=205
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocwave2root:STARTTOD"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=862
+		y=182
+		width=60
+		height=20
+	}
+	monitor {
+		chan="iocchiller:SR_status"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=924
+		y=182
+		width=130
+		height=20
+	}
+	monitor {
+		chan="iocchiller:SR_statusStr"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1056
+		y=182
+		width=200
+		height=20
+	}
+	monitor {
+		chan="iocchiller:SR_recentlyStr"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=1260
+		y=180
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Autosave"
+		name="autosave.adl"
+		args="P=iocchiller:"
+	}
+	clr=14
+	bclr=6
+}
+"text update" {
+	object {
+		x=862
+		y=205
+		width=60
+		height=20
+	}
+	monitor {
+		chan="iocwave2root:SR_status"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=924
+		y=205
+		width=130
+		height=20
+	}
+	monitor {
+		chan="iocwave2root:SR_statusStr"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1056
+		y=205
+		width=200
+		height=20
+	}
+	monitor {
+		chan="iocwave2root:SR_recentlyStr"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=1260
+		y=205
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Autosave"
+		name="autosave.adl"
+		args="P=iocwave2root:"
+	}
+	clr=14
+	bclr=6
 }

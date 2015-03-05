@@ -1,0 +1,25 @@
+file db/wave2rootData.db {
+        pattern { IOC, NELM, SRC_PREF, SRC_CHAN }
+#
+        { wave2root, 2048,         "", sixtyHz_raw_0 }
+        { wave2root, 2048, 	   "", sixtyHz_raw_1 }
+        { wave2root, 2048,         "", sixtyHz_raw_2 }
+        { wave2root, 2048,         "", sixtyHz_raw_3 }
+        { wave2root, 2048,         "", sixtyHz_raw_4 }
+        { wave2root, 2048,         "", sixtyHz_raw_5 }
+        { wave2root, 2048,         "", sixtyHz_raw_6 }
+        { wave2root, 2048,         "", sixtyHz_raw_7 }
+        { wave2root, 2048,         "", sixtyHz_raw_8 }
+        { wave2root, 2048,         "", sixtyHz_raw_9 }
+        { wave2root, 2048,         "", sixtyHz_raw_10 }
+        { wave2root, 2048,         "", sixtyHz_raw_11 }
+        { wave2root, 2048,         "", sixtyHz_raw_12 }
+        { wave2root, 2048,         "", sixtyHz_raw_13 }
+        { wave2root, 2048,         "", sixtyHz_raw_14 }
+        { wave2root, 2048,         "", sixtyHz_raw_15 }
+}
+
+file db/wave2rootCtrl.db {
+		pattern { IOC }
+		{ wave2root }
+}

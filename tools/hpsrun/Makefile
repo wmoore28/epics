@@ -1,5 +1,6 @@
 INSTALL_BIN := /usr/local/bin
 PROGFILES   += hps_epics
+PROGFILES   += screenshot
 
 
 .PHONY: all clean install uninstall

@@ -1,0 +1,5835 @@
+
+file {
+	name="/usr/clas12/hps/prod/apps/hvcaApp/medm/adl/ecal_ECAL_BOTTOM_param.adl"
+	version=030108
+}
+display {
+	object {
+		x=10
+		y=21
+		width=1050
+		height=900
+	}
+	clr=14
+	bclr=4
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+text {
+	object {
+		x=75
+		y=20
+		width=300
+		height=35
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="CONTROL PARAMETERS"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=475
+		y=15
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="ECAL_BOTTOM"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=15
+		y=75
+		width=110
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Channel Name"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=135
+		y=75
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Group#"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=212
+		y=75
+		width=30
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="V Limit"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=282
+		y=75
+		width=30
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Trip I"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=352
+		y=75
+		width=30
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Input TI"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=422
+		y=75
+		width=30
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Ramp Up"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=488
+		y=75
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Input RU"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=558
+		y=75
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Ramp Down"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=628
+		y=75
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Input RD"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=698
+		y=75
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="MVDZ"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=768
+		y=75
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Input MVDZ"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=838
+		y=75
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="MCDZ"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=908
+		y=75
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Input MCDZ"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=978
+		y=75
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Status"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=20
+		y=100
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_01"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=100
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=100
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_01_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=100
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_01_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=100
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_01_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=100
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_01_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=100
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_01_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=100
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_01_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=100
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_01_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=100
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_01_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=100
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_01_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=100
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_01_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=100
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_01_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=100
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_01_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=130
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_02"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=130
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=130
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_02_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=130
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_02_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=130
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_02_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=130
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_02_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=130
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_02_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=130
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_02_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=130
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_02_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=130
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_02_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=130
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_02_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=130
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_02_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=130
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_02_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=130
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_02_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=160
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_03"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=160
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=160
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_03_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=160
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_03_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=160
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_03_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=160
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_03_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=160
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_03_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=160
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_03_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=160
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_03_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=160
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_03_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=160
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_03_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=160
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_03_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=160
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_03_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=160
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_03_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=190
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_04"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=190
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=190
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_04_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=190
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_04_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=190
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_04_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=190
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_04_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=190
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_04_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=190
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_04_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=190
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_04_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=190
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_04_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=190
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_04_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=190
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_04_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=190
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_04_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=190
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_04_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=220
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_05"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=220
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=220
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_05_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=220
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_05_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=220
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_05_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=220
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_05_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=220
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_05_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=220
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_05_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=220
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_05_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=220
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_05_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=220
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_05_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=220
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_05_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=220
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_05_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=220
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_05_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=250
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_06"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=250
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=250
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_06_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=250
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_06_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=250
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_06_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=250
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_06_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=250
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_06_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=250
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_06_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=250
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_06_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=250
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_06_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=250
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_06_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=250
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_06_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=250
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_06_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=250
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_06_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=280
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_07"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=280
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=280
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_07_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=280
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_07_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=280
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_07_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=280
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_07_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=280
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_07_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=280
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_07_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=280
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_07_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=280
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_07_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=280
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_07_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=280
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_07_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=280
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_07_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=280
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_07_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=310
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_08"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=310
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=310
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_08_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=310
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_08_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=310
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_08_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=310
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_08_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=310
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_08_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=310
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_08_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=310
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_08_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=310
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_08_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=310
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_08_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=310
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_08_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=310
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_08_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=310
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_08_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=340
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_09"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=340
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=340
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_09_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=340
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_09_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=340
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_09_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=340
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_09_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=340
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_09_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=340
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_09_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=340
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_09_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=340
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_09_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=340
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_09_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=340
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_09_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=340
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_09_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=340
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_09_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=370
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_10"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=370
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=370
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_10_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=370
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_10_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=370
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_10_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=370
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_10_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=370
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_10_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=370
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_10_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=370
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_10_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=370
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_10_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=370
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_10_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=370
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_10_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=370
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_10_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=370
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_10_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=400
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_11"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=400
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=400
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_11_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=400
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_11_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=400
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_11_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=400
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_11_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=400
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_11_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=400
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_11_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=400
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_11_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=400
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_11_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=400
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_11_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=400
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_11_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=400
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_11_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=400
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_11_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=430
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_12"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=430
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=430
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_12_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=430
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_12_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=430
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_12_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=430
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_12_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=430
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_12_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=430
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_12_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=430
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_12_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=430
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_12_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=430
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_12_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=430
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_12_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=430
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_12_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=430
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_12_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=460
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_13"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=460
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=460
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_13_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=460
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_13_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=460
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_13_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=460
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_13_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=460
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_13_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=460
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_13_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=460
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_13_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=460
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_13_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=460
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_13_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=460
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_13_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=460
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_13_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=460
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_13_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=490
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_14"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=490
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=490
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_14_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=490
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_14_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=490
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_14_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=490
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_14_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=490
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_14_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=490
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_14_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=490
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_14_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=490
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_14_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=490
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_14_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=490
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_14_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=490
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_14_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=490
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_14_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=520
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_15"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=520
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=520
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_15_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=520
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_15_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=520
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_15_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=520
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_15_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=520
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_15_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=520
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_15_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=520
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_15_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=520
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_15_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=520
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_15_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=520
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_15_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=520
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_15_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=520
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_15_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=550
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_16"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=550
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=550
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_16_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=550
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_16_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=550
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_16_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=550
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_16_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=550
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_16_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=550
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_16_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=550
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_16_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=550
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_16_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=550
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_16_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=550
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_16_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=550
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_16_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=550
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_16_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=580
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_17"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=580
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=580
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_17_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=580
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_17_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=580
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_17_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=580
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_17_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=580
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_17_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=580
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_17_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=580
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_17_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=580
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_17_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=580
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_17_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=580
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_17_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=580
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_17_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=580
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_17_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=610
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_18"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=610
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=610
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_18_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=610
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_18_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=610
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_18_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=610
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_18_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=610
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_18_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=610
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_18_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=610
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_18_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=610
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_18_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=610
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_18_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=610
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_18_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=610
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_18_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=610
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_18_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=640
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_19"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=640
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=640
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_19_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=640
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_19_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=640
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_19_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=640
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_19_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=640
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_19_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=640
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_19_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=640
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_19_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=640
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_19_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=640
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_19_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=640
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_19_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=640
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_19_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=640
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_19_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=670
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_20"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=670
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=670
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_20_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=670
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_20_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=670
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_20_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=670
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_20_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=670
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_20_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=670
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_20_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=670
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_20_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=670
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_20_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=670
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_20_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=670
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_20_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=670
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_20_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=670
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_20_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=700
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_21"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=700
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=700
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_21_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=700
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_21_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=700
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_21_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=700
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_21_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=700
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_21_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=700
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_21_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=700
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_21_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=700
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_21_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=700
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_21_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=700
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_21_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=700
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_21_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=700
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_21_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=730
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_22"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=730
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=730
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_22_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=730
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_22_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=730
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_22_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=730
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_22_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=730
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_22_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=730
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_22_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=730
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_22_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=730
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_22_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=730
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_22_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=730
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_22_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=730
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_22_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=730
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_22_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=760
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_23"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=760
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=760
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_23_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=760
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_23_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=760
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_23_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=760
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_23_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=760
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_23_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=760
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_23_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=760
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_23_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=760
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_23_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=760
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_23_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=760
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_23_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=760
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_23_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=760
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_23_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=790
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_24"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=790
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=790
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_24_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=790
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_24_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=790
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_24_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=790
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_24_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=790
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_24_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=790
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_24_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=790
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_24_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=790
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_24_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=790
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_24_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=790
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_24_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=790
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_24_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=790
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_24_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=820
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_25"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=820
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=820
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_25_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=820
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_25_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=820
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_25_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=820
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_25_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=820
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_25_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=820
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_25_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=820
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_25_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=820
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_25_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=820
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_25_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=820
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_25_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=820
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_25_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=820
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_25_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=850
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL_BOT_26"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=850
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=850
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_26_property.O"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=270
+		y=850
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_26_property.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=340
+		y=850
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_26_TC"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=850
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_26_property.H"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=480
+		y=850
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_26_RUP"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=850
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_26_property.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=620
+		y=850
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_26_RDN"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=690
+		y=850
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_26_property.M"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=760
+		y=850
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_26_MVDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=830
+		y=850
+		width=50
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_26_property.N"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=900
+		y=850
+		width=50
+		height=20
+	}
+	control {
+		chan="B_hv_ECAL_BOT_26_MCDZ"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=970
+		y=850
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECAL_BOT_26_property.L"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+	}
+}

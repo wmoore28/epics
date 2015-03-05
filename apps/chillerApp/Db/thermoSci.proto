@@ -1,0 +1,83 @@
+#
+# Thermo Scientific Refrigerated Bath
+# 
+# This is the protocal file for RS-232.  For RS-485, set ADDR to "CC" and set 
+# the address.
+# 
+# Notes:
+#   Qualifier Byte (qb)
+#   For the responses is hard-coded, not ignored.  The values were used to 
+#   hard-code the ASLO and PREC fields for the various PVs.  See Table 3, 
+#   page 51 of the manual for the details.
+#
+#   Checksums
+#   Could have been hard-coded since only readbacks were done.  But they were 
+#   included to show what's needed for control PVs, if they get added.
+#
+# Author: Wesley Moore
+# Date:   Dec 2014
+#
+
+InTerminator  = "";
+OutTerminator = "";
+#ReadTimeout = 500;
+#ReplyTimeout = 500;
+
+ADDR = \xCA\x00\x01;   # default address 00 01
+
+
+getStatus {
+	out "\${ADDR}\x09\x00%2.1<notsum>";
+	in  "\${ADDR}\x09\x05%(\$11.VAL)0.2r%(\$12.VAL)0.2r%(\$13.VAL)0.2r%(\$14.VAL)0.2r%(\$15.VAL)0.2r%*2c";
+}
+
+# Internal temp, we aren't using an external sensor.
+getTemp {
+	out "\${ADDR}\x20\x00%2.1<notsum>";
+	in  "\${ADDR}\x20\x03\x00%0.2r%*2c";
+}
+
+getSetpt {
+    out "\${ADDR}\x70\x00%2.1<notsum>";
+	in  "\${ADDR}\x70\x03\x00%0.2r%*2c";
+}
+
+getLowLim {
+    out "\${ADDR}\x40\x00%2.1<notsum>";
+	in  "\${ADDR}\x40\x03\x00%0.2r%*2c";
+}
+
+getHighLim {
+    out "\${ADDR}\x60\x00%2.1<notsum>";
+	in  "\${ADDR}\x60\x03\x01%0.2r%*2c";
+}
+
+getHeatP {
+    out "\${ADDR}\x71\x00%2.1<notsum>";
+	in  "\${ADDR}\x71\x03\x10\x00%0.2r%*2c";
+}
+
+getHeatI {
+    out "\${ADDR}\x72\x00%2.1<notsum>";
+	in  "\${ADDR}\x72\x03\x20\x00%0.2r%*2c";
+}
+
+getHeatD {
+    out "\${ADDR}\x73\x00%2.1<notsum>";
+	in  "\${ADDR}\x73\x03\x20\x00%0.2r%*2c";
+}
+
+getCoolP {
+    out "\${ADDR}\x74\x00%2.1<notsum>";
+	in  "\${ADDR}\x74\x03\x10\x00%0.2r%*2c";
+}
+
+getCoolI {
+    out "\${ADDR}\x75\x00%2.1<notsum>";
+	in  "\${ADDR}\x75\x03\x20\x00%0.2r%*2c";
+}
+
+getCoolD {
+    out "\${ADDR}\x76\x00%2.1<notsum>";
+	in  "\${ADDR}\x76\x03\x20\x00%0.2r%*2c";
+}

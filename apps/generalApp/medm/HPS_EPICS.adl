@@ -1,14 +1,14 @@
 
 file {
-	name="/misc/clas12/hps/prod/apps/generalApp/medm/HPS_EPICS.adl"
+	name="/usr/clas12/hps/v0.3.1/apps/generalApp/medm/HPS_EPICS.adl"
 	version=030108
 }
 display {
 	object {
-		x=0
-		y=0
+		x=1
+		y=84
 		width=240
-		height=705
+		height=805
 	}
 	clr=14
 	bclr=4
@@ -90,7 +90,42 @@ display {
 rectangle {
 	object {
 		x=0
-		y=612
+		y=765
+		width=240
+		height=40
+	}
+	"basic attribute" {
+		clr=11
+	}
+}
+text {
+	object {
+		x=113
+		y=790
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Versions >"
+	align="horiz. right"
+}
+rectangle {
+	object {
+		x=0
+		y=629
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=664
 		width=300
 		height=25
 	}
@@ -101,7 +136,7 @@ rectangle {
 "choice button" {
 	object {
 		x=140
-		y=648
+		y=701
 		width=80
 		height=16
 	}
@@ -262,6 +297,15 @@ text {
 		label="Harps"
 		name="harps.adl"
 	}
+	display[4] {
+		label="Flasher"
+		name="Flasher.adl"
+	}
+	display[5] {
+		label="Chiller (ECAL)"
+		name="chiller_thermo.adl"
+		args="DESC=ECAL"
+	}
 	clr=14
 	bclr=50
 }
@@ -280,7 +324,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=550
+		y=606
 		width=20
 		height=20
 	}
@@ -294,7 +338,7 @@ text {
 text {
 	object {
 		x=70
-		y=555
+		y=611
 		width=120
 		height=16
 	}
@@ -388,6 +432,10 @@ text {
 	display[0] {
 		label="alh launcher"
 		name="alh_launch_hps.adl"
+	}
+	display[1] {
+		label="(under development)"
+		name="Aalh_launch_hps.adl"
 	}
 	clr=14
 	bclr=50
@@ -526,7 +574,7 @@ text {
 text {
 	object {
 		x=20
-		y=650
+		y=703
 		width=100
 		height=16
 	}
@@ -538,7 +586,7 @@ text {
 "choice button" {
 	object {
 		x=140
-		y=672
+		y=725
 		width=80
 		height=16
 	}
@@ -553,7 +601,7 @@ text {
 text {
 	object {
 		x=20
-		y=672
+		y=725
 		width=100
 		height=16
 	}
@@ -566,7 +614,7 @@ text {
 "related display" {
 	object {
 		x=41
-		y=550
+		y=606
 		width=20
 		height=20
 	}
@@ -734,7 +782,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=578
+		y=634
 		width=20
 		height=20
 	}
@@ -748,7 +796,7 @@ text {
 text {
 	object {
 		x=70
-		y=583
+		y=639
 		width=120
 		height=16
 	}
@@ -760,7 +808,7 @@ text {
 text {
 	object {
 		x=15
-		y=617
+		y=670
 		width=150
 		height=15
 	}
@@ -768,4 +816,127 @@ text {
 		clr=0
 	}
 	textix="Access Controls"
+}
+"related display" {
+	object {
+		x=216
+		y=767
+		width=20
+		height=18
+	}
+	display[0] {
+		label="Production (refresh)"
+		name="HPS_EPICS_refresh.adl"
+		policy="replace display"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=20
+		y=779
+		width=130
+		height=16
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Release: v0.3.1"
+}
+"shell command" {
+	object {
+		x=20
+		y=550
+		width=20
+		height=20
+	}
+	command[0] {
+		label="ECAL DSC2 GUI"
+		name="/usr/clas12/hps/prod/tools/ecal/runEcalDSC2ScalerGui.sh &"
+	}
+	command[1] {
+		label="ECAL FADC GUI"
+		name="/usr/clas12/hps/prod/tools/ecal/runEcalFADCScalerGui.sh &"
+	}
+	command[2] {
+		label="ECAL Diag GUI (solaris-only)"
+		name="xterm -title 'ECAL FADC Diag GUI' -e "
+		args="/usr/clas12/hps/prod/tools/ecal/runEcalDiagGui.sh &"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=555
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL Scaler GUIs"
+}
+"shell command" {
+	object {
+		x=20
+		y=577
+		width=20
+		height=20
+	}
+	command[0] {
+		label="Take screenshot..."
+		name="xterm -title 'Take screenshot' -e screenshot &"
+	}
+	command[1] {
+		label="Open screenshots folder"
+		name="konqueror ~hpsrun/screenshots &"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=582
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Screenshots"
+}
+"shell command" {
+	object {
+		x=216
+		y=787
+		width=20
+		height=18
+	}
+	command[1] {
+		label="Development"
+		name="hps_epics dev &"
+	}
+	command[2] {
+		label="Rollback"
+		name="hps_epics rollback &"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=113
+		y=769
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Refresh >"
+	align="horiz. right"
 }

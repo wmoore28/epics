@@ -1,7 +1,7 @@
 
 file {
-	name="/usr/clas12/hps/v0.2.5/apps/generalApp/medm/ECalHVStatus.adl"
-	version=030101
+	name="/usr/clas12/hps/prod/apps/generalApp/medm/ECalHVStatus.adl"
+	version=030108
 }
 display {
 	object {
@@ -129,29 +129,17 @@ text {
 "related display" {
 	object {
 		x=28
-		y=417
-		width=180
-		height=50
+		y=450
+		width=200
+		height=30
 	}
 	display[0] {
-		label="ECal HV All"
-		name="ecal.adl"
+		label="ECal HV Top"
+		name="ecal_ECAL_TOP.adl"
 	}
 	display[1] {
-		label="ECal HV Top 1"
-		name="ecal_ECAL_TOP_1.adl"
-	}
-	display[2] {
-		label="ECal HV Top 2"
-		name="ecal_ECAL_TOP_2.adl"
-	}
-	display[3] {
-		label="ECal HV Bot 1"
-		name="ecal_ECAL_BOTTOM_1.adl"
-	}
-	display[4] {
-		label="ECal HV Bot 2"
-		name="ecal_ECAL_BOTTOM_2.adl"
+		label="ECal HV Bot"
+		name="ecal_ECAL_BOTTOM.adl"
 	}
 	clr=14
 	bclr=27
@@ -1509,9 +1497,9 @@ text {
 }
 "related display" {
 	object {
-		x=18
-		y=225
-		width=120
+		x=28
+		y=220
+		width=200
 		height=30
 	}
 	display[0] {
@@ -1519,7 +1507,7 @@ text {
 		name="ECalHVStatus_Expert.adl"
 	}
 	clr=14
-	bclr=0
+	bclr=27
 	label="Expert HV Map"
 }
 rectangle {
@@ -3297,4 +3285,58 @@ rectangle {
 		calc="A=1"
 		chan="B_hv_ECAL_BOT_26_property.L"
 	}
+}
+"shell command" {
+	object {
+		x=28
+		y=329
+		width=98
+		height=25
+	}
+	command[0] {
+		label="Ramp Up"
+		name="ecalRampCtrl.sh 1 &"
+	}
+	clr=17
+	bclr=2
+	label="HV Ramp Up"
+}
+"shell command" {
+	object {
+		x=130
+		y=329
+		width=98
+		height=25
+	}
+	command[0] {
+		label="Ramp Down"
+		name="ecalRampCtrl 0 &"
+	}
+	clr=20
+	bclr=2
+	label="HV Ramp Down"
+}
+text {
+	object {
+		x=30
+		y=312
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=4
+	}
+	textix="Enable"
+}
+text {
+	object {
+		x=130
+		y=312
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=4
+	}
+	textix="Disable"
 }

@@ -20,7 +20,7 @@ classc4_DBD += sixty_hzSupport.dbd
 classc4_DBD += scalerSupport.dbd
 classc4_DBD += frwd_scalerSupport.dbd
 classc4_DBD += devIocStats.dbd
-
+classc4_DBD += asSupport.dbd
 
 
 # Build the main IOC entry point on workstation OSs.

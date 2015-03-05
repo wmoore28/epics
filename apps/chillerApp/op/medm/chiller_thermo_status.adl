@@ -1,0 +1,700 @@
+
+file {
+	name="/usr/clas12/hps/prod/apps/chillerApp/medm/chiller_thermo_status.adl"
+	version=030108
+}
+display {
+	object {
+		x=698
+		y=475
+		width=310
+		height=600
+	}
+	clr=14
+	bclr=4
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=0
+		width=310
+		height=30
+	}
+	"basic attribute" {
+		clr=29
+	}
+}
+text {
+	object {
+		x=0
+		y=8
+		width=310
+		height=16
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Thermo Scientific Chiller"
+	align="horiz. centered"
+}
+"related display" {
+	object {
+		x=273
+		y=5
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Comm (asyn)"
+		name="asynRecord.adl"
+		args="P=$(P),R=ASYN"
+	}
+	display[1] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=$(ioc)"
+	}
+	clr=14
+	bclr=4
+}
+byte {
+	object {
+		x=166
+		y=65
+		width=8
+		height=165
+	}
+	monitor {
+		chan="$(P)STATUS2"
+		clr=15
+		bclr=19
+	}
+	direction="down"
+	sbit=7
+}
+byte {
+	object {
+		x=9
+		y=65
+		width=8
+		height=165
+	}
+	monitor {
+		chan="$(P)STATUS1"
+		clr=15
+		bclr=19
+	}
+	direction="down"
+	sbit=7
+}
+byte {
+	object {
+		x=9
+		y=239
+		width=8
+		height=165
+	}
+	monitor {
+		chan="$(P)STATUS3"
+		clr=15
+		bclr=19
+	}
+	direction="down"
+	sbit=7
+}
+byte {
+	object {
+		x=166
+		y=239
+		width=8
+		height=165
+	}
+	monitor {
+		chan="$(P)STATUS4"
+		clr=15
+		bclr=19
+	}
+	direction="down"
+	sbit=7
+}
+byte {
+	object {
+		x=9
+		y=414
+		width=8
+		height=165
+	}
+	monitor {
+		chan="$(P)STATUS5"
+		clr=15
+		bclr=19
+	}
+	direction="down"
+	sbit=7
+}
+text {
+	object {
+		x=29
+		y=67
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="RTD1 Open Fault"
+}
+text {
+	object {
+		x=29
+		y=88
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="RTD1 Shorted Fault"
+}
+text {
+	object {
+		x=29
+		y=109
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="RTD1 Open"
+}
+text {
+	object {
+		x=29
+		y=130
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="RTD1 Shorted"
+}
+text {
+	object {
+		x=29
+		y=151
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="RTD3 Open Fault"
+}
+text {
+	object {
+		x=29
+		y=172
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="RTD3 Shorted Fault"
+}
+text {
+	object {
+		x=29
+		y=193
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="RTD3 Open"
+}
+text {
+	object {
+		x=29
+		y=214
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="RTD3 Shorted"
+}
+text {
+	object {
+		x=186
+		y=67
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="RTD2 Open Fault"
+}
+text {
+	object {
+		x=186
+		y=88
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="RTD2 Shorted Fault"
+}
+text {
+	object {
+		x=186
+		y=109
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="RTD2 Open Warn"
+}
+text {
+	object {
+		x=186
+		y=130
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="RTD2 Shorted Warn"
+}
+text {
+	object {
+		x=186
+		y=151
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="RTD2 Open"
+}
+text {
+	object {
+		x=186
+		y=172
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="RTD2 Shorted"
+}
+text {
+	object {
+		x=186
+		y=193
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Refrig High Temp"
+}
+text {
+	object {
+		x=186
+		y=214
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="HTC Fault"
+}
+text {
+	object {
+		x=27
+		y=241
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="High Fixed Temp Fault"
+}
+text {
+	object {
+		x=27
+		y=262
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Low Fixed Temp Fault"
+}
+text {
+	object {
+		x=27
+		y=283
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="High Temp Fault"
+}
+text {
+	object {
+		x=27
+		y=304
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Low Temp Fault"
+}
+text {
+	object {
+		x=27
+		y=325
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Low Level Fault"
+}
+text {
+	object {
+		x=27
+		y=346
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="High Temp Warn"
+}
+text {
+	object {
+		x=27
+		y=367
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Low Temp Warn"
+}
+text {
+	object {
+		x=27
+		y=388
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Low Level Warn"
+}
+text {
+	object {
+		x=27
+		y=416
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="RTD2 Controlling"
+}
+text {
+	object {
+		x=27
+		y=437
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Heat LED Flashing"
+}
+text {
+	object {
+		x=27
+		y=458
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Heat LED On"
+}
+text {
+	object {
+		x=27
+		y=479
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Cool LED Flashing"
+}
+text {
+	object {
+		x=27
+		y=500
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Cool LED On"
+}
+text {
+	object {
+		x=27
+		y=521
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="<not used>"
+}
+text {
+	object {
+		x=27
+		y=542
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="<not used>"
+}
+text {
+	object {
+		x=27
+		y=563
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="<not used>"
+}
+text {
+	object {
+		x=186
+		y=241
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Buzzer On"
+}
+text {
+	object {
+		x=186
+		y=262
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Alarm Muted"
+}
+text {
+	object {
+		x=186
+		y=283
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Unit Faulted"
+}
+text {
+	object {
+		x=186
+		y=304
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Unit Stopping"
+}
+text {
+	object {
+		x=186
+		y=325
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Unit On"
+}
+text {
+	object {
+		x=186
+		y=346
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Pump On"
+}
+text {
+	object {
+		x=186
+		y=367
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Compressor On"
+}
+text {
+	object {
+		x=186
+		y=388
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Heater On"
+}
+text {
+	object {
+		x=9
+		y=41
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Status Bits"
+}

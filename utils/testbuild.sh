@@ -84,15 +84,6 @@ for var in "${vars[@]}"; do
   	fi
 done
 
-if [ -n $EPICS ]; then
-	if [[ $EPICS_BASE == *$EPICS* ]]; then
-		passFail 0 "  EPICS=$EPICS"
-	else
-		passFail 1 "  EPICS=$EPICS version mismatch"
-		ENV_ERR=1
-	fi
-fi
-
 EPICS_LIBS="$EPICS_BASE/lib/$EPICS_HOST_ARCH"
 if [ -n $LD_LIBRARY_PATH ]; then
 	if [[ $LD_LIBRARY_PATH == *$EPICS_LIBS* ]]; then 
