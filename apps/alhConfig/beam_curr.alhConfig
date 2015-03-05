@@ -1,0 +1,32 @@
+GROUP    NULL                         BEAM_CURRENT                
+CHANNEL  BEAM_CURRENT                 hallb_IPM2C21A_CUR          
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_IPM2C21A_CUR" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 120
+$GUIDANCE
+              The beam current  measured at nA BPM 2C21A is out of spec.  Inform MCC about this.
+$END
+CHANNEL  BEAM_CURRENT                 hallb_IPM2C24A_CUR          
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_IPM2C24A_CUR" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 120
+$GUIDANCE
+              The beam current  measured at nA BPM 2C24A is out of spec.  Inform MCC about this.
+$END
+### CHANNEL  BEAM_CURRENT                 hallb_IPM2H01_CUR           
+### $COMMAND  medm -x -attach -cmap -macro "sig=hallb_IPM2H01_CUR" aiaocalc_alarm.adl >> /dev/null 
+### $ALARMCOUNTFILTER  10 120
+### $GUIDANCE
+###               The beam current  measured at nA BPM 2H01 is out of spec.  Inform MCC about this.
+### $END
+CHANNEL  BEAM_CURRENT                 scaler_calc1                
+$COMMAND  medm -x -attach -cmap -macro "sig=scaler_calc1" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 120
+$GUIDANCE
+              The beam current  measured by the Faraday Cup is out of spec.  Inform MCC about this.
+$END
+
+CHANNEL  BEAM_CURRENT                 scaler_eS5b                
+$COMMAND  medm -x -attach -cmap -macro "sig=scaler_eS5b" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  2 10
+$GUIDANCE
+              The downstream halo counter rate is above the spec. Beam needs some steering. Inform MCC about this.
+$END

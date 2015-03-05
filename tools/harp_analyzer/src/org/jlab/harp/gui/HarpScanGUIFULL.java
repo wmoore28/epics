@@ -226,16 +226,15 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
         return null;
     }
     
-    public void makeLogEntry(){
-               
+    public void makeLogEntry(){               
+        harpAnalyzer.setPVs(this_harp_dir);
         String imagePath = this.getTempImagePath();
         if(imagePath!=null){        
             canvas.exportPNG(imagePath);
             MakeLogEntry log = new MakeLogEntry();
             log.setTitle("Scan of " + this_harp_dir);
             StringBuilder str = new StringBuilder();
-                str.append("Harp File: " + currentHarpFilesDir + "/" + currentFileName + "\n");
-//            for(int loop = 0; harpAnalyzer.functions.size() >= loop;loop++){
+//           for(int loop = 0; harpAnalyzer.functions.size() >= loop;loop++){
               for(int loop = 0; harpAnalyzer.getHarpFuncs().size() > loop;loop++){ 
                   System.out.println("Loop = " + loop);
                 String[] labels = harpAnalyzer.getLegend(loop, this_harp_dir);

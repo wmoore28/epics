@@ -1,0 +1,122 @@
+# Database for target positions
+#
+# V.K.  July 16, 2012
+
+
+record(ao,"$(pref)hps:target:motionCondit"){
+  field(DTYP,"Soft Channel")
+  field(VAL,"0.1")
+  field(SCAN, "Passive")
+}
+record(ao,"$(pref)hps:target:home"){
+  field(DTYP,"Soft Channel")
+  field(VAL,"0.")
+  field(PINI, "YES") 
+  field(SCAN, "Passive")
+  field(PREC, "3")
+}
+record(ao,"$(pref)hps:target:home:proc"){
+  field(DTYP,"Soft Channel")
+  field(DOL,"$(pref)hps:target:home")
+  field(OMSL,"closed_loop")
+  field(OUT,"$(pref)hps:target:motor.VAL PP NMS")
+  field(SCAN, "Passive")
+}
+record(calc, "$(pref)hps:target_at_home") {
+  field(INPA, "$(pref)hps:target:motor.RBV")
+  field(INPB, "$(pref)hps:target:home")
+  field(INPC, "$(pref)hps:target:motor.DMOV")
+  field(INPE, "$(pref)hps:target:motionCondit")
+  field(SCAN, ".2 second")
+  field(CALC, "(ABS(A-B)<E)&&(C=1)?1:0")
+}
+record(ao,"$(pref)hps:target:a"){
+  field(DTYP,"Soft Channel")
+  field(VAL,"14.8455")
+  field(PINI, "YES")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+}
+record(ao,"$(pref)hps:target:a:proc"){
+  field(DTYP,"Soft Channel")
+  field(DOL,"$(pref)hps:target:a")
+  field(OMSL,"closed_loop")
+  field(OUT,"$(pref)hps:target:motor.VAL PP NMS")
+  field(SCAN, "Passive")
+}
+record(calc, "$(pref)hps:target_at_a") {
+  field(INPA, "$(pref)hps:target:motor.RBV")
+  field(INPB, "$(pref)hps:target:a")
+  field(INPC, "$(pref)hps:target:motor.DMOV")
+  field(INPE, "$(pref)hps:target:motionCondit")
+  field(SCAN, ".2 second")
+  field(CALC, "(ABS(A-B)<E)&&(C=1)?1:0")
+}
+record(ao,"$(pref)hps:target:b"){
+  field(DTYP,"Soft Channel")
+  field(VAL,"24.764")
+  field(PINI, "YES")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+}
+record(ao,"$(pref)hps:target:b:proc"){
+  field(DTYP,"Soft Channel")
+  field(DOL,"$(pref)hps:target:b")
+  field(OMSL,"closed_loop")
+  field(OUT,"$(pref)hps:target:motor.VAL PP NMS")
+  field(SCAN, "Passive")
+}
+record(calc, "$(pref)hps:target_at_b") {
+  field(INPA, "$(pref)hps:target:motor.RBV")
+  field(INPB, "$(pref)hps:target:b")
+  field(INPC, "$(pref)hps:target:motor.DMOV")
+  field(INPE, "$(pref)hps:target:motionCondit")
+  field(SCAN, ".2 second")
+  field(CALC, "(ABS(A-B)<E)&&(C=1)?1:0")
+}
+record(ao,"$(pref)hps:target:c"){
+  field(DTYP,"Soft Channel")
+  field(VAL,"33.455")
+  field(PINI, "YES")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+
+}
+record(ao,"$(pref)hps:target:c:proc"){
+  field(DTYP,"Soft Channel")
+  field(DOL,"$(pref)hps:target:c")
+  field(OMSL,"closed_loop")
+  field(OUT,"$(pref)hps:target:motor.VAL PP NMS")
+  field(SCAN, "Passive")
+}
+record(calc, "$(pref)hps:target_at_c") {
+  field(INPA, "$(pref)hps:target:motor.RBV")
+  field(INPB, "$(pref)hps:target:c")
+  field(INPC, "$(pref)hps:target:motor.DMOV")
+  field(INPE, "$(pref)hps:target:motionCondit")
+  field(SCAN, ".2 second")
+  field(CALC, "(ABS(A-B)<E)&&(C=1)?1:0")
+}
+record(ao,"$(pref)hps:target:d"){
+  field(DTYP,"Soft Channel")
+  field(VAL,"39.6745")
+  field(PINI, "YES")
+  field(SCAN, "Passive")
+  field(PREC, "3")
+}
+record(ao,"$(pref)hps:target:d:proc"){
+  field(DTYP,"Soft Channel")
+  field(DOL,"$(pref)hps:target:d")
+  field(OMSL,"closed_loop")
+  field(OUT,"$(pref)hps:target:motor.VAL PP NMS")
+  field(SCAN, "Passive")
+}
+record(calc, "$(pref)hps:target_at_d") {
+  field(INPA, "$(pref)hps:target:motor.RBV")
+  field(INPB, "$(pref)hps:target:d")
+  field(INPC, "$(pref)hps:target:motor.DMOV")
+  field(INPE, "$(pref)hps:target:motionCondit")
+  field(SCAN, ".2 second")
+  field(CALC, "(ABS(A-B)<E)&&(C=1)?1:0")
+}
+

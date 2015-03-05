@@ -1,0 +1,36 @@
+grecord(busy,"$(PREF)$(R):beamCheckBusy") 
+{
+        field(DESC,"Busy for $(PREF)$(R)")
+        field(SCAN,"Passive") 
+        field(VAL ,"0")
+        field(DTYP,"Soft Channel")
+	field(FLNK,"$(PREF)$(R):beamCheckDummy")
+	field(ZNAM,"DONE")
+	field(ONAM,"BUSY")
+}
+
+grecord(bi,"$(PREF)$(R):beamCheckDummy") 
+{
+        field(DESC,"Dummy for $(PREF)$(R)")
+        field(SCAN,"Passive") 
+}
+
+#
+# This record will write zero into the busy record if 
+# there is beam, thus allowing the scan to progress. 
+# If the busy is 0 it will not write into the busy record
+#
+grecord(calcout, "$(PREF)$(R):beamCheckCalc")
+{
+        field(DESC,"Check beam  present" )
+        field(SCAN,".1 second") 
+        field(CALC,"A>E?1:0")
+        field(INPA,"scaler_calc1")
+        field(INPE,"5")
+        field(OOPT,"When Non-zero")
+        field(DOPT,"Use OCAL")
+	field(OCAL, "0")	
+        field(OUT, "$(PREF)$(R):beamCheckBusy PP NMS")
+	field(SDIS,"$(PREF)$(R):beamCheckBusy NPP NMS")
+	field(DISV,"0")
+}

@@ -15,7 +15,7 @@ install:
 	(cd drivers; make install)
 	(cd apps; make install)
 
-clean: svtdaqlib-clean
+clean: 
 	(cd drivers; make clean)
 	(cd apps; make clean)
 
@@ -37,12 +37,6 @@ install-tools:
 
 uninstall-tools:
 	(cd tools; make uninstall)
-
-## HPS SVT DAQ library
-svtdaqlib:
-	(cd svtDaqLib; make)
-svtdaqlib-clean:
-	(cd svtDaqLib; make clean)
 
 ## Test Builds
 test: test-all

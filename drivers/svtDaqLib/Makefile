@@ -34,8 +34,10 @@ $(LIB_TARGET):	$(OBJS)
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -c $*.c
 
 clean:
-	@rm *.o 
-	@rm *.so
+	@rm -f *.o 
+	@rm -f *.so
 
+install: all
+rebuild: clean install
 
-
+.PHONY: distclean realclean

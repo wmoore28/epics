@@ -28,13 +28,10 @@ elsif ( @ARGV > 2 )
 $det2save = $ARGV[0] ;
 $det2save =~ tr/a-z/A-Z/ ;
 $grp2save = $ARGV[1] ;
-#$grp2save =~ tr/a-z/A-Z/ ;
 
-
-
-$SnapDir = "/home/epics/burt/HV/" ;
-
-#@DetectorNames = ( "EC",  "CC", "SC", "BM", "TA" );
+# Detector name will be capitalized and added to the path
+# (ex. ecal -> /usr/clas12/hps/DATA/ECAL/)
+$SnapDir = "/usr/clas12/hps/DATA/";
 
 $det_dir = $SnapDir.$det2save ;
 

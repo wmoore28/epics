@@ -1,0 +1,43 @@
+file "$(EPICS_SUPPORT)/motorR6-7/db/basic_asyn_motor.db"
+{
+pattern
+{P,          N,   M,         DTYP,     PORT, ADDR,     DESC,      EGU,    DIR,   VELO,  VBAS, ACCL, BDST, BVEL, BACC,  MRES,  PREC,   DHLM,  DLLM, INIT}
+{halldxps1:, 1, "m$(N)", "asynMotor",  XPS1,  0,      "Mult1.P1",   unit,   Pos,   2000.0,  1.,  20.,   0,    1,   .2,     1.,    2,    300000,  -300000, ""}
+}
+
+
+file "$(EPICS_SUPPORT)/motorR6-7/db/XPS_extra.db"
+{
+pattern
+{P,          R,  PORT,  ADDR}
+{halldxps1:,  m1, XPS1,   0}
+
+}
+
+file "$(EPICS_SUPPORT)/motorR6-7/db/profileMoveController.template"
+{
+pattern
+{P,	     R,      PORT,  NAXES, NPOINTS, NPULSES, TIMEOUT}
+{halldxps1:,  Prof1:, XPS1,    1,    5,    2000,	 10}
+}
+
+file "$(EPICS_SUPPORT)/motorR6-7/db/profileMoveControllerXPS.template"
+{
+pattern
+{P,	     R,      PORT, NAXES, NPOINTS, NPULSES, TIMEOUT}
+{halldxps1:,  Prof1:, XPS1,    1,    5,    2000,	 10}
+}
+
+file "$(EPICS_SUPPORT)/motorR6-7/db/profileMoveAxis.template"
+{
+pattern
+{P,	     R,      M,  PORT, ADDR, NPOINTS, NREADBACK,  MOTOR,       PREC, TIMEOUT}
+{halldxps1:,  Prof1:, 1,  XPS1,    0,  5,      2000,   halldxps1:m1,   2,	10}
+}
+
+file "$(EPICS_SUPPORT)/motorR6-7/db/profileMoveAxisXPS.template"
+{
+pattern
+{P,	     R,      M,  PORT, ADDR, NPOINTS, NREADBACK, PREC, TIMEOUT}
+{halldxps1:,  Prof1:, 1,  XPS1,    0,  5,	2000,	 2,	   10}
+}

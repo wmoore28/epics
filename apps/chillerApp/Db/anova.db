@@ -23,47 +23,47 @@ record(asyn, "$(P)$(R)ASYN") {
 #######################################
 
 record(stringin, "$(P)$(R)VERSION") {
-	field(DTYP, "stream")
-	field(INP, "@anova.proto getVersion $(PORT)")
-	field(VAL, "")
-	field(PINI, "1")
+    field(DTYP, "stream")
+    field(INP, "@anova.proto getVersion $(PORT)")
+    field(VAL, "")
+    field(PINI, "1")
 }
 
 record(stringin, "$(P)$(R)STATUS") {
-	field(DTYP, "stream")
-	field(INP, "@anova.proto getStatus $(PORT)")
-	field(VAL, "")
-	field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(INP, "@anova.proto getStatus $(PORT)")
+    field(VAL, "")
+    field(SCAN, "1 second")
 }
 
 record(bo, "$(P)$(R)DEFAULT") {
-        field(DTYP, "stream")
-        field(OUT, "@anova.proto setDefault $(PORT)")
+    field(DTYP, "stream")
+    field(OUT, "@anova.proto setDefault $(PORT)")
 }
 
 record(ai, "$(P)$(R)TEMP") {
-	field(DTYP, "stream")
-	field(INP,  "@anova.proto getBathTemp $(PORT)")
-	field(PREC, "2")
-	field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(INP,  "@anova.proto getBathTemp $(PORT)")
+    field(PREC, "2")
+    field(SCAN, "1 second")
 }
 
 ########################################
 # Control Commands
 ########################################
 record(bo, "$(P)$(R)START") {
-	field(DTYP, "stream")
-	field(OUT, "@anova.proto start $(PORT)")
+    field(DTYP, "stream")
+    field(OUT, "@anova.proto start $(PORT)")
 }
 
 record(bo, "$(P)$(R)STOP") {
-        field(DTYP, "stream")
-        field(OUT, "@anova.proto stop $(PORT)")
+    field(DTYP, "stream")
+    field(OUT, "@anova.proto stop $(PORT)")
 }
 
 record(bo, "$(P)$(R)CLEAR") {
-        field(DTYP, "stream")
-        field(OUT, "@anova.proto clear $(PORT)")
+    field(DTYP, "stream")
+    field(OUT, "@anova.proto clear $(PORT)")
 }
 
 #######################################
@@ -83,37 +83,37 @@ record(ao, "$(P)$(R)TEMP:SP") {
 }
 
 record(ai, "$(P)$(R)HIGHLIMIT") {
-        field(DTYP, "stream")
-        field(INP, "@anova.proto getHighLimit $(PORT)")
-        field(PREC, "2")
-        field(SCAN, "10 second")
+    field(DTYP, "stream")
+    field(INP, "@anova.proto getHighLimit $(PORT)")
+    field(PREC, "2")
+    field(SCAN, "10 second")
 }
 
 record(ao, "$(P)$(R)HIGHLIMIT:SP") {
-        field(DTYP, "stream")
-        field(OUT, "@anova.proto setHighLimit $(PORT)")
-        field(PREC, "2")
+    field(DTYP, "stream")
+    field(OUT, "@anova.proto setHighLimit $(PORT)")
+    field(PREC, "2")
 	field(FLNK, "$(P)$(R)HIGHLIMIT.PROC")
 }
 
 record(ai, "$(P)$(R)LOWLIMIT") {
-        field(DTYP, "stream")
-        field(INP, "@anova.proto getLowLimit $(PORT)")
-        field(PREC, "2")
-        field(SCAN, "10 second")
+    field(DTYP, "stream")
+    field(INP, "@anova.proto getLowLimit $(PORT)")
+    field(PREC, "2")
+    field(SCAN, "10 second")
 }
 
 record(ao, "$(P)$(R)LOWLIMIT:SP") {
-        field(DTYP, "stream")
-        field(OUT, "@anova.proto setLowLimit $(PORT)")
-        field(PREC, "2")
+    field(DTYP, "stream")
+    field(OUT, "@anova.proto setLowLimit $(PORT)")
+    field(PREC, "2")
 	field(FLNK, "$(P)$(R)LOWLIMIT.PROC")
 }
 
 record(mbbo, "$(P)$(R)PUMPSPD_MENU") {
-        field(DTYP, "stream")
-        field(OUT, "@anova.proto setPumpSpd $(PORT)")
-        field(ZRST, "Auto")
+    field(DTYP, "stream")
+    field(OUT, "@anova.proto setPumpSpd $(PORT)")
+    field(ZRST, "Auto")
 	field(ZRVL, "0")
 	field(ONST, "Low")
 	field(ONVL, "1")
@@ -121,14 +121,4 @@ record(mbbo, "$(P)$(R)PUMPSPD_MENU") {
 	field(TWVL, "2")
 	field(THST, "Hig")
 	field(THVL, "3")
-#	field(FLNK, "$(P)$(R)PUMPSPD:SP.PROC")
 } 
-
-#record(scalcout, "$(P)$(R)PUMPSPD:SP") {
-#	field(DTYP, "stream")
-#	field(OUT,  "@anova.proto setPumpSpd $(PORT)")
-#	field(INPA, "$(P)$(R)PUMPSPD_MENU")
-#	field(AA,   "Hig")
-#	field(CALC, "A<2?A:AA")
-#}
-

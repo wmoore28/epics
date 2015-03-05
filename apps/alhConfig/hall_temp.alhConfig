@@ -1,0 +1,34 @@
+GROUP    NULL                         HALL_TEMP                   
+CHANNEL  HALL_TEMP                    hallb_l1_temp               
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_l1_temp" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  9999 600
+$GUIDANCE
+           The temperature in the hall is above 73F (level 1).  
+           Check the temperature trend via the timelines
+           at http://clasweb.jlab.org/cgi-bin/epics_history/epics.pl.  If the trend shows a rapid increase
+           in temperature take the following actions,  stop the run, ramp the mini-torus down to 0,
+           page the engineering on call pager.  You may need to go into the hall to shut off
+           power supplies.....
+$END
+CHANNEL  HALL_TEMP                    hallb_l2_temp               
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_l2_temp" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  9999 600
+$GUIDANCE
+           The temperature in the hall is above 75F (level 2).  
+           Check the temperature trend via the timelines
+           at http://clasweb.jlab.org/cgi-bin/epics_history/epics.pl.  If the trend shows a rapid increase
+           in temperature take the following actions,  stop the run, ramp the mini-torus down to 0,
+           page the engineering on call pager.  You may need to go into the hall to shut off
+           power supplies.....
+$END
+CHANNEL  HALL_TEMP                    hallb_l3_temp               
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_l3_temp" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  9999 600
+$GUIDANCE
+           The temperature in the hall is above 75F (level 3).  
+           Check the temperature trend via the timelines
+           at http://clasweb.jlab.org/cgi-bin/epics_history/epics.pl.  If the trend shows a rapid increase
+           in temperature take the following actions,  stop the run, ramp the mini-torus down to 0,
+           page the engineering on call pager.  You may need to go into the hall to shut off
+           power supplies.....
+$END

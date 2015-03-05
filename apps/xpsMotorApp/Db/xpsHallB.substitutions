@@ -1,0 +1,21 @@
+file "$(MOTOR)/db/basic_asyn_motor.db"
+{
+pattern
+{P,        N,   M,         DTYP,     PORT,    ADDR,     DESC,       EGU,    DIR,   VELO,  VBAS, ACCL, BDST, BVEL, BACC,    MRES,      	PREC,   DHLM,  DLLM, INIT}
+{HPS-XPS:, 1, "m$(N)", "asynMotor",  HPS-XPS,  0,    "SVT_TOP"	  ,   mm,    Pos,   0.5 ,   0.,  1.0,   0,   0.5,   1.0, 0.0126582278481,  4,   18.1,    0.0,   ""}
+{HPS-XPS:, 2, "m$(N)", "asynMotor",  HPS-XPS,  1,    "SVT_BOT"	  ,   mm,    Pos,   0.5 ,   0.,  1.0,   0,   0.5,   1.0, 0.0126582278481,  4,   18.2,    0.0,   ""}
+{HPS-XPS:, 3, "m$(N)", "asynMotor",  HPS-XPS,  2,    "HPS_TARGET" ,   mm,    Pos,   1.0 ,   0.,  1.0,   0,   1.0,   1.0, 0.0126582278481,  4,   40.0,    0.0,   ""}
+}
+
+
+file "$(MOTOR)/db/XPS_extra.db"
+{
+pattern
+{P,         R,  PORT,		ADDR}
+{HPS-XPS:,  m1, HPS-XPS,	0}
+{HPS-XPS:,  m2, HPS-XPS,	1}
+{HPS-XPS:,  m3, HPS-XPS,	2}
+}
+
+
+
