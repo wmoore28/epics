@@ -12,7 +12,10 @@ include $(TOP)/configure/CONFIG
 # Create and install (or just install)
 # databases, templates, substitutions like this
 
-DB += svtIntlk.db 
+DB  += svtIntlk.template
+DB  += svtIntlk.substitutions
+
+REQ += svtIntlk.req svtIntlk_settings.req
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
