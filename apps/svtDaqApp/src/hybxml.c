@@ -87,7 +87,9 @@ double getHybIValue(xmlDocPtr doc, const char* type, int index, int hyb) {
 
 xmlXPathObjectPtr getHybTs(xmlDocPtr doc, const char* type, int hyb) {
    char tmp[256];
-   sprintf(tmp,"/system/status/ControlDpm/FebFpga/FebCore/PowerMonitor/Hybrid%d_%s",hyb,type);
+   //sprintf(tmp,"/system/status/ControlDpm/FebFpga/FebCore/PowerMonitor/Hybrid%d_%s",hyb,type);
+   sprintf(tmp,"/system/status/ControlDpm/FebFpga/FebCore/SoftPowerMonitor/Hybrid%d_%s",hyb,type);
+
    if(DEBUG>2) printf("[ getHybTs ] : xpath \"%s\"\n",tmp);
    return getnodeset(doc, (xmlChar*) tmp);
 }

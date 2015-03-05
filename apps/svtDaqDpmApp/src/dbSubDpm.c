@@ -75,7 +75,7 @@ static long subPollProcess(subRecord *precord) {
     if (mySubDebug>-1)
       printf("[ subPollProcess ]: get the xml doc\n");
     
-    getDpmXmlDoc(socketFD, idpm, &xmldoc);
+    getDpmXmlDoc(socketFD, idpm, &xmldoc, str1);
     
     
     if (mySubDebug>-1)
@@ -199,6 +199,54 @@ static long subDpmEventCountProcess(subRecord *precord) {
 }
 
 
+static long subDpmTrigCountInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subTrigCountInit ]: %d Record %s called subDpmTrigCountInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subDpmTrigCountProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDpmTrigCountProcess ]: %d Record %s called subDpmTrigCountProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int val = -1;
+
+  val = getTrigCountProcess(precord->name, xmldoc);
+
+  precord->val = val;
+
+  
+  return 0;
+}
+
+
+static long subDtmTrigCountInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subTrigCountInit ]: %d Record %s called subDtmTrigCountInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subDtmTrigCountProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDtmTrigCountProcess ]: %d Record %s called subDtmTrigCountProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int val = -1;
+
+  val = getDtmTrigCountProcess(precord->name, xmldoc);
+
+  precord->val = val;
+
+  
+  return 0;
+}
+
+
 
 
 /* Register these symbols for use by IOC code: */
@@ -214,3 +262,7 @@ epicsRegisterFunction(subDpmLinkInit);
 epicsRegisterFunction(subDpmLinkProcess);
 epicsRegisterFunction(subDpmEventCountInit);
 epicsRegisterFunction(subDpmEventCountProcess);
+epicsRegisterFunction(subDpmTrigCountInit);
+epicsRegisterFunction(subDpmTrigCountProcess);
+epicsRegisterFunction(subDtmTrigCountInit);
+epicsRegisterFunction(subDtmTrigCountProcess);

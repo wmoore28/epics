@@ -31,13 +31,17 @@ int getLinkProcess(char* pname, xmlDoc* doc);
 
 int getEventCountProcess(char* pname, xmlDoc* doc);
 
+int getTrigCountProcess(char* pname, xmlDoc* doc);
+
+int getDtmTrigCountProcess(char* pname, xmlDoc* doc);
+
 void getSyncProcess(char* pname, xmlDoc* doc, char* value);
 
 int findSystemStr(char* buf, const int MAX, char** start);
 
 void pollDpmXmlString(int socketfd, char** xml_string_out, int* len_out);
 
-void getDpmXmlDoc(int sockfd, int dpm, xmlDoc** dpm_doc_ptrptr);
+void getDpmXmlDoc(int sockfd, int dpm, xmlDoc** dpm_doc_ptrptr, char* nodeTypeStr);
 
 void flushSocket(int socketfd);
 

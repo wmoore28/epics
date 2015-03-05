@@ -43,6 +43,10 @@ def buildEpics():
     printRecords(recs,"dbDataDpmLink")
     recs = utils.buildDpmEventCount()
     printRecords(recs,"dbDataDpmEventCount")
+    recs = utils.buildDpmTrigCount()
+    printRecords(recs,"dbDataDpmTrigCount")
+    recs = utils.buildDtmTrigCount()
+    printRecords(recs,"dbDataDtmTrigCount")
     
 
 

@@ -972,11 +972,11 @@ double getHybridT(int index, int hyb, const char* type) {
    double val = 0.0;
    if(getXmlDocStatus()==0) {
       if(strcmp(type,"temp0")==0) 
-         val = getHybTValue(doc, "ZTemp0", index, hyb);
+         val = getHybTValue(doc, "ZTemp", index, hyb);
       else if(strcmp(type,"temp1")==0) 
-         val = getHybTValue(doc, "ZTemp1", index, hyb);
+         val = getHybTValue(doc, "ZTemp", index, hyb);
       else {
-         printf("[ getHybridT ]: [ ERROR ]: the typee %s is invalid\n",type);
+         printf("[ getHybridT ]: [ ERROR ]: the type %s is invalid\n",type);
       }     
    } else {
       if(DEBUG>1) printf("[ getHybridT ]: [ WARNING ]: the xml doc status is invalid\n");

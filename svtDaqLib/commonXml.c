@@ -374,6 +374,124 @@ int getEventCountProcess(char* pname, xmlDoc* doc) {
 
 
 
+int getTrigCountProcess(char* pname, xmlDoc* doc) {
+  int val;
+  int idpm;
+  char str1[256];
+  char str2[256];
+  char action[256];
+  char tmp[256];
+  xmlXPathObjectPtr result;
+  xmlNodePtr node;
+  val = -1;
+  idpm = -1;
+  getStringFromEpicsName(pname,str1,1);
+  getStringFromEpicsName(pname,str2,2);
+
+  if(strcmp(str1,"daq")==0 && strcmp(str2,"dpm")==0) {     
+    idpm = getIntFromEpicsName(pname,3);  
+    
+    getStringFromEpicsName(pname,action,4);    
+    
+    if(strcmp(action,"trigcount_sub")==0) {
+      strcpy(tmp,"/system/status/DataDpm/TrigCount");
+    } else {
+      strcpy(tmp,""); 
+    }
+    
+    if(strcmp(tmp,"")!=0) {
+      if(DEBUG>2) printf("[ getTrigCountProcess ] : xpath \"%s\"\n",tmp);
+      result =  getnodeset(doc, (xmlChar*) tmp);
+      if(result!=NULL) {
+        if(DEBUG>0) printf("[ getTrigCountProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
+        if(result->nodesetval->nodeNr==1) {
+          node = result->nodesetval->nodeTab[0];
+          if(node!=NULL) {
+             val = getIntValue(doc, node);
+            if(DEBUG>0) printf("[ getTrigCountProcess ]: got val %d.\n",val);      
+          } else {
+            printf("[ getTrigCountProcess ] : [ WARNING ] no Link nodes found\n");
+          }
+        } else {
+          printf("[ getTrigCountProcess ] : [ WARNING ] %d Link nodes found, should be exactly 1\n", result->nodesetval->nodeNr);
+        }
+      } else {
+        printf("[ getTrigCountProcess ] : [ WARNING ] no results found\n");
+      }  
+      
+      
+    } else {
+      printf("[ getTrigCountProcess ]: [ ERROR ]: wrong action \"%s\"!\n",action);
+    }     
+  } else {
+    printf("[ getTrigCountProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);    
+  }
+  return val;
+}
+
+
+int getDtmTrigCountProcess(char* pname, xmlDoc* doc) {
+  int val;
+  int idpm;
+  char str1[256];
+  char str2[256];
+  char action[256];
+  char tmp[256];
+  xmlXPathObjectPtr result;
+  xmlNodePtr node;
+  val = -1;
+  idpm = -1;
+  getStringFromEpicsName(pname,str1,1);
+  getStringFromEpicsName(pname,str2,2);
+
+  if(strcmp(str1,"daq")==0 && strcmp(str2,"dtm")==0) {     
+    idpm = getIntFromEpicsName(pname,3);  
+    
+    getStringFromEpicsName(pname,action,4);    
+    
+    if(strcmp(action,"trigcount_sub")==0) {
+      strcpy(tmp,"/system/status/TiDtm/Trig1Count");
+    } else {
+      strcpy(tmp,""); 
+    }
+    
+    if(strcmp(tmp,"")!=0) {
+       //if(DEBUG>2) 
+         printf("[ getDtmTrigCountProcess ] : xpath \"%s\"\n",tmp);
+      result =  getnodeset(doc, (xmlChar*) tmp);
+      if(result!=NULL) {
+         //if(DEBUG>0) 
+           printf("[ getDtmTrigCountProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
+        if(result->nodesetval->nodeNr==1) {
+          node = result->nodesetval->nodeTab[0];
+          if(node!=NULL) {
+             val = getIntValue(doc, node);
+             //if(DEBUG>0) 
+               printf("[ getDtmTrigCountProcess ]: got val %d.\n",val);      
+          } else {
+            printf("[ getDtmTrigCountProcess ] : [ WARNING ] no Link nodes found\n");
+          }
+        } else {
+          printf("[ getDtmTrigCountProcess ] : [ WARNING ] %d Link nodes found, should be exactly 1\n", result->nodesetval->nodeNr);
+        }
+      } else {
+        printf("[ getDtmTrigCountProcess ] : [ WARNING ] no results found\n");
+      }  
+      
+      
+    } else {
+      printf("[ getDtmTrigCountProcess ]: [ ERROR ]: wrong action \"%s\"!\n",action);
+    }     
+  } else {
+    printf("[ getDtmTrigCountProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);    
+  }
+  return val;
+}
+
+
+
+
+
 
 
 
@@ -745,9 +863,9 @@ void pollDpmXmlString(int socketfd, char** xml_string_out, int* len_out) {
 
 
 
-void getDpmXmlDoc(int sockfd, int dpm, xmlDoc** dpm_doc_ptrptr) {
+void getDpmXmlDoc(int sockfd, int dpm, xmlDoc** dpm_doc_ptrptr, char* nodeTypeStr) {
 
-  if(DEBUG>0) printf("[ getDpmXmlDoc ]: from socket %d for dpm %d at %p\n",sockfd,dpm,*dpm_doc_ptrptr);
+   if(DEBUG>0) printf("[ getDpmXmlDoc ]: from socket %d for %s %d at %p\n",sockfd,nodeTypeStr,dpm,*dpm_doc_ptrptr);
 
   if(*dpm_doc_ptrptr!=NULL) {
     if(DEBUG>-1) printf("[ getDpmXmlDoc ]: [ ERROR ]: xml doc is not null!\n");
@@ -792,7 +910,7 @@ void getDpmXmlDoc(int sockfd, int dpm, xmlDoc** dpm_doc_ptrptr) {
 	     printf("[ getDpmXmlDoc ]: print xml to file\n");
           }
           char tmpxmldocname[40];
-          sprintf(tmpxmldocname,"dpm%d.xml",dpm);
+          sprintf(tmpxmldocname,"%s%d.xml",nodeTypeStr,dpm);
           int bytes_written = xmlSaveFormatFile(tmpxmldocname,(*dpm_doc_ptrptr),1);
           if(DEBUG>2) {
             printf("[ getDpmXmlDoc ]: printed %d bytes of xml to file\n",bytes_written);

@@ -1049,13 +1049,63 @@ def buildDpmEventCount():
 record(sub,SVT:daq:dpm:$(DPM):eventcount_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subDpmEventCountLinkInit")
-    field(SNAM,"subDpmEventCountLinkProcess")
+    field(INAM,"subDpmEventCountInit")
+    field(SNAM,"subDpmEventCountProcess")
 }
 
 record(longin, SVT:daq:dpm:$(DPM):eventcount) {
   field(SCAN, "1 second") 
   field(INP, "SVT:daq:dpm:$(DPM):eventcount_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+"""	
+    records.append(s)
+    return records
+
+
+
+def buildDpmTrigCount():
+
+    records = []
+    s = """
+
+record(sub,SVT:daq:dpm:$(DPM):trigcount_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDpmTrigCountInit")
+    field(SNAM,"subDpmTrigCountProcess")
+}
+
+record(longin, SVT:daq:dpm:$(DPM):trigcount) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dpm:$(DPM):trigcount_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+"""	
+    records.append(s)
+    return records
+
+def buildDtmTrigCount():
+
+    records = []
+    s = """
+
+record(sub,SVT:daq:dtm:$(DPM):trigcount_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDtmTrigCountInit")
+    field(SNAM,"subDtmTrigCountProcess")
+}
+
+record(longin, SVT:daq:dtm:$(DPM):trigcount) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dtm:$(DPM):trigcount_sub PP")
   field(DTYP,"Soft Channel")
 }
 

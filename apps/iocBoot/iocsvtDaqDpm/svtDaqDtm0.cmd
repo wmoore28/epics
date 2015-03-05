@@ -19,6 +19,7 @@ dbLoadRecords("db/iocAdminSoft.db", "IOC=iocsvtDaqDtm0")
 ## Load record instances
 #dbLoadRecords("db/xxx.db","user=trackerHost")
 dbLoadRecords("db/dbDataDtm.db","DTM=0")
+dbLoadRecords("db/dbDataDtmTrigCount.db","DPM=0")
 
 var mySubDebug 1
 

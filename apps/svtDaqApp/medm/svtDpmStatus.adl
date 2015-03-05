@@ -5,9 +5,9 @@ file {
 }
 display {
 	object {
-		x=830
-		y=223
-		width=495
+		x=771
+		y=221
+		width=600
 		height=499
 	}
 	clr=14
@@ -362,7 +362,7 @@ text {
 }
 text {
 	object {
-		x=303
+		x=328
 		y=32
 		width=50
 		height=18
@@ -610,281 +610,528 @@ text {
 	limits {
 	}
 }
-composite {
+"text update" {
 	object {
 		x=303
 		y=55
 		width=100
-		height=344
+		height=20
 	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=303
-				y=55
-				width=100
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:0:eventcount"
-				clr=31
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=303
-				y=80
-				width=100
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:1:eventcount"
-				clr=31
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=303
-				y=105
-				width=100
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:2:eventcount"
-				clr=31
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=303
-				y=130
-				width=100
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:3:eventcount"
-				clr=31
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=303
-				y=155
-				width=100
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:4:eventcount"
-				clr=31
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=303
-				y=180
-				width=100
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:5:eventcount"
-				clr=31
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=303
-				y=205
-				width=100
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:6:eventcount"
-				clr=31
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=303
-				y=229
-				width=100
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:7:eventcount"
-				clr=31
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=303
-				y=254
-				width=100
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:8:eventcount"
-				clr=31
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=303
-				y=279
-				width=100
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:9:eventcount"
-				clr=31
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=303
-				y=304
-				width=100
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:10:eventcount"
-				clr=31
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=303
-				y=329
-				width=100
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:11:eventcount"
-				clr=31
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=303
-				y=354
-				width=100
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:12:eventcount"
-				clr=31
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=303
-				y=379
-				width=100
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:13:eventcount"
-				clr=31
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
+	monitor {
+		chan="SVT:daq:dpm:0:eventcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
 	}
 }
-composite {
+"text update" {
+	object {
+		x=303
+		y=80
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:1:eventcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=303
+		y=105
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:2:eventcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=303
+		y=130
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:3:eventcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=303
+		y=155
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:4:eventcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=303
+		y=180
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:5:eventcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=303
+		y=205
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:6:eventcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=303
+		y=229
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:7:eventcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=303
+		y=254
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:8:eventcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=303
+		y=279
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:9:eventcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=303
+		y=304
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:10:eventcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=303
+		y=329
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:11:eventcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=303
+		y=354
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:12:eventcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=303
+		y=379
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:13:eventcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=90
+		y=463
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dtm:1:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
 	object {
 		x=90
 		y=438
 		width=100
-		height=45
+		height=20
 	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=90
-				y=463
-				width=100
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dtm:1:state"
-				clr=31
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=90
-				y=438
-				width=100
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dtm:0:state"
-				clr=31
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
+	monitor {
+		chan="SVT:daq:dtm:0:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=445
+		y=32
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="Trig Count"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=420
+		y=55
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:0:trigcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=80
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:1:trigcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=105
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:2:trigcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=130
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:3:trigcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=155
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:4:trigcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=180
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:5:trigcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=205
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:6:trigcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=229
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:7:trigcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=254
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:8:trigcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=279
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:9:trigcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=304
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:10:trigcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=329
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:11:trigcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=354
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:12:trigcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=379
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:13:trigcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=419
+		y=432
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dtm:0:trigcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=419
+		y=457
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dtm:1:trigcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
 	}
 }
