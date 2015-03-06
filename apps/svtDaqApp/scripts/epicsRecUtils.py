@@ -9,12 +9,12 @@ class FEB:
 
             
 febs= [
-    FEB(2,[0,1],"0x14084072beb01c00","L1t"),
+    FEB(2,[0,1],    "0x14084072beb01c00","L1t"),
     FEB(0,[0,1,2,3],"0x42084072beb01400","L2-3t"),
     FEB(5,[0,1,2,3],"0x58d0472beb01400","L4t"),
     FEB(8,[0,1,2,3],"0x52814100a1b01c00","L5t"),
     FEB(7,[0,1,2,3],"0x50814100a1b01c00","L6t"),
-    FEB(9,[0,1],"0x24d04072beb01c00","L1b"),
+    FEB(9,[0,1],    "0x24d04072beb01c00","L1b"),
     FEB(6,[0,1,2,3],"0x02d04072beb01c00","L2-3b"),
     FEB(1,[0,1,2,3],"0x72814100a1b01c00","L4b"),
     FEB(4,[0,1,2,3],"0x1c084072beb01400","L5b"),
@@ -892,6 +892,80 @@ record(stringin, SVT:daq:dpm:LAYER:state) {
         rec = rec.replace("LAYER",str(dpm))
         records.append(rec)
     return records
+
+
+def buildDpmStatus():
+	
+    s = """
+record(aSub,SVT:daq:dpm:$(DPM):status_asub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subDpmStatusInit")
+    field(SNAM,"subDpmStatusProcess")
+    field(OUTA,"SVT:daq:dpm:$(DPM):status PP")
+    field(FTVA,"STRING")
+    field(OUTB,"SVT:daq:dpm:$(DPM):hb_check PP")
+    field(FTVB,"LONG")
+    field(OUTC,"SVT:daq:dpm:$(DPM):socketstatus PP")
+    field(FTVC,"STRING")
+    #field(FLNK,"FLNKNEXTLAYER")
+}
+
+record(stringin, SVT:daq:dpm:$(DPM):status) {
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:dpm:$(DPM):socketstatus) {
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+record(longin, SVT:daq:dpm:$(DPM):hb_check) {
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+
+"""	
+    return s
+
+
+def buildDtmStatus():
+	
+    s = """
+record(aSub,SVT:daq:dtm:$(DTM):status_asub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subDpmStatusInit")
+    field(SNAM,"subDpmStatusProcess")
+    field(OUTA,"SVT:daq:dtm:$(DTM):status PP")
+    field(FTVA,"STRING")
+    field(OUTB,"SVT:daq:dtm:$(DTM):hb_check PP")
+    field(FTVB,"LONG")
+    field(OUTC,"SVT:daq:dtm:$(DTM):socketstatus PP")
+    field(FTVC,"STRING")
+    #field(FLNK,"FLNKNEXTLAYER")
+}
+
+record(stringin, SVT:daq:dtm:$(DTM):status) {
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:dtm:$(DTM):socketstatus) {
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+record(longin, SVT:daq:dtm:$(DTM):hb_check) {
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+
+"""	
+    return s
 
 
 

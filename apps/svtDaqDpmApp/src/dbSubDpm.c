@@ -14,6 +14,7 @@ int process_order = 0;
 int socketFD = -1;
 char host[256];
 xmlDoc* xmldoc = NULL;
+char socketPollStatusStr[256];
 
 static long subPollInit(subRecord *precord) {
   process_order++;
@@ -29,7 +30,8 @@ static long subPollProcess(subRecord *precord) {
   process_order++;
   if (mySubDebug>-1)
     printf("[ subPollProcess ]: %d Record %s called subPollProcess(%p)\n",process_order, precord->name, (void*) precord);
-  
+
+  strcpy(socketPollStatusStr,"undefined");
 
   // find dpm nr
   int idpm;
@@ -71,6 +73,8 @@ static long subPollProcess(subRecord *precord) {
   if(socketFD>0) {
     printf("[ subPollProcess ]: successfully opened socket at %d\n", socketFD);
 
+    strcpy(socketPollStatusStr,"socket opened");
+
 
     if (mySubDebug>-1)
       printf("[ subPollProcess ]: get the xml doc\n");
@@ -83,6 +87,9 @@ static long subPollProcess(subRecord *precord) {
         
   } else {
     printf("[ subPollProcess ]: [ WARNING ]: failed to open socket\n");
+
+    strcpy(socketPollStatusStr,"couldnt open socket");
+
   }
 
 
@@ -125,6 +132,53 @@ static long subDpmStateProcess(aSubRecord *precord) {
   
   return 0;
 }
+
+
+static long subDpmStatusInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDpmStatusInit ]: %d Record %s called subDpmStatusInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+/*
+  strcpy(precord->vala,"init...");
+  precord->valb = 99;
+  strcpy(precord->vala,"init...");
+*/
+  return 0;
+}
+
+static long subDpmStatusProcess(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDpmStatusProcess ]: %d Record %s called subDpmStatusProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+
+
+
+
+  int heart_beat;
+  char status[256];
+  long *b;
+  heart_beat = 99;
+  strcpy(precord->vala, "no valid status");
+  b = (long*) precord->valb;
+  *b = (long) heart_beat;
+
+  if(strlen(socketPollStatusStr)>0) {
+     strcpy(precord->valc, socketPollStatusStr);
+  } else {
+     strcpy(precord->valc, "whatta f");
+  }
+  
+  getDpmStatusProcess(precord->name, xmldoc, status, &heart_beat);
+
+  strcpy(precord->vala, status);
+  *b = (long) heart_beat;
+
+
+  return 0;
+}
+
 
 
 
@@ -256,6 +310,8 @@ epicsRegisterFunction(subPollInit);
 epicsRegisterFunction(subPollProcess);
 epicsRegisterFunction(subDpmStateInit);
 epicsRegisterFunction(subDpmStateProcess);
+epicsRegisterFunction(subDpmStatusInit);
+epicsRegisterFunction(subDpmStatusProcess);
 epicsRegisterFunction(subDpmFebNumInit);
 epicsRegisterFunction(subDpmFebNumProcess);
 epicsRegisterFunction(subDpmLinkInit);

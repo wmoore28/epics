@@ -23,6 +23,8 @@ int getIntFromEpicsName(char name[], int idx);
 
 void getRunStateProcess(char* pname, xmlDoc* doc, char* state);
 
+void getDpmStatusProcess(char* pname, xmlDoc* doc, char* status, int* heart_beat);
+
 void getRunState(int idpm, xmlDoc* doc, char* state);
 
 int getFebNumProcess(char* pname, xmlDoc* doc);

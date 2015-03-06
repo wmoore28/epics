@@ -13,8 +13,9 @@ for fn in os.listdir("."):
                 dpm = fn.split("Dtm")[1].split(".")[0] 
             for l in f.readlines():
                 #l = l.replace("XXXX",dpm)
-                if "db/dbDataDpm.db\"," in l:
-                    fnew.write("dbLoadRecords(\"db/dbDataDpmTrigCount.db\",\"DPM="+str(dpm)+"\")\n")
+                if "db/dbDataDpmEventCount.db\"," in l:
+                    fnew.write("dbLoadRecords(\"db/dbDataDpmStatus.db\",\"DPM="+str(dpm)+"\")\n")
+#                    fnew.write("dbLoadRecords(\"db/dbDataDpmTrigCount.db\",\"DPM="+str(dpm)+"\")\n")
                     #fnew.write("dbLoadRecords(\"db/dbDataDpmEventCount.db\",\"DPM="+str(dpm)+"\")\n")
                 #\n\n## Load record instances\ndbLoadRecords(\"db/iocAdminSoft.db\", \"IOC=iocsvtDaqDpmXXXX\")\n\n")
                 #    fnew.write("\n\n## Load record instances\ndbLoadRecords(\"db/iocAdminSoft.db\", \"IOC=iocsvtDaqDpmXXXX\")\n\n")

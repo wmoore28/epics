@@ -34,6 +34,8 @@ DB += dbDataDtm.db
 DB += dbFebLayer.db
 DB += dbHybSync.db
 DB += dbHybSyncBase.db
+DB += dbDataDpmStatus.db
+DB += dbDataDtmStatus.db
 #DB += dbSVTtest.db
 
 #----------------------------------------------------
