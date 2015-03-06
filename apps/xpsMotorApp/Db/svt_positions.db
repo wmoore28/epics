@@ -2,6 +2,63 @@
 
 
 
+record(ao,"$(pref)hps:svt_top:motionCondit"){
+  field(DTYP,"Soft Channel")
+  field(VAL,"0.1")
+  field(SCAN, "Passive")
+}
+record(ao,"$(pref)hps:svt_top:home"){
+  field(DTYP,"Soft Channel")
+  field(VAL,"0.")
+  field(PINI, "YES") 
+  field(SCAN, "Passive")
+  field(PREC, "3")
+}
+record(ao,"$(pref)hps:svt_top:home:proc"){
+  field(DTYP,"Soft Channel")
+  field(DOL,"$(pref)hps:svt_top:home")
+  field(OMSL,"closed_loop")
+  field(OUT,"$(pref)hps:svt_top:motor.VAL PP NMS")
+  field(SCAN, "Passive")
+}
+record(calc, "$(pref)hps:svt_top_at_home") {
+  field(INPA, "$(pref)hps:svt_top:motor.RBV")
+  field(INPB, "$(pref)hps:svt_top:home")
+  field(INPC, "$(pref)hps:svt_top:motor.DMOV")
+  field(INPE, "$(pref)hps:svt_top:motionCondit")
+  field(SCAN, ".2 second")
+  field(CALC, "(ABS(A-B)<E)&&(C=1)?1:0")
+}
+
+record(ao,"$(pref)hps:svt_bot:motionCondit"){
+  field(DTYP,"Soft Channel")
+  field(VAL,"0.1")
+  field(SCAN, "Passive")
+}
+record(ao,"$(pref)hps:svt_bot:home"){
+  field(DTYP,"Soft Channel")
+  field(VAL,"0.")
+  field(PINI, "YES") 
+  field(SCAN, "Passive")
+  field(PREC, "3")
+}
+record(ao,"$(pref)hps:svt_bot:home:proc"){
+  field(DTYP,"Soft Channel")
+  field(DOL,"$(pref)hps:svt_bot:home")
+  field(OMSL,"closed_loop")
+  field(OUT,"$(pref)hps:svt_bot:motor.VAL PP NMS")
+  field(SCAN, "Passive")
+}
+record(calc, "$(pref)hps:svt_bot_at_home") {
+  field(INPA, "$(pref)hps:svt_bot:motor.RBV")
+  field(INPB, "$(pref)hps:svt_bot:home")
+  field(INPC, "$(pref)hps:svt_bot:motor.DMOV")
+  field(INPE, "$(pref)hps:svt_bot:motionCondit")
+  field(SCAN, ".2 second")
+  field(CALC, "(ABS(A-B)<E)&&(C=1)?1:0")
+}
+
+
 
 
 record(calc, "$(pref)hps:svt:top:si") {
@@ -10,9 +67,8 @@ record(calc, "$(pref)hps:svt:top:si") {
   field(CALC, "A*B+C")
   field(INPA, "$(pref)hps:svt_top:motor.RBV CPP")
   field(INPB, "-0.391")
-  field(INPC, "7.38")
+  field(INPC, "7.542")
   field(SCAN, "Passive")
-  field(CALC, "B*A+C")
   field(PREC, "3")
   field(EGU , "mm" )
 }
@@ -23,11 +79,23 @@ record(calc, "$(pref)hps:svt:top:wire") {
   field(CALC, "A*B+C")
   field(INPA, "$(pref)hps:svt_top:motor.RBV CPP")
   field(INPB, "-0.482")
-  field(INPC, "1.109")
+  field(INPC, "1.305")
   field(SCAN, "Passive")
-  field(CALC, "B*A+C")
   field(PREC, "3")
   field(EGU , "mm" )
+}
+
+
+record(calc, "$(pref)hps:svt:top:angle") {
+  field(DESC, "SVT Top angle")
+  field(PINI, "YES")
+  field(CALC, "(B-A)/C")
+  field(INPA, "$(pref)hps:svt_top:motor.RBV CPP")
+  field(INPB, "18.00")
+  field(INPC, "832.714")
+  field(SCAN, "Passive")
+  field(PREC, "4")
+  field(EGU , "deg" )
 }
 
 
@@ -38,10 +106,9 @@ record(calc, "$(pref)hps:svt:bot:si") {
   field(PINI, "YES")
   field(CALC, "A*B+C")
   field(INPA, "$(pref)hps:svt_bot:motor.RBV CPP")
-  field(INPB, "-0.363")
-  field(INPC, "7.46")
+  field(INPB, "0.363")
+  field(INPC, "-7.048")
   field(SCAN, "Passive")
-  field(CALC, "B*A+C")
   field(PREC, "3")
   field(EGU , "mm" )
 }
@@ -51,15 +118,24 @@ record(calc, "$(pref)hps:svt:bot:wire") {
   field(PINI, "YES")
   field(CALC, "A*B+C")
   field(INPA, "$(pref)hps:svt_bot:motor.RBV CPP")
-  field(INPB, "-0.463")
-  field(INPC, "1.51")
+  field(INPB, "0.463")
+  field(INPC, "-0.982")
   field(SCAN, "Passive")
-  field(CALC, "B*A+C")
   field(PREC, "3")
   field(EGU , "mm" )
 }
 
-
+record(calc, "$(pref)hps:svt:bot:angle") {
+  field(DESC, "SVT Bottom angle")
+  field(PINI, "YES")
+  field(CALC, "(B-A)/C")
+  field(INPA, "$(pref)hps:svt_bot:motor.RBV CPP")
+  field(INPB, "18.04")
+  field(INPC, "832.714")
+  field(SCAN, "Passive")
+  field(PREC, "4")
+  field(EGU , "deg" )
+}
 
 
 record(calcout, "$(pref)hps:svt:top:si_calcout") {
@@ -69,7 +145,7 @@ record(calcout, "$(pref)hps:svt:top:si_calcout") {
   field(CALC, "A*B+C")
   field(INPA, "$(pref)hps:svt:top:si_desired CPP")
   field(INPB, "-2.556")
-  field(INPC, "18.87")
+  field(INPC, "19.278")
   field(OUT, "$(pref)hps:svt_top:motor.VAL PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
@@ -84,8 +160,8 @@ record(calcout, "$(pref)hps:svt:bot:si_calcout") {
   field(PINI, "NO")
   field(CALC, "A*B+C")
   field(INPA, "$(pref)hps:svt:bot:si_desired CPP")
-  field(INPB, "-2.755")
-  field(INPC, "20.56")
+  field(INPB, "2.755")
+  field(INPC, "19.418")
   field(OUT, "$(pref)hps:svt_bot:motor.VAL PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
