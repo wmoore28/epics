@@ -1,6 +1,6 @@
 
 file {
-	name="/home/wmoore/workspaces/svtIntlk/apps/svtIntlkApp/medm/./svtIntlk.adl"
+	name="/usr/clas12/hps/develop/apps/svtIntlkApp/medm/svtIntlk.adl"
 	version=030108
 }
 display {
@@ -1835,7 +1835,7 @@ text {
 		height=20
 	}
 	control {
-		chan="HPS_INTLK:SVT_RTN:sw_scale"
+		chan="HPS_INTLK:SVT_RTN:intlk_scale"
 		clr=14
 		bclr=2
 	}
@@ -1862,7 +1862,7 @@ text {
 		height=20
 	}
 	control {
-		chan="HPS_INTLK:FE_RTN:sw_scale"
+		chan="HPS_INTLK:FE_RTN:intlk_scale"
 		clr=14
 		bclr=2
 	}
