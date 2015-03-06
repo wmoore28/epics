@@ -20,16 +20,26 @@ record(calcout, "$(P)$(R)first_check") {
   field(HSV,  "MAJOR")
 }
 
-record(ai, "$(P)$(R)max") {
-  field(VAL, "$(MAX)")
+# Scale factor for min/max
+record(ai, "$(P)$(R)intlk_scale") {
+  field(VAL, "1")
   field(PREC, "$(PREC)")
-  field(EGU, "$(EGU)")
 }
 
-record(ai, "$(P)$(R)min") {
-  field(VAL, "$(MIN)")
+record(calcout, "$(P)$(R)max") {
+  field(SCAN, "1 second")
   field(PREC, "$(PREC)")
-  field(EGU, "$(EGU)")
+  field(CALC, "A*B")
+  field(INPA, "$(PLC_TAG)-Limit_HIGH")
+  field(INPB, "$(P)$(R)intlk_scale")
+}
+
+record(calcout, "$(P)$(R)min") {
+  field(SCAN, "1 second")
+  field(PREC, "$(PREC)")
+  field(CALC, "A*(2-B)")
+  field(INPA, "$(PLC_TAG)-Limit_LOW")
+  field(INPB, "$(P)$(R)intlk_scale")
 }
 
 # Second check. If this PV is processed
