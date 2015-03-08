@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/develop/apps/svtPlcApp/medm/./svt_plc.adl"
+	name="/usr/clas12/hps/develop/apps/svtPlcApp/medm/svt_plc.adl"
 	version=030108
 }
 display {
@@ -294,6 +294,7 @@ text {
 	}
 	clrmod="alarm"
 	align="horiz. centered"
+	format="exponential"
 	limits {
 	}
 }
@@ -904,7 +905,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Valve Shutdown"
+	textix="Valve Status"
 }
 text {
 	object {
@@ -943,12 +944,13 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:Valve_FE-Shutdown.RVAL"
+		chan="HPS_SVT:PLC:i:Valve_FE-Shutdown"
 		clr=0
 		bclr=11
 	}
 	clrmod="alarm"
 	align="horiz. centered"
+	format="string"
 	limits {
 	}
 }
@@ -989,12 +991,13 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:Valve_SVT-Shutdown.RVAL"
+		chan="HPS_SVT:PLC:i:Valve_SVT-Shutdown"
 		clr=0
 		bclr=11
 	}
 	clrmod="alarm"
 	align="horiz. centered"
+	format="string"
 	limits {
 	}
 }
@@ -1008,21 +1011,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Valve Shutdown"
-}
-"choice button" {
-	object {
-		x=171
-		y=469
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:o:Valve_SVT-Enabled"
-		clr=14
-		bclr=2
-	}
-	stacking="column"
+	textix="Valve Status"
 }
 text {
 	object {
@@ -1733,6 +1722,7 @@ text {
 	}
 	clrmod="alarm"
 	align="horiz. centered"
+	format="exponential"
 	limits {
 	}
 }
@@ -1762,6 +1752,7 @@ text {
 	}
 	clrmod="alarm"
 	align="horiz. centered"
+	format="exponential"
 	limits {
 	}
 }
@@ -1810,20 +1801,6 @@ text {
 "choice button" {
 	object {
 		x=521
-		y=469
-		width=75
-		height=20
-	}
-	control {
-		chan="HPS_SVT:PLC:o:Valve_FE-Enabled"
-		clr=14
-		bclr=2
-	}
-	stacking="column"
-}
-"choice button" {
-	object {
-		x=521
 		y=412
 		width=75
 		height=20
@@ -1847,6 +1824,7 @@ text {
 		clr=14
 		bclr=2
 	}
+	format="exponential"
 	limits {
 	}
 }
@@ -1862,6 +1840,7 @@ text {
 		clr=14
 		bclr=2
 	}
+	format="exponential"
 	limits {
 	}
 }
