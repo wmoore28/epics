@@ -1,6 +1,6 @@
 
 file {
-	name="/home/wmoore/workspaces/develop/apps/myaDataApp/medm/harpScanData.adl"
+	name="/usr/clas12/hps/develop/apps/myaDataApp/medm/wireScanData.adl"
 	version=030108
 }
 display {
@@ -8,7 +8,7 @@ display {
 		x=777
 		y=49
 		width=350
-		height=200
+		height=300
 	}
 	clr=14
 	bclr=4
@@ -270,6 +270,62 @@ text {
 	}
 	monitor {
 		chan="$(P):x_offset"
+		clr=32
+		bclr=11
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=234
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Peak Stereo"
+}
+"text update" {
+	object {
+		x=251
+		y=230
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P):peak_stereo"
+		clr=32
+		bclr=11
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=209
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Peak Horizontal"
+}
+"text update" {
+	object {
+		x=251
+		y=205
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P):peak_horiz"
 		clr=32
 		bclr=11
 	}
