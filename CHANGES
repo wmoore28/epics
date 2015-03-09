@@ -1,3 +1,74 @@
+Version 1.0.0:
+ - Updates to java harp_analyzer - Merge branch 'rafopar-master'
+ - Merge branch 'master' of https://github.com/rafopar/epics into rafopar-master
+ - Merge remote-tracking branch 'origin/develop'
+ - Merged hotfix-v0.3.4/master with develop, preparing for release
+ - xpsMotorApp: Hovanes added saveData.req for sscan records
+ - peak value, and the corresponding setPVs are added
+ - myaDataApp: added several pvs for harp and wire scan data
+ - svtIntlk/svtPlc: minor screen updates
+ - svt_plc.adl: pv name fix (HPS_SVT:PLC:o:RTD_SVT_Supply-Limit_HIGH)
+ - MyaViewer: hack for running Mya on clonpc## (rhel6)
+ - Merge branch 'develop' of https://github.com/wmoore28/epics into develop
+ - svt_plc.adl: updated labels
+ - svt_plc.adl: updated labels
+ - .gitignore: updated for new app
+ - Merge branch 'develop' of https://github.com/wmoore28/epics into develop
+ - svtIntlkApp: switched to use scale factor for plc settings
+ - Merge pull request #28 from hovanes-egiyan/develop
+ - Changed the formulas for the SVT realted positions to the new ones from the Takashi' presentation. Added angle calculations.
+ - Merge branch 'develop' of https://github.com/wmoore28/epics into develop
+ - HPS_EPICS.adl: added svt plc and svt soft interlocks
+ - svtPlcApp: updated adl
+ - added SVT and target motors to the motors GUI
+ - procServ.conf: added iocsvtIntlk
+ - Merge branch 'develop' of https://github.com/wmoore28/epics into develop
+ - svtIntlkApp/ioc: working draft, but needs control channels
+ - Merge branch 'master' of https://github.com/rafopar/epics into develop
+ - caput is added for harps harp_2c21 harp_tagger and harp_2H02A
+ - svtInlkApp: empty dir structure for the new app
+ - linkmaker.sh: modified to write .gitignore for application links
+ - devIocStats/autosave: loaded db's on several new iocs
+ - iocs: updated health screens
+ - procServ.conf: fixed ioc name
+ - iocBoot: .gitigore for generated files
+ - LVMPOD: minor fix in build
+ - Merged lastest from daq-ioc-integration and reorganzied svtDaqLib
+ - Merge branch 'hotfix-v0.3.4' of https://github.com/wmoore28/epics into develop
+ - adding mya spreadhsheet
+ - add new dir for mya doc.
+ - fix some of the scripts
+ - move svtDaq to clonioc4
+ - clear interlock
+ - ioc_hps_health.adl: removed iocsvtDaqDpm14
+ - new application for collecting data from struck scalers at fast speed for wave2root to write into a ROOT file
+ - changed classc8 to have completely new set of applications
+ - ignore compiled python
+ - Adding DPM event count record.
+ - rename
+ - Utility script to handle monitor procServ for the SVT
+ - Utility script to handle procServ for the SVT
+ - Merge branch 'daq-ioc-integration' of https://github.com/wmoore28/epics into daq-ioc-integration
+ - Fix memory leak. Clean up the style a little.
+ - Fix memory leak. Clean up the style a little.
+ - clean up xml document no matter what the socket status is.
+ - add exclude option
+ - change user for start/stop
+ - further integration of ioc boot for svt daq
+ - adding IOC admin to start scripts
+ - added makefile and test line to procServ
+ - adding IOC part of integration
+ - removing obj and lib from git
+ - trailing file
+ - Updates from ppa-pc91245 today
+ - integration commit for svt daq. work in progress.
+ - Merge branch 'hotfix-v0.3.2' of https://github.com/wmoore28/epics
+ - Merge branch 'master' of https://github.com/wmoore28/epics
+ - A legend added that prints beam x and y with respect to the nomincal center coordinates
+ - saveFile.png thing is now removed
+ - bgr?peak ratio was added
+ - error bars are added and scale for harp_2h02A is multiplied by 10
+
 Version 0.3.4:
  - Merge remote-tracking branch 'origin/hotfix-v0.3.4'
  - scalerApp: new bpm screen (stepanya)
