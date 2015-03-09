@@ -77,10 +77,9 @@ public class HarpScanGUIFULL extends JFrame implements ActionListener {
         };
     private HarpGenericAnalyzer  harpAnalyzer = new HarpGenericAnalyzer();
 
-    public HarpScanGUIFULL(String type, double[] limits){        
+    public HarpScanGUIFULL(String type, double[] limits){
         super(type);
-        
-        
+                
         this.setSize(1200, 800);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         splitPane = new JSplitPane();
