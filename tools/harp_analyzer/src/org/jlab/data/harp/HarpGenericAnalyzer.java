@@ -8,6 +8,7 @@ package org.jlab.data.harp;
 
 import java.lang.Math;
 import java.awt.List;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.TreeMap;
 import org.jlab.data.fitter.DataFitter;
@@ -128,7 +129,6 @@ public class HarpGenericAnalyzer {
     
     public String[] getLegend(int index, String harp_name){
         
- 
         int n_wire = harpData.size();
         
         String[] wireName = new String[n_wire];
@@ -138,7 +138,7 @@ public class HarpGenericAnalyzer {
         {
            wireName[0] = "Wire X";
            wireName[1] = "Wire Y";
-           n_leg_entries = 5;               // It was 4 before
+           n_leg_entries = 6;               // It was 4 before
         }
         else if( n_wire == 3 )
         {
@@ -155,7 +155,7 @@ public class HarpGenericAnalyzer {
             wireName[1] = "Wire Y";
             wireName[2] = "Wire 45 deg";
             }
-           n_leg_entries = 6;
+           n_leg_entries = 7;
         }
         
         String[] legend = new String[n_leg_entries];
@@ -174,12 +174,15 @@ public class HarpGenericAnalyzer {
         double pol1 = harpFunc.get(index).parameter(4).value();
         double bgr_val = pol0 + pol1*harpFunc.get(index).parameter(1).value();      // Bgr value at under the peak
         double peak_val = harpFunc.get(index).parameter(0).value();
-        legend[4] = String.format("bgr/peak    %2.3e", bgr_val/peak_val);
+        legend[4] = String.format("peak val.   %2.3e", peak_val);
+        legend[5] = String.format("bgr/peak    %2.3e", bgr_val/peak_val);
                 
         if( n_wire == 3 )
         {
-            legend[5] = String.format("bgr/peak    %2.3e", bgr_val/peak_val);
-            if( harp_name.compareTo("harp_tagger") == 0 )
+            legend[5] = String.format("peak val.   %2.3e", peak_val);
+            legend[6] = String.format("bgr/peak    %2.3e", bgr_val/peak_val);
+ 
+           if( harp_name.compareTo("harp_tagger") == 0 )
             {
                 if(index == 1)
                 {
@@ -187,7 +190,7 @@ public class HarpGenericAnalyzer {
                 }
                 else if(index == 2)
                 {
-                    legend[4] = String.format("Motor pos     %8.5f", harpFunc.get(index).parameter(1).value()*Math.sqrt(2.));
+                 legend[4] = String.format("Motor pos     %8.5f", harpFunc.get(index).parameter(1).value()*Math.sqrt(2.));
                 }
                 else
                 {
@@ -212,6 +215,119 @@ public class HarpGenericAnalyzer {
         }
         return legend;
     }
+    
+    public void setPVs(String harp_name)
+    {
+        try{
+            if( harp_name.compareTo("harp_tagger") == 0 )
+            {
+            double[] tager_mean_ = new double[3];
+            double[] tager_sigm_ = new double[3];
+            double[] tager_pol0_ = new double[3];  
+            double[] tager_pol1_ = new double[3];  
+            double[] tager_bgr_val_ = new double[3];
+            double[] tager_peak_val_ = new double[3];
+            String[] wire_name_ = {"45", "y", "x"};
+            
+            Process p;
+            for( int iwire = 0; iwire < 3; iwire ++ )
+            {
+              tager_mean_[iwire] = harpFunc.get(iwire).parameter(1).value();
+              tager_sigm_[iwire] = harpFunc.get(iwire).parameter(2).value();
+              tager_pol0_[iwire] = harpFunc.get(iwire).parameter(3).value();
+              tager_pol1_[iwire] = harpFunc.get(iwire).parameter(4).value();
+              tager_bgr_val_[iwire] = tager_pol0_[iwire] + tager_pol1_[iwire]*harpFunc.get(iwire).parameter(1).value();
+              tager_peak_val_[iwire] = harpFunc.get(iwire).parameter(0).value();
+              
+              p = Runtime.getRuntime().exec(String.format("caput HB_BEAM:SCAN:tagger:mean_%s %1.5f", wire_name_[iwire], tager_mean_[iwire]));
+              p = Runtime.getRuntime().exec(String.format("caput HB_BEAM:SCAN:tagger:sigma_%s %1.5f", wire_name_[iwire], tager_sigm_[iwire]));
+              p = Runtime.getRuntime().exec(String.format("caput HB_BEAM:SCAN:tagger:bgr_peak_ratio_%s %1.5f", wire_name_[iwire], tager_bgr_val_[iwire]/tager_peak_val_[iwire]));
+              p = Runtime.getRuntime().exec(String.format("caput HB_BEAM:SCAN:tagger:peak_%s %1.5f", wire_name_[iwire], tager_peak_val_[iwire]));
+            }
+            
+            Harp3ScanTranslator translate = new Harp3ScanTranslator( tager_sigm_[0], tager_sigm_[2]*Math.sqrt(2.), tager_sigm_[1]*Math.sqrt(2.));
+     
+            
+            double Aalpha = translate.getAlpha();
+            double aa = translate.getA()/Math.sqrt(2.);
+            double bb = translate.getB()/Math.sqrt(2.);
+            System.out.println("========================         a = " + aa);
+            p = Runtime.getRuntime().exec(String.format("caput HB_BEAM:SCAN:tagger:alpha %1.5f", Aalpha));
+            p = Runtime.getRuntime().exec(String.format("caput HB_BEAM:SCAN:tagger:a %1.5f", aa));
+            p = Runtime.getRuntime().exec(String.format("caput HB_BEAM:SCAN:tagger:b %1.5f", bb));
+            }
+            else if( harp_name.compareTo("harp_2H02A") == 0 )
+            {
+            double[] h2H02A_mean_ = new double[3];
+            double[] h2H02A_sigm_ = new double[3];
+            double[] h2H02A_pol0_ = new double[3];  
+            double[] h2H02A_pol1_ = new double[3];  
+            double[] h2H02A_bgr_val_ = new double[3];
+            double[] h2H02A_peak_val_ = new double[3];
+            String[] wire_name_ = {"x", "y", "45"};
+            
+            Process p;
+            for( int iwire = 0; iwire < 3; iwire ++ )
+            {
+              h2H02A_mean_[iwire] = harpFunc.get(iwire).parameter(1).value();
+              h2H02A_sigm_[iwire] = harpFunc.get(iwire).parameter(2).value();
+              h2H02A_pol0_[iwire] = harpFunc.get(iwire).parameter(3).value();
+              h2H02A_pol1_[iwire] = harpFunc.get(iwire).parameter(4).value();
+              h2H02A_bgr_val_[iwire] = h2H02A_pol0_[iwire] + h2H02A_pol1_[iwire]*harpFunc.get(iwire).parameter(1).value();
+              h2H02A_peak_val_[iwire] = harpFunc.get(iwire).parameter(0).value();
+              
+              p = Runtime.getRuntime().exec(String.format("caput HB_BEAM:SCAN:2H02A:mean_%s %1.5f", wire_name_[iwire], h2H02A_mean_[iwire]));
+              p = Runtime.getRuntime().exec(String.format("caput HB_BEAM:SCAN:2H02A:sigma_%s %1.5f", wire_name_[iwire], h2H02A_sigm_[iwire]));
+              p = Runtime.getRuntime().exec(String.format("caput HB_BEAM:SCAN:2H02A:bgr_peak_ratio_%s %1.5f", wire_name_[iwire], h2H02A_bgr_val_[iwire]/h2H02A_peak_val_[iwire]));
+              p = Runtime.getRuntime().exec(String.format("caput HB_BEAM:SCAN:2H02A:peak_%s %1.5f", wire_name_[iwire], h2H02A_peak_val_[iwire]));
+            }
+             Harp3ScanTranslator translate = new Harp3ScanTranslator( h2H02A_sigm_[2], h2H02A_sigm_[0]*Math.sqrt(2.), h2H02A_sigm_[1]*Math.sqrt(2.));
+     
+            
+            double Aalpha = translate.getAlpha();
+            double aa = translate.getA()/Math.sqrt(2.);
+            double bb = translate.getB()/Math.sqrt(2.);
+            System.out.println("========================         bb = " + bb);
+            p = Runtime.getRuntime().exec(String.format("caput HB_BEAM:SCAN:2H02A:alpha %1.5f", Aalpha));
+            p = Runtime.getRuntime().exec(String.format("caput HB_BEAM:SCAN:2H02A:a %1.5f", aa));
+            p = Runtime.getRuntime().exec(String.format("caput HB_BEAM:SCAN:2H02A:b %1.5f", bb));
+            }
+            else if( harp_name.compareTo("harp_2c21") == 0 )
+            {
+            double[] h2c21_mean_ = new double[2];
+            double[] h2c21_sigm_ = new double[2];
+            double[] h2c21_pol0_ = new double[2];  
+            double[] h2c21_pol1_ = new double[2];  
+            double[] h2c21_bgr_val_ = new double[2];
+            double[] h2c21_peak_val_ = new double[2];
+            String[] wire_name_ = {"x", "y"};
+            
+            Process p;
+            for( int iwire = 0; iwire < 3; iwire ++ )
+            {
+              h2c21_mean_[iwire] = harpFunc.get(iwire).parameter(1).value();
+              h2c21_sigm_[iwire] = harpFunc.get(iwire).parameter(2).value();
+              h2c21_pol0_[iwire] = harpFunc.get(iwire).parameter(3).value();
+              h2c21_pol1_[iwire] = harpFunc.get(iwire).parameter(4).value();
+              h2c21_bgr_val_[iwire] = h2c21_pol0_[iwire] + h2c21_pol1_[iwire]*harpFunc.get(iwire).parameter(1).value();
+              h2c21_peak_val_[iwire] = harpFunc.get(iwire).parameter(0).value();
+              
+              p = Runtime.getRuntime().exec(String.format("caput HB_BEAM:SCAN:2c21:mean_%s %1.5f", wire_name_[iwire], h2c21_mean_[iwire]));
+              p = Runtime.getRuntime().exec(String.format("caput HB_BEAM:SCAN:2c21:sigma_%s %1.5f", wire_name_[iwire], h2c21_sigm_[iwire]));
+              p = Runtime.getRuntime().exec(String.format("caput HB_BEAM:SCAN:2c21:bgr_peak_ratio_%s %1.7f", wire_name_[iwire], h2c21_bgr_val_[iwire]/h2c21_peak_val_[iwire]));
+              p = Runtime.getRuntime().exec(String.format("caput HB_BEAM:SCAN:2c21:peak_%s %1.5f", wire_name_[iwire], h2c21_peak_val_[iwire]));
+            }
+
+            
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+        
+    }
+    
     
     public String[] getLegendAlphaAB(String harp_name)
     {
