@@ -11,6 +11,7 @@
 #include <TGFileDialog.h>
 #include <TGButton.h>
 #include <TImage.h>
+#include <TArrow.h>
 #include <THashList.h>
 #include <TTimeStamp.h>
 
@@ -183,9 +184,11 @@ void hps_scalers_fadc_app::draw_scalers()
     static TPaveText tt2(0.7,0.91,0.9,0.99,"NDC");
     static TPaveText ttT(-22+13+0.05,6-5,-22+22,7-5-0.05);
     static TPaveText ttB(-22+13+0.05,4-5+0.05,-22+22,5-5);
-    static TPaveText ttM(-22+0+0.05,5-5+0.05,-22+13,6-5);
+    static TPaveText ttM(-22+0+0.05,5-5+0.05,-22+13,6-5.01);
     static TBox bb;
     static TLine ll;
+    static TText tarrow(14.5,0.3,"Beam Left");
+    static TArrow arrow(19,0.5,23,0.5,0.02,"|>");
 
     if (!called)
     {
@@ -205,6 +208,9 @@ void hps_scalers_fadc_app::draw_scalers()
         ttM.SetBorderSize(0);
         ttM.SetFillColor(kWhite);
         ttM.SetTextColor(kRed);
+        arrow.SetAngle(40);
+        arrow.SetFillColor(kBlack);
+        arrow.SetLineWidth(2);
     }
 
     unsigned int max=0;
@@ -274,6 +280,10 @@ void hps_scalers_fadc_app::draw_scalers()
     ttT.Draw();
     ttB.Draw();
     ttM.Draw();
+    
+    arrow.Draw();
+    tarrow.Draw();
+
     pCanvas->GetCanvas()->Modified();
     pCanvas->GetCanvas()->Update();
 }
@@ -413,10 +423,13 @@ hps_scalers_fadc_app::hps_scalers_fadc_app(const TGWindow *p, UInt_t w, UInt_t h
     pH->GetYaxis()->SetTitleOffset(0.5);
     pH->Draw("COLZTEXT");
     TText tt;
-    tt.DrawTextNDC(0.4,0.92,"ECAL FADC SCALERS");
+    tt.SetTextColor(kBlack);
     tt.SetTextAngle(90);
-    tt.DrawText(25.5,0,"kHz");
+    tt.DrawText(25.2,0,"kHz");
     tt.SetTextAngle(0);
+    tt.SetTextColor(kRed);
+    tt.SetTextSize(0.08);
+    tt.DrawTextNDC(0.38,0.92,"FADC SCALERS");
    
     gPad->SetLogz(1);
     gPad->SetGrid(1,1);
