@@ -11,6 +11,7 @@
 #include <TGFileDialog.h>
 #include <TGButton.h>
 #include <TImage.h>
+#include <TArrow.h>
 #include <THashList.h>
 #include <TTimeStamp.h>
 #include <iostream>
@@ -179,8 +180,11 @@ void hps_scalers_dsc2_app::draw_scalers()
     static TPaveText tt2(0.7,0.91,0.9,0.99,"NDC");
     static TPaveText ttT(-22+13+0.05,6-5,-22+22,7-5-0.05);
     static TPaveText ttB(-22+13+0.05,4-5+0.05,-22+22,5-5);
+    static TPaveText ttM(-22+0+0.05,5-5+0.05,-22+13,6-5.01);
     static TBox bb;
     static TLine ll;
+    static TText tarrow(14.5,0.3,"Beam Left");
+    static TArrow arrow(19,0.5,23,0.5,0.02,"|>");
 
     if (!called)
     {
@@ -197,8 +201,15 @@ void hps_scalers_dsc2_app::draw_scalers()
         ttB.SetBorderSize(0);
         ttT.SetFillColor(kWhite);
         ttB.SetFillColor(kWhite);
+        ttM.SetBorderSize(0);
+        ttM.SetFillColor(kWhite);
+        ttM.SetTextColor(kRed);
+        arrow.SetAngle(40);
+        arrow.SetFillColor(kBlack);
+        arrow.SetLineWidth(2);
     }
 
+    unsigned int max=0;
     pH->SetMinimum(0);
     pH->Reset();
     for(int x = -23; x <= 23; x++)
@@ -211,6 +222,13 @@ void hps_scalers_dsc2_app::draw_scalers()
             {
                 pH->Fill(x, y, hpsdsc2_crate_slot_scalers[0][ch/16][ch%16]);
                 pH->Fill(x, -y, hpsdsc2_crate_slot_scalers[1][ch/16][ch%16]);
+                //if (y<3 && (x>=-11 || x<=1))
+                //{
+                    if (hpsdsc2_crate_slot_scalers[0][ch/16][ch%16] > max) 
+                        max=hpsdsc2_crate_slot_scalers[0][ch/16][ch%16];
+                    if (hpsdsc2_crate_slot_scalers[1][ch/16][ch%16] > max) 
+                        max=hpsdsc2_crate_slot_scalers[1][ch/16][ch%16];
+                //}
             }
         }
     }
@@ -246,14 +264,20 @@ void hps_scalers_dsc2_app::draw_scalers()
     tt2.Clear();
     ttT.Clear();
     ttB.Clear();
+    ttM.Clear();
     tt1.AddText(Form("Total:  %.1E Hz",(float)rr.total));
     tt2.AddText(Form("Total:  %.1f kHz",(float)rr.total/1000));
     ttT.AddText(Form("%.2f kHz",(float)rr.top/1000));
     ttB.AddText(Form("%.2f kHz",(float)rr.bottom/1000));
+    ttM.AddText(Form("MAX SINGLE CRYSTAL = %.2f kHz",(float)max/1000));
     tt1.Draw();
     tt2.Draw();
     ttT.Draw();
     ttB.Draw();
+    ttM.Draw();
+
+    arrow.Draw();
+    tarrow.Draw();
 
     pCanvas->GetCanvas()->Modified();
     pCanvas->GetCanvas()->Update();
@@ -389,7 +413,13 @@ hps_scalers_dsc2_app::hps_scalers_dsc2_app(const TGWindow *p, UInt_t w, UInt_t h
     pH->GetYaxis()->SetTitleOffset(0.5);
     pH->Draw("COLZTEXT");
     TText tt;
-    tt.DrawTextNDC(0.4,0.92,"ECAL DCS2 SCALERS");
+    tt.SetTextColor(kBlack);
+    tt.SetTextAngle(90);
+    tt.DrawText(25.2,0,"Hz");
+    tt.SetTextAngle(0);
+    tt.SetTextColor(kRed);
+    tt.SetTextSize(0.08);
+    tt.DrawTextNDC(0.41,0.92,"DISC SCALERS");
 
     gPad->SetLogz(1);
     gPad->SetGrid(1,1);

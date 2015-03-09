@@ -122,7 +122,7 @@ text {
 	}
 	command[0] {
 		label="Initialise"
-		name="initFlasher.sh &"
+		name="/usr/clas12/hps/prod/apps/flasherApp/medm/initFlasher.sh &"
 	}
 	clr=14
 	bclr=2
@@ -1377,7 +1377,7 @@ text {
 	}
 	command[0] {
 		label="Start"
-		name="flasher_start_color_seq.sh -c blue &"
+		name="/usr/clas12/hps/prod/apps/flasherApp/medm/flasher_start_color_seq.sh -c blue &"
 	}
 	clr=14
 	bclr=2
@@ -1467,7 +1467,7 @@ text {
 	}
 	command[0] {
 		label="Start"
-		name="flasher_start_color_seq.sh -c red &"
+		name="/usr/clas12/hps/prod/apps/flasherApp/medm/flasher_start_color_seq.sh -c red &"
 	}
 	clr=14
 	bclr=2
@@ -1525,7 +1525,7 @@ rectangle {
 	}
 	command[0] {
 		label="Stop"
-		name="flasher_stop_all.sh"
+		name="/usr/clas12/hps/prod/apps/flasherApp/medm/flasher_stop_all.sh"
 	}
 	clr=30
 	bclr=22

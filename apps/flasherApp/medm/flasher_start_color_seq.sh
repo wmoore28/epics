@@ -35,19 +35,21 @@ else
 	usage
 fi
 
-# Setup TOP
+# Setup TOP. Also turn driver ON in case it was not.
+caput ${TOP}:SET_DRIVER_STATUS ON
 caput ${TOP}:SET_COLOR $COLOR
-caput -S ${TOP}:DATA_FILE_LOAD HPSFlasher1${COLOR}Channels.dat
-./flasher_load_chan_file.sh "$TOP"
+caput -S ${TOP}:DATA_FILE_LOAD /usr/clas12/hps/prod/apps/flasherApp/medm/HPSFlasher1${COLOR}Channels.dat
+/usr/clas12/hps/prod/apps/flasherApp/medm/flasher_load_chan_file.sh "$TOP"
 
 	
-# Setup BOT
+# Setup BOT. Also turn driver ON in case it was not.
+caput ${BOT}:SET_DRIVER_STATUS ON
 caput ${BOT}:SET_COLOR $COLOR
-caput -S ${BOT}:DATA_FILE_LOAD HPSFlasher2${COLOR}Channels.dat
-./flasher_load_chan_file.sh "$BOT"
+caput -S ${BOT}:DATA_FILE_LOAD /usr/clas12/hps/prod/apps/flasherApp/medm/HPSFlasher2${COLOR}Channels.dat
+/usr/clas12/hps/prod/apps/flasherApp/medm/flasher_load_chan_file.sh "$BOT"
 
 #START TOP AND BOT
-./flasher_start_top.sh
-./flasher_start_bot.sh
+/usr/clas12/hps/prod/apps/flasherApp/medm/flasher_start_top.sh
+/usr/clas12/hps/prod/apps/flasherApp/medm/flasher_start_bot.sh
 
 exit 0

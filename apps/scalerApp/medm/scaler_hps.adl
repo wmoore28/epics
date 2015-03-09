@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=584
-		y=65
+		x=115
+		y=168
 		width=1268
 		height=925
 	}
@@ -131,7 +131,7 @@ polyline {
 }
 text {
 	object {
-		x=646
+		x=635
 		y=100
 		width=50
 		height=18
@@ -242,34 +242,6 @@ composite {
 		}
 	}
 }
-"text update" {
-	object {
-		x=1130
-		y=105
-		width=75
-		height=18
-	}
-	monitor {
-		chan="scalerS14b.VAL"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=1150
-		y=85
-		width=30
-		height=15
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="HPS-T"
-}
 arc {
 	object {
 		x=168
@@ -369,7 +341,7 @@ composite {
 	object {
 		x=310
 		y=105
-		width=75
+		width=85
 		height=18
 	}
 	monitor {
@@ -397,7 +369,7 @@ text {
 	object {
 		x=310
 		y=135
-		width=75
+		width=85
 		height=18
 	}
 	monitor {
@@ -853,34 +825,6 @@ text {
 	}
 	textix="Tagger Dump"
 	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=1125
-		y=140
-		width=75
-		height=18
-	}
-	monitor {
-		chan="scalerS15b.VAL"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=1150
-		y=159
-		width=30
-		height=15
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="HPS-SC"
 }
 text {
 	object {
@@ -1678,7 +1622,7 @@ composite {
 }
 composite {
 	object {
-		x=680
+		x=650
 		y=100
 		width=160
 		height=63
@@ -1687,7 +1631,7 @@ composite {
 	children {
 		"text update" {
 			object {
-				x=726
+				x=696
 				y=100
 				width=71
 				height=18
@@ -1703,7 +1647,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=769
+				x=739
 				y=121
 				width=71
 				height=18
@@ -1719,7 +1663,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=726
+				x=696
 				y=145
 				width=71
 				height=18
@@ -1735,7 +1679,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=680
+				x=650
 				y=121
 				width=71
 				height=18
@@ -2194,7 +2138,7 @@ composite {
 }
 composite {
 	object {
-		x=930
+		x=880
 		y=85
 		width=76
 		height=89
@@ -2203,7 +2147,7 @@ composite {
 	children {
 		text {
 			object {
-				x=955
+				x=905
 				y=85
 				width=30
 				height=15
@@ -2215,7 +2159,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=930
+				x=880
 				y=140
 				width=75
 				height=18
@@ -2231,7 +2175,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=931
+				x=881
 				y=103
 				width=75
 				height=18
@@ -2247,7 +2191,7 @@ composite {
 		}
 		text {
 			object {
-				x=955
+				x=905
 				y=159
 				width=30
 				height=15
@@ -3232,4 +3176,326 @@ composite {
 			}
 		}
 	}
+}
+rectangle {
+	object {
+		x=0
+		y=605
+		width=120
+		height=24
+	}
+	"basic attribute" {
+		clr=55
+	}
+}
+text {
+	object {
+		x=8
+		y=608
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Beamline Vacuum"
+}
+"text update" {
+	object {
+		x=130
+		y=612
+		width=75
+		height=18
+	}
+	monitor {
+		chan="VCG2C21Tr"
+		clr=0
+		bclr=19
+	}
+	align="horiz. centered"
+	format="exponential"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=220
+		y=612
+		width=75
+		height=18
+	}
+	monitor {
+		chan="VCG2C21ATr"
+		clr=0
+		bclr=19
+	}
+	align="horiz. centered"
+	format="exponential"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=310
+		y=612
+		width=75
+		height=18
+	}
+	monitor {
+		chan="VCG2C24ATr"
+		clr=0
+		bclr=19
+	}
+	align="horiz. centered"
+	format="exponential"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=410
+		y=612
+		width=75
+		height=18
+	}
+	monitor {
+		chan="VCG2H00ATr"
+		clr=0
+		bclr=19
+	}
+	align="horiz. centered"
+	format="exponential"
+	limits {
+	}
+}
+text {
+	object {
+		x=145
+		y=592
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2C21"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=235
+		y=592
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2C21A"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=325
+		y=592
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2C24"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=425
+		y=592
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2H00"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=660
+		y=612
+		width=75
+		height=18
+	}
+	monitor {
+		chan="VCG2H01ATr"
+		clr=0
+		bclr=19
+	}
+	align="horiz. centered"
+	format="exponential"
+	limits {
+	}
+}
+text {
+	object {
+		x=675
+		y=592
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2H01"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=825
+		y=612
+		width=75
+		height=18
+	}
+	monitor {
+		chan="VCG2H02ATr"
+		clr=0
+		bclr=19
+	}
+	align="horiz. centered"
+	format="exponential"
+	limits {
+	}
+}
+text {
+	object {
+		x=840
+		y=592
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2H02"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=1120
+		y=85
+		width=75
+		height=89
+	}
+	"composite name"=""
+	children {
+		composite {
+			object {
+				x=1120
+				y=140
+				width=75
+				height=34
+			}
+			"composite name"=""
+			children {
+				"text update" {
+					object {
+						x=1120
+						y=140
+						width=75
+						height=18
+					}
+					monitor {
+						chan="scalerS15b.VAL"
+						clr=14
+						bclr=50
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				text {
+					object {
+						x=1145
+						y=159
+						width=30
+						height=15
+					}
+					"basic attribute" {
+						clr=14
+					}
+					textix="HPS-SC"
+				}
+			}
+		}
+		composite {
+			object {
+				x=1120
+				y=85
+				width=75
+				height=38
+			}
+			"composite name"=""
+			children {
+				"text update" {
+					object {
+						x=1120
+						y=105
+						width=75
+						height=18
+					}
+					monitor {
+						chan="scalerS14b.VAL"
+						clr=14
+						bclr=50
+					}
+					align="horiz. centered"
+					limits {
+					}
+				}
+				text {
+					object {
+						x=1140
+						y=85
+						width=30
+						height=15
+					}
+					"basic attribute" {
+						clr=14
+					}
+					textix="HPS-T"
+				}
+			}
+		}
+	}
+}
+"text update" {
+	object {
+		x=910
+		y=600
+		width=75
+		height=18
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Vacuum-Value"
+		clr=0
+		bclr=19
+	}
+	align="horiz. centered"
+	format="exponential"
+	limits {
+	}
+}
+text {
+	object {
+		x=925
+		y=580
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2H03"
+	align="horiz. centered"
 }
