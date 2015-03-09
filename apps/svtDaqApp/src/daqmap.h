@@ -1,7 +1,7 @@
 #ifndef DAQMAP_H
 #define DAQMAP_H
 
-#include "constants.h"
+#include "commonConstants.h"
 
 
 int getFebInfoFromDaqMap(int hyb_id, char* half, int (*map)[N_HYBRIDS]);

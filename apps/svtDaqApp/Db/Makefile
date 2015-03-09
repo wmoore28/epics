@@ -21,11 +21,17 @@ DB += dbHybLV.db
 DB += dbHybLVStat.db
 DB += dbHybSwitch.db
 DB += dbFebTemp.db
-DB += dbSvtDaqMap.db
 DB += dbSVT.db
 DB += dbDpmMap.db
-DB += dbFebPhysMap.db
+DB += dbDataDpm.db
+DB += dbDataDpmFebNum.db
+DB += dbDataDpmHybNum.db
+DB += dbDataDpmLink.db
+DB += dbDataDpmEventCount.db
+DB += dbDataDtm.db
+DB += dbFebLayer.db
 DB += dbHybSync.db
+DB += dbHybSyncBase.db
 #DB += dbSVTtest.db
 
 #----------------------------------------------------

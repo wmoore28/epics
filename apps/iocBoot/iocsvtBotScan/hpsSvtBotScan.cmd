@@ -9,7 +9,8 @@ dbLoadDatabase("dbd/xpsMotor.dbd")
 xpsMotor_registerRecordDeviceDriver(pdbbase)
 
 # Load IOC status records
-#dbLoadRecords("db/iocAdminSoft.db","IOC=SVTBOTSCAN")
+dbLoadRecords("db/iocAdminSoft.db","IOC=${IOC}")
+dbLoadRecords("db/save_restoreStatus.db", "P=${IOC}:")
 
 epicsEnvSet("PREFIX","")
 

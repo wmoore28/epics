@@ -1,0 +1,17 @@
+
+
+record(sub,SVT:daq:dpm:$(DPM):eventcount_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDpmEventCountInit")
+    field(SNAM,"subDpmEventCountProcess")
+}
+
+record(longin, SVT:daq:dpm:$(DPM):eventcount) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dpm:$(DPM):eventcount_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+
+

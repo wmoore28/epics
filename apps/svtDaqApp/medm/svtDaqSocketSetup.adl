@@ -1,12 +1,12 @@
 
 file {
-	name="/home/tracker/pelle/epics/svt-epics/svt-medm/svtDaqSocketSetup.adl"
+	name="/u1/epics/svt-epics/svt-medm/svtDaqSocketSetup.adl"
 	version=030108
 }
 display {
 	object {
-		x=801
-		y=49
+		x=1965
+		y=61
 		width=496
 		height=113
 	}
@@ -112,7 +112,7 @@ oval {
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A>0"
+		calc="(!A)&1"
 		chan="SVT:hb_check"
 	}
 }
@@ -233,7 +233,7 @@ text {
 }
 oval {
 	object {
-		x=117
+		x=125
 		y=40
 		width=12
 		height=12
@@ -243,7 +243,7 @@ oval {
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A<1"
+		calc="A&1"
 		chan="SVT:hb_check"
 	}
 }

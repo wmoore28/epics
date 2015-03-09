@@ -1,14 +1,14 @@
 
 file {
-	name="/home/stepanya/hps/epics/general/medm/motor_screens.adl"
+	name="/home/hovanes/HPS/epics/latest/apps/generalApp/medm/motor_screens.adl"
 	version=030108
 }
 display {
 	object {
-		x=376
-		y=827
+		x=1655
+		y=122
 		width=180
-		height=250
+		height=300
 	}
 	clr=14
 	bclr=4
@@ -116,7 +116,11 @@ display {
 	}
 	display[5] {
 		label="HPS target"
-		name="hps_target.adl"
+		name="hps_targets.adl"
+	}
+	display[6] {
+		label="SVT Positioners"
+		name="svtPositions.adl"
 	}
 	clr=20
 	bclr=1

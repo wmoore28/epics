@@ -29,7 +29,7 @@ EPICS_SUPPORT=${CLAS}/R${EPICS_VER}/support
 include $(EPICS_SYNAPPS)/configure/RELEASE
 
 ## other drivers
-SNMPNSCL=$(EPICS_DRIVERS)/snmp-nscl-1-0-RC9
+DEVSNMP=$(EPICS_DRIVERS)/snmp-nscl-1-0-RC9
 
 # If using the sequencer, point SNCSEQ at its top directory:
 #SNCSEQ=$(EPICS_BASE)/../modules/soft/seq
