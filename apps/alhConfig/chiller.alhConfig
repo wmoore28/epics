@@ -1,0 +1,18 @@
+#===============================================================================
+# Temperatures Alarm Config
+#===============================================================================
+
+GROUP NULL CHILLER
+$GUIDANCE
+	Chiller is out of communication.
+$END
+
+$SEVRCOMMAND UP_MAJOR /home/hpsrun/scripts/notify_expert_auto.pl ecal_expert ECAL chiller OUT OF SPEC
+
+#=======================================
+# Channels
+#=======================================
+
+CHANNEL CHILLER STATUS
+$COMMAND medm -x -attach -cmap -macro "sig=HPS_ECAL:CHILLER:TEMP" aiaocalc_alarm.adl >> /dev/null
+
