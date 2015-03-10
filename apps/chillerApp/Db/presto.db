@@ -104,16 +104,6 @@ record(stringout, "$(P)$(R)PRES:CONV_EGU") {
     field(OUT,  "$(P)$(R)PRES.EGU")
 }
 
-# TODO (wmoore): remove flow readback
-# Read EGU from different channel and write back to .EGU
-# - uses :EGU and :CONV_EGU
-record(ai, "$(P)$(R)FLOW") {
-    field(DTYP, "stream")
-    field(INP,  "@presto.proto getAi(pv_09) $(PORT)")
-    field(PREC, "2")
-#    field(SCAN, "1 second")
-    field(FLNK, "$(P)$(R)FLOW:EGU")
-}
 record(bi, "$(P)$(R)FLOW:EGU") {
     field(DTYP, "stream")
     field(INP,  "@presto.proto getInt(sp_13) $(PORT)")
