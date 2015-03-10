@@ -14,9 +14,12 @@ program harp_scan_generic
 
 option -c;
 option +r;
+option -a;
+option +d;
 
 #include "scan.h"
 %%#include "epics_b_struct.h"
+#define sleep_delay(SltX) taskDelay(SltX*sysClkRateGet())
 
 /* motor records  */
 
@@ -164,9 +167,15 @@ float harp_position_init;
 int fd;
 int i;
 
+int delayTime;
+
+int retStatus;
+
+double timeWaited = 0;
+
 %% extern int get_e_name(int, char *);
 %% extern int get_r_name(int, char *);
-%% extern int scp_clon01(char *, int);
+%% extern int scp_clon01(char *, char*, int);
 
 /* state code  */
 ss harp_scan_snc {
@@ -283,7 +292,23 @@ ss harp_scan_snc {
    state write_beam_conf {
      when () {
       /*write magnet settings to the file*/
+        printf( "Debigging\n" );
 	for (tmp_int = 0;  (get_e_rec(tmp_int,tmp_rec) && get_e_name(tmp_int,tmp_name)); tmp_int++) {
+	   retStatus = pvAssign(tmp_float[tmp_int], tmp_rec);
+	   printf( "Return from pvAssign is %d for variable number %d \n", retStatus, tmp_int );
+
+	   timeWaited = 0.0;
+	   while( (	!pvAssigned ( tmp_float[tmp_int] ) 
+	            ||  !pvConnected( tmp_float[tmp_int] ) ) 
+	          && (timeWaited < 2) ) {
+		printf( "waiting %f \n", timeWaited );
+		timeWaited = timeWaited + 1.0;
+                epicsThreadSleep( 1.0 );
+	   }
+	printf( "Connected or timed out\n" );
+/*	delayTime = 1 * sysClkRateGet(); */
+/*	taskDelay( delayTime ); */
+/*	printf( "record name is <%s>\n",tmp_rec );  */
            pvGet(tmp_float[tmp_int]);
            tmp_f = tmp_float[tmp_int];
            printf("# %50s: %24s: %f\n",tmp_name, tmp_rec,tmp_f); 
@@ -381,7 +406,7 @@ ss harp_scan_snc {
 /*close the file  and scp to mcc*/
       if ((fd > 0) && (fd != ioGlobalStdGet(1)) ) {
          close(fd);
-         scp_clon01(shortname, 5);
+         scp_clon01(shortname, motor_name, 5);
       }
 
      } state restore_hardware
@@ -512,7 +537,7 @@ extern void printErrno(int);
 extern BOOT_PARAMS sysBootParams;
 
 STATUS
-scp_clon01(char *harpscan_file, int sleep_time)
+scp_clon01(char *harpscan_file, char* mot_name,  int sleep_time)
 {
 
   int rfd;
@@ -527,7 +552,8 @@ scp_clon01(char *harpscan_file, int sleep_time)
   strcpy(ruser,sysBootParams.usr);
 
   /* Construct the remote command */
-  sprintf(rstring,"sleep %i;scp /home/epics/data/e_scans/%s epics@opsll.acc.jlab.org:/cs/op/iocs/DATA/harp/profile/HallB/%s  &",sleep_time, harpscan_file, harpscan_file);
+  sprintf(rstring,"sleep %i;scp /home/epics/DATA/HARP_SCANS/%s/%s epics@opsll.acc.jlab.org:/usr/opsdata/harpData/HallB/%s  &",
+      sleep_time, mot_name, harpscan_file, harpscan_file);
 
    printf("SCP CMD: %s\n", rstring);
 
@@ -544,7 +570,7 @@ scp_clon01(char *harpscan_file, int sleep_time)
     printf("harp_scan_generic: file scp to mcc opsll\n");
 
 
-  } else {  /* Print the error */
+  } else {  /* PrintDe the error */
     printf("harp_scan_generic: ERROR: ");
     printErrno(errno);
     return(ERROR);

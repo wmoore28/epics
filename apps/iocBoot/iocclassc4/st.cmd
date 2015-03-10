@@ -164,7 +164,7 @@ omsSetup(2, 0x8000, 180, 5, 10)
 
 cd startup
 #< save_restore.cmd
-iocInit
+iocInit "../resource.def"
 
 ## Autosave startup (issues rewriting existing files)
 #iocshCmd("makeAutosaveFiles()")
