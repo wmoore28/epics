@@ -1,12 +1,12 @@
 
 file {
-	name="/u1/epics/dev/svt-epics/svt-medm/svtBiasMain.adl"
-	version=030108
+	name="/usr/clas12/hps/svt-devel/apps/svtDaqApp/medm/svtBiasMain.adl"
+	version=030101
 }
 display {
 	object {
-		x=1459
-		y=32
+		x=151
+		y=86
 		width=1484
 		height=1025
 	}
@@ -8202,7 +8202,7 @@ rectangle {
 		x=1206
 		y=90
 		width=280
-		height=200
+		height=215
 	}
 	"basic attribute" {
 		clr=10
@@ -9955,4 +9955,19 @@ text {
 	}
 	textix="Obsolete"
 	align="horiz. centered"
+}
+"shell command" {
+	object {
+		x=1275
+		y=275
+		width=150
+		height=20
+	}
+	command[0] {
+		label="reset"
+		name="/usr/clas12/hps/prod/apps/svtDaqApp/scripts/clear_mpod_interlock.sh"
+	}
+	clr=14
+	bclr=5
+	label="RESET INTERLOCKS"
 }
