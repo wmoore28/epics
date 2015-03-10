@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/svt-devel/apps/iocBoot/iocchiller/../../chillerApp/medm/chiller_anova.adl"
+	name="/usr/clas12/hps/prod/apps/chillerApp/medm/chiller_anova.adl"
 	version=030108
 }
 display {
@@ -542,7 +542,7 @@ rectangle {
 	display[1] {
 		label="IOC Stats"
 		name="ioc_stats_soft.adl"
-		args="ioc=iocchiller"
+		args="ioc=iocchillerSVT"
 	}
 	clr=14
 	bclr=4
