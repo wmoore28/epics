@@ -365,6 +365,11 @@ text {
 		label="StripTool"
 		name="cd $APP/generalApp/strip; StripTool &"
 	}
+	command[1] {
+		label="MyaViewer (archiver) on clonpc"
+		name="xterm -title MyaViewer -e "
+		args="$APP/generalApp/scripts/MyaViewer_launcher.sh &"
+	}
 	clr=14
 	bclr=50
 }
@@ -378,7 +383,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="StripTool(s)"
+	textix="StripTool/MyaViewer"
 }
 rectangle {
 	object {

@@ -22,6 +22,7 @@ dbLoadDatabase "dbd/classc1.dbd"
 classc1_registerRecordDeviceDriver pdbbase
 
 ##epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES", "5000000")
+epicsEnvSet( "EPICS_CA_ADDR_LIST", "129.57.255.4")
 
 ## Load record instances
 ##dbLoadTemplate "db/user.substitutions"
@@ -152,7 +153,7 @@ omsSetup(2, 0x8000, 180, 5, 10)
 #traceIocInit
 
 cd startup
-iocInit
+iocInit "../resource.def"
 
 # set some initial values:
 ##dbpf "fcup_offset","144.46"

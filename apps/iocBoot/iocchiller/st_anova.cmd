@@ -13,7 +13,7 @@ chiller_registerRecordDeviceDriver(pdbbase)
 epicsEnvSet("STREAM_PROTOCOL_PATH","${TOP}/proto")
 
 # 9600 8-N-1, No Flow Ctrl
-drvAsynIPPortConfigure("SER1","hallb-moxa2:4001")
+drvAsynIPPortConfigure("SER1","hallb-moxa1:4006")
 
 ## debugging...
 # Anova

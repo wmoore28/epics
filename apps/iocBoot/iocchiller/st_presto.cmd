@@ -12,7 +12,7 @@ chiller_registerRecordDeviceDriver(pdbbase)
 
 epicsEnvSet("STREAM_PROTOCOL_PATH","${TOP}/proto")
 
-drvAsynIPPortConfigure("SER2", "hallb-moxa2:4002")
+drvAsynIPPortConfigure("SER2", "hallb-moxa1:4007")
 ## Set terminators for using asyn directly
 asynOctetSetInputEos( "SER2", 0, "\r")
 asynOctetSetOutputEos("SER2", 0, "\r\n")

@@ -1,6 +1,6 @@
 
 file {
-	name="/home/wmoore/workspaces/svtIntlk/apps/svtIntlkApp/medm/svtIntlk.adl"
+	name="/usr/clas12/hps/develop/apps/svtIntlkApp/medm/svtIntlk.adl"
 	version=030108
 }
 display {
@@ -8,7 +8,7 @@ display {
 		x=777
 		y=49
 		width=700
-		height=800
+		height=860
 	}
 	clr=14
 	bclr=4
@@ -202,7 +202,7 @@ rectangle {
 "text update" {
 	object {
 		x=601
-		y=563
+		y=612
 		width=80
 		height=20
 	}
@@ -213,13 +213,14 @@ rectangle {
 	}
 	clrmod="alarm"
 	align="horiz. centered"
+	format="exponential"
 	limits {
 	}
 }
 text {
 	object {
 		x=375
-		y=567
+		y=616
 		width=80
 		height=16
 	}
@@ -231,7 +232,7 @@ text {
 text {
 	object {
 		x=375
-		y=533
+		y=582
 		width=200
 		height=16
 	}
@@ -243,7 +244,7 @@ text {
 rectangle {
 	object {
 		x=375
-		y=528
+		y=577
 		width=305
 		height=3
 	}
@@ -254,7 +255,7 @@ rectangle {
 rectangle {
 	object {
 		x=375
-		y=551
+		y=600
 		width=305
 		height=3
 	}
@@ -294,24 +295,24 @@ text {
 text {
 	object {
 		x=25
-		y=116
+		y=141
 		width=80
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Min"
+	textix="Min - PLC/SW"
 }
 "text update" {
 	object {
 		x=251
-		y=112
+		y=137
 		width=80
 		height=20
 	}
 	monitor {
-		chan="HPS_INTLK:SVT_SUP:first_check.B"
+		chan="HPS_INTLK:SVT_SUP:min"
 		clr=0
 		bclr=11
 	}
@@ -323,7 +324,7 @@ text {
 "text update" {
 	object {
 		x=251
-		y=212
+		y=237
 		width=80
 		height=20
 	}
@@ -341,7 +342,7 @@ text {
 text {
 	object {
 		x=25
-		y=216
+		y=241
 		width=80
 		height=16
 	}
@@ -353,7 +354,7 @@ text {
 "text update" {
 	object {
 		x=251
-		y=261
+		y=286
 		width=80
 		height=20
 	}
@@ -370,7 +371,7 @@ text {
 text {
 	object {
 		x=25
-		y=265
+		y=290
 		width=80
 		height=16
 	}
@@ -382,7 +383,7 @@ text {
 text {
 	object {
 		x=25
-		y=166
+		y=191
 		width=80
 		height=16
 	}
@@ -394,7 +395,7 @@ text {
 text {
 	object {
 		x=25
-		y=240
+		y=265
 		width=80
 		height=16
 	}
@@ -406,7 +407,7 @@ text {
 "text entry" {
 	object {
 		x=166
-		y=162
+		y=187
 		width=80
 		height=20
 	}
@@ -421,7 +422,7 @@ text {
 "text update" {
 	object {
 		x=251
-		y=236
+		y=261
 		width=80
 		height=20
 	}
@@ -439,7 +440,7 @@ text {
 "text update" {
 	object {
 		x=251
-		y=162
+		y=187
 		width=80
 		height=20
 	}
@@ -456,7 +457,7 @@ text {
 text {
 	object {
 		x=25
-		y=191
+		y=216
 		width=80
 		height=16
 	}
@@ -468,7 +469,7 @@ text {
 "text update" {
 	object {
 		x=251
-		y=187
+		y=212
 		width=80
 		height=20
 	}
@@ -486,7 +487,7 @@ text {
 "choice button" {
 	object {
 		x=166
-		y=187
+		y=212
 		width=80
 		height=20
 	}
@@ -500,24 +501,24 @@ text {
 text {
 	object {
 		x=25
-		y=141
+		y=166
 		width=80
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Max"
+	textix="Max - PLC/SW"
 }
 "text update" {
 	object {
 		x=251
-		y=137
+		y=162
 		width=80
 		height=20
 	}
 	monitor {
-		chan="HPS_INTLK:SVT_SUP:first_check.C"
+		chan="HPS_INTLK:SVT_SUP:max"
 		clr=0
 		bclr=11
 	}
@@ -555,40 +556,10 @@ text {
 	}
 	textix="PLC COMM:"
 }
-"text entry" {
-	object {
-		x=166
-		y=112
-		width=80
-		height=20
-	}
-	control {
-		chan="HPS_INTLK:SVT_SUP:min"
-		clr=14
-		bclr=2
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=166
-		y=137
-		width=80
-		height=20
-	}
-	control {
-		chan="HPS_INTLK:SVT_SUP:max"
-		clr=14
-		bclr=2
-	}
-	limits {
-	}
-}
 "message button" {
 	object {
 		x=166
-		y=261
+		y=286
 		width=80
 		height=20
 	}
@@ -603,7 +574,7 @@ text {
 text {
 	object {
 		x=25
-		y=305
+		y=330
 		width=80
 		height=16
 	}
@@ -615,7 +586,7 @@ text {
 "text update" {
 	object {
 		x=251
-		y=301
+		y=326
 		width=80
 		height=20
 	}
@@ -632,7 +603,7 @@ text {
 text {
 	object {
 		x=25
-		y=336
+		y=386
 		width=80
 		height=16
 	}
@@ -644,7 +615,7 @@ text {
 "text update" {
 	object {
 		x=251
-		y=332
+		y=382
 		width=80
 		height=20
 	}
@@ -661,7 +632,7 @@ text {
 "text update" {
 	object {
 		x=251
-		y=432
+		y=482
 		width=80
 		height=20
 	}
@@ -679,7 +650,7 @@ text {
 text {
 	object {
 		x=25
-		y=436
+		y=486
 		width=80
 		height=16
 	}
@@ -691,7 +662,7 @@ text {
 "text update" {
 	object {
 		x=251
-		y=481
+		y=531
 		width=80
 		height=20
 	}
@@ -708,7 +679,7 @@ text {
 text {
 	object {
 		x=25
-		y=485
+		y=535
 		width=80
 		height=16
 	}
@@ -720,7 +691,7 @@ text {
 text {
 	object {
 		x=25
-		y=386
+		y=436
 		width=80
 		height=16
 	}
@@ -732,7 +703,7 @@ text {
 text {
 	object {
 		x=25
-		y=460
+		y=510
 		width=80
 		height=16
 	}
@@ -744,7 +715,7 @@ text {
 "text entry" {
 	object {
 		x=166
-		y=382
+		y=432
 		width=80
 		height=20
 	}
@@ -759,7 +730,7 @@ text {
 "text update" {
 	object {
 		x=251
-		y=456
+		y=506
 		width=80
 		height=20
 	}
@@ -777,7 +748,7 @@ text {
 "text update" {
 	object {
 		x=251
-		y=382
+		y=432
 		width=80
 		height=20
 	}
@@ -794,7 +765,7 @@ text {
 text {
 	object {
 		x=25
-		y=411
+		y=461
 		width=80
 		height=16
 	}
@@ -806,7 +777,7 @@ text {
 "text update" {
 	object {
 		x=251
-		y=407
+		y=457
 		width=80
 		height=20
 	}
@@ -824,7 +795,7 @@ text {
 "choice button" {
 	object {
 		x=166
-		y=407
+		y=457
 		width=80
 		height=20
 	}
@@ -838,7 +809,7 @@ text {
 text {
 	object {
 		x=25
-		y=361
+		y=411
 		width=80
 		height=16
 	}
@@ -850,7 +821,7 @@ text {
 "text update" {
 	object {
 		x=251
-		y=357
+		y=407
 		width=80
 		height=20
 	}
@@ -867,7 +838,7 @@ text {
 "text entry" {
 	object {
 		x=166
-		y=332
+		y=382
 		width=80
 		height=20
 	}
@@ -882,7 +853,7 @@ text {
 "text entry" {
 	object {
 		x=166
-		y=357
+		y=407
 		width=80
 		height=20
 	}
@@ -897,7 +868,7 @@ text {
 "message button" {
 	object {
 		x=166
-		y=481
+		y=531
 		width=80
 		height=20
 	}
@@ -941,19 +912,19 @@ text {
 text {
 	object {
 		x=375
-		y=116
+		y=140
 		width=80
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Min"
+	textix="Min - PLC/SW"
 }
 "text update" {
 	object {
 		x=601
-		y=112
+		y=137
 		width=80
 		height=20
 	}
@@ -970,7 +941,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=212
+		y=236
 		width=80
 		height=20
 	}
@@ -988,7 +959,7 @@ text {
 text {
 	object {
 		x=375
-		y=216
+		y=240
 		width=80
 		height=16
 	}
@@ -1000,7 +971,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=261
+		y=285
 		width=80
 		height=20
 	}
@@ -1017,7 +988,7 @@ text {
 text {
 	object {
 		x=375
-		y=265
+		y=289
 		width=80
 		height=16
 	}
@@ -1029,7 +1000,7 @@ text {
 text {
 	object {
 		x=375
-		y=166
+		y=190
 		width=80
 		height=16
 	}
@@ -1041,7 +1012,7 @@ text {
 text {
 	object {
 		x=375
-		y=240
+		y=264
 		width=80
 		height=16
 	}
@@ -1053,7 +1024,7 @@ text {
 "text entry" {
 	object {
 		x=516
-		y=162
+		y=186
 		width=80
 		height=20
 	}
@@ -1068,7 +1039,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=236
+		y=260
 		width=80
 		height=20
 	}
@@ -1086,7 +1057,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=162
+		y=186
 		width=80
 		height=20
 	}
@@ -1103,7 +1074,7 @@ text {
 text {
 	object {
 		x=375
-		y=191
+		y=215
 		width=80
 		height=16
 	}
@@ -1115,7 +1086,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=187
+		y=211
 		width=80
 		height=20
 	}
@@ -1133,7 +1104,7 @@ text {
 "choice button" {
 	object {
 		x=516
-		y=187
+		y=211
 		width=80
 		height=20
 	}
@@ -1147,19 +1118,19 @@ text {
 text {
 	object {
 		x=375
-		y=141
+		y=165
 		width=80
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Max"
+	textix="Max - PLC/SW"
 }
 "text update" {
 	object {
 		x=601
-		y=137
+		y=161
 		width=80
 		height=20
 	}
@@ -1173,40 +1144,10 @@ text {
 	limits {
 	}
 }
-"text entry" {
-	object {
-		x=516
-		y=112
-		width=80
-		height=20
-	}
-	control {
-		chan="HPS_INTLK:FE_SUP:min"
-		clr=14
-		bclr=2
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=516
-		y=137
-		width=80
-		height=20
-	}
-	control {
-		chan="HPS_INTLK:FE_SUP:max"
-		clr=14
-		bclr=2
-	}
-	limits {
-	}
-}
 "message button" {
 	object {
 		x=516
-		y=261
+		y=285
 		width=80
 		height=20
 	}
@@ -1221,7 +1162,7 @@ text {
 text {
 	object {
 		x=375
-		y=305
+		y=329
 		width=80
 		height=16
 	}
@@ -1233,7 +1174,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=301
+		y=325
 		width=80
 		height=20
 	}
@@ -1250,7 +1191,7 @@ text {
 text {
 	object {
 		x=375
-		y=336
+		y=385
 		width=80
 		height=16
 	}
@@ -1262,7 +1203,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=332
+		y=381
 		width=80
 		height=20
 	}
@@ -1279,7 +1220,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=432
+		y=481
 		width=80
 		height=20
 	}
@@ -1297,7 +1238,7 @@ text {
 text {
 	object {
 		x=375
-		y=436
+		y=485
 		width=80
 		height=16
 	}
@@ -1309,7 +1250,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=481
+		y=530
 		width=80
 		height=20
 	}
@@ -1326,7 +1267,7 @@ text {
 text {
 	object {
 		x=375
-		y=485
+		y=534
 		width=80
 		height=16
 	}
@@ -1338,7 +1279,7 @@ text {
 text {
 	object {
 		x=375
-		y=386
+		y=435
 		width=80
 		height=16
 	}
@@ -1350,7 +1291,7 @@ text {
 text {
 	object {
 		x=375
-		y=460
+		y=509
 		width=80
 		height=16
 	}
@@ -1362,7 +1303,7 @@ text {
 "text entry" {
 	object {
 		x=516
-		y=382
+		y=431
 		width=80
 		height=20
 	}
@@ -1377,7 +1318,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=456
+		y=505
 		width=80
 		height=20
 	}
@@ -1395,7 +1336,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=382
+		y=431
 		width=80
 		height=20
 	}
@@ -1412,7 +1353,7 @@ text {
 text {
 	object {
 		x=375
-		y=411
+		y=460
 		width=80
 		height=16
 	}
@@ -1424,7 +1365,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=407
+		y=456
 		width=80
 		height=20
 	}
@@ -1442,7 +1383,7 @@ text {
 "choice button" {
 	object {
 		x=516
-		y=407
+		y=456
 		width=80
 		height=20
 	}
@@ -1456,7 +1397,7 @@ text {
 text {
 	object {
 		x=375
-		y=361
+		y=410
 		width=80
 		height=16
 	}
@@ -1468,7 +1409,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=357
+		y=406
 		width=80
 		height=20
 	}
@@ -1485,7 +1426,7 @@ text {
 "text entry" {
 	object {
 		x=516
-		y=332
+		y=381
 		width=80
 		height=20
 	}
@@ -1500,7 +1441,7 @@ text {
 "text entry" {
 	object {
 		x=516
-		y=357
+		y=406
 		width=80
 		height=20
 	}
@@ -1515,7 +1456,7 @@ text {
 "message button" {
 	object {
 		x=516
-		y=481
+		y=530
 		width=80
 		height=20
 	}
@@ -1527,51 +1468,10 @@ text {
 	label="Reset"
 	release_msg="1"
 }
-text {
-	object {
-		x=375
-		y=593
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Vacuum Value"
-}
 "text update" {
 	object {
 		x=601
-		y=589
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_INTLK:DET_VAC:first_check.A"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=375
-		y=624
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Min"
-}
-"text update" {
-	object {
-		x=601
-		y=620
+		y=668
 		width=80
 		height=20
 	}
@@ -1582,13 +1482,14 @@ text {
 	}
 	clrmod="alarm"
 	align="horiz. centered"
+	format="exponential"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=601
-		y=720
+		y=768
 		width=80
 		height=20
 	}
@@ -1606,7 +1507,7 @@ text {
 text {
 	object {
 		x=375
-		y=724
+		y=772
 		width=80
 		height=16
 	}
@@ -1618,7 +1519,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=769
+		y=817
 		width=80
 		height=20
 	}
@@ -1635,7 +1536,7 @@ text {
 text {
 	object {
 		x=375
-		y=773
+		y=821
 		width=80
 		height=16
 	}
@@ -1647,7 +1548,7 @@ text {
 text {
 	object {
 		x=375
-		y=674
+		y=722
 		width=80
 		height=16
 	}
@@ -1659,7 +1560,7 @@ text {
 text {
 	object {
 		x=375
-		y=748
+		y=796
 		width=80
 		height=16
 	}
@@ -1671,7 +1572,7 @@ text {
 "text entry" {
 	object {
 		x=516
-		y=670
+		y=718
 		width=80
 		height=20
 	}
@@ -1686,7 +1587,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=744
+		y=792
 		width=80
 		height=20
 	}
@@ -1704,7 +1605,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=670
+		y=718
 		width=80
 		height=20
 	}
@@ -1721,7 +1622,7 @@ text {
 text {
 	object {
 		x=375
-		y=699
+		y=747
 		width=80
 		height=16
 	}
@@ -1733,7 +1634,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=695
+		y=743
 		width=80
 		height=20
 	}
@@ -1751,7 +1652,7 @@ text {
 "choice button" {
 	object {
 		x=516
-		y=695
+		y=743
 		width=80
 		height=20
 	}
@@ -1762,22 +1663,10 @@ text {
 	}
 	stacking="column"
 }
-text {
-	object {
-		x=375
-		y=649
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Max"
-}
 "text update" {
 	object {
 		x=601
-		y=645
+		y=693
 		width=80
 		height=20
 	}
@@ -1788,43 +1677,14 @@ text {
 	}
 	clrmod="alarm"
 	align="horiz. centered"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=516
-		y=620
-		width=80
-		height=20
-	}
-	control {
-		chan="HPS_INTLK:DET_VAC:min"
-		clr=14
-		bclr=2
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=516
-		y=645
-		width=80
-		height=20
-	}
-	control {
-		chan="HPS_INTLK:DET_VAC:max"
-		clr=14
-		bclr=2
-	}
+	format="exponential"
 	limits {
 	}
 }
 "message button" {
 	object {
 		x=516
-		y=769
+		y=817
 		width=80
 		height=20
 	}
@@ -1835,4 +1695,267 @@ text {
 	}
 	label="Reset"
 	release_msg="1"
+}
+text {
+	object {
+		x=25
+		y=116
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SW Scale [0-1]"
+}
+"text entry" {
+	object {
+		x=166
+		y=112
+		width=80
+		height=20
+	}
+	control {
+		chan="HPS_INTLK:SVT_SUP:intlk_scale"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=166
+		y=136
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Limit_LOW"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=166
+		y=161
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Limit_HIGH"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=116
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SW Scale [0-1]"
+}
+"text entry" {
+	object {
+		x=516
+		y=112
+		width=80
+		height=20
+	}
+	control {
+		chan="HPS_INTLK:FE_SUP:intlk_scale"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=516
+		y=137
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Limit_LOW"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=516
+		y=162
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Limit_HIGH"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=361
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SW Scale [0-1]"
+}
+"text entry" {
+	object {
+		x=166
+		y=357
+		width=80
+		height=20
+	}
+	control {
+		chan="HPS_INTLK:SVT_RTN:intlk_scale"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=361
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SW Scale [0-1]"
+}
+"text entry" {
+	object {
+		x=516
+		y=357
+		width=80
+		height=20
+	}
+	control {
+		chan="HPS_INTLK:FE_RTN:intlk_scale"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=647
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SW Scale [0-1]"
+}
+"text entry" {
+	object {
+		x=516
+		y=643
+		width=80
+		height=20
+	}
+	control {
+		chan="HPS_INTLK:DET_VAC:intlk_scale"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=375
+		y=671
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Min - PLC/SW"
+}
+text {
+	object {
+		x=375
+		y=696
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Max - PLC/SW"
+}
+"text update" {
+	object {
+		x=516
+		y=693
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Vacuum-Limit_HIGH"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	format="exponential"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=516
+		y=668
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Vacuum-Limit_LOW"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	format="exponential"
+	limits {
+	}
 }

@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/svt-devel/apps/chillerApp/op/medm/chiller_presto.adl"
+	name="/usr/clas12/hps/prod/apps/chillerApp/medm/chiller_presto.adl"
 	version=030108
 }
 display {
@@ -126,12 +126,12 @@ text {
 	display[1] {
 		label="IOC Stats"
 		name="ioc_stats_soft.adl"
-		args="ioc=iocchiller-svt"
+		args="ioc=iocchillerSVT"
 	}
 	display[2] {
 		label="Autosave"
 		name="autosave.adl"
-		args="P=iocchiller-svt:"
+		args="P=iocchillerSVT:"
 	}
 	clr=14
 	bclr=4
@@ -328,23 +328,6 @@ text {
 	}
 	textix="Flow"
 }
-"text update" {
-	object {
-		x=130
-		y=324
-		width=120
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:CHILLER:FLOW"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
 "text entry" {
 	object {
 		x=130
@@ -525,9 +508,9 @@ rectangle {
 }
 "text update" {
 	object {
-		x=250
+		x=210
 		y=324
-		width=40
+		width=80
 		height=20
 	}
 	monitor {
