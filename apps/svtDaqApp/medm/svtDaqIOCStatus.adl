@@ -1,13 +1,13 @@
 
 file {
-	name="/usr/clas12/hps/svt-devel/apps/svtDaqDpmApp/../svtDaqApp/medm/svtDaqSocketSetup.adl"
-	version=030108
+	name="/usr/clas12/hps/svt-devel/apps/svtDaqApp/medm/svtDaqIOCStatus.adl"
+	version=030101
 }
 display {
 	object {
-		x=145
-		y=49
-		width=700
+		x=408
+		y=51
+		width=500
 		height=600
 	}
 	clr=14
@@ -1116,103 +1116,6 @@ composite {
 	limits {
 	}
 }
-composite {
-	object {
-		x=450
-		y=60
-		width=220
-		height=49
-	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=480
-				y=89
-				width=101
-				height=20
-			}
-			monitor {
-				chan="SVT:poll_xml_ip"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text entry" {
-			object {
-				x=600
-				y=89
-				width=70
-				height=20
-			}
-			control {
-				chan="SVT:poll_xml_ip"
-				clr=14
-				bclr=0
-			}
-			limits {
-			}
-		}
-		text {
-			object {
-				x=450
-				y=89
-				width=50
-				height=20
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="Host"
-		}
-		"text update" {
-			object {
-				x=480
-				y=60
-				width=45
-				height=17
-			}
-			monitor {
-				chan="SVT:poll_xml_port"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text entry" {
-			object {
-				x=540
-				y=60
-				width=50
-				height=20
-			}
-			control {
-				chan="SVT:poll_xml_port"
-				clr=14
-				bclr=0
-			}
-			limits {
-			}
-		}
-		text {
-			object {
-				x=450
-				y=60
-				width=50
-				height=20
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="Port"
-		}
-	}
-}
 text {
 	object {
 		x=90
@@ -1807,18 +1710,5 @@ text {
 		clr=25
 	}
 	textix="XML"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=444
-		y=31
-		width=200
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	textix="OBSOLETE (NOT USED)"
 	align="horiz. centered"
 }
