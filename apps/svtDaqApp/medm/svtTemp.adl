@@ -1,14 +1,14 @@
 
 file {
-	name="/u1/epics/svt-epics/svt-medm/svtTemp.adl"
-	version=030108
+	name="/usr/clas12/hps/svt-devel/apps/svtDaqApp/medm/svtTemp.adl"
+	version=030101
 }
 display {
 	object {
-		x=1476
-		y=62
-		width=370
-		height=570
+		x=380
+		y=142
+		width=350
+		height=580
 	}
 	clr=14
 	bclr=12
@@ -97,7 +97,7 @@ text {
 	"basic attribute" {
 		clr=15
 	}
-	textix="FEB TEMPERATURES"
+	textix="FEB Temperatures"
 	align="horiz. centered"
 }
 composite {
@@ -820,95 +820,104 @@ composite {
 		}
 	}
 }
-oval {
-	object {
-		x=137
-		y=500
-		width=12
-		height=12
-	}
-	"basic attribute" {
-		clr=15
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="(!A)&1"
-		chan="SVT:hb_check"
-	}
-}
 text {
 	object {
-		x=11
-		y=500
-		width=100
-		height=25
-	}
-	"basic attribute" {
-		clr=50
-	}
-	textix="SVT DAQ HEARTBEAT"
-	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=109
-		y=530
-		width=30
+		x=66
+		y=390
+		width=150
 		height=20
 	}
-	monitor {
-		chan="SVT:hb_check"
-		clr=0
-		bclr=12
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	format="string"
-	limits {
-	}
-}
-oval {
-	object {
-		x=127
-		y=500
-		width=12
-		height=12
-	}
 	"basic attribute" {
-		clr=20
+		clr=61
 	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A&1"
-		chan="SVT:hb_check"
-	}
-}
-text {
-	object {
-		x=11
-		y=530
-		width=80
-		height=25
-	}
-	"basic attribute" {
-		clr=50
-	}
-	textix="SVT DAQ STATUS"
+	textix="Vacuum Chamber Temperatures"
 	align="horiz. centered"
 }
 composite {
 	object {
 		x=11
-		y=400
-		width=277
-		height=55
+		y=420
+		width=260
+		height=103
 	}
 	"composite name"=""
 	children {
+		text {
+			object {
+				x=11
+				y=443
+				width=50
+				height=20
+			}
+			"basic attribute" {
+				clr=50
+			}
+			textix="Input"
+		}
+		text {
+			object {
+				x=11
+				y=473
+				width=50
+				height=20
+			}
+			"basic attribute" {
+				clr=50
+			}
+			textix="Output "
+		}
 		"text update" {
 			object {
-				x=150
-				y=400
+				x=98
+				y=443
+				width=45
+				height=20
+			}
+			monitor {
+				chan="HPS_SVT:PLC:i:RTD_FE_Supply-Value"
+				clr=30
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=98
+				y=473
+				width=45
+				height=17
+			}
+			monitor {
+				chan="HPS_SVT:PLC:i:RTD_FE_Return-Value"
+				clr=30
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"shell command" {
+			object {
+				x=80
+				y=503
+				width=80
+				height=20
+			}
+			command[0] {
+				label="SVT Temperatures"
+				name="StripTool"
+				args="/usr/local/clas/devel/R3.14.12/support/strip/svt_temps.stp &"
+			}
+			clr=0
+			bclr=39
+			label="StripCharts"
+		}
+		"text update" {
+			object {
+				x=209
+				y=443
 				width=45
 				height=17
 			}
@@ -923,8 +932,8 @@ composite {
 		}
 		"text update" {
 			object {
-				x=150
-				y=430
+				x=209
+				y=473
 				width=45
 				height=17
 			}
@@ -937,34 +946,10 @@ composite {
 			limits {
 			}
 		}
-		text {
-			object {
-				x=11
-				y=400
-				width=150
-				height=25
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="Vacuum Chamber Input "
-		}
-		text {
-			object {
-				x=11
-				y=430
-				width=150
-				height=25
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="Vacuum Chamber Output "
-		}
 		"shell command" {
 			object {
-				x=208
-				y=430
+				x=191
+				y=503
 				width=80
 				height=20
 			}
@@ -976,6 +961,32 @@ composite {
 			clr=0
 			bclr=39
 			label="StripCharts"
+		}
+		text {
+			object {
+				x=98
+				y=420
+				width=45
+				height=20
+			}
+			"basic attribute" {
+				clr=50
+			}
+			textix="FEB"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=209
+				y=420
+				width=45
+				height=20
+			}
+			"basic attribute" {
+				clr=50
+			}
+			textix="SVT"
+			align="horiz. centered"
 		}
 	}
 }
