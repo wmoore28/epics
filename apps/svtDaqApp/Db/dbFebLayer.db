@@ -7,11 +7,11 @@ record(stringin, SVT:daq:map:0:dna) {
 
 record(stringin, SVT:daq:map:0:layer) {
   field(SCAN, "Passive") 
-  field(VAL,"L2-3t")
+  field(VAL,"L2-3b")
   field(DTYP,"Soft Channel")
 }
 
-record(stringin, SVT:daqmap:L2-3t:febid) {
+record(stringin, SVT:daqmap:L2-3b:febid) {
   field(SCAN, "Passive") 
   field(VAL,"0")
   field(DTYP,"Soft Channel")
@@ -47,11 +47,11 @@ record(stringin, SVT:daq:map:2:dna) {
 
 record(stringin, SVT:daq:map:2:layer) {
   field(SCAN, "Passive") 
-  field(VAL,"L1t")
+  field(VAL,"L1b")
   field(DTYP,"Soft Channel")
 }
 
-record(stringin, SVT:daqmap:L1t:febid) {
+record(stringin, SVT:daqmap:L1b:febid) {
   field(SCAN, "Passive") 
   field(VAL,"2")
   field(DTYP,"Soft Channel")
@@ -127,11 +127,11 @@ record(stringin, SVT:daq:map:6:dna) {
 
 record(stringin, SVT:daq:map:6:layer) {
   field(SCAN, "Passive") 
-  field(VAL,"L2-3b")
+  field(VAL,"L2-3t")
   field(DTYP,"Soft Channel")
 }
 
-record(stringin, SVT:daqmap:L2-3b:febid) {
+record(stringin, SVT:daqmap:L2-3t:febid) {
   field(SCAN, "Passive") 
   field(VAL,"6")
   field(DTYP,"Soft Channel")
@@ -187,11 +187,11 @@ record(stringin, SVT:daq:map:9:dna) {
 
 record(stringin, SVT:daq:map:9:layer) {
   field(SCAN, "Passive") 
-  field(VAL,"L1b")
+  field(VAL,"L1t")
   field(DTYP,"Soft Channel")
 }
 
-record(stringin, SVT:daqmap:L1b:febid) {
+record(stringin, SVT:daqmap:L1t:febid) {
   field(SCAN, "Passive") 
   field(VAL,"9")
   field(DTYP,"Soft Channel")
