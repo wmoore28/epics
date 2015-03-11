@@ -1,11 +1,11 @@
 
 file {
-	name="/u1/epics/svt-epics/svt-medm/svtHybrid.adl"
+	name="/usr/clas12/hps/svt-devel/apps/svtDaqApp/medm/svtHybrid.adl"
 	version=030108
 }
 display {
 	object {
-		x=-125
+		x=10
 		y=49
 		width=1390
 		height=700
@@ -4091,1305 +4091,18 @@ rectangle {
 	limits {
 	}
 }
-composite {
+text {
 	object {
 		x=475
 		y=10
-		width=107
-		height=571
+		width=100
+		height=20
 	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=533
-				y=31
-				width=35
-				height=20
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="temp2"
-			align="horiz. centered"
-		}
-		"text update" {
-			object {
-				x=487
-				y=54
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:0:0:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=537
-				y=54
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:0:0:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=486
-				y=79
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:0:1:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=537
-				y=79
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:0:1:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=486
-				y=104
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:0:2:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=537
-				y=104
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:0:2:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=485
-				y=129
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:0:3:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=536
-				y=129
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:0:3:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=484
-				y=162
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:1:0:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=535
-				y=162
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:1:0:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=484
-				y=187
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:1:1:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=534
-				y=187
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:1:1:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=484
-				y=212
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:1:2:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=534
-				y=212
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:1:2:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=483
-				y=237
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:1:3:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=533
-				y=237
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:1:3:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=484
-				y=271
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:2:0:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=534
-				y=271
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:2:0:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=483
-				y=296
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:2:1:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=533
-				y=296
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:2:1:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=483
-				y=321
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:2:2:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=533
-				y=321
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:2:2:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=482
-				y=346
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:2:3:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=532
-				y=346
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:2:3:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=484
-				y=378
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:3:0:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=535
-				y=378
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:3:0:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=484
-				y=403
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:3:1:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=534
-				y=403
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:3:1:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=484
-				y=428
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:3:2:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=534
-				y=428
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:3:2:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=483
-				y=453
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:3:3:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=533
-				y=453
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:3:3:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=484
-				y=486
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:4:0:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=534
-				y=486
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:4:0:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=483
-				y=511
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:4:1:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=533
-				y=511
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:4:1:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=483
-				y=536
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:4:2:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=533
-				y=536
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:4:2:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=482
-				y=561
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:4:3:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=532
-				y=561
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:4:3:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		text {
-			object {
-				x=484
-				y=31
-				width=35
-				height=20
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="temp1"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=475
-				y=10
-				width=100
-				height=20
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="Temp (C)"
-			align="horiz. centered"
-		}
+	"basic attribute" {
+		clr=50
 	}
-}
-composite {
-	object {
-		x=1093
-		y=10
-		width=107
-		height=571
-	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=1151
-				y=31
-				width=35
-				height=20
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="temp2"
-			align="horiz. centered"
-		}
-		"text update" {
-			object {
-				x=1105
-				y=54
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:5:0:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1155
-				y=54
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:5:0:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1104
-				y=79
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:5:1:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1155
-				y=79
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:5:1:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1104
-				y=104
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:5:2:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1155
-				y=104
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:5:2:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1103
-				y=129
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:5:3:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1154
-				y=129
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:5:3:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1102
-				y=162
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:6:0:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1153
-				y=162
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:6:0:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1102
-				y=187
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:6:1:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1152
-				y=187
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:6:1:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1102
-				y=212
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:6:2:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1152
-				y=212
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:6:2:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1101
-				y=237
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:6:3:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1151
-				y=237
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:6:3:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1102
-				y=271
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:7:0:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1152
-				y=271
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:7:0:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1101
-				y=296
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:7:1:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1151
-				y=296
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:7:1:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1101
-				y=321
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:7:2:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1151
-				y=321
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:7:2:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1100
-				y=346
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:7:3:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1150
-				y=346
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:7:3:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1102
-				y=378
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:8:0:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1153
-				y=378
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:8:0:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1102
-				y=403
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:8:1:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1152
-				y=403
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:8:1:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1102
-				y=428
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:8:2:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1152
-				y=428
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:8:2:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1101
-				y=453
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:8:3:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1151
-				y=453
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:8:3:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1102
-				y=486
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:9:0:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1152
-				y=486
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:9:0:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1101
-				y=511
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:9:1:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1151
-				y=511
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:9:1:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1101
-				y=536
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:9:2:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1151
-				y=536
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:9:2:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1100
-				y=561
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:9:3:temp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=1150
-				y=561
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:9:3:temp2:t_rd"
-				clr=30
-				bclr=14
-			}
-			limits {
-			}
-		}
-		text {
-			object {
-				x=1102
-				y=31
-				width=35
-				height=20
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="temp1"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=1093
-				y=10
-				width=100
-				height=20
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="Temp (C)"
-			align="horiz. centered"
-		}
-	}
+	textix="Temp (C)"
+	align="horiz. centered"
 }
 "choice button" {
 	object {
@@ -6660,6 +5373,652 @@ composite {
 				bclr=14
 			}
 			align="horiz. centered"
+			limits {
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=1080
+		y=10
+		width=100
+		height=571
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=1080
+				y=10
+				width=100
+				height=20
+			}
+			"basic attribute" {
+				clr=50
+			}
+			textix="Temp (C)"
+			align="horiz. centered"
+		}
+		composite {
+			object {
+				x=1105
+				y=54
+				width=50
+				height=527
+			}
+			"composite name"=""
+			children {
+				"text update" {
+					object {
+						x=1110
+						y=54
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:5:0:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1109
+						y=79
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:5:1:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1109
+						y=104
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:5:2:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1108
+						y=129
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:5:3:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1107
+						y=162
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:6:0:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1107
+						y=187
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:6:1:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1107
+						y=212
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:6:2:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1106
+						y=237
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:6:3:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1107
+						y=271
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:7:0:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1106
+						y=296
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:7:1:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1106
+						y=321
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:7:2:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1105
+						y=346
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:7:3:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1107
+						y=378
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:8:0:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1107
+						y=403
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:8:1:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1107
+						y=428
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:8:2:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1106
+						y=453
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:8:3:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1107
+						y=486
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:9:0:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1106
+						y=511
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:9:1:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1106
+						y=536
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:9:2:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=1105
+						y=561
+						width=45
+						height=20
+					}
+					monitor {
+						chan="SVT:temp:hyb:9:3:temp1:t_rd"
+						clr=30
+						bclr=14
+					}
+					limits {
+					}
+				}
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=500
+		y=54
+		width=50
+		height=527
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=505
+				y=54
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:0:0:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=504
+				y=79
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:0:1:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=504
+				y=104
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:0:2:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=503
+				y=129
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:0:3:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=502
+				y=162
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:1:0:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=502
+				y=187
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:1:1:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=502
+				y=212
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:1:2:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=501
+				y=237
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:1:3:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=502
+				y=271
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:2:0:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=501
+				y=296
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:2:1:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=501
+				y=321
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:2:2:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=500
+				y=346
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:2:3:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=502
+				y=378
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:3:0:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=502
+				y=403
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:3:1:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=502
+				y=428
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:3:2:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=501
+				y=453
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:3:3:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=502
+				y=486
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:4:0:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=501
+				y=511
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:4:1:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=501
+				y=536
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:4:2:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=500
+				y=561
+				width=45
+				height=20
+			}
+			monitor {
+				chan="SVT:temp:hyb:4:3:temp1:t_rd"
+				clr=30
+				bclr=14
+			}
 			limits {
 			}
 		}
