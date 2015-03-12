@@ -283,7 +283,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_INTLK:SVT_SUP:first_check.A"
+		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Value"
 		clr=0
 		bclr=11
 	}
@@ -591,7 +591,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_INTLK:SVT_RTN:first_check.A"
+		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Value"
 		clr=0
 		bclr=11
 	}
@@ -870,7 +870,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_INTLK:FE_SUP:first_check.A"
+		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Value"
 		clr=0
 		bclr=11
 	}
@@ -1149,7 +1149,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_INTLK:FE_RTN:first_check.A"
+		chan="HPS_SVT:PLC:i:RTD_FE_Return-Value"
 		clr=0
 		bclr=11
 	}
