@@ -8,7 +8,7 @@ record(calcout, "$(P)$(R)first_check") {
   field(SCAN, "2 second")
   field(PREC, "$(PREC)")
   field(CALC, "(C<A||A<B)&(D#1)?1:0")
-  field(INPA, "$(VAL)")
+  field(INPA, "$(PLC_TAG)-Value")
   field(INPB, "$(P)$(R)min")
   field(INPC, "$(P)$(R)max")
   field(INPD, "$(P)$(R)intlk_bypass")
@@ -29,17 +29,19 @@ record(ai, "$(P)$(R)intlk_scale") {
 record(calcout, "$(P)$(R)max") {
   field(SCAN, "1 second")
   field(PREC, "$(PREC)")
-  field(CALC, "A*B")
+  field(CALC, "A-((A-B)*(1-C))")
   field(INPA, "$(PLC_TAG)-Limit_HIGH")
-  field(INPB, "$(P)$(R)intlk_scale")
+  field(INPB, "$(PLC_TAG)-Limit_LOW")
+  field(INPC, "$(P)$(R)intlk_scale")
 }
 
 record(calcout, "$(P)$(R)min") {
   field(SCAN, "1 second")
   field(PREC, "$(PREC)")
-  field(CALC, "A*(2-B)")
-  field(INPA, "$(PLC_TAG)-Limit_LOW")
-  field(INPB, "$(P)$(R)intlk_scale")
+  field(CALC, "B+(abs(A-B)*(1-C))")
+  field(INPA, "$(PLC_TAG)-Limit_HIGH")
+  field(INPB, "$(PLC_TAG)-Limit_LOW")
+  field(INPC, "$(P)$(R)intlk_scale")
 }
 
 # Second check. If this PV is processed
@@ -51,7 +53,7 @@ record(calcout, "$(P)$(R)second_check") {
   field(PINI, "NO")
   field(PREC, "$(PREC)")
   field(CALC, "(C<A||A<B)&(D#1)?1:0")
-  field(INPA, "$(VAL)")
+  field(INPA, "$(PLC_TAG)-Value")
   field(INPB, "$(P)$(R)min.VAL")
   field(INPC, "$(P)$(R)max.VAL")
   field(INPD, "$(P)$(R)intlk_bypass")
