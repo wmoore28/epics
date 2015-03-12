@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/develop/apps/generalApp/medm/HPS_EPICS.adl"
+	name="/usr/clas12/hps/prod/apps/generalApp/medm/HPS_EPICS.adl"
 	version=030108
 }
 display {
 	object {
-		x=3
-		y=84
+		x=5
+		y=60
 		width=240
 		height=835
 	}
@@ -90,7 +90,7 @@ display {
 rectangle {
 	object {
 		x=0
-		y=461
+		y=474
 		width=240
 		height=26
 	}
@@ -125,7 +125,7 @@ text {
 rectangle {
 	object {
 		x=0
-		y=645
+		y=659
 		width=240
 		height=20
 	}
@@ -136,7 +136,7 @@ rectangle {
 rectangle {
 	object {
 		x=0
-		y=693
+		y=706
 		width=300
 		height=25
 	}
@@ -147,7 +147,7 @@ rectangle {
 "choice button" {
 	object {
 		x=140
-		y=730
+		y=743
 		width=80
 		height=16
 	}
@@ -162,7 +162,7 @@ rectangle {
 "related display" {
 	object {
 		x=41
-		y=437
+		y=450
 		width=20
 		height=20
 	}
@@ -224,7 +224,7 @@ rectangle {
 rectangle {
 	object {
 		x=0
-		y=600
+		y=614
 		width=240
 		height=20
 	}
@@ -256,7 +256,7 @@ image {
 rectangle {
 	object {
 		x=0
-		y=550
+		y=564
 		width=240
 		height=22
 	}
@@ -280,7 +280,7 @@ text {
 text {
 	object {
 		x=70
-		y=442
+		y=455
 		width=120
 		height=15
 	}
@@ -292,7 +292,7 @@ text {
 "related display" {
 	object {
 		x=20
-		y=464
+		y=477
 		width=20
 		height=20
 	}
@@ -345,7 +345,7 @@ text {
 text {
 	object {
 		x=70
-		y=469
+		y=482
 		width=120
 		height=16
 	}
@@ -357,7 +357,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=622
+		y=635
 		width=20
 		height=20
 	}
@@ -366,9 +366,34 @@ text {
 		name="cd $APP/generalApp/strip; StripTool &"
 	}
 	command[1] {
-		label="MyaViewer (archiver) on clonpc"
+		label="MyaViewer (clonpc11)"
 		name="xterm -title MyaViewer -e "
-		args="$APP/generalApp/scripts/MyaViewer_launcher.sh &"
+		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc11 &"
+	}
+	command[2] {
+		label="MyaViewer (clonpc12)"
+		name="xterm -title MyaViewer -e"
+		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc12 &"
+	}
+	command[3] {
+		label="MyaViewer (clonpc16)"
+		name="xterm -title MyaViewer -e "
+		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc16 &"
+	}
+	command[4] {
+		label="MyaViewer (clonpc17)"
+		name="xterm -title MyaViewer -e "
+		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc17 &"
+	}
+	command[5] {
+		label="MyaViewer (clonpc18)"
+		name="xterm -title MyaViewer -e "
+		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc18 &"
+	}
+	command[6] {
+		label="MyaViewer (clonpc19)"
+		name="xterm -title MyaViewer -e "
+		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc19 &"
 	}
 	clr=14
 	bclr=50
@@ -376,7 +401,7 @@ text {
 text {
 	object {
 		x=70
-		y=627
+		y=640
 		width=120
 		height=16
 	}
@@ -388,7 +413,7 @@ text {
 rectangle {
 	object {
 		x=0
-		y=409
+		y=422
 		width=300
 		height=25
 	}
@@ -399,7 +424,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=414
+		y=427
 		width=150
 		height=15
 	}
@@ -449,7 +474,7 @@ text {
 "related display" {
 	object {
 		x=20
-		y=437
+		y=450
 		width=20
 		height=20
 	}
@@ -463,17 +488,13 @@ text {
 "related display" {
 	object {
 		x=20
-		y=553
+		y=566
 		width=20
 		height=20
 	}
 	display[0] {
 		label="alh launcher"
 		name="alh_launch_hps.adl"
-	}
-	display[1] {
-		label="(under development)"
-		name="Aalh_launch_hps.adl"
 	}
 	clr=14
 	bclr=50
@@ -574,7 +595,7 @@ text {
 text {
 	object {
 		x=70
-		y=555
+		y=568
 		width=120
 		height=16
 	}
@@ -612,7 +633,7 @@ text {
 text {
 	object {
 		x=20
-		y=732
+		y=745
 		width=100
 		height=16
 	}
@@ -624,7 +645,7 @@ text {
 "choice button" {
 	object {
 		x=140
-		y=754
+		y=767
 		width=80
 		height=16
 	}
@@ -639,7 +660,7 @@ text {
 text {
 	object {
 		x=20
-		y=754
+		y=767
 		width=100
 		height=16
 	}
@@ -652,7 +673,7 @@ text {
 "related display" {
 	object {
 		x=41
-		y=622
+		y=635
 		width=20
 		height=20
 	}
@@ -692,7 +713,7 @@ text {
 text {
 	object {
 		x=70
-		y=383
+		y=400
 		width=120
 		height=16
 	}
@@ -704,7 +725,7 @@ text {
 "related display" {
 	object {
 		x=20
-		y=379
+		y=396
 		width=20
 		height=20
 	}
@@ -797,7 +818,7 @@ text {
 rectangle {
 	object {
 		x=0
-		y=523
+		y=536
 		width=300
 		height=25
 	}
@@ -808,7 +829,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=528
+		y=541
 		width=150
 		height=15
 	}
@@ -820,7 +841,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=645
+		y=658
 		width=20
 		height=20
 	}
@@ -834,7 +855,7 @@ text {
 text {
 	object {
 		x=70
-		y=650
+		y=663
 		width=120
 		height=16
 	}
@@ -846,7 +867,7 @@ text {
 text {
 	object {
 		x=15
-		y=699
+		y=712
 		width=150
 		height=15
 	}
@@ -880,12 +901,12 @@ text {
 	"basic attribute" {
 		clr=0
 	}
-	textix="Release: v0.3.1"
+	textix="Release: v0.0.0"
 }
 "shell command" {
 	object {
 		x=20
-		y=576
+		y=589
 		width=20
 		height=20
 	}
@@ -908,7 +929,7 @@ text {
 text {
 	object {
 		x=70
-		y=581
+		y=594
 		width=120
 		height=16
 	}
@@ -920,7 +941,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=599
+		y=612
 		width=20
 		height=20
 	}
@@ -938,7 +959,7 @@ text {
 text {
 	object {
 		x=70
-		y=604
+		y=617
 		width=120
 		height=16
 	}
@@ -981,7 +1002,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=668
+		y=681
 		width=20
 		height=20
 	}
@@ -996,7 +1017,7 @@ text {
 text {
 	object {
 		x=70
-		y=673
+		y=686
 		width=120
 		height=16
 	}
@@ -1008,7 +1029,7 @@ text {
 "related display" {
 	object {
 		x=19
-		y=491
+		y=504
 		width=20
 		height=20
 	}
@@ -1038,7 +1059,7 @@ text {
 text {
 	object {
 		x=69
-		y=496
+		y=509
 		width=120
 		height=16
 	}
@@ -1046,4 +1067,62 @@ text {
 		clr=14
 	}
 	textix="Mya Scan Data"
+}
+"related display" {
+	object {
+		x=20
+		y=368
+		width=20
+		height=20
+	}
+	display[0] {
+		label="SVT Map"
+		name="svtMap.adl"
+	}
+	display[1] {
+		label="DPM Status"
+		name="svtDpmStatus.adl"
+	}
+	display[2] {
+		label="DPM Link Status"
+		name="svtDpmLinkStatus.adl"
+	}
+	display[3] {
+		label="Temperature"
+		name="svtTemp.adl"
+	}
+	display[4] {
+		label="Hybrid"
+		name="svtHybrid.adl"
+	}
+	display[5] {
+		label="Hybrid Sync"
+		name="svtHybSync.adl"
+	}
+	display[6] {
+		label="FEB Main"
+		name="svtFebMain.adl"
+	}
+	display[7] {
+		label="Flange Main"
+		name="svtFlangeMain.adl"
+	}
+	display[8] {
+		label="Bias Main"
+		name="svtBiasMain.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=372
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SVT"
 }

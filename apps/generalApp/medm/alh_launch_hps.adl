@@ -1,14 +1,14 @@
 
 file {
-	name="/home/stepanya/epics/app/general/medm/alh_launch_hps.adl"
-	version=030101
+	name="/usr/clas12/hps/prod/apps/generalApp/medm/Aalh_launch_hps.adl"
+	version=030108
 }
 display {
 	object {
-		x=1291
-		y=144
-		width=140
-		height=120
+		x=243
+		y=502
+		width=200
+		height=450
 	}
 	clr=14
 	bclr=4
@@ -87,155 +87,336 @@ display {
 		1a7309,
 	}
 }
-composite {
+rectangle {
 	object {
-		x=5
-		y=33
-		width=129
-		height=18
+		x=0
+		y=166
+		width=200
+		height=24
 	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=5
-				y=33
-				width=70
-				height=18
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Beam"
-		}
-		"shell command" {
-			object {
-				x=119
-				y=33
-				width=15
-				height=15
-			}
-			command[0] {
-				label="beam alh"
-				name="alh"
-				args="-B -m 200000 -l /home/epics/log/ beam.alhConfig > /dev/null 2>&1 &"
-			}
-			clr=0
-			bclr=20
-		}
+	"basic attribute" {
+		clr=11
 	}
 }
-composite {
+rectangle {
 	object {
-		x=5
+		x=0
+		y=38
+		width=200
+		height=24
+	}
+	"basic attribute" {
+		clr=11
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=0
+		width=200
+		height=30
+	}
+	"basic attribute" {
+		clr=23
+	}
+}
+text {
+	object {
+		x=0
 		y=10
-		width=129
+		width=200
 		height=18
 	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=5
-				y=10
-				width=70
-				height=18
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="HV"
-		}
-		"shell command" {
-			object {
-				x=119
-				y=10
-				width=15
-				height=15
-			}
-			command[0] {
-				label="HV alh"
-				name="alh"
-				args="-B -m 200000 -l /home/epics/log/ hv.alhConfig > /dev/null 2>&1 &"
-			}
-			clr=0
-			bclr=20
-		}
+	"basic attribute" {
+		clr=30
 	}
+	textix="HPS Alarm Handler Configs"
+	align="horiz. centered"
 }
-composite {
+text {
 	object {
-		x=5
-		y=78
-		width=129
+		x=15
+		y=43
+		width=70
 		height=18
 	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=5
-				y=78
-				width=70
-				height=18
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Magnets"
-		}
-		"shell command" {
-			object {
-				x=119
-				y=78
-				width=15
-				height=15
-			}
-			command[0] {
-				label="magnets alh"
-				name="alh"
-				args="-B -m 200000 -l /home/epics/log/ magnets.alhConfig > /dev/null 2>&1 &"
-			}
-			clr=0
-			bclr=20
-		}
+	"basic attribute" {
+		clr=1
 	}
+	textix="HPS (All)"
 }
-composite {
+"shell command" {
 	object {
-		x=5
-		y=55
-		width=129
+		x=160
+		y=40
+		width=20
+		height=20
+	}
+	command[0] {
+		label="alh"
+		name="alh"
+		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/HPS.alhConfig &"
+	}
+	clr=30
+	bclr=22
+}
+text {
+	object {
+		x=25
+		y=73
+		width=70
 		height=18
 	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=5
-				y=55
-				width=70
-				height=18
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Vesda"
-		}
-		"shell command" {
-			object {
-				x=119
-				y=55
-				width=15
-				height=15
-			}
-			command[0] {
-				label="Vesda alh"
-				name="alh"
-				args="-B -m 200000 -l /home/epics/log/ vesda.alhConfig > /dev/null 2>&1 &"
-			}
-			clr=0
-			bclr=20
-		}
+	"basic attribute" {
+		clr=14
 	}
+	textix="Beam"
+}
+"shell command" {
+	object {
+		x=160
+		y=70
+		width=20
+		height=20
+	}
+	command[0] {
+		label="alh"
+		name="alh"
+		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/beam.alhConfig &"
+	}
+	clr=30
+	bclr=22
+}
+text {
+	object {
+		x=25
+		y=103
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL"
+}
+"shell command" {
+	object {
+		x=160
+		y=100
+		width=20
+		height=20
+	}
+	command[0] {
+		label="alh"
+		name="alh"
+		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/ecal.alhConfig &"
+	}
+	clr=30
+	bclr=22
+}
+text {
+	object {
+		x=25
+		y=133
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Faraday Cup"
+}
+"shell command" {
+	object {
+		x=160
+		y=130
+		width=20
+		height=20
+	}
+	command[0] {
+		label="alh"
+		name="alh"
+		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/fcup.alhConfig &"
+	}
+	clr=30
+	bclr=22
+}
+text {
+	object {
+		x=25
+		y=293
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Temperatures"
+}
+"shell command" {
+	object {
+		x=160
+		y=290
+		width=20
+		height=20
+	}
+	command[0] {
+		label="ECAL"
+		name="alh"
+		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/tempSens.alhConfig &"
+	}
+	command[1] {
+		label="Hall Temp"
+		name="alh"
+		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/hall_temp.alhConfig &"
+	}
+	clr=30
+	bclr=22
+}
+text {
+	object {
+		x=25
+		y=323
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Vacuum"
+}
+"shell command" {
+	object {
+		x=160
+		y=320
+		width=20
+		height=20
+	}
+	command[0] {
+		label="alh"
+		name="alh"
+		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/vacuum.alhConfig &"
+	}
+	clr=30
+	bclr=22
+}
+text {
+	object {
+		x=15
+		y=171
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=1
+	}
+	textix="Subsystems"
+}
+text {
+	object {
+		x=25
+		y=203
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="HV"
+}
+text {
+	object {
+		x=25
+		y=233
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Magnets"
+}
+"shell command" {
+	object {
+		x=160
+		y=230
+		width=20
+		height=20
+	}
+	command[0] {
+		label="alh"
+		name="alh"
+		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/magnets.alhConfig &"
+	}
+	clr=30
+	bclr=22
+}
+text {
+	object {
+		x=25
+		y=263
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SVT"
+}
+"shell command" {
+	object {
+		x=160
+		y=260
+		width=20
+		height=20
+	}
+	command[0] {
+		label="alh"
+		name="alh"
+		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/svt.alhConfig &"
+	}
+	clr=30
+	bclr=22
+}
+"shell command" {
+	object {
+		x=160
+		y=200
+		width=20
+		height=20
+	}
+	command[0] {
+		label="alh"
+		name="alh"
+		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/hv.alhConfig &"
+	}
+	clr=30
+	bclr=22
+}
+text {
+	object {
+		x=25
+		y=353
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Vesda"
+}
+"shell command" {
+	object {
+		x=160
+		y=350
+		width=20
+		height=20
+	}
+	command[0] {
+		label="alh"
+		name="alh"
+		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/vesda.alhConfig &"
+	}
+	clr=30
+	bclr=22
 }

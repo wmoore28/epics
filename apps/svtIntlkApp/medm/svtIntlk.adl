@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/develop/apps/svtIntlkApp/medm/svtIntlk.adl"
+	name="/usr/clas12/hps/prod/apps/svtIntlkApp/medm/svtIntlk.adl"
 	version=030108
 }
 display {
@@ -610,7 +610,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Min"
+	textix="Min - PLC/SW"
 }
 "text update" {
 	object {
@@ -816,7 +816,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Max"
+	textix="Max - PLC/SW"
 }
 "text update" {
 	object {
@@ -832,36 +832,6 @@ text {
 	}
 	clrmod="alarm"
 	align="horiz. centered"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=166
-		y=382
-		width=80
-		height=20
-	}
-	control {
-		chan="HPS_INTLK:SVT_RTN:min"
-		clr=14
-		bclr=2
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=166
-		y=407
-		width=80
-		height=20
-	}
-	control {
-		chan="HPS_INTLK:SVT_RTN:max"
-		clr=14
-		bclr=2
-	}
 	limits {
 	}
 }
@@ -1198,7 +1168,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Min"
+	textix="Min - PLC/SW"
 }
 "text update" {
 	object {
@@ -1404,7 +1374,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Max"
+	textix="Max - PLC/SW"
 }
 "text update" {
 	object {
@@ -1420,36 +1390,6 @@ text {
 	}
 	clrmod="alarm"
 	align="horiz. centered"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=516
-		y=381
-		width=80
-		height=20
-	}
-	control {
-		chan="HPS_INTLK:FE_RTN:min"
-		clr=14
-		bclr=2
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=516
-		y=406
-		width=80
-		height=20
-	}
-	control {
-		chan="HPS_INTLK:FE_RTN:max"
-		clr=14
-		bclr=2
-	}
 	limits {
 	}
 }
@@ -1956,6 +1896,74 @@ text {
 	clrmod="alarm"
 	align="horiz. centered"
 	format="exponential"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=166
+		y=382
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Limit_LOW"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=166
+		y=407
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Limit_HIGH"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=516
+		y=383
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_FE_Return-Limit_LOW"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=516
+		y=408
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_FE_Return-Limit_HIGH"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
 	limits {
 	}
 }

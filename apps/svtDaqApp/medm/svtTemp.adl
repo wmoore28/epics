@@ -1,14 +1,13 @@
-
 file {
-	name="/usr/clas12/hps/svt-devel/apps/svtDaqApp/medm/svtTemp.adl"
+	name="/u1/epics/svt-epics/svt-medm/svtTemp.adl"
 	version=030108
 }
 display {
 	object {
-		x=380
-		y=142
-		width=350
-		height=580
+		x=1476
+		y=62
+		width=370
+		height=570
 	}
 	clr=14
 	bclr=12
@@ -97,7 +96,7 @@ text {
 	"basic attribute" {
 		clr=15
 	}
-	textix="FEB Temperatures"
+	textix="FEB TEMPERATURES"
 	align="horiz. centered"
 }
 composite {
@@ -820,162 +819,162 @@ composite {
 		}
 	}
 }
-text {
+oval {
 	object {
-		x=66
-		y=390
-		width=150
-		height=20
+		x=137
+		y=500
+		width=12
+		height=12
 	}
 	"basic attribute" {
-		clr=61
+		clr=15
 	}
-	textix="Vacuum Chamber Temperatures"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=11
-		y=443
-		width=50
-		height=20
+	"dynamic attribute" {
+		vis="calc"
+		calc="(!A)&1"
+		chan="SVT:hb_check"
 	}
-	"basic attribute" {
-		clr=50
-	}
-	textix="Input"
 }
 text {
 	object {
 		x=11
-		y=473
-		width=50
-		height=20
+		y=500
+		width=100
+		height=25
 	}
 	"basic attribute" {
 		clr=50
 	}
-	textix="Output "
+	textix="SVT DAQ HEARTBEAT"
+	align="horiz. centered"
 }
 "text update" {
 	object {
-		x=98
-		y=443
-		width=45
+		x=109
+		y=530
+		width=30
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Value"
-		clr=30
-		bclr=14
+		chan="SVT:hb_check"
+		clr=0
+		bclr=12
 	}
+	clrmod="alarm"
 	align="horiz. centered"
+	format="string"
 	limits {
 	}
 }
-"text update" {
+oval {
 	object {
-		x=98
-		y=473
-		width=45
-		height=17
+		x=127
+		y=500
+		width=12
+		height=12
 	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_FE_Return-Value"
-		clr=30
-		bclr=14
+	"basic attribute" {
+		clr=20
 	}
-	align="horiz. centered"
-	limits {
+	"dynamic attribute" {
+		vis="calc"
+		calc="A&1"
+		chan="SVT:hb_check"
 	}
-}
-"shell command" {
-	object {
-		x=80
-		y=503
-		width=80
-		height=20
-	}
-	command[0] {
-		label="SVT Temperatures"
-		name="StripTool"
-		args="/usr/local/clas/devel/R3.14.12/support/strip/svt_temps.stp &"
-	}
-	clr=0
-	bclr=39
-	label="StripCharts"
-}
-"text update" {
-	object {
-		x=209
-		y=443
-		width=45
-		height=17
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Value"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=209
-		y=473
-		width=45
-		height=17
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Value"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"shell command" {
-	object {
-		x=191
-		y=503
-		width=80
-		height=20
-	}
-	command[0] {
-		label="SVT Temperatures"
-		name="StripTool"
-		args="/usr/local/clas/devel/R3.14.12/support/strip/svt_temps.stp &"
-	}
-	clr=0
-	bclr=39
-	label="StripCharts"
 }
 text {
 	object {
-		x=98
-		y=420
-		width=45
-		height=20
+		x=11
+		y=530
+		width=80
+		height=25
 	}
 	"basic attribute" {
 		clr=50
 	}
-	textix="FEB"
+	textix="SVT DAQ STATUS"
 	align="horiz. centered"
 }
-text {
+composite {
 	object {
-		x=209
-		y=420
-		width=45
-		height=20
+		x=11
+		y=400
+		width=277
+		height=55
 	}
-	"basic attribute" {
-		clr=50
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=150
+				y=400
+				width=45
+				height=17
+			}
+			monitor {
+				chan="minit_t_v_LCW_IN"
+				clr=30
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=150
+				y=430
+				width=45
+				height=17
+			}
+			monitor {
+				chan="minit_t_v_LCW_OUT"
+				clr=30
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=11
+				y=400
+				width=150
+				height=25
+			}
+			"basic attribute" {
+				clr=50
+			}
+			textix="Vacuum Chamber Input "
+		}
+		text {
+			object {
+				x=11
+				y=430
+				width=150
+				height=25
+			}
+			"basic attribute" {
+				clr=50
+			}
+			textix="Vacuum Chamber Output "
+		}
+		"shell command" {
+			object {
+				x=208
+				y=430
+				width=80
+				height=20
+			}
+			command[0] {
+				label="SVT Temperatures"
+				name="StripTool"
+				args="/usr/local/clas/devel/R3.14.12/support/strip/svt_temps.stp &"
+			}
+			clr=0
+			bclr=39
+			label="StripCharts"
+		}
 	}
-	textix="SVT"
-	align="horiz. centered"
 }
