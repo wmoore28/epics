@@ -18,8 +18,8 @@ LIBRARY_IOC_Linux += svtDaqDpmSupport
 USR_INCLUDES += -I/usr/include/libxml2
 
 #SVT DAQ STUFF
-#SVTDAQDIR = $(TOP)/../svtDaqLib
-USR_INCLUDES += -I$(SVTDAQDIR)
+#SVTDAQLIB = $(TOP)/../svtDaqLib
+USR_INCLUDES += -I$(SVTDAQLIB)
 
 # Compile and add the code to the support library
 #svtDaqDpmSupport_SRCS += xxxRecord.c
@@ -59,7 +59,7 @@ xml2_LIBS += xml2
 svtDaqDpm_LIBS += xml2
 
 #SVT DAQ EXTERNAL LIB
-svtDaqExt_DIR += $(SVTDAQDIR)  
+svtDaqExt_DIR += $(SVTDAQLIB)  
 svtDaqExt_LIBS += svtDaqExt  
 svtDaqDpm_LIBS += svtDaqExt
 
