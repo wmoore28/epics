@@ -8,7 +8,7 @@ display {
 		x=10
 		y=49
 		width=1390
-		height=700
+		height=600
 	}
 	clr=14
 	bclr=12
@@ -85,18 +85,6 @@ display {
 		3cb420,
 		289315,
 		1a7309,
-	}
-}
-rectangle {
-	object {
-		x=5
-		y=5
-		width=1388
-		height=1100
-	}
-	"basic attribute" {
-		clr=14
-		fill="outline"
 	}
 }
 text {
@@ -4866,298 +4854,6 @@ composite {
 	}
 	stacking="column"
 }
-"related display" {
-	object {
-		x=223
-		y=656
-		width=79
-		height=22
-	}
-	display[0] {
-		label="GGG"
-		name="svtBiasMain.adl"
-	}
-	clr=0
-	bclr=24
-	label="Bias"
-}
-text {
-	object {
-		x=219
-		y=630
-		width=88
-		height=29
-	}
-	"basic attribute" {
-		clr=50
-	}
-	textix="BIAS"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=853
-		y=632
-		width=133
-		height=25
-	}
-	"basic attribute" {
-		clr=30
-	}
-	textix="SVT DAQ Status"
-}
-composite {
-	object {
-		x=953
-		y=630
-		width=48
-		height=20
-	}
-	"composite name"=""
-	children {
-		composite {
-			object {
-				x=953
-				y=630
-				width=48
-				height=20
-			}
-			"composite name"=""
-			children {
-				"text update" {
-					object {
-						x=953
-						y=630
-						width=48
-						height=20
-					}
-					monitor {
-						chan="SVT:hb_check"
-						clr=30
-						bclr=14
-					}
-					align="horiz. centered"
-					limits {
-					}
-				}
-			}
-		}
-	}
-}
-composite {
-	object {
-		x=349
-		y=630
-		width=120
-		height=46
-	}
-	"composite name"=""
-	children {
-		"related display" {
-			object {
-				x=349
-				y=654
-				width=120
-				height=22
-			}
-			display[0] {
-				label="GGG"
-				name="svtFebMain.adl"
-			}
-			clr=0
-			bclr=24
-			label="FEB Low Voltages"
-		}
-		text {
-			object {
-				x=364
-				y=630
-				width=89
-				height=29
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="FEB Low Voltages"
-			align="horiz. centered"
-		}
-	}
-}
-composite {
-	object {
-		x=492
-		y=630
-		width=120
-		height=46
-	}
-	"composite name"=""
-	children {
-		"related display" {
-			object {
-				x=492
-				y=654
-				width=120
-				height=22
-			}
-			display[0] {
-				label="GGG"
-				name="svtFlangeMain.adl"
-			}
-			clr=0
-			bclr=24
-			label="Flange Boards"
-		}
-		text {
-			object {
-				x=507
-				y=630
-				width=89
-				height=29
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="Flange Boards"
-			align="horiz. centered"
-		}
-	}
-}
-composite {
-	object {
-		x=634
-		y=630
-		width=162
-		height=48
-	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=666
-				y=630
-				width=89
-				height=29
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="Temperature Monitoring"
-			align="horiz. centered"
-		}
-		"related display" {
-			object {
-				x=634
-				y=656
-				width=162
-				height=22
-			}
-			display[0] {
-				label="GGG"
-				name="svtTemp.adl"
-			}
-			clr=0
-			bclr=24
-			label="Temperature Monitoring"
-		}
-	}
-}
-oval {
-	object {
-		x=1169
-		y=630
-		width=19
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A&1"
-		chan="SVT:hb_check"
-	}
-}
-oval {
-	object {
-		x=1164
-		y=630
-		width=19
-		height=20
-	}
-	"basic attribute" {
-		clr=61
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="(!A)&1"
-		chan="SVT:hb_check"
-	}
-}
-text {
-	object {
-		x=1023
-		y=630
-		width=133
-		height=25
-	}
-	"basic attribute" {
-		clr=30
-	}
-	textix="SVT DAQ Heartbeat"
-}
-composite {
-	object {
-		x=1023
-		y=660
-		width=162
-		height=28
-	}
-	"composite name"=""
-	children {
-		oval {
-			object {
-				x=1161
-				y=660
-				width=19
-				height=20
-			}
-			"basic attribute" {
-				clr=61
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="tmp:svt:ps_inlck"
-			}
-		}
-		oval {
-			object {
-				x=1166
-				y=660
-				width=19
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="tmp:svt:ps_inlck"
-			}
-		}
-		text {
-			object {
-				x=1023
-				y=663
-				width=133
-				height=25
-			}
-			"basic attribute" {
-				clr=30
-			}
-			textix="Power Supply Interlock"
-		}
-	}
-}
 composite {
 	object {
 		x=1207
@@ -6020,6 +5716,111 @@ composite {
 				bclr=14
 			}
 			limits {
+			}
+		}
+	}
+}
+oval {
+	object {
+		x=1303
+		y=200
+		width=19
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A&1"
+		chan="SVT:hb_check"
+	}
+}
+oval {
+	object {
+		x=1300
+		y=200
+		width=19
+		height=20
+	}
+	"basic attribute" {
+		clr=61
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(!A)&1"
+		chan="SVT:hb_check"
+	}
+}
+text {
+	object {
+		x=1200
+		y=200
+		width=133
+		height=25
+	}
+	"basic attribute" {
+		clr=30
+	}
+	textix="Cntrl DPM IOC"
+}
+composite {
+	object {
+		x=1200
+		y=250
+		width=148
+		height=27
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=1200
+				y=252
+				width=133
+				height=25
+			}
+			"basic attribute" {
+				clr=30
+			}
+			textix="SVT DAQ Status"
+		}
+		composite {
+			object {
+				x=1300
+				y=250
+				width=48
+				height=20
+			}
+			"composite name"=""
+			children {
+				composite {
+					object {
+						x=1300
+						y=250
+						width=48
+						height=20
+					}
+					"composite name"=""
+					children {
+						"text update" {
+							object {
+								x=1300
+								y=250
+								width=48
+								height=20
+							}
+							monitor {
+								chan="SVT:hb_check"
+								clr=30
+								bclr=14
+							}
+							align="horiz. centered"
+							limits {
+							}
+						}
+					}
+				}
 			}
 		}
 	}
