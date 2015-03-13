@@ -38,15 +38,12 @@ getStatus {
 # Internal temp, we aren't using an external sensor.
 getTemp {
 	out "\${ADDR}\x20\x00%2.1<notsum>";
-	in  "\${ADDR}\x20\x03\x00%0.2r%*2c";
-	@mismatch { 
-		in "\${ADDR}\x20\x03\x01%0.2r%*2c";
-	}
+	in  "\${ADDR}\x20\x03%2.2r%*2c";
 }
 
 getSetpt {
     out "\${ADDR}\x70\x00%2.1<notsum>";
-	in  "\${ADDR}\x70\x03\x00%0.2r%*2c";
+	in  "\${ADDR}\x70\x03%2.2r%*2c";
 }
 
 setSetpt {
@@ -56,7 +53,7 @@ setSetpt {
 
 getLowLim {
     out "\${ADDR}\x40\x00%2.1<notsum>";
-	in  "\${ADDR}\x40\x03\x00%0.2r%*2c";
+	in  "\${ADDR}\x40\x03%2.2r%*2c";
 }
 
 setLowLim {
@@ -66,7 +63,7 @@ setLowLim {
 
 getHighLim {
     out "\${ADDR}\x60\x00%2.1<notsum>";
-	in  "\${ADDR}\x60\x03\x01%0.2r%*2c";
+	in  "\${ADDR}\x60\x03%2.2r%*2c";
 }
 
 setHighLim {
