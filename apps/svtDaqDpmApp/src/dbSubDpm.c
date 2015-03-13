@@ -27,16 +27,19 @@ static long subPollInit(subRecord *precord) {
 
 
 static long subPollProcess(subRecord *precord) {
+
   process_order++;
   if (mySubDebug>-1)
     printf("[ subPollProcess ]: %d Record %s called subPollProcess(%p)\n",process_order, precord->name, (void*) precord);
 
-  strcpy(socketPollStatusStr,"undefined");
-
-  // find dpm nr
+  int port;
   int idpm;
   char str0[256];
   char str1[256];  
+
+  strcpy(socketPollStatusStr,"undefined");
+
+  // find dpm nr
   getStringFromEpicsName(precord->name,str0,0);
   getStringFromEpicsName(precord->name,str1,1);
   if(strcmp(str0,"SVT")==0 && (strcmp(str1,"dpm")==0 || strcmp(str1,"dtm")==0)) {
@@ -53,9 +56,6 @@ static long subPollProcess(subRecord *precord) {
     sprintf(host,"dtm%d",idpm);    
   }
 
-
-
-
   if(xmldoc!=NULL) {
     printf("[ subPollProcess ]: dpm doc is not null(%p). Clean up.\n", xmldoc);
     xmlFreeDoc(xmldoc);
@@ -64,16 +64,23 @@ static long subPollProcess(subRecord *precord) {
   }
 
 
+  //reset file desc
+  socketFD = -1;
+  // default searching start here
+  port = 8090;
 
-  socketFD = open_socket(host,8090);
-
+  while(socketFD<0 && port < 8100) {
+     socketFD = open_socket(host,port);
+     port++;
+  }
 
 
 
   if(socketFD>0) {
-    printf("[ subPollProcess ]: successfully opened socket at %d\n", socketFD);
+     printf("[ subPollProcess ]: successfully opened socket at %d (port=%d)\n", socketFD, port);
 
-    strcpy(socketPollStatusStr,"socket opened");
+     sprintf(str0,"socket opened (%s:%d)",host,port);
+     strcpy(socketPollStatusStr,str0);
 
 
     if (mySubDebug>-1)
@@ -88,7 +95,7 @@ static long subPollProcess(subRecord *precord) {
   } else {
     printf("[ subPollProcess ]: [ WARNING ]: failed to open socket\n");
 
-    strcpy(socketPollStatusStr,"couldnt open socket");
+    strcpy(socketPollStatusStr,"couldn't open socket");
 
   }
 
