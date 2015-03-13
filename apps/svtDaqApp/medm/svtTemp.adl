@@ -1,13 +1,14 @@
+
 file {
-	name="/u1/epics/svt-epics/svt-medm/svtTemp.adl"
+	name="/usr/clas12/hps/svt-devel/apps/svtDaqApp/medm/svtTemp.adl"
 	version=030108
 }
 display {
 	object {
-		x=1476
-		y=62
-		width=370
-		height=570
+		x=359
+		y=49
+		width=400
+		height=700
 	}
 	clr=14
 	bclr=12
@@ -88,7 +89,7 @@ display {
 }
 text {
 	object {
-		x=10
+		x=70
 		y=15
 		width=240
 		height=35
@@ -96,12 +97,12 @@ text {
 	"basic attribute" {
 		clr=15
 	}
-	textix="FEB TEMPERATURES"
+	textix="FEB Temperatures"
 	align="horiz. centered"
 }
 composite {
 	object {
-		x=10
+		x=70
 		y=50
 		width=240
 		height=318
@@ -110,7 +111,7 @@ composite {
 	children {
 		text {
 			object {
-				x=80
+				x=140
 				y=50
 				width=50
 				height=25
@@ -123,7 +124,7 @@ composite {
 		}
 		text {
 			object {
-				x=140
+				x=200
 				y=50
 				width=50
 				height=25
@@ -136,7 +137,7 @@ composite {
 		}
 		text {
 			object {
-				x=200
+				x=260
 				y=50
 				width=50
 				height=25
@@ -149,7 +150,7 @@ composite {
 		}
 		text {
 			object {
-				x=10
+				x=70
 				y=73
 				width=50
 				height=25
@@ -162,7 +163,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=80
+				x=140
 				y=71
 				width=50
 				height=25
@@ -180,7 +181,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=140
+				x=200
 				y=71
 				width=50
 				height=25
@@ -198,7 +199,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=200
+				x=260
 				y=71
 				width=50
 				height=25
@@ -216,7 +217,7 @@ composite {
 		}
 		text {
 			object {
-				x=10
+				x=70
 				y=103
 				width=50
 				height=25
@@ -229,7 +230,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=80
+				x=140
 				y=101
 				width=50
 				height=25
@@ -247,7 +248,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=140
+				x=200
 				y=101
 				width=50
 				height=25
@@ -265,7 +266,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=200
+				x=260
 				y=101
 				width=50
 				height=25
@@ -283,7 +284,7 @@ composite {
 		}
 		text {
 			object {
-				x=10
+				x=70
 				y=133
 				width=50
 				height=25
@@ -296,7 +297,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=80
+				x=140
 				y=131
 				width=50
 				height=25
@@ -314,7 +315,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=140
+				x=200
 				y=131
 				width=50
 				height=25
@@ -332,7 +333,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=200
+				x=260
 				y=131
 				width=50
 				height=25
@@ -350,7 +351,7 @@ composite {
 		}
 		text {
 			object {
-				x=10
+				x=70
 				y=163
 				width=50
 				height=25
@@ -363,7 +364,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=80
+				x=140
 				y=161
 				width=50
 				height=25
@@ -381,7 +382,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=140
+				x=200
 				y=161
 				width=50
 				height=25
@@ -399,7 +400,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=200
+				x=260
 				y=161
 				width=50
 				height=25
@@ -417,7 +418,7 @@ composite {
 		}
 		text {
 			object {
-				x=10
+				x=70
 				y=193
 				width=50
 				height=25
@@ -430,7 +431,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=80
+				x=140
 				y=191
 				width=50
 				height=25
@@ -448,7 +449,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=140
+				x=200
 				y=191
 				width=50
 				height=25
@@ -466,7 +467,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=200
+				x=260
 				y=191
 				width=50
 				height=25
@@ -484,7 +485,7 @@ composite {
 		}
 		text {
 			object {
-				x=10
+				x=70
 				y=223
 				width=50
 				height=25
@@ -497,7 +498,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=80
+				x=140
 				y=221
 				width=50
 				height=25
@@ -515,7 +516,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=140
+				x=200
 				y=221
 				width=50
 				height=25
@@ -533,7 +534,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=200
+				x=260
 				y=221
 				width=50
 				height=25
@@ -551,7 +552,7 @@ composite {
 		}
 		text {
 			object {
-				x=10
+				x=70
 				y=253
 				width=50
 				height=25
@@ -564,7 +565,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=80
+				x=140
 				y=251
 				width=50
 				height=25
@@ -582,7 +583,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=140
+				x=200
 				y=251
 				width=50
 				height=25
@@ -600,7 +601,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=200
+				x=260
 				y=251
 				width=50
 				height=25
@@ -618,7 +619,7 @@ composite {
 		}
 		text {
 			object {
-				x=10
+				x=70
 				y=283
 				width=50
 				height=25
@@ -631,7 +632,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=80
+				x=140
 				y=281
 				width=50
 				height=25
@@ -649,7 +650,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=140
+				x=200
 				y=281
 				width=50
 				height=25
@@ -667,7 +668,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=200
+				x=260
 				y=281
 				width=50
 				height=25
@@ -685,7 +686,7 @@ composite {
 		}
 		text {
 			object {
-				x=10
+				x=70
 				y=313
 				width=50
 				height=25
@@ -698,7 +699,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=80
+				x=140
 				y=311
 				width=50
 				height=25
@@ -716,7 +717,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=140
+				x=200
 				y=311
 				width=50
 				height=25
@@ -734,7 +735,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=200
+				x=260
 				y=311
 				width=50
 				height=25
@@ -752,7 +753,7 @@ composite {
 		}
 		text {
 			object {
-				x=10
+				x=70
 				y=343
 				width=50
 				height=25
@@ -765,7 +766,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=80
+				x=140
 				y=341
 				width=50
 				height=25
@@ -783,7 +784,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=140
+				x=200
 				y=341
 				width=50
 				height=25
@@ -801,7 +802,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=200
+				x=260
 				y=341
 				width=50
 				height=25
@@ -819,162 +820,389 @@ composite {
 		}
 	}
 }
-oval {
+text {
 	object {
-		x=137
-		y=500
-		width=12
-		height=12
+		x=125
+		y=390
+		width=150
+		height=20
 	}
 	"basic attribute" {
-		clr=15
+		clr=61
 	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="(!A)&1"
-		chan="SVT:hb_check"
-	}
+	textix="Vacuum Chamber Temperatures"
+	align="horiz. centered"
 }
 text {
 	object {
-		x=11
-		y=500
-		width=100
-		height=25
+		x=70
+		y=443
+		width=50
+		height=20
 	}
 	"basic attribute" {
 		clr=50
 	}
-	textix="SVT DAQ HEARTBEAT"
+	textix="Input"
+}
+text {
+	object {
+		x=70
+		y=473
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="Output "
+}
+"text update" {
+	object {
+		x=157
+		y=443
+		width=45
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Value"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=157
+		y=473
+		width=45
+		height=17
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_FE_Return-Value"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"shell command" {
+	object {
+		x=139
+		y=503
+		width=80
+		height=20
+	}
+	command[0] {
+		label="SVT Temperatures"
+		name="StripTool"
+		args="/usr/local/clas/devel/R3.14.12/support/strip/svt_temps.stp &"
+	}
+	clr=0
+	bclr=39
+	label="StripCharts"
+}
+"text update" {
+	object {
+		x=268
+		y=443
+		width=45
+		height=17
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Value"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=268
+		y=473
+		width=45
+		height=17
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Value"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"shell command" {
+	object {
+		x=250
+		y=503
+		width=80
+		height=20
+	}
+	command[0] {
+		label="SVT Temperatures"
+		name="StripTool"
+		args="/usr/local/clas/devel/R3.14.12/support/strip/svt_temps.stp &"
+	}
+	clr=0
+	bclr=39
+	label="StripCharts"
+}
+text {
+	object {
+		x=157
+		y=420
+		width=45
+		height=20
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="FEB"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=268
+		y=420
+		width=45
+		height=20
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="SVT"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=70
+		y=550
+		width=240
+		height=20
+	}
+	"basic attribute" {
+		clr=61
+	}
+	textix="Chiller Status"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=70
+		y=618
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="SVT"
+}
+text {
+	object {
+		x=70
+		y=648
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="FEB"
+}
+"text update" {
+	object {
+		x=98
+		y=620
+		width=45
+		height=17
+	}
+	monitor {
+		chan="HPS_SVT:CHILLER:START_STOP"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=98
+		y=596
+		width=45
+		height=20
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="Status"
 	align="horiz. centered"
 }
 "text update" {
 	object {
-		x=109
-		y=530
-		width=30
-		height=20
+		x=160
+		y=650
+		width=45
+		height=17
 	}
 	monitor {
-		chan="SVT:hb_check"
-		clr=0
-		bclr=12
+		chan="HPS_FE:CHILLER:TEMP"
+		clr=30
+		bclr=14
 	}
-	clrmod="alarm"
 	align="horiz. centered"
-	format="string"
 	limits {
 	}
 }
-oval {
+"text update" {
 	object {
-		x=127
-		y=500
-		width=12
-		height=12
+		x=160
+		y=620
+		width=45
+		height=17
 	}
-	"basic attribute" {
-		clr=20
+	monitor {
+		chan="HPS_SVT:CHILLER:TEMP"
+		clr=30
+		bclr=14
 	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A&1"
-		chan="SVT:hb_check"
+	align="horiz. centered"
+	limits {
 	}
 }
 text {
 	object {
-		x=11
-		y=530
-		width=80
-		height=25
+		x=160
+		y=596
+		width=45
+		height=20
 	}
 	"basic attribute" {
 		clr=50
 	}
-	textix="SVT DAQ STATUS"
+	textix="Temp."
 	align="horiz. centered"
 }
-composite {
+"text update" {
 	object {
-		x=11
-		y=400
-		width=277
-		height=55
+		x=216
+		y=650
+		width=45
+		height=17
 	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=150
-				y=400
-				width=45
-				height=17
-			}
-			monitor {
-				chan="minit_t_v_LCW_IN"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=150
-				y=430
-				width=45
-				height=17
-			}
-			monitor {
-				chan="minit_t_v_LCW_OUT"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=11
-				y=400
-				width=150
-				height=25
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="Vacuum Chamber Input "
-		}
-		text {
-			object {
-				x=11
-				y=430
-				width=150
-				height=25
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="Vacuum Chamber Output "
-		}
-		"shell command" {
-			object {
-				x=208
-				y=430
-				width=80
-				height=20
-			}
-			command[0] {
-				label="SVT Temperatures"
-				name="StripTool"
-				args="/usr/local/clas/devel/R3.14.12/support/strip/svt_temps.stp &"
-			}
-			clr=0
-			bclr=39
-			label="StripCharts"
-		}
+	monitor {
+		chan="HPS_FE:CHILLER:TEMP:RD_SP"
+		clr=30
+		bclr=14
 	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=216
+		y=620
+		width=45
+		height=17
+	}
+	monitor {
+		chan="HPS_SVT:CHILLER:TEMP:RD_SP"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=216
+		y=594
+		width=45
+		height=20
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="Temp_RD"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=274
+		y=620
+		width=45
+		height=17
+	}
+	monitor {
+		chan="HPS_SVT:CHILLER:PRES"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=274
+		y=595
+		width=45
+		height=20
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="Pressure"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=323
+		y=620
+		width=45
+		height=17
+	}
+	monitor {
+		chan="HPS_SVT:CHILLER:PUMP_STAGE"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=323
+		y=595
+		width=45
+		height=20
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="Stage"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=323
+		y=575
+		width=45
+		height=20
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="Pump"
+	align="horiz. centered"
 }
