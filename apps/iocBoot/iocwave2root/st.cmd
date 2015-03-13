@@ -10,6 +10,8 @@ cd $(TOP)
 dbLoadDatabase "dbd/wave2root.dbd"
 wave2root_registerRecordDeviceDriver pdbbase
 
+epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES", "1000000")
+
 # Load IOC status records
 dbLoadRecords("db/iocAdminSoft.db","IOC=$(IOC)")
 dbLoadRecords("db/save_restoreStatus.db", "P=$(IOC):")
