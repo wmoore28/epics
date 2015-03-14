@@ -309,6 +309,31 @@ static long subDtmTrigCountProcess(subRecord *precord) {
 
 
 
+static long subDtmAckCountInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subAckCountInit ]: %d Record %s called subDtmAckCountInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subDtmAckCountProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDtmAckCountProcess ]: %d Record %s called subDtmAckCountProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int val = -1;
+
+  val = getDtmAckCountProcess(precord->name, xmldoc);
+
+  precord->val = val;
+
+  
+  return 0;
+}
+
+
+
 
 /* Register these symbols for use by IOC code: */
 
@@ -329,3 +354,5 @@ epicsRegisterFunction(subDpmTrigCountInit);
 epicsRegisterFunction(subDpmTrigCountProcess);
 epicsRegisterFunction(subDtmTrigCountInit);
 epicsRegisterFunction(subDtmTrigCountProcess);
+epicsRegisterFunction(subDtmAckCountInit);
+epicsRegisterFunction(subDtmAckCountProcess);

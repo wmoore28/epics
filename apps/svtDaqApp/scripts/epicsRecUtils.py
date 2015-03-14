@@ -1183,16 +1183,38 @@ def buildDtmTrigCount():
     records = []
     s = """
 
-record(sub,SVT:daq:dtm:$(DPM):trigcount_sub)
+record(sub,SVT:daq:dtm:$(DTM):trigcount_sub)
 {
     field(SCAN,"Passive")
     field(INAM,"subDtmTrigCountInit")
     field(SNAM,"subDtmTrigCountProcess")
 }
 
-record(longin, SVT:daq:dtm:$(DPM):trigcount) {
+record(longin, SVT:daq:dtm:$(DTM):trigcount) {
   field(SCAN, "1 second") 
   field(INP, "SVT:daq:dtm:$(DPM):trigcount_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+"""	
+    records.append(s)
+    return records
+
+def buildDtmAckCount():
+
+    records = []
+    s = """
+
+record(sub,SVT:daq:dtm:$(DTM):$(DPM):ackcount_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDtmAckCountInit")
+    field(SNAM,"subDtmAckCountProcess")
+}
+
+record(longin, SVT:daq:dtm:$(DTM):$(DPM):ackcount) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dtm:$(DTM):$(DPM):ackcount_sub PP")
   field(DTYP,"Soft Channel")
 }
 

@@ -560,6 +560,73 @@ int getDtmTrigCountProcess(char* pname, xmlDoc* doc) {
 
 
 
+int getDtmAckCountProcess(char* pname, xmlDoc* doc) {
+  int val;
+  int idpm;
+  int idtm;
+  char str1[256];
+  char str2[256];
+  char action[256];
+  char tmp[256];
+  xmlXPathObjectPtr result;
+  xmlNodePtr node;
+  val = -1;
+  idpm = -1;
+  idtm = -1;
+  getStringFromEpicsName(pname,str1,1);
+  getStringFromEpicsName(pname,str2,2);
+
+  if(strcmp(str1,"daq")==0 && strcmp(str2,"dtm")==0) {     
+    idtm = getIntFromEpicsName(pname,3);  
+    idpm = getIntFromEpicsName(pname,4);      
+    getStringFromEpicsName(pname,action,5);    
+    
+    if(strcmp(action,"ackcount_sub")==0) {
+       sprintf(tmp,"/system/status/TiDtm/AckCount%d",idpm);
+    } else {
+       strcpy(tmp,""); 
+    }
+    
+    if(strcmp(tmp,"")!=0) {
+       if(DEBUG>2) 
+          printf("[ getDtmAckCountProcess ] : xpath \"%s\"\n",tmp);
+      result =  getnodeset(doc, (xmlChar*) tmp);
+      if(result!=NULL) {
+         if(DEBUG>0) 
+            printf("[ getDtmAckCountProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
+        if(result->nodesetval->nodeNr==1) {
+          node = result->nodesetval->nodeTab[0];
+          if(node!=NULL) {
+             val = getIntValue(doc, node);
+             if(DEBUG>0) 
+                printf("[ getDtmAckCountProcess ]: got val %d.\n",val);      
+          } else {
+             printf("[ getDtmAckCountProcess ] : [ WARNING ] no Link nodes found\n");
+          }
+        } else {
+          printf("[ getDtmAckCountProcess ] : [ WARNING ] %d Link nodes found, should be exactly 1\n", result->nodesetval->nodeNr);
+        }
+        strcpy(tmp,"/system/status/TiDtm/AckCount%d");
+        if(DEBUG>2)
+           printf("[ getDtmAckCountProcess ] : free xpath result\n");
+        xmlXPathFreeObject(result);
+      } else {
+         printf("[ getDtmAckCountProcess ] : [ WARNING ] no results found\n");
+      }  
+      
+      
+    } else {
+      printf("[ getDtmAckCountProcess ]: [ ERROR ]: wrong action \"%s\"!\n",action);
+    }     
+  } else {
+    printf("[ getDtmAckCountProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);    
+  }
+  return val;
+}
+
+
+
+
 
 
 

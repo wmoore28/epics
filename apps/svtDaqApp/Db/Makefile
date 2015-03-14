@@ -30,6 +30,7 @@ DB += dbDataDpmLink.db
 DB += dbDataDpmEventCount.db
 DB += dbDataDpmTrigCount.db
 DB += dbDataDtmTrigCount.db
+DB += dbDataDtmAckCount.db
 DB += dbDataDtm.db
 DB += dbFebLayer.db
 DB += dbHybSync.db

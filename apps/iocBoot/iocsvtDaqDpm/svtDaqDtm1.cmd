@@ -20,7 +20,16 @@ dbLoadRecords("db/iocAdminSoft.db", "IOC=iocsvtDaqDtm1")
 #dbLoadRecords("db/xxx.db","user=trackerHost")
 dbLoadRecords("db/dbDataDtm.db","DTM=1")
 dbLoadRecords("db/dbDataDtmStatus.db","DTM=1")
-dbLoadRecords("db/dbDataDtmTrigCount.db","DPM=1")
+dbLoadRecords("db/dbDataDtmTrigCount.db","DTM=1")
+dbLoadRecords("db/dbDataDtmAckCount.db","DTM=1,DPM=0")
+dbLoadRecords("db/dbDataDtmAckCount.db","DTM=1,DPM=1")
+dbLoadRecords("db/dbDataDtmAckCount.db","DTM=1,DPM=2")
+dbLoadRecords("db/dbDataDtmAckCount.db","DTM=1,DPM=3")
+dbLoadRecords("db/dbDataDtmAckCount.db","DTM=1,DPM=4")
+dbLoadRecords("db/dbDataDtmAckCount.db","DTM=1,DPM=5")
+dbLoadRecords("db/dbDataDtmAckCount.db","DTM=1,DPM=6")
+dbLoadRecords("db/dbDataDtmAckCount.db","DTM=1,DPM=7")
+
 
 var mySubDebug 1
 

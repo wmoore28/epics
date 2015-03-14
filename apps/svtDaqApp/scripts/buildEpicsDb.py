@@ -47,6 +47,8 @@ def buildEpics():
     printRecords(recs,"dbDataDpmTrigCount")
     recs = utils.buildDtmTrigCount()
     printRecords(recs,"dbDataDtmTrigCount")
+    recs = utils.buildDtmAckCount()
+    printRecords(recs,"dbDataDtmAckCount")
     recs = utils.buildDpmStatus()
     printRecords(recs,"dbDataDpmStatus")
     recs = utils.buildDtmStatus()

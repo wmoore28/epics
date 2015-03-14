@@ -37,6 +37,8 @@ int getTrigCountProcess(char* pname, xmlDoc* doc);
 
 int getDtmTrigCountProcess(char* pname, xmlDoc* doc);
 
+int getDtmAckCountProcess(char* pname, xmlDoc* doc);
+
 void getSyncProcess(char* pname, xmlDoc* doc, char* value);
 
 int findSystemStr(char* buf, const int MAX, char** start);
