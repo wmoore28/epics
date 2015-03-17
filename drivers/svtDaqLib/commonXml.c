@@ -1092,7 +1092,6 @@ void getSyncProcess(char* pname, xmlDoc* doc, char* value) {
    int iapv;
    char str1[256];
    char str5[256];
-   char action[256];
    char tmp[256];
    xmlXPathObjectPtr result;
    xmlNodePtr node;
@@ -1154,7 +1153,7 @@ void getSyncProcess(char* pname, xmlDoc* doc, char* value) {
             strcpy(value,"-8");	  	
          }
       } else {
-         printf("[ getSyncProcess ]: [ ERROR ]: wrong action \"%s\"!\n",action);
+         printf("[ getSyncProcess ]: [ ERROR ]: couldn't find action for this record name \"%s\"!\n",pname);
          strcpy(value,"-6");
       }     
    } else {

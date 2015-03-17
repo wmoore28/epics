@@ -737,40 +737,78 @@ record(longin, SVT:lv:FEBID:HYBID:sync:sync_rd) {
 
 
 def buildHybSyncBase():
-
-    s = """
-record(aSub,SVT:daq:$(FEB):$(HYB):$(APV):syncbase_rd_asub)
+	
+	s = """
+record(aSub,SVT:daq:FEBID:HYBID:APVID:syncbase_rd_asub)
 {
-    field(SCAN,"1 second")
+    field(SCAN,"Passive")
     field(INAM,"subSyncBaseInit")
     field(SNAM,"subSyncBaseProcess")
-    field(OUTA,"SVT:daq:$(FEB):$(HYB):$(APV):syncbase_rd PP")
+    field(OUTA,"SVT:daq:FEBID:HYBID:APVID:syncbase_rd PP")
     field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:FEBID:HYBID:APVID:syncpeak_rd_asub")
 }
 
-record(longin, SVT:daq:$(FEB):$(HYB):$(APV):syncbase_rd) {
+record(longin, SVT:daq:FEBID:HYBID:APVID:syncbase_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
 
 
-record(aSub,SVT:daq:$(FEB):$(HYB):$(APV):syncpeak_rd_asub)
+record(aSub,SVT:daq:FEBID:HYBID:APVID:syncpeak_rd_asub)
 {
-    field(SCAN,"1 second")
+    field(SCAN,"Passive")
     field(INAM,"subSyncBaseInit")
     field(SNAM,"subSyncBaseProcess")
-    field(OUTA,"SVT:daq:$(FEB):$(HYB):$(APV):syncpeak_rd PP")
+    field(OUTA,"SVT:daq:FEBID:HYBID:APVID:syncpeak_rd PP")
     field(FTVA,"LONG")
+    field(FLNK,"FLNKNEXTHYB")
 }
 
-record(longin, SVT:daq:$(FEB):$(HYB):$(APV):syncpeak_rd) {
+record(longin, SVT:daq:FEBID:HYBID:APVID:syncpeak_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
 
 
 """
-    return s
+	
+	s_flnk = "SVT:daq:NEXTFEBID:NEXTHYBID:NEXTAPV:syncbase_rd_asub"
+	records = []
+	for feb in range(0,10):
+		for hyb in range(0,4):
+			for apv in range(0,5):
+				rec = s
+				if apv==4:
+					if hyb == 3:
+						if feb == 9:
+							# done
+							rec = rec.replace("FLNKNEXTHYB","")                    
+						else:
+							# go to next feb
+							rec = rec.replace("FLNKNEXTHYB",s_flnk)
+							rec = rec.replace("NEXTHYBID",str(0))
+							rec = rec.replace("NEXTAPV",str(0))
+							rec = rec.replace("NEXTFEBID",str(feb+1))
+					else:
+						# go to next hybrid
+						rec = rec.replace("FLNKNEXTHYB",s_flnk)
+						rec = rec.replace("NEXTHYBID",str(hyb+1))
+						rec = rec.replace("NEXTAPV",str(0))
+						rec = rec.replace("NEXTFEBID",str(feb))
+				else:
+					# go to next apv
+					rec = rec.replace("FLNKNEXTHYB",s_flnk)
+					rec = rec.replace("NEXTHYBID",str(hyb))
+					rec = rec.replace("NEXTAPV",str(apv+1))
+					rec = rec.replace("NEXTFEBID",str(feb))				
+				# replace the current record
+				rec = rec.replace("APVID",str(apv))
+				rec = rec.replace("HYBID",str(hyb))
+				rec = rec.replace("FEBID",str(feb))
+				#print 'add rec ', rec
+				records.append(rec)
+	return records
 
 
 
