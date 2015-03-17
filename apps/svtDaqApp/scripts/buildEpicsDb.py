@@ -29,8 +29,6 @@ def buildEpics():
     printRecords(recs,"dbHybSyncBase")
     recs = utils.buildLayer()
     printRecords(recs,"dbFebLayer")
-    #recs = utils.buildDpmState()
-    #printRecords(recs,"dbDpmState")
     recs = utils.buildDpm()
     printRecords(recs,"dbDataDpm")
     recs = utils.buildDtm()
@@ -53,6 +51,8 @@ def buildEpics():
     printRecords(recs,"dbDataDpmStatus")
     recs = utils.buildDtmStatus()
     printRecords(recs,"dbDataDtmStatus")
+    recs = utils.buildDpmEventState()
+    printRecords(recs,"dbDataDpmEventState")
     
 
 

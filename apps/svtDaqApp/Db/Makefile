@@ -37,6 +37,7 @@ DB += dbHybSync.db
 DB += dbHybSyncBase.db
 DB += dbDataDpmStatus.db
 DB += dbDataDtmStatus.db
+DB += dbDataDpmEventState.db
 #DB += dbSVTtest.db
 
 #----------------------------------------------------

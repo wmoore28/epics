@@ -911,38 +911,6 @@ record(stringin, SVT:daqmap:PHYSLAYER:febid) {
 
 
 
-def buildDpmState():
-	
-    s = """
-record(aSub,SVT:daq:dpm:LAYER:state_asub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subDpmStateInit")
-    field(SNAM,"subDpmStateProcess")
-    field(OUTA,"SVT:daq:dpm:LAYER:state PP")
-    field(FTVA,"STRING")
-    field(FLNK,"FLNKNEXTLAYER")
-}
-
-record(stringin, SVT:daq:dpm:LAYER:state) {
-  field(SCAN, "Passive") 
-  field(DTYP,"Soft Channel")
-}
-
-
-"""	
-    s_flnk = "SVT:daq:dpm:NEXTLAYER:state_asub"
-    records = []
-    for dpm in range(0,14):
-        rec = s
-        if dpm <13:
-			rec = rec.replace("FLNKNEXTLAYER",s_flnk)
-			rec = rec.replace("NEXTLAYER",str(dpm+1))
-        else:
-			rec = rec.replace("FLNKNEXTLAYER","")			
-        rec = rec.replace("LAYER",str(dpm))
-        records.append(rec)
-    return records
 
 
 def buildDpmStatus():
@@ -1189,6 +1157,32 @@ record(longin, SVT:daq:dpm:$(DPM):eventcount) {
 """	
     records.append(s)
     return records
+
+
+def buildDpmEventState():
+
+    records = []
+    s = """
+
+record(sub,SVT:daq:dpm:$(DPM):eventstate_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDpmEventStateInit")
+    field(SNAM,"subDpmEventStateProcess")
+}
+
+record(longin, SVT:daq:dpm:$(DPM):eventstate) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dpm:$(DPM):eventstate_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+"""	
+    records.append(s)
+    return records
+
 
 
 

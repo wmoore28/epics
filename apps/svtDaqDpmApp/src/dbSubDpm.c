@@ -260,6 +260,30 @@ static long subDpmEventCountProcess(subRecord *precord) {
 }
 
 
+static long subDpmEventStateInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subEventStateInit ]: %d Record %s called subDpmEventStateInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subDpmEventStateProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDpmEventStateProcess ]: %d Record %s called subDpmEventStateProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int val = -1;
+
+  val = getEventStateProcess(precord->name, xmldoc);
+
+  precord->val = val;
+
+  
+  return 0;
+}
+
+
 static long subDpmTrigCountInit(subRecord *precord) {
   process_order++;
   if (mySubDebug) {
@@ -356,3 +380,5 @@ epicsRegisterFunction(subDtmTrigCountInit);
 epicsRegisterFunction(subDtmTrigCountProcess);
 epicsRegisterFunction(subDtmAckCountInit);
 epicsRegisterFunction(subDtmAckCountProcess);
+epicsRegisterFunction(subDpmEventStateInit);
+epicsRegisterFunction(subDpmEventStateProcess);

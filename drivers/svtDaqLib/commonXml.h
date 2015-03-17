@@ -31,6 +31,8 @@ int getFebNumProcess(char* pname, xmlDoc* doc);
 
 int getLinkProcess(char* pname, xmlDoc* doc);
 
+int getEventStateProcess(char* pname, xmlDoc* doc);
+
 int getEventCountProcess(char* pname, xmlDoc* doc);
 
 int getTrigCountProcess(char* pname, xmlDoc* doc);

@@ -442,6 +442,72 @@ int getEventCountProcess(char* pname, xmlDoc* doc) {
 
 
 
+int getEventStateProcess(char* pname, xmlDoc* doc) {
+   int val;
+   int idpm;
+   char str1[256];
+   char str2[256];
+   char action[256];
+   char tmp[256];
+   xmlXPathObjectPtr result;
+   xmlNodePtr node;
+   val = -1;
+   idpm = -1;
+   getStringFromEpicsName(pname,str1,1);
+   getStringFromEpicsName(pname,str2,2);
+
+   if(strcmp(str1,"daq")==0 && strcmp(str2,"dpm")==0) {     
+      idpm = getIntFromEpicsName(pname,3);  
+    
+      getStringFromEpicsName(pname,action,4);    
+    
+      if(strcmp(action,"eventstate_sub")==0) {
+         strcpy(tmp,"/system/status/DataDpm/EventState");
+      } else {
+         strcpy(tmp,""); 
+      }
+    
+      if(strcmp(tmp,"")!=0) {
+         if(DEBUG>2) printf("[ getEventStateProcess ] : xpath \"%s\"\n",tmp);
+
+         if(doc!=NULL) {
+            
+            result =  getnodeset(doc, (xmlChar*) tmp);
+            if(result!=NULL) {
+               if(DEBUG>0) printf("[ getEventStateProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
+               if(result->nodesetval->nodeNr==1) {
+                  node = result->nodesetval->nodeTab[0];
+                  if(node!=NULL) {
+                     
+                     val = getIntValue(doc, node);
+                     
+                     if(DEBUG>0) printf("[ getEventStateProcess ]: got val %d.\n",val);      
+                  } else {
+                     printf("[ getEventStateProcess ] : [ WARNING ] no Link nodes found\n");
+                  }
+               } else {
+                  printf("[ getEventStateProcess ] : [ WARNING ] %d Link nodes found, should be exactly 1\n", result->nodesetval->nodeNr);
+               }
+               xmlXPathFreeObject(result);        
+            } else {
+               printf("[ getEventStateProcess ] : [ WARNING ] no results found\n");
+            }  
+            
+         } else {
+            printf("[ getEventStateProcess ]: [ WARNING ]: no XML doc\n");
+         }
+      } else {
+         printf("[ getEventStateProcess ]: [ ERROR ]: wrong action \"%s\"!\n",action);
+      }     
+   } else {
+      printf("[ getEventStateProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);    
+   }
+   return val;
+}
+
+
+
+
 
 int getTrigCountProcess(char* pname, xmlDoc* doc) {
   int val;
