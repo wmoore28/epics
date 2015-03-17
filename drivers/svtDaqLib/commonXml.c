@@ -1086,78 +1086,138 @@ void getDpmXmlDoc(int sockfd, int dpm, xmlDoc** dpm_doc_ptrptr, char* nodeTypeSt
 
 
 void getSyncProcess(char* pname, xmlDoc* doc, char* value) {
-  int val;
-  int ifeb;
-  int idp;
-  int iapv;
-  char str1[256];
-  char str5[256];
-  char action[256];
-  char tmp[256];
-  xmlXPathObjectPtr result;
-  xmlNodePtr node;
-  val = -1;
-  ifeb = -1;
-  idp = -1;
+   int val;
+   int ifeb;
+   int idp;
+   int iapv;
+   char str1[256];
+   char str5[256];
+   char action[256];
+   char tmp[256];
+   xmlXPathObjectPtr result;
+   xmlNodePtr node;
+   val = -1;
+   ifeb = -1;
+   idp = -1;
   
-  getStringFromEpicsName(pname,str1,1);
+   getStringFromEpicsName(pname,str1,1);
   
-  if(strcmp(str1,"daq")==0) {
+   if(strcmp(str1,"daq")==0) {
     
-    getStringFromEpicsName(pname,str5,5);
+      getStringFromEpicsName(pname,str5,5);
     
-    if(strcmp(str5,"syncbase_rd_asub")==0) {      
-      ifeb = getIntFromEpicsName(pname,2);  
-      idp = getIntFromEpicsName(pname,3);  
-      iapv = getIntFromEpicsName(pname,4);        
-      sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/HybridSyncStatus[@index=\"%d\"]/Base%d", ifeb, idp, iapv);      
-    } else if(strcmp(str5,"syncpeak_rd_asub")==0) {
-      ifeb = getIntFromEpicsName(pname,2);  
-      idp = getIntFromEpicsName(pname,3);  
-      iapv = getIntFromEpicsName(pname,4);        
-      sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/HybridSyncStatus[@index=\"%d\"]/Peak%d", ifeb, idp, iapv);      
-    } else {
-      strcpy(tmp,""); 
-    }
-    
-    if(strcmp(tmp,"")!=0) {
-      if(DEBUG>2) 
-	printf("[ getSyncProcess ] : xpath \"%s\"\n",tmp);
-      result =  getnodeset(doc, (xmlChar*) tmp);
-      if(result!=NULL) {
-	if(DEBUG>0) printf("[ getSyncProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
-	if(result->nodesetval->nodeNr==1) {
-	  node = result->nodesetval->nodeTab[0];
-	  if(node!=NULL) {
-	    getStrValue(doc,node,value);
-	    if(DEBUG>0) printf("[ getSyncProcess ]: got val %tmp2.\n",value);      
-	  } else {
-	    printf("[ getSyncProcess ] : [ WARNING ] no Sync nodes found\n");
-	    strcpy(value,"no nodes");
-	  }
-	} else {
-	  printf("[ getSyncProcess ] : [ WARNING ] %d Sync nodes found, should be exactly 1\n", result->nodesetval->nodeNr);
-	  strcpy(value,"too many nodes");	  
-	}	  
+      if(strcmp(str5,"syncbase_rd_asub")==0) {      
+         ifeb = getIntFromEpicsName(pname,2);  
+         idp = getIntFromEpicsName(pname,3);  
+         iapv = getIntFromEpicsName(pname,4);        
+         sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/HybridSyncStatus[@index=\"%d\"]/Base%d", ifeb, idp, iapv);      
+      } else if(strcmp(str5,"syncpeak_rd_asub")==0) {
+         ifeb = getIntFromEpicsName(pname,2);  
+         idp = getIntFromEpicsName(pname,3);  
+         iapv = getIntFromEpicsName(pname,4);        
+         sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/HybridSyncStatus[@index=\"%d\"]/Peak%d", ifeb, idp, iapv);      
       } else {
-	if(DEBUG>1)
-	  printf("[ getSyncProcess ] : [ WARNING ] no results found\n");
-	strcpy(value,"no result");	  	
-      }  
-    } else {
-      printf("[ getSyncProcess ]: [ ERROR ]: wrong action \"%s\"!\n",action);
-      strcpy(value,"wrong action");
-    }     
-  } else {
-    printf("[ getSyncProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);   
-    strcpy(value, "record");
-  }
+         strcpy(tmp,""); 
+      }
+    
+      if(strcmp(tmp,"")!=0) {
+         if(DEBUG>2) 
+            printf("[ getSyncProcess ] : xpath \"%s\"\n",tmp);
+         result =  getnodeset(doc, (xmlChar*) tmp);
+         if(result!=NULL) {
+            if(DEBUG>0) printf("[ getSyncProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
+            if(result->nodesetval->nodeNr==1) {
+               node = result->nodesetval->nodeTab[0];
+               if(node!=NULL) {
+                  getStrValue(doc,node,value);
+                  if(DEBUG>0) printf("[ getSyncProcess ]: got val %tmp2.\n",value);      
+               } else {
+                  printf("[ getSyncProcess ] : [ WARNING ] no Sync nodes found\n");
+                  strcpy(value,"-3");
+               }
+            } else {
+               printf("[ getSyncProcess ] : [ WARNING ] %d Sync nodes found, should be exactly 1\n", result->nodesetval->nodeNr);
+               strcpy(value,"-4");	  
+            }	  
+         } else {
+            if(DEBUG>1)
+               printf("[ getSyncProcess ] : [ WARNING ] no results found\n");
+            strcpy(value,"-5");	  	
+         }  
+      } else {
+         printf("[ getSyncProcess ]: [ ERROR ]: wrong action \"%s\"!\n",action);
+         strcpy(value,"-6");
+      }     
+   } else {
+      printf("[ getSyncProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);   
+      strcpy(value, "-7");
+   }
 
-  return;
+   return;
 }
 
 
 
+
+
+void getHybSync(char* pname, xmlDoc* doc, char* syncStr) {
+   if(DEBUG>1) 
+         printf("[ getHybSync ] : for pname \"%s\"\n", pname);
+
+   xmlXPathObjectPtr result;
+   xmlNodeSetPtr nodeset;
+   char tmp[256];
+   int feb;
+   int datapath;
+   char str1[256];
+   char str2[256];
+   char action[256];
+   char sync[40];
+   getStringFromEpicsName(pname,str1,1);
+   getStringFromEpicsName(pname,str2,4);
+   if(strcmp(str1,"lv")==0 && strcmp(str2,"sync")==0) {    
+      feb = getIntFromEpicsName(pname,2);      
+      datapath = getIntFromEpicsName(pname,3);      
+      getStringFromEpicsName(pname,action,5);    
+      //getHybridSync(feb, datapath, action, sync);
+      
+      if(strcmp(action,"sync_asub")) {
+         sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/HybridSyncStatus[@index=\"%d\"]/SyncDetected", feb, datapath);
+      }
+      else {
+         printf("[ getHybSync ] : [ ERROR ] wrong action \"%s\"\n",action);    
+      }
+      
+      if(DEBUG>1) 
+         printf("[ getHybSync ] : xpath \"%s\"\n",tmp);
+      
+      result = getnodeset(doc, (xmlChar*) tmp);
+      
+      if(result!=NULL) {
+         nodeset = result->nodesetval;
+         if(DEBUG>1) 
+            printf("[ getHybSync ] : got %d nodes\n", nodeset->nodeNr);
+         if(nodeset->nodeNr==1) {
+            getStrValue(doc,nodeset->nodeTab[0],(xmlChar*)syncStr);
+         } else {
+            strcpy(syncStr, "-1");
+         }
+
+         xmlXPathFreeObject(result);
+
+      } else {
+         if(DEBUG>1)
+            printf("[ getHybSync ] : no nodes found\n");
+         strcpy(syncStr, "-1");
+      }
+      
+   } else {
+      printf("[ getHybSync ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);    
+      exit(1);
+   }
+   
+   
+}
 
 
 

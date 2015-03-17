@@ -704,11 +704,11 @@ record(aSub,SVT:lv:FEBID:HYBID:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:FEBID:HYBID:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"FLNKNEXTHYB")
 }
 
-record(stringin, SVT:lv:FEBID:HYBID:sync:sync_rd) {
+record(longin, SVT:lv:FEBID:HYBID:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -745,10 +745,10 @@ record(aSub,SVT:daq:$(FEB):$(HYB):$(APV):syncbase_rd_asub)
     field(INAM,"subSyncBaseInit")
     field(SNAM,"subSyncBaseProcess")
     field(OUTA,"SVT:daq:$(FEB):$(HYB):$(APV):syncbase_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
 }
 
-record(stringin, SVT:daq:$(FEB):$(HYB):$(APV):syncbase_rd) {
+record(longin, SVT:daq:$(FEB):$(HYB):$(APV):syncbase_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -760,10 +760,10 @@ record(aSub,SVT:daq:$(FEB):$(HYB):$(APV):syncpeak_rd_asub)
     field(INAM,"subSyncBaseInit")
     field(SNAM,"subSyncBaseProcess")
     field(OUTA,"SVT:daq:$(FEB):$(HYB):$(APV):syncpeak_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
 }
 
-record(stringin, SVT:daq:$(FEB):$(HYB):$(APV):syncpeak_rd) {
+record(longin, SVT:daq:$(FEB):$(HYB):$(APV):syncpeak_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }

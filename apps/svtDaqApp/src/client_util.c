@@ -1019,18 +1019,19 @@ double getHybridSwitch(int index, int hyb) {
    return val; 
 }
 
-void getHybridSync(int index, int datapath, char* action, char* syncStr) {
+void getHybridSync(char* pname, char* syncStr) {
   if(DEBUG>1)
-    printf("[ getHybridSync ]: get sync for feb %d datapath %d \n", index, datapath);  
+    printf("[ getHybridSync ]: get sync for pname %s \n", pname);  
   if(getXmlDocStatus()==0) {      
-    if(DEBUG>1)
-      printf("[ getHybridSync ]: xml ok\n");
-    getHybSync(doc, index, datapath, action, syncStr);
-    if(DEBUG>1)
-      printf("[ getHybridSync ]: got val %s\n", syncStr);
+     if(DEBUG>1)
+        printf("[ getHybridSync ]: xml ok\n");
+     getHybSync(pname, doc, syncStr);
+     //getHybSync(doc, index, datapath, action, syncStr);
+     if(DEBUG>1)
+        printf("[ getHybridSync ]: got val %s\n", syncStr);
   } else {
-    if(DEBUG>1) printf("[ getHybridSync ]: [ WARNING ]: the dpm xml doc status is invalid\n");    
-    strcpy(syncStr, "no xml");
+     if(DEBUG>1) printf("[ getHybridSync ]: [ WARNING ]: the dpm xml doc status is invalid\n");    
+     strcpy(syncStr, "-1");
   }
 }
 

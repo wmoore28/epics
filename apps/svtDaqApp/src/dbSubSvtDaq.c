@@ -903,30 +903,26 @@ static long subSyncProcess(aSubRecord *precord) {
     printf("[ subSyncProcess ]: %d Record %s called subSyncProcess(%p)\n",process_order, precord->name, (void*) precord);
   }
   
-  int feb;
-  int datapath;
-  char str1[BUF_SIZE];
-  char str2[BUF_SIZE];
-  char action[BUF_SIZE];
-  char sync[40];
-  precord->val = -1.0;  
-  strcpy(precord->vala,"default");
-  if (mySubDebug>2) printf("[ subSyncProcess ]: done memcpy\n");
-  getStringFromEpicsName(precord->name,str1,1);
-  getStringFromEpicsName(precord->name,str2,4);
-  if(strcmp(str1,"lv")==0 && strcmp(str2,"sync")==0) {    
-    feb = getIntFromEpicsName(precord->name,2);      
-    datapath = getIntFromEpicsName(precord->name,3);      
-    getStringFromEpicsName(precord->name,action,5);    
-    getHybridSync(feb, datapath, action, sync);
-    //getHybridSync(feb, datapath, sync);
-    if (mySubDebug) printf("[ subSyncProcess ]: got sync %s.\n",sync);
-    strcpy(precord->vala, sync);  
-    if (mySubDebug>2) printf("[ subSyncProcess ]: done memcpy\n");
-  } else {
-    printf("[ subSyncProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",precord->name);    
-    exit(1);
-  }
+  char val[256];
+  int number;
+  long *a;
+  
+  getHybridSync(precord->name, val);   
+  //strcpy(precord->vala, val);
+
+  if (mySubDebug)
+     printf("[ subSyncProcess ]: got sync string \"%s\"\n", val);
+  
+  number = (int) strtol(val,NULL,0); // string rep begins with 0x so use base=0 instead of 16
+
+  if (mySubDebug)
+     printf("[ subSyncProcess ]: got sync number \"%d\"\n", number);
+
+  
+  a = (long*) precord->vala;
+  *a = (long) number;
+  
+  
   return 0;
 }
 
@@ -938,10 +934,24 @@ static long subSyncBaseProcess(aSubRecord *precord) {
   }
   
   char val[256];
+  int number;
+  long *a;
 
   getSync(precord->name, val); 
+//strcpy(precord->vala, val);
+  
+  if (mySubDebug)
+     printf("[ subSyncBaseProcess ]: got sync string \"%s\"\n", val);
+  
+  number = (int) strtol(val,NULL,0); // string rep begins with 0x so use base=0 instead of 16
 
-  strcpy(precord->vala, val);
+  if (mySubDebug)
+     printf("[ subSyncProcess ]: got sync number \"%d\"\n", number);
+
+  
+  a = (long*) precord->vala;
+  *a = (long) number;
+
 
   return 0;
 }

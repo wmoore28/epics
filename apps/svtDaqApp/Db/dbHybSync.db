@@ -5,11 +5,11 @@ record(aSub,SVT:lv:0:0:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:0:0:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:0:1:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:0:0:sync:sync_rd) {
+record(longin, SVT:lv:0:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -20,11 +20,11 @@ record(aSub,SVT:lv:0:1:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:0:1:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:0:2:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:0:1:sync:sync_rd) {
+record(longin, SVT:lv:0:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -35,11 +35,11 @@ record(aSub,SVT:lv:0:2:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:0:2:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:0:3:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:0:2:sync:sync_rd) {
+record(longin, SVT:lv:0:2:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -50,11 +50,11 @@ record(aSub,SVT:lv:0:3:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:0:3:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:1:0:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:0:3:sync:sync_rd) {
+record(longin, SVT:lv:0:3:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -65,11 +65,11 @@ record(aSub,SVT:lv:1:0:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:1:0:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:1:1:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:1:0:sync:sync_rd) {
+record(longin, SVT:lv:1:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -80,11 +80,11 @@ record(aSub,SVT:lv:1:1:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:1:1:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:1:2:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:1:1:sync:sync_rd) {
+record(longin, SVT:lv:1:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -95,11 +95,11 @@ record(aSub,SVT:lv:1:2:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:1:2:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:1:3:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:1:2:sync:sync_rd) {
+record(longin, SVT:lv:1:2:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -110,11 +110,11 @@ record(aSub,SVT:lv:1:3:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:1:3:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:2:0:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:1:3:sync:sync_rd) {
+record(longin, SVT:lv:1:3:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -125,11 +125,11 @@ record(aSub,SVT:lv:2:0:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:2:0:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:2:1:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:2:0:sync:sync_rd) {
+record(longin, SVT:lv:2:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -140,11 +140,11 @@ record(aSub,SVT:lv:2:1:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:2:1:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:2:2:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:2:1:sync:sync_rd) {
+record(longin, SVT:lv:2:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -155,11 +155,11 @@ record(aSub,SVT:lv:2:2:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:2:2:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:2:3:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:2:2:sync:sync_rd) {
+record(longin, SVT:lv:2:2:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -170,11 +170,11 @@ record(aSub,SVT:lv:2:3:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:2:3:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:3:0:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:2:3:sync:sync_rd) {
+record(longin, SVT:lv:2:3:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -185,11 +185,11 @@ record(aSub,SVT:lv:3:0:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:3:0:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:3:1:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:3:0:sync:sync_rd) {
+record(longin, SVT:lv:3:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -200,11 +200,11 @@ record(aSub,SVT:lv:3:1:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:3:1:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:3:2:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:3:1:sync:sync_rd) {
+record(longin, SVT:lv:3:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -215,11 +215,11 @@ record(aSub,SVT:lv:3:2:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:3:2:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:3:3:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:3:2:sync:sync_rd) {
+record(longin, SVT:lv:3:2:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -230,11 +230,11 @@ record(aSub,SVT:lv:3:3:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:3:3:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:4:0:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:3:3:sync:sync_rd) {
+record(longin, SVT:lv:3:3:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -245,11 +245,11 @@ record(aSub,SVT:lv:4:0:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:4:0:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:4:1:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:4:0:sync:sync_rd) {
+record(longin, SVT:lv:4:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -260,11 +260,11 @@ record(aSub,SVT:lv:4:1:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:4:1:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:4:2:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:4:1:sync:sync_rd) {
+record(longin, SVT:lv:4:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -275,11 +275,11 @@ record(aSub,SVT:lv:4:2:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:4:2:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:4:3:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:4:2:sync:sync_rd) {
+record(longin, SVT:lv:4:2:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -290,11 +290,11 @@ record(aSub,SVT:lv:4:3:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:4:3:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:5:0:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:4:3:sync:sync_rd) {
+record(longin, SVT:lv:4:3:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -305,11 +305,11 @@ record(aSub,SVT:lv:5:0:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:5:0:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:5:1:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:5:0:sync:sync_rd) {
+record(longin, SVT:lv:5:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -320,11 +320,11 @@ record(aSub,SVT:lv:5:1:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:5:1:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:5:2:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:5:1:sync:sync_rd) {
+record(longin, SVT:lv:5:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -335,11 +335,11 @@ record(aSub,SVT:lv:5:2:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:5:2:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:5:3:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:5:2:sync:sync_rd) {
+record(longin, SVT:lv:5:2:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -350,11 +350,11 @@ record(aSub,SVT:lv:5:3:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:5:3:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:6:0:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:5:3:sync:sync_rd) {
+record(longin, SVT:lv:5:3:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -365,11 +365,11 @@ record(aSub,SVT:lv:6:0:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:6:0:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:6:1:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:6:0:sync:sync_rd) {
+record(longin, SVT:lv:6:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -380,11 +380,11 @@ record(aSub,SVT:lv:6:1:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:6:1:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:6:2:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:6:1:sync:sync_rd) {
+record(longin, SVT:lv:6:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -395,11 +395,11 @@ record(aSub,SVT:lv:6:2:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:6:2:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:6:3:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:6:2:sync:sync_rd) {
+record(longin, SVT:lv:6:2:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -410,11 +410,11 @@ record(aSub,SVT:lv:6:3:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:6:3:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:7:0:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:6:3:sync:sync_rd) {
+record(longin, SVT:lv:6:3:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -425,11 +425,11 @@ record(aSub,SVT:lv:7:0:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:7:0:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:7:1:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:7:0:sync:sync_rd) {
+record(longin, SVT:lv:7:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -440,11 +440,11 @@ record(aSub,SVT:lv:7:1:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:7:1:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:7:2:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:7:1:sync:sync_rd) {
+record(longin, SVT:lv:7:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -455,11 +455,11 @@ record(aSub,SVT:lv:7:2:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:7:2:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:7:3:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:7:2:sync:sync_rd) {
+record(longin, SVT:lv:7:2:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -470,11 +470,11 @@ record(aSub,SVT:lv:7:3:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:7:3:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:8:0:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:7:3:sync:sync_rd) {
+record(longin, SVT:lv:7:3:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -485,11 +485,11 @@ record(aSub,SVT:lv:8:0:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:8:0:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:8:1:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:8:0:sync:sync_rd) {
+record(longin, SVT:lv:8:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -500,11 +500,11 @@ record(aSub,SVT:lv:8:1:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:8:1:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:8:2:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:8:1:sync:sync_rd) {
+record(longin, SVT:lv:8:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -515,11 +515,11 @@ record(aSub,SVT:lv:8:2:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:8:2:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:8:3:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:8:2:sync:sync_rd) {
+record(longin, SVT:lv:8:2:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -530,11 +530,11 @@ record(aSub,SVT:lv:8:3:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:8:3:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:9:0:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:8:3:sync:sync_rd) {
+record(longin, SVT:lv:8:3:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -545,11 +545,11 @@ record(aSub,SVT:lv:9:0:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:9:0:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:9:1:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:9:0:sync:sync_rd) {
+record(longin, SVT:lv:9:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -560,11 +560,11 @@ record(aSub,SVT:lv:9:1:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:9:1:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:9:2:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:9:1:sync:sync_rd) {
+record(longin, SVT:lv:9:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -575,11 +575,11 @@ record(aSub,SVT:lv:9:2:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:9:2:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"SVT:lv:9:3:sync:sync_rd_asub")
 }
 
-record(stringin, SVT:lv:9:2:sync:sync_rd) {
+record(longin, SVT:lv:9:2:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
@@ -590,11 +590,11 @@ record(aSub,SVT:lv:9:3:sync:sync_rd_asub)
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:9:3:sync:sync_rd PP")
-    field(FTVA,"STRING")
+    field(FTVA,"LONG")
     field(FLNK,"")
 }
 
-record(stringin, SVT:lv:9:3:sync:sync_rd) {
+record(longin, SVT:lv:9:3:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
