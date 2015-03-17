@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/svtIntlkApp/medm/svtIntlk.adl"
+	name="/home/wmoore/workspaces/develop/apps/svtIntlkApp/medm/svtIntlk.adl"
 	version=030108
 }
 display {
@@ -8,7 +8,7 @@ display {
 		x=777
 		y=49
 		width=700
-		height=860
+		height=840
 	}
 	clr=14
 	bclr=4
@@ -283,7 +283,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_INTLK:SVT_SUP:first_check.A"
+		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Value"
 		clr=0
 		bclr=11
 	}
@@ -591,7 +591,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_INTLK:SVT_RTN:first_check.A"
+		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Value"
 		clr=0
 		bclr=11
 	}
@@ -620,7 +620,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_INTLK:SVT_RTN:first_check.B"
+		chan="HPS_INTLK:SVT_RTN:min"
 		clr=0
 		bclr=11
 	}
@@ -826,7 +826,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_INTLK:SVT_RTN:first_check.C"
+		chan="HPS_INTLK:SVT_RTN:max"
 		clr=0
 		bclr=11
 	}
@@ -870,7 +870,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_INTLK:FE_SUP:first_check.A"
+		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Value"
 		clr=0
 		bclr=11
 	}
@@ -899,7 +899,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_INTLK:FE_SUP:first_check.B"
+		chan="HPS_INTLK:FE_SUP:min"
 		clr=0
 		bclr=11
 	}
@@ -1105,7 +1105,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_INTLK:FE_SUP:first_check.C"
+		chan="HPS_INTLK:FE_SUP:max"
 		clr=0
 		bclr=11
 	}
@@ -1149,7 +1149,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_INTLK:FE_RTN:first_check.A"
+		chan="HPS_SVT:PLC:i:RTD_FE_Return-Value"
 		clr=0
 		bclr=11
 	}
@@ -1178,7 +1178,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_INTLK:FE_RTN:first_check.B"
+		chan="HPS_INTLK:FE_RTN:min"
 		clr=0
 		bclr=11
 	}
@@ -1384,7 +1384,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_INTLK:FE_RTN:first_check.C"
+		chan="HPS_INTLK:FE_RTN:max"
 		clr=0
 		bclr=11
 	}
@@ -1411,25 +1411,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=668
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_INTLK:DET_VAC:first_check.B"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	format="exponential"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=601
-		y=768
+		y=743
 		width=80
 		height=20
 	}
@@ -1447,7 +1429,7 @@ text {
 text {
 	object {
 		x=375
-		y=772
+		y=747
 		width=80
 		height=16
 	}
@@ -1459,7 +1441,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=817
+		y=792
 		width=80
 		height=20
 	}
@@ -1476,7 +1458,7 @@ text {
 text {
 	object {
 		x=375
-		y=821
+		y=796
 		width=80
 		height=16
 	}
@@ -1488,7 +1470,7 @@ text {
 text {
 	object {
 		x=375
-		y=722
+		y=697
 		width=80
 		height=16
 	}
@@ -1500,7 +1482,7 @@ text {
 text {
 	object {
 		x=375
-		y=796
+		y=771
 		width=80
 		height=16
 	}
@@ -1512,7 +1494,7 @@ text {
 "text entry" {
 	object {
 		x=516
-		y=718
+		y=693
 		width=80
 		height=20
 	}
@@ -1527,7 +1509,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=792
+		y=767
 		width=80
 		height=20
 	}
@@ -1545,7 +1527,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=718
+		y=693
 		width=80
 		height=20
 	}
@@ -1562,7 +1544,7 @@ text {
 text {
 	object {
 		x=375
-		y=747
+		y=722
 		width=80
 		height=16
 	}
@@ -1574,7 +1556,7 @@ text {
 "text update" {
 	object {
 		x=601
-		y=743
+		y=718
 		width=80
 		height=20
 	}
@@ -1592,7 +1574,7 @@ text {
 "choice button" {
 	object {
 		x=516
-		y=743
+		y=718
 		width=80
 		height=20
 	}
@@ -1606,12 +1588,12 @@ text {
 "text update" {
 	object {
 		x=601
-		y=693
+		y=668
 		width=80
 		height=20
 	}
 	monitor {
-		chan="HPS_INTLK:DET_VAC:first_check.C"
+		chan="HPS_INTLK:DET_VAC:max"
 		clr=0
 		bclr=11
 	}
@@ -1624,7 +1606,7 @@ text {
 "message button" {
 	object {
 		x=516
-		y=817
+		y=792
 		width=80
 		height=20
 	}
@@ -1849,37 +1831,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Min - PLC/SW"
-}
-text {
-	object {
-		x=375
-		y=696
-		width=80
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
 	textix="Max - PLC/SW"
-}
-"text update" {
-	object {
-		x=516
-		y=693
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPS_SVT:PLC:i:Vacuum-Limit_HIGH"
-		clr=0
-		bclr=11
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	format="exponential"
-	limits {
-	}
 }
 "text update" {
 	object {
@@ -1889,7 +1841,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:Vacuum-Limit_LOW"
+		chan="HPS_SVT:PLC:i:Vacuum-Limit_HIGH"
 		clr=0
 		bclr=11
 	}

@@ -4,5 +4,16 @@ pattern{ P,   R,        PLC_TAG,                   PREC, EGU,   CTRL, CTRL_VAL }
 { HPS_INTLK:, SVT_RTN:, HPS_SVT:PLC:i:RTD_SVT_Return, 2, C,     HPS_SVT:CHILLER:START_STOP:CTRL, 0 }
 { HPS_INTLK:, FE_SUP:,  HPS_SVT:PLC:i:RTD_FE_Supply,  2, C,     HPS_FE:CHILLER:STOP.PROC, 1 }
 { HPS_INTLK:, FE_RTN:,  HPS_SVT:PLC:i:RTD_FE_Return,  2, C,     HPS_FE:CHILLER:STOP.PROC, 1 }
+}
+
+file "$(TOP)/db/svtIntlk_max.template" {
+pattern{ P,   R,        PLC_TAG,                   PREC, EGU,   CTRL, CTRL_VAL }
 { HPS_INTLK:, DET_VAC:, HPS_SVT:PLC:i:Vacuum,         2, Torr,  HPS_SVT:CHILLER:START_STOP:CTRL, 0 }
+}
+
+# NO BEAM STATES - BPM Compare
+file "$(TOP)/db/svtIntlk_bpm.template" {
+pattern{ P,   R,        BPM1,     BPM2,     BPM3,   PREC, EGU,  CTRL, CTRL_VAL }
+{ HPS_INTLK:, NO_BEAM:, IPM2C21A, IPM2C24A, IPM2H01,   3,  nA,  #motors, 0 }
+{ HPS_INTLK:, NO_BEAM:, IPM2C21A, IPM2C24A, IPM2H01,   3,  nA,  #volts, 0 }
 }

@@ -7,11 +7,12 @@ record(calcout, "$(P)$(R)first_check") {
   field(DESC, "First test")
   field(SCAN, "2 second")
   field(PREC, "$(PREC)")
-  field(CALC, "(C<A||A<B)&(D#1)?1:0")
-  field(INPA, "$(PLC_TAG)-Value")
-  field(INPB, "$(P)$(R)min")
-  field(INPC, "$(P)$(R)max")
-  field(INPD, "$(P)$(R)intlk_bypass")
+  field(CALC, "(A<D && B<D && C<D)&(E#1)?1:0")
+  field(INPA, "$(BPM1)")
+  field(INPB, "$(BPM2)")
+  field(INPC, "$(BPM3)")
+  field(INPD, "$(LIM)")
+  field(INPE, "$(P)$(R)intlk_bypass")
   field(OUT, "$(P)$(R)second_check PP")
   field(OOPT, "When Non-zero")
   field(DOPT, "Use OCAL")
@@ -20,28 +21,10 @@ record(calcout, "$(P)$(R)first_check") {
   field(HSV,  "MAJOR")
 }
 
-# Scale factor for min/max
-record(ai, "$(P)$(R)intlk_scale") {
-  field(VAL, "1")
+record(ai, "$(P)$(R)intlk_lim") {
+  field(VAL,  "0")
   field(PREC, "$(PREC)")
-}
-
-record(calcout, "$(P)$(R)max") {
-  field(SCAN, "1 second")
-  field(PREC, "$(PREC)")
-  field(CALC, "A-((A-B)*(1-C))")
-  field(INPA, "$(PLC_TAG)-Limit_HIGH")
-  field(INPB, "$(PLC_TAG)-Limit_LOW")
-  field(INPC, "$(P)$(R)intlk_scale")
-}
-
-record(calcout, "$(P)$(R)min") {
-  field(SCAN, "1 second")
-  field(PREC, "$(PREC)")
-  field(CALC, "B+(abs(A-B)*(1-C))")
-  field(INPA, "$(PLC_TAG)-Limit_HIGH")
-  field(INPB, "$(PLC_TAG)-Limit_LOW")
-  field(INPC, "$(P)$(R)intlk_scale")
+  field(EGU,  "$(EGU)")
 }
 
 # Second check. If this PV is processed
@@ -52,11 +35,12 @@ record(calcout, "$(P)$(R)second_check") {
   field(SCAN, "Passive")
   field(PINI, "NO")
   field(PREC, "$(PREC)")
-  field(CALC, "(C<A||A<B)&(D#1)?1:0")
-  field(INPA, "$(PLC_TAG)-Value")
-  field(INPB, "$(P)$(R)min.VAL")
-  field(INPC, "$(P)$(R)max.VAL")
-  field(INPD, "$(P)$(R)intlk_bypass")
+  field(CALC, "(A<D && B<D && C<D)&(E#1)?1:0")
+  field(INPA, "$(BPM1)")
+  field(INPB, "$(BPM2)")
+  field(INPC, "$(BPM3)")
+  field(INPD, "$(LIM)")
+  field(INPE, "$(P)$(R)intlk_bypass")
   field(OUT, "$(P)$(R)intlk_status.VAL PP")
   field(OOPT, "When Non-zero")
   field(DOPT, "Use CALC")
