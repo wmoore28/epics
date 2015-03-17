@@ -4,12 +4,14 @@
 #include <TTree.h>
 #include <TMath.h>
 #include <TMath.h>
+#include <TLine.h>
 #include <TGraph.h>
 #include <iostream>
 #include <TCanvas.h>
 #include <TRandom.h>
 #include <TTimeStamp.h>
 
+#include <string>
 #include <fstream>
 
 using namespace std;
@@ -22,12 +24,17 @@ struct scaler_record
   Float_t record_data[60000];
 };
 
+bool check_beam_trip(Float_t *, int);
+bool check_beam_recover(Float_t *, int);
+
 int main( int argc, char** argv )
 {
   string file_name;
+  string file_init_part;
   if( argc == 2 )
     {
       file_name = argv[1];
+      file_init_part = file_name.substr(0, 19);
     }
   else
     {
@@ -35,23 +42,30 @@ int main( int argc, char** argv )
       cout<<"The program is exiting"<<endl;
       exit(1);
     }
+  cout<<"Filename initial part = "<<file_init_part<<endl;
 
-
-  const int n_trees = 4;  // number of trees in the file
+  const int n_trees = 5;  // number of trees in the file
   const int n_max_graphi_points = 200000; 
   const int buf_size = 60000;
   const int n_train_groups = n_max_graphi_points/60000;
   const int n_for_averaging = 200; // Will calculate average rates of the 1st n_for_averaging events
-  const int NSA = 200; // number of buffer readings befor the suspecious event
-  const int NSB = 200; // number of buffer readings after the suspecious event
-  const double dwel = 15000./1.e9;
+  const int NSA = 300; // number of buffer readings befor the suspecious event
+  const int NSB = 300; // number of buffer readings after the suspecious event
+  //  const double dwel = 15000./1.e9;
+  const double dwel = 15000.;
   const double min_av_rate = 10; // We assume that average rate on counters should be higher than this number
+  const double microsec = 1.e3;
 
   TRandom *rand1 = new TRandom();
 
   TTimeStamp t_stamp;
 
-  string tree_names_[n_trees] = {"struckDaq_copy_0", "struckDaq_copy_1", "struckDaq_copy_2", "struckDaq_copy_3"};
+  string tree_names_[n_trees] = {"struckDaq_copy_0", "struckDaq_copy_1", "struckDaq_copy_2", "struckDaq_copy_3", "struckDaq_copy_4"};
+
+  TLine *line1 = new TLine();
+  line1->SetLineColor(2);
+  TCanvas *c_trip = new TCanvas("c_trip", "", 750, 750);
+  TCanvas *c_recover = new TCanvas("c_recover", "", 750, 750);
 
   TFile *file_in = new TFile(Form("/usr/clas12/hps/DATA/waveforms/%s", file_name.c_str()), "Read");
   TFile *file_out = new TFile(Form("skim_%s",file_name.c_str() ), "Recreate");
@@ -65,6 +79,8 @@ int main( int argc, char** argv )
 
   TTree *tr1_[n_trees];
 
+  c_trip->Print(Form("Beam_trips_%s.ps[", file_init_part.c_str()));
+  c_recover->Print(Form("Beam_recovers_%s.ps[", file_init_part.c_str()));
   
   // Lets loop over trees, one tree is one channel of Struk Scaler
   for( int i = 0; i < n_trees; i++ )
@@ -88,42 +104,26 @@ int main( int argc, char** argv )
 	  Double_t nanosec = rootTS.GetNanoSec();
 	  
 	  // =============== Simulate Beam trip ===================
-	  if( i == 2 && jentry < 10 )
-	  {
-	    cout<<"Simulating Beam tripp for event "<<jentry<<endl;
-	    for( int i_buf = 0; i_buf < buf_size; i_buf++ )
-	      {
-		double mc_count = rand1->Gaus(45, sqrt(45.));
-		if( i_buf > 4125 && i_buf <  4130)
-		  {
-		    mc_count = rand1->Gaus((45. + 45*(i_buf - 4125)), sqrt(45.));
-		  }
-		else if (i_buf > 9915 && i_buf < 15120)
-		  {
-		    mc_count = 0.;
-		  }
-		record.record_data[i_buf] = mc_count;
-	      }
-	  }
+// 	  if( i == 2 && jentry < 10 )
+// 	  {
+// 	    cout<<"Simulating Beam tripp for event "<<jentry<<endl;
+// 	    for( int i_buf = 0; i_buf < buf_size; i_buf++ )
+// 	      {
+// 		double mc_count = rand1->Gaus(45, sqrt(45.));
+// 		if( i_buf > 4125 && i_buf <  4130)
+// 		  {
+// 		    mc_count = rand1->Gaus((45. + 45*(i_buf - 4125)), sqrt(45.));
+// 		  }
+// 		else if (i_buf > 9915 && i_buf < 15120)
+// 		  {
+// 		    mc_count = 0.;
+// 		  }
+// 		record.record_data[i_buf] = mc_count;
+// 	      }
+// 	  }
 	  
-	  
-	  // get Average rate using 1st n_for_averaging events
-	  if( jentry%500 == 0 || jentry == 10) // Rafresh average rate values every 500 events
-	    {
-	      for( int ii_av = 0; ii_av < n_for_averaging; ii_av++ )
-		{
-		  // To make sure that there is a beam, consecuently there will be some counts
-		  if( record.record_data[ii_av] > 2 )
-		    {
-		      average_rate = average_rate + record.record_data[ii_av];
-		    }
-		}
-	      average_rate = average_rate/double(n_for_averaging);
-	      average_sigma = sqrt(average_rate);
-	    }
-	  
-
 	  int i_trip = 0; // just a counter that will calculate trpis in the this train
+	  int i_recover = 0; // just a counter that will calculate trpis in the this train
 	  // ========== Loop over the buffer ==================
 	  for( int i_buf = 0; i_buf < buf_size; i_buf++ )
 	    {
@@ -132,49 +132,150 @@ int main( int argc, char** argv )
 	      double counts_2bef = record.record_data[TMath::Max(0, i_buf - 2)];  // counts of 2 index before in the buffer
 	      double counts_1aft = record.record_data[TMath::Min(buf_size - 1, i_buf + 1)];  // counts of previous index in the buffer
 	      double counts_2aft = record.record_data[TMath::Min(buf_size - 1, i_buf + 2)];  // counts of 2 index before in the buffer
-
-	      //if (i == 2 && jentry < 10) {cout<<"counts = "<<counts<<endl;}
-	      // =========== This is suspeciouse events, Wee can write events from i_buf - NSB to i_buf + NSB
-	      if(average_rate > min_av_rate)
+	      
+	      
+	      if( counts == 0 && i_buf < (buf_size - 100) && i_buf > 100)
 		{
-		  
-		  if( (counts < (average_rate - 4*average_sigma) || counts > (average_rate + 4*average_sigma)) && 
-		      ( counts_1bef > (average_rate - 4*average_sigma) && counts_1bef < (average_rate + 4*average_sigma) ) &&
-		      ( counts_2bef > (average_rate - 4*average_sigma) && counts_2bef < (average_rate + 4*average_sigma) ) )
+		  bool trip = check_beam_trip( record.record_data, i_buf );
+
+		  if( trip )
 		    {
-		      cout<<" Potential Beam trip:   Average rate = "<<average_rate<<"   counts = "<<counts<<"   buffer index = "<<i_buf<<"    jentry = "<<jentry<<"    i = "<<i<<endl;
-		      cout<<"counts 1 bef = "<<counts_1bef<<"   counts 2bef = "<<counts_2bef<<endl;
+		      c_trip->cd();
+		      string timestamp1 = rootTS.AsString("lc");
 		      TGraph *gr1 = new TGraph();
 		      gr1->SetMarkerStyle(24);
 		      gr1->SetMarkerSize(0.15);
 		      gr1->SetMarkerColor(4);
+		      //gr1->SetTitle(Form("%d ; time #mu s ; counts", month));
+		      gr1->SetTitle(Form("channel %s , %s ; time #mu s ; counts",tree_names_[i].c_str(),  timestamp1.c_str()));
 		      int i_point = 0;
 		      for( int i_skim = TMath::Max(0, i_buf - NSB); i_skim < TMath::Min(buf_size, i_buf + NSA); i_skim++ )
 			{
-			  gr1->SetPoint(i_point, sec + nanosec + dwel*i_skim, record.record_data[i_skim] );
+			  gr1->SetPoint(i_point, (dwel*i_skim)/microsec, record.record_data[i_skim] );
 			  i_point = i_point + 1;
+			  //cout<<"i_skim = "<<i_skim<<endl;
 			}
-		      gr1->Write(Form("gr_%d_%d_%d", i, jentry, i_trip)); // The scaler channel, buffer number, and the trip number in the current buffer
+		      gr1->Write(Form("gr_trip_%d_%d_%d", i, jentry, i_trip)); // The scaler channel, buffer number, and the trip number in the current buffer
+		      gr1->Draw("AP");
+		      line1->DrawLine((dwel*double(i_buf))/microsec, 0., (dwel*double(i_buf))/microsec, 25);
+		      //c_trip->Modified();
+		      //c_trip->Update();
+		      c_trip->Print(Form("Beam_trips_%s.ps", file_init_part.c_str()));
+
 		      i_trip = i_trip + 1;
 		      i_buf = i_buf + NSA + 1;
 		    }
 		}
-	      else  // Some potential scenario when 1st counts are close to 0, but during the beam trip these counters show high rates
+	      else if( counts > 5 )
 		{
-		  if( counts > min_av_rate )
-		    {
+		  bool recover = check_beam_recover(record.record_data, i_buf);
+		  recover = false;
+		  if( recover )
+		    {	
+		      c_recover->cd();
+		      string timestamp1 = rootTS.AsString("lc");
 		      TGraph *gr1 = new TGraph();
+		      gr1->SetMarkerStyle(24);
+		      gr1->SetMarkerSize(0.15);
+		      gr1->SetMarkerColor(2);
+		      gr1->SetTitle(Form("channel: %s ,   %s; time #mu s ; counts",tree_names_[i].c_str(),  timestamp1.c_str()));
+		      //gr1->SetTitle(Form("%s ; time #mu s ; counts", timestamp1.c_str()));
 		      int i_point = 0;
-		      for( int i_skim = TMath::Max(0, i_buf - NSB); i_skim < TMath::Min(0, i_buf + NSA); i_skim++ )
+		      for( int i_skim = TMath::Max(0, i_buf - NSA); i_skim < TMath::Min(buf_size, i_buf + NSB); i_skim++ )  // For recover NSA (NSB) actually means NSB (NSA)
 			{
-			  gr1->SetPoint(i_point, sec + nanosec + dwel*i_skim, record.record_data[i_skim] );
+			  gr1->SetPoint(i_point, (sec + nanosec + dwel*i_skim)*microsec, record.record_data[i_skim] );
+			  i_point = i_point + 1;
 			}
-		      gr1->Write(Form("gr_%d_%d_%d", i, jentry, i_trip)); // The scaler channel, buffer number, and the trip number in the current buffer*
-		      i_trip = i_trip + 1;
+		      gr1->Write(Form("gr_recover_%d_%d_%d", i, jentry, i_recover)); // The scaler channel, buffer number, and the recover number in the current buffer
+		      gr1->Draw("AP");
+		      c_recover->Print(Form("Beam_recovers_%s.ps", file_init_part.c_str()));
+		      i_recover = i_recover + 1;
+		      i_buf = i_buf + NSA + 1;
 		    }
 		}
+	      
 	    }
 	}
       
     }
+
+  c_trip->Print(Form("Beam_trips_%s.ps]", file_init_part.c_str()));
+  c_recover->Print(Form("Beam_recovers_%s.ps]", file_init_part.c_str()));
+
 }
+
+// bool check_beam_trip(Float_t *buffer, int index)
+// {
+//   bool trip = true;
+//   if( index > 30 && ( buffer[index - 29] + buffer[index - 28] + buffer[index - 27] + buffer[index - 26] > 2))
+//     {
+//       trip = true;
+//     }
+//   else
+//     {return false;}
+  
+//   for( int i = 0; i < 25; i++ )
+//     {
+//       if( buffer[TMath::Max(index - i, 0)] != 0 )
+// 	{
+// 	  trip = false;
+// 	}
+//     }
+//   return trip;
+// }
+
+
+bool check_beam_trip(Float_t *buffer, int index)
+{
+  double sum_after = 0.;
+  double sum_before = 0.;
+  
+  for( int i = 0; i < 100; i++ )
+    {
+      sum_after = sum_after + buffer[index + i];
+    }
+
+  for( int i = 0; i < 100; i++ )
+    {
+      sum_before = sum_before + buffer[index - i];
+    }
+  
+  bool trip = false;
+  if( sum_before > 250 && sum_before > 30.*sum_after )
+    {
+      trip = true;
+    }
+
+  return trip;
+}
+
+
+bool check_beam_recover(Float_t *buffer, int index)
+{
+  bool recover = true;
+
+  for( int i = 0; i < 40; i++ )
+    {
+      if( buffer[TMath::Max(index - i - 1, 0)] > 1.5 )
+	{
+	  return false;
+	}
+    }
+
+  return recover;
+}
+
+
+// 		      TGraph *gr1 = new TGraph();
+// 		      gr1->SetMarkerStyle(24);
+// 		      gr1->SetMarkerSize(0.15);
+// 		      gr1->SetMarkerColor(4);
+// 		      int i_point = 0;
+// 		      for( int i_skim = TMath::Max(0, i_buf - NSB); i_skim < TMath::Min(buf_size, i_buf + NSA); i_skim++ )
+// 			{
+// 			  gr1->SetPoint(i_point, sec + nanosec + dwel*i_skim, record.record_data[i_skim] );
+// 			  i_point = i_point + 1;
+// 			}
+// 		      gr1->Write(Form("gr_%d_%d_%d", i, jentry, i_trip)); // The scaler channel, buffer number, and the trip number in the current buffer
+// 		      i_trip = i_trip + 1;
+// 		      i_buf = i_buf + NSA + 1;
