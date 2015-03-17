@@ -328,7 +328,7 @@ dbLoadRecords("db/dbHybSyncBase.db","FEB=9,HYB=4,APV=5")
 
 
 ## Set this to see messages from mySub
-var mySubDebug 2
+var mySubDebug 0
 
 ## Run this to trace the stages of iocInit
 #traceIocInit

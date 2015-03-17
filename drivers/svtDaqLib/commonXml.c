@@ -1123,27 +1123,36 @@ void getSyncProcess(char* pname, xmlDoc* doc, char* value) {
       if(strcmp(tmp,"")!=0) {
          if(DEBUG>2) 
             printf("[ getSyncProcess ] : xpath \"%s\"\n",tmp);
-         result =  getnodeset(doc, (xmlChar*) tmp);
-         if(result!=NULL) {
-            if(DEBUG>0) printf("[ getSyncProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
-            if(result->nodesetval->nodeNr==1) {
-               node = result->nodesetval->nodeTab[0];
-               if(node!=NULL) {
-                  getStrValue(doc,node,value);
-                  if(DEBUG>0) printf("[ getSyncProcess ]: got val %tmp2.\n",value);      
+
+         if(doc!=NULL) {
+            
+            result =  getnodeset(doc, (xmlChar*) tmp);
+
+            if(result!=NULL) {
+               if(DEBUG>0) printf("[ getSyncProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
+               if(result->nodesetval->nodeNr==1) {
+                  node = result->nodesetval->nodeTab[0];
+                  if(node!=NULL) {
+                     getStrValue(doc,node,value);
+                     if(DEBUG>0) printf("[ getSyncProcess ]: got val %tmp2.\n",value);      
+                  } else {
+                     printf("[ getSyncProcess ] : [ WARNING ] no Sync nodes found\n");
+                     strcpy(value,"-3");
+                  }
                } else {
-                  printf("[ getSyncProcess ] : [ WARNING ] no Sync nodes found\n");
-                  strcpy(value,"-3");
-               }
+                  printf("[ getSyncProcess ] : [ WARNING ] %d Sync nodes found, should be exactly 1\n", result->nodesetval->nodeNr);
+                  strcpy(value,"-4");	  
+               }	  
             } else {
-               printf("[ getSyncProcess ] : [ WARNING ] %d Sync nodes found, should be exactly 1\n", result->nodesetval->nodeNr);
-               strcpy(value,"-4");	  
-            }	  
+               if(DEBUG>1)
+                  printf("[ getSyncProcess ] : [ WARNING ] no results found\n");
+               strcpy(value,"-5");	  	
+            }
          } else {
             if(DEBUG>1)
-               printf("[ getSyncProcess ] : [ WARNING ] no results found\n");
-            strcpy(value,"-5");	  	
-         }  
+               printf("[ getSyncProcess ] : [ WARNING ] no XML doc\n");
+            strcpy(value,"-8");	  	
+         }
       } else {
          printf("[ getSyncProcess ]: [ ERROR ]: wrong action \"%s\"!\n",action);
          strcpy(value,"-6");
@@ -1190,27 +1199,34 @@ void getHybSync(char* pname, xmlDoc* doc, char* syncStr) {
       
       if(DEBUG>1) 
          printf("[ getHybSync ] : xpath \"%s\"\n",tmp);
-      
-      result = getnodeset(doc, (xmlChar*) tmp);
-      
-      if(result!=NULL) {
-         nodeset = result->nodesetval;
-         if(DEBUG>1) 
-            printf("[ getHybSync ] : got %d nodes\n", nodeset->nodeNr);
-         if(nodeset->nodeNr==1) {
-            getStrValue(doc,nodeset->nodeTab[0],(xmlChar*)syncStr);
+
+
+      if(doc!=NULL) {
+         
+         result = getnodeset(doc, (xmlChar*) tmp);
+         
+         if(result!=NULL) {
+            nodeset = result->nodesetval;
+            if(DEBUG>1) 
+               printf("[ getHybSync ] : got %d nodes\n", nodeset->nodeNr);
+            if(nodeset->nodeNr==1) {
+               getStrValue(doc,nodeset->nodeTab[0],(xmlChar*)syncStr);
+            } else {
+               strcpy(syncStr, "-1");
+            }
+            
+            xmlXPathFreeObject(result);
+            
          } else {
+            if(DEBUG>1)
+               printf("[ getHybSync ] : no nodes found\n");
             strcpy(syncStr, "-1");
          }
-
-         xmlXPathFreeObject(result);
-
       } else {
          if(DEBUG>1)
-            printf("[ getHybSync ] : no nodes found\n");
-         strcpy(syncStr, "-1");
+            printf("[ getHybSync ] : no xml doc found\n");
+         strcpy(syncStr, "-8");
       }
-      
    } else {
       printf("[ getHybSync ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);    
       exit(1);

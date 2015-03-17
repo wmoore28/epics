@@ -3,7 +3,7 @@
 
 #define N_DPM 14
 #define N_FEB 10
-#define DEBUG 3
+#define DEBUG 0
 #define N_HALVES 2
 #define N_HYBRIDS 18
 
