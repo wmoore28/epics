@@ -94,16 +94,6 @@ if [ -n $LD_LIBRARY_PATH ]; then
 	fi
 fi
 
-SVT_LIBS="svtDaqLib"
-if [ -n $LD_LIBRARY_PATH ]; then
-	if [[ $LD_LIBRARY_PATH == *$SVT_LIBS* ]]; then 
-		passFail 0 "  LD_LIBRARY_PATH contains $SVT_LIBS"
-	else
-		passFail 1 "  LD_LIBRARY_PATH does not contain $SVT_LIBS"
-		ENV_ERR=1
-	fi
-fi
-
 if [ $ENV_ERR -eq 1 ]; then
 	printEnvErr
   	exit 1

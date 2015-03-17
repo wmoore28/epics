@@ -29,12 +29,6 @@ setenv EPICS_CA_ADDR_LIST "129.57.255.4 129.57.163.255 129.57.57.188 129.57.99.2
 
 
 ########################################
-# SVT DAQ
-########################################
-setenv SVTDAQDIR $PWD/drivers/svtDaqLib
-setenv LD_LIBRARY_PATH "$LD_LIBRARY_PATH":"$SVTDAQDIR"
-
-########################################
 # apps/CAEN_HV
 ########################################
 setenv SMIDIR /apps/smixx

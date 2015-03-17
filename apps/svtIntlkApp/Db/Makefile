@@ -13,6 +13,8 @@ include $(TOP)/configure/CONFIG
 # databases, templates, substitutions like this
 
 DB  += svtIntlk.template
+DB  += svtIntlk_max.template
+DB  += svtIntlk_bpm.template
 DB  += svtIntlk.substitutions
 
 REQ += svtIntlk.req svtIntlk_settings.req
