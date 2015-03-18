@@ -92,7 +92,8 @@ getAmplSel { out "GET AMPL %(\$1:SELECTED_CHANNEL.VAL)s"; in "%g";  wait 10;};
 setAllAmpAsSelected { out "SET AMPL_ALL %(\$1:SET_SELECTED_AMP.VAL)s"; wait 10; }; 
 setAllWidthAsSelected { out "SET WIDTH_ALL %(\$1:SET_SELECTED_WIDTH.VAL)s"; wait 10; };
 
-setData { separator=" "; out "SET DATA% i"; wait 100;}; 
+#setData { separator=" "; out "SET DATA% i"; wait 100;}; 
+setData { separator=""; out "SET DATA% i"; wait 100;}; 
 
 switchLED{ out "SWITCH %{OFF|ON} %(\$1:SELECTED_CHANNEL.VAL)s"; wait 10;};
 statusLED{ out "GET LED_STATUS %(\$1:SELECTED_CHANNEL.VAL)s"; in "%{0|1}"; wait 10;};

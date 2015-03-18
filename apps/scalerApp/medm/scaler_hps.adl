@@ -1,6 +1,6 @@
 
 file {
-	name="/home/stepanya/hps/epics/general/medm/scaler_hps.adl"
+	name="/usr/clas12/hps/v1.1.0/apps/scalerApp/medm/scaler_hps.adl"
 	version=030108
 }
 display {
@@ -345,7 +345,7 @@ composite {
 		height=18
 	}
 	monitor {
-		chan="scaler_cS4b.VAL"
+		chan="scaler_cS3b.VAL"
 		clr=14
 		bclr=50
 	}
@@ -373,7 +373,7 @@ text {
 		height=18
 	}
 	monitor {
-		chan="scaler_cS3b.VAL"
+		chan="scaler_cS4b.VAL"
 		clr=14
 		bclr=50
 	}
@@ -882,7 +882,7 @@ text {
 		height=18
 	}
 	monitor {
-		chan="MQA2H00"
+		chan="MQA2H00.BDL"
 		clr=34
 		bclr=0
 	}
@@ -899,7 +899,7 @@ text {
 		height=18
 	}
 	monitor {
-		chan="MQA2H00A"
+		chan="MQA2H00A.BDL"
 		clr=34
 		bclr=0
 	}
@@ -1363,100 +1363,89 @@ text {
 	textix="Tagger Dump"
 	align="horiz. centered"
 }
-composite {
+"text update" {
 	object {
 		x=420
+		y=200
+		width=75
+		height=18
+	}
+	monitor {
+		chan="scaler_cS5b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=550
+		y=200
+		width=75
+		height=18
+	}
+	monitor {
+		chan="scaler_cS7b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=480
+		y=170
+		width=75
+		height=18
+	}
+	monitor {
+		chan="scaler_cS6b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=500
 		y=150
-		width=205
-		height=68
+		width=30
+		height=15
 	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=420
-				y=200
-				width=75
-				height=18
-			}
-			monitor {
-				chan="scaler_cS5b.VAL"
-				clr=14
-				bclr=50
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=550
-				y=200
-				width=75
-				height=18
-			}
-			monitor {
-				chan="scaler_cS7b.VAL"
-				clr=14
-				bclr=50
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=480
-				y=170
-				width=75
-				height=18
-			}
-			monitor {
-				chan="scaler_cS6b.VAL"
-				clr=14
-				bclr=50
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=500
-				y=150
-				width=30
-				height=15
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="TAG-T"
-		}
-		text {
-			object {
-				x=435
-				y=180
-				width=30
-				height=15
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="TAG-L"
-		}
-		text {
-			object {
-				x=575
-				y=180
-				width=30
-				height=15
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="TAG-T"
-		}
+	"basic attribute" {
+		clr=14
 	}
+	textix="TAG-T"
+}
+text {
+	object {
+		x=435
+		y=180
+		width=30
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="TAG-L"
+}
+text {
+	object {
+		x=575
+		y=180
+		width=34
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="TAG-T2"
 }
 "text update" {
 	object {

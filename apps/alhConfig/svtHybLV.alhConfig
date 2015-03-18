@@ -1,0 +1,18 @@
+#===============================================================================
+# SVT Hybrid Low Voltage Alarm Config
+#===============================================================================
+
+GROUP NULL HYBRID_LV
+$GUIDANCE
+	See SVT Ops manual sections relating to voltages.
+	PVs monitored by these alarms are supplied by the SVT DAQ IOCs.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:0:dvdd:i_rd
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:0:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+           This signifies that the Inlet LCW for SVT is out of specifications.
+           Contact the SVT expert for further guidance.
+$END
+
+

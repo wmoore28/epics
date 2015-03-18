@@ -62,6 +62,14 @@ Read_60Hz_LDFLAGS += $(shell root-config --libs)
 Read_60Hz_SRCS    += Read_60Hz.cc
 
 #=============================
+PROD_Linux = Analyze_Beam_trip
+
+Analyze_Beam_trip_LDFLAGS += $(shell root-config --cflags)
+Analyze_Beam_trip_LDFLAGS += $(shell root-config --libs)
+
+Analyze_Beam_trip_SRCS    += Analyze_Beam_trip.cc
+
+#=============================
 
 
 include $(TOP)/configure/RULES

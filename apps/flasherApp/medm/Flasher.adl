@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/v0.2.8/apps/flasherApp/medm/Flasher.adl"
+	name="/usr/clas12/hps/v1.0.0/apps/flasherApp/medm/Flasher.adl"
 	version=030108
 }
 display {
@@ -1630,4 +1630,41 @@ composite {
 		vis="if zero"
 		chan="B_HPS_ECAL_FLASHER_TOP:GET_CLOCK"
 	}
+}
+"related display" {
+	object {
+		x=886
+		y=15
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Comm TOP (asyn)"
+		name="asynRecord.adl"
+		args="P=B_HPS_ECAL_FLASHER_TOP:,R=asyn"
+	}
+	display[1] {
+		label="Comm BOT (asyn)"
+		name="asynRecord.adl"
+		args="P=B_HPS_ECAL_FLASHER_BOT:,R=asyn"
+	}
+	display[2] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocflasher"
+	}
+	clr=14
+	bclr=4
+}
+text {
+	object {
+		x=840
+		y=20
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=32
+	}
+	textix="Expert"
 }

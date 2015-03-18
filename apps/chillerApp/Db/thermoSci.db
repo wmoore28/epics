@@ -105,7 +105,7 @@ record(ai, "$(P)$(R)LOW_LIMIT") {
 record(ai, "$(P)$(R)HIGH_LIMIT") {
     field(DTYP, "stream")
     field(INP,  "@thermoSci.proto getHighLim $(PORT)")
-    field(ASLO, "1")
+    field(ASLO, "0.1")
     field(PREC, "1")
     field(SCAN, "1 second")
 }

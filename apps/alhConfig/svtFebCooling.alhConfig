@@ -1,0 +1,50 @@
+#===============================================================================
+# SVT FEB Cooling Alarm Config
+#===============================================================================
+
+GROUP NULL FEB_COOLING
+$GUIDANCE
+See SVT Ops manual sections relating to cooling.
+PVs monitored by these alarms are supplied by the PLC IOC (svtPlc) or the svt chiller IOC (svtChiller).
+$END
+
+CHANNEL FEB_COOLING HPS_SVT:PLC:i:RTD_FE_Supply-Value
+$COMMAND  medm -x -attach -cmap -macro "sig=HPS_SVT:PLC:i:RTD_FE_Supply-Value" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The RTD temperature at the vacuum chamber feedthrough for cooling supply to the frontend boards is outside its normal range.
+If the temperature continues to rise or fall, the software interlock will shut down the FEB chiller and all SVT voltages will trip.
+Contact the SVT expert if this alarm was not expected as part of a procedure.
+$END
+
+CHANNEL FEB_COOLING HPS_SVT:PLC:i:RTD_FE_Return-Value
+$COMMAND  medm -x -attach -cmap -macro "sig=HPS_SVT:PLC:i:RTD_FE_Return-Value" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The RTD temperature at the vacuum chamber feedthrough for cooling return from the frontend boards is outside its normal range.
+If the temperature continues to rise or fall, the software interlock will shut down the FEB chiller and all SVT voltages will trip.
+Contact the SVT expert if this alarm was not expected as part of a procedure.
+$END
+
+CHANNEL FEB_COOLING HPS_SVT:PLC:i:Flow_FE-Value
+$COMMAND  medm -x -attach -cmap -macro "sig=HPS_SVT:PLC:i:Flow_FE-Value" bibo_alarm.adl >> /dev/null 
+$GUIDANCE
+The flow through the FEB cooling loop is below the setpoint of the flow switch.
+This may happen because the chiller has stopped, or because the solenoid valve has closed.
+Contact the SVT expert if this alarm was not expected as part of a procedure.
+$END
+
+CHANNEL FEB_COOLING HPS_SVT:PLC:i:Valve_FE-Shutdown
+$COMMAND  medm -x -attach -cmap -macro "sig=HPS_SVT:PLC:i:Valve_FE-Shutdown" bibo_alarm.adl >> /dev/null 
+$GUIDANCE
+The solenoid valve at the FEB chiller outlet is closed.
+This valve is controlled by the PLC, and is closed when a PLC interlock has tripped.
+Contact the SVT expert if this alarm was not expected as part of a procedure.
+$END
+
+#CHANNEL FEB_COOLING HPS_FE:CHILLER:STATUS
+#$COMMAND  medm -x -attach -cmap -macro "sig=HPS_FE:CHILLER:STATUS" bibo_alarm.adl >> /dev/null 
+#$GUIDANCE
+#The FEB chiller is not running.
+#The chiller may have been stopped by a software interlock.
+#Contact the SVT expert if this alarm was not expected as part of a procedure.
+#$END
+

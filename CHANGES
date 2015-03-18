@@ -1,3 +1,45 @@
+Version 1.1.0:
+ - Merge branch 'develop' of https://github.com/wmoore28/epics
+ - svtIntlkApp medm: added no-beam to main screen and added units
+ - svtIntlkApp: working NO BEAM interlock for svt bias voltages
+ - svtIntlkApp: draft for BPM watchers
+ - svtInlkApp: changed so vacuum will only have a max compare (not min/max)
+ - svtDaq: removed usage of LD_LIBRARY_PATH for svtDaqApp and svtDaqDpmApp
+
+Version 1.0.1:
+ - svtDaqApp: added allHybCaput.sh (pelle)
+ - alh: added svtFebCooling.alhConfig (pelle)
+ - wave2RootApp: updated makefile to build Analyze_Beam_trip
+ - Analyze beam trips code with it's compilation command is added
+ - Read_60Hz was modified to read 5 channels and produce graphs of scaler channels. Each graph contains 3 events (each containg 60K buffer)
+ - changes to LED data
+ - flasherApp: fix to proto, loading channels from file wasn't working
+ - Flasher.adl: added asyn gui links
+ - gitignore: generated file, order of app names to ignore changed
+ - procServMgr: iocs will run as wmoore until a new groups account is configured
+ - apps/alhConfig - add (some) SVT alarms
+ - chillerApp: fixed parsing of ECAL temp limit readbacks
+ - added wave2root GUI button to the beam buttons. Increased the CA MAX ARRAY for wave2root app IOC
+ - ioc_hps_health.adl: added iocsvtIntlk
+ - svtIntlk.adl: minor updates to pvs shown
+ - svtIntlkApp: corrected min/max calculations
+ - apps/svtIntlk/medm: change variables displayed
+ - updating fast sequences
+ - HPS Main: cleaned up alh launcher links
+ - svtIntlkApp: fixes to gui
+ - fixing PV name
+ - svtDaqApp/medm - GUI changes add "reset interlocks" shell command for bias screen correct hybrid IDs for temperatures use FEB RTD temperatures instead of dummy
+ - MyaViewer: added host arg to launcher and updated HPS Main
+ - harp_genericApp: updated viewer_at_c CALC (stepanya)
+ - added gateway address to the address variables in the shell list for classc4. changed the names of the variables from 60Hz to the new struckDAQ application for the wave2root IOC DB
+ - chillerApp/ioc: added SVT and FE chillers on iocsvtChiller
+ - iocchiller: updated st.cmd for ecal only
+ - iocchiller: updated test iocs from EEL to Hall B
+ - chillerApp: removed false flow rdbk from presto.db
+ - updating ecal alarms
+ - adding comments for users
+ - completely changed the network file. Added resource.def file. In the scan SNL code added a loop to wait for the connection which made it work on classc1, but not classc4. Changed the path of where the scan files are copie on the MCC machines.
+
 Version 1.0.0:
  - Updates to java harp_analyzer - Merge branch 'rafopar-master'
  - Merge branch 'master' of https://github.com/rafopar/epics into rafopar-master

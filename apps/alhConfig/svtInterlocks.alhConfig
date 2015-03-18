@@ -1,0 +1,18 @@
+#===============================================================================
+# SVT Interlock Alarm Config
+#===============================================================================
+
+GROUP NULL INTERLOCKS
+$GUIDANCE
+See SVT Ops manual sections relating to cooling.
+PVs monitored by these alarms are supplied by the PLC IOC (svtPlc) or the software interlocks IOC (svtIntlk).
+$END
+
+CHANNEL INTERLOCKS HPS_SVT:PLC:i:Vacuum-Value
+$COMMAND  medm -x -attach -cmap -macro "sig=HPS_SVT:PLC:i:Vacuum-Value" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The vacuum at the downstream end of the PS vacuum chamber is bad. This may indicate a leak in the SVT/FEB cooling system.
+Further increase in this value will trip the software interlock, stopping both chillers and closing both chiller valves.
+Contact the SVT expert for further guidance.
+$END
+

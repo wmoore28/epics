@@ -128,9 +128,11 @@ monitor command;
 
 float position_a;
 assign position_a to "{motor_name}_position_a";
+monitor position_a;
 
 float position_b;
 assign position_b to "{motor_name}_position_b";
+monitor position_b;
 
 float speed_to_a;
 assign speed_to_a to "{motor_name}_speed_to_a";
@@ -191,10 +193,25 @@ ss harp_scan_snc {
    }
    if(  ( ! (strcmp(motor_name,"harp_2H02A"))) )
    {
+       pvStopMonitor( scaler_cnt );
        pvAssign(scaler_tp, "scaler.TP"); 
        pvAssign(scaler_cnt, "scaler.CNT"); 
        pvAssign(scaler_mode, "scaler_mode.VAL"); 
        pvAssign(display_mode, "display_mode.VAL"); 
+       pvMonitor( scaler_cnt );
+       timeWaited = 0.0;
+       while( ( (	!pvAssigned (scaler_tp  ) || !pvConnected(scaler_tp  ) ) || 
+	        (	!pvAssigned (scaler_cnt  ) || !pvConnected(scaler_cnt  ) ) || 
+	        (	!pvAssigned (scaler_mode  ) || !pvConnected(scaler_mode ) ) ||
+	        (	!pvAssigned (display_mode  ) || !pvConnected(display_mode ) ) )
+	     && (timeWaited < 10) ) {
+		printf( "Scaler Connect: waiting %f \n", timeWaited );
+		timeWaited = timeWaited + 1.0;
+                epicsThreadSleep( 1.0 );
+       }
+       if( timeWaited >= 10 ) { 
+	printf( "Error : Timed out waiting for scaler to connect \n" );
+       }
    }
 
 /* ========================================================= */
@@ -230,10 +247,25 @@ ss harp_scan_snc {
    }
    if(  ( ! (strcmp(motor_name,"harp_2H02A"))) )
    {
+       pvStopMonitor( scaler_cnt );
        pvAssign(scaler_tp, "scaler.TP"); 
        pvAssign(scaler_cnt, "scaler.CNT"); 
        pvAssign(scaler_mode, "scaler_mode.VAL"); 
        pvAssign(display_mode, "display_mode.VAL"); 
+       pvMonitor( scaler_cnt );
+       timeWaited = 0.0;
+       while( ( (	!pvAssigned (scaler_tp  ) || !pvConnected(scaler_tp  ) ) || 
+	        (	!pvAssigned (scaler_cnt  ) || !pvConnected(scaler_cnt  ) ) || 
+	        (	!pvAssigned (scaler_mode  ) || !pvConnected(scaler_mode ) ) ||
+	        (	!pvAssigned (display_mode  ) || !pvConnected(display_mode ) ) )
+	     && (timeWaited < 10) ) {
+		printf( "Scaler Connect: waiting %f \n", timeWaited );
+		timeWaited = timeWaited + 1.0;
+                epicsThreadSleep( 1.0 );
+       }
+       if( timeWaited >= 10 ) { 
+	printf( "Error : Timed out waiting for scaler to connect \n" );
+       }
    }
 
 /* ========================================================= */
@@ -341,10 +373,12 @@ ss harp_scan_snc {
 
         scaler_cnt = COUNT;
         pvPut(scaler_cnt);
+        printf( "Will go to write scaler (daq_write) \n" );
      } state daq_write
    }
    state daq_write {
      when (scaler_cnt == DONE && harp_position > position_a && harp_position < position_b) {
+/*       printf( "Count done \n" ); */
        pvGet(rmp);
        fdprintf(fd,"%f ", harp_position);
 
@@ -357,8 +391,9 @@ ss harp_scan_snc {
 	          fdprintf(fd,"%d ", scaler_datasc1[i]);
 	       }
        }
-       if(  ( ! (strcmp(cmotor_name,"harp_2H02A"))) )
+       if(  ( ! (strcmp(motor_name,"harp_2H02A"))) )
        {
+/*	printf("Writing scalers for harp_2H02A \n" ); */
 	       for (i=0;i<16;i++) {
 	          pvGet(scaler_datasc4[i]);
 	          fdprintf(fd,"%d ", scaler_datasc4[i]);

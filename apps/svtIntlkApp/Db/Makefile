@@ -17,7 +17,9 @@ DB  += svtIntlk_max.template
 DB  += svtIntlk_bpm.template
 DB  += svtIntlk.substitutions
 
-REQ += svtIntlk.req svtIntlk_settings.req
+REQ += svtIntlk.req
+REQ += svtIntlk_bpm.req
+REQ += svtIntlk_settings.req
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
