@@ -8,7 +8,7 @@ display {
 		x=777
 		y=49
 		width=350
-		height=620
+		height=340
 	}
 	clr=14
 	bclr=4
@@ -163,7 +163,7 @@ text {
 "text update" {
 	object {
 		x=251
-		y=92
+		y=93
 		width=80
 		height=20
 	}
@@ -180,31 +180,31 @@ text {
 text {
 	object {
 		x=25
-		y=96
+		y=97
 		width=80
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="IPM2C21A"
+	textix="IPM2C21A (nA)"
 }
 text {
 	object {
 		x=25
-		y=69
+		y=70
 		width=200
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="SVT Motor Positioning"
+	textix="SVT Voltages - Ramp Down"
 }
 rectangle {
 	object {
 		x=25
-		y=64
+		y=65
 		width=305
 		height=3
 	}
@@ -215,7 +215,7 @@ rectangle {
 rectangle {
 	object {
 		x=25
-		y=87
+		y=88
 		width=305
 		height=3
 	}
@@ -226,19 +226,19 @@ rectangle {
 text {
 	object {
 		x=25
-		y=117
+		y=118
 		width=80
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="IPM2C24A"
+	textix="IPM2C24A (nA)"
 }
 "text update" {
 	object {
 		x=251
-		y=113
+		y=114
 		width=80
 		height=20
 	}
@@ -255,19 +255,19 @@ text {
 text {
 	object {
 		x=25
-		y=138
+		y=139
 		width=80
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="IPM2H01"
+	textix="IPM2H01  (nA)"
 }
 "text update" {
 	object {
 		x=251
-		y=134
+		y=135
 		width=80
 		height=20
 	}
@@ -281,263 +281,45 @@ text {
 	limits {
 	}
 }
-composite {
-	object {
-		x=25
-		y=171
-		width=306
-		height=144
-	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=251
-				y=246
-				width=80
-				height=20
-			}
-			monitor {
-				chan="HPS_INTLK:NO_BEAM:first_check"
-				clr=0
-				bclr=11
-			}
-			clrmod="alarm"
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-			}
-		}
-		text {
-			object {
-				x=25
-				y=250
-				width=80
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="First Check Status"
-		}
-		"text update" {
-			object {
-				x=251
-				y=295
-				width=80
-				height=20
-			}
-			monitor {
-				chan="HPS_INTLK:NO_BEAM:intlk_status"
-				clr=0
-				bclr=11
-			}
-			clrmod="alarm"
-			align="horiz. centered"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=25
-				y=299
-				width=80
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Interlock Reset/Status"
-		}
-		text {
-			object {
-				x=25
-				y=200
-				width=80
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Interlock Delay (s)"
-		}
-		text {
-			object {
-				x=25
-				y=274
-				width=80
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Second Check Status"
-		}
-		"text entry" {
-			object {
-				x=166
-				y=196
-				width=80
-				height=20
-			}
-			control {
-				chan="HPS_INTLK:NO_BEAM:intlk_delay"
-				clr=14
-				bclr=2
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=251
-				y=270
-				width=80
-				height=20
-			}
-			monitor {
-				chan="HPS_INTLK:NO_BEAM:second_check"
-				clr=0
-				bclr=11
-			}
-			clrmod="alarm"
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-			}
-		}
-		"text update" {
-			object {
-				x=251
-				y=196
-				width=80
-				height=20
-			}
-			monitor {
-				chan="HPS_INTLK:NO_BEAM:intlk_delay"
-				clr=0
-				bclr=11
-			}
-			clrmod="alarm"
-			align="horiz. centered"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=25
-				y=225
-				width=80
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Interlock Bypass"
-		}
-		"text update" {
-			object {
-				x=251
-				y=221
-				width=80
-				height=20
-			}
-			monitor {
-				chan="HPS_INTLK:NO_BEAM:intlk_bypass"
-				clr=0
-				bclr=11
-			}
-			clrmod="alarm"
-			align="horiz. centered"
-			format="string"
-			limits {
-			}
-		}
-		"choice button" {
-			object {
-				x=166
-				y=221
-				width=80
-				height=20
-			}
-			control {
-				chan="HPS_INTLK:NO_BEAM:intlk_bypass"
-				clr=14
-				bclr=2
-			}
-			stacking="column"
-		}
-		"message button" {
-			object {
-				x=166
-				y=295
-				width=80
-				height=20
-			}
-			control {
-				chan="HPS_INTLK:NO_BEAM:intlk_reset.PROC"
-				clr=14
-				bclr=2
-			}
-			label="Reset"
-			release_msg="1"
-		}
-		text {
-			object {
-				x=25
-				y=174
-				width=80
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Limit"
-		}
-		"text update" {
-			object {
-				x=251
-				y=171
-				width=80
-				height=20
-			}
-			monitor {
-				chan="HPS_INTLK:NO_BEAM:intlk_lim"
-				clr=0
-				bclr=11
-			}
-			clrmod="alarm"
-			align="horiz. centered"
-			format="exponential"
-			limits {
-			}
-		}
-		"text entry" {
-			object {
-				x=166
-				y=171
-				width=80
-				height=20
-			}
-			control {
-				chan="HPS_INTLK:NO_BEAM:intlk_lim"
-				clr=14
-				bclr=2
-			}
-			limits {
-			}
-		}
-	}
-}
 "text update" {
 	object {
 		x=251
-		y=372
+		y=247
 		width=80
 		height=20
 	}
 	monitor {
-		chan="IPM2C21A"
+		chan="HPS_INTLK:NO_BEAM:first_check"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+text {
+	object {
+		x=25
+		y=251
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="First Check Status"
+}
+"text update" {
+	object {
+		x=251
+		y=296
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_INTLK:NO_BEAM:intlk_status"
 		clr=0
 		bclr=11
 	}
@@ -549,70 +331,81 @@ composite {
 text {
 	object {
 		x=25
-		y=376
+		y=300
 		width=80
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="IPM2C21A"
+	textix="Interlock Reset/Status"
 }
 text {
 	object {
 		x=25
-		y=349
-		width=200
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="SVT Voltages"
-}
-rectangle {
-	object {
-		x=25
-		y=344
-		width=305
-		height=3
-	}
-	"basic attribute" {
-		clr=24
-	}
-}
-rectangle {
-	object {
-		x=25
-		y=367
-		width=305
-		height=3
-	}
-	"basic attribute" {
-		clr=24
-	}
-}
-text {
-	object {
-		x=25
-		y=397
+		y=201
 		width=80
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="IPM2C24A"
+	textix="Interlock Delay (s)"
+}
+text {
+	object {
+		x=25
+		y=275
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Second Check Status"
+}
+"text entry" {
+	object {
+		x=166
+		y=197
+		width=80
+		height=20
+	}
+	control {
+		chan="HPS_INTLK:NO_BEAM:intlk_delay"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
 }
 "text update" {
 	object {
 		x=251
-		y=393
+		y=271
 		width=80
 		height=20
 	}
 	monitor {
-		chan="IPM2C24A"
+		chan="HPS_INTLK:NO_BEAM:second_check"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=251
+		y=197
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_INTLK:NO_BEAM:intlk_delay"
 		clr=0
 		bclr=11
 	}
@@ -624,24 +417,83 @@ text {
 text {
 	object {
 		x=25
-		y=418
+		y=226
 		width=80
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="IPM2H01"
+	textix="Interlock Bypass"
 }
 "text update" {
 	object {
 		x=251
-		y=414
+		y=222
 		width=80
 		height=20
 	}
 	monitor {
-		chan="IPM2H01"
+		chan="HPS_INTLK:NO_BEAM:intlk_bypass"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=166
+		y=222
+		width=80
+		height=20
+	}
+	control {
+		chan="HPS_INTLK:NO_BEAM:intlk_bypass"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
+}
+"message button" {
+	object {
+		x=166
+		y=296
+		width=80
+		height=20
+	}
+	control {
+		chan="HPS_INTLK:NO_BEAM:intlk_reset.PROC"
+		clr=14
+		bclr=2
+	}
+	label="Reset"
+	release_msg="1"
+}
+text {
+	object {
+		x=25
+		y=175
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Limit (nA)"
+}
+"text update" {
+	object {
+		x=251
+		y=172
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_INTLK:NO_BEAM:intlk_lim"
 		clr=0
 		bclr=11
 	}
@@ -650,251 +502,18 @@ text {
 	limits {
 	}
 }
-composite {
+"text entry" {
 	object {
-		x=25
-		y=451
-		width=306
-		height=144
+		x=166
+		y=172
+		width=80
+		height=20
 	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=251
-				y=526
-				width=80
-				height=20
-			}
-			monitor {
-				chan="HPS_INTLK:NO_BEAM:first_check"
-				clr=0
-				bclr=11
-			}
-			clrmod="alarm"
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-			}
-		}
-		text {
-			object {
-				x=25
-				y=530
-				width=80
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="First Check Status"
-		}
-		"text update" {
-			object {
-				x=251
-				y=575
-				width=80
-				height=20
-			}
-			monitor {
-				chan="HPS_INTLK:NO_BEAM:intlk_status"
-				clr=0
-				bclr=11
-			}
-			clrmod="alarm"
-			align="horiz. centered"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=25
-				y=579
-				width=80
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Interlock Reset/Status"
-		}
-		text {
-			object {
-				x=25
-				y=480
-				width=80
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Interlock Delay (s)"
-		}
-		text {
-			object {
-				x=25
-				y=554
-				width=80
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Second Check Status"
-		}
-		"text entry" {
-			object {
-				x=166
-				y=476
-				width=80
-				height=20
-			}
-			control {
-				chan="HPS_INTLK:NO_BEAM:intlk_delay"
-				clr=14
-				bclr=2
-			}
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=251
-				y=550
-				width=80
-				height=20
-			}
-			monitor {
-				chan="HPS_INTLK:NO_BEAM:second_check"
-				clr=0
-				bclr=11
-			}
-			clrmod="alarm"
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-			}
-		}
-		"text update" {
-			object {
-				x=251
-				y=476
-				width=80
-				height=20
-			}
-			monitor {
-				chan="HPS_INTLK:NO_BEAM:intlk_delay"
-				clr=0
-				bclr=11
-			}
-			clrmod="alarm"
-			align="horiz. centered"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=25
-				y=505
-				width=80
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Interlock Bypass"
-		}
-		"text update" {
-			object {
-				x=251
-				y=501
-				width=80
-				height=20
-			}
-			monitor {
-				chan="HPS_INTLK:NO_BEAM:intlk_bypass"
-				clr=0
-				bclr=11
-			}
-			clrmod="alarm"
-			align="horiz. centered"
-			format="string"
-			limits {
-			}
-		}
-		"choice button" {
-			object {
-				x=166
-				y=501
-				width=80
-				height=20
-			}
-			control {
-				chan="HPS_INTLK:NO_BEAM:intlk_bypass"
-				clr=14
-				bclr=2
-			}
-			stacking="column"
-		}
-		"message button" {
-			object {
-				x=166
-				y=575
-				width=80
-				height=20
-			}
-			control {
-				chan="HPS_INTLK:NO_BEAM:intlk_reset.PROC"
-				clr=14
-				bclr=2
-			}
-			label="Reset"
-			release_msg="1"
-		}
-		text {
-			object {
-				x=25
-				y=454
-				width=80
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Limit"
-		}
-		"text update" {
-			object {
-				x=251
-				y=451
-				width=80
-				height=20
-			}
-			monitor {
-				chan="HPS_INTLK:NO_BEAM:intlk_lim"
-				clr=0
-				bclr=11
-			}
-			clrmod="alarm"
-			align="horiz. centered"
-			format="exponential"
-			limits {
-			}
-		}
-		"text entry" {
-			object {
-				x=166
-				y=451
-				width=80
-				height=20
-			}
-			control {
-				chan="HPS_INTLK:NO_BEAM:intlk_lim"
-				clr=14
-				bclr=2
-			}
-			limits {
-			}
-		}
+	control {
+		chan="HPS_INTLK:NO_BEAM:intlk_lim"
+		clr=14
+		bclr=2
+	}
+	limits {
 	}
 }

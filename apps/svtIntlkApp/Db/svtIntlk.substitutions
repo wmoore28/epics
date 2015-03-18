@@ -14,6 +14,5 @@ pattern{ P,   R,        PLC_TAG,                   PREC, EGU,   CTRL, CTRL_VAL }
 # NO BEAM STATES - BPM Compare
 file "$(TOP)/db/svtIntlk_bpm.template" {
 pattern{ P,   R,        BPM1,     BPM2,     BPM3,   PREC, EGU,  CTRL, CTRL_VAL }
-{ HPS_INTLK:, NO_BEAM:, IPM2C21A, IPM2C24A, IPM2H01,   3,  nA,  #motors, 0 }
-{ HPS_INTLK:, NO_BEAM:, IPM2C21A, IPM2C24A, IPM2H01,   3,  nA,  #volts, 0 }
+{ HPS_INTLK:, NO_BEAM:, IPM2C21A, IPM2C24A, IPM2H01,   3,  nA,  SVT:bias:switch, 0 }
 }

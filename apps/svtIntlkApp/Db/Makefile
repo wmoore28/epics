@@ -14,6 +14,7 @@ include $(TOP)/configure/CONFIG
 
 DB  += svtIntlk.template
 DB  += svtIntlk_max.template
+DB  += svtIntlk_bpm.template
 DB  += svtIntlk.substitutions
 
 REQ += svtIntlk.req svtIntlk_settings.req
