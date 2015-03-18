@@ -1496,4 +1496,99 @@ void flushSocket(int socketfd) {
    return;
    
 
+} 
+
+
+
+void writeHybridSwitchProcess(char* pname, int value, int socket) {
+
+   int feb_id;
+   int feb_ch;
+   char type[256];
+   char ch_name[256];
+   char action[256];
+   char buffer[256];
+   char hyb_tag[256];
+   char toggle[256];
+   char open_tag[256];
+   char close_tag[256];
+   int n;
+   
+   
+   
+   getStringFromEpicsName(pname,type,1);
+   
+   if(strcmp(type,"lv")==0) {
+      
+      feb_id = getIntFromEpicsName(pname,2);    
+      
+      if(feb_id>=0) {
+         
+         feb_ch = getIntFromEpicsName(pname,3);   
+         
+         if(feb_ch>=0 && feb_ch<=3) {
+            
+            getStringFromEpicsName(pname,action,5);
+            
+            if(strcmp(action,"switch_sub")==0) { 
+               
+               
+               getStringFromEpicsName(pname,ch_name,4);
+               
+               if(strcmp(ch_name,"dvdd")==0 || 
+                  strcmp(ch_name,"avdd")==0 || 
+                  strcmp(ch_name,"v125")==0 || 
+                  strcmp(ch_name,"all")==0) {
+                  
+                  if(value==1) sprintf(toggle,"%s","True");
+                  else sprintf(toggle,"%s","False");
+                  
+                  getFebCnfCmd(feb_id,1,open_tag,256);
+                  getFebCnfCmd(feb_id,0,close_tag,256);
+                  sprintf(hyb_tag,"Hybrid%dPwrEn",feb_ch);
+                  sprintf(buffer,"%s<%s>%s</%s>%s\f",open_tag,hyb_tag,toggle,hyb_tag,close_tag);
+                  
+                  printf("[ writeHybridSwitchProcess ] : cmd \"%s\"\n",buffer);
+                  
+                  n = write(socket,buffer,strlen(buffer));
+                  
+                  if(n<0) 
+                     socket_error("[ writeHybridSwitchProcess ] : [ ERROR ] : couldn't write to socket");
+                  else 
+                     printf("[ writeHybridSwitchProcess ] : wrote %d chars to socket\n",n);
+                  
+                  //writeHybridSwitch(socket, value, feb_id, hyb_id);
+                  //writeHybrid(precord,action,feb_ch,feb_id,ch_name);  
+                  
+               } else {
+                  printf("[ writeHybridSwitchProcess ]: [ ERROR ]: wrong option for hybrid ch: %s\n",ch_name);
+               }
+            } else {
+               printf("[ writeHybridSwitchProcess ]: [ ERROR ]: this hybrid action type is not valid \"%s\"\n",action);
+            }    
+            
+            
+            
+         } else {
+            printf("[ writeHybridSwitchProcess ]: [ ERROR ]: getting feb ch\n");
+         } 
+      } else {
+         printf("[ writeHybridSwitchProcess ]: [ ERROR ]: getting feb id\n");
+      } 
+   } else {
+      printf("[ writeHybridSwitchProcess ]: [ ERROR ]: this type is not valid \"%s\"\n",type);
+   }  
+   
+   return;
+}
+
+
+
+void getFebCnfCmd(int feb_id, int isopentag,  char* cmd, const int MAX) {
+   char tmp[MAX];
+   if(isopentag==0) 
+      sprintf(tmp,"</FebCore></FebFpga></ControlDpm></config></system>");
+   else
+      sprintf(tmp,"<system><config><ControlDpm><FebFpga index=\"%d\"><FebCore>",feb_id);
+   strcpy(cmd,tmp);
 }

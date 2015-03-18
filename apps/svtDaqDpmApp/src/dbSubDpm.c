@@ -409,6 +409,57 @@ static long subDtmAckCountProcess(subRecord *precord) {
 }
 
 
+static long subHybridSwitchInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subTrigCountInit ]: %d Record %s called subHybridSwitchInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subHybridSwitchProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subHybridSwitchProcess ]: %d Record %s called subHybridSwitchProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int socket;
+  int p;
+  char hostname[40];
+  int val;
+  socket = -1;
+  p = 8089;
+  strcpy(hostname,"dpm7");
+  while(socket<0 && p < 8100) {
+     p++;
+     socket = open_socket(hostname,p);
+  }
+
+  
+  
+  if(socket>0) {
+     printf("[ subHybridSwitchProcess ]: successfully opened socket at %d (port=%d)\n", socket, p);
+     
+     if (mySubDebug) printf("[ subHybridSwitchProcess ] : Flush socket.\n");
+     
+     flushSocket(socket);
+     
+     if (mySubDebug) printf("[ subHybridSwitchProcess ] : Done flushing socket.\n");
+
+     writeHybridSwitchProcess(precord->name, precord->val, socket);
+
+     if (mySubDebug) printf("[ subPollProcess ]: close socket %d\n", socketFD);
+     
+     socket = close_socket(socket);
+     
+        
+  } else {
+    printf("[ subHybridSwitchProcess ]: [ WARNING ]: failed to open socket\n");
+  }
+  
+  
+  return 0;
+}
+
 
 
 /* Register these symbols for use by IOC code: */
@@ -438,3 +489,6 @@ epicsRegisterFunction(subDpmBlockCountInit);
 epicsRegisterFunction(subDpmBlockCountProcess);
 epicsRegisterFunction(subDpmSystemStateInit);
 epicsRegisterFunction(subDpmSystemStateProcess);
+epicsRegisterFunction(subHybridSwitchInit);
+epicsRegisterFunction(subHybridSwitchProcess);
+

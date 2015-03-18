@@ -4,8 +4,6 @@
 #include "common.h"
 
 
-void getFebCnfCmd(int feb_id, int isopentag,  char* cmd, const int MAX);
-
 xmlXPathObjectPtr getHybVs(xmlDocPtr doc, const char* type, int hyb, const char* pos);
 xmlNodePtr getHybVNode(xmlDocPtr doc, const char* type, int index, int hyb, const char* pos);
 double getHybVValue(xmlDocPtr doc, const char* type, int index, int hyb, const char* pos);

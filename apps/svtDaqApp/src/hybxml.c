@@ -5,14 +5,6 @@
 #include "commonXml.h"
 
 
-void getFebCnfCmd(int feb_id, int isopentag,  char* cmd, const int MAX) {
-   char tmp[256];
-   if(isopentag==0) 
-      sprintf(tmp,"</FebCore></FebFpga></ControlDpm></config></system>");
-   else
-      sprintf(tmp,"<system><config><ControlDpm><FebFpga index=\"%d\"><FebCore>",feb_id);
-   strcpy(cmd,tmp);
-}
 
 
 

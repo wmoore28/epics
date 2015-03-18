@@ -1078,7 +1078,7 @@ static long subLVProcess(subRecord *precord) {
      }
      readHybrid(precord,action,feb_ch,feb_id,ch_name);  
      
-  } else if(strcmp(action,"v_set_sub")==0 || strcmp(action,"switch_sub")==0) { 
+  } else if(strcmp(action,"v_set_sub")==0) { 
      
      if(strcmp(ch_name,"dvdd")!=0 && strcmp(ch_name,"avdd")!=0 && strcmp(ch_name,"v125")!=0 && strcmp(ch_name,"all")!=0) {
         printf("[ subLVProcess ]: [ ERROR ]: wrong option for hybrid ch: %s\n",ch_name);

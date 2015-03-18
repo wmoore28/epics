@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/generalApp/medm/ioc_hps_svt_health.adl"
+	name="/usr/clas12/hps/dev/apps/generalApp/medm/ioc_hps_svt_health.adl"
 	version=030108
 }
 display {
 	object {
-		x=211
+		x=95
 		y=49
 		width=1300
-		height=530
+		height=550
 	}
 	clr=3
 	bclr=4
@@ -103,7 +103,7 @@ rectangle {
 		x=859
 		y=54
 		width=425
-		height=455
+		height=475
 	}
 	"basic attribute" {
 		clr=5
@@ -2190,124 +2190,6 @@ rectangle {
 rectangle {
 	object {
 		x=10
-		y=483
-		width=1270
-		height=20
-	}
-	"basic attribute" {
-		clr=2
-	}
-}
-text {
-	object {
-		x=15
-		y=484
-		width=160
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="iocsvtDaqDtm1"
-}
-"text update" {
-	object {
-		x=193
-		y=485
-		width=150
-		height=20
-	}
-	monitor {
-		chan="iocsvtDaqDtm1:HOSTNAME"
-		clr=0
-		bclr=27
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=345
-		y=485
-		width=150
-		height=20
-	}
-	monitor {
-		chan="iocsvtDaqDtm1:UPTIME"
-		clr=0
-		bclr=27
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=497
-		y=485
-		width=100
-		height=20
-	}
-	monitor {
-		chan="iocsvtDaqDtm1:HEARTBEAT"
-		clr=0
-		bclr=27
-	}
-	align="horiz. right"
-	limits {
-	}
-}
-"related display" {
-	object {
-		x=601
-		y=483
-		width=20
-		height=20
-	}
-	display[0] {
-		label="IOC Stats"
-		name="ioc_stats_soft.adl"
-		args="ioc=iocsvtDaqDtm1"
-	}
-	clr=14
-	bclr=6
-}
-"related display" {
-	object {
-		x=626
-		y=483
-		width=75
-		height=20
-	}
-	display[0] {
-		label="Reboot"
-		name="ioc_stats_reboot_confirm.adl"
-		args="ioc=iocsvtDaqDtm1"
-	}
-	clr=14
-	bclr=6
-	label="Reboot..."
-}
-"text update" {
-	object {
-		x=707
-		y=485
-		width=150
-		height=20
-	}
-	monitor {
-		chan="iocsvtDaqDtm1:STARTTOD"
-		clr=0
-		bclr=27
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-rectangle {
-	object {
-		x=10
 		y=95
 		width=1270
 		height=20
@@ -2485,4 +2367,240 @@ text {
 	}
 	clr=14
 	bclr=6
+}
+rectangle {
+	object {
+		x=10
+		y=483
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+text {
+	object {
+		x=15
+		y=484
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqDtm1"
+}
+"text update" {
+	object {
+		x=193
+		y=485
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDtm1:HOSTNAME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=485
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDtm1:UPTIME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=485
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDtm1:HEARTBEAT"
+		clr=0
+		bclr=27
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=601
+		y=483
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqDtm1"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=626
+		y=483
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqDtm1"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+"text update" {
+	object {
+		x=707
+		y=485
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqDtm1:STARTTOD"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=10
+		y=505
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+text {
+	object {
+		x=15
+		y=506
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqCntrlWDpm"
+}
+"text update" {
+	object {
+		x=193
+		y=507
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqCntrlWDpm:HOSTNAME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=507
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqCntrlWDpm:UPTIME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=507
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqCntrlWDpm:HEARTBEAT"
+		clr=0
+		bclr=27
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=601
+		y=505
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqCntrlWDpm"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=626
+		y=505
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqCntrlWDpm"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+"text update" {
+	object {
+		x=707
+		y=507
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqCntrlWDpm:STARTTOD"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
 }

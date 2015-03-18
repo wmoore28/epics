@@ -479,7 +479,13 @@ record(calc, SVT:lv:FEBID:HYBID:stat)
 
 
 
-def buildHybLVSwitch():
+
+
+
+
+
+
+def buildHybridLVSwitch():
 
 
     s = """
@@ -488,8 +494,8 @@ def buildHybLVSwitch():
 
 record(sub,SVT:lv:FEBID:HYBID:all:switch_sub)
 {
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridSwitchInit")
+    field(SNAM,"subHybridSwitchProcess")
     field(SCAN,"Passive")
     field(FLNK,"SVT:lv:FEBID:HYBID:all:switch_fanout")
 }

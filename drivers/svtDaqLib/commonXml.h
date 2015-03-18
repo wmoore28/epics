@@ -58,6 +58,9 @@ void getDpmXmlDoc(int sockfd, int dpm, xmlDoc** dpm_doc_ptrptr, char* nodeTypeSt
 
 void flushSocket(int socketfd);
 
+void writeHybridSwitchProcess(char* pname, int value, int socket);
+
+void getFebCnfCmd(int feb_id, int isopentag,  char* cmd, const int MAX);
 
 
 #endif
