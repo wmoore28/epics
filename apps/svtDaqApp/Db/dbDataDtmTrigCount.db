@@ -9,7 +9,7 @@ record(sub,SVT:daq:dtm:$(DTM):trigcount_sub)
 
 record(longin, SVT:daq:dtm:$(DTM):trigcount) {
   field(SCAN, "1 second") 
-  field(INP, "SVT:daq:dtm:$(DPM):trigcount_sub PP")
+  field(INP, "SVT:daq:dtm:$(DTM):trigcount_sub PP")
   field(DTYP,"Soft Channel")
 }
 

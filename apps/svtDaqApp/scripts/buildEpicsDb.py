@@ -53,6 +53,10 @@ def buildEpics():
     printRecords(recs,"dbDataDtmStatus")
     recs = utils.buildDpmEventState()
     printRecords(recs,"dbDataDpmEventState")
+    recs = utils.buildDpmBlockCount()
+    printRecords(recs,"dbDataDpmBlockCount")
+    recs = utils.buildDpmSystemState()
+    printRecords(recs,"dbDataDpmSystemState")
     
 
 

@@ -84,6 +84,10 @@ record(ai, SVT:lv:FEBID:HYBID:dvdd:i_rd)
   field(SCAN, "Passive") field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:dvdd:i_rd_sub PP")
   field(DTYP,"Soft Channel")
+  field(HIHI,"0.31") field(HHSV,"MAJOR")
+  field(HIGH,"0.295") field(HSV,"MINOR")
+  field(LOW,"0.26") field(LSV,"MINOR")
+  field(LOLO,"0.24") field(LLSV,"MAJOR")
 }
 
 record(sub,SVT:lv:FEBID:HYBID:avdd:i_rd_sub)
@@ -99,6 +103,10 @@ record(ai, SVT:lv:FEBID:HYBID:avdd:i_rd)
   field(SCAN, "Passive") field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:avdd:i_rd_sub PP")
   field(DTYP,"Soft Channel")
+  field(HIHI,"0.45") field(HHSV,"MAJOR")
+  field(HIGH,"0.43") field(HSV,"MINOR")
+  field(LOW,"0.355") field(LSV,"MINOR")
+  field(LOLO,"0.345") field(LLSV,"MAJOR")
 }
 
 record(sub,SVT:lv:FEBID:HYBID:v125:i_rd_sub)
@@ -114,6 +122,10 @@ record(ai, SVT:lv:FEBID:HYBID:v125:i_rd)
   field(SCAN, "Passive") field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:v125:i_rd_sub PP")
   field(DTYP,"Soft Channel")
+  field(HIHI,"0.36") field(HHSV,"MAJOR")
+  field(HIGH,"0.34") field(HSV,"MINOR")
+  field(LOW,"0.305") field(LSV,"MINOR")
+  field(LOLO,"0.295") field(LLSV,"MAJOR")
 }
 
 
@@ -134,6 +146,10 @@ record(ai, SVT:lv:FEBID:HYBID:dvdd:vn)
   field(SCAN, "Passive") field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:dvdd:vn_sub PP")
   field(DTYP,"Soft Channel")
+  field(HIHI,"2.8") field(HHSV,"MAJOR")
+  field(HIGH,"2.7") field(HSV,"MINOR")
+  field(LOW,"2.5") field(LSV,"MINOR")
+  field(LOLO,"2.4") field(LLSV,"MAJOR")
 }
 
 record(sub,SVT:lv:FEBID:HYBID:avdd:vn_sub)
@@ -149,6 +165,10 @@ record(ai, SVT:lv:FEBID:HYBID:avdd:vn)
   field(SCAN, "Passive") field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:avdd:vn_sub PP")
   field(DTYP,"Soft Channel")
+  field(HIHI,"2.9") field(HHSV,"MAJOR")
+  field(HIGH,"2.8") field(HSV,"MINOR")
+  field(LOW,"2.6") field(LSV,"MINOR")
+  field(LOLO,"2.5") field(LLSV,"MAJOR")
 }
 
 record(sub,SVT:lv:FEBID:HYBID:v125:vn_sub)
@@ -164,6 +184,10 @@ record(ai, SVT:lv:FEBID:HYBID:v125:vn)
   field(SCAN, "Passive") field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:v125:vn_sub PP")
   field(DTYP,"Soft Channel")
+  field(HIHI,"1.55") field(HHSV,"MAJOR")
+  field(HIGH,"1.45") field(HSV,"MINOR")
+  field(LOW,"1.25") field(LSV,"MINOR")
+  field(LOLO,"1.15") field(LLSV,"MAJOR")
 }
 
 
@@ -199,6 +223,10 @@ record(ai, SVT:lv:FEBID:HYBID:avdd:vf)
   field(SCAN, "Passive") field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:avdd:vf_sub PP")
   field(DTYP,"Soft Channel")
+  field(HIHI,"2.8") field(HHSV,"MAJOR")
+  field(HIGH,"2.7") field(HSV,"MINOR")
+  field(LOW,"2.5") field(LSV,"MINOR")
+  field(LOLO,"2.4") field(LLSV,"MAJOR")
 }
 
 record(sub,SVT:lv:FEBID:HYBID:v125:vf_sub)
@@ -213,6 +241,10 @@ record(ai, SVT:lv:FEBID:HYBID:v125:vf) {
   field(SCAN, "Passive") field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:v125:vf_sub PP")
   field(DTYP,"Soft Channel")
+  field(HIHI,"1.47") field(HHSV,"MAJOR")
+  field(HIGH,"1.37") field(HSV,"MINOR")
+  field(LOW,"1.17") field(LSV,"MINOR")
+  field(LOLO,"1.07") field(LLSV,"MAJOR")
 }
 
 
@@ -233,6 +265,10 @@ record(ai, SVT:lv:FEBID:HYBID:dvdd:v_set_rd)
   field(SCAN, "Passive") field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:dvdd:v_set_rd_sub PP")
   field(DTYP,"Soft Channel")
+  field(HIHI,"160") field(HHSV,"MAJOR")
+  field(HIGH,"155") field(HSV,"MINOR")
+  field(LOW,"145") field(LSV,"MINOR")
+  field(LOLO,"140") field(LLSV,"MAJOR")
 }
 
 record(sub,SVT:lv:FEBID:HYBID:avdd:v_set_rd_sub)
@@ -248,6 +284,10 @@ record(ai, SVT:lv:FEBID:HYBID:avdd:v_set_rd)
   field(SCAN, "Passive") field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:avdd:v_set_rd_sub PP")
   field(DTYP,"Soft Channel")
+  field(HIHI,"180") field(HHSV,"MAJOR")
+  field(HIGH,"175") field(HSV,"MINOR")
+  field(LOW,"165") field(LSV,"MINOR")
+  field(LOLO,"160") field(LLSV,"MAJOR")
 }
 
 record(sub,SVT:lv:FEBID:HYBID:v125:v_set_rd_sub)
@@ -263,6 +303,10 @@ record(ai, SVT:lv:FEBID:HYBID:v125:v_set_rd)
   field(SCAN, "Passive") field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:v125:v_set_rd_sub PP")
   field(DTYP,"Soft Channel")
+  field(HIHI,"190") field(HHSV,"MAJOR")
+  field(HIGH,"185") field(HSV,"MINOR")
+  field(LOW,"175") field(LSV,"MINOR")
+  field(LOLO,"170") field(LLSV,"MAJOR")
 }
 
 
@@ -588,6 +632,10 @@ record(ai, SVT:temp:hyb:FEBID:HYBID:temp0:t_rd) {
   field(SCAN, "Passive") field(PREC, "1")
   field(INP, "SVT:temp:hyb:FEBID:HYBID:temp0:t_rd_sub PP")
   field(DTYP,"Soft Channel")
+  field(HIHI,"-16.5") field(HHSV,"MAJOR")
+  field(HIGH,"-16") field(HSV,"MINOR")
+  field(LOW,"-14.5") field(LSV,"MINOR")
+  field(LOLO,"-14") field(LLSV,"MAJOR")
 }
 
 
@@ -644,6 +692,10 @@ record(ai, SVT:temp:fe:FEBID:axixadc:t_rd) {
     field(SCAN, "Passive") field(PREC, "1")
     field(INP, "SVT:temp:fe:FEBID:axixadc:t_rd_sub PP")
     field(DTYP,"Soft Channel")
+    field(HIHI,"47") field(HHSV,"MAJOR")
+    field(HIGH,"45") field(HSV,"MINOR")
+    field(LOW,"37") field(LSV,"MINOR")
+    field(LOLO,"35") field(LLSV,"MAJOR")
 }
 
 record(sub,SVT:temp:fe:FEBID:FebTemp0:t_rd_sub)
@@ -658,6 +710,10 @@ record(ai, SVT:temp:fe:FEBID:FebTemp0:t_rd) {
     field(SCAN, "Passive") field(PREC, "1")
     field(INP, "SVT:temp:fe:FEBID:FebTemp0:t_rd_sub PP")
     field(DTYP,"Soft Channel")
+    field(HIHI,"30") field(HHSV,"MAJOR")
+    field(HIGH,"28") field(HSV,"MINOR")
+    field(LOW,"22") field(LSV,"MINOR")
+    field(LOLO,"20") field(LLSV,"MAJOR")
 }
 
 record(sub,SVT:temp:fe:FEBID:FebTemp1:t_rd_sub)
@@ -672,6 +728,10 @@ record(ai, SVT:temp:fe:FEBID:FebTemp1:t_rd) {
     field(SCAN, "Passive") field(PREC, "1")
     field(INP, "SVT:temp:fe:FEBID:FebTemp1:t_rd_sub PP")
     field(DTYP,"Soft Channel")
+    field(HIHI,"30") field(HHSV,"MAJOR")
+    field(HIGH,"28") field(HSV,"MINOR")
+    field(LOW,"22") field(LSV,"MINOR")
+    field(LOLO,"20") field(LLSV,"MAJOR")
 }
 
 """
@@ -711,6 +771,8 @@ record(aSub,SVT:lv:FEBID:HYBID:sync:sync_rd_asub)
 record(longin, SVT:lv:FEBID:HYBID:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 """
     s_flnk = "SVT:lv:NEXTFEBID:NEXTHYBID:sync:sync_rd_asub"
@@ -1159,6 +1221,31 @@ record(longin, SVT:daq:dpm:$(DPM):eventcount) {
     return records
 
 
+def buildDpmBlockCount():
+
+    records = []
+    s = """
+
+record(sub,SVT:daq:dpm:$(DPM):blockcount_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDpmBlockCountInit")
+    field(SNAM,"subDpmBlockCountProcess")
+}
+
+record(longin, SVT:daq:dpm:$(DPM):blockcount) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dpm:$(DPM):blockcount_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+"""	
+    records.append(s)
+    return records
+
+
 def buildDpmEventState():
 
     records = []
@@ -1174,6 +1261,33 @@ record(sub,SVT:daq:dpm:$(DPM):eventstate_sub)
 record(longin, SVT:daq:dpm:$(DPM):eventstate) {
   field(SCAN, "1 second") 
   field(INP, "SVT:daq:dpm:$(DPM):eventstate_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+"""	
+    records.append(s)
+    return records
+
+
+def buildDpmSystemState():
+
+    records = []
+    s = """
+
+record(aSub,SVT:daq:dpm:$(DPM):systemstate_sub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subDpmSystemStateInit")
+    field(SNAM,"subDpmSystemStateProcess")
+    field(OUTA,"SVT:daq:dpm:$(DPM):systemstate PP")
+    field(FTVA,"STRING")
+
+}
+
+record(stringin, SVT:daq:dpm:$(DPM):systemstate) {
+  field(SCAN, "Passive") 
   field(DTYP,"Soft Channel")
 }
 
@@ -1224,7 +1338,7 @@ record(sub,SVT:daq:dtm:$(DTM):trigcount_sub)
 
 record(longin, SVT:daq:dtm:$(DTM):trigcount) {
   field(SCAN, "1 second") 
-  field(INP, "SVT:daq:dtm:$(DPM):trigcount_sub PP")
+  field(INP, "SVT:daq:dtm:$(DTM):trigcount_sub PP")
   field(DTYP,"Soft Channel")
 }
 

@@ -17,6 +17,8 @@ dbLoadRecords("db/iocAdminSoft.db", "IOC=iocsvtDaqDpm1")
 ## Load record instances
 dbLoadRecords("db/dbDataDpmStatus.db","DPM=1")
 dbLoadRecords("db/dbDataDpmEventState.db","DPM=1")
+dbLoadRecords("db/dbDataDpmBlockCount.db","DPM=1")
+dbLoadRecords("db/dbDataDpmSystemState.db","DPM=1")
 dbLoadRecords("db/dbDataDpmEventCount.db","DPM=1")
 dbLoadRecords("db/dbDataDpmTrigCount.db","DPM=1")
 dbLoadRecords("db/dbDataDpm.db","DPM=1")

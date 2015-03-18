@@ -260,6 +260,30 @@ static long subDpmEventCountProcess(subRecord *precord) {
 }
 
 
+static long subDpmBlockCountInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subBlockCountInit ]: %d Record %s called subDpmBlockCountInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subDpmBlockCountProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDpmBlockCountProcess ]: %d Record %s called subDpmBlockCountProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int val = -1;
+
+  val = getBlockCountProcess(precord->name, xmldoc);
+
+  precord->val = val;
+
+  
+  return 0;
+}
+
+
 static long subDpmEventStateInit(subRecord *precord) {
   process_order++;
   if (mySubDebug) {
@@ -282,6 +306,34 @@ static long subDpmEventStateProcess(subRecord *precord) {
   
   return 0;
 }
+
+
+static long subDpmSystemStateInit(aSubRecord *precord) {
+   process_order++;
+   if (mySubDebug) {
+      printf("[ subSystemStateInit ]: %d Record %s called subDpmSystemStateInit(%p)\n", process_order, precord->name, (void*) precord);
+   }
+   return 0;
+}
+
+static long subDpmSystemStateProcess(aSubRecord *precord) {
+   process_order++;
+   if (mySubDebug) {
+      printf("[ subDpmSystemStateProcess ]: %d Record %s called subDpmSystemStateProcess(%p)\n",process_order, precord->name, (void*) precord);
+   }
+   char val[256];
+   
+   getSystemStateProcess(precord->name, xmldoc, val);
+   
+   char* a;
+   
+   a = (char*) precord->vala;
+   strcpy(a, val);
+   
+   
+   return 0;
+}
+
 
 
 static long subDpmTrigCountInit(subRecord *precord) {
@@ -382,3 +434,7 @@ epicsRegisterFunction(subDtmAckCountInit);
 epicsRegisterFunction(subDtmAckCountProcess);
 epicsRegisterFunction(subDpmEventStateInit);
 epicsRegisterFunction(subDpmEventStateProcess);
+epicsRegisterFunction(subDpmBlockCountInit);
+epicsRegisterFunction(subDpmBlockCountProcess);
+epicsRegisterFunction(subDpmSystemStateInit);
+epicsRegisterFunction(subDpmSystemStateProcess);
