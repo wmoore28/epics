@@ -19,6 +19,7 @@ hvCaen_DBD += asyn.dbd
 hvCaen_DBD += devSnmp.dbd
 hvCaen_DBD += LVMPODSupport.dbd
 hvCaen_DBD += devIocStats.dbd
+hvCaen_DBD += asSupport.dbd
 
 # hvCaen_registerRecordDeviceDriver.cpp derives from hvCaen.dbd
 hvCaen_SRCS += hvCaen_registerRecordDeviceDriver.cpp
