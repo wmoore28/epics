@@ -5,7 +5,7 @@ file {
 }
 display {
 	object {
-		x=10
+		x=-115
 		y=49
 		width=1390
 		height=600
@@ -509,7 +509,7 @@ text {
 		height=20
 	}
 	control {
-		chan="SVT:lv:2:2:all:switch"
+		chan="SVT:lv:2:2:all:switchDEFUNCT"
 		clr=55
 		bclr=12
 	}
@@ -523,7 +523,7 @@ text {
 		height=20
 	}
 	control {
-		chan="SVT:lv:2:3:all:switch"
+		chan="SVT:lv:2:3:all:switchDEFUNCT"
 		clr=55
 		bclr=12
 	}
@@ -3755,7 +3755,7 @@ text {
 		height=20
 	}
 	control {
-		chan="SVT:lv:9:2:all:switch"
+		chan="SVT:lv:9:2:all:switchDEFUNCT"
 		clr=55
 		bclr=12
 	}
@@ -3769,7 +3769,7 @@ text {
 		height=20
 	}
 	control {
-		chan="SVT:lv:9:3:all:switch"
+		chan="SVT:lv:9:3:all:switchDEFUNCT"
 		clr=55
 		bclr=12
 	}
@@ -4106,316 +4106,245 @@ text {
 	}
 	stacking="column"
 }
-composite {
+"related display" {
 	object {
 		x=799
 		y=54
-		width=38
-		height=527
+		width=36
+		height=20
 	}
-	"composite name"=""
-	children {
-		"related display" {
-			object {
-				x=799
-				y=54
-				width=36
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_0.adl"
-			}
-			clr=0
-			bclr=24
-			label="0"
-		}
-		"related display" {
-			object {
-				x=799
-				y=79
-				width=36
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_1.adl"
-			}
-			clr=0
-			bclr=24
-			label="1"
-		}
-		"related display" {
-			object {
-				x=799
-				y=104
-				width=36
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_2.adl"
-			}
-			clr=0
-			bclr=24
-			label="2"
-		}
-		"related display" {
-			object {
-				x=799
-				y=129
-				width=36
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_3.adl"
-			}
-			clr=0
-			bclr=24
-			label="3"
-		}
-		"related display" {
-			object {
-				x=799
-				y=161
-				width=36
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_0.adl"
-			}
-			clr=0
-			bclr=24
-			label="0"
-		}
-		"related display" {
-			object {
-				x=799
-				y=186
-				width=36
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_1.adl"
-			}
-			clr=0
-			bclr=24
-			label="1"
-		}
-		"related display" {
-			object {
-				x=799
-				y=211
-				width=36
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_2.adl"
-			}
-			clr=0
-			bclr=24
-			label="2"
-		}
-		"related display" {
-			object {
-				x=799
-				y=236
-				width=36
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_3.adl"
-			}
-			clr=0
-			bclr=24
-			label="3"
-		}
-		"related display" {
-			object {
-				x=800
-				y=270
-				width=36
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_0.adl"
-			}
-			clr=0
-			bclr=24
-			label="0"
-		}
-		"related display" {
-			object {
-				x=800
-				y=295
-				width=36
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_1.adl"
-			}
-			clr=0
-			bclr=24
-			label="1"
-		}
-		"related display" {
-			object {
-				x=800
-				y=320
-				width=36
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_2.adl"
-			}
-			clr=0
-			bclr=24
-			label="2"
-		}
-		"related display" {
-			object {
-				x=800
-				y=345
-				width=36
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_3.adl"
-			}
-			clr=0
-			bclr=24
-			label="3"
-		}
-		"related display" {
-			object {
-				x=801
-				y=379
-				width=36
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_0.adl"
-			}
-			clr=0
-			bclr=24
-			label="0"
-		}
-		"related display" {
-			object {
-				x=801
-				y=404
-				width=36
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_1.adl"
-			}
-			clr=0
-			bclr=24
-			label="1"
-		}
-		"related display" {
-			object {
-				x=801
-				y=429
-				width=36
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_2.adl"
-			}
-			clr=0
-			bclr=24
-			label="2"
-		}
-		"related display" {
-			object {
-				x=801
-				y=454
-				width=36
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_3.adl"
-			}
-			clr=0
-			bclr=24
-			label="3"
-		}
-		"related display" {
-			object {
-				x=802
-				y=486
-				width=36
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_0.adl"
-			}
-			clr=0
-			bclr=24
-			label="0"
-		}
-		"related display" {
-			object {
-				x=802
-				y=511
-				width=22
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_1.adl"
-			}
-			clr=0
-			bclr=24
-			label="1"
-		}
-		"related display" {
-			object {
-				x=802
-				y=536
-				width=28
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_2.adl"
-			}
-			clr=0
-			bclr=24
-			label="2"
-		}
-		"related display" {
-			object {
-				x=802
-				y=561
-				width=28
-				height=20
-			}
-			display[0] {
-				label="GGG"
-				name="hps_svt_hybrid_LV_top_3.adl"
-			}
-			clr=0
-			bclr=24
-			label="3"
-		}
+	display[0] {
+		label="GGG"
+		name="hps_svt_hybrid_LV_top_0.adl"
 	}
+	clr=0
+	bclr=24
+	label="0"
+}
+"related display" {
+	object {
+		x=799
+		y=79
+		width=36
+		height=20
+	}
+	display[0] {
+		label="GGG"
+		name="hps_svt_hybrid_LV_top_1.adl"
+	}
+	clr=0
+	bclr=24
+	label="1"
+}
+"related display" {
+	object {
+		x=799
+		y=104
+		width=36
+		height=20
+	}
+	display[0] {
+		label="GGG"
+		name="hps_svt_hybrid_LV_top_2.adl"
+	}
+	clr=0
+	bclr=24
+	label="2"
+}
+"related display" {
+	object {
+		x=799
+		y=129
+		width=36
+		height=20
+	}
+	display[0] {
+		label="GGG"
+		name="hps_svt_hybrid_LV_top_3.adl"
+	}
+	clr=0
+	bclr=24
+	label="3"
+}
+"related display" {
+	object {
+		x=799
+		y=161
+		width=36
+		height=20
+	}
+	display[0] {
+		label="GGG"
+		name="hps_svt_hybrid_LV_top_0.adl"
+	}
+	clr=0
+	bclr=24
+	label="0"
+}
+"related display" {
+	object {
+		x=799
+		y=186
+		width=36
+		height=20
+	}
+	display[0] {
+		label="GGG"
+		name="hps_svt_hybrid_LV_top_1.adl"
+	}
+	clr=0
+	bclr=24
+	label="1"
+}
+"related display" {
+	object {
+		x=799
+		y=211
+		width=36
+		height=20
+	}
+	display[0] {
+		label="GGG"
+		name="hps_svt_hybrid_LV_top_2.adl"
+	}
+	clr=0
+	bclr=24
+	label="2"
+}
+"related display" {
+	object {
+		x=799
+		y=236
+		width=36
+		height=20
+	}
+	display[0] {
+		label="GGG"
+		name="hps_svt_hybrid_LV_top_3.adl"
+	}
+	clr=0
+	bclr=24
+	label="3"
+}
+"related display" {
+	object {
+		x=800
+		y=270
+		width=36
+		height=20
+	}
+	display[0] {
+		label="GGG"
+		name="hps_svt_hybrid_LV_top_0.adl"
+	}
+	clr=0
+	bclr=24
+	label="0"
+}
+"related display" {
+	object {
+		x=800
+		y=295
+		width=36
+		height=20
+	}
+	display[0] {
+		label="GGG"
+		name="hps_svt_hybrid_LV_top_1.adl"
+	}
+	clr=0
+	bclr=24
+	label="1"
+}
+"related display" {
+	object {
+		x=800
+		y=320
+		width=36
+		height=20
+	}
+	display[0] {
+		label="GGG"
+		name="hps_svt_hybrid_LV_top_2.adl"
+	}
+	clr=0
+	bclr=24
+	label="2"
+}
+"related display" {
+	object {
+		x=800
+		y=345
+		width=36
+		height=20
+	}
+	display[0] {
+		label="GGG"
+		name="hps_svt_hybrid_LV_top_3.adl"
+	}
+	clr=0
+	bclr=24
+	label="3"
+}
+"related display" {
+	object {
+		x=801
+		y=379
+		width=36
+		height=20
+	}
+	display[0] {
+		label="GGG"
+		name="hps_svt_hybrid_LV_top_0.adl"
+	}
+	clr=0
+	bclr=24
+	label="0"
+}
+"related display" {
+	object {
+		x=801
+		y=404
+		width=36
+		height=20
+	}
+	display[0] {
+		label="GGG"
+		name="hps_svt_hybrid_LV_top_1.adl"
+	}
+	clr=0
+	bclr=24
+	label="1"
+}
+"related display" {
+	object {
+		x=801
+		y=429
+		width=36
+		height=20
+	}
+	display[0] {
+		label="GGG"
+		name="hps_svt_hybrid_LV_top_2.adl"
+	}
+	clr=0
+	bclr=24
+	label="2"
+}
+"related display" {
+	object {
+		x=801
+		y=454
+		width=36
+		height=20
+	}
+	display[0] {
+		label="GGG"
+		name="hps_svt_hybrid_LV_top_3.adl"
+	}
+	clr=0
+	bclr=24
+	label="3"
 }
 "choice button" {
 	object {
@@ -4854,43 +4783,32 @@ composite {
 	}
 	stacking="column"
 }
-composite {
+"choice button" {
+	object {
+		x=1234
+		y=120
+		width=50
+		height=20
+	}
+	control {
+		chan="SVT:lv:hyb:all:switch"
+		clr=55
+		bclr=12
+	}
+	stacking="column"
+}
+text {
 	object {
 		x=1207
 		y=100
 		width=103
-		height=40
+		height=29
 	}
-	"composite name"=""
-	children {
-		"choice button" {
-			object {
-				x=1234
-				y=120
-				width=50
-				height=20
-			}
-			control {
-				chan="SVT:lv:hyb:all:switch"
-				clr=55
-				bclr=12
-			}
-			stacking="column"
-		}
-		text {
-			object {
-				x=1207
-				y=100
-				width=103
-				height=29
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="All hybrids ON/OFF"
-			align="horiz. centered"
-		}
+	"basic attribute" {
+		clr=50
 	}
+	textix="All hybrids ON/OFF"
+	align="horiz. centered"
 }
 composite {
 	object {
@@ -4983,95 +4901,84 @@ composite {
 		}
 	}
 }
-composite {
+"text update" {
 	object {
 		x=621
 		y=91
-		width=45
-		height=452
+		width=42
+		height=20
 	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=621
-				y=91
-				width=42
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:map:5:layer"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=621
-				y=198
-				width=42
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:map:6:layer"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=622
-				y=307
-				width=42
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:map:7:layer"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=624
-				y=416
-				width=42
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:map:8:layer"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=624
-				y=523
-				width=42
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:map:9:layer"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
+	monitor {
+		chan="SVT:daq:map:5:layer"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=621
+		y=198
+		width=42
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:6:layer"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=622
+		y=307
+		width=42
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:7:layer"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=624
+		y=416
+		width=42
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:8:layer"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=624
+		y=523
+		width=42
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:9:layer"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
 	}
 }
 composite {
@@ -5823,5 +5730,69 @@ composite {
 				}
 			}
 		}
+	}
+}
+"text update" {
+	object {
+		x=791
+		y=486
+		width=50
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:9:0:sensor"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=791
+		y=511
+		width=50
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:9:1:sensor"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=791
+		y=536
+		width=50
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:9:2:sensor"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=791
+		y=561
+		width=50
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:map:9:3:sensor"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
 	}
 }
