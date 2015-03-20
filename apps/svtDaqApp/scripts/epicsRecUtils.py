@@ -1,40 +1,31 @@
 import sys
 
+class Hybrid:
+    def __init__(self,id,layer,side, type):
+        self.id = id
+        self.layer = layer
+        self.side = side
+        self.type = type    
+
 class FEB:
-    def __init__(self,febid, hybrids,dna, layer):
+    def __init__(self,febid, hybrids, dna, layer):
         self.id = febid
         self.hybrids = hybrids
         self.dna = dna
         self.layer = layer
-
             
 febs= [
-    FEB(2,[0,1],    "0x14084072beb01c00","L1b"),
-    FEB(0,[0,1,2,3],"0x42084072beb01400","L2-3b"),
-    FEB(5,[0,1,2,3],"0x58d0472beb01400","L4t"),
-    FEB(8,[0,1,2,3],"0x52814100a1b01c00","L5t"),
-    FEB(7,[0,1,2,3],"0x50814100a1b01c00","L6t"),
-    FEB(9,[0,1],    "0x24d04072beb01c00","L1t"),
-    FEB(6,[0,1,2,3],"0x02d04072beb01c00","L2-3t"),
-    FEB(1,[0,1,2,3],"0x72814100a1b01c00","L4b"),
-    FEB(4,[0,1,2,3],"0x1c084072beb01400","L5b"),
-    FEB(3,[0,1,2,3],"0x70d04072beb01c00","L6b"),
+    FEB(2,[Hybrid(0,"L1b","electron","stereo"),Hybrid(1,"L1b","electron","axial")],"0x14084072beb01c00","L1b"),
+    FEB(0,[Hybrid(0,"L2b","electron","stereo"),Hybrid(1,"L2b","electron","axial"),Hybrid(2,"L3b","electron","stereo"),Hybrid(3,"L3b","electron","axial")],"0x42084072beb01400","L2-3b"),
+    FEB(5,[Hybrid(0,"L4t","electron","axial"),Hybrid(1,"L4t","positron","axial"),Hybrid(2,"L4t","electron","stereo"),Hybrid(3,"L4t","positron","stereo")],"0x58d0472beb01400","L4t"),
+    FEB(8,[Hybrid(0,"L5t","electron","axial"),Hybrid(1,"L5t","positron","axial"),Hybrid(2,"L5t","electron","stereo"),Hybrid(3,"L5t","positron","axial")],"0x52814100a1b01c00","L5t"),
+    FEB(7,[Hybrid(0,"L6t","electron","axial"),Hybrid(1,"L6t","positron","axial"),Hybrid(2,"L6t","electron","stereo"),Hybrid(3,"L6t","positron","axial")],"0x50814100a1b01c00","L6t"),
+    FEB(9,[Hybrid(0,"L1t","electron","axial"),Hybrid(1,"L1t","electron","stereo")],"0x24d04072beb01c00","L1t"),
+    FEB(6,[Hybrid(0,"L2t","electron","axial"),Hybrid(1,"L2t","electron","stereo"),Hybrid(2,"L3t","electron","axial"),Hybrid(3,"L3t","electron","stereo")],"0x02d04072beb01c00","L2-3t"),
+    FEB(1,[Hybrid(0,"L4b","electron","stereo"),Hybrid(1,"L4b","positron","stereo"),Hybrid(2,"L4b","electron","axial"),Hybrid(3,"L4b","positron","axial")],"0x72814100a1b01c00","L4b"),
+    FEB(4,[Hybrid(0,"L4b","electron","stereo"),Hybrid(1,"L4b","positron","stereo"),Hybrid(2,"L4b","electron","axial"),Hybrid(3,"L4b","positron","axial")],"0x1c084072beb01400","L5b"),
+    FEB(3,[Hybrid(0,"L4b","electron","stereo"),Hybrid(1,"L4b","positron","stereo"),Hybrid(2,"L4b","electron","axial"),Hybrid(3,"L4b","positron","axial")],"0x70d04072beb01c00","L6b"),
     ]
-
-
-#febs= [
-#    FEB(2,[0,1],    "0x14084072beb01c00","L1b"),
-#    FEB(0,[0,1,2,3],"0x42084072beb01400","L2-3b"),
-#    FEB(5,[0,1,2,3],"0x58d0472beb01400","L4t"),
-#    FEB(8,[0,1,2,3],"0x52814100a1b01c00","L5t"),
-#    FEB(7,[0,1,2,3],"0x50814100a1b01c00","L6t"),
-#    FEB(9,[0,1],    "0x24d04072beb01c00","L1t"),
-#    FEB(6,[0,1,2,3],"0x02d04072beb01c00","L2-3t"),
-#    FEB(1,[0,1,2,3],"0x72814100a1b01c00","L4b"),
-#    FEB(4,[0,1,2,3],"0x1c084072beb01400","L5b"),
-#    FEB(3,[0,1,2,3],"0x70d04072beb01c00","L6b"),
-#    ]
-
 
 
 
@@ -50,12 +41,12 @@ def getLayer(febid):
                 sys.exit(1)
     return layer
 
-def getNHybrids(febid):
-    n=-1
+def getHybrids(febid):
+    n = None
     for feb in febs:
         if feb.id ==febid:
-            if n==-1:
-                n = len(feb.hybrids)
+            if n==None:
+                n = feb.hybrids
             else:
                 print "ERROR: found two febs with ID ", febid
                 sys.exit(1)
@@ -370,9 +361,10 @@ record(ao, SVT:lv:FEBID:HYBID:v125:v_set) {
     s_flnk = "SVT:lv:NEXTFEBID:NEXTHYBID:dvdd:i_rd"
     records = []
     for feb in range(0,10):
-        for hyb in range(0,4):
+        r = range(0,len(getHybrids(feb)))
+        for hyb in r:
             rec = s
-            if hyb==3:
+            if (hyb==3 and len(r)==4) or (hyb==1 and len(r)==2):
                 if feb < 9:
                     rec = rec.replace("FLNKNEXTHYB",s_flnk)
                     rec = rec.replace("NEXTHYBID",str(0))
@@ -571,7 +563,7 @@ record(dfanout,SVT:lv:"""+str(feb)+""":all:switch_fanout)
     field(DOL,"SVT:lv:"""+str(feb)+""":all:switch")
     field(OMSL,"closed_loop")
 """
-        r = range(0,getNHybrids(feb))
+        r = range(0,len(getHybrids(feb)))
         link = ["OUTA","OUTB","OUTC","OUTD"]
         for hyb in r:
             s += "    field(" + link[hyb]+",\"SVT:lv:"+str(feb)+":"+str(hyb)+":all:switch\") " + "\n"
@@ -629,25 +621,6 @@ def buildHybTemp():
     
 
     s = """
-record(sub,SVT:temp:hyb:FEBID:HYBID:temp0:t_rd_sub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
-    field(FLNK,"SVT:temp:hyb:FEBID:HYBID:temp1:t_rd")
-}
-
-record(ai, SVT:temp:hyb:FEBID:HYBID:temp0:t_rd) {
-  field(SCAN, "Passive") field(PREC, "1")
-  field(INP, "SVT:temp:hyb:FEBID:HYBID:temp0:t_rd_sub PP")
-  field(DTYP,"Soft Channel")
-  field(HIHI,"-16.5") field(HHSV,"MAJOR")
-  field(HIGH,"-16") field(HSV,"MINOR")
-  field(LOW,"-14.5") field(LSV,"MINOR")
-  field(LOLO,"-14") field(LLSV,"MAJOR")
-}
-
-
 record(sub,SVT:temp:hyb:FEBID:HYBID:temp1:t_rd_sub)
 {
     field(SCAN,"Passive")
@@ -660,15 +633,20 @@ record(ai, SVT:temp:hyb:FEBID:HYBID:temp1:t_rd) {
   field(SCAN, "Passive") field(PREC, "1")
   field(INP, "SVT:temp:hyb:FEBID:HYBID:temp1:t_rd_sub PP")
   field(DTYP,"Soft Channel")
+  field(HIHI,"-16.5") field(HHSV,"MAJOR")
+  field(HIGH,"-16") field(HSV,"MINOR")
+  field(LOW,"-14.5") field(LSV,"MINOR")
+  field(LOLO,"-14") field(LLSV,"MAJOR")
 }
 """
 
-    s_flnk = "SVT:temp:hyb:NEXTFEBID:NEXTHYBID:temp0:t_rd"
+    s_flnk = "SVT:temp:hyb:NEXTFEBID:NEXTHYBID:temp1:t_rd"
     records = []
     for feb in range(0,10):
-        for hyb in range(0,4):
+        r = range(0,len(getHybrids(feb)))
+        for hyb in r:
             rec = s
-            if hyb==3:
+            if (hyb==3 and len(r)==4) or (hyb==1 and len(r)==2):
                 if feb < 9:
                     rec = rec.replace("FLNKNEXTHYB",s_flnk)
                     rec = rec.replace("NEXTHYBID",str(0))
@@ -764,8 +742,6 @@ record(ai, SVT:temp:fe:FEBID:FebTemp1:t_rd) {
 
 def buildHybSync():
 
-    
-
     s = """
 record(aSub,SVT:lv:FEBID:HYBID:sync:sync_rd_asub)
 {
@@ -808,8 +784,7 @@ record(longin, SVT:lv:FEBID:HYBID:sync:sync_rd) {
 
 
 def buildHybSyncBase():
-	
-	s = """
+    s = """
 record(aSub,SVT:daq:FEBID:HYBID:APVID:syncbase_rd_asub)
 {
     field(SCAN,"Passive")
@@ -843,43 +818,43 @@ record(longin, SVT:daq:FEBID:HYBID:APVID:syncpeak_rd) {
 
 
 """
-	
-	s_flnk = "SVT:daq:NEXTFEBID:NEXTHYBID:NEXTAPV:syncbase_rd_asub"
-	records = []
-	for feb in range(0,10):
-		for hyb in range(0,4):
-			for apv in range(0,5):
-				rec = s
-				if apv==4:
-					if hyb == 3:
-						if feb == 9:
-							# done
-							rec = rec.replace("FLNKNEXTHYB","")                    
-						else:
-							# go to next feb
-							rec = rec.replace("FLNKNEXTHYB",s_flnk)
-							rec = rec.replace("NEXTHYBID",str(0))
-							rec = rec.replace("NEXTAPV",str(0))
-							rec = rec.replace("NEXTFEBID",str(feb+1))
-					else:
-						# go to next hybrid
-						rec = rec.replace("FLNKNEXTHYB",s_flnk)
-						rec = rec.replace("NEXTHYBID",str(hyb+1))
-						rec = rec.replace("NEXTAPV",str(0))
-						rec = rec.replace("NEXTFEBID",str(feb))
-				else:
-					# go to next apv
-					rec = rec.replace("FLNKNEXTHYB",s_flnk)
-					rec = rec.replace("NEXTHYBID",str(hyb))
-					rec = rec.replace("NEXTAPV",str(apv+1))
-					rec = rec.replace("NEXTFEBID",str(feb))				
-				# replace the current record
-				rec = rec.replace("APVID",str(apv))
-				rec = rec.replace("HYBID",str(hyb))
-				rec = rec.replace("FEBID",str(feb))
-				#print 'add rec ', rec
-				records.append(rec)
-	return records
+    s_flnk = "SVT:daq:NEXTFEBID:NEXTHYBID:NEXTAPV:syncbase_rd_asub"
+    records = []
+    for feb in range(0,10):
+        r = range(0,len(getHybrids(feb)))
+        for hyb in r:
+            for apv in range(0,5):
+                rec = s
+                if apv==4:
+                    if (hyb==3 and len(r)==4) or (hyb==1 and len(r)==2):
+                        if feb == 9:
+                            # done
+                            rec = rec.replace("FLNKNEXTHYB","")                    
+                        else:
+                            # go to next feb
+                            rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                            rec = rec.replace("NEXTHYBID",str(0))
+                            rec = rec.replace("NEXTAPV",str(0))
+                            rec = rec.replace("NEXTFEBID",str(feb+1))
+                    else:
+                        # go to next hybrid
+                        rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                        rec = rec.replace("NEXTHYBID",str(hyb+1))
+                        rec = rec.replace("NEXTAPV",str(0))
+                        rec = rec.replace("NEXTFEBID",str(feb))
+                else:
+                    # go to next apv
+                    rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                    rec = rec.replace("NEXTHYBID",str(hyb))
+                    rec = rec.replace("NEXTAPV",str(apv+1))
+                    rec = rec.replace("NEXTFEBID",str(feb))				
+                # replace the current record
+                rec = rec.replace("APVID",str(apv))
+                rec = rec.replace("HYBID",str(hyb))
+                rec = rec.replace("FEBID",str(feb))
+                #print 'add rec ', rec
+                records.append(rec)
+    return records
 
 
 
@@ -978,6 +953,41 @@ record(stringin, SVT:daqmap:PHYSLAYER:febid) {
         rec = rec.replace("DNA",str(getDna(feb)))
         records.append(rec)
         
+	
+
+    s = """
+record(stringin, SVT:daq:map:FEBID:HYBID:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"SIDE")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:FEBID:HYBID:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"LAYER")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:FEBID:HYBID:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"TYPE")
+  field(DTYP,"Soft Channel")
+}
+
+
+"""	
+
+    for feb in range(0,10):
+        hybrids = getHybrids(feb)
+        for hybrid in hybrids:
+            rec = s
+            rec = rec.replace("FEBID",str(feb))
+            rec = rec.replace("HYBID",str(hybrid.id))
+            rec = rec.replace("SIDE",str(hybrid.side))
+            rec = rec.replace("LAYER",str(hybrid.layer))
+            rec = rec.replace("TYPE",str(hybrid.type))
+            records.append(rec)
+    
     return records
 
 
