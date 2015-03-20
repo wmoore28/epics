@@ -6,6 +6,7 @@
 #define DEBUG 0
 #define N_HALVES 2
 #define N_HYBRIDS 18
-
+#define EPICS_STRING_SIZE 40
+#define BUF_SIZE 256
 
 #endif
