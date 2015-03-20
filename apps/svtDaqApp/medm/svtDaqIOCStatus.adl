@@ -1,7 +1,7 @@
 
 file {
 	name="/usr/clas12/hps/svt-devel/apps/svtDaqApp/medm/svtDaqIOCStatus.adl"
-	version=030101
+	version=030108
 }
 display {
 	object {
@@ -110,7 +110,7 @@ text {
 	"basic attribute" {
 		clr=50
 	}
-	textix="Data DPM 12"
+	textix="Data DPM 11"
 	align="horiz. centered"
 }
 text {
@@ -227,7 +227,7 @@ text {
 	"basic attribute" {
 		clr=50
 	}
-	textix="Data DPM 7"
+	textix="Control DPM"
 	align="horiz. centered"
 }
 text {
@@ -240,7 +240,7 @@ text {
 	"basic attribute" {
 		clr=50
 	}
-	textix="Data DPM 8"
+	textix="Data DPM 7"
 	align="horiz. centered"
 }
 text {
@@ -253,7 +253,7 @@ text {
 	"basic attribute" {
 		clr=50
 	}
-	textix="Data DPM 9"
+	textix="Data DPM 8"
 	align="horiz. centered"
 }
 text {
@@ -266,7 +266,7 @@ text {
 	"basic attribute" {
 		clr=50
 	}
-	textix="Data DPM 10"
+	textix="Data DPM 9"
 	align="horiz. centered"
 }
 text {
@@ -279,7 +279,7 @@ text {
 	"basic attribute" {
 		clr=50
 	}
-	textix="Data DPM 11"
+	textix="Data DPM 10"
 	align="horiz. centered"
 }
 text {
@@ -292,7 +292,7 @@ text {
 	"basic attribute" {
 		clr=50
 	}
-	textix="Data DPM 13"
+	textix="Data DPM 12"
 	align="horiz. centered"
 }
 text {
@@ -321,287 +321,276 @@ text {
 	textix="DTM 1"
 	align="horiz. centered"
 }
-composite {
+"text update" {
 	object {
 		x=149
 		y=89
 		width=30
-		height=457
+		height=20
 	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=149
-				y=89
-				width=30
-				height=20
-			}
-			monitor {
-				chan="SVT:hb_check"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=149
-				y=114
-				width=30
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:0:hb_check"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=149
-				y=138
-				width=30
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:1:hb_check"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=149
-				y=442
-				width=30
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:13:hb_check"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=149
-				y=164
-				width=30
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:2:hb_check"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=149
-				y=189
-				width=30
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:3:hb_check"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=149
-				y=214
-				width=30
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:4:hb_check"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=149
-				y=239
-				width=30
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:5:hb_check"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=149
-				y=264
-				width=30
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:6:hb_check"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=149
-				y=289
-				width=30
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:7:hb_check"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=149
-				y=314
-				width=30
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:8:hb_check"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=149
-				y=339
-				width=30
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:9:hb_check"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=149
-				y=364
-				width=30
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:10:hb_check"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=149
-				y=389
-				width=30
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:11:hb_check"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=149
-				y=414
-				width=30
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dpm:12:hb_check"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=149
-				y=500
-				width=30
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dtm:0:hb_check"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=149
-				y=526
-				width=30
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dtm:1:hb_check"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
+	monitor {
+		chan="SVT:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=149
+		y=114
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:0:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=149
+		y=138
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:1:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=149
+		y=442
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:13:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=149
+		y=164
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:2:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=149
+		y=189
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:3:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=149
+		y=214
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:4:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=149
+		y=239
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:5:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=149
+		y=264
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:6:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=149
+		y=289
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:7:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=149
+		y=314
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:8:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=149
+		y=339
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:9:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=149
+		y=364
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:10:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=149
+		y=389
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:11:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=149
+		y=414
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:12:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=149
+		y=500
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dtm:0:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=149
+		y=526
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dtm:1:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
 	}
 }
 "text update" {
@@ -1711,4 +1700,97 @@ text {
 	}
 	textix="XML"
 	align="horiz. centered"
+}
+text {
+	object {
+		x=6
+		y=472
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="Data DPM 13"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=148
+		y=469
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:14:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=189
+		y=469
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:14:socketstatus"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=299
+		y=469
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:14:status"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+oval {
+	object {
+		x=105
+		y=469
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(A<0)&1"
+		chan="SVT:daq:dpm:13:hb_check"
+	}
+}
+oval {
+	object {
+		x=113
+		y=469
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(A>0|A=0)&1"
+		chan="SVT:daq:dpm:13:hb_check"
+	}
 }
