@@ -21,14 +21,15 @@ febs= [
     FEB(3,[0,1,2,3],"0x70d04072beb01c00","L6b"),
     ]
 
+
 #febs= [
-#    FEB(2,[0,1],    "0x14084072beb01c00","L1t"),
-#    FEB(0,[0,1,2,3],"0x42084072beb01400","L2-3t"),
+#    FEB(2,[0,1],    "0x14084072beb01c00","L1b"),
+#    FEB(0,[0,1,2,3],"0x42084072beb01400","L2-3b"),
 #    FEB(5,[0,1,2,3],"0x58d0472beb01400","L4t"),
 #    FEB(8,[0,1,2,3],"0x52814100a1b01c00","L5t"),
 #    FEB(7,[0,1,2,3],"0x50814100a1b01c00","L6t"),
-#    FEB(9,[0,1],    "0x24d04072beb01c00","L1b"),
-#    FEB(6,[0,1,2,3],"0x02d04072beb01c00","L2-3b"),
+#    FEB(9,[0,1],    "0x24d04072beb01c00","L1t"),
+#    FEB(6,[0,1,2,3],"0x02d04072beb01c00","L2-3t"),
 #    FEB(1,[0,1,2,3],"0x72814100a1b01c00","L4b"),
 #    FEB(4,[0,1,2,3],"0x1c084072beb01400","L5b"),
 #    FEB(3,[0,1,2,3],"0x70d04072beb01c00","L6b"),
@@ -45,9 +46,21 @@ def getLayer(febid):
             if layer=="":
                 layer = feb.layer
             else:
-                print "ERROR: found two febs with ID ", id
+                print "ERROR: found two febs with ID ", febid
                 sys.exit(1)
     return layer
+
+def getNHybrids(febid):
+    n=-1
+    for feb in febs:
+        if feb.id ==febid:
+            if n==-1:
+                n = len(feb.hybrids)
+            else:
+                print "ERROR: found two febs with ID ", febid
+                sys.exit(1)
+    return n
+
 
 def getDna(febid):
     layer=""
@@ -56,7 +69,7 @@ def getDna(febid):
             if layer=="":
                 layer = feb.dna
             else:
-                print "ERROR: found two febs with ID ", id
+                print "ERROR: found two febs with ID ", febid
                 sys.exit(1)
     return layer
 
@@ -497,7 +510,6 @@ record(sub,SVT:lv:FEBID:HYBID:all:switch_sub)
     field(INAM,"subHybridSwitchInit")
     field(SNAM,"subHybridSwitchProcess")
     field(SCAN,"Passive")
-    field(FLNK,"SVT:lv:FEBID:HYBID:all:switch_fanout")
 }
 
 record(bo, SVT:lv:FEBID:HYBID:all:switch)
@@ -509,40 +521,6 @@ record(bo, SVT:lv:FEBID:HYBID:all:switch)
     field(OMSL, "supervisory")
 }
 
-record(fanout,SVT:lv:FEBID:HYBID:all:switch_fanout)
-{
-    field(LNK1,"SVT:lv:FEBID:HYBID:dvdd:switch")
-    field(LNK2,"SVT:lv:FEBID:HYBID:avdd:switch")
-    field(LNK3,"SVT:lv:FEBID:HYBID:v125:switch")
-}
-
-
-record(bo, SVT:lv:FEBID:HYBID:dvdd:switch)
-{
-    field(DOL, "SVT:lv:FEBID:HYBID:all:switch PP")
-    field(DTYP,"Soft Channel")
-    field(ZNAM, "Off")
-    field(ONAM, "On")
-    field(OMSL, "closed_loop")
-}
-
-record(bo, SVT:lv:FEBID:HYBID:avdd:switch)
-{
-    field(DOL, "SVT:lv:FEBID:HYBID:all:switch PP")
-    field(DTYP,"Soft Channel")
-    field(ZNAM, "Off")
-    field(ONAM, "On")
-    field(OMSL, "closed_loop")
-}
-
-record(bo, SVT:lv:FEBID:HYBID:v125:switch)
-{
-    field(DOL, "SVT:lv:FEBID:HYBID:all:switch PP")
-    field(DTYP,"Soft Channel")
-    field(ZNAM, "Off")
-    field(ONAM, "On")
-    field(OMSL, "closed_loop")
-}
 
 
 
@@ -554,26 +532,51 @@ record(bo, SVT:lv:FEBID:HYBID:v125:switch)
             rec = s.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
             records.append(rec)
-    
+
+
+
+    s = """
+
+
+record(bo, SVT:lv:FEBID:all:switch)
+{
+    field(OUT, "SVT:lv:FEBID:all:switch_sub PP")
+    field(DTYP,"Soft Channel")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(OMSL, "supervisory")
+}
+
+
+record(aSub,SVT:lv:FEBID:all:switch_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subHybridSwitchInit")
+    field(SNAM,"subHybridSwitchProcess")
+	field(INPA,"SVT:daq:map:FEBID:layer")
+    field(FTA,"STRING")
+	field(FLNK,"SVT:lv:FEBID:all:switch_fanout")
+}
+"""
+    for feb in range(0,10):
+        rec = s.replace("FEBID",str(feb))
+        records.append(rec)
+
+
 
     for feb in range(0,10):
         s = """
 record(dfanout,SVT:lv:"""+str(feb)+""":all:switch_fanout)
 {
+    field(DOL,"SVT:lv:"""+str(feb)+""":all:switch")
+    field(OMSL,"closed_loop")
 """
-        if feb == 2 or feb ==9:
-            r = range(0,2)
-        else:
-            r = range(0,4)
+        r = range(0,getNHybrids(feb))
         link = ["OUTA","OUTB","OUTC","OUTD"]
         for hyb in r:
-            s += "    field(" + link[hyb]+",\"SVT:lv:"+str(feb)+":"+str(hyb)+":all:switch.VAL PP\") " + "\n"
+            s += "    field(" + link[hyb]+",\"SVT:lv:"+str(feb)+":"+str(hyb)+":all:switch\") " + "\n"
         s += "}\n\n"
-        s += " record(bo, SVT:lv:"+str(feb)+":all:switch)" + "\n" + "{\n"
-        s += "\n\tfield(OUT, \"SVT:lv:"+str(feb)+":all:switch_fanout PP\")\n\tfield(ZNAM, \"Off\")\n\tfield(ONAM, \"On\")\n}\n"
         records.append(s)
-    
-
     
 
     s = """

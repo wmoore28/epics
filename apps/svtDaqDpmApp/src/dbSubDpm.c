@@ -7,6 +7,8 @@
 #include "commonXml.h"
 #include "commonDoc.h"
 #include <libxml/parser.h>
+//#include <dbAccess.h>
+#include <cadef.h>
 
 
 int mySubDebug = 0;
@@ -40,8 +42,8 @@ static long subPollProcess(subRecord *precord) {
   strcpy(socketPollStatusStr,"undefined");
 
   // find dpm nr
-  getStringFromEpicsName(precord->name,str0,0);
-  getStringFromEpicsName(precord->name,str1,1);
+  getStringFromEpicsName(precord->name,str0,0,256);
+  getStringFromEpicsName(precord->name,str1,1,256);
   if(strcmp(str0,"SVT")==0 && (strcmp(str1,"dpm")==0 || strcmp(str1,"dtm")==0)) {
     idpm = getIntFromEpicsName(precord->name,2);  
   } else {
@@ -409,7 +411,7 @@ static long subDtmAckCountProcess(subRecord *precord) {
 }
 
 
-static long subHybridSwitchInit(subRecord *precord) {
+static long subHybridSwitchInit(aSubRecord *precord) {
   process_order++;
   if (mySubDebug) {
     printf("[ subTrigCountInit ]: %d Record %s called subHybridSwitchInit(%p)\n", process_order, precord->name, (void*) precord);
@@ -417,15 +419,94 @@ static long subHybridSwitchInit(subRecord *precord) {
   return 0;
 }
 
-static long subHybridSwitchProcess(subRecord *precord) {
+static long subHybridSwitchProcess(aSubRecord *precord) {
   process_order++;
   if (mySubDebug) {
     printf("[ subHybridSwitchProcess ]: %d Record %s called subHybridSwitchProcess(%p)\n",process_order, precord->name, (void*) precord);
   }
   int socket;
   int p;
-  char hostname[40];
-  int val;
+  char hostname[EPICS_STRING_SIZE];
+
+
+  if (mySubDebug) printf("[ subHybridSwitchProcess ]: find the FEB layer\n");
+
+  // ---
+  // find the layer in order to manage existing hybrids on the FEB's  
+  
+  const char* layer = (char*)precord->a;
+
+/*
+
+  char pvarName[EPICS_STRING_SIZE];
+  int feb_id;
+
+  //find the feb id
+  feb_id = -1;
+  char pname[EPICS_STRING_SIZE];
+  strcpy(pname,precord->name);
+  if (mySubDebug) printf("[ subHybridSwitchProcess ]: get type for name str \"%s\" at %p\n",pname, pname);
+  
+  getStringFromEpicsName(pname,type,1,40);
+  strcpy(type,"lv");
+  if (mySubDebug) printf("[ subHybridSwitchProcess ]: got type \"%s\" for name str \"%s\" at %p\n", type, pname, pname);
+  
+  if(strcmp(type,"lv")==0) {
+     if (mySubDebug) printf("[ subHybridSwitchProcess ]: get febid for name str \"%s\" at %p\n",precord->name, precord->name);
+     feb_id = getIntFromEpicsName(precord->name,2);    
+     if (mySubDebug) printf("[ subHybridSwitchProcess ]: got febid  %d \n",feb_id);
+  }
+  
+  if (mySubDebug) printf("[ subHybridSwitchProcess ]: FEB id %d\n",feb_id);
+
+  sprintf(pvarName,"SVT:daq:map:%d:layer",feb_id);
+
+  if (mySubDebug) printf("[ subHybridSwitchProcess ]: pvarName %s\n",pvarName);
+
+  // find and fill the address info
+  dbAddr paddr; 
+  long dbStat;
+  dbStat = dbNameToAddr(pvarName,&paddr);
+  if(dbStat) {
+     printf("[ subHybridSwitchProcess ]: [ ERROR ]: dbNameToAddr error %ld\n",dbStat);     
+  }
+  if (mySubDebug) printf("[ subHybridSwitchProcess ]: paddr->precord %p\n",paddr.precord);
+
+  // convert to expected type
+  short pvarType = paddr.field_type;
+  if (mySubDebug) printf("[ subHybridSwitchProcess ]: pvarName %s pvarType %hd\n",pvarName,pvarType);
+  char pvarValue[EPICS_STRING_SIZE];
+  if (mySubDebug)printf("[ subHybridSwitchProcess ]: get value\n");
+  dbStat = dbGetField(&paddr,DBR_STRING,pvarValue,NULL,NULL,NULL);
+  if(dbStat) {
+     printf("[ subHybridSwitchProcess ]: [ ERROR ]: name error %ld\n",dbStat);     
+  }
+  //struct stringinRecord* pvarRecord = (stringinRecord*)
+  //char* pvarString = (char*) pVarValue; 
+  if (mySubDebug)printf("[ subHybridSwitchProcess ]: got pvarString %s\n", pvarValue);
+  chid pvarChanID;
+  int dbStat = ca_search(pvarName,&pvarChanID);
+  if(dbStat) {
+     printf("[ subHybridSwitchProcess ]: [ ERROR ]: ca_search for \"%s\" failed with error %d\n",pvarName,dbStat);     
+     //exit(1);
+  } 
+  
+  char layer[EPICS_STRING_SIZE];
+  dbStat = ca_bget(pvarChanID,layer);
+  if(dbStat) {
+     printf("[ subHybridSwitchProcess ]: [ ERROR ]: ca_bget failed with error %d\n",dbStat);     
+     //exit(1);
+  } 
+*/
+
+  if (mySubDebug) printf("[ subHybridSwitchProcess ]: got \"%s\" at %p\n",layer,layer);
+
+
+  // ---
+  
+
+  // ---
+  // open socket
   socket = -1;
   p = 8089;
   strcpy(hostname,"dpm7");
@@ -433,6 +514,7 @@ static long subHybridSwitchProcess(subRecord *precord) {
      p++;
      socket = open_socket(hostname,p);
   }
+  // ---
 
   
   
@@ -445,9 +527,13 @@ static long subHybridSwitchProcess(subRecord *precord) {
      
      if (mySubDebug) printf("[ subHybridSwitchProcess ] : Done flushing socket.\n");
 
-     writeHybridSwitchProcess(precord->name, precord->val, socket);
+     writeHybridSwitchProcess(precord->name, precord->val, socket, layer);
 
-     if (mySubDebug) printf("[ subPollProcess ]: close socket %d\n", socketFD);
+     if (mySubDebug) printf("[ subHybridSwitchProcess ] : Flush socket after writing.\n");
+     
+     flushSocket(socket);
+
+     if (mySubDebug) printf("[ subHybridSwitchProcess ]: close socket %d\n", socketFD);
      
      socket = close_socket(socket);
      

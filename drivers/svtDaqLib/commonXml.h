@@ -15,11 +15,11 @@ int getIntValue(xmlDocPtr doc, xmlNodePtr node);
 
 xmlXPathObjectPtr getnodeset (xmlDocPtr doc, xmlChar *xpath);
 
-void getSubStrFromName(char name[],const int i, char board_type[], const int MAX);
+void getSubStrFromName(const char *name,const int i, char *board_type, const int MAX);
 
-void getStringFromEpicsName(char name[], char str[], int idx);
+void getStringFromEpicsName(const char *name, char *str, const int idx, const int MAX);
 
-int getIntFromEpicsName(char name[], int idx);
+int getIntFromEpicsName(const char *name, const int idx);
 
 void getRunStateProcess(char* pname, xmlDoc* doc, char* state);
 
@@ -58,7 +58,7 @@ void getDpmXmlDoc(int sockfd, int dpm, xmlDoc** dpm_doc_ptrptr, char* nodeTypeSt
 
 void flushSocket(int socketfd);
 
-void writeHybridSwitchProcess(char* pname, int value, int socket);
+void writeHybridSwitchProcess(const char* pname, const int value, const int socket, const char* layer);
 
 void getFebCnfCmd(int feb_id, int isopentag,  char* cmd, const int MAX);
 

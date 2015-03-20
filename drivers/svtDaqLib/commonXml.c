@@ -83,13 +83,17 @@ getnodeset (xmlDocPtr doc, xmlChar *xpath) {
 
 
 
-void getSubStrFromName(char name[],const int i, char board_type[], const int MAX) {
-    char buf[MAX];
-    strcpy(buf,name);
-    strcpy(board_type,"");
+void getSubStrFromName(const char* name,const int i, char* str, const int MAX) {
+   char buf[MAX];
+   if(strlen(name)>MAX) {
+      printf("[ getSubStrFromName ] : [ ERROR ] : name is too long!\n");
+      exit(1);
+   } 
+   strcpy(buf,name);
+    strcpy(str,"");
     int idx;
     char* pch;
-    memset(board_type,'\0',MAX);
+    memset(str,'\0',MAX);
     pch = strtok(buf,":");
     idx=0;
     while(pch!=NULL) {
@@ -97,32 +101,39 @@ void getSubStrFromName(char name[],const int i, char board_type[], const int MAX
             if(strlen(pch)>MAX) {
                 printf("ERROR pch string is too long!\n");	
             } else {
-                strcpy(board_type,pch);
+                strcpy(str,pch);
                 break;
             }
         }
         idx++;    
         pch = strtok(NULL,":");
     }  
-    //printf("[ getSubStrFromName ] : got %s \n",board_type);
+    //if(DEBUG>3) 
+    printf("[ getSubStrFromName ] : got \"%s\" from name \"%s\"\n",str,name);
     return;
 }
 
-void getStringFromEpicsName(char name[], char str[], int idx) {   
-   getSubStrFromName(name,idx,str,256);
+void getStringFromEpicsName(const char *name, char *str, const int idx, const int MAX) {   
+    //if(DEBUG>3) 
+    printf("[ getStringFromEpicsName ] : idx %d from name \"%s\"\n",idx, name);
+   getSubStrFromName(name,idx,str,MAX);
+   printf("[ getStringFromEpicsName ] : got \"%s\" on idx %d from name \"%s\"\n",str,idx, name);
 }
 
-int getIntFromEpicsName(char name[], int idx) {   
-   char str[256];
-   if(DEBUG>2) printf("[ getIntFromEpicsName ] : name %s idx %d\n", name, idx);
-   getSubStrFromName(name,idx,str,256);
+int getIntFromEpicsName(const char* name, const int idx) {   
+   const int MAX = 256;
+   char str[MAX];
+   //if(DEBUG>2) 
+      printf("[ getIntFromEpicsName ] : name %s idx %d\n", name, idx);
+   getSubStrFromName(name,idx,str,MAX);
    char* p_end = str;
    int id = (int) strtol(str,&p_end,0);
    if(p_end==str) {
      printf("[ getIntFromEpicsName ]: [ ERROR ]: invalid convertion of this feb id %s\n",str);
       return -1;      
    }
-   if(DEBUG>2) printf("[ getIntFromEpicsName ] : got %d\n", id);
+   //if(DEBUG>2) 
+      printf("[ getIntFromEpicsName ] : got %d\n", id);
    return id;
 }
 
@@ -134,11 +145,11 @@ void getRunStateProcess(char* pname, xmlDoc* doc, char* state) {
   char str1[256];
   char str2[256];
   char action[256];
-  getStringFromEpicsName(pname,str1,1);
-  getStringFromEpicsName(pname,str2,2);
+  getStringFromEpicsName(pname,str1,1,256);
+  getStringFromEpicsName(pname,str2,2,256);
   if(strcmp(str1,"daq")==0 && (strcmp(str2,"dtm")==0 ||strcmp(str2,"dpm")==0)) {
     idpm = getIntFromEpicsName(pname,3);  
-    getStringFromEpicsName(pname,action,4);    
+    getStringFromEpicsName(pname,action,4,256);    
     if(strcmp(action,"state_asub")==0) {           
       getRunState(idpm, doc, state);
       if(DEBUG>0) printf("[ getRunStateProcess ]: got state %s.\n",state);      
@@ -157,11 +168,11 @@ void getDpmStatusProcess(char* pname, xmlDoc* doc, char* status, int* heart_beat
    char str1[256];
    char str2[256];
    char action[256];
-   getStringFromEpicsName(pname,str1,1);
-   getStringFromEpicsName(pname,str2,2);
+   getStringFromEpicsName(pname,str1,1,256);
+   getStringFromEpicsName(pname,str2,2,256);
    if(strcmp(str1,"daq")==0 && (strcmp(str2,"dtm")==0 ||strcmp(str2,"dpm")==0)) {
       idpm = getIntFromEpicsName(pname,3);  
-      getStringFromEpicsName(pname,action,4);    
+      getStringFromEpicsName(pname,action,4,256);    
 
       if(strcmp(action,"status_asub")==0) {           
          
@@ -231,14 +242,14 @@ int getFebNumProcess(char* pname, xmlDoc* doc) {
   val = -1;
   idpm = -1;
   idp = -1;
-  getStringFromEpicsName(pname,str1,1);
-  getStringFromEpicsName(pname,str2,2);
+  getStringFromEpicsName(pname,str1,1,256);
+  getStringFromEpicsName(pname,str2,2,256);
 
   if(strcmp(str1,"daq")==0 && strcmp(str2,"dpm")==0) {     
     idpm = getIntFromEpicsName(pname,3);  
     idp = getIntFromEpicsName(pname,4);  
         
-    getStringFromEpicsName(pname,action,5);    
+    getStringFromEpicsName(pname,action,5,256);    
     
     if(DEBUG>2)  printf("[ getFebNumProcess ] : get %s from dpm xml\n", action);
     if(strcmp(action,"febnum_sub")==0) {
@@ -294,14 +305,14 @@ int getLinkProcess(char* pname, xmlDoc* doc) {
   val = -1;
   idpm = -1;
   idp = -1;
-  getStringFromEpicsName(pname,str1,1);
-  getStringFromEpicsName(pname,str2,2);
+  getStringFromEpicsName(pname,str1,1,256);
+  getStringFromEpicsName(pname,str2,2,256);
 
   if(strcmp(str1,"daq")==0 && strcmp(str2,"dpm")==0) {     
     idpm = getIntFromEpicsName(pname,3);  
     idp = getIntFromEpicsName(pname,4);  
     
-    getStringFromEpicsName(pname,action,5);    
+    getStringFromEpicsName(pname,action,5,256);    
     
     if(strcmp(action,"rxphyready_sub")==0) {
       sprintf(tmp,"/system/status/DataDpm/Pgp2bAxi[@index=\"%d\"]/RxPhyReady",idp);
@@ -382,13 +393,13 @@ int getEventCountProcess(char* pname, xmlDoc* doc) {
   xmlNodePtr node;
   val = -1;
   idpm = -1;
-  getStringFromEpicsName(pname,str1,1);
-  getStringFromEpicsName(pname,str2,2);
+  getStringFromEpicsName(pname,str1,1,256);
+  getStringFromEpicsName(pname,str2,2,256);
 
   if(strcmp(str1,"daq")==0 && strcmp(str2,"dpm")==0) {     
     idpm = getIntFromEpicsName(pname,3);  
     
-    getStringFromEpicsName(pname,action,4);    
+    getStringFromEpicsName(pname,action,4,256);    
     
     if(strcmp(action,"eventcount_sub")==0) {
       strcpy(tmp,"/system/status/DataDpm/EventCount");
@@ -453,13 +464,13 @@ int getBlockCountProcess(char* pname, xmlDoc* doc) {
   xmlNodePtr node;
   val = -1;
   idpm = -1;
-  getStringFromEpicsName(pname,str1,1);
-  getStringFromEpicsName(pname,str2,2);
+  getStringFromEpicsName(pname,str1,1,256);
+  getStringFromEpicsName(pname,str2,2,256);
 
   if(strcmp(str1,"daq")==0 && strcmp(str2,"dpm")==0) {     
     idpm = getIntFromEpicsName(pname,3);  
     
-    getStringFromEpicsName(pname,action,4);    
+    getStringFromEpicsName(pname,action,4,256);    
     
     if(strcmp(action,"blockcount_sub")==0) {
       strcpy(tmp,"/system/status/DataDpm/BlockCount");
@@ -522,13 +533,13 @@ void getSystemStateProcess(char* pname, xmlDoc* doc, char* value) {
    xmlXPathObjectPtr result;
    xmlNodePtr node;
    idpm = -1;
-   getStringFromEpicsName(pname,str1,1);
-   getStringFromEpicsName(pname,str2,2);
+   getStringFromEpicsName(pname,str1,1,256);
+   getStringFromEpicsName(pname,str2,2,256);
 
    if(strcmp(str1,"daq")==0 && strcmp(str2,"dpm")==0) {     
       idpm = getIntFromEpicsName(pname,3);  
     
-      getStringFromEpicsName(pname,action,4);    
+      getStringFromEpicsName(pname,action,4,256);    
     
       if(strcmp(action,"systemstate_sub")==0) {
          strcpy(tmp,"/system/status/SystemStatus");
@@ -588,13 +599,13 @@ int getEventStateProcess(char* pname, xmlDoc* doc) {
    xmlNodePtr node;
    val = -1;
    idpm = -1;
-   getStringFromEpicsName(pname,str1,1);
-   getStringFromEpicsName(pname,str2,2);
+   getStringFromEpicsName(pname,str1,1,256);
+   getStringFromEpicsName(pname,str2,2,256);
 
    if(strcmp(str1,"daq")==0 && strcmp(str2,"dpm")==0) {     
       idpm = getIntFromEpicsName(pname,3);  
     
-      getStringFromEpicsName(pname,action,4);    
+      getStringFromEpicsName(pname,action,4,256);    
     
       if(strcmp(action,"eventstate_sub")==0) {
          strcpy(tmp,"/system/status/DataDpm/EventStatus");
@@ -655,13 +666,13 @@ int getTrigCountProcess(char* pname, xmlDoc* doc) {
   xmlNodePtr node;
   val = -1;
   idpm = -1;
-  getStringFromEpicsName(pname,str1,1);
-  getStringFromEpicsName(pname,str2,2);
+  getStringFromEpicsName(pname,str1,1,256);
+  getStringFromEpicsName(pname,str2,2,256);
 
   if(strcmp(str1,"daq")==0 && strcmp(str2,"dpm")==0) {     
     idpm = getIntFromEpicsName(pname,3);  
     
-    getStringFromEpicsName(pname,action,4);    
+    getStringFromEpicsName(pname,action,4,256);    
     
     if(strcmp(action,"trigcount_sub")==0) {
       strcpy(tmp,"/system/status/DataDpm/TrigCount");
@@ -711,13 +722,13 @@ int getDtmTrigCountProcess(char* pname, xmlDoc* doc) {
   xmlNodePtr node;
   val = -1;
   idpm = -1;
-  getStringFromEpicsName(pname,str1,1);
-  getStringFromEpicsName(pname,str2,2);
+  getStringFromEpicsName(pname,str1,1,256);
+  getStringFromEpicsName(pname,str2,2,256);
 
   if(strcmp(str1,"daq")==0 && strcmp(str2,"dtm")==0) {     
     idpm = getIntFromEpicsName(pname,3);  
     
-    getStringFromEpicsName(pname,action,4);    
+    getStringFromEpicsName(pname,action,4,256);    
     
     if(strcmp(action,"trigcount_sub")==0) {
       strcpy(tmp,"/system/status/TiDtm/Trig1Count");
@@ -780,13 +791,13 @@ int getDtmAckCountProcess(char* pname, xmlDoc* doc) {
   val = -1;
   idpm = -1;
   idtm = -1;
-  getStringFromEpicsName(pname,str1,1);
-  getStringFromEpicsName(pname,str2,2);
+  getStringFromEpicsName(pname,str1,1,256);
+  getStringFromEpicsName(pname,str2,2,256);
 
   if(strcmp(str1,"daq")==0 && strcmp(str2,"dtm")==0) {     
     idtm = getIntFromEpicsName(pname,3);  
     idpm = getIntFromEpicsName(pname,4);      
-    getStringFromEpicsName(pname,action,5);    
+    getStringFromEpicsName(pname,action,5,256);    
     
     if(strcmp(action,"ackcount_sub")==0) {
        sprintf(tmp,"/system/status/TiDtm/AckCount%d",idpm);
@@ -1306,11 +1317,11 @@ void getSyncProcess(char* pname, xmlDoc* doc, char* value) {
    ifeb = -1;
    idp = -1;
   
-   getStringFromEpicsName(pname,str1,1);
+   getStringFromEpicsName(pname,str1,1,256);
   
    if(strcmp(str1,"daq")==0) {
     
-      getStringFromEpicsName(pname,str5,5);
+      getStringFromEpicsName(pname,str5,5,256);
     
       if(strcmp(str5,"syncbase_rd_asub")==0) {      
          ifeb = getIntFromEpicsName(pname,2);  
@@ -1388,12 +1399,12 @@ void getHybSync(char* pname, xmlDoc* doc, char* syncStr) {
    char str2[256];
    char action[256];
    char sync[40];
-   getStringFromEpicsName(pname,str1,1);
-   getStringFromEpicsName(pname,str2,4);
+   getStringFromEpicsName(pname,str1,1,256);
+   getStringFromEpicsName(pname,str2,4,256);
    if(strcmp(str1,"lv")==0 && strcmp(str2,"sync")==0) {    
       feb = getIntFromEpicsName(pname,2);      
       datapath = getIntFromEpicsName(pname,3);      
-      getStringFromEpicsName(pname,action,5);    
+      getStringFromEpicsName(pname,action,5,256);    
       //getHybridSync(feb, datapath, action, sync);
       
       if(strcmp(action,"sync_asub")) {
@@ -1500,10 +1511,11 @@ void flushSocket(int socketfd) {
 
 
 
-void writeHybridSwitchProcess(char* pname, int value, int socket) {
+void writeHybridSwitchProcess(const char* pname, const int value, const int socket, const char* layer) {
 
    int feb_id;
    int feb_ch;
+   char tmp[256];
    char type[256];
    char ch_name[256];
    char action[256];
@@ -1515,63 +1527,145 @@ void writeHybridSwitchProcess(char* pname, int value, int socket) {
    int n;
    
    
+               
+   if(value==1) sprintf(toggle,"%s","True");
+   else sprintf(toggle,"%s","False");
    
-   getStringFromEpicsName(pname,type,1);
+
+   
+   getStringFromEpicsName(pname,type,1,256);
    
    if(strcmp(type,"lv")==0) {
+
+      // check if this is all hybrids on all febs
+//       char tmp[256];
+//       getStringFromEpicsName(pname,type,2);
+//       if(strcmp(tmp,"hyb")
+      
       
       feb_id = getIntFromEpicsName(pname,2);    
+
+      if(DEBUG>-1) printf("[ writeHybridSwitchProcess ] : got feb_id %d which is layer %s\n",feb_id, layer);
+
       
       if(feb_id>=0) {
          
-         feb_ch = getIntFromEpicsName(pname,3);   
-         
-         if(feb_ch>=0 && feb_ch<=3) {
+         // check if this is all hybrids on a feb or individual
+         getStringFromEpicsName(pname,tmp,3,256);
+
+         if(DEBUG>-1) printf("[ writeHybridSwitchProcess ] : got type %s\n",tmp);
+
+
+         if(strcmp(tmp,"all")==0) {
             
-            getStringFromEpicsName(pname,action,5);
+            // do all hybrids on this feb
+
+            getStringFromEpicsName(pname,action,4,256);
             
             if(strcmp(action,"switch_sub")==0) { 
+               const int BIG_BUF_SIZE = 1024;
+               char bigbuffer[BIG_BUF_SIZE];
+               memset(bigbuffer,0,BIG_BUF_SIZE);
                
-               
-               getStringFromEpicsName(pname,ch_name,4);
-               
-               if(strcmp(ch_name,"dvdd")==0 || 
-                  strcmp(ch_name,"avdd")==0 || 
-                  strcmp(ch_name,"v125")==0 || 
-                  strcmp(ch_name,"all")==0) {
-                  
-                  if(value==1) sprintf(toggle,"%s","True");
-                  else sprintf(toggle,"%s","False");
-                  
-                  getFebCnfCmd(feb_id,1,open_tag,256);
-                  getFebCnfCmd(feb_id,0,close_tag,256);
-                  sprintf(hyb_tag,"Hybrid%dPwrEn",feb_ch);
-                  sprintf(buffer,"%s<%s>%s</%s>%s\f",open_tag,hyb_tag,toggle,hyb_tag,close_tag);
-                  
-                  printf("[ writeHybridSwitchProcess ] : cmd \"%s\"\n",buffer);
-                  
-                  n = write(socket,buffer,strlen(buffer));
-                  
-                  if(n<0) 
-                     socket_error("[ writeHybridSwitchProcess ] : [ ERROR ] : couldn't write to socket");
-                  else 
-                     printf("[ writeHybridSwitchProcess ] : wrote %d chars to socket\n",n);
-                  
-                  //writeHybridSwitch(socket, value, feb_id, hyb_id);
-                  //writeHybrid(precord,action,feb_ch,feb_id,ch_name);  
-                  
-               } else {
-                  printf("[ writeHybridSwitchProcess ]: [ ERROR ]: wrong option for hybrid ch: %s\n",ch_name);
+               // open tags
+
+               char* bb_ptr = bigbuffer;
+               sprintf(bb_ptr,"<system><config><ControlDpm><FebFpga index=\"%d\"><FebCore>",feb_id);
+               bb_ptr = bb_ptr + strlen(bigbuffer)-1+1;
+
+               // add the hybrid cmd's
+               for(feb_ch=0;feb_ch<4;++feb_ch) {
+                  sprintf(buffer,"<Hybrid%dPwrEn>%s</Hybrid%dPwrEn>",feb_ch,toggle,feb_ch);
+                  // check that we don't overrun the biffer
+                  if((bb_ptr-bigbuffer+strlen(buffer))<BIG_BUF_SIZE) {
+                     // copy the string into the buffer
+                     strcpy(bb_ptr,buffer);
+                     //point to the next char
+                     bb_ptr = bb_ptr + strlen(buffer)-1+1; 
+                     //reset loop buffer
+                     memset(buffer,0,256);
+                  } else {
+                     printf("[ writeHybridSwitchProcess ] : [ ERROR ] : bigbuffer is too small to hold command\n");
+                     exit(1);                     
+                  }
                }
+               
+               // close the tags
+               strcpy(buffer,"</FebCore></FebFpga></ControlDpm></config></system>");
+               strcpy(bb_ptr,buffer);
+               bb_ptr =  bb_ptr + strlen(buffer)-1+1;
+               
+
+               // add the end of command char
+               *bb_ptr = '\f';
+               
+               printf("[ writeHybridSwitchProcess ] : cmd \"%s\"\n",bigbuffer);
+               
+               // write to sicket file desc.
+               n = write(socket,bigbuffer,strlen(bigbuffer));
+               
+               if(n<0) 
+                  socket_error("[ writeHybridSwitchProcess ] : [ ERROR ] : couldn't write to socket");
+               else 
+                  printf("[ writeHybridSwitchProcess ] : wrote %d chars to socket\n",n);
+               
+               
+               
             } else {
                printf("[ writeHybridSwitchProcess ]: [ ERROR ]: this hybrid action type is not valid \"%s\"\n",action);
             }    
             
             
-            
          } else {
-            printf("[ writeHybridSwitchProcess ]: [ ERROR ]: getting feb ch\n");
-         } 
+
+            // do single hybrid on this feb
+            
+            feb_ch = getIntFromEpicsName(pname,3);   
+            
+            if(feb_ch>=0 && feb_ch<=3) {
+               
+               getStringFromEpicsName(pname,action,5,256);
+               
+               if(strcmp(action,"switch_sub")==0) { 
+                  
+                  
+                  getStringFromEpicsName(pname,ch_name,4,256);
+                  
+                  if(strcmp(ch_name,"dvdd")==0 || 
+                     strcmp(ch_name,"avdd")==0 || 
+                     strcmp(ch_name,"v125")==0 || 
+                     strcmp(ch_name,"all")==0) {
+                     
+                     getFebCnfCmd(feb_id,1,open_tag,256);
+                     getFebCnfCmd(feb_id,0,close_tag,256);
+                     sprintf(hyb_tag,"Hybrid%dPwrEn",feb_ch);
+                     sprintf(buffer,"%s<%s>%s</%s>%s\f",open_tag,hyb_tag,toggle,hyb_tag,close_tag);
+                     
+                     printf("[ writeHybridSwitchProcess ] : cmd \"%s\"\n",buffer);
+                     
+                     n = write(socket,buffer,strlen(buffer));
+                     
+                     if(n<0) 
+                        socket_error("[ writeHybridSwitchProcess ] : [ ERROR ] : couldn't write to socket");
+                     else 
+                        printf("[ writeHybridSwitchProcess ] : wrote %d chars to socket\n",n);
+                     
+                     //writeHybridSwitch(socket, value, feb_id, hyb_id);
+                     //writeHybrid(precord,action,feb_ch,feb_id,ch_name);  
+                     
+                  } else {
+                     printf("[ writeHybridSwitchProcess ]: [ ERROR ]: wrong option for hybrid ch: %s\n",ch_name);
+                  }
+               } else {
+                  printf("[ writeHybridSwitchProcess ]: [ ERROR ]: this hybrid action type is not valid \"%s\"\n",action);
+               }    
+               
+               
+               
+            } else {
+               printf("[ writeHybridSwitchProcess ]: [ ERROR ]: getting feb ch\n");
+            } 
+         }
       } else {
          printf("[ writeHybridSwitchProcess ]: [ ERROR ]: getting feb id\n");
       } 

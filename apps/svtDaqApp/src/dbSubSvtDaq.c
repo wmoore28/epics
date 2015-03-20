@@ -18,7 +18,6 @@
 int mySubDebug = 0;
 const int DO_DATA_DPM = 0;
 int process_order = 0;
-const int BUF_SIZE = 256;
 char* hostNameControlDpm = "dpm7"; //192.168.1.17";
 static int hybToFeb[N_HALVES][N_HYBRIDS];
 static int hybToFebCh[N_HALVES][N_HYBRIDS];
@@ -869,15 +868,15 @@ static long subDnaProcess(aSubRecord *precord) {
   char str1[BUF_SIZE];
   char str2[BUF_SIZE];
   char action[BUF_SIZE];
-  char dna[40];
+  char dna[BUF_SIZE];
   precord->val = -1.0;  
   strcpy(precord->vala,"default");
   if (mySubDebug>2) printf("[ subDnaProcess ]: done memcpy\n");
-  getStringFromEpicsName(precord->name,str1,1);
-  getStringFromEpicsName(precord->name,str2,2);
+  getStringFromEpicsName(precord->name,str1,1,BUF_SIZE);
+  getStringFromEpicsName(precord->name,str2,2,BUF_SIZE);
   if(strcmp(str1,"daq")==0 && strcmp(str2,"map")==0) {    
     feb = getIntFromEpicsName(precord->name,3);      
-    getStringFromEpicsName(precord->name,action,4);    
+    getStringFromEpicsName(precord->name,action,4,BUF_SIZE);    
     if(strcmp(action,"dna_asub")==0) {           
       getFebDeviceDna(feb,dna);
       strcpy(febDna[feb],dna);      
@@ -969,14 +968,14 @@ static long subLayerProcess(aSubRecord *precord) {
   char str2[BUF_SIZE];
   char action[BUF_SIZE];
   char layer[40];
-  getStringFromEpicsName(precord->name,str1,1);
-  getStringFromEpicsName(precord->name,str2,2);
+  getStringFromEpicsName(precord->name,str1,1,BUF_SIZE);
+  getStringFromEpicsName(precord->name,str2,2,BUF_SIZE);
   precord->val = -1.0;  
   strcpy(precord->vala, "default");
   //memcpy(precord->vala, (const void*) "default", 7);  
   if(strcmp(str1,"daq")==0 && strcmp(str2,"map")==0) {        
     feb = getIntFromEpicsName(precord->name,3);      
-    getStringFromEpicsName(precord->name,action,4);        
+    getStringFromEpicsName(precord->name,action,4,BUF_SIZE);        
     if(strcmp(action,"layer_asub")==0) {           
       if(febDna[feb]!=NULL) {
 	if(mySubDebug) printf("[ subLayerProcess ]: Get physical layer for feb %d and dna %s\n",feb, febDna[feb]);
@@ -1016,11 +1015,11 @@ static long subLVProcess(subRecord *precord) {
   char ch_name[BUF_SIZE];
   char action[BUF_SIZE];
   
-  getStringFromEpicsName(precord->name,type,1);
+  getStringFromEpicsName(precord->name,type,1,BUF_SIZE);
   feb_id = getIntFromEpicsName(precord->name,2);    
   feb_ch = getIntFromEpicsName(precord->name,3);    
-  getStringFromEpicsName(precord->name,ch_name,4);
-  getStringFromEpicsName(precord->name,action,5);
+  getStringFromEpicsName(precord->name,ch_name,4,BUF_SIZE);
+  getStringFromEpicsName(precord->name,action,5,BUF_SIZE);
   
   if(feb_id<0) {
      printf("[ subTempProcess ]: [ ERROR ]: getting feb id\n");
@@ -1118,8 +1117,8 @@ static long subTempProcess(subRecord *precord) {
   char ch_name[BUF_SIZE];
   char action[BUF_SIZE];
 
-  getStringFromEpicsName(precord->name,type,1);
-  getStringFromEpicsName(precord->name,board_type,2);
+  getStringFromEpicsName(precord->name,type,1,BUF_SIZE);
+  getStringFromEpicsName(precord->name,board_type,2,BUF_SIZE);
   feb_id = getIntFromEpicsName(precord->name,3);    
 
   if(feb_id<0) {
@@ -1143,9 +1142,9 @@ static long subTempProcess(subRecord *precord) {
      // find feb ch
      feb_ch = getIntFromEpicsName(precord->name,4);    
      // find the channel
-     getStringFromEpicsName(precord->name,ch_name,5);
+     getStringFromEpicsName(precord->name,ch_name,5,BUF_SIZE);
      // find out what to do
-     getStringFromEpicsName(precord->name,action,6);
+     getStringFromEpicsName(precord->name,action,6,BUF_SIZE);
      
      // x-checks
      
@@ -1168,9 +1167,9 @@ static long subTempProcess(subRecord *precord) {
   } 
   else if(strcmp(board_type,"fe")==0) {  
      // find the channel
-     getStringFromEpicsName(precord->name,ch_name,4);
+     getStringFromEpicsName(precord->name,ch_name,4,BUF_SIZE);
      // find out what to do
-     getStringFromEpicsName(precord->name,action,5);
+     getStringFromEpicsName(precord->name,action,5,BUF_SIZE);
      
      if(strcmp(action,"t_rd_sub")!=0) {
         printf("[ subTempProcess ]: [ ERROR ]: this feb action type is not valid \"%s\"\n",action);
@@ -1389,12 +1388,12 @@ static long subPollDaqMapProcess(subRecord *precord) {
   char str2[BUF_SIZE];
   char action[BUF_SIZE];
 
-  getStringFromEpicsName(precord->name,str1,1);
-  getStringFromEpicsName(precord->name,str2,2);
+  getStringFromEpicsName(precord->name,str1,1,BUF_SIZE);
+  getStringFromEpicsName(precord->name,str2,2,BUF_SIZE);
 
   if(strcmp(str1,"daq")==0 && strcmp(str2,"map")==0) {
      
-     getStringFromEpicsName(precord->name,action,4);
+     getStringFromEpicsName(precord->name,action,4,BUF_SIZE);
      
      if(strcmp(action,"layer_sub")==0) {
         
