@@ -120,7 +120,7 @@ void getStringFromEpicsName(const char *name, char *str, const int idx, const in
 }
 
 int getIntFromEpicsName(const char* name, const int idx) {   
-   const int MAX = 256;
+   const int MAX = BUF_SIZE;
    char str[MAX];
    if(DEBUG>2) 
       printf("[ getIntFromEpicsName ] : name %s idx %d\n", name, idx);
@@ -141,14 +141,14 @@ int getIntFromEpicsName(const char* name, const int idx) {
 void getRunStateProcess(char* pname, xmlDoc* doc, char* state) {
 
    int idpm;
-   char str1[256];
-   char str2[256];
-   char action[256];
-   getStringFromEpicsName(pname,str1,1,256);
-   getStringFromEpicsName(pname,str2,2,256);
+   char str1[BUF_SIZE];
+   char str2[BUF_SIZE];
+   char action[BUF_SIZE];
+   getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+   getStringFromEpicsName(pname,str2,2,BUF_SIZE);
    if(strcmp(str1,"daq")==0 && (strcmp(str2,"dtm")==0 ||strcmp(str2,"dpm")==0)) {
       idpm = getIntFromEpicsName(pname,3);  
-      getStringFromEpicsName(pname,action,4,256);    
+      getStringFromEpicsName(pname,action,4,BUF_SIZE);    
       if(strcmp(action,"state_asub")==0) {           
          getRunState(idpm, doc, state);
          if(DEBUG>0) printf("[ getRunStateProcess ]: got state %s.\n",state);      
@@ -164,21 +164,21 @@ void getRunStateProcess(char* pname, xmlDoc* doc, char* state) {
 void getDpmStatusProcess(char* pname, xmlDoc* doc, char* status, int* heart_beat) {
 
    int idpm;
-   char str1[256];
-   char str2[256];
-   char action[256];
-   getStringFromEpicsName(pname,str1,1,256);
-   getStringFromEpicsName(pname,str2,2,256);
+   char str1[BUF_SIZE];
+   char str2[BUF_SIZE];
+   char action[BUF_SIZE];
+   getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+   getStringFromEpicsName(pname,str2,2,BUF_SIZE);
    if(strcmp(str1,"daq")==0 && (strcmp(str2,"dtm")==0 ||strcmp(str2,"dpm")==0)) {
       idpm = getIntFromEpicsName(pname,3);  
-      getStringFromEpicsName(pname,action,4,256);    
+      getStringFromEpicsName(pname,action,4,BUF_SIZE);    
 
       if(strcmp(action,"status_asub")==0) {           
          
          int dpm;
          xmlXPathObjectPtr result;
          xmlNodePtr node;
-         char tmp[256];
+         char tmp[BUF_SIZE];
          dpm = idpm;
          strcpy((char*)status, "undef");
          *heart_beat = 98;
@@ -232,23 +232,23 @@ int getFebNumProcess(char* pname, xmlDoc* doc) {
    int val;
    int idpm;
    int idp;
-   char str1[256];
-   char str2[256];
-   char action[256];
+   char str1[BUF_SIZE];
+   char str2[BUF_SIZE];
+   char action[BUF_SIZE];
    xmlXPathObjectPtr result;
    xmlNodePtr node;
-   char tmp[256];
+   char tmp[BUF_SIZE];
    val = -1;
    idpm = -1;
    idp = -1;
-   getStringFromEpicsName(pname,str1,1,256);
-   getStringFromEpicsName(pname,str2,2,256);
+   getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+   getStringFromEpicsName(pname,str2,2,BUF_SIZE);
 
    if(strcmp(str1,"daq")==0 && strcmp(str2,"dpm")==0) {     
       idpm = getIntFromEpicsName(pname,3);  
       idp = getIntFromEpicsName(pname,4);  
         
-      getStringFromEpicsName(pname,action,5,256);    
+      getStringFromEpicsName(pname,action,5,BUF_SIZE);    
     
       if(DEBUG>2)  printf("[ getFebNumProcess ] : get %s from dpm xml\n", action);
       if(strcmp(action,"febnum_sub")==0) {
@@ -295,23 +295,23 @@ int getLinkProcess(char* pname, xmlDoc* doc) {
    int val;
    int idpm;
    int idp;
-   char str1[256];
-   char str2[256];
-   char action[256];
-   char tmp[256];
+   char str1[BUF_SIZE];
+   char str2[BUF_SIZE];
+   char action[BUF_SIZE];
+   char tmp[BUF_SIZE];
    xmlXPathObjectPtr result;
    xmlNodePtr node;
    val = -1;
    idpm = -1;
    idp = -1;
-   getStringFromEpicsName(pname,str1,1,256);
-   getStringFromEpicsName(pname,str2,2,256);
+   getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+   getStringFromEpicsName(pname,str2,2,BUF_SIZE);
 
    if(strcmp(str1,"daq")==0 && strcmp(str2,"dpm")==0) {     
       idpm = getIntFromEpicsName(pname,3);  
       idp = getIntFromEpicsName(pname,4);  
     
-      getStringFromEpicsName(pname,action,5,256);    
+      getStringFromEpicsName(pname,action,5,BUF_SIZE);    
     
       if(strcmp(action,"rxphyready_sub")==0) {
          sprintf(tmp,"/system/status/DataDpm/Pgp2bAxi[@index=\"%d\"]/RxPhyReady",idp);
@@ -343,7 +343,7 @@ int getLinkProcess(char* pname, xmlDoc* doc) {
                node = result->nodesetval->nodeTab[0];
                if(node!=NULL) {
                   if(strcmp(action,"rxphyready")==0) {
-                     char tmp2[256];
+                     char tmp2[BUF_SIZE];
                      getStrValue(doc,node,tmp2);
                      if(strcmp(strToUpper(tmp2),"FALSE")==0) 
                         val = 0;
@@ -383,21 +383,21 @@ int getLinkProcess(char* pname, xmlDoc* doc) {
 int getEventCountProcess(char* pname, xmlDoc* doc) {
   int val;
   int idpm;
-  char str1[256];
-  char str2[256];
-  char action[256];
-  char tmp[256];
+  char str1[BUF_SIZE];
+  char str2[BUF_SIZE];
+  char action[BUF_SIZE];
+  char tmp[BUF_SIZE];
   xmlXPathObjectPtr result;
   xmlNodePtr node;
   val = -1;
   idpm = -1;
-  getStringFromEpicsName(pname,str1,1,256);
-  getStringFromEpicsName(pname,str2,2,256);
+  getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+  getStringFromEpicsName(pname,str2,2,BUF_SIZE);
 
   if(strcmp(str1,"daq")==0 && strcmp(str2,"dpm")==0) {     
     idpm = getIntFromEpicsName(pname,3);  
     
-    getStringFromEpicsName(pname,action,4,256);    
+    getStringFromEpicsName(pname,action,4,BUF_SIZE);    
     
     if(strcmp(action,"eventcount_sub")==0) {
       strcpy(tmp,"/system/status/DataDpm/EventCount");
@@ -414,7 +414,7 @@ int getEventCountProcess(char* pname, xmlDoc* doc) {
           node = result->nodesetval->nodeTab[0];
           if(node!=NULL) {
             if(strcmp(action,"rxphyready")==0) {
-              char tmp2[256];
+              char tmp2[BUF_SIZE];
               getStrValue(doc,node,tmp2);
               if(strcmp(strToUpper(tmp2),"FALSE")==0) 
                 val = 0;
@@ -455,21 +455,21 @@ int getEventCountProcess(char* pname, xmlDoc* doc) {
 int getBlockCountProcess(char* pname, xmlDoc* doc) {
   int val;
   int idpm;
-  char str1[256];
-  char str2[256];
-  char action[256];
-  char tmp[256];
+  char str1[BUF_SIZE];
+  char str2[BUF_SIZE];
+  char action[BUF_SIZE];
+  char tmp[BUF_SIZE];
   xmlXPathObjectPtr result;
   xmlNodePtr node;
   val = -1;
   idpm = -1;
-  getStringFromEpicsName(pname,str1,1,256);
-  getStringFromEpicsName(pname,str2,2,256);
+  getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+  getStringFromEpicsName(pname,str2,2,BUF_SIZE);
 
   if(strcmp(str1,"daq")==0 && strcmp(str2,"dpm")==0) {     
     idpm = getIntFromEpicsName(pname,3);  
     
-    getStringFromEpicsName(pname,action,4,256);    
+    getStringFromEpicsName(pname,action,4,BUF_SIZE);    
     
     if(strcmp(action,"blockcount_sub")==0) {
       strcpy(tmp,"/system/status/DataDpm/BlockCount");
@@ -486,7 +486,7 @@ int getBlockCountProcess(char* pname, xmlDoc* doc) {
           node = result->nodesetval->nodeTab[0];
           if(node!=NULL) {
             if(strcmp(action,"rxphyready")==0) {
-              char tmp2[256];
+              char tmp2[BUF_SIZE];
               getStrValue(doc,node,tmp2);
               if(strcmp(strToUpper(tmp2),"FALSE")==0) 
                 val = 0;
@@ -526,20 +526,20 @@ int getBlockCountProcess(char* pname, xmlDoc* doc) {
 
 void getSystemStateProcess(char* pname, xmlDoc* doc, char* value) {
    int idpm;
-   char str1[256];
-   char str2[256];
-   char action[256];
-   char tmp[256];
+   char str1[BUF_SIZE];
+   char str2[BUF_SIZE];
+   char action[BUF_SIZE];
+   char tmp[BUF_SIZE];
    xmlXPathObjectPtr result;
    xmlNodePtr node;
    idpm = -1;
-   getStringFromEpicsName(pname,str1,1,256);
-   getStringFromEpicsName(pname,str2,2,256);
+   getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+   getStringFromEpicsName(pname,str2,2,BUF_SIZE);
 
    if(strcmp(str1,"daq")==0 && strcmp(str2,"dpm")==0) {     
       idpm = getIntFromEpicsName(pname,3);  
     
-      getStringFromEpicsName(pname,action,4,256);    
+      getStringFromEpicsName(pname,action,4,BUF_SIZE);    
     
       if(strcmp(action,"systemstate_sub")==0) {
          strcpy(tmp,"/system/status/SystemStatus");
@@ -591,24 +591,24 @@ void getSystemStateProcess(char* pname, xmlDoc* doc, char* value) {
 int getEventStateProcess(char* pname, xmlDoc* doc) {
    int val;
    int idpm;
-   char str1[256];
-   char str2[256];
-   char action[256];
-   char tmp[256];
+   char str1[BUF_SIZE];
+   char str2[BUF_SIZE];
+   char action[BUF_SIZE];
+   char tmp[BUF_SIZE];
    xmlXPathObjectPtr result;
    xmlNodePtr node;
    val = -1;
    idpm = -1;
-   getStringFromEpicsName(pname,str1,1,256);
-   getStringFromEpicsName(pname,str2,2,256);
+   getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+   getStringFromEpicsName(pname,str2,2,BUF_SIZE);
 
    if(strcmp(str1,"daq")==0 && strcmp(str2,"dpm")==0) {     
       idpm = getIntFromEpicsName(pname,3);  
     
-      getStringFromEpicsName(pname,action,4,256);    
+      getStringFromEpicsName(pname,action,4,BUF_SIZE);    
     
       if(strcmp(action,"eventstate_sub")==0) {
-         strcpy(tmp,"/system/status/DataDpm/EventStatus");
+         strcpy(tmp,"/system/status/DataDpm/EventState");
       } else {
          strcpy(tmp,""); 
       }
@@ -636,7 +636,7 @@ int getEventStateProcess(char* pname, xmlDoc* doc) {
                }
                xmlXPathFreeObject(result);        
             } else {
-               printf("[ getEventStateProcess ] : [ WARNING ] no results found\n");
+               printf("[ getEventStateProcess ] : [ WARNING ] no results found with xpath \"%s\"\n",tmp);
             }  
             
          } else {
@@ -658,21 +658,21 @@ int getEventStateProcess(char* pname, xmlDoc* doc) {
 int getTrigCountProcess(char* pname, xmlDoc* doc) {
   int val;
   int idpm;
-  char str1[256];
-  char str2[256];
-  char action[256];
-  char tmp[256];
+  char str1[BUF_SIZE];
+  char str2[BUF_SIZE];
+  char action[BUF_SIZE];
+  char tmp[BUF_SIZE];
   xmlXPathObjectPtr result;
   xmlNodePtr node;
   val = -1;
   idpm = -1;
-  getStringFromEpicsName(pname,str1,1,256);
-  getStringFromEpicsName(pname,str2,2,256);
+  getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+  getStringFromEpicsName(pname,str2,2,BUF_SIZE);
 
   if(strcmp(str1,"daq")==0 && strcmp(str2,"dpm")==0) {     
     idpm = getIntFromEpicsName(pname,3);  
     
-    getStringFromEpicsName(pname,action,4,256);    
+    getStringFromEpicsName(pname,action,4,BUF_SIZE);    
     
     if(strcmp(action,"trigcount_sub")==0) {
       strcpy(tmp,"/system/status/DataDpm/TrigCount");
@@ -715,21 +715,21 @@ int getTrigCountProcess(char* pname, xmlDoc* doc) {
 int getDtmTrigCountProcess(char* pname, xmlDoc* doc) {
   int val;
   int idpm;
-  char str1[256];
-  char str2[256];
-  char action[256];
-  char tmp[256];
+  char str1[BUF_SIZE];
+  char str2[BUF_SIZE];
+  char action[BUF_SIZE];
+  char tmp[BUF_SIZE];
   xmlXPathObjectPtr result;
   xmlNodePtr node;
   val = -1;
   idpm = -1;
-  getStringFromEpicsName(pname,str1,1,256);
-  getStringFromEpicsName(pname,str2,2,256);
+  getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+  getStringFromEpicsName(pname,str2,2,BUF_SIZE);
 
   if(strcmp(str1,"daq")==0 && strcmp(str2,"dtm")==0) {     
     idpm = getIntFromEpicsName(pname,3);  
     
-    getStringFromEpicsName(pname,action,4,256);    
+    getStringFromEpicsName(pname,action,4,BUF_SIZE);    
     
     if(strcmp(action,"trigcount_sub")==0) {
       strcpy(tmp,"/system/status/TiDtm/Trig1Count");
@@ -783,22 +783,22 @@ int getDtmAckCountProcess(char* pname, xmlDoc* doc) {
   int val;
   int idpm;
   int idtm;
-  char str1[256];
-  char str2[256];
-  char action[256];
-  char tmp[256];
+  char str1[BUF_SIZE];
+  char str2[BUF_SIZE];
+  char action[BUF_SIZE];
+  char tmp[BUF_SIZE];
   xmlXPathObjectPtr result;
   xmlNodePtr node;
   val = -1;
   idpm = -1;
   idtm = -1;
-  getStringFromEpicsName(pname,str1,1,256);
-  getStringFromEpicsName(pname,str2,2,256);
+  getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+  getStringFromEpicsName(pname,str2,2,BUF_SIZE);
 
   if(strcmp(str1,"daq")==0 && strcmp(str2,"dtm")==0) {     
     idtm = getIntFromEpicsName(pname,3);  
     idpm = getIntFromEpicsName(pname,4);      
-    getStringFromEpicsName(pname,action,5,256);    
+    getStringFromEpicsName(pname,action,5,BUF_SIZE);    
     
     if(strcmp(action,"ackcount_sub")==0) {
        sprintf(tmp,"/system/status/TiDtm/AckCount%d",idpm);
@@ -854,7 +854,7 @@ void getRunState(int idpm, xmlDoc* doc, char* state) {
    int dpm;
    xmlXPathObjectPtr result;
    xmlNodePtr node;
-   char tmp[256];
+   char tmp[BUF_SIZE];
    dpm = idpm;
    strcpy((char*)state, "undef");
    if(DEBUG>0)
@@ -906,7 +906,7 @@ void getRunState(int idpm, xmlDoc* doc, char* state) {
 void getRunStateFromDpmValue(xmlDocPtr doc, xmlChar* state) {
   xmlXPathObjectPtr result;
   xmlNodePtr node;
-  char tmp[256];
+  char tmp[BUF_SIZE];
   
   return;
 }
@@ -1311,20 +1311,20 @@ void getSyncProcess(char* pname, xmlDoc* doc, char* value) {
    int ifeb;
    int idp;
    int iapv;
-   char str1[256];
-   char str5[256];
-   char tmp[256];
+   char str1[BUF_SIZE];
+   char str5[BUF_SIZE];
+   char tmp[BUF_SIZE];
    xmlXPathObjectPtr result;
    xmlNodePtr node;
    val = -1;
    ifeb = -1;
    idp = -1;
   
-   getStringFromEpicsName(pname,str1,1,256);
+   getStringFromEpicsName(pname,str1,1,BUF_SIZE);
   
    if(strcmp(str1,"daq")==0) {
     
-      getStringFromEpicsName(pname,str5,5,256);
+      getStringFromEpicsName(pname,str5,5,BUF_SIZE);
     
       if(strcmp(str5,"syncbase_rd_asub")==0) {      
          ifeb = getIntFromEpicsName(pname,2);  
@@ -1396,19 +1396,19 @@ void getHybSync(char* pname, xmlDoc* doc, char* syncStr) {
 
    xmlXPathObjectPtr result;
    xmlNodeSetPtr nodeset;
-   char tmp[256];
+   char tmp[BUF_SIZE];
    int feb;
    int datapath;
-   char str1[256];
-   char str2[256];
-   char action[256];
+   char str1[BUF_SIZE];
+   char str2[BUF_SIZE];
+   char action[BUF_SIZE];
    char sync[40];
-   getStringFromEpicsName(pname,str1,1,256);
-   getStringFromEpicsName(pname,str2,4,256);
+   getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+   getStringFromEpicsName(pname,str2,4,BUF_SIZE);
    if(strcmp(str1,"lv")==0 && strcmp(str2,"sync")==0) {    
       feb = getIntFromEpicsName(pname,2);      
       datapath = getIntFromEpicsName(pname,3);      
-      getStringFromEpicsName(pname,action,5,256);    
+      getStringFromEpicsName(pname,action,5,BUF_SIZE);    
       //getHybridSync(feb, datapath, action, sync);
       
       if(strcmp(action,"sync_asub")) {
@@ -1519,15 +1519,15 @@ void writeHybridSwitchProcess(const char* pname, const int value, const int sock
 
    int feb_id;
    int feb_ch;
-   char tmp[256];
-   char type[256];
-   char ch_name[256];
-   char action[256];
-   char buffer[256];
-   char hyb_tag[256];
-   char toggle[256];
-   char open_tag[256];
-   char close_tag[256];
+   char tmp[BUF_SIZE];
+   char type[BUF_SIZE];
+   char ch_name[BUF_SIZE];
+   char action[BUF_SIZE];
+   char buffer[BUF_SIZE];
+   char hyb_tag[BUF_SIZE];
+   char toggle[BUF_SIZE];
+   char open_tag[BUF_SIZE];
+   char close_tag[BUF_SIZE];
    int n;
    
    
@@ -1537,7 +1537,7 @@ void writeHybridSwitchProcess(const char* pname, const int value, const int sock
    
 
    
-   getStringFromEpicsName(pname,type,1,256);
+   getStringFromEpicsName(pname,type,1,BUF_SIZE);
    
    if(strcmp(type,"lv")==0) {
 
@@ -1549,7 +1549,7 @@ void writeHybridSwitchProcess(const char* pname, const int value, const int sock
       if(feb_id>=0) {
          
          // check if this is all hybrids on a feb or individual
-         getStringFromEpicsName(pname,tmp,3,256);
+         getStringFromEpicsName(pname,tmp,3,BUF_SIZE);
 
          if(DEBUG>-1) printf("[ writeHybridSwitchProcess ] : got type %s\n",tmp);
 
@@ -1558,7 +1558,7 @@ void writeHybridSwitchProcess(const char* pname, const int value, const int sock
             
             // do all hybrids on this feb
 
-            getStringFromEpicsName(pname,action,4,256);
+            getStringFromEpicsName(pname,action,4,BUF_SIZE);
             
             if(strcmp(action,"switch_sub")==0) { 
                const int BIG_BUF_SIZE = 1024;
@@ -1586,7 +1586,7 @@ void writeHybridSwitchProcess(const char* pname, const int value, const int sock
                      //point to the next char
                      bb_ptr = bb_ptr + strlen(buffer)-1+1; 
                      //reset loop buffer
-                     memset(buffer,0,256);
+                     memset(buffer,0,BUF_SIZE);
                   } else {
                      printf("[ writeHybridSwitchProcess ] : [ ERROR ] : bigbuffer is too small to hold command\n");
                      exit(1);                     
@@ -1627,20 +1627,20 @@ void writeHybridSwitchProcess(const char* pname, const int value, const int sock
             
             if(feb_ch>=0 && feb_ch<=3) {
                
-               getStringFromEpicsName(pname,action,5,256);
+               getStringFromEpicsName(pname,action,5,BUF_SIZE);
                
                if(strcmp(action,"switch_sub")==0) { 
                   
                   
-                  getStringFromEpicsName(pname,ch_name,4,256);
+                  getStringFromEpicsName(pname,ch_name,4,BUF_SIZE);
                   
                   if(strcmp(ch_name,"dvdd")==0 || 
                      strcmp(ch_name,"avdd")==0 || 
                      strcmp(ch_name,"v125")==0 || 
                      strcmp(ch_name,"all")==0) {
                      
-                     getFebCnfCmd(feb_id,1,open_tag,256);
-                     getFebCnfCmd(feb_id,0,close_tag,256);
+                     getFebCnfCmd(feb_id,1,open_tag,BUF_SIZE);
+                     getFebCnfCmd(feb_id,0,close_tag,BUF_SIZE);
                      sprintf(hyb_tag,"Hybrid%dPwrEn",feb_ch);
                      sprintf(buffer,"%s<%s>%s</%s>%s\f",open_tag,hyb_tag,toggle,hyb_tag,close_tag);
                      
