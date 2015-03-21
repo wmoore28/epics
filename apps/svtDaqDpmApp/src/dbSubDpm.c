@@ -59,7 +59,7 @@ static long subPollProcess(subRecord *precord) {
   }
 
   if(xmldoc!=NULL) {
-    printf("[ subPollProcess ]: dpm doc is not null(%p). Clean up.\n", xmldoc);
+    if (mySubDebug>-1) printf("[ subPollProcess ]: dpm doc is not null(%p). Clean up.\n", xmldoc);
     xmlFreeDoc(xmldoc);
     xmlCleanupParser();      
     xmldoc = NULL;
@@ -85,7 +85,7 @@ static long subPollProcess(subRecord *precord) {
      strcpy(socketPollStatusStr,str0);
 
 
-    if (mySubDebug>-1)
+    if (mySubDebug>0)
       printf("[ subPollProcess ]: get the xml doc\n");
     
     getDpmXmlDoc(socketFD, idpm, &xmldoc, str1);

@@ -148,18 +148,17 @@ void getXmlDoc(int sockfd, int read_status, int read_config) {
 
     }
 
-    if(DEBUG>2) printf("[ getXmlDoc ]: Before reading xml string (%p)\n",xml_string);
+    if(DEBUG>2) printf("[ getXmlDoc ]: poll xml string (%p)\n",xml_string);
 
     pollXmlString(sockfd);
 
-    if(DEBUG>2) printf("[ getXmlDoc ]: After reading xml string (%p)\n",xml_string);
 
     if(xml_string!=NULL) {
         if(strlen(xml_string)>0) {
-           if(DEBUG>1) printf("[ getXmlDoc ]: create xml document from xml string(strlen %d)\n",strlen(xml_string));
+           if(DEBUG>-1) printf("[ getXmlDoc ]: build  xml document (%d)\n",strlen(xml_string));
             if(DEBUG>1) printf("[ getXmlDoc ]: xml string:\n%s\n",xml_string);
             doc = xmlReadMemory(xml_string,strlen(xml_string),"noname.xml",NULL,0);
-            if(DEBUG>1) printf("[ getXmlDoc ]: xml doc done %p\n",doc);
+            if(DEBUG>-1) printf("[ getXmlDoc ]: xml doc created (%p)\n",doc);
             if(doc!=NULL) {
                 xml_root = xmlDocGetRootElement(doc);
                 if(xml_root!=NULL) {
@@ -168,8 +167,8 @@ void getXmlDoc(int sockfd, int read_status, int read_config) {
                       printf("[ getXmlDoc ]: print xml to file\n");
                    }
                    int bytes_written = xmlSaveFormatFile("svtdaq.xml",doc,1);
-                   if(DEBUG>2) {
-                      printf("[ getXmlDoc ]: printed %d bytes of xml to file\n",bytes_written);
+                   if(DEBUG>-1) {
+                      printf("[ getXmlDoc ]: printed %d bytes of xml to disk\n",bytes_written);
                    }
                 }
             } else {
@@ -181,7 +180,7 @@ void getXmlDoc(int sockfd, int read_status, int read_config) {
             exit(1);
         }
     } else {
-        printf("[ getXmlDoc ]: [ WARNING ]:  xml_string is NULL after reading from socket!\n");	
+        printf("[ getXmlDoc ]: [ WARNING ]:  no xml_string after reading from socket!\n");	
     }
 
     //clear the flag
