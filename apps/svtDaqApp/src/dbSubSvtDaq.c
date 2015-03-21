@@ -1222,7 +1222,7 @@ static long subPollProcess(subRecord *precord) {
 
   process_order++;
 
-  if (mySubDebug>0) {
+  if (mySubDebug>-1) {
     printf("[ subPollProcess ]: %d Record %s called subPollProcess(%p)\n",process_order, precord->name, (void*) precord);
   }
  
@@ -1234,12 +1234,12 @@ static long subPollProcess(subRecord *precord) {
      return 0;
   }
 
-  if (mySubDebug) printf("[ subPollProcess] : Flush socket.\n");
+  //if (mySubDebug) printf("[ subPollProcess] : Flush socket.\n");
 
-  flushSocket(socketfd);
+  //flushSocket(socketfd);
 
 
-  if (mySubDebug) printf("[ subPollProcess] : Done flushing socket.\n");
+  //if (mySubDebug) printf("[ subPollProcess] : Done flushing socket.\n");
 
   // poll the xml string
   
@@ -1247,9 +1247,10 @@ static long subPollProcess(subRecord *precord) {
   
   getXmlDoc(socketfd,0,0);
   
-  if (mySubDebug) printf("[ subPollProcess ]: Poll XML done. Close socket\n");
+  if (mySubDebug) printf("[ subPollProcess ]: Poll XML done\n");
 
   if(socketfd>0) {
+     if (mySubDebug) printf("[ subPollProcess ]: Close socket.\n");
     socketfd = close_socket(socketfd);
   } else {
       printf("[ subPollProcess ]: [ ERROR ]: the socket should be open here!? Exit.\n");
