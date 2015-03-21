@@ -621,7 +621,7 @@ def buildHybTemp():
     
 
     s = """
-record(sub,SVT:temp:hyb:FEBID:HYBID:temp1:t_rd_sub)
+record(sub,SVT:temp:hyb:FEBID:HYBID:temp0:t_rd_sub)
 {
     field(SCAN,"Passive")
     field(INAM,"subTempInit")
@@ -629,9 +629,9 @@ record(sub,SVT:temp:hyb:FEBID:HYBID:temp1:t_rd_sub)
     field(FLNK,"FLNKNEXTHYB")
 }
 
-record(ai, SVT:temp:hyb:FEBID:HYBID:temp1:t_rd) {
+record(ai, SVT:temp:hyb:FEBID:HYBID:temp0:t_rd) {
   field(SCAN, "Passive") field(PREC, "1")
-  field(INP, "SVT:temp:hyb:FEBID:HYBID:temp1:t_rd_sub PP")
+  field(INP, "SVT:temp:hyb:FEBID:HYBID:temp0:t_rd_sub PP")
   field(DTYP,"Soft Channel")
   field(HIHI,"-16.5") field(HHSV,"MAJOR")
   field(HIGH,"-16") field(HSV,"MINOR")
@@ -640,7 +640,7 @@ record(ai, SVT:temp:hyb:FEBID:HYBID:temp1:t_rd) {
 }
 """
 
-    s_flnk = "SVT:temp:hyb:NEXTFEBID:NEXTHYBID:temp1:t_rd"
+    s_flnk = "SVT:temp:hyb:NEXTFEBID:NEXTHYBID:temp0:t_rd"
     records = []
     for feb in range(0,10):
         r = range(0,len(getHybrids(feb)))
