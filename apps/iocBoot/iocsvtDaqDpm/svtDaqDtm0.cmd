@@ -30,8 +30,7 @@ dbLoadRecords("db/dbDataDtmAckCount.db","DTM=0,DPM=5")
 dbLoadRecords("db/dbDataDtmAckCount.db","DTM=0,DPM=6")
 dbLoadRecords("db/dbDataDtmAckCount.db","DTM=0,DPM=7")
 
-var mySubDebug 1
-
+var mySubDebug 0
 #traceIocInit
 
 cd ${TOP}/iocBoot/${IOC}

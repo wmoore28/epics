@@ -17,8 +17,7 @@ dbLoadRecords("db/iocAdminSoft.db", "IOC=iocsvtDaqCntrlWDpm")
 ## Load record instances
 dbLoadRecords "db/dbHybridSwitch.db"
 
-var mySubDebug 1
-
+var mySubDebug 0
 ##traceIocInit
 
 cd ${TOP}/iocBoot/${IOC}

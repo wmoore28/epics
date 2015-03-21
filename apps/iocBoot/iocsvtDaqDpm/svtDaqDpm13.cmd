@@ -38,8 +38,7 @@ dbLoadRecords("db/dbDataDpmFebNum.db","DPM=13,DP=1")
 dbLoadRecords("db/dbDataDpmFebNum.db","DPM=13,DP=2")
 dbLoadRecords("db/dbDataDpmFebNum.db","DPM=13,DP=3")
 
-var mySubDebug 1
-
+var mySubDebug 0
 #traceIocInit
 
 cd ${TOP}/iocBoot/${IOC}
