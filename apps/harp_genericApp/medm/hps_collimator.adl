@@ -1,12 +1,12 @@
 
 file {
-	name="/home/stepanya/hps/epics/harp_genericApp/medm/hps_collimator.adl"
+	name="/usr/clas12/hps/v1.1.0/apps/harp_genericApp/medm/hps_collimator.adl"
 	version=030108
 }
 display {
 	object {
-		x=813
-		y=266
+		x=847
+		y=502
 		width=670
 		height=110
 	}
@@ -100,7 +100,7 @@ display {
 		bclr=4
 	}
 	label="Wire"
-	press_msg="4.445"
+	press_msg="4.41"
 	clrmod="discrete"
 }
 "message button" {
@@ -116,7 +116,7 @@ display {
 		bclr=4
 	}
 	label="3 mm"
-	press_msg="5.025"
+	press_msg="4.99"
 }
 "message button" {
 	object {
@@ -202,7 +202,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="4.445"
+	textix="4.41"
 	align="horiz. centered"
 }
 "text update" {
@@ -260,7 +260,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="5.025"
+	textix="4.99"
 	align="horiz. centered"
 }
 "message button" {
@@ -276,7 +276,7 @@ text {
 		bclr=4
 	}
 	label="3 mm / Au"
-	press_msg="5.605"
+	press_msg="5.57"
 }
 rectangle {
 	object {
@@ -303,7 +303,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="5.605"
+	textix="5.57"
 	align="horiz. centered"
 }
 text {
@@ -335,7 +335,7 @@ text {
 		bclr=4
 	}
 	label="4 mm"
-	press_msg="6.185"
+	press_msg="6.15"
 }
 rectangle {
 	object {
@@ -362,7 +362,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="6.185"
+	textix="6.15"
 	align="horiz. centered"
 }
 "message button" {
