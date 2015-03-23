@@ -49,6 +49,8 @@ DB += dbFebSwitch.db
 DB += dbHVSwitch.db  
 DB += dbHVset.db  
 
+REQ += hvCaen_alarms.req
+
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_template = <templatename>
@@ -57,3 +59,7 @@ include $(TOP)/configure/RULES
 #----------------------------------------
 #  ADD RULES AFTER THIS LINE
 
+# Generate autosave req file for svt_voltages.db (sqlite)
+hvCaen_alarms.req:
+	$(RM) $@
+	@../hvCaen_alarms_req.sh > $@
