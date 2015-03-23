@@ -6,17 +6,43 @@ class Usage(Exception):
     def __init__(self,msg):
         self.msg = msg
 
-
-
-
 def buildEpics():
     records = []
     recs = utils.buildFebTemp()
     printRecords(recs,"dbFebTemp")
     recs = utils.buildHybTemp()
     printRecords(recs,"dbHybT")
-    recs = utils.buildHybLV()
-    printRecords(recs,"dbHybLV")
+    recs = utils.buildHybLVVSet()
+    printRecords(recs,"dbHybLVVSet")
+    
+    recs = utils.buildHybLVVSetRd_dvdd()
+    printRecords(recs,"dbHybLVVSetRd_dvdd")
+    recs = utils.buildHybLVVSetRd_avdd()
+    printRecords(recs,"dbHybLVVSetRd_avdd")
+    recs = utils.buildHybLVVSetRd_v125()
+    printRecords(recs,"dbHybLVVSetRd_v125")
+    
+    recs = utils.buildHybLVVf_dvdd()
+    printRecords(recs,"dbHybLVVf_dvdd")
+    recs = utils.buildHybLVVf_avdd()
+    printRecords(recs,"dbHybLVVf_avdd")
+    recs = utils.buildHybLVVf_v125()
+    printRecords(recs,"dbHybLVVf_v125")
+    
+    recs = utils.buildHybLVVn_dvdd()
+    printRecords(recs,"dbHybLVVn_dvdd")
+    recs = utils.buildHybLVVn_avdd()
+    printRecords(recs,"dbHybLVVn_avdd")
+    recs = utils.buildHybLVVn_v125()
+    printRecords(recs,"dbHybLVVn_v125")
+    
+    recs = utils.buildHybLVIrd_dvdd()
+    printRecords(recs,"dbHybLVIrd_dvdd")
+    recs = utils.buildHybLVIrd_avdd()
+    printRecords(recs,"dbHybLVIrd_avdd")
+    recs = utils.buildHybLVIrd_v125()
+    printRecords(recs,"dbHybLVIrd_v125")
+    print "1"
     recs = utils.buildHybLVStat()
     printRecords(recs,"dbHybLVStat")
     recs = utils.buildHybridLVSwitch()
@@ -25,6 +51,8 @@ def buildEpics():
     printRecords(recs,"dbDpmMap")
     recs = utils.buildHybSync()
     printRecords(recs,"dbHybSync")
+    recs = utils.buildHybSyncPeak()
+    printRecords(recs,"dbHybSyncPeak")
     recs = utils.buildHybSyncBase()
     printRecords(recs,"dbHybSyncBase")
     recs = utils.buildLayer()

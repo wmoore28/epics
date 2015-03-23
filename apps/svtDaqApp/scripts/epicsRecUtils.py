@@ -69,252 +69,10 @@ def getDna(febid):
 
 
 
-def buildHybLV():
+def buildHybLVVSet():
 
 
     s = """
-
-
-record(sub,SVT:lv:FEBID:HYBID:dvdd:i_rd_sub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
-    field(FLNK,"SVT:lv:FEBID:HYBID:avdd:i_rd")
-}
-
-record(ai, SVT:lv:FEBID:HYBID:dvdd:i_rd)
-{
-  field(SCAN, "Passive") field(PREC, "3")
-  field(INP, "SVT:lv:FEBID:HYBID:dvdd:i_rd_sub PP")
-  field(DTYP,"Soft Channel")
-  field(HIHI,"0.31") field(HHSV,"MAJOR")
-  field(HIGH,"0.295") field(HSV,"MINOR")
-  field(LOW,"0.26") field(LSV,"MINOR")
-  field(LOLO,"0.24") field(LLSV,"MAJOR")
-}
-
-record(sub,SVT:lv:FEBID:HYBID:avdd:i_rd_sub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
-    field(FLNK,"SVT:lv:FEBID:HYBID:v125:i_rd")
-}
-
-record(ai, SVT:lv:FEBID:HYBID:avdd:i_rd)
-{
-  field(SCAN, "Passive") field(PREC, "3")
-  field(INP, "SVT:lv:FEBID:HYBID:avdd:i_rd_sub PP")
-  field(DTYP,"Soft Channel")
-  field(HIHI,"0.45") field(HHSV,"MAJOR")
-  field(HIGH,"0.43") field(HSV,"MINOR")
-  field(LOW,"0.355") field(LSV,"MINOR")
-  field(LOLO,"0.345") field(LLSV,"MAJOR")
-}
-
-record(sub,SVT:lv:FEBID:HYBID:v125:i_rd_sub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
-    field(FLNK,"SVT:lv:FEBID:HYBID:dvdd:vn")
-}
-
-record(ai, SVT:lv:FEBID:HYBID:v125:i_rd)
-{
-  field(SCAN, "Passive") field(PREC, "3")
-  field(INP, "SVT:lv:FEBID:HYBID:v125:i_rd_sub PP")
-  field(DTYP,"Soft Channel")
-  field(HIHI,"0.36") field(HHSV,"MAJOR")
-  field(HIGH,"0.34") field(HSV,"MINOR")
-  field(LOW,"0.305") field(LSV,"MINOR")
-  field(LOLO,"0.295") field(LLSV,"MAJOR")
-}
-
-
-
-
-
-
-record(sub,SVT:lv:FEBID:HYBID:dvdd:vn_sub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
-    field(FLNK,"SVT:lv:FEBID:HYBID:avdd:vn")
-}
-
-record(ai, SVT:lv:FEBID:HYBID:dvdd:vn)
-{
-  field(SCAN, "Passive") field(PREC, "3")
-  field(INP, "SVT:lv:FEBID:HYBID:dvdd:vn_sub PP")
-  field(DTYP,"Soft Channel")
-  field(HIHI,"2.8") field(HHSV,"MAJOR")
-  field(HIGH,"2.7") field(HSV,"MINOR")
-  field(LOW,"2.5") field(LSV,"MINOR")
-  field(LOLO,"2.4") field(LLSV,"MAJOR")
-}
-
-record(sub,SVT:lv:FEBID:HYBID:avdd:vn_sub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
-    field(FLNK,"SVT:lv:FEBID:HYBID:v125:vn")
-}
-
-record(ai, SVT:lv:FEBID:HYBID:avdd:vn)
-{
-  field(SCAN, "Passive") field(PREC, "3")
-  field(INP, "SVT:lv:FEBID:HYBID:avdd:vn_sub PP")
-  field(DTYP,"Soft Channel")
-  field(HIHI,"2.9") field(HHSV,"MAJOR")
-  field(HIGH,"2.8") field(HSV,"MINOR")
-  field(LOW,"2.6") field(LSV,"MINOR")
-  field(LOLO,"2.5") field(LLSV,"MAJOR")
-}
-
-record(sub,SVT:lv:FEBID:HYBID:v125:vn_sub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
-    field(FLNK,"SVT:lv:FEBID:HYBID:dvdd:vf")
-}
-
-record(ai, SVT:lv:FEBID:HYBID:v125:vn)
-{
-  field(SCAN, "Passive") field(PREC, "3")
-  field(INP, "SVT:lv:FEBID:HYBID:v125:vn_sub PP")
-  field(DTYP,"Soft Channel")
-  field(HIHI,"1.55") field(HHSV,"MAJOR")
-  field(HIGH,"1.45") field(HSV,"MINOR")
-  field(LOW,"1.25") field(LSV,"MINOR")
-  field(LOLO,"1.15") field(LLSV,"MAJOR")
-}
-
-
-
-
-
-
-record(sub,SVT:lv:FEBID:HYBID:dvdd:vf_sub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
-    field(FLNK,"SVT:lv:FEBID:HYBID:avdd:vf")
-}
-
-record(ai, SVT:lv:FEBID:HYBID:dvdd:vf)
-{
-  field(SCAN, "Passive") field(PREC, "3")
-  field(INP, "SVT:lv:FEBID:HYBID:dvdd:vf_sub PP")
-  field(DTYP,"Soft Channel")
-}
-
-record(sub,SVT:lv:FEBID:HYBID:avdd:vf_sub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
-    field(FLNK,"SVT:lv:FEBID:HYBID:v125:vf")
-}
-
-record(ai, SVT:lv:FEBID:HYBID:avdd:vf)
-{
-  field(SCAN, "Passive") field(PREC, "3")
-  field(INP, "SVT:lv:FEBID:HYBID:avdd:vf_sub PP")
-  field(DTYP,"Soft Channel")
-  field(HIHI,"2.8") field(HHSV,"MAJOR")
-  field(HIGH,"2.7") field(HSV,"MINOR")
-  field(LOW,"2.5") field(LSV,"MINOR")
-  field(LOLO,"2.4") field(LLSV,"MAJOR")
-}
-
-record(sub,SVT:lv:FEBID:HYBID:v125:vf_sub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
-    field(FLNK,"SVT:lv:FEBID:HYBID:dvdd:v_set_rd")
-}
-
-record(ai, SVT:lv:FEBID:HYBID:v125:vf) {
-  field(SCAN, "Passive") field(PREC, "3")
-  field(INP, "SVT:lv:FEBID:HYBID:v125:vf_sub PP")
-  field(DTYP,"Soft Channel")
-  field(HIHI,"1.47") field(HHSV,"MAJOR")
-  field(HIGH,"1.37") field(HSV,"MINOR")
-  field(LOW,"1.17") field(LSV,"MINOR")
-  field(LOLO,"1.07") field(LLSV,"MAJOR")
-}
-
-
-
-
-
-
-record(sub,SVT:lv:FEBID:HYBID:dvdd:v_set_rd_sub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
-    field(FLNK,"SVT:lv:FEBID:HYBID:avdd:v_set_rd")
-}
-
-record(ai, SVT:lv:FEBID:HYBID:dvdd:v_set_rd)
-{
-  field(SCAN, "Passive") field(PREC, "3")
-  field(INP, "SVT:lv:FEBID:HYBID:dvdd:v_set_rd_sub PP")
-  field(DTYP,"Soft Channel")
-  field(HIHI,"160") field(HHSV,"MAJOR")
-  field(HIGH,"155") field(HSV,"MINOR")
-  field(LOW,"145") field(LSV,"MINOR")
-  field(LOLO,"140") field(LLSV,"MAJOR")
-}
-
-record(sub,SVT:lv:FEBID:HYBID:avdd:v_set_rd_sub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
-    field(FLNK,"SVT:lv:FEBID:HYBID:v125:v_set_rd")
-}
-
-record(ai, SVT:lv:FEBID:HYBID:avdd:v_set_rd)
-{
-  field(SCAN, "Passive") field(PREC, "3")
-  field(INP, "SVT:lv:FEBID:HYBID:avdd:v_set_rd_sub PP")
-  field(DTYP,"Soft Channel")
-  field(HIHI,"180") field(HHSV,"MAJOR")
-  field(HIGH,"175") field(HSV,"MINOR")
-  field(LOW,"165") field(LSV,"MINOR")
-  field(LOLO,"160") field(LLSV,"MAJOR")
-}
-
-record(sub,SVT:lv:FEBID:HYBID:v125:v_set_rd_sub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")    
-    field(FLNK,"FLNKNEXTHYB")
-}
-
-record(ai, SVT:lv:FEBID:HYBID:v125:v_set_rd)
-{
-  field(SCAN, "Passive") field(PREC, "3")
-  field(INP, "SVT:lv:FEBID:HYBID:v125:v_set_rd_sub PP")
-  field(DTYP,"Soft Channel")
-  field(HIHI,"190") field(HHSV,"MAJOR")
-  field(HIGH,"185") field(HSV,"MINOR")
-  field(LOW,"175") field(LSV,"MINOR")
-  field(LOLO,"170") field(LLSV,"MAJOR")
-}
-
-
-
 
 
 
@@ -358,6 +116,706 @@ record(ao, SVT:lv:FEBID:HYBID:v125:v_set) {
 
 
 """
+    records = []
+    for feb in range(0,10):
+        r = range(0,len(getHybrids(feb)))
+        for hyb in r:
+            rec = s
+            if (hyb==3 and len(r)==4) or (hyb==1 and len(r)==2):
+                rec = rec.replace("NEXTHYBID",str(0))
+                rec = rec.replace("NEXTFEBID",str(feb+1))					
+            else:
+                rec = rec.replace("NEXTFEBID",str(feb))
+                rec = rec.replace("NEXTHYBID",str(hyb+1))
+            rec = rec.replace("HYBID",str(hyb))
+            rec = rec.replace("FEBID",str(feb))
+            records.append(rec)
+    
+    return records
+
+
+
+
+
+
+
+
+
+def buildHybLVVSetRd_v125():
+
+
+    s = """
+
+
+record(sub,SVT:lv:FEBID:HYBID:v125:v_set_rd_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subLVInit")
+    field(SNAM,"subLVProcess")    
+    field(FLNK,"FLNKNEXTHYB")
+}
+
+record(ai, SVT:lv:FEBID:HYBID:v125:v_set_rd)
+{
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(INP, "SVT:lv:FEBID:HYBID:v125:v_set_rd_sub PP")
+  field(DTYP,"Soft Channel")
+  field(HIHI,"190") field(HHSV,"MAJOR")
+  field(HIGH,"185") field(HSV,"MINOR")
+  field(LOW,"175") field(LSV,"MINOR")
+  field(LOLO,"170") field(LLSV,"MAJOR")
+}
+
+
+
+
+
+
+"""
+    s_flnk = "SVT:lv:NEXTFEBID:NEXTHYBID:v125:v_set_rd"
+    records = []
+    for feb in range(0,10):
+        r = range(0,len(getHybrids(feb)))
+        for hyb in r:
+            rec = s
+            if (hyb==3 and len(r)==4) or (hyb==1 and len(r)==2):
+                if feb < 9:
+                    rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                    rec = rec.replace("NEXTHYBID",str(0))
+                    rec = rec.replace("NEXTFEBID",str(feb+1))					
+                else:
+                    rec = rec.replace("FLNKNEXTHYB","")                    
+            else:
+                rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                rec = rec.replace("NEXTFEBID",str(feb))
+                rec = rec.replace("NEXTHYBID",str(hyb+1))
+            rec = rec.replace("HYBID",str(hyb))
+            rec = rec.replace("FEBID",str(feb))
+            records.append(rec)
+    
+    return records
+
+
+
+def buildHybLVVSetRd_avdd():
+
+
+    s = """
+
+
+
+record(sub,SVT:lv:FEBID:HYBID:avdd:v_set_rd_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subLVInit")
+    field(SNAM,"subLVProcess")
+    field(FLNK,"FLNKNEXTHYB")
+}
+
+record(ai, SVT:lv:FEBID:HYBID:avdd:v_set_rd)
+{
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(INP, "SVT:lv:FEBID:HYBID:avdd:v_set_rd_sub PP")
+  field(DTYP,"Soft Channel")
+  field(HIHI,"180") field(HHSV,"MAJOR")
+  field(HIGH,"175") field(HSV,"MINOR")
+  field(LOW,"165") field(LSV,"MINOR")
+  field(LOLO,"160") field(LLSV,"MAJOR")
+}
+
+
+
+
+"""
+    s_flnk = "SVT:lv:NEXTFEBID:NEXTHYBID:avdd:v_set_rd"
+    records = []
+    for feb in range(0,10):
+        r = range(0,len(getHybrids(feb)))
+        for hyb in r:
+            rec = s
+            if (hyb==3 and len(r)==4) or (hyb==1 and len(r)==2):
+                if feb < 9:
+                    rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                    rec = rec.replace("NEXTHYBID",str(0))
+                    rec = rec.replace("NEXTFEBID",str(feb+1))					
+                else:
+                    rec = rec.replace("FLNKNEXTHYB","")                    
+            else:
+                rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                rec = rec.replace("NEXTFEBID",str(feb))
+                rec = rec.replace("NEXTHYBID",str(hyb+1))
+            rec = rec.replace("HYBID",str(hyb))
+            rec = rec.replace("FEBID",str(feb))
+            records.append(rec)
+    
+    return records
+
+
+
+def buildHybLVVSetRd_dvdd():
+
+
+    s = """
+
+
+
+record(sub,SVT:lv:FEBID:HYBID:dvdd:v_set_rd_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subLVInit")
+    field(SNAM,"subLVProcess")
+    field(FLNK,"FLNKNEXTHYB")
+}
+
+record(ai, SVT:lv:FEBID:HYBID:dvdd:v_set_rd)
+{
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(INP, "SVT:lv:FEBID:HYBID:dvdd:v_set_rd_sub PP")
+  field(DTYP,"Soft Channel")
+  field(HIHI,"160") field(HHSV,"MAJOR")
+  field(HIGH,"155") field(HSV,"MINOR")
+  field(LOW,"145") field(LSV,"MINOR")
+  field(LOLO,"140") field(LLSV,"MAJOR")
+}
+
+
+
+"""
+    s_flnk = "SVT:lv:NEXTFEBID:NEXTHYBID:dvdd:v_set_rd"
+    records = []
+    for feb in range(0,10):
+        r = range(0,len(getHybrids(feb)))
+        for hyb in r:
+            rec = s
+            if (hyb==3 and len(r)==4) or (hyb==1 and len(r)==2):
+                if feb < 9:
+                    rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                    rec = rec.replace("NEXTHYBID",str(0))
+                    rec = rec.replace("NEXTFEBID",str(feb+1))					
+                else:
+                    rec = rec.replace("FLNKNEXTHYB","")                    
+            else:
+                rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                rec = rec.replace("NEXTFEBID",str(feb))
+                rec = rec.replace("NEXTHYBID",str(hyb+1))
+            rec = rec.replace("HYBID",str(hyb))
+            rec = rec.replace("FEBID",str(feb))
+            records.append(rec)
+    
+    return records
+
+
+
+
+
+
+
+
+def buildHybLVVf_v125():
+
+
+    s = """
+
+
+
+record(sub,SVT:lv:FEBID:HYBID:v125:vf_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subLVInit")
+    field(SNAM,"subLVProcess")
+    field(FLNK,"FLNKNEXTHYB")
+}
+
+record(ai, SVT:lv:FEBID:HYBID:v125:vf) {
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(INP, "SVT:lv:FEBID:HYBID:v125:vf_sub PP")
+  field(DTYP,"Soft Channel")
+  field(HIHI,"1.47") field(HHSV,"MAJOR")
+  field(HIGH,"1.37") field(HSV,"MINOR")
+  field(LOW,"1.17") field(LSV,"MINOR")
+  field(LOLO,"1.07") field(LLSV,"MAJOR")
+}
+
+
+
+
+
+"""
+    s_flnk = "SVT:lv:NEXTFEBID:NEXTHYBID:v125:vf"
+    records = []
+    for feb in range(0,10):
+        r = range(0,len(getHybrids(feb)))
+        for hyb in r:
+            rec = s
+            if (hyb==3 and len(r)==4) or (hyb==1 and len(r)==2):
+                if feb < 9:
+                    rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                    rec = rec.replace("NEXTHYBID",str(0))
+                    rec = rec.replace("NEXTFEBID",str(feb+1))					
+                else:
+                    rec = rec.replace("FLNKNEXTHYB","")                    
+            else:
+                rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                rec = rec.replace("NEXTFEBID",str(feb))
+                rec = rec.replace("NEXTHYBID",str(hyb+1))
+            rec = rec.replace("HYBID",str(hyb))
+            rec = rec.replace("FEBID",str(feb))
+            records.append(rec)
+    
+    return records
+
+
+
+
+
+
+def buildHybLVVf_avdd():
+
+
+    s = """
+
+
+record(sub,SVT:lv:FEBID:HYBID:avdd:vf_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subLVInit")
+    field(SNAM,"subLVProcess")
+    field(FLNK,"FLNKNEXTHYB")
+}
+
+record(ai, SVT:lv:FEBID:HYBID:avdd:vf)
+{
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(INP, "SVT:lv:FEBID:HYBID:avdd:vf_sub PP")
+  field(DTYP,"Soft Channel")
+  field(HIHI,"2.8") field(HHSV,"MAJOR")
+  field(HIGH,"2.7") field(HSV,"MINOR")
+  field(LOW,"2.5") field(LSV,"MINOR")
+  field(LOLO,"2.4") field(LLSV,"MAJOR")
+}
+
+
+
+"""
+    s_flnk = "SVT:lv:NEXTFEBID:NEXTHYBID:avdd:vf"
+    records = []
+    for feb in range(0,10):
+        r = range(0,len(getHybrids(feb)))
+        for hyb in r:
+            rec = s
+            if (hyb==3 and len(r)==4) or (hyb==1 and len(r)==2):
+                if feb < 9:
+                    rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                    rec = rec.replace("NEXTHYBID",str(0))
+                    rec = rec.replace("NEXTFEBID",str(feb+1))					
+                else:
+                    rec = rec.replace("FLNKNEXTHYB","")                    
+            else:
+                rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                rec = rec.replace("NEXTFEBID",str(feb))
+                rec = rec.replace("NEXTHYBID",str(hyb+1))
+            rec = rec.replace("HYBID",str(hyb))
+            rec = rec.replace("FEBID",str(feb))
+            records.append(rec)
+    
+    return records
+
+
+
+
+
+
+def buildHybLVVf_dvdd():
+
+
+    s = """
+
+
+
+
+
+record(sub,SVT:lv:FEBID:HYBID:dvdd:vf_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subLVInit")
+    field(SNAM,"subLVProcess")
+    field(FLNK,"FLNKNEXTHYB")
+}
+
+record(ai, SVT:lv:FEBID:HYBID:dvdd:vf)
+{
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(INP, "SVT:lv:FEBID:HYBID:dvdd:vf_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+
+"""
+    s_flnk = "SVT:lv:NEXTFEBID:NEXTHYBID:dvdd:vf"
+    records = []
+    for feb in range(0,10):
+        r = range(0,len(getHybrids(feb)))
+        for hyb in r:
+            rec = s
+            if (hyb==3 and len(r)==4) or (hyb==1 and len(r)==2):
+                if feb < 9:
+                    rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                    rec = rec.replace("NEXTHYBID",str(0))
+                    rec = rec.replace("NEXTFEBID",str(feb+1))					
+                else:
+                    rec = rec.replace("FLNKNEXTHYB","")                    
+            else:
+                rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                rec = rec.replace("NEXTFEBID",str(feb))
+                rec = rec.replace("NEXTHYBID",str(hyb+1))
+            rec = rec.replace("HYBID",str(hyb))
+            rec = rec.replace("FEBID",str(feb))
+            records.append(rec)
+    
+    return records
+
+
+
+
+
+
+
+def buildHybLVVn_v125():
+
+
+    s = """
+
+
+record(sub,SVT:lv:FEBID:HYBID:v125:vn_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subLVInit")
+    field(SNAM,"subLVProcess")
+    field(FLNK,"FLNKNEXTHYB")
+}
+
+record(ai, SVT:lv:FEBID:HYBID:v125:vn)
+{
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(INP, "SVT:lv:FEBID:HYBID:v125:vn_sub PP")
+  field(DTYP,"Soft Channel")
+  field(HIHI,"1.55") field(HHSV,"MAJOR")
+  field(HIGH,"1.45") field(HSV,"MINOR")
+  field(LOW,"1.25") field(LSV,"MINOR")
+  field(LOLO,"1.15") field(LLSV,"MAJOR")
+}
+
+
+
+
+
+"""
+    s_flnk = "SVT:lv:NEXTFEBID:NEXTHYBID:v125:vn"
+    records = []
+    for feb in range(0,10):
+        r = range(0,len(getHybrids(feb)))
+        for hyb in r:
+            rec = s
+            if (hyb==3 and len(r)==4) or (hyb==1 and len(r)==2):
+                if feb < 9:
+                    rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                    rec = rec.replace("NEXTHYBID",str(0))
+                    rec = rec.replace("NEXTFEBID",str(feb+1))					
+                else:
+                    rec = rec.replace("FLNKNEXTHYB","")                    
+            else:
+                rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                rec = rec.replace("NEXTFEBID",str(feb))
+                rec = rec.replace("NEXTHYBID",str(hyb+1))
+            rec = rec.replace("HYBID",str(hyb))
+            rec = rec.replace("FEBID",str(feb))
+            records.append(rec)
+    
+    return records
+
+
+
+
+
+
+def buildHybLVVn_avdd():
+
+
+    s = """
+
+
+
+
+record(sub,SVT:lv:FEBID:HYBID:avdd:vn_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subLVInit")
+    field(SNAM,"subLVProcess")
+    field(FLNK,"FLNKNEXTHYB")
+}
+
+record(ai, SVT:lv:FEBID:HYBID:avdd:vn)
+{
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(INP, "SVT:lv:FEBID:HYBID:avdd:vn_sub PP")
+  field(DTYP,"Soft Channel")
+  field(HIHI,"2.9") field(HHSV,"MAJOR")
+  field(HIGH,"2.8") field(HSV,"MINOR")
+  field(LOW,"2.6") field(LSV,"MINOR")
+  field(LOLO,"2.5") field(LLSV,"MAJOR")
+}
+
+
+
+"""
+    s_flnk = "SVT:lv:NEXTFEBID:NEXTHYBID:avdd:vn"
+    records = []
+    for feb in range(0,10):
+        r = range(0,len(getHybrids(feb)))
+        for hyb in r:
+            rec = s
+            if (hyb==3 and len(r)==4) or (hyb==1 and len(r)==2):
+                if feb < 9:
+                    rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                    rec = rec.replace("NEXTHYBID",str(0))
+                    rec = rec.replace("NEXTFEBID",str(feb+1))					
+                else:
+                    rec = rec.replace("FLNKNEXTHYB","")                    
+            else:
+                rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                rec = rec.replace("NEXTFEBID",str(feb))
+                rec = rec.replace("NEXTHYBID",str(hyb+1))
+            rec = rec.replace("HYBID",str(hyb))
+            rec = rec.replace("FEBID",str(feb))
+            records.append(rec)
+    
+    return records
+
+
+
+
+
+
+
+
+def buildHybLVVn_dvdd():
+
+
+    s = """
+
+
+record(sub,SVT:lv:FEBID:HYBID:dvdd:vn_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subLVInit")
+    field(SNAM,"subLVProcess")
+    field(FLNK,"FLNKNEXTHYB")
+}
+
+record(ai, SVT:lv:FEBID:HYBID:dvdd:vn)
+{
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(INP, "SVT:lv:FEBID:HYBID:dvdd:vn_sub PP")
+  field(DTYP,"Soft Channel")
+  field(HIHI,"2.8") field(HHSV,"MAJOR")
+  field(HIGH,"2.7") field(HSV,"MINOR")
+  field(LOW,"2.5") field(LSV,"MINOR")
+  field(LOLO,"2.4") field(LLSV,"MAJOR")
+}
+
+
+
+"""
+    s_flnk = "SVT:lv:NEXTFEBID:NEXTHYBID:dvdd:vn"
+    records = []
+    for feb in range(0,10):
+        r = range(0,len(getHybrids(feb)))
+        for hyb in r:
+            rec = s
+            if (hyb==3 and len(r)==4) or (hyb==1 and len(r)==2):
+                if feb < 9:
+                    rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                    rec = rec.replace("NEXTHYBID",str(0))
+                    rec = rec.replace("NEXTFEBID",str(feb+1))					
+                else:
+                    rec = rec.replace("FLNKNEXTHYB","")                    
+            else:
+                rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                rec = rec.replace("NEXTFEBID",str(feb))
+                rec = rec.replace("NEXTHYBID",str(hyb+1))
+            rec = rec.replace("HYBID",str(hyb))
+            rec = rec.replace("FEBID",str(feb))
+            records.append(rec)
+    
+    return records
+
+
+
+
+
+
+
+
+
+
+
+def buildHybLVIrd_v125():
+
+
+    s = """
+
+record(sub,SVT:lv:FEBID:HYBID:v125:i_rd_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subLVInit")
+    field(SNAM,"subLVProcess")
+    field(FLNK,"FLNKNEXTHYB")
+}
+
+record(ai, SVT:lv:FEBID:HYBID:v125:i_rd)
+{
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(INP, "SVT:lv:FEBID:HYBID:v125:i_rd_sub PP")
+  field(DTYP,"Soft Channel")
+  field(HIHI,"0.36") field(HHSV,"MAJOR")
+  field(HIGH,"0.34") field(HSV,"MINOR")
+  field(LOW,"0.305") field(LSV,"MINOR")
+  field(LOLO,"0.295") field(LLSV,"MAJOR")
+}
+
+
+
+
+"""
+    s_flnk = "SVT:lv:NEXTFEBID:NEXTHYBID:v125:i_rd"
+    records = []
+    for feb in range(0,10):
+        r = range(0,len(getHybrids(feb)))
+        for hyb in r:
+            rec = s
+            if (hyb==3 and len(r)==4) or (hyb==1 and len(r)==2):
+                if feb < 9:
+                    rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                    rec = rec.replace("NEXTHYBID",str(0))
+                    rec = rec.replace("NEXTFEBID",str(feb+1))					
+                else:
+                    rec = rec.replace("FLNKNEXTHYB","")                    
+            else:
+                rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                rec = rec.replace("NEXTFEBID",str(feb))
+                rec = rec.replace("NEXTHYBID",str(hyb+1))
+            rec = rec.replace("HYBID",str(hyb))
+            rec = rec.replace("FEBID",str(feb))
+            records.append(rec)
+    
+    return records
+
+
+
+
+
+
+
+def buildHybLVIrd_avdd():
+
+
+    s = """
+
+
+record(sub,SVT:lv:FEBID:HYBID:avdd:i_rd_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subLVInit")
+    field(SNAM,"subLVProcess")
+    field(FLNK,"FLNKNEXTHYB")
+}
+
+record(ai, SVT:lv:FEBID:HYBID:avdd:i_rd)
+{
+  field(SCAN, "Passive")
+  field(PREC, "3")
+  field(INP, "SVT:lv:FEBID:HYBID:avdd:i_rd_sub PP")
+  field(DTYP,"Soft Channel")
+  field(HIHI,"0.45") field(HHSV,"MAJOR")
+  field(HIGH,"0.43") field(HSV,"MINOR")
+  field(LOW,"0.355") field(LSV,"MINOR")
+  field(LOLO,"0.345") field(LLSV,"MAJOR")
+}
+
+
+
+"""
+    s_flnk = "SVT:lv:NEXTFEBID:NEXTHYBID:avdd:i_rd"
+    records = []
+    for feb in range(0,10):
+        r = range(0,len(getHybrids(feb)))
+        for hyb in r:
+            rec = s
+            if (hyb==3 and len(r)==4) or (hyb==1 and len(r)==2):
+                if feb < 9:
+                    rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                    rec = rec.replace("NEXTHYBID",str(0))
+                    rec = rec.replace("NEXTFEBID",str(feb+1))					
+                else:
+                    rec = rec.replace("FLNKNEXTHYB","")                    
+            else:
+                rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                rec = rec.replace("NEXTFEBID",str(feb))
+                rec = rec.replace("NEXTHYBID",str(hyb+1))
+            rec = rec.replace("HYBID",str(hyb))
+            rec = rec.replace("FEBID",str(feb))
+            records.append(rec)
+    
+    return records
+
+
+
+
+
+
+
+def buildHybLVIrd_dvdd():
+
+
+    s = """
+
+
+record(sub,SVT:lv:FEBID:HYBID:dvdd:i_rd_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subLVInit")
+    field(SNAM,"subLVProcess")
+    field(FLNK,"FLNKNEXTHYB")
+}
+
+record(ai, SVT:lv:FEBID:HYBID:dvdd:i_rd)
+{
+  field(SCAN, "Passive") field(PREC, "3")
+  field(INP, "SVT:lv:FEBID:HYBID:dvdd:i_rd_sub PP")
+  field(DTYP,"Soft Channel")
+  field(HIHI,"0.31") field(HHSV,"MAJOR")
+  field(HIGH,"0.295") field(HSV,"MINOR")
+  field(LOW,"0.26") field(LSV,"MINOR")
+  field(LOLO,"0.24") field(LLSV,"MAJOR")
+}
+
+
+
+"""
     s_flnk = "SVT:lv:NEXTFEBID:NEXTHYBID:dvdd:i_rd"
     records = []
     for feb in range(0,10):
@@ -380,6 +838,7 @@ record(ao, SVT:lv:FEBID:HYBID:v125:v_set) {
             records.append(rec)
     
     return records
+
 
 
 
@@ -783,23 +1242,8 @@ record(longin, SVT:lv:FEBID:HYBID:sync:sync_rd) {
     return records
 
 
-def buildHybSyncBase():
+def buildHybSyncPeak():
     s = """
-record(aSub,SVT:daq:FEBID:HYBID:APVID:syncbase_rd_asub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subSyncBaseInit")
-    field(SNAM,"subSyncBaseProcess")
-    field(OUTA,"SVT:daq:FEBID:HYBID:APVID:syncbase_rd PP")
-    field(FTVA,"LONG")
-    field(FLNK,"SVT:daq:FEBID:HYBID:APVID:syncpeak_rd_asub")
-}
-
-record(longin, SVT:daq:FEBID:HYBID:APVID:syncbase_rd) {
-  field(SCAN, "Passive")
-  field(DTYP,"Soft Channel")
-}
-
 
 record(aSub,SVT:daq:FEBID:HYBID:APVID:syncpeak_rd_asub)
 {
@@ -815,6 +1259,68 @@ record(longin, SVT:daq:FEBID:HYBID:APVID:syncpeak_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
+
+
+"""
+    s_flnk = "SVT:daq:NEXTFEBID:NEXTHYBID:NEXTAPV:syncpeak_rd_asub"
+    records = []
+    for feb in range(0,10):
+        r = range(0,len(getHybrids(feb)))
+        for hyb in r:
+            for apv in range(0,5):
+                rec = s
+                if apv==4:
+                    if (hyb==3 and len(r)==4) or (hyb==1 and len(r)==2):
+                        if feb == 9:
+                            # done
+                            rec = rec.replace("FLNKNEXTHYB","")                    
+                        else:
+                            # go to next feb
+                            rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                            rec = rec.replace("NEXTHYBID",str(0))
+                            rec = rec.replace("NEXTAPV",str(0))
+                            rec = rec.replace("NEXTFEBID",str(feb+1))
+                    else:
+                        # go to next hybrid
+                        rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                        rec = rec.replace("NEXTHYBID",str(hyb+1))
+                        rec = rec.replace("NEXTAPV",str(0))
+                        rec = rec.replace("NEXTFEBID",str(feb))
+                else:
+                    # go to next apv
+                    rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                    rec = rec.replace("NEXTHYBID",str(hyb))
+                    rec = rec.replace("NEXTAPV",str(apv+1))
+                    rec = rec.replace("NEXTFEBID",str(feb))				
+                # replace the current record
+                rec = rec.replace("APVID",str(apv))
+                rec = rec.replace("HYBID",str(hyb))
+                rec = rec.replace("FEBID",str(feb))
+                #print 'add rec ', rec
+                records.append(rec)
+    return records
+
+
+
+
+def buildHybSyncBase():
+    s = """
+record(aSub,SVT:daq:FEBID:HYBID:APVID:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:FEBID:HYBID:APVID:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"FLNKNEXTHYB")
+}
+
+record(longin, SVT:daq:FEBID:HYBID:APVID:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
 
 
 """
@@ -855,6 +1361,8 @@ record(longin, SVT:daq:FEBID:HYBID:APVID:syncpeak_rd) {
                 #print 'add rec ', rec
                 records.append(rec)
     return records
+
+
 
 
 
