@@ -501,6 +501,10 @@ static long subSyncProcess(aSubRecord *precord) {
   char val[256];
   int number;
   long *a;
+
+  if (mySubDebug)
+     printf("[ subSyncProcess ]: get sync string from xml at %p\n", xmldoc);
+
   
   getHybSync(precord->name, xmldoc, val);
 
@@ -539,6 +543,8 @@ static long subSyncBaseProcess(aSubRecord *precord) {
   int number;
   long *a;
   
+  if (mySubDebug)
+     printf("[ subSyncProcess ]: get sync string from xml at %p\n", xmldoc);
 
   getSyncProcess(precord->name, xmldoc, val);
   

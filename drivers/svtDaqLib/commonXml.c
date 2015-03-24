@@ -279,7 +279,7 @@ int getFebNumProcess(char* pname, xmlDoc* doc) {
             }
             xmlXPathFreeObject(result);
          } else {
-            printf("[ getFebNumProcess ] : [ WARNING ] no results found\n");
+            if(DEBUG>0) printf("[ getFebNumProcess ] : [ WARNING ] no results found\n");
          }  
       } else {
          printf("[ getFebNumProcess ] : [ WARNING ] wrong action (%s) \n",action);      
@@ -365,7 +365,7 @@ int getLinkProcess(char* pname, xmlDoc* doc) {
             }
             xmlXPathFreeObject(result);        
          } else {
-            printf("[ getLinkProcess ] : [ WARNING ] no results found\n");
+            if(DEBUG>0) printf("[ getLinkProcess ] : [ WARNING ] no results found\n");
          }  
       } else {
          printf("[ getLinkProcess ]: [ ERROR ]: wrong action \"%s\"!\n",action);
@@ -436,7 +436,7 @@ int getEventCountProcess(char* pname, xmlDoc* doc) {
         }
         xmlXPathFreeObject(result);        
       } else {
-        printf("[ getEventCountProcess ] : [ WARNING ] no results found\n");
+        if(DEBUG>0) printf("[ getEventCountProcess ] : [ WARNING ] no results found\n");
       }  
       
       
@@ -508,7 +508,7 @@ int getBlockCountProcess(char* pname, xmlDoc* doc) {
         }
         xmlXPathFreeObject(result);        
       } else {
-        printf("[ getBlockCountProcess ] : [ WARNING ] no results found\n");
+        if(DEBUG>0) printf("[ getBlockCountProcess ] : [ WARNING ] no results found\n");
       }  
       
       
@@ -570,7 +570,7 @@ void getSystemStateProcess(char* pname, xmlDoc* doc, char* value) {
                }
                xmlXPathFreeObject(result);        
             } else {
-               printf("[ getSystemStateProcess ] : [ WARNING ] no results found\n");
+               if(DEBUG>0) printf("[ getSystemStateProcess ] : [ WARNING ] no results found\n");
             }  
             
          } else {
@@ -636,7 +636,7 @@ int getEventStateProcess(char* pname, xmlDoc* doc) {
                }
                xmlXPathFreeObject(result);        
             } else {
-               printf("[ getEventStateProcess ] : [ WARNING ] no results found with xpath \"%s\"\n",tmp);
+               if(DEBUG>0) printf("[ getEventStateProcess ] : [ WARNING ] no results found with xpath \"%s\"\n",tmp);
             }  
             
          } else {
@@ -698,7 +698,7 @@ int getTrigCountProcess(char* pname, xmlDoc* doc) {
         }
         xmlXPathFreeObject(result);        
       } else {
-        printf("[ getTrigCountProcess ] : [ WARNING ] no results found\n");
+        if(DEBUG>0) printf("[ getTrigCountProcess ] : [ WARNING ] no results found\n");
       }  
       
       

@@ -18,9 +18,6 @@ dbLoadRecords("db/iocAdminSoft.db", "IOC=iocsvtDaqDpm7")
 
 ## Load record instances
 #dbLoadRecords("db/xxx.db","user=trackerHost")
-dbLoadRecords "db/dbHybSync.db"
-dbLoadRecords("db/dbHybSyncBase.db")
-dbLoadRecords("db/dbHybSyncPeak.db")
 dbLoadRecords("db/dbDataDpmStatus.db","DPM=7")
 dbLoadRecords("db/dbDataDpmEventState.db","DPM=7")
 dbLoadRecords("db/dbDataDpmBlockCount.db","DPM=7")
@@ -40,6 +37,9 @@ dbLoadRecords("db/dbDataDpmFebNum.db","DPM=7,DP=0")
 dbLoadRecords("db/dbDataDpmFebNum.db","DPM=7,DP=1")
 dbLoadRecords("db/dbDataDpmFebNum.db","DPM=7,DP=2")
 dbLoadRecords("db/dbDataDpmFebNum.db","DPM=7,DP=3")
+dbLoadRecords "db/dbHybSync.db"
+dbLoadRecords("db/dbHybSyncBase.db")
+dbLoadRecords("db/dbHybSyncPeak.db")
 
 var mySubDebug 0
 #traceIocInit
