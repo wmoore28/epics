@@ -1,3 +1,7 @@
+#
+# Generated dump to text for easy compare in VCS (Makefile)
+# Cmd: sqlite3 svt_voltages.db .dump >> svt_voltages.txt
+#
 BEGIN TRANSACTION;
 CREATE TABLE Crate(crateid INTEGER PRIMARY KEY, name TEXT, area TEXT, rack INT, location TEXT, SN TEXT, Function TEXT, rocid INT, host TEXT, IP TEXT);
 INSERT INTO "Crate" VALUES(1, 'B1:1:TOP', 'B1', 1, 'TOP', 'CRT1', 'BIAS/LV', 91, 'hpsmpod.jlab.org', NULL);

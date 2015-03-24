@@ -7,4 +7,6 @@
 #
 
 echo "Running ECAL FADC Scaler GUI (DiagGUI)..."
-ssh clasrun@clondaq5 'cd $CODA/src/DiagGUI; ./DiagGUI ROCConfigHPS_SSP_only.txt'
+diaggui $CODA/src/diaggui/config/ROCConfigHPS.txt
+#ssh clasrun@clondaq5 'diaggui $CODA/src/diaggui/config/ROCConfigHPS.txt'
+#ssh clasrun@clondaq5 'cd $CODA/src/DiagGUI; ./DiagGUI ROCConfigHPS_SSP_only.txt'

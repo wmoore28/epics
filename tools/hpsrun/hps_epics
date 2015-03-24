@@ -17,5 +17,11 @@ ADL_FILE=HPS_EPICS.adl
 
 export EPICS_DISPLAY_PATH=$ADL_PATH
 export APP=$APP_PATH
-xterm -title "HPS MEDM ${1}" -e medm -x -cmap -cleanup $ADL_FILE &
+
+if [ "$#" -gt 0 ]; then
+    xterm -title "HPS MEDM ${1}" -e medm -x -cmap -cleanup $ADL_FILE &
+else
+    medm -x -cmap -cleanup $ADL_FILE
+fi
+
 exit
