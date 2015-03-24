@@ -28,12 +28,9 @@ dbLoadRecords "db/dbHybLVVSetRd_avdd.db"
 dbLoadRecords "db/dbHybLVVSetRd_dvdd.db"
 dbLoadRecords "db/dbHybLVStat.db"
 dbLoadRecords "db/dbFebTemp.db"
-dbLoadRecords "db/dbHybSync.db"
 dbLoadRecords "db/dbDpmMap.db"
 dbLoadRecords "db/dbFebLayer.db"
 dbLoadRecords "db/dbSVT.db"
-dbLoadRecords("db/dbHybSyncBase.db")
-dbLoadRecords("db/dbHybSyncPeak.db")
 
 
 

@@ -110,21 +110,7 @@ static void getPhysLayer(char* dna, char* layer) {
 }
 
 
-static long subSyncInit(aSubRecord *precord) {
-  process_order++;
-  if (mySubDebug) {
-    printf("[ subSyncInit ]: %d Record %s called subSyncInit(%p)\n", process_order, precord->name, (void*) precord);
-  }
-  return 0;
-}
 
-static long subSyncBaseInit(aSubRecord *precord) {
-  process_order++;
-  if (mySubDebug) {
-    printf("[ subSyncBaseInit ]: %d Record %s called subSyncBaseInit(%p)\n", process_order, precord->name, (void*) precord);
-  }
-  return 0;
-}
 
 static long subDnaInit(aSubRecord *precord) {
   process_order++;
@@ -896,64 +882,7 @@ static long subDnaProcess(aSubRecord *precord) {
 
 
 
-static long subSyncProcess(aSubRecord *precord) {
-  process_order++;
-  if (mySubDebug) {
-    printf("[ subSyncProcess ]: %d Record %s called subSyncProcess(%p)\n",process_order, precord->name, (void*) precord);
-  }
-  
-  char val[256];
-  int number;
-  long *a;
-  
-  getHybridSync(precord->name, val);   
-  //strcpy(precord->vala, val);
 
-  if (mySubDebug)
-     printf("[ subSyncProcess ]: got sync string \"%s\"\n", val);
-  
-  number = (int) strtol(val,NULL,0); // string rep begins with 0x so use base=0 instead of 16
-
-  if (mySubDebug)
-     printf("[ subSyncProcess ]: got sync number \"%d\"\n", number);
-
-  
-  a = (long*) precord->vala;
-  *a = (long) number;
-  
-  
-  return 0;
-}
-
-
-static long subSyncBaseProcess(aSubRecord *precord) {
-  process_order++;
-  if (mySubDebug) {
-    printf("[ subSyncBaseProcess ]: %d Record %s called subSyncBaseProcess(%p)\n",process_order, precord->name, (void*) precord);
-  }
-  
-  char val[256];
-  int number;
-  long *a;
-
-  getSync(precord->name, val); 
-//strcpy(precord->vala, val);
-  
-  if (mySubDebug)
-     printf("[ subSyncBaseProcess ]: got sync string \"%s\"\n", val);
-  
-  number = (int) strtol(val,NULL,0); // string rep begins with 0x so use base=0 instead of 16
-
-  if (mySubDebug)
-     printf("[ subSyncProcess ]: got sync number \"%d\"\n", number);
-
-  
-  a = (long*) precord->vala;
-  *a = (long) number;
-
-
-  return 0;
-}
 
 
 
@@ -1484,7 +1413,3 @@ epicsRegisterFunction(subDnaInit);
 epicsRegisterFunction(subDnaProcess);
 epicsRegisterFunction(subLayerInit);
 epicsRegisterFunction(subLayerProcess);
-epicsRegisterFunction(subSyncInit);
-epicsRegisterFunction(subSyncProcess);
-epicsRegisterFunction(subSyncBaseInit);
-epicsRegisterFunction(subSyncBaseProcess);

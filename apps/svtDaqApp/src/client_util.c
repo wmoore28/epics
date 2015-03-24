@@ -1018,26 +1018,7 @@ double getHybridSwitch(int index, int hyb) {
    return val; 
 }
 
-void getHybridSync(char* pname, char* syncStr) {
-  if(DEBUG>1)
-    printf("[ getHybridSync ]: get sync for pname %s \n", pname);  
-     getHybSync(pname, doc, syncStr);
-  
-}
 
-
-void getSync(char* pname, char* value) {
-  if(getXmlDocStatus()==0) {      
-    if(DEBUG>1)
-      printf("[ getSync ]: xml ok\n");
-    getSyncProcess(pname, doc, value);
-    if(DEBUG>1)
-      printf("[ getSync ]: got val %s\n", value);
-  } else {
-    if(DEBUG>1) printf("[ getSync ]: [ WARNING ]: the xml doc status is invalid\n");    
-    strcpy(value, "no xml");
-  }
-}
 
 
 int getDpmFromFebValue(int index, int hybrid) {

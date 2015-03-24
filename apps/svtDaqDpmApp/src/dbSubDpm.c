@@ -436,69 +436,6 @@ static long subHybridSwitchProcess(aSubRecord *precord) {
   
   const char* layer = (char*)precord->a;
 
-/*
-
-  char pvarName[EPICS_STRING_SIZE];
-  int feb_id;
-
-  //find the feb id
-  feb_id = -1;
-  char pname[EPICS_STRING_SIZE];
-  strcpy(pname,precord->name);
-  if (mySubDebug) printf("[ subHybridSwitchProcess ]: get type for name str \"%s\" at %p\n",pname, pname);
-  
-  getStringFromEpicsName(pname,type,1,40);
-  strcpy(type,"lv");
-  if (mySubDebug) printf("[ subHybridSwitchProcess ]: got type \"%s\" for name str \"%s\" at %p\n", type, pname, pname);
-  
-  if(strcmp(type,"lv")==0) {
-     if (mySubDebug) printf("[ subHybridSwitchProcess ]: get febid for name str \"%s\" at %p\n",precord->name, precord->name);
-     feb_id = getIntFromEpicsName(precord->name,2);    
-     if (mySubDebug) printf("[ subHybridSwitchProcess ]: got febid  %d \n",feb_id);
-  }
-  
-  if (mySubDebug) printf("[ subHybridSwitchProcess ]: FEB id %d\n",feb_id);
-
-  sprintf(pvarName,"SVT:daq:map:%d:layer",feb_id);
-
-  if (mySubDebug) printf("[ subHybridSwitchProcess ]: pvarName %s\n",pvarName);
-
-  // find and fill the address info
-  dbAddr paddr; 
-  long dbStat;
-  dbStat = dbNameToAddr(pvarName,&paddr);
-  if(dbStat) {
-     printf("[ subHybridSwitchProcess ]: [ ERROR ]: dbNameToAddr error %ld\n",dbStat);     
-  }
-  if (mySubDebug) printf("[ subHybridSwitchProcess ]: paddr->precord %p\n",paddr.precord);
-
-  // convert to expected type
-  short pvarType = paddr.field_type;
-  if (mySubDebug) printf("[ subHybridSwitchProcess ]: pvarName %s pvarType %hd\n",pvarName,pvarType);
-  char pvarValue[EPICS_STRING_SIZE];
-  if (mySubDebug)printf("[ subHybridSwitchProcess ]: get value\n");
-  dbStat = dbGetField(&paddr,DBR_STRING,pvarValue,NULL,NULL,NULL);
-  if(dbStat) {
-     printf("[ subHybridSwitchProcess ]: [ ERROR ]: name error %ld\n",dbStat);     
-  }
-  //struct stringinRecord* pvarRecord = (stringinRecord*)
-  //char* pvarString = (char*) pVarValue; 
-  if (mySubDebug)printf("[ subHybridSwitchProcess ]: got pvarString %s\n", pvarValue);
-  chid pvarChanID;
-  int dbStat = ca_search(pvarName,&pvarChanID);
-  if(dbStat) {
-     printf("[ subHybridSwitchProcess ]: [ ERROR ]: ca_search for \"%s\" failed with error %d\n",pvarName,dbStat);     
-     //exit(1);
-  } 
-  
-  char layer[EPICS_STRING_SIZE];
-  dbStat = ca_bget(pvarChanID,layer);
-  if(dbStat) {
-     printf("[ subHybridSwitchProcess ]: [ ERROR ]: ca_bget failed with error %d\n",dbStat);     
-     //exit(1);
-  } 
-*/
-
   if (mySubDebug) printf("[ subHybridSwitchProcess ]: got \"%s\" at %p\n",layer,layer);
 
 
@@ -546,6 +483,82 @@ static long subHybridSwitchProcess(aSubRecord *precord) {
   return 0;
 }
 
+static long subSyncInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subSyncInit ]: %d Record %s called subSyncInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+
+static long subSyncProcess(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subSyncProcess ]: %d Record %s called subSyncProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  
+  char val[256];
+  int number;
+  long *a;
+  
+  getHybSync(precord->name, xmldoc, val);
+
+  if (mySubDebug)
+     printf("[ subSyncProcess ]: got sync string \"%s\"\n", val);
+  
+  number = (int) strtol(val,NULL,0); // string rep begins with 0x so use base=0 instead of 16
+
+  if (mySubDebug)
+     printf("[ subSyncProcess ]: got sync number \"%d\"\n", number);
+
+  
+  a = (long*) precord->vala;
+  *a = (long) number;
+  
+  
+  return 0;
+}
+
+static long subSyncBaseInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subSyncBaseInit ]: %d Record %s called subSyncBaseInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+
+static long subSyncBaseProcess(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subSyncBaseProcess ]: %d Record %s called subSyncBaseProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  
+  char val[256];
+  int number;
+  long *a;
+  
+
+  getSyncProcess(precord->name, xmldoc, val);
+  
+  if (mySubDebug)
+     printf("[ subSyncBaseProcess ]: got sync string \"%s\"\n", val);
+  
+  number = (int) strtol(val,NULL,0); // string rep begins with 0x so use base=0 instead of 16
+
+  if (mySubDebug)
+     printf("[ subSyncProcess ]: got sync number \"%d\"\n", number);
+
+  
+  a = (long*) precord->vala;
+  *a = (long) number;
+
+
+  return 0;
+}
+
+
 
 
 /* Register these symbols for use by IOC code: */
@@ -577,4 +590,8 @@ epicsRegisterFunction(subDpmSystemStateInit);
 epicsRegisterFunction(subDpmSystemStateProcess);
 epicsRegisterFunction(subHybridSwitchInit);
 epicsRegisterFunction(subHybridSwitchProcess);
+epicsRegisterFunction(subSyncInit);
+epicsRegisterFunction(subSyncProcess);
+epicsRegisterFunction(subSyncBaseInit);
+epicsRegisterFunction(subSyncBaseProcess);
 

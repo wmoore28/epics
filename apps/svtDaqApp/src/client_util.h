@@ -40,11 +40,9 @@ double getHybridTrim(int index, int hyb, char* type);
 void writeHybridVTrim(int sockid, int value, int feb_id, int hyb_id, char *ch_name);
 //double getHybridSync(int index, int hyb, int dpm);
 //void getHybridSync(int index, int datapath, char* action, char* syncStr);
-void getHybridSync(char* pname, char* value);
 int getDpm(int index, int hyb);
 double getDatapath(int index, int hyb, int dpm);
 int getDpmFromFebValue(int index, int hybrid);
 int getDataDpmId(int i);
-void getSync(char* pname, char* value);
 
 #endif

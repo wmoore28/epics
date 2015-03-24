@@ -48,7 +48,6 @@ int getDtmAckCountProcess(char* pname, xmlDoc* doc);
 void getSyncProcess(char* pname, xmlDoc* doc, char* value);
 
 void getHybSync(char* pname, xmlDocPtr doc, char* syncStr);
-//void getHybSync(xmlDocPtr doc, int index, int datapath, char* action, char* syncStr);
 
 int findSystemStr(char* buf, const int MAX, char** start);
 
