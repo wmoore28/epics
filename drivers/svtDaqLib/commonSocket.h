@@ -45,7 +45,6 @@ int open_socket(char* hostname, int portno) {
     if (server == NULL) {
       char msgstr[256];
       sprintf(msgstr,"[ open_socket ]: [ ERROR ]: Host \"%s\" was not found.",hostname);
-      //socket_error("[ open_socket ]: [ ERROR ]: Host was not found.");
       socket_error(msgstr);
       close_socket(socketfd);
       return -1;
@@ -63,13 +62,14 @@ int open_socket(char* hostname, int portno) {
     if(DEBUG>1) printf("[ open_socket ]: Connecting to host %s ...\n", server->h_name);
     if (connect(socketfd,(struct sockaddr *) &serv_addr,sizeof(serv_addr)) < 0) {
       char tmp[256];
-      sprintf(tmp,"[ open_socket ]: [ ERROR ] Couldn't connect to host %s %d\n", hostname, portno);
+      if(DEBUG>0) sprintf(tmp,"[ open_socket ]: [ WARNING ] Couldn't connect to host %s %d\n", hostname, portno);
+      else strcpy(tmp,"");
       socket_error(tmp);
-        close_socket(socketfd); 
-        return -1;
+      close_socket(socketfd); 
+      return -1;
     }
     if(DEBUG>1) printf("[ open_socket ] : return socket %d\n",socketfd);
-
+    
     return socketfd;
 }
 
