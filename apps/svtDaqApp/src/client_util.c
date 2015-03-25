@@ -6,7 +6,6 @@
 #include "febxml.h"
 #include "dpmxml.h"
 #include "hybxml.h"
-#include "socket.h"
 #include "commonConstants.h"
 #include "commonXml.h"
 #include "status.h"
@@ -215,7 +214,8 @@ int getXmlPollStatus() {
 	 xmlDocExists = 0;	 
 	 if(DEBUG>0) printf("[ getXmlPollStatus ] : xml doc exists.\n");	 
 	 if(DEBUG>0) printf("[ getXmlPollStatus ] : check non-zero nodes.\n");
-	 nonZero = checkNonZeroNodes(doc);
+	 nonZero = checkNonZeroNodes(doc,"/system/status/ControlDpm/FebFpga/FebCore/SoftPowerMonitor/FebTemp0");
+
 	 if(DEBUG>0) printf("[ getXmlPollStatus ] : nonZero = %d\n",nonZero);
          
 	 // compare a xml dump to previous

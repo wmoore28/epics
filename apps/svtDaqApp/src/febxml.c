@@ -33,6 +33,11 @@ double getFebTempValue(xmlDocPtr doc, const char* type, int index) {
 
 
 
+
+
+
+
+
 xmlXPathObjectPtr getFebDna(xmlDocPtr doc) {
    char tmp[256];
    //sprintf(tmp,"/system/status/ControlDpm/FebFpga/AxiVersion/DeviceDna");
