@@ -6,7 +6,7 @@
 #   ./hvCaen_alarms_req.sh | xargs caget
 
 # All records are ai/ao.
-ALARMS=("HIGH" "HSV" "HIHI" "HHSV" "LOW" "LSV" "LOLO" "LLSV")
+ALARMS=(HIGH" "HSV" "HIHI" "HHSV" "LOW" "LSV" "LOLO" "LLSV)
 
 # SVT:lv:fe:[0-9]:[digi|anan|anap]:[i_rd|v_sens|v_term|stat]
 for CHAN in $(seq 0 9); do
