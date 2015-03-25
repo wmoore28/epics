@@ -93,6 +93,12 @@ static long subPollProcess(subRecord *precord) {
     
     if (mySubDebug>-1)
       printf("[ subPollProcess ]: found xml doc at %p\n", xmldoc);
+
+
+    printf("[ subPollProcess ]: close socket %d\n", socketFD);
+
+    socketFD = close_socket(socketFD);
+
         
   } else {
     printf("[ subPollProcess ]: [ WARNING ]: failed to open socket\n");
@@ -100,14 +106,6 @@ static long subPollProcess(subRecord *precord) {
     strcpy(socketPollStatusStr,"couldn't open socket");
 
   }
-
-
-
-  if(socketFD>0) {
-    printf("[ subPollProcess ]: close socket %d\n", socketFD);
-    socketFD = close_socket(socketFD);
-  }
-
 
 
   return 0;
