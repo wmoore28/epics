@@ -163,30 +163,29 @@ void getRunStateProcess(char* pname, xmlDoc* doc, char* state) {
 
 void getDpmStatusProcess(char* pname, xmlDoc* doc, char* status, int* heart_beat) {
 
-   int idpm;
+   int dpm;
+   int nonZeroStatus;
    char str1[BUF_SIZE];
    char str2[BUF_SIZE];
    char action[BUF_SIZE];
    getStringFromEpicsName(pname,str1,1,BUF_SIZE);
    getStringFromEpicsName(pname,str2,2,BUF_SIZE);
    if(strcmp(str1,"daq")==0 && (strcmp(str2,"dtm")==0 ||strcmp(str2,"dpm")==0)) {
-      idpm = getIntFromEpicsName(pname,3);  
+      dpm = getIntFromEpicsName(pname,3);  
       getStringFromEpicsName(pname,action,4,BUF_SIZE);    
 
       if(strcmp(action,"status_asub")==0) {           
          
-         int dpm;
          xmlXPathObjectPtr result;
          xmlNodePtr node;
          char tmp[BUF_SIZE];
-         dpm = idpm;
          strcpy((char*)status, "undef");
          *heart_beat = 98;
          if(DEBUG>0)
-            printf("[ getDpmStatusProcess ] : get status of dpm %d dpm_doc at %p\n", idpm, doc);
+            printf("[ getDpmStatusProcess ] : get status of dpm %d dpm_doc at %p\n", dpm, doc);
          if(doc!=NULL) {      
             if(DEBUG>0)
-               printf("[ getDpmStatusProcess ]: idpm %d xml ok\n", idpm);    
+               printf("[ getDpmStatusProcess ]: dpm %d xml ok\n", dpm);    
             sprintf(tmp,"/system/status");
             if(DEBUG>2) printf("[ getDpmStatusProcessDpm ] : xpath \"%s\"\n",tmp);
             result =  getnodeset(doc, (xmlChar*) tmp);
@@ -194,23 +193,71 @@ void getDpmStatusProcess(char* pname, xmlDoc* doc, char* status, int* heart_beat
                if(DEBUG>2) 
                   printf("[ getDpmStatusProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
                if(result->nodesetval->nodeNr==1) {
-                  strcpy((char*)status, "Seems OK");
-                  *heart_beat = -1;
+                  if(DEBUG>2) 
+                     printf("[ getDpmStatusProcess ] : got system tags\n");
+                  
+                  //free results
+                  xmlXPathFreeObject(result);
+                  
+                  if(strcmp(str2,"dtm")==0) {                     
+                     nonZeroStatus = checkNonZeroNodes(doc,"/system/status/TiDtm/RceDtmTiming/TxCount1");
+                     //check for dummy value
+                     if(nonZeroStatus==0) {
+                        char value[256];
+                        getNodeVal(doc, "/system/status/TiDtm/RceDtmTiming/TxCount1",value);
+                        if(strcmp(value,"0x0")==0) {
+                           nonZeroStatus=1;
+                        }
+                     }
+                  } else {
+                     if(dpm==7) {
+                        nonZeroStatus = checkNonZeroNodes(doc,"/system/status/ControlDpm/RceDpmTiming/RxCount1");
+                     } else {
+                        nonZeroStatus = checkNonZeroNodes(doc,"/system/status/DataDpm/RceDpmTiming/RxCount1");
+                        //nonZeroStatus = checkNonZeroNodes(doc,"/system/status");
+                     }
+                  }
+                  if(DEBUG>2) 
+                     printf("[ getDpmStatusProcess ] : nonZeroStatus %d \n",nonZeroStatus);
+                  
+                  if(nonZeroStatus==0) {
+                     
+                     // checkl softpower monitor stuff for dpm7
+                     if(dpm==7) {
+                        nonZeroStatus = checkNonZeroNodes(doc,"/system/status/ControlDpm/FebFpga/FebCore/SoftPowerMonitor/FebTemp0");                                          
+                        if(nonZeroStatus==0) {
+                           strcpy((char*)status, "Seems OK");
+                           *heart_beat = -1;
+                        } else {
+                           printf("[ getDpmStatusProcess ] : [ WARNING ] SoftPowerMonitor temps were empty!?\n");
+                           strcpy((char*)status,"XML content: empty <SoftPowerMonitor tags>, FEB power&link ok?");
+                           *heart_beat = 8;                     
+                        }                        
+                     } else {
+                        strcpy((char*)status, "Seems OK");
+                        *heart_beat = -1;
+                     }
+                  } else {
+                     printf("[ getDpmStatusProcess ] : [ WARNING ] Tx/RxCounts were empty\n");
+                     strcpy((char*)status,"XML content: empty tags");
+                     *heart_beat = 7;                     
+                  }
                } else {
                   printf("[ getDpmStatusProcess ] : [ WARNING ] %d status nodes found, should be exactly 1\n", result->nodesetval->nodeNr);
-                  strcpy((char*)status,"wrong nr of system tags");
+                  strcpy((char*)status,"XML content: wrong nr of <system> tags");
                   *heart_beat = 6;
+                  xmlXPathFreeObject(result);
                }
-               xmlXPathFreeObject(result);
+               
             } else {
                printf("[ getDpmStatusProcess ] : [ WARNING ] no results found\n");
-               strcpy((char*)status, "no xpath results");
+               strcpy((char*)status, "XML content: <status> tag missing");
                *heart_beat = 5;
             }  
          } else {
             if(DEBUG>0) 
-               printf("[ getDpmStatusProcess ]: [ WARNING ]: the dpm %d xml doc status is invalid\n",idpm);
-            strcpy(status,"xml doc is NULL");
+               printf("[ getDpmStatusProcess ]: [ WARNING ]: the dpm %d xml doc status is invalid\n",dpm);
+            strcpy(status,"No XML doc built. ");
             *heart_beat = 4;
          }
          if(DEBUG>0) printf("[ getDpmStatusProcess ]: got status %s.\n",status);      
@@ -1689,3 +1736,72 @@ void getFebCnfCmd(int feb_id, int isopentag,  char* cmd, const int MAX) {
       sprintf(tmp,"<system><config><ControlDpm><FebFpga index=\"%d\"><FebCore>",feb_id);
    strcpy(cmd,tmp);
 }
+
+
+
+
+
+
+int checkNonZeroNodes(xmlDoc* document, const char* xpath) {
+   xmlXPathObjectPtr result;
+   xmlNodeSetPtr nodeset;
+   xmlNodePtr node;
+   xmlNodePtr children;
+   int i;
+   int nnonzero;
+   int n;
+   nnonzero=0;
+   if(DEBUG>1) printf("[ checkNonZeroNodes ] :search xpath=\"%s\" \n", xpath);
+   result = getnodeset(document, (xmlChar*) xpath);
+   if(result!=NULL) {
+      nodeset = result->nodesetval;
+      if(DEBUG>1) printf("[ checkNonZeroNodes ] : found %d results for xpath=\"%s\" \n", nodeset->nodeNr,xpath);
+      for(i=0;i<nodeset->nodeNr;++i) {
+         node = nodeset->nodeTab[i];
+         if(node!=NULL) {
+            children = node->xmlChildrenNode;
+            n++;
+            if(children==NULL) {
+               if(DEBUG>1) printf("[ checkNonZeroNodes ] : no children found for node %s.\n", node->name);
+            } else {
+               if(DEBUG>1) printf("[ checkNonZeroNodes ] : found children for node %s.\n", node->name);               
+               nnonzero++;
+            }
+         } else {
+            printf("[ checkNonZeroNodes ] : [ ERROR ] :  couldn't find node!\n");
+         }
+      }
+      xmlXPathFreeObject(result);	
+   } else {
+      if(DEBUG>1) printf("[ checkNonZeroNodes ] : no results found.\n");
+   }
+   if(DEBUG>1) printf("[ checkNonZeroNodes ] : %d/%d elements had no children\n", nnonzero,n);
+
+   if(nnonzero>0) return 0;
+   else return 1;
+}
+
+
+void getNodeVal(xmlDoc* document, const char* xpath, char* value) {
+   xmlXPathObjectPtr result;
+   xmlNodeSetPtr nodeset;
+   xmlNodePtr node;
+   xmlNodePtr children;
+   strcpy(value,"");
+   if(DEBUG>1) printf("[ getNodeVal ] :search xpath=\"%s\" \n", xpath);
+   result = getnodeset(document, (xmlChar*) xpath);
+   if(result!=NULL) {
+      nodeset = result->nodesetval;      
+      if(DEBUG>1) printf("[ getNodeVal ] : found %d results for xpath=\"%s\" \n", nodeset->nodeNr,xpath);
+      if(nodeset->nodeNr==1) {
+         getStrValue(document, nodeset->nodeTab[0], (xmlChar*)value);
+      } else {
+         if(DEBUG>1) printf("[ getNodeVal ] : nodes found are different than 1 (=%d).\n", node->name, nodeset->nodeNr);        
+      }
+      xmlXPathFreeObject(result);	
+   } else {
+      if(DEBUG>1) printf("[ getNodeVal ] : no results found.\n");
+   }
+   return;
+}
+
