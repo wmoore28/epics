@@ -13,7 +13,7 @@
 #include "commonXml.h"
 #include "daqmap.h"
 #include "client_util.h"
-#include "socket.h"
+#include "commonSocket.h"
 
 int mySubDebug = 0;
 const int DO_DATA_DPM = 0;
@@ -637,111 +637,6 @@ static long subPollStatInit(subRecord *precord) {
 
 
 
-/*
-
- static void writeHybrid(subRecord* precord,char action[], int id, int feb_id, char ch_name[])
-{
-  if(mySubDebug) printf("[ writeHybrid ]: Record %s called writeHybrid %s with val %f for feb_id= %d  id=%d ch_name=%s\n", precord->name,action,precord->val,feb_id,id,ch_name);
-  
-  time_t cur_time;
-  time_t timer;
-  time(&timer);
-  int dt;
-  // get a valid socket
-  dt = 0;
-  if(sockfd>0) {
-    if (mySubDebug) printf("[ writeHybrid ]: socket %d is already open, wait for it to close\n", sockfd);    
-    while(sockfd>0 && dt<6) {
-      time(&cur_time);
-      dt = difftime(cur_time, timer);
-      if (mySubDebug) printf("[ writeHybrid ]: socket %d is still open after %ds, sleep 1s\n", sockfd, dt);    
-      sleep(1);
-    }    
-  }
-  
-  if(sockfd>0) {    
-    printf("[ writeHybrid ]: [ WARNING ]: socket %d was still open after %ds, don't write anything\n", sockfd, dt); 
-    return;
-  } 
-  else {    
-     if (mySubDebug) printf("[ writeHybrid ]: Opening socket\n");    
-     sockfd = setupSocket(precord);
-     if (mySubDebug) printf("[ writeHybrid ]: Opened socket : %d\n",sockfd);            
-  }
-  
-  if(sockfd<=0) {
-     printf("[ writeHybrid ]: [ ERROR ]: Failed to open socket in writeHybrid (host %s:%d) \n",hostName,sockfd);        
-     return;
-  }
-  
-  if(strcmp(action,"v_set_sub")==0) {    
-     if(precord->val<255 && precord->val>0) {
-        
-        if (mySubDebug) printf("[ writeHybrid ]: write %s trim %d to feb %d hyb %d\n",ch_name,(int)precord->val, feb_id, id);
-        
-        writeHybridVTrim(sockfd,(int)precord->val, feb_id, id, ch_name);    
-        
-      //if (mySubDebug) printf("[ writeHybrid ]: Poll xml string after write\n");
-      
-      //getXmlDoc(sockfd,0,0);
-      
-      //if (mySubDebug) printf("[ writeHybrid ]:  Poll XML done after write.\n");
-      
-    } else {
-       printf("[ writeHybrid ]: [ ERROR]: voltage trim %f is not allowed!\n",precord->val);
-       exit(1);
-    }
-    
-  } 
-  else if(strcmp(action,"switch_sub")==0) {    
-
-    if(strcmp(ch_name,"all")==0) {
-      
-      int val = (int)precord->val;
-      if(val==0 || val==1) {
-
-         if (mySubDebug) printf("[ writeHybrid ]: write %d switch to feb %d hyb %d\n",(int)precord->val, feb_id, id);
-         
-         writeHybridVSwitch(sockfd, val, feb_id, id);    
-         
-         //if (mySubDebug) printf("[ writeHybrid ]: Poll xml string after write\n");
-
-         //getXmlDoc(sockfd,0,0);
-
-         //if (mySubDebug) printf("[ writeHybrid ]: Poll XML done after write.\n");
-	
-      } else {
-	printf("[ writeHybrid ]: [ ERROR ]: voltage switch %d is not allowed!\n",val);
-	exit(1);
-      }
-
-    } else {
-      printf("[ writeHybrid ]: [ ERROR ]: this ch_name %s for action %s is not defined yet\n",ch_name,action);
-    }    
-  }
-  else {
-    printf("[ writeHybrid ]: [ ERROR ]: this action \"%s\" for writeHybrid is not defined!\n",action);
-    exit(1);
-  }
-  
-  if (mySubDebug) {
-    printf("[ writeHybrid ]: Closing socket\n");
-  }
-  
-  sockfd = close_socket(sockfd);
-  
-  if (mySubDebug) {
-    printf("[ writeHybrid ]:  after closing socket is %d\n",sockfd);
-  }
-
-}
-
-
-*/
-
-
-
-
 
 
   static void readHybrid(subRecord* precord,char action[], int id, int feb_id, char ch_name[])
@@ -1154,59 +1049,54 @@ static long subPollProcess(subRecord *precord) {
   if (mySubDebug>-1) {
     printf("[ subPollProcess ]: %d Record %s called subPollProcess(%p)\n",process_order, precord->name, (void*) precord);
   }
- 
   
   socketfd = setupSocket(precord, hostNameControlDpm, 8090);
   
-  if(socketfd<=0) {
-     printf("[ subPollProcess ]: [ WARNING ]: couldn't open a socket.\n");
-     return 0;
-  }
-
-  //if (mySubDebug) printf("[ subPollProcess] : Flush socket.\n");
-
-  //flushSocket(socketfd);
-
-
-  //if (mySubDebug) printf("[ subPollProcess] : Done flushing socket.\n");
-
-  // poll the xml string
-  
-  if (mySubDebug) printf("[ subPollProcess] : Poll xml string\n");
-  
-  getXmlDoc(socketfd,0,0);
-  
-  if (mySubDebug) printf("[ subPollProcess ]: Poll XML done\n");
-
   if(socketfd>0) {
-     if (mySubDebug) printf("[ subPollProcess ]: Close socket.\n");
-    socketfd = close_socket(socketfd);
+     
+     // poll the xml string
+     
+     if (mySubDebug) printf("[ subPollProcess] : Poll xml string\n");
+     
+     getXmlDoc(socketfd,0,0);
+     
+     if (mySubDebug) printf("[ subPollProcess ]: Poll XML done\n");
+     
+     if(socketfd>0) {
+        if (mySubDebug) printf("[ subPollProcess ]: Close socket.\n");
+        socketfd = close_socket(socketfd);
+     } else {
+        printf("[ subPollProcess ]: [ ERROR ]: the socket should be open here!? Exit.\n");
+        exit(1);
+     }
+     
+     if(mySubDebug>100) {
+        char * s = NULL;
+        int len;
+        getXmlDocStrFormat(&s, &len);
+        printf("[ subPollProcess ]: got XML with len %d\n", len);
+        if(len>0) printf("\n%s\n",s);
+        if(s!=NULL) {
+           printf("[ subPollProcess ]: free string at %p\n",s);      
+           free(s);
+           printf("[ subPollProcess ]: done free string at %p\n",s);      
+        }
+     }
+     
   } else {
-      printf("[ subPollProcess ]: [ ERROR ]: the socket should be open here!? Exit.\n");
-      exit(1);
+     printf("[ subPollProcess ]: [ WARNING ]: couldn't open a socket.\n");
   }
   
-  if(mySubDebug>1) {
-    char * s = NULL;
-    int len;
-    getXmlDocStrFormat(&s, &len);
-    printf("[ subPollProcess ]: got XML with len %d\n", len);
-    if(len>0) printf("\n%s\n",s);
-    if(s!=NULL) {
-      printf("[ subPollProcess ]: free string at %p\n",s);      
-      free(s);
-      printf("[ subPollProcess ]: done free string at %p\n",s);      
-    }
-  }
-
+  
+  
   if (mySubDebug) printf("[ subPollProcess ]: before update status_poll_flag = %d\n", status_poll_flag);
   
   updatePollStatusFlag();
   
   if (mySubDebug) printf("[ subPollProcess ]: after update status_poll_flag = %d\n", status_poll_flag);
-
-
-
+  
+  
+  
   return 0;
 }
 
