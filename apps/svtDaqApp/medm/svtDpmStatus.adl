@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/dev/apps/svtDaqApp/medm/svtDpmStatus.adl"
+	name="/usr/clas12/hps/svt-devel/apps/svtDaqApp/medm/svtDpmStatus.adl"
 	version=030108
 }
 display {
@@ -149,96 +149,6 @@ text {
 		clr=51
 	}
 	textix="DTM"
-	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=1000
-		y=70
-		width=100
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dtm:0:trigcount"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=1000
-		y=95
-		width=100
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dtm:1:trigcount"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=890
-		y=95
-		width=80
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dtm:1:state"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=890
-		y=70
-		width=80
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dtm:0:state"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=906
-		y=50
-		width=50
-		height=18
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="RunState"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=1023
-		y=50
-		width=50
-		height=18
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="Trig1Count"
 	align="horiz. centered"
 }
 text {
@@ -2745,6 +2655,163 @@ composite {
 				chan="SVT:daq:dpm:14:trigcount"
 				chanB="SVT:daq:dtm:0:trigcount"
 			}
+		}
+	}
+}
+composite {
+	object {
+		x=950
+		y=50
+		width=100
+		height=65
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=950
+				y=70
+				width=100
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:dtm:0:trigcount"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=950
+				y=95
+				width=100
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:dtm:1:trigcount"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=973
+				y=50
+				width=50
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Trig1Count"
+			align="horiz. centered"
+		}
+	}
+}
+"text update" {
+	object {
+		x=1060
+		y=70
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dtm:0:readcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1060
+		y=95
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dtm:1:readcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=1083
+		y=50
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=51
+	}
+	textix="ReadCount"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=860
+		y=50
+		width=80
+		height=65
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=860
+				y=95
+				width=80
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:dtm:1:state"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=860
+				y=70
+				width=80
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:dtm:0:state"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=876
+				y=50
+				width=50
+				height=18
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="RunState"
+			align="horiz. centered"
 		}
 	}
 }

@@ -42,6 +42,7 @@ DB += dbDataDpmLink.db
 DB += dbDataDpmEventCount.db
 DB += dbDataDpmTrigCount.db
 DB += dbDataDtmTrigCount.db
+DB += dbDataDtmReadCount.db
 DB += dbDataDtmAckCount.db
 DB += dbDataDtm.db
 DB += dbFebLayer.db

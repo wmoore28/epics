@@ -824,6 +824,71 @@ int getDtmTrigCountProcess(char* pname, xmlDoc* doc) {
 }
 
 
+int getDtmReadCountProcess(char* pname, xmlDoc* doc) {
+  int val;
+  int idpm;
+  char str1[BUF_SIZE];
+  char str2[BUF_SIZE];
+  char action[BUF_SIZE];
+  char tmp[BUF_SIZE];
+  xmlXPathObjectPtr result;
+  xmlNodePtr node;
+  val = -1;
+  idpm = -1;
+  getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+  getStringFromEpicsName(pname,str2,2,BUF_SIZE);
+
+  if(strcmp(str1,"daq")==0 && strcmp(str2,"dtm")==0) {     
+    idpm = getIntFromEpicsName(pname,3);  
+    
+    getStringFromEpicsName(pname,action,4,BUF_SIZE);    
+    
+    if(strcmp(action,"readcount_sub")==0) {
+      strcpy(tmp,"/system/status/TiDtm/ReadCount");
+    } else {
+      strcpy(tmp,""); 
+    }
+    
+    if(strcmp(tmp,"")!=0) {
+       //if(DEBUG>2) 
+       printf("[ getDtmReadCountProcess ] : xpath \"%s\"\n",tmp);
+       
+       if(doc!=NULL) {
+          result =  getnodeset(doc, (xmlChar*) tmp);
+          if(result!=NULL) {
+             //if(DEBUG>0) 
+             printf("[ getDtmReadCountProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
+             if(result->nodesetval->nodeNr==1) {
+                node = result->nodesetval->nodeTab[0];
+                if(node!=NULL) {
+                   val = getIntValue(doc, node);
+                   //if(DEBUG>0) 
+                   printf("[ getDtmReadCountProcess ]: got val %d.\n",val);      
+                } else {
+                   printf("[ getDtmReadCountProcess ] : [ WARNING ] no Link nodes found\n");
+                }
+             } else {
+                printf("[ getDtmReadCountProcess ] : [ WARNING ] %d Link nodes found, should be exactly 1\n", result->nodesetval->nodeNr);
+             }
+             
+             xmlXPathFreeObject(result);
+             
+          } else {
+             printf("[ getDtmReadCountProcess ] : [ WARNING ] no results found\n");
+          }  
+       } else {
+             printf("[ getDtmReadCountProcess ] : [ WARNING ] no xml doc\n");
+       }
+    } else {
+      printf("[ getDtmReadCountProcess ]: [ ERROR ]: wrong action \"%s\"!\n",action);
+    }     
+  } else {
+    printf("[ getDtmReadCountProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);    
+  }
+  return val;
+}
+
+
 
 
 int getDtmAckCountProcess(char* pname, xmlDoc* doc) {

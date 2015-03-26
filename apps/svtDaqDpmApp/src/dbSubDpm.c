@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <registryFunction.h>
 #include <subRecord.h>
 #include <aSubRecord.h>
@@ -384,6 +385,30 @@ static long subDtmTrigCountProcess(subRecord *precord) {
 }
 
 
+static long subDtmReadCountInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subReadCountInit ]: %d Record %s called subDtmReadCountInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subDtmReadCountProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDtmReadCountProcess ]: %d Record %s called subDtmReadCountProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int val = -1;
+
+  val = getDtmReadCountProcess(precord->name, xmldoc);
+
+  precord->val = val;
+
+  
+  return 0;
+}
+
+
 
 static long subDtmAckCountInit(subRecord *precord) {
   process_order++;
@@ -584,6 +609,8 @@ epicsRegisterFunction(subDpmTrigCountInit);
 epicsRegisterFunction(subDpmTrigCountProcess);
 epicsRegisterFunction(subDtmTrigCountInit);
 epicsRegisterFunction(subDtmTrigCountProcess);
+epicsRegisterFunction(subDtmReadCountInit);
+epicsRegisterFunction(subDtmReadCountProcess);
 epicsRegisterFunction(subDtmAckCountInit);
 epicsRegisterFunction(subDtmAckCountProcess);
 epicsRegisterFunction(subDpmEventStateInit);

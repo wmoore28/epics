@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import sys
 import getopt
 import epicsRecUtils as utils
@@ -73,6 +74,8 @@ def buildEpics():
     printRecords(recs,"dbDataDpmTrigCount")
     recs = utils.buildDtmTrigCount()
     printRecords(recs,"dbDataDtmTrigCount")
+    recs = utils.buildDtmReadCount()
+    printRecords(recs,"dbDataDtmReadCount")
     recs = utils.buildDtmAckCount()
     printRecords(recs,"dbDataDtmAckCount")
     recs = utils.buildDpmStatus()

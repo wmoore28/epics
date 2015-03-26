@@ -750,10 +750,10 @@ record(ai, SVT:lv:FEBID:HYBID:avdd:i_rd)
   field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:avdd:i_rd_sub PP")
   field(DTYP,"Soft Channel")
-  field(HIHI,"0.45") field(HHSV,"MAJOR")
-  field(HIGH,"0.43") field(HSV,"MINOR")
-  field(LOW,"0.355") field(LSV,"MINOR")
-  field(LOLO,"0.345") field(LLSV,"MAJOR")
+  field(HIHI,"HHLIM") field(HHSV,"MAJOR")
+  field(HIGH,"HILIM") field(HSV,"MINOR")
+  field(LOW,"LOLIM") field(LSV,"MINOR")
+  field(LOLO,"LLLIM") field(LLSV,"MAJOR")
 }
 
 
@@ -776,6 +776,16 @@ record(ai, SVT:lv:FEBID:HYBID:avdd:i_rd)
                 rec = rec.replace("FLNKNEXTHYB",s_flnk)
                 rec = rec.replace("NEXTFEBID",str(feb))
                 rec = rec.replace("NEXTHYBID",str(hyb+1))
+            if (feb==6 and hyb==2):
+                rec = rec.replace("HHLIM",0.61)
+                rec = rec.replace("HILIM",0.59)
+                rec = rec.replace("LOLIM",0.50)
+                rec = rec.replace("LLLIM",0.45)
+            else:
+                rec = rec.replace("HHLIM",0.45)
+                rec = rec.replace("HILIM",0.43)
+                rec = rec.replace("LOLIM",0.355)
+                rec = rec.replace("LLLIM",0.345)
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
             records.append(rec)
@@ -1092,10 +1102,10 @@ record(ai, SVT:temp:hyb:FEBID:HYBID:temp0:t_rd) {
   field(SCAN, "Passive") field(PREC, "1")
   field(INP, "SVT:temp:hyb:FEBID:HYBID:temp0:t_rd_sub PP")
   field(DTYP,"Soft Channel")
-  field(HIHI,"-16.5") field(HHSV,"MAJOR")
-  field(HIGH,"-16") field(HSV,"MINOR")
-  field(LOW,"-14.5") field(LSV,"MINOR")
-  field(LOLO,"-14") field(LLSV,"MAJOR")
+  field(HIHI,"-14") field(HHSV,"MAJOR")
+  field(HIGH,"-14.5") field(HSV,"MINOR")
+  field(LOW,"-16") field(LSV,"MINOR")
+  field(LOLO,"-16.5") field(LLSV,"MAJOR")
 }
 """
 
@@ -1885,6 +1895,29 @@ record(longin, SVT:daq:dtm:$(DTM):trigcount) {
 """	
     records.append(s)
     return records
+
+def buildDtmReadCount():
+
+    records = []
+    s = """
+
+record(sub,SVT:daq:dtm:$(DTM):readcount_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDtmReadCountInit")
+    field(SNAM,"subDtmReadCountProcess")
+}
+
+record(longin, SVT:daq:dtm:$(DTM):readcount) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dtm:$(DTM):readcount_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+"""	
+    records.append(s)
+    return records
+
 
 def buildDtmAckCount():
 
