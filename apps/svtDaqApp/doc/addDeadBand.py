@@ -7,6 +7,11 @@ def getLongStr(ss):
         s += ss.replace("dpm:0","dpm:"+str(j))
     return s
 
+def getLongStrDtm(ss):
+    s = ss
+    for j in range(1,2):
+        s += ss.replace("dtm:0","dtm:"+str(j))
+    return s
         
     
 
@@ -38,6 +43,14 @@ for line in f.readlines():
     elif "eventstate" in l:
         ll = l + " 1 1 \n"
         lll = getLongStr(ll)
+        fn.write(lll)
+    elif "blockcount" in l or "eventcount" in l:
+        ll = l + " 1 1 \n"
+        lll = getLongStr(ll)
+        fn.write(lll)
+    elif "ackcount" in l or "readcount" in l or "trigcount" in l:
+        ll = l + " 1 1 \n"
+        lll = getLongStrDtm(ll)
         fn.write(lll)
     else:
         print "no archiving for ", l
