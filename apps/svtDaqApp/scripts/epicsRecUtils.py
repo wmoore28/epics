@@ -1204,7 +1204,7 @@ def buildHybSync():
     s = """
 record(aSub,SVT:lv:FEBID:HYBID:sync:sync_rd_asub)
 {
-    field(SCAN,"Passive")
+    field(SCAN,"SCANFREQ")
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:FEBID:HYBID:sync:sync_rd PP")
@@ -1222,9 +1222,10 @@ record(longin, SVT:lv:FEBID:HYBID:sync:sync_rd) {
     s_flnk = "SVT:lv:NEXTFEBID:NEXTHYBID:sync:sync_rd_asub"
     records = []
     for feb in range(0,10):
-        for hyb in range(0,4):
+        r = range(0,len(getHybrids(feb)))
+        for hyb in r:
             rec = s
-            if hyb==3:
+            if (hyb==3 and len(r)==4) or (hyb==1 and len(r)==2):
                 if feb < 9:
                     rec = rec.replace("FLNKNEXTHYB",s_flnk)
                     rec = rec.replace("NEXTHYBID",str(0))
@@ -1237,6 +1238,10 @@ record(longin, SVT:lv:FEBID:HYBID:sync:sync_rd) {
                 rec = rec.replace("NEXTFEBID",str(feb))
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
+            if feb==0 and hyb==0:
+                rec = rec.replace("SCANFREQ","1 second")
+            else:
+                rec = rec.replace("SCANFREQ","Passive")                
             records.append(rec)
     
     return records
@@ -1247,7 +1252,7 @@ def buildHybSyncPeak():
 
 record(aSub,SVT:daq:FEBID:HYBID:APVID:syncpeak_rd_asub)
 {
-    field(SCAN,"Passive")
+    field(SCAN,"SCANFREQ")
     field(INAM,"subSyncBaseInit")
     field(SNAM,"subSyncBaseProcess")
     field(OUTA,"SVT:daq:FEBID:HYBID:APVID:syncpeak_rd PP")
@@ -1296,6 +1301,10 @@ record(longin, SVT:daq:FEBID:HYBID:APVID:syncpeak_rd) {
                 rec = rec.replace("APVID",str(apv))
                 rec = rec.replace("HYBID",str(hyb))
                 rec = rec.replace("FEBID",str(feb))
+                if feb==0 and hyb==0 and apv==0:
+                    rec = rec.replace("SCANFREQ","1 second")
+                else:
+                    rec = rec.replace("SCANFREQ","Passive")    
                 #print 'add rec ', rec
                 records.append(rec)
     return records
@@ -1307,7 +1316,7 @@ def buildHybSyncBase():
     s = """
 record(aSub,SVT:daq:FEBID:HYBID:APVID:syncbase_rd_asub)
 {
-    field(SCAN,"Passive")
+    field(SCAN,"SCANFREQ")
     field(INAM,"subSyncBaseInit")
     field(SNAM,"subSyncBaseProcess")
     field(OUTA,"SVT:daq:FEBID:HYBID:APVID:syncbase_rd PP")
@@ -1358,6 +1367,10 @@ record(longin, SVT:daq:FEBID:HYBID:APVID:syncbase_rd) {
                 rec = rec.replace("APVID",str(apv))
                 rec = rec.replace("HYBID",str(hyb))
                 rec = rec.replace("FEBID",str(feb))
+                if feb==0 and hyb==0 and apv==0:
+                    rec = rec.replace("SCANFREQ","1 second")
+                else:
+                    rec = rec.replace("SCANFREQ","Passive")
                 #print 'add rec ', rec
                 records.append(rec)
     return records

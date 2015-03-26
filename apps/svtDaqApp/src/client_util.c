@@ -6,7 +6,6 @@
 #include "febxml.h"
 #include "dpmxml.h"
 #include "hybxml.h"
-#include "socket.h"
 #include "commonConstants.h"
 #include "commonXml.h"
 #include "status.h"
@@ -215,7 +214,8 @@ int getXmlPollStatus() {
 	 xmlDocExists = 0;	 
 	 if(DEBUG>0) printf("[ getXmlPollStatus ] : xml doc exists.\n");	 
 	 if(DEBUG>0) printf("[ getXmlPollStatus ] : check non-zero nodes.\n");
-	 nonZero = checkNonZeroNodes(doc);
+	 nonZero = checkNonZeroNodes(doc,"/system/status/ControlDpm/FebFpga/FebCore/SoftPowerMonitor/FebTemp0");
+
 	 if(DEBUG>0) printf("[ getXmlPollStatus ] : nonZero = %d\n",nonZero);
          
 	 // compare a xml dump to previous
@@ -258,15 +258,15 @@ int getXmlPollStatus() {
    }
    
    if(cmpDump == 0) {
-     printf("[ getXmlPollStatus ] : check that previous xml poll is not identical -> OK\n");
+     printf("[ getXmlPollStatus ] : previous xml poll is not identical -> OK\n");
    } else {
-     printf("[ getXmlPollStatus ] : [ ERROR ]: check that previous xml poll is not identical -> FAILED\n");
+     printf("[ getXmlPollStatus ] : [ WARNING ]: previous xml poll is not identical -> FAILED\n");
    }
 
    if(cmpNodes == 0) {
-      printf("[ getXmlPollStatus ] : check that specific xml node values are updating -> OK\n");
+      printf("[ getXmlPollStatus ] : specific xml node values are updating -> OK\n");
    } else {
-     printf("[ getXmlPollStatus ] : [ ERROR ] : check that specific xml node values are updating -> FAILED\n");
+     printf("[ getXmlPollStatus ] : [ WARNING ] : specific xml node values are updating -> FAILED\n");
    }
    
    int status;
@@ -281,7 +281,7 @@ int getXmlPollStatus() {
    } 
 
    if(status!=0) 
-     printf("[ getXmlPollStatus ] : [ ERROR ] : XML document NOT OK.\n");
+     printf("[ getXmlPollStatus ] : [ WARNING ] : XML document NOT OK.\n");
    
    return status;
    

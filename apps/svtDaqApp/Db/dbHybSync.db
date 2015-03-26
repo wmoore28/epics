@@ -1,7 +1,7 @@
 
 record(aSub,SVT:lv:0:0:sync:sync_rd_asub)
 {
-    field(SCAN,"Passive")
+    field(SCAN,"1 second")
     field(INAM,"subSyncInit")
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:0:0:sync:sync_rd PP")
@@ -12,6 +12,8 @@ record(aSub,SVT:lv:0:0:sync:sync_rd_asub)
 record(longin, SVT:lv:0:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:0:1:sync:sync_rd_asub)
@@ -27,6 +29,8 @@ record(aSub,SVT:lv:0:1:sync:sync_rd_asub)
 record(longin, SVT:lv:0:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:0:2:sync:sync_rd_asub)
@@ -42,6 +46,8 @@ record(aSub,SVT:lv:0:2:sync:sync_rd_asub)
 record(longin, SVT:lv:0:2:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:0:3:sync:sync_rd_asub)
@@ -57,6 +63,8 @@ record(aSub,SVT:lv:0:3:sync:sync_rd_asub)
 record(longin, SVT:lv:0:3:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:1:0:sync:sync_rd_asub)
@@ -72,6 +80,8 @@ record(aSub,SVT:lv:1:0:sync:sync_rd_asub)
 record(longin, SVT:lv:1:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:1:1:sync:sync_rd_asub)
@@ -87,6 +97,8 @@ record(aSub,SVT:lv:1:1:sync:sync_rd_asub)
 record(longin, SVT:lv:1:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:1:2:sync:sync_rd_asub)
@@ -102,6 +114,8 @@ record(aSub,SVT:lv:1:2:sync:sync_rd_asub)
 record(longin, SVT:lv:1:2:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:1:3:sync:sync_rd_asub)
@@ -117,6 +131,8 @@ record(aSub,SVT:lv:1:3:sync:sync_rd_asub)
 record(longin, SVT:lv:1:3:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:2:0:sync:sync_rd_asub)
@@ -132,6 +148,8 @@ record(aSub,SVT:lv:2:0:sync:sync_rd_asub)
 record(longin, SVT:lv:2:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:2:1:sync:sync_rd_asub)
@@ -141,42 +159,14 @@ record(aSub,SVT:lv:2:1:sync:sync_rd_asub)
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:2:1:sync:sync_rd PP")
     field(FTVA,"LONG")
-    field(FLNK,"SVT:lv:2:2:sync:sync_rd_asub")
+    field(FLNK,"SVT:lv:3:0:sync:sync_rd_asub")
 }
 
 record(longin, SVT:lv:2:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
-}
-
-record(aSub,SVT:lv:2:2:sync:sync_rd_asub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subSyncInit")
-    field(SNAM,"subSyncProcess")
-    field(OUTA,"SVT:lv:2:2:sync:sync_rd PP")
-    field(FTVA,"LONG")
-    field(FLNK,"SVT:lv:2:3:sync:sync_rd_asub")
-}
-
-record(longin, SVT:lv:2:2:sync:sync_rd) {
-  field(SCAN, "Passive")
-  field(DTYP,"Soft Channel")
-}
-
-record(aSub,SVT:lv:2:3:sync:sync_rd_asub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subSyncInit")
-    field(SNAM,"subSyncProcess")
-    field(OUTA,"SVT:lv:2:3:sync:sync_rd PP")
-    field(FTVA,"LONG")
-    field(FLNK,"SVT:lv:3:0:sync:sync_rd_asub")
-}
-
-record(longin, SVT:lv:2:3:sync:sync_rd) {
-  field(SCAN, "Passive")
-  field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:3:0:sync:sync_rd_asub)
@@ -192,6 +182,8 @@ record(aSub,SVT:lv:3:0:sync:sync_rd_asub)
 record(longin, SVT:lv:3:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:3:1:sync:sync_rd_asub)
@@ -207,6 +199,8 @@ record(aSub,SVT:lv:3:1:sync:sync_rd_asub)
 record(longin, SVT:lv:3:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:3:2:sync:sync_rd_asub)
@@ -222,6 +216,8 @@ record(aSub,SVT:lv:3:2:sync:sync_rd_asub)
 record(longin, SVT:lv:3:2:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:3:3:sync:sync_rd_asub)
@@ -237,6 +233,8 @@ record(aSub,SVT:lv:3:3:sync:sync_rd_asub)
 record(longin, SVT:lv:3:3:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:4:0:sync:sync_rd_asub)
@@ -252,6 +250,8 @@ record(aSub,SVT:lv:4:0:sync:sync_rd_asub)
 record(longin, SVT:lv:4:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:4:1:sync:sync_rd_asub)
@@ -267,6 +267,8 @@ record(aSub,SVT:lv:4:1:sync:sync_rd_asub)
 record(longin, SVT:lv:4:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:4:2:sync:sync_rd_asub)
@@ -282,6 +284,8 @@ record(aSub,SVT:lv:4:2:sync:sync_rd_asub)
 record(longin, SVT:lv:4:2:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:4:3:sync:sync_rd_asub)
@@ -297,6 +301,8 @@ record(aSub,SVT:lv:4:3:sync:sync_rd_asub)
 record(longin, SVT:lv:4:3:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:5:0:sync:sync_rd_asub)
@@ -312,6 +318,8 @@ record(aSub,SVT:lv:5:0:sync:sync_rd_asub)
 record(longin, SVT:lv:5:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:5:1:sync:sync_rd_asub)
@@ -327,6 +335,8 @@ record(aSub,SVT:lv:5:1:sync:sync_rd_asub)
 record(longin, SVT:lv:5:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:5:2:sync:sync_rd_asub)
@@ -342,6 +352,8 @@ record(aSub,SVT:lv:5:2:sync:sync_rd_asub)
 record(longin, SVT:lv:5:2:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:5:3:sync:sync_rd_asub)
@@ -357,6 +369,8 @@ record(aSub,SVT:lv:5:3:sync:sync_rd_asub)
 record(longin, SVT:lv:5:3:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:6:0:sync:sync_rd_asub)
@@ -372,6 +386,8 @@ record(aSub,SVT:lv:6:0:sync:sync_rd_asub)
 record(longin, SVT:lv:6:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:6:1:sync:sync_rd_asub)
@@ -387,6 +403,8 @@ record(aSub,SVT:lv:6:1:sync:sync_rd_asub)
 record(longin, SVT:lv:6:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:6:2:sync:sync_rd_asub)
@@ -402,6 +420,8 @@ record(aSub,SVT:lv:6:2:sync:sync_rd_asub)
 record(longin, SVT:lv:6:2:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:6:3:sync:sync_rd_asub)
@@ -417,6 +437,8 @@ record(aSub,SVT:lv:6:3:sync:sync_rd_asub)
 record(longin, SVT:lv:6:3:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:7:0:sync:sync_rd_asub)
@@ -432,6 +454,8 @@ record(aSub,SVT:lv:7:0:sync:sync_rd_asub)
 record(longin, SVT:lv:7:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:7:1:sync:sync_rd_asub)
@@ -447,6 +471,8 @@ record(aSub,SVT:lv:7:1:sync:sync_rd_asub)
 record(longin, SVT:lv:7:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:7:2:sync:sync_rd_asub)
@@ -462,6 +488,8 @@ record(aSub,SVT:lv:7:2:sync:sync_rd_asub)
 record(longin, SVT:lv:7:2:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:7:3:sync:sync_rd_asub)
@@ -477,6 +505,8 @@ record(aSub,SVT:lv:7:3:sync:sync_rd_asub)
 record(longin, SVT:lv:7:3:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:8:0:sync:sync_rd_asub)
@@ -492,6 +522,8 @@ record(aSub,SVT:lv:8:0:sync:sync_rd_asub)
 record(longin, SVT:lv:8:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:8:1:sync:sync_rd_asub)
@@ -507,6 +539,8 @@ record(aSub,SVT:lv:8:1:sync:sync_rd_asub)
 record(longin, SVT:lv:8:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:8:2:sync:sync_rd_asub)
@@ -522,6 +556,8 @@ record(aSub,SVT:lv:8:2:sync:sync_rd_asub)
 record(longin, SVT:lv:8:2:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:8:3:sync:sync_rd_asub)
@@ -537,6 +573,8 @@ record(aSub,SVT:lv:8:3:sync:sync_rd_asub)
 record(longin, SVT:lv:8:3:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:9:0:sync:sync_rd_asub)
@@ -552,6 +590,8 @@ record(aSub,SVT:lv:9:0:sync:sync_rd_asub)
 record(longin, SVT:lv:9:0:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }
 
 record(aSub,SVT:lv:9:1:sync:sync_rd_asub)
@@ -561,40 +601,12 @@ record(aSub,SVT:lv:9:1:sync:sync_rd_asub)
     field(SNAM,"subSyncProcess")
     field(OUTA,"SVT:lv:9:1:sync:sync_rd PP")
     field(FTVA,"LONG")
-    field(FLNK,"SVT:lv:9:2:sync:sync_rd_asub")
+    field(FLNK,"")
 }
 
 record(longin, SVT:lv:9:1:sync:sync_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
-}
-
-record(aSub,SVT:lv:9:2:sync:sync_rd_asub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subSyncInit")
-    field(SNAM,"subSyncProcess")
-    field(OUTA,"SVT:lv:9:2:sync:sync_rd PP")
-    field(FTVA,"LONG")
-    field(FLNK,"SVT:lv:9:3:sync:sync_rd_asub")
-}
-
-record(longin, SVT:lv:9:2:sync:sync_rd) {
-  field(SCAN, "Passive")
-  field(DTYP,"Soft Channel")
-}
-
-record(aSub,SVT:lv:9:3:sync:sync_rd_asub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subSyncInit")
-    field(SNAM,"subSyncProcess")
-    field(OUTA,"SVT:lv:9:3:sync:sync_rd PP")
-    field(FTVA,"LONG")
-    field(FLNK,"")
-}
-
-record(longin, SVT:lv:9:3:sync:sync_rd) {
-  field(SCAN, "Passive")
-  field(DTYP,"Soft Channel")
+  field(HIGH,"32") field(HSV,"MAJOR")
+  field(LOW,"30") field(LSV,"MAJOR")
 }

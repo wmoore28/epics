@@ -37,21 +37,12 @@ record(fanout, SVT:process)
   field(LNK2,"SVT:lv:fanout")
   field(LNK3,"SVT:lv:0:0:stat")
   field(LNK4,"SVT:temp:hyb:0:0:temp0:t_rd")
-  field(LNK5,"SVT:daqmap:fanout")
 }
 
-record(fanout, SVT:daqmap:fanout)
-{
-  field(SCAN,"Passive")
-  field(LNK1,"SVT:lv:0:0:sync:sync_rd_asub")
-  field(LNK2,"SVT:daq:0:0:0:syncbase_rd_asub")
-  field(LNK3,"SVT:daq:0:0:0:syncpeak_rd_asub")
-}
 
 
 record(fanout, SVT:lv:fanout)
 {
-  field(SCAN,"Passive")
   field(LNK1,"SVT:lv:i_rd:fanout")
   field(LNK2,"SVT:lv:vf:fanout")
   field(LNK3,"SVT:lv:vn:fanout")
@@ -60,7 +51,6 @@ record(fanout, SVT:lv:fanout)
 
 record(fanout, SVT:lv:i_rd:fanout)
 {
-  field(SCAN,"Passive")
   field(LNK1,"SVT:lv:0:0:dvdd:i_rd")
   field(LNK2,"SVT:lv:0:0:avdd:i_rd")
   field(LNK3,"SVT:lv:0:0:v125:i_rd")

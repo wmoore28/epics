@@ -36,7 +36,6 @@ svtDaqSupport_SRCS += client_util.c
 svtDaqSupport_SRCS += febxml.c
 svtDaqSupport_SRCS += hybxml.c
 svtDaqSupport_SRCS += common.c
-svtDaqSupport_SRCS += socket.c
 
 svtDaqSupport_LIBS += $(EPICS_BASE_IOC_LIBS)
 
