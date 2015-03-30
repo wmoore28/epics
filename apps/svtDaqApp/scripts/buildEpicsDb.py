@@ -92,6 +92,9 @@ def buildEpics():
     printRecords(recs,"dbDataDpmBurnCount")
     recs = utils.buildDtmMinTrigPeriod()
     printRecords(recs,"dbDataDtmMinTrigPeriod")
+    recs = utils.buildInsertedFrames()
+    printRecords(recs,"dbDataDpmInsertedFrames")
+
 
     
 

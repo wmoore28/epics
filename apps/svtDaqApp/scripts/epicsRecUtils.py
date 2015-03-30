@@ -1440,6 +1440,56 @@ record(longin, SVT:daq:FEBID:HYBID:APVID:syncbase_rd) {
 
 
 
+def buildInsertedFrames():
+    s = """
+
+record(aSub,SVT:daq:$(DPM):HYBID:APVID:insertedframes_rd_asub)
+{
+    field(SCAN,"SCANFREQ")
+    field(INAM,"subInsertedFramesInit")
+    field(SNAM,"subInsertedFramesProcess")
+    field(OUTA,"SVT:daq:$(DPM):HYBID:APVID:insertedframes_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"FLNKNEXTHYB")
+}
+
+record(longin, SVT:daq:$(DPM):HYBID:APVID:insertedframes_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+"""
+    s_flnk = "SVT:daq:$(DPM):NEXTHYBID:NEXTAPV:insertedframes_rd_asub"
+    records = []
+    for hyb in range(0,4):
+        for apv in range(0,5):
+            rec = s
+            if apv==4:
+                if hyb==3:
+                    # done
+                    rec = rec.replace("FLNKNEXTHYB","")                    
+                else:
+                    # go to next hybrid
+                    rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                    rec = rec.replace("NEXTHYBID",str(hyb+1))
+                    rec = rec.replace("NEXTAPV",str(0))
+            else:
+                # go to next apv
+                rec = rec.replace("FLNKNEXTHYB",s_flnk)
+                rec = rec.replace("NEXTHYBID",str(hyb))
+                rec = rec.replace("NEXTAPV",str(apv+1))
+            # replace the current record
+            rec = rec.replace("APVID",str(apv))
+            rec = rec.replace("HYBID",str(hyb))
+            if hyb==0 and apv==0:
+                rec = rec.replace("SCANFREQ","1 second")
+            else:
+                rec = rec.replace("SCANFREQ","Passive")    
+            #print 'add rec ', rec
+            records.append(rec)
+    return records
+
 
 
 

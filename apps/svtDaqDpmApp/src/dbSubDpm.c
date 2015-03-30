@@ -634,6 +634,48 @@ static long subSyncBaseProcess(aSubRecord *precord) {
 }
 
 
+static long subInsertedFramesInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subInsertedFramesInit ]: %d Record %s called subInsertedFramesInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+
+static long subInsertedFramesProcess(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subInsertedFramesProcess ]: %d Record %s called subInsertedFramesProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  
+  char val[256];
+  int number;
+  long *a;
+  
+  if (mySubDebug)
+     printf("[ subSyncProcess ]: get string from xml at %p\n", xmldoc);
+
+  getInsertedFramesProcess(precord->name, xmldoc, val);
+  
+  if (mySubDebug)
+     printf("[ subInsertedFramesProcess ]: got sync string \"%s\"\n", val);
+  
+  number = (int) strtol(val,NULL,0); // string rep begins with 0x so use base=0 instead of 16
+
+  if (mySubDebug)
+     printf("[ subSyncProcess ]: got sync number \"%d\"\n", number);
+
+  
+  a = (long*) precord->vala;
+  *a = (long) number;
+
+
+  return 0;
+}
+
+
+
 
 
 /* Register these symbols for use by IOC code: */
@@ -675,4 +717,6 @@ epicsRegisterFunction(subDpmBurnCountInit);
 epicsRegisterFunction(subDpmBurnCountProcess);
 epicsRegisterFunction(subDtmMinTrigPeriodInit);
 epicsRegisterFunction(subDtmMinTrigPeriodProcess);
+epicsRegisterFunction(subInsertedFramesInit);
+epicsRegisterFunction(subInsertedFramesProcess);
 

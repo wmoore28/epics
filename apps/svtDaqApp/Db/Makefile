@@ -56,6 +56,7 @@ DB += dbDataDpmBlockCount.db
 DB += dbDataDpmSystemState.db
 DB += dbDataDpmBurnCount.db
 DB += dbDataDtmMinTrigPeriod.db
+DB += dbDataDpmInsertedFrames.db
 #DB += dbSVTtest.db
 
 #----------------------------------------------------

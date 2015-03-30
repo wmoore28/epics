@@ -71,6 +71,8 @@ int getBurnCountProcess(char* pname, xmlDoc* doc);
 
 int getDtmMinTrigPeriodProcess(char* pname, xmlDoc* doc);
 
+void getInsertedFramesProcess(char* pname, xmlDoc* doc, char* value);
+
 
 #endif
 
