@@ -5,7 +5,8 @@ class Hybrid:
         self.id = id
         self.layer = layer
         self.side = side
-        self.type = type    
+        self.type = type
+        self.templimit = None
 
 class FEB:
     def __init__(self,febid, hybrids, dna, layer):
@@ -13,6 +14,14 @@ class FEB:
         self.hybrids = hybrids
         self.dna = dna
         self.layer = layer
+
+class TempLimit:
+    def __init__(self,LOLO,LO,HI,HIHI):
+        self.LOLO = LOLO
+        self.LO = LO
+        self.HI = HI
+        self.HIHI = HIHI
+
             
 febs= [
     FEB(2,[Hybrid(0,"L1b","electron","stereo"),Hybrid(1,"L1b","electron","axial")],"0x14084072beb01c00","L1b"),
@@ -27,6 +36,27 @@ febs= [
     FEB(3,[Hybrid(0,"L4b","electron","stereo"),Hybrid(1,"L4b","positron","stereo"),Hybrid(2,"L4b","electron","axial"),Hybrid(3,"L4b","positron","axial")],"0x70d04072beb01c00","L6b"),
     ]
 
+
+hybtemplimits = { 0:[-12.9,-13.4,-13.3,-13.1],1:[-14.5,-13.8,-11.8,-13.7],2:[-13.6,-12.7],3:[-13.6,-13.0,-11.1,-12.9],4:[-14.0,-13.5,-12.8,-13.9],5:[-12.3,-13.9,-13.5,-12.6],6:[-13.9,-13.0,-12.9,-12.8],7:[-13.2,-14.4,-13.6,-12.6],8:[-13.0,-13.9,-13.5,-12.5],9:[-12.8,-13.1] }
+                                                                                    
+def getHybridTempLimits(feb,hyb):
+    if feb in hybtemplimits:
+        hybrids = hybtemplimits[feb]
+        if hyb < len(hybrids):
+            t = hybrids[hyb]
+            delta = [1.0,1.5]
+            if(feb==2 and hyb==0):
+                delta = [1.5,2.0]
+            l = TempLimit(t-delta[1],t-delta[0],t+delta[0],t+delta[1])
+        else:
+            print "ERROR: hyb ", hyb, " too large for feb ", feb
+            sys.exit(1)            
+    else:
+        print "ERROR: ", feb, " not found among febs"
+        sys.exit(1)
+    return l
+
+        
 
 
 
@@ -691,10 +721,11 @@ record(ai, SVT:lv:FEBID:HYBID:v125:i_rd)
   field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:v125:i_rd_sub PP")
   field(DTYP,"Soft Channel")
-  field(HIHI,"0.36") field(HHSV,"MAJOR")
-  field(HIGH,"0.34") field(HSV,"MINOR")
-  field(LOW,"0.305") field(LSV,"MINOR")
-  field(LOLO,"0.295") field(LLSV,"MAJOR")
+   field(HIHI,"HHLIM") field(HHSV,"MAJOR")
+  field(HIGH,"HILIM") field(HSV,"MINOR")
+  field(LOW,"LOLIM") field(LSV,"MINOR")
+  field(LOLO,"LLLIM") field(LLSV,"MAJOR")
+
 }
 
 
@@ -720,6 +751,18 @@ record(ai, SVT:lv:FEBID:HYBID:v125:i_rd)
                 rec = rec.replace("NEXTHYBID",str(hyb+1))
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
+            if (feb==0 and hyb==1) or (feb==4 and hyb==1):
+                rec = rec.replace("HHLIM",str(0.34))
+                rec = rec.replace("HILIM",str(0.32))
+                rec = rec.replace("LOLIM",str(0.285))
+                rec = rec.replace("LLLIM",str(0.275))
+            else:
+                rec = rec.replace("HHLIM",str(0.36))
+                rec = rec.replace("HILIM",str(0.34))
+                rec = rec.replace("LOLIM",str(0.305))
+                rec = rec.replace("LLLIM",str(0.295))
+
+
             records.append(rec)
     
     return records
@@ -777,15 +820,20 @@ record(ai, SVT:lv:FEBID:HYBID:avdd:i_rd)
                 rec = rec.replace("NEXTFEBID",str(feb))
                 rec = rec.replace("NEXTHYBID",str(hyb+1))
             if (feb==6 and hyb==2):
-                rec = rec.replace("HHLIM",0.61)
-                rec = rec.replace("HILIM",0.59)
-                rec = rec.replace("LOLIM",0.50)
-                rec = rec.replace("LLLIM",0.45)
+                rec = rec.replace("HHLIM",str(0.61))
+                rec = rec.replace("HILIM",str(0.59))
+                rec = rec.replace("LOLIM",str(0.50))
+                rec = rec.replace("LLLIM",str(0.45))
+            elif (feb==5 and hyb==2) or (feb==1 and hyb==3):
+                rec = rec.replace("HHLIM",str(0.47))
+                rec = rec.replace("HILIM",str(0.45))
+                rec = rec.replace("LOLIM",str(0.375))
+                rec = rec.replace("LLLIM",str(0.365))
             else:
-                rec = rec.replace("HHLIM",0.45)
-                rec = rec.replace("HILIM",0.43)
-                rec = rec.replace("LOLIM",0.355)
-                rec = rec.replace("LLLIM",0.345)
+                rec = rec.replace("HHLIM",str(0.45))
+                rec = rec.replace("HILIM",str(0.43))
+                rec = rec.replace("LOLIM",str(0.355))
+                rec = rec.replace("LLLIM",str(0.345))
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
             records.append(rec)
@@ -1102,10 +1150,10 @@ record(ai, SVT:temp:hyb:FEBID:HYBID:temp0:t_rd) {
   field(SCAN, "Passive") field(PREC, "1")
   field(INP, "SVT:temp:hyb:FEBID:HYBID:temp0:t_rd_sub PP")
   field(DTYP,"Soft Channel")
-  field(HIHI,"-14") field(HHSV,"MAJOR")
-  field(HIGH,"-14.5") field(HSV,"MINOR")
-  field(LOW,"-16") field(LSV,"MINOR")
-  field(LOLO,"-16.5") field(LLSV,"MAJOR")
+  field(HIHI,"HIHIVAL") field(HHSV,"MAJOR")
+  field(HIGH,"HIVAL") field(HSV,"MINOR")
+  field(LOW,"LOWVAL") field(LSV,"MINOR")
+  field(LOLO,"LOLOVAL") field(LLSV,"MAJOR")
 }
 """
 
@@ -1128,6 +1176,11 @@ record(ai, SVT:temp:hyb:FEBID:HYBID:temp0:t_rd) {
                 rec = rec.replace("NEXTFEBID",str(feb))
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
+            rec = rec.replace("HIHIVAL",str(getHybridTempLimits(feb,hyb).HIHI))
+            rec = rec.replace("HIVAL",str(getHybridTempLimits(feb,hyb).HI))
+            rec = rec.replace("LOWVAL",str(getHybridTempLimits(feb,hyb).LO))
+            rec = rec.replace("LOLOVAL",str(getHybridTempLimits(feb,hyb).LOLO))
+            
             records.append(rec)
     
     return records
@@ -1943,5 +1996,53 @@ record(longin, SVT:daq:dtm:$(DTM):$(DPM):ackcount) {
     records.append(s)
     return records
 
+def buildDtmMinTrigPeriod():
+
+    records = []
+    s = """
+
+record(sub,SVT:daq:dtm:$(DTM):mintrigperiod_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDtmMinTrigPeriodInit")
+    field(SNAM,"subDtmMinTrigPeriodProcess")
+}
+
+record(longin, SVT:daq:dtm:$(DTM):mintrigperiod) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dtm:$(DTM):mintrigperiod_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+"""	
+    records.append(s)
+    return records
+
+
+def buildDpmBurnCount():
+
+    records = []
+    s = """
+
+record(sub,SVT:daq:dpm:$(DPM):burncount_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDpmBurnCountInit")
+    field(SNAM,"subDpmBurnCountProcess")
+}
+
+record(longin, SVT:daq:dpm:$(DPM):burncount) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dpm:$(DPM):burncount_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+"""	
+    records.append(s)
+    return records
 
 

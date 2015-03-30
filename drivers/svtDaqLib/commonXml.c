@@ -425,6 +425,70 @@ int getLinkProcess(char* pname, xmlDoc* doc) {
 
 
 
+int getBurnCountProcess(char* pname, xmlDoc* doc) {
+   int val;
+   int idpm;
+   int idp;
+   char str1[BUF_SIZE];
+   char str2[BUF_SIZE];
+   char action[BUF_SIZE];
+   char tmp[BUF_SIZE];
+   xmlXPathObjectPtr result;
+   xmlNodePtr node;
+   val = -1;
+   idpm = -1;
+   idp = -1;
+   getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+   getStringFromEpicsName(pname,str2,2,BUF_SIZE);
+
+   if(strcmp(str1,"daq")==0 && strcmp(str2,"dpm")==0) {     
+      idpm = getIntFromEpicsName(pname,3);  
+   
+      //cross-check
+      if(idpm<0 && idpm>14) {
+         printf("[ getBurnCountProcess ] : [ ERROR ] : idpm invalid for \"%s\"?!\n",pname);
+         exit(1);
+      }
+
+      getStringFromEpicsName(pname,action,4,BUF_SIZE);    
+    
+      if(strcmp(action,"burncount_sub")==0) {
+         sprintf(tmp,"/system/status/DataDpm/RceCore/EventBuilder/BurnCount");
+      } else {
+         strcpy(tmp,""); 
+      }
+      
+      if(strcmp(tmp,"")!=0) {
+         if(DEBUG>2) printf("[ getBurnCountProcess ] : xpath \"%s\"\n",tmp);
+         result =  getnodeset(doc, (xmlChar*) tmp);
+         if(result!=NULL) {
+            if(DEBUG>0) printf("[ getBurnCountProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
+            if(result->nodesetval->nodeNr==1) {
+               node = result->nodesetval->nodeTab[0];
+               if(node!=NULL) {
+                  val = getIntValue(doc, node);
+                  if(DEBUG>0) printf("[ getBurnCountProcess ]: got val %d.\n",val);      
+               } else {
+                  printf("[ getBurnCountProcess ] : [ WARNING ] no Link nodes found\n");
+               }
+            } else {
+               printf("[ getBurnCountProcess ] : [ WARNING ] %d Link nodes found, should be exactly 1\n", result->nodesetval->nodeNr);
+            }
+            xmlXPathFreeObject(result);        
+         } else {
+            if(DEBUG>0) printf("[ getBurnCountProcess ] : [ WARNING ] no results found\n");
+         }  
+      } else {
+         printf("[ getBurnCountProcess ]: [ ERROR ]: wrong action \"%s\"!\n",action);
+      }     
+   } else {
+      printf("[ getBurnCountProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);    
+   }
+   return val;
+}
+
+
+
 
 
 int getEventCountProcess(char* pname, xmlDoc* doc) {
@@ -951,6 +1015,77 @@ int getDtmAckCountProcess(char* pname, xmlDoc* doc) {
     }     
   } else {
     printf("[ getDtmAckCountProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);    
+  }
+  return val;
+}
+
+
+
+
+int getDtmMinTrigPeriodProcess(char* pname, xmlDoc* doc) {
+  int val;
+  int idtm;
+  char str1[BUF_SIZE];
+  char str2[BUF_SIZE];
+  char action[BUF_SIZE];
+  char tmp[BUF_SIZE];
+  xmlXPathObjectPtr result;
+  xmlNodePtr node;
+  val = -1;
+  idtm = -1;
+  getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+  getStringFromEpicsName(pname,str2,2,BUF_SIZE);
+
+  if(strcmp(str1,"daq")==0 && strcmp(str2,"dtm")==0) {     
+    idtm = getIntFromEpicsName(pname,3);  
+
+    //cross-check
+    if(idtm<0 &&idtm>1) {
+       printf("[ getDtmMinTrigPeriodProcess ] : [ ERROR ]: idtm not valid for \"%s\"\n", pname);
+       exit(1);
+    }
+
+    getStringFromEpicsName(pname,action,4,BUF_SIZE);    
+    
+    if(strcmp(action,"mintrigperiod_sub")==0) {
+       sprintf(tmp,"/system/status/TiDtm/MinTrigPeriod");
+    } else {
+       strcpy(tmp,""); 
+    }
+    
+    if(strcmp(tmp,"")!=0) {
+       if(DEBUG>-1) 
+          printf("[ getDtmMinTrigPeriodProcess ] : xpath \"%s\"\n",tmp);
+      result =  getnodeset(doc, (xmlChar*) tmp);
+      if(result!=NULL) {
+         if(DEBUG>-1) 
+            printf("[ getDtmMinTrigPeriodProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
+        if(result->nodesetval->nodeNr==1) {
+          node = result->nodesetval->nodeTab[0];
+          if(node!=NULL) {
+             val = getIntValue(doc, node);
+             //if(DEBUG>0) 
+                printf("[ getDtmMinTrigPeriodProcess ]: got val %d.\n",val);      
+          } else {
+             printf("[ getDtmMinTrigPeriodProcess ] : [ WARNING ] no Link nodes found\n");
+          }
+        } else {
+          printf("[ getDtmMinTrigPeriodProcess ] : [ WARNING ] %d Link nodes found, should be exactly 1\n", result->nodesetval->nodeNr);
+        }
+        strcpy(tmp,"/system/status/TiDtm/MinTrigPeriod%d");
+        if(DEBUG>2)
+           printf("[ getDtmMinTrigPeriodProcess ] : free xpath result\n");
+        xmlXPathFreeObject(result);
+      } else {
+         printf("[ getDtmMinTrigPeriodProcess ] : [ WARNING ] no results found\n");
+      }  
+      
+      
+    } else {
+      printf("[ getDtmMinTrigPeriodProcess ]: [ ERROR ]: wrong action \"%s\"!\n",action);
+    }     
+  } else {
+    printf("[ getDtmMinTrigPeriodProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);    
   }
   return val;
 }

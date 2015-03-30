@@ -67,6 +67,10 @@ void getFebCnfCmd(int feb_id, int isopentag,  char* cmd, const int MAX);
 
 int checkNonZeroNodes(xmlDoc* document, const char* xpath);
 
+int getBurnCountProcess(char* pname, xmlDoc* doc);
+
+int getDtmMinTrigPeriodProcess(char* pname, xmlDoc* doc);
+
 
 #endif
 

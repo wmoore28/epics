@@ -88,6 +88,10 @@ def buildEpics():
     printRecords(recs,"dbDataDpmBlockCount")
     recs = utils.buildDpmSystemState()
     printRecords(recs,"dbDataDpmSystemState")
+    recs = utils.buildDpmBurnCount()
+    printRecords(recs,"dbDataDpmBurnCount")
+    recs = utils.buildDtmMinTrigPeriod()
+    printRecords(recs,"dbDataDtmMinTrigPeriod")
 
     
 

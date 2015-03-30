@@ -7,8 +7,8 @@ display {
 	object {
 		x=123
 		y=78
-		width=1200
-		height=520
+		width=1300
+		height=1000
 	}
 	clr=14
 	bclr=12
@@ -104,7 +104,7 @@ rectangle {
 	object {
 		x=800
 		y=6
-		width=370
+		width=490
 		height=450
 	}
 	"basic attribute" {
@@ -451,7 +451,7 @@ rectangle {
 		x=5
 		y=6
 		width=775
-		height=450
+		height=900
 	}
 	"basic attribute" {
 		clr=51
@@ -469,201 +469,6 @@ text {
 		clr=15
 	}
 	textix="DTM Status"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=25
-		y=51
-		width=50
-		height=18
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="Data DPM"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=27
-		y=74
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="0"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=27
-		y=99
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="1"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=27
-		y=124
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="2"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=27
-		y=149
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="3"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=27
-		y=174
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="4"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=27
-		y=199
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="5"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=27
-		y=224
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="6"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=27
-		y=249
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="(cntrl) dpm7"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=27
-		y=273
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="7"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=27
-		y=298
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="8"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=27
-		y=323
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="9"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=27
-		y=348
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="10"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=27
-		y=373
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="11"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=130
-		y=51
-		width=50
-		height=18
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="RunState"
 	align="horiz. centered"
 }
 text {
@@ -880,214 +685,6 @@ text {
 	}
 	monitor {
 		chan="SVT:daq:dpm:12:systemstate"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=105
-		y=74
-		width=80
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dpm:0:state"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=105
-		y=99
-		width=80
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dpm:1:state"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=105
-		y=124
-		width=80
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dpm:2:state"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=105
-		y=149
-		width=80
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dpm:3:state"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=105
-		y=174
-		width=80
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dpm:4:state"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=105
-		y=199
-		width=80
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dpm:5:state"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=105
-		y=224
-		width=80
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dpm:6:state"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=105
-		y=249
-		width=80
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dpm:7:state"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=105
-		y=273
-		width=80
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dpm:8:state"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=105
-		y=298
-		width=80
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dpm:9:state"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=105
-		y=323
-		width=80
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dpm:10:state"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=105
-		y=348
-		width=80
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dpm:11:state"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=105
-		y=373
-		width=80
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dpm:12:state"
 		clr=31
 		bclr=14
 	}
@@ -1935,22 +1532,9 @@ text {
 		height=18
 	}
 	"basic attribute" {
-		clr=51
+		clr=20
 	}
-	textix="Run Integrity"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=27
-		y=398
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="12"
+	textix="END OF RUN ONLY"
 	align="horiz. centered"
 }
 "text update" {
@@ -1962,22 +1546,6 @@ text {
 	}
 	monitor {
 		chan="SVT:daq:dpm:13:systemstate"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=105
-		y=398
-		width=80
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dpm:13:state"
 		clr=31
 		bclr=14
 	}
@@ -2050,19 +1618,6 @@ text {
 	limits {
 	}
 }
-text {
-	object {
-		x=27
-		y=424
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="13"
-	align="horiz. centered"
-}
 "text update" {
 	object {
 		x=213
@@ -2072,22 +1627,6 @@ text {
 	}
 	monitor {
 		chan="SVT:daq:dpm:14:systemstate"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=105
-		y=424
-		width=80
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:dpm:14:state"
 		clr=31
 		bclr=14
 	}
@@ -2160,559 +1699,571 @@ text {
 	limits {
 	}
 }
-composite {
+oval {
 	object {
 		x=704
 		y=74
 		width=20
-		height=370
+		height=20
 	}
-	"composite name"=""
-	children {
-		oval {
-			object {
-				x=704
-				y=74
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A!=B|A=0"
-				chan="SVT:daq:dpm:0:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=704
-				y=99
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A!=B|A=0"
-				chan="SVT:daq:dpm:1:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=704
-				y=124
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A!=B|A=0"
-				chan="SVT:daq:dpm:2:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=704
-				y=149
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A!=B|A=0"
-				chan="SVT:daq:dpm:3:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=704
-				y=174
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A!=B|A=0"
-				chan="SVT:daq:dpm:4:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=704
-				y=199
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A!=B|A=0"
-				chan="SVT:daq:dpm:5:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=704
-				y=224
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A!=B|A=0"
-				chan="SVT:daq:dpm:6:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=704
-				y=274
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A!=B|A=0"
-				chan="SVT:daq:dpm:8:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=704
-				y=299
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A!=B|A=0"
-				chan="SVT:daq:dpm:9:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=704
-				y=324
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A!=B|A=0"
-				chan="SVT:daq:dpm:10:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=704
-				y=349
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A!=B|A=0"
-				chan="SVT:daq:dpm:11:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=704
-				y=374
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A!=B|A=0"
-				chan="SVT:daq:dpm:12:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=704
-				y=399
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A!=B|A=0"
-				chan="SVT:daq:dpm:13:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=704
-				y=424
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A!=B|A=0"
-				chan="SVT:daq:dpm:14:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:0:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
 	}
 }
-composite {
+oval {
+	object {
+		x=704
+		y=99
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:1:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=704
+		y=124
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:2:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=704
+		y=149
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:3:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=704
+		y=174
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:4:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=704
+		y=199
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:5:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=704
+		y=224
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:6:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=704
+		y=274
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:8:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=704
+		y=299
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:9:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=704
+		y=324
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:10:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=704
+		y=349
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:11:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=704
+		y=374
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:12:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=704
+		y=399
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:13:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=704
+		y=424
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:14:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
 	object {
 		x=700
 		y=74
 		width=20
-		height=370
+		height=20
 	}
-	"composite name"=""
-	children {
-		oval {
-			object {
-				x=700
-				y=74
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A=B&A>0"
-				chan="SVT:daq:dpm:0:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=700
-				y=99
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A=B&A>0"
-				chan="SVT:daq:dpm:1:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=700
-				y=124
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A=B&A>0"
-				chan="SVT:daq:dpm:2:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=700
-				y=149
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A=B&A>0"
-				chan="SVT:daq:dpm:3:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=700
-				y=174
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A=B&A>0"
-				chan="SVT:daq:dpm:4:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=700
-				y=199
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A=B&A>0"
-				chan="SVT:daq:dpm:5:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=700
-				y=224
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A=B&A>0"
-				chan="SVT:daq:dpm:6:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=700
-				y=274
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A=B&A>0"
-				chan="SVT:daq:dpm:8:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=700
-				y=299
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A=B&A>0"
-				chan="SVT:daq:dpm:9:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=700
-				y=324
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A=B&A>0"
-				chan="SVT:daq:dpm:10:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=700
-				y=349
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A=B&A>0"
-				chan="SVT:daq:dpm:11:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=700
-				y=374
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A=B&A>0"
-				chan="SVT:daq:dpm:12:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=700
-				y=399
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A=B&A>0"
-				chan="SVT:daq:dpm:13:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
-		oval {
-			object {
-				x=700
-				y=424
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A=B&A>0"
-				chan="SVT:daq:dpm:14:trigcount"
-				chanB="SVT:daq:dtm:0:trigcount"
-			}
-		}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:0:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
 	}
 }
-composite {
+oval {
+	object {
+		x=700
+		y=99
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:1:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=700
+		y=124
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:2:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=700
+		y=149
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:3:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=700
+		y=174
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:4:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=700
+		y=199
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:5:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=700
+		y=224
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:6:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=700
+		y=274
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:8:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=700
+		y=299
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:9:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=700
+		y=324
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:10:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=700
+		y=349
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:11:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=700
+		y=374
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:12:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=700
+		y=399
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:13:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+oval {
+	object {
+		x=700
+		y=424
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:14:trigcount"
+		chanB="SVT:daq:dtm:0:trigcount"
+	}
+}
+"text update" {
 	object {
 		x=950
-		y=50
+		y=70
 		width=100
-		height=65
+		height=20
 	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=950
-				y=70
-				width=100
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dtm:0:trigcount"
-				clr=31
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=950
-				y=95
-				width=100
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:dtm:1:trigcount"
-				clr=31
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=973
-				y=50
-				width=50
-				height=18
-			}
-			"basic attribute" {
-				clr=51
-			}
-			textix="Trig1Count"
-			align="horiz. centered"
-		}
+	monitor {
+		chan="SVT:daq:dtm:0:trigcount"
+		clr=31
+		bclr=14
 	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=950
+		y=95
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dtm:1:trigcount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=973
+		y=50
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=51
+	}
+	textix="Trig1Count"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=860
+		y=95
+		width=80
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dtm:1:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=860
+		y=70
+		width=80
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dtm:0:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=876
+		y=50
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=51
+	}
+	textix="RunState"
+	align="horiz. centered"
 }
 "text update" {
 	object {
@@ -2759,24 +2310,753 @@ text {
 	textix="ReadCount"
 	align="horiz. centered"
 }
+"text update" {
+	object {
+		x=1170
+		y=70
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dtm:0:mintrigperiod"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1170
+		y=95
+		width=100
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dtm:1:mintrigperiod"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+	}
+}
+text {
+	object {
+		x=1193
+		y=50
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=51
+	}
+	textix="MinTrigPeriod"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=25
+		y=51
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=51
+	}
+	textix="Data DPM"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=74
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="0"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=99
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="1"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=124
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="2"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=149
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="3"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=174
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="4"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=199
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="5"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=224
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="6"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=249
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="(cntrl) dpm7"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=273
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="7"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=298
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="8"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=323
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="9"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=348
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="10"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=373
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="11"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=130
+		y=51
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=51
+	}
+	textix="RunState"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=105
+		y=74
+		width=80
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:0:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=105
+		y=99
+		width=80
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:1:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=105
+		y=124
+		width=80
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:2:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=105
+		y=149
+		width=80
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:3:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=105
+		y=174
+		width=80
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:4:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=105
+		y=199
+		width=80
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:5:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=105
+		y=224
+		width=80
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:6:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=105
+		y=249
+		width=80
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:7:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=105
+		y=273
+		width=80
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:8:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=105
+		y=298
+		width=80
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:9:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=105
+		y=323
+		width=80
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:10:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=105
+		y=348
+		width=80
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:11:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=105
+		y=373
+		width=80
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:12:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=27
+		y=398
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="12"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=105
+		y=398
+		width=80
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:13:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=27
+		y=424
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="13"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=105
+		y=424
+		width=80
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:14:state"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=480
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=51
+	}
+	textix="Data DPM"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=503
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="0"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=528
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="1"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=553
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="2"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=578
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="3"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=603
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="4"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=628
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="5"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=653
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="6"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=678
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="(cntrl) dpm7"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=702
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="7"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=727
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="8"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=752
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="9"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=777
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="10"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=802
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="11"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=130
+		y=480
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=51
+	}
+	textix="BurnCount"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=827
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="12"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=27
+		y=853
+		width=46
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="13"
+	align="horiz. centered"
+}
 composite {
 	object {
-		x=860
-		y=50
+		x=105
+		y=503
 		width=80
-		height=65
+		height=370
 	}
 	"composite name"=""
 	children {
 		"text update" {
 			object {
-				x=860
-				y=95
+				x=105
+				y=503
 				width=80
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dtm:1:state"
+				chan="SVT:daq:dpm:0:burncount"
 				clr=31
 				bclr=14
 			}
@@ -2786,13 +3066,13 @@ composite {
 		}
 		"text update" {
 			object {
-				x=860
-				y=70
+				x=105
+				y=528
 				width=80
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dtm:0:state"
+				chan="SVT:daq:dpm:1:burncount"
 				clr=31
 				bclr=14
 			}
@@ -2800,18 +3080,226 @@ composite {
 			limits {
 			}
 		}
-		text {
+		"text update" {
 			object {
-				x=876
-				y=50
-				width=50
-				height=18
+				x=105
+				y=553
+				width=80
+				height=20
 			}
-			"basic attribute" {
-				clr=51
+			monitor {
+				chan="SVT:daq:dpm:2:burncount"
+				clr=31
+				bclr=14
 			}
-			textix="RunState"
 			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=105
+				y=578
+				width=80
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:dpm:3:burncount"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=105
+				y=603
+				width=80
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:dpm:4:burncount"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=105
+				y=628
+				width=80
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:dpm:5:burncount"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=105
+				y=653
+				width=80
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:dpm:6:burncount"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=105
+				y=678
+				width=80
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:dpm:7:burncount"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=105
+				y=702
+				width=80
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:dpm:8:burncount"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=105
+				y=727
+				width=80
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:dpm:9:burncount"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=105
+				y=752
+				width=80
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:dpm:10:burncount"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=105
+				y=777
+				width=80
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:dpm:11:burncount"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=105
+				y=802
+				width=80
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:dpm:12:burncount"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=105
+				y=827
+				width=80
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:dpm:13:burncount"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=105
+				y=853
+				width=80
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:dpm:14:burncount"
+				clr=31
+				bclr=14
+			}
+			align="horiz. centered"
+			limits {
+			}
 		}
 	}
+}
+text {
+	object {
+		x=706
+		y=30
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=51
+	}
+	textix="Run Integrity"
+	align="horiz. centered"
 }

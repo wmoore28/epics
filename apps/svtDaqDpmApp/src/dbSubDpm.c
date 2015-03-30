@@ -260,6 +260,29 @@ static long subDpmEventCountProcess(subRecord *precord) {
   return 0;
 }
 
+static long subDpmBurnCountInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subBurnCountInit ]: %d Record %s called subDpmBurnCountInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subDpmBurnCountProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDpmBurnCountProcess ]: %d Record %s called subDpmBurnCountProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int val = -1;
+
+  val = getBurnCountProcess(precord->name, xmldoc);
+
+  precord->val = val;
+
+  
+  return 0;
+}
+
 
 static long subDpmBlockCountInit(subRecord *precord) {
   process_order++;
@@ -413,7 +436,7 @@ static long subDtmReadCountProcess(subRecord *precord) {
 static long subDtmAckCountInit(subRecord *precord) {
   process_order++;
   if (mySubDebug) {
-    printf("[ subAckCountInit ]: %d Record %s called subDtmAckCountInit(%p)\n", process_order, precord->name, (void*) precord);
+    printf("[ subDtmAckCountInit ]: %d Record %s called subDtmAckCountInit(%p)\n", process_order, precord->name, (void*) precord);
   }
   return 0;
 }
@@ -426,6 +449,29 @@ static long subDtmAckCountProcess(subRecord *precord) {
   int val = -1;
 
   val = getDtmAckCountProcess(precord->name, xmldoc);
+
+  precord->val = val;
+
+  
+  return 0;
+}
+
+static long subDtmMinTrigPeriodInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug>-1) {
+    printf("[ subDtmMinTrigPeriodInit ]: %d Record %s called subDtmMinTrigPeriodInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subDtmMinTrigPeriodProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug-1) {
+    printf("[ subDtmMinTrigPeriodProcess ]: %d Record %s called subDtmMinTrigPeriodProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int val = -1;
+
+  val = getDtmMinTrigPeriodProcess(precord->name, xmldoc);
 
   precord->val = val;
 
@@ -625,4 +671,8 @@ epicsRegisterFunction(subSyncInit);
 epicsRegisterFunction(subSyncProcess);
 epicsRegisterFunction(subSyncBaseInit);
 epicsRegisterFunction(subSyncBaseProcess);
+epicsRegisterFunction(subDpmBurnCountInit);
+epicsRegisterFunction(subDpmBurnCountProcess);
+epicsRegisterFunction(subDtmMinTrigPeriodInit);
+epicsRegisterFunction(subDtmMinTrigPeriodProcess);
 

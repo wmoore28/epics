@@ -54,6 +54,8 @@ DB += dbDataDtmStatus.db
 DB += dbDataDpmEventState.db
 DB += dbDataDpmBlockCount.db
 DB += dbDataDpmSystemState.db
+DB += dbDataDpmBurnCount.db
+DB += dbDataDtmMinTrigPeriod.db
 #DB += dbSVTtest.db
 
 #----------------------------------------------------

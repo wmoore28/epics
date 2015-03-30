@@ -1,3 +1,5 @@
+#/usr/bin/python
+
 import os,sys
 
 
@@ -53,10 +55,13 @@ for line in f.readlines():
         lll = getLongStrDtm(ll)
         fn.write(lll)
     elif "v125" in l or "avdd" in l or "dvdd" in l:
-        if "i_rd":
-            ll = l + " 0.01 0.01 \n"
-            lll = getLongStrDtm(ll)
-        fn.write(lll)
+        if "i_rd" in l:
+            ll = l + " 0.01 \n"
+        elif "v_set_rd" in l or "stat" in l:
+            ll = l + " 1 \n"
+        elif "vn" in l or "vf" in l:
+            ll = l + " 0.1 \n"
+        fn.write(ll)
 
     else:
         print "no archiving for ", l
