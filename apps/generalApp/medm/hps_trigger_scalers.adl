@@ -5,13 +5,13 @@ file {
 }
 display {
 	object {
-		x=32
-		y=262
-		width=821
-		height=595
+		x=83
+		y=22
+		width=966
+		height=700
 	}
-	clr=5
-	bclr=29
+	clr=0
+	bclr=14
 	cmap=""
 	gridSpacing=5
 	gridOn=0
@@ -89,8 +89,8 @@ display {
 }
 text {
 	object {
-		x=68
-		y=10
+		x=77
+		y=47
 		width=123
 		height=54
 	}
@@ -101,8 +101,8 @@ text {
 }
 text {
 	object {
-		x=196
-		y=10
+		x=206
+		y=47
 		width=123
 		height=54
 	}
@@ -113,8 +113,8 @@ text {
 }
 text {
 	object {
-		x=326
-		y=10
+		x=339
+		y=47
 		width=123
 		height=54
 	}
@@ -125,8 +125,8 @@ text {
 }
 text {
 	object {
-		x=450
-		y=10
+		x=466
+		y=47
 		width=123
 		height=54
 	}
@@ -137,8 +137,8 @@ text {
 }
 text {
 	object {
-		x=580
-		y=10
+		x=597
+		y=47
 		width=123
 		height=54
 	}
@@ -149,8 +149,8 @@ text {
 }
 text {
 	object {
-		x=703
-		y=10
+		x=723
+		y=47
 		width=123
 		height=54
 	}
@@ -161,8 +161,8 @@ text {
 }
 "text update" {
 	object {
-		x=32
-		y=38
+		x=41
+		y=70
 		width=123
 		height=24
 	}
@@ -171,14 +171,14 @@ text {
 		clr=0
 		bclr=13
 	}
-	align="horiz. right"
+	align="horiz. centered"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=160
-		y=38
+		x=169
+		y=70
 		width=123
 		height=24
 	}
@@ -187,15 +187,15 @@ text {
 		clr=0
 		bclr=13
 	}
-	align="horiz. right"
+	align="horiz. centered"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=288
-		y=38
-		width=124
+		x=297
+		y=70
+		width=123
 		height=24
 	}
 	monitor {
@@ -203,14 +203,14 @@ text {
 		clr=0
 		bclr=13
 	}
-	align="horiz. right"
+	align="horiz. centered"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=417
-		y=38
+		x=425
+		y=70
 		width=123
 		height=24
 	}
@@ -219,14 +219,14 @@ text {
 		clr=0
 		bclr=13
 	}
-	align="horiz. right"
+	align="horiz. centered"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=545
-		y=38
+		x=553
+		y=70
 		width=123
 		height=24
 	}
@@ -235,14 +235,14 @@ text {
 		clr=0
 		bclr=13
 	}
-	align="horiz. right"
+	align="horiz. centered"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=673
-		y=38
+		x=681
+		y=70
 		width=123
 		height=24
 	}
@@ -251,16 +251,16 @@ text {
 		clr=0
 		bclr=13
 	}
-	align="horiz. right"
+	align="horiz. centered"
 	limits {
 	}
 }
 "strip chart" {
 	object {
-		x=32
-		y=109
-		width=763
-		height=466
+		x=41
+		y=141
+		width=891
+		height=523
 	}
 	plotcom {
 		clr=0
@@ -276,7 +276,7 @@ text {
 	}
 	pen[1] {
 		chan="HPSTRIGSC_1"
-		clr=24
+		clr=23
 		limits {
 			hoprSrc="default"
 			hoprDefault=100
@@ -292,7 +292,7 @@ text {
 	}
 	pen[3] {
 		chan="HPSTRIGSC_3"
-		clr=19
+		clr=18
 		limits {
 			hoprSrc="default"
 			hoprDefault=100
@@ -300,7 +300,7 @@ text {
 	}
 	pen[4] {
 		chan="HPSTRIGSC_4"
-		clr=14
+		clr=6
 		limits {
 			hoprSrc="default"
 			hoprDefault=100
@@ -317,97 +317,296 @@ text {
 }
 "text update" {
 	object {
-		x=32
-		y=69
+		x=41
+		y=101
 		width=123
 		height=24
 	}
 	monitor {
-		chan="HPSTRIGSC_0"
+		chan="HPSTRIGSC_0_FRAC"
 		clr=0
 		bclr=13
 	}
-	align="horiz. right"
+	align="horiz. centered"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=160
-		y=69
+		x=169
+		y=101
 		width=123
 		height=24
 	}
 	monitor {
-		chan="HPSTRIGSC_1"
+		chan="HPSTRIGSC_1_FRAC"
 		clr=0
 		bclr=13
 	}
-	align="horiz. right"
+	align="horiz. centered"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=288
-		y=69
+		x=297
+		y=101
 		width=123
 		height=24
 	}
 	monitor {
-		chan="HPSTRIGSC_2"
+		chan="HPSTRIGSC_2_FRAC"
 		clr=0
 		bclr=13
 	}
-	align="horiz. right"
+	align="horiz. centered"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=416
-		y=69
+		x=425
+		y=101
 		width=123
 		height=24
 	}
 	monitor {
-		chan="HPSTRIGSC_3"
+		chan="HPSTRIGSC_3_FRAC"
 		clr=0
 		bclr=13
 	}
-	align="horiz. right"
+	align="horiz. centered"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=544
-		y=69
+		x=553
+		y=101
 		width=123
 		height=24
 	}
 	monitor {
-		chan="HPSTRIGSC_4"
+		chan="HPSTRIGSC_4_FRAC"
 		clr=0
 		bclr=13
 	}
-	align="horiz. right"
+	align="horiz. centered"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=672
-		y=69
+		x=681
+		y=101
 		width=123
 		height=24
 	}
 	monitor {
-		chan="HPSTRIGSC_5"
+		chan="HPSTRIGSC_5_FRAC"
 		clr=0
 		bclr=13
 	}
-	align="horiz. right"
+	align="horiz. centered"
 	limits {
+	}
+}
+"text update" {
+	object {
+		x=809
+		y=70
+		width=123
+		height=24
+	}
+	monitor {
+		chan="HPSTRIGSC_TOTAL"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=809
+		y=101
+		width=123
+		height=24
+	}
+	monitor {
+		chan="HPSTRIGSC_TOTAL_FRAC"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=854
+		y=47
+		width=121
+		height=54
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="TOTAL"
+}
+text {
+	object {
+		x=23
+		y=75
+		width=12
+		height=40
+	}
+	"basic attribute" {
+		clr=5
+	}
+	textix="Hz"
+	align="horiz. right"
+}
+text {
+	object {
+		x=938
+		y=75
+		width=12
+		height=40
+	}
+	"basic attribute" {
+		clr=5
+	}
+	textix="Hz"
+}
+text {
+	object {
+		x=22
+		y=106
+		width=12
+		height=40
+	}
+	"basic attribute" {
+		clr=5
+	}
+	textix="%"
+	align="horiz. right"
+}
+text {
+	object {
+		x=938
+		y=106
+		width=12
+		height=40
+	}
+	"basic attribute" {
+		clr=5
+	}
+	textix="%"
+}
+rectangle {
+	object {
+		x=41
+		y=93
+		width=123
+		height=7
+	}
+	"basic attribute" {
+		clr=20
+	}
+}
+rectangle {
+	object {
+		x=169
+		y=93
+		width=123
+		height=7
+	}
+	"basic attribute" {
+		clr=23
+	}
+}
+rectangle {
+	object {
+		x=297
+		y=93
+		width=123
+		height=7
+	}
+	"basic attribute" {
+		clr=15
+	}
+}
+rectangle {
+	object {
+		x=425
+		y=93
+		width=123
+		height=7
+	}
+	"basic attribute" {
+		clr=18
+	}
+}
+rectangle {
+	object {
+		x=553
+		y=93
+		width=123
+		height=7
+	}
+	"basic attribute" {
+		clr=6
+	}
+}
+rectangle {
+	object {
+		x=681
+		y=93
+		width=123
+		height=7
+	}
+	"basic attribute" {
+		clr=30
+	}
+}
+rectangle {
+	object {
+		x=809
+		y=93
+		width=123
+		height=7
+	}
+	"basic attribute" {
+		clr=0
+	}
+}
+text {
+	object {
+		x=425
+		y=9
+		width=114
+		height=25
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="***** HPS TRIGGER SCALERS *****"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=21
+		y=33
+		width=922
+		height=0
+	}
+	"basic attribute" {
+		clr=0
+	}
+	points {
+		(21,33)
+		(943,33)
 	}
 }
