@@ -784,11 +784,15 @@ text {
 		width=20
 		height=20
 	}
-	display[0] {
+        display[0] {
+                label="HPS Trigger"
+                name="hps_trigger_scalers.adl"
+        }
+	display[1] {
 		label="Photon Trigger"
 		name="ts_bits.adl"
 	}
-	display[1] {
+	display[2] {
 		label="DVCS Trigger"
 		name="dvcs_trigger.adl"
 	}
