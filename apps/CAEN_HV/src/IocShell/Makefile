@@ -31,6 +31,7 @@ ioccaen_LIBS += hscaenet
 ioccaen_LIBS += smi
 ioccaen_LIBS += smiui
 ioccaen_LIBS += dim
+ioccaen_LIBS += devIocStats
 ioccaen_LIBS += $(EPICS_BASE_IOC_LIBS)
 
 sy1527epics1_DIR  += $(TOP)/lib/$(T_A)
