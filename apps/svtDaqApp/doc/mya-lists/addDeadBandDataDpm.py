@@ -1,6 +1,7 @@
-#!/usr/bin/python
+#/usr/bin/python
 
 import os,sys
+
 
 def getLongStr(ss):
     s = ss
@@ -18,8 +19,6 @@ def getLongStrDtm(ss):
         s += ss.replace("dtm:0","dtm:"+str(j))
     return s
         
-
-        
     
 
 
@@ -35,26 +34,13 @@ fn = open(sys.argv[1]+".deadband","w")
 for line in f.readlines():
     l = line.split()[0]
     print l
-    if "temp0" in l or "FebTemp" in l or "axixadc" in l:
-        print "no archiving for ", l
-        continue
-    if "v125" in l or "avdd" in l or "dvdd" in l:
-        if "i_rd" in l:
-            ll = l + " 0.01 \n"
-        elif "v_set_rd" in l or "stat" in l:
-            ll = l + " 1 \n"
-        elif "vn" in l or "vf" in l:
-            ll = l + " 0.1 \n"
-        print ll
-        fn.write(ll)
-    else:
-        ll = l + " 1 1 \n"
-        lll = getLongStr(ll)
-        print lll
+    if "dtm" in l:
+        ll = l + " 1 \n"
+        lll = getLongStrDtm(ll)
         fn.write(lll)
-
-    
+    else:
+        ll = l + " 1 \n"
+        lll = getLongStr(ll)    
+        fn.write(lll)
 fn.close()
 f.close()
-
-        

@@ -32,8 +32,8 @@ febs= [
     FEB(9,[Hybrid(0,"L1t","electron","axial"),Hybrid(1,"L1t","electron","stereo")],"0x24d04072beb01c00","L1t"),
     FEB(6,[Hybrid(0,"L2t","electron","axial"),Hybrid(1,"L2t","electron","stereo"),Hybrid(2,"L3t","electron","axial"),Hybrid(3,"L3t","electron","stereo")],"0x02d04072beb01c00","L2-3t"),
     FEB(1,[Hybrid(0,"L4b","electron","stereo"),Hybrid(1,"L4b","positron","stereo"),Hybrid(2,"L4b","electron","axial"),Hybrid(3,"L4b","positron","axial")],"0x72814100a1b01c00","L4b"),
-    FEB(4,[Hybrid(0,"L4b","electron","stereo"),Hybrid(1,"L4b","positron","stereo"),Hybrid(2,"L4b","electron","axial"),Hybrid(3,"L4b","positron","axial")],"0x1c084072beb01400","L5b"),
-    FEB(3,[Hybrid(0,"L4b","electron","stereo"),Hybrid(1,"L4b","positron","stereo"),Hybrid(2,"L4b","electron","axial"),Hybrid(3,"L4b","positron","axial")],"0x70d04072beb01c00","L6b"),
+    FEB(4,[Hybrid(0,"L5b","electron","stereo"),Hybrid(1,"L5b","positron","stereo"),Hybrid(2,"L5b","electron","axial"),Hybrid(3,"L5b","positron","axial")],"0x1c084072beb01400","L5b"),
+    FEB(3,[Hybrid(0,"L6b","electron","stereo"),Hybrid(1,"L6b","positron","stereo"),Hybrid(2,"L6b","electron","axial"),Hybrid(3,"L6b","positron","axial")],"0x70d04072beb01c00","L6b"),
     ]
 
 
