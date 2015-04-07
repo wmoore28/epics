@@ -42,13 +42,13 @@ for line in f.readlines():
         if "i_rd" in l:
             ll = l + " 0.01 \n"
         elif "v_set_rd" in l or "stat" in l:
-            ll = l + " 1 \n"
+            ll = l + " 0.5 \n"
         elif "vn" in l or "vf" in l:
             ll = l + " 0.1 \n"
         print ll
         fn.write(ll)
     else:
-        ll = l + " 1 1 \n"
+        ll = l + " 0.5 \n"
         lll = getLongStr(ll)
         print lll
         fn.write(lll)
