@@ -690,8 +690,8 @@ static long subHybridTempProcess(subRecord *precord) {
     printf("[ subHybridTempProcess ]: %d Record %s called subHybridTempProcess(%p)\n", process_order, precord->name, (void*) precord);
   }
 
-  //if (mySubDebug)
-  printf("[ subHybridTempProcess ]: get temp from xml at %p\n", xmldoc);
+  if (mySubDebug)
+     printf("[ subHybridTempProcess ]: get temp from xml at %p\n", xmldoc);
   
   char val[256];
   float v;
@@ -701,13 +701,13 @@ static long subHybridTempProcess(subRecord *precord) {
   getHybridTempProcess(precord->name, xmldoc, val);
 
 
-  //if (mySubDebug)
-  printf("[ subHybridTempProcess ]: got str val %s\n", val);
+  if (mySubDebug)
+     printf("[ subHybridTempProcess ]: got str val %s\n", val);
 
   sscanf(val,"%f %s",&v,unit);
   
-  //if (mySubDebug)
-  printf("[ subHybridTempProcess ]: got val %f\n", v);
+  if (mySubDebug)
+     printf("[ subHybridTempProcess ]: got val %f\n", v);
 
   precord->val = (double) v;
   

@@ -2086,7 +2086,7 @@ void getNodeVal(xmlDoc* document, const char* xpath, char* value) {
 
 
 void getHybridTempProcess(char* pname, xmlDoc* doc, char* value) {
-   if(DEBUG>-1) printf("[ getHybridTempProcess ] : for pname \"%s\"\n", pname);
+   if(DEBUG>1) printf("[ getHybridTempProcess ] : for pname \"%s\"\n", pname);
 
    xmlXPathObjectPtr result;
    xmlNodeSetPtr nodeset;
@@ -2107,7 +2107,7 @@ void getHybridTempProcess(char* pname, xmlDoc* doc, char* value) {
       
       if(strcmp(action,"temp0")==0) {
          sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/SoftPowerMonitor/Hybrid%d_ZTemp", feb, datapath);
-         if(DEBUG>-1) 
+         if(DEBUG>1) 
             printf("[ getHybridTempProcess ] : xpath \"%s\"\n",tmp);
          
          if(doc!=NULL) {
@@ -2116,7 +2116,7 @@ void getHybridTempProcess(char* pname, xmlDoc* doc, char* value) {
             
             if(result!=NULL) {
                nodeset = result->nodesetval;
-               if(DEBUG>-1) 
+               if(DEBUG>1) 
                   printf("[ getHybridTempProcess ] : got %d nodes\n", nodeset->nodeNr);
                if(nodeset->nodeNr==1) {
                   getStrValue(doc,nodeset->nodeTab[0],value);
@@ -2124,18 +2124,18 @@ void getHybridTempProcess(char* pname, xmlDoc* doc, char* value) {
                   printf("[ getHybridTempProcess ] : got  value %s\n", value);
 
                } else {
-                  if(DEBUG>-1)
+                  if(DEBUG>1)
                      printf("[ getHybridTempProcess ] : [ WARNING ] : wrong nr of nodes found\n");
                }
                
                xmlXPathFreeObject(result);
                
             } else {
-               if(DEBUG>-1)
+               if(DEBUG>1)
                   printf("[ getHybridTempProcess ] : no nodes found\n");
             }
          } else {
-            if(DEBUG>-1)
+            if(DEBUG>1)
                printf("[ getHybridTempProcess ] : no xml doc found\n");
          }
       }
