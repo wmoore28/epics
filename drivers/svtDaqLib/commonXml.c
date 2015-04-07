@@ -146,7 +146,7 @@ void getRunStateProcess(char* pname, xmlDoc* doc, char* state) {
    char action[BUF_SIZE];
    getStringFromEpicsName(pname,str1,1,BUF_SIZE);
    getStringFromEpicsName(pname,str2,2,BUF_SIZE);
-   if(strcmp(str1,"daq")==0 && (strcmp(str2,"dtm")==0 ||strcmp(str2,"dpm")==0)) {
+   if(strcmp(str1,"daq")==0 && (strcmp(str2,"dtm")==0 ||strcmp(str2,"dpm")==0 || strcmp(str2,"controldpm1")==0)) {
       idpm = getIntFromEpicsName(pname,3);  
       getStringFromEpicsName(pname,action,4,BUF_SIZE);    
       if(strcmp(action,"state_asub")==0) {           
@@ -170,7 +170,7 @@ void getDpmStatusProcess(char* pname, xmlDoc* doc, char* status, int* heart_beat
    char action[BUF_SIZE];
    getStringFromEpicsName(pname,str1,1,BUF_SIZE);
    getStringFromEpicsName(pname,str2,2,BUF_SIZE);
-   if(strcmp(str1,"daq")==0 && (strcmp(str2,"dtm")==0 ||strcmp(str2,"dpm")==0)) {
+   if(strcmp(str1,"daq")==0 && (strcmp(str2,"dtm")==0 ||strcmp(str2,"dpm")==0 ||strcmp(str2,"controldpm1")==0)) {
       dpm = getIntFromEpicsName(pname,3);  
       getStringFromEpicsName(pname,action,4,BUF_SIZE);    
 
@@ -2081,5 +2081,71 @@ void getNodeVal(xmlDoc* document, const char* xpath, char* value) {
       if(DEBUG>1) printf("[ getNodeVal ] : no results found.\n");
    }
    return;
+}
+
+
+
+void getHybridTempProcess(char* pname, xmlDoc* doc, char* value) {
+   if(DEBUG>-1) printf("[ getHybridTempProcess ] : for pname \"%s\"\n", pname);
+
+   xmlXPathObjectPtr result;
+   xmlNodeSetPtr nodeset;
+   char tmp[BUF_SIZE];
+   int feb;
+   int datapath;
+   char str1[BUF_SIZE];
+   char str2[BUF_SIZE];
+   char str3[BUF_SIZE];
+   char action[BUF_SIZE];
+   strcpy(value,"");
+   getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+   getStringFromEpicsName(pname,str2,2,BUF_SIZE);
+   if(strcmp(str1,"temp")==0 && strcmp(str2,"hyb")==0) {
+      feb = getIntFromEpicsName(pname,3);      
+      datapath = getIntFromEpicsName(pname,4);      
+      getStringFromEpicsName(pname,action,5,BUF_SIZE);    
+      
+      if(strcmp(action,"temp0")==0) {
+         sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/SoftPowerMonitor/Hybrid%d_ZTemp", feb, datapath);
+         if(DEBUG>-1) 
+            printf("[ getHybridTempProcess ] : xpath \"%s\"\n",tmp);
+         
+         if(doc!=NULL) {
+            
+            result = getnodeset(doc, (xmlChar*) tmp);
+            
+            if(result!=NULL) {
+               nodeset = result->nodesetval;
+               if(DEBUG>-1) 
+                  printf("[ getHybridTempProcess ] : got %d nodes\n", nodeset->nodeNr);
+               if(nodeset->nodeNr==1) {
+                  getStrValue(doc,nodeset->nodeTab[0],value);
+
+                  printf("[ getHybridTempProcess ] : got  value %s\n", value);
+
+               } else {
+                  if(DEBUG>-1)
+                     printf("[ getHybridTempProcess ] : [ WARNING ] : wrong nr of nodes found\n");
+               }
+               
+               xmlXPathFreeObject(result);
+               
+            } else {
+               if(DEBUG>-1)
+                  printf("[ getHybridTempProcess ] : no nodes found\n");
+            }
+         } else {
+            if(DEBUG>-1)
+               printf("[ getHybridTempProcess ] : no xml doc found\n");
+         }
+      }
+      else {
+         printf("[ getHybridTempProcess ] : [ ERROR ] wrong action \"%s\"\n",action);    
+         exit(1);
+      }
+   } else {
+      printf("[ getHybridTempProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);    
+      exit(1);
+   }
 }
 

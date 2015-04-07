@@ -36,6 +36,7 @@ DB += dbFebTemp.db
 DB += dbSVT.db
 DB += dbDpmMap.db
 DB += dbDataDpm.db
+DB += dbControlDpm.db
 DB += dbDataDpmFebNum.db
 DB += dbDataDpmHybNum.db
 DB += dbDataDpmLink.db

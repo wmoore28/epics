@@ -14,9 +14,9 @@ xmlNodePtr getHybINode(xmlDocPtr doc, const char* type, int index, int hyb);
 double getHybIValue(xmlDocPtr doc, const char* type, int index, int hyb);
 
 
-xmlXPathObjectPtr getHybTs(xmlDocPtr doc, const char* type, int hyb);
-xmlNodePtr getHybTNode(xmlDocPtr doc, const char* type, int index, int hyb);
-double getHybTValue(xmlDocPtr doc, const char* type, int index, int hyb);
+// xmlXPathObjectPtr getHybTs(xmlDocPtr doc, const char* type, int hyb);
+// xmlNodePtr getHybTNode(xmlDocPtr doc, const char* type, int index, int hyb);
+// double getHybTValue(xmlDocPtr doc, const char* type, int index, int hyb);
 
 
 xmlXPathObjectPtr getHybSwitches(xmlDocPtr doc, int hyb);

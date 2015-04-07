@@ -31,7 +31,6 @@ int getDpmXmlDocStatus(int dpm);
 
 double getFebT(int feb_id, char* ch_name);
 void getFebDeviceDna(int feb_id, char* dna);
-double getHybridT(int index, int hyb, const char* type);
 double getHybridI(int index, int hyb, const char* type);
 double getHybridV(int feb_id, int hyb_id,char ch_name[], char ch_pos[]);
 double getHybridSwitch(int index, int hyb);

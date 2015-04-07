@@ -660,10 +660,6 @@ static long subPollStatInit(subRecord *precord) {
      val = getHybridI(feb_id, id, ch_name);
      precord->val = val*constant;
   } 
-  else if(strcmp(action,"t_rd_sub")==0) {
-     val = getHybridT(feb_id, id, ch_name);
-     precord->val = val*constant;
-  } 
   else if(strcmp(action,"vn_sub")==0) {
      val = getHybridV(feb_id, id, ch_name, "Near");
      precord->val = val*constant;

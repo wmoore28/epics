@@ -1141,13 +1141,14 @@ def buildHybTemp():
 record(sub,SVT:temp:hyb:FEBID:HYBID:temp0:t_rd_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subHybridTempInit")
+    field(SNAM,"subHybridTempProcess")
     field(FLNK,"FLNKNEXTHYB")
 }
 
 record(ai, SVT:temp:hyb:FEBID:HYBID:temp0:t_rd) {
-  field(SCAN, "Passive") field(PREC, "1")
+  field(SCAN, "SCANFREQ")
+  field(PREC, "1")
   field(INP, "SVT:temp:hyb:FEBID:HYBID:temp0:t_rd_sub PP")
   field(DTYP,"Soft Channel")
   field(HIHI,"HIHIVAL") field(HHSV,"MAJOR")
@@ -1180,6 +1181,10 @@ record(ai, SVT:temp:hyb:FEBID:HYBID:temp0:t_rd) {
             rec = rec.replace("HIVAL",str(getHybridTempLimits(feb,hyb).HI))
             rec = rec.replace("LOWVAL",str(getHybridTempLimits(feb,hyb).LO))
             rec = rec.replace("LOLOVAL",str(getHybridTempLimits(feb,hyb).LOLO))
+            if feb==0 and hyb==0:
+                rec = rec.replace("SCANFREQ","1 second")
+            else:
+                rec = rec.replace("SCANFREQ","Passive")    
             
             records.append(rec)
     
@@ -1704,6 +1709,9 @@ record(longin, SVT:daq:dtm:$(DTM):hb_check) {
 
 
 
+
+
+
 def buildDpm():
 
     records = []
@@ -1735,6 +1743,40 @@ record(stringin, SVT:daq:dpm:$(DPM):state) {
 """	
     records.append(s)
     return records
+
+
+def buildControlDpm():
+
+    records = []
+    s = """
+record(sub,SVT:controldpm1:$(DPM):poll_xml)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subPollInit")
+    field(SNAM,"subPollProcess")
+    field(FLNK,"SVT:daq:controldpm1:$(DPM):state_asub")
+
+}
+
+record(aSub,SVT:daq:controldpm1:$(DPM):state_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDpmStateInit")
+    field(SNAM,"subDpmStateProcess")
+    field(OUTA,"SVT:daq:controldpm1:$(DPM):state PP")
+    field(FTVA,"STRING")
+}
+
+record(stringin, SVT:daq:controldpm1:$(DPM):state) {
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+
+"""	
+    records.append(s)
+    return records
+
 
 
 def buildDtm():

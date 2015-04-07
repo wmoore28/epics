@@ -77,30 +77,30 @@ double getHybIValue(xmlDocPtr doc, const char* type, int index, int hyb) {
 
 
 
-xmlXPathObjectPtr getHybTs(xmlDocPtr doc, const char* type, int hyb) {
-   char tmp[256];
-   //sprintf(tmp,"/system/status/ControlDpm/FebFpga/FebCore/PowerMonitor/Hybrid%d_%s",hyb,type);
-   sprintf(tmp,"/system/status/ControlDpm/FebFpga/FebCore/SoftPowerMonitor/Hybrid%d_%s",hyb,type);
+// xmlXPathObjectPtr getHybTs(xmlDocPtr doc, const char* type, int hyb) {
+//    char tmp[256];
+//    //sprintf(tmp,"/system/status/ControlDpm/FebFpga/FebCore/PowerMonitor/Hybrid%d_%s",hyb,type);
+//    sprintf(tmp,"/system/status/ControlDpm/FebFpga/FebCore/SoftPowerMonitor/Hybrid%d_%s",hyb,type);
 
-   if(DEBUG>2) printf("[ getHybTs ] : xpath \"%s\"\n",tmp);
-   return getnodeset(doc, (xmlChar*) tmp);
-}
+//    if(DEBUG>2) printf("[ getHybTs ] : xpath \"%s\"\n",tmp);
+//    return getnodeset(doc, (xmlChar*) tmp);
+// }
 
-xmlNodePtr getHybTNode(xmlDocPtr doc, const char* type, int index, int hyb) {
-   xmlXPathObjectPtr result;
-   xmlNodePtr node;
-   result = getHybTs(doc, type, hyb);
-   node = getFebNode(doc, result, index, 3,(xmlChar*)"FebFpga");
-   return node;
-}
+// xmlNodePtr getHybTNode(xmlDocPtr doc, const char* type, int index, int hyb) {
+//    xmlXPathObjectPtr result;
+//    xmlNodePtr node;
+//    result = getHybTs(doc, type, hyb);
+//    node = getFebNode(doc, result, index, 3,(xmlChar*)"FebFpga");
+//    return node;
+// }
 
-double getHybTValue(xmlDocPtr doc, const char* type, int index, int hyb) {
-   double t;
-   xmlNodePtr node;
-   node = getHybTNode(doc,type, index, hyb);
-   t = getFloatValue(doc, node);
-   return t;
-}
+// double getHybTValue(xmlDocPtr doc, const char* type, int index, int hyb) {
+//    double t;
+//    xmlNodePtr node;
+//    node = getHybTNode(doc,type, index, hyb);
+//    t = getFloatValue(doc, node);
+//    return t;
+// }
 
 
 

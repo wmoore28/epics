@@ -13,7 +13,6 @@ svtDaq_registerRecordDeviceDriver(pdbbase)
 ## Load record instances
 dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC}")
 
-dbLoadRecords "db/dbHybT.db"
 dbLoadRecords "db/dbHybLVIrd_v125.db"
 dbLoadRecords "db/dbHybLVIrd_avdd.db"
 dbLoadRecords "db/dbHybLVIrd_dvdd.db"

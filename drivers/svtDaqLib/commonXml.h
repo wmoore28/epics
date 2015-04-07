@@ -73,6 +73,7 @@ int getDtmMinTrigPeriodProcess(char* pname, xmlDoc* doc);
 
 void getInsertedFramesProcess(char* pname, xmlDoc* doc, char* value);
 
+void getHybridTempProcess(char* pname, xmlDoc* doc, char* value);
 
 #endif
 

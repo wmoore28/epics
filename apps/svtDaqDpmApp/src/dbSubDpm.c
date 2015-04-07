@@ -45,14 +45,14 @@ static long subPollProcess(subRecord *precord) {
   // find dpm nr
   getStringFromEpicsName(precord->name,str0,0,256);
   getStringFromEpicsName(precord->name,str1,1,256);
-  if(strcmp(str0,"SVT")==0 && (strcmp(str1,"dpm")==0 || strcmp(str1,"dtm")==0)) {
+  if(strcmp(str0,"SVT")==0 && (strcmp(str1,"dpm")==0 || strcmp(str1,"dtm")==0 || strcmp(str1,"controldpm1")==0)) {
     idpm = getIntFromEpicsName(precord->name,2);  
   } else {
     printf("[ subPollProcess ]: Wrong precord name to call this function?!  (%s)\n", precord->name);    
     exit(1);
   }
   
-  if(strcmp(str1,"dpm")==0) {
+  if(strcmp(str1,"dpm")==0 || strcmp(str1,"controldpm1")==0) {
     sprintf(host,"dpm%d",idpm);
   }
   else {
@@ -675,6 +675,45 @@ static long subInsertedFramesProcess(aSubRecord *precord) {
 }
 
 
+static long subHybridTempInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subHybridTempInit ]: %d Record %s called subHybridTempInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+
+static long subHybridTempProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subHybridTempProcess ]: %d Record %s called subHybridTempProcess(%p)\n", process_order, precord->name, (void*) precord);
+  }
+
+  //if (mySubDebug)
+  printf("[ subHybridTempProcess ]: get temp from xml at %p\n", xmldoc);
+  
+  char val[256];
+  float v;
+  char unit[10];
+
+  v=0.0;
+  getHybridTempProcess(precord->name, xmldoc, val);
+
+
+  //if (mySubDebug)
+  printf("[ subHybridTempProcess ]: got str val %s\n", val);
+
+  sscanf(val,"%f %s",&v,unit);
+  
+  //if (mySubDebug)
+  printf("[ subHybridTempProcess ]: got val %f\n", v);
+
+  precord->val = (double) v;
+  
+
+  return 0;
+}
 
 
 
@@ -719,4 +758,6 @@ epicsRegisterFunction(subDtmMinTrigPeriodInit);
 epicsRegisterFunction(subDtmMinTrigPeriodProcess);
 epicsRegisterFunction(subInsertedFramesInit);
 epicsRegisterFunction(subInsertedFramesProcess);
+epicsRegisterFunction(subHybridTempInit);
+epicsRegisterFunction(subHybridTempProcess);
 
