@@ -454,7 +454,7 @@ hps_scalers_dsc2_app::hps_scalers_dsc2_app(const TGWindow *p, UInt_t w, UInt_t h
     TTimer::SingleShot(SCALER_UPDATE_PERIOD, "hps_scalers_dsc2_app", this, "refresh_scalers()");
 }
 
-void hps_scalers_dsc2_app_run(bool accumulate)
+void hps_scalers_dsc2_app_run(bool accumulate=0)
 {
     new hps_scalers_dsc2_app(gClient->GetRoot(), 1500, 500, accumulate);
 }
