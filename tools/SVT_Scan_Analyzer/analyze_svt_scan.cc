@@ -66,6 +66,11 @@ int main(int argc, char **argv)
   TF1 *f_GPol0 = new TF1("f_GPol0", "[0]*TMath::Gaus(x, [1], [2]) + [3]", 0., 15);
   f_GPol0->SetParLimits(3, 0., 100000.);
 
+  TF1 *f_Gaus = new TF1("f_Gaus", "[0]*TMath::Gaus(x, [1], [2])", 0., 20.);
+  f_Gaus->SetLineStyle(2);
+  f_Gaus->SetLineColor(96);
+  f_Gaus->SetLineWidth(4);
+
   TLatex *lat1 = new TLatex();
   lat1->SetNDC();
   
@@ -80,8 +85,12 @@ int main(int argc, char **argv)
   double si_pos_[n_graphs];
   double horiz_wire_pos_[n_graphs];
   double stereo_wire_pos_[n_graphs];
+  double horiz_wire_pos_truncated_[n_graphs];
+  double stereo_wire_pos_truncated_[n_graphs];
   double stage1_[n_graphs];
   double stage2_[n_graphs];
+  double stage1_truncated_[n_graphs];
+  double stage2_truncated_[n_graphs];
 
   gr_[0] = new TGraph(Form("%s/%s", file_dir.c_str(), file_name.c_str()), "%*s %*s %lg %lg");
   gr_[1] = new TGraph(Form("%s/%s", file_dir.c_str(), file_name.c_str()), "%*s %*s %lg %*s %lg");
@@ -137,8 +146,13 @@ int main(int argc, char **argv)
   //gr_[2]->Draw("AP");
   
   double *mean_vals = new double[n_peaks2];
+  double *mean_vals_truncated = new double[n_peaks2];
   for( int i_peak = 0; i_peak < n_peaks2; i_peak++ )
     {
+      int mean_bin = h_gr_2->FindBin(pos_2[i_peak]);
+      double fit_left_lim = h_gr_2->GetBinCenter(mean_bin - 4);
+      double fit_right_lim = h_gr_2->GetBinCenter(mean_bin + 4);
+
       cout<<"pos2_["<<i_peak<<"]  = "<<pos_2[i_peak]<<endl;
       f_GPol0->SetParameters(peak_val_2[i_peak], pos_2[i_peak], 0.2);
       h_gr_2->Fit(f_GPol0, "eN", "", pos_2[i_peak] - 1.9, pos_2[i_peak] + 1.9 );
@@ -147,6 +161,9 @@ int main(int argc, char **argv)
       double sigma = f_fit_func2_[i_peak]->GetParameter(2);
       f_fit_func2_[i_peak]->SetRange(pos_2[i_peak] - 5*sigma, pos_2[i_peak] + 5*sigma);
       mean_vals[i_peak] = f_fit_func2_[i_peak]->GetParameter(1);
+      f_Gaus->SetParameters(h_gr_2->GetBinContent(mean_bin), pos_2[i_peak], 0.07);
+      h_gr_2->Fit(f_Gaus, "+MeV", "", fit_left_lim, fit_right_lim);
+      mean_vals_truncated[i_peak] = f_Gaus->GetParameter(1);
     }
   h_gr_2->Draw("E1");
   for( int i_peak = 0; i_peak < n_peaks2; i_peak++ )
@@ -160,15 +177,21 @@ int main(int argc, char **argv)
 	{
 	  stage1_[2] = mean_vals[0];
 	  stage2_[2] = mean_vals[1];
+	  stage1_truncated_[2] = mean_vals_truncated[0];
+	  stage2_truncated_[2] = mean_vals_truncated[1];
 	}
       else
 	{
 	  stage1_[2] = mean_vals[1];
 	  stage2_[2] = mean_vals[0];
+	  stage1_truncated_[2] = mean_vals_truncated[1];
+	  stage2_truncated_[2] = mean_vals_truncated[0];
+
 	}
     }
 
   delete mean_vals;
+  delete mean_vals_truncated;
   //  line1->DrawLine(pos_x[0], 0., pos_x[0], 1.05*h_gr_2->GetMaximum());
   //  line1->DrawLine(pos_x[1], 0., pos_x[1], 1.05*h_gr_2->GetMaximum());
   //=======================================================================================================================
@@ -179,9 +202,14 @@ int main(int argc, char **argv)
   gr_[3]->Draw("AP");
 
   mean_vals = new double[n_peaks3];
-  
+  mean_vals_truncated = new double[n_peaks2];
+
   for( int i_peak = 0; i_peak < n_peaks3; i_peak++ )
     {
+      int mean_bin = h_gr_3->FindBin(pos_3[i_peak]);
+      double fit_left_lim = h_gr_3->GetBinCenter(mean_bin - 4);
+      double fit_right_lim = h_gr_3->GetBinCenter(mean_bin + 4);
+
       cout<<"pos3_["<<i_peak<<"]  = "<<pos_3[i_peak]<<endl;
       f_GPol0->SetParameters(peak_val_3[i_peak], pos_3[i_peak], 0.2);
       h_gr_3->Fit(f_GPol0, "eN", "", pos_3[i_peak] - 1.9, pos_3[i_peak] + 1.9 );
@@ -190,7 +218,9 @@ int main(int argc, char **argv)
       double sigma = f_fit_func3_[i_peak]->GetParameter(2);
       f_fit_func3_[i_peak]->SetRange(pos_3[i_peak] - 5*sigma, pos_3[i_peak] + 5*sigma);
       mean_vals[i_peak] = f_fit_func3_[i_peak]->GetParameter(1);
-
+      f_Gaus->SetParameters(h_gr_3->GetBinContent(mean_bin), pos_3[i_peak], 0.07);
+      h_gr_3->Fit(f_Gaus, "+MeV", "", fit_left_lim, fit_right_lim);
+      mean_vals_truncated[i_peak] = f_Gaus->GetParameter(1);
     }
   h_gr_3->Draw("E1");
   for( int i_peak = 0; i_peak < n_peaks3; i_peak++ )
@@ -204,11 +234,15 @@ int main(int argc, char **argv)
 	{
 	  stage1_[3] = mean_vals[0];
 	  stage2_[3] = mean_vals[1];
+	  stage1_truncated_[3] = mean_vals_truncated[0];
+	  stage2_truncated_[3] = mean_vals_truncated[1];
 	}
       else
 	{
 	  stage1_[3] = mean_vals[1];
 	  stage2_[3] = mean_vals[0];
+	  stage1_truncated_[3] = mean_vals_truncated[1];
+	  stage2_truncated_[3] = mean_vals_truncated[0];
 	}
     }
   //=======================================================================================================================
@@ -221,59 +255,87 @@ int main(int argc, char **argv)
     {
       double *positions_;
       double *positions2_;
+      double *positions_truncated_;
+      double *positions2_truncated_;
       SVTwirePosition svt_wire_pos(file_name);
 
       if( top_scan )
 	{
 	  positions_ = GetTopPos(stage1_[2]);
 	  positions2_ = GetTopPos(stage2_[2]);
+	  positions_truncated_ = GetTopPos(stage1_truncated_[2]);
+	  positions2_truncated_ = GetTopPos(stage2_truncated_[2]);
 	}
       else if( bot_scan)
 	{
 	  positions_ = GetBotPos(stage1_[2]);
 	  positions2_ = GetBotPos(stage2_[2]);
+	  positions_truncated_ = GetBotPos(stage1_truncated_[2]);
+	  positions2_truncated_ = GetBotPos(stage2_truncated_[2]);
 	}
       si_pos_[2] = positions_[0];
       horiz_wire_pos_[2] = positions_[1];
       stereo_wire_pos_[2] = positions2_[1];
+      horiz_wire_pos_truncated_[2] = positions_truncated_[1];
+      stereo_wire_pos_truncated_[2] = positions2_truncated_[1];
 
       double wire_dist = TMath::Abs(stereo_wire_pos_[2] - horiz_wire_pos_[2]);
       double beam_x = svt_wire_pos.calcXbeam(wire_dist);
-      lat1->DrawLatex(0.15, 0.95, Form("File: %s", file_name.c_str()));
+      double wire_dist_truncated = TMath::Abs(stereo_wire_pos_truncated_[2] - horiz_wire_pos_truncated_[2]);
+      double beam_x_truncated = svt_wire_pos.calcXbeam(wire_dist_truncated);
+
+      lat1->DrawLatex(0.15, 0.975, Form("File: %s", file_name.c_str()));
 
       lat1->SetTextColor(4);
-      lat1->DrawLatex(0.15, 0.85, "Analyze from HPS_t counter" );
+      lat1->DrawLatex(0.15, 0.93, "Analyze from HPS_t counter" );
       lat1->SetTextColor(64);
-      lat1->DrawLatex(0.1, 0.81, Form("%s_mot_pos1 = %1.3f mm", which_scan.c_str(), stage1_[2]));
-      lat1->DrawLatex(0.1, 0.77, Form("%s_mot_pos2 = %1.3f mm", which_scan.c_str(), stage2_[2]));
+      lat1->DrawLatex(0.1, 0.89, Form("%s_mot_pos1 = %1.3f mm", which_scan.c_str(), stage1_[2]));
+      lat1->DrawLatex(0.1, 0.85, Form("%s_mot_pos2 = %1.3f mm", which_scan.c_str(), stage2_[2]));
       //lat1->DrawLatex(0.1, 0.83, Form("%s_si_retracted_pos = %1.3f mm", which_scan.c_str(), si_pos_[2]));
-      lat1->DrawLatex(0.1, 0.73, Form("%s_wire_dist = %1.3f mm", which_scan.c_str(), wire_dist));
-      lat1->DrawLatex(0.1, 0.69, Form("%s_beam_Y = %1.3f mm", which_scan.c_str(), horiz_wire_pos_[2]));
-      lat1->DrawLatex(0.1, 0.65, Form("%s_beam_X = %1.3f mm", which_scan.c_str(), beam_x));
+      lat1->DrawLatex(0.1, 0.81, Form("%s_wire_dist = %1.3f mm", which_scan.c_str(), wire_dist));
+      lat1->DrawLatex(0.1, 0.77, Form("%s_beam_Y = %1.3f mm", which_scan.c_str(), horiz_wire_pos_[2]));
+      lat1->DrawLatex(0.1, 0.73, Form("%s_beam_X = %1.3f mm", which_scan.c_str(), beam_x));
+      lat1->SetTextColor(96);
+      lat1->DrawLatex(0.1, 0.69, Form("%s_mot_pos1 = %1.3f mm", which_scan.c_str(), stage1_truncated_[2]));
+      lat1->DrawLatex(0.1, 0.65, Form("%s_mot_pos2 = %1.3f mm", which_scan.c_str(), stage2_truncated_[2]));
+      //lat1->DrawLatex(0.1, 0.83, Form("%s_si_retracted_pos = %1.3f mm", which_scan.c_str(), si_pos_[2]));
+      lat1->DrawLatex(0.1, 0.61, Form("%s_wire_dist = %1.3f mm", which_scan.c_str(), wire_dist_truncated));
+      lat1->DrawLatex(0.1, 0.57, Form("%s_beam_Y = %1.3f mm", which_scan.c_str(), horiz_wire_pos_truncated_[2]));
+      lat1->DrawLatex(0.1, 0.53, Form("%s_beam_X = %1.3f mm", which_scan.c_str(), beam_x_truncated));
     }
   
   if( n_peaks3 == 2 )
     {
       double *positions_;
       double *positions2_;
+      double *positions_truncated_;
+      double *positions2_truncated_;
       SVTwirePosition svt_wire_pos(file_name);
 
       if( top_scan )
 	{
 	  positions_ = GetTopPos(stage1_[3]);
 	  positions2_ = GetTopPos(stage2_[3]);
+	  positions_truncated_ = GetTopPos(stage1_truncated_[3]);
+	  positions2_truncated_ = GetTopPos(stage2_truncated_[3]);
 	}
       else if( bot_scan)
 	{
 	  positions_ = GetBotPos(stage1_[3]);
 	  positions2_ = GetBotPos(stage2_[3]);
+	  positions_truncated_ = GetBotPos(stage1_truncated_[3]);
+	  positions2_truncated_ = GetBotPos(stage2_truncated_[3]);
 	}
       si_pos_[3] = positions_[0];
       horiz_wire_pos_[3] = positions_[1];
       stereo_wire_pos_[3] = positions2_[1];
+      horiz_wire_pos_truncated_[3] = positions_truncated_[1];
+      stereo_wire_pos_truncated_[3] = positions2_truncated_[1];
       
       double wire_dist = TMath::Abs(stereo_wire_pos_[3] - horiz_wire_pos_[3]);
       double beam_x = svt_wire_pos.calcXbeam(wire_dist);
+      double wire_dist_truncated = TMath::Abs(stereo_wire_pos_truncated_[3] - horiz_wire_pos_truncated_[3]);
+      double beam_x_truncated = svt_wire_pos.calcXbeam(wire_dist_truncated);
 
       lat1->SetTextColor(4);
       lat1->DrawLatex(0.15, 0.45, "Analyze from HPS_SC counter" );
@@ -284,6 +346,12 @@ int main(int argc, char **argv)
       lat1->DrawLatex(0.1, 0.33, Form("%s_wire_dist = %1.3f mm", which_scan.c_str(), wire_dist));
       lat1->DrawLatex(0.1, 0.29, Form("%s_beam_Y = %1.3f mm", which_scan.c_str(), horiz_wire_pos_[3]));
       lat1->DrawLatex(0.1, 0.25, Form("%s_beam_X = %1.3f mm", which_scan.c_str(), beam_x));
+      lat1->SetTextColor(96);
+      lat1->DrawLatex(0.1, 0.21, Form("%s_mot_pos1 = %1.3f mm", which_scan.c_str(), stage1_truncated_[3]));
+      lat1->DrawLatex(0.1, 0.17, Form("%s_mot_pos2 = %1.3f mm", which_scan.c_str(), stage2_truncated_[3]));
+      lat1->DrawLatex(0.1, 0.13, Form("%s_wire_dist = %1.3f mm", which_scan.c_str(), wire_dist_truncated));
+      lat1->DrawLatex(0.1, 0.09, Form("%s_beam_Y = %1.3f mm", which_scan.c_str(), horiz_wire_pos_truncated_[3]));
+      lat1->DrawLatex(0.1, 0.05, Form("%s_beam_X = %1.3f mm", which_scan.c_str(), beam_x_truncated));
 
       if( make_log )
 	{
