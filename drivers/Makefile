@@ -3,6 +3,7 @@ TOP = .
 include $(TOP)/configure/CONFIG
 
 ## Define modules to build
+MODULES += CAEN_HV
 MODULES += HVCAENx527
 MODULES += jlabVMEBoard
 MODULES += LVMPOD
