@@ -833,7 +833,7 @@ sy1527Init()
     mainframes_disconnect[i] = 0; // my_n:
     is_mainframe_read[i]=0; // my: flag to prevent epics value init before reading by driver
 
-int mbp=MAX_BOARDPARTS;
+  // int mbp=MAX_BOARDPARTS;
   // printf("MAXBOARDPARTS=%d\n",mbp);
     for(j=0;j<MAX_SLOT;j++){
 
@@ -1128,7 +1128,7 @@ unsigned int first_channel, unsigned int chs_number, unsigned int onoff){
 pthread_mutex_lock(&global_mutex);
     int chan;
 
-  float value=onoff;
+  // float value=onoff;
   char *tmp1, *tmp22;
   char tmp2[81], tmp3[81+strlen("caput -w 6   ")]; /// temporal
    

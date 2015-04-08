@@ -14,8 +14,8 @@ extern "C"
 #include "sy1527.h"
 #include "sy1527epics1.h"
 } ;
-#include <iostream.h> 
-
+#include <iostream> 
+using namespace std;
 
 /* Define Arguments descriptors for "Start and Atop Commands */
 static const iocshArg StartArgs[2] = { {"Chassis Number", iocshArgInt }, 
