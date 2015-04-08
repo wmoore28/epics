@@ -12,8 +12,6 @@ PROD_IOC_Linux = ioccaen
 # ecalHV.dbd will be created and installed
 DBD += ioccaen.dbd
 
-STATIC_BUILD=NO
-
 # <name>_registerRecordDeviceDriver.cpp will be created from <name>.dbd
 ioccaen_SRCS += ioccaen_registerRecordDeviceDriver.cpp
 ioccaen_SRCS += bigsub.c

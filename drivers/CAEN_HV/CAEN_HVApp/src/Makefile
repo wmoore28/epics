@@ -7,9 +7,6 @@
 TOP=../..
 include $(TOP)/configure/CONFIG
 
-# my: comment out +++++++++++ so far I do not undertand why it is needed for 
-STATIC_BUILD=NO
-
 LIB_SRCS += sy1527.c 
 LIB_SRCS += sy1527epics1.c
 PROD_SRC += sy1527_test.c
