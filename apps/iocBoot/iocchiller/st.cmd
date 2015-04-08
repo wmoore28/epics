@@ -13,14 +13,14 @@ epicsEnvSet("STREAM_PROTOCOL_PATH","${TOP}/proto")
 drvAsynIPPortConfigure("SER5", "hallb-moxa1:4005")
 
 ## debugging...
-# Thermo Scientific
+# ECAL - Anova A40
 # asynSetTraceMask("SER5",-1,0x09)
-# asynSetTraceIOMask("SER5",-1,0x04)
+# asynSetTraceIOMask("SER5",-1,0x02)
 
 ## Load record instances
 dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC}")
 dbLoadRecords("db/save_restoreStatus.db", "P=${IOC}:")
-dbLoadRecords("db/thermoSci.db", "P=HPS_ECAL:,R=CHILLER:,PORT=SER5")
+dbLoadRecords("db/anova.db", "P=HPS_ECAL:,R=CHILLER:,PORT=SER5")
 
 cd ${TOP}/iocBoot/${IOC}
 
