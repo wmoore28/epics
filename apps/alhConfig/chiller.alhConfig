@@ -13,8 +13,8 @@ $SEVRCOMMAND UP_MAJOR /home/hpsrun/scripts/notify_expert_auto.pl ecal_expert ECA
 # Channels
 #=======================================
 
-#CHANNEL CHILLER HPS_ECAL:CHILLER:TEMP
-#$COMMAND medm -x -attach -cmap -macro "sig=HPS_ECAL:CHILLER:TEMP" aiaocalc_alarm.adl >> /dev/null
+CHANNEL CHILLER HPS_ECAL:CHILLER:TEMP
+$COMMAND medm -x -attach -cmap -macro "sig=HPS_ECAL:CHILLER:TEMP" aiaocalc_alarm.adl >> /dev/null
 
 CHANNEL CHILLER HPS_ECAL:CHILLER:TEMP.STAT
 $COMMAND medm -x -attach -cmap -macro "sig=HPS_ECAL:CHILLER:TEMP.STAT" aiaocalc_alarm.adl >> /dev/null
