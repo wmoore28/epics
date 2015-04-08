@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/v1.1.0/apps/generalApp/medm/ioc_hps_health.adl"
+	name="/home/wmoore/workspaces/develop/apps/generalApp/medm/ioc_hps_health.adl"
 	version=030108
 }
 display {
@@ -1827,22 +1827,6 @@ rectangle {
 	limits {
 	}
 }
-"text update" {
-	object {
-		x=707
-		y=228
-		width=150
-		height=20
-	}
-	monitor {
-		chan="iocecalVoltages:STARTTOD"
-		clr=0
-		bclr=29
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
 text {
 	object {
 		x=15
@@ -1870,69 +1854,6 @@ text {
 	clr=14
 	bclr=8
 	label="Reboot..."
-}
-"text update" {
-	object {
-		x=862
-		y=228
-		width=60
-		height=20
-	}
-	monitor {
-		chan="iocecalVoltages:SR_status"
-		clr=0
-		bclr=29
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=924
-		y=228
-		width=130
-		height=20
-	}
-	monitor {
-		chan="iocecalVoltages:SR_statusStr"
-		clr=0
-		bclr=29
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=1056
-		y=228
-		width=200
-		height=20
-	}
-	monitor {
-		chan="iocecalVoltages:SR_recentlyStr"
-		clr=0
-		bclr=29
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"related display" {
-	object {
-		x=1260
-		y=226
-		width=20
-		height=20
-	}
-	display[0] {
-		label="Autosave"
-		name="autosave.adl"
-		args="P=iocecalVoltages:"
-	}
-	clr=14
-	bclr=6
 }
 "related display" {
 	object {
