@@ -357,6 +357,8 @@ int main(int argc, char **argv)
 	{
 	  system(Form("caput HPS_SVT:SCAN:x_offset %1.4f", beam_x));
 	  system(Form("caput HPS_SVT:SCAN:y_offset %1.4f", horiz_wire_pos_[3]));
+	  system(Form("caput HPS_SVT:SCAN:x_offset_locfit %1.4f", beam_x_truncated));
+	  system(Form("caput HPS_SVT:SCAN:y_offset_locfit %1.4f", horiz_wire_pos_truncated_[3]));
 	}
     }
   
