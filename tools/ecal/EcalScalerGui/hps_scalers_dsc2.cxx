@@ -28,6 +28,9 @@ struct totalrates_t
 class hps_scalers_dsc2_app : public TGMainFrame
 {
     private:
+
+        bool accumulate;
+
         int connect_to_server();
         int read_scalers();
         int get_ch(int x, int y);
@@ -47,7 +50,7 @@ class hps_scalers_dsc2_app : public TGMainFrame
         TH2I *pH;
         TRootEmbeddedCanvas *pCanvas;
     public:
-        hps_scalers_dsc2_app(const TGWindow *p, UInt_t w, UInt_t h);
+        hps_scalers_dsc2_app(const TGWindow *p, UInt_t w, UInt_t h, bool accumulate=0);
         ~hps_scalers_dsc2_app();
 
         void DoExit();
@@ -116,7 +119,7 @@ void hps_scalers_dsc2_app::normalize_scalers()
 
                 for(int ch = 0; ch < 16; ch++)
                 {
-                    scaled = (float)hpsdsc2_crate_slot_scalers[crate][slot][ch] * ref;
+                    scaled = (float)hpsdsc2_crate_slot_scalers[crate][slot][ch] * ref / 1250;  //  NABO HARD-CODED FIX 
                     hpsdsc2_crate_slot_scalers[crate][slot][ch] = (int)scaled;
                 }
             }
@@ -211,7 +214,7 @@ void hps_scalers_dsc2_app::draw_scalers()
 
     unsigned int max=0;
     pH->SetMinimum(0);
-    pH->Reset();
+    if (!accumulate) pH->Reset();
     for(int x = -23; x <= 23; x++)
     {
         for(int y = 1; y <= 5; y++)
@@ -377,8 +380,10 @@ void hps_scalers_dsc2_app::button_Save()
     }
 }
 
-hps_scalers_dsc2_app::hps_scalers_dsc2_app(const TGWindow *p, UInt_t w, UInt_t h) : TGMainFrame(p, w, h) 
+hps_scalers_dsc2_app::hps_scalers_dsc2_app(const TGWindow *p, UInt_t w, UInt_t h, bool accumulate) : TGMainFrame(p, w, h) 
 {
+    this->accumulate=accumulate;
+
     printf("hps_scalers_dsc2_app started...\n");
 
     SetCleanup(kDeepCleanup);
@@ -449,8 +454,8 @@ hps_scalers_dsc2_app::hps_scalers_dsc2_app(const TGWindow *p, UInt_t w, UInt_t h
     TTimer::SingleShot(SCALER_UPDATE_PERIOD, "hps_scalers_dsc2_app", this, "refresh_scalers()");
 }
 
-void hps_scalers_dsc2_app_run()
+void hps_scalers_dsc2_app_run(bool accumulate)
 {
-    new hps_scalers_dsc2_app(gClient->GetRoot(), 1500, 500);
+    new hps_scalers_dsc2_app(gClient->GetRoot(), 1500, 500, accumulate);
 }
 
