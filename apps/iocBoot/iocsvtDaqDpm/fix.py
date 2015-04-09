@@ -14,7 +14,8 @@ for fn in os.listdir("."):
             for l in f.readlines():
                 #l = l.replace("XXXX",dpm)
                 if "db/dbDataDpmEventCount.db\"," in l:
-                    fnew.write("dbLoadRecords(\"db/dbDataDpmInsertedFrames.db\",\"DPM="+str(dpm)+"\")\n")
+                    fnew.write("dbLoadRecords(\"db/dbDataDpmEBEventErrorCount.db\",\"DPM="+str(dpm)+"\")\n")
+#                    fnew.write("dbLoadRecords(\"db/dbDataDpmInsertedFrames.db\",\"DPM="+str(dpm)+"\")\n")
 #                    fnew.write("dbLoadRecords(\"db/dbDataDpmBurnCount.db\",\"DPM="+str(dpm)+"\")\n")
 #                    fnew.write("dbLoadRecords(\"db/dbDataDpmSystemState.db\",\"DPM="+str(dpm)+"\")\n")
 #                    fnew.write("dbLoadRecords(\"db/dbDataDpmBlockCount.db\",\"DPM="+str(dpm)+"\")\n")

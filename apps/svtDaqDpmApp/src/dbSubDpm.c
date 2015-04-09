@@ -654,15 +654,57 @@ static long subInsertedFramesProcess(aSubRecord *precord) {
   long *a;
   
   if (mySubDebug)
-     printf("[ subSyncProcess ]: get string from xml at %p\n", xmldoc);
-
+     printf("[ subInsertedFramesProcess ]: get string from xml at %p\n", xmldoc);
+  
   getInsertedFramesProcess(precord->name, xmldoc, val);
   
   if (mySubDebug)
      printf("[ subInsertedFramesProcess ]: got sync string \"%s\"\n", val);
   
   number = (int) strtol(val,NULL,0); // string rep begins with 0x so use base=0 instead of 16
+  
+  if (mySubDebug)
+     printf("[ subSyncProcess ]: got sync number \"%d\"\n", number);
 
+  
+  a = (long*) precord->vala;
+  *a = (long) number;
+
+
+  return 0;
+}
+
+
+static long subEBEventErrorCountInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subEBEventErrorCountInit ]: %d Record %s called subEBEventErrorCountInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+
+static long subEBEventErrorCountProcess(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subEBEventErrorCountProcess ]: %d Record %s called subEBEventErrorCountProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  
+  char val[256];
+  int number;
+  long *a;
+  
+  if (mySubDebug)
+     printf("[ subEBEventErrorCountProcess ]: get string from xml at %p\n", xmldoc);
+  
+  getEBEventErrorCountProcess(precord->name, xmldoc, val);
+
+  
+  if (mySubDebug)
+     printf("[ subEBEventErrorCountProcess ]: got sync string \"%s\"\n", val);
+  
+  number = (int) strtol(val,NULL,0); // string rep begins with 0x so use base=0 instead of 16
+  
   if (mySubDebug)
      printf("[ subSyncProcess ]: got sync number \"%d\"\n", number);
 
@@ -760,4 +802,6 @@ epicsRegisterFunction(subInsertedFramesInit);
 epicsRegisterFunction(subInsertedFramesProcess);
 epicsRegisterFunction(subHybridTempInit);
 epicsRegisterFunction(subHybridTempProcess);
+epicsRegisterFunction(subEBEventErrorCountInit);
+epicsRegisterFunction(subEBEventErrorCountProcess);
 

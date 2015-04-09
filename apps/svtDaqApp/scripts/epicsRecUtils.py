@@ -1496,6 +1496,29 @@ record(longin, SVT:daq:$(DPM):HYBID:APVID:insertedframes_rd) {
     return records
 
 
+def buildEBEventErrorCount():
+    s = """
+
+record(aSub,SVT:daq:$(DPM):ebeventerrorcount_rd_asub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subEBEventErrorCountInit")
+    field(SNAM,"subEBEventErrorCountProcess")
+    field(OUTA,"SVT:daq:$(DPM):ebeventerrorcount_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"")
+}
+
+record(longin, SVT:daq:$(DPM):ebeventerrorcount_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+"""
+    return s
+
+
 
 
 def buildDpmMap():

@@ -1638,7 +1638,6 @@ void getSyncProcess(char* pname, xmlDoc* doc, char* value) {
 
 void getInsertedFramesProcess(char* pname, xmlDoc* doc, char* value) {
    int val;
-   int ifeb;
    int idp;
    int iapv;
    char str1[BUF_SIZE];
@@ -1647,7 +1646,6 @@ void getInsertedFramesProcess(char* pname, xmlDoc* doc, char* value) {
    xmlXPathObjectPtr result;
    xmlNodePtr node;
    val = -1;
-   ifeb = -1;
    idp = -1;
   
    getStringFromEpicsName(pname,str1,1,BUF_SIZE);
@@ -1657,16 +1655,16 @@ void getInsertedFramesProcess(char* pname, xmlDoc* doc, char* value) {
       getStringFromEpicsName(pname,str5,5,BUF_SIZE);
     
       if(strcmp(str5,"insertedframes_rd_asub")==0) {      
-         ifeb = getIntFromEpicsName(pname,2);  
          idp = getIntFromEpicsName(pname,3);  
          iapv = getIntFromEpicsName(pname,4);        
          sprintf(tmp,"/system/status/DataDpm/RceCore/DataPath[@index=\"%d\"]/SampleExtractor[@index=\"%d\"]/InsertedFrames",idp,iapv);
+         
       } else {
          strcpy(tmp,""); 
       }
     
       if(strcmp(tmp,"")!=0) {
-         if(DEBUG>-2) 
+         if(DEBUG>0) 
             printf("[ getInsertedFramesProcess ] : xpath \"%s\"\n",tmp);
 
          if(doc!=NULL) {
@@ -1674,7 +1672,7 @@ void getInsertedFramesProcess(char* pname, xmlDoc* doc, char* value) {
             result =  getnodeset(doc, (xmlChar*) tmp);
 
             if(result!=NULL) {
-               if(DEBUG>-2) printf("[ getInsertedFramesProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
+               if(DEBUG>0) printf("[ getInsertedFramesProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
                if(result->nodesetval->nodeNr==1) {
                   node = result->nodesetval->nodeTab[0];
                   if(node!=NULL) {
@@ -1690,7 +1688,7 @@ void getInsertedFramesProcess(char* pname, xmlDoc* doc, char* value) {
                }
                xmlXPathFreeObject(result);	  
             } else {
-               if(DEBUG>-2)
+               if(DEBUG>0)
                   printf("[ getInsertedFramesProcess ] : [ WARNING ] no results found\n");
                strcpy(value,"-5");	  	
             }
@@ -1710,6 +1708,79 @@ void getInsertedFramesProcess(char* pname, xmlDoc* doc, char* value) {
 
    return;
 }
+
+
+
+void getEBEventErrorCountProcess(char* pname, xmlDoc* doc, char* value) {
+   int val;
+   int idp;
+   int iapv;
+   char str1[BUF_SIZE];
+   char str5[BUF_SIZE];
+   char tmp[BUF_SIZE];
+   xmlXPathObjectPtr result;
+   xmlNodePtr node;
+   val = -1;
+   idp = -1;
+  
+   getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+  
+   if(strcmp(str1,"daq")==0) {
+    
+      getStringFromEpicsName(pname,str5,3,BUF_SIZE);
+    
+      if(strcmp(str5,"ebeventerrorcount_rd_asub")==0) {      
+         sprintf(tmp,"/system/status/DataDpm/RceCore/EventBuilder/EventErrorCount");
+      } else {
+         strcpy(tmp,""); 
+      }
+      
+      if(strcmp(tmp,"")!=0) {
+         if(DEBUG>-1) 
+            printf("[ getEBEventErrorCountProcess ] : xpath \"%s\"\n",tmp);
+
+         if(doc!=NULL) {
+            
+            result =  getnodeset(doc, (xmlChar*) tmp);
+
+            if(result!=NULL) {
+               if(DEBUG>-1) printf("[ getEBEventErrorCountProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
+               if(result->nodesetval->nodeNr==1) {
+                  node = result->nodesetval->nodeTab[0];
+                  if(node!=NULL) {
+                     getStrValue(doc,node,value);
+                     if(DEBUG>-1) printf("[ getEBEventErrorCountProcess ]: got val %s.\n",value);      
+                  } else {
+                     printf("[ getEBEventErrorCountProcess ] : [ WARNING ] no Sync nodes found\n");
+                     strcpy(value,"-3");
+                  }
+               } else {
+                  printf("[ getEBEventErrorCountProcess ] : [ WARNING ] %d Sync nodes found, should be exactly 1\n", result->nodesetval->nodeNr);
+                  strcpy(value,"-4");	  
+               }
+               xmlXPathFreeObject(result);	  
+            } else {
+               if(DEBUG>-1)
+                  printf("[ getEBEventErrorCountProcess ] : [ WARNING ] no results found\n");
+               strcpy(value,"-5");	  	
+            }
+         } else {
+            if(DEBUG>1)
+               printf("[ getEBEventErrorCountProcess ] : [ WARNING ] no XML doc\n");
+            strcpy(value,"-8");	  	
+         }
+      } else {
+         printf("[ getEBEventErrorCountProcess ]: [ ERROR ]: couldn't find action for this record name \"%s\"!\n",pname);
+         strcpy(value,"-6");
+      }     
+   } else {
+      printf("[ getEBEventErrorCountProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);   
+      strcpy(value, "-7");
+   }
+
+   return;
+}
+
 
 
 

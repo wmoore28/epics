@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/svt-devel/apps/svtDaqApp/scripts/../medm/svtDpmStatus.adl"
+	name="/usr/clas12/hps/dev/apps/svtDaqApp/medm/svtDpmStatus.adl"
 	version=030108
 }
 display {
 	object {
-		x=123
-		y=78
+		x=95
+		y=21
 		width=1300
-		height=1000
+		height=900
 	}
 	clr=14
 	bclr=12
@@ -3002,19 +3002,6 @@ text {
 }
 text {
 	object {
-		x=117
-		y=480
-		width=50
-		height=18
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="BurnCount"
-	align="horiz. centered"
-}
-text {
-	object {
 		x=27
 		y=827
 		width=46
@@ -3039,6 +3026,542 @@ text {
 	textix="13"
 	align="horiz. centered"
 }
+text {
+	object {
+		x=706
+		y=30
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=51
+	}
+	textix="Run Integrity"
+	align="horiz. centered"
+}
+oval {
+	object {
+		x=729
+		y=74
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:0:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=74
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:0:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=99
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:1:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=99
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:1:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=124
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:2:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=124
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:2:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=149
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:3:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=149
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:3:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=174
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:4:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=174
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:4:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=199
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:5:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=199
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:5:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=224
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:6:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=224
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:6:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=249
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:7:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=249
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:7:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=274
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:8:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=274
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:8:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=299
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:9:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=299
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:9:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=324
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:10:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=324
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:10:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=349
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:11:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=349
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:11:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=374
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:12:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=374
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:12:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=399
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:13:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=399
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:13:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=424
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A!=B|A=0"
+		chan="SVT:daq:dpm:14:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+oval {
+	object {
+		x=729
+		y=424
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=B&A>0"
+		chan="SVT:daq:dpm:14:blockcount"
+		chanB="SVT:daq:dtm:0:readcount"
+	}
+}
+text {
+	object {
+		x=117
+		y=480
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=51
+	}
+	textix="EventErrorCount"
+	align="horiz. centered"
+}
 composite {
 	object {
 		x=127
@@ -3056,7 +3579,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:0:burncount"
+				chan="SVT:daq:0:ebeventerrorcount_rd"
 				clr=31
 				bclr=14
 			}
@@ -3072,7 +3595,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:1:burncount"
+				chan="SVT:daq:1:ebeventerrorcount_rd"
 				clr=31
 				bclr=14
 			}
@@ -3088,7 +3611,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:2:burncount"
+				chan="SVT:daq:2:ebeventerrorcount_rd"
 				clr=31
 				bclr=14
 			}
@@ -3104,7 +3627,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:3:burncount"
+				chan="SVT:daq:3:ebeventerrorcount_rd"
 				clr=31
 				bclr=14
 			}
@@ -3120,7 +3643,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:4:burncount"
+				chan="SVT:daq:4:ebeventerrorcount_rd"
 				clr=31
 				bclr=14
 			}
@@ -3136,7 +3659,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:5:burncount"
+				chan="SVT:daq:5:ebeventerrorcount_rd"
 				clr=31
 				bclr=14
 			}
@@ -3152,7 +3675,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:6:burncount"
+				chan="SVT:daq:6:ebeventerrorcount_rd"
 				clr=31
 				bclr=14
 			}
@@ -3168,7 +3691,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:7:burncount"
+				chan="SVT:daq:7:ebeventerrorcount_rd"
 				clr=31
 				bclr=14
 			}
@@ -3184,7 +3707,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:8:burncount"
+				chan="SVT:daq:8:ebeventerrorcount_rd"
 				clr=31
 				bclr=14
 			}
@@ -3200,7 +3723,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:9:burncount"
+				chan="SVT:daq:9:ebeventerrorcount_rd"
 				clr=31
 				bclr=14
 			}
@@ -3216,7 +3739,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:10:burncount"
+				chan="SVT:daq:10:ebeventerrorcount_rd"
 				clr=31
 				bclr=14
 			}
@@ -3232,7 +3755,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:11:burncount"
+				chan="SVT:daq:11:ebeventerrorcount_rd"
 				clr=31
 				bclr=14
 			}
@@ -3248,7 +3771,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:12:burncount"
+				chan="SVT:daq:12:ebeventerrorcount_rd"
 				clr=31
 				bclr=14
 			}
@@ -3264,7 +3787,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:13:burncount"
+				chan="SVT:daq:13:ebeventerrorcount_rd"
 				clr=31
 				bclr=14
 			}
@@ -3280,7 +3803,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="SVT:daq:dpm:14:burncount"
+				chan="SVT:daq:14:ebeventerrorcount_rd"
 				clr=31
 				bclr=14
 			}
@@ -3292,20 +3815,260 @@ composite {
 }
 text {
 	object {
-		x=706
-		y=30
+		x=205
+		y=480
 		width=50
 		height=18
 	}
 	"basic attribute" {
 		clr=51
 	}
-	textix="Run Integrity"
+	textix="BurnCount"
 	align="horiz. centered"
 }
 "text update" {
 	object {
-		x=185
+		x=215
+		y=503
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:0:burncount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=528
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:1:burncount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=553
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:2:burncount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=578
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:3:burncount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=603
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:4:burncount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=628
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:5:burncount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=653
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:6:burncount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=678
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:7:burncount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=702
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:8:burncount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=727
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:9:burncount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=752
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:10:burncount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=777
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:11:burncount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=802
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:12:burncount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=827
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:13:burncount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=853
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:dpm:14:burncount"
+		clr=31
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=277
 		y=503
 		width=20
 		height=20
@@ -3321,7 +4084,7 @@ text {
 }
 "text update" {
 	object {
-		x=207
+		x=299
 		y=503
 		width=20
 		height=20
@@ -3337,7 +4100,7 @@ text {
 }
 "text update" {
 	object {
-		x=229
+		x=321
 		y=503
 		width=20
 		height=20
@@ -3353,7 +4116,7 @@ text {
 }
 "text update" {
 	object {
-		x=251
+		x=343
 		y=503
 		width=20
 		height=20
@@ -3369,7 +4132,7 @@ text {
 }
 "text update" {
 	object {
-		x=273
+		x=365
 		y=503
 		width=20
 		height=20
@@ -3385,7 +4148,7 @@ text {
 }
 "text update" {
 	object {
-		x=297
+		x=389
 		y=503
 		width=20
 		height=20
@@ -3401,7 +4164,7 @@ text {
 }
 "text update" {
 	object {
-		x=319
+		x=411
 		y=503
 		width=20
 		height=20
@@ -3417,7 +4180,7 @@ text {
 }
 "text update" {
 	object {
-		x=341
+		x=433
 		y=503
 		width=20
 		height=20
@@ -3433,7 +4196,7 @@ text {
 }
 "text update" {
 	object {
-		x=363
+		x=455
 		y=503
 		width=20
 		height=20
@@ -3449,7 +4212,7 @@ text {
 }
 "text update" {
 	object {
-		x=385
+		x=477
 		y=503
 		width=20
 		height=20
@@ -3465,7 +4228,7 @@ text {
 }
 "text update" {
 	object {
-		x=409
+		x=501
 		y=503
 		width=20
 		height=20
@@ -3481,7 +4244,7 @@ text {
 }
 "text update" {
 	object {
-		x=431
+		x=523
 		y=503
 		width=20
 		height=20
@@ -3497,7 +4260,7 @@ text {
 }
 "text update" {
 	object {
-		x=453
+		x=545
 		y=503
 		width=20
 		height=20
@@ -3513,7 +4276,7 @@ text {
 }
 "text update" {
 	object {
-		x=475
+		x=567
 		y=503
 		width=20
 		height=20
@@ -3529,7 +4292,7 @@ text {
 }
 "text update" {
 	object {
-		x=497
+		x=589
 		y=503
 		width=20
 		height=20
@@ -3545,7 +4308,7 @@ text {
 }
 "text update" {
 	object {
-		x=521
+		x=613
 		y=503
 		width=20
 		height=20
@@ -3561,7 +4324,7 @@ text {
 }
 "text update" {
 	object {
-		x=543
+		x=635
 		y=503
 		width=20
 		height=20
@@ -3577,7 +4340,7 @@ text {
 }
 "text update" {
 	object {
-		x=565
+		x=657
 		y=503
 		width=20
 		height=20
@@ -3593,7 +4356,7 @@ text {
 }
 "text update" {
 	object {
-		x=587
+		x=679
 		y=503
 		width=20
 		height=20
@@ -3609,7 +4372,7 @@ text {
 }
 "text update" {
 	object {
-		x=609
+		x=701
 		y=503
 		width=20
 		height=20
@@ -3625,7 +4388,7 @@ text {
 }
 "text update" {
 	object {
-		x=185
+		x=277
 		y=528
 		width=20
 		height=20
@@ -3641,7 +4404,7 @@ text {
 }
 "text update" {
 	object {
-		x=207
+		x=299
 		y=528
 		width=20
 		height=20
@@ -3657,7 +4420,7 @@ text {
 }
 "text update" {
 	object {
-		x=229
+		x=321
 		y=528
 		width=20
 		height=20
@@ -3673,7 +4436,7 @@ text {
 }
 "text update" {
 	object {
-		x=251
+		x=343
 		y=528
 		width=20
 		height=20
@@ -3689,7 +4452,7 @@ text {
 }
 "text update" {
 	object {
-		x=273
+		x=365
 		y=528
 		width=20
 		height=20
@@ -3705,7 +4468,7 @@ text {
 }
 "text update" {
 	object {
-		x=297
+		x=389
 		y=528
 		width=20
 		height=20
@@ -3721,7 +4484,7 @@ text {
 }
 "text update" {
 	object {
-		x=319
+		x=411
 		y=528
 		width=20
 		height=20
@@ -3737,7 +4500,7 @@ text {
 }
 "text update" {
 	object {
-		x=341
+		x=433
 		y=528
 		width=20
 		height=20
@@ -3753,7 +4516,7 @@ text {
 }
 "text update" {
 	object {
-		x=363
+		x=455
 		y=528
 		width=20
 		height=20
@@ -3769,7 +4532,7 @@ text {
 }
 "text update" {
 	object {
-		x=385
+		x=477
 		y=528
 		width=20
 		height=20
@@ -3785,7 +4548,7 @@ text {
 }
 "text update" {
 	object {
-		x=409
+		x=501
 		y=528
 		width=20
 		height=20
@@ -3801,7 +4564,7 @@ text {
 }
 "text update" {
 	object {
-		x=431
+		x=523
 		y=528
 		width=20
 		height=20
@@ -3817,7 +4580,7 @@ text {
 }
 "text update" {
 	object {
-		x=453
+		x=545
 		y=528
 		width=20
 		height=20
@@ -3833,7 +4596,7 @@ text {
 }
 "text update" {
 	object {
-		x=475
+		x=567
 		y=528
 		width=20
 		height=20
@@ -3849,7 +4612,7 @@ text {
 }
 "text update" {
 	object {
-		x=497
+		x=589
 		y=528
 		width=20
 		height=20
@@ -3865,7 +4628,7 @@ text {
 }
 "text update" {
 	object {
-		x=521
+		x=613
 		y=528
 		width=20
 		height=20
@@ -3881,7 +4644,7 @@ text {
 }
 "text update" {
 	object {
-		x=543
+		x=635
 		y=528
 		width=20
 		height=20
@@ -3897,7 +4660,7 @@ text {
 }
 "text update" {
 	object {
-		x=565
+		x=657
 		y=528
 		width=20
 		height=20
@@ -3913,7 +4676,7 @@ text {
 }
 "text update" {
 	object {
-		x=587
+		x=679
 		y=528
 		width=20
 		height=20
@@ -3929,7 +4692,7 @@ text {
 }
 "text update" {
 	object {
-		x=609
+		x=701
 		y=528
 		width=20
 		height=20
@@ -3945,7 +4708,7 @@ text {
 }
 "text update" {
 	object {
-		x=185
+		x=277
 		y=553
 		width=20
 		height=20
@@ -3961,7 +4724,7 @@ text {
 }
 "text update" {
 	object {
-		x=207
+		x=299
 		y=553
 		width=20
 		height=20
@@ -3977,7 +4740,7 @@ text {
 }
 "text update" {
 	object {
-		x=229
+		x=321
 		y=553
 		width=20
 		height=20
@@ -3993,7 +4756,7 @@ text {
 }
 "text update" {
 	object {
-		x=251
+		x=343
 		y=553
 		width=20
 		height=20
@@ -4009,7 +4772,7 @@ text {
 }
 "text update" {
 	object {
-		x=273
+		x=365
 		y=553
 		width=20
 		height=20
@@ -4025,7 +4788,7 @@ text {
 }
 "text update" {
 	object {
-		x=297
+		x=389
 		y=553
 		width=20
 		height=20
@@ -4041,7 +4804,7 @@ text {
 }
 "text update" {
 	object {
-		x=319
+		x=411
 		y=553
 		width=20
 		height=20
@@ -4057,7 +4820,7 @@ text {
 }
 "text update" {
 	object {
-		x=341
+		x=433
 		y=553
 		width=20
 		height=20
@@ -4073,7 +4836,7 @@ text {
 }
 "text update" {
 	object {
-		x=363
+		x=455
 		y=553
 		width=20
 		height=20
@@ -4089,7 +4852,7 @@ text {
 }
 "text update" {
 	object {
-		x=385
+		x=477
 		y=553
 		width=20
 		height=20
@@ -4105,7 +4868,7 @@ text {
 }
 "text update" {
 	object {
-		x=409
+		x=501
 		y=553
 		width=20
 		height=20
@@ -4121,7 +4884,7 @@ text {
 }
 "text update" {
 	object {
-		x=431
+		x=523
 		y=553
 		width=20
 		height=20
@@ -4137,7 +4900,7 @@ text {
 }
 "text update" {
 	object {
-		x=453
+		x=545
 		y=553
 		width=20
 		height=20
@@ -4153,7 +4916,7 @@ text {
 }
 "text update" {
 	object {
-		x=475
+		x=567
 		y=553
 		width=20
 		height=20
@@ -4169,7 +4932,7 @@ text {
 }
 "text update" {
 	object {
-		x=497
+		x=589
 		y=553
 		width=20
 		height=20
@@ -4185,7 +4948,7 @@ text {
 }
 "text update" {
 	object {
-		x=521
+		x=613
 		y=553
 		width=20
 		height=20
@@ -4201,7 +4964,7 @@ text {
 }
 "text update" {
 	object {
-		x=543
+		x=635
 		y=553
 		width=20
 		height=20
@@ -4217,7 +4980,7 @@ text {
 }
 "text update" {
 	object {
-		x=565
+		x=657
 		y=553
 		width=20
 		height=20
@@ -4233,7 +4996,7 @@ text {
 }
 "text update" {
 	object {
-		x=587
+		x=679
 		y=553
 		width=20
 		height=20
@@ -4249,7 +5012,7 @@ text {
 }
 "text update" {
 	object {
-		x=609
+		x=701
 		y=553
 		width=20
 		height=20
@@ -4265,7 +5028,7 @@ text {
 }
 "text update" {
 	object {
-		x=185
+		x=277
 		y=578
 		width=20
 		height=20
@@ -4281,7 +5044,7 @@ text {
 }
 "text update" {
 	object {
-		x=207
+		x=299
 		y=578
 		width=20
 		height=20
@@ -4297,7 +5060,7 @@ text {
 }
 "text update" {
 	object {
-		x=229
+		x=321
 		y=578
 		width=20
 		height=20
@@ -4313,7 +5076,7 @@ text {
 }
 "text update" {
 	object {
-		x=251
+		x=343
 		y=578
 		width=20
 		height=20
@@ -4329,7 +5092,7 @@ text {
 }
 "text update" {
 	object {
-		x=273
+		x=365
 		y=578
 		width=20
 		height=20
@@ -4345,7 +5108,7 @@ text {
 }
 "text update" {
 	object {
-		x=297
+		x=389
 		y=578
 		width=20
 		height=20
@@ -4361,7 +5124,7 @@ text {
 }
 "text update" {
 	object {
-		x=319
+		x=411
 		y=578
 		width=20
 		height=20
@@ -4377,7 +5140,7 @@ text {
 }
 "text update" {
 	object {
-		x=341
+		x=433
 		y=578
 		width=20
 		height=20
@@ -4393,7 +5156,7 @@ text {
 }
 "text update" {
 	object {
-		x=363
+		x=455
 		y=578
 		width=20
 		height=20
@@ -4409,7 +5172,7 @@ text {
 }
 "text update" {
 	object {
-		x=385
+		x=477
 		y=578
 		width=20
 		height=20
@@ -4425,7 +5188,7 @@ text {
 }
 "text update" {
 	object {
-		x=409
+		x=501
 		y=578
 		width=20
 		height=20
@@ -4441,7 +5204,7 @@ text {
 }
 "text update" {
 	object {
-		x=431
+		x=523
 		y=578
 		width=20
 		height=20
@@ -4457,7 +5220,7 @@ text {
 }
 "text update" {
 	object {
-		x=453
+		x=545
 		y=578
 		width=20
 		height=20
@@ -4473,7 +5236,7 @@ text {
 }
 "text update" {
 	object {
-		x=475
+		x=567
 		y=578
 		width=20
 		height=20
@@ -4489,7 +5252,7 @@ text {
 }
 "text update" {
 	object {
-		x=497
+		x=589
 		y=578
 		width=20
 		height=20
@@ -4505,7 +5268,7 @@ text {
 }
 "text update" {
 	object {
-		x=521
+		x=613
 		y=578
 		width=20
 		height=20
@@ -4521,7 +5284,7 @@ text {
 }
 "text update" {
 	object {
-		x=543
+		x=635
 		y=578
 		width=20
 		height=20
@@ -4537,7 +5300,7 @@ text {
 }
 "text update" {
 	object {
-		x=565
+		x=657
 		y=578
 		width=20
 		height=20
@@ -4553,7 +5316,7 @@ text {
 }
 "text update" {
 	object {
-		x=587
+		x=679
 		y=578
 		width=20
 		height=20
@@ -4569,7 +5332,7 @@ text {
 }
 "text update" {
 	object {
-		x=609
+		x=701
 		y=578
 		width=20
 		height=20
@@ -4585,7 +5348,7 @@ text {
 }
 "text update" {
 	object {
-		x=185
+		x=277
 		y=603
 		width=20
 		height=20
@@ -4601,7 +5364,7 @@ text {
 }
 "text update" {
 	object {
-		x=207
+		x=299
 		y=603
 		width=20
 		height=20
@@ -4617,7 +5380,7 @@ text {
 }
 "text update" {
 	object {
-		x=229
+		x=321
 		y=603
 		width=20
 		height=20
@@ -4633,7 +5396,7 @@ text {
 }
 "text update" {
 	object {
-		x=251
+		x=343
 		y=603
 		width=20
 		height=20
@@ -4649,7 +5412,7 @@ text {
 }
 "text update" {
 	object {
-		x=273
+		x=365
 		y=603
 		width=20
 		height=20
@@ -4665,7 +5428,7 @@ text {
 }
 "text update" {
 	object {
-		x=297
+		x=389
 		y=603
 		width=20
 		height=20
@@ -4681,7 +5444,7 @@ text {
 }
 "text update" {
 	object {
-		x=319
+		x=411
 		y=603
 		width=20
 		height=20
@@ -4697,7 +5460,7 @@ text {
 }
 "text update" {
 	object {
-		x=341
+		x=433
 		y=603
 		width=20
 		height=20
@@ -4713,7 +5476,7 @@ text {
 }
 "text update" {
 	object {
-		x=363
+		x=455
 		y=603
 		width=20
 		height=20
@@ -4729,7 +5492,7 @@ text {
 }
 "text update" {
 	object {
-		x=385
+		x=477
 		y=603
 		width=20
 		height=20
@@ -4745,7 +5508,7 @@ text {
 }
 "text update" {
 	object {
-		x=409
+		x=501
 		y=603
 		width=20
 		height=20
@@ -4761,7 +5524,7 @@ text {
 }
 "text update" {
 	object {
-		x=431
+		x=523
 		y=603
 		width=20
 		height=20
@@ -4777,7 +5540,7 @@ text {
 }
 "text update" {
 	object {
-		x=453
+		x=545
 		y=603
 		width=20
 		height=20
@@ -4793,7 +5556,7 @@ text {
 }
 "text update" {
 	object {
-		x=475
+		x=567
 		y=603
 		width=20
 		height=20
@@ -4809,7 +5572,7 @@ text {
 }
 "text update" {
 	object {
-		x=497
+		x=589
 		y=603
 		width=20
 		height=20
@@ -4825,7 +5588,7 @@ text {
 }
 "text update" {
 	object {
-		x=521
+		x=613
 		y=603
 		width=20
 		height=20
@@ -4841,7 +5604,7 @@ text {
 }
 "text update" {
 	object {
-		x=543
+		x=635
 		y=603
 		width=20
 		height=20
@@ -4857,7 +5620,7 @@ text {
 }
 "text update" {
 	object {
-		x=565
+		x=657
 		y=603
 		width=20
 		height=20
@@ -4873,7 +5636,7 @@ text {
 }
 "text update" {
 	object {
-		x=587
+		x=679
 		y=603
 		width=20
 		height=20
@@ -4889,7 +5652,7 @@ text {
 }
 "text update" {
 	object {
-		x=609
+		x=701
 		y=603
 		width=20
 		height=20
@@ -4905,7 +5668,7 @@ text {
 }
 "text update" {
 	object {
-		x=185
+		x=277
 		y=628
 		width=20
 		height=20
@@ -4921,7 +5684,7 @@ text {
 }
 "text update" {
 	object {
-		x=207
+		x=299
 		y=628
 		width=20
 		height=20
@@ -4937,7 +5700,7 @@ text {
 }
 "text update" {
 	object {
-		x=229
+		x=321
 		y=628
 		width=20
 		height=20
@@ -4953,7 +5716,7 @@ text {
 }
 "text update" {
 	object {
-		x=251
+		x=343
 		y=628
 		width=20
 		height=20
@@ -4969,7 +5732,7 @@ text {
 }
 "text update" {
 	object {
-		x=273
+		x=365
 		y=628
 		width=20
 		height=20
@@ -4985,7 +5748,7 @@ text {
 }
 "text update" {
 	object {
-		x=297
+		x=389
 		y=628
 		width=20
 		height=20
@@ -5001,7 +5764,7 @@ text {
 }
 "text update" {
 	object {
-		x=319
+		x=411
 		y=628
 		width=20
 		height=20
@@ -5017,7 +5780,7 @@ text {
 }
 "text update" {
 	object {
-		x=341
+		x=433
 		y=628
 		width=20
 		height=20
@@ -5033,7 +5796,7 @@ text {
 }
 "text update" {
 	object {
-		x=363
+		x=455
 		y=628
 		width=20
 		height=20
@@ -5049,7 +5812,7 @@ text {
 }
 "text update" {
 	object {
-		x=385
+		x=477
 		y=628
 		width=20
 		height=20
@@ -5065,7 +5828,7 @@ text {
 }
 "text update" {
 	object {
-		x=409
+		x=501
 		y=628
 		width=20
 		height=20
@@ -5081,7 +5844,7 @@ text {
 }
 "text update" {
 	object {
-		x=431
+		x=523
 		y=628
 		width=20
 		height=20
@@ -5097,7 +5860,7 @@ text {
 }
 "text update" {
 	object {
-		x=453
+		x=545
 		y=628
 		width=20
 		height=20
@@ -5113,7 +5876,7 @@ text {
 }
 "text update" {
 	object {
-		x=475
+		x=567
 		y=628
 		width=20
 		height=20
@@ -5129,7 +5892,7 @@ text {
 }
 "text update" {
 	object {
-		x=497
+		x=589
 		y=628
 		width=20
 		height=20
@@ -5145,7 +5908,7 @@ text {
 }
 "text update" {
 	object {
-		x=521
+		x=613
 		y=628
 		width=20
 		height=20
@@ -5161,7 +5924,7 @@ text {
 }
 "text update" {
 	object {
-		x=543
+		x=635
 		y=628
 		width=20
 		height=20
@@ -5177,7 +5940,7 @@ text {
 }
 "text update" {
 	object {
-		x=565
+		x=657
 		y=628
 		width=20
 		height=20
@@ -5193,7 +5956,7 @@ text {
 }
 "text update" {
 	object {
-		x=587
+		x=679
 		y=628
 		width=20
 		height=20
@@ -5209,7 +5972,7 @@ text {
 }
 "text update" {
 	object {
-		x=609
+		x=701
 		y=628
 		width=20
 		height=20
@@ -5225,7 +5988,7 @@ text {
 }
 "text update" {
 	object {
-		x=185
+		x=277
 		y=653
 		width=20
 		height=20
@@ -5241,7 +6004,7 @@ text {
 }
 "text update" {
 	object {
-		x=207
+		x=299
 		y=653
 		width=20
 		height=20
@@ -5257,7 +6020,7 @@ text {
 }
 "text update" {
 	object {
-		x=229
+		x=321
 		y=653
 		width=20
 		height=20
@@ -5273,7 +6036,7 @@ text {
 }
 "text update" {
 	object {
-		x=251
+		x=343
 		y=653
 		width=20
 		height=20
@@ -5289,7 +6052,7 @@ text {
 }
 "text update" {
 	object {
-		x=273
+		x=365
 		y=653
 		width=20
 		height=20
@@ -5305,7 +6068,7 @@ text {
 }
 "text update" {
 	object {
-		x=297
+		x=389
 		y=653
 		width=20
 		height=20
@@ -5321,7 +6084,7 @@ text {
 }
 "text update" {
 	object {
-		x=319
+		x=411
 		y=653
 		width=20
 		height=20
@@ -5337,7 +6100,7 @@ text {
 }
 "text update" {
 	object {
-		x=341
+		x=433
 		y=653
 		width=20
 		height=20
@@ -5353,7 +6116,7 @@ text {
 }
 "text update" {
 	object {
-		x=363
+		x=455
 		y=653
 		width=20
 		height=20
@@ -5369,7 +6132,7 @@ text {
 }
 "text update" {
 	object {
-		x=385
+		x=477
 		y=653
 		width=20
 		height=20
@@ -5385,7 +6148,7 @@ text {
 }
 "text update" {
 	object {
-		x=409
+		x=501
 		y=653
 		width=20
 		height=20
@@ -5401,7 +6164,7 @@ text {
 }
 "text update" {
 	object {
-		x=431
+		x=523
 		y=653
 		width=20
 		height=20
@@ -5417,7 +6180,7 @@ text {
 }
 "text update" {
 	object {
-		x=453
+		x=545
 		y=653
 		width=20
 		height=20
@@ -5433,7 +6196,7 @@ text {
 }
 "text update" {
 	object {
-		x=475
+		x=567
 		y=653
 		width=20
 		height=20
@@ -5449,7 +6212,7 @@ text {
 }
 "text update" {
 	object {
-		x=497
+		x=589
 		y=653
 		width=20
 		height=20
@@ -5465,7 +6228,7 @@ text {
 }
 "text update" {
 	object {
-		x=521
+		x=613
 		y=653
 		width=20
 		height=20
@@ -5481,7 +6244,7 @@ text {
 }
 "text update" {
 	object {
-		x=543
+		x=635
 		y=653
 		width=20
 		height=20
@@ -5497,7 +6260,7 @@ text {
 }
 "text update" {
 	object {
-		x=565
+		x=657
 		y=653
 		width=20
 		height=20
@@ -5513,7 +6276,7 @@ text {
 }
 "text update" {
 	object {
-		x=587
+		x=679
 		y=653
 		width=20
 		height=20
@@ -5529,7 +6292,7 @@ text {
 }
 "text update" {
 	object {
-		x=609
+		x=701
 		y=653
 		width=20
 		height=20
@@ -5545,7 +6308,7 @@ text {
 }
 "text update" {
 	object {
-		x=185
+		x=277
 		y=678
 		width=20
 		height=20
@@ -5561,7 +6324,7 @@ text {
 }
 "text update" {
 	object {
-		x=207
+		x=299
 		y=678
 		width=20
 		height=20
@@ -5577,7 +6340,7 @@ text {
 }
 "text update" {
 	object {
-		x=229
+		x=321
 		y=678
 		width=20
 		height=20
@@ -5593,7 +6356,7 @@ text {
 }
 "text update" {
 	object {
-		x=251
+		x=343
 		y=678
 		width=20
 		height=20
@@ -5609,7 +6372,7 @@ text {
 }
 "text update" {
 	object {
-		x=273
+		x=365
 		y=678
 		width=20
 		height=20
@@ -5625,7 +6388,7 @@ text {
 }
 "text update" {
 	object {
-		x=297
+		x=389
 		y=678
 		width=20
 		height=20
@@ -5641,7 +6404,7 @@ text {
 }
 "text update" {
 	object {
-		x=319
+		x=411
 		y=678
 		width=20
 		height=20
@@ -5657,7 +6420,7 @@ text {
 }
 "text update" {
 	object {
-		x=341
+		x=433
 		y=678
 		width=20
 		height=20
@@ -5673,7 +6436,7 @@ text {
 }
 "text update" {
 	object {
-		x=363
+		x=455
 		y=678
 		width=20
 		height=20
@@ -5689,7 +6452,7 @@ text {
 }
 "text update" {
 	object {
-		x=385
+		x=477
 		y=678
 		width=20
 		height=20
@@ -5705,7 +6468,7 @@ text {
 }
 "text update" {
 	object {
-		x=409
+		x=501
 		y=678
 		width=20
 		height=20
@@ -5721,7 +6484,7 @@ text {
 }
 "text update" {
 	object {
-		x=431
+		x=523
 		y=678
 		width=20
 		height=20
@@ -5737,7 +6500,7 @@ text {
 }
 "text update" {
 	object {
-		x=453
+		x=545
 		y=678
 		width=20
 		height=20
@@ -5753,7 +6516,7 @@ text {
 }
 "text update" {
 	object {
-		x=475
+		x=567
 		y=678
 		width=20
 		height=20
@@ -5769,7 +6532,7 @@ text {
 }
 "text update" {
 	object {
-		x=497
+		x=589
 		y=678
 		width=20
 		height=20
@@ -5785,7 +6548,7 @@ text {
 }
 "text update" {
 	object {
-		x=521
+		x=613
 		y=678
 		width=20
 		height=20
@@ -5801,7 +6564,7 @@ text {
 }
 "text update" {
 	object {
-		x=543
+		x=635
 		y=678
 		width=20
 		height=20
@@ -5817,7 +6580,7 @@ text {
 }
 "text update" {
 	object {
-		x=565
+		x=657
 		y=678
 		width=20
 		height=20
@@ -5833,7 +6596,7 @@ text {
 }
 "text update" {
 	object {
-		x=587
+		x=679
 		y=678
 		width=20
 		height=20
@@ -5849,7 +6612,7 @@ text {
 }
 "text update" {
 	object {
-		x=609
+		x=701
 		y=678
 		width=20
 		height=20
@@ -5865,7 +6628,7 @@ text {
 }
 "text update" {
 	object {
-		x=185
+		x=277
 		y=703
 		width=20
 		height=20
@@ -5881,7 +6644,7 @@ text {
 }
 "text update" {
 	object {
-		x=207
+		x=299
 		y=703
 		width=20
 		height=20
@@ -5897,7 +6660,7 @@ text {
 }
 "text update" {
 	object {
-		x=229
+		x=321
 		y=703
 		width=20
 		height=20
@@ -5913,7 +6676,7 @@ text {
 }
 "text update" {
 	object {
-		x=251
+		x=343
 		y=703
 		width=20
 		height=20
@@ -5929,7 +6692,7 @@ text {
 }
 "text update" {
 	object {
-		x=273
+		x=365
 		y=703
 		width=20
 		height=20
@@ -5945,7 +6708,7 @@ text {
 }
 "text update" {
 	object {
-		x=297
+		x=389
 		y=703
 		width=20
 		height=20
@@ -5961,7 +6724,7 @@ text {
 }
 "text update" {
 	object {
-		x=319
+		x=411
 		y=703
 		width=20
 		height=20
@@ -5977,7 +6740,7 @@ text {
 }
 "text update" {
 	object {
-		x=341
+		x=433
 		y=703
 		width=20
 		height=20
@@ -5993,7 +6756,7 @@ text {
 }
 "text update" {
 	object {
-		x=363
+		x=455
 		y=703
 		width=20
 		height=20
@@ -6009,7 +6772,7 @@ text {
 }
 "text update" {
 	object {
-		x=385
+		x=477
 		y=703
 		width=20
 		height=20
@@ -6025,7 +6788,7 @@ text {
 }
 "text update" {
 	object {
-		x=409
+		x=501
 		y=703
 		width=20
 		height=20
@@ -6041,7 +6804,7 @@ text {
 }
 "text update" {
 	object {
-		x=431
+		x=523
 		y=703
 		width=20
 		height=20
@@ -6057,7 +6820,7 @@ text {
 }
 "text update" {
 	object {
-		x=453
+		x=545
 		y=703
 		width=20
 		height=20
@@ -6073,7 +6836,7 @@ text {
 }
 "text update" {
 	object {
-		x=475
+		x=567
 		y=703
 		width=20
 		height=20
@@ -6089,7 +6852,7 @@ text {
 }
 "text update" {
 	object {
-		x=497
+		x=589
 		y=703
 		width=20
 		height=20
@@ -6105,7 +6868,7 @@ text {
 }
 "text update" {
 	object {
-		x=521
+		x=613
 		y=703
 		width=20
 		height=20
@@ -6121,7 +6884,7 @@ text {
 }
 "text update" {
 	object {
-		x=543
+		x=635
 		y=703
 		width=20
 		height=20
@@ -6137,7 +6900,7 @@ text {
 }
 "text update" {
 	object {
-		x=565
+		x=657
 		y=703
 		width=20
 		height=20
@@ -6153,7 +6916,7 @@ text {
 }
 "text update" {
 	object {
-		x=587
+		x=679
 		y=703
 		width=20
 		height=20
@@ -6169,7 +6932,7 @@ text {
 }
 "text update" {
 	object {
-		x=609
+		x=701
 		y=703
 		width=20
 		height=20
@@ -6185,7 +6948,7 @@ text {
 }
 "text update" {
 	object {
-		x=185
+		x=277
 		y=728
 		width=20
 		height=20
@@ -6201,7 +6964,7 @@ text {
 }
 "text update" {
 	object {
-		x=207
+		x=299
 		y=728
 		width=20
 		height=20
@@ -6217,7 +6980,7 @@ text {
 }
 "text update" {
 	object {
-		x=229
+		x=321
 		y=728
 		width=20
 		height=20
@@ -6233,7 +6996,7 @@ text {
 }
 "text update" {
 	object {
-		x=251
+		x=343
 		y=728
 		width=20
 		height=20
@@ -6249,7 +7012,7 @@ text {
 }
 "text update" {
 	object {
-		x=273
+		x=365
 		y=728
 		width=20
 		height=20
@@ -6265,7 +7028,7 @@ text {
 }
 "text update" {
 	object {
-		x=297
+		x=389
 		y=728
 		width=20
 		height=20
@@ -6281,7 +7044,7 @@ text {
 }
 "text update" {
 	object {
-		x=319
+		x=411
 		y=728
 		width=20
 		height=20
@@ -6297,7 +7060,7 @@ text {
 }
 "text update" {
 	object {
-		x=341
+		x=433
 		y=728
 		width=20
 		height=20
@@ -6313,7 +7076,7 @@ text {
 }
 "text update" {
 	object {
-		x=363
+		x=455
 		y=728
 		width=20
 		height=20
@@ -6329,7 +7092,7 @@ text {
 }
 "text update" {
 	object {
-		x=385
+		x=477
 		y=728
 		width=20
 		height=20
@@ -6345,7 +7108,7 @@ text {
 }
 "text update" {
 	object {
-		x=409
+		x=501
 		y=728
 		width=20
 		height=20
@@ -6361,7 +7124,7 @@ text {
 }
 "text update" {
 	object {
-		x=431
+		x=523
 		y=728
 		width=20
 		height=20
@@ -6377,7 +7140,7 @@ text {
 }
 "text update" {
 	object {
-		x=453
+		x=545
 		y=728
 		width=20
 		height=20
@@ -6393,7 +7156,7 @@ text {
 }
 "text update" {
 	object {
-		x=475
+		x=567
 		y=728
 		width=20
 		height=20
@@ -6409,7 +7172,7 @@ text {
 }
 "text update" {
 	object {
-		x=497
+		x=589
 		y=728
 		width=20
 		height=20
@@ -6425,7 +7188,7 @@ text {
 }
 "text update" {
 	object {
-		x=521
+		x=613
 		y=728
 		width=20
 		height=20
@@ -6441,7 +7204,7 @@ text {
 }
 "text update" {
 	object {
-		x=543
+		x=635
 		y=728
 		width=20
 		height=20
@@ -6457,7 +7220,7 @@ text {
 }
 "text update" {
 	object {
-		x=565
+		x=657
 		y=728
 		width=20
 		height=20
@@ -6473,7 +7236,7 @@ text {
 }
 "text update" {
 	object {
-		x=587
+		x=679
 		y=728
 		width=20
 		height=20
@@ -6489,7 +7252,7 @@ text {
 }
 "text update" {
 	object {
-		x=609
+		x=701
 		y=728
 		width=20
 		height=20
@@ -6505,7 +7268,7 @@ text {
 }
 "text update" {
 	object {
-		x=185
+		x=277
 		y=753
 		width=20
 		height=20
@@ -6521,7 +7284,7 @@ text {
 }
 "text update" {
 	object {
-		x=207
+		x=299
 		y=753
 		width=20
 		height=20
@@ -6537,7 +7300,7 @@ text {
 }
 "text update" {
 	object {
-		x=229
+		x=321
 		y=753
 		width=20
 		height=20
@@ -6553,7 +7316,7 @@ text {
 }
 "text update" {
 	object {
-		x=251
+		x=343
 		y=753
 		width=20
 		height=20
@@ -6569,7 +7332,7 @@ text {
 }
 "text update" {
 	object {
-		x=273
+		x=365
 		y=753
 		width=20
 		height=20
@@ -6585,7 +7348,7 @@ text {
 }
 "text update" {
 	object {
-		x=297
+		x=389
 		y=753
 		width=20
 		height=20
@@ -6601,7 +7364,7 @@ text {
 }
 "text update" {
 	object {
-		x=319
+		x=411
 		y=753
 		width=20
 		height=20
@@ -6617,7 +7380,7 @@ text {
 }
 "text update" {
 	object {
-		x=341
+		x=433
 		y=753
 		width=20
 		height=20
@@ -6633,7 +7396,7 @@ text {
 }
 "text update" {
 	object {
-		x=363
+		x=455
 		y=753
 		width=20
 		height=20
@@ -6649,7 +7412,7 @@ text {
 }
 "text update" {
 	object {
-		x=385
+		x=477
 		y=753
 		width=20
 		height=20
@@ -6665,7 +7428,7 @@ text {
 }
 "text update" {
 	object {
-		x=409
+		x=501
 		y=753
 		width=20
 		height=20
@@ -6681,7 +7444,7 @@ text {
 }
 "text update" {
 	object {
-		x=431
+		x=523
 		y=753
 		width=20
 		height=20
@@ -6697,7 +7460,7 @@ text {
 }
 "text update" {
 	object {
-		x=453
+		x=545
 		y=753
 		width=20
 		height=20
@@ -6713,7 +7476,7 @@ text {
 }
 "text update" {
 	object {
-		x=475
+		x=567
 		y=753
 		width=20
 		height=20
@@ -6729,7 +7492,7 @@ text {
 }
 "text update" {
 	object {
-		x=497
+		x=589
 		y=753
 		width=20
 		height=20
@@ -6745,7 +7508,7 @@ text {
 }
 "text update" {
 	object {
-		x=521
+		x=613
 		y=753
 		width=20
 		height=20
@@ -6761,7 +7524,7 @@ text {
 }
 "text update" {
 	object {
-		x=543
+		x=635
 		y=753
 		width=20
 		height=20
@@ -6777,7 +7540,7 @@ text {
 }
 "text update" {
 	object {
-		x=565
+		x=657
 		y=753
 		width=20
 		height=20
@@ -6793,7 +7556,7 @@ text {
 }
 "text update" {
 	object {
-		x=587
+		x=679
 		y=753
 		width=20
 		height=20
@@ -6809,7 +7572,7 @@ text {
 }
 "text update" {
 	object {
-		x=609
+		x=701
 		y=753
 		width=20
 		height=20
@@ -6825,7 +7588,7 @@ text {
 }
 "text update" {
 	object {
-		x=185
+		x=277
 		y=778
 		width=20
 		height=20
@@ -6841,7 +7604,7 @@ text {
 }
 "text update" {
 	object {
-		x=207
+		x=299
 		y=778
 		width=20
 		height=20
@@ -6857,7 +7620,7 @@ text {
 }
 "text update" {
 	object {
-		x=229
+		x=321
 		y=778
 		width=20
 		height=20
@@ -6873,7 +7636,7 @@ text {
 }
 "text update" {
 	object {
-		x=251
+		x=343
 		y=778
 		width=20
 		height=20
@@ -6889,7 +7652,7 @@ text {
 }
 "text update" {
 	object {
-		x=273
+		x=365
 		y=778
 		width=20
 		height=20
@@ -6905,7 +7668,7 @@ text {
 }
 "text update" {
 	object {
-		x=297
+		x=389
 		y=778
 		width=20
 		height=20
@@ -6921,7 +7684,7 @@ text {
 }
 "text update" {
 	object {
-		x=319
+		x=411
 		y=778
 		width=20
 		height=20
@@ -6937,7 +7700,7 @@ text {
 }
 "text update" {
 	object {
-		x=341
+		x=433
 		y=778
 		width=20
 		height=20
@@ -6953,7 +7716,7 @@ text {
 }
 "text update" {
 	object {
-		x=363
+		x=455
 		y=778
 		width=20
 		height=20
@@ -6969,7 +7732,7 @@ text {
 }
 "text update" {
 	object {
-		x=385
+		x=477
 		y=778
 		width=20
 		height=20
@@ -6985,7 +7748,7 @@ text {
 }
 "text update" {
 	object {
-		x=409
+		x=501
 		y=778
 		width=20
 		height=20
@@ -7001,7 +7764,7 @@ text {
 }
 "text update" {
 	object {
-		x=431
+		x=523
 		y=778
 		width=20
 		height=20
@@ -7017,7 +7780,7 @@ text {
 }
 "text update" {
 	object {
-		x=453
+		x=545
 		y=778
 		width=20
 		height=20
@@ -7033,7 +7796,7 @@ text {
 }
 "text update" {
 	object {
-		x=475
+		x=567
 		y=778
 		width=20
 		height=20
@@ -7049,7 +7812,7 @@ text {
 }
 "text update" {
 	object {
-		x=497
+		x=589
 		y=778
 		width=20
 		height=20
@@ -7065,7 +7828,7 @@ text {
 }
 "text update" {
 	object {
-		x=521
+		x=613
 		y=778
 		width=20
 		height=20
@@ -7081,7 +7844,7 @@ text {
 }
 "text update" {
 	object {
-		x=543
+		x=635
 		y=778
 		width=20
 		height=20
@@ -7097,7 +7860,7 @@ text {
 }
 "text update" {
 	object {
-		x=565
+		x=657
 		y=778
 		width=20
 		height=20
@@ -7113,7 +7876,7 @@ text {
 }
 "text update" {
 	object {
-		x=587
+		x=679
 		y=778
 		width=20
 		height=20
@@ -7129,7 +7892,7 @@ text {
 }
 "text update" {
 	object {
-		x=609
+		x=701
 		y=778
 		width=20
 		height=20
@@ -7145,7 +7908,7 @@ text {
 }
 "text update" {
 	object {
-		x=185
+		x=277
 		y=803
 		width=20
 		height=20
@@ -7161,7 +7924,7 @@ text {
 }
 "text update" {
 	object {
-		x=207
+		x=299
 		y=803
 		width=20
 		height=20
@@ -7177,7 +7940,7 @@ text {
 }
 "text update" {
 	object {
-		x=229
+		x=321
 		y=803
 		width=20
 		height=20
@@ -7193,7 +7956,7 @@ text {
 }
 "text update" {
 	object {
-		x=251
+		x=343
 		y=803
 		width=20
 		height=20
@@ -7209,7 +7972,7 @@ text {
 }
 "text update" {
 	object {
-		x=273
+		x=365
 		y=803
 		width=20
 		height=20
@@ -7225,7 +7988,7 @@ text {
 }
 "text update" {
 	object {
-		x=297
+		x=389
 		y=803
 		width=20
 		height=20
@@ -7241,7 +8004,7 @@ text {
 }
 "text update" {
 	object {
-		x=319
+		x=411
 		y=803
 		width=20
 		height=20
@@ -7257,7 +8020,7 @@ text {
 }
 "text update" {
 	object {
-		x=341
+		x=433
 		y=803
 		width=20
 		height=20
@@ -7273,7 +8036,7 @@ text {
 }
 "text update" {
 	object {
-		x=363
+		x=455
 		y=803
 		width=20
 		height=20
@@ -7289,7 +8052,7 @@ text {
 }
 "text update" {
 	object {
-		x=385
+		x=477
 		y=803
 		width=20
 		height=20
@@ -7305,7 +8068,7 @@ text {
 }
 "text update" {
 	object {
-		x=409
+		x=501
 		y=803
 		width=20
 		height=20
@@ -7321,7 +8084,7 @@ text {
 }
 "text update" {
 	object {
-		x=431
+		x=523
 		y=803
 		width=20
 		height=20
@@ -7337,7 +8100,7 @@ text {
 }
 "text update" {
 	object {
-		x=453
+		x=545
 		y=803
 		width=20
 		height=20
@@ -7353,7 +8116,7 @@ text {
 }
 "text update" {
 	object {
-		x=475
+		x=567
 		y=803
 		width=20
 		height=20
@@ -7369,7 +8132,7 @@ text {
 }
 "text update" {
 	object {
-		x=497
+		x=589
 		y=803
 		width=20
 		height=20
@@ -7385,7 +8148,7 @@ text {
 }
 "text update" {
 	object {
-		x=521
+		x=613
 		y=803
 		width=20
 		height=20
@@ -7401,7 +8164,7 @@ text {
 }
 "text update" {
 	object {
-		x=543
+		x=635
 		y=803
 		width=20
 		height=20
@@ -7417,7 +8180,7 @@ text {
 }
 "text update" {
 	object {
-		x=565
+		x=657
 		y=803
 		width=20
 		height=20
@@ -7433,7 +8196,7 @@ text {
 }
 "text update" {
 	object {
-		x=587
+		x=679
 		y=803
 		width=20
 		height=20
@@ -7449,7 +8212,7 @@ text {
 }
 "text update" {
 	object {
-		x=609
+		x=701
 		y=803
 		width=20
 		height=20
@@ -7465,7 +8228,7 @@ text {
 }
 "text update" {
 	object {
-		x=185
+		x=277
 		y=828
 		width=20
 		height=20
@@ -7481,7 +8244,7 @@ text {
 }
 "text update" {
 	object {
-		x=207
+		x=299
 		y=828
 		width=20
 		height=20
@@ -7497,7 +8260,7 @@ text {
 }
 "text update" {
 	object {
-		x=229
+		x=321
 		y=828
 		width=20
 		height=20
@@ -7513,7 +8276,7 @@ text {
 }
 "text update" {
 	object {
-		x=251
+		x=343
 		y=828
 		width=20
 		height=20
@@ -7529,7 +8292,7 @@ text {
 }
 "text update" {
 	object {
-		x=273
+		x=365
 		y=828
 		width=20
 		height=20
@@ -7545,7 +8308,7 @@ text {
 }
 "text update" {
 	object {
-		x=297
+		x=389
 		y=828
 		width=20
 		height=20
@@ -7561,7 +8324,7 @@ text {
 }
 "text update" {
 	object {
-		x=319
+		x=411
 		y=828
 		width=20
 		height=20
@@ -7577,7 +8340,7 @@ text {
 }
 "text update" {
 	object {
-		x=341
+		x=433
 		y=828
 		width=20
 		height=20
@@ -7593,7 +8356,7 @@ text {
 }
 "text update" {
 	object {
-		x=363
+		x=455
 		y=828
 		width=20
 		height=20
@@ -7609,7 +8372,7 @@ text {
 }
 "text update" {
 	object {
-		x=385
+		x=477
 		y=828
 		width=20
 		height=20
@@ -7625,7 +8388,7 @@ text {
 }
 "text update" {
 	object {
-		x=409
+		x=501
 		y=828
 		width=20
 		height=20
@@ -7641,7 +8404,7 @@ text {
 }
 "text update" {
 	object {
-		x=431
+		x=523
 		y=828
 		width=20
 		height=20
@@ -7657,7 +8420,7 @@ text {
 }
 "text update" {
 	object {
-		x=453
+		x=545
 		y=828
 		width=20
 		height=20
@@ -7673,7 +8436,7 @@ text {
 }
 "text update" {
 	object {
-		x=475
+		x=567
 		y=828
 		width=20
 		height=20
@@ -7689,7 +8452,7 @@ text {
 }
 "text update" {
 	object {
-		x=497
+		x=589
 		y=828
 		width=20
 		height=20
@@ -7705,7 +8468,7 @@ text {
 }
 "text update" {
 	object {
-		x=521
+		x=613
 		y=828
 		width=20
 		height=20
@@ -7721,7 +8484,7 @@ text {
 }
 "text update" {
 	object {
-		x=543
+		x=635
 		y=828
 		width=20
 		height=20
@@ -7737,7 +8500,7 @@ text {
 }
 "text update" {
 	object {
-		x=565
+		x=657
 		y=828
 		width=20
 		height=20
@@ -7753,7 +8516,7 @@ text {
 }
 "text update" {
 	object {
-		x=587
+		x=679
 		y=828
 		width=20
 		height=20
@@ -7769,7 +8532,7 @@ text {
 }
 "text update" {
 	object {
-		x=609
+		x=701
 		y=828
 		width=20
 		height=20
@@ -7785,7 +8548,7 @@ text {
 }
 "text update" {
 	object {
-		x=185
+		x=277
 		y=853
 		width=20
 		height=20
@@ -7801,7 +8564,7 @@ text {
 }
 "text update" {
 	object {
-		x=207
+		x=299
 		y=853
 		width=20
 		height=20
@@ -7817,7 +8580,7 @@ text {
 }
 "text update" {
 	object {
-		x=229
+		x=321
 		y=853
 		width=20
 		height=20
@@ -7833,7 +8596,7 @@ text {
 }
 "text update" {
 	object {
-		x=251
+		x=343
 		y=853
 		width=20
 		height=20
@@ -7849,7 +8612,7 @@ text {
 }
 "text update" {
 	object {
-		x=273
+		x=365
 		y=853
 		width=20
 		height=20
@@ -7865,7 +8628,7 @@ text {
 }
 "text update" {
 	object {
-		x=297
+		x=389
 		y=853
 		width=20
 		height=20
@@ -7881,7 +8644,7 @@ text {
 }
 "text update" {
 	object {
-		x=319
+		x=411
 		y=853
 		width=20
 		height=20
@@ -7897,7 +8660,7 @@ text {
 }
 "text update" {
 	object {
-		x=341
+		x=433
 		y=853
 		width=20
 		height=20
@@ -7913,7 +8676,7 @@ text {
 }
 "text update" {
 	object {
-		x=363
+		x=455
 		y=853
 		width=20
 		height=20
@@ -7929,7 +8692,7 @@ text {
 }
 "text update" {
 	object {
-		x=385
+		x=477
 		y=853
 		width=20
 		height=20
@@ -7945,7 +8708,7 @@ text {
 }
 "text update" {
 	object {
-		x=409
+		x=501
 		y=853
 		width=20
 		height=20
@@ -7961,7 +8724,7 @@ text {
 }
 "text update" {
 	object {
-		x=431
+		x=523
 		y=853
 		width=20
 		height=20
@@ -7977,7 +8740,7 @@ text {
 }
 "text update" {
 	object {
-		x=453
+		x=545
 		y=853
 		width=20
 		height=20
@@ -7993,7 +8756,7 @@ text {
 }
 "text update" {
 	object {
-		x=475
+		x=567
 		y=853
 		width=20
 		height=20
@@ -8009,7 +8772,7 @@ text {
 }
 "text update" {
 	object {
-		x=497
+		x=589
 		y=853
 		width=20
 		height=20
@@ -8025,7 +8788,7 @@ text {
 }
 "text update" {
 	object {
-		x=521
+		x=613
 		y=853
 		width=20
 		height=20
@@ -8041,7 +8804,7 @@ text {
 }
 "text update" {
 	object {
-		x=543
+		x=635
 		y=853
 		width=20
 		height=20
@@ -8057,7 +8820,7 @@ text {
 }
 "text update" {
 	object {
-		x=565
+		x=657
 		y=853
 		width=20
 		height=20
@@ -8073,7 +8836,7 @@ text {
 }
 "text update" {
 	object {
-		x=587
+		x=679
 		y=853
 		width=20
 		height=20
@@ -8089,7 +8852,7 @@ text {
 }
 "text update" {
 	object {
-		x=609
+		x=701
 		y=853
 		width=20
 		height=20
@@ -8105,7 +8868,7 @@ text {
 }
 text {
 	object {
-		x=379
+		x=471
 		y=480
 		width=50
 		height=18
@@ -8118,7 +8881,7 @@ text {
 }
 rectangle {
 	object {
-		x=178
+		x=270
 		y=478
 		width=457
 		height=400
@@ -8127,515 +8890,5 @@ rectangle {
 		clr=8
 		style="dash"
 		fill="outline"
-	}
-}
-oval {
-	object {
-		x=729
-		y=74
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A!=B|A=0"
-		chan="SVT:daq:dpm:0:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=74
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=15
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=B&A>0"
-		chan="SVT:daq:dpm:0:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=99
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A!=B|A=0"
-		chan="SVT:daq:dpm:1:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=99
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=15
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=B&A>0"
-		chan="SVT:daq:dpm:1:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=124
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A!=B|A=0"
-		chan="SVT:daq:dpm:2:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=124
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=15
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=B&A>0"
-		chan="SVT:daq:dpm:2:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=149
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A!=B|A=0"
-		chan="SVT:daq:dpm:3:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=149
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=15
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=B&A>0"
-		chan="SVT:daq:dpm:3:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=174
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A!=B|A=0"
-		chan="SVT:daq:dpm:4:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=174
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=15
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=B&A>0"
-		chan="SVT:daq:dpm:4:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=199
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A!=B|A=0"
-		chan="SVT:daq:dpm:5:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=199
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=15
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=B&A>0"
-		chan="SVT:daq:dpm:5:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=224
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A!=B|A=0"
-		chan="SVT:daq:dpm:6:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=224
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=15
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=B&A>0"
-		chan="SVT:daq:dpm:6:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=249
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A!=B|A=0"
-		chan="SVT:daq:dpm:7:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=249
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=15
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=B&A>0"
-		chan="SVT:daq:dpm:7:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=274
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A!=B|A=0"
-		chan="SVT:daq:dpm:8:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=274
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=15
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=B&A>0"
-		chan="SVT:daq:dpm:8:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=299
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A!=B|A=0"
-		chan="SVT:daq:dpm:9:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=299
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=15
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=B&A>0"
-		chan="SVT:daq:dpm:9:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=324
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A!=B|A=0"
-		chan="SVT:daq:dpm:10:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=324
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=15
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=B&A>0"
-		chan="SVT:daq:dpm:10:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=349
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A!=B|A=0"
-		chan="SVT:daq:dpm:11:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=349
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=15
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=B&A>0"
-		chan="SVT:daq:dpm:11:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=374
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A!=B|A=0"
-		chan="SVT:daq:dpm:12:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=374
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=15
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=B&A>0"
-		chan="SVT:daq:dpm:12:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=399
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A!=B|A=0"
-		chan="SVT:daq:dpm:13:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=399
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=15
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=B&A>0"
-		chan="SVT:daq:dpm:13:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=424
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A!=B|A=0"
-		chan="SVT:daq:dpm:14:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
-	}
-}
-oval {
-	object {
-		x=729
-		y=424
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=15
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=B&A>0"
-		chan="SVT:daq:dpm:14:blockcount"
-		chanB="SVT:daq:dtm:0:readcount"
 	}
 }
