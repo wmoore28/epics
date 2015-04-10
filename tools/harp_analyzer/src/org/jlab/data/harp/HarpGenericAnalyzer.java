@@ -126,9 +126,21 @@ public class HarpGenericAnalyzer {
         return harpData;
     }
     
+    double ArnesCorrection(double a_sigma_meas, double a_wd)
+    {
+       a_sigma_meas = Math.abs(a_sigma_meas)/a_wd;
+        
+        double true_sigma = a_sigma_meas/(1+0.025/Math.pow(a_sigma_meas,2.826));
+        
+        System.out.println(a_sigma_meas+" " + Math.pow(a_sigma_meas,2.826)+" "+(1+0.025/Math.pow(a_sigma_meas,2.826)));
+        
+        
+        return true_sigma*a_wd;    
+     }
     
     public String[] getLegend(int index, String harp_name){
         
+        double wd = 0.025; // Wire diameter in mm
         int n_wire = harpData.size();
         
         String[] wireName = new String[n_wire];
@@ -156,15 +168,19 @@ public class HarpGenericAnalyzer {
             wireName[2] = "Wire 45 deg";
             }
            n_leg_entries = 7;
-        }
+           }
+        
+        
+        double sigma_meas = harpFunc.get(index).parameter(2).value();
+        double sigma_true = ArnesCorrection(sigma_meas, wd);
+        
         
         String[] legend = new String[n_leg_entries];
         
         legend[0] = String.format("Wire         %-10s", wireName[index]);
         legend[1] = String.format("%-12s %8.5f", "mean", 
                 harpFunc.get(index).parameter(1).value());
-        legend[2] = String.format("%-12s %8.5f", "sigma", 
-                harpFunc.get(index).parameter(2).value());
+        legend[2] = String.format("%-12s %8.5f", "sigma", sigma_true);
         legend[3] = String.format("%-12s %8.5f", "chi2",
                 harpFunc.get(index).getChiSquare(harpData.get(index))/
                 harpFunc.get(index).getNDF(harpData.get(index))
