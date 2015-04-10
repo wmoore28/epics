@@ -42,18 +42,11 @@ record(fanout, SVT:process)
 
 record(fanout, SVT:lv:fanout)
 {
-  field(LNK1,"SVT:lv:i_rd:fanout")
-  field(LNK2,"SVT:lv:vf:fanout")
-  field(LNK3,"SVT:lv:vn:fanout")
-  field(LNK4,"SVT:lv:v_set_rd:fanout")
+  field(LNK1,"SVT:lv:vf:fanout")
+  field(LNK2,"SVT:lv:vn:fanout")
+  field(LNK3,"SVT:lv:v_set_rd:fanout")
 }
 
-record(fanout, SVT:lv:i_rd:fanout)
-{
-  field(LNK1,"SVT:lv:0:0:dvdd:i_rd")
-  field(LNK2,"SVT:lv:0:0:avdd:i_rd")
-  field(LNK3,"SVT:lv:0:0:v125:i_rd")
-}
 
 
 record(fanout, SVT:lv:vf:fanout)

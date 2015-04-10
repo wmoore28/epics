@@ -50,6 +50,7 @@ DB += dbFebLayer.db
 DB += dbHybSync.db
 DB += dbHybSyncBase.db
 DB += dbHybSyncPeak.db
+DB += dbControlDpmStatus.db
 DB += dbDataDpmStatus.db
 DB += dbDataDtmStatus.db
 DB += dbDataDpmEventState.db

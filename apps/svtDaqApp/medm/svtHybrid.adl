@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=5
-		y=77
+		x=142
+		y=80
 		width=1390
-		height=721
+		height=712
 	}
 	clr=14
 	bclr=12
@@ -194,38 +194,6 @@ text {
 	textix="All hybrids ON/OFF"
 	align="horiz. centered"
 }
-oval {
-	object {
-		x=403
-		y=630
-		width=19
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A&1"
-		chan="SVT:hb_check"
-	}
-}
-oval {
-	object {
-		x=400
-		y=630
-		width=19
-		height=20
-	}
-	"basic attribute" {
-		clr=61
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="(!A)&1"
-		chan="SVT:hb_check"
-	}
-}
 text {
 	object {
 		x=300
@@ -236,7 +204,7 @@ text {
 	"basic attribute" {
 		clr=30
 	}
-	textix="Cntrl DPM IOC"
+	textix="Cntrl DPM IOCs"
 }
 text {
 	object {
@@ -7107,5 +7075,69 @@ composite {
 				}
 			}
 		}
+	}
+}
+oval {
+	object {
+		x=403
+		y=630
+		width=19
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A&1"
+		chan="SVT:hb_check"
+	}
+}
+oval {
+	object {
+		x=400
+		y=630
+		width=19
+		height=20
+	}
+	"basic attribute" {
+		clr=61
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(!A)&1"
+		chan="SVT:hb_check"
+	}
+}
+oval {
+	object {
+		x=427
+		y=630
+		width=19
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(A>0|A=0)&1"
+		chan="SVT:daq:dpm:7:hb_check"
+	}
+}
+oval {
+	object {
+		x=424
+		y=630
+		width=19
+		height=20
+	}
+	"basic attribute" {
+		clr=61
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(A<0)&1"
+		chan="SVT:daq:dpm:7:hb_check"
 	}
 }

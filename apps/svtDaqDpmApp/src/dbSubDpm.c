@@ -45,14 +45,14 @@ static long subPollProcess(subRecord *precord) {
   // find dpm nr
   getStringFromEpicsName(precord->name,str0,0,256);
   getStringFromEpicsName(precord->name,str1,1,256);
-  if(strcmp(str0,"SVT")==0 && (strcmp(str1,"dpm")==0 || strcmp(str1,"dtm")==0 || strcmp(str1,"controldpm1")==0)) {
+  if(strcmp(str0,"SVT")==0 && (strcmp(str1,"dpm")==0 || strcmp(str1,"dtm")==0 || strcmp(str1,"controldpm")==0)) {
     idpm = getIntFromEpicsName(precord->name,2);  
   } else {
     printf("[ subPollProcess ]: Wrong precord name to call this function?!  (%s)\n", precord->name);    
     exit(1);
   }
   
-  if(strcmp(str1,"dpm")==0 || strcmp(str1,"controldpm1")==0) {
+  if(strcmp(str1,"dpm")==0 || strcmp(str1,"controldpm")==0) {
     sprintf(host,"dpm%d",idpm);
   }
   else {
@@ -694,20 +694,26 @@ static long subEBEventErrorCountProcess(aSubRecord *precord) {
   int number;
   long *a;
   
+  strcpy(val,"");
+  number = -1;
+
   if (mySubDebug)
      printf("[ subEBEventErrorCountProcess ]: get string from xml at %p\n", xmldoc);
   
   getEBEventErrorCountProcess(precord->name, xmldoc, val);
 
+  if(strlen(val)>0) {
+     
+     if (mySubDebug)
+        printf("[ subEBEventErrorCountProcess ]: got sync string \"%s\"\n", val);
+     
+     number = (int) strtol(val,NULL,0); // string rep begins with 0x so use base=0 instead of 16
+     
+  }
   
-  if (mySubDebug)
-     printf("[ subEBEventErrorCountProcess ]: got sync string \"%s\"\n", val);
-  
-  number = (int) strtol(val,NULL,0); // string rep begins with 0x so use base=0 instead of 16
-  
+
   if (mySubDebug)
      printf("[ subSyncProcess ]: got sync number \"%d\"\n", number);
-
   
   a = (long*) precord->vala;
   *a = (long) number;
@@ -759,6 +765,49 @@ static long subHybridTempProcess(subRecord *precord) {
 
 
 
+static long subHybridLVInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subHybridLVInit ]: %d Record %s called subHybridLVInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+
+static long subHybridLVProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subHybridLVProcess ]: %d Record %s called subHybridLVProcess(%p)\n", process_order, precord->name, (void*) precord);
+  }
+
+  if (mySubDebug)
+     printf("[ subHybridLVProcess ]: get temp from xml at %p\n", xmldoc);
+  
+  char val[256];
+  float v;
+  char unit[10];
+
+  v=0.0;
+  getHybridLVProcess(precord->name, xmldoc, val);
+
+
+  if (mySubDebug)
+     printf("[ subHybridLVProcess ]: got str val %s\n", val);
+
+  sscanf(val,"%f %s",&v,unit);
+  
+  if (mySubDebug)
+     printf("[ subHybridLVProcess ]: got val %f\n", v);
+
+  precord->val = (double) v;
+  
+
+  return 0;
+}
+
+
+
+
 /* Register these symbols for use by IOC code: */
 
 epicsExportAddress(int, mySubDebug);
@@ -804,4 +853,6 @@ epicsRegisterFunction(subHybridTempInit);
 epicsRegisterFunction(subHybridTempProcess);
 epicsRegisterFunction(subEBEventErrorCountInit);
 epicsRegisterFunction(subEBEventErrorCountProcess);
+epicsRegisterFunction(subHybridLVInit);
+epicsRegisterFunction(subHybridLVProcess);
 

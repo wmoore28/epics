@@ -710,14 +710,14 @@ def buildHybLVIrd_v125():
 record(sub,SVT:lv:FEBID:HYBID:v125:i_rd_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"FLNKNEXTHYB")
 }
 
 record(ai, SVT:lv:FEBID:HYBID:v125:i_rd)
 {
-  field(SCAN, "Passive")
+  field(SCAN, "SCANFREQ")
   field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:v125:i_rd_sub PP")
   field(DTYP,"Soft Channel")
@@ -762,7 +762,10 @@ record(ai, SVT:lv:FEBID:HYBID:v125:i_rd)
                 rec = rec.replace("LOLIM",str(0.305))
                 rec = rec.replace("LLLIM",str(0.295))
 
-
+            if feb==0 and hyb==0:
+                rec = rec.replace("SCANFREQ","1 second")
+            else:
+                rec = rec.replace("SCANFREQ","Passive")                
             records.append(rec)
     
     return records
@@ -782,14 +785,14 @@ def buildHybLVIrd_avdd():
 record(sub,SVT:lv:FEBID:HYBID:avdd:i_rd_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"FLNKNEXTHYB")
 }
 
 record(ai, SVT:lv:FEBID:HYBID:avdd:i_rd)
 {
-  field(SCAN, "Passive")
+  field(SCAN, "SCANFREQ")
   field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:avdd:i_rd_sub PP")
   field(DTYP,"Soft Channel")
@@ -836,6 +839,12 @@ record(ai, SVT:lv:FEBID:HYBID:avdd:i_rd)
                 rec = rec.replace("LLLIM",str(0.345))
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
+            if feb==0 and hyb==0:
+                rec = rec.replace("SCANFREQ","1 second")
+            else:
+                rec = rec.replace("SCANFREQ","Passive")                
+            records.append(rec)
+            
             records.append(rec)
     
     return records
@@ -855,14 +864,15 @@ def buildHybLVIrd_dvdd():
 record(sub,SVT:lv:FEBID:HYBID:dvdd:i_rd_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"FLNKNEXTHYB")
 }
 
 record(ai, SVT:lv:FEBID:HYBID:dvdd:i_rd)
 {
-  field(SCAN, "Passive") field(PREC, "3")
+  field(SCAN, "SCANFREQ")
+  field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:dvdd:i_rd_sub PP")
   field(DTYP,"Soft Channel")
   field(HIHI,"0.31") field(HHSV,"MAJOR")
@@ -893,6 +903,10 @@ record(ai, SVT:lv:FEBID:HYBID:dvdd:i_rd)
                 rec = rec.replace("NEXTHYBID",str(hyb+1))
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
+            if feb==0 and hyb==0:
+                rec = rec.replace("SCANFREQ","1 second")
+            else:
+                rec = rec.replace("SCANFREQ","Passive")  
             records.append(rec)
     
     return records
@@ -1692,6 +1706,42 @@ record(longin, SVT:daq:dpm:$(DPM):hb_check) {
 """	
     return s
 
+def buildControlDpmStatus():
+	
+    s = """
+record(aSub,SVT:daq:controldpm:$(DPM):$(NR):status_asub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subDpmStatusInit")
+    field(SNAM,"subDpmStatusProcess")
+    field(OUTA,"SVT:daq:controldpm:$(DPM):$(NR):status PP")
+    field(FTVA,"STRING")
+    field(OUTB,"SVT:daq:controldpm:$(DPM):$(NR):hb_check PP")
+    field(FTVB,"LONG")
+    field(OUTC,"SVT:daq:controldpm:$(DPM):$(NR):socketstatus PP")
+    field(FTVC,"STRING")
+    #field(FLNK,"FLNKNEXTLAYER")
+}
+
+record(stringin, SVT:daq:controldpm:$(DPM):$(NR):status) {
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:controldpm:$(DPM):$(NR):socketstatus) {
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+record(longin, SVT:daq:controldpm:$(DPM):$(NR):hb_check) {
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+
+"""	
+    return s
+
 
 def buildDtmStatus():
 	
@@ -1772,25 +1822,25 @@ def buildControlDpm():
 
     records = []
     s = """
-record(sub,SVT:controldpm1:$(DPM):poll_xml)
+record(sub,SVT:controldpm:$(DPM):$(NR):poll_xml)
 {
     field(SCAN,"1 second")
     field(INAM,"subPollInit")
     field(SNAM,"subPollProcess")
-    field(FLNK,"SVT:daq:controldpm1:$(DPM):state_asub")
+    field(FLNK,"SVT:daq:controldpm:$(DPM):$(NR):state_asub")
 
 }
 
-record(aSub,SVT:daq:controldpm1:$(DPM):state_asub)
+record(aSub,SVT:daq:controldpm:$(DPM):$(NR):state_asub)
 {
     field(SCAN,"Passive")
     field(INAM,"subDpmStateInit")
     field(SNAM,"subDpmStateProcess")
-    field(OUTA,"SVT:daq:controldpm1:$(DPM):state PP")
+    field(OUTA,"SVT:daq:controldpm:$(DPM):$(NR):state PP")
     field(FTVA,"STRING")
 }
 
-record(stringin, SVT:daq:controldpm1:$(DPM):state) {
+record(stringin, SVT:daq:controldpm:$(DPM):$(NR):state) {
   field(SCAN, "Passive") 
   field(DTYP,"Soft Channel")
 }

@@ -1,23 +1,23 @@
 
-record(sub,SVT:controldpm1:$(DPM):poll_xml)
+record(sub,SVT:controldpm:$(DPM):$(NR):poll_xml)
 {
     field(SCAN,"1 second")
     field(INAM,"subPollInit")
     field(SNAM,"subPollProcess")
-    field(FLNK,"SVT:daq:controldpm1:$(DPM):state_asub")
+    field(FLNK,"SVT:daq:controldpm:$(DPM):$(NR):state_asub")
 
 }
 
-record(aSub,SVT:daq:controldpm1:$(DPM):state_asub)
+record(aSub,SVT:daq:controldpm:$(DPM):$(NR):state_asub)
 {
     field(SCAN,"Passive")
     field(INAM,"subDpmStateInit")
     field(SNAM,"subDpmStateProcess")
-    field(OUTA,"SVT:daq:controldpm1:$(DPM):state PP")
+    field(OUTA,"SVT:daq:controldpm:$(DPM):$(NR):state PP")
     field(FTVA,"STRING")
 }
 
-record(stringin, SVT:daq:controldpm1:$(DPM):state) {
+record(stringin, SVT:daq:controldpm:$(DPM):$(NR):state) {
   field(SCAN, "Passive") 
   field(DTYP,"Soft Channel")
 }

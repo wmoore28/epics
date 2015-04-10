@@ -146,9 +146,12 @@ void getRunStateProcess(char* pname, xmlDoc* doc, char* state) {
    char action[BUF_SIZE];
    getStringFromEpicsName(pname,str1,1,BUF_SIZE);
    getStringFromEpicsName(pname,str2,2,BUF_SIZE);
-   if(strcmp(str1,"daq")==0 && (strcmp(str2,"dtm")==0 ||strcmp(str2,"dpm")==0 || strcmp(str2,"controldpm1")==0)) {
+   if(strcmp(str1,"daq")==0 && (strcmp(str2,"dtm")==0 ||strcmp(str2,"dpm")==0 || strcmp(str2,"controldpm")==0)) {
       idpm = getIntFromEpicsName(pname,3);  
-      getStringFromEpicsName(pname,action,4,BUF_SIZE);    
+      if(strcmp(str2,"controldpm")==0)
+         getStringFromEpicsName(pname,action,5,BUF_SIZE);    
+      else
+         getStringFromEpicsName(pname,action,4,BUF_SIZE);    
       if(strcmp(action,"state_asub")==0) {           
          getRunState(idpm, doc, state);
          if(DEBUG>0) printf("[ getRunStateProcess ]: got state %s.\n",state);      
@@ -170,9 +173,14 @@ void getDpmStatusProcess(char* pname, xmlDoc* doc, char* status, int* heart_beat
    char action[BUF_SIZE];
    getStringFromEpicsName(pname,str1,1,BUF_SIZE);
    getStringFromEpicsName(pname,str2,2,BUF_SIZE);
-   if(strcmp(str1,"daq")==0 && (strcmp(str2,"dtm")==0 ||strcmp(str2,"dpm")==0 ||strcmp(str2,"controldpm1")==0)) {
+   if(strcmp(str1,"daq")==0 && (strcmp(str2,"dtm")==0 ||strcmp(str2,"dpm")==0 ||strcmp(str2,"controldpm")==0)) {
       dpm = getIntFromEpicsName(pname,3);  
-      getStringFromEpicsName(pname,action,4,BUF_SIZE);    
+
+      if(strcmp(str2,"controldpm")==0)
+         getStringFromEpicsName(pname,action,5,BUF_SIZE);    
+      else
+         getStringFromEpicsName(pname,action,4,BUF_SIZE);    
+
 
       if(strcmp(action,"status_asub")==0) {           
          
@@ -2216,6 +2224,101 @@ void getHybridTempProcess(char* pname, xmlDoc* doc, char* value) {
       }
    } else {
       printf("[ getHybridTempProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);    
+      exit(1);
+   }
+}
+
+
+
+void getHybridLVProcess(char* pname, xmlDoc* doc, char* value) {
+   if(DEBUG>1) printf("[ getHybridLVProcess ] : for pname \"%s\"\n", pname);
+
+   xmlXPathObjectPtr result;
+   xmlNodeSetPtr nodeset;
+   char tmp[BUF_SIZE];
+   int feb;
+   int datapath;
+   char str1[BUF_SIZE];
+   char str2[BUF_SIZE];
+   char str3[BUF_SIZE];
+   char action[BUF_SIZE];
+   char channel[BUF_SIZE];
+   char type[BUF_SIZE];
+   
+   strcpy(value,"");
+   getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+   getStringFromEpicsName(pname,str2,4,BUF_SIZE);    
+   
+   
+   if(strcmp(str1,"lv")==0) {
+      
+      if(strcmp(str2,"v125")==0)
+         sprintf(channel,"V125");
+      else if(strcmp(str2,"avdd")==0)
+         sprintf(channel,"AVDD");
+      else if(strcmp(str2,"dvdd")==0)
+         sprintf(channel,"DVDD");
+      else 
+         sprintf(channel,"");
+      
+      if(strcmp(channel,"")!=0) {
+         feb = getIntFromEpicsName(pname,2);      
+         datapath = getIntFromEpicsName(pname,3);            
+         
+         getStringFromEpicsName(pname,action,5,BUF_SIZE);    
+         
+         if(strcmp(action,"i_rd_sub")==0)
+            sprintf(type,"Current");
+         else
+            sprintf(type,"");
+         
+         if(strcmp(type,"")!=0) {
+            
+            sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/SoftPowerMonitor/Hybrid%d_%s_%s", feb, datapath, channel, type);
+            if(DEBUG>-1) 
+               printf("[ getHybridLVProcess ] : xpath \"%s\"\n",tmp);
+            
+            if(doc!=NULL) {
+               
+               result = getnodeset(doc, (xmlChar*) tmp);
+               
+               if(result!=NULL) {
+                  nodeset = result->nodesetval;
+                  if(DEBUG>1) 
+                     printf("[ getHybridLVProcess ] : got %d nodes\n", nodeset->nodeNr);
+                  if(nodeset->nodeNr==1) {
+                     getStrValue(doc,nodeset->nodeTab[0],value);
+                     
+                     printf("[ getHybridLVProcess ] : got  value %s\n", value);
+                     
+                  } else {
+                     if(DEBUG>1)
+                        printf("[ getHybridLVProcess ] : [ WARNING ] : wrong nr of nodes found\n");
+                  }
+                  
+                  xmlXPathFreeObject(result);
+                  
+               } else {
+                  if(DEBUG>1)
+                     printf("[ getHybridLVProcess ] : no nodes found\n");
+               }
+            } else {
+               if(DEBUG>1)
+                  printf("[ getHybridLVProcess ] : no xml doc found\n");
+            }
+         }
+         else {
+            printf("[ getHybridLVProcess ] : [ ERROR ] wrong type for pname \"%s\"\n",pname);    
+            exit(1);
+         }
+      }
+      else {
+         printf("[ getHybridLVProcess ] : [ ERROR ] wrong channel for pname \"%s\"\n",pname);    
+         exit(1);
+      }
+      
+   } else {
+      printf("[ getHybridLVProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);    
       exit(1);
    }
 }
