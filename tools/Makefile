@@ -1,4 +1,4 @@
-TOOLDIRS := harp_analyzer hpsrun LogEntry procServMgr
+TOOLDIRS := harp_analyzer hpsrun LogEntry procServMgr SVT_Scan_Analyzer
 
 .PHONY: all clean distclean install uninstall 
 

@@ -6,6 +6,8 @@ ROOT_LIBS       = $(shell root-config --libs)
 Link            = ld -r
 
 
+all: analyze_svt_scan.exe
+
 analyze_svt_scan.exe:	libSVTwirePosition.so analyze_svt_scan.cc
 			$(CC) analyze_svt_scan.cc -o $@ $(ROOT_CFLAGS) $(ROOT_LIBS) -lSpectrum -I. -L. -lSVTwirePosition
 
