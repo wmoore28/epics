@@ -2230,6 +2230,89 @@ void getHybridTempProcess(char* pname, xmlDoc* doc, char* value) {
 
 
 
+void getFebTempProcess(char* pname, xmlDoc* doc, char* value) {
+   if(DEBUG>1) printf("[ getFebTempProcess ] : for pname \"%s\"\n", pname);
+
+   xmlXPathObjectPtr result;
+   xmlNodeSetPtr nodeset;
+   char tmp[BUF_SIZE];
+   int feb;
+   int datapath;
+   char str1[BUF_SIZE];
+   char str2[BUF_SIZE];
+   char type[BUF_SIZE];
+   char action[BUF_SIZE];
+   strcpy(value,"");
+   getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+   getStringFromEpicsName(pname,str2,2,BUF_SIZE);
+   if(strcmp(str1,"temp")==0 && strcmp(str2,"fe")==0) {
+      feb = getIntFromEpicsName(pname,3);      
+      getStringFromEpicsName(pname,action,4,BUF_SIZE);    
+      
+      
+      if(strcmp(action,"axixadc")==0) {
+         sprintf(type,"FebFpgaTemp");
+      }
+      else if(strcmp(action,"FebTemp0")==0) {
+         sprintf(type,"FebTemp0");
+      }
+      else if(strcmp(action,"FebTemp1")==0) {
+         sprintf(type,"FebTemp1");
+      } else {
+         sprintf(type,"");
+      }
+      
+      if(strcmp(type,"")!=0) {
+         
+         
+         sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/SoftPowerMonitor/%s",feb,type);
+         
+         if(DEBUG>1) 
+            printf("[ getFebTempProcess ] : xpath \"%s\"\n",tmp);
+         
+         if(doc!=NULL) {
+            
+            result = getnodeset(doc, (xmlChar*) tmp);
+            
+            if(result!=NULL) {
+               nodeset = result->nodesetval;
+               if(DEBUG>1) 
+                  printf("[ getFebTempProcess ] : got %d nodes\n", nodeset->nodeNr);
+               if(nodeset->nodeNr==1) {
+                  getStrValue(doc,nodeset->nodeTab[0],value);
+                  
+                  printf("[ getFebTempProcess ] : got  value %s\n", value);
+                  
+               } else {
+                  if(DEBUG>1)
+                     printf("[ getFebTempProcess ] : [ WARNING ] : wrong nr of nodes found\n");
+               }
+               
+               xmlXPathFreeObject(result);
+               
+            } else {
+               if(DEBUG>1)
+                  printf("[ getFebTempProcess ] : no nodes found\n");
+            }
+         } else {
+            if(DEBUG>1)
+               printf("[ getFebTempProcess ] : no xml doc found\n");
+         }
+      }
+      else {
+         printf("[ getFebTempProcess ] : [ ERROR ] wrong action \"%s\"\n",action);    
+         exit(1);
+      }
+   } else {
+      printf("[ getFebTempProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);    
+      exit(1);
+   }
+}
+
+
+
+
+
 void getHybridLVProcess(char* pname, xmlDoc* doc, char* value) {
    if(DEBUG>1) printf("[ getHybridLVProcess ] : for pname \"%s\"\n", pname);
 
@@ -2267,15 +2350,39 @@ void getHybridLVProcess(char* pname, xmlDoc* doc, char* value) {
          
          getStringFromEpicsName(pname,action,5,BUF_SIZE);    
          
-         if(strcmp(action,"i_rd_sub")==0)
+         if(strcmp(action,"i_rd_sub")==0) {
             sprintf(type,"Current");
-         else
-            sprintf(type,"");
-         
-         if(strcmp(type,"")!=0) {
-            
             sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/SoftPowerMonitor/Hybrid%d_%s_%s", feb, datapath, channel, type);
-            if(DEBUG>-1) 
+         }
+         else if(strcmp(action,"vn_sub")==0) {
+            sprintf(type,"Near");
+            sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/SoftPowerMonitor/Hybrid%d_%s_%s", feb, datapath, channel, type);
+         }
+         else if(strcmp(action,"vf_sub")==0) {
+            sprintf(type,"Sense");
+            sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/SoftPowerMonitor/Hybrid%d_%s_%s", feb, datapath, channel, type);
+         }
+         else if(strcmp(action,"stat_sub")==0) {
+            sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/Hybrid%dPwrOn", feb, datapath);
+         }
+         else if(strcmp(action,"v_set_rd_sub")==0) {
+            // need to fix the names for this particular one
+            strcpy(channel,"");
+            if(strcmp(str2,"v125")==0)
+               sprintf(channel,"V1_25");
+            else if(strcmp(str2,"avdd")==0)
+               sprintf(channel,"Avdd");
+            else 
+               sprintf(channel,"Dvdd");
+            sprintf(tmp,"/system/config/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/Hybrid%d%sTrim",feb,datapath,channel);
+            
+         }
+         else
+            sprintf(tmp,"");
+            
+            if(strcmp(tmp,"")!=0) {
+            
+            if(DEBUG>1) 
                printf("[ getHybridLVProcess ] : xpath \"%s\"\n",tmp);
             
             if(doc!=NULL) {
@@ -2289,7 +2396,8 @@ void getHybridLVProcess(char* pname, xmlDoc* doc, char* value) {
                   if(nodeset->nodeNr==1) {
                      getStrValue(doc,nodeset->nodeTab[0],value);
                      
-                     printf("[ getHybridLVProcess ] : got  value %s\n", value);
+                     if(DEBUG>1)
+                        printf("[ getHybridLVProcess ] : got  value %s\n", value);
                      
                   } else {
                      if(DEBUG>1)
@@ -2308,7 +2416,7 @@ void getHybridLVProcess(char* pname, xmlDoc* doc, char* value) {
             }
          }
          else {
-            printf("[ getHybridLVProcess ] : [ ERROR ] wrong type for pname \"%s\"\n",pname);    
+            printf("[ getHybridLVProcess ] : [ ERROR ] unknown action for pname \"%s\"\n",pname);    
             exit(1);
          }
       }

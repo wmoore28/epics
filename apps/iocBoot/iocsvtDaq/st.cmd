@@ -13,17 +13,6 @@ svtDaq_registerRecordDeviceDriver(pdbbase)
 ## Load record instances
 dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC}")
 
-dbLoadRecords "db/dbHybLVVf_v125.db"
-dbLoadRecords "db/dbHybLVVf_avdd.db"
-dbLoadRecords "db/dbHybLVVf_dvdd.db"
-dbLoadRecords "db/dbHybLVVn_v125.db"
-dbLoadRecords "db/dbHybLVVn_avdd.db"
-dbLoadRecords "db/dbHybLVVn_dvdd.db"
-dbLoadRecords "db/dbHybLVVSetRd_v125.db"
-dbLoadRecords "db/dbHybLVVSetRd_avdd.db"
-dbLoadRecords "db/dbHybLVVSetRd_dvdd.db"
-dbLoadRecords "db/dbHybLVStat.db"
-dbLoadRecords "db/dbFebTemp.db"
 dbLoadRecords "db/dbDpmMap.db"
 dbLoadRecords "db/dbFebLayer.db"
 dbLoadRecords "db/dbSVT.db"

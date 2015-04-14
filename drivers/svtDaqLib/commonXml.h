@@ -75,7 +75,11 @@ void getInsertedFramesProcess(char* pname, xmlDoc* doc, char* value);
 
 void getHybridTempProcess(char* pname, xmlDoc* doc, char* value);
 
+void getFebTempProcess(char* pname, xmlDoc* doc, char* value);
+
 void getEBEventErrorCountProcess(char* pname, xmlDoc* doc, char* value);
+
+void getHybridLVProcess(char* pname, xmlDoc* doc, char* value);
 
 #endif
 

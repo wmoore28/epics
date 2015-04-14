@@ -765,6 +765,49 @@ static long subHybridTempProcess(subRecord *precord) {
 
 
 
+static long subFebTempInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subFebTempInit ]: %d Record %s called subFebTempInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+
+static long subFebTempProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subFebTempProcess ]: %d Record %s called subFebTempProcess(%p)\n", process_order, precord->name, (void*) precord);
+  }
+
+  if (mySubDebug)
+     printf("[ subFebTempProcess ]: get temp from xml at %p\n", xmldoc);
+  
+  char val[256];
+  float v;
+  char unit[10];
+
+  v=0.0;
+  getFebTempProcess(precord->name, xmldoc, val);
+
+
+  if (mySubDebug)
+     printf("[ subFebTempProcess ]: got str val %s\n", val);
+
+  sscanf(val,"%f %s",&v,unit);
+  
+  if (mySubDebug)
+     printf("[ subFebTempProcess ]: got val %f\n", v);
+
+  precord->val = (double) v;
+  
+
+  return 0;
+}
+
+
+
+
 static long subHybridLVInit(subRecord *precord) {
   process_order++;
   if (mySubDebug) {
@@ -781,7 +824,7 @@ static long subHybridLVProcess(subRecord *precord) {
   }
 
   if (mySubDebug)
-     printf("[ subHybridLVProcess ]: get temp from xml at %p\n", xmldoc);
+     printf("[ subHybridLVProcess ]: get info from xml at %p\n", xmldoc);
   
   char val[256];
   float v;
@@ -792,16 +835,28 @@ static long subHybridLVProcess(subRecord *precord) {
 
 
   if (mySubDebug)
-     printf("[ subHybridLVProcess ]: got str val %s\n", val);
+     printf("[ subHybridLVProcess ]: got str val \"%s\"\n", val);
 
-  sscanf(val,"%f %s",&v,unit);
-  
+  //check if empty
+  if(strcmp("",val)==0) {
+     v = 0.0;
+  } 
+  else {
+     // check if this is a boolean or float
+     if(strstr("True",val)!=NULL || strstr("true",val)!=NULL) 
+        v = 1.0;
+     else if(strstr("false",val)!=NULL || strstr("False",val)!=NULL)
+        v = 0.0;
+     else     
+        // it's a float
+        sscanf(val,"%f %s",&v,unit);
+  }
   if (mySubDebug)
      printf("[ subHybridLVProcess ]: got val %f\n", v);
-
+  
   precord->val = (double) v;
   
-
+  
   return 0;
 }
 
@@ -851,6 +906,8 @@ epicsRegisterFunction(subInsertedFramesInit);
 epicsRegisterFunction(subInsertedFramesProcess);
 epicsRegisterFunction(subHybridTempInit);
 epicsRegisterFunction(subHybridTempProcess);
+epicsRegisterFunction(subFebTempInit);
+epicsRegisterFunction(subFebTempProcess);
 epicsRegisterFunction(subEBEventErrorCountInit);
 epicsRegisterFunction(subEBEventErrorCountProcess);
 epicsRegisterFunction(subHybridLVInit);

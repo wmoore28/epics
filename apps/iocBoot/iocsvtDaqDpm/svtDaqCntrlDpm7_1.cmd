@@ -23,9 +23,17 @@ dbLoadRecords("db/dbControlDpmStatus.db","DPM=7,NR=1")
 dbLoadRecords ("db/dbHybLVIrd_v125.db")
 dbLoadRecords ("db/dbHybLVIrd_avdd.db")
 dbLoadRecords ("db/dbHybLVIrd_dvdd.db")
+dbLoadRecords "db/dbHybLVVf_v125.db"
+dbLoadRecords "db/dbHybLVVf_avdd.db"
+dbLoadRecords "db/dbHybLVVf_dvdd.db"
+dbLoadRecords "db/dbHybLVVn_v125.db"
+dbLoadRecords "db/dbHybLVVn_avdd.db"
+dbLoadRecords "db/dbHybLVVn_dvdd.db"
+dbLoadRecords "db/dbHybLVStat.db"
 
 
-var mySubDebug 1
+
+var mySubDebug 0
 #traceIocInit
 
 cd ${TOP}/iocBoot/${IOC}

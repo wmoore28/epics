@@ -2,13 +2,14 @@
 record(sub,SVT:temp:fe:0:axixadc:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:0:FebTemp0:t_rd")
 }
 
 record(ai, SVT:temp:fe:0:axixadc:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "1 second")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:0:axixadc:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"47") field(HHSV,"MAJOR")
@@ -20,13 +21,14 @@ record(ai, SVT:temp:fe:0:axixadc:t_rd) {
 record(sub,SVT:temp:fe:0:FebTemp0:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:0:FebTemp1:t_rd")
 }
 
 record(ai, SVT:temp:fe:0:FebTemp0:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:0:FebTemp0:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -38,13 +40,14 @@ record(ai, SVT:temp:fe:0:FebTemp0:t_rd) {
 record(sub,SVT:temp:fe:0:FebTemp1:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:1:axixadc:t_rd")
 }
 
 record(ai, SVT:temp:fe:0:FebTemp1:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:0:FebTemp1:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -57,13 +60,14 @@ record(ai, SVT:temp:fe:0:FebTemp1:t_rd) {
 record(sub,SVT:temp:fe:1:axixadc:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:1:FebTemp0:t_rd")
 }
 
 record(ai, SVT:temp:fe:1:axixadc:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:1:axixadc:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"47") field(HHSV,"MAJOR")
@@ -75,13 +79,14 @@ record(ai, SVT:temp:fe:1:axixadc:t_rd) {
 record(sub,SVT:temp:fe:1:FebTemp0:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:1:FebTemp1:t_rd")
 }
 
 record(ai, SVT:temp:fe:1:FebTemp0:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:1:FebTemp0:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -93,13 +98,14 @@ record(ai, SVT:temp:fe:1:FebTemp0:t_rd) {
 record(sub,SVT:temp:fe:1:FebTemp1:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:2:axixadc:t_rd")
 }
 
 record(ai, SVT:temp:fe:1:FebTemp1:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:1:FebTemp1:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -112,13 +118,14 @@ record(ai, SVT:temp:fe:1:FebTemp1:t_rd) {
 record(sub,SVT:temp:fe:2:axixadc:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:2:FebTemp0:t_rd")
 }
 
 record(ai, SVT:temp:fe:2:axixadc:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:2:axixadc:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"47") field(HHSV,"MAJOR")
@@ -130,13 +137,14 @@ record(ai, SVT:temp:fe:2:axixadc:t_rd) {
 record(sub,SVT:temp:fe:2:FebTemp0:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:2:FebTemp1:t_rd")
 }
 
 record(ai, SVT:temp:fe:2:FebTemp0:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:2:FebTemp0:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -148,13 +156,14 @@ record(ai, SVT:temp:fe:2:FebTemp0:t_rd) {
 record(sub,SVT:temp:fe:2:FebTemp1:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:3:axixadc:t_rd")
 }
 
 record(ai, SVT:temp:fe:2:FebTemp1:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:2:FebTemp1:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -167,13 +176,14 @@ record(ai, SVT:temp:fe:2:FebTemp1:t_rd) {
 record(sub,SVT:temp:fe:3:axixadc:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:3:FebTemp0:t_rd")
 }
 
 record(ai, SVT:temp:fe:3:axixadc:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:3:axixadc:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"47") field(HHSV,"MAJOR")
@@ -185,13 +195,14 @@ record(ai, SVT:temp:fe:3:axixadc:t_rd) {
 record(sub,SVT:temp:fe:3:FebTemp0:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:3:FebTemp1:t_rd")
 }
 
 record(ai, SVT:temp:fe:3:FebTemp0:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:3:FebTemp0:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -203,13 +214,14 @@ record(ai, SVT:temp:fe:3:FebTemp0:t_rd) {
 record(sub,SVT:temp:fe:3:FebTemp1:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:4:axixadc:t_rd")
 }
 
 record(ai, SVT:temp:fe:3:FebTemp1:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:3:FebTemp1:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -222,13 +234,14 @@ record(ai, SVT:temp:fe:3:FebTemp1:t_rd) {
 record(sub,SVT:temp:fe:4:axixadc:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:4:FebTemp0:t_rd")
 }
 
 record(ai, SVT:temp:fe:4:axixadc:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:4:axixadc:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"47") field(HHSV,"MAJOR")
@@ -240,13 +253,14 @@ record(ai, SVT:temp:fe:4:axixadc:t_rd) {
 record(sub,SVT:temp:fe:4:FebTemp0:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:4:FebTemp1:t_rd")
 }
 
 record(ai, SVT:temp:fe:4:FebTemp0:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:4:FebTemp0:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -258,13 +272,14 @@ record(ai, SVT:temp:fe:4:FebTemp0:t_rd) {
 record(sub,SVT:temp:fe:4:FebTemp1:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:5:axixadc:t_rd")
 }
 
 record(ai, SVT:temp:fe:4:FebTemp1:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:4:FebTemp1:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -277,13 +292,14 @@ record(ai, SVT:temp:fe:4:FebTemp1:t_rd) {
 record(sub,SVT:temp:fe:5:axixadc:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:5:FebTemp0:t_rd")
 }
 
 record(ai, SVT:temp:fe:5:axixadc:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:5:axixadc:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"47") field(HHSV,"MAJOR")
@@ -295,13 +311,14 @@ record(ai, SVT:temp:fe:5:axixadc:t_rd) {
 record(sub,SVT:temp:fe:5:FebTemp0:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:5:FebTemp1:t_rd")
 }
 
 record(ai, SVT:temp:fe:5:FebTemp0:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:5:FebTemp0:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -313,13 +330,14 @@ record(ai, SVT:temp:fe:5:FebTemp0:t_rd) {
 record(sub,SVT:temp:fe:5:FebTemp1:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:6:axixadc:t_rd")
 }
 
 record(ai, SVT:temp:fe:5:FebTemp1:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:5:FebTemp1:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -332,13 +350,14 @@ record(ai, SVT:temp:fe:5:FebTemp1:t_rd) {
 record(sub,SVT:temp:fe:6:axixadc:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:6:FebTemp0:t_rd")
 }
 
 record(ai, SVT:temp:fe:6:axixadc:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:6:axixadc:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"47") field(HHSV,"MAJOR")
@@ -350,13 +369,14 @@ record(ai, SVT:temp:fe:6:axixadc:t_rd) {
 record(sub,SVT:temp:fe:6:FebTemp0:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:6:FebTemp1:t_rd")
 }
 
 record(ai, SVT:temp:fe:6:FebTemp0:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:6:FebTemp0:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -368,13 +388,14 @@ record(ai, SVT:temp:fe:6:FebTemp0:t_rd) {
 record(sub,SVT:temp:fe:6:FebTemp1:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:7:axixadc:t_rd")
 }
 
 record(ai, SVT:temp:fe:6:FebTemp1:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:6:FebTemp1:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -387,13 +408,14 @@ record(ai, SVT:temp:fe:6:FebTemp1:t_rd) {
 record(sub,SVT:temp:fe:7:axixadc:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:7:FebTemp0:t_rd")
 }
 
 record(ai, SVT:temp:fe:7:axixadc:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:7:axixadc:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"47") field(HHSV,"MAJOR")
@@ -405,13 +427,14 @@ record(ai, SVT:temp:fe:7:axixadc:t_rd) {
 record(sub,SVT:temp:fe:7:FebTemp0:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:7:FebTemp1:t_rd")
 }
 
 record(ai, SVT:temp:fe:7:FebTemp0:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:7:FebTemp0:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -423,13 +446,14 @@ record(ai, SVT:temp:fe:7:FebTemp0:t_rd) {
 record(sub,SVT:temp:fe:7:FebTemp1:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:8:axixadc:t_rd")
 }
 
 record(ai, SVT:temp:fe:7:FebTemp1:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:7:FebTemp1:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -442,13 +466,14 @@ record(ai, SVT:temp:fe:7:FebTemp1:t_rd) {
 record(sub,SVT:temp:fe:8:axixadc:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:8:FebTemp0:t_rd")
 }
 
 record(ai, SVT:temp:fe:8:axixadc:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:8:axixadc:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"47") field(HHSV,"MAJOR")
@@ -460,13 +485,14 @@ record(ai, SVT:temp:fe:8:axixadc:t_rd) {
 record(sub,SVT:temp:fe:8:FebTemp0:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:8:FebTemp1:t_rd")
 }
 
 record(ai, SVT:temp:fe:8:FebTemp0:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:8:FebTemp0:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -478,13 +504,14 @@ record(ai, SVT:temp:fe:8:FebTemp0:t_rd) {
 record(sub,SVT:temp:fe:8:FebTemp1:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:9:axixadc:t_rd")
 }
 
 record(ai, SVT:temp:fe:8:FebTemp1:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:8:FebTemp1:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -497,13 +524,14 @@ record(ai, SVT:temp:fe:8:FebTemp1:t_rd) {
 record(sub,SVT:temp:fe:9:axixadc:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:9:FebTemp0:t_rd")
 }
 
 record(ai, SVT:temp:fe:9:axixadc:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:9:axixadc:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"47") field(HHSV,"MAJOR")
@@ -515,13 +543,14 @@ record(ai, SVT:temp:fe:9:axixadc:t_rd) {
 record(sub,SVT:temp:fe:9:FebTemp0:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:9:FebTemp1:t_rd")
 }
 
 record(ai, SVT:temp:fe:9:FebTemp0:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:9:FebTemp0:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -533,13 +562,14 @@ record(ai, SVT:temp:fe:9:FebTemp0:t_rd) {
 record(sub,SVT:temp:fe:9:FebTemp1:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"")
 }
 
 record(ai, SVT:temp:fe:9:FebTemp1:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:9:FebTemp1:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")

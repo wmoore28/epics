@@ -28,50 +28,14 @@ record(longin, SVT:poll_xml_port) {
 record(ai, SVT:hb_check) {
   field(INP, "SVT:poll_stat")
   field(DTYP,"Soft Channel")
-  field(FLNK,"SVT:process")
-}
-
-record(fanout, SVT:process)
-{
-  field(LNK1,"SVT:temp:fe:0:axixadc:t_rd")
-  field(LNK2,"SVT:lv:fanout")
-  field(LNK3,"SVT:lv:0:0:stat")
 }
 
 
 
-record(fanout, SVT:lv:fanout)
-{
-  field(LNK1,"SVT:lv:vf:fanout")
-  field(LNK2,"SVT:lv:vn:fanout")
-  field(LNK3,"SVT:lv:v_set_rd:fanout")
-}
 
 
 
-record(fanout, SVT:lv:vf:fanout)
-{
-  field(SCAN,"Passive")
-  field(LNK1,"SVT:lv:0:0:dvdd:vf")
-  field(LNK2,"SVT:lv:0:0:avdd:vf")
-  field(LNK3,"SVT:lv:0:0:v125:vf")
-}
 
-record(fanout, SVT:lv:vn:fanout)
-{
-  field(SCAN,"Passive")
-  field(LNK1,"SVT:lv:0:0:dvdd:vn")
-  field(LNK2,"SVT:lv:0:0:avdd:vn")
-  field(LNK3,"SVT:lv:0:0:v125:vn")
-}
-
-record(fanout, SVT:lv:v_set_rd:fanout)
-{
-  field(SCAN,"Passive")
-  field(LNK1,"SVT:lv:0:0:dvdd:v_set_rd")
-  field(LNK2,"SVT:lv:0:0:avdd:v_set_rd")
-  field(LNK3,"SVT:lv:0:0:v125:v_set_rd")
-}
 
 
 

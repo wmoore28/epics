@@ -21,6 +21,11 @@ dbLoadRecords("db/iocAdminSoft.db", "IOC=iocsvtDaqCntrlDpm7")
 dbLoadRecords("db/dbControlDpm.db","DPM=7,NR=0")
 dbLoadRecords("db/dbControlDpmStatus.db","DPM=7,NR=0")
 dbLoadRecords "db/dbHybT.db"
+dbLoadRecords "db/dbFebTemp.db"
+dbLoadRecords "db/dbHybLVVSetRd_v125.db"
+dbLoadRecords "db/dbHybLVVSetRd_avdd.db"
+dbLoadRecords "db/dbHybLVVSetRd_dvdd.db"
+
 
 
 

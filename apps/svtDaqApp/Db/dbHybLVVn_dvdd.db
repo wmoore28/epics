@@ -4,14 +4,14 @@
 record(sub,SVT:lv:0:0:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:0:1:dvdd:vn")
 }
 
 record(ai, SVT:lv:0:0:dvdd:vn)
 {
-  field(SCAN, "Passive")
+  field(SCAN, "1 second")
   field(PREC, "3")
   field(INP, "SVT:lv:0:0:dvdd:vn_sub PP")
   field(DTYP,"Soft Channel")
@@ -29,8 +29,8 @@ record(ai, SVT:lv:0:0:dvdd:vn)
 record(sub,SVT:lv:0:1:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:0:2:dvdd:vn")
 }
 
@@ -54,8 +54,8 @@ record(ai, SVT:lv:0:1:dvdd:vn)
 record(sub,SVT:lv:0:2:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:0:3:dvdd:vn")
 }
 
@@ -79,8 +79,8 @@ record(ai, SVT:lv:0:2:dvdd:vn)
 record(sub,SVT:lv:0:3:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:1:0:dvdd:vn")
 }
 
@@ -104,8 +104,8 @@ record(ai, SVT:lv:0:3:dvdd:vn)
 record(sub,SVT:lv:1:0:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:1:1:dvdd:vn")
 }
 
@@ -129,8 +129,8 @@ record(ai, SVT:lv:1:0:dvdd:vn)
 record(sub,SVT:lv:1:1:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:1:2:dvdd:vn")
 }
 
@@ -154,8 +154,8 @@ record(ai, SVT:lv:1:1:dvdd:vn)
 record(sub,SVT:lv:1:2:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:1:3:dvdd:vn")
 }
 
@@ -179,8 +179,8 @@ record(ai, SVT:lv:1:2:dvdd:vn)
 record(sub,SVT:lv:1:3:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:2:0:dvdd:vn")
 }
 
@@ -204,8 +204,8 @@ record(ai, SVT:lv:1:3:dvdd:vn)
 record(sub,SVT:lv:2:0:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:2:1:dvdd:vn")
 }
 
@@ -229,8 +229,8 @@ record(ai, SVT:lv:2:0:dvdd:vn)
 record(sub,SVT:lv:2:1:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:3:0:dvdd:vn")
 }
 
@@ -254,8 +254,8 @@ record(ai, SVT:lv:2:1:dvdd:vn)
 record(sub,SVT:lv:3:0:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:3:1:dvdd:vn")
 }
 
@@ -279,8 +279,8 @@ record(ai, SVT:lv:3:0:dvdd:vn)
 record(sub,SVT:lv:3:1:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:3:2:dvdd:vn")
 }
 
@@ -304,8 +304,8 @@ record(ai, SVT:lv:3:1:dvdd:vn)
 record(sub,SVT:lv:3:2:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:3:3:dvdd:vn")
 }
 
@@ -329,8 +329,8 @@ record(ai, SVT:lv:3:2:dvdd:vn)
 record(sub,SVT:lv:3:3:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:4:0:dvdd:vn")
 }
 
@@ -354,8 +354,8 @@ record(ai, SVT:lv:3:3:dvdd:vn)
 record(sub,SVT:lv:4:0:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:4:1:dvdd:vn")
 }
 
@@ -379,8 +379,8 @@ record(ai, SVT:lv:4:0:dvdd:vn)
 record(sub,SVT:lv:4:1:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:4:2:dvdd:vn")
 }
 
@@ -404,8 +404,8 @@ record(ai, SVT:lv:4:1:dvdd:vn)
 record(sub,SVT:lv:4:2:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:4:3:dvdd:vn")
 }
 
@@ -429,8 +429,8 @@ record(ai, SVT:lv:4:2:dvdd:vn)
 record(sub,SVT:lv:4:3:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:5:0:dvdd:vn")
 }
 
@@ -454,8 +454,8 @@ record(ai, SVT:lv:4:3:dvdd:vn)
 record(sub,SVT:lv:5:0:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:5:1:dvdd:vn")
 }
 
@@ -479,8 +479,8 @@ record(ai, SVT:lv:5:0:dvdd:vn)
 record(sub,SVT:lv:5:1:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:5:2:dvdd:vn")
 }
 
@@ -504,8 +504,8 @@ record(ai, SVT:lv:5:1:dvdd:vn)
 record(sub,SVT:lv:5:2:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:5:3:dvdd:vn")
 }
 
@@ -529,8 +529,8 @@ record(ai, SVT:lv:5:2:dvdd:vn)
 record(sub,SVT:lv:5:3:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:6:0:dvdd:vn")
 }
 
@@ -554,8 +554,8 @@ record(ai, SVT:lv:5:3:dvdd:vn)
 record(sub,SVT:lv:6:0:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:6:1:dvdd:vn")
 }
 
@@ -579,8 +579,8 @@ record(ai, SVT:lv:6:0:dvdd:vn)
 record(sub,SVT:lv:6:1:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:6:2:dvdd:vn")
 }
 
@@ -604,8 +604,8 @@ record(ai, SVT:lv:6:1:dvdd:vn)
 record(sub,SVT:lv:6:2:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:6:3:dvdd:vn")
 }
 
@@ -629,8 +629,8 @@ record(ai, SVT:lv:6:2:dvdd:vn)
 record(sub,SVT:lv:6:3:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:7:0:dvdd:vn")
 }
 
@@ -654,8 +654,8 @@ record(ai, SVT:lv:6:3:dvdd:vn)
 record(sub,SVT:lv:7:0:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:7:1:dvdd:vn")
 }
 
@@ -679,8 +679,8 @@ record(ai, SVT:lv:7:0:dvdd:vn)
 record(sub,SVT:lv:7:1:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:7:2:dvdd:vn")
 }
 
@@ -704,8 +704,8 @@ record(ai, SVT:lv:7:1:dvdd:vn)
 record(sub,SVT:lv:7:2:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:7:3:dvdd:vn")
 }
 
@@ -729,8 +729,8 @@ record(ai, SVT:lv:7:2:dvdd:vn)
 record(sub,SVT:lv:7:3:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:8:0:dvdd:vn")
 }
 
@@ -754,8 +754,8 @@ record(ai, SVT:lv:7:3:dvdd:vn)
 record(sub,SVT:lv:8:0:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:8:1:dvdd:vn")
 }
 
@@ -779,8 +779,8 @@ record(ai, SVT:lv:8:0:dvdd:vn)
 record(sub,SVT:lv:8:1:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:8:2:dvdd:vn")
 }
 
@@ -804,8 +804,8 @@ record(ai, SVT:lv:8:1:dvdd:vn)
 record(sub,SVT:lv:8:2:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:8:3:dvdd:vn")
 }
 
@@ -829,8 +829,8 @@ record(ai, SVT:lv:8:2:dvdd:vn)
 record(sub,SVT:lv:8:3:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:9:0:dvdd:vn")
 }
 
@@ -854,8 +854,8 @@ record(ai, SVT:lv:8:3:dvdd:vn)
 record(sub,SVT:lv:9:0:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"SVT:lv:9:1:dvdd:vn")
 }
 
@@ -879,8 +879,8 @@ record(ai, SVT:lv:9:0:dvdd:vn)
 record(sub,SVT:lv:9:1:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"")
 }
 

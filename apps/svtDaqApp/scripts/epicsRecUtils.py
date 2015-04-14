@@ -180,14 +180,14 @@ def buildHybLVVSetRd_v125():
 record(sub,SVT:lv:FEBID:HYBID:v125:v_set_rd_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")    
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")    
     field(FLNK,"FLNKNEXTHYB")
 }
 
 record(ai, SVT:lv:FEBID:HYBID:v125:v_set_rd)
 {
-  field(SCAN, "Passive")
+  field(SCAN, "SCANFREQ")
   field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:v125:v_set_rd_sub PP")
   field(DTYP,"Soft Channel")
@@ -222,6 +222,10 @@ record(ai, SVT:lv:FEBID:HYBID:v125:v_set_rd)
                 rec = rec.replace("NEXTHYBID",str(hyb+1))
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
+            if feb==0 and hyb==0:
+                rec = rec.replace("SCANFREQ","1 second")
+            else:
+                rec = rec.replace("SCANFREQ","Passive")  
             records.append(rec)
     
     return records
@@ -238,14 +242,14 @@ def buildHybLVVSetRd_avdd():
 record(sub,SVT:lv:FEBID:HYBID:avdd:v_set_rd_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"FLNKNEXTHYB")
 }
 
 record(ai, SVT:lv:FEBID:HYBID:avdd:v_set_rd)
 {
-  field(SCAN, "Passive")
+  field(SCAN, "SCANFREQ")
   field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:avdd:v_set_rd_sub PP")
   field(DTYP,"Soft Channel")
@@ -278,6 +282,10 @@ record(ai, SVT:lv:FEBID:HYBID:avdd:v_set_rd)
                 rec = rec.replace("NEXTHYBID",str(hyb+1))
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
+            if feb==0 and hyb==0:
+                rec = rec.replace("SCANFREQ","1 second")
+            else:
+                rec = rec.replace("SCANFREQ","Passive")  
             records.append(rec)
     
     return records
@@ -294,14 +302,14 @@ def buildHybLVVSetRd_dvdd():
 record(sub,SVT:lv:FEBID:HYBID:dvdd:v_set_rd_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"FLNKNEXTHYB")
 }
 
 record(ai, SVT:lv:FEBID:HYBID:dvdd:v_set_rd)
 {
-  field(SCAN, "Passive")
+  field(SCAN, "SCANFREQ")
   field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:dvdd:v_set_rd_sub PP")
   field(DTYP,"Soft Channel")
@@ -333,6 +341,10 @@ record(ai, SVT:lv:FEBID:HYBID:dvdd:v_set_rd)
                 rec = rec.replace("NEXTHYBID",str(hyb+1))
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
+            if feb==0 and hyb==0:
+                rec = rec.replace("SCANFREQ","1 second")
+            else:
+                rec = rec.replace("SCANFREQ","Passive")  
             records.append(rec)
     
     return records
@@ -354,13 +366,13 @@ def buildHybLVVf_v125():
 record(sub,SVT:lv:FEBID:HYBID:v125:vf_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"FLNKNEXTHYB")
 }
 
 record(ai, SVT:lv:FEBID:HYBID:v125:vf) {
-  field(SCAN, "Passive")
+  field(SCAN, "SCANFREQ")
   field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:v125:vf_sub PP")
   field(DTYP,"Soft Channel")
@@ -394,6 +406,10 @@ record(ai, SVT:lv:FEBID:HYBID:v125:vf) {
                 rec = rec.replace("NEXTHYBID",str(hyb+1))
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
+            if feb==0 and hyb==0:
+                rec = rec.replace("SCANFREQ","1 second")
+            else:
+                rec = rec.replace("SCANFREQ","Passive")                
             records.append(rec)
     
     return records
@@ -412,14 +428,14 @@ def buildHybLVVf_avdd():
 record(sub,SVT:lv:FEBID:HYBID:avdd:vf_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"FLNKNEXTHYB")
 }
 
 record(ai, SVT:lv:FEBID:HYBID:avdd:vf)
 {
-  field(SCAN, "Passive")
+  field(SCAN, "SCANFREQ")
   field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:avdd:vf_sub PP")
   field(DTYP,"Soft Channel")
@@ -451,6 +467,10 @@ record(ai, SVT:lv:FEBID:HYBID:avdd:vf)
                 rec = rec.replace("NEXTHYBID",str(hyb+1))
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
+            if feb==0 and hyb==0:
+                rec = rec.replace("SCANFREQ","1 second")
+            else:
+                rec = rec.replace("SCANFREQ","Passive")
             records.append(rec)
     
     return records
@@ -472,14 +492,14 @@ def buildHybLVVf_dvdd():
 record(sub,SVT:lv:FEBID:HYBID:dvdd:vf_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"FLNKNEXTHYB")
 }
 
 record(ai, SVT:lv:FEBID:HYBID:dvdd:vf)
 {
-  field(SCAN, "Passive")
+  field(SCAN, "SCANFREQ")
   field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:dvdd:vf_sub PP")
   field(DTYP,"Soft Channel")
@@ -510,6 +530,10 @@ record(ai, SVT:lv:FEBID:HYBID:dvdd:vf)
                 rec = rec.replace("NEXTHYBID",str(hyb+1))
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
+            if feb==0 and hyb==0:
+                rec = rec.replace("SCANFREQ","1 second")
+            else:
+                rec = rec.replace("SCANFREQ","Passive")
             records.append(rec)
     
     return records
@@ -529,14 +553,14 @@ def buildHybLVVn_v125():
 record(sub,SVT:lv:FEBID:HYBID:v125:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"FLNKNEXTHYB")
 }
 
 record(ai, SVT:lv:FEBID:HYBID:v125:vn)
 {
-  field(SCAN, "Passive")
+  field(SCAN, "SCANFREQ")
   field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:v125:vn_sub PP")
   field(DTYP,"Soft Channel")
@@ -570,6 +594,10 @@ record(ai, SVT:lv:FEBID:HYBID:v125:vn)
                 rec = rec.replace("NEXTHYBID",str(hyb+1))
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
+            if feb==0 and hyb==0:
+                rec = rec.replace("SCANFREQ","1 second")
+            else:
+                rec = rec.replace("SCANFREQ","Passive")
             records.append(rec)
     
     return records
@@ -590,14 +618,14 @@ def buildHybLVVn_avdd():
 record(sub,SVT:lv:FEBID:HYBID:avdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"FLNKNEXTHYB")
 }
 
 record(ai, SVT:lv:FEBID:HYBID:avdd:vn)
 {
-  field(SCAN, "Passive")
+  field(SCAN, "SCANFREQ")
   field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:avdd:vn_sub PP")
   field(DTYP,"Soft Channel")
@@ -629,6 +657,10 @@ record(ai, SVT:lv:FEBID:HYBID:avdd:vn)
                 rec = rec.replace("NEXTHYBID",str(hyb+1))
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
+            if feb==0 and hyb==0:
+                rec = rec.replace("SCANFREQ","1 second")
+            else:
+                rec = rec.replace("SCANFREQ","Passive")
             records.append(rec)
     
     return records
@@ -649,14 +681,14 @@ def buildHybLVVn_dvdd():
 record(sub,SVT:lv:FEBID:HYBID:dvdd:vn_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
     field(FLNK,"FLNKNEXTHYB")
 }
 
 record(ai, SVT:lv:FEBID:HYBID:dvdd:vn)
 {
-  field(SCAN, "Passive")
+  field(SCAN, "SCANFREQ")
   field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:dvdd:vn_sub PP")
   field(DTYP,"Soft Channel")
@@ -688,6 +720,10 @@ record(ai, SVT:lv:FEBID:HYBID:dvdd:vn)
                 rec = rec.replace("NEXTHYBID",str(hyb+1))
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
+            if feb==0 and hyb==0:
+                rec = rec.replace("SCANFREQ","1 second")
+            else:
+                rec = rec.replace("SCANFREQ","Passive")
             records.append(rec)
     
     return records
@@ -928,13 +964,14 @@ def buildHybLVStat():
 record(sub,SVT:lv:FEBID:HYBID:dvdd:stat_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
 }
 
 record(ai, SVT:lv:FEBID:HYBID:dvdd:stat)
 {
-  field(SCAN, "Passive") field(PREC, "3")
+  field(SCAN, "Passive")
+  field(PREC, "3")
   field(INP, "SVT:lv:FEBID:HYBID:dvdd:stat_sub PP")
   field(DTYP,"Soft Channel")
 }
@@ -943,8 +980,8 @@ record(ai, SVT:lv:FEBID:HYBID:dvdd:stat)
 record(sub,SVT:lv:FEBID:HYBID:avdd:stat_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
 }
 
 record(ai, SVT:lv:FEBID:HYBID:avdd:stat)
@@ -957,8 +994,8 @@ record(ai, SVT:lv:FEBID:HYBID:avdd:stat)
 record(sub,SVT:lv:FEBID:HYBID:v125:stat_sub)
 {
     field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
+    field(INAM,"subHybridLVInit")
+    field(SNAM,"subHybridLVProcess")
 }
 
 record(ai, SVT:lv:FEBID:HYBID:v125:stat)
@@ -970,7 +1007,7 @@ record(ai, SVT:lv:FEBID:HYBID:v125:stat)
 
 record(calc, SVT:lv:FEBID:HYBID:stat)
 {
-  field(SCAN, "Passive")
+  field(SCAN, "SCANFREQ")
   field(CALC, "A&&B&&C")
   field(INPA, "SVT:lv:FEBID:HYBID:dvdd:stat.VAL PP")
   field(INPB, "SVT:lv:FEBID:HYBID:avdd:stat.VAL PP")
@@ -1002,6 +1039,10 @@ record(calc, SVT:lv:FEBID:HYBID:stat)
                 rec = rec.replace("NEXTHYBID",str(hyb+1))
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
+            if feb==0 and hyb==0:
+                rec = rec.replace("SCANFREQ","1 second")
+            else:
+                rec = rec.replace("SCANFREQ","Passive")  
             records.append(rec)
     
     return records
@@ -1211,13 +1252,14 @@ def buildFebTemp():
 record(sub,SVT:temp:fe:FEBID:axixadc:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:FEBID:FebTemp0:t_rd")
 }
 
 record(ai, SVT:temp:fe:FEBID:axixadc:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "SCANFREQ")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:FEBID:axixadc:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"47") field(HHSV,"MAJOR")
@@ -1229,13 +1271,14 @@ record(ai, SVT:temp:fe:FEBID:axixadc:t_rd) {
 record(sub,SVT:temp:fe:FEBID:FebTemp0:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"SVT:temp:fe:FEBID:FebTemp1:t_rd")
 }
 
 record(ai, SVT:temp:fe:FEBID:FebTemp0:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:FEBID:FebTemp0:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -1247,13 +1290,14 @@ record(ai, SVT:temp:fe:FEBID:FebTemp0:t_rd) {
 record(sub,SVT:temp:fe:FEBID:FebTemp1:t_rd_sub)
 {
     field(SCAN, "Passive")
-    field(INAM,"subTempInit")
-    field(SNAM,"subTempProcess")
+    field(INAM,"subFebTempInit")
+    field(SNAM,"subFebTempProcess")
     field(FLNK,"FLNKNEXTFEB")
 }
 
 record(ai, SVT:temp:fe:FEBID:FebTemp1:t_rd) {
-    field(SCAN, "Passive") field(PREC, "1")
+    field(SCAN, "Passive")
+    field(PREC, "1")
     field(INP, "SVT:temp:fe:FEBID:FebTemp1:t_rd_sub PP")
     field(DTYP,"Soft Channel")
     field(HIHI,"30") field(HHSV,"MAJOR")
@@ -1276,6 +1320,10 @@ record(ai, SVT:temp:fe:FEBID:FebTemp1:t_rd) {
             rec = rec.replace("FLNKNEXTFEB",s_flnk)            
         rec = rec.replace("NEXTFEBID",str(feb+1))
         rec = rec.replace("FEBID",str(feb))
+        if feb==0:
+            rec = rec.replace("SCANFREQ","1 second")
+        else:
+            rec = rec.replace("SCANFREQ","Passive") 
         records.append(rec)
     
     return records
