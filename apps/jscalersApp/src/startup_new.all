@@ -1,0 +1,32 @@
+#
+#  startup.all test for linux ioc
+#
+Init_SCALERS()
+
+# hps11 ###
+Start_SCALERS_CRATE("0",  "hps11") 
+# hps12
+Start_SCALERS_CRATE("1",  "hps12") 
+
+# hps1 ###
+Start_SCALERS_CRATE("2",  "hps1") 
+# hps2
+Start_SCALERS_CRATE("3",  "hps2") 
+
+#Start_SCALERS_CRATE("0",  "hps11", "22", "-1","-1","0","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1") 
+#Start_SCALERS_CRATE("1",  "hps12", "22", "-1","-1","0","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1") 
+dbLoadDatabase("/usr/local/clas12/release/0.1/epics/drivers/SCALERS/level0/IocShell/O.Common/iocscalers.dbd",0,0)
+
+iocscalers_registerRecordDeviceDriver(pdbbase)
+
+#dbLoadRecords("/usr/local/clas12/release/0.1/epics/drivers/CAEN_HV/level0/IocShell/hvprod.db")
+
+###dbLoadTemplate("test.substitutions")
+dbLoadRecords("scalers_prod.db")
+dbLoadRecords("smi_scaler_records.db")
+#
+dbLoadRecords("waveform2calc.db")
+#
+iocInit()
+#
+# end of linux ioc startup script

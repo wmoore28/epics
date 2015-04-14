@@ -1,0 +1,70 @@
+record(subArray, "$(P)$(R)") {
+    field(INP,"$(WF)")
+    field(NELM,1)
+    field(INDX,3)
+    field(FTVL,"DOUBLE")
+#    field(FLNK,"$(P)$(R)_FANOUT")
+	field(FLNK, "$(P)$(R)_FRAC")
+}
+
+#record(fanout, "$(P)$(R)_FANOUT") {
+#    field(LNK1, "HPSTRIGSC_TOTAL")
+#    field(LNK2, "$(P)$(R)_FRAC")
+#}
+
+# You can still use TOTAL, but it doesn't seem needed.
+record(calc, "$(P)$(R)_FRAC") {
+    field(INPA,"$(P)$(R)")
+    field(INPB,"HPSTRIGSC_TOTAL")
+    field(CALC,"B>0 ? 100*A/B : -1")
+    field(FLNK,"$(P)$(R)_SFRAC")
+}
+
+record(ai, "$(P)$(R)_SFRAC") {
+    field(INP,"$(P)$(R)_FRAC")
+    field(SMOO,0.1)
+}
+
+# Needs to be in a new db file.
+#record(calc, "HPSTRIGSC_TOTAL") {
+#    field(INPA,"HPSTRIGSC_0")
+#    field(INPB,"HPSTRIGSC_1")
+#    field(INPC,"HPSTRIGSC_2")
+#    field(INPD,"HPSTRIGSC_3")
+#    field(INPE,"HPSTRIGSC_4")
+#    field(INPF,"HPSTRIGSC_5")
+#    field(CALC,"A+B+C+D+E+F")
+#}
+
+# Needs to be in a new db file.
+#record(calc, "HPSTRIGSC_TOTAL_FRAC") {
+#    field(INPA,"HPSTRIGSC_TOTAL")
+#    field(INPB,"HPSTRIGSC_TOTAL")
+#    field(CALC,"B>0 ? 100 : -1")
+#    field(SCAN,"2 second")
+#}
+
+
+# Needs to be in a new db file.
+#record(calc, "HPSBEAMANGX") {
+#    field(INPA,"IPM2H01.XPOS")
+#    field(INPB,"IPM2H02.XPOS")
+#    field(CALC,"ATAN((B-A)/26/1000)*1000")
+#    field(SCAN,"2 second")
+#}
+#record(calc, "HPSBEAMANGY") {
+#    field(INPA,"IPM2H01.YPOS")
+#    field(INPB,"IPM2H02.YPOS")
+#    field(CALC,"ATAN((B-A)/26/1000)*1000")
+#    field(SCAN,"2 second")
+#}
+#record(calc, "DOGGY") {
+#    field(INPA,"B_hv_ECAL_TOP_01_property.G")
+#    field(INPB,"B_hv_ECAL_TOP_03_property.G")
+#    field(CALC,"B-A")
+#    field(SCAN,"2 second")
+#}
+#record(calc, "KITTY") {
+#    field(CALC,"98.1")
+#    field(SCAN,"2 second")
+#}
