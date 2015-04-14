@@ -19,7 +19,7 @@ double* GetBotPos(double);
 
 int main(int argc, char **argv)
 {
-  if( argc < 2 )
+  if( argc != 2 )
     {
       cout<<"Wrong launching command"<<endl;
       cout<<"Usage: ./analyze_svt_scan.exe filename"<<endl;
@@ -27,12 +27,6 @@ int main(int argc, char **argv)
       exit(1);
     }
   
-  bool make_log = false;
-  if(argc == 3)
-    {
-      make_log = atoi(argv[2]);
-    }
-
   string file_name = argv[1];
   string file_dir = "/usr/clas12/hps/DATA/hps_svt_scans";
   string which_scan;
@@ -40,7 +34,7 @@ int main(int argc, char **argv)
 
   bool bot_scan = false;
   bool top_scan = false;
-  
+
   size_t scan_type = file_name.find("top");
   if( file_name.find("top") == 4 )
     {
@@ -92,10 +86,10 @@ int main(int argc, char **argv)
   gr_[6] = new TGraph(Form("%s/%s", file_dir.c_str(), file_name.c_str()), "%*s %*s %lg %*s %*s %*s %*s %*s %*s %lg");
   gr_[7] = new TGraph(Form("%s/%s", file_dir.c_str(), file_name.c_str()), "%*s %*s %lg %*s %*s %*s %*s %*s %*s %*s %lg");
   
-  cout<<"Kuku"<<endl;
   TCanvas *c1 = new TCanvas("c1", "", 1200, 600);
+
   c1->Divide(4, 2);
-    
+  
   for( int i = 0; i < n_graphs; i++ )
     {
       c1->cd(i+1);
@@ -237,19 +231,16 @@ int main(int argc, char **argv)
       horiz_wire_pos_[2] = positions_[1];
       stereo_wire_pos_[2] = positions2_[1];
 
-      double wire_dist = TMath::Abs(stereo_wire_pos_[2] - horiz_wire_pos_[2]);
-      double beam_x = svt_wire_pos.calcXbeam(wire_dist);
-      lat1->DrawLatex(0.15, 0.95, Form("File: %s", file_name.c_str()));
+      double beam_x = svt_wire_pos.calcXbeam(stereo_wire_pos_[2] - horiz_wire_pos_[2]);
 
       lat1->SetTextColor(4);
-      lat1->DrawLatex(0.15, 0.85, "Analyze from HPS_t counter" );
+      lat1->DrawLatex(0.15, 0.95, "Analyze from HPS_t counter" );
       lat1->SetTextColor(64);
-      lat1->DrawLatex(0.1, 0.81, Form("%s_mot_pos1 = %1.3f mm", which_scan.c_str(), stage1_[2]));
-      lat1->DrawLatex(0.1, 0.77, Form("%s_mot_pos2 = %1.3f mm", which_scan.c_str(), stage2_[2]));
-      //lat1->DrawLatex(0.1, 0.83, Form("%s_si_retracted_pos = %1.3f mm", which_scan.c_str(), si_pos_[2]));
-      lat1->DrawLatex(0.1, 0.73, Form("%s_wire_dist = %1.3f mm", which_scan.c_str(), wire_dist));
-      lat1->DrawLatex(0.1, 0.69, Form("%s_beam_Y = %1.3f mm", which_scan.c_str(), horiz_wire_pos_[2]));
-      lat1->DrawLatex(0.1, 0.65, Form("%s_beam_X = %1.3f mm", which_scan.c_str(), beam_x));
+      lat1->DrawLatex(0.1, 0.91, Form("%s_mot_pos1 = %1.3f mm", which_scan.c_str(), stage1_[2]));
+      lat1->DrawLatex(0.1, 0.87, Form("%s_mot_pos2 = %1.3f mm", which_scan.c_str(), stage2_[2]));
+      lat1->DrawLatex(0.1, 0.83, Form("%s_si_retracted_pos = %1.3f mm", which_scan.c_str(), si_pos_[2]));
+      lat1->DrawLatex(0.1, 0.79, Form("%s_wire_retratced_pos = %1.3f mm", which_scan.c_str(), horiz_wire_pos_[2]));
+      lat1->DrawLatex(0.1, 0.75, Form("%s_beam_X = %1.3f mm", which_scan.c_str(), beam_x));
     }
   
   if( n_peaks3 == 2 )
@@ -272,38 +263,18 @@ int main(int argc, char **argv)
       horiz_wire_pos_[3] = positions_[1];
       stereo_wire_pos_[3] = positions2_[1];
       
-      double wire_dist = TMath::Abs(stereo_wire_pos_[3] - horiz_wire_pos_[3]);
-      double beam_x = svt_wire_pos.calcXbeam(wire_dist);
+      double beam_x = svt_wire_pos.calcXbeam(stereo_wire_pos_[3] - horiz_wire_pos_[3]);
 
       lat1->SetTextColor(4);
       lat1->DrawLatex(0.15, 0.45, "Analyze from HPS_SC counter" );
       lat1->SetTextColor(64);
       lat1->DrawLatex(0.1, 0.41, Form("%s_mot_pos1 = %1.3f mm", which_scan.c_str(), stage1_[3]));
       lat1->DrawLatex(0.1, 0.37, Form("%s_mot_pos2 = %1.3f mm", which_scan.c_str(), stage2_[3]));
-      //lat1->DrawLatex(0.1, 0.33, Form("%s_si_pos = %1.3f mm", which_scan.c_str(), si_pos_[3]));
-      lat1->DrawLatex(0.1, 0.33, Form("%s_wire_dist = %1.3f mm", which_scan.c_str(), wire_dist));
-      lat1->DrawLatex(0.1, 0.29, Form("%s_beam_Y = %1.3f mm", which_scan.c_str(), horiz_wire_pos_[3]));
+      lat1->DrawLatex(0.1, 0.33, Form("%s_si_pos = %1.3f mm", which_scan.c_str(), si_pos_[3]));
+      lat1->DrawLatex(0.1, 0.29, Form("%s_wire_pos = %1.3f mm", which_scan.c_str(), horiz_wire_pos_[3]));
       lat1->DrawLatex(0.1, 0.25, Form("%s_beam_X = %1.3f mm", which_scan.c_str(), beam_x));
-
-      if( make_log )
-	{
-	  system(Form("caput HPS_SVT:SCAN:x_offset %1.4f", beam_x));
-	  system(Form("caput HPS_SVT:SCAN:y_offset %1.4f", horiz_wire_pos_[3]));
-	}
     }
-  
-  string img_path = Form("/home/hpsrun/screenshots/Analyze_%s.gif", file_name.c_str());
-  //c2->Print(Form("/home/hpsrun/screenshots/Analyze_%s.gif", file_name.c_str()));
-  
-  if( make_log )
-    {
-      c2->Print(Form("%s", img_path.c_str()));
-      if( n_peaks2 == 2 || n_peaks2 == 3 )
-	{
-	  system(Form("/site/ace/certified/apps/bin/logentry -l HBLOG -t \"Analyse of %s \" -a %s ", file_name.c_str(), img_path.c_str()));
-	  //system(Form("/site/ace/certified/apps/bin/logentry -l HBLOG -t \"Analyse of %s \" -a %s ", file_name.c_str(), img_path.c_str()));
-	}
-    }
+ 
   app1->Run();
 }
 
