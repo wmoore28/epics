@@ -1,0 +1,219 @@
+#===============================================================================
+# SVT FEB Temperature Alarm Config
+#===============================================================================
+
+GROUP NULL FEB_TEMP
+$GUIDANCE
+See SVT Ops manual sections relating to cooling.
+PVs monitored by these alarms are supplied by the SVT DAQ IOCs.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:0:axixadc:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:0:axixadc:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The FPGA on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:0:FebTemp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:0:FebTemp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:0:FebTemp1:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:0:FebTemp1:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:1:axixadc:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:1:axixadc:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The FPGA on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:1:FebTemp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:1:FebTemp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:1:FebTemp1:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:1:FebTemp1:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:2:axixadc:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:2:axixadc:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The FPGA on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:2:FebTemp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:2:FebTemp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:2:FebTemp1:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:2:FebTemp1:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:3:axixadc:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:3:axixadc:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The FPGA on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:3:FebTemp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:3:FebTemp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:3:FebTemp1:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:3:FebTemp1:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:4:axixadc:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:4:axixadc:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The FPGA on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:4:FebTemp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:4:FebTemp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:4:FebTemp1:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:4:FebTemp1:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:5:axixadc:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:5:axixadc:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The FPGA on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:5:FebTemp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:5:FebTemp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:5:FebTemp1:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:5:FebTemp1:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:6:axixadc:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:6:axixadc:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The FPGA on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:6:FebTemp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:6:FebTemp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:6:FebTemp1:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:6:FebTemp1:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:7:axixadc:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:7:axixadc:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The FPGA on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:7:FebTemp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:7:FebTemp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:7:FebTemp1:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:7:FebTemp1:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:8:axixadc:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:8:axixadc:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The FPGA on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:8:FebTemp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:8:FebTemp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:8:FebTemp1:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:8:FebTemp1:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:9:axixadc:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:9:axixadc:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The FPGA on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:9:FebTemp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:9:FebTemp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FEB_TEMP SVT:temp:fe:9:FebTemp1:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:9:FebTemp1:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END

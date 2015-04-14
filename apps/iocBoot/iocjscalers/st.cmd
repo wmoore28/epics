@@ -24,6 +24,6 @@ dbLoadRecords("db/jscalers.db")
 dbLoadRecords("db/smi_scaler_records.db")
 dbLoadRecords("db/waveform2calc.db")
 
-cd ${TOP}/iocBoot/${IOC}gedit 
+cd ${TOP}/iocBoot/${IOC} 
 
 iocInit

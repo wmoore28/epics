@@ -9,6 +9,7 @@ def main(argv=None):
     buildBiasConfig()
     buildLVConfig()
     buildHybLVConfig()
+    buildFlangeLVConfig()
     buildHybTempConfig()
     buildFebTempConfig()
     buildDaqConfig()
@@ -401,7 +402,7 @@ CHANNEL FEB_LV SVT:lv:fe:CHANNELTEMPLATE:anan:stat
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:CHANNELTEMPLATE:anan:stat" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 This FEB low voltage channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
+A value of 0 means this channel is off.
 A value of 40 means the PLC interlock has tripped the MPOD off.
 Contact the SVT expert for further guidance.
 $END
@@ -410,7 +411,7 @@ CHANNEL FEB_LV SVT:lv:fe:CHANNELTEMPLATE:anap:stat
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:CHANNELTEMPLATE:anap:stat" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 This FEB low voltage channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
+A value of 0 means this channel is off.
 A value of 40 means the PLC interlock has tripped the MPOD off.
 Contact the SVT expert for further guidance.
 $END
@@ -419,7 +420,7 @@ CHANNEL FEB_LV SVT:lv:fe:CHANNELTEMPLATE:digi:stat
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:CHANNELTEMPLATE:digi:stat" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 This FEB low voltage channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
+A value of 0 means this channel is off.
 A value of 40 means the PLC interlock has tripped the MPOD off.
 Contact the SVT expert for further guidance.
 $END
@@ -429,6 +430,60 @@ $END
     f.write(head)
     for feb in range(0,10):
         f.write(s.replace("CHANNELTEMPLATE",str(feb)))
+
+def buildFlangeLVConfig():
+	
+    f = open("svtFlangeLV.alhConfig","w")
+    head = """#===============================================================================
+# SVT Flange Board Low Voltage Config
+#===============================================================================
+
+GROUP NULL FLANGE_LV
+$GUIDANCE
+See SVT Ops manual sections relating to voltages.
+PVs monitored by these alarms are supplied by the MPOD IOC (hvCaen).
+$END
+"""
+
+    s = """
+CHANNEL FLANGE_LV SVT:lv:fl:CHANNELTEMPLATE:i_rd
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fl:CHANNELTEMPLATE:i_rd" aiaocalc_alarm.adl >> /dev/null
+$GUIDANCE
+The current supplied by this flange board low voltage channel has deviated from its normal value.
+This usually indicates the channel is overloaded or disconnected, or that the hybrids have not yet been turned on.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FLANGE_LV SVT:lv:fl:CHANNELTEMPLATE:v_term
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fl:CHANNELTEMPLATE:v_term" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The terminal voltage for this flange board low voltage channel has deviated from its normal value.
+This usually indicates the channel is overloaded or disconnected.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FLANGE_LV SVT:lv:fl:CHANNELTEMPLATE:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fl:CHANNELTEMPLATE:v_sens" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The sense terminal voltage for this flange board low voltage channel has deviated from its nominal value of 5.5 V.
+This usually indicates the channel is overloaded or disconnected.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL FLANGE_LV SVT:lv:fl:CHANNELTEMPLATE:stat
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fl:CHANNELTEMPLATE:stat" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+This flange board low voltage channel is off, or in an abnormal state.
+A value of 0 means this channel is off.
+A value of 40 means the PLC interlock has tripped the MPOD off.
+Contact the SVT expert for further guidance.
+$END
+
+"""
+
+    f.write(head)
+    for fl in range(0,4):
+        f.write(s.replace("CHANNELTEMPLATE",str(fl)))
 
 if __name__ == "__main__":
     sys.exit(main());

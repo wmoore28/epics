@@ -49,4 +49,13 @@ dbpf("$(SVTTOP_MOTOR):scan1.R1PV", "$(SVTTOP_MOTOR).RBV")
 dbpf("$(SVTTOP_MOTOR):scan1.P1PV", "$(SVTTOP_MOTOR).VAL")
 dbpf("$(SVTTOP_MOTOR):scan1.D01PV", "$(SVTTOP_MOTOR).RBV")
 
+dbpf("$(SVTTOP_MOTOR):scan1.D02PV", "scalerS12b")
+dbpf("$(SVTTOP_MOTOR):scan1.D03PV", "scalerS13b")
+dbpf("$(SVTTOP_MOTOR):scan1.D04PV", "scalerS14b")
+dbpf("$(SVTTOP_MOTOR):scan1.D05PV", "scalerS15b")
+dbpf("$(SVTTOP_MOTOR):scan1.D06PV", "scaler_calc1")
+dbpf("$(SVTTOP_MOTOR):scan1.D07PV", "hallb_IPM2H02_XPOS")
+dbpf("$(SVTTOP_MOTOR):scan1.D08PV", "hallb_IPM2H02_YPOS")
+dbpf("$(SVTTOP_MOTOR):scan1.D09PV", "hallb_IPM2H01_CUR")
+
 dbpf("$(SVTTOP_MOTOR):scan1.T1PV", "$(SVTTOP_MOTOR):beamCheckBusy")
