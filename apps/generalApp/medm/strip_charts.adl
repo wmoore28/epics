@@ -1,12 +1,12 @@
 
 file {
-	name="/home/stepanya/epics/app/general/medm/strip_charts.adl"
-	version=030101
+	name="/usr/clas12/hps/prod/apps/generalApp/medm/strip_charts.adl"
+	version=030108
 }
 display {
 	object {
-		x=1511
-		y=314
+		x=510
+		y=803
 		width=350
 		height=150
 	}
@@ -140,7 +140,7 @@ display {
 text {
 	object {
 		x=47
-		y=14
+		y=16
 		width=245
 		height=20
 	}
@@ -167,7 +167,7 @@ text {
 text {
 	object {
 		x=47
-		y=39
+		y=41
 		width=245
 		height=20
 	}
@@ -219,7 +219,7 @@ text {
 text {
 	object {
 		x=47
-		y=66
+		y=68
 		width=245
 		height=20
 	}
@@ -227,4 +227,66 @@ text {
 		clr=14
 	}
 	textix="Machine Parameters Strip Charts"
+}
+"shell command" {
+	object {
+		x=21
+		y=94
+		width=20
+		height=20
+	}
+	command[0] {
+		label="Temperature Top"
+		name="StripTool"
+		args="$APP/general/strip/hps_ecal_temp_top.stc &"
+	}
+	command[1] {
+		label="Temperature Bottom"
+		name="StripTool"
+		args="$APP/general/strip/hps_ecal_temp_bottom.stc &"
+	}
+	command[2] {
+		label="HV Current Top A"
+		name="StripTool"
+		args="$APP/general/strip/hps_ecal_current_topA.stc &"
+	}
+	command[3] {
+		label="HV Current Top B"
+		name="StripTool"
+		args="$APP/general/strip/hps_ecal_current_topB.stc &"
+	}
+	command[4] {
+		label="HV Current Top C"
+		name="StripTool"
+		args="$APP/general/strip/hps_ecal_current_topC.stc &"
+	}
+	command[5] {
+		label="HV Current Bottom A"
+		name="StripTool"
+		args="$APP/general/strip/hps_ecal_current_botA.stc &"
+	}
+	command[6] {
+		label="HV Current Bottom B"
+		name="StripTool"
+		args="$APP/general/strip/hps_ecal_current_botB.stc &"
+	}
+	command[7] {
+		label="HV Current Bottom C"
+		name="StripTool"
+		args="$APP/general/strip/hps_ecal_current_botC.stc &"
+	}
+	clr=14
+	bclr=4
+}
+text {
+	object {
+		x=47
+		y=96
+		width=245
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECal Strip Charts"
 }

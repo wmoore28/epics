@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/generalApp/medm/ECalHVStatus.adl"
+	name="/usr/clas12/hps/prod/apps/medm/ECalHVStatus.adl"
 	version=030108
 }
 display {
 	object {
-		x=175
-		y=150
+		x=43
+		y=127
 		width=1229
 		height=560
 	}
@@ -3348,14 +3348,9 @@ text {
 		height=25
 	}
 	command[0] {
-		label="Save Top"
-		name="$APP/hvcaApp/scripts/save_hv_4_grp.pl"
-		args="ECAL ECAL_TOP &"
-	}
-	command[1] {
-		label="Save Bottom"
-		name="$APP/hvcaApp/scripts/save_hv_4_grp.pl"
-		args="ECAL ECAL_BOT &"
+		label="Save"
+		name="$APP/hvcaApp/scripts/backupHPSECALHV.py"
+		args="save &"
 	}
 	clr=14
 	bclr=2
@@ -3370,8 +3365,8 @@ text {
 	}
 	command[0] {
 		label="Restore"
-		name="$APP/hvcaApp/scripts/restore_hv.pl"
-		args="ECAL &"
+		name="$APP/hvcaApp/scripts/backupHPSECALHV.py"
+		args="restore &"
 	}
 	clr=14
 	bclr=2

@@ -135,7 +135,16 @@ sub save_file
 
     $grp_key = $det_name."\_grp".$grp_numb ;
 #    print "Group Key is $grp_key \n" ;
-    $req_dir = "\$APP/hvcaApp/req/" ;
+
+#NO:
+    #$req_dir = "\$APP/hvcaApp/req/" ;
+#YES:
+    $req_dir = $ENV{"APP"}."/hvcaApp/req/" ;
+
+
+#    print "\n\n$req_dir\n\n$grp_key\n\n";
+
+
     @req_file_list = `ls $req_dir\* | grep \"$grp_key\"` ;
     
     $req_file_string = "";

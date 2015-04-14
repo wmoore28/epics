@@ -19,6 +19,7 @@ hvCaen_DBD += asyn.dbd
 hvCaen_DBD += devSnmp.dbd
 hvCaen_DBD += LVMPODSupport.dbd
 hvCaen_DBD += devIocStats.dbd
+hvCaen_DBD += asSupport.dbd
 
 # hvCaen_registerRecordDeviceDriver.cpp derives from hvCaen.dbd
 hvCaen_SRCS += hvCaen_registerRecordDeviceDriver.cpp
@@ -71,3 +72,10 @@ include $(TOP)/configure/RULES
 #----------------------------------------
 #  ADD RULES AFTER THIS LINE
 
+dump_db:
+	@rm -f svt_voltages.txt
+	@echo -e "#\n# Generated dump to text for easy compare in VCS (Makefile)" >> svt_voltages.txt
+	@echo -e "# Cmd: sqlite3 svt_voltages.db .dump >> svt_voltages.txt\n#" >> svt_voltages.txt
+	@sqlite3 svt_voltages.db .dump >> svt_voltages.txt
+
+install: dump_db

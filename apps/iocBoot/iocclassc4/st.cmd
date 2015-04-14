@@ -99,7 +99,7 @@ dbLoadRecords("db/motor.db","motor_name=beam_stop, card=0, slot=0, srev=2000, ur
 dbLoadRecords("db/motor.db","motor_name=harp_2H02A, card=0, slot=2, srev=2000, urev=2.54, direction=Pos, velo=0.5, accl=0.01")
 dbLoadRecords("db/scan.db","motor_name=harp_2H02A, start_at=3.0, end_at=9.5, start_speed=0.5, scan_speed=0.04, acq_time=0.1")
 
-dbLoadRecords("db/motor.db","motor_name=viewer, card=0, slot=1,srev=2000,urev=2.54,direction=Neg,velo=0.05,accl=0.01")
+dbLoadRecords("db/motor.db","motor_name=viewer, card=0, slot=1,srev=2000,urev=2.54,direction=Neg,velo=0.03,accl=0.01")
 ##dbLoadRecords("db/motor.db","motor_name=hps_target, card=0, slot=1,srev=2000,urev=2.54,direction=Neg,velo=0.5,accl=0.01")
 
 
@@ -175,7 +175,8 @@ iocInit "../resource.def"
 
 ##dbpf "fcup_offset","144.46"
 ##dbpf "fcup_slope","9071"
-dbpf "fcup_offset","63.08"
+##dbpf "fcup_offset","63.08"
+dbpf "fcup_offset","74."
 dbpf "fcup_slope","905.937"
 
 

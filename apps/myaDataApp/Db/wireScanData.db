@@ -27,7 +27,15 @@ record(ai, "$(P)$(R)x_offset") {
     field(PREC, "3")
 }
 
+record(ai, "$(P)$(R)x_offset_locfit") {
+    field(PREC, "3")
+}
+
 record(ai, "$(P)$(R)y_offset") {
+    field(PREC, "3")
+}
+
+record(ai, "$(P)$(R)y_offset_locfit") {
     field(PREC, "3")
 }
 

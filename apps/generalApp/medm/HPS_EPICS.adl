@@ -5,7 +5,7 @@ file {
 }
 display {
 	object {
-		x=5
+		x=1
 		y=60
 		width=240
 		height=835
@@ -318,8 +318,8 @@ text {
 	}
 	display[5] {
 		label="Chiller (ECAL)"
-		name="chiller_thermo.adl"
-		args="DESC=ECAL"
+		name="chiller_anova.adl"
+		args="DESC=ECAL,P=HPS_ECAL:CHILLER:"
 	}
 	display[6] {
 		label="Chiller (SVT)"
@@ -329,7 +329,7 @@ text {
 	display[7] {
 		label="Chiller (FE Boards)"
 		name="chiller_anova.adl"
-		args="DESC=FE_Boards"
+		args="DESC=FE_Boards,P=HPS_FE:CHILLER:"
 	}
 	display[8] {
 		label="SVT PLC"
@@ -376,21 +376,36 @@ text {
 		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc12 &"
 	}
 	command[3] {
+		label="MyaViewer (clonpc13)"
+		name="xterm -title MyaViewer -e "
+		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc13 &"
+	}
+	command[4] {
+		label="MyaViewer (clonpc14)"
+		name="xterm -title MyaViewer -e "
+		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc14 &"
+	}
+	command[5] {
+		label="MyaViewer (clonpc15)"
+		name="xterm -title MyaViewer -e "
+		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc15 &"
+	}
+	command[6] {
 		label="MyaViewer (clonpc16)"
 		name="xterm -title MyaViewer -e "
 		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc16 &"
 	}
-	command[4] {
+	command[7] {
 		label="MyaViewer (clonpc17)"
 		name="xterm -title MyaViewer -e "
 		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc17 &"
 	}
-	command[5] {
+	command[8] {
 		label="MyaViewer (clonpc18)"
 		name="xterm -title MyaViewer -e "
 		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc18 &"
 	}
-	command[6] {
+	command[9] {
 		label="MyaViewer (clonpc19)"
 		name="xterm -title MyaViewer -e "
 		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc19 &"
@@ -770,10 +785,14 @@ text {
 		height=20
 	}
 	display[0] {
+		label="HPS Trigger"
+		name="hps_trigger_scalers.adl"
+	}
+	display[1] {
 		label="Photon Trigger"
 		name="ts_bits.adl"
 	}
-	display[1] {
+	display[2] {
 		label="DVCS Trigger"
 		name="dvcs_trigger.adl"
 	}

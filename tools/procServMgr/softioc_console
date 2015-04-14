@@ -22,14 +22,11 @@
 #-----------------------------------------------------------------------
 # Global Variables
 #-----------------------------------------------------------------------
-SCRIPT_USER=epics
-#SCRIPT_USER=wmoore
 SCRIPT_NAME=softioc_console
 
 #-----------------------------------------------------------------------
 # Data File Locations
 #-----------------------------------------------------------------------
-#CONFIG_DIR=~wmoore/workspaces/hps-epics/apps/iocBoot
 CONFIG_DIR=/usr/clas12/hps/prod/apps/iocBoot
 
 IOC_DIR=$CONFIG_DIR
@@ -43,7 +40,7 @@ FILE_LIST="$CONFIG_FILE"
 #-----------------------------------------------------------------------
 
 HOSTNAME='/bin/hostname'
-HOST=`$HOSTNAME`
+HOST=`hostname -s`
 ID='/usr/bin/id'
 TELNET='/usr/bin/telnet'
 SSH='/usr/bin/ssh -xt'
