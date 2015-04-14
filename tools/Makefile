@@ -1,4 +1,4 @@
-TOOLDIRS := harp_analyzer hpsrun LogEntry procServMgr
+TOOLDIRS := ${shell find . -maxdepth 1 ! -path . -type d -print}
 
 .PHONY: all clean distclean install uninstall 
 

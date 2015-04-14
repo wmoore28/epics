@@ -1,0 +1,149 @@
+record(subArray, "HPSTRIGSC_0") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl10_Ch0.VAL")
+    field(NELM,1)
+    field(INDX,3)
+    field(FTVL,"DOUBLE")
+    field(SCAN,"2 second")
+}
+record(subArray, "HPSTRIGSC_1") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl10_Ch1.VAL")
+    field(NELM,1)
+    field(INDX,3)
+    field(FTVL,"DOUBLE")
+    field(SCAN,"2 second")
+}
+record(subArray, "HPSTRIGSC_2") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl10_Ch2.VAL")
+    field(NELM,1)
+    field(INDX,3)
+    field(FTVL,"DOUBLE")
+    field(SCAN,"2 second")
+}
+record(subArray, "HPSTRIGSC_3") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl10_Ch3.VAL")
+    field(NELM,1)
+    field(INDX,3)
+    field(FTVL,"DOUBLE")
+    field(SCAN,"2 second")
+}
+record(subArray, "HPSTRIGSC_4") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl10_Ch4.VAL")
+    field(NELM,1)
+    field(INDX,3)
+    field(FTVL,"DOUBLE")
+    field(FLNK,"HPSTRIGSC_4_FANOUT")
+}
+record(subArray, "HPSTRIGSC_5") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl10_Ch5.VAL")
+    field(NELM,1)
+    field(INDX,3)
+    field(FTVL,"DOUBLE")
+    field(FLNK,"HPSTRIGSC_5_FANOUT")
+}
+record(fanout, "HPSTRIGSC_4_FANOUT") {
+    field(LNK1, "HPSTRIGSC_TOTAL")
+    field(LNK2, "HPSTRIGSC_4_FRAC")
+}
+record(fanout, "HPSTRIGSC_5_FANOUT") {
+    field(LNK1, "HPSTRIGSC_TOTAL")
+    field(LNK2, "HPSTRIGSC_5_FRAC")
+}
+record(calc, "HPSTRIGSC_TOTAL") {
+    field(INPA,"HPSTRIGSC_0")
+    field(INPB,"HPSTRIGSC_1")
+    field(INPC,"HPSTRIGSC_2")
+    field(INPD,"HPSTRIGSC_3")
+    field(INPE,"HPSTRIGSC_4")
+    field(INPF,"HPSTRIGSC_5")
+    field(CALC,"A+B+C+D+E+F")
+}
+record(calc, "HPSTRIGSC_0_FRAC") {
+    field(INPA,"HPSTRIGSC_0")
+    field(INPB,"HPSTRIGSC_TOTAL")
+    field(CALC,"B>0 ? 100*A/B : -1")
+    field(SCAN,"2 second")
+}
+record(calc, "HPSTRIGSC_1_FRAC") {
+    field(INPA,"HPSTRIGSC_1")
+    field(INPB,"HPSTRIGSC_TOTAL")
+    field(CALC,"B>0 ? 100*A/B : -1")
+    field(SCAN,"2 second")
+}
+record(calc, "HPSTRIGSC_2_FRAC") {
+    field(INPA,"HPSTRIGSC_2")
+    field(INPB,"HPSTRIGSC_TOTAL")
+    field(CALC,"B>0 ? 100*A/B : -1")
+    field(SCAN,"2 second")
+}
+record(calc, "HPSTRIGSC_3_FRAC") {
+    field(INPA,"HPSTRIGSC_3")
+    field(INPB,"HPSTRIGSC_TOTAL")
+    field(CALC,"B>0 ? 100*A/B : -1")
+    field(SCAN,"2 second")
+}
+record(calc, "HPSTRIGSC_4_FRAC") {
+    field(INPA,"HPSTRIGSC_4")
+    field(INPB,"HPSTRIGSC_TOTAL")
+    field(CALC,"B>0 ? 100*A/B : -1")
+    field(FLNK,"HPSTRIGSC_4_SFRAC")
+}
+record(calc, "HPSTRIGSC_5_FRAC") {
+    field(INPA,"HPSTRIGSC_5")
+    field(INPB,"HPSTRIGSC_TOTAL")
+    field(CALC,"B>0 ? 100*A/B : -1")
+    field(FLNK,"HPSTRIGSC_5_SFRAC")
+}
+record(ai, "HPSTRIGSC_0_SFRAC") {
+    field(INP,"HPSTRIGSC_0_FRAC")
+    field(SCAN,"2 second")
+    field(SMOO,0.6)
+}
+record(ai, "HPSTRIGSC_1_SFRAC") {
+    field(INP,"HPSTRIGSC_1_FRAC")
+    field(SCAN,"2 second")
+    field(SMOO,0.6)
+}
+record(ai, "HPSTRIGSC_2_SFRAC") {
+    field(INP,"HPSTRIGSC_2_FRAC")
+    field(SCAN,"2 second")
+    field(SMOO,0.6)
+}
+record(ai, "HPSTRIGSC_3_SFRAC") {
+    field(INP,"HPSTRIGSC_3_FRAC")
+    field(SCAN,"2 second")
+    field(SMOO,0.6)
+}
+record(ai, "HPSTRIGSC_4_SFRAC") {
+    field(INP,"HPSTRIGSC_4_FRAC")
+    field(SMOO,0.6)
+}
+record(ai, "HPSTRIGSC_5_SFRAC") {
+    field(INP,"HPSTRIGSC_5_FRAC")
+    field(SMOO,0.6)
+}
+record(calc, "HPSTRIGSC_TOTAL_FRAC") {
+    field(INPA,"HPSTRIGSC_TOTAL")
+    field(INPB,"HPSTRIGSC_TOTAL")
+    field(CALC,"B>0 ? 100 : -1")
+    field(SCAN,"2 second")
+}
+
+
+record(calc, "HPSBEAMANGX") {
+    field(INPA,"IPM2H01.XPOS")
+    field(INPB,"IPM2H02.XPOS")
+    field(CALC,"ATAN((B-A)/26/1000)*1000")
+    field(SCAN,"2 second")
+}
+record(calc, "HPSBEAMANGY") {
+    field(INPA,"IPM2H01.YPOS")
+    field(INPB,"IPM2H02.YPOS")
+    field(CALC,"ATAN((B-A)/26/1000)*1000")
+    field(SCAN,"2 second")
+}

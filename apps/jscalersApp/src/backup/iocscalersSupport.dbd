@@ -1,0 +1,7 @@
+include "base.dbd"
+
+include "/usr/local/clas12/release/0.1/R3.14.12.3//base/dbd/bigsubRecord.dbd"
+
+device(ao,VME_IO,devAoSCALERS,"JLAB_SCALERS")
+device(bo,VME_IO,devBoSCALERS,"JLAB_SCALERS")
+device(bi,VME_IO,devBiSCALERS,"JLAB_SCALERS")

@@ -15,7 +15,8 @@ Start_CAEN(1, "129.57.160.80")
 Start_CAEN(2, "129.57.167.190")
 
 ## Load record instances
-dbLoadRecords("db/ecal_01.db")
+dbLoadRecords("${DEVIOCSTATS}/db/iocAdminSoft.db", "IOC=iocecalVoltages")
+dbLoadRecords("db/ecalHV.db")
 dbLoadRecords("db/bm_01.db")
 dbLoadRecords("db/bm_02.db")
 
