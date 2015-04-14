@@ -1,3 +1,21 @@
+Version 1.2.0:
+ - Merged develop: imported CAEN_HV for ECAL and jlab scalers
+ - Handled merge conflicts from branch rafo-merge (orig: rafopar/epics epics-hps)
+ - jscalers: imported SCALERS from clas 0.2 with some mods for HPS
+ - Merged lastest updates from rafopar/epics, branch epics-hps
+ - tools: updated Makefile to find directories instead of hardcoded
+ - SVT_Scan_Analyzer: fix, top-level makefile didn't include this app.  Set .gitignore for generated files.
+ - caen_hvApp: fixed channel assignment
+ - Arne's correction is added
+ - ioc_hps_health.adl: removed autosave fields from iocecalVoltages
+ - CAEN_HV: removed STATIC_BUILD=NO
+ - CAEN_HV: fixed compiler warnings
+ - CAEN_HV/iocecalVoltages: working version, needs clean up
+ - Merge remote-tracking branch 'origin/hotfix-v1.1.1' into develop
+ - First version of SVT scan analyzer
+ -  Analyzer of beam_trips is added
+ - a preliminary version of Beam trip analyzer
+
 Version 1.1.1:
  - Merge remote-tracking branch 'origin/hotfix-v1.1.1'
  - iocclassc4: updated fcup_offset
