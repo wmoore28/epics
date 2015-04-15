@@ -221,7 +221,7 @@ function start_ioc {
         return 1
     fi
     
-    $APP_EXE $OPTIONS -n $1 -i^D^C --logfile $LOG_DIR/$1 --logstamp -c $IOC_DIR/$1 $2 $STCMD $START_OPTIONS >/dev/null 2>&1
+    $APP_EXE $OPTIONS -n $1 -i^D^C --logfile $LOG_DIR/$1.log --logstamp -c $IOC_DIR/$1 $2 $STCMD $START_OPTIONS >/dev/null 2>&1
  
     if [ $? != 0 ]; then
         echo "Could not start $1 on port $2 of $HOST"
