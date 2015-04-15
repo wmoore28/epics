@@ -5,7 +5,7 @@ file {
 }
 display {
 	object {
-		x=202
+		x=193
 		y=60
 		width=1300
 		height=610
@@ -3507,4 +3507,36 @@ text {
 	}
 	clr=14
 	bclr=8
+}
+"text update" {
+	object {
+		x=707
+		y=226
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocecalVoltages:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=707
+		y=424
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocjscalers:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
 }
