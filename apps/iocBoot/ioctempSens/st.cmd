@@ -1,10 +1,7 @@
 #!../../bin/linux-x86/tempSens
-
-## You may have to change tempSens to something else
-## everywhere it appears in this file
-
+################################################################################
 < envPaths
-
+################################################################################
 cd ${TOP}
 
 epicsEnvSet("STREAM_PROTOCOL_PATH", "${TOP}/proto")
