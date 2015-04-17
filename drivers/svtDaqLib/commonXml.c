@@ -2199,8 +2199,8 @@ void getHybridTempProcess(char* pname, xmlDoc* doc, char* value) {
                   printf("[ getHybridTempProcess ] : got %d nodes\n", nodeset->nodeNr);
                if(nodeset->nodeNr==1) {
                   getStrValue(doc,nodeset->nodeTab[0],value);
-
-                  printf("[ getHybridTempProcess ] : got  value %s\n", value);
+                  if(DEBUG>1) 
+                     printf("[ getHybridTempProcess ] : got  value %s\n", value);
 
                } else {
                   if(DEBUG>1)
@@ -2281,7 +2281,8 @@ void getFebTempProcess(char* pname, xmlDoc* doc, char* value) {
                if(nodeset->nodeNr==1) {
                   getStrValue(doc,nodeset->nodeTab[0],value);
                   
-                  printf("[ getFebTempProcess ] : got  value %s\n", value);
+                  if(DEBUG>1)
+                     printf("[ getFebTempProcess ] : got  value %s\n", value);
                   
                } else {
                   if(DEBUG>1)

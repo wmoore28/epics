@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/svt-devel/apps/svtDaqApp/../generalApp/medm/ioc_hps_svt_health.adl"
+	name="/usr/clas12/hps/svt-devel/apps/iocBoot/../../apps/generalApp/medm/ioc_hps_svt_health.adl"
 	version=030108
 }
 display {
@@ -8,7 +8,7 @@ display {
 		x=61
 		y=21
 		width=1300
-		height=590
+		height=610
 	}
 	clr=3
 	bclr=4
@@ -103,7 +103,7 @@ rectangle {
 		x=859
 		y=54
 		width=425
-		height=520
+		height=542
 	}
 	"basic attribute" {
 		clr=5
@@ -2733,10 +2733,139 @@ composite {
 		}
 	}
 }
-rectangle {
+composite {
 	object {
 		x=9
 		y=553
+		width=1270
+		height=22
+	}
+	"composite name"=""
+	children {
+		rectangle {
+			object {
+				x=9
+				y=553
+				width=1270
+				height=20
+			}
+			"basic attribute" {
+				clr=2
+			}
+		}
+		text {
+			object {
+				x=14
+				y=554
+				width=160
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="iocsvtDaqCntrlDpm7"
+		}
+		"text update" {
+			object {
+				x=192
+				y=555
+				width=150
+				height=20
+			}
+			monitor {
+				chan="iocsvtDaqCntrlDpm7:HOSTNAME"
+				clr=0
+				bclr=27
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=344
+				y=555
+				width=150
+				height=20
+			}
+			monitor {
+				chan="iocsvtDaqCntrlDpm7:UPTIME"
+				clr=0
+				bclr=27
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=496
+				y=555
+				width=100
+				height=20
+			}
+			monitor {
+				chan="iocsvtDaqCntrlDpm7:HEARTBEAT"
+				clr=0
+				bclr=27
+			}
+			align="horiz. right"
+			limits {
+			}
+		}
+		"related display" {
+			object {
+				x=600
+				y=553
+				width=20
+				height=20
+			}
+			display[0] {
+				label="IOC Stats"
+				name="ioc_stats_soft.adl"
+				args="ioc=iocsvtDaqCntrlDpm7"
+			}
+			clr=14
+			bclr=6
+		}
+		"related display" {
+			object {
+				x=625
+				y=553
+				width=75
+				height=20
+			}
+			display[0] {
+				label="Reboot"
+				name="ioc_stats_reboot_confirm.adl"
+				args="ioc=iocsvtDaqCntrlDpm7"
+			}
+			clr=14
+			bclr=6
+			label="Reboot..."
+		}
+		"text update" {
+			object {
+				x=706
+				y=555
+				width=150
+				height=20
+			}
+			monitor {
+				chan="iocsvtDaqCntrlDpm7:STARTTOD"
+				clr=0
+				bclr=27
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+	}
+}
+rectangle {
+	object {
+		x=8
+		y=576
 		width=1270
 		height=20
 	}
@@ -2746,25 +2875,25 @@ rectangle {
 }
 text {
 	object {
-		x=14
-		y=554
+		x=13
+		y=577
 		width=160
 		height=20
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="iocsvtDaqCntrlDpm7"
+	textix="iocsvtDaqCntrlDpm7_1"
 }
 "text update" {
 	object {
-		x=192
-		y=555
+		x=191
+		y=578
 		width=150
 		height=20
 	}
 	monitor {
-		chan="iocsvtDaqCntrlDpm7:HOSTNAME"
+		chan="iocsvtDaqCntrlDpm7_1:HOSTNAME"
 		clr=0
 		bclr=27
 	}
@@ -2774,13 +2903,13 @@ text {
 }
 "text update" {
 	object {
-		x=344
-		y=555
+		x=343
+		y=578
 		width=150
 		height=20
 	}
 	monitor {
-		chan="iocsvtDaqCntrlDpm7:UPTIME"
+		chan="iocsvtDaqCntrlDpm7_1:UPTIME"
 		clr=0
 		bclr=27
 	}
@@ -2790,13 +2919,13 @@ text {
 }
 "text update" {
 	object {
-		x=496
-		y=555
+		x=495
+		y=578
 		width=100
 		height=20
 	}
 	monitor {
-		chan="iocsvtDaqCntrlDpm7:HEARTBEAT"
+		chan="iocsvtDaqCntrlDpm7_1:HEARTBEAT"
 		clr=0
 		bclr=27
 	}
@@ -2806,30 +2935,30 @@ text {
 }
 "related display" {
 	object {
-		x=600
-		y=553
+		x=599
+		y=576
 		width=20
 		height=20
 	}
 	display[0] {
 		label="IOC Stats"
 		name="ioc_stats_soft.adl"
-		args="ioc=iocsvtDaqCntrlDpm7"
+		args="ioc=iocsvtDaqCntrlDpm7_1"
 	}
 	clr=14
 	bclr=6
 }
 "related display" {
 	object {
-		x=625
-		y=553
+		x=624
+		y=576
 		width=75
 		height=20
 	}
 	display[0] {
 		label="Reboot"
 		name="ioc_stats_reboot_confirm.adl"
-		args="ioc=iocsvtDaqCntrlDpm7"
+		args="ioc=iocsvtDaqCntrlDpm7_1"
 	}
 	clr=14
 	bclr=6
@@ -2837,13 +2966,13 @@ text {
 }
 "text update" {
 	object {
-		x=706
-		y=555
+		x=705
+		y=578
 		width=150
 		height=20
 	}
 	monitor {
-		chan="iocsvtDaqCntrlDpm7:STARTTOD"
+		chan="iocsvtDaqCntrlDpm7_1:STARTTOD"
 		clr=0
 		bclr=27
 	}

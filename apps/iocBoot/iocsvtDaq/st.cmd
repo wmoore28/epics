@@ -13,11 +13,6 @@ svtDaq_registerRecordDeviceDriver(pdbbase)
 ## Load record instances
 dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC}")
 
-dbLoadRecords "db/dbDpmMap.db"
-dbLoadRecords "db/dbFebLayer.db"
-dbLoadRecords "db/dbSVT.db"
-
-
 
 ## Set this to see messages from mySub
 var mySubDebug 0

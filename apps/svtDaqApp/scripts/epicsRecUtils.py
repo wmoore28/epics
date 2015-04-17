@@ -1583,64 +1583,6 @@ record(longin, SVT:daq:$(DPM):ebeventerrorcount_rd) {
 
 
 
-def buildDpmMap():
-
-    
-
-    s = """
-record(sub,SVT:lv:FEBID:HYBID:dpm:dpm_rd_sub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
-	field(FLNK,"SVT:lv:FEBID:HYBID:datapath:datapath_rd")
-}
-
-record(ai, SVT:lv:FEBID:HYBID:dpm:dpm_rd) {
-  field(SCAN, "Passive") field(PREC, "1")
-  field(INP, "SVT:lv:FEBID:HYBID:dpm:dpm_rd_sub PP")
-  field(DTYP,"Soft Channel")
-}
-
-record(sub,SVT:lv:FEBID:HYBID:datapath:datapath_rd_sub)
-{
-    field(SCAN,"Passive")
-    field(INAM,"subLVInit")
-    field(SNAM,"subLVProcess")
-    field(FLNK,"FLNKNEXTHYB")
-}
-
-record(ai, SVT:lv:FEBID:HYBID:datapath:datapath_rd) {
-  field(SCAN, "Passive") field(PREC, "1")
-  field(INP, "SVT:lv:FEBID:HYBID:datapath:datapath_rd_sub PP")
-  field(DTYP,"Soft Channel")
-}
-
-"""
-
-    s_flnk = "SVT:lv:NEXTFEBID:NEXTHYBID:dpm:dpm_rd"
-    records = []
-    for feb in range(0,10):
-        for hyb in range(0,4):
-            rec = s
-            if hyb==3:
-                if feb < 9:
-                    rec = rec.replace("FLNKNEXTHYB",s_flnk)
-                    rec = rec.replace("NEXTHYBID",str(0))
-                    rec = rec.replace("NEXTFEBID",str(feb+1))
-                else:
-                    rec = rec.replace("FLNKNEXTHYB","")                    
-            else:
-                rec = rec.replace("FLNKNEXTHYB",s_flnk)
-                rec = rec.replace("NEXTHYBID",str(hyb+1))
-                rec = rec.replace("NEXTFEBID",str(feb))
-            rec = rec.replace("HYBID",str(hyb))
-            rec = rec.replace("FEBID",str(feb))
-            records.append(rec)
-    
-    return records
-
-
 
 
 

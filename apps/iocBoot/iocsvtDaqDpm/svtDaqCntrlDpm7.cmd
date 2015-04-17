@@ -25,11 +25,12 @@ dbLoadRecords "db/dbFebTemp.db"
 dbLoadRecords "db/dbHybLVVSetRd_v125.db"
 dbLoadRecords "db/dbHybLVVSetRd_avdd.db"
 dbLoadRecords "db/dbHybLVVSetRd_dvdd.db"
+dbLoadRecords "db/dbFebLayer.db"
 
 
 
 
-var mySubDebug 1
+var mySubDebug 0
 #traceIocInit
 
 cd ${TOP}/iocBoot/${IOC}

@@ -48,8 +48,6 @@ def buildEpics():
     printRecords(recs,"dbHybLVStat")
     recs = utils.buildHybridLVSwitch()
     printRecords(recs,"dbHybridSwitch")
-    recs = utils.buildDpmMap()
-    printRecords(recs,"dbDpmMap")
     recs = utils.buildHybSync()
     printRecords(recs,"dbHybSync")
     recs = utils.buildHybSyncPeak()

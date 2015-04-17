@@ -14,7 +14,7 @@ svtDaqDpm_registerRecordDeviceDriver pdbbase
 
 
 ## Load record instances
-dbLoadRecords("db/iocAdminSoft.db", "IOC=iocsvtDaqCntrlDpm7")
+dbLoadRecords("db/iocAdminSoft.db", "IOC=iocsvtDaqCntrlDpm7_1")
 
 ## Load record instances
 #dbLoadRecords("db/xxx.db","user=trackerHost")
