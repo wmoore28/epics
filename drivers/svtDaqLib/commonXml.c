@@ -1665,7 +1665,7 @@ void getInsertedFramesProcess(char* pname, xmlDoc* doc, char* value) {
       if(strcmp(str5,"insertedframes_rd_asub")==0) {      
          idp = getIntFromEpicsName(pname,3);  
          iapv = getIntFromEpicsName(pname,4);        
-         sprintf(tmp,"/system/status/DataDpm/RceCore/DataPath[@index=\"%d\"]/SampleExtractor[@index=\"%d\"]/InsertedFrames",idp,iapv);
+         sprintf(tmp,"/system/status/DataDpm/RceCore/DataPath[@index=\"%d\"]/SampleExtractor[@index=\"%d\"]/InsertedFrames1",idp,iapv);
          
       } else {
          strcpy(tmp,""); 
