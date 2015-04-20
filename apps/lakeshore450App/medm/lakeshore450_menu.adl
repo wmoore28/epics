@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=1063
-		y=321
+		x=1054
+		y=313
 		width=400
 		height=200
 	}
@@ -111,7 +111,7 @@ rectangle {
 }
 text {
 	object {
-		x=10
+		x=6
 		y=97
 		width=105
 		height=20
@@ -175,7 +175,7 @@ text {
 }
 text {
 	object {
-		x=10
+		x=6
 		y=126
 		width=105
 		height=20
@@ -292,7 +292,7 @@ text {
 }
 "text update" {
 	object {
-		x=89
+		x=78
 		y=93
 		width=130
 		height=25
@@ -308,7 +308,7 @@ text {
 }
 text {
 	object {
-		x=89
+		x=78
 		y=73
 		width=130
 		height=15
@@ -321,7 +321,7 @@ text {
 }
 text {
 	object {
-		x=10
+		x=6
 		y=74
 		width=130
 		height=15
@@ -333,7 +333,7 @@ text {
 }
 "text update" {
 	object {
-		x=89
+		x=78
 		y=122
 		width=130
 		height=25
@@ -346,4 +346,47 @@ text {
 	align="horiz. centered"
 	limits {
 	}
+}
+rectangle {
+	object {
+		x=212
+		y=93
+		width=15
+		height=25
+	}
+	"basic attribute" {
+		clr=9
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="HPS:LS450_1:FIELD.STAT"
+	}
+}
+rectangle {
+	object {
+		x=212
+		y=122
+		width=15
+		height=25
+	}
+	"basic attribute" {
+		clr=9
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="HPS:LS450_2:FIELD.STAT"
+	}
+}
+text {
+	object {
+		x=208
+		y=73
+		width=25
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="COMM"
+	align="horiz. centered"
 }

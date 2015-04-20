@@ -1,0 +1,12 @@
+This app was overhauled for HPS from /usr/clas12/release/0.2.  It's structure 
+has been changed.  We also compile in devIocStats and use iocsh.  Other notes
+below.
+
+db_generator.cpp
+  The db_generator will build scalers_prod.db.  That db has been slightly 
+  modified and renamed Db/jscalers.db.  To build:
+  g++ -I ../../../drivers/jscalers/include db_generator.db -o db_generator
+
+t.c
+  No idea what this is/was used for.  Keeping it until more is known.  To build:
+  g++ t.c -o t

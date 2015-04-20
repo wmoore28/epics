@@ -11,6 +11,8 @@
 #include "epicsThread.h"
 #include "iocsh.h"
 
+#include "ioc_com_def.h"
+
 int main(int argc,char *argv[])
 {
     if(argc>=2) {    

@@ -1,4 +1,4 @@
-#!../../bin/linux-x86/iocjscalers
+#!../../bin/linux-x86/iocscalers
 
 ############################################################################
 < envPaths
@@ -15,8 +15,8 @@ Start_SCALERS_CRATE("2",  "hps1")
 Start_SCALERS_CRATE("3",  "hps2") 
 
 ## Register all support components
-dbLoadDatabase("dbd/iocjscalers.dbd")
-iocjscalers_registerRecordDeviceDriver(pdbbase)
+dbLoadDatabase("dbd/iocscalers.dbd")
+iocscalers_registerRecordDeviceDriver(pdbbase)
 
 ## Load record instances
 dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC}")
@@ -24,6 +24,6 @@ dbLoadRecords("db/jscalers.db")
 dbLoadRecords("db/smi_scaler_records.db")
 dbLoadRecords("db/waveform2calc.db")
 
-cd ${TOP}/iocBoot/${IOC} 
+cd ${TOP}/iocBoot/${IOC}
 
 iocInit
