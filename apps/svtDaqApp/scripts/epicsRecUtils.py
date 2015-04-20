@@ -24,16 +24,16 @@ class TempLimit:
 
             
 febs= [
-    FEB(2,[Hybrid(0,"L1b","electron","stereo"),Hybrid(1,"L1b","electron","axial")],"0x14084072beb01c00","L1b"),
     FEB(0,[Hybrid(0,"L2b","electron","stereo"),Hybrid(1,"L2b","electron","axial"),Hybrid(2,"L3b","electron","stereo"),Hybrid(3,"L3b","electron","axial")],"0x42084072beb01400","L2-3b"),
-    FEB(5,[Hybrid(0,"L4t","electron","axial"),Hybrid(1,"L4t","positron","axial"),Hybrid(2,"L4t","electron","stereo"),Hybrid(3,"L4t","positron","stereo")],"0x58d0472beb01400","L4t"),
-    FEB(8,[Hybrid(0,"L5t","electron","axial"),Hybrid(1,"L5t","positron","axial"),Hybrid(2,"L5t","electron","stereo"),Hybrid(3,"L5t","positron","axial")],"0x52814100a1b01c00","L5t"),
-    FEB(7,[Hybrid(0,"L6t","electron","axial"),Hybrid(1,"L6t","positron","axial"),Hybrid(2,"L6t","electron","stereo"),Hybrid(3,"L6t","positron","axial")],"0x50814100a1b01c00","L6t"),
-    FEB(9,[Hybrid(0,"L1t","electron","axial"),Hybrid(1,"L1t","electron","stereo")],"0x24d04072beb01c00","L1t"),
-    FEB(6,[Hybrid(0,"L2t","electron","axial"),Hybrid(1,"L2t","electron","stereo"),Hybrid(2,"L3t","electron","axial"),Hybrid(3,"L3t","electron","stereo")],"0x02d04072beb01c00","L2-3t"),
     FEB(1,[Hybrid(0,"L4b","electron","stereo"),Hybrid(1,"L4b","positron","stereo"),Hybrid(2,"L4b","electron","axial"),Hybrid(3,"L4b","positron","axial")],"0x72814100a1b01c00","L4b"),
-    FEB(4,[Hybrid(0,"L5b","electron","stereo"),Hybrid(1,"L5b","positron","stereo"),Hybrid(2,"L5b","electron","axial"),Hybrid(3,"L5b","positron","axial")],"0x1c084072beb01400","L5b"),
+    FEB(2,[Hybrid(0,"L1b","electron","stereo"),Hybrid(1,"L1b","electron","axial")],"0x14084072beb01c00","L1b"),
     FEB(3,[Hybrid(0,"L6b","electron","stereo"),Hybrid(1,"L6b","positron","stereo"),Hybrid(2,"L6b","electron","axial"),Hybrid(3,"L6b","positron","axial")],"0x70d04072beb01c00","L6b"),
+    FEB(4,[Hybrid(0,"L5b","electron","stereo"),Hybrid(1,"L5b","positron","stereo"),Hybrid(2,"L5b","electron","axial"),Hybrid(3,"L5b","positron","axial")],"0x1c084072beb01400","L5b"),
+    FEB(5,[Hybrid(0,"L4t","electron","axial"),Hybrid(1,"L4t","positron","axial"),Hybrid(2,"L4t","electron","stereo"),Hybrid(3,"L4t","positron","stereo")],"0x58d0472beb01400","L4t"),
+    FEB(6,[Hybrid(0,"L2t","electron","axial"),Hybrid(1,"L2t","electron","stereo"),Hybrid(2,"L3t","electron","axial"),Hybrid(3,"L3t","electron","stereo")],"0x02d04072beb01c00","L2-3t"),
+    FEB(7,[Hybrid(0,"L6t","electron","axial"),Hybrid(1,"L6t","positron","axial"),Hybrid(2,"L6t","electron","stereo"),Hybrid(3,"L6t","positron","stereo")],"0x50814100a1b01c00","L6t"),
+    FEB(8,[Hybrid(0,"L5t","electron","axial"),Hybrid(1,"L5t","positron","axial"),Hybrid(2,"L5t","electron","stereo"),Hybrid(3,"L5t","positron","stereo")],"0x52814100a1b01c00","L5t"),
+    FEB(9,[Hybrid(0,"L1t","electron","axial"),Hybrid(1,"L1t","electron","stereo")],"0x24d04072beb01c00","L1t"),
     ]
 
 
