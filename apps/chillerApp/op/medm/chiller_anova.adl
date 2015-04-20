@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=1137
-		y=419
+		x=1128
+		y=411
 		width=310
 		height=385
 	}
@@ -119,7 +119,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_FE:CHILLER:TEMP"
+		chan="$(P)TEMP"
 		clr=0
 		bclr=11
 	}
@@ -184,7 +184,7 @@ text {
 		height=15
 	}
 	monitor {
-		chan="HPS_FE:CHILLER:VERSION"
+		chan="$(P)VERSION"
 		clr=0
 		bclr=11
 	}
@@ -201,7 +201,7 @@ text {
 		height=20
 	}
 	control {
-		chan="HPS_FE:CHILLER:START.PROC"
+		chan="$(P)START.PROC"
 		clr=14
 		bclr=4
 	}
@@ -216,7 +216,7 @@ text {
 		height=20
 	}
 	control {
-		chan="HPS_FE:CHILLER:STOP.PROC"
+		chan="$(P)STOP.PROC"
 		clr=14
 		bclr=4
 	}
@@ -231,7 +231,7 @@ text {
 		height=15
 	}
 	monitor {
-		chan="HPS_FE:CHILLER:STATUS"
+		chan="$(P)STATUS"
 		clr=0
 		bclr=11
 	}
@@ -268,7 +268,7 @@ text {
 		height=20
 	}
 	control {
-		chan="HPS_FE:CHILLER:DEFAULT.PROC"
+		chan="$(P)DEFAULT.PROC"
 		clr=14
 		bclr=4
 	}
@@ -283,7 +283,7 @@ text {
 		height=20
 	}
 	control {
-		chan="HPS_FE:CHILLER:CLEAR.PROC"
+		chan="$(P)CLEAR.PROC"
 		clr=14
 		bclr=4
 	}
@@ -370,7 +370,7 @@ menu {
 		height=20
 	}
 	control {
-		chan="HPS_FE:CHILLER:PUMPSPD_MENU"
+		chan="$(P)PUMPSPD_MENU"
 		clr=14
 		bclr=4
 	}
@@ -383,7 +383,7 @@ menu {
 		height=20
 	}
 	control {
-		chan="HPS_FE:CHILLER:TEMP:SP"
+		chan="$(P)TEMP:SP"
 		clr=14
 		bclr=4
 	}
@@ -398,7 +398,7 @@ menu {
 		height=20
 	}
 	monitor {
-		chan="HPS_FE:CHILLER:TEMP:RD_SP"
+		chan="$(P)TEMP:RD_SP"
 		clr=0
 		bclr=11
 	}
@@ -415,7 +415,7 @@ menu {
 		height=20
 	}
 	monitor {
-		chan="HPS_FE:CHILLER:HIGHLIMIT"
+		chan="$(P)HIGHLIMIT"
 		clr=0
 		bclr=11
 	}
@@ -432,7 +432,7 @@ menu {
 		height=20
 	}
 	control {
-		chan="HPS_FE:CHILLER:HIGHLIMIT:SP"
+		chan="$(P)HIGHLIMIT:SP"
 		clr=14
 		bclr=4
 	}
@@ -447,7 +447,7 @@ menu {
 		height=20
 	}
 	control {
-		chan="HPS_FE:CHILLER:LOWLIMIT:SP"
+		chan="$(P)LOWLIMIT:SP"
 		clr=14
 		bclr=4
 	}
@@ -462,7 +462,7 @@ menu {
 		height=20
 	}
 	monitor {
-		chan="HPS_FE:CHILLER:LOWLIMIT"
+		chan="$(P)LOWLIMIT"
 		clr=0
 		bclr=11
 	}
@@ -479,7 +479,7 @@ menu {
 		height=20
 	}
 	monitor {
-		chan="HPS_FE:CHILLER:TEMP.EGU"
+		chan="$(P)TEMP.EGU"
 		clr=15
 		bclr=11
 	}
@@ -507,7 +507,7 @@ text {
 		height=15
 	}
 	monitor {
-		chan="HPS_FE:CHILLER:TEMP.STAT"
+		chan="$(P)TEMP.STAT"
 		clr=0
 		bclr=11
 	}
@@ -537,12 +537,7 @@ rectangle {
 	display[0] {
 		label="Comm (asyn)"
 		name="asynRecord.adl"
-		args="P=HPS_FE:CHILLER:,R=ASYN"
-	}
-	display[1] {
-		label="IOC Stats"
-		name="ioc_stats_soft.adl"
-		args="ioc=iocchillerSVT"
+		args="P=$(P),R=ASYN"
 	}
 	clr=14
 	bclr=4

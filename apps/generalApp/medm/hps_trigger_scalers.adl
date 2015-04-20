@@ -1,0 +1,613 @@
+
+file {
+	name="/usr/clas12/hps/prod/apps/generalApp/medm/hps_trigger_scalers.adl"
+	version=030108
+}
+display {
+	object {
+		x=9
+		y=22
+		width=812
+		height=600
+	}
+	clr=0
+	bclr=14
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+text {
+	object {
+		x=73
+		y=47
+		width=100
+		height=54
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="SINGLE 0"
+}
+text {
+	object {
+		x=178
+		y=47
+		width=100
+		height=54
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="SINGLE 1"
+}
+text {
+	object {
+		x=285
+		y=47
+		width=100
+		height=54
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="PAIR 0"
+}
+text {
+	object {
+		x=392
+		y=47
+		width=100
+		height=54
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="PAIR 1"
+}
+text {
+	object {
+		x=497
+		y=47
+		width=100
+		height=54
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="CALIB"
+}
+text {
+	object {
+		x=602
+		y=47
+		width=100
+		height=54
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="PULSER"
+}
+"text update" {
+	object {
+		x=41
+		y=70
+		width=100
+		height=24
+	}
+	monitor {
+		chan="HPSTRIGSC_0"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=146
+		y=70
+		width=100
+		height=24
+	}
+	monitor {
+		chan="HPSTRIGSC_1"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=251
+		y=70
+		width=100
+		height=24
+	}
+	monitor {
+		chan="HPSTRIGSC_2"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=356
+		y=70
+		width=100
+		height=24
+	}
+	monitor {
+		chan="HPSTRIGSC_3"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=461
+		y=70
+		width=100
+		height=24
+	}
+	monitor {
+		chan="HPSTRIGSC_4"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=566
+		y=70
+		width=100
+		height=24
+	}
+	monitor {
+		chan="HPSTRIGSC_5"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"strip chart" {
+	object {
+		x=41
+		y=141
+		width=730
+		height=450
+	}
+	plotcom {
+		clr=0
+		bclr=13
+	}
+	units="minute"
+	pen[0] {
+		chan="HPSTRIGSC_0_SFRAC"
+		clr=20
+		limits {
+			hoprSrc="default"
+			hoprDefault=100
+		}
+	}
+	pen[1] {
+		chan="HPSTRIGSC_1_SFRAC"
+		clr=23
+		limits {
+			hoprSrc="default"
+			hoprDefault=100
+		}
+	}
+	pen[2] {
+		chan="HPSTRIGSC_2_SFRAC"
+		clr=15
+		limits {
+			hoprSrc="default"
+			hoprDefault=100
+		}
+	}
+	pen[3] {
+		chan="HPSTRIGSC_3_SFRAC"
+		clr=18
+		limits {
+			hoprSrc="default"
+			hoprDefault=100
+		}
+	}
+	pen[4] {
+		chan="HPSTRIGSC_4_SFRAC"
+		clr=6
+		limits {
+			hoprSrc="default"
+			hoprDefault=100
+		}
+	}
+	pen[5] {
+		chan="HPSTRIGSC_5_SFRAC"
+		clr=30
+		limits {
+			hoprSrc="default"
+			hoprDefault=100
+		}
+	}
+}
+"text update" {
+	object {
+		x=41
+		y=101
+		width=100
+		height=24
+	}
+	monitor {
+		chan="HPSTRIGSC_0_FRAC"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=146
+		y=101
+		width=100
+		height=24
+	}
+	monitor {
+		chan="HPSTRIGSC_1_FRAC"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=251
+		y=101
+		width=100
+		height=24
+	}
+	monitor {
+		chan="HPSTRIGSC_2_FRAC"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=356
+		y=101
+		width=100
+		height=24
+	}
+	monitor {
+		chan="HPSTRIGSC_3_FRAC"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=461
+		y=101
+		width=100
+		height=24
+	}
+	monitor {
+		chan="HPSTRIGSC_4_FRAC"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=566
+		y=101
+		width=100
+		height=24
+	}
+	monitor {
+		chan="HPSTRIGSC_5_FRAC"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=671
+		y=70
+		width=100
+		height=24
+	}
+	monitor {
+		chan="HPSTRIGSC_TOTAL"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=671
+		y=101
+		width=100
+		height=24
+	}
+	monitor {
+		chan="HPSTRIGSC_TOTAL_FRAC"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=707
+		y=47
+		width=121
+		height=54
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="TOTAL"
+}
+text {
+	object {
+		x=23
+		y=75
+		width=12
+		height=40
+	}
+	"basic attribute" {
+		clr=5
+	}
+	textix="Hz"
+	align="horiz. right"
+}
+text {
+	object {
+		x=779
+		y=75
+		width=12
+		height=40
+	}
+	"basic attribute" {
+		clr=5
+	}
+	textix="Hz"
+}
+text {
+	object {
+		x=22
+		y=106
+		width=12
+		height=40
+	}
+	"basic attribute" {
+		clr=5
+	}
+	textix="%"
+	align="horiz. right"
+}
+text {
+	object {
+		x=779
+		y=106
+		width=12
+		height=40
+	}
+	"basic attribute" {
+		clr=5
+	}
+	textix="%"
+}
+rectangle {
+	object {
+		x=41
+		y=93
+		width=100
+		height=7
+	}
+	"basic attribute" {
+		clr=20
+	}
+}
+rectangle {
+	object {
+		x=146
+		y=93
+		width=100
+		height=7
+	}
+	"basic attribute" {
+		clr=23
+	}
+}
+rectangle {
+	object {
+		x=251
+		y=93
+		width=100
+		height=7
+	}
+	"basic attribute" {
+		clr=15
+	}
+}
+rectangle {
+	object {
+		x=356
+		y=93
+		width=100
+		height=7
+	}
+	"basic attribute" {
+		clr=18
+	}
+}
+rectangle {
+	object {
+		x=461
+		y=93
+		width=100
+		height=7
+	}
+	"basic attribute" {
+		clr=6
+	}
+}
+rectangle {
+	object {
+		x=566
+		y=93
+		width=100
+		height=7
+	}
+	"basic attribute" {
+		clr=30
+	}
+}
+rectangle {
+	object {
+		x=671
+		y=93
+		width=100
+		height=7
+	}
+	"basic attribute" {
+		clr=0
+	}
+}
+text {
+	object {
+		x=349
+		y=9
+		width=114
+		height=25
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="***** HPS TRIGGER SCALERS *****"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=31
+		y=33
+		width=750
+		height=0
+	}
+	"basic attribute" {
+		clr=0
+	}
+	points {
+		(31,33)
+		(781,33)
+	}
+}

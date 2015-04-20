@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/develop/apps/myaDataApp/medm/wireScanData.adl"
+	name="/usr/clas12/hps/v1.1.0/apps/myaDataApp/medm/wireScanData.adl"
 	version=030108
 }
 display {
 	object {
-		x=777
-		y=49
+		x=768
+		y=60
 		width=350
-		height=300
+		height=350
 	}
 	clr=14
 	bclr=4
@@ -280,7 +280,7 @@ text {
 text {
 	object {
 		x=25
-		y=234
+		y=278
 		width=80
 		height=16
 	}
@@ -292,7 +292,7 @@ text {
 "text update" {
 	object {
 		x=251
-		y=230
+		y=274
 		width=80
 		height=20
 	}
@@ -308,7 +308,7 @@ text {
 text {
 	object {
 		x=25
-		y=209
+		y=253
 		width=80
 		height=16
 	}
@@ -320,7 +320,7 @@ text {
 "text update" {
 	object {
 		x=251
-		y=205
+		y=249
 		width=80
 		height=20
 	}
@@ -332,4 +332,60 @@ text {
 	align="horiz. centered"
 	limits {
 	}
+}
+"text update" {
+	object {
+		x=251
+		y=215
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P):y_offset_locfit"
+		clr=32
+		bclr=11
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=251
+		y=190
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P):x_offset_locfit"
+		clr=32
+		bclr=11
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=194
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X offset (local fit)"
+}
+text {
+	object {
+		x=25
+		y=219
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Y Offset (local fit)"
 }

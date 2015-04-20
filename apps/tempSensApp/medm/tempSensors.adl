@@ -1,12 +1,12 @@
 
 file {
-	name="/home/wmoore/workspaces/develop/apps/tempSensApp/medm/tempSensors.adl"
+	name="/usr/clas12/hps/prod/apps/tempSensApp/medm/tempSensors.adl"
 	version=030108
 }
 display {
 	object {
-		x=516
-		y=81
+		x=498
+		y=65
 		width=910
 		height=960
 	}
@@ -4961,4 +4961,32 @@ text {
 	clr=14
 	bclr=4
 	label="Expert"
+}
+"text update" {
+	object {
+		x=25
+		y=20
+		width=85
+		height=16
+	}
+	monitor {
+		chan="tempSensorA:RAW.STAT"
+		clr=15
+		bclr=28
+	}
+	clrmod="alarm"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=5
+		width=75
+		height=16
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="COMM STATUS"
 }

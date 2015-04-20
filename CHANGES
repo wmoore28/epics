@@ -1,3 +1,73 @@
+Version 1.2.1:
+ - generalApp/strip: updated makefile to generate .gitignore for symlinks
+
+Version 1.2.0:
+ - Merged develop: imported CAEN_HV for ECAL and jlab scalers
+ - Handled merge conflicts from branch rafo-merge (orig: rafopar/epics epics-hps)
+ - jscalers: imported SCALERS from clas 0.2 with some mods for HPS
+ - Merged lastest updates from rafopar/epics, branch epics-hps
+ - tools: updated Makefile to find directories instead of hardcoded
+ - SVT_Scan_Analyzer: fix, top-level makefile didn't include this app.  Set .gitignore for generated files.
+ - caen_hvApp: fixed channel assignment
+ - Arne's correction is added
+ - ioc_hps_health.adl: removed autosave fields from iocecalVoltages
+ - CAEN_HV: removed STATIC_BUILD=NO
+ - CAEN_HV: fixed compiler warnings
+ - CAEN_HV/iocecalVoltages: working version, needs clean up
+ - Merge remote-tracking branch 'origin/hotfix-v1.1.1' into develop
+ - First version of SVT scan analyzer
+ -  Analyzer of beam_trips is added
+ - a preliminary version of Beam trip analyzer
+
+Version 1.1.1:
+ - Merge remote-tracking branch 'origin/hotfix-v1.1.1'
+ - iocclassc4: updated fcup_offset
+ - hvcaApp: update for req directory (baltzell)
+ - caput is added for the x_offset and y_offset that are obtained from a truncated fit names are HPS_SVT:SCAN:x_offset_locfit and HPS_SVT:SCAN:y_offset_locfit
+ - myaDataApp: added [x-y]_offset_locfit for rafopar
+ - new hps ecal strip charts
+ - fixing oops
+ - Two different fit results are now shown in the output screen
+ - adding ecal StripTool stripcharts
+ - readding chiller temp alarm
+ - adding non-refresh/accumulate mode
+ - making a less fast hps ecal led sequence
+ - apps/alhConfig, apps/svtDaqApp - changes to ALH configs and alarm setpoints
+ - added the EPICS channels for the detectors
+ - CAEN_HV: added devIocStats
+ - chillerApp: updated ECAL to use new Anova A40
+ - 1st version of SVT scan analyzer
+ - strip chart is fraction
+ - changed the units of the angle to radians
+ - changed the units of the angle to radians
+ - adding new HPS trigger rates screen
+ - updating trigger scalers
+ - hps trigger scalers after epics db update
+ - adding new hps_trigger_scalers.adl
+ - new trigger rate gui for HPS
+ - new HV backup gui for HPS ECAL
+ - using new backup script
+ - softioc_console: fixed ssh problem. The hostname check was comparing against full hostname, causing an issue when using on same host as the ioc is running.
+ - procServMgr: added options for ioc logfiles to be used
+ - apps/alhconfig - add SVT alarms and generator script
+ - HPS_EPICS.adl: updated list of MyaViewer machines
+ - ioc health: added iochvCaen autosave to the gui
+ - hvCaenApp: updated Makefile to dump sqlite db to text for VCS
+ - some makeup
+ - some makeup
+ - new values for collimator from vertical scan, log entry 3329009
+ - new values for collimator from vertical scan, log entry 3329009
+ - fixing ecal chiller alarm
+ - changing to run in current terminal unless any argument is given, to lessen accidental closing.  tried nohup but that did not work.
+ - not good to run this on clondaq, now running locally, is it ok to let it run on clonsl1/2/3?
+ - updating paths
+ - Faraday cup offset is changed to 36.6 in the iocclassc4 st.cmd
+ - set the viewer motor speed to 0.3 (down from 0.5)
+ - new positions for OTR and YAG screens
+ - new positions for OTR and YAG screens
+ - Corrected the format of BDL readout for 2H00 quads and the name of upstream halo counters L-R
+ - svtIntlkApp: fix, new bpm req file was not being installed
+
 Version 1.1.0:
  - Merge branch 'develop' of https://github.com/wmoore28/epics
  - svtIntlkApp medm: added no-beam to main screen and added units

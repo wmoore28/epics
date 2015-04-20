@@ -31,9 +31,10 @@ SCRIPT_NAME=procServMgr
 # Data File Locations
 #-----------------------------------------------------------------------
 CONFIG_DIR=/usr/clas12/hps/prod/apps/iocBoot
-APP_DIR=${EPICS_EXTENSIONS}/bin/linux-x86
+LOG_DIR=/usr/clas12/hps/logs
+APP_DIR=/usr/local/clas12/release/0.2/R3.14.12.3/extensions/bin/linux-x86
 IOC_DIR=$CONFIG_DIR
-DIR_LIST="$APP_DIR $CONFIG_DIR $IOC_DIR"
+DIR_LIST="$APP_DIR $CONFIG_DIR $IOC_DIR $LOG_DIR"
 
 CONFIG_FILE="$CONFIG_DIR/procServ.conf"
 FILE_LIST="$CONFIG_FILE"
@@ -220,7 +221,7 @@ function start_ioc {
         return 1
     fi
     
-    $APP_EXE $OPTIONS -n $1 -i^D^C -c $IOC_DIR/$1 $2 $STCMD $START_OPTIONS >/dev/null 2>&1
+    $APP_EXE $OPTIONS -n $1 -i^D^C --logfile $LOG_DIR/$1.log --logstamp -c $IOC_DIR/$1 $2 $STCMD $START_OPTIONS >/dev/null 2>&1
  
     if [ $? != 0 ]; then
         echo "Could not start $1 on port $2 of $HOST"
@@ -312,7 +313,7 @@ do
     p)  # Override default path, for usage with development directories
         CONFIG_DIR=$OPTARG
         IOC_DIR=$CONFIG_DIR
-        DIR_LIST="$APP_DIR $CONFIG_DIR $IOC_DIR"
+        DIR_LIST="$APP_DIR $CONFIG_DIR $IOC_DIR $LOG_DIR"
         CONFIG_FILE="$CONFIG_DIR/procServ.conf"
         FILE_LIST="$CONFIG_FILE"
         ;;
