@@ -1,0 +1,261 @@
+#===============================================================================
+# SVT Hybrid Temperature Alarm Config
+#===============================================================================
+
+GROUP NULL HYBRID_TEMP
+$GUIDANCE
+See SVT Ops manual sections relating to cooling.
+PVs monitored by these alarms are supplied by the SVT DAQ IOCs.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:0:0:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:0:0:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:0:1:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:0:1:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:0:2:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:0:2:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:0:3:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:0:3:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:1:0:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:1:0:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:1:1:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:1:1:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:1:2:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:1:2:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:1:3:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:1:3:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:2:0:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:2:0:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:2:1:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:2:1:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:3:0:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:3:0:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:3:1:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:3:1:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:3:2:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:3:2:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:3:3:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:3:3:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:4:0:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:4:0:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:4:1:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:4:1:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:4:2:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:4:2:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:4:3:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:4:3:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:5:0:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:5:0:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:5:1:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:5:1:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:5:2:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:5:2:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:5:3:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:5:3:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:6:0:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:6:0:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:6:1:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:6:1:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:6:2:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:6:2:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:6:3:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:6:3:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:7:0:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:7:0:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:7:1:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:7:1:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:7:2:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:7:2:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:7:3:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:7:3:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:8:0:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:8:0:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:8:1:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:8:1:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:8:2:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:8:2:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:8:3:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:8:3:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:9:0:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:9:0:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_TEMP SVT:temp:hyb:9:1:temp0:t_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:9:1:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
+Contact the SVT expert for further guidance.
+$END

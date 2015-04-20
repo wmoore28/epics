@@ -4,15 +4,4074 @@
 
 GROUP NULL HYBRID_LV
 $GUIDANCE
-	See SVT Ops manual sections relating to voltages.
-	PVs monitored by these alarms are supplied by the SVT DAQ IOCs.
+See SVT Ops manual sections relating to voltages.
+PVs monitored by these alarms are supplied by the SVT DAQ IOCs.
 $END
 
-CHANNEL HYBRID_LV SVT:lv:0:0:dvdd:i_rd
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:0:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL HYBRID_LV SVT:lv:0:0:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:0:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
 $GUIDANCE
-           This signifies that the Inlet LCW for SVT is out of specifications.
-           Contact the SVT expert for further guidance.
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
 $END
 
+CHANNEL HYBRID_LV SVT:lv:0:0:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:0:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:0:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:0:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:0:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:0:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:0:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:0:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:0:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:0:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:0:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:0:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:0:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:0:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:0:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:0:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:0:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:0:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:0:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:0:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:0:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:0:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:0:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:0:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:0:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:0:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:0:1:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:1:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:1:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:1:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:1:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:1:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:1:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:1:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:1:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:1:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:1:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:1:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:1:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:1:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:1:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:1:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:1:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:1:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:1:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:1:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:1:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:1:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:1:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:1:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:1:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:1:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:1:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:1:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:0:2:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:2:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:2:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:2:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:2:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:2:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:2:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:2:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:2:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:2:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:2:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:2:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:2:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:2:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:2:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:2:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:2:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:2:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:2:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:2:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:2:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:2:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:2:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:2:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:2:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:2:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:2:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:2:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:0:3:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:3:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:3:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:3:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:3:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:3:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:3:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:3:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:3:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:3:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:3:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:3:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:3:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:3:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:3:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:3:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:3:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:3:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:3:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:3:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:3:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:3:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:3:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:3:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:3:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:3:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:0:3:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:3:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:1:0:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:0:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:0:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:0:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:0:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:0:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:0:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:0:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:0:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:0:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:0:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:0:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:0:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:0:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:0:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:0:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:0:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:0:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:0:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:0:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:0:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:0:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:0:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:0:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:0:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:0:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:0:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:0:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:1:1:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:1:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:1:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:1:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:1:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:1:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:1:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:1:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:1:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:1:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:1:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:1:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:1:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:1:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:1:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:1:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:1:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:1:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:1:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:1:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:1:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:1:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:1:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:1:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:1:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:1:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:1:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:1:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:1:2:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:2:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:2:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:2:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:2:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:2:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:2:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:2:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:2:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:2:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:2:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:2:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:2:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:2:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:2:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:2:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:2:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:2:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:2:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:2:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:2:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:2:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:2:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:2:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:2:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:2:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:2:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:2:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:1:3:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:3:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:3:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:3:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:3:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:3:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:3:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:3:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:3:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:3:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:3:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:3:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:3:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:3:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:3:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:3:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:3:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:3:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:3:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:3:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:3:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:3:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:3:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:3:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:3:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:3:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:1:3:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:1:3:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:2:0:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:0:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:0:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:0:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:0:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:0:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:0:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:0:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:0:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:0:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:0:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:0:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:0:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:0:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:0:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:0:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:0:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:0:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:0:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:0:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:0:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:0:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:0:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:0:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:0:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:0:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:0:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:0:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:2:1:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:1:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:1:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:1:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:1:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:1:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:1:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:1:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:1:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:1:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:1:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:1:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:1:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:1:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:1:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:1:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:1:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:1:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:1:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:1:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:1:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:1:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:1:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:1:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:1:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:1:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:2:1:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:2:1:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:3:0:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:0:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:0:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:0:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:0:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:0:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:0:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:0:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:0:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:0:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:0:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:0:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:0:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:0:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:0:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:0:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:0:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:0:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:0:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:0:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:0:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:0:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:0:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:0:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:0:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:0:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:0:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:0:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:3:1:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:1:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:1:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:1:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:1:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:1:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:1:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:1:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:1:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:1:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:1:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:1:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:1:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:1:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:1:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:1:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:1:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:1:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:1:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:1:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:1:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:1:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:1:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:1:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:1:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:1:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:1:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:1:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:3:2:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:2:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:2:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:2:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:2:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:2:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:2:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:2:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:2:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:2:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:2:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:2:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:2:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:2:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:2:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:2:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:2:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:2:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:2:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:2:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:2:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:2:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:2:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:2:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:2:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:2:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:2:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:2:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:3:3:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:3:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:3:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:3:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:3:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:3:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:3:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:3:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:3:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:3:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:3:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:3:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:3:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:3:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:3:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:3:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:3:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:3:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:3:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:3:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:3:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:3:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:3:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:3:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:3:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:3:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:3:3:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:3:3:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:4:0:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:0:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:0:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:0:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:0:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:0:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:0:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:0:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:0:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:0:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:0:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:0:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:0:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:0:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:0:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:0:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:0:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:0:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:0:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:0:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:0:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:0:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:0:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:0:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:0:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:0:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:0:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:0:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:4:1:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:1:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:1:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:1:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:1:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:1:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:1:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:1:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:1:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:1:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:1:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:1:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:1:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:1:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:1:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:1:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:1:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:1:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:1:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:1:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:1:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:1:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:1:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:1:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:1:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:1:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:1:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:1:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:4:2:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:2:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:2:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:2:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:2:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:2:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:2:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:2:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:2:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:2:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:2:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:2:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:2:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:2:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:2:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:2:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:2:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:2:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:2:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:2:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:2:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:2:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:2:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:2:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:2:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:2:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:2:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:2:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:4:3:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:3:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:3:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:3:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:3:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:3:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:3:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:3:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:3:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:3:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:3:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:3:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:3:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:3:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:3:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:3:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:3:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:3:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:3:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:3:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:3:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:3:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:3:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:3:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:3:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:3:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:4:3:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:4:3:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:5:0:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:0:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:0:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:0:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:0:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:0:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:0:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:0:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:0:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:0:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:0:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:0:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:0:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:0:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:0:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:0:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:0:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:0:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:0:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:0:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:0:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:0:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:0:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:0:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:0:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:0:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:0:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:0:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:5:1:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:1:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:1:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:1:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:1:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:1:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:1:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:1:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:1:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:1:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:1:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:1:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:1:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:1:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:1:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:1:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:1:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:1:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:1:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:1:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:1:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:1:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:1:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:1:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:1:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:1:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:1:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:1:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:5:2:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:2:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:2:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:2:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:2:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:2:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:2:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:2:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:2:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:2:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:2:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:2:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:2:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:2:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:2:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:2:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:2:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:2:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:2:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:2:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:2:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:2:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:2:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:2:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:2:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:2:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:2:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:2:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:5:3:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:3:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:3:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:3:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:3:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:3:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:3:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:3:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:3:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:3:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:3:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:3:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:3:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:3:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:3:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:3:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:3:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:3:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:3:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:3:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:3:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:3:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:3:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:3:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:3:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:3:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:5:3:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:5:3:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:6:0:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:0:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:0:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:0:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:0:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:0:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:0:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:0:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:0:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:0:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:0:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:0:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:0:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:0:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:0:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:0:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:0:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:0:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:0:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:0:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:0:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:0:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:0:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:0:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:0:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:0:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:0:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:0:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:6:1:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:1:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:1:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:1:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:1:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:1:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:1:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:1:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:1:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:1:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:1:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:1:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:1:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:1:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:1:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:1:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:1:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:1:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:1:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:1:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:1:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:1:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:1:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:1:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:1:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:1:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:1:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:1:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:6:2:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:2:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:2:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:2:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:2:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:2:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:2:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:2:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:2:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:2:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:2:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:2:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:2:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:2:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:2:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:2:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:2:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:2:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:2:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:2:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:2:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:2:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:2:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:2:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:2:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:2:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:2:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:2:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:6:3:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:3:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:3:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:3:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:3:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:3:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:3:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:3:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:3:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:3:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:3:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:3:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:3:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:3:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:3:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:3:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:3:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:3:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:3:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:3:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:3:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:3:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:3:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:3:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:3:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:3:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:6:3:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:6:3:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:7:0:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:0:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:0:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:0:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:0:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:0:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:0:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:0:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:0:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:0:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:0:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:0:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:0:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:0:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:0:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:0:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:0:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:0:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:0:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:0:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:0:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:0:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:0:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:0:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:0:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:0:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:0:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:0:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:7:1:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:1:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:1:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:1:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:1:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:1:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:1:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:1:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:1:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:1:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:1:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:1:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:1:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:1:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:1:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:1:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:1:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:1:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:1:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:1:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:1:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:1:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:1:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:1:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:1:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:1:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:1:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:1:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:7:2:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:2:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:2:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:2:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:2:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:2:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:2:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:2:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:2:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:2:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:2:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:2:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:2:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:2:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:2:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:2:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:2:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:2:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:2:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:2:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:2:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:2:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:2:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:2:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:2:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:2:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:2:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:2:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:7:3:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:3:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:3:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:3:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:3:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:3:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:3:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:3:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:3:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:3:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:3:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:3:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:3:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:3:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:3:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:3:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:3:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:3:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:3:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:3:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:3:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:3:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:3:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:3:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:3:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:3:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:7:3:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:7:3:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:8:0:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:0:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:0:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:0:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:0:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:0:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:0:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:0:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:0:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:0:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:0:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:0:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:0:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:0:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:0:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:0:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:0:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:0:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:0:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:0:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:0:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:0:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:0:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:0:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:0:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:0:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:0:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:0:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:8:1:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:1:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:1:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:1:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:1:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:1:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:1:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:1:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:1:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:1:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:1:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:1:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:1:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:1:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:1:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:1:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:1:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:1:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:1:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:1:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:1:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:1:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:1:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:1:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:1:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:1:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:1:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:1:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:8:2:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:2:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:2:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:2:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:2:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:2:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:2:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:2:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:2:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:2:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:2:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:2:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:2:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:2:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:2:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:2:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:2:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:2:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:2:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:2:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:2:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:2:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:2:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:2:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:2:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:2:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:2:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:2:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:8:3:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:3:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:3:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:3:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:3:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:3:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:3:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:3:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:3:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:3:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:3:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:3:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:3:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:3:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:3:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:3:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:3:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:3:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:3:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:3:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:3:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:3:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:3:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:3:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:3:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:3:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:8:3:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:8:3:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:9:0:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:0:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:0:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:0:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:0:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:0:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:0:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:0:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:0:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:0:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:0:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:0:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:0:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:0:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:0:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:0:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:0:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:0:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:0:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:0:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:0:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:0:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:0:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:0:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:0:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:0:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:0:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:0:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+
+CHANNEL HYBRID_LV SVT:lv:9:1:avdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:1:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its AVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:1:dvdd:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:1:dvdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its DVDD low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:1:v125:i_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:1:v125:i_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids is drawing an abnormal amount of current on its V125 low voltage supply.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:1:avdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:1:avdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its AVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:1:dvdd:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:1:dvdd:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its DVDD low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:1:v125:v_set_rd A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:1:v125:v_set_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+One of the SVT hybrids has an abnormal setting for its V125 low voltage trim.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:1:avdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:1:avdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:1:dvdd:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:1:dvdd:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The DVDD supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:1:v125:vn A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:1:v125:vn" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 supply terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:1:avdd:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:1:avdd:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The AVDD sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:1:v125:vf A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:1:v125:vf" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+The V125 sense terminal voltage for one of the SVT hybrids is out of its normal range.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:1:avdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:1:avdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:1:dvdd:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:1:dvdd:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
+CHANNEL HYBRID_LV SVT:lv:9:1:v125:stat A
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:9:1:v125:stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 10
+$GUIDANCE
+This SVT hybrid low voltage channel is off, or in an abnormal state.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
 

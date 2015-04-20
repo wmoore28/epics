@@ -176,7 +176,7 @@ iocInit "../resource.def"
 ##dbpf "fcup_offset","144.46"
 ##dbpf "fcup_slope","9071"
 ##dbpf "fcup_offset","63.08"
-dbpf "fcup_offset","36.6"
+dbpf "fcup_offset","200."
 dbpf "fcup_slope","905.937"
 
 

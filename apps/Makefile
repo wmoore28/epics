@@ -2,18 +2,18 @@
 TOP = .
 include $(TOP)/configure/CONFIG
 DIRS := $(DIRS) $(filter-out $(DIRS), configure)
-DIRS := $(DIRS) $(filter-out $(DIRS), CAEN_HV)
+#DIRS := $(DIRS) $(filter-out $(DIRS), CAEN_HV)
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard *App))
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard iocBoot))
 # Build our medm links
 DIRS := $(DIRS) $(filter-out $(DIRS), medm)
 
 # List any drivers, they need to be built first.
-DRVS := CAEN_HV
+#DRVS := CAEN_HV
 
-define DIR_template
- $(1)_DEPEND_DIRS = configure $(DRVS)
-endef
+#define DIR_template
+# $(1)_DEPEND_DIRS = configure $(DRVS)
+#endef
 $(foreach dir, $(filter-out configure,$(DIRS)),$(eval $(call DIR_template,$(dir))))
 
 iocBoot_DEPEND_DIRS += $(filter %App,$(DIRS))
