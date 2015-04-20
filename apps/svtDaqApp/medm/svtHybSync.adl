@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/svt-devel/apps/svtDaqApp/medm/svtHybSync.adl"
+	name="/usr/clas12/hps/dev/apps/svtDaqApp/medm/svtHybSync.adl"
 	version=030108
 }
 display {
 	object {
-		x=9
-		y=21
+		x=2194
+		y=30
 		width=1000
 		height=1100
 	}
@@ -1267,646 +1267,6 @@ text {
 	}
 	monitor {
 		chan="SVT:daq:1:3:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=312
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:2:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=262
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:0:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=287
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:1:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=337
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:3:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=312
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:2:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=262
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:0:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=287
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:1:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=337
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:3:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=312
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:2:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=262
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:0:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=287
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:1:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=337
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:3:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=312
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:2:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=262
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:0:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=287
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:1:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=337
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:3:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=312
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:2:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=262
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:0:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=287
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:1:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=337
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:3:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=312
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:2:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=262
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:0:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=287
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:1:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=337
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:3:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=312
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:2:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=262
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:0:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=287
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:1:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=337
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:3:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=312
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:2:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=262
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:0:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=287
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:1:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=337
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:3:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=312
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:2:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=262
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:0:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=287
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:1:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=337
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:3:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=312
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:2:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=262
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:0:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=287
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:1:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=337
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:2:3:4:syncpeak_rd"
 		clr=31
 		bclr=14
 	}
@@ -5754,646 +5114,6 @@ text {
 	limits {
 	}
 }
-"text update" {
-	object {
-		x=332
-		y=1012
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:2:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=962
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:0:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=987
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:1:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=1037
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:3:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=1012
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:2:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=962
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:0:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=987
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:1:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=1037
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:3:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=1012
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:2:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=962
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:0:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=987
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:1:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=1037
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:3:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=1012
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:2:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=962
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:0:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=987
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:1:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=1037
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:3:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=1012
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:2:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=962
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:0:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=987
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:1:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=1037
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:3:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=1012
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:2:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=962
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:0:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=987
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:1:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=1037
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:3:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=1012
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:2:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=962
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:0:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=987
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:1:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=1037
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:3:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=1012
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:2:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=962
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:0:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=987
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:1:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=1037
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:3:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=1012
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:2:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=962
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:0:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=987
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:1:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=1037
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:3:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=1012
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:2:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=962
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:0:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=987
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:1:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=1037
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:9:3:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
 text {
 	object {
 		x=779
@@ -6502,58 +5222,6 @@ text {
 	object {
 		x=194
 		y=237
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=30
-	}
-	textix="3"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=194
-		y=262
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=30
-	}
-	textix="0"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=194
-		y=287
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=30
-	}
-	textix="1"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=194
-		y=312
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=30
-	}
-	textix="2"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=194
-		y=337
 		width=40
 		height=20
 	}
@@ -6875,58 +5543,6 @@ text {
 	textix="3"
 	align="horiz. centered"
 }
-text {
-	object {
-		x=194
-		y=962
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=30
-	}
-	textix="0"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=194
-		y=987
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=30
-	}
-	textix="1"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=194
-		y=1012
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=30
-	}
-	textix="2"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=194
-		y=1037
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=30
-	}
-	textix="3"
-	align="horiz. centered"
-}
 "text update" {
 	object {
 		x=264
@@ -7000,70 +5616,6 @@ text {
 	}
 	monitor {
 		chan="SVT:lv:1:3:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=312
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:2:2:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=262
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:2:0:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=287
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:2:1:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=337
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:2:3:sync:sync_rd"
 		clr=31
 		bclr=14
 	}
@@ -7432,70 +5984,6 @@ text {
 	}
 	monitor {
 		chan="SVT:lv:8:1:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=1012
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:9:2:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=962
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:9:0:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=987
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:9:1:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=1037
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:9:3:sync:sync_rd"
 		clr=31
 		bclr=14
 	}
@@ -8205,5 +6693,783 @@ text {
 	}
 	format="hexadecimal"
 	limits {
+	}
+}
+composite {
+	object {
+		x=194
+		y=283
+		width=685
+		height=45
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=332
+				y=283
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:0:0:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=332
+				y=308
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:1:0:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=444
+				y=283
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:0:1:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=444
+				y=308
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:1:1:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=554
+				y=283
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:0:2:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=554
+				y=308
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:1:2:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=664
+				y=283
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:0:3:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=664
+				y=308
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:1:3:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=774
+				y=283
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:0:4:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=774
+				y=308
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:1:4:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=386
+				y=283
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:0:0:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=386
+				y=308
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:1:0:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=498
+				y=283
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:0:1:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=498
+				y=308
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:1:1:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=608
+				y=283
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:0:2:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=608
+				y=308
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:1:2:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=718
+				y=283
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:0:3:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=718
+				y=308
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:1:3:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=828
+				y=283
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:0:4:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=828
+				y=308
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:2:1:4:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=194
+				y=283
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=30
+			}
+			textix="0"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=194
+				y=308
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=30
+			}
+			textix="1"
+			align="horiz. centered"
+		}
+		"text update" {
+			object {
+				x=264
+				y=283
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:lv:2:0:sync:sync_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=264
+				y=308
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:lv:2:1:sync:sync_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=194
+		y=992
+		width=685
+		height=45
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=332
+				y=992
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:0:0:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=332
+				y=1017
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:1:0:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=444
+				y=992
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:0:1:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=444
+				y=1017
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:1:1:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=554
+				y=992
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:0:2:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=554
+				y=1017
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:1:2:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=664
+				y=992
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:0:3:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=664
+				y=1017
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:1:3:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=774
+				y=992
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:0:4:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=774
+				y=1017
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:1:4:syncbase_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=386
+				y=992
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:0:0:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=386
+				y=1017
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:1:0:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=498
+				y=992
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:0:1:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=498
+				y=1017
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:1:1:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=608
+				y=992
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:0:2:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=608
+				y=1017
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:1:2:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=718
+				y=992
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:0:3:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=718
+				y=1017
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:1:3:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=828
+				y=992
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:0:4:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=828
+				y=1017
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:9:1:4:syncpeak_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=194
+				y=992
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=30
+			}
+			textix="0"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=194
+				y=1017
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=30
+			}
+			textix="1"
+			align="horiz. centered"
+		}
+		"text update" {
+			object {
+				x=264
+				y=992
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:lv:9:0:sync:sync_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=264
+				y=1017
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:lv:9:1:sync:sync_rd"
+				clr=31
+				bclr=14
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
 	}
 }
