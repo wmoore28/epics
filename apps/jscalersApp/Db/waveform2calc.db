@@ -1,4 +1,28 @@
 
+#record(fanout, "HPSTRIGSC_0_FANA") {
+#    field(LNK1, "HPSTRIGSC_0")
+#    field(LNK2, "HPSTRIGSC_0_GATED")
+#}
+#record(fanout, "HPSTRIGSC_1_FANA") {
+#    field(LNK1, "HPSTRIGSC_1")
+#    field(LNK2, "HPSTRIGSC_1_GATED")
+#}
+#record(fanout, "HPSTRIGSC_2_FANA") {
+#    field(LNK1, "HPSTRIGSC_2")
+#    field(LNK2, "HPSTRIGSC_2_GATED")
+#}
+#record(fanout, "HPSTRIGSC_3_FANA") {
+#    field(LNK1, "HPSTRIGSC_3")
+#    field(LNK2, "HPSTRIGSC_3_GATED")
+#}
+#record(fanout, "HPSTRIGSC_4_FANA") {
+#    field(LNK1, "HPSTRIGSC_4")
+#    field(LNK2, "HPSTRIGSC_4_GATED")
+#}
+#record(fanout, "HPSTRIGSC_5_FANA") {
+#    field(LNK1, "HPSTRIGSC_5")
+#    field(LNK2, "HPSTRIGSC_5_GATED")
+#}
 
 # CONVERT WAVEFORM TO ARRAY:
 ############################################
@@ -6,7 +30,7 @@ record(subArray, "HPSTRIGSC_0") {
     field(DTYP,"Soft Channel")
     field(INP,"B_SCALERSHPS2_Sl10_Ch0.VAL")
     field(NELM,1)
-    field(INDX,3)
+    field(INDX,0)
     field(FTVL,"DOUBLE")
     field(FLNK,"HPSTRIGSC_0_FAN")
 }
@@ -14,7 +38,7 @@ record(subArray, "HPSTRIGSC_1") {
     field(DTYP,"Soft Channel")
     field(INP,"B_SCALERSHPS2_Sl10_Ch1.VAL")
     field(NELM,1)
-    field(INDX,3)
+    field(INDX,0)
     field(FTVL,"DOUBLE")
     field(FLNK,"HPSTRIGSC_1_FAN")
 }
@@ -22,7 +46,7 @@ record(subArray, "HPSTRIGSC_2") {
     field(DTYP,"Soft Channel")
     field(INP,"B_SCALERSHPS2_Sl10_Ch2.VAL")
     field(NELM,1)
-    field(INDX,3)
+    field(INDX,0)
     field(FTVL,"DOUBLE")
     field(FLNK,"HPSTRIGSC_2_FAN")
 }
@@ -30,7 +54,7 @@ record(subArray, "HPSTRIGSC_3") {
     field(DTYP,"Soft Channel")
     field(INP,"B_SCALERSHPS2_Sl10_Ch3.VAL")
     field(NELM,1)
-    field(INDX,3)
+    field(INDX,0)
     field(FTVL,"DOUBLE")
     field(FLNK,"HPSTRIGSC_3_FAN")
 }
@@ -38,7 +62,7 @@ record(subArray, "HPSTRIGSC_4") {
     field(DTYP,"Soft Channel")
     field(INP,"B_SCALERSHPS2_Sl10_Ch4.VAL")
     field(NELM,1)
-    field(INDX,3)
+    field(INDX,0)
     field(FTVL,"DOUBLE")
     field(FLNK,"HPSTRIGSC_4_FAN")
 }
@@ -46,14 +70,61 @@ record(subArray, "HPSTRIGSC_5") {
     field(DTYP,"Soft Channel")
     field(INP,"B_SCALERSHPS2_Sl10_Ch5.VAL")
     field(NELM,1)
-    field(INDX,3)
+    field(INDX,0)
     field(FTVL,"DOUBLE")
     field(FLNK,"HPSTRIGSC_5_FAN")
 }
 
 
-# FANOUT TO TOTAL AND FRACTIONS:
+####################################################
+
+#record(subArray, "HPSTRIGSC_0_UNGATED") {
+#    field(DTYP,"Soft Channel")
+#    field(INP,"B_SCALERSHPS2_Sl10_Ch0.VAL")
+#    field(NELM,1)
+#    field(INDX,1)
+#    field(FTVL,"DOUBLE")
+#}
+#record(subArray, "HPSTRIGSC_1_UNGATED") {
+#    field(DTYP,"Soft Channel")
+#    field(INP,"B_SCALERSHPS2_Sl10_Ch1.VAL")
+#    field(NELM,1)
+#    field(INDX,1)
+#    field(FTVL,"DOUBLE")
+#}
+#record(subArray, "HPSTRIGSC_2_UNGATED") {
+#    field(DTYP,"Soft Channel")
+#    field(INP,"B_SCALERSHPS2_Sl10_Ch2.VAL")
+#    field(NELM,1)
+#    field(INDX,1)
+#    field(FTVL,"DOUBLE")
+#}
+#record(subArray, "HPSTRIGSC_3_UNGATED") {
+#    field(DTYP,"Soft Channel")
+#    field(INP,"B_SCALERSHPS2_Sl10_Ch3.VAL")
+#    field(NELM,1)
+#    field(INDX,1)
+#    field(FTVL,"DOUBLE")
+#}
+#record(subArray, "HPSTRIGSC_4_UNGATED") {
+#    field(DTYP,"Soft Channel")
+#    field(INP,"B_SCALERSHPS2_Sl10_Ch4.VAL")
+#    field(NELM,1)
+#    field(INDX,1)
+#    field(FTVL,"DOUBLE")
+#}
+record(subArray, "HPSTRIGSC_5_UNGATED") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl10_Ch5.VAL")
+    field(NELM,1)
+    field(MALM,4)
+    field(INDX,3)
+    field(FTVL,"DOUBLE")
+    field(FLNK, "HPSTRIGSC_LIVETIME")
+}
+
 ############################################
+
 record(fanout, "HPSTRIGSC_0_FAN") {
     field(LNK1, "HPSTRIGSC_TOTAL")
     field(LNK2, "HPSTRIGSC_0_FRAC")
@@ -83,6 +154,7 @@ record(fanout, "HPSTRIGSC_5_FAN") {
     field(LNK1, "HPSTRIGSC_TOTAL")
     field(LNK2, "HPSTRIGSC_5_FRAC")
     field(LNK3, "HPSTRIGSC_5_PRE")
+    field(LNK4, "HPSTRIGSC_LIVETIME")
 }
 
 
@@ -96,6 +168,11 @@ record(calc, "HPSTRIGSC_TOTAL") {
     field(INPE,"HPSTRIGSC_4")
     field(INPF,"HPSTRIGSC_5")
     field(CALC,"A+B+C+D+E+F")
+}
+record(calc, "HPSTRIGSC_LIVETIME") {
+    field(INPA,"HPSTRIGSC_5")
+    field(INPB,"HPSTRIGSC_5_UNGATED PP")
+    field(CALC,"B>0 ? 100*A/B : 0")
 }
 record(calc, "HPSTRIGSC_TOTAL_FRAC") {
     field(CALC,"100")
@@ -229,7 +306,6 @@ record(calc, "HPSTRIGSC_5_PRE") {
     field(INPA,"HPSTRIGSC_5")
     field(INPB,"HPSTRIGPRESCALE_5")
     field(CALC,"A/(2^B)")
-#    field(SCAN,"2 second")
     field(FLNK,"HPSTRIGSC_5_FAN_PRE")
 }
 
@@ -343,18 +419,6 @@ record(ai, "HPSTRIGSC_5_SFRAC_PRE") {
 }
 
 
-
-
-# LIVETIME
-############################################
-record(subArray, "HPSTRIGSC_0") {
-    field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS2_Sl10_Ch0.VAL")
-    field(NELM,1)
-    field(INDX,3)
-    field(FTVL,"DOUBLE")
-    field(FLNK,"HPSTRIGSC_0_FAN")
-}
 
 
 
