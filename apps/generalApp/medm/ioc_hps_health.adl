@@ -5,7 +5,7 @@ file {
 }
 display {
 	object {
-		x=193
+		x=184
 		y=60
 		width=1300
 		height=610
@@ -147,7 +147,7 @@ rectangle {
 		x=859
 		y=468
 		width=425
-		height=130
+		height=110
 	}
 	"basic attribute" {
 		clr=5
@@ -2094,124 +2094,6 @@ text {
 	align="horiz. centered"
 	limits {
 	}
-}
-rectangle {
-	object {
-		x=10
-		y=574
-		width=1270
-		height=20
-	}
-	"basic attribute" {
-		clr=3
-	}
-}
-"text update" {
-	object {
-		x=193
-		y=574
-		width=150
-		height=20
-	}
-	monitor {
-		chan="classc8:HOSTNAME"
-		clr=0
-		bclr=29
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=345
-		y=574
-		width=150
-		height=20
-	}
-	monitor {
-		chan="classc8:UPTIME"
-		clr=0
-		bclr=29
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=497
-		y=574
-		width=100
-		height=20
-	}
-	monitor {
-		chan="classc8:HEARTBEAT"
-		clr=0
-		bclr=29
-	}
-	align="horiz. right"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=707
-		y=574
-		width=150
-		height=20
-	}
-	monitor {
-		chan="classc8:STARTTOD"
-		clr=0
-		bclr=29
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=15
-		y=575
-		width=160
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="iocclassc8"
-}
-"related display" {
-	object {
-		x=626
-		y=574
-		width=75
-		height=20
-	}
-	display[0] {
-		label="Reboot"
-		name="ioc_stats_reboot_confirm.adl"
-		args="ioc=classc8"
-	}
-	clr=14
-	bclr=8
-	label="Reboot..."
-}
-"related display" {
-	object {
-		x=601
-		y=575
-		width=20
-		height=20
-	}
-	display[0] {
-		label="IOC Stats"
-		name="ioc_stats_vxworks.adl"
-		args="ioc=classc8"
-	}
-	clr=14
-	bclr=8
 }
 rectangle {
 	object {
