@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string>
-#include "../Driver/common.h"
+#include "common.h"
 
 using namespace std;
 

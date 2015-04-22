@@ -72,7 +72,7 @@ static void  runStart_SCALERS_CRATE( const iocshArgBuf* args )
 char *new_args[args->aval.ac+1];
 int id=-1;
 string hostname;
-int number_of_slots;
+//int number_of_slots;
 ///int *board_types;
 ///board_types = new int[number_of_slots];
 

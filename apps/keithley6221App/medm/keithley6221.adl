@@ -1,12 +1,12 @@
 
 file {
-	name="/misc/home/wmoore/workspaces/epics-keithley/apps/keithley6221App/medm/keithley6221.adl"
+	name="/usr/clas12/hps/prod/apps/keithley6221App/medm/keithley6221.adl"
 	version=030108
 }
 display {
 	object {
-		x=1063
-		y=353
+		x=1054
+		y=345
 		width=400
 		height=405
 	}
@@ -136,7 +136,7 @@ text {
 "text entry" {
 	object {
 		x=151
-		y=93
+		y=119
 		width=105
 		height=25
 	}
@@ -152,7 +152,7 @@ text {
 "text update" {
 	object {
 		x=264
-		y=93
+		y=119
 		width=105
 		height=25
 	}
@@ -227,7 +227,7 @@ menu {
 menu {
 	object {
 		x=151
-		y=58
+		y=84
 		width=105
 		height=25
 	}
@@ -240,7 +240,7 @@ menu {
 "text update" {
 	object {
 		x=264
-		y=58
+		y=84
 		width=105
 		height=25
 	}
@@ -256,7 +256,7 @@ menu {
 text {
 	object {
 		x=40
-		y=97
+		y=123
 		width=105
 		height=21
 	}
@@ -292,7 +292,7 @@ text {
 text {
 	object {
 		x=40
-		y=62
+		y=88
 		width=105
 		height=21
 	}
@@ -383,7 +383,7 @@ text {
 text {
 	object {
 		x=40
-		y=127
+		y=153
 		width=105
 		height=21
 	}
@@ -395,7 +395,7 @@ text {
 "text entry" {
 	object {
 		x=151
-		y=123
+		y=149
 		width=105
 		height=25
 	}
@@ -411,7 +411,7 @@ text {
 "text update" {
 	object {
 		x=264
-		y=123
+		y=149
 		width=105
 		height=25
 	}
@@ -479,4 +479,47 @@ menu {
 		clr=14
 		bclr=4
 	}
+}
+text {
+	object {
+		x=40
+		y=50
+		width=105
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="COMM Status"
+}
+"text update" {
+	object {
+		x=264
+		y=46
+		width=105
+		height=25
+	}
+	monitor {
+		chan="K6221:OUTPUT.STAT"
+		clr=15
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=370
+		y=8
+		width=22
+		height=22
+	}
+	display[0] {
+		label="Comm (asyn)"
+		name="asynRecord.adl"
+		args="P=K6221:,R=ASYN"
+	}
+	clr=14
+	bclr=4
 }

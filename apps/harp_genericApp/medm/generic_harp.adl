@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/medm/generic_harp.adl"
+	name="/home/rafopar/git/epics-hps/tools/harp_fitter/generic_harp.adl"
 	version=030108
 }
 display {
 	object {
-		x=28
-		y=333
-		width=600
-		height=150
+		x=21
+		y=326
+		width=602
+		height=173
 	}
 	clr=14
 	bclr=4
@@ -356,7 +356,7 @@ text {
 "shell command" {
 	object {
 		x=517
-		y=124
+		y=110
 		width=15
 		height=15
 	}
@@ -374,7 +374,7 @@ text {
 text {
 	object {
 		x=355
-		y=123
+		y=110
 		width=110
 		height=18
 	}
@@ -382,4 +382,34 @@ text {
 		clr=14
 	}
 	textix="Analyze Scan Data"
+}
+"shell command" {
+	object {
+		x=517
+		y=147
+		width=15
+		height=15
+	}
+	command[0] {
+		label="Analyze Scans"
+		name="/usr/clas12/hps/prod/tools/harp_fitter/run_fitter.pl $(motor_name) &"
+		args=" "
+	}
+	command[1] {
+		args=" "
+	}
+	clr=14
+	bclr=49
+}
+text {
+	object {
+		x=390
+		y=145
+		width=102
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Analyze with ROOT"
 }
