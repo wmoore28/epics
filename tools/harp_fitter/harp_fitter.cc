@@ -1,6 +1,7 @@
 #include <TF1.h>
 #include <TH1D.h>
 #include <TFile.h>
+#include <TMath.h>
 #include <iostream>
 #include <TGraph.h>
 #include <TLatex.h>
@@ -16,6 +17,7 @@ double* Calc_abalpha(double, double, double);
 bool Fit_tagger(TGraph *, string);
 bool Fit_2H02A(TGraph *, string);
 bool Fit_2c21(TGraph *, string);
+double Arnes_Corr(double , double );
 
 int main( int argc, char **argv)
 {
@@ -246,16 +248,11 @@ bool Fit_2c21(TGraph *gr, string counter_name)
 	  h_gr_tmp_[i]->SetAxisRange(mean_x - 3.5, mean_x + 3.5);
 	  //h_gr_tmp_[i]->Draw();
 	  h_gr_tmp_[i]->Fit(f_GPol0_[i], "+MeV", "", mean_x - 3., mean_x + 3.);
-	  if( i < 2 ) // wires X and Y
-	    {
-	      mean_[i] = f_GPol0_[i]->GetParameter(1)/sqrt(2.);
-	      sigm_[i] = f_GPol0_[i]->GetParameter(2)/sqrt(2.);
-	    }
-	  else if(i == 2)
-	    {
-	      mean_[i] = f_GPol0_[i]->GetParameter(1);
-	      sigm_[i] = f_GPol0_[i]->GetParameter(2);
-	    }
+	  
+	  mean_[i] = f_GPol0_[i]->GetParameter(1)/sqrt(2.);
+	  sigm_[i] = f_GPol0_[i]->GetParameter(2)/sqrt(2.);
+	  sigm_[i] = sigm_[i]/Arnes_Corr(sigm_[i], 0.025);
+	      
 	  bgr_[i] = f_GPol0_[i]->GetParameter(3);
 	  peak_val_[i] = f_GPol0_[i]->GetParameter(0);
 	  
@@ -336,16 +333,18 @@ bool Fit_tagger(TGraph *gr, string counter_name)
 	  h_gr_tmp_[i]->SetAxisRange(mean_x - 5., mean_x + 5.);
 	  //h_gr_tmp_[i]->Draw();
 	  h_gr_tmp_[i]->Fit(f_GPol0_[i], "+MeV", "", mean_x - 4.5, mean_x + 4.5);
-	  if( i < 2 ) // wires X and Y
+	  if( i > 0 ) // wires X and Y
 	    {
 	      mean_[i] = f_GPol0_[i]->GetParameter(1)/sqrt(2.);
 	      sigm_[i] = f_GPol0_[i]->GetParameter(2)/sqrt(2.);
 	    }
-	  else if(i == 2)
+	  else if(i == 0)
 	    {
 	      mean_[i] = f_GPol0_[i]->GetParameter(1);
 	      sigm_[i] = f_GPol0_[i]->GetParameter(2);
 	    }
+	  sigm_[i] = sigm_[i]/Arnes_Corr(sigm_[i], 0.025);
+	  
 	  bgr_[i] = f_GPol0_[i]->GetParameter(3);
 	  peak_val_[i] = f_GPol0_[i]->GetParameter(0);
 	  
@@ -448,6 +447,8 @@ bool Fit_2H02A(TGraph *gr, string counter_name)
 	      mean_[i] = f_GPol0_[i]->GetParameter(1);
 	      sigm_[i] = f_GPol0_[i]->GetParameter(2);
 	    }
+	  sigm_[i] = sigm_[i]/Arnes_Corr(sigm_[i], 0.025);
+	  
 	  bgr_[i] = f_GPol0_[i]->GetParameter(3);
 	  peak_val_[i] = f_GPol0_[i]->GetParameter(0);
 	  
@@ -537,3 +538,9 @@ double* Calc_abalpha(double sigm45, double sigm_x, double sigm_y)
   
   return ret_values;
  }
+
+double Arnes_Corr(double sigm, double wd)
+{
+  double corr = 1 + 0.025/TMath::Power(sigm/wd, 2.826);
+  return corr;
+}
