@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/svt-devel/apps/iocBoot/../../apps/generalApp/medm/ioc_hps_svt_health.adl"
+	name="/usr/clas12/hps/v1.3.0/apps/generalApp/medm/ioc_hps_svt_health.adl"
 	version=030108
 }
 display {
 	object {
-		x=61
-		y=21
+		x=52
+		y=60
 		width=1300
 		height=610
 	}
@@ -89,17 +89,6 @@ display {
 }
 rectangle {
 	object {
-		x=0
-		y=0
-		width=1300
-		height=40
-	}
-	"basic attribute" {
-		clr=29
-	}
-}
-rectangle {
-	object {
 		x=859
 		y=54
 		width=425
@@ -107,6 +96,135 @@ rectangle {
 	}
 	"basic attribute" {
 		clr=5
+	}
+}
+rectangle {
+	object {
+		x=10
+		y=549
+		width=1270
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+text {
+	object {
+		x=15
+		y=550
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqCntrlDpm7"
+}
+"text update" {
+	object {
+		x=193
+		y=549
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqCntrlDpm7:HOSTNAME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=549
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqCntrlDpm7:UPTIME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=549
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqCntrlDpm7:HEARTBEAT"
+		clr=0
+		bclr=29
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=601
+		y=550
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqCntrlDpm7"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=626
+		y=550
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqCntrlDpm7"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+"text update" {
+	object {
+		x=707
+		y=549
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqCntrlDpm7:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=0
+		width=1300
+		height=40
+	}
+	"basic attribute" {
+		clr=29
 	}
 }
 text {
@@ -303,7 +421,7 @@ text {
 "text update" {
 	object {
 		x=193
-		y=133
+		y=131
 		width=150
 		height=20
 	}
@@ -319,7 +437,7 @@ text {
 "text update" {
 	object {
 		x=345
-		y=133
+		y=131
 		width=150
 		height=20
 	}
@@ -335,7 +453,7 @@ text {
 "text update" {
 	object {
 		x=497
-		y=133
+		y=131
 		width=100
 		height=20
 	}
@@ -382,7 +500,7 @@ text {
 "text update" {
 	object {
 		x=707
-		y=133
+		y=131
 		width=150
 		height=20
 	}
@@ -442,7 +560,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=155
+		y=153
 		width=150
 		height=20
 	}
@@ -458,7 +576,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=155
+		y=153
 		width=150
 		height=20
 	}
@@ -474,7 +592,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=155
+		y=153
 		width=100
 		height=20
 	}
@@ -490,7 +608,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=155
+		y=153
 		width=150
 		height=20
 	}
@@ -545,7 +663,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=177
+		y=175
 		width=150
 		height=20
 	}
@@ -561,7 +679,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=177
+		y=175
 		width=150
 		height=20
 	}
@@ -577,7 +695,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=177
+		y=175
 		width=100
 		height=20
 	}
@@ -593,7 +711,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=177
+		y=175
 		width=150
 		height=20
 	}
@@ -648,7 +766,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=199
+		y=197
 		width=150
 		height=20
 	}
@@ -664,7 +782,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=199
+		y=197
 		width=150
 		height=20
 	}
@@ -680,7 +798,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=199
+		y=197
 		width=100
 		height=20
 	}
@@ -696,7 +814,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=199
+		y=197
 		width=150
 		height=20
 	}
@@ -797,7 +915,7 @@ text {
 "text update" {
 	object {
 		x=193
-		y=221
+		y=219
 		width=150
 		height=20
 	}
@@ -813,7 +931,7 @@ text {
 "text update" {
 	object {
 		x=345
-		y=221
+		y=219
 		width=150
 		height=20
 	}
@@ -829,7 +947,7 @@ text {
 "text update" {
 	object {
 		x=497
-		y=221
+		y=219
 		width=100
 		height=20
 	}
@@ -876,7 +994,7 @@ text {
 "text update" {
 	object {
 		x=707
-		y=221
+		y=219
 		width=150
 		height=20
 	}
@@ -904,7 +1022,7 @@ text {
 "text update" {
 	object {
 		x=193
-		y=243
+		y=241
 		width=150
 		height=20
 	}
@@ -920,7 +1038,7 @@ text {
 "text update" {
 	object {
 		x=345
-		y=243
+		y=241
 		width=150
 		height=20
 	}
@@ -936,7 +1054,7 @@ text {
 "text update" {
 	object {
 		x=497
-		y=243
+		y=241
 		width=100
 		height=20
 	}
@@ -983,7 +1101,7 @@ text {
 "text update" {
 	object {
 		x=707
-		y=243
+		y=241
 		width=150
 		height=20
 	}
@@ -1010,7 +1128,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=265
+		y=263
 		width=150
 		height=20
 	}
@@ -1026,7 +1144,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=265
+		y=263
 		width=150
 		height=20
 	}
@@ -1042,7 +1160,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=265
+		y=263
 		width=100
 		height=20
 	}
@@ -1058,7 +1176,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=265
+		y=263
 		width=150
 		height=20
 	}
@@ -1128,7 +1246,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=287
+		y=285
 		width=150
 		height=20
 	}
@@ -1144,7 +1262,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=287
+		y=285
 		width=150
 		height=20
 	}
@@ -1160,7 +1278,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=287
+		y=285
 		width=100
 		height=20
 	}
@@ -1176,7 +1294,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=287
+		y=285
 		width=150
 		height=20
 	}
@@ -1247,7 +1365,7 @@ text {
 "text update" {
 	object {
 		x=193
-		y=309
+		y=307
 		width=150
 		height=20
 	}
@@ -1263,7 +1381,7 @@ text {
 "text update" {
 	object {
 		x=345
-		y=309
+		y=307
 		width=150
 		height=20
 	}
@@ -1279,7 +1397,7 @@ text {
 "text update" {
 	object {
 		x=497
-		y=309
+		y=307
 		width=100
 		height=20
 	}
@@ -1326,7 +1444,7 @@ text {
 "text update" {
 	object {
 		x=707
-		y=309
+		y=307
 		width=150
 		height=20
 	}
@@ -1375,7 +1493,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=331
+		y=329
 		width=150
 		height=20
 	}
@@ -1391,7 +1509,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=331
+		y=329
 		width=150
 		height=20
 	}
@@ -1407,7 +1525,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=331
+		y=329
 		width=100
 		height=20
 	}
@@ -1423,7 +1541,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=331
+		y=329
 		width=150
 		height=20
 	}
@@ -1478,7 +1596,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=353
+		y=351
 		width=150
 		height=20
 	}
@@ -1494,7 +1612,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=353
+		y=351
 		width=150
 		height=20
 	}
@@ -1510,7 +1628,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=353
+		y=351
 		width=100
 		height=20
 	}
@@ -1526,7 +1644,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=353
+		y=351
 		width=150
 		height=20
 	}
@@ -1581,7 +1699,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=375
+		y=373
 		width=150
 		height=20
 	}
@@ -1597,7 +1715,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=375
+		y=373
 		width=150
 		height=20
 	}
@@ -1613,7 +1731,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=375
+		y=373
 		width=100
 		height=20
 	}
@@ -1629,7 +1747,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=375
+		y=373
 		width=150
 		height=20
 	}
@@ -1730,7 +1848,7 @@ text {
 "text update" {
 	object {
 		x=193
-		y=397
+		y=395
 		width=150
 		height=20
 	}
@@ -1746,7 +1864,7 @@ text {
 "text update" {
 	object {
 		x=345
-		y=397
+		y=395
 		width=150
 		height=20
 	}
@@ -1762,7 +1880,7 @@ text {
 "text update" {
 	object {
 		x=497
-		y=397
+		y=395
 		width=100
 		height=20
 	}
@@ -1809,7 +1927,7 @@ text {
 "text update" {
 	object {
 		x=707
-		y=397
+		y=395
 		width=150
 		height=20
 	}
@@ -1837,7 +1955,7 @@ text {
 "text update" {
 	object {
 		x=193
-		y=419
+		y=417
 		width=150
 		height=20
 	}
@@ -1853,7 +1971,7 @@ text {
 "text update" {
 	object {
 		x=345
-		y=419
+		y=417
 		width=150
 		height=20
 	}
@@ -1869,7 +1987,7 @@ text {
 "text update" {
 	object {
 		x=497
-		y=419
+		y=417
 		width=100
 		height=20
 	}
@@ -1916,7 +2034,7 @@ text {
 "text update" {
 	object {
 		x=707
-		y=419
+		y=417
 		width=150
 		height=20
 	}
@@ -1977,7 +2095,7 @@ text {
 "text update" {
 	object {
 		x=193
-		y=97
+		y=95
 		width=150
 		height=20
 	}
@@ -1993,7 +2111,7 @@ text {
 "text update" {
 	object {
 		x=345
-		y=97
+		y=95
 		width=150
 		height=20
 	}
@@ -2009,7 +2127,7 @@ text {
 "text update" {
 	object {
 		x=497
-		y=97
+		y=95
 		width=100
 		height=20
 	}
@@ -2056,7 +2174,7 @@ text {
 "text update" {
 	object {
 		x=707
-		y=97
+		y=95
 		width=150
 		height=20
 	}
@@ -2072,7 +2190,7 @@ text {
 "text update" {
 	object {
 		x=862
-		y=97
+		y=95
 		width=60
 		height=20
 	}
@@ -2088,7 +2206,7 @@ text {
 "text update" {
 	object {
 		x=924
-		y=97
+		y=95
 		width=130
 		height=20
 	}
@@ -2104,7 +2222,7 @@ text {
 "text update" {
 	object {
 		x=1056
-		y=97
+		y=95
 		width=200
 		height=20
 	}
@@ -2120,7 +2238,7 @@ text {
 "related display" {
 	object {
 		x=1260
-		y=96
+		y=94
 		width=20
 		height=20
 	}
@@ -2135,25 +2253,25 @@ text {
 rectangle {
 	object {
 		x=10
-		y=485
+		y=483
 		width=1270
 		height=20
 	}
 	"basic attribute" {
-		clr=3
+		clr=2
 	}
 }
 "text update" {
 	object {
 		x=193
-		y=487
+		y=483
 		width=150
 		height=20
 	}
 	monitor {
 		chan="iocsvtDaqDtm0:HOSTNAME"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. centered"
 	limits {
@@ -2162,14 +2280,14 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=487
+		y=483
 		width=150
 		height=20
 	}
 	monitor {
 		chan="iocsvtDaqDtm0:UPTIME"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. centered"
 	limits {
@@ -2178,14 +2296,14 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=487
+		y=483
 		width=100
 		height=20
 	}
 	monitor {
 		chan="iocsvtDaqDtm0:HEARTBEAT"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. right"
 	limits {
@@ -2194,14 +2312,14 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=487
+		y=483
 		width=150
 		height=20
 	}
 	monitor {
 		chan="iocsvtDaqDtm0:STARTTOD"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. centered"
 	limits {
@@ -2210,7 +2328,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=486
+		y=484
 		width=160
 		height=20
 	}
@@ -2222,7 +2340,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=485
+		y=483
 		width=75
 		height=20
 	}
@@ -2238,7 +2356,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=486
+		y=484
 		width=20
 		height=20
 	}
@@ -2253,7 +2371,7 @@ text {
 rectangle {
 	object {
 		x=10
-		y=507
+		y=505
 		width=1270
 		height=20
 	}
@@ -2264,7 +2382,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=508
+		y=506
 		width=160
 		height=20
 	}
@@ -2276,7 +2394,7 @@ text {
 "text update" {
 	object {
 		x=193
-		y=509
+		y=505
 		width=150
 		height=20
 	}
@@ -2292,7 +2410,7 @@ text {
 "text update" {
 	object {
 		x=345
-		y=509
+		y=505
 		width=150
 		height=20
 	}
@@ -2308,7 +2426,7 @@ text {
 "text update" {
 	object {
 		x=497
-		y=509
+		y=505
 		width=100
 		height=20
 	}
@@ -2324,7 +2442,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=507
+		y=505
 		width=20
 		height=20
 	}
@@ -2339,7 +2457,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=507
+		y=505
 		width=75
 		height=20
 	}
@@ -2355,7 +2473,7 @@ text {
 "text update" {
 	object {
 		x=707
-		y=509
+		y=505
 		width=150
 		height=20
 	}
@@ -2382,7 +2500,7 @@ rectangle {
 "text update" {
 	object {
 		x=193
-		y=441
+		y=439
 		width=150
 		height=20
 	}
@@ -2398,7 +2516,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=441
+		y=439
 		width=150
 		height=20
 	}
@@ -2414,7 +2532,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=441
+		y=439
 		width=100
 		height=20
 	}
@@ -2430,7 +2548,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=441
+		y=439
 		width=150
 		height=20
 	}
@@ -2489,18 +2607,18 @@ text {
 rectangle {
 	object {
 		x=10
-		y=463
+		y=461
 		width=1270
 		height=20
 	}
 	"basic attribute" {
-		clr=2
+		clr=3
 	}
 }
 "text update" {
 	object {
 		x=193
-		y=465
+		y=461
 		width=150
 		height=20
 	}
@@ -2516,7 +2634,7 @@ rectangle {
 "text update" {
 	object {
 		x=345
-		y=465
+		y=461
 		width=150
 		height=20
 	}
@@ -2532,7 +2650,7 @@ rectangle {
 "text update" {
 	object {
 		x=497
-		y=465
+		y=461
 		width=100
 		height=20
 	}
@@ -2548,7 +2666,7 @@ rectangle {
 "text update" {
 	object {
 		x=707
-		y=465
+		y=461
 		width=150
 		height=20
 	}
@@ -2564,7 +2682,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=464
+		y=462
 		width=160
 		height=20
 	}
@@ -2576,7 +2694,7 @@ text {
 "related display" {
 	object {
 		x=626
-		y=463
+		y=461
 		width=75
 		height=20
 	}
@@ -2592,7 +2710,7 @@ text {
 "related display" {
 	object {
 		x=601
-		y=464
+		y=462
 		width=20
 		height=20
 	}
@@ -2604,268 +2722,128 @@ text {
 	clr=14
 	bclr=8
 }
-composite {
+rectangle {
 	object {
 		x=10
-		y=529
+		y=527
 		width=1270
-		height=22
+		height=20
 	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=10
-				y=529
-				width=1270
-				height=20
-			}
-			"basic attribute" {
-				clr=2
-			}
-		}
-		text {
-			object {
-				x=15
-				y=530
-				width=160
-				height=20
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="iocsvtDaqCntrlWDpm"
-		}
-		"text update" {
-			object {
-				x=193
-				y=531
-				width=150
-				height=20
-			}
-			monitor {
-				chan="iocsvtDaqCntrlWDpm:HOSTNAME"
-				clr=0
-				bclr=27
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=345
-				y=531
-				width=150
-				height=20
-			}
-			monitor {
-				chan="iocsvtDaqCntrlWDpm:UPTIME"
-				clr=0
-				bclr=27
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=497
-				y=531
-				width=100
-				height=20
-			}
-			monitor {
-				chan="iocsvtDaqCntrlWDpm:HEARTBEAT"
-				clr=0
-				bclr=27
-			}
-			align="horiz. right"
-			limits {
-			}
-		}
-		"related display" {
-			object {
-				x=601
-				y=529
-				width=20
-				height=20
-			}
-			display[0] {
-				label="IOC Stats"
-				name="ioc_stats_soft.adl"
-				args="ioc=iocsvtDaqCntrlWDpm"
-			}
-			clr=14
-			bclr=6
-		}
-		"related display" {
-			object {
-				x=626
-				y=529
-				width=75
-				height=20
-			}
-			display[0] {
-				label="Reboot"
-				name="ioc_stats_reboot_confirm.adl"
-				args="ioc=iocsvtDaqCntrlWDpm"
-			}
-			clr=14
-			bclr=6
-			label="Reboot..."
-		}
-		"text update" {
-			object {
-				x=707
-				y=531
-				width=150
-				height=20
-			}
-			monitor {
-				chan="iocsvtDaqCntrlWDpm:STARTTOD"
-				clr=0
-				bclr=27
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
+	"basic attribute" {
+		clr=3
 	}
 }
-composite {
+text {
 	object {
-		x=9
-		y=553
-		width=1270
-		height=22
+		x=15
+		y=528
+		width=160
+		height=20
 	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=9
-				y=553
-				width=1270
-				height=20
-			}
-			"basic attribute" {
-				clr=2
-			}
-		}
-		text {
-			object {
-				x=14
-				y=554
-				width=160
-				height=20
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="iocsvtDaqCntrlDpm7"
-		}
-		"text update" {
-			object {
-				x=192
-				y=555
-				width=150
-				height=20
-			}
-			monitor {
-				chan="iocsvtDaqCntrlDpm7:HOSTNAME"
-				clr=0
-				bclr=27
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=344
-				y=555
-				width=150
-				height=20
-			}
-			monitor {
-				chan="iocsvtDaqCntrlDpm7:UPTIME"
-				clr=0
-				bclr=27
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=496
-				y=555
-				width=100
-				height=20
-			}
-			monitor {
-				chan="iocsvtDaqCntrlDpm7:HEARTBEAT"
-				clr=0
-				bclr=27
-			}
-			align="horiz. right"
-			limits {
-			}
-		}
-		"related display" {
-			object {
-				x=600
-				y=553
-				width=20
-				height=20
-			}
-			display[0] {
-				label="IOC Stats"
-				name="ioc_stats_soft.adl"
-				args="ioc=iocsvtDaqCntrlDpm7"
-			}
-			clr=14
-			bclr=6
-		}
-		"related display" {
-			object {
-				x=625
-				y=553
-				width=75
-				height=20
-			}
-			display[0] {
-				label="Reboot"
-				name="ioc_stats_reboot_confirm.adl"
-				args="ioc=iocsvtDaqCntrlDpm7"
-			}
-			clr=14
-			bclr=6
-			label="Reboot..."
-		}
-		"text update" {
-			object {
-				x=706
-				y=555
-				width=150
-				height=20
-			}
-			monitor {
-				chan="iocsvtDaqCntrlDpm7:STARTTOD"
-				clr=0
-				bclr=27
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocsvtDaqCntrlWDpm"
+}
+"text update" {
+	object {
+		x=193
+		y=527
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqCntrlWDpm:HOSTNAME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=527
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqCntrlWDpm:UPTIME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=527
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqCntrlWDpm:HEARTBEAT"
+		clr=0
+		bclr=29
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=601
+		y=528
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocsvtDaqCntrlWDpm"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=626
+		y=528
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocsvtDaqCntrlWDpm"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+"text update" {
+	object {
+		x=707
+		y=527
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocsvtDaqCntrlWDpm:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
 	}
 }
 rectangle {
 	object {
-		x=8
-		y=576
+		x=10
+		y=571
 		width=1270
 		height=20
 	}
@@ -2875,8 +2853,8 @@ rectangle {
 }
 text {
 	object {
-		x=13
-		y=577
+		x=15
+		y=572
 		width=160
 		height=20
 	}
@@ -2887,8 +2865,8 @@ text {
 }
 "text update" {
 	object {
-		x=191
-		y=578
+		x=193
+		y=571
 		width=150
 		height=20
 	}
@@ -2903,8 +2881,8 @@ text {
 }
 "text update" {
 	object {
-		x=343
-		y=578
+		x=345
+		y=571
 		width=150
 		height=20
 	}
@@ -2919,8 +2897,8 @@ text {
 }
 "text update" {
 	object {
-		x=495
-		y=578
+		x=497
+		y=571
 		width=100
 		height=20
 	}
@@ -2935,8 +2913,8 @@ text {
 }
 "related display" {
 	object {
-		x=599
-		y=576
+		x=601
+		y=571
 		width=20
 		height=20
 	}
@@ -2950,8 +2928,8 @@ text {
 }
 "related display" {
 	object {
-		x=624
-		y=576
+		x=626
+		y=571
 		width=75
 		height=20
 	}
@@ -2966,8 +2944,8 @@ text {
 }
 "text update" {
 	object {
-		x=705
-		y=578
+		x=707
+		y=571
 		width=150
 		height=20
 	}
