@@ -6,11 +6,11 @@
 #include "febxml.h"
 #include "dpmxml.h"
 #include "hybxml.h"
-#include "socket.h"
 #include "commonConstants.h"
 #include "commonXml.h"
 #include "status.h"
 #include "commonDoc.h"
+#include "commonSocket.h"
 
 //int client_util_debug = 2;
 char *xml_string = NULL;
@@ -148,18 +148,17 @@ void getXmlDoc(int sockfd, int read_status, int read_config) {
 
     }
 
-    if(DEBUG>2) printf("[ getXmlDoc ]: Before reading xml string (%p)\n",xml_string);
+    if(DEBUG>2) printf("[ getXmlDoc ]: poll xml string (%p)\n",xml_string);
 
     pollXmlString(sockfd);
 
-    if(DEBUG>2) printf("[ getXmlDoc ]: After reading xml string (%p)\n",xml_string);
 
     if(xml_string!=NULL) {
         if(strlen(xml_string)>0) {
-           if(DEBUG>1) printf("[ getXmlDoc ]: create xml document from xml string(strlen %d)\n",strlen(xml_string));
+           if(DEBUG>-1) printf("[ getXmlDoc ]: build  xml document (%d)\n",strlen(xml_string));
             if(DEBUG>1) printf("[ getXmlDoc ]: xml string:\n%s\n",xml_string);
             doc = xmlReadMemory(xml_string,strlen(xml_string),"noname.xml",NULL,0);
-            if(DEBUG>1) printf("[ getXmlDoc ]: xml doc done %p\n",doc);
+            if(DEBUG>-1) printf("[ getXmlDoc ]: xml doc created (%p)\n",doc);
             if(doc!=NULL) {
                 xml_root = xmlDocGetRootElement(doc);
                 if(xml_root!=NULL) {
@@ -168,8 +167,8 @@ void getXmlDoc(int sockfd, int read_status, int read_config) {
                       printf("[ getXmlDoc ]: print xml to file\n");
                    }
                    int bytes_written = xmlSaveFormatFile("svtdaq.xml",doc,1);
-                   if(DEBUG>2) {
-                      printf("[ getXmlDoc ]: printed %d bytes of xml to file\n",bytes_written);
+                   if(DEBUG>-1) {
+                      printf("[ getXmlDoc ]: printed %d bytes of xml to disk\n",bytes_written);
                    }
                 }
             } else {
@@ -181,7 +180,7 @@ void getXmlDoc(int sockfd, int read_status, int read_config) {
             exit(1);
         }
     } else {
-        printf("[ getXmlDoc ]: [ WARNING ]:  xml_string is NULL after reading from socket!\n");	
+        printf("[ getXmlDoc ]: [ WARNING ]:  no xml_string after reading from socket!\n");	
     }
 
     //clear the flag
@@ -216,7 +215,8 @@ int getXmlPollStatus() {
 	 xmlDocExists = 0;	 
 	 if(DEBUG>0) printf("[ getXmlPollStatus ] : xml doc exists.\n");	 
 	 if(DEBUG>0) printf("[ getXmlPollStatus ] : check non-zero nodes.\n");
-	 nonZero = checkNonZeroNodes(doc);
+	 nonZero = checkNonZeroNodes(doc,"/system/status/ControlDpm/FebFpga/FebCore/SoftPowerMonitor/FebTemp0");
+
 	 if(DEBUG>0) printf("[ getXmlPollStatus ] : nonZero = %d\n",nonZero);
          
 	 // compare a xml dump to previous
@@ -259,15 +259,15 @@ int getXmlPollStatus() {
    }
    
    if(cmpDump == 0) {
-     printf("[ getXmlPollStatus ] : check that previous xml poll is not identical -> OK\n");
+     printf("[ getXmlPollStatus ] : previous xml poll is not identical -> OK\n");
    } else {
-     printf("[ getXmlPollStatus ] : [ ERROR ]: check that previous xml poll is not identical -> FAILED\n");
+     printf("[ getXmlPollStatus ] : [ WARNING ]: previous xml poll is not identical -> FAILED\n");
    }
 
    if(cmpNodes == 0) {
-      printf("[ getXmlPollStatus ] : check that specific xml node values are updating -> OK\n");
+      printf("[ getXmlPollStatus ] : specific xml node values are updating -> OK\n");
    } else {
-     printf("[ getXmlPollStatus ] : [ ERROR ] : check that specific xml node values are updating -> FAILED\n");
+     printf("[ getXmlPollStatus ] : [ WARNING ] : specific xml node values are updating -> FAILED\n");
    }
    
    int status;
@@ -282,7 +282,7 @@ int getXmlPollStatus() {
    } 
 
    if(status!=0) 
-     printf("[ getXmlPollStatus ] : [ ERROR ] : XML document NOT OK.\n");
+     printf("[ getXmlPollStatus ] : [ WARNING ] : XML document NOT OK.\n");
    
    return status;
    
@@ -660,211 +660,6 @@ void pollXmlString(int socketfd) {
 
 
 
-/*
-void pollDpmXmlString(int socketfd, char** xml_string_out, int* len_out) {
-   char* buf = NULL;
-   char* buf_loop = NULL;
-   int buf_len;
-   int read_i;
-   int read_n;
-   int nempty;
-   int counter;
-   int n_endings;
-   time_t timer;
-   time_t cur_time;
-   struct tm *lt;
-   int dt;
-   char *pch;
-   
-   
-   if(DEBUG>0) printf("[ pollDpmXmlString ]:  from socket %d \n", socketfd);
-      
-   time(&timer);
-   
-   if(DEBUG>0) {
-     lt = localtime(&timer);
-     printf("[ pollDpmXmlString ]: start_time at %s\n",asctime(lt));
-   }
-   
-   nempty=0;
-   counter=0;
-   read_i=0;
-   buf_len=0;
-   n_endings=0;
-   dt=0;
-   
-   while(dt<3) { 
-      
-      time(&cur_time);
-      dt = difftime(cur_time,timer);
-      
-      if(DEBUG>1) 
-	printf("[ pollDpmXmlString ]: Try to read from socket (nempty %d read_i %d time %ds)\n",nempty,read_i,dt);
-      
-      read_n = 0;
-      ioctl(socketfd, FIONREAD, &read_n);
-      
-      if(DEBUG>0) {
-         printf("[ pollDpmXmlString ]: %d chars available on socket\n",read_n);
-      }
-      
-      if(read_n>0) {      
-         
-         // allocate memory needed
-         if(DEBUG>1) printf("[ pollDpmXmlString ]: Allocate %d array\n",read_n);      
-         
-         // check that the buffer used is not weird
-         if(buf_loop!=NULL) {
-            printf("[ pollDpmXmlString ]: [ ERROR ]: buf_loop is not null!\n");
-            exit(1);
-         }
-         
-         // allocate space to hold the input
-         buf_loop = (char*) calloc(read_n+1,sizeof(char));
-         
-         if(DEBUG>1) printf("[ pollDpmXmlString ]: Allocated buf_loop array at %p strlen %d with %d length \n",buf_loop,strlen(buf_loop),(int)sizeof(char)*(read_n+1));      
-         
-         // Read from socket
-         read_n = read(socketfd,buf_loop,read_n);
-         
-         if(DEBUG>0) printf("[ pollDpmXmlString ]: Read %d chars from socket\n",read_n);
-         
-         if(DEBUG>2) printf("[ pollDpmXmlString ]: buf_loop strlen is %d\n",strlen(buf_loop));
-         
-         if (read_n < 0) {
-            printf("[ pollDpmXmlString ]: [ ERROR ]: read %d from socket\n",read_n);
-            exit(1);
-         }
-         
-         //fix c-string terminations, cases where there is a termination in the middle..
-         int k;
-         for(k=0;k<read_n;++k) {
-            //printf("[ pollDpmXmlString ]: '%c'\n",buf_loop[k]);
-            if(buf_loop[k]=='\0') {
-               if(DEBUG>2) printf("[ pollDpmXmlString ]: fix termination at idx %d in this buf_loop\n",k);
-               buf_loop[k]=' ';
-            }
-         }
-         
-         if(DEBUG>2) printf("[ pollDpmXmlString ]: Fixed buf_loop strlen %d:\n%s\n",strlen(buf_loop),buf_loop);
-         
-         
-         // search for xml endings in this buffer
-         pch = strchr(buf_loop,'\f'); 
-         while(pch!=NULL) { 
-            if(DEBUG>1) printf("[ pollDpmXmlString ]: found ending at %p (array index %d) in this buf!\n",pch,pch-buf_loop); 
-            n_endings++; 
-            pch = strchr(pch+1,'\f'); 
-         } 
-         
-         
-         // copy to other buffer while looping            
-         if(DEBUG>2) printf("[ pollDpmXmlString ]: Copy %d to other buffer (at %p before realloc) \n",read_n,buf);      
-         
-         // reallocate more memory
-         buf = (char*) realloc(buf,sizeof(char)*(buf_len+read_n));
-         if(buf==NULL) {
-            printf("[ pollDpmXmlString ]: [ ERROR ]: failed to allocated buf\n");
-            if(buf_loop==NULL) {
-               free(buf_loop);
-            }
-            exit(1);
-         }
-         
-         if(DEBUG>2) printf("[ pollDpmXmlString ]: Allocated longer buf at %p and copy to pointer %p (offset= %d) \n",buf,buf+buf_len,buf_len);      
-         
-         
-         // do the copy
-         memcpy(buf+buf_len,buf_loop,sizeof(char)*read_n);
-         
-         if(DEBUG>1) printf("[ pollDpmXmlString ]: memcpy done\n");
-         
-         //update the buffer length counter
-         buf_len += read_n;      
-         
-         if(DEBUG>1) printf("[ pollDpmXmlString ]: free buf_loop\n");
-         
-         // free loop buffer for next loop
-         if(buf_loop!=NULL) {
-            free(buf_loop);
-            buf_loop=NULL;
-         }
-         
-         if(DEBUG>2) printf("[ pollDpmXmlString ]: end of read_i %d with buf strlen %d\n",read_i,strlen(buf));
-         
-         read_i++;
-         
-      } // read_n>0
-      else {
-         if(DEBUG>0) printf("[ pollDpmXmlString ]: Nothing to read from socket. Sleep a little..\n");      
-         usleep(0.05);
-         nempty++;
-      } 
-      
-      
-      
-      if(n_endings>1) {
-         if(DEBUG>0) printf("[ pollDpmXmlString ]: \nfound %d endings at read_i %d with at len %d and strlen %d. Stop reading from buffer\n",n_endings,read_i,buf_len,strlen(buf));      
-         break;
-      }
-      
-      
-      counter++;
-      
-      
-   } //time out
-   
-   
-   
-   //if(DEBUG>0) {
-   printf("[ pollDpmXmlString ]: Done reading from socket. Found %d endings and a buf_len of %d (dt=%d)\n",n_endings, buf_len, dt);
-   if(DEBUG>0)
-     if(buf!=NULL) printf("[ pollDpmXmlString ]: strlen %d\n", strlen(buf));
-   
-   
-   
-   if(n_endings>=1) {
-      if(DEBUG>0) printf("[ pollDpmXmlString ]: \nPick out config and status string between <system> and %d endings in string with strlen %d and buf_len %d\n",n_endings,strlen(buf),buf_len);
-      if(DEBUG>1) printf("[ pollDpmXmlString ]: \nbuf: \n%s\n",buf);
-      
-      //search for the <status> tag in each <system>->'\f' substring
-      
-      char* start = NULL;
-      char* tmp_str = NULL;
-      int len = findSystemStr(buf, buf_len,&start);    
-      if(len>0) {      
-         char* stop = start+len;
-         if(DEBUG>1) printf("[ pollDpmXmlString ]: len %d start at %p stop at %p\n",len,start, stop);
-         if(DEBUG>1) printf("[ pollDpmXmlString ]: calloc xml string len %d\n",len+1);
-         tmp_str = (char*) calloc(len+1,sizeof(char));
-         if(DEBUG>1) printf("[ pollDpmXmlString ]: copy to xml string at %p\n",tmp_str);	
-         memcpy(tmp_str,start,len);
-         // terminate
-         tmp_str[len] = '\0'; 
-         if(DEBUG>1) printf("[ pollDpmXmlString ]: \ncopied %d chars to %p with strlen %d\n%s\n",len+1,tmp_str,strlen(tmp_str),tmp_str);
-         // fix output pars
-         *xml_string_out = tmp_str;
-         *len_out = len+1;
-         if(DEBUG>1) printf("[ pollDpmXmlString ]: output pars are at %p and len %d\n",*xml_string_out,*len_out);
-         
-         
-      } else {
-         if(DEBUG>0) printf("[ pollDpmXmlString ]: Couldn't find system and/or status string in xml buffer\n");
-      }
-   }
-   
-   if(xml_string_out==NULL) {
-      if(DEBUG>0) printf("[ pollDpmXmlString ]: No valid xml string extracted from this poll (%d endings)\n",n_endings);
-   }
-   
-   return;
-   
-}
-
-*/
-
-
-
 
 
 void retrieveValue(xmlDoc* doc, xmlNode* node, char* tags, char value[], const unsigned int MAX) {
@@ -968,21 +763,6 @@ double getFebT(int feb_id, char* ch_name) {
    return t;
 }
 
-double getHybridT(int index, int hyb, const char* type) {
-   double val = 0.0;
-   if(getXmlDocStatus()==0) {
-      if(strcmp(type,"temp0")==0) 
-         val = getHybTValue(doc, "ZTemp0", index, hyb);
-      else if(strcmp(type,"temp1")==0) 
-         val = getHybTValue(doc, "ZTemp1", index, hyb);
-      else {
-         printf("[ getHybridT ]: [ ERROR ]: the typee %s is invalid\n",type);
-      }     
-   } else {
-      if(DEBUG>1) printf("[ getHybridT ]: [ WARNING ]: the xml doc status is invalid\n");
-   }
-   return val; 
-}
 
 double getHybridI(int index, int hyb, const char* type) {
    double val = 0.0;
@@ -1019,34 +799,7 @@ double getHybridSwitch(int index, int hyb) {
    return val; 
 }
 
-void getHybridSync(int index, int datapath, char* action, char* syncStr) {
-  if(DEBUG>1)
-    printf("[ getHybridSync ]: get sync for feb %d datapath %d \n", index, datapath);  
-  if(getXmlDocStatus()==0) {      
-    if(DEBUG>1)
-      printf("[ getHybridSync ]: xml ok\n");
-    getHybSync(doc, index, datapath, action, syncStr);
-    if(DEBUG>1)
-      printf("[ getHybridSync ]: got val %s\n", syncStr);
-  } else {
-    if(DEBUG>1) printf("[ getHybridSync ]: [ WARNING ]: the dpm xml doc status is invalid\n");    
-    strcpy(syncStr, "no xml");
-  }
-}
 
-
-void getSync(char* pname, char* value) {
-  if(getXmlDocStatus()==0) {      
-    if(DEBUG>1)
-      printf("[ getSync ]: xml ok\n");
-    getSyncProcess(pname, doc, value);
-    if(DEBUG>1)
-      printf("[ getSync ]: got val %s\n", value);
-  } else {
-    if(DEBUG>1) printf("[ getSync ]: [ WARNING ]: the xml doc status is invalid\n");    
-    strcpy(value, "no xml");
-  }
-}
 
 
 int getDpmFromFebValue(int index, int hybrid) {

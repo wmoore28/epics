@@ -1,0 +1,15 @@
+
+
+record(sub,SVT:daq:dtm:$(DTM):trigcount_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDtmTrigCountInit")
+    field(SNAM,"subDtmTrigCountProcess")
+}
+
+record(longin, SVT:daq:dtm:$(DTM):trigcount) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dtm:$(DTM):trigcount_sub PP")
+  field(DTYP,"Soft Channel")
+}
+

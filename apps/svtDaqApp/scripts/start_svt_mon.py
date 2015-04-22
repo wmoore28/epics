@@ -30,7 +30,7 @@ for l in open(procServConf,"r").readlines():
 print "SVT DAQ IOC's: ", iocNames 
 
 
-for dpm in range (0, 17):
+for dpm in range (0, 18):
 
     ix = dpm % 3
     iy = math.floor(dpm/3)
@@ -50,6 +50,9 @@ for dpm in range (0, 17):
     if dpm==16:
         name = "dtm1"
         iocName = "iocsvtDaqDtm1"
+    if dpm==17:
+        name = "controldpmW"
+        iocName = "iocsvtDaqCntrlWDpm"
 
     go = True    
     if len(args)>0 and name not in args:

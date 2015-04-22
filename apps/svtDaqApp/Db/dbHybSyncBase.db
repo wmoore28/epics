@@ -1,31 +1,3420 @@
 
-record(aSub,SVT:daq:$(FEB):$(HYB):$(APV):syncbase_rd_asub)
+record(aSub,SVT:daq:0:0:0:syncbase_rd_asub)
 {
     field(SCAN,"1 second")
     field(INAM,"subSyncBaseInit")
     field(SNAM,"subSyncBaseProcess")
-    field(OUTA,"SVT:daq:$(FEB):$(HYB):$(APV):syncbase_rd PP")
-    field(FTVA,"STRING")
+    field(OUTA,"SVT:daq:0:0:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:0:1:syncbase_rd_asub")
 }
 
-record(stringin, SVT:daq:$(FEB):$(HYB):$(APV):syncbase_rd) {
+record(longin, SVT:daq:0:0:0:syncbase_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
 
 
-record(aSub,SVT:daq:$(FEB):$(HYB):$(APV):syncpeak_rd_asub)
+
+
+
+record(aSub,SVT:daq:0:0:1:syncbase_rd_asub)
 {
-    field(SCAN,"1 second")
+    field(SCAN,"Passive")
     field(INAM,"subSyncBaseInit")
     field(SNAM,"subSyncBaseProcess")
-    field(OUTA,"SVT:daq:$(FEB):$(HYB):$(APV):syncpeak_rd PP")
-    field(FTVA,"STRING")
+    field(OUTA,"SVT:daq:0:0:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:0:2:syncbase_rd_asub")
 }
 
-record(stringin, SVT:daq:$(FEB):$(HYB):$(APV):syncpeak_rd) {
+record(longin, SVT:daq:0:0:1:syncbase_rd) {
   field(SCAN, "Passive")
   field(DTYP,"Soft Channel")
 }
+
+
+
+
+
+record(aSub,SVT:daq:0:0:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:0:0:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:0:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:0:0:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:0:0:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:0:0:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:0:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:0:0:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:0:0:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:0:0:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:1:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:0:0:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:0:1:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:0:1:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:1:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:0:1:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:0:1:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:0:1:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:1:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:0:1:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:0:1:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:0:1:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:1:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:0:1:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:0:1:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:0:1:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:1:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:0:1:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:0:1:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:0:1:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:2:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:0:1:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:0:2:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:0:2:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:2:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:0:2:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:0:2:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:0:2:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:2:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:0:2:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:0:2:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:0:2:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:2:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:0:2:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:0:2:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:0:2:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:2:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:0:2:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:0:2:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:0:2:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:3:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:0:2:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:0:3:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:0:3:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:3:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:0:3:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:0:3:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:0:3:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:3:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:0:3:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:0:3:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:0:3:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:3:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:0:3:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:0:3:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:0:3:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:0:3:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:0:3:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:0:3:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:0:3:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:0:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:0:3:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:0:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:0:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:0:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:0:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:0:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:0:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:0:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:0:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:0:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:0:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:0:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:0:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:0:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:0:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:0:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:0:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:0:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:0:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:1:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:0:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:1:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:1:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:1:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:1:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:1:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:1:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:1:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:1:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:1:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:1:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:1:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:1:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:1:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:1:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:1:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:1:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:1:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:1:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:2:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:1:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:2:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:2:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:2:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:2:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:2:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:2:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:2:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:2:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:2:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:2:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:2:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:2:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:2:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:2:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:2:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:2:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:2:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:2:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:3:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:2:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:3:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:3:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:3:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:3:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:3:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:3:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:3:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:3:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:3:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:3:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:3:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:3:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:3:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:3:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:1:3:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:3:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:1:3:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:1:3:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:2:0:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:1:3:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:2:0:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:2:0:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:2:0:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:2:0:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:2:0:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:2:0:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:2:0:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:2:0:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:2:0:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:2:0:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:2:0:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:2:0:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:2:0:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:2:0:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:2:0:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:2:0:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:2:0:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:2:0:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:2:1:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:2:0:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:2:1:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:2:1:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:2:1:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:2:1:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:2:1:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:2:1:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:2:1:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:2:1:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:2:1:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:2:1:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:2:1:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:2:1:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:2:1:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:2:1:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:2:1:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:2:1:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:2:1:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:2:1:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:0:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:2:1:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:0:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:0:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:0:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:0:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:0:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:0:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:0:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:0:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:0:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:0:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:0:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:0:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:0:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:0:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:0:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:0:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:0:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:0:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:1:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:0:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:1:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:1:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:1:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:1:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:1:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:1:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:1:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:1:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:1:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:1:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:1:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:1:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:1:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:1:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:1:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:1:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:1:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:1:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:2:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:1:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:2:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:2:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:2:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:2:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:2:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:2:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:2:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:2:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:2:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:2:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:2:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:2:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:2:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:2:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:2:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:2:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:2:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:2:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:3:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:2:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:3:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:3:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:3:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:3:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:3:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:3:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:3:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:3:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:3:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:3:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:3:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:3:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:3:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:3:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:3:3:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:3:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:3:3:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:3:3:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:0:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:3:3:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:0:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:0:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:0:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:0:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:0:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:0:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:0:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:0:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:0:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:0:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:0:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:0:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:0:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:0:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:0:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:0:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:0:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:0:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:1:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:0:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:1:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:1:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:1:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:1:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:1:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:1:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:1:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:1:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:1:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:1:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:1:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:1:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:1:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:1:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:1:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:1:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:1:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:1:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:2:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:1:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:2:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:2:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:2:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:2:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:2:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:2:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:2:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:2:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:2:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:2:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:2:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:2:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:2:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:2:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:2:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:2:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:2:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:2:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:3:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:2:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:3:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:3:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:3:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:3:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:3:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:3:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:3:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:3:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:3:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:3:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:3:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:3:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:3:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:3:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:4:3:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:3:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:4:3:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:4:3:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:0:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:4:3:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:0:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:0:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:0:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:0:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:0:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:0:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:0:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:0:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:0:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:0:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:0:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:0:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:0:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:0:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:0:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:0:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:0:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:0:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:1:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:0:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:1:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:1:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:1:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:1:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:1:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:1:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:1:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:1:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:1:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:1:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:1:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:1:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:1:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:1:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:1:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:1:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:1:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:1:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:2:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:1:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:2:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:2:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:2:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:2:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:2:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:2:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:2:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:2:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:2:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:2:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:2:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:2:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:2:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:2:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:2:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:2:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:2:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:2:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:3:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:2:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:3:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:3:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:3:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:3:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:3:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:3:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:3:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:3:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:3:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:3:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:3:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:3:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:3:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:3:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:5:3:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:3:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:5:3:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:5:3:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:0:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:5:3:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:0:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:0:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:0:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:0:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:0:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:0:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:0:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:0:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:0:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:0:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:0:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:0:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:0:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:0:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:0:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:0:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:0:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:0:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:1:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:0:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:1:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:1:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:1:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:1:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:1:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:1:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:1:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:1:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:1:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:1:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:1:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:1:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:1:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:1:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:1:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:1:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:1:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:1:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:2:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:1:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:2:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:2:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:2:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:2:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:2:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:2:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:2:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:2:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:2:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:2:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:2:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:2:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:2:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:2:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:2:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:2:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:2:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:2:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:3:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:2:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:3:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:3:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:3:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:3:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:3:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:3:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:3:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:3:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:3:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:3:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:3:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:3:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:3:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:3:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:6:3:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:3:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:6:3:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:6:3:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:0:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:6:3:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:0:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:0:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:0:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:0:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:0:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:0:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:0:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:0:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:0:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:0:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:0:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:0:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:0:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:0:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:0:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:0:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:0:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:0:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:1:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:0:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:1:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:1:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:1:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:1:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:1:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:1:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:1:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:1:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:1:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:1:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:1:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:1:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:1:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:1:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:1:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:1:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:1:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:1:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:2:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:1:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:2:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:2:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:2:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:2:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:2:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:2:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:2:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:2:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:2:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:2:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:2:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:2:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:2:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:2:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:2:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:2:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:2:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:2:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:3:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:2:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:3:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:3:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:3:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:3:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:3:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:3:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:3:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:3:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:3:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:3:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:3:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:3:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:3:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:3:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:7:3:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:3:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:7:3:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:7:3:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:0:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:7:3:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:0:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:0:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:0:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:0:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:0:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:0:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:0:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:0:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:0:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:0:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:0:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:0:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:0:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:0:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:0:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:0:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:0:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:0:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:1:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:0:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:1:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:1:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:1:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:1:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:1:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:1:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:1:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:1:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:1:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:1:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:1:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:1:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:1:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:1:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:1:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:1:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:1:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:1:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:2:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:1:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:2:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:2:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:2:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:2:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:2:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:2:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:2:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:2:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:2:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:2:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:2:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:2:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:2:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:2:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:2:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:2:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:2:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:2:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:3:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:2:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:3:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:3:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:3:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:3:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:3:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:3:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:3:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:3:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:3:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:3:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:3:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:3:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:3:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:3:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:8:3:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:3:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:8:3:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:8:3:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:9:0:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:8:3:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:9:0:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:9:0:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:9:0:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:9:0:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:9:0:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:9:0:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:9:0:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:9:0:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:9:0:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:9:0:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:9:0:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:9:0:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:9:0:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:9:0:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:9:0:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:9:0:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:9:0:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:9:0:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:9:1:0:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:9:0:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:9:1:0:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:9:1:0:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:9:1:1:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:9:1:0:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:9:1:1:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:9:1:1:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:9:1:2:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:9:1:1:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:9:1:2:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:9:1:2:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:9:1:3:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:9:1:2:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:9:1:3:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:9:1:3:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"SVT:daq:9:1:4:syncbase_rd_asub")
+}
+
+record(longin, SVT:daq:9:1:3:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+
+
+record(aSub,SVT:daq:9:1:4:syncbase_rd_asub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:9:1:4:syncbase_rd PP")
+    field(FTVA,"LONG")
+    field(FLNK,"")
+}
+
+record(longin, SVT:daq:9:1:4:syncbase_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}
+
+
 
 

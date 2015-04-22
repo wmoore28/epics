@@ -46,9 +46,18 @@ dbLoadRecords "db/dbHVSwitch.db"
 dbLoadRecords "db/dbHVset.db"
 
 ## Load devIocStats
-dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC}")
+dbLoadRecords("${DEVIOCSTATS}/db/iocAdminSoft.db", "IOC=${IOC}")
+dbLoadRecords("${AUTOSAVE}/asApp/Db/save_restoreStatus.db", "P=${IOC}:")
 
 cd ${TOP}/iocBoot/${IOC}
+
+## autosave setup
+< save_restore.cmd
+
 iocInit
 
-
+## Handle autosave 'commands' contained in loaded databases
+makeAutosaveFiles()
+create_monitor_set("info_positions.req", 5, "P=${IOC}:")
+create_monitor_set("info_settings.req", 30, "P=${IOC}:")
+create_monitor_set("hvCaen_alarms.req", 30)

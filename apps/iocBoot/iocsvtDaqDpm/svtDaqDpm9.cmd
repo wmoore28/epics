@@ -18,7 +18,15 @@ dbLoadRecords("db/iocAdminSoft.db", "IOC=iocsvtDaqDpm9")
 
 ## Load record instances
 #dbLoadRecords("db/xxx.db","user=trackerHost")
+dbLoadRecords("db/dbDataDpmStatus.db","DPM=9")
+dbLoadRecords("db/dbDataDpmEventState.db","DPM=9")
+dbLoadRecords("db/dbDataDpmBlockCount.db","DPM=9")
+dbLoadRecords("db/dbDataDpmSystemState.db","DPM=9")
+dbLoadRecords("db/dbDataDpmBurnCount.db","DPM=9")
+dbLoadRecords("db/dbDataDpmInsertedFrames.db","DPM=9")
+dbLoadRecords("db/dbDataDpmEBEventErrorCount.db","DPM=9")
 dbLoadRecords("db/dbDataDpmEventCount.db","DPM=9")
+dbLoadRecords("db/dbDataDpmTrigCount.db","DPM=9")
 dbLoadRecords("db/dbDataDpm.db","DPM=9")
 dbLoadRecords("db/dbDataDpmLink.db","DPM=9,DP=0")
 dbLoadRecords("db/dbDataDpmLink.db","DPM=9,DP=1")
@@ -33,8 +41,7 @@ dbLoadRecords("db/dbDataDpmFebNum.db","DPM=9,DP=1")
 dbLoadRecords("db/dbDataDpmFebNum.db","DPM=9,DP=2")
 dbLoadRecords("db/dbDataDpmFebNum.db","DPM=9,DP=3")
 
-var mySubDebug 1
-
+var mySubDebug 0
 #traceIocInit
 
 cd ${TOP}/iocBoot/${IOC}
