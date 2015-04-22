@@ -1,0 +1,19 @@
+
+
+record(aSub,SVT:daq:dpm:$(DPM):systemstate_sub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subDpmSystemStateInit")
+    field(SNAM,"subDpmSystemStateProcess")
+    field(OUTA,"SVT:daq:dpm:$(DPM):systemstate PP")
+    field(FTVA,"STRING")
+
+}
+
+record(stringin, SVT:daq:dpm:$(DPM):systemstate) {
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+
+

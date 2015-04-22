@@ -45,44 +45,6 @@ int compareXmlDump(xmlDoc* doc_cur,xmlDoc* doc_prev) {
 }
 
 
-int checkNonZeroNodes(xmlDoc* document) {
-   xmlXPathObjectPtr result;
-   xmlNodeSetPtr nodeset;
-   xmlNodePtr node;
-   xmlNodePtr children;
-   int i;
-   int nnonzero;
-   int n;
-   nnonzero=0;
-   result = getFebTemps(document, "FebTemp0");
-   if(result!=NULL) {
-      nodeset = result->nodesetval;
-      if(DEBUG>1) printf("[ checkNonZeroNodes ] : found %d results \n", nodeset->nodeNr);
-      for(i=0;i<nodeset->nodeNr;++i) {
-         node = nodeset->nodeTab[i];
-         if(node!=NULL) {
-            children = node->xmlChildrenNode;
-            n++;
-            if(children==NULL) {
-               if(DEBUG>1) printf("[ checkNonZeroNodes ] : no children found for node %s.\n", node->name);
-            } else {
-               if(DEBUG>1) printf("[ checkNonZeroNodes ] : found children for node %s.\n", node->name);               
-               nnonzero++;
-            }
-         } else {
-            printf("[ checkNonZeroNodes ] : [ ERROR ] :  couldn't find node!\n");
-         }
-      }
-   } else {
-      if(DEBUG>1) printf("[ checkNonZeroNodes ] : no results found.\n");
-   }
-   if(DEBUG>1) printf("[ checkNonZeroNodes ] : %d/%d elements had no children\n", nnonzero,n);
-
-   // if a single element is not empty report a '1'
-   if(nnonzero>0) return 0;
-   else return 1;
-}
-
 
 
 

@@ -1,0 +1,17 @@
+
+
+record(sub,SVT:daq:dtm:$(DTM):mintrigperiod_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDtmMinTrigPeriodInit")
+    field(SNAM,"subDtmMinTrigPeriodProcess")
+}
+
+record(longin, SVT:daq:dtm:$(DTM):mintrigperiod) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dtm:$(DTM):mintrigperiod_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+
+

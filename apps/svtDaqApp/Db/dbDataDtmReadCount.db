@@ -1,0 +1,15 @@
+
+
+record(sub,SVT:daq:dtm:$(DTM):readcount_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDtmReadCountInit")
+    field(SNAM,"subDtmReadCountProcess")
+}
+
+record(longin, SVT:daq:dtm:$(DTM):readcount) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dtm:$(DTM):readcount_sub PP")
+  field(DTYP,"Soft Channel")
+}
+

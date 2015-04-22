@@ -31,7 +31,6 @@ int getDpmXmlDocStatus(int dpm);
 
 double getFebT(int feb_id, char* ch_name);
 void getFebDeviceDna(int feb_id, char* dna);
-double getHybridT(int index, int hyb, const char* type);
 double getHybridI(int index, int hyb, const char* type);
 double getHybridV(int feb_id, int hyb_id,char ch_name[], char ch_pos[]);
 double getHybridSwitch(int index, int hyb);
@@ -39,11 +38,10 @@ void writeHybridVSwitch(int sockid, int value, int feb_id, int hyb_id);
 double getHybridTrim(int index, int hyb, char* type);
 void writeHybridVTrim(int sockid, int value, int feb_id, int hyb_id, char *ch_name);
 //double getHybridSync(int index, int hyb, int dpm);
-void getHybridSync(int index, int datapath, char* action, char* syncStr);
+//void getHybridSync(int index, int datapath, char* action, char* syncStr);
 int getDpm(int index, int hyb);
 double getDatapath(int index, int hyb, int dpm);
 int getDpmFromFebValue(int index, int hybrid);
 int getDataDpmId(int i);
-void getSync(char* pname, char* value);
 
 #endif

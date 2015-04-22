@@ -4,7 +4,7 @@
 	hps tar todo
 
 ## HPS - build epics apps and tools
-hps: all tools svtdaqlib		# Build all EPICS Apps and Tools
+hps: all tools		# Build all EPICS Apps and Tools
 
 ## EPICS Only (apps/)
 all: test-env

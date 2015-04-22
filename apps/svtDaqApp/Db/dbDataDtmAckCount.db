@@ -1,0 +1,17 @@
+
+
+record(sub,SVT:daq:dtm:$(DTM):$(DPM):ackcount_sub)
+{
+    field(SCAN,"Passive")
+    field(INAM,"subDtmAckCountInit")
+    field(SNAM,"subDtmAckCountProcess")
+}
+
+record(longin, SVT:daq:dtm:$(DTM):$(DPM):ackcount) {
+  field(SCAN, "1 second") 
+  field(INP, "SVT:daq:dtm:$(DTM):$(DPM):ackcount_sub PP")
+  field(DTYP,"Soft Channel")
+}
+
+
+

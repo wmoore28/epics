@@ -18,7 +18,15 @@ dbLoadRecords("db/iocAdminSoft.db", "IOC=iocsvtDaqDpm7")
 
 ## Load record instances
 #dbLoadRecords("db/xxx.db","user=trackerHost")
+dbLoadRecords("db/dbDataDpmStatus.db","DPM=7")
+dbLoadRecords("db/dbDataDpmEventState.db","DPM=7")
+dbLoadRecords("db/dbDataDpmBlockCount.db","DPM=7")
+dbLoadRecords("db/dbDataDpmSystemState.db","DPM=7")
+dbLoadRecords("db/dbDataDpmBurnCount.db","DPM=7")
+dbLoadRecords("db/dbDataDpmInsertedFrames.db","DPM=7")
+dbLoadRecords("db/dbDataDpmEBEventErrorCount.db","DPM=7")
 dbLoadRecords("db/dbDataDpmEventCount.db","DPM=7")
+dbLoadRecords("db/dbDataDpmTrigCount.db","DPM=7")
 dbLoadRecords("db/dbDataDpm.db","DPM=7")
 dbLoadRecords("db/dbDataDpmLink.db","DPM=7,DP=0")
 dbLoadRecords("db/dbDataDpmLink.db","DPM=7,DP=1")
@@ -32,9 +40,11 @@ dbLoadRecords("db/dbDataDpmFebNum.db","DPM=7,DP=0")
 dbLoadRecords("db/dbDataDpmFebNum.db","DPM=7,DP=1")
 dbLoadRecords("db/dbDataDpmFebNum.db","DPM=7,DP=2")
 dbLoadRecords("db/dbDataDpmFebNum.db","DPM=7,DP=3")
+dbLoadRecords "db/dbHybSync.db"
+dbLoadRecords("db/dbHybSyncBase.db")
+dbLoadRecords("db/dbHybSyncPeak.db")
 
-var mySubDebug 1
-
+var mySubDebug 0
 #traceIocInit
 
 cd ${TOP}/iocBoot/${IOC}

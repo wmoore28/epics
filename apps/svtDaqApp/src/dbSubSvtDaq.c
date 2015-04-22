@@ -13,12 +13,11 @@
 #include "commonXml.h"
 #include "daqmap.h"
 #include "client_util.h"
-#include "socket.h"
+#include "commonSocket.h"
 
 int mySubDebug = 0;
 const int DO_DATA_DPM = 0;
 int process_order = 0;
-const int BUF_SIZE = 256;
 char* hostNameControlDpm = "dpm7"; //192.168.1.17";
 static int hybToFeb[N_HALVES][N_HYBRIDS];
 static int hybToFebCh[N_HALVES][N_HYBRIDS];
@@ -111,21 +110,7 @@ static void getPhysLayer(char* dna, char* layer) {
 }
 
 
-static long subSyncInit(aSubRecord *precord) {
-  process_order++;
-  if (mySubDebug) {
-    printf("[ subSyncInit ]: %d Record %s called subSyncInit(%p)\n", process_order, precord->name, (void*) precord);
-  }
-  return 0;
-}
 
-static long subSyncBaseInit(aSubRecord *precord) {
-  process_order++;
-  if (mySubDebug) {
-    printf("[ subSyncBaseInit ]: %d Record %s called subSyncBaseInit(%p)\n", process_order, precord->name, (void*) precord);
-  }
-  return 0;
-}
 
 static long subDnaInit(aSubRecord *precord) {
   process_order++;
@@ -652,111 +637,6 @@ static long subPollStatInit(subRecord *precord) {
 
 
 
-/*
-
- static void writeHybrid(subRecord* precord,char action[], int id, int feb_id, char ch_name[])
-{
-  if(mySubDebug) printf("[ writeHybrid ]: Record %s called writeHybrid %s with val %f for feb_id= %d  id=%d ch_name=%s\n", precord->name,action,precord->val,feb_id,id,ch_name);
-  
-  time_t cur_time;
-  time_t timer;
-  time(&timer);
-  int dt;
-  // get a valid socket
-  dt = 0;
-  if(sockfd>0) {
-    if (mySubDebug) printf("[ writeHybrid ]: socket %d is already open, wait for it to close\n", sockfd);    
-    while(sockfd>0 && dt<6) {
-      time(&cur_time);
-      dt = difftime(cur_time, timer);
-      if (mySubDebug) printf("[ writeHybrid ]: socket %d is still open after %ds, sleep 1s\n", sockfd, dt);    
-      sleep(1);
-    }    
-  }
-  
-  if(sockfd>0) {    
-    printf("[ writeHybrid ]: [ WARNING ]: socket %d was still open after %ds, don't write anything\n", sockfd, dt); 
-    return;
-  } 
-  else {    
-     if (mySubDebug) printf("[ writeHybrid ]: Opening socket\n");    
-     sockfd = setupSocket(precord);
-     if (mySubDebug) printf("[ writeHybrid ]: Opened socket : %d\n",sockfd);            
-  }
-  
-  if(sockfd<=0) {
-     printf("[ writeHybrid ]: [ ERROR ]: Failed to open socket in writeHybrid (host %s:%d) \n",hostName,sockfd);        
-     return;
-  }
-  
-  if(strcmp(action,"v_set_sub")==0) {    
-     if(precord->val<255 && precord->val>0) {
-        
-        if (mySubDebug) printf("[ writeHybrid ]: write %s trim %d to feb %d hyb %d\n",ch_name,(int)precord->val, feb_id, id);
-        
-        writeHybridVTrim(sockfd,(int)precord->val, feb_id, id, ch_name);    
-        
-      //if (mySubDebug) printf("[ writeHybrid ]: Poll xml string after write\n");
-      
-      //getXmlDoc(sockfd,0,0);
-      
-      //if (mySubDebug) printf("[ writeHybrid ]:  Poll XML done after write.\n");
-      
-    } else {
-       printf("[ writeHybrid ]: [ ERROR]: voltage trim %f is not allowed!\n",precord->val);
-       exit(1);
-    }
-    
-  } 
-  else if(strcmp(action,"switch_sub")==0) {    
-
-    if(strcmp(ch_name,"all")==0) {
-      
-      int val = (int)precord->val;
-      if(val==0 || val==1) {
-
-         if (mySubDebug) printf("[ writeHybrid ]: write %d switch to feb %d hyb %d\n",(int)precord->val, feb_id, id);
-         
-         writeHybridVSwitch(sockfd, val, feb_id, id);    
-         
-         //if (mySubDebug) printf("[ writeHybrid ]: Poll xml string after write\n");
-
-         //getXmlDoc(sockfd,0,0);
-
-         //if (mySubDebug) printf("[ writeHybrid ]: Poll XML done after write.\n");
-	
-      } else {
-	printf("[ writeHybrid ]: [ ERROR ]: voltage switch %d is not allowed!\n",val);
-	exit(1);
-      }
-
-    } else {
-      printf("[ writeHybrid ]: [ ERROR ]: this ch_name %s for action %s is not defined yet\n",ch_name,action);
-    }    
-  }
-  else {
-    printf("[ writeHybrid ]: [ ERROR ]: this action \"%s\" for writeHybrid is not defined!\n",action);
-    exit(1);
-  }
-  
-  if (mySubDebug) {
-    printf("[ writeHybrid ]: Closing socket\n");
-  }
-  
-  sockfd = close_socket(sockfd);
-  
-  if (mySubDebug) {
-    printf("[ writeHybrid ]:  after closing socket is %d\n",sockfd);
-  }
-
-}
-
-
-*/
-
-
-
-
 
 
   static void readHybrid(subRecord* precord,char action[], int id, int feb_id, char ch_name[])
@@ -778,10 +658,6 @@ static long subPollStatInit(subRecord *precord) {
 
   if(strcmp(action,"i_rd_sub")==0) {
      val = getHybridI(feb_id, id, ch_name);
-     precord->val = val*constant;
-  } 
-  else if(strcmp(action,"t_rd_sub")==0) {
-     val = getHybridT(feb_id, id, ch_name);
      precord->val = val*constant;
   } 
   else if(strcmp(action,"vn_sub")==0) {
@@ -869,15 +745,15 @@ static long subDnaProcess(aSubRecord *precord) {
   char str1[BUF_SIZE];
   char str2[BUF_SIZE];
   char action[BUF_SIZE];
-  char dna[40];
+  char dna[BUF_SIZE];
   precord->val = -1.0;  
   strcpy(precord->vala,"default");
   if (mySubDebug>2) printf("[ subDnaProcess ]: done memcpy\n");
-  getStringFromEpicsName(precord->name,str1,1);
-  getStringFromEpicsName(precord->name,str2,2);
+  getStringFromEpicsName(precord->name,str1,1,BUF_SIZE);
+  getStringFromEpicsName(precord->name,str2,2,BUF_SIZE);
   if(strcmp(str1,"daq")==0 && strcmp(str2,"map")==0) {    
     feb = getIntFromEpicsName(precord->name,3);      
-    getStringFromEpicsName(precord->name,action,4);    
+    getStringFromEpicsName(precord->name,action,4,BUF_SIZE);    
     if(strcmp(action,"dna_asub")==0) {           
       getFebDeviceDna(feb,dna);
       strcpy(febDna[feb],dna);      
@@ -897,54 +773,7 @@ static long subDnaProcess(aSubRecord *precord) {
 
 
 
-static long subSyncProcess(aSubRecord *precord) {
-  process_order++;
-  if (mySubDebug) {
-    printf("[ subSyncProcess ]: %d Record %s called subSyncProcess(%p)\n",process_order, precord->name, (void*) precord);
-  }
-  
-  int feb;
-  int datapath;
-  char str1[BUF_SIZE];
-  char str2[BUF_SIZE];
-  char action[BUF_SIZE];
-  char sync[40];
-  precord->val = -1.0;  
-  strcpy(precord->vala,"default");
-  if (mySubDebug>2) printf("[ subSyncProcess ]: done memcpy\n");
-  getStringFromEpicsName(precord->name,str1,1);
-  getStringFromEpicsName(precord->name,str2,4);
-  if(strcmp(str1,"lv")==0 && strcmp(str2,"sync")==0) {    
-    feb = getIntFromEpicsName(precord->name,2);      
-    datapath = getIntFromEpicsName(precord->name,3);      
-    getStringFromEpicsName(precord->name,action,5);    
-    getHybridSync(feb, datapath, action, sync);
-    //getHybridSync(feb, datapath, sync);
-    if (mySubDebug) printf("[ subSyncProcess ]: got sync %s.\n",sync);
-    strcpy(precord->vala, sync);  
-    if (mySubDebug>2) printf("[ subSyncProcess ]: done memcpy\n");
-  } else {
-    printf("[ subSyncProcess ]: [ ERROR ]: wrong record name? \"%s\"!\n",precord->name);    
-    exit(1);
-  }
-  return 0;
-}
 
-
-static long subSyncBaseProcess(aSubRecord *precord) {
-  process_order++;
-  if (mySubDebug) {
-    printf("[ subSyncBaseProcess ]: %d Record %s called subSyncBaseProcess(%p)\n",process_order, precord->name, (void*) precord);
-  }
-  
-  char val[256];
-
-  getSync(precord->name, val); 
-
-  strcpy(precord->vala, val);
-
-  return 0;
-}
 
 
 
@@ -959,14 +788,14 @@ static long subLayerProcess(aSubRecord *precord) {
   char str2[BUF_SIZE];
   char action[BUF_SIZE];
   char layer[40];
-  getStringFromEpicsName(precord->name,str1,1);
-  getStringFromEpicsName(precord->name,str2,2);
+  getStringFromEpicsName(precord->name,str1,1,BUF_SIZE);
+  getStringFromEpicsName(precord->name,str2,2,BUF_SIZE);
   precord->val = -1.0;  
   strcpy(precord->vala, "default");
   //memcpy(precord->vala, (const void*) "default", 7);  
   if(strcmp(str1,"daq")==0 && strcmp(str2,"map")==0) {        
     feb = getIntFromEpicsName(precord->name,3);      
-    getStringFromEpicsName(precord->name,action,4);        
+    getStringFromEpicsName(precord->name,action,4,BUF_SIZE);        
     if(strcmp(action,"layer_asub")==0) {           
       if(febDna[feb]!=NULL) {
 	if(mySubDebug) printf("[ subLayerProcess ]: Get physical layer for feb %d and dna %s\n",feb, febDna[feb]);
@@ -1006,11 +835,11 @@ static long subLVProcess(subRecord *precord) {
   char ch_name[BUF_SIZE];
   char action[BUF_SIZE];
   
-  getStringFromEpicsName(precord->name,type,1);
+  getStringFromEpicsName(precord->name,type,1,BUF_SIZE);
   feb_id = getIntFromEpicsName(precord->name,2);    
   feb_ch = getIntFromEpicsName(precord->name,3);    
-  getStringFromEpicsName(precord->name,ch_name,4);
-  getStringFromEpicsName(precord->name,action,5);
+  getStringFromEpicsName(precord->name,ch_name,4,BUF_SIZE);
+  getStringFromEpicsName(precord->name,action,5,BUF_SIZE);
   
   if(feb_id<0) {
      printf("[ subTempProcess ]: [ ERROR ]: getting feb id\n");
@@ -1068,7 +897,7 @@ static long subLVProcess(subRecord *precord) {
      }
      readHybrid(precord,action,feb_ch,feb_id,ch_name);  
      
-  } else if(strcmp(action,"v_set_sub")==0 || strcmp(action,"switch_sub")==0) { 
+  } else if(strcmp(action,"v_set_sub")==0) { 
      
      if(strcmp(ch_name,"dvdd")!=0 && strcmp(ch_name,"avdd")!=0 && strcmp(ch_name,"v125")!=0 && strcmp(ch_name,"all")!=0) {
         printf("[ subLVProcess ]: [ ERROR ]: wrong option for hybrid ch: %s\n",ch_name);
@@ -1108,8 +937,8 @@ static long subTempProcess(subRecord *precord) {
   char ch_name[BUF_SIZE];
   char action[BUF_SIZE];
 
-  getStringFromEpicsName(precord->name,type,1);
-  getStringFromEpicsName(precord->name,board_type,2);
+  getStringFromEpicsName(precord->name,type,1,BUF_SIZE);
+  getStringFromEpicsName(precord->name,board_type,2,BUF_SIZE);
   feb_id = getIntFromEpicsName(precord->name,3);    
 
   if(feb_id<0) {
@@ -1133,9 +962,9 @@ static long subTempProcess(subRecord *precord) {
      // find feb ch
      feb_ch = getIntFromEpicsName(precord->name,4);    
      // find the channel
-     getStringFromEpicsName(precord->name,ch_name,5);
+     getStringFromEpicsName(precord->name,ch_name,5,BUF_SIZE);
      // find out what to do
-     getStringFromEpicsName(precord->name,action,6);
+     getStringFromEpicsName(precord->name,action,6,BUF_SIZE);
      
      // x-checks
      
@@ -1158,9 +987,9 @@ static long subTempProcess(subRecord *precord) {
   } 
   else if(strcmp(board_type,"fe")==0) {  
      // find the channel
-     getStringFromEpicsName(precord->name,ch_name,4);
+     getStringFromEpicsName(precord->name,ch_name,4,BUF_SIZE);
      // find out what to do
-     getStringFromEpicsName(precord->name,action,5);
+     getStringFromEpicsName(precord->name,action,5,BUF_SIZE);
      
      if(strcmp(action,"t_rd_sub")!=0) {
         printf("[ subTempProcess ]: [ ERROR ]: this feb action type is not valid \"%s\"\n",action);
@@ -1213,61 +1042,57 @@ static long subPollProcess(subRecord *precord) {
 
   process_order++;
 
-  if (mySubDebug>0) {
+  if (mySubDebug>-1) {
     printf("[ subPollProcess ]: %d Record %s called subPollProcess(%p)\n",process_order, precord->name, (void*) precord);
   }
- 
   
   socketfd = setupSocket(precord, hostNameControlDpm, 8090);
   
-  if(socketfd<=0) {
-     printf("[ subPollProcess ]: [ WARNING ]: couldn't open a socket.\n");
-     return 0;
-  }
-
-  if (mySubDebug) printf("[ subPollProcess] : Flush socket.\n");
-
-  flushSocket(socketfd);
-
-
-  if (mySubDebug) printf("[ subPollProcess] : Done flushing socket.\n");
-
-  // poll the xml string
-  
-  if (mySubDebug) printf("[ subPollProcess] : Poll xml string\n");
-  
-  getXmlDoc(socketfd,0,0);
-  
-  if (mySubDebug) printf("[ subPollProcess ]: Poll XML done. Close socket\n");
-
   if(socketfd>0) {
-    socketfd = close_socket(socketfd);
+     
+     // poll the xml string
+     
+     if (mySubDebug) printf("[ subPollProcess] : Poll xml string\n");
+     
+     getXmlDoc(socketfd,0,0);
+     
+     if (mySubDebug) printf("[ subPollProcess ]: Poll XML done\n");
+     
+     if(socketfd>0) {
+        if (mySubDebug) printf("[ subPollProcess ]: Close socket.\n");
+        socketfd = close_socket(socketfd);
+     } else {
+        printf("[ subPollProcess ]: [ ERROR ]: the socket should be open here!? Exit.\n");
+        exit(1);
+     }
+     
+     if(mySubDebug>100) {
+        char * s = NULL;
+        int len;
+        getXmlDocStrFormat(&s, &len);
+        printf("[ subPollProcess ]: got XML with len %d\n", len);
+        if(len>0) printf("\n%s\n",s);
+        if(s!=NULL) {
+           printf("[ subPollProcess ]: free string at %p\n",s);      
+           free(s);
+           printf("[ subPollProcess ]: done free string at %p\n",s);      
+        }
+     }
+     
   } else {
-      printf("[ subPollProcess ]: [ ERROR ]: the socket should be open here!? Exit.\n");
-      exit(1);
+     printf("[ subPollProcess ]: [ WARNING ]: couldn't open a socket.\n");
   }
   
-  if(mySubDebug>1) {
-    char * s = NULL;
-    int len;
-    getXmlDocStrFormat(&s, &len);
-    printf("[ subPollProcess ]: got XML with len %d\n", len);
-    if(len>0) printf("\n%s\n",s);
-    if(s!=NULL) {
-      printf("[ subPollProcess ]: free string at %p\n",s);      
-      free(s);
-      printf("[ subPollProcess ]: done free string at %p\n",s);      
-    }
-  }
-
+  
+  
   if (mySubDebug) printf("[ subPollProcess ]: before update status_poll_flag = %d\n", status_poll_flag);
   
   updatePollStatusFlag();
   
   if (mySubDebug) printf("[ subPollProcess ]: after update status_poll_flag = %d\n", status_poll_flag);
-
-
-
+  
+  
+  
   return 0;
 }
 
@@ -1379,12 +1204,12 @@ static long subPollDaqMapProcess(subRecord *precord) {
   char str2[BUF_SIZE];
   char action[BUF_SIZE];
 
-  getStringFromEpicsName(precord->name,str1,1);
-  getStringFromEpicsName(precord->name,str2,2);
+  getStringFromEpicsName(precord->name,str1,1,BUF_SIZE);
+  getStringFromEpicsName(precord->name,str2,2,BUF_SIZE);
 
   if(strcmp(str1,"daq")==0 && strcmp(str2,"map")==0) {
      
-     getStringFromEpicsName(precord->name,action,4);
+     getStringFromEpicsName(precord->name,action,4,BUF_SIZE);
      
      if(strcmp(action,"layer_sub")==0) {
         
@@ -1474,7 +1299,3 @@ epicsRegisterFunction(subDnaInit);
 epicsRegisterFunction(subDnaProcess);
 epicsRegisterFunction(subLayerInit);
 epicsRegisterFunction(subLayerProcess);
-epicsRegisterFunction(subSyncInit);
-epicsRegisterFunction(subSyncProcess);
-epicsRegisterFunction(subSyncBaseInit);
-epicsRegisterFunction(subSyncBaseProcess);

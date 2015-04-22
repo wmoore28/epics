@@ -7,11 +7,11 @@ record(stringin, SVT:daq:map:0:dna) {
 
 record(stringin, SVT:daq:map:0:layer) {
   field(SCAN, "Passive") 
-  field(VAL,"L2-3t")
+  field(VAL,"L2-3b")
   field(DTYP,"Soft Channel")
 }
 
-record(stringin, SVT:daqmap:L2-3t:febid) {
+record(stringin, SVT:daqmap:L2-3b:febid) {
   field(SCAN, "Passive") 
   field(VAL,"0")
   field(DTYP,"Soft Channel")
@@ -47,11 +47,11 @@ record(stringin, SVT:daq:map:2:dna) {
 
 record(stringin, SVT:daq:map:2:layer) {
   field(SCAN, "Passive") 
-  field(VAL,"L1t")
+  field(VAL,"L1b")
   field(DTYP,"Soft Channel")
 }
 
-record(stringin, SVT:daqmap:L1t:febid) {
+record(stringin, SVT:daqmap:L1b:febid) {
   field(SCAN, "Passive") 
   field(VAL,"2")
   field(DTYP,"Soft Channel")
@@ -127,11 +127,11 @@ record(stringin, SVT:daq:map:6:dna) {
 
 record(stringin, SVT:daq:map:6:layer) {
   field(SCAN, "Passive") 
-  field(VAL,"L2-3b")
+  field(VAL,"L2-3t")
   field(DTYP,"Soft Channel")
 }
 
-record(stringin, SVT:daqmap:L2-3b:febid) {
+record(stringin, SVT:daqmap:L2-3t:febid) {
   field(SCAN, "Passive") 
   field(VAL,"6")
   field(DTYP,"Soft Channel")
@@ -187,13 +187,733 @@ record(stringin, SVT:daq:map:9:dna) {
 
 record(stringin, SVT:daq:map:9:layer) {
   field(SCAN, "Passive") 
+  field(VAL,"L1t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daqmap:L1t:febid) {
+  field(SCAN, "Passive") 
+  field(VAL,"9")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:0:0:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:0:0:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L2b")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:0:0:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"stereo")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:0:1:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:0:1:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L2b")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:0:1:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"axial")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:0:2:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:0:2:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L3b")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:0:2:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"stereo")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:0:3:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:0:3:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L3b")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:0:3:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"axial")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:1:0:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:1:0:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L4b")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:1:0:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"stereo")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:1:1:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"positron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:1:1:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L4b")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:1:1:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"stereo")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:1:2:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:1:2:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L4b")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:1:2:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"axial")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:1:3:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"positron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:1:3:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L4b")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:1:3:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"axial")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:2:0:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:2:0:layer) {
+  field(SCAN, "Passive") 
   field(VAL,"L1b")
   field(DTYP,"Soft Channel")
 }
 
-record(stringin, SVT:daqmap:L1b:febid) {
+record(stringin, SVT:daq:map:2:0:type) {
   field(SCAN, "Passive") 
-  field(VAL,"9")
+  field(VAL,"stereo")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:2:1:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:2:1:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L1b")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:2:1:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"axial")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:3:0:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:3:0:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L6b")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:3:0:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"stereo")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:3:1:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"positron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:3:1:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L6b")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:3:1:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"stereo")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:3:2:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:3:2:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L6b")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:3:2:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"axial")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:3:3:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"positron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:3:3:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L6b")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:3:3:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"axial")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:4:0:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:4:0:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L5b")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:4:0:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"stereo")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:4:1:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"positron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:4:1:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L5b")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:4:1:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"stereo")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:4:2:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:4:2:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L5b")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:4:2:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"axial")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:4:3:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"positron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:4:3:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L5b")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:4:3:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"axial")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:5:0:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:5:0:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L4t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:5:0:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"axial")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:5:1:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"positron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:5:1:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L4t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:5:1:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"axial")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:5:2:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:5:2:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L4t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:5:2:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"stereo")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:5:3:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"positron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:5:3:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L4t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:5:3:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"stereo")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:6:0:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:6:0:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L2t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:6:0:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"axial")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:6:1:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:6:1:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L2t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:6:1:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"stereo")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:6:2:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:6:2:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L3t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:6:2:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"axial")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:6:3:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:6:3:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L3t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:6:3:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"stereo")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:7:0:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:7:0:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L6t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:7:0:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"axial")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:7:1:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"positron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:7:1:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L6t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:7:1:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"axial")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:7:2:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:7:2:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L6t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:7:2:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"stereo")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:7:3:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"positron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:7:3:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L6t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:7:3:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"stereo")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:8:0:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:8:0:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L5t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:8:0:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"axial")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:8:1:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"positron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:8:1:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L5t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:8:1:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"axial")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:8:2:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:8:2:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L5t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:8:2:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"stereo")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:8:3:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"positron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:8:3:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L5t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:8:3:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"stereo")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:9:0:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:9:0:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L1t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:9:0:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"axial")
+  field(DTYP,"Soft Channel")
+}
+
+
+
+record(stringin, SVT:daq:map:9:1:side) {
+  field(SCAN, "Passive") 
+  field(VAL,"electron")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:9:1:layer) {
+  field(SCAN, "Passive") 
+  field(VAL,"L1t")
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:map:9:1:type) {
+  field(SCAN, "Passive") 
+  field(VAL,"stereo")
   field(DTYP,"Soft Channel")
 }
 

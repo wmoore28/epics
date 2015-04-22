@@ -5,14 +5,6 @@
 #include "commonXml.h"
 
 
-void getFebCnfCmd(int feb_id, int isopentag,  char* cmd, const int MAX) {
-   char tmp[256];
-   if(isopentag==0) 
-      sprintf(tmp,"</FebCore></FebFpga></ControlDpm></config></system>");
-   else
-      sprintf(tmp,"<system><config><ControlDpm><FebFpga index=\"%d\"><FebCore>",feb_id);
-   strcpy(cmd,tmp);
-}
 
 
 
@@ -85,68 +77,35 @@ double getHybIValue(xmlDocPtr doc, const char* type, int index, int hyb) {
 
 
 
-xmlXPathObjectPtr getHybTs(xmlDocPtr doc, const char* type, int hyb) {
-   char tmp[256];
-   sprintf(tmp,"/system/status/ControlDpm/FebFpga/FebCore/PowerMonitor/Hybrid%d_%s",hyb,type);
-   if(DEBUG>2) printf("[ getHybTs ] : xpath \"%s\"\n",tmp);
-   return getnodeset(doc, (xmlChar*) tmp);
-}
+// xmlXPathObjectPtr getHybTs(xmlDocPtr doc, const char* type, int hyb) {
+//    char tmp[256];
+//    //sprintf(tmp,"/system/status/ControlDpm/FebFpga/FebCore/PowerMonitor/Hybrid%d_%s",hyb,type);
+//    sprintf(tmp,"/system/status/ControlDpm/FebFpga/FebCore/SoftPowerMonitor/Hybrid%d_%s",hyb,type);
 
-xmlNodePtr getHybTNode(xmlDocPtr doc, const char* type, int index, int hyb) {
-   xmlXPathObjectPtr result;
-   xmlNodePtr node;
-   result = getHybTs(doc, type, hyb);
-   node = getFebNode(doc, result, index, 3,(xmlChar*)"FebFpga");
-   return node;
-}
+//    if(DEBUG>2) printf("[ getHybTs ] : xpath \"%s\"\n",tmp);
+//    return getnodeset(doc, (xmlChar*) tmp);
+// }
 
-double getHybTValue(xmlDocPtr doc, const char* type, int index, int hyb) {
-   double t;
-   xmlNodePtr node;
-   node = getHybTNode(doc,type, index, hyb);
-   t = getFloatValue(doc, node);
-   return t;
-}
+// xmlNodePtr getHybTNode(xmlDocPtr doc, const char* type, int index, int hyb) {
+//    xmlXPathObjectPtr result;
+//    xmlNodePtr node;
+//    result = getHybTs(doc, type, hyb);
+//    node = getFebNode(doc, result, index, 3,(xmlChar*)"FebFpga");
+//    return node;
+// }
 
-
-
-
+// double getHybTValue(xmlDocPtr doc, const char* type, int index, int hyb) {
+//    double t;
+//    xmlNodePtr node;
+//    node = getHybTNode(doc,type, index, hyb);
+//    t = getFloatValue(doc, node);
+//    return t;
+// }
 
 
-void getHybSync(xmlDocPtr doc, int index, int datapath, char* action, char* syncStr) {
-  xmlXPathObjectPtr result;
-  xmlNodeSetPtr nodeset;
-  char tmp[256];
-  //sprintf(tmp,"/system/status/ControlDpm/FebFpga/FebCore/HybridSyncStatus/SyncDetected");
-  if(strcmp(action,"sync_asub")) {
-     sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/HybridSyncStatus[@index=\"%d\"]/SyncDetected", index, datapath);
-  }
-  else if(strcmp(action,"syncbase_asub")) {
-     sprintf(tmp,"/system/status/ControlDpm/FebFpga[@index=\"%d\"]/FebCore/HybridSyncStatus[@index=\"%d\"]/Base0", index, datapath);
-  } 
-  else {
-    printf("[ getHybSync ] : [ ERROR ] wrong action \"%s\"\n",action);    
-  }
-  
-  if(DEBUG>1) 
-    printf("[ getHybSync ] : xpath \"%s\"\n",tmp);
-  result = getnodeset(doc, (xmlChar*) tmp);
-  if(result!=NULL) {
-    nodeset = result->nodesetval;
-    if(DEBUG>1) 
-      printf("[ getHybSync ] : got %d nodes\n", nodeset->nodeNr);
-    if(nodeset->nodeNr==1) {
-      getStrValue(doc,nodeset->nodeTab[0],(xmlChar*)syncStr);
-    } else {
-      strcpy(syncStr, "too many nodes");
-    }
-  } else {
-    if(DEBUG>1)
-      printf("[ getHybSync ] : no nodes found\n");
-    strcpy(syncStr, "no results");
-  }
-  
-}
+
+
+
 
   
 

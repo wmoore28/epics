@@ -14,9 +14,9 @@ CXXFLAGS	:= $(ROOTCXXFLAGS) $(CXXFLAGS)
 LDFLAGS		:= $(ROOTLDFLAGS) $(LDFLAGS) $(XML2INC)
 LIBS		:= $(ROOTLIBS) $(LIBS) $(XML2LIB)
 
-HDRS		= commonXml.h commonConstants.h commonDoc.h
-SRCS		= commonXml.c commonConstants.c commonDoc.c
-OBJS		= commonXml.o commonConstants.o commonDoc.o
+HDRS		= commonXml.h commonConstants.h commonDoc.h commonSocket.h
+SRCS		= commonXml.c commonConstants.c commonDoc.c commonSocket.c
+OBJS		= commonXml.o commonConstants.o commonDoc.o commonSocket.o
 
 
 LIB_TARGET	= libsvtDaqExt.so
