@@ -1,4 +1,4 @@
-#include <TF1.h> 
+#include <TF1.h>
 #include <TH1D.h>
 #include <TFile.h>
 #include <TMath.h>
@@ -362,7 +362,7 @@ bool Fit_tagger(TGraph *gr, string counter_name)
 	  //f_GPol0_[i]->DrawCopy("Same");
 	}
 
-      double *alpha_a_b = Calc_abalpha(sigm_[0], sigm_[2], sigm_[1]);
+      double *alpha_a_b = Calc_abalpha(sigm_[0], sigm_[2]*TMath::Sqrt(2.), sigm_[1]*TMath::Sqrt(2.));
       
       double alpha = alpha_a_b[0];
       double aa = alpha_a_b[1];
@@ -468,7 +468,7 @@ bool Fit_2H02A(TGraph *gr, string counter_name)
 	  //f_GPol0_[i]->DrawCopy("Same");
 	}
 
-      double *alpha_a_b = Calc_abalpha(sigm_[2], sigm_[0], sigm_[1]);
+      double *alpha_a_b = Calc_abalpha(sigm_[2], sigm_[0]*TMath::Sqrt(2.), sigm_[1]*TMath::Sqrt(2.));
       
       double alpha = alpha_a_b[0];
       double aa = alpha_a_b[1];
