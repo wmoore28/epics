@@ -19,14 +19,16 @@ bool Fit_2H02A(TGraph *, string);
 bool Fit_2c21(TGraph *, string);
 double Arnes_Corr(double , double );
 
+string glob_filename;
+string all_harp_dir = "/home/epics/DATA/HARP_SCANS";
+
 int main( int argc, char **argv)
 {
   TApplication *app1 = new TApplication("", 0, NULL);
 
   TLatex *lat1 = new TLatex();
   lat1->SetNDC();
-
-
+  
   if( argc ==1 )
     {
       cout<<"PLease specify at least the harp_name"<<endl;
@@ -39,6 +41,7 @@ int main( int argc, char **argv)
 
   const int n_counters = 15;
   string fname = argv[1];
+  glob_filename  = fname;
   cout<<"File name is "<<fname<<endl;
   
   //cout<<"Checking the filename"<<fname.find("2c21")<<endl;
@@ -63,8 +66,7 @@ int main( int argc, char **argv)
   TGraph *gr1 = new TGraph( "harp_2H02A_04-19-15_09:21:56.txt", "%lg %*s %*s %*s %*s %*s %*s %*s %*s %*s %*s %*s %*s %*s %*s %lg");
   //TGraph *gr1 = new TGraph( "harp_2H02A_04-19-15_12:36:21.txt", "%lg %*s %*s %*s %*s %*s %*s %*s %*s %*s %*s %*s %*s %*s %*s %lg");
 
-  string all_harp_dir = "/home/epics/DATA/HARP_SCANS";
- 
+  
   string counter_names_[n_counters] = {"FCup", "Upstream_Left", "Upstream Right", "tagger_left", "tagger_right", "tagger_top", 
 				       "downstream_left", "downstream_right",  "downstream_top", "downstream_bottom", 
 				       "HPS-Left", "HPS-Right", "HPS-T", "HPS_SC", "empty"};
@@ -264,6 +266,9 @@ bool Fit_2c21(TGraph *gr, string counter_name)
 	  cout<<"Bgr Average is "<<bgr_average<<endl;
 	  //f_GPol0_[i]->DrawCopy("Same");
 	}
+      c1->cd(1);
+      lat1->SetTextSize(0.04);
+      lat1->DrawLatex(0.1, 0.97, Form("%s/%s", all_harp_dir.c_str(), glob_filename.c_str()));
       
       return true;
     }
@@ -367,6 +372,8 @@ bool Fit_tagger(TGraph *gr, string counter_name)
       lat1->DrawLatex(0.7, 0.85, Form("#alpha = %1.2f deg", alpha));
       lat1->DrawLatex(0.7, 0.8, Form("a = %1.2f", aa));
       lat1->DrawLatex(0.7, 0.75, Form("b = %1.2f", bb));
+      lat1->SetTextSize(0.04);
+      lat1->DrawLatex(0.1, 0.97, Form("%s/%s", all_harp_dir.c_str(), glob_filename.c_str()));
 
       return true;
     }
@@ -471,6 +478,8 @@ bool Fit_2H02A(TGraph *gr, string counter_name)
       lat1->DrawLatex(0.7, 0.85, Form("#alpha = %1.2f deg", alpha));
       lat1->DrawLatex(0.7, 0.8, Form("a = %1.2f", aa));
       lat1->DrawLatex(0.7, 0.75, Form("b = %1.2f", bb));
+      lat1->SetTextSize(0.04);
+      lat1->DrawLatex(0.1, 0.97, Form("%s/%s", all_harp_dir.c_str(), glob_filename.c_str()));
 
       return true;
     }
