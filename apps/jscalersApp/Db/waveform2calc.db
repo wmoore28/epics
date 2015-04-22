@@ -172,7 +172,7 @@ record(calc, "HPSTRIGSC_TOTAL") {
 record(calc, "HPSTRIGSC_LIVETIME") {
     field(INPA,"HPSTRIGSC_5")
     field(INPB,"HPSTRIGSC_5_UNGATED PP")
-    field(CALC,"B>0 ? 100*A/B : 0")
+    field(CALC,"B>0 ? 100*A/B : -999")
 }
 record(calc, "HPSTRIGSC_TOTAL_FRAC") {
     field(CALC,"100")
