@@ -1,3 +1,45 @@
+Version 1.2.2:
+ - Merge remote-tracking branch 'origin/hotfix-v1.2.2'
+ - updating status color dot PV
+ - generic_harp.adl: rafopar added button harp_fitter
+ - update livetime
+ - changing PV for status color dot
+ - stripTools: updated .gitignore for new symlink
+ - harp_fitter: removed exe and compile_test.sh (replaced by Makefile)
+ - Wesley added a Makefile to it be build automatically in the building process and added executable it the .gitignore
+ - ioc health: remove iocclassc8 for now, it's not running devIocStats yet
+ - update livetime n/a
+ - Harp data filename is added into the canvas
+ - Arne's correction is added
+ - Harp fitter with a ROOT
+ - adding livetime
+ - new position for 4mm collimator, from 6.15 to 6.182
+ - new position for 4mm collimator, from 6.15 to 6.182
+ - Analyzer is running now in a background mode, and doesn't cause other screens to freeze
+ - adding beam angle strip chart
+ - adding beam angle stripchart
+ - fixing missing flnk
+ - fcup_offset in the st.cmd was chenged to 200
+ - iocs: added markers so logs are easier to read
+ - medm: added comm status
+ - ioc_hps_health.adl: fixed missing fields (ecalVoltages, jscalers)
+ - procServMgr: updated README for config file
+ - procServMgr: added README
+ - procServMgr: added README
+ - procServMgr.cron: updated to show current crontab config
+ - procServMgr: used full path to procServ so cron task can find it
+ - ioc logging: added logrotate config file (make install)
+ - procServMgr: fixed logfile name
+ - ioc_hps_health.adl: added iocjscalers
+ - jscalersApp: fix unused variable compiler warning
+ - jscalersApp: main, include ioc_com_def.h for access to driver functions
+ - iocjscalers: st.cmd ready for ops
+ - jscalersApp: now using offical base.dbd, so others don't have to be specified
+ - jscalersApp: heavy cleanup.  added README with some notes.
+ - procServ.conf: added iocjscalers
+ - iocjscalers: fixed typo
+ - .gitignore: updates to ordering (theses are generated files)
+
 Version 1.2.1:
  - generalApp/strip: updated makefile to generate .gitignore for symlinks
 
