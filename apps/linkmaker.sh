@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APPS=`find -maxdepth 1 -name "*App" -type d `
+APPS=`find -maxdepth 1 -name "*App" -type d | sort`
 
 touch linkmaker.txt
 
@@ -11,11 +11,11 @@ echo "linkmaker.txt" >> .gitignore
 
 for dir in $APPS
 do
-	dir=`basename $dir`
-	link=`echo $dir | sed -e 's/App//g'`
+    dir=`basename $dir`
+    link=`echo $dir | sed -e 's/App//g'`
     echo $link >> .gitignore
-	if [ ! -h $link ]; then
-		ln -s $dir $link
-		echo $link >> linkmaker.txt
-	fi
+    if [ ! -h $link ]; then
+        ln -s $dir $link
+        echo $link >> linkmaker.txt
+    fi
 done
