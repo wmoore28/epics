@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <registryFunction.h>
 #include <subRecord.h>
 #include <aSubRecord.h>
@@ -7,6 +8,8 @@
 #include "commonXml.h"
 #include "commonDoc.h"
 #include <libxml/parser.h>
+//#include <dbAccess.h>
+#include <cadef.h>
 
 
 int mySubDebug = 0;
@@ -14,6 +17,7 @@ int process_order = 0;
 int socketFD = -1;
 char host[256];
 xmlDoc* xmldoc = NULL;
+char socketPollStatusStr[256];
 
 static long subPollInit(subRecord *precord) {
   process_order++;
@@ -26,72 +30,83 @@ static long subPollInit(subRecord *precord) {
 
 
 static long subPollProcess(subRecord *precord) {
+
   process_order++;
   if (mySubDebug>-1)
     printf("[ subPollProcess ]: %d Record %s called subPollProcess(%p)\n",process_order, precord->name, (void*) precord);
-  
 
-  // find dpm nr
+  int port;
   int idpm;
   char str0[256];
   char str1[256];  
-  getStringFromEpicsName(precord->name,str0,0);
-  getStringFromEpicsName(precord->name,str1,1);
-  if(strcmp(str0,"SVT")==0 && (strcmp(str1,"dpm")==0 || strcmp(str1,"dtm")==0)) {
+
+  strcpy(socketPollStatusStr,"undefined");
+
+  // find dpm nr
+  getStringFromEpicsName(precord->name,str0,0,256);
+  getStringFromEpicsName(precord->name,str1,1,256);
+  if(strcmp(str0,"SVT")==0 && (strcmp(str1,"dpm")==0 || strcmp(str1,"dtm")==0 || strcmp(str1,"controldpm")==0)) {
     idpm = getIntFromEpicsName(precord->name,2);  
   } else {
     printf("[ subPollProcess ]: Wrong precord name to call this function?!  (%s)\n", precord->name);    
     exit(1);
   }
   
-  if(strcmp(str1,"dpm")==0) {
+  if(strcmp(str1,"dpm")==0 || strcmp(str1,"controldpm")==0) {
     sprintf(host,"dpm%d",idpm);
   }
   else {
     sprintf(host,"dtm%d",idpm);    
   }
 
-
-
-
   if(xmldoc!=NULL) {
-    printf("[ subPollProcess ]: dpm doc is not null(%p). Clean up.\n", xmldoc);
+    if (mySubDebug>-1) printf("[ subPollProcess ]: dpm doc is not null(%p). Clean up.\n", xmldoc);
     xmlFreeDoc(xmldoc);
     xmlCleanupParser();      
     xmldoc = NULL;
   }
 
 
+  //reset file desc
+  socketFD = -1;
+  // default searching start here
+  port = 8090;
 
-  socketFD = open_socket(host,8090);
-
+  while(socketFD<0 && port < 8100) {
+     socketFD = open_socket(host,port);
+     port++;
+  }
 
 
 
   if(socketFD>0) {
-    printf("[ subPollProcess ]: successfully opened socket at %d\n", socketFD);
+     printf("[ subPollProcess ]: successfully opened socket at %d (port=%d)\n", socketFD, port);
+
+     sprintf(str0,"socket opened (%s:%d)",host,port);
+     strcpy(socketPollStatusStr,str0);
 
 
-    if (mySubDebug>-1)
+    if (mySubDebug>0)
       printf("[ subPollProcess ]: get the xml doc\n");
     
-    getDpmXmlDoc(socketFD, idpm, &xmldoc);
+    getDpmXmlDoc(socketFD, idpm, &xmldoc, str1);
     
     
     if (mySubDebug>-1)
       printf("[ subPollProcess ]: found xml doc at %p\n", xmldoc);
+
+
+    printf("[ subPollProcess ]: close socket %d\n", socketFD);
+
+    socketFD = close_socket(socketFD);
+
         
   } else {
     printf("[ subPollProcess ]: [ WARNING ]: failed to open socket\n");
+
+    strcpy(socketPollStatusStr,"couldn't open socket");
+
   }
-
-
-
-  if(socketFD>0) {
-    printf("[ subPollProcess ]: close socket %d\n", socketFD);
-    socketFD = close_socket(socketFD);
-  }
-
 
 
   return 0;
@@ -125,6 +140,53 @@ static long subDpmStateProcess(aSubRecord *precord) {
   
   return 0;
 }
+
+
+static long subDpmStatusInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDpmStatusInit ]: %d Record %s called subDpmStatusInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+/*
+  strcpy(precord->vala,"init...");
+  precord->valb = 99;
+  strcpy(precord->vala,"init...");
+*/
+  return 0;
+}
+
+static long subDpmStatusProcess(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDpmStatusProcess ]: %d Record %s called subDpmStatusProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+
+
+
+
+  int heart_beat;
+  char status[256];
+  long *b;
+  heart_beat = 99;
+  strcpy(precord->vala, "no valid status");
+  b = (long*) precord->valb;
+  *b = (long) heart_beat;
+
+  if(strlen(socketPollStatusStr)>0) {
+     strcpy(precord->valc, socketPollStatusStr);
+  } else {
+     strcpy(precord->valc, "whatta f");
+  }
+  
+  getDpmStatusProcess(precord->name, xmldoc, status, &heart_beat);
+
+  strcpy(precord->vala, status);
+  *b = (long) heart_beat;
+
+
+  return 0;
+}
+
 
 
 
@@ -198,6 +260,606 @@ static long subDpmEventCountProcess(subRecord *precord) {
   return 0;
 }
 
+static long subDpmBurnCountInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subBurnCountInit ]: %d Record %s called subDpmBurnCountInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subDpmBurnCountProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDpmBurnCountProcess ]: %d Record %s called subDpmBurnCountProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int val = -1;
+
+  val = getBurnCountProcess(precord->name, xmldoc);
+
+  precord->val = val;
+
+  
+  return 0;
+}
+
+
+static long subDpmBlockCountInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subBlockCountInit ]: %d Record %s called subDpmBlockCountInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subDpmBlockCountProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDpmBlockCountProcess ]: %d Record %s called subDpmBlockCountProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int val = -1;
+
+  val = getBlockCountProcess(precord->name, xmldoc);
+
+  precord->val = val;
+
+  
+  return 0;
+}
+
+
+static long subDpmEventStateInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subEventStateInit ]: %d Record %s called subDpmEventStateInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subDpmEventStateProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDpmEventStateProcess ]: %d Record %s called subDpmEventStateProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int val = -1;
+
+  val = getEventStateProcess(precord->name, xmldoc);
+
+  precord->val = val;
+
+  
+  return 0;
+}
+
+
+static long subDpmSystemStateInit(aSubRecord *precord) {
+   process_order++;
+   if (mySubDebug) {
+      printf("[ subSystemStateInit ]: %d Record %s called subDpmSystemStateInit(%p)\n", process_order, precord->name, (void*) precord);
+   }
+   return 0;
+}
+
+static long subDpmSystemStateProcess(aSubRecord *precord) {
+   process_order++;
+   if (mySubDebug) {
+      printf("[ subDpmSystemStateProcess ]: %d Record %s called subDpmSystemStateProcess(%p)\n",process_order, precord->name, (void*) precord);
+   }
+   char val[256];
+   
+   getSystemStateProcess(precord->name, xmldoc, val);
+   
+   char* a;
+   
+   a = (char*) precord->vala;
+   strcpy(a, val);
+   
+   
+   return 0;
+}
+
+
+
+static long subDpmTrigCountInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subTrigCountInit ]: %d Record %s called subDpmTrigCountInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subDpmTrigCountProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDpmTrigCountProcess ]: %d Record %s called subDpmTrigCountProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int val = -1;
+
+  val = getTrigCountProcess(precord->name, xmldoc);
+
+  precord->val = val;
+
+  
+  return 0;
+}
+
+
+static long subDtmTrigCountInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subTrigCountInit ]: %d Record %s called subDtmTrigCountInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subDtmTrigCountProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDtmTrigCountProcess ]: %d Record %s called subDtmTrigCountProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int val = -1;
+
+  val = getDtmTrigCountProcess(precord->name, xmldoc);
+
+  precord->val = val;
+
+  
+  return 0;
+}
+
+
+static long subDtmReadCountInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subReadCountInit ]: %d Record %s called subDtmReadCountInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subDtmReadCountProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDtmReadCountProcess ]: %d Record %s called subDtmReadCountProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int val = -1;
+
+  val = getDtmReadCountProcess(precord->name, xmldoc);
+
+  precord->val = val;
+
+  
+  return 0;
+}
+
+
+
+static long subDtmAckCountInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDtmAckCountInit ]: %d Record %s called subDtmAckCountInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subDtmAckCountProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subDtmAckCountProcess ]: %d Record %s called subDtmAckCountProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int val = -1;
+
+  val = getDtmAckCountProcess(precord->name, xmldoc);
+
+  precord->val = val;
+
+  
+  return 0;
+}
+
+static long subDtmMinTrigPeriodInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug>-1) {
+    printf("[ subDtmMinTrigPeriodInit ]: %d Record %s called subDtmMinTrigPeriodInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subDtmMinTrigPeriodProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug-1) {
+    printf("[ subDtmMinTrigPeriodProcess ]: %d Record %s called subDtmMinTrigPeriodProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int val = -1;
+
+  val = getDtmMinTrigPeriodProcess(precord->name, xmldoc);
+
+  precord->val = val;
+
+  
+  return 0;
+}
+
+
+static long subHybridSwitchInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subTrigCountInit ]: %d Record %s called subHybridSwitchInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subHybridSwitchProcess(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subHybridSwitchProcess ]: %d Record %s called subHybridSwitchProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  int socket;
+  int p;
+  char hostname[EPICS_STRING_SIZE];
+
+
+  if (mySubDebug) printf("[ subHybridSwitchProcess ]: find the FEB layer\n");
+
+  // ---
+  // find the layer in order to manage existing hybrids on the FEB's  
+  
+  const char* layer = (char*)precord->a;
+
+  if (mySubDebug) printf("[ subHybridSwitchProcess ]: got \"%s\" at %p\n",layer,layer);
+
+
+  // ---
+  
+
+  // ---
+  // open socket
+  socket = -1;
+  p = 8089;
+  strcpy(hostname,"dpm7");
+  while(socket<0 && p < 8100) {
+     p++;
+     socket = open_socket(hostname,p);
+  }
+  // ---
+
+  
+  
+  if(socket>0) {
+     printf("[ subHybridSwitchProcess ]: successfully opened socket at %d (port=%d)\n", socket, p);
+     
+     if (mySubDebug) printf("[ subHybridSwitchProcess ] : Flush socket.\n");
+     
+     flushSocket(socket);
+     
+     if (mySubDebug) printf("[ subHybridSwitchProcess ] : Done flushing socket.\n");
+
+     writeHybridSwitchProcess(precord->name, precord->val, socket, layer);
+
+     if (mySubDebug) printf("[ subHybridSwitchProcess ] : Flush socket after writing.\n");
+     
+     flushSocket(socket);
+
+     if (mySubDebug) printf("[ subHybridSwitchProcess ]: close socket %d\n", socketFD);
+     
+     socket = close_socket(socket);
+     
+        
+  } else {
+    printf("[ subHybridSwitchProcess ]: [ WARNING ]: failed to open socket\n");
+  }
+  
+  
+  return 0;
+}
+
+static long subSyncInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subSyncInit ]: %d Record %s called subSyncInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+
+static long subSyncProcess(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subSyncProcess ]: %d Record %s called subSyncProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  
+  char val[256];
+  int number;
+  long *a;
+
+  if (mySubDebug)
+     printf("[ subSyncProcess ]: get sync string from xml at %p\n", xmldoc);
+
+  
+  getHybSync(precord->name, xmldoc, val);
+
+  if (mySubDebug)
+     printf("[ subSyncProcess ]: got sync string \"%s\"\n", val);
+  
+  number = (int) strtol(val,NULL,0); // string rep begins with 0x so use base=0 instead of 16
+
+  if (mySubDebug)
+     printf("[ subSyncProcess ]: got sync number \"%d\"\n", number);
+
+  
+  a = (long*) precord->vala;
+  *a = (long) number;
+  
+  
+  return 0;
+}
+
+static long subSyncBaseInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subSyncBaseInit ]: %d Record %s called subSyncBaseInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+
+static long subSyncBaseProcess(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subSyncBaseProcess ]: %d Record %s called subSyncBaseProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  
+  char val[256];
+  int number;
+  long *a;
+  
+  if (mySubDebug)
+     printf("[ subSyncProcess ]: get sync string from xml at %p\n", xmldoc);
+
+  getSyncProcess(precord->name, xmldoc, val);
+  
+  if (mySubDebug)
+     printf("[ subSyncBaseProcess ]: got sync string \"%s\"\n", val);
+  
+  number = (int) strtol(val,NULL,0); // string rep begins with 0x so use base=0 instead of 16
+
+  if (mySubDebug)
+     printf("[ subSyncProcess ]: got sync number \"%d\"\n", number);
+
+  
+  a = (long*) precord->vala;
+  *a = (long) number;
+
+
+  return 0;
+}
+
+
+static long subInsertedFramesInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subInsertedFramesInit ]: %d Record %s called subInsertedFramesInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+
+static long subInsertedFramesProcess(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subInsertedFramesProcess ]: %d Record %s called subInsertedFramesProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  
+  char val[256];
+  int number;
+  long *a;
+  
+  if (mySubDebug)
+     printf("[ subInsertedFramesProcess ]: get string from xml at %p\n", xmldoc);
+  
+  getInsertedFramesProcess(precord->name, xmldoc, val);
+  
+  if (mySubDebug)
+     printf("[ subInsertedFramesProcess ]: got sync string \"%s\"\n", val);
+  
+  number = (int) strtol(val,NULL,0); // string rep begins with 0x so use base=0 instead of 16
+  
+  if (mySubDebug)
+     printf("[ subSyncProcess ]: got sync number \"%d\"\n", number);
+
+  
+  a = (long*) precord->vala;
+  *a = (long) number;
+
+
+  return 0;
+}
+
+
+static long subEBEventErrorCountInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subEBEventErrorCountInit ]: %d Record %s called subEBEventErrorCountInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+
+static long subEBEventErrorCountProcess(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subEBEventErrorCountProcess ]: %d Record %s called subEBEventErrorCountProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  
+  char val[256];
+  int number;
+  long *a;
+  
+  strcpy(val,"");
+  number = -1;
+
+  if (mySubDebug)
+     printf("[ subEBEventErrorCountProcess ]: get string from xml at %p\n", xmldoc);
+  
+  getEBEventErrorCountProcess(precord->name, xmldoc, val);
+
+  if(strlen(val)>0) {
+     
+     if (mySubDebug)
+        printf("[ subEBEventErrorCountProcess ]: got sync string \"%s\"\n", val);
+     
+     number = (int) strtol(val,NULL,0); // string rep begins with 0x so use base=0 instead of 16
+     
+  }
+  
+
+  if (mySubDebug)
+     printf("[ subSyncProcess ]: got sync number \"%d\"\n", number);
+  
+  a = (long*) precord->vala;
+  *a = (long) number;
+
+
+  return 0;
+}
+
+
+static long subHybridTempInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subHybridTempInit ]: %d Record %s called subHybridTempInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+
+static long subHybridTempProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subHybridTempProcess ]: %d Record %s called subHybridTempProcess(%p)\n", process_order, precord->name, (void*) precord);
+  }
+
+  if (mySubDebug)
+     printf("[ subHybridTempProcess ]: get temp from xml at %p\n", xmldoc);
+  
+  char val[256];
+  float v;
+  char unit[10];
+
+  v=0.0;
+  getHybridTempProcess(precord->name, xmldoc, val);
+
+
+  if (mySubDebug)
+     printf("[ subHybridTempProcess ]: got str val %s\n", val);
+
+  sscanf(val,"%f %s",&v,unit);
+  
+  if (mySubDebug)
+     printf("[ subHybridTempProcess ]: got val %f\n", v);
+
+  precord->val = (double) v;
+  
+
+  return 0;
+}
+
+
+
+static long subFebTempInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subFebTempInit ]: %d Record %s called subFebTempInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+
+static long subFebTempProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subFebTempProcess ]: %d Record %s called subFebTempProcess(%p)\n", process_order, precord->name, (void*) precord);
+  }
+
+  if (mySubDebug)
+     printf("[ subFebTempProcess ]: get temp from xml at %p\n", xmldoc);
+  
+  char val[256];
+  float v;
+  char unit[10];
+
+  v=0.0;
+  getFebTempProcess(precord->name, xmldoc, val);
+
+
+  if (mySubDebug)
+     printf("[ subFebTempProcess ]: got str val %s\n", val);
+
+  sscanf(val,"%f %s",&v,unit);
+  
+  if (mySubDebug)
+     printf("[ subFebTempProcess ]: got val %f\n", v);
+
+  precord->val = (double) v;
+  
+
+  return 0;
+}
+
+
+
+
+static long subHybridLVInit(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subHybridLVInit ]: %d Record %s called subHybridLVInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+
+static long subHybridLVProcess(subRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subHybridLVProcess ]: %d Record %s called subHybridLVProcess(%p)\n", process_order, precord->name, (void*) precord);
+  }
+
+  if (mySubDebug)
+     printf("[ subHybridLVProcess ]: get info from xml at %p\n", xmldoc);
+  
+  char val[256];
+  float v;
+  char unit[10];
+
+  v=0.0;
+  getHybridLVProcess(precord->name, xmldoc, val);
+
+
+  if (mySubDebug)
+     printf("[ subHybridLVProcess ]: got str val \"%s\"\n", val);
+
+  //check if empty
+  if(strcmp("",val)==0) {
+     v = 0.0;
+  } 
+  else {
+     // check if this is a boolean or float
+     if(strstr("True",val)!=NULL || strstr("true",val)!=NULL) 
+        v = 1.0;
+     else if(strstr("false",val)!=NULL || strstr("False",val)!=NULL)
+        v = 0.0;
+     else     
+        // it's a float
+        sscanf(val,"%f %s",&v,unit);
+  }
+  if (mySubDebug)
+     printf("[ subHybridLVProcess ]: got val %f\n", v);
+  
+  precord->val = (double) v;
+  
+  
+  return 0;
+}
+
 
 
 
@@ -208,9 +870,46 @@ epicsRegisterFunction(subPollInit);
 epicsRegisterFunction(subPollProcess);
 epicsRegisterFunction(subDpmStateInit);
 epicsRegisterFunction(subDpmStateProcess);
+epicsRegisterFunction(subDpmStatusInit);
+epicsRegisterFunction(subDpmStatusProcess);
 epicsRegisterFunction(subDpmFebNumInit);
 epicsRegisterFunction(subDpmFebNumProcess);
 epicsRegisterFunction(subDpmLinkInit);
 epicsRegisterFunction(subDpmLinkProcess);
 epicsRegisterFunction(subDpmEventCountInit);
 epicsRegisterFunction(subDpmEventCountProcess);
+epicsRegisterFunction(subDpmTrigCountInit);
+epicsRegisterFunction(subDpmTrigCountProcess);
+epicsRegisterFunction(subDtmTrigCountInit);
+epicsRegisterFunction(subDtmTrigCountProcess);
+epicsRegisterFunction(subDtmReadCountInit);
+epicsRegisterFunction(subDtmReadCountProcess);
+epicsRegisterFunction(subDtmAckCountInit);
+epicsRegisterFunction(subDtmAckCountProcess);
+epicsRegisterFunction(subDpmEventStateInit);
+epicsRegisterFunction(subDpmEventStateProcess);
+epicsRegisterFunction(subDpmBlockCountInit);
+epicsRegisterFunction(subDpmBlockCountProcess);
+epicsRegisterFunction(subDpmSystemStateInit);
+epicsRegisterFunction(subDpmSystemStateProcess);
+epicsRegisterFunction(subHybridSwitchInit);
+epicsRegisterFunction(subHybridSwitchProcess);
+epicsRegisterFunction(subSyncInit);
+epicsRegisterFunction(subSyncProcess);
+epicsRegisterFunction(subSyncBaseInit);
+epicsRegisterFunction(subSyncBaseProcess);
+epicsRegisterFunction(subDpmBurnCountInit);
+epicsRegisterFunction(subDpmBurnCountProcess);
+epicsRegisterFunction(subDtmMinTrigPeriodInit);
+epicsRegisterFunction(subDtmMinTrigPeriodProcess);
+epicsRegisterFunction(subInsertedFramesInit);
+epicsRegisterFunction(subInsertedFramesProcess);
+epicsRegisterFunction(subHybridTempInit);
+epicsRegisterFunction(subHybridTempProcess);
+epicsRegisterFunction(subFebTempInit);
+epicsRegisterFunction(subFebTempProcess);
+epicsRegisterFunction(subEBEventErrorCountInit);
+epicsRegisterFunction(subEBEventErrorCountProcess);
+epicsRegisterFunction(subHybridLVInit);
+epicsRegisterFunction(subHybridLVProcess);
+

@@ -1,3 +1,154 @@
+Version 1.3.0:
+ - Merge remote-tracking branch 'origin/svtdaqdev5'
+ - svtDaqLib: commonSocket.c wasn't added to the repo
+ - commit to allow to switch branch
+ - Merge branch 'develop' into svtdaqdev5
+ - Add indicators for hybrid sync
+ - remove non-existing hybrids
+ - fix inserted frames to look at 1 and remove control dpm from that gui.
+ - fix typo in gui from daq map
+ - fix positions
+ - fix IOC status indicators
+ - Merge remote-tracking branch 'origin/hotfix-v1.2.2' into develop
+ - Finish moving off everythig from the svtDaq IOC. It doesn't do anything at this point but it has all the common db files in it's db dir.
+ - Moving records off the old control dpm IOC
+ - Merge remote-tracking branch 'origin/hotfix-v1.2.2' into develop
+ - Adding new control dpm IOC. Move over i_rd to it.
+ - add new error count variable. Add new mya list.
+ - Adding new ioc
+ - Adding new ioc
+ - another mya attempt.
+ - lower debug level
+ - Added new IOC. Added HybT to it.
+ - updated request
+ - updated mya lists
+ - Add mya lists. Fix db util script daq map.
+ - Fix typo in daq map giving wrong layer names.
+ - Add InsertedFrames variable. Add run integrity flags.
+ - Fixing limits. Adding BurnCount. Adding mya-lists.
+ - Merge branch 'svtdaqdev4-hotfix-v1.1.1' of https://github.com/wmoore28/epics into svtdaqdev4-hotfix-v1.1.1
+ - Merge branch 'svtdaqdev4-hotfix-v1.1.1' of https://github.com/wmoore28/epics into svtdaqdev4-hotfix-v1.1.1
+ - removing missing hybrids. adding some daq counters.
+ - new variables
+ - Adding dtm readcount variable. Fix the socket.
+ - apps/hvCaenApp - fix typo in alarm autosave request generator
+ - Merge branch 'svtdaqdev4-hotfix-v1.1.1' of https://github.com/wmoore28/epics into svtdaqdev4-hotfix-v1.1.1
+ - Move status functions over to the common lib.
+ - move in unecessary if statement
+ - fix state problem when socket not opened
+ - larger text fields.
+ - use commonsocket fncs instead
+ - update the status to give more information about the state.
+ - add debug switch to remove annoying message
+ - Move sync variables to dpm7 IOC; make them scan at 1s. Add limits to some records.
+ - rm missing hybrids
+ - add mya list
+ - move sync to iocdpm7
+ - move sync to iocdpm7
+ - mya variables
+ - Merge branch 'hotfix-v1.1.1' into svtdaqdev4-hotfix-v1.1.1
+ - Split up all hybLV processing chains. Also split base and peak chains.
+ - hvCaenApp: generate autosave req file for alarm settings
+ - use temp0 since that's what is in the archiver
+ - set debug level to 0
+ - fix debug output
+ - organize better
+ - removed flushing for read only poll
+ - chamge ioc debug level
+ - add missing data dpm ioc
+ - fix size
+ - Add daq map.
+ - Free resources allocated by xpath processing. Fix indentation.
+ - desable hybroid switch for L1 febs
+ - Move buffer size to constants. Fix bug in getting strings of non-standard length from epics record name. Use sub record to switch on hybrids. Remove unused avdd/dvdd/apv125 switches. Add layer as input to feb hybrid switch to understand daq map
+ - add alarm levels
+ - Add missing dpm IOC dir
+ - Add missing dpm IOC
+ - Merge branch 'svtdaqdev3' of https://github.com/wmoore28/epics into svtdaqdev3
+ - added daq variables.
+ - hvCaenApp/iochvCaen: added autosave basics
+ - since this is auto-gen I'm not sure it should be commited but I'll do it anyway.
+ - use epics user
+ - Merge branch 'hotfix-v1.1.1' into svtdaqdev3
+ - Merge branch 'develop' into svtdaqdev3
+ - Created new control DPM IOC that handles the switches. No functionality change right now.
+ - Adding blocklevel, eventstate and systemstate variables
+ - Adding DPM EventState
+ - Merge branch 'develop' into svtdaqdev2
+ - Do fwd processing of sync records.
+ - Remove debug from control IOC. Try to move unnecessay code in client_util.
+ - change sync type to integer.
+ - updated sync_rd and removed limits on base and peak.
+ - user epics
+ - Adding count of DTM trigger acks from the DPMs
+ - removed old links.
+ - Added search for correct port when connecting to hosts.
+ - Added IOC status GUI to SVT list
+ - Added chiller records.
+ - get latest fixes
+ - Merge branch 'svtdaqdev1' of https://github.com/wmoore28/epics into svtdaqdev1
+ - Committing all the debug files from the IOC problem earlier. Can be removed later probably.
+ - username changed by wesley.
+ - added RTDs epics variables
+ - Removed temp2 values as they are not gonna be used.
+ - updated variable list and limits.
+ - updates with flange power and some limits
+ - remove incomplete host/port config implementation
+ - fix daq map
+ - clean up
+ - adding SVT chiller temp
+ - fixed daq map
+ - Merge /usr/clas12/hps/prod into svtdaqdev1
+ - svtDaqApp/medm - GUI changes add "reset interlocks" shell command for bias screen correct hybrid IDs for temperatures use FEB RTD temperatures instead of dummy
+ - fixed path to guis.
+ - renaming gui
+ - Add new asubrecord to give better control over the status of the IOCs. Use the socket GUI for displaying it.
+ - remove svtdaqlib as target
+ - Merge branch 'develop' of https://github.com/wmoore28/epics into svtdaqdev1
+ - adding trig count
+
+Version 1.2.2:
+ - Merge remote-tracking branch 'origin/hotfix-v1.2.2'
+ - updating status color dot PV
+ - generic_harp.adl: rafopar added button harp_fitter
+ - update livetime
+ - changing PV for status color dot
+ - stripTools: updated .gitignore for new symlink
+ - harp_fitter: removed exe and compile_test.sh (replaced by Makefile)
+ - Wesley added a Makefile to it be build automatically in the building process and added executable it the .gitignore
+ - ioc health: remove iocclassc8 for now, it's not running devIocStats yet
+ - update livetime n/a
+ - Harp data filename is added into the canvas
+ - Arne's correction is added
+ - Harp fitter with a ROOT
+ - adding livetime
+ - new position for 4mm collimator, from 6.15 to 6.182
+ - new position for 4mm collimator, from 6.15 to 6.182
+ - Analyzer is running now in a background mode, and doesn't cause other screens to freeze
+ - adding beam angle strip chart
+ - adding beam angle stripchart
+ - fixing missing flnk
+ - fcup_offset in the st.cmd was chenged to 200
+ - iocs: added markers so logs are easier to read
+ - medm: added comm status
+ - ioc_hps_health.adl: fixed missing fields (ecalVoltages, jscalers)
+ - procServMgr: updated README for config file
+ - procServMgr: added README
+ - procServMgr: added README
+ - procServMgr.cron: updated to show current crontab config
+ - procServMgr: used full path to procServ so cron task can find it
+ - ioc logging: added logrotate config file (make install)
+ - procServMgr: fixed logfile name
+ - ioc_hps_health.adl: added iocjscalers
+ - jscalersApp: fix unused variable compiler warning
+ - jscalersApp: main, include ioc_com_def.h for access to driver functions
+ - iocjscalers: st.cmd ready for ops
+ - jscalersApp: now using offical base.dbd, so others don't have to be specified
+ - jscalersApp: heavy cleanup.  added README with some notes.
+ - procServ.conf: added iocjscalers
+ - iocjscalers: fixed typo
+ - .gitignore: updates to ordering (theses are generated files)
+
 Version 1.2.1:
  - generalApp/strip: updated makefile to generate .gitignore for symlinks
 

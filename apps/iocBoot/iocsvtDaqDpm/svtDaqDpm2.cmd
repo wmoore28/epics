@@ -15,7 +15,15 @@ svtDaqDpm_registerRecordDeviceDriver pdbbase
 dbLoadRecords("db/iocAdminSoft.db", "IOC=iocsvtDaqDpm2")
 
 ## Load record instances
+dbLoadRecords("db/dbDataDpmStatus.db","DPM=2")
+dbLoadRecords("db/dbDataDpmEventState.db","DPM=2")
+dbLoadRecords("db/dbDataDpmBlockCount.db","DPM=2")
+dbLoadRecords("db/dbDataDpmSystemState.db","DPM=2")
+dbLoadRecords("db/dbDataDpmBurnCount.db","DPM=2")
+dbLoadRecords("db/dbDataDpmInsertedFrames.db","DPM=2")
+dbLoadRecords("db/dbDataDpmEBEventErrorCount.db","DPM=2")
 dbLoadRecords("db/dbDataDpmEventCount.db","DPM=2")
+dbLoadRecords("db/dbDataDpmTrigCount.db","DPM=2")
 dbLoadRecords("db/dbDataDpm.db","DPM=2")
 dbLoadRecords("db/dbDataDpmLink.db","DPM=2,DP=0")
 dbLoadRecords("db/dbDataDpmLink.db","DPM=2,DP=1")
@@ -30,9 +38,8 @@ dbLoadRecords("db/dbDataDpmFebNum.db","DPM=2,DP=1")
 dbLoadRecords("db/dbDataDpmFebNum.db","DPM=2,DP=2")
 dbLoadRecords("db/dbDataDpmFebNum.db","DPM=2,DP=3")
 
-var mySubDebug 1
-
-##traceIocInit
+var mySubDebug 0
+#traceIocInit
 
 cd ${TOP}/iocBoot/${IOC}
 iocInit

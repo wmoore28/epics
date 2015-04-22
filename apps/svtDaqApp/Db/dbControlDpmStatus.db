@@ -1,0 +1,31 @@
+
+record(aSub,SVT:daq:controldpm:$(DPM):$(NR):status_asub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subDpmStatusInit")
+    field(SNAM,"subDpmStatusProcess")
+    field(OUTA,"SVT:daq:controldpm:$(DPM):$(NR):status PP")
+    field(FTVA,"STRING")
+    field(OUTB,"SVT:daq:controldpm:$(DPM):$(NR):hb_check PP")
+    field(FTVB,"LONG")
+    field(OUTC,"SVT:daq:controldpm:$(DPM):$(NR):socketstatus PP")
+    field(FTVC,"STRING")
+    #field(FLNK,"FLNKNEXTLAYER")
+}
+
+record(stringin, SVT:daq:controldpm:$(DPM):$(NR):status) {
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin, SVT:daq:controldpm:$(DPM):$(NR):socketstatus) {
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+record(longin, SVT:daq:controldpm:$(DPM):$(NR):hb_check) {
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+
