@@ -1,11 +1,11 @@
 
 file {
-	name="/usr/clas12/hps/svt-devel/apps/generalApp/medm/HPS_EPICS.adl"
+	name="/usr/clas12/hps/prod/apps/generalApp/medm/HPS_EPICS.adl"
 	version=030108
 }
 display {
 	object {
-		x=1
+		x=5
 		y=60
 		width=240
 		height=835
@@ -970,7 +970,7 @@ text {
 	}
 	command[1] {
 		label="Open screenshots folder"
-		name="konqueror ~hpsrun/screenshots &"
+		name="nautilus ~hpsrun/screenshots &"
 	}
 	clr=14
 	bclr=50
