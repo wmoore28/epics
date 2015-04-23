@@ -58,6 +58,18 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
+CHANNEL BIAS SVT:bias:CHANNELTEMPLATE:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:CHANNELTEMPLATE:v_sens" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+The sense voltage readback from this bias channel is out of spec.
+Possible causes:
+    The bias channel is turned off.
+    The sensor is behaving abnormally and the HV supply is current-limited (check the status and current readback for this channel).
+    The bias voltage was set incorrectly.
+The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has decided otherwise.
+Contact the SVT expert if the cause of this alarm is not understood.
+$END
+
 CHANNEL BIAS SVT:bias:CHANNELTEMPLATE:stat
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:CHANNELTEMPLATE:stat" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
