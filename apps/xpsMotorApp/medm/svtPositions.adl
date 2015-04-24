@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/v1.3.0/apps/xpsMotorApp/Db/../../xpsMotorApp/medm/svtPositions.adl"
+	name="/usr/clas12/hps/v1.3.0/apps/xpsMotorApp/medm/svtPositions.adl"
 	version=030108
 }
 display {
@@ -89,6 +89,40 @@ display {
 }
 text {
 	object {
+		x=293
+		y=420
+		width=123
+		height=17
+	}
+	"basic attribute" {
+		clr=18
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="hps:svt_bot:motor:scan1.BUSY"
+	}
+	textix="SCAN IN PROGRESS"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=293
+		y=420
+		width=123
+		height=17
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="hps:svt_bot:motor:scan1.BUSY"
+	}
+	textix="NOT SCANNING"
+	align="horiz. centered"
+}
+text {
+	object {
 		x=200
 		y=5
 		width=200
@@ -161,7 +195,7 @@ text {
 "related display" {
 	object {
 		x=450
-		y=195
+		y=212
 		width=120
 		height=25
 	}
@@ -338,7 +372,7 @@ text {
 "related display" {
 	object {
 		x=450
-		y=425
+		y=437
 		width=120
 		height=25
 	}
@@ -762,46 +796,35 @@ text {
 	}
 	textix="rad"
 }
-composite {
+"message button" {
+	object {
+		x=293
+		y=137
+		width=125
+		height=24
+	}
+	control {
+		chan="hps:svt_top:home:proc"
+		clr=14
+		bclr=55
+	}
+	label="Retract Stage"
+	press_msg="0"
+	release_msg="0"
+}
+rectangle {
 	object {
 		x=280
 		y=133
 		width=150
 		height=34
 	}
-	"composite name"=""
-	children {
-		"message button" {
-			object {
-				x=293
-				y=137
-				width=125
-				height=24
-			}
-			control {
-				chan="hps:svt_top:home:proc"
-				clr=14
-				bclr=55
-			}
-			label="Retract Stage"
-			press_msg="0"
-			release_msg="0"
-		}
-		rectangle {
-			object {
-				x=280
-				y=133
-				width=150
-				height=34
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="hps:svt_top_at_home"
-			}
-		}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="hps:svt_top_at_home"
 	}
 }
 composite {
@@ -947,4 +970,70 @@ composite {
 			textix="Position"
 		}
 	}
+}
+text {
+	object {
+		x=293
+		y=196
+		width=123
+		height=17
+	}
+	"basic attribute" {
+		clr=18
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="hps:svt_top:motor:scan1.BUSY"
+	}
+	textix="SCAN IN PROGRESS"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=292
+		y=212
+		width=125
+		height=25
+	}
+	control {
+		chan="hps:svt_top:motor:AbortScans.PROC"
+		clr=30
+		bclr=20
+	}
+	label="ABORT SCAN"
+	press_msg="1"
+	release_msg="0"
+}
+text {
+	object {
+		x=293
+		y=196
+		width=123
+		height=17
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="hps:svt_top:motor:scan1.BUSY"
+	}
+	textix="NOT SCANNING"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=292
+		y=437
+		width=125
+		height=25
+	}
+	control {
+		chan="hps:svt_bot:motor:AbortScans.PROC"
+		clr=30
+		bclr=20
+	}
+	label="ABORT SCAN"
+	press_msg="1"
+	release_msg="0"
 }
