@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/generalApp/medm/hps_trigger_scalers.adl"
+	name="/home/baltzell/./hps_trigger_scalers.adl"
 	version=030108
 }
 display {
 	object {
-		x=1224
-		y=365
+		x=768
+		y=206
 		width=567
 		height=466
 	}
@@ -496,639 +496,628 @@ composite {
 		}
 	}
 }
-composite {
+"text update" {
+	object {
+		x=25
+		y=32
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_0_GATED"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=99
+		y=32
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_1_GATED"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=173
+		y=32
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_2_GATED"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=247
+		y=32
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_3_GATED"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=321
+		y=32
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_4_GATED"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=32
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_5_GATED"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=25
+		y=47
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_0_FRAC"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=99
+		y=47
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_1_FRAC"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=173
+		y=47
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_2_FRAC"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=247
+		y=47
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_3_FRAC"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=321
+		y=47
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_4_FRAC"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=47
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_5_FRAC"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=469
+		y=32
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_TOTAL"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=469
+		y=47
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_TOTAL_FRAC"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=10
+		y=31
+		width=12
+		height=40
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Hz"
+	align="horiz. right"
+}
+text {
+	object {
+		x=544
+		y=31
+		width=12
+		height=40
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Hz"
+}
+rectangle {
+	object {
+		x=25
+		y=62
+		width=70
+		height=5
+	}
+	"basic attribute" {
+		clr=20
+	}
+}
+rectangle {
+	object {
+		x=99
+		y=62
+		width=70
+		height=5
+	}
+	"basic attribute" {
+		clr=23
+	}
+}
+rectangle {
+	object {
+		x=173
+		y=62
+		width=70
+		height=5
+	}
+	"basic attribute" {
+		clr=15
+	}
+}
+rectangle {
+	object {
+		x=247
+		y=62
+		width=70
+		height=5
+	}
+	"basic attribute" {
+		clr=18
+	}
+}
+rectangle {
+	object {
+		x=321
+		y=62
+		width=70
+		height=5
+	}
+	"basic attribute" {
+		clr=6
+	}
+}
+rectangle {
+	object {
+		x=395
+		y=62
+		width=70
+		height=5
+	}
+	"basic attribute" {
+		clr=30
+	}
+}
+rectangle {
+	object {
+		x=469
+		y=62
+		width=70
+		height=5
+	}
+	"basic attribute" {
+		clr=0
+	}
+}
+"text update" {
+	object {
+		x=25
+		y=69
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_0_PRE"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=99
+		y=69
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_1_PRE"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=173
+		y=69
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_2_PRE"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=247
+		y=69
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_3_PRE"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=321
+		y=69
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_4_PRE"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=69
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_5_PRE"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=469
+		y=69
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_TOTAL_PRE"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=469
+		y=84
+		width=70
+		height=15
+	}
+	monitor {
+		chan="HPSTRIGSC_TOTAL_FRAC"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=84
+		width=70
+		height=15
+	}
+	monitor {
+		chan="HPSTRIGSC_5_FRAC_PRE"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=321
+		y=84
+		width=70
+		height=15
+	}
+	monitor {
+		chan="HPSTRIGSC_4_FRAC_PRE"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=247
+		y=84
+		width=70
+		height=15
+	}
+	monitor {
+		chan="HPSTRIGSC_3_FRAC_PRE"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=173
+		y=84
+		width=70
+		height=15
+	}
+	monitor {
+		chan="HPSTRIGSC_2_FRAC_PRE"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=99
+		y=84
+		width=70
+		height=15
+	}
+	monitor {
+		chan="HPSTRIGSC_1_FRAC_PRE"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=25
+		y=84
+		width=70
+		height=15
+	}
+	monitor {
+		chan="HPSTRIGSC_0_FRAC_PRE"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=544
+		y=69
+		width=12
+		height=40
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Hz"
+}
+text {
+	object {
+		x=539
+		y=88
+		width=12
+		height=40
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="%"
+	align="horiz. right"
+}
+text {
+	object {
+		x=9
+		y=47
+		width=12
+		height=40
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="%"
+	align="horiz. right"
+}
+text {
+	object {
+		x=10
+		y=68
+		width=12
+		height=40
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Hz"
+	align="horiz. right"
+}
+text {
 	object {
 		x=8
-		y=31
-		width=548
-		height=97
+		y=87
+		width=12
+		height=40
 	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=25
-				y=32
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_0"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=99
-				y=32
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_1"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=173
-				y=32
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_2"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=247
-				y=32
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_3"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=321
-				y=32
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_4"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=395
-				y=32
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_5"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=25
-				y=47
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_0_FRAC"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=99
-				y=47
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_1_FRAC"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=173
-				y=47
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_2_FRAC"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=247
-				y=47
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_3_FRAC"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=321
-				y=47
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_4_FRAC"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=395
-				y=47
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_5_FRAC"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=469
-				y=32
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_TOTAL"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=469
-				y=47
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_TOTAL_FRAC"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=10
-				y=31
-				width=12
-				height=40
-			}
-			"basic attribute" {
-				clr=0
-			}
-			textix="Hz"
-			align="horiz. right"
-		}
-		text {
-			object {
-				x=544
-				y=31
-				width=12
-				height=40
-			}
-			"basic attribute" {
-				clr=0
-			}
-			textix="Hz"
-		}
-		rectangle {
-			object {
-				x=25
-				y=62
-				width=70
-				height=5
-			}
-			"basic attribute" {
-				clr=20
-			}
-		}
-		rectangle {
-			object {
-				x=99
-				y=62
-				width=70
-				height=5
-			}
-			"basic attribute" {
-				clr=23
-			}
-		}
-		rectangle {
-			object {
-				x=173
-				y=62
-				width=70
-				height=5
-			}
-			"basic attribute" {
-				clr=15
-			}
-		}
-		rectangle {
-			object {
-				x=247
-				y=62
-				width=70
-				height=5
-			}
-			"basic attribute" {
-				clr=18
-			}
-		}
-		rectangle {
-			object {
-				x=321
-				y=62
-				width=70
-				height=5
-			}
-			"basic attribute" {
-				clr=6
-			}
-		}
-		rectangle {
-			object {
-				x=395
-				y=62
-				width=70
-				height=5
-			}
-			"basic attribute" {
-				clr=30
-			}
-		}
-		rectangle {
-			object {
-				x=469
-				y=62
-				width=70
-				height=5
-			}
-			"basic attribute" {
-				clr=0
-			}
-		}
-		"text update" {
-			object {
-				x=25
-				y=69
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_0_PRE"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=99
-				y=69
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_1_PRE"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=173
-				y=69
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_2_PRE"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=247
-				y=69
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_3_PRE"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=321
-				y=69
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_4_PRE"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=395
-				y=69
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_5_PRE"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=469
-				y=69
-				width=70
-				height=13
-			}
-			monitor {
-				chan="HPSTRIGSC_TOTAL_PRE"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=469
-				y=84
-				width=70
-				height=15
-			}
-			monitor {
-				chan="HPSTRIGSC_TOTAL_FRAC"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=395
-				y=84
-				width=70
-				height=15
-			}
-			monitor {
-				chan="HPSTRIGSC_5_FRAC_PRE"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=321
-				y=84
-				width=70
-				height=15
-			}
-			monitor {
-				chan="HPSTRIGSC_4_FRAC_PRE"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=247
-				y=84
-				width=70
-				height=15
-			}
-			monitor {
-				chan="HPSTRIGSC_3_FRAC_PRE"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=173
-				y=84
-				width=70
-				height=15
-			}
-			monitor {
-				chan="HPSTRIGSC_2_FRAC_PRE"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=99
-				y=84
-				width=70
-				height=15
-			}
-			monitor {
-				chan="HPSTRIGSC_1_FRAC_PRE"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=25
-				y=84
-				width=70
-				height=15
-			}
-			monitor {
-				chan="HPSTRIGSC_0_FRAC_PRE"
-				clr=0
-				bclr=13
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=544
-				y=69
-				width=12
-				height=40
-			}
-			"basic attribute" {
-				clr=0
-			}
-			textix="Hz"
-		}
-		text {
-			object {
-				x=539
-				y=88
-				width=12
-				height=40
-			}
-			"basic attribute" {
-				clr=0
-			}
-			textix="%"
-			align="horiz. right"
-		}
-		text {
-			object {
-				x=9
-				y=47
-				width=12
-				height=40
-			}
-			"basic attribute" {
-				clr=0
-			}
-			textix="%"
-			align="horiz. right"
-		}
-		text {
-			object {
-				x=10
-				y=68
-				width=12
-				height=40
-			}
-			"basic attribute" {
-				clr=0
-			}
-			textix="Hz"
-			align="horiz. right"
-		}
-		text {
-			object {
-				x=8
-				y=87
-				width=12
-				height=40
-			}
-			"basic attribute" {
-				clr=0
-			}
-			textix="%"
-			align="horiz. right"
-		}
+	"basic attribute" {
+		clr=0
 	}
+	textix="%"
+	align="horiz. right"
 }
 text {
 	object {
