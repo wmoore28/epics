@@ -1,11 +1,11 @@
 
 file {
-	name="/usr/clas12/hps/v1.1.0/apps/myaDataApp/medm/wireScanData.adl"
+	name="/usr/clas12/hps/v1.3.0/apps/myaDataApp/medm/wireScanData.adl"
 	version=030108
 }
 display {
 	object {
-		x=768
+		x=759
 		y=60
 		width=350
 		height=350
@@ -388,4 +388,32 @@ text {
 		clr=14
 	}
 	textix="Y Offset (local fit)"
+}
+text {
+	object {
+		x=25
+		y=317
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Sigma Y"
+}
+"text update" {
+	object {
+		x=251
+		y=313
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P):sigma_y"
+		clr=32
+		bclr=11
+	}
+	align="horiz. centered"
+	limits {
+	}
 }
