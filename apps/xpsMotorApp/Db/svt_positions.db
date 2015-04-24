@@ -173,12 +173,54 @@ record( ai, "$(pref)hps:svt:top:si_desired" ) {
   field( EGU , "mm" )
   field( SCAN, "Passive" )
   field( DESC, "Desired value for top Si" )
-  field(PREC, "3")
+  field( PREC, "3")
+  field( SDIS, "$(pref)hps:svt:top:si_desired_sync.PACT" )
+  field( DISV, "1" )
 }
 
 record( ai, "$(pref)hps:svt:bot:si_desired" ) {
   field( EGU , "mm" )
   field( SCAN, "Passive" )
   field( DESC, "Desired value for bot Si" )
-  field(PREC, "3")
+  field( PREC, "3")
+  field( SDIS, "$(pref)hps:svt:bot:si_desired_sync.PACT" )
+  field( DISV, "1" )
+}
+
+record( ao, "$(pref)hps:svt:top:si_desired_sp" ) {
+  field( EGU , "mm" )
+  field( SCAN, "Passive" )
+  field( DESC, "Desired value for top Si" )
+  field( PREC, "3")
+  field( OUT , "$(pref)hps:svt:top:si_desired NPP" ) 
+  field( OMSL, "supervisory")
+} 
+
+record( ao, "$(pref)hps:svt:bot:si_desired_sp" ) {
+  field( EGU , "mm" )
+  field( SCAN, "Passive" )
+  field( DESC, "Desired value for bot Si" )
+  field( PREC, "3")
+  field( OUT , "$(pref)hps:svt:bot:si_desired NPP")
+  field( OMSL, "supervisory")
+}
+
+record( ao, "$(pref)hps:svt:top:si_desired_sync" ) {
+  field( EGU , "mm" )
+  field( SCAN, "Passive" )
+  field( DESC, "Desired value for top Si" )
+  field( PREC, "3")
+  field( DOL , "$(pref)hps:svt:top:si CPP")
+  field( OUT , "$(pref)hps:svt:top:si_desired_sp PP" ) 
+  field( OMSL, "closed_loop")
+} 
+
+record( ao, "$(pref)hps:svt:bot:si_desired_sync" ) {
+  field( EGU , "mm" )
+  field( SCAN, "Passive" )
+  field( DESC, "Desired value for bot Si" )
+  field( PREC, "3")
+  field( DOL , "$(pref)hps:svt:bot:si CPP")
+  field( OUT , "$(pref)hps:svt:bot:si_desired_sp PP")
+  field( OMSL, "closed_loop")
 }

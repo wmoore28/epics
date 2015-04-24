@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v1.1.0/apps/xpsMotorApp/medm/svtPositions.adl"
+	name="/usr/clas12/hps/v1.3.0/apps/xpsMotorApp/Db/../../xpsMotorApp/medm/svtPositions.adl"
 	version=030108
 }
 display {
 	object {
-		x=65
-		y=447
+		x=516
+		y=338
 		width=600
 		height=500
 	}
@@ -124,7 +124,7 @@ text {
 		height=20
 	}
 	control {
-		chan="hps:svt:top:si_desired"
+		chan="hps:svt:top:si_desired_sp"
 		clr=14
 		bclr=55
 	}
@@ -157,18 +157,6 @@ text {
 	}
 	textix="Stage"
 	align="horiz. centered"
-}
-text {
-	object {
-		x=10
-		y=146
-		width=100
-		height=12
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Move Layer-1 to"
 }
 "related display" {
 	object {
@@ -219,7 +207,7 @@ text {
 text {
 	object {
 		x=175
-		y=144
+		y=145
 		width=30
 		height=20
 	}
@@ -252,7 +240,7 @@ text {
 		height=20
 	}
 	control {
-		chan="hps:svt:bot:si_desired"
+		chan="hps:svt:bot:si_desired_sp"
 		clr=14
 		bclr=55
 	}
@@ -286,18 +274,6 @@ text {
 	textix="Stage"
 	align="horiz. centered"
 }
-text {
-	object {
-		x=10
-		y=375
-		width=100
-		height=12
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Move Layer-1 to"
-}
 rectangle {
 	object {
 		x=5
@@ -326,7 +302,7 @@ text {
 text {
 	object {
 		x=180
-		y=373
+		y=374
 		width=30
 		height=20
 	}
@@ -610,37 +586,6 @@ text {
 	}
 	textix="mm"
 }
-"message button" {
-	object {
-		x=263
-		y=137
-		width=125
-		height=24
-	}
-	control {
-		chan="hps:svt_top:home:proc"
-		clr=14
-		bclr=55
-	}
-	label="Retract Stage"
-	press_msg="0"
-	release_msg="0"
-}
-rectangle {
-	object {
-		x=250
-		y=133
-		width=150
-		height=34
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="if not zero"
-		chan="hps:svt_top_at_home"
-	}
-}
 "text update" {
 	object {
 		x=353
@@ -735,37 +680,6 @@ text {
 	}
 	textix="mm"
 }
-"message button" {
-	object {
-		x=260
-		y=369
-		width=125
-		height=24
-	}
-	control {
-		chan="hps:svt_bot:home:proc"
-		clr=14
-		bclr=55
-	}
-	label="Retract Stage"
-	press_msg="0"
-	release_msg="0"
-}
-rectangle {
-	object {
-		x=250
-		y=365
-		width=150
-		height=34
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="if not zero"
-		chan="hps:svt_bot_at_home"
-	}
-}
 "text update" {
 	object {
 		x=478
@@ -847,4 +761,190 @@ text {
 		clr=14
 	}
 	textix="rad"
+}
+composite {
+	object {
+		x=280
+		y=133
+		width=150
+		height=34
+	}
+	"composite name"=""
+	children {
+		"message button" {
+			object {
+				x=293
+				y=137
+				width=125
+				height=24
+			}
+			control {
+				chan="hps:svt_top:home:proc"
+				clr=14
+				bclr=55
+			}
+			label="Retract Stage"
+			press_msg="0"
+			release_msg="0"
+		}
+		rectangle {
+			object {
+				x=280
+				y=133
+				width=150
+				height=34
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="hps:svt_top_at_home"
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=280
+		y=365
+		width=150
+		height=34
+	}
+	"composite name"=""
+	children {
+		"message button" {
+			object {
+				x=290
+				y=369
+				width=125
+				height=24
+			}
+			control {
+				chan="hps:svt_bot:home:proc"
+				clr=14
+				bclr=55
+			}
+			label="Retract Stage"
+			press_msg="0"
+			release_msg="0"
+		}
+		rectangle {
+			object {
+				x=280
+				y=365
+				width=150
+				height=34
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="hps:svt_bot_at_home"
+			}
+		}
+	}
+}
+"message button" {
+	object {
+		x=195
+		y=142
+		width=43
+		height=20
+	}
+	control {
+		chan="hps:svt:top:si_desired.PROC"
+		clr=14
+		bclr=32
+	}
+	label="MOVE"
+	press_msg="1"
+	release_msg="0"
+}
+"message button" {
+	object {
+		x=195
+		y=371
+		width=43
+		height=20
+	}
+	control {
+		chan="hps:svt:bot:si_desired.PROC"
+		clr=14
+		bclr=32
+	}
+	label="MOVE"
+	press_msg="1"
+	release_msg="0"
+}
+composite {
+	object {
+		x=10
+		y=368
+		width=100
+		height=27
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=10
+				y=368
+				width=100
+				height=12
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Desired Layer-1 "
+		}
+		text {
+			object {
+				x=10
+				y=383
+				width=100
+				height=12
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Position"
+		}
+	}
+}
+composite {
+	object {
+		x=10
+		y=139
+		width=100
+		height=27
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=10
+				y=139
+				width=100
+				height=12
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Desired Layer-1 "
+		}
+		text {
+			object {
+				x=10
+				y=154
+				width=100
+				height=12
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Position"
+		}
+	}
 }
