@@ -240,7 +240,8 @@ $END
 
     s = """
 CHANNEL HYBRID_TEMP SVT:temp:hyb:CHANNELTEMPLATE:temp0:t_rd A
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:CHANNELTEMPLATE:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:hyb:CHANNELTEMPLATE:temp0:t_rd" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 15
 $GUIDANCE
 The temperature sensor on one of the SVT hybrids is reporting an abnormal temperature.
 Contact the SVT expert for further guidance.
@@ -269,21 +270,24 @@ $END
 
     s = """
 CHANNEL FEB_TEMP SVT:temp:fe:CHANNELTEMPLATE:axixadc:t_rd A
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:CHANNELTEMPLATE:axixadc:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:CHANNELTEMPLATE:axixadc:t_rd" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 $GUIDANCE
 The FPGA on one of the SVT frontend boards is reporting an abnormal temperature.
 Contact the SVT expert for further guidance.
 $END
 
 CHANNEL FEB_TEMP SVT:temp:fe:CHANNELTEMPLATE:FebTemp0:t_rd A
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:CHANNELTEMPLATE:FebTemp0:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:CHANNELTEMPLATE:FebTemp0:t_rd" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 $GUIDANCE
 A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
 Contact the SVT expert for further guidance.
 $END
 
 CHANNEL FEB_TEMP SVT:temp:fe:CHANNELTEMPLATE:FebTemp1:t_rd A
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:CHANNELTEMPLATE:FebTemp1:t_rd" aiaocalc_alarm.adl >> /dev/null 
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:temp:fe:CHANNELTEMPLATE:FebTemp1:t_rd" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 $GUIDANCE
 A temperature sensor on one of the SVT frontend boards is reporting an abnormal temperature.
 Contact the SVT expert for further guidance.
@@ -311,6 +315,7 @@ $END
     s = """
 CHANNEL DAQ SVT:lv:CHANNELTEMPLATE:sync:sync_rd A
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:CHANNELTEMPLATE:sync:sync_rd" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER 0 20
 $GUIDANCE
 One or more readout chips on this SVT hybrid have gone out of sync.
 Contact the SVT expert for further guidance.

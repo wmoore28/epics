@@ -1,17 +1,32 @@
 #!/bin/bash
 basedir="${0/%`basename $0`/}"
 pushd $basedir
-./allFebCaput.sh SVT:lv:fe anan:i_rd.LOLO 0.3
-./allFebCaput.sh SVT:lv:fe anan:i_rd.LOW 0.31
-./allFebCaput.sh SVT:lv:fe anan:i_rd.HIGH 0.33
-./allFebCaput.sh SVT:lv:fe anan:i_rd.HIHI 0.34
 
-caput SVT:lv:fe:0:anan:i_rd.LOLO 0.27
-caput SVT:lv:fe:0:anan:i_rd.LOW 0.275
+./allFebCaput.sh SVT:temp:fe FebTemp0:t_rd.LOLO 20.0
+./allFebCaput.sh SVT:temp:fe FebTemp0:t_rd.LOW 22.0
+./allFebCaput.sh SVT:temp:fe FebTemp0:t_rd.HIGH 28.0
+./allFebCaput.sh SVT:temp:fe FebTemp0:t_rd.HIHI 30.0
+./allFebCaput.sh SVT:temp:fe FebTemp1:t_rd.LOLO 20.0
+./allFebCaput.sh SVT:temp:fe FebTemp1:t_rd.LOW 22.0
+./allFebCaput.sh SVT:temp:fe FebTemp1:t_rd.HIGH 28.0
+./allFebCaput.sh SVT:temp:fe FebTemp1:t_rd.HIHI 30.0
+./allFebCaput.sh SVT:temp:fe axixadc:t_rd.LOLO 36.0
+./allFebCaput.sh SVT:temp:fe axixadc:t_rd.LOW 38.0
+./allFebCaput.sh SVT:temp:fe axixadc:t_rd.HIGH 50.0
+./allFebCaput.sh SVT:temp:fe axixadc:t_rd.HIHI 52.0
+
+
+./allFebCaput.sh SVT:lv:fe anan:i_rd.LOLO 0.27
+./allFebCaput.sh SVT:lv:fe anan:i_rd.LOW 0.3
+./allFebCaput.sh SVT:lv:fe anan:i_rd.HIGH 0.35
+./allFebCaput.sh SVT:lv:fe anan:i_rd.HIHI 0.37
+
+caput SVT:lv:fe:0:anan:i_rd.LOLO 0.26
+caput SVT:lv:fe:0:anan:i_rd.LOW 0.27
 caput SVT:lv:fe:0:anan:i_rd.HIGH 0.295
 caput SVT:lv:fe:0:anan:i_rd.HIHI 0.305
-caput SVT:lv:fe:8:anan:i_rd.LOLO 0.27
-caput SVT:lv:fe:8:anan:i_rd.LOW 0.275
+caput SVT:lv:fe:8:anan:i_rd.LOLO 0.26
+caput SVT:lv:fe:8:anan:i_rd.LOW 0.27
 caput SVT:lv:fe:8:anan:i_rd.HIGH 0.295
 caput SVT:lv:fe:8:anan:i_rd.HIHI 0.305
 
@@ -21,7 +36,7 @@ caput SVT:lv:fe:8:anan:i_rd.HIHI 0.305
 ./allFebCaput.sh SVT:lv:fe anap:i_rd.HIHI 3.3
 
 caput SVT:lv:fe:0:anap:i_rd.LOLO 1.95
-caput SVT:lv:fe:0:anap:i_rd.LOW 2.02
+caput SVT:lv:fe:0:anap:i_rd.LOW 2.0
 caput SVT:lv:fe:0:anap:i_rd.HIGH 2.15
 caput SVT:lv:fe:0:anap:i_rd.HIHI 2.2
 caput SVT:lv:fe:8:anap:i_rd.LOLO 1.95
