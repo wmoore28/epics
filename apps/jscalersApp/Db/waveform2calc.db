@@ -1,32 +1,10 @@
 
-#record(fanout, "HPSTRIGSC_0_FANA") {
-#    field(LNK1, "HPSTRIGSC_0")
-#    field(LNK2, "HPSTRIGSC_0_GATED")
-#}
-#record(fanout, "HPSTRIGSC_1_FANA") {
-#    field(LNK1, "HPSTRIGSC_1")
-#    field(LNK2, "HPSTRIGSC_1_GATED")
-#}
-#record(fanout, "HPSTRIGSC_2_FANA") {
-#    field(LNK1, "HPSTRIGSC_2")
-#    field(LNK2, "HPSTRIGSC_2_GATED")
-#}
-#record(fanout, "HPSTRIGSC_3_FANA") {
-#    field(LNK1, "HPSTRIGSC_3")
-#    field(LNK2, "HPSTRIGSC_3_GATED")
-#}
-#record(fanout, "HPSTRIGSC_4_FANA") {
-#    field(LNK1, "HPSTRIGSC_4")
-#    field(LNK2, "HPSTRIGSC_4_GATED")
-#}
-#record(fanout, "HPSTRIGSC_5_FANA") {
-#    field(LNK1, "HPSTRIGSC_5")
-#    field(LNK2, "HPSTRIGSC_5_GATED")
-#}
 
-# CONVERT WAVEFORM TO ARRAY:
+# MAIN INPUTS, GATED TRIGGER RATES
+# FLINKED FROM jscalers.db
+# FLINKED TO FANOUTs
 ############################################
-record(subArray, "HPSTRIGSC_0") {
+record(subArray, "HPSTRIGSC_0_GATED") {
     field(DTYP,"Soft Channel")
     field(INP,"B_SCALERSHPS2_Sl10_Ch0.VAL")
     field(NELM,1)
@@ -34,7 +12,7 @@ record(subArray, "HPSTRIGSC_0") {
     field(FTVL,"DOUBLE")
     field(FLNK,"HPSTRIGSC_0_FAN")
 }
-record(subArray, "HPSTRIGSC_1") {
+record(subArray, "HPSTRIGSC_1_GATED") {
     field(DTYP,"Soft Channel")
     field(INP,"B_SCALERSHPS2_Sl10_Ch1.VAL")
     field(NELM,1)
@@ -42,7 +20,7 @@ record(subArray, "HPSTRIGSC_1") {
     field(FTVL,"DOUBLE")
     field(FLNK,"HPSTRIGSC_1_FAN")
 }
-record(subArray, "HPSTRIGSC_2") {
+record(subArray, "HPSTRIGSC_2_GATED") {
     field(DTYP,"Soft Channel")
     field(INP,"B_SCALERSHPS2_Sl10_Ch2.VAL")
     field(NELM,1)
@@ -50,7 +28,7 @@ record(subArray, "HPSTRIGSC_2") {
     field(FTVL,"DOUBLE")
     field(FLNK,"HPSTRIGSC_2_FAN")
 }
-record(subArray, "HPSTRIGSC_3") {
+record(subArray, "HPSTRIGSC_3_GATED") {
     field(DTYP,"Soft Channel")
     field(INP,"B_SCALERSHPS2_Sl10_Ch3.VAL")
     field(NELM,1)
@@ -58,7 +36,7 @@ record(subArray, "HPSTRIGSC_3") {
     field(FTVL,"DOUBLE")
     field(FLNK,"HPSTRIGSC_3_FAN")
 }
-record(subArray, "HPSTRIGSC_4") {
+record(subArray, "HPSTRIGSC_4_GATED") {
     field(DTYP,"Soft Channel")
     field(INP,"B_SCALERSHPS2_Sl10_Ch4.VAL")
     field(NELM,1)
@@ -66,7 +44,7 @@ record(subArray, "HPSTRIGSC_4") {
     field(FTVL,"DOUBLE")
     field(FLNK,"HPSTRIGSC_4_FAN")
 }
-record(subArray, "HPSTRIGSC_5") {
+record(subArray, "HPSTRIGSC_5_GATED") {
     field(DTYP,"Soft Channel")
     field(INP,"B_SCALERSHPS2_Sl10_Ch5.VAL")
     field(NELM,1)
@@ -75,54 +53,7 @@ record(subArray, "HPSTRIGSC_5") {
     field(FLNK,"HPSTRIGSC_5_FAN")
 }
 
-
-####################################################
-
-#record(subArray, "HPSTRIGSC_0_UNGATED") {
-#    field(DTYP,"Soft Channel")
-#    field(INP,"B_SCALERSHPS2_Sl10_Ch0.VAL")
-#    field(NELM,1)
-#    field(INDX,1)
-#    field(FTVL,"DOUBLE")
-#}
-#record(subArray, "HPSTRIGSC_1_UNGATED") {
-#    field(DTYP,"Soft Channel")
-#    field(INP,"B_SCALERSHPS2_Sl10_Ch1.VAL")
-#    field(NELM,1)
-#    field(INDX,1)
-#    field(FTVL,"DOUBLE")
-#}
-#record(subArray, "HPSTRIGSC_2_UNGATED") {
-#    field(DTYP,"Soft Channel")
-#    field(INP,"B_SCALERSHPS2_Sl10_Ch2.VAL")
-#    field(NELM,1)
-#    field(INDX,1)
-#    field(FTVL,"DOUBLE")
-#}
-#record(subArray, "HPSTRIGSC_3_UNGATED") {
-#    field(DTYP,"Soft Channel")
-#    field(INP,"B_SCALERSHPS2_Sl10_Ch3.VAL")
-#    field(NELM,1)
-#    field(INDX,1)
-#    field(FTVL,"DOUBLE")
-#}
-#record(subArray, "HPSTRIGSC_4_UNGATED") {
-#    field(DTYP,"Soft Channel")
-#    field(INP,"B_SCALERSHPS2_Sl10_Ch4.VAL")
-#    field(NELM,1)
-#    field(INDX,1)
-#    field(FTVL,"DOUBLE")
-#}
-record(subArray, "HPSTRIGSC_5_UNGATED") {
-    field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS2_Sl10_Ch5.VAL")
-    field(NELM,1)
-    field(MALM,4)
-    field(INDX,3)
-    field(FTVL,"DOUBLE")
-    field(FLNK, "HPSTRIGSC_LIVETIME")
-}
-
+# FANOUT FROM MAIN INPUTS:
 ############################################
 
 record(fanout, "HPSTRIGSC_0_FAN") {
@@ -157,153 +88,90 @@ record(fanout, "HPSTRIGSC_5_FAN") {
     field(LNK4, "HPSTRIGSC_LIVETIME")
 }
 
-
-# COMPUTE TOTAL RATE:
+# TOTAL GATED RATED, FLINKED FROM FANOUTs:
 ############################################
 record(calc, "HPSTRIGSC_TOTAL") {
-    field(INPA,"HPSTRIGSC_0")
-    field(INPB,"HPSTRIGSC_1")
-    field(INPC,"HPSTRIGSC_2")
-    field(INPD,"HPSTRIGSC_3")
-    field(INPE,"HPSTRIGSC_4")
-    field(INPF,"HPSTRIGSC_5")
+    field(INPA,"HPSTRIGSC_0_GATED")
+    field(INPB,"HPSTRIGSC_1_GATED")
+    field(INPC,"HPSTRIGSC_2_GATED")
+    field(INPD,"HPSTRIGSC_3_GATED")
+    field(INPE,"HPSTRIGSC_4_GATED")
+    field(INPF,"HPSTRIGSC_5_GATED")
     field(CALC,"A+B+C+D+E+F")
 }
-record(calc, "HPSTRIGSC_LIVETIME") {
-    field(INPA,"HPSTRIGSC_5")
-    field(INPB,"HPSTRIGSC_5_UNGATED PP")
-    field(CALC,"B>0 ? 100*A/B : -999")
-}
-record(calc, "HPSTRIGSC_TOTAL_FRAC") {
-    field(CALC,"100")
-    field(SCAN,"10 second")
-}
 
 
-# COMPUTE RELATIVE RATES:
+
+# COMPUTE RELATIVE RATES, FLINKED FROM FANOUTs:
 ############################################
 record(calc, "HPSTRIGSC_0_FRAC") {
-    field(INPA,"HPSTRIGSC_0")
+    field(INPA,"HPSTRIGSC_0_GATED")
     field(INPB,"HPSTRIGSC_TOTAL")
     field(CALC,"B>0 ? 100*A/B : -1")
-    field(FLNK,"HPSTRIGSC_0_SFRAC")
 }
 record(calc, "HPSTRIGSC_1_FRAC") {
-    field(INPA,"HPSTRIGSC_1")
+    field(INPA,"HPSTRIGSC_1_GATED")
     field(INPB,"HPSTRIGSC_TOTAL")
     field(CALC,"B>0 ? 100*A/B : -1")
-    field(FLNK,"HPSTRIGSC_1_SFRAC")
 }
 record(calc, "HPSTRIGSC_2_FRAC") {
-    field(INPA,"HPSTRIGSC_2")
+    field(INPA,"HPSTRIGSC_2_GATED")
     field(INPB,"HPSTRIGSC_TOTAL")
     field(CALC,"B>0 ? 100*A/B : -1")
-    field(FLNK,"HPSTRIGSC_2_SFRAC")
 }
 record(calc, "HPSTRIGSC_3_FRAC") {
-    field(INPA,"HPSTRIGSC_3")
+    field(INPA,"HPSTRIGSC_3_GATED")
     field(INPB,"HPSTRIGSC_TOTAL")
     field(CALC,"B>0 ? 100*A/B : -1")
-    field(FLNK,"HPSTRIGSC_3_SFRAC")
 }
 record(calc, "HPSTRIGSC_4_FRAC") {
-    field(INPA,"HPSTRIGSC_4")
+    field(INPA,"HPSTRIGSC_4_GATED")
     field(INPB,"HPSTRIGSC_TOTAL")
     field(CALC,"B>0 ? 100*A/B : -1")
-    field(FLNK,"HPSTRIGSC_4_SFRAC")
 }
 record(calc, "HPSTRIGSC_5_FRAC") {
-    field(INPA,"HPSTRIGSC_5")
+    field(INPA,"HPSTRIGSC_5_GATED")
     field(INPB,"HPSTRIGSC_TOTAL")
     field(CALC,"B>0 ? 100*A/B : -1")
-    field(FLNK,"HPSTRIGSC_5_SFRAC")
 }
 
-
-# SMOOTH RATES:
-############################################
-record(ai, "HPSTRIGSC_0_SFRAC") {
-    field(INP,"HPSTRIGSC_0_FRAC")
-    field(SMOO,0.6)
-}
-record(ai, "HPSTRIGSC_1_SFRAC") {
-    field(INP,"HPSTRIGSC_1_FRAC")
-    field(SMOO,0.6)
-}
-record(ai, "HPSTRIGSC_2_SFRAC") {
-    field(INP,"HPSTRIGSC_2_FRAC")
-    field(SMOO,0.6)
-}
-record(ai, "HPSTRIGSC_3_SFRAC") {
-    field(INP,"HPSTRIGSC_3_FRAC")
-    field(SMOO,0.6)
-}
-record(ai, "HPSTRIGSC_4_SFRAC") {
-    field(INP,"HPSTRIGSC_4_FRAC")
-    field(SMOO,0.6)
-}
-record(ai, "HPSTRIGSC_5_SFRAC") {
-    field(INP,"HPSTRIGSC_5_FRAC")
-    field(SMOO,0.6)
-}
-
-
-# PRESCALE FACTORS:
-############################################
-record(ai, "HPSTRIGPRESCALE_0") {
-    field(FLNK,"HPSTRIGSC_0_PRE")
-}
-record(ai, "HPSTRIGPRESCALE_1") {
-    field(FLNK,"HPSTRIGSC_1_PRE")
-}
-record(ai, "HPSTRIGPRESCALE_2") {
-    field(FLNK,"HPSTRIGSC_2_PRE")
-}
-record(ai, "HPSTRIGPRESCALE_3") {
-    field(FLNK,"HPSTRIGSC_3_PRE")
-}
-record(ai, "HPSTRIGPRESCALE_4") {
-    field(FLNK,"HPSTRIGSC_4_PRE")
-}
-record(ai, "HPSTRIGPRESCALE_5") {
-    field(FLNK,"HPSTRIGSC_5_PRE")
-}
 
 
 # PRESCALED TRIGGER RATES:
+# FLINKS to FANOUTS
 ############################################
 record(calc, "HPSTRIGSC_0_PRE") {
-    field(INPA,"HPSTRIGSC_0")
+    field(INPA,"HPSTRIGSC_0_GATED")
     field(INPB,"HPSTRIGPRESCALE_0")
     field(CALC,"A/(2^B)")
     field(FLNK,"HPSTRIGSC_0_FAN_PRE")
 }
 record(calc, "HPSTRIGSC_1_PRE") {
-    field(INPA,"HPSTRIGSC_1")
+    field(INPA,"HPSTRIGSC_1_GATED")
     field(INPB,"HPSTRIGPRESCALE_1")
     field(CALC,"A/(2^B)")
     field(FLNK,"HPSTRIGSC_1_FAN_PRE")
 }
 record(calc, "HPSTRIGSC_2_PRE") {
-    field(INPA,"HPSTRIGSC_2")
+    field(INPA,"HPSTRIGSC_2_GATED")
     field(INPB,"HPSTRIGPRESCALE_2")
     field(CALC,"A/(2^B)")
     field(FLNK,"HPSTRIGSC_2_FAN_PRE")
 }
 record(calc, "HPSTRIGSC_3_PRE") {
-    field(INPA,"HPSTRIGSC_3")
+    field(INPA,"HPSTRIGSC_3_GATED")
     field(INPB,"HPSTRIGPRESCALE_3")
     field(CALC,"A/(2^B)")
     field(FLNK,"HPSTRIGSC_3_FAN_PRE")
 }
 record(calc, "HPSTRIGSC_4_PRE") {
-    field(INPA,"HPSTRIGSC_4")
+    field(INPA,"HPSTRIGSC_4_GATED")
     field(INPB,"HPSTRIGPRESCALE_4")
     field(CALC,"A/(2^B)")
     field(FLNK,"HPSTRIGSC_4_FAN_PRE")
 }
 record(calc, "HPSTRIGSC_5_PRE") {
-    field(INPA,"HPSTRIGSC_5")
+    field(INPA,"HPSTRIGSC_5_GATED")
     field(INPB,"HPSTRIGPRESCALE_5")
     field(CALC,"A/(2^B)")
     field(FLNK,"HPSTRIGSC_5_FAN_PRE")
@@ -338,7 +206,7 @@ record(fanout, "HPSTRIGSC_5_FAN_PRE") {
 }
 
 
-# COMPUTE TOTAL PRESCALED RATE:
+# TOTAL ABSOLUTE PRESCALED RATES, FLINKED FROM FANOUTS:
 ############################################
 record(calc, "HPSTRIGSC_TOTAL_PRE") {
     field(INPA,"HPSTRIGSC_0_PRE")
@@ -351,7 +219,7 @@ record(calc, "HPSTRIGSC_TOTAL_PRE") {
 }
 
 
-# COMPUTE PRESCALED RELATIVE RATES:
+# PRESCALED FRACTIONAL RATES, FLINKED FROM FANOUTs:
 ############################################
 record(calc, "HPSTRIGSC_0_FRAC_PRE") {
     field(INPA,"HPSTRIGSC_0_PRE")
@@ -391,7 +259,7 @@ record(calc, "HPSTRIGSC_5_FRAC_PRE") {
 }
 
 
-# SMOOTH PRESCALED RELATIVE RATES:
+# SMOOTHING ONLY, FLINKED FROM FRACTIONAL PRESCALED RATES:
 ############################################
 record(ai, "HPSTRIGSC_0_SFRAC_PRE") {
     field(INP,"HPSTRIGSC_0_FRAC_PRE")
@@ -420,6 +288,103 @@ record(ai, "HPSTRIGSC_5_SFRAC_PRE") {
 
 
 
+
+# DUMMY:
+############################################
+record(calc, "HPSTRIGSC_TOTAL_FRAC") {
+    field(CALC,"100")
+    field(SCAN,"10 second")
+}
+
+# PRESCALE FACTORS:
+############################################
+record(ai, "HPSTRIGPRESCALE_0") {
+    field(FLNK,"HPSTRIGSC_0_PRE")
+}
+record(ai, "HPSTRIGPRESCALE_1") {
+    field(FLNK,"HPSTRIGSC_1_PRE")
+}
+record(ai, "HPSTRIGPRESCALE_2") {
+    field(FLNK,"HPSTRIGSC_2_PRE")
+}
+record(ai, "HPSTRIGPRESCALE_3") {
+    field(FLNK,"HPSTRIGSC_3_PRE")
+}
+record(ai, "HPSTRIGPRESCALE_4") {
+    field(FLNK,"HPSTRIGSC_4_PRE")
+}
+record(ai, "HPSTRIGPRESCALE_5") {
+    field(FLNK,"HPSTRIGSC_5_PRE")
+}
+
+
+
+# UNGATED TRIGGER RATES:
+####################################################
+
+record(subArray, "HPSTRIGSC_0") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl10_Ch0.VAL")
+    field(NELM,1)
+    field(MALM,4)
+    field(INDX,3)
+    field(FTVL,"DOUBLE")
+}
+record(subArray, "HPSTRIGSC_1") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl10_Ch1.VAL")
+    field(NELM,1)
+    field(MALM,4)
+    field(INDX,3)
+    field(FTVL,"DOUBLE")
+}
+record(subArray, "HPSTRIGSC_2") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl10_Ch2.VAL")
+    field(NELM,1)
+    field(MALM,4)
+    field(INDX,3)
+    field(FTVL,"DOUBLE")
+}
+record(subArray, "HPSTRIGSC_3") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl10_Ch3.VAL")
+    field(NELM,1)
+    field(MALM,4)
+    field(INDX,3)
+    field(FTVL,"DOUBLE")
+}
+record(subArray, "HPSTRIGSC_4") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl10_Ch4.VAL")
+    field(NELM,1)
+    field(MALM,4)
+    field(INDX,3)
+    field(FTVL,"DOUBLE")
+}
+record(subArray, "HPSTRIGSC_5") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl10_Ch5.VAL")
+    field(NELM,1)
+    field(MALM,4)
+    field(INDX,3)
+    field(FTVL,"DOUBLE")
+    field(FLNK, "HPSTRIGSC_LIVETIME")
+}
+
+
+# LIVETIME, FLINKED FROM HPSTRIGSC_5:
+############################################
+record(calc, "HPSTRIGSC_LIVETIME") {
+    field(INPA,"HPSTRIGSC_5_GATED")
+    field(INPB,"HPSTRIGSC_5 PP")
+    field(INPC,"HPSTRIGSC_4 PP")
+    field(INPD,"HPSTRIGSC_3 PP")
+    field(INPE,"HPSTRIGSC_2 PP")
+    field(INPF,"HPSTRIGSC_1 PP")
+    field(INPG,"HPSTRIGSC_0 PP")
+    field(CALC,"B>0 ? 100*A/B : -999")
+}
 
 
 
