@@ -1,14 +1,14 @@
 
 file {
-	name="/home/baltzell/./hps_trigger_scalers.adl"
+	name="/home/baltzell/hps_trigger_scalers.adl"
 	version=030108
 }
 display {
 	object {
-		x=768
-		y=206
-		width=567
-		height=466
+		x=2309
+		y=44
+		width=606
+		height=441
 	}
 	clr=0
 	bclr=14
@@ -89,8 +89,8 @@ display {
 }
 rectangle {
 	object {
-		x=72
-		y=423
+		x=57
+		y=396
 		width=409
 		height=38
 	}
@@ -100,8 +100,8 @@ rectangle {
 }
 rectangle {
 	object {
-		x=72
-		y=423
+		x=57
+		y=395
 		width=409
 		height=38
 	}
@@ -112,8 +112,8 @@ rectangle {
 }
 rectangle {
 	object {
-		x=526
-		y=119
+		x=566
+		y=92
 		width=33
 		height=48
 	}
@@ -127,14 +127,15 @@ rectangle {
 "strip chart" {
 	object {
 		x=5
-		y=118
-		width=515
+		y=91
+		width=556
 		height=300
 	}
 	plotcom {
 		clr=0
 		bclr=13
 	}
+	period=20.000000
 	units="minute"
 	pen[0] {
 		chan="HPSTRIGSC_0_SFRAC_PRE"
@@ -195,8 +196,8 @@ rectangle {
 }
 text {
 	object {
-		x=255
-		y=99
+		x=10
+		y=64
 		width=54
 		height=20
 	}
@@ -209,26 +210,10 @@ text {
 	textix="PRESCALED"
 	align="horiz. centered"
 }
-text {
-	object {
-		x=254
-		y=19
-		width=54
-		height=20
-	}
-	"basic attribute" {
-		clr=0
-	}
-	"dynamic attribute" {
-		chan="HPSTRIGSC_TOTAL"
-	}
-	textix="RAW"
-	align="horiz. centered"
-}
 bar {
 	object {
-		x=527
-		y=188
+		x=567
+		y=161
 		width=33
 		height=229
 	}
@@ -247,8 +232,8 @@ bar {
 }
 text {
 	object {
-		x=531
-		y=122
+		x=571
+		y=95
 		width=24
 		height=12
 	}
@@ -262,8 +247,8 @@ text {
 }
 rectangle {
 	object {
-		x=526
-		y=167
+		x=566
+		y=140
 		width=33
 		height=5
 	}
@@ -273,8 +258,8 @@ rectangle {
 }
 text {
 	object {
-		x=540
-		y=152
+		x=580
+		y=125
 		width=24
 		height=40
 	}
@@ -288,8 +273,8 @@ text {
 }
 "text update" {
 	object {
-		x=526
-		y=172
+		x=566
+		y=145
 		width=33
 		height=15
 	}
@@ -304,8 +289,8 @@ text {
 }
 text {
 	object {
-		x=531
-		y=137
+		x=571
+		y=110
 		width=24
 		height=12
 	}
@@ -320,9 +305,9 @@ text {
 rectangle {
 	object {
 		x=5
-		y=18
-		width=555
-		height=42
+		y=17
+		width=595
+		height=30
 	}
 	"basic attribute" {
 		clr=10
@@ -331,8 +316,8 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=86
-		y=441
+		x=71
+		y=412
 		width=30
 		height=15
 	}
@@ -346,8 +331,8 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=151
-		y=441
+		x=136
+		y=412
 		width=30
 		height=15
 	}
@@ -361,8 +346,8 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=216
-		y=441
+		x=201
+		y=412
 		width=30
 		height=15
 	}
@@ -376,8 +361,8 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=281
-		y=441
+		x=266
+		y=412
 		width=30
 		height=15
 	}
@@ -392,9 +377,9 @@ rectangle {
 rectangle {
 	object {
 		x=5
-		y=67
-		width=555
-		height=45
+		y=54
+		width=595
+		height=33
 	}
 	"basic attribute" {
 		clr=10
@@ -403,8 +388,8 @@ rectangle {
 }
 composite {
 	object {
-		x=37
-		y=4
+		x=80
+		y=2
 		width=504
 		height=15
 	}
@@ -412,8 +397,8 @@ composite {
 	children {
 		text {
 			object {
-				x=491
-				y=4
+				x=534
+				y=2
 				width=50
 				height=15
 			}
@@ -424,8 +409,8 @@ composite {
 		}
 		text {
 			object {
-				x=411
-				y=4
+				x=454
+				y=2
 				width=50
 				height=15
 			}
@@ -436,8 +421,8 @@ composite {
 		}
 		text {
 			object {
-				x=340
-				y=4
+				x=383
+				y=2
 				width=50
 				height=15
 			}
@@ -448,8 +433,8 @@ composite {
 		}
 		text {
 			object {
-				x=264
-				y=4
+				x=307
+				y=2
 				width=50
 				height=15
 			}
@@ -460,8 +445,8 @@ composite {
 		}
 		text {
 			object {
-				x=189
-				y=4
+				x=232
+				y=2
 				width=50
 				height=15
 			}
@@ -472,8 +457,8 @@ composite {
 		}
 		text {
 			object {
-				x=111
-				y=4
+				x=154
+				y=2
 				width=50
 				height=15
 			}
@@ -484,8 +469,8 @@ composite {
 		}
 		text {
 			object {
-				x=37
-				y=4
+				x=80
+				y=2
 				width=50
 				height=15
 			}
@@ -498,8 +483,106 @@ composite {
 }
 "text update" {
 	object {
-		x=25
-		y=32
+		x=68
+		y=19
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_0"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=142
+		y=19
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_1"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=216
+		y=19
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_2"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=290
+		y=19
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_3"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=364
+		y=19
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_4"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=438
+		y=19
+		width=70
+		height=13
+	}
+	monitor {
+		chan="HPSTRIGSC_5"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=68
+		y=34
 		width=70
 		height=13
 	}
@@ -514,8 +597,8 @@ composite {
 }
 "text update" {
 	object {
-		x=99
-		y=32
+		x=142
+		y=34
 		width=70
 		height=13
 	}
@@ -530,8 +613,8 @@ composite {
 }
 "text update" {
 	object {
-		x=173
-		y=32
+		x=216
+		y=34
 		width=70
 		height=13
 	}
@@ -546,8 +629,8 @@ composite {
 }
 "text update" {
 	object {
-		x=247
-		y=32
+		x=290
+		y=34
 		width=70
 		height=13
 	}
@@ -562,8 +645,8 @@ composite {
 }
 "text update" {
 	object {
-		x=321
-		y=32
+		x=364
+		y=34
 		width=70
 		height=13
 	}
@@ -574,14 +657,12 @@ composite {
 	}
 	align="horiz. centered"
 	limits {
-		precSrc="default"
-		precDefault=1
 	}
 }
 "text update" {
 	object {
-		x=395
-		y=32
+		x=438
+		y=34
 		width=70
 		height=13
 	}
@@ -592,110 +673,12 @@ composite {
 	}
 	align="horiz. centered"
 	limits {
-		precSrc="default"
-		precDefault=1
 	}
 }
 "text update" {
 	object {
-		x=25
-		y=47
-		width=70
-		height=13
-	}
-	monitor {
-		chan="HPSTRIGSC_0_FRAC"
-		clr=0
-		bclr=13
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=99
-		y=47
-		width=70
-		height=13
-	}
-	monitor {
-		chan="HPSTRIGSC_1_FRAC"
-		clr=0
-		bclr=13
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=173
-		y=47
-		width=70
-		height=13
-	}
-	monitor {
-		chan="HPSTRIGSC_2_FRAC"
-		clr=0
-		bclr=13
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=247
-		y=47
-		width=70
-		height=13
-	}
-	monitor {
-		chan="HPSTRIGSC_3_FRAC"
-		clr=0
-		bclr=13
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=321
-		y=47
-		width=70
-		height=13
-	}
-	monitor {
-		chan="HPSTRIGSC_4_FRAC"
-		clr=0
-		bclr=13
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=395
-		y=47
-		width=70
-		height=13
-	}
-	monitor {
-		chan="HPSTRIGSC_5_FRAC"
-		clr=0
-		bclr=13
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=469
-		y=32
+		x=512
+		y=34
 		width=70
 		height=13
 	}
@@ -708,41 +691,12 @@ composite {
 	limits {
 	}
 }
-"text update" {
-	object {
-		x=469
-		y=47
-		width=70
-		height=13
-	}
-	monitor {
-		chan="HPSTRIGSC_TOTAL_FRAC"
-		clr=0
-		bclr=13
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
 text {
 	object {
-		x=10
-		y=31
+		x=587
+		y=18
 		width=12
-		height=40
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="Hz"
-	align="horiz. right"
-}
-text {
-	object {
-		x=544
-		y=31
-		width=12
-		height=40
+		height=12
 	}
 	"basic attribute" {
 		clr=0
@@ -751,8 +705,8 @@ text {
 }
 rectangle {
 	object {
-		x=25
-		y=62
+		x=68
+		y=49
 		width=70
 		height=5
 	}
@@ -762,8 +716,8 @@ rectangle {
 }
 rectangle {
 	object {
-		x=99
-		y=62
+		x=142
+		y=49
 		width=70
 		height=5
 	}
@@ -773,8 +727,8 @@ rectangle {
 }
 rectangle {
 	object {
-		x=173
-		y=62
+		x=216
+		y=49
 		width=70
 		height=5
 	}
@@ -784,8 +738,8 @@ rectangle {
 }
 rectangle {
 	object {
-		x=247
-		y=62
+		x=290
+		y=49
 		width=70
 		height=5
 	}
@@ -795,8 +749,8 @@ rectangle {
 }
 rectangle {
 	object {
-		x=321
-		y=62
+		x=364
+		y=49
 		width=70
 		height=5
 	}
@@ -806,8 +760,8 @@ rectangle {
 }
 rectangle {
 	object {
-		x=395
-		y=62
+		x=438
+		y=49
 		width=70
 		height=5
 	}
@@ -817,8 +771,8 @@ rectangle {
 }
 rectangle {
 	object {
-		x=469
-		y=62
+		x=512
+		y=49
 		width=70
 		height=5
 	}
@@ -828,8 +782,8 @@ rectangle {
 }
 "text update" {
 	object {
-		x=25
-		y=69
+		x=68
+		y=56
 		width=70
 		height=13
 	}
@@ -844,8 +798,8 @@ rectangle {
 }
 "text update" {
 	object {
-		x=99
-		y=69
+		x=142
+		y=56
 		width=70
 		height=13
 	}
@@ -860,8 +814,8 @@ rectangle {
 }
 "text update" {
 	object {
-		x=173
-		y=69
+		x=216
+		y=56
 		width=70
 		height=13
 	}
@@ -876,8 +830,8 @@ rectangle {
 }
 "text update" {
 	object {
-		x=247
-		y=69
+		x=290
+		y=56
 		width=70
 		height=13
 	}
@@ -892,8 +846,8 @@ rectangle {
 }
 "text update" {
 	object {
-		x=321
-		y=69
+		x=364
+		y=56
 		width=70
 		height=13
 	}
@@ -905,13 +859,12 @@ rectangle {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
-		precDefault=1
 	}
 }
 "text update" {
 	object {
-		x=395
-		y=69
+		x=438
+		y=56
 		width=70
 		height=13
 	}
@@ -923,13 +876,12 @@ rectangle {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
-		precDefault=1
 	}
 }
 "text update" {
 	object {
-		x=469
-		y=69
+		x=512
+		y=56
 		width=70
 		height=13
 	}
@@ -945,8 +897,8 @@ rectangle {
 }
 "text update" {
 	object {
-		x=469
-		y=84
+		x=512
+		y=71
 		width=70
 		height=15
 	}
@@ -961,8 +913,8 @@ rectangle {
 }
 "text update" {
 	object {
-		x=395
-		y=84
+		x=438
+		y=71
 		width=70
 		height=15
 	}
@@ -977,8 +929,8 @@ rectangle {
 }
 "text update" {
 	object {
-		x=321
-		y=84
+		x=364
+		y=71
 		width=70
 		height=15
 	}
@@ -993,8 +945,8 @@ rectangle {
 }
 "text update" {
 	object {
-		x=247
-		y=84
+		x=290
+		y=71
 		width=70
 		height=15
 	}
@@ -1009,8 +961,8 @@ rectangle {
 }
 "text update" {
 	object {
-		x=173
-		y=84
+		x=216
+		y=71
 		width=70
 		height=15
 	}
@@ -1025,8 +977,8 @@ rectangle {
 }
 "text update" {
 	object {
-		x=99
-		y=84
+		x=142
+		y=71
 		width=70
 		height=15
 	}
@@ -1041,8 +993,8 @@ rectangle {
 }
 "text update" {
 	object {
-		x=25
-		y=84
+		x=68
+		y=71
 		width=70
 		height=15
 	}
@@ -1057,10 +1009,10 @@ rectangle {
 }
 text {
 	object {
-		x=544
-		y=69
+		x=587
+		y=56
 		width=12
-		height=40
+		height=12
 	}
 	"basic attribute" {
 		clr=0
@@ -1069,10 +1021,10 @@ text {
 }
 text {
 	object {
-		x=539
-		y=88
+		x=581
+		y=72
 		width=12
-		height=40
+		height=12
 	}
 	"basic attribute" {
 		clr=0
@@ -1082,59 +1034,8 @@ text {
 }
 text {
 	object {
-		x=9
-		y=47
-		width=12
-		height=40
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="%"
-	align="horiz. right"
-}
-text {
-	object {
-		x=10
-		y=68
-		width=12
-		height=40
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="Hz"
-	align="horiz. right"
-}
-text {
-	object {
-		x=8
-		y=87
-		width=12
-		height=40
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="%"
-	align="horiz. right"
-}
-text {
-	object {
-		x=544
-		y=47
-		width=12
-		height=40
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="%"
-}
-text {
-	object {
-		x=80
-		y=426
+		x=65
+		y=397
 		width=54
 		height=11
 	}
@@ -1145,8 +1046,8 @@ text {
 }
 text {
 	object {
-		x=143
-		y=426
+		x=128
+		y=397
 		width=54
 		height=11
 	}
@@ -1157,8 +1058,8 @@ text {
 }
 text {
 	object {
-		x=214
-		y=426
+		x=199
+		y=397
 		width=54
 		height=11
 	}
@@ -1169,8 +1070,8 @@ text {
 }
 text {
 	object {
-		x=279
-		y=426
+		x=264
+		y=397
 		width=54
 		height=11
 	}
@@ -1181,8 +1082,8 @@ text {
 }
 text {
 	object {
-		x=329
-		y=436
+		x=314
+		y=407
 		width=54
 		height=11
 	}
@@ -1193,8 +1094,8 @@ text {
 }
 rectangle {
 	object {
-		x=525
-		y=118
+		x=565
+		y=91
 		width=35
 		height=299
 	}
@@ -1202,4 +1103,64 @@ rectangle {
 		clr=6
 		fill="outline"
 	}
+}
+"related display" {
+	object {
+		x=507
+		y=405
+		width=65
+		height=22
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocjscalers"
+	}
+	clr=34
+	bclr=13
+	label="REBOOT"
+}
+text {
+	object {
+		x=16
+		y=19
+		width=54
+		height=12
+	}
+	"basic attribute" {
+		clr=0
+	}
+	"dynamic attribute" {
+		chan="HPSTRIGSC_TOTAL"
+	}
+	textix="UNGATED"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=22
+		y=34
+		width=54
+		height=12
+	}
+	"basic attribute" {
+		clr=0
+	}
+	"dynamic attribute" {
+		chan="HPSTRIGSC_TOTAL"
+	}
+	textix="GATED"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=587
+		y=34
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Hz"
 }
