@@ -966,7 +966,7 @@ text {
 	}
 	command[0] {
 		label="Take screenshot..."
-		name="xterm -title 'Take screenshot' -e screenshot &"
+		name="xterm -title 'Take screenshot' -geometry 60x10+0+0 -e screenshot &"
 	}
 	command[1] {
 		label="Open screenshots folder"
