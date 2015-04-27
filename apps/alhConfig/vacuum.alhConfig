@@ -1,91 +1,82 @@
 GROUP    NULL                         VACUUM                      
-CHANNEL  VACUUM                       hallb_VCG2C21               
-$COMMAND  medm -x -attach -cmap -macro "sig=hallb_VCG2C21" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL  VACUUM                       VCG2C21Tr               
+$COMMAND  medm -x -attach -cmap -macro "sig=VCG2C21Tr" aiaocalc_alarm.adl >> /dev/null 
 $ALARMCOUNTFILTER  99 60
 $GUIDANCE
                 The cold cathode gauge at the moller region is out of spec.  
                 This means the vacuum between the shield wall and the tagger
-                magnet has degraded.  Use the slow controls web page 
-                (clasweb.jlab.org/cgi-bin/epics_history/epics.pl  select the VACUUM group and select a 4 hour time window)
+                magnet has degraded.  Use the MYA Viewer and monitor the VCG2C21Tr
                 to check for trends in the past few hours.  If the vacuum is degrading (values increasing on 
                 the plots) then contact engineering on call.   Also contact MCC and inform them about the
                 problem, they might want to shut off the beam and close some valves to isolate the problem.
                 If the vacuum spiked and recovered, continue taking
                 data.
 $END
-CHANNEL  VACUUM                       hallb_VCG2C24               
-$COMMAND  medm -x -attach -cmap -macro "sig=hallb_VCG2C24" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL  VACUUM                       VCG2C21ATr
+$COMMAND  medm -x -attach -cmap -macro "sig=VCG2C21ATr" aiaocalc_alarm.adl >> /dev/null 
 $ALARMCOUNTFILTER  99 60
 $GUIDANCE
-                The cold cathode gauge at the tagger magnet is out of spec.  
-                This means the vacuum in the tagger magnet has degraded.  Use the slow controls web page 
-                (clasweb.jlab.org/cgi-bin/epics_history/epics.pl  select the VACUUM group and select a 4 hour time window)
+                The cold cathode gauge at the moller region is out of spec.  
+                This means the vacuum between the shield wall and the tagger
+                magnet has degraded.  Use the MYA Viewer and monitor the VCG2C21ATr
                 to check for trends in the past few hours.  If the vacuum is degrading (values increasing on 
                 the plots) then contact engineering on call.   Also contact MCC and inform them about the
                 problem, they might want to shut off the beam and close some valves to isolate the problem.
                 If the vacuum spiked and recovered, continue taking
                 data.
 $END
-CHANNEL  VACUUM                       hallb_VMP2C24SPD            
-$COMMAND  medm -x -attach -cmap -macro "sig=hallb_VMP2C24SPD" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL  VACUUM                       VCG2C24ATr
+$COMMAND  medm -x -attach -cmap -macro "sig=VCG2C24ATr" aiaocalc_alarm.adl >> /dev/null 
 $ALARMCOUNTFILTER  99 60
 $GUIDANCE
                 The tagger turbo speed is below operating range...it may have tripped off.
-                Use the slow controls web page 
-                (clasweb.jlab.org/cgi-bin/epics_history/epics.pl  select the VACUUM group and select a 4 hour time window)
+                Use the MYA Viewer and monitor VCG2C24ATr
                 to check for trends in the past few hours.  If the vacuum is degrading (values increasing on 
                 the plots) then contact engineering on call.   Also contact MCC and inform them about the
                 problem, they might want to shut off the beam and close some valves to isolate the problem.
                 If the vacuum spiked and recovered, continue taking
                 data.
 $END
-CHANNEL  VACUUM                       hallb_VCG2H01               
-$COMMAND  medm -x -attach -cmap -macro "sig=hallb_VCG2H01" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL  VACUUM                       VCG2H00ATr             
+$COMMAND  medm -x -attach -cmap -macro "sig=VCG2H00ATr" aiaocalc_alarm.adl >> /dev/null 
 $ALARMCOUNTFILTER  99 60
 $GUIDANCE
-                The cold cathode gauge at 2H01 is out of spec.  This means the vacuum between the tagger magnet
-                and target has degraded.  Use the slow controls web page 
-                (clasweb.jlab.org/cgi-bin/epics_history/epics.pl  select the VACUUM group and select a 4 hour time window)
+                The cold cathode gauge at 2H00 is out of spec.  This means the vacuum between the tagger magnet
+                and target has degraded. Use the MYA Viewer and monitor VCG2H00ATr
                 to check for trends in the past few hours.  If the vacuum is degrading (values increasing on 
                 the plots) then contact engineering on call.   Also contact MCC and inform them about the
                 problem, they might want to shut off the beam and close some valves to isolate the problem.
                 If the vacuum spiked and recovered, continue taking
                 data.
 $END
-CHANNEL  VACUUM                       hallb_VCG2H01A              
-$COMMAND  medm -x -attach -cmap -macro "sig=hallb_VCG2H01A" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL  VACUUM                       VCG2H01ATr              
+$COMMAND  medm -x -attach -cmap -macro "sig=VCG2H01ATr" aiaocalc_alarm.adl >> /dev/null 
 $ALARMCOUNTFILTER  99 60
 $GUIDANCE
-                The cold cathode gauge at 2H01A is out of spec.  This means the vacuum between the target
-                and Faraday Cup has degraded.  NOTE: that during photon runs this region is NOT under vacuum
-                but consists of a Helium bag. Use the slow controls web page 
-                (clasweb.jlab.org/cgi-bin/epics_history/epics.pl  select the VACUUM group and select a 4 hour time window)
+                The cold cathode gauge at 2H01A is out of spec.  This means the vacuum between the tagger
+                and target has degraded. Use the MYA Viewer and monitor VCG2H01ATr 
                 to check for trends in the past few hours.  If the vacuum is degrading (values increasing on 
                 the plots) then contact engineering on call.   Also contact MCC and inform them about the
                 problem, they might want to shut off the beam and close some valves to isolate the problem.
                 If the vacuum spiked and recovered, continue taking
                 data.
 $END
-CHANNEL  VACUUM                       hallb_VIP2H01DI             
-$COMMAND  medm -x -attach -cmap -macro "sig=hallb_VIP2H01DI" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL  VACUUM                       VCG2H02ATr             
+$COMMAND  medm -x -attach -cmap -macro "sig=VCG2H02ATr" aiaocalc_alarm.adl >> /dev/null 
 $ALARMCOUNTFILTER  99 60
 $GUIDANCE
-                The current draw on the Faraday Cup ION pump is out of spec.
-                Use the slow controls web page 
-                (clasweb.jlab.org/cgi-bin/epics_history/epics.pl  select the VACUUM group and select a 4 hour time window)
+                The cold cathode gauge at 2H02A is out of spec. Use the MYA Viewer and monitor VCG2H02ATr
                 to check for trends in the past few hours.  If the vacuum is degrading (values increasing on 
                 the plots) then contact engineering on call.   Also contact MCC and inform them about the
                 problem, they might want to shut off the beam and close some valves to isolate the problem.
                 If the vacuum spiked and recovered, continue taking
                 data.
 $END
-CHANNEL  VACUUM                       hallb_VIP2H01DV             
-$COMMAND  medm -x -attach -cmap -macro "sig=hallb_VIP2H01DV" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL  VACUUM                       HPS_SVT:PLC:i:Vacuum-Value             
+$COMMAND  medm -x -attach -cmap -macro "sig=HPS_SVT:PLC:i:Vacuum-Value" aiaocalc_alarm.adl >> /dev/null 
 $ALARMCOUNTFILTER  99 60
 $GUIDANCE
-                The voltage of the Faraday Cup ION pump is out of spec.
-                Use the slow controls web page 
-                (clasweb.jlab.org/cgi-bin/epics_history/epics.pl  select the VACUUM group and select a 4 hour time window)
+                The voltage of the Faraday Cup ION pump is out of spec. Use the MYA Viewer and monitor HPS_SVT:PLC:i:Vacuum-Value
                 to check for trends in the past few hours.  If the vacuum is degrading (values increasing on 
                 the plots) then contact engineering on call.   Also contact MCC and inform them about the
                 problem, they might want to shut off the beam and close some valves to isolate the problem.
