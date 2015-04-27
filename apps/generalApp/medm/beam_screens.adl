@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v1.0.0/apps/generalApp/medm/beam_screens.adl"
+	name="/usr/clas12/hps/prod/apps/generalApp/medm/beam_screens.adl"
 	version=030108
 }
 display {
 	object {
-		x=1407
-		y=556
+		x=1398
+		y=548
 		width=200
 		height=300
 	}
@@ -95,34 +95,38 @@ display {
 		height=200
 	}
 	display[0] {
-		label="Scalers"
-		name="scaler_hps.adl"
-	}
-	display[1] {
-		label="BPM"
-		name="BPMs.adl"
-	}
-	display[2] {
-		label="Injector"
-		name="injector.adl"
-	}
-	display[3] {
 		label="Asymmetry"
 		name="asym_ia.adl"
 	}
-	display[4] {
-		label="Moller"
-		name="moller_setup.adl"
+	display[1] {
+		label="BLMs"
+		name="blm.adl"
 	}
-	display[5] {
-		label="SixtyHz"
-		name="sixtyHz_scaler.adl"
+	display[2] {
+		label="BPMs"
+		name="BPMs.adl"
 	}
-	display[6] {
+	display[3] {
 		label="BTA"
 		name="bta_status.adl"
 	}
+	display[4] {
+		label="Injector"
+		name="injector.adl"
+	}
+	display[5] {
+		label="Moller"
+		name="moller_setup.adl"
+	}
+	display[6] {
+		label="Scalers"
+		name="scaler_hps.adl"
+	}
 	display[7] {
+		label="SixtyHz"
+		name="sixtyHz_scaler.adl"
+	}
+	display[8] {
 		label="Waveform Writer"
 		name="wave2root.adl"
 	}
