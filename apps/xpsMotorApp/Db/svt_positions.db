@@ -143,7 +143,7 @@ record(calcout, "$(pref)hps:svt:top:si_calcout") {
   field(SCAN, "Passive")
   field(PINI, "NO")
   field(CALC, "A*B+C")
-  field(INPA, "$(pref)hps:svt:top:si_desired CPP")
+  field(INPA, "$(pref)hps:svt:top:si_desired")
   field(INPB, "-2.556")
   field(INPC, "19.278")
   field(OUT, "$(pref)hps:svt_top:motor.VAL PP")
@@ -159,7 +159,7 @@ record(calcout, "$(pref)hps:svt:bot:si_calcout") {
   field(SCAN, "Passive")
   field(PINI, "NO")
   field(CALC, "A*B+C")
-  field(INPA, "$(pref)hps:svt:bot:si_desired CPP")
+  field(INPA, "$(pref)hps:svt:bot:si_desired")
   field(INPB, "2.755")
   field(INPC, "19.418")
   field(OUT, "$(pref)hps:svt_bot:motor.VAL PP")
@@ -175,6 +175,7 @@ record( ai, "$(pref)hps:svt:top:si_desired" ) {
   field( DESC, "Desired value for top Si" )
   field( PREC, "3")
   field( SDIS, "$(pref)hps:svt:top:si_desired_sync.PACT" )
+  field( FLNK, "$(pref)hps:svt:top:si_calcout PP" )
   field( DISV, "1" )
 }
 
@@ -184,6 +185,7 @@ record( ai, "$(pref)hps:svt:bot:si_desired" ) {
   field( DESC, "Desired value for bot Si" )
   field( PREC, "3")
   field( SDIS, "$(pref)hps:svt:bot:si_desired_sync.PACT" )
+  field( FLNK, "$(pref)hps:svt:bot:si_calcout PP")
   field( DISV, "1" )
 }
 
