@@ -1,6 +1,7 @@
 #!/bin/sh
 #
-# Generate autosave req file for svt_voltages.db (sqlite) alarm fields.
+# Generate autosave req file for svt_voltages.db (sqlite) alarm fields.  Called 
+# by Db/Makefile to create and install $(TOP)/req/hvCaen_alarms.req.
 #
 # To test that names are generated correctly: 
 #   ./hvCaen_alarms_req.sh | xargs caget
@@ -30,7 +31,7 @@ done
 
 # SVT:bias:top:[0-17]:[i_rd|v_term|stat]
 for CHAN in $(seq 0 17); do
-  for PV in "i_rd" "v_term" "stat"; do
+  for PV in "i_rd" "v_term" "stat" "v_sens"; do
     for ALARM in $ALARMS; do
       echo SVT:bias:top:$CHAN:$PV.$ALARM
     done
@@ -39,7 +40,7 @@ done
 
 # SVT:bias:bot:[20-37]:[i_rd|v_term|stat]
 for CHAN in $(seq 20 37); do
-  for PV in "i_rd" "v_term" "stat"; do
+  for PV in "i_rd" "v_term" "stat" "v_sens"; do
     for ALARM in $ALARMS; do
       echo SVT:bias:bot:$CHAN:$PV.$ALARM
     done
