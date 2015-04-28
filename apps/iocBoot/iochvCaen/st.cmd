@@ -1,5 +1,5 @@
 #!../../bin/linux-x86/hvCaen
-
+################################################################################
 # scanOnce requests are placed in a ring buffer.
 # This command can be used to set the size for the ring buffer.
 # The default is 1000. It should rarely be necessary to override this default.
@@ -8,6 +8,7 @@
 scanOnceSetQueueSize 1000
 
 < envPaths
+################################################################################
 epicsEnvSet("PREFIX","")
 epicsEnvSet("MIB","WIENER-CRATE-MIB::")
 epicsEnvSet("WO", "WIENER-CRATE-MIB::output")
