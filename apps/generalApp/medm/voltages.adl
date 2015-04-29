@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/medm/voltages.adl"
+	name="/usr/clas12/hps/v1.3.0/apps/generalApp/medm/voltages.adl"
 	version=030108
 }
 display {
@@ -105,6 +105,10 @@ display {
 	display[2] {
 		label="Beav HV"
 		name="bm.adl"
+	}
+	display[3] {
+		label="BLMs"
+		name="blm.adl"
 	}
 	clr=20
 	bclr=2
