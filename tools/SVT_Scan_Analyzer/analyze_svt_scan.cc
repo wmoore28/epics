@@ -96,7 +96,7 @@ int main(int argc, char **argv)
   double stage2_truncated_[n_graphs];
   double sigma_[n_graphs];
   double sigma_truncated_[n_graphs];
-
+  
   gr_[0] = new TGraph(Form("%s/%s", file_dir.c_str(), file_name.c_str()), "%*s %*s %lg %lg");
   gr_[1] = new TGraph(Form("%s/%s", file_dir.c_str(), file_name.c_str()), "%*s %*s %lg %*s %lg");
   gr_[2] = new TGraph(Form("%s/%s", file_dir.c_str(), file_name.c_str()), "%*s %*s %lg %*s %*s %lg");
@@ -105,7 +105,9 @@ int main(int argc, char **argv)
   gr_[5] = new TGraph(Form("%s/%s", file_dir.c_str(), file_name.c_str()), "%*s %*s %lg %*s %*s %*s %*s %*s %lg");
   gr_[6] = new TGraph(Form("%s/%s", file_dir.c_str(), file_name.c_str()), "%*s %*s %lg %*s %*s %*s %*s %*s %*s %lg");
   gr_[7] = new TGraph(Form("%s/%s", file_dir.c_str(), file_name.c_str()), "%*s %*s %lg %*s %*s %*s %*s %*s %*s %*s %lg");
-  
+ 
+  for (int ii=0; ii<8; ii++) std::cerr<<gr_[ii]->GetN()<<std::endl;
+
   cout<<"Kuku"<<endl;
   TCanvas *c1 = new TCanvas("c1", "", 1200, 600);
   c1->Divide(4, 2);
@@ -121,6 +123,7 @@ int main(int argc, char **argv)
       gr_[i]->Draw("AP");
     }
   
+  std::cerr<<"AAAAAAAAA5AAAAAAAAAAAA"<<std::endl;
   //c1->Modified();
   //c1->Update();
   TCanvas *c2 = new TCanvas("c2", "", 2000, 900);
@@ -128,8 +131,12 @@ int main(int argc, char **argv)
   int n_points_[n_graphs];
 
   TH1D *h_gr_2 = Graph2Hist(gr_[2]); h_gr_2->SetName("h_gr_2"); h_gr_2->SetTitle("HPS_T; Motor pos. (mm)");
-  TH1D *h_gr_3 = Graph2Hist(gr_[3]); h_gr_3->SetName("h_gr_3"); h_gr_3->SetTitle("HPS_SC; Motor pos. (mm)");
+  std::cerr<<"AAAAAAAAA5AAAAAAAAAAAA"<<std::endl;
+  TH1D *h_gr_3 = Graph2Hist(gr_[3]);
+  std::cerr<<"AAAAAAAAA5AAAAAAAAAAAA"<<std::endl;
+  h_gr_3->SetName("h_gr_3"); h_gr_3->SetTitle("HPS_SC; Motor pos. (mm)");
   
+  std::cerr<<"AAAAAAAAA5AAAAAAAAAAAA"<<std::endl;
   sp1->Search(h_gr_2, 2, "", 0.2);
   float *peak_val_2 = sp1->GetPositionY();
   float *pos_2 = sp1->GetPositionX();
@@ -379,7 +386,7 @@ int main(int argc, char **argv)
       lat1->DrawLatex(0.1, 0.15, Form("%s_wire_dist = %1.3f mm", which_scan.c_str(), wire_dist_truncated));
       lat1->DrawLatex(0.1, 0.12, Form("%s_beam_Y = %1.3f mm", which_scan.c_str(), horiz_wire_pos_truncated_[3]));
       lat1->DrawLatex(0.1, 0.09, Form("%s_beam_X = %1.3f mm", which_scan.c_str(), beam_x_truncated));
-      lat1->DrawLatex(0.1, 0.06, Form("%s_beam_#sigma_{Y} = %1.4f mm", which_scan.c_str(), sigma_[3]));
+      lat1->DrawLatex(0.1, 0.06, Form("%s_beam_#sigma_{Y} = %1.4f mm", which_scan.c_str(), sigma_truncated_[3]));
 
       if( make_log )
 	{
@@ -387,6 +394,14 @@ int main(int argc, char **argv)
 	  system(Form("caput HPS_SVT:SCAN:y_offset %1.4f", horiz_wire_pos_[3]));
 	  system(Form("caput HPS_SVT:SCAN:x_offset_locfit %1.4f", beam_x_truncated));
 	  system(Form("caput HPS_SVT:SCAN:y_offset_locfit %1.4f", horiz_wire_pos_truncated_[3]));
+	  if( n_peaks3 == 2 )
+	    {
+	      system(Form("caput HPS_SVT:SCAN:sigma_y %1.4f", sigma_truncated_[3]));
+	    }
+	  else if( n_peaks2 == 2 )
+	    {
+	      system(Form("caput HPS_SVT:SCAN:sigma_y %1.4f", sigma_truncated_[2]));
+	    }
 	}
     }
   
@@ -407,20 +422,26 @@ int main(int argc, char **argv)
 
 TH1D *Graph2Hist(TGraph * gr)
 {
+  std::cerr<<"aaaaaaaaa   "<<gr<<std::endl;
   int n_points = gr->GetN();
   double *x_axis = gr->GetX();
   double *y_axis = gr->GetY();
   
+  std::cerr<<"aaaaaaaaa   "<<gr<<std::endl;
   double x_varbins_[n_points + 1];
   double y_varbins_[n_points + 1];
 
+  std::cerr<<"aaaaaaaaa   "<<gr->GetN()<<" "<<n_points<<std::endl;
   x_varbins_[0] = x_axis[0] - (x_axis[1] - x_axis[0])/2.;
   x_varbins_[n_points] = x_axis[n_points - 1] + (x_axis[n_points - 1] - x_axis[n_points - 2])/2.;
   
+  std::cerr<<"aaaaaaaaa   "<<gr<<std::endl;
   cout<<"x_varbins ["<<0<<"] = "<<x_varbins_[0]<<endl;
   cout<<"x_varbins ["<<n_points<<"] = "<<x_varbins_[n_points]<<endl;
+  std::cerr<<"aaaaaaaaa   "<<gr<<std::endl;
   for( int i = 1; i < n_points; i++ )
     {
+  std::cerr<<"aaaaaaaaa   "<<gr<<"   "<<i<<std::endl;
       x_varbins_[i] = (x_axis[i-1] + x_axis[i])/2.;
       //cout<<"x_varbins ["<<i<<"] = "<<x_varbins_[i]<<endl;
       
@@ -429,6 +450,7 @@ TH1D *Graph2Hist(TGraph * gr)
 	  cout<<"               ================= Hop ============== x is decreasing ====== "<<endl;
 	}
     }
+  std::cerr<<"aaaaaaaaa   "<<gr<<std::endl;
 
   double x_low, y_low;
   double x_high, y_high;
@@ -442,24 +464,26 @@ TH1D *Graph2Hist(TGraph * gr)
 
   h_gr->FillN(n_points, x_axis, y_axis);
   h_gr->SetStats(0);
-  
+ 
+  std::cerr<<"aaaaaaaaa   "<<h_gr<<std::endl;
+
   return h_gr;
 }
 
 double* GetTopPos(double stage)
 {
   double *top_pos = new double[2];
-  top_pos[0]  = -0.391*stage + 7.542; // dtstance of Top Si. from the beam;
-  top_pos[1] = -0.482*stage + 1.305; // distance of the top horizontal wire from the beam
- // top_pos[1] = -0.482*stage + 1.223; // distance of the top horizontal wire from the beam, th, Takashi's new number, but need a confirmation to put in a production
+  top_pos[0]  = -0.391*stage + 7.472; // dtstance of Top Si. from the beam;
+  //top_pos[1] = -0.482*stage + 1.305; // distance of the top horizontal wire from the beam
+  top_pos[1] = -0.482*stage + 1.218; // distance of the top horizontal wire from the beam, These are Revised numbers
   return top_pos;
 }
 
 double* GetBotPos(double stage)
 {
   double *bot_pos = new double[2];
-  bot_pos[0]  = +0.363*stage - 7.048; // dtstance of Top Si. from the beam;
-  bot_pos[1] = +0.463*stage - 0.982; // distance of the top horizontal wire from the beam
+  bot_pos[0]  = +0.363*stage - 6.815; // dtstance of Top Si. from the beam;
+  bot_pos[1] = +0.463*stage - 0.684; // distance of the top horizontal wire from the beam
   return bot_pos;
 }
 
