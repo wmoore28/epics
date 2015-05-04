@@ -2,18 +2,18 @@
 basedir="${0/%`basename $0`/}"
 pushd $basedir
 
-./allFebCaput.sh SVT:temp:fe FebTemp0:t_rd.LOLO 20.0
-./allFebCaput.sh SVT:temp:fe FebTemp0:t_rd.LOW 22.0
-./allFebCaput.sh SVT:temp:fe FebTemp0:t_rd.HIGH 28.0
-./allFebCaput.sh SVT:temp:fe FebTemp0:t_rd.HIHI 30.0
-./allFebCaput.sh SVT:temp:fe FebTemp1:t_rd.LOLO 20.0
-./allFebCaput.sh SVT:temp:fe FebTemp1:t_rd.LOW 22.0
-./allFebCaput.sh SVT:temp:fe FebTemp1:t_rd.HIGH 28.0
-./allFebCaput.sh SVT:temp:fe FebTemp1:t_rd.HIHI 30.0
-./allFebCaput.sh SVT:temp:fe axixadc:t_rd.LOLO 36.0
-./allFebCaput.sh SVT:temp:fe axixadc:t_rd.LOW 38.0
-./allFebCaput.sh SVT:temp:fe axixadc:t_rd.HIGH 50.0
-./allFebCaput.sh SVT:temp:fe axixadc:t_rd.HIHI 52.0
+#./allFebCaput.sh SVT:temp:fe FebTemp0:t_rd.LOLO 20.0
+#./allFebCaput.sh SVT:temp:fe FebTemp0:t_rd.LOW 22.0
+#./allFebCaput.sh SVT:temp:fe FebTemp0:t_rd.HIGH 28.0
+#./allFebCaput.sh SVT:temp:fe FebTemp0:t_rd.HIHI 30.0
+#./allFebCaput.sh SVT:temp:fe FebTemp1:t_rd.LOLO 20.0
+#./allFebCaput.sh SVT:temp:fe FebTemp1:t_rd.LOW 22.0
+#./allFebCaput.sh SVT:temp:fe FebTemp1:t_rd.HIGH 28.0
+#./allFebCaput.sh SVT:temp:fe FebTemp1:t_rd.HIHI 30.0
+#./allFebCaput.sh SVT:temp:fe axixadc:t_rd.LOLO 36.0
+#./allFebCaput.sh SVT:temp:fe axixadc:t_rd.LOW 38.0
+#./allFebCaput.sh SVT:temp:fe axixadc:t_rd.HIGH 50.0
+#./allFebCaput.sh SVT:temp:fe axixadc:t_rd.HIHI 52.0
 
 
 ./allFebCaput.sh SVT:lv:fe anan:i_rd.LOLO 0.27

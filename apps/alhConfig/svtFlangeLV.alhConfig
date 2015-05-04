@@ -32,15 +32,6 @@ This usually indicates the channel is overloaded or disconnected.
 Contact the SVT expert for further guidance.
 $END
 
-CHANNEL FLANGE_LV SVT:lv:fl:0:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fl:0:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This flange board low voltage channel is off, or in an abnormal state.
-A value of 0 means this channel is off.
-A value of 40 means the PLC interlock has tripped the MPOD off.
-Contact the SVT expert for further guidance.
-$END
-
 
 CHANNEL FLANGE_LV SVT:lv:fl:1:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fl:1:i_rd" aiaocalc_alarm.adl >> /dev/null
@@ -63,15 +54,6 @@ $COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fl:1:v_sens" aiaocalc_alarm.a
 $GUIDANCE
 The sense terminal voltage for this flange board low voltage channel has deviated from its nominal value of 5.5 V.
 This usually indicates the channel is overloaded or disconnected.
-Contact the SVT expert for further guidance.
-$END
-
-CHANNEL FLANGE_LV SVT:lv:fl:1:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fl:1:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This flange board low voltage channel is off, or in an abnormal state.
-A value of 0 means this channel is off.
-A value of 40 means the PLC interlock has tripped the MPOD off.
 Contact the SVT expert for further guidance.
 $END
 
@@ -100,15 +82,6 @@ This usually indicates the channel is overloaded or disconnected.
 Contact the SVT expert for further guidance.
 $END
 
-CHANNEL FLANGE_LV SVT:lv:fl:2:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fl:2:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This flange board low voltage channel is off, or in an abnormal state.
-A value of 0 means this channel is off.
-A value of 40 means the PLC interlock has tripped the MPOD off.
-Contact the SVT expert for further guidance.
-$END
-
 
 CHANNEL FLANGE_LV SVT:lv:fl:3:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fl:3:i_rd" aiaocalc_alarm.adl >> /dev/null
@@ -131,15 +104,6 @@ $COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fl:3:v_sens" aiaocalc_alarm.a
 $GUIDANCE
 The sense terminal voltage for this flange board low voltage channel has deviated from its nominal value of 5.5 V.
 This usually indicates the channel is overloaded or disconnected.
-Contact the SVT expert for further guidance.
-$END
-
-CHANNEL FLANGE_LV SVT:lv:fl:3:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fl:3:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This flange board low voltage channel is off, or in an abnormal state.
-A value of 0 means this channel is off.
-A value of 40 means the PLC interlock has tripped the MPOD off.
 Contact the SVT expert for further guidance.
 $END
 
