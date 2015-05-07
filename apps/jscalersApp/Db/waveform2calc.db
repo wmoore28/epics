@@ -85,7 +85,7 @@ record(fanout, "HPSTRIGSC_5_FAN") {
     field(LNK1, "HPSTRIGSC_TOTAL")
     field(LNK2, "HPSTRIGSC_5_FRAC")
     field(LNK3, "HPSTRIGSC_5_PRE")
-    field(LNK4, "HPSTRIGSC_LIVETIME")
+    field(LNK4, "HPSTRIGSC_LIVETIME0")
 }
 
 # TOTAL GATED RATED, FLINKED FROM FANOUTs:
@@ -369,13 +369,13 @@ record(subArray, "HPSTRIGSC_5") {
     field(MALM,4)
     field(INDX,3)
     field(FTVL,"DOUBLE")
-    field(FLNK, "HPSTRIGSC_LIVETIME")
+    field(FLNK, "HPSTRIGSC_LIVETIME0")
 }
 
 
 # LIVETIME, FLINKED FROM HPSTRIGSC_5:
 ############################################
-record(calc, "HPSTRIGSC_LIVETIME") {
+record(calc, "HPSTRIGSC_LIVETIME0") {
     field(INPA,"HPSTRIGSC_5_GATED")
     field(INPB,"HPSTRIGSC_5 PP")
     field(INPC,"HPSTRIGSC_4 PP")
@@ -384,7 +384,17 @@ record(calc, "HPSTRIGSC_LIVETIME") {
     field(INPF,"HPSTRIGSC_1 PP")
     field(INPG,"HPSTRIGSC_0 PP")
     field(CALC,"B>0 ? 100*A/B : -999")
+    field(FLNK,"HPSTRIGSC_LIVETIME")
 }
+record(ai, "HPSTRIGSC_LIVETIME") {
+    field(INP,"HPSTRIGSC_LIVETIME0")
+    field(SMOO,0.6)
+    field(LOW,50.0)
+    field(LOLO,10.0)
+    field(LSV,MINOR)
+    field(LLSV,MAJOR)
+}
+
 
 
 

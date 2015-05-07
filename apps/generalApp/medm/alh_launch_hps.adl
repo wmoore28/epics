@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/generalApp/medm/Aalh_launch_hps.adl"
+	name="/usr/clas12/hps/v1.3.0/apps/generalApp/medm/alh_launch_hps.adl"
 	version=030108
 }
 display {
@@ -8,7 +8,7 @@ display {
 		x=243
 		y=502
 		width=200
-		height=450
+		height=380
 	}
 	clr=14
 	bclr=4
@@ -90,7 +90,7 @@ display {
 rectangle {
 	object {
 		x=0
-		y=166
+		y=196
 		width=200
 		height=24
 	}
@@ -224,7 +224,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Faraday Cup"
+	textix="Trigger"
 }
 "shell command" {
 	object {
@@ -236,7 +236,7 @@ text {
 	command[0] {
 		label="alh"
 		name="alh"
-		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/fcup.alhConfig &"
+		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/trigger.alhConfig &"
 	}
 	clr=30
 	bclr=22
@@ -303,7 +303,7 @@ text {
 text {
 	object {
 		x=15
-		y=171
+		y=201
 		width=70
 		height=18
 	}
@@ -315,7 +315,7 @@ text {
 text {
 	object {
 		x=25
-		y=203
+		y=233
 		width=70
 		height=18
 	}
@@ -327,7 +327,7 @@ text {
 text {
 	object {
 		x=25
-		y=233
+		y=263
 		width=70
 		height=18
 	}
@@ -339,7 +339,7 @@ text {
 "shell command" {
 	object {
 		x=160
-		y=230
+		y=260
 		width=20
 		height=20
 	}
@@ -354,7 +354,7 @@ text {
 text {
 	object {
 		x=25
-		y=263
+		y=163
 		width=70
 		height=18
 	}
@@ -366,7 +366,7 @@ text {
 "shell command" {
 	object {
 		x=160
-		y=260
+		y=160
 		width=20
 		height=20
 	}
@@ -381,7 +381,7 @@ text {
 "shell command" {
 	object {
 		x=160
-		y=200
+		y=230
 		width=20
 		height=20
 	}

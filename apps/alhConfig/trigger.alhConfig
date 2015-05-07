@@ -1,0 +1,19 @@
+GROUP NULL TRIGGER
+$GUIDANCE
+Optional wake up call.
+$END
+
+CHANNEL TRIGGER scaler_calc1
+$GUIDANCE
+Yellow: Faraday cup sees beam.
+Red: Faraday cup does not see beam.
+Alarm will sound on transitions between states.
+$END
+
+CHANNEL TRIGGER HPSTRIGSC_LIVETIME
+$COMMAND  medm -x -attach -cmap -macro "sig=HPSTRIGSC_LIVETIME" aiaocalc_alarm.adl >> /dev/null 
+$GUIDANCE
+DAQ livetime out of normal range.
+Ignore this alarm during DAQ state transitions.
+If livetime drops to 0 during a run, end the run; a DAQ teardown and ROC reboots may be necessary.
+$END
