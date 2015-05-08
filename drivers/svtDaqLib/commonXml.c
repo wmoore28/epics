@@ -207,23 +207,14 @@ void getDpmStatusProcess(char* pname, xmlDoc* doc, char* status, int* heart_beat
                   //free results
                   xmlXPathFreeObject(result);
                   
-                  if(strcmp(str2,"dtm")==0) {                     
-                     nonZeroStatus = checkNonZeroNodes(doc,"/system/status/TiDtm/RceDtmTiming/TxCount1");
-                     //check for dummy value
-                     if(nonZeroStatus==0) {
-                        char value[256];
-                        getNodeVal(doc, "/system/status/TiDtm/RceDtmTiming/TxCount1",value);
-                        if(strcmp(value,"0x0")==0) {
-                           nonZeroStatus=1;
-                        }
-                     }
-                  } else {
-                     if(dpm==7) {
-                        nonZeroStatus = checkNonZeroNodes(doc,"/system/status/ControlDpm/RceDpmTiming/RxCount1");
-                     } else {
-                        nonZeroStatus = checkNonZeroNodes(doc,"/system/status/DataDpm/RceDpmTiming/RxCount1");
-                        //nonZeroStatus = checkNonZeroNodes(doc,"/system/status");
-                     }
+                  if(strcmp(str2,"dtm")==0) {         
+                     nonZeroStatus = checkNonZeroNodes(doc,"/system/status/TiDtm/RceCommon/Heartbeat");
+                  } else {                     
+                      if(dpm==7) {
+                         nonZeroStatus = checkNonZeroNodes(doc,"/system/status/ControlDpm/RceCommon/Heartbeat");
+                      } else {
+                         nonZeroStatus = checkNonZeroNodes(doc,"/system/status/DataDpm/RceCommon/Heartbeat");
+                      }
                   }
                   if(DEBUG>2) 
                      printf("[ getDpmStatusProcess ] : nonZeroStatus %d \n",nonZeroStatus);
