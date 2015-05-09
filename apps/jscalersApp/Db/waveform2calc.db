@@ -299,21 +299,27 @@ record(calc, "HPSTRIGSC_TOTAL_FRAC") {
 # PRESCALE FACTORS:
 ############################################
 record(ai, "HPSTRIGPRESCALE_0") {
+    field(VAL,13)
     field(FLNK,"HPSTRIGSC_0_PRE")
 }
 record(ai, "HPSTRIGPRESCALE_1") {
+    field(VAL,11)
     field(FLNK,"HPSTRIGSC_1_PRE")
 }
 record(ai, "HPSTRIGPRESCALE_2") {
+    field(VAL,10)
     field(FLNK,"HPSTRIGSC_2_PRE")
 }
 record(ai, "HPSTRIGPRESCALE_3") {
+    field(VAL,0)
     field(FLNK,"HPSTRIGSC_3_PRE")
 }
 record(ai, "HPSTRIGPRESCALE_4") {
+    field(VAL,0)
     field(FLNK,"HPSTRIGSC_4_PRE")
 }
 record(ai, "HPSTRIGPRESCALE_5") {
+    field(VAL,0)
     field(FLNK,"HPSTRIGSC_5_PRE")
 }
 
