@@ -38,6 +38,12 @@ def setBiasLimits(doIt):
             caputLevel(ch,"HSV","MINOR", doIt)
             caputLevel(ch,"LSV","MINOR", doIt)
             caputLevel(ch,"LLSV","MAJOR", doIt)
+            ch = getBiasName(half, id, "i_rd")                             
+            print "Processing \"" + ch + "\""
+            caputLimit(ch,"HIGH",2e-6, doIt)
+            caputLimit(ch,"HIHI",10e-6, doIt)
+            caputLevel(ch,"HSV","MINOR", doIt)
+            caputLevel(ch,"HHSV","MAJOR", doIt)
 
 
 
