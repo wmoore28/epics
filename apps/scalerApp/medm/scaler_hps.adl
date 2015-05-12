@@ -3545,3 +3545,45 @@ text {
 	limits {
 	}
 }
+"text update" {
+	object {
+		x=745
+		y=740
+		width=61
+		height=18
+	}
+	monitor {
+		chan="MQB2H01.BDL"
+		clr=0
+		bclr=53
+	}
+	align="horiz. centered"
+	format="truncated"
+	limits {
+	}
+}
+text {
+	object {
+		x=745
+		y=765
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Skew Quad"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=750
+		y=725
+		width=50
+		height=16
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="MQB2H01"
+}
