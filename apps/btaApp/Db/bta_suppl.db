@@ -274,7 +274,8 @@ grecord( calc, "HL$(hall):bta_main_cur" )
 	
 	field(CALC,"D=0?A:(D=1?B:C)")
 
-	field(INPA,"scaler_calc2 NPP NMS")
+#	field(INPA,"scaler_calc2 NPP NMS") # No SLM based beam PV is available, so replacing with FCUP one temporarly. Nerses
+	field(INPA,"scaler_calc1 NPP NMS")
 	field(INPB,"IPM2C21A NPP NMS")
 	field(INPC,"scaler_calc1 NPP NMS")
 	field(INPD,"HL$(hall):bta_cur_stor NPP NMS")
