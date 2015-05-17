@@ -270,8 +270,12 @@ bool Fit_2c21(TGraph *gr, string counter_name)
 	  h_gr_tmp_[i] = (TH1D*)h_gr->Clone(Form("h_gr_%d", i));
 	  f_GPol0_[i] = new TF1(Form("f_GPol0_%d", i), "[0]*TMath::Gaus(x, [1], [2]) + [3]");
 	  double mean_x = pos[i];
+	  h_gr_tmp_[i]->SetAxisRange(mean_x - 8., mean_x + 0.8);
+	  double tmp_RMS = h_gr_tmp_[i]->GetRMS();
+	  
 	  f_GPol0_[i]->SetRange(mean_x - 5., mean_x + 5.);
-	  f_GPol0_[i]->SetParameters(peak_val[i] - bgr_average, pos[i], 0.1, bgr_average);
+	  f_GPol0_[i]->SetParLimits(2, 0., 5.5);
+	  f_GPol0_[i]->SetParameters(peak_val[i] - bgr_average, pos[i], tmp_RMS, bgr_average);
 	  h_gr_tmp_[i]->SetAxisRange(mean_x - 3.5, mean_x + 3.5);
 	  //h_gr_tmp_[i]->Draw();
 	  h_gr_tmp_[i]->Fit(f_GPol0_[i], "+MeV", "", mean_x - 3., mean_x + 3.);
@@ -407,6 +411,7 @@ bool Fit_tagger(TGraph *gr, string counter_name)
 	  h_gr_tmp_[i]->SetAxisRange(mean_x - 5., mean_x + 5.);
 	  f_GPol0_[i]->SetRange(mean_x - 5., mean_x + 5.);
 	  //f_GPol0_[i]->SetParameters(peak_val[i] - bgr_average, pos[i], 0.3, bgr_average);
+	  f_GPol0_[i]->SetParLimits(2, 0., 5.5);
 	  f_GPol0_[i]->SetParameters(peak_val[i] - bgr_average, pos[i], h_gr_tmp_[i]->GetRMS(), bgr_average);
 	  //h_gr_tmp_[i]->Draw();
 	  h_gr_tmp_[i]->Fit(f_GPol0_[i], "+MeV", "", mean_x - 4.5, mean_x + 4.5);
@@ -576,6 +581,7 @@ bool Fit_2H02A(TGraph *gr, string counter_name)
 	  h_gr_tmp_[i]->SetAxisRange(mean_x - 3., mean_x + 3.);
 
 	  f_GPol0_[i]->SetRange(mean_x - 3., mean_x + 3.);
+	  f_GPol0_[i]->SetParLimits(2, 0., 5.5);
 	  f_GPol0_[i]->SetParameters(peak_val[i] - bgr_average, pos[i], tmp_RMS, bgr_average);
 	  //f_GPol0_[i]->SetParameters(peak_val[i] - bgr_average, pos[i], 0.1, bgr_average);
 	  //h_gr_tmp_[i]->Draw();
@@ -590,6 +596,7 @@ bool Fit_2H02A(TGraph *gr, string counter_name)
 	      mean_[i] = f_GPol0_[i]->GetParameter(1);
 	      sigm_[i] = f_GPol0_[i]->GetParameter(2);
 	    }
+	  cout<<"sigm  = "<<sigm_[i]<<endl;
 	  sigm_[i] = sigm_[i]/Arnes_Corr(sigm_[i], 0.025);
 	  
 	  bgr_[i] = f_GPol0_[i]->GetParameter(3);
@@ -642,8 +649,8 @@ bool Fit_2H02A(TGraph *gr, string counter_name)
 	  string img_path = Form("/home/hpsrun/screenshots/Scan_of_harp_2H02A_%s_%s.gif", counter_name.c_str(), glob_filename_part.c_str());
 	  c1->Print(Form("%s", img_path.c_str()));
 
-	  system(Form("/site/ace/certified/apps/bin/logentry -l HBLOG -t \" Scan of Harp 2H02A \" -a %s ", img_path.c_str()));
-	  //system(Form("/site/ace/certified/apps/bin/logentry -l TLOG -t \" Scan of Harp 2H02A \" -a %s ", img_path.c_str()));
+	  //system(Form("/site/ace/certified/apps/bin/logentry -l HBLOG -t \" Scan of Harp 2H02A \" -a %s ", img_path.c_str()));
+	  system(Form("/site/ace/certified/apps/bin/logentry -l TLOG -t \" Scan of Harp 2H02A \" -a %s ", img_path.c_str()));
 	}
 
 
