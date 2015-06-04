@@ -876,8 +876,8 @@ record(ai, SVT:lv:FEBID:HYBID:avdd:i_rd)
             else:
                 rec = rec.replace("HHLIM",str(0.47))
                 rec = rec.replace("HILIM",str(0.45))
-                rec = rec.replace("LOLIM",str(0.355))
-                rec = rec.replace("LLLIM",str(0.345))
+                rec = rec.replace("LOLIM",str(0.35))
+                rec = rec.replace("LLLIM",str(0.34))
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
             if feb==0 and hyb==0:
