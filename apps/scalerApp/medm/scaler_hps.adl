@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v1.3.0/apps/scalerApp/medm/scaler_hps.adl"
+	name="/home/baltzell/scaler_hps.adl"
 	version=030108
 }
 display {
 	object {
-		x=515
-		y=128
+		x=124
+		y=87
 		width=1268
 		height=925
 	}
@@ -165,7 +165,7 @@ polyline {
 	object {
 		x=191
 		y=129
-		width=999
+		width=1021
 		height=3
 	}
 	"basic attribute" {
@@ -174,7 +174,7 @@ polyline {
 	}
 	points {
 		(192,130)
-		(1188,130)
+		(1210,130)
 	}
 }
 arc {
@@ -3373,7 +3373,7 @@ text {
 }
 composite {
 	object {
-		x=1120
+		x=1163
 		y=85
 		width=75
 		height=89
@@ -3382,7 +3382,7 @@ composite {
 	children {
 		composite {
 			object {
-				x=1120
+				x=1163
 				y=140
 				width=75
 				height=34
@@ -3391,7 +3391,7 @@ composite {
 			children {
 				"text update" {
 					object {
-						x=1120
+						x=1163
 						y=140
 						width=75
 						height=18
@@ -3407,7 +3407,7 @@ composite {
 				}
 				text {
 					object {
-						x=1145
+						x=1188
 						y=159
 						width=30
 						height=15
@@ -3421,7 +3421,7 @@ composite {
 		}
 		composite {
 			object {
-				x=1120
+				x=1163
 				y=85
 				width=75
 				height=38
@@ -3430,7 +3430,7 @@ composite {
 			children {
 				"text update" {
 					object {
-						x=1120
+						x=1163
 						y=105
 						width=75
 						height=18
@@ -3446,7 +3446,7 @@ composite {
 				}
 				text {
 					object {
-						x=1140
+						x=1183
 						y=85
 						width=30
 						height=15
@@ -3518,8 +3518,8 @@ text {
 }
 text {
 	object {
-		x=980
-		y=20
+		x=979
+		y=39
 		width=160
 		height=18
 	}
@@ -3531,8 +3531,8 @@ text {
 }
 "text update" {
 	object {
-		x=1000
-		y=50
+		x=1011
+		y=55
 		width=85
 		height=18
 	}
@@ -3586,4 +3586,238 @@ text {
 		clr=54
 	}
 	textix="MQB2H01"
+}
+"text update" {
+	object {
+		x=960
+		y=109
+		width=48
+		height=12
+	}
+	monitor {
+		chan="B_HPSECALDSC_TOP_2"
+		clr=14
+		bclr=35
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1010
+		y=109
+		width=48
+		height=12
+	}
+	monitor {
+		chan="B_HPSECALDSC_TOP_3"
+		clr=14
+		bclr=35
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1060
+		y=109
+		width=48
+		height=12
+	}
+	monitor {
+		chan="B_HPSECALDSC_TOP_4"
+		clr=14
+		bclr=35
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1110
+		y=109
+		width=48
+		height=12
+	}
+	monitor {
+		chan="B_HPSECALDSC_TOP_5"
+		clr=14
+		bclr=35
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=960
+		y=138
+		width=48
+		height=12
+	}
+	monitor {
+		chan="B_HPSECALDSC_BOT_2"
+		clr=14
+		bclr=35
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1060
+		y=138
+		width=48
+		height=12
+	}
+	monitor {
+		chan="B_HPSECALDSC_BOT_4"
+		clr=14
+		bclr=35
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1010
+		y=138
+		width=48
+		height=12
+	}
+	monitor {
+		chan="B_HPSECALDSC_BOT_3"
+		clr=14
+		bclr=35
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1110
+		y=138
+		width=48
+		height=12
+	}
+	monitor {
+		chan="B_HPSECALDSC_BOT_5"
+		clr=14
+		bclr=35
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=1047
+		y=156
+		width=24
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Bottom"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=1047
+		y=92
+		width=24
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Top"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=977
+		y=165
+		width=24
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Left"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=1120
+		y=165
+		width=24
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Right"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=1005
+		y=163
+		width=30
+		height=0
+	}
+	"basic attribute" {
+		clr=14
+	}
+	points {
+		(1005,163)
+		(1035,163)
+	}
+}
+polyline {
+	object {
+		x=1081
+		y=164
+		width=30
+		height=0
+	}
+	"basic attribute" {
+		clr=14
+	}
+	points {
+		(1081,164)
+		(1111,164)
+	}
+}
+text {
+	object {
+		x=976
+		y=152
+		width=24
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Beam"
+}
+text {
+	object {
+		x=1118
+		y=152
+		width=24
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Beam"
 }

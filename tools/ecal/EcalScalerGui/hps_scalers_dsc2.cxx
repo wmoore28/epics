@@ -18,7 +18,8 @@
 
 #include "CrateMsgClient.h"
 
-#define SCALER_UPDATE_PERIOD	1000	/* in milliseconds */
+//#define SCALER_UPDATE_PERIOD	1000	/* in milliseconds */
+#define SCALER_UPDATE_PERIOD	5000	/* in milliseconds */
 
 struct totalrates_t
 {

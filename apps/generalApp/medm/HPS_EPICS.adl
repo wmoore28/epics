@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v1.3.0/apps/generalApp/medm/HPS_EPICS.adl"
+	name="/usr/clas12/hps/v1.3.0/apps/medm/HPS_EPICS.adl"
 	version=030108
 }
 display {
 	object {
-		x=1
-		y=60
+		x=674
+		y=151
 		width=240
 		height=835
 	}
@@ -788,14 +788,6 @@ text {
 		label="HPS Trigger"
 		name="hps_trigger_scalers.adl"
 	}
-	display[1] {
-		label="Photon Trigger"
-		name="ts_bits.adl"
-	}
-	display[2] {
-		label="DVCS Trigger"
-		name="dvcs_trigger.adl"
-	}
 	clr=14
 	bclr=50
 }
@@ -972,6 +964,10 @@ text {
 		label="Open screenshots folder"
 		name="nautilus ~hpsrun/screenshots &"
 	}
+        command[2] {
+                label="Screenshot --> Log Entry"
+                name="xterm -e $APP/generalApp/scripts/takeScreenshotMakeLogEntry.sh"
+        }
 	clr=14
 	bclr=50
 }
@@ -1133,6 +1129,14 @@ text {
 	display[9] {
 		label="DAQ IOC Status"
 		name="svtDaqIOCStatus.adl"
+	}
+	display[10] {
+		label="HV STATUS"
+		name="HpsSvtHvStatus.adl"
+	}
+	display[11] {
+		label="POSITION STATUS"
+		name="HpsSvtPosition.adl"
 	}
 	clr=14
 	bclr=50
