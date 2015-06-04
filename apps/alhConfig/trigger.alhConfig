@@ -1,6 +1,6 @@
 GROUP NULL TRIGGER
 $GUIDANCE
-Optional wake up call.
+Optional wake up calls.
 $END
 
 CHANNEL TRIGGER scaler_calc1
@@ -12,6 +12,7 @@ $END
 
 CHANNEL TRIGGER HPSTRIGSC_LIVETIME
 $COMMAND  medm -x -attach -cmap -macro "sig=HPSTRIGSC_LIVETIME" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 10
 $GUIDANCE
 DAQ livetime out of normal range.
 Ignore this alarm during DAQ state transitions.
