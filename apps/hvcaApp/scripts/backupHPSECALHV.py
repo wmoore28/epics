@@ -133,8 +133,8 @@ def main():
         sys.exit('Must use one of save/restore.')
 
     user = pwd.getpwuid(os.getuid())[0]
-    if os.getgid() != grp.getgrnam('clas-4').gr_gid:
-      exit('BACKUPS REQUIRE MEMBERSHIP IN GROUP clas-4.\n\n'+user+' IS NOT A MEMBER.\n\nEXITING.')
+    if os.getgid() != grp.getgrnam('clas-3').gr_gid:
+      exit('BACKUPS REQUIRE MEMBERSHIP IN GROUP clas-3.\n\n'+user+' IS NOT A MEMBER.\n\nEXITING.')
 
 
     chooser = FileChooser()
