@@ -1,3 +1,66 @@
+Version 1.3.1:
+ - apps/xpsMotorApp/Db - change motor offsets
+ - apps/xpsMotorApp/medm - add preset buttons and bias currents to SVT motor GUI
+ - apps/svtDaqApp - change alarm points
+ - apps/alhConfig - commit last changes from run, add e-mail alert for SVT cooling
+ - screenshot->logentry script
+ - big red/green indicators
+ - I remember Holly/Andrea fixed this.
+ - commiting changes I made during May run
+ - updating prescale
+ - Limits of the fit sigma is set it to be positive and less than 5.5
+ - in the HLB:bta_main_cur the PV scaler_calc2 corresponding to the beam current by SLM is not available, that's why it's calculation is stopped. Temporarly, the scaler_calc2 was replaced to scaler_calc1 which is Faraday Cup current measurement.
+ - Added skew quad MQB2H01
+ - apps/svtDaq - add exponential display of bias currents, add alarm coloring, change some alarm setpoints
+ - A mistake was found in the writing the canvas to a gif file. Now for each harp scan it creates a different image in the screenshot directory
+ - default prescsales, alarm limits
+ - use heartbeat registers to check for non-empty tags
+ - apps/alhConfig, apps/jscalersApp, apps/generalApp/medm - add trigger livetime alarm
+ - Adding feb LV and bias variables
+ - apps/svtDaq/medm, apps/svtIntlk/Db - change beam interlock so it ramps to 5V instead of switching off bias
+ - alhConfig, apps/svtDaq - get rid of unused SVT alarms, tweak masks and holdoffs
+ - New (probably final) position of the 3mm collimator, from 5.022 to 5.0285
+ - New (probably final) position of the 3mm collimator, from 5.022 to 5.0285
+ - Takashi's revised numbers for the wire offsets are updated
+ - adding beam current, changing reboot button
+ - New position for collimator, 5.022 instead of 5.026, shift by 100 um
+ - New position for collimator, 5.022 instead of 5.026, shift by 100 um
+ - Added the sum of halo counters going into FSD
+ - medm: moved blm.adl from beam screens to voltages
+ - hvCaen alarms builder: added v_sens, updated doc
+ - iochvCaen: added breaks to make log files easy to read
+ - HPS_EPICS.adl: added PSS status
+ - Changes CPP flags in the caclout input fields to FLNK fields in the desired_sp records to get the motor records to process when the MOVE button on the SVT positioner GUI was pressed. Setting the PROC field to zero or one obviously did not force processing the records with CPP flagged links
+ - fix limit for alarming hybrid
+ - Increased the allowed temp range
+ - Updated vacuum variables.
+ - screenshot: updated to clarify usage
+ - BLMs: added GUI to make access easier
+ - Fixed my errors. 1. removed inculde of svtInterlocks.alhConfig in the svt.alhConfig. 2. Uncommented the PV which was in the svtInterlocks.alhConfig
+ - In the svt.alhConfig added include of svtInterlocks.alhConfig In the svtInterlocks.alhConfig added HPS_INTLK:NO_BEAM:intlk_status
+ - adding ungated trigger rates
+ - adding update time
+ - xpsMotorApp: added abort scan and scan status to GUI (for tknelson)
+ - Added after-scan action to the list of autosaved variables
+ - Added a loop that pushes the current value of the silicon positions for the SVTs into the desired setpoints for the desired values for the silicon positions. Added a button on the GUI (with appropriate EPICS records) to push the desired silicon position into the motor setpoint, just hitting return on the text input widget now will not move the motor.
+ - myaData: added sigma_y for wire scans
+ - bumped grace period
+ - changing PV names such that ungated is in Mya
+ - changing PV names such that ungated is in Mya
+ - in the run perl file the file path is corrected and the if condition to make a Log entry is fxed
+ - tuning some alarm limits.
+ - Adding sense alh script and update the one being used.
+ - Adding sense channel to alh
+ - SVT TOP/BOT limits: changed to +/-1.45mm (orig +/-3mm)
+ - Added 2H00 and 2H02 BPM positions into alarms
+ - Added 2H00 and 2H02 BPM positions into alarms
+ - using nautilus instead of kde for file browser
+ - new position for the 3 mm collimator
+ - new position for the 3 mm, from 4.99 to 5.026
+ - A mistake was found in the determination of alpha, i.e. sigmas that passed to the Calc_abalpha for wire X and Y should be multiplied by sqrt(2), now it is fixed...
+ - strip/.gitignore: generated order changed
+ - ioc_hps_svt_health.adl: minor formatting
+
 Version 1.3.0:
  - Merge remote-tracking branch 'origin/svtdaqdev5'
  - svtDaqLib: commonSocket.c wasn't added to the repo
