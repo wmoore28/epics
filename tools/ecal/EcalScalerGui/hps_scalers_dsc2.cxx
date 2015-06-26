@@ -18,7 +18,8 @@
 
 #include "CrateMsgClient.h"
 
-#define SCALER_UPDATE_PERIOD	1000	/* in milliseconds */
+//#define SCALER_UPDATE_PERIOD	1000	/* in milliseconds */
+#define SCALER_UPDATE_PERIOD	5000	/* in milliseconds */
 
 struct totalrates_t
 {
@@ -188,6 +189,7 @@ void hps_scalers_dsc2_app::draw_scalers()
     static TLine ll;
     static TText tarrow(14.5,0.3,"Beam Left");
     static TArrow arrow(19,0.5,23,0.5,0.02,"|>");
+    static TPaveText tdatime(-5,-6.5,5,-5.8);
 
     if (!called)
     {
@@ -210,6 +212,9 @@ void hps_scalers_dsc2_app::draw_scalers()
         arrow.SetAngle(40);
         arrow.SetFillColor(kBlack);
         arrow.SetLineWidth(2);
+        tdatime.SetFillColor(kWhite);
+        tdatime.SetBorderSize(0);
+        tdatime.SetLineWidth(0);
     }
 
     unsigned int max=0;
@@ -282,6 +287,12 @@ void hps_scalers_dsc2_app::draw_scalers()
     arrow.Draw();
     tarrow.Draw();
 
+    TDatime datime;
+    tdatime.Clear();
+    tdatime.AddText(Form("%d/%d/%d %.2d:%.2d:%.2d",
+                datime.GetDay(),datime.GetMonth(),datime.GetYear(),
+                datime.GetHour(),datime.GetMinute(),datime.GetSecond()));
+    tdatime.Draw();
     pCanvas->GetCanvas()->Modified();
     pCanvas->GetCanvas()->Update();
 }

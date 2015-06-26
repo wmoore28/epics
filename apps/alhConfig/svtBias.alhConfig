@@ -15,8 +15,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:0:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:0:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:top:0:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:0:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -27,18 +27,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:0:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:0:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:top:1:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:1:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -47,8 +35,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:1:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:1:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:top:1:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:1:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -59,18 +47,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:1:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:1:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:top:2:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:2:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -79,8 +55,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:2:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:2:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:top:2:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:2:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -91,18 +67,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:2:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:2:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:top:3:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:3:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -111,8 +75,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:3:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:3:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:top:3:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:3:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -123,18 +87,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:3:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:3:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:top:4:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:4:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -143,8 +95,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:4:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:4:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:top:4:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:4:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -155,18 +107,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:4:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:4:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:top:5:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:5:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -175,8 +115,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:5:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:5:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:top:5:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:5:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -187,18 +127,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:5:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:5:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:top:6:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:6:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -207,8 +135,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:6:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:6:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:top:6:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:6:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -219,18 +147,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:6:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:6:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:top:7:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:7:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -239,8 +155,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:7:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:7:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:top:7:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:7:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -251,18 +167,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:7:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:7:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:top:8:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:8:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -271,8 +175,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:8:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:8:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:top:8:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:8:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -283,18 +187,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:8:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:8:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:top:9:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:9:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -303,8 +195,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:9:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:9:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:top:9:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:9:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -315,18 +207,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:9:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:9:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:top:10:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:10:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -335,8 +215,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:10:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:10:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:top:10:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:10:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -347,18 +227,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:10:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:10:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:top:11:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:11:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -367,8 +235,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:11:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:11:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:top:11:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:11:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -379,18 +247,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:11:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:11:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:top:12:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:12:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -399,8 +255,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:12:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:12:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:top:12:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:12:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -411,18 +267,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:12:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:12:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:top:13:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:13:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -431,8 +275,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:13:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:13:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:top:13:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:13:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -443,18 +287,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:13:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:13:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:top:14:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:14:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -463,8 +295,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:14:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:14:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:top:14:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:14:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -475,18 +307,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:14:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:14:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:top:15:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:15:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -495,8 +315,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:15:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:15:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:top:15:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:15:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -507,18 +327,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:15:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:15:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:top:16:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:16:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -527,8 +335,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:16:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:16:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:top:16:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:16:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -539,18 +347,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:16:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:16:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:top:17:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:17:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -559,8 +355,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:17:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:17:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:top:17:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:17:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -571,18 +367,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:top:17:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:top:17:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:bot:20:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:20:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -591,8 +375,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:20:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:20:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:bot:20:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:20:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -603,18 +387,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:20:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:20:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:bot:21:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:21:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -623,8 +395,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:21:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:21:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:bot:21:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:21:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -635,18 +407,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:21:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:21:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:bot:22:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:22:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -655,8 +415,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:22:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:22:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:bot:22:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:22:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -667,18 +427,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:22:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:22:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:bot:23:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:23:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -687,8 +435,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:23:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:23:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:bot:23:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:23:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -699,18 +447,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:23:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:23:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:bot:24:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:24:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -719,8 +455,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:24:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:24:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:bot:24:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:24:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -731,18 +467,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:24:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:24:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:bot:25:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:25:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -751,8 +475,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:25:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:25:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:bot:25:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:25:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -763,18 +487,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:25:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:25:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:bot:26:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:26:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -783,8 +495,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:26:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:26:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:bot:26:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:26:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -795,18 +507,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:26:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:26:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:bot:27:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:27:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -815,8 +515,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:27:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:27:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:bot:27:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:27:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -827,18 +527,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:27:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:27:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:bot:28:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:28:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -847,8 +535,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:28:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:28:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:bot:28:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:28:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -859,18 +547,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:28:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:28:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:bot:29:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:29:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -879,8 +555,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:29:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:29:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:bot:29:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:29:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -891,18 +567,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:29:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:29:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:bot:30:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:30:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -911,8 +575,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:30:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:30:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:bot:30:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:30:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -923,18 +587,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:30:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:30:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:bot:31:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:31:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -943,8 +595,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:31:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:31:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:bot:31:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:31:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -955,18 +607,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:31:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:31:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:bot:32:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:32:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -975,8 +615,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:32:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:32:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:bot:32:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:32:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -987,18 +627,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:32:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:32:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:bot:33:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:33:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -1007,8 +635,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:33:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:33:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:bot:33:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:33:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -1019,18 +647,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:33:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:33:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:bot:34:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:34:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -1039,8 +655,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:34:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:34:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:bot:34:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:34:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -1051,18 +667,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:34:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:34:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:bot:35:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:35:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -1071,8 +675,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:35:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:35:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:bot:35:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:35:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -1083,18 +687,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:35:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:35:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:bot:36:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:36:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -1103,8 +695,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:36:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:36:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:bot:36:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:36:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -1115,18 +707,6 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:36:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:36:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END
 
 CHANNEL BIAS SVT:bias:bot:37:i_rd
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:37:i_rd" aiaocalc_alarm.adl >> /dev/null 
@@ -1135,8 +715,8 @@ The current readback from this bias channel is abnormally high.
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:37:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:37:v_term" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL BIAS SVT:bias:bot:37:v_sens
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:37:v_sens" aiaocalc_alarm.adl >> /dev/null 
 $GUIDANCE
 The voltage readback from this bias channel is out of spec.
 Possible causes:
@@ -1147,15 +727,3 @@ The bias voltage specified by SVT procedures is 180 V, unless the SVT expert has
 Contact the SVT expert if the cause of this alarm is not understood.
 $END
 
-CHANNEL BIAS SVT:bias:bot:37:stat
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:bias:bot:37:stat" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-This bias channel is off, or in an abnormal state.
-A value of 0 means this bias channel is off.
-    If the beam-bias interlock is enabled, all bias channels will be turned off when the beam is lost.
-    If the beam was just lost, follow the procedure for responding to a beam trip.
-A value of 40 means this bias channel is in "Interlock" state, and must be reset.
-    Follow the procedure for responding to an MPOD trip.
-    When the trip has cleared, press the "RESET INTERLOCKS" button on the SVT Bias GUI.
-Contact the SVT expert if the cause of this alarm is not understood.
-$END

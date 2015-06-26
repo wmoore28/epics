@@ -3,6 +3,7 @@
 #include <TH2D.h>
 #include <stdio.h>
 #include <TLine.h>
+#include <TMath.h>
 #include <iostream>
 #include <TGraph.h>
 #include <TLatex.h>
@@ -16,6 +17,7 @@ using namespace std;
 TH1D *Graph2Hist(TGraph *);
 double* GetTopPos(double);
 double* GetBotPos(double);
+double Arnes_Corr(double , double );
 
 int main(int argc, char **argv)
 {
@@ -59,7 +61,8 @@ int main(int argc, char **argv)
       cout<<"The program is exiting"<<endl;
       exit(1);
     }
-
+  
+  const double wd = 0.02; // Horizontal wire diameter
   const int n_graphs = 8; //number of graphs
   string graph_titles_[n_graphs] = {"HPS_L", "HPS_R", "HPS_T", "HPS_SC", "FCup_current", "2H02 X", "2H02 Y", "2H02 current"};
 
@@ -91,7 +94,9 @@ int main(int argc, char **argv)
   double stage2_[n_graphs];
   double stage1_truncated_[n_graphs];
   double stage2_truncated_[n_graphs];
-
+  double sigma_[n_graphs];
+  double sigma_truncated_[n_graphs];
+  
   gr_[0] = new TGraph(Form("%s/%s", file_dir.c_str(), file_name.c_str()), "%*s %*s %lg %lg");
   gr_[1] = new TGraph(Form("%s/%s", file_dir.c_str(), file_name.c_str()), "%*s %*s %lg %*s %lg");
   gr_[2] = new TGraph(Form("%s/%s", file_dir.c_str(), file_name.c_str()), "%*s %*s %lg %*s %*s %lg");
@@ -100,7 +105,9 @@ int main(int argc, char **argv)
   gr_[5] = new TGraph(Form("%s/%s", file_dir.c_str(), file_name.c_str()), "%*s %*s %lg %*s %*s %*s %*s %*s %lg");
   gr_[6] = new TGraph(Form("%s/%s", file_dir.c_str(), file_name.c_str()), "%*s %*s %lg %*s %*s %*s %*s %*s %*s %lg");
   gr_[7] = new TGraph(Form("%s/%s", file_dir.c_str(), file_name.c_str()), "%*s %*s %lg %*s %*s %*s %*s %*s %*s %*s %lg");
-  
+ 
+  for (int ii=0; ii<8; ii++) std::cerr<<gr_[ii]->GetN()<<std::endl;
+
   cout<<"Kuku"<<endl;
   TCanvas *c1 = new TCanvas("c1", "", 1200, 600);
   c1->Divide(4, 2);
@@ -116,6 +123,7 @@ int main(int argc, char **argv)
       gr_[i]->Draw("AP");
     }
   
+  std::cerr<<"AAAAAAAAA5AAAAAAAAAAAA"<<std::endl;
   //c1->Modified();
   //c1->Update();
   TCanvas *c2 = new TCanvas("c2", "", 2000, 900);
@@ -123,8 +131,12 @@ int main(int argc, char **argv)
   int n_points_[n_graphs];
 
   TH1D *h_gr_2 = Graph2Hist(gr_[2]); h_gr_2->SetName("h_gr_2"); h_gr_2->SetTitle("HPS_T; Motor pos. (mm)");
-  TH1D *h_gr_3 = Graph2Hist(gr_[3]); h_gr_3->SetName("h_gr_3"); h_gr_3->SetTitle("HPS_SC; Motor pos. (mm)");
+  std::cerr<<"AAAAAAAAA5AAAAAAAAAAAA"<<std::endl;
+  TH1D *h_gr_3 = Graph2Hist(gr_[3]);
+  std::cerr<<"AAAAAAAAA5AAAAAAAAAAAA"<<std::endl;
+  h_gr_3->SetName("h_gr_3"); h_gr_3->SetTitle("HPS_SC; Motor pos. (mm)");
   
+  std::cerr<<"AAAAAAAAA5AAAAAAAAAAAA"<<std::endl;
   sp1->Search(h_gr_2, 2, "", 0.2);
   float *peak_val_2 = sp1->GetPositionY();
   float *pos_2 = sp1->GetPositionX();
@@ -147,11 +159,13 @@ int main(int argc, char **argv)
   
   double *mean_vals = new double[n_peaks2];
   double *mean_vals_truncated = new double[n_peaks2];
+  double *sigmas = new double[n_peaks2];
+  double *sigmas_truncated = new double[n_peaks2];
   for( int i_peak = 0; i_peak < n_peaks2; i_peak++ )
     {
       int mean_bin = h_gr_2->FindBin(pos_2[i_peak]);
-      double fit_left_lim = h_gr_2->GetBinCenter(mean_bin - 4);
-      double fit_right_lim = h_gr_2->GetBinCenter(mean_bin + 4);
+      double fit_left_lim = h_gr_2->GetBinCenter(mean_bin - 3);
+      double fit_right_lim = h_gr_2->GetBinCenter(mean_bin + 3);
 
       cout<<"pos2_["<<i_peak<<"]  = "<<pos_2[i_peak]<<endl;
       f_GPol0->SetParameters(peak_val_2[i_peak], pos_2[i_peak], 0.2);
@@ -159,11 +173,14 @@ int main(int argc, char **argv)
       f_fit_func2_[i_peak] = (TF1*)f_GPol0->Clone(Form("f_fit_func2_%d", i_peak));
       f_fit_func2_[i_peak]->SetLineColor(2 + 2*i_peak);
       double sigma = f_fit_func2_[i_peak]->GetParameter(2);
-      f_fit_func2_[i_peak]->SetRange(pos_2[i_peak] - 5*sigma, pos_2[i_peak] + 5*sigma);
+      f_fit_func2_[i_peak]->SetRange(pos_2[i_peak] - 9*sigma, pos_2[i_peak] + 9*sigma);
+
+      sigma_[2] = sigma;
       mean_vals[i_peak] = f_fit_func2_[i_peak]->GetParameter(1);
       f_Gaus->SetParameters(h_gr_2->GetBinContent(mean_bin), pos_2[i_peak], 0.07);
       h_gr_2->Fit(f_Gaus, "+MeV", "", fit_left_lim, fit_right_lim);
       mean_vals_truncated[i_peak] = f_Gaus->GetParameter(1);
+      sigma_truncated_[2] = f_Gaus->GetParameter(2);
     }
   h_gr_2->Draw("E1");
   for( int i_peak = 0; i_peak < n_peaks2; i_peak++ )
@@ -207,8 +224,8 @@ int main(int argc, char **argv)
   for( int i_peak = 0; i_peak < n_peaks3; i_peak++ )
     {
       int mean_bin = h_gr_3->FindBin(pos_3[i_peak]);
-      double fit_left_lim = h_gr_3->GetBinCenter(mean_bin - 4);
-      double fit_right_lim = h_gr_3->GetBinCenter(mean_bin + 4);
+      double fit_left_lim = h_gr_3->GetBinCenter(mean_bin - 3);
+      double fit_right_lim = h_gr_3->GetBinCenter(mean_bin + 3);
 
       cout<<"pos3_["<<i_peak<<"]  = "<<pos_3[i_peak]<<endl;
       f_GPol0->SetParameters(peak_val_3[i_peak], pos_3[i_peak], 0.2);
@@ -216,11 +233,13 @@ int main(int argc, char **argv)
       f_fit_func3_[i_peak] = (TF1*)f_GPol0->Clone(Form("f_fit_func3_%d", i_peak));
       f_fit_func3_[i_peak]->SetLineColor(2 + 2*i_peak);
       double sigma = f_fit_func3_[i_peak]->GetParameter(2);
-      f_fit_func3_[i_peak]->SetRange(pos_3[i_peak] - 5*sigma, pos_3[i_peak] + 5*sigma);
+      sigma_[3] = sigma;
+      f_fit_func3_[i_peak]->SetRange(pos_3[i_peak] - 9*sigma, pos_3[i_peak] + 9*sigma);
       mean_vals[i_peak] = f_fit_func3_[i_peak]->GetParameter(1);
       f_Gaus->SetParameters(h_gr_3->GetBinContent(mean_bin), pos_3[i_peak], 0.07);
       h_gr_3->Fit(f_Gaus, "+MeV", "", fit_left_lim, fit_right_lim);
       mean_vals_truncated[i_peak] = f_Gaus->GetParameter(1);
+      sigma_truncated_[3] = f_Gaus->GetParameter(2);
     }
   h_gr_3->Draw("E1");
   for( int i_peak = 0; i_peak < n_peaks3; i_peak++ )
@@ -265,6 +284,8 @@ int main(int argc, char **argv)
 	  positions2_ = GetTopPos(stage2_[2]);
 	  positions_truncated_ = GetTopPos(stage1_truncated_[2]);
 	  positions2_truncated_ = GetTopPos(stage2_truncated_[2]);
+	  sigma_[2] = 0.482*sigma_[2];
+	  sigma_truncated_[2] = 0.482*sigma_truncated_[2];
 	}
       else if( bot_scan)
 	{
@@ -272,7 +293,11 @@ int main(int argc, char **argv)
 	  positions2_ = GetBotPos(stage2_[2]);
 	  positions_truncated_ = GetBotPos(stage1_truncated_[2]);
 	  positions2_truncated_ = GetBotPos(stage2_truncated_[2]);
+	  sigma_[2] = 0.463*sigma_[2];
+	  sigma_truncated_[2] = 0.463*sigma_truncated_[2];
 	}
+      sigma_[2] = sigma_[2]/Arnes_Corr(sigma_[2], wd);
+      sigma_truncated_[2] = sigma_truncated_[2]/Arnes_Corr(sigma_truncated_[2], wd);
       si_pos_[2] = positions_[0];
       horiz_wire_pos_[2] = positions_[1];
       stereo_wire_pos_[2] = positions2_[1];
@@ -286,22 +311,24 @@ int main(int argc, char **argv)
 
       lat1->DrawLatex(0.15, 0.975, Form("File: %s", file_name.c_str()));
 
+      lat1->SetTextSize(0.04);
       lat1->SetTextColor(4);
       lat1->DrawLatex(0.15, 0.93, "Analyze from HPS_t counter" );
       lat1->SetTextColor(64);
-      lat1->DrawLatex(0.1, 0.89, Form("%s_mot_pos1 = %1.3f mm", which_scan.c_str(), stage1_[2]));
-      lat1->DrawLatex(0.1, 0.85, Form("%s_mot_pos2 = %1.3f mm", which_scan.c_str(), stage2_[2]));
+      lat1->DrawLatex(0.1, 0.90, Form("%s_mot_pos1 = %1.3f mm", which_scan.c_str(), stage1_[2]));
+      lat1->DrawLatex(0.1, 0.87, Form("%s_mot_pos2 = %1.3f mm", which_scan.c_str(), stage2_[2]));
       //lat1->DrawLatex(0.1, 0.83, Form("%s_si_retracted_pos = %1.3f mm", which_scan.c_str(), si_pos_[2]));
-      lat1->DrawLatex(0.1, 0.81, Form("%s_wire_dist = %1.3f mm", which_scan.c_str(), wire_dist));
-      lat1->DrawLatex(0.1, 0.77, Form("%s_beam_Y = %1.3f mm", which_scan.c_str(), horiz_wire_pos_[2]));
-      lat1->DrawLatex(0.1, 0.73, Form("%s_beam_X = %1.3f mm", which_scan.c_str(), beam_x));
+      lat1->DrawLatex(0.1, 0.84, Form("%s_wire_dist = %1.3f mm", which_scan.c_str(), wire_dist));
+      lat1->DrawLatex(0.1, 0.81, Form("%s_beam_Y = %1.3f mm", which_scan.c_str(), horiz_wire_pos_[2]));
+      lat1->DrawLatex(0.1, 0.78, Form("%s_beam_X = %1.3f mm", which_scan.c_str(), beam_x));
+      lat1->DrawLatex(0.1, 0.75, Form("%s_beam_#sigma_{Y} = %1.4f mm", which_scan.c_str(), sigma_[2]));
       lat1->SetTextColor(96);
       lat1->DrawLatex(0.1, 0.69, Form("%s_mot_pos1 = %1.3f mm", which_scan.c_str(), stage1_truncated_[2]));
-      lat1->DrawLatex(0.1, 0.65, Form("%s_mot_pos2 = %1.3f mm", which_scan.c_str(), stage2_truncated_[2]));
-      //lat1->DrawLatex(0.1, 0.83, Form("%s_si_retracted_pos = %1.3f mm", which_scan.c_str(), si_pos_[2]));
-      lat1->DrawLatex(0.1, 0.61, Form("%s_wire_dist = %1.3f mm", which_scan.c_str(), wire_dist_truncated));
-      lat1->DrawLatex(0.1, 0.57, Form("%s_beam_Y = %1.3f mm", which_scan.c_str(), horiz_wire_pos_truncated_[2]));
-      lat1->DrawLatex(0.1, 0.53, Form("%s_beam_X = %1.3f mm", which_scan.c_str(), beam_x_truncated));
+      lat1->DrawLatex(0.1, 0.66, Form("%s_mot_pos2 = %1.3f mm", which_scan.c_str(), stage2_truncated_[2]));
+      lat1->DrawLatex(0.1, 0.63, Form("%s_wire_dist = %1.3f mm", which_scan.c_str(), wire_dist_truncated));
+      lat1->DrawLatex(0.1, 0.60, Form("%s_beam_Y = %1.3f mm", which_scan.c_str(), horiz_wire_pos_truncated_[2]));
+      lat1->DrawLatex(0.1, 0.57, Form("%s_beam_X = %1.3f mm", which_scan.c_str(), beam_x_truncated));
+      lat1->DrawLatex(0.1, 0.54, Form("%s_beam_#sigma_{Y} = %1.4f mm", which_scan.c_str(), sigma_truncated_[2]));
     }
   
   if( n_peaks3 == 2 )
@@ -318,6 +345,8 @@ int main(int argc, char **argv)
 	  positions2_ = GetTopPos(stage2_[3]);
 	  positions_truncated_ = GetTopPos(stage1_truncated_[3]);
 	  positions2_truncated_ = GetTopPos(stage2_truncated_[3]);
+	  sigma_[3] = 0.482*sigma_[3];
+	  sigma_truncated_[3] = 0.482*sigma_truncated_[3];
 	}
       else if( bot_scan)
 	{
@@ -325,7 +354,11 @@ int main(int argc, char **argv)
 	  positions2_ = GetBotPos(stage2_[3]);
 	  positions_truncated_ = GetBotPos(stage1_truncated_[3]);
 	  positions2_truncated_ = GetBotPos(stage2_truncated_[3]);
+	  sigma_[3] = 0.463*sigma_[3];
+	  sigma_truncated_[3] = 0.463*sigma_truncated_[3];
 	}
+      sigma_[3] = sigma_[3]/Arnes_Corr(sigma_[3], wd);
+      sigma_truncated_[3] = sigma_truncated_[3]/Arnes_Corr(sigma_truncated_[3], wd);
       si_pos_[3] = positions_[0];
       horiz_wire_pos_[3] = positions_[1];
       stereo_wire_pos_[3] = positions2_[1];
@@ -341,17 +374,19 @@ int main(int argc, char **argv)
       lat1->DrawLatex(0.15, 0.45, "Analyze from HPS_SC counter" );
       lat1->SetTextColor(64);
       lat1->DrawLatex(0.1, 0.41, Form("%s_mot_pos1 = %1.3f mm", which_scan.c_str(), stage1_[3]));
-      lat1->DrawLatex(0.1, 0.37, Form("%s_mot_pos2 = %1.3f mm", which_scan.c_str(), stage2_[3]));
+      lat1->DrawLatex(0.1, 0.38, Form("%s_mot_pos2 = %1.3f mm", which_scan.c_str(), stage2_[3]));
       //lat1->DrawLatex(0.1, 0.33, Form("%s_si_pos = %1.3f mm", which_scan.c_str(), si_pos_[3]));
-      lat1->DrawLatex(0.1, 0.33, Form("%s_wire_dist = %1.3f mm", which_scan.c_str(), wire_dist));
-      lat1->DrawLatex(0.1, 0.29, Form("%s_beam_Y = %1.3f mm", which_scan.c_str(), horiz_wire_pos_[3]));
-      lat1->DrawLatex(0.1, 0.25, Form("%s_beam_X = %1.3f mm", which_scan.c_str(), beam_x));
+      lat1->DrawLatex(0.1, 0.35, Form("%s_wire_dist = %1.3f mm", which_scan.c_str(), wire_dist));
+      lat1->DrawLatex(0.1, 0.32, Form("%s_beam_Y = %1.3f mm", which_scan.c_str(), horiz_wire_pos_[3]));
+      lat1->DrawLatex(0.1, 0.29, Form("%s_beam_X = %1.3f mm", which_scan.c_str(), beam_x));
+      lat1->DrawLatex(0.1, 0.26, Form("%s_beam_#sigma_{Y} = %1.4f mm", which_scan.c_str(), sigma_[3]));
       lat1->SetTextColor(96);
       lat1->DrawLatex(0.1, 0.21, Form("%s_mot_pos1 = %1.3f mm", which_scan.c_str(), stage1_truncated_[3]));
-      lat1->DrawLatex(0.1, 0.17, Form("%s_mot_pos2 = %1.3f mm", which_scan.c_str(), stage2_truncated_[3]));
-      lat1->DrawLatex(0.1, 0.13, Form("%s_wire_dist = %1.3f mm", which_scan.c_str(), wire_dist_truncated));
-      lat1->DrawLatex(0.1, 0.09, Form("%s_beam_Y = %1.3f mm", which_scan.c_str(), horiz_wire_pos_truncated_[3]));
-      lat1->DrawLatex(0.1, 0.05, Form("%s_beam_X = %1.3f mm", which_scan.c_str(), beam_x_truncated));
+      lat1->DrawLatex(0.1, 0.18, Form("%s_mot_pos2 = %1.3f mm", which_scan.c_str(), stage2_truncated_[3]));
+      lat1->DrawLatex(0.1, 0.15, Form("%s_wire_dist = %1.3f mm", which_scan.c_str(), wire_dist_truncated));
+      lat1->DrawLatex(0.1, 0.12, Form("%s_beam_Y = %1.3f mm", which_scan.c_str(), horiz_wire_pos_truncated_[3]));
+      lat1->DrawLatex(0.1, 0.09, Form("%s_beam_X = %1.3f mm", which_scan.c_str(), beam_x_truncated));
+      lat1->DrawLatex(0.1, 0.06, Form("%s_beam_#sigma_{Y} = %1.4f mm", which_scan.c_str(), sigma_truncated_[3]));
 
       if( make_log )
 	{
@@ -359,6 +394,14 @@ int main(int argc, char **argv)
 	  system(Form("caput HPS_SVT:SCAN:y_offset %1.4f", horiz_wire_pos_[3]));
 	  system(Form("caput HPS_SVT:SCAN:x_offset_locfit %1.4f", beam_x_truncated));
 	  system(Form("caput HPS_SVT:SCAN:y_offset_locfit %1.4f", horiz_wire_pos_truncated_[3]));
+	  if( n_peaks3 == 2 )
+	    {
+	      system(Form("caput HPS_SVT:SCAN:sigma_y %1.4f", sigma_truncated_[3]));
+	    }
+	  else if( n_peaks2 == 2 )
+	    {
+	      system(Form("caput HPS_SVT:SCAN:sigma_y %1.4f", sigma_truncated_[2]));
+	    }
 	}
     }
   
@@ -368,7 +411,7 @@ int main(int argc, char **argv)
   if( make_log )
     {
       c2->Print(Form("%s", img_path.c_str()));
-      if( n_peaks2 == 2 || n_peaks2 == 3 )
+      if( n_peaks2 == 2 || n_peaks3 == 2 )
 	{
 	  system(Form("/site/ace/certified/apps/bin/logentry -l HBLOG -t \"Analyse of %s \" -a %s ", file_name.c_str(), img_path.c_str()));
 	  //system(Form("/site/ace/certified/apps/bin/logentry -l HBLOG -t \"Analyse of %s \" -a %s ", file_name.c_str(), img_path.c_str()));
@@ -379,20 +422,26 @@ int main(int argc, char **argv)
 
 TH1D *Graph2Hist(TGraph * gr)
 {
+  std::cerr<<"aaaaaaaaa   "<<gr<<std::endl;
   int n_points = gr->GetN();
   double *x_axis = gr->GetX();
   double *y_axis = gr->GetY();
   
+  std::cerr<<"aaaaaaaaa   "<<gr<<std::endl;
   double x_varbins_[n_points + 1];
   double y_varbins_[n_points + 1];
 
+  std::cerr<<"aaaaaaaaa   "<<gr->GetN()<<" "<<n_points<<std::endl;
   x_varbins_[0] = x_axis[0] - (x_axis[1] - x_axis[0])/2.;
   x_varbins_[n_points] = x_axis[n_points - 1] + (x_axis[n_points - 1] - x_axis[n_points - 2])/2.;
   
+  std::cerr<<"aaaaaaaaa   "<<gr<<std::endl;
   cout<<"x_varbins ["<<0<<"] = "<<x_varbins_[0]<<endl;
   cout<<"x_varbins ["<<n_points<<"] = "<<x_varbins_[n_points]<<endl;
+  std::cerr<<"aaaaaaaaa   "<<gr<<std::endl;
   for( int i = 1; i < n_points; i++ )
     {
+  std::cerr<<"aaaaaaaaa   "<<gr<<"   "<<i<<std::endl;
       x_varbins_[i] = (x_axis[i-1] + x_axis[i])/2.;
       //cout<<"x_varbins ["<<i<<"] = "<<x_varbins_[i]<<endl;
       
@@ -401,6 +450,7 @@ TH1D *Graph2Hist(TGraph * gr)
 	  cout<<"               ================= Hop ============== x is decreasing ====== "<<endl;
 	}
     }
+  std::cerr<<"aaaaaaaaa   "<<gr<<std::endl;
 
   double x_low, y_low;
   double x_high, y_high;
@@ -414,22 +464,31 @@ TH1D *Graph2Hist(TGraph * gr)
 
   h_gr->FillN(n_points, x_axis, y_axis);
   h_gr->SetStats(0);
-  
+ 
+  std::cerr<<"aaaaaaaaa   "<<h_gr<<std::endl;
+
   return h_gr;
 }
 
 double* GetTopPos(double stage)
 {
   double *top_pos = new double[2];
-  top_pos[0]  = -0.391*stage + 7.542; // dtstance of Top Si. from the beam;
-  top_pos[1] = -0.482*stage + 1.305; // distance of the top horizontal wire from the beam
+  top_pos[0]  = -0.391*stage + 7.472; // dtstance of Top Si. from the beam;
+  //top_pos[1] = -0.482*stage + 1.305; // distance of the top horizontal wire from the beam
+  top_pos[1] = -0.482*stage + 1.218; // distance of the top horizontal wire from the beam, These are Revised numbers
   return top_pos;
 }
 
 double* GetBotPos(double stage)
 {
   double *bot_pos = new double[2];
-  bot_pos[0]  = +0.363*stage - 7.048; // dtstance of Top Si. from the beam;
-  bot_pos[1] = +0.463*stage - 0.982; // distance of the top horizontal wire from the beam
+  bot_pos[0]  = +0.363*stage - 6.815; // dtstance of Top Si. from the beam;
+  bot_pos[1] = +0.463*stage - 0.684; // distance of the top horizontal wire from the beam
   return bot_pos;
+}
+
+double Arnes_Corr(double sigm, double wd)
+{
+  double corr = 1 + 0.025/TMath::Power(sigm/wd, 2.826);
+  return corr;
 }

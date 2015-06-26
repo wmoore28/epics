@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/v1.3.0/apps/generalApp/medm/voltages.adl"
+	name="/home/hpsrun/./biggreenbox2.adl"
 	version=030108
 }
 display {
 	object {
-		x=1214
-		y=185
-		width=200
-		height=200
+		x=2011
+		y=53
+		width=400
+		height=250
 	}
 	clr=14
 	bclr=4
@@ -87,44 +87,37 @@ display {
 		1a7309,
 	}
 }
-"related display" {
+image {
 	object {
-		x=25
-		y=30
-		width=140
-		height=140
+		x=1
+		y=1
+		width=400
+		height=300
 	}
-	display[0] {
-		label="SVT"
-		name="cc.adl"
+	type="gif"
+	"image name"="/home/hpsrun/.svbon.gif"
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=180&&B&&C>177"
+		chan="SVT:bias:v_set"
+		chanB="SVT:bias:switch"
+		chanC="SVT:bias:top:0:v_sens"
 	}
-	display[1] {
-		label="ECal HV"
-		name="ECalHVStatus.adl"
-	}
-	display[2] {
-		label="Beav HV"
-		name="bm.adl"
-	}
-	display[3] {
-		label="BLMs"
-		name="blm.adl"
-	}
-	clr=20
-	bclr=2
-	label="abd"
-	visual="a column of buttons"
 }
-text {
+image {
 	object {
-		x=18
-		y=7
-		width=153
-		height=25
+		x=0
+		y=0
+		width=400
+		height=250
 	}
-	"basic attribute" {
-		clr=48
+	type="gif"
+	"image name"="/home/hpsrun/.svboff.gif"
+	"dynamic attribute" {
+		vis="calc"
+		calc="A#180||!B||C<177"
+		chan="SVT:bias:v_set"
+		chanB="SVT:bias:switch"
+		chanC="SVT:bias:top:0:v_sens"
 	}
-	textix="Voltages"
-	align="horiz. centered"
 }

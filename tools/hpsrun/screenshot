@@ -3,9 +3,14 @@
 # Wrap with xterm -e
 #
 
-echo 'Enter Title ... (NO SPACES NOR SPECIAL CHARACTERS ALLOWED) ...'
+echo 'After entering title, left Click in Window for Snapshot'
+echo ''
+echo 'WARNING:'
+echo '  NO OVERLAPPING WINDOWS!' 
+echo '  NO SPACES OR SPECIAL CHARACTERS ALLOWED!'
+echo ''
+echo 'Enter Title ... '
 read title
-echo 'Left Click in Window for Snapshot (NO OVERLAPPING WINDOWS)  ....'
 
 file=$HOME/screenshots/$title\_`date +%Y-%m-%d_%H-%M-%S`.png
 import $file

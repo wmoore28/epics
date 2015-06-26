@@ -16,3 +16,9 @@ Further increase in this value will trip the software interlock, stopping both c
 Contact the SVT expert for further guidance.
 $END
 
+CHANNEL INTERLOCKS HPS_INTLK:NO_BEAM:intlk_status
+$GUIDANCE
+This indicates that for due to beam trip or some other reason the interlock tripped off the bias voltages of SVT.
+Reset the interlock and make SVT BIAS ALL ON.
+$END
+

@@ -863,16 +863,21 @@ record(ai, SVT:lv:FEBID:HYBID:avdd:i_rd)
                 rec = rec.replace("HILIM",str(0.59))
                 rec = rec.replace("LOLIM",str(0.50))
                 rec = rec.replace("LLLIM",str(0.45))
-            elif (feb==5 and hyb==2) or (feb==1 and hyb==3):
-                rec = rec.replace("HHLIM",str(0.47))
-                rec = rec.replace("HILIM",str(0.45))
-                rec = rec.replace("LOLIM",str(0.375))
-                rec = rec.replace("LLLIM",str(0.365))
-            else:
+            elif (feb==0 and hyb==1):
                 rec = rec.replace("HHLIM",str(0.45))
                 rec = rec.replace("HILIM",str(0.43))
-                rec = rec.replace("LOLIM",str(0.355))
-                rec = rec.replace("LLLIM",str(0.345))
+                rec = rec.replace("LOLIM",str(0.3))
+                rec = rec.replace("LLLIM",str(0.28))
+            #elif (feb==5 and hyb==2) or (feb==1 and hyb==3):
+            #    rec = rec.replace("HHLIM",str(0.47))
+            #    rec = rec.replace("HILIM",str(0.45))
+            #    rec = rec.replace("LOLIM",str(0.375))
+            #    rec = rec.replace("LLLIM",str(0.365))
+            else:
+                rec = rec.replace("HHLIM",str(0.47))
+                rec = rec.replace("HILIM",str(0.45))
+                rec = rec.replace("LOLIM",str(0.35))
+                rec = rec.replace("LLLIM",str(0.34))
             rec = rec.replace("HYBID",str(hyb))
             rec = rec.replace("FEBID",str(feb))
             if feb==0 and hyb==0:
@@ -1262,8 +1267,8 @@ record(ai, SVT:temp:fe:FEBID:axixadc:t_rd) {
     field(PREC, "1")
     field(INP, "SVT:temp:fe:FEBID:axixadc:t_rd_sub PP")
     field(DTYP,"Soft Channel")
-    field(HIHI,"47") field(HHSV,"MAJOR")
-    field(HIGH,"45") field(HSV,"MINOR")
+    field(HIHI,"52") field(HHSV,"MAJOR")
+    field(HIGH,"50") field(HSV,"MINOR")
     field(LOW,"37") field(LSV,"MINOR")
     field(LOLO,"35") field(LLSV,"MAJOR")
 }
