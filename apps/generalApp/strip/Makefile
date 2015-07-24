@@ -6,7 +6,7 @@
 
 .PHONY: all clean distclean install rebuild realclean
 
-STC_FILES = $(shell find ./ -name "*.stc")
+STC_FILES = $(shell find ./ -name "*.stc" | sort)
 
 STP_LINK_COMMAND = $(foreach file_with_path, $(STC_FILES), \
 	ln -sf $(file_with_path) $(basename $(notdir $(file_with_path))).stp ; \
