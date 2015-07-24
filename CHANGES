@@ -1,3 +1,24 @@
+Version 2.0.0:
+ - Merge remote-tracking branch 'origin/develop'
+ - Merge remote-tracking branch 'origin/hotfix-v1.3.2'
+ - putting voltages in menu instead of separate window
+ - swapping back to hvhps1 IP
+ - shrinking screen
+ - Nothing really modified in harp_scan_generic.st just was looking,and probably some space was saved, Thinking Keithly.db is a good place I was trying to add some PVs to do some tests,
+ - sending fit parameters, stamp time and counter number to the MYA is done, also the crashing bug because of TGNumberEntry is fixed
+ - chillerApp: minor update to opi
+ - chillerApp: added first draft boy opi's
+ - myaDataApp: added unix_time and counter_num
+ -  1st version of a Harp Fitter with a ROOT GUI
+ - Fixed missed patches - Merge branch 'hotfix-v1.3.1' of https://github.com/wmoore28/epics into hotfix-v1.3.2
+ - Merge branch 'master' of https://github.com/wmoore28/epics into develop
+ - generalApp/medm: minor update
+ - iocecalVoltages: updated IPs (baltzell)
+ - making ECalHVStatusCompact and making it the default
+ - updating for apparent change of group name clas-4 to clas-3
+ - Updated generated .gitignore files to help them from showing as modified after rebuilds
+ - Merge remote-tracking branch 'origin/master' into develop
+
 Version 1.3.1:
  - apps/xpsMotorApp/Db - change motor offsets
  - apps/xpsMotorApp/medm - add preset buttons and bias currents to SVT motor GUI
