@@ -129,3 +129,29 @@ record(mbbo, "$(P)$(R)RANGE:SET") {
 	field(SVST, "20e-3")
 	field(EIST, "100e-3")
 }
+
+
+
+
+#####################################
+##########  TESTS  Rafo #############
+#####################################
+
+record(ai, "test_Input_voltage") {
+	field(DTYP, "stream")
+	field(PREC, "3")
+}
+
+record(ai, "test_Indicator_light") {
+}
+
+
+record(ai, "test_Input_voltage") {
+	field(DTYP, "stream")
+	field(PREC, "3")
+}
+
+record(ai, "twst_Output_voltage") {
+	field(DTYP, "stream")
+	field(PREC, "3")
+}
