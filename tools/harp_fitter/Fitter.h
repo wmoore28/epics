@@ -5,6 +5,7 @@
 class TF1;
 class TH1D;
 class TGWindow; 
+class TTimeStamp;
 class TGMainFrame; 
 class TRootEmbeddedCanvas;
 class TGTextEntry;
@@ -52,6 +53,9 @@ private:
   
   TF1 *f_1st_peak, *f_2nd_peak, *f_3rd_peak;
   TH1D *h_1st_peak, *h_2nd_peak, *h_3rd_peak;
+
+  TTimeStamp *tstmp_scan_time;
+  long int scan_time_in_sec;
 
   double aa, bb, alpha;
 
