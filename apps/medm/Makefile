@@ -5,7 +5,7 @@
 # are allowed to ensure compatibility with the build system.  
 # 
 
-OLD_FILES_WITH_PATH = $(shell find /usr/local/clas/devel/R3.14.8.2/EPICS/app/medm/ -name "*.adl")
+OLD_FILES_WITH_PATH = $(shell find /usr/clas/devel/R3.14.8.2/EPICS/app/medm/ -name "*.adl")
 ADL_FILES_WITH_PATH = $(shell find ../*App/medm/ -name "*.adl" -type f)
 GIF_FILES_WITH_PATH = $(shell find ../*App/medm/ -name "*.gif" -type f)
 SH_FILES_WITH_PATH  = $(shell find ../*App/medm/ -name "*.sh"  -type f)
