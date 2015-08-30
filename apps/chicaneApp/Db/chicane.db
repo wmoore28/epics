@@ -1,0 +1,76 @@
+
+record (bo, "$(P):start")
+{
+}
+record (bo, "$(P):stop")
+{
+}
+record (bo, "$(P):calc")
+{
+}
+record (stringout, "$(P):msg")
+{
+}
+
+
+
+
+record (ai, "$(P):energy")
+{
+    field(VAL,2.2)
+}
+record (ai, "$(P):iCalcMT")
+{
+}
+record (ai, "$(P):iCalcPS")
+{
+}
+
+
+record (ai, "$(P):tHoldMax")
+{
+    field(VAL,5)
+}
+record (ai, "$(P):iDelta")
+{
+    field(VAL,1.0)
+}
+record (ai, "$(P):complete")
+{
+}
+record (bo, "$(P):isReady")
+{
+}
+record (bo, "$(P):isError")
+{
+}
+record (bo, "$(P):isOff")
+{
+}
+
+
+
+record (ai, "$(P):iSetMT")
+{
+}
+record (ai, "$(P):iMonMT")
+{
+}
+record (ai, "$(P):iSetPS")
+{
+}
+record (ai, "$(P):iMonPS")
+{
+}
+
+
+# these will be removed when deployed:
+record (bo, "$(P):gotoMax")
+{
+}
+record (bo, "$(P):gotoSet")
+{
+}
+record (bo, "$(P):gotoZero")
+{
+}
