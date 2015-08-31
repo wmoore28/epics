@@ -50,7 +50,7 @@ short  gotoSetBtn;  assign gotoSetBtn  to "{P}:gotoSet";  monitor gotoSetBtn;
 
 
 %{
-#include "math.h"
+//#include "math.h"
 float getCurrentPS(float ee) {
     return 0.22727*0.1537*1e4*ee + 0.6657;
 }
@@ -64,11 +64,6 @@ float minComplete(float x0,float x1,float x2,float y0,float y1,float y2) {
     const float cx = (x1-x0) / (x2-x0);
     const float cy = (y1-y0) / (y2-y0);
     return cx<cy ? cx : cy;
-}
-float countComplete(int count,int target) {
-    float dog = (float)(count)/target;
-    fprintf(stderr,"dog = %.1f\n",dog);
-    return dog;
 }
 float getRampCurrent(int step,int nstep,float i0,float i1) {
     return i0 + (float)step/nstep*(i1-i0);
@@ -311,8 +306,7 @@ ss seqChicane {
         } state rampToMax
 
         when () {
-            //complete = (float)(count) / tConfirm;
-            complete = countComplete(count,tConfirm);
+            %% complete = (float)(count) / tConfirm;
             pvPut(complete);
             sprintf(msg,"Ramping Up to Max in %d seconds",tConfirm-count);
             pvPut(msg);
@@ -359,7 +353,7 @@ ss seqChicane {
 
     state holdAtMax {
 
-	option -t; // only reset delay timer if previous state was a different state
+	//option -t; // only reset delay timer if previous state was a different state
 	
 	entry {
 	    count = 0;
@@ -374,12 +368,14 @@ ss seqChicane {
         
         when (pvConnectCount() < pvChannelCount() ) {} state init
 
-	when (delay(tHoldMax) && isSimilar(iMonPS,iSetPS,iMonMT,iSetMT,iDelta)) {
+	when (count>=tHoldMax && isSimilar(iMonPS,iSetPS,iMonMT,iSetMT,iDelta)) {
 	    complete = 0;
 	    pvPut(complete);
 	} state rampToSetpoint
 
-	when (delay(tHoldMax) && !isSimilar(iMonPS,iSetPS,iMonMT,iSetMT,iDelta)) {
+	when (count>=tHoldMax && !isSimilar(iMonPS,iSetPS,iMonMT,iSetMT,iDelta)) {
+	    complete = 0.9;
+	    pvPut(complete);
 	    sprintf(msg,"Waiting, current NOT at Max.");
 	    pvPut(msg);
 	} state holdAtMax
@@ -395,13 +391,11 @@ ss seqChicane {
             count++;
         } state holdAtMax
 	
-        when () {
-	    //complete = (float)(count) / tHoldMax;
-            complete = countComplete(count,tHoldMax);
+        when (delay(1.0)) {
+	    %% complete = (float)(count) / tHoldMax;
 	    pvPut(complete);
 	    sprintf(msg,"Holding at Max for %ds",tHoldMax-count);
 	    pvPut(msg);
-	    epicsThreadSleep(1);
 	    count++;
 	} state holdAtMax
     }
