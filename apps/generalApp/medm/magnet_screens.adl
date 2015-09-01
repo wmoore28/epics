@@ -1,14 +1,14 @@
 
 file {
-	name="/home/stepanya/epics/app/general/medm/magnet_screens.adl"
-	version=030101
+	name="/usr/clas12/hps/v2.0.0/apps/generalApp/medm/magnet_screens.adl"
+	version=030108
 }
 display {
 	object {
-		x=359
-		y=119
+		x=357
+		y=103
 		width=160
-		height=130
+		height=139
 	}
 	clr=14
 	bclr=4
@@ -89,30 +89,26 @@ display {
 }
 "related display" {
 	object {
-		x=14
-		y=41
-		width=131
-		height=70
+		x=16
+		y=26
+		width=130
+		height=100
 	}
 	display[0] {
+		label="Chicane"
+		name="chicane.adl"
+	}
+	display[1] {
 		label="Tagger"
 		name="tagger.adl"
 	}
-	display[1] {
+	display[2] {
 		label="Frascati Magnets"
 		name="minitorus.adl"
 	}
-	display[2] {
+	display[3] {
 		label="Analyzing Magnet"
 		name="pspec.adl"
-	}
-	display[5] {
-		name="dynac.adl"
-		policy="replace display"
-	}
-	display[6] {
-		name="kepco.adl"
-		policy="replace display"
 	}
 	clr=14
 	bclr=55
@@ -121,7 +117,7 @@ display {
 }
 text {
 	object {
-		x=12
+		x=22
 		y=6
 		width=116
 		height=22
