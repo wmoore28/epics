@@ -1,6 +1,6 @@
 
 file {
-	name="/home/baltzell/hps_ecal_all.adl"
+	name="/usr/clas12/hps/v2.0.0/apps/./generalApp/medm/hps_ecal_all.adl"
 	version=030108
 }
 display {
@@ -6279,7 +6279,7 @@ menu {
 		height=20
 	}
 	monitor {
-		chan="$(P)TEMP.EGU"
+		chan="$(PC)TEMP.EGU"
 		clr=15
 		bclr=11
 	}
