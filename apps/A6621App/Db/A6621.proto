@@ -2,6 +2,7 @@
 
 OutTerminator = CR LF;
 ExtraInput = Ignore;
+ReplyTimeout = 3000;
 
 getVoltage1 {
    out "VOUT? 1"; in "%f"; 
