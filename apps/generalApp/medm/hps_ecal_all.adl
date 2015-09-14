@@ -1,11 +1,11 @@
 
 file {
-	name="/usr/clas12/hps/v2.0.0/apps/generalApp/medm/hps_ecal_all.adl"
+	name="/usr/clas12/hps/v2.0.0/apps/./generalApp/medm/hps_ecal_all.adl"
 	version=030108
 }
 display {
 	object {
-		x=1012
+		x=964
 		y=185
 		width=951
 		height=650
@@ -4060,7 +4060,7 @@ polyline {
 "choice button" {
 	object {
 		x=90
-		y=538
+		y=539
 		width=30
 		height=34
 	}
@@ -4240,7 +4240,7 @@ text {
 text {
 	object {
 		x=99
-		y=575
+		y=576
 		width=30
 		height=12
 	}
@@ -4252,7 +4252,7 @@ text {
 text {
 	object {
 		x=132
-		y=575
+		y=576
 		width=15
 		height=12
 	}
@@ -4264,7 +4264,7 @@ text {
 "choice button" {
 	object {
 		x=125
-		y=538
+		y=539
 		width=30
 		height=34
 	}
@@ -4273,22 +4273,6 @@ text {
 		clr=0
 		bclr=29
 	}
-}
-"message button" {
-	object {
-		x=90
-		y=593
-		width=60
-		height=18
-	}
-	control {
-		chan="$(P):CLEAR_OC1"
-		clr=0
-		bclr=29
-	}
-	label="Clear OC"
-	press_msg="0"
-	release_msg="1"
 }
 oval {
 	object {
@@ -4465,7 +4449,7 @@ text {
 "choice button" {
 	object {
 		x=207
-		y=540
+		y=539
 		width=30
 		height=34
 	}
@@ -4639,7 +4623,7 @@ text {
 text {
 	object {
 		x=216
-		y=576
+		y=575
 		width=30
 		height=12
 	}
@@ -4651,7 +4635,7 @@ text {
 text {
 	object {
 		x=249
-		y=576
+		y=575
 		width=15
 		height=12
 	}
@@ -4663,7 +4647,7 @@ text {
 "choice button" {
 	object {
 		x=242
-		y=540
+		y=539
 		width=30
 		height=34
 	}
@@ -4672,22 +4656,6 @@ text {
 		clr=0
 		bclr=29
 	}
-}
-"message button" {
-	object {
-		x=209
-		y=593
-		width=60
-		height=18
-	}
-	control {
-		chan="$(P):CLEAR_OC2"
-		clr=0
-		bclr=29
-	}
-	label="Clear OC"
-	press_msg="0"
-	release_msg="1"
 }
 oval {
 	object {
@@ -6520,4 +6488,35 @@ rectangle {
 	}
 	clr=14
 	bclr=4
+}
+"text update" {
+	object {
+		x=110
+		y=605
+		width=154
+		height=15
+	}
+	monitor {
+		chan="$(P):GET_ONOFF1.STAT"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=67
+		y=605
+		width=36
+		height=19
+	}
+	"basic attribute" {
+		clr=0
+	}
+	"dynamic attribute" {
+		chan="$(P):GET_ONOFF1.STAT"
+	}
+	textix="Comms:"
 }

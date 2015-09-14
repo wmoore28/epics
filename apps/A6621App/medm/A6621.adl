@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/release/0.1/epics/apps/A6551App/iocBoot/iocA6551App/./A6621.adl"
+	name="/usr/clas12/hps/v2.0.0/apps/A6621/medm/A6621.adl"
 	version=030108
 }
 display {
 	object {
-		x=78
-		y=57
+		x=313
+		y=277
 		width=420
-		height=240
+		height=260
 	}
 	clr=14
 	bclr=12
@@ -90,7 +90,7 @@ display {
 "text update" {
 	object {
 		x=81
-		y=105
+		y=114
 		width=50
 		height=15
 	}
@@ -107,29 +107,10 @@ display {
 		precDefault=2
 	}
 }
-"text entry" {
-	object {
-		x=80
-		y=141
-		width=50
-		height=15
-	}
-	control {
-		chan="$(P):SET_VOLTAGE1"
-		clr=14
-		bclr=0
-	}
-	limits {
-		hoprSrc="default"
-		hoprDefault=10
-		precSrc="default"
-		precDefault=2
-	}
-}
 "text update" {
 	object {
 		x=136
-		y=105
+		y=114
 		width=50
 		height=15
 	}
@@ -146,29 +127,10 @@ display {
 		precDefault=2
 	}
 }
-"text entry" {
-	object {
-		x=136
-		y=141
-		width=50
-		height=15
-	}
-	control {
-		chan="$(P):SET_CURRENT1"
-		clr=14
-		bclr=0
-	}
-	limits {
-		hoprSrc="default"
-		hoprDefault=10
-		precSrc="default"
-		precDefault=2
-	}
-}
 "choice button" {
 	object {
-		x=23
-		y=183
+		x=45
+		y=174
 		width=30
 		height=34
 	}
@@ -181,7 +143,7 @@ display {
 "text update" {
 	object {
 		x=80
-		y=123
+		y=132
 		width=50
 		height=15
 	}
@@ -201,7 +163,7 @@ display {
 "text update" {
 	object {
 		x=136
-		y=123
+		y=132
 		width=50
 		height=15
 	}
@@ -221,7 +183,7 @@ display {
 text {
 	object {
 		x=140
-		y=88
+		y=97
 		width=42
 		height=12
 	}
@@ -233,7 +195,7 @@ text {
 text {
 	object {
 		x=84
-		y=88
+		y=97
 		width=42
 		height=12
 	}
@@ -245,7 +207,7 @@ text {
 text {
 	object {
 		x=21
-		y=105
+		y=114
 		width=42
 		height=12
 	}
@@ -257,7 +219,7 @@ text {
 text {
 	object {
 		x=21
-		y=123
+		y=132
 		width=42
 		height=12
 	}
@@ -268,20 +230,8 @@ text {
 }
 text {
 	object {
-		x=21
-		y=141
-		width=42
-		height=12
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="Input"
-}
-text {
-	object {
 		x=111
-		y=32
+		y=41
 		width=66
 		height=20
 	}
@@ -294,7 +244,7 @@ text {
 oval {
 	object {
 		x=18
-		y=36
+		y=45
 		width=10
 		height=10
 	}
@@ -310,7 +260,7 @@ oval {
 oval {
 	object {
 		x=18
-		y=36
+		y=45
 		width=10
 		height=10
 	}
@@ -326,7 +276,7 @@ oval {
 text {
 	object {
 		x=36
-		y=35
+		y=44
 		width=40
 		height=17
 	}
@@ -343,7 +293,7 @@ text {
 text {
 	object {
 		x=36
-		y=35
+		y=44
 		width=40
 		height=12
 	}
@@ -359,8 +309,8 @@ text {
 }
 text {
 	object {
-		x=32
-		y=220
+		x=54
+		y=211
 		width=30
 		height=12
 	}
@@ -369,35 +319,10 @@ text {
 	}
 	textix="Pw"
 }
-text {
-	object {
-		x=72
-		y=220
-		width=15
-		height=12
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="OCP"
-}
-"choice button" {
-	object {
-		x=65
-		y=183
-		width=30
-		height=34
-	}
-	control {
-		chan="$(P):SET_OCONOFF1"
-		clr=0
-		bclr=29
-	}
-}
 "message button" {
 	object {
-		x=126
-		y=193
+		x=106
+		y=184
 		width=60
 		height=18
 	}
@@ -413,7 +338,7 @@ text {
 oval {
 	object {
 		x=18
-		y=57
+		y=66
 		width=10
 		height=10
 	}
@@ -429,7 +354,7 @@ oval {
 oval {
 	object {
 		x=18
-		y=57
+		y=66
 		width=10
 		height=10
 	}
@@ -445,7 +370,7 @@ oval {
 text {
 	object {
 		x=36
-		y=56
+		y=65
 		width=40
 		height=12
 	}
@@ -462,7 +387,7 @@ text {
 text {
 	object {
 		x=36
-		y=56
+		y=65
 		width=40
 		height=12
 	}
@@ -479,7 +404,7 @@ text {
 polyline {
 	object {
 		x=11
-		y=163
+		y=160
 		width=190
 		height=0
 	}
@@ -490,14 +415,14 @@ polyline {
 		chan="LV:DC:S$(S):L$(L):GET_OC"
 	}
 	points {
-		(11,163)
-		(201,163)
+		(11,160)
+		(201,160)
 	}
 }
 polyline {
 	object {
 		x=11
-		y=82
+		y=91
 		width=189
 		height=0
 	}
@@ -508,14 +433,14 @@ polyline {
 		chan="LV:DC:S$(S):L$(L):GET_OC"
 	}
 	points {
-		(11,82)
-		(200,82)
+		(11,91)
+		(200,91)
 	}
 }
 oval {
 	object {
 		x=144
-		y=57
+		y=66
 		width=14
 		height=14
 	}
@@ -531,7 +456,7 @@ oval {
 oval {
 	object {
 		x=144
-		y=57
+		y=66
 		width=14
 		height=14
 	}
@@ -547,7 +472,7 @@ oval {
 text {
 	object {
 		x=125
-		y=58
+		y=67
 		width=15
 		height=12
 	}
@@ -564,7 +489,7 @@ text {
 text {
 	object {
 		x=125
-		y=58
+		y=67
 		width=30
 		height=12
 	}
@@ -581,7 +506,7 @@ text {
 "text update" {
 	object {
 		x=289
-		y=105
+		y=114
 		width=50
 		height=15
 	}
@@ -598,29 +523,10 @@ text {
 		precDefault=2
 	}
 }
-"text entry" {
-	object {
-		x=288
-		y=141
-		width=50
-		height=15
-	}
-	control {
-		chan="$(P):SET_VOLTAGE2"
-		clr=14
-		bclr=0
-	}
-	limits {
-		hoprSrc="default"
-		hoprDefault=10
-		precSrc="default"
-		precDefault=2
-	}
-}
 "text update" {
 	object {
 		x=344
-		y=105
+		y=114
 		width=50
 		height=15
 	}
@@ -637,29 +543,10 @@ text {
 		precDefault=2
 	}
 }
-"text entry" {
-	object {
-		x=344
-		y=141
-		width=50
-		height=15
-	}
-	control {
-		chan="$(P):SET_CURRENT2"
-		clr=14
-		bclr=0
-	}
-	limits {
-		hoprSrc="default"
-		hoprDefault=10
-		precSrc="default"
-		precDefault=2
-	}
-}
 "choice button" {
 	object {
-		x=234
-		y=183
+		x=260
+		y=174
 		width=30
 		height=34
 	}
@@ -672,7 +559,7 @@ text {
 "text update" {
 	object {
 		x=288
-		y=123
+		y=132
 		width=50
 		height=15
 	}
@@ -692,7 +579,7 @@ text {
 "text update" {
 	object {
 		x=344
-		y=123
+		y=132
 		width=50
 		height=15
 	}
@@ -712,7 +599,7 @@ text {
 text {
 	object {
 		x=347
-		y=88
+		y=97
 		width=42
 		height=12
 	}
@@ -724,7 +611,7 @@ text {
 text {
 	object {
 		x=293
-		y=88
+		y=97
 		width=42
 		height=12
 	}
@@ -736,7 +623,7 @@ text {
 text {
 	object {
 		x=229
-		y=105
+		y=114
 		width=42
 		height=12
 	}
@@ -748,7 +635,7 @@ text {
 text {
 	object {
 		x=229
-		y=123
+		y=132
 		width=42
 		height=12
 	}
@@ -759,20 +646,8 @@ text {
 }
 text {
 	object {
-		x=229
-		y=141
-		width=42
-		height=12
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="Input"
-}
-text {
-	object {
 		x=319
-		y=32
+		y=41
 		width=66
 		height=20
 	}
@@ -785,7 +660,7 @@ text {
 polyline {
 	object {
 		x=321
-		y=47
+		y=56
 		width=60
 		height=0
 	}
@@ -796,14 +671,14 @@ polyline {
 		chan="LV:DC:S$(S):L$(L):SET_ONOFF"
 	}
 	points {
-		(321,47)
-		(381,47)
+		(321,56)
+		(381,56)
 	}
 }
 oval {
 	object {
 		x=226
-		y=36
+		y=45
 		width=10
 		height=10
 	}
@@ -819,7 +694,7 @@ oval {
 oval {
 	object {
 		x=226
-		y=36
+		y=45
 		width=10
 		height=10
 	}
@@ -835,7 +710,7 @@ oval {
 text {
 	object {
 		x=244
-		y=35
+		y=44
 		width=40
 		height=17
 	}
@@ -852,7 +727,7 @@ text {
 text {
 	object {
 		x=244
-		y=35
+		y=44
 		width=40
 		height=12
 	}
@@ -868,8 +743,8 @@ text {
 }
 text {
 	object {
-		x=243
-		y=219
+		x=269
+		y=210
 		width=30
 		height=12
 	}
@@ -878,35 +753,10 @@ text {
 	}
 	textix="Pw"
 }
-text {
-	object {
-		x=283
-		y=219
-		width=15
-		height=12
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="OCP"
-}
-"choice button" {
-	object {
-		x=276
-		y=183
-		width=30
-		height=34
-	}
-	control {
-		chan="$(P):SET_OCONOFF2"
-		clr=0
-		bclr=29
-	}
-}
 "message button" {
 	object {
-		x=339
-		y=193
+		x=322
+		y=184
 		width=60
 		height=18
 	}
@@ -922,7 +772,7 @@ text {
 oval {
 	object {
 		x=226
-		y=57
+		y=66
 		width=10
 		height=10
 	}
@@ -938,7 +788,7 @@ oval {
 oval {
 	object {
 		x=226
-		y=57
+		y=66
 		width=10
 		height=10
 	}
@@ -954,7 +804,7 @@ oval {
 text {
 	object {
 		x=244
-		y=56
+		y=65
 		width=40
 		height=12
 	}
@@ -971,7 +821,7 @@ text {
 text {
 	object {
 		x=244
-		y=56
+		y=65
 		width=40
 		height=12
 	}
@@ -988,7 +838,7 @@ text {
 polyline {
 	object {
 		x=221
-		y=163
+		y=160
 		width=190
 		height=0
 	}
@@ -999,14 +849,14 @@ polyline {
 		chan="LV:DC:S$(S):L$(L):GET_OC"
 	}
 	points {
-		(221,163)
-		(411,163)
+		(221,160)
+		(411,160)
 	}
 }
 polyline {
 	object {
 		x=221
-		y=82
+		y=91
 		width=190
 		height=0
 	}
@@ -1017,14 +867,14 @@ polyline {
 		chan="LV:DC:S$(S):L$(L):GET_OC"
 	}
 	points {
-		(221,82)
-		(411,82)
+		(221,91)
+		(411,91)
 	}
 }
 oval {
 	object {
 		x=346
-		y=57
+		y=66
 		width=14
 		height=14
 	}
@@ -1040,7 +890,7 @@ oval {
 oval {
 	object {
 		x=346
-		y=57
+		y=66
 		width=14
 		height=14
 	}
@@ -1056,7 +906,7 @@ oval {
 text {
 	object {
 		x=327
-		y=58
+		y=67
 		width=15
 		height=12
 	}
@@ -1073,7 +923,7 @@ text {
 text {
 	object {
 		x=327
-		y=58
+		y=67
 		width=30
 		height=12
 	}
@@ -1090,7 +940,7 @@ text {
 polyline {
 	object {
 		x=113
-		y=47
+		y=56
 		width=60
 		height=0
 	}
@@ -1101,23 +951,23 @@ polyline {
 		chan="LV:DC:S$(S):L$(L):SET_ONOFF"
 	}
 	points {
-		(113,47)
-		(173,47)
+		(113,56)
+		(173,56)
 	}
 }
 polyline {
 	object {
 		x=211
-		y=36
+		y=45
 		width=0
-		height=192
+		height=180
 	}
 	"basic attribute" {
 		clr=0
 	}
 	points {
-		(211,36)
-		(211,228)
+		(211,45)
+		(211,225)
 	}
 }
 text {
@@ -1136,7 +986,7 @@ text {
 polyline {
 	object {
 		x=12
-		y=23
+		y=32
 		width=395
 		height=0
 	}
@@ -1147,7 +997,50 @@ polyline {
 		chan="LV:DC:S$(S):L$(L):SET_ONOFF"
 	}
 	points {
-		(12,23)
-		(407,23)
+		(12,32)
+		(407,32)
 	}
+}
+"related display" {
+	object {
+		x=378
+		y=3
+		width=29
+		height=24
+	}
+	display[0] {
+		label="Expert"
+		name="A6621expert.adl"
+		args="-macro "
+	}
+	clr=0
+	bclr=12
+}
+"text update" {
+	object {
+		x=128
+		y=238
+		width=175
+		height=15
+	}
+	monitor {
+		chan="$(P):GET_ONOFF1.STAT"
+		clr=0
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=87
+		y=238
+		width=30
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Comms:"
 }
