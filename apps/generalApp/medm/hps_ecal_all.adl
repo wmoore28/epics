@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/v2.0.0/apps/./generalApp/medm/hps_ecal_all.adl"
+	name="/usr/clas12/hps/v2.0.0/apps/generalApp/medm/hps_ecal_all.adl"
 	version=030108
 }
 display {
@@ -4057,19 +4057,6 @@ polyline {
 		precDefault=2
 	}
 }
-"choice button" {
-	object {
-		x=90
-		y=539
-		width=30
-		height=34
-	}
-	control {
-		chan="$(P):SET_ONOFF1"
-		clr=0
-		bclr=29
-	}
-}
 "text update" {
 	object {
 		x=67
@@ -4236,43 +4223,6 @@ text {
 		chan="$(P):GET_ONOFF1"
 	}
 	textix="Pw OFF"
-}
-text {
-	object {
-		x=99
-		y=576
-		width=30
-		height=12
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="Pw"
-}
-text {
-	object {
-		x=132
-		y=576
-		width=15
-		height=12
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="OCP"
-}
-"choice button" {
-	object {
-		x=125
-		y=539
-		width=30
-		height=34
-	}
-	control {
-		chan="$(P):SET_OCONOFF1"
-		clr=0
-		bclr=29
-	}
 }
 oval {
 	object {
@@ -4446,19 +4396,6 @@ text {
 		precDefault=2
 	}
 }
-"choice button" {
-	object {
-		x=207
-		y=539
-		width=30
-		height=34
-	}
-	control {
-		chan="$(P):SET_ONOFF2"
-		clr=0
-		bclr=29
-	}
-}
 "text update" {
 	object {
 		x=186
@@ -4619,43 +4556,6 @@ text {
 		chan="$(P):GET_ONOFF2"
 	}
 	textix="Pw OFF"
-}
-text {
-	object {
-		x=216
-		y=575
-		width=30
-		height=12
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="Pw"
-}
-text {
-	object {
-		x=249
-		y=575
-		width=15
-		height=12
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="OCP"
-}
-"choice button" {
-	object {
-		x=242
-		y=539
-		width=30
-		height=34
-	}
-	control {
-		chan="$(P):SET_OCONOFF2"
-		clr=0
-		bclr=29
-	}
 }
 oval {
 	object {
@@ -6491,8 +6391,8 @@ rectangle {
 }
 "text update" {
 	object {
-		x=110
-		y=605
+		x=95
+		y=579
 		width=154
 		height=15
 	}
@@ -6507,8 +6407,8 @@ rectangle {
 }
 text {
 	object {
-		x=67
-		y=605
+		x=52
+		y=579
 		width=36
 		height=19
 	}
