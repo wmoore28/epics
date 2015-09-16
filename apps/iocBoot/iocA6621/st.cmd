@@ -26,7 +26,16 @@ asynOctetSetInputEos("L0",0,"\n")
 ## Call one for each with sector, layer and GPIB ID
 dbLoadRecords("db/A6621.db","PV=HPSECALLV,PORT=L0,ADDR=24,IMAX=2000,OMAX=2000")
 
+#dbLoadRecords("db/save_restoreStatus.db", "P=${IOC}:")
+
 cd ${TOP}/iocBoot/${IOC}
+
+< save_restore.cmd
+
 asSetFilename("ecal.acf")
+
 iocInit();
+
+makeAutosaveFiles()
+create_monitor_set("A6621_settings.req",30,"P=HPSECALLV")
 
