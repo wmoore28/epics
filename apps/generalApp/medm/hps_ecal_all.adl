@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v2.0.0/apps/generalApp/medm/hps_ecal_all.adl"
+	name="/usr/clas12/hps/v2.0.0/apps/./generalApp/medm/hps_ecal_all.adl"
 	version=030108
 }
 display {
 	object {
-		x=964
-		y=185
+		x=87
+		y=39
 		width=951
 		height=650
 	}
@@ -4025,7 +4025,7 @@ polyline {
 		height=15
 	}
 	monitor {
-		chan="$(P):GET_VOLTAGE1"
+		chan="$(P):v1mon"
 		clr=14
 		bclr=55
 	}
@@ -4045,7 +4045,7 @@ polyline {
 		height=15
 	}
 	monitor {
-		chan="$(P):GET_CURRENT1"
+		chan="$(P):i1mon"
 		clr=14
 		bclr=55
 	}
@@ -4065,7 +4065,7 @@ polyline {
 		height=15
 	}
 	monitor {
-		chan="$(P):GET_VOLTAGE_SETP1"
+		chan="$(P):v1setrbk"
 		clr=14
 		bclr=55
 	}
@@ -4085,7 +4085,7 @@ polyline {
 		height=15
 	}
 	monitor {
-		chan="$(P):GET_CURRENT_SETP1"
+		chan="$(P):i1setrbk"
 		clr=14
 		bclr=55
 	}
@@ -4171,7 +4171,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#1"
-		chan="$(P):GET_ONOFF1"
+		chan="$(P):pw1mon"
 	}
 }
 oval {
@@ -4187,7 +4187,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=1"
-		chan="$(P):GET_ONOFF1"
+		chan="$(P):pw1mon"
 	}
 }
 text {
@@ -4203,7 +4203,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=1"
-		chan="$(P):GET_ONOFF1"
+		chan="$(P):pw1mon"
 	}
 	textix="Pw ON"
 }
@@ -4220,7 +4220,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#1"
-		chan="$(P):GET_ONOFF1"
+		chan="$(P):pw1mon"
 	}
 	textix="Pw OFF"
 }
@@ -4237,7 +4237,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=1"
-		chan="$(P):GET_OCONOFF1"
+		chan="$(P):oc1mon"
 	}
 }
 oval {
@@ -4253,7 +4253,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#1"
-		chan="$(P):GET_OCONOFF1"
+		chan="$(P):oc1mon"
 	}
 }
 text {
@@ -4269,7 +4269,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#1"
-		chan="$(P):GET_OCONOFF1"
+		chan="$(P):oc1mon"
 	}
 	textix="OCP OFF"
 }
@@ -4286,7 +4286,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=1"
-		chan="$(P):GET_OCONOFF1"
+		chan="$(P):oc1mon"
 	}
 	textix="OCP ON"
 }
@@ -4303,7 +4303,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#2"
-		chan="$(P):GET_OC1"
+		chan="$(P):oc1stat"
 	}
 }
 oval {
@@ -4319,7 +4319,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=2"
-		chan="$(P):GET_OC1"
+		chan="$(P):oc1stat"
 	}
 }
 text {
@@ -4335,7 +4335,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=2"
-		chan="$(P):GET_OC1"
+		chan="$(P):oc1stat"
 	}
 	textix="OC!"
 }
@@ -4352,7 +4352,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#2"
-		chan="$(P):GET_OC1"
+		chan="$(P):oc1stat"
 	}
 	textix="UC"
 }
@@ -4364,7 +4364,7 @@ text {
 		height=15
 	}
 	monitor {
-		chan="$(P):GET_VOLTAGE2"
+		chan="$(P):v2mon"
 		clr=14
 		bclr=55
 	}
@@ -4384,7 +4384,7 @@ text {
 		height=15
 	}
 	monitor {
-		chan="$(P):GET_CURRENT2"
+		chan="$(P):i2mon"
 		clr=14
 		bclr=55
 	}
@@ -4404,7 +4404,7 @@ text {
 		height=15
 	}
 	monitor {
-		chan="$(P):GET_VOLTAGE_SETP2"
+		chan="$(P):v2setrbk"
 		clr=14
 		bclr=55
 	}
@@ -4424,7 +4424,7 @@ text {
 		height=15
 	}
 	monitor {
-		chan="$(P):GET_CURRENT_SETP2"
+		chan="$(P):i2setrbk"
 		clr=14
 		bclr=55
 	}
@@ -4504,7 +4504,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#1"
-		chan="$(P):GET_ONOFF2"
+		chan="$(P):pw2mon"
 	}
 }
 oval {
@@ -4520,7 +4520,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=1"
-		chan="$(P):GET_ONOFF2"
+		chan="$(P):pw2mon"
 	}
 }
 text {
@@ -4536,7 +4536,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=1"
-		chan="$(P):GET_ONOFF2"
+		chan="$(P):pw2mon"
 	}
 	textix="Pw ON"
 }
@@ -4553,7 +4553,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#1"
-		chan="$(P):GET_ONOFF2"
+		chan="$(P):pw2mon"
 	}
 	textix="Pw OFF"
 }
@@ -4570,7 +4570,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=1"
-		chan="$(P):GET_OCONOFF2"
+		chan="$(P):oc2mon"
 	}
 }
 oval {
@@ -4586,7 +4586,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#1"
-		chan="$(P):GET_OCONOFF2"
+		chan="$(P):oc2mon"
 	}
 }
 text {
@@ -4602,7 +4602,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#1"
-		chan="$(P):GET_OCONOFF2"
+		chan="$(P):oc2mon"
 	}
 	textix="OCP OFF"
 }
@@ -4619,7 +4619,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=1"
-		chan="$(P):GET_OCONOFF2"
+		chan="$(P):oc2mon"
 	}
 	textix="OCP ON"
 }
@@ -4636,7 +4636,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#2"
-		chan="$(P):GET_OC2"
+		chan="$(P):oc2stat"
 	}
 }
 oval {
@@ -4652,7 +4652,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=2"
-		chan="$(P):GET_OC2"
+		chan="$(P):oc2stat"
 	}
 }
 text {
@@ -4668,7 +4668,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=2"
-		chan="$(P):GET_OC2"
+		chan="$(P):oc2stat"
 	}
 	textix="OC!"
 }
@@ -4685,7 +4685,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#2"
-		chan="$(P):GET_OC2"
+		chan="$(P):oc2stat"
 	}
 	textix="UC"
 }
@@ -5811,7 +5811,7 @@ text {
 "text update" {
 	object {
 		x=777
-		y=395
+		y=446
 		width=120
 		height=20
 	}
@@ -5828,7 +5828,7 @@ text {
 text {
 	object {
 		x=674
-		y=421
+		y=509
 		width=60
 		height=16
 	}
@@ -5840,7 +5840,7 @@ text {
 text {
 	object {
 		x=674
-		y=465
+		y=553
 		width=60
 		height=16
 	}
@@ -5852,7 +5852,7 @@ text {
 text {
 	object {
 		x=674
-		y=441
+		y=529
 		width=60
 		height=16
 	}
@@ -5864,7 +5864,7 @@ text {
 text {
 	object {
 		x=674
-		y=619
+		y=600
 		width=60
 		height=16
 	}
@@ -5876,7 +5876,7 @@ text {
 "text update" {
 	object {
 		x=777
-		y=619
+		y=600
 		width=160
 		height=15
 	}
@@ -5890,40 +5890,10 @@ text {
 	limits {
 	}
 }
-"message button" {
-	object {
-		x=777
-		y=500
-		width=80
-		height=20
-	}
-	control {
-		chan="$(PC)START.PROC"
-		clr=14
-		bclr=4
-	}
-	label="Start"
-	release_msg="1"
-}
-"message button" {
-	object {
-		x=857
-		y=500
-		width=80
-		height=20
-	}
-	control {
-		chan="$(PC)STOP.PROC"
-		clr=14
-		bclr=4
-	}
-	label="Stop"
-	release_msg="1"
-}
 "text update" {
 	object {
 		x=777
-		y=378
+		y=388
 		width=160
 		height=15
 	}
@@ -5937,52 +5907,10 @@ text {
 	limits {
 	}
 }
-"message button" {
-	object {
-		x=826
-		y=557
-		width=110
-		height=20
-	}
-	control {
-		chan="$(PC)DEFAULT.PROC"
-		clr=14
-		bclr=5
-	}
-	label="Load Defaults"
-	release_msg="1"
-}
-"message button" {
-	object {
-		x=826
-		y=535
-		width=110
-		height=20
-	}
-	control {
-		chan="$(PC)CLEAR.PROC"
-		clr=14
-		bclr=5
-	}
-	label="Clear Errors"
-	release_msg="1"
-}
 text {
 	object {
 		x=674
-		y=589
-		width=60
-		height=16
-	}
-	"basic attribute" {
-		clr=2
-	}
-	textix="Pump Speed"
-}
-text {
-	object {
-		x=674
-		y=399
+		y=450
 		width=80
 		height=16
 	}
@@ -5994,7 +5922,7 @@ text {
 text {
 	object {
 		x=674
-		y=378
+		y=388
 		width=80
 		height=16
 	}
@@ -6003,74 +5931,10 @@ text {
 	}
 	textix="Status"
 }
-text {
-	object {
-		x=674
-		y=504
-		width=60
-		height=16
-	}
-	"basic attribute" {
-		clr=2
-	}
-	textix="Chiller Ctrl"
-}
-text {
-	object {
-		x=674
-		y=535
-		width=60
-		height=16
-	}
-	"basic attribute" {
-		clr=2
-	}
-	textix="Clear stops from errors"
-}
-text {
-	object {
-		x=674
-		y=557
-		width=60
-		height=16
-	}
-	"basic attribute" {
-		clr=2
-	}
-	textix="Set rate and pump speed"
-}
-menu {
-	object {
-		x=777
-		y=589
-		width=160
-		height=20
-	}
-	control {
-		chan="$(PC)PUMPSPD_MENU"
-		clr=0
-		bclr=10
-	}
-}
-"text entry" {
-	object {
-		x=777
-		y=417
-		width=75
-		height=20
-	}
-	control {
-		chan="$(PC)TEMP:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
 "text update" {
 	object {
 		x=857
-		y=417
+		y=505
 		width=80
 		height=20
 	}
@@ -6087,7 +5951,7 @@ menu {
 "text update" {
 	object {
 		x=857
-		y=465
+		y=553
 		width=80
 		height=20
 	}
@@ -6101,40 +5965,10 @@ menu {
 	limits {
 	}
 }
-"text entry" {
-	object {
-		x=777
-		y=465
-		width=75
-		height=20
-	}
-	control {
-		chan="$(PC)HIGHLIMIT:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=777
-		y=441
-		width=75
-		height=20
-	}
-	control {
-		chan="$(PC)LOWLIMIT:SP"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
 "text update" {
 	object {
 		x=857
-		y=441
+		y=529
 		width=80
 		height=20
 	}
@@ -6151,7 +5985,7 @@ menu {
 "text update" {
 	object {
 		x=897
-		y=395
+		y=446
 		width=40
 		height=20
 	}
@@ -6167,7 +6001,7 @@ menu {
 text {
 	object {
 		x=674
-		y=361
+		y=366
 		width=80
 		height=16
 	}
@@ -6179,7 +6013,7 @@ text {
 "text update" {
 	object {
 		x=777
-		y=361
+		y=366
 		width=160
 		height=15
 	}
@@ -6196,7 +6030,7 @@ text {
 rectangle {
 	object {
 		x=674
-		y=490
+		y=493
 		width=265
 		height=3
 	}
@@ -6213,7 +6047,7 @@ rectangle {
 	}
 	display[0] {
 		label="Comm (asyn)"
-		name="asynRecord.adl"
+		name="chiller_anova.adl"
 		args="P=$(PC),R=ASYN"
 	}
 	clr=14
@@ -6222,18 +6056,7 @@ rectangle {
 rectangle {
 	object {
 		x=674
-		y=582
-		width=265
-		height=3
-	}
-	"basic attribute" {
-		clr=6
-	}
-}
-rectangle {
-	object {
-		x=674
-		y=612
+		y=578
 		width=265
 		height=3
 	}
@@ -6397,7 +6220,7 @@ rectangle {
 		height=15
 	}
 	monitor {
-		chan="$(P):GET_ONOFF1.STAT"
+		chan="$(P):pw1mon.STAT"
 		clr=0
 		bclr=13
 	}
@@ -6416,7 +6239,18 @@ text {
 		clr=0
 	}
 	"dynamic attribute" {
-		chan="$(P):GET_ONOFF1.STAT"
+		chan="$(P):pw1mon.STAT"
 	}
 	textix="Comms:"
+}
+rectangle {
+	object {
+		x=674
+		y=418
+		width=265
+		height=3
+	}
+	"basic attribute" {
+		clr=6
+	}
 }
