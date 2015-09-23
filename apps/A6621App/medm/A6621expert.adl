@@ -95,7 +95,7 @@ display {
 		height=15
 	}
 	monitor {
-		chan="$(P):GET_VOLTAGE1"
+		chan="$(P):v1mon"
 		clr=14
 		bclr=55
 	}
@@ -115,7 +115,7 @@ display {
 		height=15
 	}
 	control {
-		chan="$(P):SET_VOLTAGE1"
+		chan="$(P):v1set"
 		clr=14
 		bclr=0
 	}
@@ -134,7 +134,7 @@ display {
 		height=15
 	}
 	monitor {
-		chan="$(P):GET_CURRENT1"
+		chan="$(P):i1mon"
 		clr=14
 		bclr=55
 	}
@@ -154,7 +154,7 @@ display {
 		height=15
 	}
 	control {
-		chan="$(P):SET_CURRENT1"
+		chan="$(P):i1set"
 		clr=14
 		bclr=0
 	}
@@ -173,7 +173,7 @@ display {
 		height=34
 	}
 	control {
-		chan="$(P):SET_ONOFF1"
+		chan="$(P):pw1set"
 		clr=0
 		bclr=29
 	}
@@ -186,7 +186,7 @@ display {
 		height=15
 	}
 	monitor {
-		chan="$(P):GET_VOLTAGE_SETP1"
+		chan="$(P):v1setrbk"
 		clr=14
 		bclr=55
 	}
@@ -206,7 +206,7 @@ display {
 		height=15
 	}
 	monitor {
-		chan="$(P):GET_CURRENT_SETP1"
+		chan="$(P):i1setrbk"
 		clr=14
 		bclr=55
 	}
@@ -304,7 +304,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#1"
-		chan="$(P):GET_ONOFF1"
+		chan="$(P):pw1mon"
 	}
 }
 oval {
@@ -320,7 +320,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=1"
-		chan="$(P):GET_ONOFF1"
+		chan="$(P):pw1mon"
 	}
 }
 text {
@@ -336,7 +336,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=1"
-		chan="$(P):GET_ONOFF1"
+		chan="$(P):pw1mon"
 	}
 	textix="Pw ON"
 }
@@ -353,7 +353,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#1"
-		chan="$(P):GET_ONOFF1"
+		chan="$(P):pw1mon"
 	}
 	textix="Pw OFF"
 }
@@ -389,7 +389,7 @@ text {
 		height=34
 	}
 	control {
-		chan="$(P):SET_OCONOFF1"
+		chan="$(P):oc1set"
 		clr=0
 		bclr=29
 	}
@@ -402,7 +402,7 @@ text {
 		height=18
 	}
 	control {
-		chan="$(P):CLEAR_OC1"
+		chan="$(P):oc1clear"
 		clr=0
 		bclr=29
 	}
@@ -423,7 +423,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=1"
-		chan="$(P):GET_OCONOFF1"
+		chan="$(P):oc1mon"
 	}
 }
 oval {
@@ -439,7 +439,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#1"
-		chan="$(P):GET_OCONOFF1"
+		chan="$(P):oc1mon"
 	}
 }
 text {
@@ -455,7 +455,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#1"
-		chan="$(P):GET_OCONOFF1"
+		chan="$(P):oc1mon"
 	}
 	textix="OCP OFF"
 }
@@ -472,45 +472,9 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=1"
-		chan="$(P):GET_OCONOFF1"
+		chan="$(P):oc1mon"
 	}
 	textix="OCP ON"
-}
-polyline {
-	object {
-		x=11
-		y=163
-		width=190
-		height=0
-	}
-	"basic attribute" {
-		clr=0
-	}
-	"dynamic attribute" {
-		chan="LV:DC:S$(S):L$(L):GET_OC"
-	}
-	points {
-		(11,163)
-		(201,163)
-	}
-}
-polyline {
-	object {
-		x=11
-		y=82
-		width=189
-		height=0
-	}
-	"basic attribute" {
-		clr=0
-	}
-	"dynamic attribute" {
-		chan="LV:DC:S$(S):L$(L):GET_OC"
-	}
-	points {
-		(11,82)
-		(200,82)
-	}
 }
 oval {
 	object {
@@ -525,7 +489,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#2"
-		chan="$(P):GET_OC1"
+		chan="$(P):oc1stat"
 	}
 }
 oval {
@@ -541,7 +505,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=2"
-		chan="$(P):GET_OC1"
+		chan="$(P):oc1stat"
 	}
 }
 text {
@@ -557,7 +521,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=2"
-		chan="$(P):GET_OC1"
+		chan="$(P):oc1stat"
 	}
 	textix="OC!"
 }
@@ -574,7 +538,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#2"
-		chan="$(P):GET_OC1"
+		chan="$(P):oc1stat"
 	}
 	textix="UC"
 }
@@ -586,7 +550,7 @@ text {
 		height=15
 	}
 	monitor {
-		chan="$(P):GET_VOLTAGE2"
+		chan="$(P):v2mon"
 		clr=14
 		bclr=55
 	}
@@ -606,7 +570,7 @@ text {
 		height=15
 	}
 	control {
-		chan="$(P):SET_VOLTAGE2"
+		chan="$(P):v2set"
 		clr=14
 		bclr=0
 	}
@@ -625,7 +589,7 @@ text {
 		height=15
 	}
 	monitor {
-		chan="$(P):GET_CURRENT2"
+		chan="$(P):i2mon"
 		clr=14
 		bclr=55
 	}
@@ -645,7 +609,7 @@ text {
 		height=15
 	}
 	control {
-		chan="$(P):SET_CURRENT2"
+		chan="$(P):i2set"
 		clr=14
 		bclr=0
 	}
@@ -664,7 +628,7 @@ text {
 		height=34
 	}
 	control {
-		chan="$(P):SET_ONOFF2"
+		chan="$(P):pw2set"
 		clr=0
 		bclr=29
 	}
@@ -677,7 +641,7 @@ text {
 		height=15
 	}
 	monitor {
-		chan="$(P):GET_VOLTAGE_SETP2"
+		chan="$(P):v2setrbk"
 		clr=14
 		bclr=55
 	}
@@ -697,7 +661,7 @@ text {
 		height=15
 	}
 	monitor {
-		chan="$(P):GET_CURRENT_SETP2"
+		chan="$(P):i2setrbk"
 		clr=14
 		bclr=55
 	}
@@ -782,24 +746,6 @@ text {
 	textix="Channel #2"
 	align="horiz. centered"
 }
-polyline {
-	object {
-		x=321
-		y=47
-		width=60
-		height=0
-	}
-	"basic attribute" {
-		clr=0
-	}
-	"dynamic attribute" {
-		chan="LV:DC:S$(S):L$(L):SET_ONOFF"
-	}
-	points {
-		(321,47)
-		(381,47)
-	}
-}
 oval {
 	object {
 		x=226
@@ -813,7 +759,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#1"
-		chan="$(P):GET_ONOFF2"
+		chan="$(P):pw2mon"
 	}
 }
 oval {
@@ -829,7 +775,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=1"
-		chan="$(P):GET_ONOFF2"
+		chan="$(P):pw2mon"
 	}
 }
 text {
@@ -845,7 +791,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=1"
-		chan="$(P):GET_ONOFF2"
+		chan="$(P):pw2mon"
 	}
 	textix="Pw ON"
 }
@@ -862,7 +808,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#1"
-		chan="$(P):GET_ONOFF2"
+		chan="$(P):pw2mon"
 	}
 	textix="Pw OFF"
 }
@@ -898,7 +844,7 @@ text {
 		height=34
 	}
 	control {
-		chan="$(P):SET_OCONOFF2"
+		chan="$(P):oc2set"
 		clr=0
 		bclr=29
 	}
@@ -911,7 +857,7 @@ text {
 		height=18
 	}
 	control {
-		chan="$(P):CLEAR_OC2"
+		chan="$(P):oc2clear"
 		clr=0
 		bclr=29
 	}
@@ -932,7 +878,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=1"
-		chan="$(P):GET_OCONOFF2"
+		chan="$(P):oc2mon"
 	}
 }
 oval {
@@ -948,7 +894,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#1"
-		chan="$(P):GET_OCONOFF2"
+		chan="$(P):oc2mon"
 	}
 }
 text {
@@ -964,7 +910,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#1"
-		chan="$(P):GET_OCONOFF2"
+		chan="$(P):oc2mon"
 	}
 	textix="OCP OFF"
 }
@@ -981,45 +927,9 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=1"
-		chan="$(P):GET_OCONOFF2"
+		chan="$(P):oc2mon"
 	}
 	textix="OCP ON"
-}
-polyline {
-	object {
-		x=221
-		y=163
-		width=190
-		height=0
-	}
-	"basic attribute" {
-		clr=0
-	}
-	"dynamic attribute" {
-		chan="LV:DC:S$(S):L$(L):GET_OC"
-	}
-	points {
-		(221,163)
-		(411,163)
-	}
-}
-polyline {
-	object {
-		x=221
-		y=82
-		width=190
-		height=0
-	}
-	"basic attribute" {
-		clr=0
-	}
-	"dynamic attribute" {
-		chan="LV:DC:S$(S):L$(L):GET_OC"
-	}
-	points {
-		(221,82)
-		(411,82)
-	}
 }
 oval {
 	object {
@@ -1034,7 +944,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#2"
-		chan="$(P):GET_OC2"
+		chan="$(P):oc2stat"
 	}
 }
 oval {
@@ -1050,7 +960,7 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=2"
-		chan="$(P):GET_OC2"
+		chan="$(P):oc2stat"
 	}
 }
 text {
@@ -1066,7 +976,7 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=2"
-		chan="$(P):GET_OC2"
+		chan="$(P):oc2stat"
 	}
 	textix="OC!"
 }
@@ -1083,27 +993,9 @@ text {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A#2"
-		chan="$(P):GET_OC2"
+		chan="$(P):oc2stat"
 	}
 	textix="UC"
-}
-polyline {
-	object {
-		x=113
-		y=47
-		width=60
-		height=0
-	}
-	"basic attribute" {
-		clr=0
-	}
-	"dynamic attribute" {
-		chan="LV:DC:S$(S):L$(L):SET_ONOFF"
-	}
-	points {
-		(113,47)
-		(173,47)
-	}
 }
 polyline {
 	object {
@@ -1133,24 +1025,6 @@ text {
 	textix="HPS ECAL LV"
 	align="horiz. centered"
 }
-polyline {
-	object {
-		x=12
-		y=23
-		width=395
-		height=0
-	}
-	"basic attribute" {
-		clr=0
-	}
-	"dynamic attribute" {
-		chan="LV:DC:S$(S):L$(L):SET_ONOFF"
-	}
-	points {
-		(12,23)
-		(407,23)
-	}
-}
 "text update" {
 	object {
 		x=133
@@ -1159,7 +1033,7 @@ polyline {
 		height=19
 	}
 	monitor {
-		chan="$(P):GET_ONOFF1.STAT"
+		chan="$(P):pw1mon.STAT"
 		clr=0
 		bclr=13
 	}
@@ -1178,7 +1052,7 @@ text {
 		clr=0
 	}
 	"dynamic attribute" {
-		chan="$(P):GET_ONOFF1.STAT"
+		chan="$(P):pw1mon.STAT"
 	}
 	textix="Comms:"
 }
