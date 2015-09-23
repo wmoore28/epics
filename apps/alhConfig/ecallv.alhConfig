@@ -6,19 +6,19 @@ $END
 
 $SEVRCOMMAND UP_MAJOR /home/hpsrun/scripts/notify_expert_auto.pl ecal_expert ECAL lowVoltage OUT OF SPEC
 
-CHANNEL LV HPSECALLV:GET_VOLTAGE1
-$ALARMCOUNTFILTER -1 5
-$COMMAND medm -x -attach -cmap -macro "sig=HPSECALLV:GET_VOLTAGE1" aiaocalc_alarm.adl >> /dev/null
+CHANNEL LV HPSECALLV:v1mon
+$ALARMCOUNTFILTER -1 6
+$COMMAND medm -x -attach -cmap -macro "sig=HPSECALLV:v1mon" aiaocalc_alarm.adl >> /dev/null
 
-CHANNEL LV HPSECALLV:GET_VOLTAGE2
-$ALARMCOUNTFILTER -1 5
-$COMMAND medm -x -attach -cmap -macro "sig=HPSECALLV:GET_VOLTAGE2" aiaocalc_alarm.adl >> /dev/null
+CHANNEL LV HPSECALLV:v2mon
+$ALARMCOUNTFILTER -1 6
+$COMMAND medm -x -attach -cmap -macro "sig=HPSECALLV:v2mon" aiaocalc_alarm.adl >> /dev/null
 
-CHANNEL LV HPSECALLV:GET_CURRENT1
-$ALARMCOUNTFILTER -1 5
-$COMMAND medm -x -attach -cmap -macro "sig=HPSECALLV:GET_CURRENT1" aiaocalc_alarm.adl >> /dev/null
+CHANNEL LV HPSECALLV:i1mon
+$ALARMCOUNTFILTER -1 6
+$COMMAND medm -x -attach -cmap -macro "sig=HPSECALLV:i1mon" aiaocalc_alarm.adl >> /dev/null
 
-CHANNEL LV HPSECALLV:GET_CURRENT2
-$ALARMCOUNTFILTER -1 5
-$COMMAND medm -x -attach -cmap -macro "sig=HPSECALLV:GET_CURRENT2" aiaocalc_alarm.adl >> /dev/null
+CHANNEL LV HPSECALLV:i2mon
+$ALARMCOUNTFILTER -1 6
+$COMMAND medm -x -attach -cmap -macro "sig=HPSECALLV:i2mon" aiaocalc_alarm.adl >> /dev/null
 
