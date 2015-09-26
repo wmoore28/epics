@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/generalApp/medm/HPS_EPICS.adl"
+	name="/usr/clas12/hps/v2.0.0/apps/generalApp/medm/HPS_EPICS.adl"
 	version=030108
 }
 display {
@@ -1210,4 +1210,31 @@ text {
 	}
 	textix="Hall B Status"
 	align="horiz. centered"
+}
+text {
+	object {
+		x=197
+		y=373
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL"
+}
+"related display" {
+	object {
+		x=167
+		y=369
+		width=20
+		height=20
+	}
+	display[0] {
+		label="ECAL SLOW CONTROLS"
+		name="hps_ecal_all.adl"
+		args="P=HPSECALLV,PC=HPS_ECAL:CHILLER:"
+	}
+	clr=14
+	bclr=50
 }
