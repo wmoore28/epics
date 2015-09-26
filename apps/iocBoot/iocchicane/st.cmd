@@ -6,11 +6,11 @@ cd ${TOP}
 dbLoadDatabase "dbd/chicane.dbd"
 chicane_registerRecordDeviceDriver pdbbase
 
-dbLoadRecords "db/chicane.db", "P=a"
+dbLoadRecords "db/chicane.db", "P=hps_chicane"
 
 cd ${TOP}/iocBoot/${IOC}
 
 iocInit
 
-seq seqChicane, "P=a"
+seq seqChicane, "P=hps_chicane"
 
