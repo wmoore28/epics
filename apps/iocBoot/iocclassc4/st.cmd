@@ -113,8 +113,8 @@ dbLoadRecords("db/hps_collimators.db")
 
 
 # Load IOC status records
-dbLoadRecords("db/iocAdminVxWorks.db","IOC=classc4")
-#dbLoadRecords("db/save_restoreStatus.db", "P=classc4:")
+dbLoadRecords("db/iocAdminVxWorks.db","IOC=iocclassc4")
+#dbLoadRecords("db/save_restoreStatus.db", "P=iocclassc4:")
 
 # SIS 8201/7201 scaler (STRUCK scaler) setup parameters:
 #     (1)cards, (2)base address(ext, 256-byte boundary),

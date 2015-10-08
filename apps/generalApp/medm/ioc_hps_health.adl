@@ -1,11 +1,11 @@
 
 file {
-	name="/usr/clas12/hps/v1.2.1/apps/generalApp/medm/ioc_hps_health.adl"
+	name="/usr/clas12/hps/v2.0.0/apps/generalApp/medm/ioc_hps_health.adl"
 	version=030108
 }
 display {
 	object {
-		x=184
+		x=175
 		y=60
 		width=1300
 		height=610
@@ -886,7 +886,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="classc1:HOSTNAME"
+		chan="iocclassc1:HOSTNAME"
 		clr=0
 		bclr=27
 	}
@@ -902,7 +902,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="classc1:UPTIME"
+		chan="iocclassc1:UPTIME"
 		clr=0
 		bclr=27
 	}
@@ -918,7 +918,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="classc1:HEARTBEAT"
+		chan="iocclassc1:HEARTBEAT"
 		clr=0
 		bclr=27
 	}
@@ -934,7 +934,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="classc1:STARTTOD"
+		chan="iocclassc1:STARTTOD"
 		clr=0
 		bclr=27
 	}
@@ -1003,7 +1003,7 @@ text {
 	display[0] {
 		label="Reboot"
 		name="ioc_stats_reboot_confirm.adl"
-		args="ioc=classc1"
+		args="ioc=iocclassc1"
 	}
 	clr=14
 	bclr=6
@@ -1067,7 +1067,7 @@ rectangle {
 		height=20
 	}
 	monitor {
-		chan="classc4:HOSTNAME"
+		chan="iocclassc4:HOSTNAME"
 		clr=0
 		bclr=27
 	}
@@ -1083,7 +1083,7 @@ rectangle {
 		height=20
 	}
 	monitor {
-		chan="classc4:UPTIME"
+		chan="iocclassc4:UPTIME"
 		clr=0
 		bclr=27
 	}
@@ -1099,7 +1099,7 @@ rectangle {
 		height=20
 	}
 	monitor {
-		chan="classc4:HEARTBEAT"
+		chan="iocclassc4:HEARTBEAT"
 		clr=0
 		bclr=27
 	}
@@ -1115,7 +1115,7 @@ rectangle {
 		height=20
 	}
 	monitor {
-		chan="classc4:STARTTOD"
+		chan="iocclassc4:STARTTOD"
 		clr=0
 		bclr=27
 	}
@@ -1145,7 +1145,7 @@ text {
 	display[0] {
 		label="Reboot"
 		name="ioc_stats_reboot_confirm.adl"
-		args="ioc=classc4"
+		args="ioc=iocclassc4"
 	}
 	clr=14
 	bclr=6
@@ -1393,7 +1393,7 @@ text {
 	display[0] {
 		label="IOC Stats"
 		name="ioc_stats_vxworks.adl"
-		args="ioc=classc1"
+		args="ioc=iocclassc1"
 	}
 	clr=14
 	bclr=6
@@ -1408,7 +1408,7 @@ text {
 	display[0] {
 		label="IOC Stats"
 		name="ioc_stats_vxworks.adl"
-		args="ioc=classc4"
+		args="ioc=iocclassc4"
 	}
 	clr=14
 	bclr=6

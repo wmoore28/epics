@@ -90,9 +90,7 @@ dbLoadRecords("db/scaler_e.db")
 
 
 # Load IOC status records
-dbLoadRecords("db/iocAdminVxWorks.db","IOC=classc1")
-#dbLoadRecords("../support/devIocStats-3.1.12/db/iocAdminVxWorks.db","IOC=classc1")
-
+dbLoadRecords("db/iocAdminVxWorks.db","IOC=iocclassc1")
 
 
 # SIS 8201/7201 scaler (STRUCK scaler) setup parameters:
