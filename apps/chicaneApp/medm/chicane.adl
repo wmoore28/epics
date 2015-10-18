@@ -1,12 +1,12 @@
 
 file {
-	name="HPS Chicane Controls"
-	version=030109
+	name="/usr/clas12/hps/v2.0.0/apps/chicaneApp/medm/chicane.adl"
+	version=030108
 }
 display {
 	object {
-		x=593
-		y=152
+		x=488
+		y=379
 		width=420
 		height=245
 	}
@@ -150,15 +150,12 @@ rectangle {
 rectangle {
 	object {
 		x=103
-		y=215
+		y=216
 		width=230
 		height=15
 	}
 	"basic attribute" {
 		clr=12
-	}
-	"dynamic attribute" {
-		chan="a:stop"
 	}
 }
 bar {
@@ -568,10 +565,10 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=0 && B=0 && C=0 && D=0"
-		chan="PSPECR.B1"
-		chanB="PSPECr.B1"
-		chanC="PSPECR.BF"
-		chanD="PSPECr.B4"
+		chan="$(P):globalstatPS"
+		chanB="$(P):intlk1PS"
+		chanC="$(P):intlk2PS"
+		chanD="$(P):comstatPS"
 	}
 }
 oval {
@@ -587,10 +584,10 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A!=0 || B!=0 || C!=0 || D!=0"
-		chan="PSPECR.B1"
-		chanB="PSPECr.B1"
-		chanC="PSPECR.BF"
-		chanD="PSPECr.B4"
+		chan="$(P):globalstatPS"
+		chanB="$(P):intlk1PS"
+		chanC="$(P):intlk2PS"
+		chanD="$(P):comstatPS"
 	}
 }
 "related display" {
@@ -620,48 +617,6 @@ oval {
 	clr=0
 	bclr=12
 	label="Expert"
-}
-text {
-	object {
-		x=103
-		y=215
-		width=230
-		height=15
-	}
-	"basic attribute" {
-		clr=4
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=0 && B=0 && C=0 && D=0"
-		chan="PSPECR.B1"
-		chanB="PSPECr.B1"
-		chanC="PSPECr.B2"
-		chanD="PSPECR.BF"
-	}
-	textix="READY"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=103
-		y=215
-		width=230
-		height=21
-	}
-	"basic attribute" {
-		clr=4
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!0 || B!=0 || C!=0 || D!=0"
-		chan="PSPECR.B1"
-		chanB="PSPECr.B1"
-		chanC="PSPECr.B2"
-		chanD="PSPECR.BF"
-	}
-	textix="ERROR"
-	align="horiz. centered"
 }
 "text update" {
 	object {
@@ -819,4 +774,90 @@ oval {
 		chanB="$(P):isOff"
 		chanC="$(P):isReady"
 	}
+}
+
+
+text {
+	object {
+		x=102
+		y=216
+		width=230
+		height=15
+	}
+	"basic attribute" {
+		clr=4
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=0 && B=0 && C=0 && D=0"
+		chan="$(P):globalstatPS"
+		chanB="$(P):intlk1PS"
+		chanC="$(P):intlk2PS"
+		chanD="$(P):comstatPS"
+	}
+	textix="READY"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=103
+		y=216
+		width=230
+		height=15
+	}
+	"basic attribute" {
+		clr=4
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=0 && (B>0 || C>0) && D=0"
+		chan="$(P):globalstatPS"
+		chanB="$(P):intlk1PS"
+		chanC="$(P):intlk2PS"
+		chanD="$(P):comstatPS"
+	}
+	textix="COMM ERROR"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=103
+		y=216
+		width=230
+		height=15
+	}
+	"basic attribute" {
+		clr=4
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A>0 && B=0 && C=0 && D=0"
+		chan="$(P):globalstatPS"
+		chanB="$(P):intlk1PS"
+		chanC="$(P):intlk2PS"
+		chanD="$(P):comstatPS"
+	}
+	textix="NOT READY"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=103
+		y=216
+		width=230
+		height=15
+	}
+	"basic attribute" {
+		clr=4
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=0 && B=0 && C=0 && D>0"
+		chan="$(P):globalstatPS"
+		chanB="$(P):intlk1PS"
+		chanC="$(P):intlk2PS"
+		chanD="$(P):comstatPS"
+	}
+	textix="COMM ERROR"
+	align="horiz. centered"
 }
