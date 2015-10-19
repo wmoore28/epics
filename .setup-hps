@@ -2,7 +2,7 @@
 # File: .setup-hps
 #
 
-setenv CLAS /usr/local/clas12/release/0.2
+setenv CLAS /usr/clas12/release/0.2
 
 if ( ($OSTYPE == "Linux") && ($MACHINE == "i686" || $MACHINE == "x86_64" || $MACHINE == "i686_vme") ) then
   setenv EPICS_HOST_ARCH linux-x86
