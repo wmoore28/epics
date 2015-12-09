@@ -4,11 +4,11 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
 
-USR_CFLAGS += `net-snmp-config --cflags`
+USR_CFLAGS += `$(NET_SNMP_CONFIG_EXE) --cflags`
 USR_CFLAGS += -DNETSNMP_NO_INLINE
 
-USR_LDFLAGS += `net-snmp-config --libs`
-PROD_LDLIBS += `net-snmp-config --libs`
+USR_LDFLAGS += `$(NET_SNMP_CONFIG_EXE) --libs`
+PROD_LDLIBS += `$(NET_SNMP_CONFIG_EXE) --libs`
 
 USR_CFLAGS += $(shell $(PERL) $(DEVSNMP)/snmpApp/src/getNetSNMPversion.pl)
 USR_CPPFLAGS += $(shell $(PERL) $(DEVSNMP)/snmpApp/src/getNetSNMPversion.pl)

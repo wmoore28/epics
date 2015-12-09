@@ -21,21 +21,24 @@
 
 TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 
-EPICS_SYNAPPS=/usr/clas12/R3.14.12.3/synApps/synApps_5_7/support
-EPICS_DRIVERS=$(TOP)/..
+EPICS_BASE=/usr/clas12/R3.14.12.5/base
+
+EPICS_SYNAPPS=$(EPICS_BASE)/../synApps_5_8
+MODULES=$(EPICS_BASE)/../modules
 EPICS_SUPPORT=${CLAS}/R${EPICS_VER}/support
 
 ## synApps
 include $(EPICS_SYNAPPS)/configure/RELEASE
+include $(MODULES)/configure/RELEASE
 
 ## other drivers
-DEVSNMP=$(EPICS_DRIVERS)/snmp-nscl-1-0-RC9
+#DEVSNMP=$(EPICS_DRIVERS)/snmp-nscl-1-0-RC9
 
 # If using the sequencer, point SNCSEQ at its top directory:
 #SNCSEQ=$(EPICS_BASE)/../modules/soft/seq
 
 # EPICS_BASE usually appears last so other apps can override stuff:
-EPICS_BASE=/usr/clas12/release/0.2/R3.14.12.3/base
+EPICS_BASE=/usr/clas12/R3.14.12.5/base
 
 # Set RULES here if you want to take build rules from somewhere
 # other than EPICS_BASE:
