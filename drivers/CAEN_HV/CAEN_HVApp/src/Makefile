@@ -16,9 +16,9 @@ PROD_LIBS += sy1527epics1
 PROD_LIBS += caenhvwrapper 
 PROD_LIBS += hscaenet 
 PROD_LIBS += pthread
-hscaenet_DIR += $(CLAS)/clon/src/caen/CAENHVControlSoftware-1.1.2/lib
-caenhvwrapper_DIR += $(CLAS)/clon/src/caen/CAENHVControlSoftware-1.1.2/lib
-pthread_DIR += /usr/lib
+hscaenet_DIR += $(HSCAENET_LIB)
+caenhvwrapper_DIR += $(CAENHVWRAPPER_LIB)
+pthread_DIR += $(PTHREAD_LIB)
 
 LIBRARY += sy1527epics1
 PROD += sy1527_test
@@ -32,12 +32,12 @@ PROD_LIBS += smi
 PROD_LIBS += smiui
 PROD_LIBS += dim
 
-smi_DIR += $(SMIDIR)/$(ODIR)
-smiui_DIR += $(SMIDIR)/$(ODIR)
-dim_DIR += $(DIMDIR)/$(ODIR)
+smi_DIR += $(SMIXX_LIB)
+smiui_DIR += $(SMIXX_LIB)
+dim_DIR += $(DIM_LIB)
 
-USR_INCLUDES += -I $(SMIDIR)/smixx
-USR_INCLUDES += -I $(DIMDIR)/dim
+USR_INCLUDES += $(SMIXX_INCLUDE)
+USR_INCLUDES += $(DIM_INCLUDE)
 
 #===========================
 include $(TOP)/configure/RULES
