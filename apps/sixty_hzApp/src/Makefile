@@ -20,20 +20,21 @@ sixty_hzSupport_DBD += base.dbd
 sixty_hzSupport_DBD += asyn.dbd
 
 sixty_hzSupport_DBD += stdSupport.dbd
-sixty_hzSupport_DBD += calcSupport.dbd
-sixty_hzSupport_DBD += busySupport.dbd 
-sixty_hzSupport_DBD += sscanSupport.dbd 
+#sixty_hzSupport_DBD += calcSupport.dbd
+#sixty_hzSupport_DBD += busySupport.dbd 
+#sixty_hzSupport_DBD += sscanSupport.dbd 
 sixty_hzSupport_DBD += asSupport.dbd
-sixty_hzSupport_DBD += devSequencer.dbd
+#sixty_hzSupport_DBD += devSequencer.dbd
 #sixty_hzSupport_DBD += stream.dbd
 #sixty_hzSupport_DBD += streamSynApps.dbd
-sixty_hzSupport_DBD += vmeVXSupport.dbd
-sixty_hzSupport_DBD += std.dbd
+#sixty_hzSupport_DBD += vmeVXSupport.dbd
+#sixty_hzSupport_DBD += std.dbd
 
 sixty_hzSupport_DBD += mcaSupport.dbd
-sixty_hzSupport_DBD += mcaSISSupport.dbd
+#sixty_hzSupport_DBD += mcaSISSupport.dbd
+sixty_hzSupport_DBD += SIS38XXSupport.dbd
 #sixty_hzSupport_DBD += mcaCanberraSupport.dbd
-sixty_hzSupport_DBD += stdVXSupport.dbd
+#sixty_hzSupport_DBD += stdVXSupport.dbd
 
 
 # Compile and add the code to the support library
@@ -75,18 +76,18 @@ sixty_hz_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 # Link in the code from the support library
 sixty_hz_LIBS += sixty_hzSupport 
 sixty_hz_LIBS += asyn
-sixty_hz_LIBS += mca
-sixty_hz_LIBS += calc
-sixty_hz_LIBS += busy
-sixty_hz_LIBS += sscan
+sixty_hz_LIBS += SIS38XX mca
+#sixty_hz_LIBS += calc
+#sixty_hz_LIBS += busy
+#sixty_hz_LIBS += sscan
 sixty_hz_LIBS += autosave
-sixty_hz_LIBS += vme
+#sixty_hz_LIBS += vme
 sixty_hz_LIBS += std
 #sixty_hz_LIBS += stream streamSynApps
 sixty_hz_LIBS += asyn
-sixty_hz_LIBS += seqDev seq pv 
+sixty_hz_LIBS += seq pv 
 
-sixty_hz_LIBS += mcaSIS
+#sixty_hz_LIBS += mcaSIS
 #sixty_hz_LIBS += mcaCanberra
 
 
