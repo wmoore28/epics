@@ -39,9 +39,9 @@ COMMONDBDS += drvAsynSerialPort.dbd
 
 DBD += omsMotor.dbd
 omsMotor_DBD += $(COMMONDBDS)
-ifdef SNCSEQ
-omsMotor_DBD += devSequencer.dbd
-endif
+#ifdef SNCSEQ
+#omsMotor_DBD += devSequencer.dbd
+#endif
 
 ifeq ($(OS_CLASS), vxWorks)
 DBD += omsMotorVx.dbd
@@ -78,7 +78,7 @@ COMMONLIBS += motor
 omsMotor_LIBS += $(COMMONLIBS)
 omsMotor_LIBS += asyn
 ifdef SNCSEQ
-omsMotor_LIBS += seqDev seq pv
+omsMotor_LIBS += seq pv
 endif
 omsMotor_LIBS += $(EPICS_BASE_IOC_LIBS)
 
@@ -89,7 +89,7 @@ endif
 omsMotorVx_LIBS += asyn
 # Needed for Newport SNL programs
 ifdef SNCSEQ
-omsMotorVx_LIBS   += seqDev seq pv
+omsMotorVx_LIBS   += seq pv
 endif
 omsMotorVx_LIBS += $(EPICS_BASE_IOC_LIBS)
 
