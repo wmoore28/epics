@@ -23,7 +23,7 @@ scalerSupport_DBD += calcSupport.dbd
 scalerSupport_DBD += busySupport.dbd 
 scalerSupport_DBD += sscanSupport.dbd 
 scalerSupport_DBD += asSupport.dbd
-scalerSupport_DBD += devSequencer.dbd
+#scalerSupport_DBD += devSequencer.dbd
 #scalerSupport_DBD += stream.dbd
 #scalerSupport_DBD += streamSynApps.dbd
 scalerSupport_DBD += vmeVXSupport.dbd
@@ -67,7 +67,7 @@ scaler_LIBS += vme
 scaler_LIBS += std
 #scaler_LIBS += stream streamSynApps
 scaler_LIBS += asyn
-scaler_LIBS += seqDev seq pv 
+scaler_LIBS += seq pv 
 
 
 # NOTE: To build SNL programs, SNCSEQ must be defined
