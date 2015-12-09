@@ -30,11 +30,11 @@ iocscalers_LIBS += rol
 iocscalers_LIBS += devIocStats
 iocscalers_LIBS += $(EPICS_BASE_IOC_LIBS)
 
-rol_DIR += /usr/local/clas12/release/0.2/coda/src/rol/Linux_i686/lib
-PROD_LIBS += mysql4.1.20
-mysql4.1.20_DIR += /usr/local/clas12/release/0.2/coda/src/mysql4.1.20/Linux_i686/lib
+rol_DIR         += $(ROL_LIB)
+PROD_LIBS       += mysql4.1.20
+mysql4.1.20_DIR += $(MYSQL_LIB)
 
-USR_INCLUDES += -I /usr/local/clas12/release/0.2/coda/src/rol/code.s
+USR_INCLUDES += $(ROL_INCLUDE)
 
 #===========================
 
