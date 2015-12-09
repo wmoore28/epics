@@ -24,7 +24,6 @@ btaSupport_DBD += calcSupport.dbd
 btaSupport_DBD += busySupport.dbd 
 btaSupport_DBD += sscanSupport.dbd 
 btaSupport_DBD += asSupport.dbd
-btaSupport_DBD += devSequencer.dbd
 btaSupport_DBD += stream.dbd
 btaSupport_DBD += streamSynApps.dbd
 btaSupport_DBD += std.dbd
@@ -64,7 +63,7 @@ bta_LIBS += autosave
 bta_LIBS += std
 bta_LIBS += stream streamSynApps
 bta_LIBS += asyn
-bta_LIBS += seqDev seq pv 
+bta_LIBS += seq pv 
 bta_LIBS += softDevIoc
 # NOTE: To build SNL programs, SNCSEQ must be defined
 # in the <top>/configure/RELEASE file
