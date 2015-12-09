@@ -29,6 +29,7 @@ A6621_LIBS += $(EPICS_BASE_IOC_LIBS)
 
 #A6621_DBD += drvVxi11.dbd
 A6621_DBD += stream.dbd
+A6621_DBD += asyn.dbd
 A6621_DBD += drvAsynIPPort.dbd
 
 A6621_LIBS += stream

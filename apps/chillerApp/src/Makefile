@@ -20,6 +20,7 @@ DBD += chiller.dbd
 
 # chiller.dbd will be made up from these files:
 chiller_DBD += base.dbd
+chiller_DBD += asyn.dbd
 chiller_DBD += drvAsynSerialPort.dbd
 chiller_DBD += drvAsynIPPort.dbd
 chiller_DBD += sCalcoutRecord.dbd
