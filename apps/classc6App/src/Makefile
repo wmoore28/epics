@@ -42,7 +42,7 @@ PROD_IOC_vxWorks = classc6
 DBD += classc6.dbd
 
 # classc6.dbd will be made up from these files:
-##classc6_DBD += base.dbd
+classc6_DBD += base.dbd
 ##classc6_DBD += xxxSupport.dbd
 ##classc6_DBD += dbSubExample.dbd
 ##classc6_DBD += classc6Hello.dbd
@@ -74,8 +74,9 @@ classc6_LIBS += sscan
 classc6_LIBS += autosave
 classc6_LIBS += std
 classc6_LIBS += stream streamSynApps
-classc6_LIBS += asyn
 classc6_LIBS += devIocStats
+classc6_LIBS += asyn
+#classc6_LIBS += devIocStats
 
 classc6_LIBS += seq pv 
 
