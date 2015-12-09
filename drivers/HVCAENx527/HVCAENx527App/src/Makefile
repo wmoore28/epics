@@ -40,8 +40,8 @@ HVCAENx527_LIBS += HVCAENx527Lib
 HVCAENx527_LIBS += hscaenet
 HVCAENx527_LIBS += caenhvwrapper
 
-hscaenet_DIR      += $(CLAS)/clon/src/caen/CAENHVControlSoftware-1.1.2/lib
-caenhvwrapper_DIR += $(CLAS)/clon/src/caen/CAENHVControlSoftware-1.1.2/lib
+hscaenet_DIR      += $(HSCAENET_LIB)
+caenhvwrapper_DIR += $(CAENHVWRAPPER_LIB)
 
 # Finally link to the EPICS Base libraries
 HVCAENx527_LIBS += $(EPICS_BASE_IOC_LIBS)
