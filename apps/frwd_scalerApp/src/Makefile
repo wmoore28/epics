@@ -23,7 +23,6 @@ frwd_scalerSupport_DBD += calcSupport.dbd
 frwd_scalerSupport_DBD += busySupport.dbd 
 frwd_scalerSupport_DBD += sscanSupport.dbd 
 frwd_scalerSupport_DBD += asSupport.dbd
-frwd_scalerSupport_DBD += devSequencer.dbd
 #frwd_scalerSupport_DBD += stream.dbd
 #frwd_scalerSupport_DBD += streamSynApps.dbd
 frwd_scalerSupport_DBD += vmeVXSupport.dbd
@@ -66,7 +65,7 @@ frwd_scaler_LIBS += vme
 frwd_scaler_LIBS += std
 #frwd_scaler_LIBS += stream streamSynApps
 frwd_scaler_LIBS += asyn
-frwd_scaler_LIBS += seqDev seq pv 
+frwd_scaler_LIBS += seq pv 
 
 # NOTE: To build SNL programs, SNCSEQ must be defined
 # in the <top>/configure/RELEASE file
