@@ -18,7 +18,7 @@ plc2epics_DBD += calcSupport.dbd
 plc2epics_DBD += busySupport.dbd
 plc2epics_DBD += sscanSupport.dbd
 plc2epics_DBD += asSupport.dbd
-plc2epics_DBD += devSequencer.dbd
+#plc2epics_DBD += devSequencer.dbd
 plc2epics_DBD += asyn.dbd
 plc2epics_DBD += std.dbd
 plc2epics_DBD += devIocStats.dbd 
@@ -37,7 +37,7 @@ plc2epics_LIBS += busy
 plc2epics_LIBS += sscan
 plc2epics_LIBS += autosave
 plc2epics_LIBS += std
-plc2epics_LIBS += seqDev seq pv
+plc2epics_LIBS += seq pv
 plc2epics_LIBS += asyn
 plc2epics_LIBS += devIocStats
 
