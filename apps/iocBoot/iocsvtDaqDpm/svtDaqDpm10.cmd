@@ -1,4 +1,4 @@
-#!../../bin/linux-x86/svtDaqDpm
+#!../../bin/linux-x86_64/svtDaqDpm
 
 ## You may have to change svtDaqDpm to something else
 ## everywhere it appears in this file

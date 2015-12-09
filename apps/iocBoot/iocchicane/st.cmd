@@ -1,4 +1,4 @@
-#!../../bin/linux-x86/chicane
+#!../../bin/linux-x86_64/chicane
 
 < envPaths
 cd ${TOP}

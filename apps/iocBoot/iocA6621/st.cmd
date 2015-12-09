@@ -1,4 +1,4 @@
-#!../../bin/linux-x86/A6621
+#!../../bin/linux-x86_64/A6621
 
 ## You may have to change A6621 to something else
 ## everywhere it appears in this file
