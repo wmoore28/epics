@@ -39,7 +39,7 @@ classc1_LIBS += scaler_eSupport
 ##classc1_LIBS += asymSupport
 classc1_LIBS += bomSupport
 
-classc1_LIBS += mca
+classc1_LIBS += SIS38XX mca
 classc1_LIBS += calc
 classc1_LIBS += busy
 classc1_LIBS += sscan
@@ -47,8 +47,6 @@ classc1_LIBS += autosave
 classc1_LIBS += oms
 classc1_LIBS += motor
 classc1_LIBS += vme
-classc1_LIBS += mcaSIS
-classc1_LIBS += mcaCanberra
 classc1_LIBS += std
 classc1_LIBS += devIocStats
 ##classc1_LIBS += xycomDigital
@@ -58,7 +56,7 @@ ifdef IPAC
 classc1_LIBS += Ipac TyGSOctal
 endif
 
-classc1_LIBS += seqDev seq pv 
+classc1_LIBS += seq pv 
 
 # NOTE: To build SNL programs, SNCSEQ must be defined
 # in the <top>/configure/RELEASE file
