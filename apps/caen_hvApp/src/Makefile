@@ -27,10 +27,10 @@ ioccaen_LIBS += sy1527epics1
 ioccaen_LIBS += caenhvwrapper 
 ioccaen_LIBS += hscaenet 
 ioccaen_LIBS += devIocStats
-sy1527epics1_DIR += $(TOP)/lib/$(T_A)
+#sy1527epics1_DIR += $(TOP)/lib/$(T_A)
 
-caenhvwrapper_DIR += $(CLAS)/clon/src/caen/CAENHVControlSoftware-1.1.2/lib
-hscaenet_DIR += $(CLAS)/clon/src/caen/CAENHVControlSoftware-1.1.2/lib
+caenhvwrapper_DIR += $(CAENHVWRAPPER_LIB)
+hscaenet_DIR += $(HSCAENET_LIB)
 
 #===========================
 
@@ -38,12 +38,12 @@ ioccaen_LIBS += smi
 ioccaen_LIBS += smiui
 ioccaen_LIBS += dim
 
-smi_DIR += $(SMIDIR)/$(ODIR)
-smiui_DIR += $(SMIDIR)/$(ODIR)
-dim_DIR += $(DIMDIR)/$(ODIR)
+smi_DIR += $(SMIXX_LIB)
+smiui_DIR += $(SMIXX_LIB)
+dim_DIR += $(DIM_LIB)
 
-USR_INCLUDES += -I $(SMIDIR)/smixx
-USR_INCLUDES += -I $(DIMDIR)/dim
+USR_INCLUDES += $(SMIXX_INCLUDE)
+USR_INCLUDES += $(DIM_INCLUDE)
 
 #===========================
 include $(TOP)/configure/RULES
