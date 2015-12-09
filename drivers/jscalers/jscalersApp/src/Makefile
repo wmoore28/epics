@@ -16,8 +16,8 @@ PROD_SRC += scalers_test.cpp
 
 PROD_LIBS += jscalers
 
-LIBRARY += jscalers
-PROD += scalers_test
+LIBRARY_Linux += jscalers
+PROD_Linux += scalers_test
 
 INC += common.h
 INC += jscalers.h
