@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/v2.0.0/apps/generalApp/medm/./hps_ecal_all.adl"
+	name="/usr/clas12/hps/v2.0.0/apps/generalApp/medm/hps_ecal_all.adl"
 	version=030108
 }
 display {
@@ -6221,7 +6221,7 @@ rectangle {
 	}
 	monitor {
 		chan="$(P):pw1mon.STAT"
-		clr=0
+		clr=15
 		bclr=13
 	}
 	align="horiz. centered"
