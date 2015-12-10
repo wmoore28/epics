@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v2.0.0/apps/./generalApp/medm/hps_ecal_all.adl"
+	name="/usr/clas12/hps/v2.0.0/apps/generalApp/medm/./hps_ecal_all.adl"
 	version=030108
 }
 display {
 	object {
-		x=87
-		y=39
+		x=85
+		y=23
 		width=951
 		height=650
 	}
@@ -4026,8 +4026,8 @@ polyline {
 	}
 	monitor {
 		chan="$(P):v1mon"
-		clr=14
-		bclr=55
+		clr=15
+		bclr=13
 	}
 	align="horiz. centered"
 	limits {
@@ -4046,8 +4046,8 @@ polyline {
 	}
 	monitor {
 		chan="$(P):i1mon"
-		clr=14
-		bclr=55
+		clr=15
+		bclr=13
 	}
 	align="horiz. centered"
 	limits {
@@ -4066,8 +4066,8 @@ polyline {
 	}
 	monitor {
 		chan="$(P):v1setrbk"
-		clr=14
-		bclr=55
+		clr=15
+		bclr=13
 	}
 	align="horiz. centered"
 	limits {
@@ -4086,8 +4086,8 @@ polyline {
 	}
 	monitor {
 		chan="$(P):i1setrbk"
-		clr=14
-		bclr=55
+		clr=15
+		bclr=13
 	}
 	align="horiz. centered"
 	limits {
@@ -4365,8 +4365,8 @@ text {
 	}
 	monitor {
 		chan="$(P):v2mon"
-		clr=14
-		bclr=55
+		clr=15
+		bclr=13
 	}
 	align="horiz. centered"
 	limits {
@@ -4385,8 +4385,8 @@ text {
 	}
 	monitor {
 		chan="$(P):i2mon"
-		clr=14
-		bclr=55
+		clr=15
+		bclr=13
 	}
 	align="horiz. centered"
 	limits {
@@ -4405,8 +4405,8 @@ text {
 	}
 	monitor {
 		chan="$(P):v2setrbk"
-		clr=14
-		bclr=55
+		clr=15
+		bclr=13
 	}
 	align="horiz. centered"
 	limits {
@@ -4425,8 +4425,8 @@ text {
 	}
 	monitor {
 		chan="$(P):i2setrbk"
-		clr=14
-		bclr=55
+		clr=15
+		bclr=13
 	}
 	align="horiz. centered"
 	limits {

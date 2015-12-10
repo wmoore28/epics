@@ -3,3 +3,4 @@ Fitter.exe:	FitterDict.cxx	Fitter.cxx
 
 FitterDict.cxx:	Fitter.h FitterLinkDef.h
 		rootcint -f FitterDict.cxx -c Fitter.h FitterLinkDef.h
+

@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v2.0.0/apps/generalApp/medm/ioc_hps_health.adl"
-	version=030108
+	name="/usr/clas12/hps/prod/apps/generalApp/medm/ioc_hps_health.adl"
+	version=030109
 }
 display {
 	object {
-		x=175
-		y=60
+		x=166
+		y=67
 		width=1300
 		height=610
 	}
@@ -490,7 +490,7 @@ rectangle {
 		height=20
 	}
 	monitor {
-		chan="ioclakeshore450:STARTTOD"
+		chan="iockeithley:STARTTOD"
 		clr=0
 		bclr=27
 	}
