@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/v2.0.0/apps/chicaneApp/medm/chicane.adl"
+	name="/usr/clas12/hps/v2.0.0/apps/chicaneApp/./medm/chicane.adl"
 	version=030108
 }
 display {
 	object {
-		x=488
-		y=379
-		width=420
-		height=245
+		x=486
+		y=363
+		width=419
+		height=247
 	}
 	clr=0
 	bclr=13
@@ -140,7 +140,7 @@ rectangle {
 		height=62
 	}
 	"basic attribute" {
-		clr=5
+		clr=10
 		fill="outline"
 	}
 	"dynamic attribute" {
@@ -276,8 +276,8 @@ text {
 }
 "text update" {
 	object {
-		x=354
-		y=41
+		x=349
+		y=84
 		width=50
 		height=14
 	}
@@ -297,7 +297,7 @@ text {
 text {
 	object {
 		x=272
-		y=40
+		y=84
 		width=80
 		height=14
 	}
@@ -323,7 +323,7 @@ text {
 text {
 	object {
 		x=281
-		y=69
+		y=64
 		width=120
 		height=14
 	}
@@ -335,8 +335,8 @@ text {
 }
 "text update" {
 	object {
-		x=346
-		y=90
+		x=349
+		y=99
 		width=50
 		height=14
 	}
@@ -361,7 +361,7 @@ rectangle {
 		height=133
 	}
 	"basic attribute" {
-		clr=5
+		clr=10
 		fill="outline"
 	}
 	"dynamic attribute" {
@@ -376,7 +376,7 @@ rectangle {
 		height=133
 	}
 	"basic attribute" {
-		clr=5
+		clr=10
 		fill="outline"
 	}
 }
@@ -399,7 +399,7 @@ rectangle {
 text {
 	object {
 		x=280
-		y=90
+		y=99
 		width=60
 		height=14
 	}
@@ -412,7 +412,7 @@ text {
 text {
 	object {
 		x=280
-		y=110
+		y=114
 		width=60
 		height=14
 	}
@@ -424,8 +424,8 @@ text {
 }
 "text update" {
 	object {
-		x=346
-		y=110
+		x=349
+		y=114
 		width=50
 		height=14
 	}
@@ -445,9 +445,9 @@ text {
 rectangle {
 	object {
 		x=275
-		y=64
+		y=61
 		width=130
-		height=65
+		height=70
 	}
 	"basic attribute" {
 		clr=12
@@ -775,8 +775,6 @@ oval {
 		chanC="$(P):isReady"
 	}
 }
-
-
 text {
 	object {
 		x=102
@@ -858,6 +856,39 @@ text {
 		chanC="$(P):intlk2PS"
 		chanD="$(P):comstatPS"
 	}
-	textix="COMM ERROR"
+	textix="INTERLOCK ERROR"
 	align="horiz. centered"
+}
+text {
+	object {
+		x=272
+		y=40
+		width=80
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Beam Energy"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=349
+		y=40
+		width=50
+		height=14
+	}
+	monitor {
+		chan="$(P):energy"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=4
+	}
 }
