@@ -22,7 +22,7 @@ chicane_SRCS_vxWorks += -nil-
 
 chicane_SRCS += chicane.st
 chicane_LIBS += seq pv
-
+chicane_LIBS += devIocStats
 chicane_LIBS += $(EPICS_BASE_IOC_LIBS)
 
 include $(TOP)/configure/RULES
