@@ -1,13 +1,13 @@
 
 file {
-	name="/usr/clas12/hps/v2.0.0/apps/chicaneApp/./medm/chicane.adl"
+	name="/usr/clas12/hps/v2.0.0/apps/chicaneApp/medm/chicane.adl"
 	version=030108
 }
 display {
 	object {
-		x=486
-		y=363
-		width=419
+		x=110
+		y=190
+		width=442
 		height=247
 	}
 	clr=0
@@ -89,8 +89,8 @@ display {
 }
 "message button" {
 	object {
-		x=302
-		y=139
+		x=315
+		y=140
 		width=80
 		height=20
 	}
@@ -107,11 +107,11 @@ rectangle {
 	object {
 		x=10
 		y=8
-		width=401
+		width=420
 		height=18
 	}
 	"basic attribute" {
-		clr=5
+		clr=4
 	}
 }
 "text update" {
@@ -136,7 +136,7 @@ rectangle {
 	object {
 		x=10
 		y=173
-		width=400
+		width=420
 		height=62
 	}
 	"basic attribute" {
@@ -151,7 +151,7 @@ rectangle {
 	object {
 		x=103
 		y=216
-		width=230
+		width=258
 		height=15
 	}
 	"basic attribute" {
@@ -276,8 +276,8 @@ text {
 }
 "text update" {
 	object {
-		x=349
-		y=84
+		x=363
+		y=90
 		width=50
 		height=14
 	}
@@ -296,20 +296,20 @@ text {
 }
 text {
 	object {
-		x=272
-		y=84
-		width=80
+		x=291
+		y=90
+		width=60
 		height=14
 	}
 	"basic attribute" {
 		clr=0
 	}
 	textix="Beam Energy"
-	align="horiz. centered"
+	align="horiz. right"
 }
 text {
 	object {
-		x=160
+		x=182
 		y=176
 		width=100
 		height=12
@@ -322,8 +322,8 @@ text {
 }
 text {
 	object {
-		x=281
-		y=64
+		x=289
+		y=69
 		width=120
 		height=14
 	}
@@ -335,8 +335,8 @@ text {
 }
 "text update" {
 	object {
-		x=349
-		y=99
+		x=363
+		y=105
 		width=50
 		height=14
 	}
@@ -356,9 +356,9 @@ text {
 rectangle {
 	object {
 		x=270
-		y=31
-		width=140
-		height=133
+		y=64
+		width=160
+		height=100
 	}
 	"basic attribute" {
 		clr=10
@@ -384,7 +384,7 @@ rectangle {
 	object {
 		x=103
 		y=193
-		width=230
+		width=258
 		height=15
 	}
 	monitor {
@@ -398,8 +398,8 @@ rectangle {
 }
 text {
 	object {
-		x=280
-		y=99
+		x=291
+		y=105
 		width=60
 		height=14
 	}
@@ -407,12 +407,12 @@ text {
 		clr=0
 	}
 	textix="Mini Torus"
-	align="horiz. centered"
+	align="horiz. right"
 }
 text {
 	object {
-		x=280
-		y=114
+		x=291
+		y=120
 		width=60
 		height=14
 	}
@@ -420,12 +420,12 @@ text {
 		clr=0
 	}
 	textix="Pair Spec"
-	align="horiz. centered"
+	align="horiz. right"
 }
 "text update" {
 	object {
-		x=349
-		y=114
+		x=363
+		y=120
 		width=50
 		height=14
 	}
@@ -440,18 +440,6 @@ text {
 		hoprDefault=20
 		precSrc="default"
 		precDefault=1
-	}
-}
-rectangle {
-	object {
-		x=275
-		y=61
-		width=130
-		height=70
-	}
-	"basic attribute" {
-		clr=12
-		fill="outline"
 	}
 }
 "text update" {
@@ -496,7 +484,7 @@ rectangle {
 }
 text {
 	object {
-		x=17
+		x=21
 		y=125
 		width=54
 		height=15
@@ -505,11 +493,11 @@ text {
 		clr=0
 	}
 	textix="Mini Torus"
-	align="horiz. centered"
+	align="horiz. right"
 }
 text {
 	object {
-		x=16
+		x=20
 		y=145
 		width=54
 		height=15
@@ -518,7 +506,7 @@ text {
 		clr=0
 	}
 	textix="Pair Spec"
-	align="horiz. centered"
+	align="horiz. right"
 }
 oval {
 	object {
@@ -592,8 +580,8 @@ oval {
 }
 "related display" {
 	object {
-		x=341
-		y=190
+		x=366
+		y=191
 		width=60
 		height=20
 	}
@@ -606,8 +594,8 @@ oval {
 }
 "related display" {
 	object {
-		x=341
-		y=211
+		x=366
+		y=212
 		width=60
 		height=20
 	}
@@ -671,27 +659,27 @@ text {
 	object {
 		x=21
 		y=193
-		width=54
+		width=60
 		height=15
 	}
 	"basic attribute" {
 		clr=0
 	}
-	textix="Frascatis"
-	align="horiz. centered"
+	textix="Mini Torus"
+	align="horiz. right"
 }
 text {
 	object {
 		x=21
 		y=216
-		width=54
+		width=60
 		height=15
 	}
 	"basic attribute" {
 		clr=0
 	}
 	textix="Pair Spec"
-	align="horiz. centered"
+	align="horiz. right"
 }
 text {
 	object {
@@ -779,7 +767,7 @@ text {
 	object {
 		x=102
 		y=216
-		width=230
+		width=258
 		height=15
 	}
 	"basic attribute" {
@@ -800,7 +788,7 @@ text {
 	object {
 		x=103
 		y=216
-		width=230
+		width=258
 		height=15
 	}
 	"basic attribute" {
@@ -821,7 +809,7 @@ text {
 	object {
 		x=103
 		y=216
-		width=230
+		width=258
 		height=15
 	}
 	"basic attribute" {
@@ -842,7 +830,7 @@ text {
 	object {
 		x=103
 		y=216
-		width=230
+		width=258
 		height=15
 	}
 	"basic attribute" {
@@ -861,21 +849,21 @@ text {
 }
 text {
 	object {
-		x=272
-		y=40
+		x=284
+		y=39
 		width=80
 		height=14
 	}
 	"basic attribute" {
 		clr=0
 	}
-	textix="Beam Energy"
+	textix="Live Beam Energy"
 	align="horiz. centered"
 }
 "text update" {
 	object {
-		x=349
-		y=40
+		x=376
+		y=39
 		width=50
 		height=14
 	}
@@ -890,5 +878,35 @@ text {
 		hoprDefault=20
 		precSrc="default"
 		precDefault=4
+	}
+}
+rectangle {
+	object {
+		x=270
+		y=32
+		width=160
+		height=25
+	}
+	"basic attribute" {
+		clr=10
+		fill="outline"
+	}
+	"dynamic attribute" {
+		chan="a:current"
+	}
+}
+polyline {
+	object {
+		x=287
+		y=85
+		width=121
+		height=0
+	}
+	"basic attribute" {
+		clr=5
+	}
+	points {
+		(287,85)
+		(408,85)
 	}
 }
