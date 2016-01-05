@@ -27,7 +27,6 @@ keithley6221_DBD += devIocStats.dbd
 
 # keithley6221_registerRecordDeviceDriver.cpp derives from keithley6221.dbd
 keithley6221_SRCS += keithley6221_registerRecordDeviceDriver.cpp
-keithley6221_SRCS += check_voltage.st
 
 # Build the main IOC entry point on workstation OSs.
 keithley6221_SRCS_DEFAULT += keithley6221Main.cpp
