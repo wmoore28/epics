@@ -48,6 +48,10 @@ caput ${BOT}:SET_COLOR $COLOR
 caput -S ${BOT}:DATA_FILE_LOAD /usr/clas12/hps/prod/apps/flasherApp/medm/HPSFlasher2${COLOR}Channels.dat
 /usr/clas12/hps/prod/apps/flasherApp/medm/flasher_load_chan_file.sh "$BOT"
 
+#sleep 3 s, to ensure above commands are done, and that we are ready to start both sequences
+
+sleep 3
+
 #START TOP AND BOT
 /usr/clas12/hps/prod/apps/flasherApp/medm/flasher_start_top.sh
 /usr/clas12/hps/prod/apps/flasherApp/medm/flasher_start_bot.sh
