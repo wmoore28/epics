@@ -1,5 +1,10 @@
 #HPS EPICS
 
+## Versions
+* EPICS_BASE 3.14.12.5
+* EPICS_HOST_ARCH linux-x86_64 (rhel7 32/64-bit, VxWorks 5.5 PPC)
+* synApps 5.8
+
 ## Getting Started
 To get a github repository setup for HPS EPICS developement:
 * Create a github account and login
