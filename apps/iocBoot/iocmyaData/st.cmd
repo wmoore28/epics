@@ -1,4 +1,4 @@
-#!../../bin/linux-x86/myaData
+#!../../bin/linux-x86_64/myaData
 
 < envPaths
 

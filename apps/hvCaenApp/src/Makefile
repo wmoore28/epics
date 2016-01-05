@@ -7,7 +7,6 @@ include $(TOP)/configure/CONFIG
 
 #=============================
 # Build the IOC application
-
 PROD_IOC_Linux = hvCaen
 # hvCaen.dbd will be created and installed
 DBD += hvCaen.dbd
@@ -31,7 +30,7 @@ hvCaen_SRCS += genericDB.cc
 hvCaen_SRCS += detector.cc
 hvCaen_SRCS += DetChannelsWaveform.cc
 
-USR_INCLUDES += -I/apps/Trolltech/Qt/include
+#USR_INCLUDES += -I/apps/Trolltech/Qt/include
 
 USR_INCLUDES += -I$(HVCAENx527)/HVCAENx527App/src
 USR_INCLUDES += -I$(DEVSNMP)/snmpApp/src
@@ -44,7 +43,7 @@ USR_CXXFLAGS += -g
 
 hvCaen_LIBS += hscaenet
 hvCaen_LIBS += caenhvwrapper
-hvCaen_LIBS += QtSql
+hvCaen_LIBS += QtCore QtSql
 #
 hvCaen_LIBS += std
 hvCaen_LIBS += busy
@@ -58,9 +57,10 @@ hvCaen_LIBS += HVCAENx527Lib
 hvCaen_LIBS += devSnmp
 hvCaen_LIBS += LVMPODSupport
 
-hscaenet_DIR      += $(CLAS)/clon/src/caen/CAENHVControlSoftware-1.1.2/lib
-caenhvwrapper_DIR += $(CLAS)/clon/src/caen/CAENHVControlSoftware-1.1.2/lib
-QtSql_DIR += /apps/Trolltech/Qt/lib
+hscaenet_DIR      += $(HSCAENET_LIB)
+caenhvwrapper_DIR += $(CAENHVWRAPPER_LIB)
+QtCore_DIR        += $(LIBS)
+QtSql_DIR         += $(LIBS)
 
 
 # Finally link to the EPICS Base libraries

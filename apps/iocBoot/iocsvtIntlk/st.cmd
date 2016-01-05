@@ -1,4 +1,4 @@
-#!../../bin/linux-x86/svtIntlk
+#!../../bin/linux-x86_64/svtIntlk
 
 < envPaths
 

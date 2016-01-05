@@ -32,4 +32,6 @@ CHECK_RELEASE = YES
 # You must rebuild in the iocBoot directory for this to
 #   take effect.
 #IOCS_APPL_TOP = </IOC/path/to/application/top>
-CROSS_COMPILER_TARGET_ARCHS =
+#CROSS_COMPILER_TARGET_ARCHS =
+
+-include $(TOP)/configure/CONFIG_SITE.local.$(T_A)

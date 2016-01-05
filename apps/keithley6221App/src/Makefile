@@ -21,7 +21,7 @@ DBD += keithley6221.dbd
 # keithley6221.dbd will be made up from these files:
 keithley6221_DBD += base.dbd
 keithley6221_DBD += stream.dbd
-keithley6221_DBD += drvAsynIPPort.dbd
+keithley6221_DBD += drvAsynIPPort.dbd asyn.dbd
 keithley6221_DBD += asSupport.dbd
 keithley6221_DBD += devIocStats.dbd
 

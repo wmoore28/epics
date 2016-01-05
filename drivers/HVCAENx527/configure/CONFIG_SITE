@@ -21,6 +21,7 @@ CHECK_RELEASE = YES
 #   that Base is built for.
 #CROSS_COMPILER_TARGET_ARCHS = vxWorks-68040
 
+
 # To install files into a location other than $(TOP) define
 #   INSTALL_LOCATION here.
 #INSTALL_LOCATION=</path/name/to/install/top>
@@ -31,3 +32,5 @@ CHECK_RELEASE = YES
 # You must rebuild in the iocBoot directory for this to
 #   take effect.
 #IOCS_APPL_TOP = </IOC/path/to/application/top>
+
+-include $(TOP)/configure/CONFIG_SITE.local.$(T_A)

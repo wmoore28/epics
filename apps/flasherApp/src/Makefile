@@ -16,6 +16,7 @@ DBD += flasher.dbd
 # flasher.dbd will be made up from these files:
 flasher_DBD += base.dbd
 flasher_DBD += devIocStats.dbd
+flasher_DBD += asyn.dbd
 flasher_DBD += drvAsynIPPort.dbd
 flasher_DBD += stream.dbd
 flasher_DBD += system.dbd

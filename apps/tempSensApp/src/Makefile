@@ -20,6 +20,7 @@ DBD += tempSens.dbd
 
 # tempSens.dbd will be made up from these files:
 tempSens_DBD += base.dbd
+tempSens_DBD += asyn.dbd
 tempSens_DBD += drvAsynIPPort.dbd
 tempSens_DBD += stream.dbd
 tempSens_DBD += asSupport.dbd

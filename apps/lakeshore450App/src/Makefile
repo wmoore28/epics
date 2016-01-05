@@ -19,6 +19,7 @@ lakeshore450_DBD += base.dbd
 lakeshore450_DBD += asSupport.dbd
 lakeshore450_DBD += devIocStats.dbd
 lakeshore450_DBD += stream.dbd
+lakeshore450_DBD += asyn.dbd
 lakeshore450_DBD += drvAsynIPPort.dbd
 lakeshore450_DBD += fieldCalc.dbd
 

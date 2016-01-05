@@ -14,23 +14,22 @@ LIB_SRCS += jscalers.cpp
 
 PROD_SRC += scalers_test.cpp
 
-#PROD_LIBS += scalers_epics
 PROD_LIBS += jscalers
 
-#LIBRARY += scalers_epics
-LIBRARY += jscalers
-PROD += scalers_test
+LIBRARY_Linux += jscalers
+PROD_Linux += scalers_test
 
 INC += common.h
 INC += jscalers.h
 
 #===========================
-PROD_LIBS += rol
-rol_DIR += /usr/local/clas12/release/0.2/coda/Linux_i686/lib
-rol_DIR += /usr/local/clas12/release/0.2/coda/src/rol/Linux_i686/lib
-USR_INCLUDES += -I /usr/local/clas12/release/0.2/coda/src/rol/code.s
+PROD_LIBS    += rol
+rol_DIR      += $(CODA_LIB)
+rol_DIR      += $(ROL_LIB)
+USR_INCLUDES += $(ROL_INCLUDE)
+
 PROD_LIBS += mysql4.1.20
-mysql4.1.20_DIR += /usr/local/clas12/coda/src/mysql4.1.20/Linux_i686/lib
+mysql4.1.20_DIR += $(MYSQL_LIB)
 
 #===========================
 include $(TOP)/configure/RULES
