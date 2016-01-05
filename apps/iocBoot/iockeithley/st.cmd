@@ -28,3 +28,5 @@ cd ${TOP}/iocBoot/${IOC}
 dbl > keithley_pv.list
 iocInit
 
+seq &check_voltage
+

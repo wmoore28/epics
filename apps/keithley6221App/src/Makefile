@@ -27,6 +27,7 @@ keithley6221_DBD += devIocStats.dbd
 
 # keithley6221_registerRecordDeviceDriver.cpp derives from keithley6221.dbd
 keithley6221_SRCS += keithley6221_registerRecordDeviceDriver.cpp
+keithley6221_SRCS += check_voltage.st
 
 # Build the main IOC entry point on workstation OSs.
 keithley6221_SRCS_DEFAULT += keithley6221Main.cpp
@@ -37,9 +38,12 @@ keithley6221_LIBS += autosave
 keithley6221_LIBS += stream
 keithley6221_LIBS += devIocStats
 keithley6221_LIBS += asyn
+keithley6221_LIBS += seq pv
 
 # Finally link to the EPICS Base libraries
 keithley6221_LIBS += $(EPICS_BASE_IOC_LIBS)
+
+
 
 #=============================
 
