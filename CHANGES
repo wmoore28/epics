@@ -1,3 +1,60 @@
+Version 3.0.0:
+ - added version numbers
+ - hvCaenApp: white-space changes to generated sqlite3 dump
+ - Merge remote-tracking branch 'origin/rhel7-dev'
+ - added bin/ to avoid /usr/local/bin
+ - procServMgr: tmp setup for transition to RHEL7
+ - .setup-hps: updated for RHEL7
+ - qt: removed, not used
+ - ioc_watchdog: removed, not used
+ - classmi: removed, not used
+ - Merge branch 'hotfix-v2.0.1' of https://github.com/wmoore28/epics into rhel7-dev
+ - switched to use linux-x86_64 executables
+ - asyn.dbd must be defined with asyn 4-22+
+ - wave2rootApp: added 32/64-bit compatibility, needs libs linked properly
+ - classc6App: added base.dbd
+ - .setup-hps: added 32/64-bit compatibility
+ - hvCaenApp: added 32/64-bit compatibility
+ - svtDaqDpmApp: added 32/64-bit compatibility
+ - svtDaqApp: added 32/64-bit compatibility
+ - struckDaqApp: updated SIS38XX support, removed seqDev
+ - jscalersApp: added 32/64-bit compatibility
+ - scaler_eApp: removed seqDev
+ - scaler_dApp: removed seqDev
+ - scaler_cApp: removed seqDev
+ - scalerApp: removed seqDev
+ - sixty_hzApp: updated SIS38XX support, removed seqDev
+ - svtPlcApp: removed seqDev
+ - omsMotorApp: removed seqDev
+ - harp_genericApp: removed seqDev
+ - frwd_scalerApp: removed seqDev
+ - updated SIS38XX support
+ - btaApp: makefile clean-up
+ - btaApp: removed seqDev
+ - bomApp: updated SIS38XX support, also cleaned up
+ - asymApp: updated SIS38XX support, also cleaned up
+ - caen_hvApp: added 32/64-bit compatibility
+ - caen_hvApp: fixed hard-coded dbd includes
+ - svtDaqLibExtApp: added app dependencies for this library
+ - apps: removed chicane symlink, it's generated
+ - svtDaqLibExtApp: added 32/64-bit compatibility, ported from drivers/
+ - hvcaApp: src/ won't cross-compile, so 'commented' it out
+ - apps: updated epics version
+ - apps: added 32/64bit compatibility
+ - v450*: updated epics version
+ - drivers: added 32/64bit compatibility
+ - LVMPOD: added 32/64bit compatibility
+ - jscalers: fixed cross-compile
+ - HVCAENx527: fixed cross-compile
+ - CAEN_HV: fixed cross-compile
+ - HVCAENx527: added 32/64bit compatibility
+ - CAEN_HV: added 32/64bit compatibility
+ - jscalers: added 32/64bit compatibility
+ - removed svtDaqLib, created new epics support lib in apps/ for cross-compile
+ - removed community snmp driver
+ - removed unused jlabVMEBoard driver
+ - updated /usr/clas12/ path
+
 Version 2.0.1:
  - .gitignore: was updated for new apps
  - keithley6221App: removed reference to sequencer that doesn't exist
