@@ -7,18 +7,18 @@
 #include <TLatex.h>
 #include <TGraph.h>
 #include <TGText.h>
-#include <TGButton.h> 
-#include <TRootEmbeddedCanvas.h>
 #include <TGFrame.h>
 #include <TGLabel.h>
+#include <TGButton.h> 
 #include <TSpectrum.h>
+#include <TGTextEdit.h>
 #include <TTimeStamp.h>
 #include <TGComboBox.h>
 #include <TGDimension.h>
 #include <TGTextEntry.h>
 #include <TGFileDialog.h>
 #include <TGNumberEntry.h>
-#include <TGTextEdit.h>
+#include <TRootEmbeddedCanvas.h>
 
 
 #include "Fitter.h" 
@@ -447,30 +447,51 @@ void Fitter::SubmitToLogbook()
   TCanvas *c1 = (TCanvas*)fEcanvas->GetCanvas();
   c1->Modified();
   c1->Update();
-  
-  comments->GetText()->Save("/usr/tmp/Log_comments.txt");
+  string log_text_filename = "/usr/clas12/DATA/harp_fitter/Log_comments.txt";
+
+  comments->GetText()->Save(log_text_filename.c_str());
 
   std::size_t pos = file_name.find(harp_name);
   std::size_t pos_end = file_name.find(".txt");
   string file_endpart = file_name.substr(pos + harp_name.size() + 1, pos_end - pos - harp_name.size() - 1);
-  
-  string dump_img_name = "/home/hpsrun/screenshots/fit_"+file_endpart+".gif";
+
+  // screenshots directory has restrictions on writing permissions for other accounts
+  // therefore the dumped image will be in the ~/.config directory. For each user this
+  // will be her/his own home/.config directory
+  //string dump_img_name = "/home/hpsrun/screenshots/fit_"+file_endpart+".gif";
+  string dump_img_name = "/usr/clas12/DATA/harp_fitter/fit_"+harp_name+".gif";
   
   c1->Print(Form("%s", dump_img_name.c_str()));
+  
+  string logbook_list = "";
+
+  if(but_to_HBLOG->IsOn() )
+    {
+      logbook_list = logbook_list + " -l HBLOG";
+    }
+  if(but_to_TLOG->IsOn() )
+    {
+      logbook_list = logbook_list + " -l TLOG";
+    }
+  if(but_to_ELOG->IsOn() )
+    {
+      logbook_list = logbook_list + " -l ELOG";
+    }
   
   if( but_to_MYA->IsOn() )
     {
       cout<<"Send to MYA is selected"<<endl;
       CAPUT();
     }
-
-  system(Form("/site/ace/certified/apps/bin/logentry -l TLOG -t \" Scan of %s \" -a %s -b \"/usr/tmp/Log_comments.txt\" ",
-	      harp_name.c_str(), dump_img_name.c_str()));
+  
+  system(Form("/site/ace/certified/apps/bin/logentry %s -t \" Scan of %s \" -a %s -b \"%s\" ",
+	      logbook_list.c_str() , harp_name.c_str(), dump_img_name.c_str(), log_text_filename.c_str()));
 
  // When Log entry is done, let's delete the temporary file containing the log comments, in irder
  // to avoid permission errors for other users to create a same file
 
-  system("rm -f /usr/tmp/Log_comments.txt");
+  system(Form("rm -f %s", log_text_filename.c_str()));
+  system(Form("chmod a+w %s", dump_img_name.c_str()));
 
   fMain_log->CloseWindow();
 }
@@ -485,13 +506,29 @@ void Fitter::GetComments()
 
   TGHorizontalFrame *hor_frame1 = new TGHorizontalFrame(fMain_log, 400, 2, kHorizontalFrame);
 
+  TGGroupFrame *group_frame1 = new TGGroupFrame(hor_frame1, "", kVerticalFrame);
+  group_frame1->SetTitle("Select Logbook(s)");
+  but_to_HBLOG = new TGCheckButton(group_frame1, "HBLog");
+  but_to_HBLOG->SetOn();
+  group_frame1->AddFrame(but_to_HBLOG, new TGLayoutHints(kLHintsCenterX ,2,2,2,2));
+  but_to_ELOG = new TGCheckButton(group_frame1, "ELog");
+  group_frame1->AddFrame(but_to_ELOG, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
+  but_to_TLOG = new TGCheckButton(group_frame1, "TLog");
+  group_frame1->AddFrame(but_to_TLOG, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
+
+  hor_frame1->AddFrame(group_frame1, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
+  
+  TGGroupFrame *group_frame2 = new TGGroupFrame(hor_frame1, "", kVerticalFrame);
+  group_frame2->SetTitle("Update MYA");
+  
+  //  TGSelectBox *box_to_MYA = new TGSelectBox(hor_frame1, fMain);
+  but_to_MYA = new TGCheckButton(hor_frame1, "Send to MYA");
+  hor_frame1->AddFrame(but_to_MYA, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
+  
   TGTextButton *submit = new TGTextButton(hor_frame1, "&Submit");
   submit->Connect("Clicked()", "Fitter", this, "SubmitToLogbook()");
   hor_frame1->AddFrame(submit, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
 
-  //  TGSelectBox *box_to_MYA = new TGSelectBox(hor_frame1, fMain);
-  but_to_MYA = new TGCheckButton(hor_frame1, "Send to MYA");
-  hor_frame1->AddFrame(but_to_MYA, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
 
   fMain_log->AddFrame(hor_frame1, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
 

@@ -32,6 +32,9 @@ private:
   TGComboBox *counters_box;
   TGTextEdit *comments;
   TGCheckButton *but_to_MYA;
+  TGCheckButton *but_to_HBLOG;
+  TGCheckButton *but_to_ELOG;
+  TGCheckButton *but_to_TLOG;
   TGMainFrame *fMain_log;
   bool fit_2c21;
   bool fit_tagger;
