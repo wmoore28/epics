@@ -1,4 +1,4 @@
-#!../../bin/linux-x86/svtDaq
+#!../../bin/linux-x86_64/svtDaq
 
 #< envPaths_x86
 < envPaths

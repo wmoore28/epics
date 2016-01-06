@@ -19,7 +19,7 @@ USR_INCLUDES += -I/usr/include/libxml2
 
 #SVT DAQ STUFF
 #SVTDAQLIB = $(TOP)/../svtDaqLib
-USR_INCLUDES += -I$(SVTDAQLIB)
+#USR_INCLUDES += -I$(SVTDAQLIB)
 
 # Compile and add the code to the support library
 #svtDaqSupport_SRCS += xxxRecord.c
@@ -62,14 +62,14 @@ svtDaq_SRCS_vxWorks += -nil-
 svtDaq_LIBS += svtDaqSupport
 svtDaq_LIBS += devIocStats
 
-xml2_DIR += /usr/lib  
+xml2_DIR += $(LIBS)  
 xml2_LIBS += xml2  
 svtDaq_LIBS += xml2
 
 #SVT DAQ EXTERNAL LIB
-svtDaqExt_DIR += $(SVTDAQLIB)  
-svtDaqExt_LIBS += svtDaqExt  
-svtDaq_LIBS += svtDaqExt
+#svtDaqExt_DIR += $(SVTDAQLIB)  
+#svtDaqExt_LIBS += svtDaqExt  
+svtDaq_LIBS += svtDaqLibExt
 
 # Finally link to the EPICS Base libraries
 svtDaq_LIBS += $(EPICS_BASE_IOC_LIBS)

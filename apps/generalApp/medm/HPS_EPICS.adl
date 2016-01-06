@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v1.3.0/apps/medm/HPS_EPICS.adl"
+	name="/usr/clas12/hps/v2.0.0/apps/generalApp/medm/HPS_EPICS.adl"
 	version=030108
 }
 display {
 	object {
-		x=674
-		y=151
+		x=118
+		y=16
 		width=240
 		height=835
 	}
@@ -601,8 +601,21 @@ text {
 		height=20
 	}
 	display[0] {
-		label="Voltages"
-		name="voltages.adl"
+		label="     ECAL HV   "
+		name="ECalHVStatusCompact.adl"
+	}
+	display[1] {
+		label="     BEAM     "
+		name="bm.adl"
+	}
+	display[2] {
+		label="     BLMs     "
+		name="blm.adl"
+	}
+	display[3] {
+		label="     ECAL LV"
+		name="hps_ecal_lv.adl"
+		args="P=HPSECALLV"
 	}
 	clr=14
 	bclr=50
@@ -745,8 +758,24 @@ text {
 		height=20
 	}
 	display[0] {
-		label="misc screens"
-		name="misc_screens.adl"
+		label="VESDA    "
+		name="vesda2.adl"
+	}
+	display[1] {
+		label="Beamline Vacuum"
+		name="vacuum.adl"
+	}
+	display[2] {
+		label="Tagger Dump Lamp"
+		name="tagger_dump_lamp.adl"
+	}
+	display[3] {
+		label="Weather"
+		name="hallBenv.adl"
+	}
+	display[4] {
+		label="ECAL Temperature"
+		name="hps_ecal_temp.adl"
 	}
 	clr=14
 	bclr=50
@@ -964,10 +993,10 @@ text {
 		label="Open screenshots folder"
 		name="nautilus ~hpsrun/screenshots &"
 	}
-        command[2] {
-                label="Screenshot --> Log Entry"
-                name="xterm -e $APP/generalApp/scripts/takeScreenshotMakeLogEntry.sh"
-        }
+	command[2] {
+		label="Screenshot --> Log Entry"
+		name="xterm -e $APP/generalApp/scripts/takeScreenshotMakeLogEntry.sh"
+	}
 	clr=14
 	bclr=50
 }
@@ -1181,4 +1210,31 @@ text {
 	}
 	textix="Hall B Status"
 	align="horiz. centered"
+}
+text {
+	object {
+		x=197
+		y=373
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL"
+}
+"related display" {
+	object {
+		x=167
+		y=369
+		width=20
+		height=20
+	}
+	display[0] {
+		label="ECAL SLOW CONTROLS"
+		name="hps_ecal_all.adl"
+		args="P=HPSECALLV,PC=HPS_ECAL:CHILLER:"
+	}
+	clr=14
+	bclr=50
 }

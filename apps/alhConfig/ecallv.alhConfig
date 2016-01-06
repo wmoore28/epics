@@ -1,0 +1,24 @@
+GROUP NULL LV
+$GUIDANCE
+	Some low voltage sensor on ECAL is out of specs.
+$END
+
+
+$SEVRCOMMAND UP_MAJOR /home/hpsrun/scripts/notify_expert_auto.pl ecal_expert ECAL lowVoltage OUT OF SPEC
+
+CHANNEL LV HPSECALLV:v1mon
+$ALARMCOUNTFILTER -1 15
+$COMMAND medm -x -attach -cmap -macro "sig=HPSECALLV:v1mon" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL LV HPSECALLV:v2mon
+$ALARMCOUNTFILTER -1 15
+$COMMAND medm -x -attach -cmap -macro "sig=HPSECALLV:v2mon" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL LV HPSECALLV:i1mon
+$ALARMCOUNTFILTER -1 15
+$COMMAND medm -x -attach -cmap -macro "sig=HPSECALLV:i1mon" aiaocalc_alarm.adl >> /dev/null
+
+CHANNEL LV HPSECALLV:i2mon
+$ALARMCOUNTFILTER -1 15
+$COMMAND medm -x -attach -cmap -macro "sig=HPSECALLV:i2mon" aiaocalc_alarm.adl >> /dev/null
+

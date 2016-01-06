@@ -1,4 +1,4 @@
-#!../../bin/linux-x86/keithley6221
+#!../../bin/linux-x86_64/keithley6221
 
 ## You may have to change keithley6221 to something else
 ## everywhere it appears in this file
@@ -27,4 +27,6 @@ dbLoadRecords("db/keithley6221.db", "P=K, R=6221:, PORT=SER2")
 cd ${TOP}/iocBoot/${IOC}
 dbl > keithley_pv.list
 iocInit
+
+seq &check_voltage
 

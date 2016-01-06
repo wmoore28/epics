@@ -1,4 +1,4 @@
-#!../../bin/linux-x86/wave2root
+#!../../bin/linux-x86_64/wave2root
 
 ## You may have to change pxi to something else
 ## everywhere it appears in this file

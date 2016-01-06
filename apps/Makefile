@@ -26,6 +26,8 @@ classc8App_DEPEND_DIRS += $(filter %App,$(DIRS))
 
 hvcaApp_DEPEND_DIRS    += adl_genApp
 generalApp_DEPEND_DIRS += hvcaApp
+svtDaqApp_DEPEND_DIRS    += svtDaqLibExtApp
+svtDaqDpmApp_DEPEND_DIRS += svtDaqLibExtApp
 
 include $(TOP)/configure/RULES_TOP
 

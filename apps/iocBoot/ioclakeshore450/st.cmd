@@ -1,4 +1,4 @@
-#!../../bin/linux-x86/lakeshore450
+#!../../bin/linux-x86_64/lakeshore450
 
 ## You may have to change lakeshore450 to something else
 ## everywhere it appears in this file

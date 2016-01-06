@@ -21,7 +21,7 @@ DBD += keithley6221.dbd
 # keithley6221.dbd will be made up from these files:
 keithley6221_DBD += base.dbd
 keithley6221_DBD += stream.dbd
-keithley6221_DBD += drvAsynIPPort.dbd
+keithley6221_DBD += drvAsynIPPort.dbd asyn.dbd
 keithley6221_DBD += asSupport.dbd
 keithley6221_DBD += devIocStats.dbd
 
@@ -37,9 +37,12 @@ keithley6221_LIBS += autosave
 keithley6221_LIBS += stream
 keithley6221_LIBS += devIocStats
 keithley6221_LIBS += asyn
+keithley6221_LIBS += seq pv
 
 # Finally link to the EPICS Base libraries
 keithley6221_LIBS += $(EPICS_BASE_IOC_LIBS)
+
+
 
 #=============================
 

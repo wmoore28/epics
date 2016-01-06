@@ -1,4 +1,4 @@
-#!../../bin/linux-x86/plc2epics
+#!../../bin/linux-x86_64/plc2epics
 
 < envPaths
 

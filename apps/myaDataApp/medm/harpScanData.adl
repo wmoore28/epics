@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/develop/apps/myaDataApp/medm/harpScanData.adl"
+	name="/usr/clas12/hps/prod/apps/myaDataApp/medm/harpScanData.adl"
 	version=030108
 }
 display {
 	object {
-		x=777
-		y=49
+		x=768
+		y=60
 		width=350
-		height=550
+		height=650
 	}
 	clr=14
 	bclr=4
@@ -612,6 +612,62 @@ text {
 	}
 	monitor {
 		chan="$(P):peak_x"
+		clr=32
+		bclr=11
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=552
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Scan Time (unix time)"
+}
+text {
+	object {
+		x=25
+		y=577
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Counter Number"
+}
+"text update" {
+	object {
+		x=251
+		y=548
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P):unix_time"
+		clr=32
+		bclr=11
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=251
+		y=573
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P):counter_num"
 		clr=32
 		bclr=11
 	}

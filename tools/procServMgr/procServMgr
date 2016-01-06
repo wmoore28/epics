@@ -22,8 +22,8 @@
 #-----------------------------------------------------------------------
 # Global Variables
 #-----------------------------------------------------------------------
-SCRIPT_USER=epics
-#SCRIPT_USER=wmoore
+#SCRIPT_USER=epics
+SCRIPT_USER=wmoore
 #SCRIPT_USER=phansson
 SCRIPT_NAME=procServMgr
 
@@ -32,7 +32,7 @@ SCRIPT_NAME=procServMgr
 #-----------------------------------------------------------------------
 CONFIG_DIR=/usr/clas12/hps/prod/apps/iocBoot
 LOG_DIR=/usr/clas12/hps/logs
-APP_DIR=/usr/local/clas12/release/0.2/R3.14.12.3/extensions/bin/linux-x86
+APP_DIR=/usr/local/bin
 IOC_DIR=$CONFIG_DIR
 DIR_LIST="$APP_DIR $CONFIG_DIR $IOC_DIR $LOG_DIR"
 

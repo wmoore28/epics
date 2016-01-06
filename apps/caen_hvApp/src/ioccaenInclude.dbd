@@ -1,6 +1,6 @@
-include "/usr/local/clas12/release/0.1/R3.14.12.3/base/dbd/base.dbd"
+include "base.dbd"
 
-include "/usr/local/clas12/release/0.1/R3.14.12.3/base/dbd/bigsubRecord.dbd"
+include "bigsubRecord.dbd"
 
 device(ao,VME_IO,devAoCAEN,"CAEN_HV")
 device(bo,VME_IO,devBoCAEN,"CAEN_HV")

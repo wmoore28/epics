@@ -42,7 +42,7 @@ PROD_IOC_vxWorks = classc6
 DBD += classc6.dbd
 
 # classc6.dbd will be made up from these files:
-##classc6_DBD += base.dbd
+classc6_DBD += base.dbd
 ##classc6_DBD += xxxSupport.dbd
 ##classc6_DBD += dbSubExample.dbd
 ##classc6_DBD += classc6Hello.dbd
@@ -67,23 +67,18 @@ classc6_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 # Link in the code from the support library
 ##classc6_LIBS += classc6Support
 
-classc6_LIBS += mca
+classc6_LIBS += SIS38XX mca
 classc6_LIBS += calc
 classc6_LIBS += busy
 classc6_LIBS += sscan
 classc6_LIBS += autosave
 classc6_LIBS += std
 classc6_LIBS += stream streamSynApps
-classc6_LIBS += asyn
-
-
-
-classc6_LIBS += mcaSIS
-classc6_LIBS += mcaCanberra
-
 classc6_LIBS += devIocStats
+classc6_LIBS += asyn
+#classc6_LIBS += devIocStats
 
-classc6_LIBS += seqDev seq pv 
+classc6_LIBS += seq pv 
 
 ##classc6_LIBS += sixty_hzSupport
 classc6_LIBS += btaSupport

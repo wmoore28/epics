@@ -18,12 +18,12 @@ struckDaqSupport_DBD += calcSupport.dbd
 struckDaqSupport_DBD += busySupport.dbd 
 struckDaqSupport_DBD += sscanSupport.dbd 
 struckDaqSupport_DBD += asSupport.dbd
-struckDaqSupport_DBD += devSequencer.dbd
+#struckDaqSupport_DBD += devSequencer.dbd
 struckDaqSupport_DBD += vmeVXSupport.dbd
 struckDaqSupport_DBD += std.dbd
 
 struckDaqSupport_DBD += mcaSupport.dbd
-struckDaqSupport_DBD += mcaSISSupport.dbd
+struckDaqSupport_DBD += SIS38XXSupport.dbd
 struckDaqSupport_DBD += stdVXSupport.dbd
 
 
@@ -58,9 +58,9 @@ struckDaq_LIBS += autosave
 struckDaq_LIBS += vme
 struckDaq_LIBS += std
 struckDaq_LIBS += asyn
-struckDaq_LIBS += seqDev seq pv 
+struckDaq_LIBS += seq pv 
 
-struckDaq_LIBS += mcaSIS
+struckDaq_LIBS += SIS38XX
 
 
 # NOTE: To build SNL programs, SNCSEQ must be defined

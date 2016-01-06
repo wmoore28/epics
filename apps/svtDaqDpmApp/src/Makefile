@@ -54,14 +54,14 @@ svtDaqDpm_SRCS_vxWorks += -nil-
 svtDaqDpm_LIBS += svtDaqDpmSupport
 svtDaqDpm_LIBS += devIocStats
 
-xml2_DIR += /usr/lib  
+xml2_DIR += $(LIBS)  
 xml2_LIBS += xml2  
 svtDaqDpm_LIBS += xml2
 
 #SVT DAQ EXTERNAL LIB
-svtDaqExt_DIR += $(SVTDAQLIB)  
-svtDaqExt_LIBS += svtDaqExt  
-svtDaqDpm_LIBS += svtDaqExt
+#svtDaqExt_DIR += $(SVTDAQLIB)  
+#svtDaqExt_LIBS += svtDaqExt  
+svtDaqDpm_LIBS += svtDaqLibExt
 
 # Finally link to the EPICS Base libraries
 svtDaqDpm_LIBS += $(EPICS_BASE_IOC_LIBS)

@@ -299,7 +299,7 @@ ss harp_scan_snc {
 	pvPut(harp_speed);
 
 	harp_absolute_move = -5.;
-   pvPut(harp_absolute_move);
+	pvPut(harp_absolute_move);
 	command = 0;
         pvPut(command);
      } state wait_lls

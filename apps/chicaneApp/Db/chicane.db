@@ -1,0 +1,156 @@
+
+record (bo, "$(P):start")
+{
+}
+record (bo, "$(P):stop")
+{
+}
+record (bo, "$(P):calc")
+{
+}
+record (stringout, "$(P):msg")
+{
+}
+
+
+
+
+record (ai, "$(P):complete")
+{
+}
+
+record (bo, "$(P):isReady")
+{
+}
+record (bo, "$(P):isError")
+{
+}
+record (bo, "$(P):isOff")
+{
+}
+
+record (ai, "$(P):iCalcMT")
+{
+}
+record (ai, "$(P):iCalcPS")
+{
+}
+record (ai, "$(P):iSetMT")
+{
+}
+record (ai, "$(P):iMonMT")
+{
+}
+record (ai, "$(P):iSetPS")
+{
+}
+record (ai, "$(P):iMonPS")
+{
+}
+
+record (ai, "$(P):energy")
+{
+    field(VAL,2.2)
+}
+
+
+
+# these defaults should be changed for real magnet:
+record (ai, "$(P):tHoldMax")
+{
+    field(VAL,5)
+}
+record (ai, "$(P):iDelta")
+{
+    field(VAL,1.0)
+}
+
+
+record(calc,"$(P):comstatMT")
+{
+    field(INPA,"MTCCMODE")     # Remote Mode
+    field(INPB,"MTSERIALSTAT") # Serial Comms Status
+    field(CALC,"A+B")
+    field(SCAN,"2 second")
+
+}
+record(calc,"$(P):statMT")
+{
+    field(INPA,"MTIPFAULT")   # Input Power
+    field(INPB,"MTFCFAULT")   # Firing Circuit
+    field(INPC,"MTZFCFAULT")  # ZFCT
+    field(INPD,"MTLSODFAULT") # Local Stop / Open Door
+    field(INPE,"MTOTFAULT")   # Xmfr/Thy Overtemp
+    field(INPF,"MTOCFAULT")   # Over Current
+    field(INPG,"MTOVFAULT")   # Over Voltage
+    field(INPH,"MTGDFAULT")   # Ground
+    field(INPI,"MTPFSHUTDWN") # Power Failure Shutdown
+    field(INPJ,"MTLCWFAULT")  # LCW
+    field(INPK,"MTESILOCK")   # External Safety Interlock
+    field(INPL,"MTVLWARN")    # Voltage Limit Warning
+    field(CALC,"A+B+C+D+E+F+G+H+I+J+K+L")
+    field(SCAN,"2 second")
+}
+record(calc,"$(P):globalstatPS")
+{
+    field(INPA,"PSPECR.B1")
+    field(INPB,"PSPECr.B1")
+    field(INPC,"PSPECr.B2")
+    field(CALC,"A+B+C")
+    field(SCAN,"2 second")
+}
+record(calc,"$(P):intlk1PS")
+{
+    field(INPA,"PSPECR.B0")    # Spare Interlock
+    field(INPB,"PSPECr.B0")    # One Transistor
+    field(INPC,"PSPECR.B3")    # DC Over Current
+    field(INPD,"PSPECR.B4")    # DC Overload
+    field(INPE,"PSPECR.B5")    # Regulation Module
+    field(INPF,"PSPECR.B6")    # Max Current Set
+    field(INPG,"PSPECR,B7")    # Phase/Unbalance
+    field(CALC,"A+B+C+D+E+F+G")
+    field(SCAN,"2 second")
+}
+record(calc,"$(P):intlk2PS")
+{
+    field(INPA,"PSPECR.B8")    # MPS Waterflow
+    field(INPB,"PSPECR.B9")    # Earth Leakage
+    field(INPC,"PSPECR.BA")    # Thermal Breaker
+    field(INPD,"PSPECR.BB")    # MPS Overtemperature
+    field(INPE,"PSPECR.BC")    # Panic Button / Door Switch
+    field(INPF,"PSPECR.BE")    # Magnet Overterperature
+    field(INPG,"PSPECR.BD")    # Safety System
+    field(CALC,"A+B+C+D+E+F+G+H")
+    field(SCAN,"2 second")
+}
+record(calc,"$(P):comstatPS")
+{
+    field(INPA,"PSPECR.BF")    # Comm Error
+    field(INPB,"PSPECR.B4")    # No Reponse
+    field(INPC,"PSPECR.B5")    # RX Data Buffer Overrun
+    field(INPD,"PSPECR.B6")    # Wrong Address Responded
+    field(INPE,"PSPECR.B7")    # RX Data Corrupted
+    field(INPF,"PSPECR.B8")    # Bad RX Termination
+    field(INPG,"PSPECR.B9")    # Command RX Error
+    field(INPH,"PSPECr.BA")    # Setpoint Error
+    field(INPI,"PSPECr.BD")    # Polarity Stuck
+    field(INPJ,"PSPECr.BE")    # Polarity Change in Progress
+    field(CALC,"A+B+C+D+E+F+G+H+I+J")
+    field(SCAN,"2 second")
+}
+
+
+
+
+# these will be removed when deployed:
+record (bo, "$(P):gotoMax")
+{
+}
+record (bo, "$(P):gotoSet")
+{
+}
+record (bo, "$(P):gotoZero")
+{
+}
+
+
