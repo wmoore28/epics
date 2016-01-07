@@ -63,9 +63,7 @@ dbLoadRecords("db/bta_suppl.db","hall=B,ioc=classc6")
 ##dbLoadRecords("db/sixty_hz_macro.db", "FIFO=4096, HALF_FIFO=2048, CHAN=31")
 
 # Load IOC status records
-dbLoadRecords("db/iocAdminVxWorks.db","IOC=classc6")
-#dbLoadRecords("../support/devIocStats-3.1.12/db/iocAdminVxWorks.db","IOC=classc6")
-
+dbLoadRecords("${DEVIOCSTATS}/db/iocAdminVxWorks.db","IOC=iocclassc6")
 
 
 # SIS 8201/7201 scaler (STRUCK scaler) setup parameters:
