@@ -20,7 +20,6 @@
 #include <TGNumberEntry.h>
 #include <TRootEmbeddedCanvas.h>
 
-
 #include "Fitter.h" 
 
 using namespace std;
@@ -32,6 +31,8 @@ double Arnes_Corr(double , double );
 
 Fitter::Fitter(const TGWindow *p,UInt_t w,UInt_t h, string fname)
 {
+  p_wind = p;
+  fMain_log = NULL;
   // Initialize Counter Names=============
   counter_names_[0] = "FCup";
   counter_names_[1] = "Upstream Left";
@@ -56,11 +57,11 @@ Fitter::Fitter(const TGWindow *p,UInt_t w,UInt_t h, string fname)
 
   //========= Allocate Momory for Fit Parameters =======
 
-  pars_bgr_1st_peak = new double[3]; pars_A_1st_peak = new double[3]; pars_mean_1st_peak =new double[3]; pars_sigm_1st_peak = new double[3]; 
-  range_1st_peak = new double[2]; 
-  pars_bgr_2nd_peak = new double[3]; pars_A_2nd_peak = new double[3]; pars_mean_2nd_peak =new double[3]; pars_sigm_2nd_peak = new double[3]; 
-  range_2nd_peak = new double[2]; 
-  pars_bgr_3rd_peak = new double[3]; pars_A_3rd_peak = new double[3]; pars_mean_3rd_peak =new double[3]; pars_sigm_3rd_peak = new double[3]; 
+  pars_bgr_1st_peak = new double[3]; pars_A_1st_peak = new double[3]; pars_mean_1st_peak = new double[3]; pars_sigm_1st_peak = new double[3];
+  range_1st_peak = new double[2];
+  pars_bgr_2nd_peak = new double[3]; pars_A_2nd_peak = new double[3]; pars_mean_2nd_peak = new double[3]; pars_sigm_2nd_peak = new double[3];
+  range_2nd_peak = new double[2];
+  pars_bgr_3rd_peak = new double[3]; pars_A_3rd_peak = new double[3]; pars_mean_3rd_peak = new double[3]; pars_sigm_3rd_peak = new double[3];
   range_3rd_peak = new double[2]; 
   f_1st_peak = new TF1("f_1st_peak", "[0]*TMath::Gaus(x, [1], [2]) + [3]"); f_1st_peak->SetNpx(2500);
   f_2nd_peak = new TF1("f_2nd_peak", "[0]*TMath::Gaus(x, [1], [2]) + [3]"); f_2nd_peak->SetNpx(2500);
@@ -70,8 +71,9 @@ Fitter::Fitter(const TGWindow *p,UInt_t w,UInt_t h, string fname)
 
   // Create a main frame
   fMain = new TGMainFrame(p,w,h, kHorizontalFrame);
+  fMain->Connect("CloseWindow()", "Fitter", this, "CloseApp()");
   // Create canvas widget 
-  fEcanvas = new TRootEmbeddedCanvas("Ecanvas",fMain,700,900); 
+  fEcanvas = new TRootEmbeddedCanvas("Ecanvas",fMain,700,900);
   
   TGVerticalFrame *vframe = new TGVerticalFrame(fMain,200,40);
   TGTextButton *open_file = new TGTextButton(vframe, "&Choose a File");
@@ -442,12 +444,30 @@ int main(int argc, char **argv) {
   return 0;
 }
 
+void Fitter::CloseApp()
+{
+  cout<<"Exiting the Fitter"<<endl;
+  gApplication->Terminate(0);
+}
+
+void Fitter::CloseUtilFrame()
+{
+  fMain_log->CloseWindow();
+  fMain_log = NULL;
+}
+
+void Fitter::CloseFitRanges()
+{
+  f_Main_FitPars->CloseWindow();
+  f_Main_FitPars = NULL;
+}
+
 void Fitter::SubmitToLogbook()
 {
   TCanvas *c1 = (TCanvas*)fEcanvas->GetCanvas();
   c1->Modified();
   c1->Update();
-  string log_text_filename = "/usr/clas12/DATA/harp_fitter/Log_comments.txt";
+  string log_text_filename = "/usr/clas12/hps/DATA/harp_fitter/Log_comments.txt";
 
   comments->GetText()->Save(log_text_filename.c_str());
 
@@ -459,7 +479,7 @@ void Fitter::SubmitToLogbook()
   // therefore the dumped image will be in the ~/.config directory. For each user this
   // will be her/his own home/.config directory
   //string dump_img_name = "/home/hpsrun/screenshots/fit_"+file_endpart+".gif";
-  string dump_img_name = "/usr/clas12/DATA/harp_fitter/fit_"+harp_name+".gif";
+  string dump_img_name = "/usr/clas12/hps/DATA/harp_fitter/fit_"+harp_name+".gif";
   
   c1->Print(Form("%s", dump_img_name.c_str()));
   
@@ -493,120 +513,137 @@ void Fitter::SubmitToLogbook()
   system(Form("rm -f %s", log_text_filename.c_str()));
   system(Form("chmod a+w %s", dump_img_name.c_str()));
 
-  fMain_log->CloseWindow();
+
+  CloseUtilFrame();
 }
 
 void Fitter::GetComments()
 {
-  cout<<"Kuku"<<endl;
-  fMain_log = new TGMainFrame(gClient->GetRoot(), 400, 150, kVerticalFrame);
-  comments = new TGTextEdit(fMain_log, 400, 150);
-  comments->SetText(new TGText("Comments"));
-  fMain_log->AddFrame(comments, new TGLayoutHints(kLHintsExpandX| kLHintsExpandY, 2,2,2,2) );
-
-  TGHorizontalFrame *hor_frame1 = new TGHorizontalFrame(fMain_log, 400, 2, kHorizontalFrame);
-
-  TGGroupFrame *group_frame1 = new TGGroupFrame(hor_frame1, "", kVerticalFrame);
-  group_frame1->SetTitle("Select Logbook(s)");
-  but_to_HBLOG = new TGCheckButton(group_frame1, "HBLog");
-  but_to_HBLOG->SetOn();
-  group_frame1->AddFrame(but_to_HBLOG, new TGLayoutHints(kLHintsCenterX ,2,2,2,2));
-  but_to_ELOG = new TGCheckButton(group_frame1, "ELog");
-  group_frame1->AddFrame(but_to_ELOG, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
-  but_to_TLOG = new TGCheckButton(group_frame1, "TLog");
-  group_frame1->AddFrame(but_to_TLOG, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
-
-  hor_frame1->AddFrame(group_frame1, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
-  
-  TGGroupFrame *group_frame2 = new TGGroupFrame(hor_frame1, "", kVerticalFrame);
-  group_frame2->SetTitle("Update MYA");
-  
-  //  TGSelectBox *box_to_MYA = new TGSelectBox(hor_frame1, fMain);
-  but_to_MYA = new TGCheckButton(hor_frame1, "Send to MYA");
-  hor_frame1->AddFrame(but_to_MYA, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
-  
-  TGTextButton *submit = new TGTextButton(hor_frame1, "&Submit");
-  submit->Connect("Clicked()", "Fitter", this, "SubmitToLogbook()");
-  hor_frame1->AddFrame(submit, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
-
-
-  fMain_log->AddFrame(hor_frame1, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
-
-  fMain_log->SetWindowName("Sumit to Logbook"); 
-  // Map all subwindows of main frame 
-  fMain_log->MapSubwindows();
-  // Initialize the layout algorithm 
-  fMain_log->Resize(fMain_log->GetDefaultSize()); 
-  // Map main frame 
-  fMain_log->MapWindow();
+  if( !fMain_log  ){
+    cout<<"Kuku"<<endl;
+    fMain_log = new TGTransientFrame(gClient->GetRoot(), p_wind, 400, 150);
+    fMain_log->Connect("CloseWindow()", "Fitter", this, "CloseUtilFrame()");
+    fMain_log->SetCleanup(kDeepCleanup);
+    fMain_log->DontCallClose(); // to avoid double deletions.
+    
+    //fMain_log = new TGCompositeFrame(gClient->GetRoot(), 400, 150, kChildFrame);
+    //  fMain_log->Connect("Closed()", NULL, NULL, "CloseWindow()");
+    comments = new TGTextEdit(fMain_log, 400, 150);
+    comments->SetText(new TGText("Comments"));
+    fMain_log->AddFrame(comments, new TGLayoutHints(kLHintsExpandX| kLHintsExpandY, 2,2,2,2) );
+    
+    TGHorizontalFrame *hor_frame1 = new TGHorizontalFrame(fMain_log, 400, 2, kHorizontalFrame);
+    
+    TGGroupFrame *group_frame1 = new TGGroupFrame(hor_frame1, "", kVerticalFrame);
+    group_frame1->SetTitle("Select Logbook(s)");
+    but_to_HBLOG = new TGCheckButton(group_frame1, "HBLog");
+    but_to_HBLOG->SetOn();
+    group_frame1->AddFrame(but_to_HBLOG, new TGLayoutHints(kLHintsCenterX ,2,2,2,2));
+    but_to_ELOG = new TGCheckButton(group_frame1, "ELog");
+    group_frame1->AddFrame(but_to_ELOG, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
+    but_to_TLOG = new TGCheckButton(group_frame1, "TLog");
+    group_frame1->AddFrame(but_to_TLOG, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
+    
+    hor_frame1->AddFrame(group_frame1, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
+    
+    TGGroupFrame *group_frame2 = new TGGroupFrame(hor_frame1, "", kVerticalFrame);
+    group_frame2->SetTitle("Update MYA");
+    
+    //  TGSelectBox *box_to_MYA = new TGSelectBox(hor_frame1, fMain);
+    but_to_MYA = new TGCheckButton(hor_frame1, "Send to MYA");
+    hor_frame1->AddFrame(but_to_MYA, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
+    
+    TGTextButton *submit = new TGTextButton(hor_frame1, "&Submit");
+    submit->Connect("Clicked()", "Fitter", this, "SubmitToLogbook()");
+    hor_frame1->AddFrame(submit, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
+    
+    fMain_log->AddFrame(hor_frame1, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
+    
+    fMain_log->SetWindowName("Sumit to Logbook");
+    // Map all subwindows of main frame 
+    fMain_log->MapSubwindows();
+    // Initialize the layout algorithm 
+    fMain_log->Resize(fMain_log->GetDefaultSize()); 
+    // Map main frame 
+    fMain_log->MapWindow();
+  }
+  else{
+    fMain_log->RaiseWindow();
+  }
 }
 
 void Fitter::Set_Fit_Pars()
 {
-  TGMainFrame *f_Main_FitPars = new TGMainFrame(gClient->GetRoot(), 100, 100, kVerticalFrame);
- 
-  f_Main_FitPars->SetCleanup(kDeepCleanup); // Without this line it crashes, when one close the 
-  //  TGHorizontalFrame *f_buttons =            new TGHorizontalFrame(f_Main_FitPars, 70, 4, kHorizontalFrame );
-  TGHorizontalFrame *f_1st_peak_Fit_Range = new TGHorizontalFrame(f_Main_FitPars, 70, 4, kHorizontalFrame );
-  TGLabel *lbl_1st_peak_Fit_Range_min = new TGLabel(f_1st_peak_Fit_Range, "1st Peak Fit Range:        min");
-  f_1st_peak_Fit_Range->AddFrame(lbl_1st_peak_Fit_Range_min);
-  First_peak_range_min = new TGNumberEntry(f_1st_peak_Fit_Range, min_1st_hist, 10);
-  f_1st_peak_Fit_Range->AddFrame(First_peak_range_min,  new TGLayoutHints(kLHintsCenterX,2,2,2,2));
+  if( !f_Main_FitPars ){
+    //f_Main_FitPars = new TGTransientFrame(gClient->GetRoot(), p_wind, 100, 100, kVerticalFrame);
+    f_Main_FitPars = new TGTransientFrame(gClient->GetRoot(), p_wind, 100, 100);
+    f_Main_FitPars->Connect("CloseWindow()", "Fitter", this, "CloseFitRanges()");
+    f_Main_FitPars->SetCleanup(kDeepCleanup); // Without this line it crashes, when one close the 
+    f_Main_FitPars->DontCallClose(); // to avoid double deletions.
+    //  TGHorizontalFrame *f_buttons =            new TGHorizontalFrame(f_Main_FitPars, 70, 4, kHorizontalFrame );
+    TGHorizontalFrame *f_1st_peak_Fit_Range = new TGHorizontalFrame(f_Main_FitPars, 70, 4, kHorizontalFrame );
+    TGLabel *lbl_1st_peak_Fit_Range_min = new TGLabel(f_1st_peak_Fit_Range, "1st Peak Fit Range:        min");
+    f_1st_peak_Fit_Range->AddFrame(lbl_1st_peak_Fit_Range_min);
+    First_peak_range_min = new TGNumberEntry(f_1st_peak_Fit_Range, min_1st_hist, 10);
+    f_1st_peak_Fit_Range->AddFrame(First_peak_range_min,  new TGLayoutHints(kLHintsCenterX,2,2,2,2));
 
-  TGLabel *lbl_1st_peak_Fit_Range_max = new TGLabel(f_1st_peak_Fit_Range, "      max:");
-  f_1st_peak_Fit_Range->AddFrame(lbl_1st_peak_Fit_Range_max);
-  First_peak_range_max = new TGNumberEntry(f_1st_peak_Fit_Range, max_1st_hist, 10);
-  f_1st_peak_Fit_Range->AddFrame(First_peak_range_max,  new TGLayoutHints(kLHintsCenterX,2,2,2,2));
+    TGLabel *lbl_1st_peak_Fit_Range_max = new TGLabel(f_1st_peak_Fit_Range, "      max:");
+    f_1st_peak_Fit_Range->AddFrame(lbl_1st_peak_Fit_Range_max);
+    First_peak_range_max = new TGNumberEntry(f_1st_peak_Fit_Range, max_1st_hist, 10);
+    f_1st_peak_Fit_Range->AddFrame(First_peak_range_max,  new TGLayoutHints(kLHintsCenterX,2,2,2,2));
   
 
-  TGHorizontalFrame *f_2nd_peak_Fit_Range = new TGHorizontalFrame(f_Main_FitPars, 70, 4, kHorizontalFrame );
-  TGLabel *lbl_2nd_peak_Fit_Range_min = new TGLabel(f_2nd_peak_Fit_Range, "2nd Peak Fit Range:        min");
-  f_2nd_peak_Fit_Range->AddFrame(lbl_2nd_peak_Fit_Range_min);
-  Second_peak_range_min = new TGNumberEntry(f_2nd_peak_Fit_Range, min_2nd_hist, 10);
-  f_2nd_peak_Fit_Range->AddFrame(Second_peak_range_min,  new TGLayoutHints(kLHintsCenterX,2,2,2,2));
+    TGHorizontalFrame *f_2nd_peak_Fit_Range = new TGHorizontalFrame(f_Main_FitPars, 70, 4, kHorizontalFrame );
+    TGLabel *lbl_2nd_peak_Fit_Range_min = new TGLabel(f_2nd_peak_Fit_Range, "2nd Peak Fit Range:        min");
+    f_2nd_peak_Fit_Range->AddFrame(lbl_2nd_peak_Fit_Range_min);
+    Second_peak_range_min = new TGNumberEntry(f_2nd_peak_Fit_Range, min_2nd_hist, 10);
+    f_2nd_peak_Fit_Range->AddFrame(Second_peak_range_min,  new TGLayoutHints(kLHintsCenterX,2,2,2,2));
 
-  TGLabel *lbl_2nd_peak_Fit_Range_max = new TGLabel(f_2nd_peak_Fit_Range, "      max:");
-  f_2nd_peak_Fit_Range->AddFrame(lbl_2nd_peak_Fit_Range_max);
-  Second_peak_range_max = new TGNumberEntry(f_2nd_peak_Fit_Range, max_2nd_hist, 10);
-  f_2nd_peak_Fit_Range->AddFrame(Second_peak_range_max,  new TGLayoutHints(kLHintsCenterX,2,2,2,2));
-
-
-  TGHorizontalFrame *f_3rd_peak_Fit_Range = new TGHorizontalFrame(f_Main_FitPars, 70, 4, kHorizontalFrame );
-  TGLabel *lbl_3rd_peak_Fit_Range_min = new TGLabel(f_3rd_peak_Fit_Range, "3rd Peak Fit Range:        min");
-  f_3rd_peak_Fit_Range->AddFrame(lbl_3rd_peak_Fit_Range_min);
-  Third_peak_range_min = new TGNumberEntry(f_3rd_peak_Fit_Range, min_3rd_hist, 10);
-  f_3rd_peak_Fit_Range->AddFrame(Third_peak_range_min,  new TGLayoutHints(kLHintsCenterX,2,2,2,2));
-
-  TGLabel *lbl_3rd_peak_Fit_Range_max = new TGLabel(f_3rd_peak_Fit_Range, "      max:");
-  f_3rd_peak_Fit_Range->AddFrame(lbl_3rd_peak_Fit_Range_max);
-  Third_peak_range_max = new TGNumberEntry(f_3rd_peak_Fit_Range, max_3rd_hist, 10);
-  f_3rd_peak_Fit_Range->AddFrame(Third_peak_range_max,  new TGLayoutHints(kLHintsCenterX,2,2,2,2));
+    TGLabel *lbl_2nd_peak_Fit_Range_max = new TGLabel(f_2nd_peak_Fit_Range, "      max:");
+    f_2nd_peak_Fit_Range->AddFrame(lbl_2nd_peak_Fit_Range_max);
+    Second_peak_range_max = new TGNumberEntry(f_2nd_peak_Fit_Range, max_2nd_hist, 10);
+    f_2nd_peak_Fit_Range->AddFrame(Second_peak_range_max,  new TGLayoutHints(kLHintsCenterX,2,2,2,2));
 
 
-  f_Main_FitPars->AddFrame(f_1st_peak_Fit_Range, new TGLayoutHints(kLHintsTop,2,2,2,2));
-  f_Main_FitPars->AddFrame(f_2nd_peak_Fit_Range, new TGLayoutHints(kLHintsTop,2,2,2,2));
+    TGHorizontalFrame *f_3rd_peak_Fit_Range = new TGHorizontalFrame(f_Main_FitPars, 70, 4, kHorizontalFrame );
+    TGLabel *lbl_3rd_peak_Fit_Range_min = new TGLabel(f_3rd_peak_Fit_Range, "3rd Peak Fit Range:        min");
+    f_3rd_peak_Fit_Range->AddFrame(lbl_3rd_peak_Fit_Range_min);
+    Third_peak_range_min = new TGNumberEntry(f_3rd_peak_Fit_Range, min_3rd_hist, 10);
+    f_3rd_peak_Fit_Range->AddFrame(Third_peak_range_min,  new TGLayoutHints(kLHintsCenterX,2,2,2,2));
 
-  if( fit_tagger || fit_2H02A )
-    {
-      f_Main_FitPars->AddFrame(f_3rd_peak_Fit_Range, new TGLayoutHints(kLHintsTop,2,2,2,2)); 
-    }
-  TGHorizontalFrame *f_buttons = new TGHorizontalFrame(f_Main_FitPars, 70, 4, kHorizontalFrame );
+    TGLabel *lbl_3rd_peak_Fit_Range_max = new TGLabel(f_3rd_peak_Fit_Range, "      max:");
+    f_3rd_peak_Fit_Range->AddFrame(lbl_3rd_peak_Fit_Range_max);
+    Third_peak_range_max = new TGNumberEntry(f_3rd_peak_Fit_Range, max_3rd_hist, 10);
+    f_3rd_peak_Fit_Range->AddFrame(Third_peak_range_max,  new TGLayoutHints(kLHintsCenterX,2,2,2,2));
+
+
+    f_Main_FitPars->AddFrame(f_1st_peak_Fit_Range, new TGLayoutHints(kLHintsTop,2,2,2,2));
+    f_Main_FitPars->AddFrame(f_2nd_peak_Fit_Range, new TGLayoutHints(kLHintsTop,2,2,2,2));
+
+    if( fit_tagger || fit_2H02A )
+      {
+	f_Main_FitPars->AddFrame(f_3rd_peak_Fit_Range, new TGLayoutHints(kLHintsTop,2,2,2,2)); 
+      }
+    TGHorizontalFrame *f_buttons = new TGHorizontalFrame(f_Main_FitPars, 70, 4, kHorizontalFrame );
   
-  TGTextButton *b_Fit = new TGTextButton(f_buttons, "    &Fit    ");
-  b_Fit->Connect("Clicked()", "Fitter", this, "FitData(=true, false)");
-  f_buttons->AddFrame(b_Fit, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
+    TGTextButton *b_Fit = new TGTextButton(f_buttons, "    &Fit    ");
+    b_Fit->Connect("Clicked()", "Fitter", this, "FitData(=true, false)");
+    f_buttons->AddFrame(b_Fit, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
   
-  f_Main_FitPars->AddFrame(f_buttons, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
+    f_Main_FitPars->AddFrame(f_buttons, new TGLayoutHints(kLHintsCenterX,2,2,2,2));
 
 
-  f_Main_FitPars->SetWindowName("Set Fit Parameters Manualy"); 
-  // Map all subwindows of main frame 
-  f_Main_FitPars->MapSubwindows();
-  // Initialize the layout algorithm 
-  f_Main_FitPars->Resize(f_Main_FitPars->GetDefaultSize()); 
-  // Map main frame 
-  f_Main_FitPars->MapWindow();
-
+    f_Main_FitPars->SetWindowName("Set Fit Parameters Manualy"); 
+    // Map all subwindows of main frame 
+    f_Main_FitPars->MapSubwindows();
+    // Initialize the layout algorithm 
+    f_Main_FitPars->Resize(f_Main_FitPars->GetDefaultSize()); 
+    // Map main frame 
+    f_Main_FitPars->MapWindow();
+  }
+  else{
+    f_Main_FitPars->RaiseWindow();
+  }
 }
 
 void Fitter::Load_Fit_Pars()

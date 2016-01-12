@@ -19,6 +19,7 @@ class Fitter {
    RQ_OBJECT("Fitter")
 private: 
   TGMainFrame         *fMain;
+  const TGWindow *p_wind;
   TRootEmbeddedCanvas *fEcanvas;
   TGTextEntry *par0;
   TGFileInfo file_info;
@@ -35,7 +36,9 @@ private:
   TGCheckButton *but_to_HBLOG;
   TGCheckButton *but_to_ELOG;
   TGCheckButton *but_to_TLOG;
-  TGMainFrame *fMain_log;
+  //TGMainFrame *fMain_log;
+  TGTransientFrame *fMain_log;
+  TGTransientFrame *f_Main_FitPars;
   bool fit_2c21;
   bool fit_tagger;
   bool fit_2H02A;
@@ -86,6 +89,9 @@ public:
   void Draw_All_Counters();
   void FitData( bool, bool );
   void GetComments();
+  void CloseUtilFrame();
+  void CloseFitRanges();
+  void CloseApp();
   void SubmitToLogbook();
   bool Fit_2c21(TGraph *, std::string );
   bool Fit_tagger(TGraph *, std::string );
