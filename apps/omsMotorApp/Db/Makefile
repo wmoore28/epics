@@ -10,21 +10,6 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------------------
 # Create and install (or just install)
 # databases, templates, substitutions like this
-
-#DB += dbExample1.db
-#DB += dbExample2.db
-#DB += dbSubExample.db
-#DB += user.substitutions
-#DB += userHost.substitutions
-
-MOTOR_DB_LOC=$(MOTOR)/db
-
-DB += $(MOTOR_DB_LOC)/motor.db
-DB += $(MOTOR_DB_LOC)/asyn_motor.db 
-DB += $(MOTOR_DB_LOC)/basic_motor.db
-DB += $(MOTOR_DB_LOC)/basic_asyn_motor.db
-DB += $(MOTOR_DB_LOC)/motorUtil.db
-
 DB += omsMotor.substitutions
 
 #----------------------------------------------------
