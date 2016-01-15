@@ -1,12 +1,12 @@
 
 file {
-	name="/home/hovanes/EPICS_ALL/app/scaler/medm/scaler_control.adl"
-	version=020306
+	name="/usr/clas12/hps/v3.0.0/apps/scalerApp/medm/scaler_control.adl"
+	version=030109
 }
 display {
 	object {
-		x=34
-		y=512
+		x=25
+		y=504
 		width=800
 		height=400
 	}
@@ -884,84 +884,73 @@ text {
 	textix="Should be in norm mode for electron runs"
 	align="horiz. centered"
 }
-composite {
+"choice button" {
 	object {
 		x=164
 		y=22
 		width=200
-		height=328
+		height=20
 	}
-	"composite name"=""
-	children {
-		"choice button" {
-			object {
-				x=164
-				y=22
-				width=200
-				height=20
-			}
-			control {
-				chan="display_c_mode.VAL"
-				clr=14
-				bclr=52
-			}
-			stacking="column"
-		}
-		"choice button" {
-			object {
-				x=164
-				y=99
-				width=200
-				height=20
-			}
-			control {
-				chan="frwd_display_mode.VAL"
-				clr=14
-				bclr=52
-			}
-			stacking="column"
-		}
-		"choice button" {
-			object {
-				x=164
-				y=171
-				width=200
-				height=20
-			}
-			control {
-				chan="display_c_mode.VAL"
-				clr=14
-				bclr=52
-			}
-			stacking="column"
-		}
-		"choice button" {
-			object {
-				x=164
-				y=242
-				width=200
-				height=20
-			}
-			control {
-				chan="display_d_mode.VAL"
-				clr=14
-				bclr=52
-			}
-			stacking="column"
-		}
-		"choice button" {
-			object {
-				x=164
-				y=330
-				width=200
-				height=20
-			}
-			control {
-				chan="display_e_mode.VAL"
-				clr=14
-				bclr=52
-			}
-			stacking="column"
-		}
+	control {
+		chan="display_mode.VAL"
+		clr=14
+		bclr=52
 	}
+	stacking="column"
+}
+"choice button" {
+	object {
+		x=164
+		y=99
+		width=200
+		height=20
+	}
+	control {
+		chan="frwd_display_mode.VAL"
+		clr=14
+		bclr=52
+	}
+	stacking="column"
+}
+"choice button" {
+	object {
+		x=164
+		y=171
+		width=200
+		height=20
+	}
+	control {
+		chan="display_c_mode.VAL"
+		clr=14
+		bclr=52
+	}
+	stacking="column"
+}
+"choice button" {
+	object {
+		x=164
+		y=242
+		width=200
+		height=20
+	}
+	control {
+		chan="display_d_mode.VAL"
+		clr=14
+		bclr=52
+	}
+	stacking="column"
+}
+"choice button" {
+	object {
+		x=164
+		y=330
+		width=200
+		height=20
+	}
+	control {
+		chan="display_e_mode.VAL"
+		clr=14
+		bclr=52
+	}
+	stacking="column"
 }
