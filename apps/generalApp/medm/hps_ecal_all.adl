@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/hps_ecal_all.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./hps_ecal_all.adl"
 	version=030109
 }
 display {
 	object {
-		x=85
-		y=23
+		x=97
+		y=84
 		width=951
 		height=650
 	}
@@ -248,6 +248,10 @@ rectangle {
 	display[1] {
 		label="ECal HV Bot"
 		name="ecal_ECAL_BOTTOM.adl"
+	}
+	display[2] {
+		label="Cosmic PMTs"
+		name="ECalHVCosmicPMTs.adl"
 	}
 	clr=14
 	bclr=5
@@ -6215,7 +6219,7 @@ rectangle {
 "text update" {
 	object {
 		x=95
-		y=579
+		y=578
 		width=154
 		height=15
 	}
@@ -6231,7 +6235,7 @@ rectangle {
 text {
 	object {
 		x=52
-		y=579
+		y=578
 		width=36
 		height=19
 	}
