@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/./generalApp/medm/hps_ecal_all.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./hps_ecal_all.adl"
 	version=030109
 }
 display {
@@ -4023,7 +4023,7 @@ polyline {
 }
 "text update" {
 	object {
-		x=68
+		x=72
 		y=500
 		width=50
 		height=15
@@ -4043,7 +4043,7 @@ polyline {
 }
 "text update" {
 	object {
-		x=123
+		x=127
 		y=500
 		width=50
 		height=15
@@ -4063,7 +4063,7 @@ polyline {
 }
 "text update" {
 	object {
-		x=67
+		x=72
 		y=518
 		width=50
 		height=15
@@ -4083,7 +4083,7 @@ polyline {
 }
 "text update" {
 	object {
-		x=123
+		x=127
 		y=518
 		width=50
 		height=15
@@ -4103,7 +4103,7 @@ polyline {
 }
 text {
 	object {
-		x=127
+		x=131
 		y=483
 		width=42
 		height=12
@@ -4115,7 +4115,7 @@ text {
 }
 text {
 	object {
-		x=71
+		x=75
 		y=483
 		width=42
 		height=12
@@ -4151,7 +4151,7 @@ text {
 }
 text {
 	object {
-		x=84
+		x=88
 		y=369
 		width=66
 		height=20
@@ -4164,7 +4164,7 @@ text {
 }
 oval {
 	object {
-		x=87
+		x=91
 		y=401
 		width=10
 		height=10
@@ -4180,7 +4180,7 @@ oval {
 }
 oval {
 	object {
-		x=87
+		x=91
 		y=401
 		width=10
 		height=10
@@ -4196,7 +4196,7 @@ oval {
 }
 text {
 	object {
-		x=105
+		x=109
 		y=400
 		width=40
 		height=17
@@ -4213,7 +4213,7 @@ text {
 }
 text {
 	object {
-		x=105
+		x=109
 		y=400
 		width=40
 		height=12
@@ -4230,7 +4230,7 @@ text {
 }
 oval {
 	object {
-		x=87
+		x=91
 		y=422
 		width=10
 		height=10
@@ -4246,7 +4246,7 @@ oval {
 }
 oval {
 	object {
-		x=87
+		x=91
 		y=422
 		width=10
 		height=10
@@ -4262,7 +4262,7 @@ oval {
 }
 text {
 	object {
-		x=105
+		x=109
 		y=421
 		width=40
 		height=12
@@ -4279,7 +4279,7 @@ text {
 }
 text {
 	object {
-		x=105
+		x=109
 		y=421
 		width=40
 		height=12
@@ -4296,7 +4296,7 @@ text {
 }
 oval {
 	object {
-		x=116
+		x=120
 		y=445
 		width=14
 		height=14
@@ -4312,7 +4312,7 @@ oval {
 }
 oval {
 	object {
-		x=116
+		x=120
 		y=445
 		width=14
 		height=14
@@ -4328,7 +4328,7 @@ oval {
 }
 text {
 	object {
-		x=97
+		x=101
 		y=446
 		width=15
 		height=12
@@ -4345,7 +4345,7 @@ text {
 }
 text {
 	object {
-		x=97
+		x=101
 		y=446
 		width=30
 		height=12
@@ -4402,7 +4402,7 @@ text {
 }
 "text update" {
 	object {
-		x=186
+		x=187
 		y=518
 		width=50
 		height=15
@@ -4695,7 +4695,7 @@ text {
 }
 polyline {
 	object {
-		x=86
+		x=90
 		y=385
 		width=60
 		height=0
@@ -4707,8 +4707,8 @@ polyline {
 		chan="LV:DC:S$(S):L$(L):SET_ONOFF"
 	}
 	points {
-		(86,385)
-		(146,385)
+		(90,385)
+		(150,385)
 	}
 }
 "text update" {
@@ -6256,5 +6256,29 @@ rectangle {
 	}
 	"basic attribute" {
 		clr=6
+	}
+}
+rectangle {
+	object {
+		x=68
+		y=364
+		width=112
+		height=176
+	}
+	"basic attribute" {
+		clr=10
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=184
+		y=364
+		width=112
+		height=176
+	}
+	"basic attribute" {
+		clr=10
+		fill="outline"
 	}
 }
