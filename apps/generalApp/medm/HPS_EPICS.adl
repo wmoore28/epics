@@ -1,7 +1,7 @@
 
 file {
-	name="/usr/clas12/hps/v2.0.0/apps/generalApp/medm/HPS_EPICS.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./HPS_EPICS.adl"
+	version=030109
 }
 display {
 	object {
@@ -366,49 +366,9 @@ text {
 		name="cd $APP/generalApp/strip; StripTool &"
 	}
 	command[1] {
-		label="MyaViewer (clonpc11)"
-		name="xterm -title MyaViewer -e "
-		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc11 &"
-	}
-	command[2] {
-		label="MyaViewer (clonpc12)"
-		name="xterm -title MyaViewer -e"
-		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc12 &"
-	}
-	command[3] {
-		label="MyaViewer (clonpc13)"
-		name="xterm -title MyaViewer -e "
-		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc13 &"
-	}
-	command[4] {
-		label="MyaViewer (clonpc14)"
-		name="xterm -title MyaViewer -e "
-		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc14 &"
-	}
-	command[5] {
-		label="MyaViewer (clonpc15)"
-		name="xterm -title MyaViewer -e "
-		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc15 &"
-	}
-	command[6] {
-		label="MyaViewer (clonpc16)"
-		name="xterm -title MyaViewer -e "
-		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc16 &"
-	}
-	command[7] {
-		label="MyaViewer (clonpc17)"
-		name="xterm -title MyaViewer -e "
-		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc17 &"
-	}
-	command[8] {
-		label="MyaViewer (clonpc18)"
-		name="xterm -title MyaViewer -e "
-		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc18 &"
-	}
-	command[9] {
-		label="MyaViewer (clonpc19)"
-		name="xterm -title MyaViewer -e "
-		args="$APP/generalApp/scripts/MyaViewer_launcher.sh -h clonpc19 &"
+		label="MyaViewer"
+		name="MyaViewer"
+		args="&"
 	}
 	clr=14
 	bclr=50
@@ -941,7 +901,7 @@ text {
 	"basic attribute" {
 		clr=0
 	}
-	textix="Release: v0.0.0"
+	textix="Release: v3.0.0"
 }
 "shell command" {
 	object {
@@ -952,11 +912,11 @@ text {
 	}
 	command[0] {
 		label="ECAL DSC2 GUI"
-		name="/usr/clas12/hps/prod/tools/ecal/runEcalDSC2ScalerGui.sh &"
+		name="hps_ecal_scalers -d &"
 	}
 	command[1] {
 		label="ECAL FADC GUI"
-		name="/usr/clas12/hps/prod/tools/ecal/runEcalFADCScalerGui.sh &"
+		name="hps_ecal_scalers &"
 	}
 	command[2] {
 		label="ECAL Diag GUI (solaris-only)"
