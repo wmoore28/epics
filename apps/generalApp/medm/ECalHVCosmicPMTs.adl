@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/ECalHVCosmicPMTs.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./ECalHVCosmicPMTs.adl"
 	version=030109
 }
 display {
@@ -11,7 +11,7 @@ display {
 		height=108
 	}
 	clr=10
-	bclr=13
+	bclr=5
 	cmap=""
 	gridSpacing=5
 	gridOn=0
@@ -95,7 +95,7 @@ text {
 		height=15
 	}
 	"basic attribute" {
-		clr=0
+		clr=14
 		style="dash"
 	}
 	textix="ECal_cosm1"
@@ -104,14 +104,14 @@ text {
 "message button" {
 	object {
 		x=85
-		y=47
+		y=44
 		width=28
-		height=15
+		height=20
 	}
 	control {
 		chan="B_hv_ECal_cosm1_CE"
 		clr=15
-		bclr=13
+		bclr=8
 	}
 	label="Ena"
 	press_msg="1"
@@ -137,14 +137,14 @@ oval {
 "message button" {
 	object {
 		x=137
-		y=47
+		y=44
 		width=28
-		height=15
+		height=20
 	}
 	control {
 		chan="B_hv_ECal_cosm1_CE"
 		clr=20
-		bclr=13
+		bclr=7
 	}
 	label="Dis"
 	press_msg="0"
@@ -159,8 +159,8 @@ oval {
 	}
 	monitor {
 		chan="B_hv_ECal_cosm1_property.F"
-		clr=2
-		bclr=12
+		clr=14
+		bclr=0
 	}
 	clrmod="discrete"
 	align="horiz. centered"
@@ -176,8 +176,8 @@ oval {
 	}
 	monitor {
 		chan="B_hv_ECal_cosm1_property.G"
-		clr=2
-		bclr=12
+		clr=14
+		bclr=0
 	}
 	clrmod="discrete"
 	align="horiz. centered"
@@ -187,14 +187,14 @@ oval {
 "text entry" {
 	object {
 		x=344
-		y=45
+		y=44
 		width=80
 		height=20
 	}
 	control {
 		chan="B_hv_ECal_cosm1_DV"
-		clr=0
-		bclr=13
+		clr=14
+		bclr=55
 	}
 	clrmod="discrete"
 	limits {
@@ -209,8 +209,8 @@ oval {
 	}
 	monitor {
 		chan="B_hv_ECal_cosm1_property.E"
-		clr=2
-		bclr=12
+		clr=14
+		bclr=0
 	}
 	clrmod="discrete"
 	align="horiz. centered"
@@ -226,8 +226,8 @@ oval {
 	}
 	monitor {
 		chan="B_hv_ECal_cosm1_property.L"
-		clr=2
-		bclr=12
+		clr=14
+		bclr=0
 	}
 	clrmod="discrete"
 	align="horiz. centered"
@@ -242,7 +242,7 @@ text {
 		height=12
 	}
 	"basic attribute" {
-		clr=0
+		clr=14
 		style="dash"
 	}
 	textix="ECal_cosm2"
@@ -251,14 +251,14 @@ text {
 "message button" {
 	object {
 		x=85
-		y=71
+		y=68
 		width=28
-		height=15
+		height=20
 	}
 	control {
 		chan="B_hv_ECal_cosm2_CE"
 		clr=15
-		bclr=13
+		bclr=8
 	}
 	label="Ena"
 	press_msg="1"
@@ -284,14 +284,14 @@ oval {
 "message button" {
 	object {
 		x=137
-		y=71
+		y=68
 		width=28
-		height=15
+		height=20
 	}
 	control {
 		chan="B_hv_ECal_cosm2_CE"
 		clr=20
-		bclr=13
+		bclr=7
 	}
 	label="Dis"
 	press_msg="0"
@@ -306,8 +306,8 @@ oval {
 	}
 	monitor {
 		chan="B_hv_ECal_cosm2_property.F"
-		clr=2
-		bclr=12
+		clr=14
+		bclr=0
 	}
 	clrmod="discrete"
 	align="horiz. centered"
@@ -323,8 +323,8 @@ oval {
 	}
 	monitor {
 		chan="B_hv_ECal_cosm2_property.G"
-		clr=2
-		bclr=12
+		clr=14
+		bclr=0
 	}
 	clrmod="discrete"
 	align="horiz. centered"
@@ -334,14 +334,14 @@ oval {
 "text entry" {
 	object {
 		x=344
-		y=69
+		y=68
 		width=80
 		height=20
 	}
 	control {
 		chan="B_hv_ECal_cosm2_DV"
-		clr=0
-		bclr=13
+		clr=14
+		bclr=55
 	}
 	clrmod="discrete"
 	limits {
@@ -356,8 +356,8 @@ oval {
 	}
 	monitor {
 		chan="B_hv_ECal_cosm2_property.E"
-		clr=2
-		bclr=12
+		clr=14
+		bclr=0
 	}
 	clrmod="discrete"
 	align="horiz. centered"
@@ -373,8 +373,8 @@ oval {
 	}
 	monitor {
 		chan="B_hv_ECal_cosm2_property.L"
-		clr=2
-		bclr=12
+		clr=14
+		bclr=0
 	}
 	clrmod="discrete"
 	align="horiz. centered"
@@ -389,7 +389,7 @@ text {
 		height=20
 	}
 	"basic attribute" {
-		clr=0
+		clr=14
 	}
 	textix="HPS ECAL COSMIC PMTs"
 	align="horiz. centered"
@@ -402,7 +402,7 @@ text {
 		height=18
 	}
 	"basic attribute" {
-		clr=50
+		clr=54
 	}
 	textix="Channel Name"
 	align="horiz. centered"
@@ -415,7 +415,7 @@ text {
 		height=12
 	}
 	"basic attribute" {
-		clr=50
+		clr=54
 	}
 	textix="Measured V"
 	align="horiz. centered"
@@ -428,7 +428,7 @@ text {
 		height=12
 	}
 	"basic attribute" {
-		clr=50
+		clr=54
 	}
 	textix="Demand V"
 	align="horiz. centered"
@@ -441,7 +441,7 @@ text {
 		height=12
 	}
 	"basic attribute" {
-		clr=50
+		clr=54
 	}
 	textix="Input V"
 	align="horiz. centered"
@@ -454,7 +454,7 @@ text {
 		height=12
 	}
 	"basic attribute" {
-		clr=50
+		clr=54
 	}
 	textix="Measured I"
 	align="horiz. centered"
@@ -467,7 +467,7 @@ text {
 		height=12
 	}
 	"basic attribute" {
-		clr=50
+		clr=54
 	}
 	textix="Status"
 	align="horiz. centered"

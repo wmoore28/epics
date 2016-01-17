@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/hps_ecal_all.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./hps_ecal_all.adl"
 	version=030109
 }
 display {
 	object {
-		x=14
-		y=50
+		x=86
+		y=176
 		width=951
 		height=650
 	}
@@ -119,6 +119,7 @@ rectangle {
 	}
 	"basic attribute" {
 		clr=11
+		fill="outline"
 	}
 }
 rectangle {
@@ -130,6 +131,7 @@ rectangle {
 	}
 	"basic attribute" {
 		clr=11
+		fill="outline"
 	}
 }
 rectangle {
@@ -271,7 +273,7 @@ rectangle {
 "related display" {
 	object {
 		x=365
-		y=180
+		y=167
 		width=80
 		height=25
 	}
@@ -286,10 +288,6 @@ rectangle {
 	display[2] {
 		label="Cosmic PMTs"
 		name="ECalHVCosmicPMTs.adl"
-	}
-	display[3] {
-		label="V/I Details"
-		name="ECalHVStatusCompactDetails.adl"
 	}
 	clr=14
 	bclr=5
@@ -4147,7 +4145,7 @@ text {
 		height=12
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	textix="Current"
 }
@@ -4159,7 +4157,7 @@ text {
 		height=12
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	textix="Voltage"
 }
@@ -4171,7 +4169,7 @@ text {
 		height=12
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	textix="Measured"
 }
@@ -4183,7 +4181,7 @@ text {
 		height=12
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	textix="Setpoint"
 }
@@ -4195,7 +4193,7 @@ text {
 		height=20
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	textix="Channel #1"
 	align="horiz. centered"
@@ -4486,7 +4484,7 @@ text {
 		height=12
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	textix="Current"
 }
@@ -4498,7 +4496,7 @@ text {
 		height=12
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	textix="Voltage"
 }
@@ -4510,7 +4508,7 @@ text {
 		height=20
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	textix="Channel #2"
 	align="horiz. centered"
@@ -4523,7 +4521,7 @@ polyline {
 		height=0
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	"dynamic attribute" {
 		chan="LV:DC:S$(S):L$(L):SET_ONOFF"
@@ -4739,7 +4737,7 @@ polyline {
 		height=0
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	"dynamic attribute" {
 		chan="LV:DC:S$(S):L$(L):SET_ONOFF"
@@ -5207,10 +5205,10 @@ text {
 }
 "shell command" {
 	object {
-		x=321
-		y=544
-		width=176
-		height=25
+		x=338
+		y=551
+		width=140
+		height=20
 	}
 	command[0] {
 		label="Temperatures"
@@ -5223,10 +5221,10 @@ text {
 }
 "shell command" {
 	object {
-		x=321
-		y=571
-		width=176
-		height=25
+		x=338
+		y=572
+		width=140
+		height=20
 	}
 	command[0] {
 		label="Temperatures"
@@ -6266,7 +6264,7 @@ text {
 		height=19
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	"dynamic attribute" {
 		chan="$(P):pw1mon.STAT"
@@ -6283,4 +6281,50 @@ rectangle {
 	"basic attribute" {
 		clr=6
 	}
+}
+"shell command" {
+	object {
+		x=365
+		y=196
+		width=80
+		height=25
+	}
+	command[0] {
+		label="Strip Current Top A"
+		name="StripTool"
+		args="$APP/generalApp/strip/hps_ecal_current_topA.stc &"
+	}
+	command[1] {
+		label="Strip Current Top B"
+		name="StripTool"
+		args="$APP/generalApp/strip/hps_ecal_current_topB.stc &"
+	}
+	command[2] {
+		label="Strip Current Top C"
+		name="StripTool"
+		args="$APP/generalApp/strip/hps_ecal_current_topC.stc &"
+	}
+	command[3] {
+		label="Strip Current Bot A"
+		name="StripTool"
+		args="$APP/generalApp/strip/hps_ecal_current_botA.stc &"
+	}
+	command[4] {
+		label="Strip Current Bot B"
+		name="StripTool"
+		args="$APP/generalApp/strip/hps_ecal_current_botB.stc &"
+	}
+	command[5] {
+		label="Strip Current Bot C"
+		name="StripTool"
+		args="$APP/generalApp/strip/hps_ecal_current_botC.stc &"
+	}
+	command[6] {
+		label="Mini V/I"
+		name="medm"
+		args="-x $APP/generalApp/medm/ECalHVStatusCompactDetails.adl &"
+	}
+	clr=14
+	bclr=5
+	label="Monitors"
 }
