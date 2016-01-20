@@ -1,11 +1,11 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/chicaneApp/medm/../../generalApp/medm/ioc_hps_health.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/ioc_hps_health.adl"
 	version=030109
 }
 display {
 	object {
-		x=112
+		x=94
 		y=67
 		width=1300
 		height=660
@@ -103,7 +103,7 @@ rectangle {
 		x=859
 		y=54
 		width=425
-		height=395
+		height=440
 	}
 	"basic attribute" {
 		clr=5
@@ -3548,7 +3548,7 @@ rectangle {
 		height=20
 	}
 	"basic attribute" {
-		clr=3
+		clr=2
 	}
 }
 "text update" {
@@ -3561,7 +3561,7 @@ rectangle {
 	monitor {
 		chan="iocA6621:HOSTNAME"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. centered"
 	limits {
@@ -3577,7 +3577,7 @@ rectangle {
 	monitor {
 		chan="iocA6621:UPTIME"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. centered"
 	limits {
@@ -3593,7 +3593,7 @@ rectangle {
 	monitor {
 		chan="iocA6621:HEARTBEAT"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. right"
 	limits {
@@ -3624,7 +3624,7 @@ text {
 		args="ioc=iocA6621"
 	}
 	clr=14
-	bclr=8
+	bclr=6
 	label="Reboot..."
 }
 "related display" {
@@ -3640,7 +3640,7 @@ text {
 		args="ioc=iocA6621"
 	}
 	clr=14
-	bclr=8
+	bclr=6
 }
 "text update" {
 	object {
@@ -3652,7 +3652,7 @@ text {
 	monitor {
 		chan="iocA6621:STARTTOD"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. centered"
 	limits {
@@ -3668,7 +3668,7 @@ text {
 	monitor {
 		chan="iocA6621:SR_status"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. centered"
 	limits {
@@ -3684,7 +3684,7 @@ text {
 	monitor {
 		chan="iocA6621:SR_statusStr"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. centered"
 	limits {
@@ -3700,7 +3700,7 @@ text {
 	monitor {
 		chan="iocA6621:SR_recentlyStr"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. centered"
 	limits {
@@ -3729,7 +3729,7 @@ rectangle {
 		height=20
 	}
 	"basic attribute" {
-		clr=3
+		clr=2
 	}
 }
 "text update" {
@@ -3742,7 +3742,7 @@ rectangle {
 	monitor {
 		chan="iocchicane:HOSTNAME"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. centered"
 	limits {
@@ -3758,7 +3758,7 @@ rectangle {
 	monitor {
 		chan="iocchicane:UPTIME"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. centered"
 	limits {
@@ -3774,7 +3774,7 @@ rectangle {
 	monitor {
 		chan="iocchicane:HEARTBEAT"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. right"
 	limits {
@@ -3805,7 +3805,7 @@ text {
 		args="ioc=iocchicane"
 	}
 	clr=14
-	bclr=8
+	bclr=6
 	label="Reboot..."
 }
 "related display" {
@@ -3821,7 +3821,7 @@ text {
 		args="ioc=iocchicane"
 	}
 	clr=14
-	bclr=8
+	bclr=6
 }
 "text update" {
 	object {
@@ -3833,7 +3833,7 @@ text {
 	monitor {
 		chan="iocchicane:STARTTOD"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. centered"
 	limits {
@@ -3849,7 +3849,7 @@ text {
 	monitor {
 		chan="iocchicane:SR_status"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. centered"
 	limits {
@@ -3865,7 +3865,7 @@ text {
 	monitor {
 		chan="iocchicane:SR_statusStr"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. centered"
 	limits {
@@ -3881,7 +3881,7 @@ text {
 	monitor {
 		chan="iocchicane:SR_recentlyStr"
 		clr=0
-		bclr=29
+		bclr=27
 	}
 	align="horiz. centered"
 	limits {
