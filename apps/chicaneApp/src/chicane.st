@@ -100,6 +100,7 @@ ss seqChicane {
 //            pvPut(iCalcPS);
 //            pvPut(iCalcMT);
             sprintf(msg,"Initialized");
+            epicsThreadSleep(2);
             pvPut(msg);
         } state idle
     }
