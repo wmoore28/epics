@@ -33,11 +33,13 @@ record (bo, "$(P):isOff")
 {
 }
 
-record (ai, "$(P):iCalcMT")
+record (ao, "$(P):iCalcMT")
 {
+    field(DRVH,3500)
 }
-record (ai, "$(P):iCalcPS")
+record (ao, "$(P):iCalcPS")
 {
+    field(DRVH,2700)
 }
 record (ai, "$(P):iSetMT")
 {
