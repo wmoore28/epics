@@ -2509,13 +2509,16 @@ record(bigsub, "B_hv_ECAL_BOT_13_property") {
    field(INPC,"02")
    field(HSV,"MAJOR")
 }
+
+
+
 record(bo, "B_hv_ECAL_TOP_01_CE") {
    field(DTYP,"CAEN_HV")
    field(PRIO,"LOW")
    field(ZNAM,"OFF")
    field(DESC,"binary output record")
    field(SCAN,"Passive")
-   field(OUT,"#C1 S256")
+   field(OUT,"#C2049 S262")
    field(ONAM,"ON")
    field(OMSL,"supervisory")
 }
@@ -2525,7 +2528,7 @@ record(bo, "B_hv_ECAL_TOP_01_CHHV") {
    field(ZNAM,"OFF")
    field(DESC,"binary output record")
    field(SCAN,"Passive")
-   field(OUT,"#C1 S2816")
+   field(OUT,"#C2049 S2822")
    field(ONAM,"ON")
    field(OMSL,"supervisory")
 }
@@ -2534,7 +2537,7 @@ record(ao, "B_hv_ECAL_TOP_01_DV") {
    field(PRIO,"LOW")
    field(DESC,"analog output record")
    field(SCAN,"Passive")
-   field(OUT,"#C1 S512")
+   field(OUT,"#C2049 S518")
    field(PREC,"3")
    field(OMSL,"supervisory")
 }
@@ -2543,7 +2546,7 @@ record(ao, "B_hv_ECAL_TOP_01_RDN") {
    field(PRIO,"LOW")
    field(DESC,"analog output record")
    field(SCAN,"Passive")
-   field(OUT,"#C1 S768")
+   field(OUT,"#C2049 S774")
    field(OMSL,"supervisory")
 }
 record(ao, "B_hv_ECAL_TOP_01_RUP") {
@@ -2551,7 +2554,7 @@ record(ao, "B_hv_ECAL_TOP_01_RUP") {
    field(PRIO,"LOW")
    field(DESC,"analog output record")
    field(SCAN,"Passive")
-   field(OUT,"#C1 S1024")
+   field(OUT,"#C2049 S1030")
    field(OMSL,"supervisory")
 }
 record(ao, "B_hv_ECAL_TOP_01_TC") {
@@ -2559,7 +2562,7 @@ record(ao, "B_hv_ECAL_TOP_01_TC") {
    field(PRIO,"LOW")
    field(DESC,"analog output record")
    field(SCAN,"Passive")
-   field(OUT,"#C1 S1280")
+   field(OUT,"#C2049 S1286")
    field(OMSL,"supervisory")
 }
 record(ao, "B_hv_ECAL_TOP_01_MVDZ") {
@@ -2567,7 +2570,7 @@ record(ao, "B_hv_ECAL_TOP_01_MVDZ") {
    field(PRIO,"LOW")
    field(DESC,"analog output record")
    field(SCAN,"Passive")
-   field(OUT,"#C1 S1536")
+   field(OUT,"#C2049 S1542")
    field(OMSL,"supervisory")
 }
 record(ao, "B_hv_ECAL_TOP_01_MCDZ") {
@@ -2575,7 +2578,7 @@ record(ao, "B_hv_ECAL_TOP_01_MCDZ") {
    field(PRIO,"LOW")
    field(DESC,"analog output record")
    field(SCAN,"Passive")
-   field(OUT,"#C1 S1792")
+   field(OUT,"#C2049 S1798")
    field(OMSL,"supervisory")
 }
 record(bigsub, "B_hv_ECAL_TOP_01_property") {
@@ -2586,11 +2589,13 @@ record(bigsub, "B_hv_ECAL_TOP_01_property") {
    field(SNAM,"ScanChannel")
    field(PREC,"3")
    field(INAM,"InitChannel")
-   field(INPB,"00")
+   field(INPB,"8")
    field(HIGH,"10")
-   field(INPC,"00")
+   field(INPC,"6")
    field(HSV,"MAJOR")
 }
+
+
 record(bo, "B_hv_ECAL_TOP_20_CE") {
    field(DTYP,"CAEN_HV")
    field(PRIO,"LOW")
