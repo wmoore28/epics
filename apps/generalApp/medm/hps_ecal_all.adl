@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./hps_ecal_all.adl"
-	version=030109
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/hps_ecal_all.adl"
+	version=030101
 }
 display {
 	object {
-		x=86
-		y=176
+		x=84
+		y=160
 		width=951
 		height=650
 	}
@@ -4918,6 +4918,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -4936,6 +4937,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -4954,6 +4956,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -4972,6 +4975,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -4990,6 +4994,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -5008,6 +5013,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -5026,6 +5032,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -5044,6 +5051,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 text {
@@ -5075,6 +5083,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -5093,6 +5102,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -5111,6 +5121,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -5129,6 +5140,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -5147,6 +5159,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -5165,6 +5178,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -5183,6 +5197,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -5201,6 +5216,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "shell command" {
@@ -5540,6 +5556,7 @@ polyline {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 rectangle {
@@ -6322,7 +6339,7 @@ rectangle {
 	command[6] {
 		label="Mini V/I"
 		name="medm"
-		args="-x $APP/generalApp/medm/ECalHVStatusCompactDetails.adl &"
+		args="-attach -x $APP/generalApp/medm/ECalHVStatusCompactDetails.adl &"
 	}
 	clr=14
 	bclr=5
