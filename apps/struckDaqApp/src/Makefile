@@ -17,14 +17,11 @@ struckDaqSupport_DBD += stdSupport.dbd
 struckDaqSupport_DBD += calcSupport.dbd
 struckDaqSupport_DBD += busySupport.dbd 
 struckDaqSupport_DBD += sscanSupport.dbd 
-struckDaqSupport_DBD += asSupport.dbd
-struckDaqSupport_DBD += vmeVXSupport.dbd
+#struckDaqSupport_DBD += asSupport.dbd
 struckDaqSupport_DBD += std.dbd
 
 struckDaqSupport_DBD += mcaSupport.dbd
-strucDaqSupport_DBD  += SIS38XXSupport.dbd
-struckDaqSupport_DBD += stdVXSupport.dbd
-
+struckDaqSupport_DBD += SIS38XXSupport.dbd
 
 struckDaqSupport_LIBS += $(EPICS_BASE_IOC_LIBS)
 
@@ -37,7 +34,7 @@ DBD += struckDaq.dbd
 
 # struckDaq.dbd will be made up from these files:
 struckDaq_DBD += struckDaqSupport.dbd
-
+#struckDaq_DBD += devIocStats.dbd
 
 # Build the main IOC entry point on workstation OSs.
 struckDaq_SRCS_DEFAULT += struckDaqMain.cpp
@@ -49,19 +46,14 @@ struckDaq_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
 # Link in the code from the support library
 struckDaq_LIBS += struckDaqSupport 
-struckDaq_LIBS += asyn
-struckDaq_LIBS += mca
+struckDaq_LIBS += SIS38XX mca
 struckDaq_LIBS += calc
 struckDaq_LIBS += busy
 struckDaq_LIBS += sscan
-struckDaq_LIBS += autosave
-struckDaq_LIBS += vme
+#struckDaq_LIBS += devIocStats
+#struckDaq_LIBS += autosave
 struckDaq_LIBS += std
 struckDaq_LIBS += asyn
-struckDaq_LIBS += seq pv 
-
-struckDaq_LIBS += SIS38XX
-
 
 # NOTE: To build SNL programs, SNCSEQ must be defined
 # in the <top>/configure/RELEASE file
