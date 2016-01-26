@@ -9,16 +9,14 @@ option -r;  // donot allow multiple instances
 short  onBtn;   assign onBtn   to "{P}:start";  monitor onBtn;
 short  offBtn;  assign offBtn  to "{P}:stop";   monitor offBtn;
 short  calcBtn; assign calcBtn to "{P}:calc";   monitor calcBtn;
-float  iDelta;  assign iDelta  to "{P}:iDelta"; monitor iDelta;
+short  calcBtnCurr; assign calcBtnCurr to "{P}:calcCurr";   monitor calcBtnCurr;
 
-int    tHoldMax; assign tHoldMax to "{P}:tHoldMax";
+float  iDelta;   assign iDelta   to "{P}:iDelta"; monitor iDelta;
+float  tHoldMax; assign tHoldMax to "{P}:tHoldMax";
+
 string msg;      assign msg      to "{P}:msg";
 
-float  iSetPS;   assign iSetPS   to "{P}:iSetPS";
-float  iMonPS;   assign iMonPS   to "{P}:iMonPS";  monitor iMonPS;
 float  iCalcPS;  assign iCalcPS  to "{P}:iCalcPS";
-float  iSetMT;   assign iSetMT   to "{P}:iSetMT";
-float  iMonMT;   assign iMonMT   to "{P}:iMonMT";  monitor iMonMT;
 float  iCalcMT;  assign iCalcMT  to "{P}:iCalcMT";
 float  complete; assign complete to "{P}:complete";
 float  energy;   assign energy   to "{P}:energy";
@@ -26,13 +24,20 @@ short  isReady;  assign isReady  to "{P}:isReady";
 short  isError;  assign isError  to "{P}:isError";
 short  isOff;    assign isOff    to "{P}:isOff";
 
-//float energyB;      assign energyB to "hallb_energyB";
-//float iSetPS;       assign iSetPS  to "PSPECISET";
-//float iMonPS;       assign iMonPS  to "PSPECIRBCK";
-//float iSetMT;       assign iSetMT  to "MTSETI";
-//float iMonMT;       assign iMonMT  to "MTIRBCK";
-//short powerMT;      assign powerMT to "MTPSONSET"; 
-//short powerPS;      assign powerPS to "PSPECC.B0";
+float energyB;   assign energyB to "MBSY2C_energy";
+
+float  iSetPS;   assign iSetPS   to "{P}:iSetPS";
+float  iMonPS;   assign iMonPS   to "{P}:iMonPS";  monitor iMonPS;
+float  iSetMT;   assign iSetMT   to "{P}:iSetMT";
+float  iMonMT;   assign iMonMT   to "{P}:iMonMT";  monitor iMonMT;
+
+//float iSetPS;       assign iSetPS  to "PSPECISET";  monitor iSetPS;
+//float iMonPS;       assign iMonPS  to "PSPECIRBCK"; monitor iMonPS;
+//float iSetMT;       assign iSetMT  to "MTSETI";     monitor iSetMT;
+//float iMonMT;       assign iMonMT  to "MTIRBCK";    monitor iMonMT;
+
+//short powerMT;      assign powerMT to "MTPSONSET";
+//short powerPS;      assign powerPS to "PSPECC.B0";  
 
 int tConfirm = 5; // time to give user a chance to cancel (seconds)
 float iMaxPS = 2700.0;  // saturation current to hold at (Amps)
@@ -52,6 +57,7 @@ short  gotoSetBtn;  assign gotoSetBtn  to "{P}:gotoSet";  monitor gotoSetBtn;
 %{
 //#include "math.h"
 float getCurrentPS(float ee) {
+    ee/=1e3; // convert from MeV to GeV
     return 0.22727*0.1537*1e4*ee + 0.6657;
 }
 float getCurrentMT(float ee) {
@@ -87,11 +93,14 @@ ss seqChicane {
             pvGet(energy);
             pvGet(iSetPS);
             pvGet(iSetMT);
-            iCalcPS=getCurrentPS(energy);
-            iCalcMT=getCurrentMT(energy);
-            pvPut(iCalcPS);
-            pvPut(iCalcMT);
+            pvGet(iCalcPS);
+            pvGet(iCalcMT);
+//            iCalcPS=getCurrentPS(energy);
+//            iCalcMT=getCurrentMT(energy);
+//            pvPut(iCalcPS);
+//            pvPut(iCalcMT);
             sprintf(msg,"Initialized");
+            epicsThreadSleep(2);
             pvPut(msg);
         } state idle
     }
@@ -121,6 +130,11 @@ ss seqChicane {
             calcBtn=0;
             pvPut(calcBtn);
         } state calculate
+        
+        when (calcBtnCurr) {
+            calcBtnCurr=0;
+            pvPut(calcBtnCurr);
+        } state calculateCurrents
 
         // Chicane ready when IOC was restarted:
         when (energy > 0 &&
@@ -152,11 +166,29 @@ ss seqChicane {
 
     state calculate {
         when () {
-            //pvGet(energyB);
-            //energy=energyB;
-            //pvPut(energy);
+            pvGet(energyB);
+            energy=energyB;
+            pvPut(energy);
             pvGet(energy);
-            sprintf(msg,"Beam Energy Retrieved:  %.1f",energy);
+            sprintf(msg,"MCC Beam Energy Retrieved:  %.2f",energy);
+            pvPut(msg);
+            epicsThreadSleep(2);
+            iCalcPS=getCurrentPS(energy);
+            iCalcMT=getCurrentMT(energy);
+            pvPut(iCalcPS);
+            pvPut(iCalcMT);
+            sprintf(msg,"Currents Recalculated");
+            pvPut(msg);
+            epicsThreadSleep(2);
+            sprintf(msg,"OFF");
+            pvPut(msg);
+        } state idle
+    }
+    
+    state calculateCurrents {
+        when () {
+            pvGet(energy);
+            sprintf(msg,"Using Beam Energy:  %.2f",energy);
             pvPut(msg);
             epicsThreadSleep(2);
             iCalcPS=getCurrentPS(energy);
@@ -236,6 +268,16 @@ ss seqChicane {
         when (calcBtn) {
             calcBtn=0;
             pvPut(calcBtn);
+            sprintf(msg,"Must turn OFF to Recalculate");
+            pvPut(msg);
+            epicsThreadSleep(2);
+            sprintf(msg,"Chicane Ready");
+            pvPut(msg);
+        } state ready
+        
+        when (calcBtnCurr) {
+            calcBtnCurr=0;
+            pvPut(calcBtnCurr);
             sprintf(msg,"Must turn OFF to Recalculate");
             pvPut(msg);
             epicsThreadSleep(2);
@@ -341,6 +383,13 @@ ss seqChicane {
             pvPut(msg);
             epicsThreadSleep(1);
         } state rampToMax
+        when (calcBtnCurr) {
+            calcBtnCurr=0;
+            pvPut(calcBtnCurr);
+            sprintf(msg,"Must turn OFF to Recalculate");
+            pvPut(msg);
+            epicsThreadSleep(1);
+        } state rampToMax
 	
         when () {
             complete = minComplete(0,iMonPS,iSetPS,0,iMonMT,iSetMT);
@@ -359,7 +408,7 @@ ss seqChicane {
 	    count = 0;
 	    complete = 0;
 	    pvGet(tHoldMax);
-	    sprintf(msg,"Holding at Max for %ds",tHoldMax);
+	    sprintf(msg,"Holding at Max for %.1f minutes",tHoldMax);
 	    pvPut(msg);
 	    pvPut(complete);
 	}
@@ -368,12 +417,12 @@ ss seqChicane {
         
         when (pvConnectCount() < pvChannelCount() ) {} state init
 
-	when (count>=tHoldMax && isSimilar(iMonPS,iSetPS,iMonMT,iSetMT,iDelta)) {
+	when (count>=60*tHoldMax && isSimilar(iMonPS,iSetPS,iMonMT,iSetMT,iDelta)) {
 	    complete = 0;
 	    pvPut(complete);
 	} state rampToSetpoint
 
-	when (count>=tHoldMax && !isSimilar(iMonPS,iSetPS,iMonMT,iSetMT,iDelta)) {
+	when (count>=60*tHoldMax && !isSimilar(iMonPS,iSetPS,iMonMT,iSetMT,iDelta)) {
 	    complete = 0.9;
 	    pvPut(complete);
 	    sprintf(msg,"Waiting, current NOT at Max.");
@@ -386,15 +435,25 @@ ss seqChicane {
             sprintf(msg,"Must turn OFF to Recalculate");
             pvPut(msg);
             epicsThreadSleep(1);
-	    sprintf(msg,"Holding at Max for %ds",tHoldMax-count);
+	    sprintf(msg,"Holding at Max for %ds",(int)(60*tHoldMax-count));
+	    pvPut(msg);
+            count++;
+        } state holdAtMax
+        when (calcBtnCurr) {
+            calcBtnCurr=0;
+            pvPut(calcBtnCurr);
+            sprintf(msg,"Must turn OFF to Recalculate");
+            pvPut(msg);
+            epicsThreadSleep(1);
+	    sprintf(msg,"Holding at Max for %ds",(int)(60*tHoldMax-count));
 	    pvPut(msg);
             count++;
         } state holdAtMax
 	
         when (delay(1.0)) {
-	    %% complete = (float)(count) / tHoldMax;
+	    %% complete = (float)(count) / (60*tHoldMax);
 	    pvPut(complete);
-	    sprintf(msg,"Holding at Max for %ds",tHoldMax-count);
+	    sprintf(msg,"Holding at Max for %ds",(int)(60*tHoldMax-count));
 	    pvPut(msg);
 	    count++;
 	} state holdAtMax
@@ -407,6 +466,8 @@ ss seqChicane {
 	    pvGet(energy);
             iStartPS = iMonPS;
             iStartMT = iMonMT;
+            pvGet(iCalcPS);
+            pvGet(iCalcMT);
             iSetPS = iCalcPS;
             iSetMT = iCalcMT;
             sprintf(msg,"Ramping Down to Setpoint");
@@ -428,6 +489,16 @@ ss seqChicane {
         when (calcBtn) {
             calcBtn=0;
             pvPut(calcBtn);
+            sprintf(msg,"Must turn OFF to Recalculate");
+            pvPut(msg);
+            epicsThreadSleep(1);
+	    sprintf(msg,"Ramping Down to Setpoint");
+	    pvPut(msg);
+            count++;
+        } state rampToSetpoint
+        when (calcBtnCurr) {
+            calcBtnCurr=0;
+            pvPut(calcBtnCurr);
             sprintf(msg,"Must turn OFF to Recalculate");
             pvPut(msg);
             epicsThreadSleep(1);

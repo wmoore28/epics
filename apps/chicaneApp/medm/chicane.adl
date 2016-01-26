@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v2.0.0/apps/chicaneApp/medm/chicane.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/chicaneApp/medm/chicane.adl"
+	version=030109
 }
 display {
 	object {
-		x=110
-		y=190
+		x=196
+		y=208
 		width=442
 		height=247
 	}
@@ -87,31 +87,15 @@ display {
 		1a7309,
 	}
 }
-"message button" {
-	object {
-		x=315
-		y=140
-		width=80
-		height=20
-	}
-	control {
-		chan="$(P):calc"
-		clr=0
-		bclr=12
-	}
-	label="Recalculate"
-	press_msg="1"
-	clrmod="discrete"
-}
 rectangle {
 	object {
 		x=10
 		y=8
-		width=420
+		width=395
 		height=18
 	}
 	"basic attribute" {
-		clr=4
+		clr=0
 	}
 }
 "text update" {
@@ -149,7 +133,7 @@ rectangle {
 }
 rectangle {
 	object {
-		x=103
+		x=145
 		y=216
 		width=258
 		height=15
@@ -214,15 +198,15 @@ bar {
 	}
 	monitor {
 		chan="$(P):iSetMT"
-		clr=14
-		bclr=4
+		clr=0
+		bclr=12
 	}
 	align="horiz. centered"
 	limits {
 		hoprSrc="default"
 		hoprDefault=20
 		precSrc="default"
-		precDefault=1
+		precDefault=2
 	}
 }
 "text update" {
@@ -234,15 +218,15 @@ bar {
 	}
 	monitor {
 		chan="$(P):iMonMT"
-		clr=14
-		bclr=4
+		clr=0
+		bclr=12
 	}
 	align="horiz. centered"
 	limits {
 		hoprSrc="default"
 		hoprDefault=20
 		precSrc="default"
-		precDefault=1
+		precDefault=2
 	}
 }
 text {
@@ -271,13 +255,13 @@ text {
 	"basic attribute" {
 		clr=0
 	}
-	textix="Readback"
+	textix="Monitor"
 	align="horiz. centered"
 }
 "text update" {
 	object {
 		x=363
-		y=90
+		y=106
 		width=50
 		height=14
 	}
@@ -291,13 +275,13 @@ text {
 		hoprSrc="default"
 		hoprDefault=20
 		precSrc="default"
-		precDefault=4
+		precDefault=2
 	}
 }
 text {
 	object {
 		x=291
-		y=90
+		y=106
 		width=60
 		height=14
 	}
@@ -323,7 +307,7 @@ text {
 text {
 	object {
 		x=289
-		y=69
+		y=76
 		width=120
 		height=14
 	}
@@ -336,7 +320,7 @@ text {
 "text update" {
 	object {
 		x=363
-		y=105
+		y=121
 		width=50
 		height=14
 	}
@@ -350,7 +334,7 @@ text {
 		hoprSrc="default"
 		hoprDefault=20
 		precSrc="default"
-		precDefault=1
+		precDefault=2
 	}
 }
 rectangle {
@@ -382,7 +366,7 @@ rectangle {
 }
 "text update" {
 	object {
-		x=103
+		x=145
 		y=193
 		width=258
 		height=15
@@ -399,7 +383,7 @@ rectangle {
 text {
 	object {
 		x=291
-		y=105
+		y=121
 		width=60
 		height=14
 	}
@@ -412,7 +396,7 @@ text {
 text {
 	object {
 		x=291
-		y=120
+		y=136
 		width=60
 		height=14
 	}
@@ -425,7 +409,7 @@ text {
 "text update" {
 	object {
 		x=363
-		y=120
+		y=136
 		width=50
 		height=14
 	}
@@ -439,7 +423,7 @@ text {
 		hoprSrc="default"
 		hoprDefault=20
 		precSrc="default"
-		precDefault=1
+		precDefault=2
 	}
 }
 "text update" {
@@ -451,15 +435,15 @@ text {
 	}
 	monitor {
 		chan="$(P):iSetPS"
-		clr=14
-		bclr=4
+		clr=0
+		bclr=12
 	}
 	align="horiz. centered"
 	limits {
 		hoprSrc="default"
 		hoprDefault=20
 		precSrc="default"
-		precDefault=1
+		precDefault=2
 	}
 }
 "text update" {
@@ -471,15 +455,15 @@ text {
 	}
 	monitor {
 		chan="$(P):iMonPS"
-		clr=14
-		bclr=4
+		clr=0
+		bclr=12
 	}
 	align="horiz. centered"
 	limits {
 		hoprSrc="default"
 		hoprDefault=20
 		precSrc="default"
-		precDefault=1
+		precDefault=2
 	}
 }
 text {
@@ -510,7 +494,7 @@ text {
 }
 oval {
 	object {
-		x=82
+		x=77
 		y=192
 		width=15
 		height=15
@@ -526,7 +510,7 @@ oval {
 }
 oval {
 	object {
-		x=82
+		x=77
 		y=192
 		width=15
 		height=15
@@ -542,7 +526,7 @@ oval {
 }
 oval {
 	object {
-		x=82
+		x=77
 		y=215
 		width=15
 		height=15
@@ -561,7 +545,7 @@ oval {
 }
 oval {
 	object {
-		x=82
+		x=77
 		y=215
 		width=15
 		height=15
@@ -580,9 +564,9 @@ oval {
 }
 "related display" {
 	object {
-		x=366
+		x=406
 		y=191
-		width=60
+		width=20
 		height=20
 	}
 	display[0] {
@@ -590,13 +574,12 @@ oval {
 	}
 	clr=0
 	bclr=12
-	label="Expert"
 }
 "related display" {
 	object {
-		x=366
+		x=406
 		y=212
-		width=60
+		width=20
 		height=20
 	}
 	display[0] {
@@ -604,7 +587,6 @@ oval {
 	}
 	clr=0
 	bclr=12
-	label="Expert"
 }
 "text update" {
 	object {
@@ -615,13 +597,13 @@ oval {
 	}
 	monitor {
 		chan="HPS:LS450_1:FIELD"
-		clr=14
-		bclr=4
+		clr=0
+		bclr=12
 	}
 	align="horiz. centered"
 	limits {
 		precSrc="default"
-		precDefault=1
+		precDefault=2
 	}
 }
 "text update" {
@@ -633,13 +615,13 @@ oval {
 	}
 	monitor {
 		chan="HPS:LS450_2:FIELD"
-		clr=14
-		bclr=4
+		clr=0
+		bclr=12
 	}
 	align="horiz. centered"
 	limits {
 		precSrc="default"
-		precDefault=1
+		precDefault=2
 	}
 }
 text {
@@ -657,7 +639,7 @@ text {
 }
 text {
 	object {
-		x=21
+		x=16
 		y=193
 		width=60
 		height=15
@@ -670,7 +652,7 @@ text {
 }
 text {
 	object {
-		x=21
+		x=16
 		y=216
 		width=60
 		height=15
@@ -765,7 +747,7 @@ oval {
 }
 text {
 	object {
-		x=102
+		x=144
 		y=216
 		width=258
 		height=15
@@ -786,7 +768,7 @@ text {
 }
 text {
 	object {
-		x=103
+		x=145
 		y=216
 		width=258
 		height=15
@@ -807,7 +789,7 @@ text {
 }
 text {
 	object {
-		x=103
+		x=145
 		y=216
 		width=258
 		height=15
@@ -828,7 +810,7 @@ text {
 }
 text {
 	object {
-		x=103
+		x=145
 		y=216
 		width=258
 		height=15
@@ -857,7 +839,7 @@ text {
 	"basic attribute" {
 		clr=0
 	}
-	textix="Live Beam Energy"
+	textix="MCC Beam Energy"
 	align="horiz. centered"
 }
 "text update" {
@@ -868,7 +850,7 @@ text {
 		height=14
 	}
 	monitor {
-		chan="$(P):energy"
+		chan="MBSY2C_energy"
 		clr=0
 		bclr=12
 	}
@@ -877,7 +859,7 @@ text {
 		hoprSrc="default"
 		hoprDefault=20
 		precSrc="default"
-		precDefault=4
+		precDefault=2
 	}
 }
 rectangle {
@@ -898,7 +880,7 @@ rectangle {
 polyline {
 	object {
 		x=287
-		y=85
+		y=95
 		width=121
 		height=0
 	}
@@ -906,7 +888,22 @@ polyline {
 		clr=5
 	}
 	points {
-		(287,85)
-		(408,85)
+		(287,95)
+		(408,95)
 	}
+}
+"related display" {
+	object {
+		x=410
+		y=7
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Chicane Expert"
+		name="chicaneExpert.adl"
+		args="P=$(P)"
+	}
+	clr=0
+	bclr=11
 }

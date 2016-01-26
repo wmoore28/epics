@@ -1,4 +1,5 @@
 
+
 record (bo, "$(P):start")
 {
 }
@@ -6,6 +7,9 @@ record (bo, "$(P):stop")
 {
 }
 record (bo, "$(P):calc")
+{
+}
+record (bo, "$(P):calcCurr")
 {
 }
 record (stringout, "$(P):msg")
@@ -29,11 +33,13 @@ record (bo, "$(P):isOff")
 {
 }
 
-record (ai, "$(P):iCalcMT")
+record (ao, "$(P):iCalcMT")
 {
+    field(DRVH,3500)
 }
-record (ai, "$(P):iCalcPS")
+record (ao, "$(P):iCalcPS")
 {
+    field(DRVH,2700)
 }
 record (ai, "$(P):iSetMT")
 {
@@ -50,19 +56,13 @@ record (ai, "$(P):iMonPS")
 
 record (ai, "$(P):energy")
 {
-    field(VAL,2.2)
 }
 
-
-
-# these defaults should be changed for real magnet:
 record (ai, "$(P):tHoldMax")
 {
-    field(VAL,5)
 }
 record (ai, "$(P):iDelta")
 {
-    field(VAL,1.0)
 }
 
 

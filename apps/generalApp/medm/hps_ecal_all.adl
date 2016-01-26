@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v2.0.0/apps/generalApp/medm/hps_ecal_all.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/hps_ecal_all.adl"
+	version=030101
 }
 display {
 	object {
-		x=85
-		y=23
+		x=84
+		y=160
 		width=951
 		height=650
 	}
@@ -90,6 +90,53 @@ display {
 rectangle {
 	object {
 		x=9
+		y=329
+		width=290
+		height=310
+	}
+	"basic attribute" {
+		clr=12
+	}
+}
+rectangle {
+	object {
+		x=9
+		y=328
+		width=290
+		height=310
+	}
+	"basic attribute" {
+		clr=0
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=180
+		y=374
+		width=112
+		height=176
+	}
+	"basic attribute" {
+		clr=11
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=64
+		y=374
+		width=112
+		height=176
+	}
+	"basic attribute" {
+		clr=11
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=9
 		y=43
 		width=932
 		height=273
@@ -101,7 +148,7 @@ rectangle {
 rectangle {
 	object {
 		x=274
-		y=5
+		y=8
 		width=400
 		height=24
 	}
@@ -126,17 +173,6 @@ rectangle {
 		x=315
 		y=329
 		width=338
-		height=310
-	}
-	"basic attribute" {
-		clr=12
-	}
-}
-rectangle {
-	object {
-		x=9
-		y=329
-		width=290
 		height=310
 	}
 	"basic attribute" {
@@ -237,7 +273,7 @@ rectangle {
 "related display" {
 	object {
 		x=365
-		y=181
+		y=167
 		width=80
 		height=25
 	}
@@ -248,6 +284,10 @@ rectangle {
 	display[1] {
 		label="ECal HV Bot"
 		name="ecal_ECAL_BOTTOM.adl"
+	}
+	display[2] {
+		label="Cosmic PMTs"
+		name="ECalHVCosmicPMTs.adl"
 	}
 	clr=14
 	bclr=5
@@ -4020,7 +4060,7 @@ polyline {
 "text update" {
 	object {
 		x=68
-		y=491
+		y=510
 		width=50
 		height=15
 	}
@@ -4040,7 +4080,7 @@ polyline {
 "text update" {
 	object {
 		x=123
-		y=491
+		y=510
 		width=50
 		height=15
 	}
@@ -4059,8 +4099,8 @@ polyline {
 }
 "text update" {
 	object {
-		x=67
-		y=509
+		x=68
+		y=528
 		width=50
 		height=15
 	}
@@ -4080,7 +4120,7 @@ polyline {
 "text update" {
 	object {
 		x=123
-		y=509
+		y=528
 		width=50
 		height=15
 	}
@@ -4100,60 +4140,60 @@ polyline {
 text {
 	object {
 		x=127
-		y=474
+		y=493
 		width=42
 		height=12
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	textix="Current"
 }
 text {
 	object {
 		x=71
-		y=474
+		y=493
 		width=42
 		height=12
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	textix="Voltage"
 }
 text {
 	object {
-		x=22
-		y=491
+		x=14
+		y=510
 		width=42
 		height=12
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
-	textix="Monitor"
+	textix="Measured"
 }
 text {
 	object {
-		x=15
-		y=509
+		x=14
+		y=528
 		width=42
 		height=12
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	textix="Setpoint"
 }
 text {
 	object {
 		x=84
-		y=369
+		y=379
 		width=66
 		height=20
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	textix="Channel #1"
 	align="horiz. centered"
@@ -4161,7 +4201,7 @@ text {
 oval {
 	object {
 		x=87
-		y=401
+		y=411
 		width=10
 		height=10
 	}
@@ -4177,7 +4217,7 @@ oval {
 oval {
 	object {
 		x=87
-		y=401
+		y=411
 		width=10
 		height=10
 	}
@@ -4193,7 +4233,7 @@ oval {
 text {
 	object {
 		x=105
-		y=400
+		y=410
 		width=40
 		height=17
 	}
@@ -4210,7 +4250,7 @@ text {
 text {
 	object {
 		x=105
-		y=400
+		y=410
 		width=40
 		height=12
 	}
@@ -4227,7 +4267,7 @@ text {
 oval {
 	object {
 		x=87
-		y=422
+		y=432
 		width=10
 		height=10
 	}
@@ -4243,7 +4283,7 @@ oval {
 oval {
 	object {
 		x=87
-		y=422
+		y=432
 		width=10
 		height=10
 	}
@@ -4259,7 +4299,7 @@ oval {
 text {
 	object {
 		x=105
-		y=421
+		y=431
 		width=40
 		height=12
 	}
@@ -4276,7 +4316,7 @@ text {
 text {
 	object {
 		x=105
-		y=421
+		y=431
 		width=40
 		height=12
 	}
@@ -4293,7 +4333,7 @@ text {
 oval {
 	object {
 		x=116
-		y=445
+		y=455
 		width=14
 		height=14
 	}
@@ -4309,7 +4349,7 @@ oval {
 oval {
 	object {
 		x=116
-		y=445
+		y=455
 		width=14
 		height=14
 	}
@@ -4325,7 +4365,7 @@ oval {
 text {
 	object {
 		x=97
-		y=446
+		y=456
 		width=15
 		height=12
 	}
@@ -4342,7 +4382,7 @@ text {
 text {
 	object {
 		x=97
-		y=446
+		y=456
 		width=30
 		height=12
 	}
@@ -4358,8 +4398,8 @@ text {
 }
 "text update" {
 	object {
-		x=187
-		y=491
+		x=183
+		y=510
 		width=50
 		height=15
 	}
@@ -4378,8 +4418,8 @@ text {
 }
 "text update" {
 	object {
-		x=242
-		y=491
+		x=238
+		y=510
 		width=50
 		height=15
 	}
@@ -4398,8 +4438,8 @@ text {
 }
 "text update" {
 	object {
-		x=186
-		y=509
+		x=183
+		y=528
 		width=50
 		height=15
 	}
@@ -4418,8 +4458,8 @@ text {
 }
 "text update" {
 	object {
-		x=242
-		y=509
+		x=238
+		y=528
 		width=50
 		height=15
 	}
@@ -4438,63 +4478,63 @@ text {
 }
 text {
 	object {
-		x=245
-		y=474
+		x=241
+		y=493
 		width=42
 		height=12
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	textix="Current"
 }
 text {
 	object {
-		x=191
-		y=474
+		x=187
+		y=493
 		width=42
 		height=12
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	textix="Voltage"
 }
 text {
 	object {
-		x=204
-		y=369
+		x=200
+		y=379
 		width=66
 		height=20
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	textix="Channel #2"
 	align="horiz. centered"
 }
 polyline {
 	object {
-		x=207
-		y=385
+		x=203
+		y=395
 		width=60
 		height=0
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	"dynamic attribute" {
 		chan="LV:DC:S$(S):L$(L):SET_ONOFF"
 	}
 	points {
-		(207,385)
-		(267,385)
+		(203,395)
+		(263,395)
 	}
 }
 oval {
 	object {
-		x=207
-		y=401
+		x=203
+		y=411
 		width=10
 		height=10
 	}
@@ -4509,8 +4549,8 @@ oval {
 }
 oval {
 	object {
-		x=207
-		y=401
+		x=203
+		y=411
 		width=10
 		height=10
 	}
@@ -4525,8 +4565,8 @@ oval {
 }
 text {
 	object {
-		x=225
-		y=400
+		x=221
+		y=410
 		width=40
 		height=17
 	}
@@ -4542,8 +4582,8 @@ text {
 }
 text {
 	object {
-		x=225
-		y=400
+		x=221
+		y=410
 		width=40
 		height=12
 	}
@@ -4559,8 +4599,8 @@ text {
 }
 oval {
 	object {
-		x=207
-		y=422
+		x=203
+		y=432
 		width=10
 		height=10
 	}
@@ -4575,8 +4615,8 @@ oval {
 }
 oval {
 	object {
-		x=207
-		y=422
+		x=203
+		y=432
 		width=10
 		height=10
 	}
@@ -4591,8 +4631,8 @@ oval {
 }
 text {
 	object {
-		x=225
-		y=421
+		x=221
+		y=431
 		width=40
 		height=12
 	}
@@ -4608,8 +4648,8 @@ text {
 }
 text {
 	object {
-		x=225
-		y=421
+		x=221
+		y=431
 		width=40
 		height=12
 	}
@@ -4625,8 +4665,8 @@ text {
 }
 oval {
 	object {
-		x=231
-		y=447
+		x=227
+		y=457
 		width=14
 		height=14
 	}
@@ -4641,8 +4681,8 @@ oval {
 }
 oval {
 	object {
-		x=231
-		y=447
+		x=227
+		y=457
 		width=14
 		height=14
 	}
@@ -4657,8 +4697,8 @@ oval {
 }
 text {
 	object {
-		x=212
-		y=448
+		x=208
+		y=458
 		width=15
 		height=12
 	}
@@ -4674,8 +4714,8 @@ text {
 }
 text {
 	object {
-		x=212
-		y=448
+		x=208
+		y=458
 		width=30
 		height=12
 	}
@@ -4692,19 +4732,19 @@ text {
 polyline {
 	object {
 		x=86
-		y=385
+		y=395
 		width=60
 		height=0
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	"dynamic attribute" {
 		chan="LV:DC:S$(S):L$(L):SET_ONOFF"
 	}
 	points {
-		(86,385)
-		(146,385)
+		(86,395)
+		(146,395)
 	}
 }
 "text update" {
@@ -4878,6 +4918,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -4896,6 +4937,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -4914,6 +4956,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -4932,6 +4975,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -4950,6 +4994,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -4968,6 +5013,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -4986,6 +5032,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -5004,6 +5051,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 text {
@@ -5035,6 +5083,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -5053,6 +5102,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -5071,6 +5121,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -5089,6 +5140,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -5107,6 +5159,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -5125,6 +5178,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -5143,6 +5197,7 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -5161,14 +5216,15 @@ text {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 "shell command" {
 	object {
-		x=321
-		y=544
-		width=176
-		height=25
+		x=338
+		y=551
+		width=140
+		height=20
 	}
 	command[0] {
 		label="Temperatures"
@@ -5181,10 +5237,10 @@ text {
 }
 "shell command" {
 	object {
-		x=321
-		y=571
-		width=176
-		height=25
+		x=338
+		y=572
+		width=140
+		height=20
 	}
 	command[0] {
 		label="Temperatures"
@@ -5500,6 +5556,7 @@ polyline {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
+		precDefault=1
 	}
 }
 rectangle {
@@ -6139,7 +6196,7 @@ text {
 text {
 	object {
 		x=374
-		y=11
+		y=14
 		width=200
 		height=20
 	}
@@ -6152,21 +6209,9 @@ text {
 rectangle {
 	object {
 		x=273
-		y=5
+		y=8
 		width=400
 		height=25
-	}
-	"basic attribute" {
-		clr=0
-		fill="outline"
-	}
-}
-rectangle {
-	object {
-		x=9
-		y=328
-		width=290
-		height=310
 	}
 	"basic attribute" {
 		clr=0
@@ -6215,7 +6260,7 @@ rectangle {
 "text update" {
 	object {
 		x=95
-		y=579
+		y=583
 		width=154
 		height=15
 	}
@@ -6231,12 +6276,12 @@ rectangle {
 text {
 	object {
 		x=52
-		y=579
+		y=583
 		width=36
 		height=19
 	}
 	"basic attribute" {
-		clr=0
+		clr=3
 	}
 	"dynamic attribute" {
 		chan="$(P):pw1mon.STAT"
@@ -6253,4 +6298,50 @@ rectangle {
 	"basic attribute" {
 		clr=6
 	}
+}
+"shell command" {
+	object {
+		x=365
+		y=196
+		width=80
+		height=25
+	}
+	command[0] {
+		label="Strip Current Top A"
+		name="StripTool"
+		args="$APP/generalApp/strip/hps_ecal_current_topA.stc &"
+	}
+	command[1] {
+		label="Strip Current Top B"
+		name="StripTool"
+		args="$APP/generalApp/strip/hps_ecal_current_topB.stc &"
+	}
+	command[2] {
+		label="Strip Current Top C"
+		name="StripTool"
+		args="$APP/generalApp/strip/hps_ecal_current_topC.stc &"
+	}
+	command[3] {
+		label="Strip Current Bot A"
+		name="StripTool"
+		args="$APP/generalApp/strip/hps_ecal_current_botA.stc &"
+	}
+	command[4] {
+		label="Strip Current Bot B"
+		name="StripTool"
+		args="$APP/generalApp/strip/hps_ecal_current_botB.stc &"
+	}
+	command[5] {
+		label="Strip Current Bot C"
+		name="StripTool"
+		args="$APP/generalApp/strip/hps_ecal_current_botC.stc &"
+	}
+	command[6] {
+		label="Mini V/I"
+		name="medm"
+		args="-attach -x $APP/generalApp/medm/ECalHVStatusCompactDetails.adl &"
+	}
+	clr=14
+	bclr=5
+	label="Monitors"
 }

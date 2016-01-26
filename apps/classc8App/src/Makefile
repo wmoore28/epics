@@ -2,74 +2,43 @@ TOP=../..
 
 include $(TOP)/configure/CONFIG
 #----------------------------------------
-#  ADD MACRO DEFINITIONS AFTER THIS LINE
+#  ADD MACRO DEFINITIONS BELOW HERE
 
-#=============================
-# Build the IOC support library
-
-#=============================
 # Build the IOC application
+PROD_IOC_vxWorks += classc8
 
-PROD_IOC_vxWorks = classc8
-# classc8.dbd will be created and installed 
+# classc8.dbd will be created and installed
 DBD += classc8.dbd
 
-# classc8.dbd will be made up from these files:
-#classc8_DBD += harp_genericSupport.dbd
-classc8_DBD += sixty_hzSupport.dbd
-#classc8_DBD += scalerSupport.dbd
-#classc8_DBD += frwd_scalerSupport.dbd
+# classc8.dbd will include these files:
+classc8_DBD += base.dbd
+classc8_DBD += struckDaqSupport.dbd
+#classc8_DBD += asSupport.dbd
 classc8_DBD += devIocStats.dbd
-classc8_DBD += asSupport.dbd
 
+# classc8_registerRecordDeviceDriver.cpp derives from classc8.dbd
+classc8_SRCS += classc8_registerRecordDeviceDriver.cpp
 
-# Build the main IOC entry point on workstation OSs.
+# Build the main IOC entry point where needed
 classc8_SRCS_DEFAULT += classc8Main.cpp
-classc8_SRCS_vxWorks += classc8_registerRecordDeviceDriver.cpp
+classc8_SRCS_vxWorks += -nil-
 
 # Add support from base/src/vxWorks if needed
 classc8_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
-# Link in the code from the support library
-#classc8_LIBS += harp_genericSupport
-classc8_LIBS += sixty_hzSupport
-#classc8_LIBS += scalerSupport
-#classc8_LIBS += frwd_scalerSupport
-
-#classc8_LIBS += devIocStats
-
+# Link in the code from our support library
+classc8_LIBS += struckDaqSupport
 classc8_LIBS += SIS38XX mca
-#classc8_LIBS += calc
-#classc8_LIBS += busy
-#classc8_LIBS += sscan
-classc8_LIBS += autosave
-classc8_LIBS += oms
-classc8_LIBS += motor
-classc8_LIBS += vme
-classc8_LIBS += std
-#classc8_LIBS += devIocStats
-classc8_LIBS += asyn
+classc8_LIBS += busy calc sscan std
+#classc8_LIBS += autosave
 classc8_LIBS += devIocStats
+classc8_LIBS += asyn
+classc8_LIBS += seq pv
 
-ifdef IPAC
-classc8_LIBS += Ipac TyGSOctal
-endif
-
-classc8_LIBS += seq pv 
-
-# NOTE: To build SNL programs, SNCSEQ must be defined
-# in the <top>/configure/RELEASE file
-
-ifneq ($(SNCSEQ),)
-    classc8Support_LIBS += seq pv
-endif
-
-# Finally link to the EPICS Base libraries
+# Finally link IOC to the EPICS Base libraries
 classc8_LIBS += $(EPICS_BASE_IOC_LIBS)
-
-#=============================
 
 include $(TOP)/configure/RULES
 #----------------------------------------
-#  ADD RULES AFTER THIS LINE
+#  ADD EXTRA GNUMAKE RULES BELOW HERE
 

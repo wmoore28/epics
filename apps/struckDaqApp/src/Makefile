@@ -18,12 +18,11 @@ struckDaqSupport_DBD += calcSupport.dbd
 struckDaqSupport_DBD += busySupport.dbd 
 struckDaqSupport_DBD += sscanSupport.dbd 
 struckDaqSupport_DBD += asSupport.dbd
-#struckDaqSupport_DBD += devSequencer.dbd
 struckDaqSupport_DBD += vmeVXSupport.dbd
 struckDaqSupport_DBD += std.dbd
 
 struckDaqSupport_DBD += mcaSupport.dbd
-struckDaqSupport_DBD += SIS38XXSupport.dbd
+strucDaqSupport_DBD  += SIS38XXSupport.dbd
 struckDaqSupport_DBD += stdVXSupport.dbd
 
 
@@ -43,6 +42,7 @@ struckDaq_DBD += struckDaqSupport.dbd
 # Build the main IOC entry point on workstation OSs.
 struckDaq_SRCS_DEFAULT += struckDaqMain.cpp
 struckDaq_SRCS_vxWorks += struckDaq_registerRecordDeviceDriver.cpp
+struckDaq_SRCS += testLoop.c
 
 # Add support from base/src/vxWorks if needed
 struckDaq_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary

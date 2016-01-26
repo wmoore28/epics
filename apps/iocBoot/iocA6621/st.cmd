@@ -26,7 +26,7 @@ asynOctetSetInputEos("L0",0,"\n")
 ## Call one for each with sector, layer and GPIB ID
 dbLoadRecords("db/A6621.db","P=HPSECALLV,PORT=L0,ADDR=24,IMAX=2000,OMAX=2000")
 
-#dbLoadRecords("db/save_restoreStatus.db", "P=${IOC}:")
+dbLoadRecords("db/save_restoreStatus.db", "P=${IOC}:")
 
 dbLoadRecords("db/iocAdminSoft.db","IOC=${IOC}")
 

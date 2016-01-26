@@ -1,12 +1,12 @@
 
 file {
-	name="/home/hovanes/HPS/epics/latest/apps/struckDaqApp/medm/power_one.adl"
+	name="/home/hovanes/HPS/epics/latest/apps/struckDaqApp/medm/struckSnapshot.adl"
 	version=030108
 }
 display {
 	object {
-		x=799
-		y=151
+		x=814
+		y=200
 		width=1025
 		height=400
 	}
@@ -87,115 +87,104 @@ display {
 		1a7309,
 	}
 }
-composite {
+"cartesian plot" {
+	object {
+		x=50
+		y=84
+		width=950
+		height=200
+	}
+	plotcom {
+		clr=14
+		bclr=1
+	}
+	style="line"
+	erase_oldest="plot last n pts"
+	trace[0] {
+		ydata="struckDaq_copy_$(sig).VAL"
+		data_clr=14
+		yaxis=0
+	}
+	y1_axis {
+		rangeStyle="auto-scale"
+	}
+}
+text {
+	object {
+		x=346
+		y=300
+		width=252
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Time (DWEL seconds/bin)"
+}
+"text update" {
+	object {
+		x=599
+		y=300
+		width=80
+		height=14
+	}
+	monitor {
+		chan="struckDaq_0.DWEL"
+		clr=10
+		bclr=50
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=550
+		y=301
+		width=59
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="DWEL="
+}
+text {
+	object {
+		x=689
+		y=301
+		width=59
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SECS"
+}
+text {
 	object {
 		x=15
 		y=50
-		width=985
-		height=266
+		width=120
+		height=18
 	}
-	"composite name"=""
-	children {
-		"cartesian plot" {
-			object {
-				x=50
-				y=84
-				width=950
-				height=200
-			}
-			plotcom {
-				clr=14
-				bclr=1
-			}
-			style="line"
-			erase_oldest="plot last n pts"
-			trace[0] {
-				ydata="sixtyHz_raw_$(sig).VAL"
-				data_clr=14
-				yaxis=0
-			}
-			y1_axis {
-				rangeStyle="auto-scale"
-			}
-		}
-		text {
-			object {
-				x=346
-				y=300
-				width=252
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Time (DWEL seconds/bin)"
-		}
-		"text update" {
-			object {
-				x=599
-				y=300
-				width=80
-				height=14
-			}
-			monitor {
-				chan="sixtyHz_0.DWEL"
-				clr=10
-				bclr=50
-			}
-			limits {
-			}
-		}
-		text {
-			object {
-				x=550
-				y=301
-				width=59
-				height=14
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="DWEL="
-		}
-		text {
-			object {
-				x=689
-				y=301
-				width=59
-				height=14
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="SECS"
-		}
-		text {
-			object {
-				x=15
-				y=50
-				width=120
-				height=18
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Raw data for:"
-			align="horiz. right"
-		}
-		"text update" {
-			object {
-				x=156
-				y=51
-				width=156
-				height=23
-			}
-			monitor {
-				chan="sixtyHz_display_$(sig)"
-				clr=14
-				bclr=4
-			}
-			limits {
-			}
-		}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Raw data for:"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=156
+		y=51
+		width=156
+		height=23
+	}
+	monitor {
+		chan="sixtyHz_display_$(sig)"
+		clr=14
+		bclr=4
+	}
+	limits {
 	}
 }
