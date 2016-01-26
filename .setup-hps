@@ -4,15 +4,28 @@
 
 setenv CLAS /usr/clas12
 
+## Overrides for RHEL5/6, only solves base (ex. caget, caput, etc)
+set rhel_vers = `awk '{print substr($7,0,1)}' /etc/redhat-release`
+if ( $rhel_vers == "5" ) then
+  setenv EPICS_VER 3.14.12.3
+  set RHEL_VER = "_RHEL5"
+else if ( $rhel_vers == "6" ) then
+  setenv EPICS_VER 3.14.12.5
+  set RHEL_VER = "_RHEL6"
+else
+  setenv EPICS_VER 3.14.12.5
+  set RHEL_VER = ""
+endif
+
 if ( ($OSTYPE == "Linux") && ($MACHINE == "i686" || $MACHINE == "x86") ) then
   setenv EPICS_HOST_ARCH linux-x86
 else
   setenv EPICS_HOST_ARCH linux-x86_64
 endif
 
-setenv EPICS_VER 3.14.12.5
-setenv EPICS_BASE $CLAS/R$EPICS_VER/base
-setenv EPICS_EXTENSIONS $CLAS/R$EPICS_VER/extensions
+#setenv EPICS_VER 3.14.12.5
+setenv EPICS_BASE $CLAS/R$EPICS_VER/base$RHEL_VER
+setenv EPICS_EXTENSIONS $CLAS/R$EPICS_VER/extensions$RHEL_VER
 
 set -f path=($path:q "$EPICS_BASE/bin/$EPICS_HOST_ARCH")
 set -f path=($path:q "$EPICS_EXTENSIONS/bin/$EPICS_HOST_ARCH")
