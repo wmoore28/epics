@@ -73,7 +73,7 @@ while getopts "e" opt; do
   esac
 done
 
-declare -a vars=("CLAS" "EPICS_BASE" "EPICS_HOST_ARCH" "EPICSB_DRIVERS")
+declare -a vars=("CLAS" "EPICS_BASE" "EPICS_HOST_ARCH")
 printf "Testing environment variables:\n"
 for var in "${vars[@]}"; do
   	if [ -n "${!var}" ]; then
