@@ -1,12 +1,12 @@
 
 file {
 	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./ECalHVCosmicPMTs.adl"
-	version=030109
+	version=030101
 }
 display {
 	object {
-		x=780
-		y=362
+		x=930
+		y=123
 		width=561
 		height=108
 	}
@@ -109,7 +109,7 @@ text {
 		height=20
 	}
 	control {
-		chan="B_hv_ECal_cosm1_CE"
+		chan="B_hv_ECal_cosm1_CHHV"
 		clr=15
 		bclr=8
 	}
@@ -131,7 +131,7 @@ oval {
 	"dynamic attribute" {
 		clr="discrete"
 		vis="if not zero"
-		chan="B_hv_ECal_cosm1_property.K"
+		chan="B_hv_ECal_cosm1_property.L"
 	}
 }
 "message button" {
@@ -142,7 +142,7 @@ oval {
 		height=20
 	}
 	control {
-		chan="B_hv_ECal_cosm1_CE"
+		chan="B_hv_ECal_cosm1_CHHV"
 		clr=20
 		bclr=7
 	}
@@ -256,7 +256,7 @@ text {
 		height=20
 	}
 	control {
-		chan="B_hv_ECal_cosm2_CE"
+		chan="B_hv_ECal_cosm2_CHHV"
 		clr=15
 		bclr=8
 	}
@@ -278,7 +278,7 @@ oval {
 	"dynamic attribute" {
 		clr="discrete"
 		vis="if not zero"
-		chan="B_hv_ECal_cosm2_property.K"
+		chan="B_hv_ECal_cosm2_property.L"
 	}
 }
 "message button" {
@@ -289,7 +289,7 @@ oval {
 		height=20
 	}
 	control {
-		chan="B_hv_ECal_cosm2_CE"
+		chan="B_hv_ECal_cosm2_CHHV"
 		clr=20
 		bclr=7
 	}
