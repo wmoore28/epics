@@ -1,0 +1,13 @@
+GROUP NULL HV
+$GUIDANCE
+	Some ECAL HV Current is out of specs.
+$END
+
+
+$SEVRCOMMAND UP_MAJOR /home/hpsrun/scripts/notify_expert_auto.pl ecal_expert ECAL HV Current OUT OF SPEC
+
+CHANNEL HV B_hv_ECAL_TOP_01_property.E
+$ALARMCOUNTFILTER -1 15
+$COMMAND medm -x -attach -cmap -macro "sig=B_hv_ECAL_TOP_01_property.E" aiaocalc_alarm.adl >> /dev/null
+
+
