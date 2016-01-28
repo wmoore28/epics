@@ -1,7 +1,7 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./HPS_EPICS.adl"
-	version=030109
+	name="/usr/clas12/hps/v3.0.0/apps/general/medm/HPS_EPICS.adl"
+	version=030101
 }
 display {
 	object {
@@ -566,7 +566,7 @@ text {
 	}
 	display[1] {
 		label="     BEAM     "
-		name="bm.adl"
+		name="bm_beam_counter_1.adl"
 	}
 	display[2] {
 		label="     BLMs     "
