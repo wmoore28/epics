@@ -1,0 +1,60 @@
+record(calc, SVT:daq:controldpm:all:hb_check)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:daq:controldpm:7:0:hb_check CPP")
+	field(INPB,"SVT:daq:controldpm:7:1:hb_check CPP")
+	field(INPC,"SVT:daq:dpm:7:hb_check CPP")
+	field(CALC,"(A<0) & (B<0) & (C<0)")
+}
+
+
+record(calc, SVT:daq:dpm:half1:hb_check)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:daq:dpm:0:hb_check CPP")
+	field(INPB,"SVT:daq:dpm:1:hb_check CPP")
+	field(INPC,"SVT:daq:dpm:2:hb_check CPP")
+	field(INPD,"SVT:daq:dpm:3:hb_check CPP")
+	field(INPE,"SVT:daq:dpm:4:hb_check CPP")
+	field(INPF,"SVT:daq:dpm:5:hb_check CPP")
+	field(INPG,"SVT:daq:dpm:6:hb_check CPP")
+	field(CALC,"(A<0) & (B<0) & (C<0) & (D<0) & (E<0) & (F<0) & (G<0)")
+}
+
+record(calc, SVT:daq:dpm:half2:hb_check)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:daq:dpm:8:hb_check CPP")
+	field(INPB,"SVT:daq:dpm:9:hb_check CPP")
+	field(INPC,"SVT:daq:dpm:10:hb_check CPP")
+	field(INPD,"SVT:daq:dpm:11:hb_check CPP")
+	field(INPE,"SVT:daq:dpm:12:hb_check CPP")
+	field(INPF,"SVT:daq:dpm:13:hb_check CPP")
+	field(INPG,"SVT:daq:dpm:14:hb_check CPP")
+	field(CALC,"(A<0) & (B<0) & (C<0) & (D<0) & (E<0) & (F<0) & (G<0)")
+}
+
+record(calc, SVT:daq:dtm:all:hb_check)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:daq:dtm:0:hb_check CPP")
+	field(INPB,"SVT:daq:dtm:1:hb_check CPP")
+	field(CALC,"(A<0) & (B<0)")
+}
+
+record(calc, SVT:daq:dpm:all:hb_check)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:daq:controldpm:all:hb_check CPP")
+	field(INPB,"SVT:daq:dpm:half1:hb_check CPP")
+	field(INPC,"SVT:daq:dpm:half2:hb_check CPP")
+	field(CALC,"(A>0) & (B>0) & (C>0)")
+}
+
+record(calc, SVT:daq:dpm:dtm:all:hb_check)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:daq:dpm:all:hb_check CPP")
+	field(INPB,"SVT:daq:dtm:all:hb_check CPP")
+	field(CALC,"(A>0) & (B>0)")
+}

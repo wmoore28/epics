@@ -2423,3 +2423,79 @@ void getHybridLVProcess(char* pname, xmlDoc* doc, char* value) {
    }
 }
 
+void getHeartbeat(char* pname, xmlDoc* doc, char* value) {
+
+  if (DEBUG >2)
+    printf("[ getHeartbeat ] : getHeartbeat called for recordname %s\n",pname);
+
+  //int val;
+   int ifeb;
+   char str1[BUF_SIZE];
+   char str3[BUF_SIZE];
+   char tmp[BUF_SIZE];
+   xmlXPathObjectPtr result;
+   xmlNodePtr node;
+   //val = -1;
+   ifeb = -1;
+  
+   getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+  
+   if(strcmp(str1,"daq")==0) {
+    
+      getStringFromEpicsName(pname,str3,3,BUF_SIZE);
+    
+      if(strcmp(str3,"heart_asub")==0) {      
+         ifeb = getIntFromEpicsName(pname,2);             
+	 sprintf(tmp,"/system/status/ControlDpm[@index=\"%d\"]/FebFpga[@index=\"%d\"]/AxiVersion[@index=\"%d\"]/Counter",0,ifeb,0);
+
+
+      } else {
+         strcpy(tmp,""); 
+      }
+    
+      if(strcmp(tmp,"")!=0) {
+	if(DEBUG>2) 
+            printf("[ getHeartbeat ] : xpath \"%s\"\n",tmp);
+
+         if(doc!=NULL) {
+             
+            result =  getnodeset(doc, (xmlChar*) tmp);
+
+            if(result!=NULL) {
+	     if(DEBUG>0) 
+		 printf("[ getHeartbeat ] : got %d nodes\n", result->nodesetval->nodeNr);
+               if(result->nodesetval->nodeNr==1) {
+                  node = result->nodesetval->nodeTab[0];
+                  if(node!=NULL) {
+		    getStrValue(doc,node, (xmlChar*) value);
+                     if(DEBUG>0) printf("[ getSyncProcess ]: got val %s\n",value);      
+                  } else {
+                     printf("[ getHeartbeat ] : [ WARNING ] no Sync nodes found\n");
+                     strcpy(value,"-3");
+                  }
+               } else {
+                  printf("[ getHeartbeat ] : [ WARNING ] %d Sync nodes found, should be exactly 1\n", result->nodesetval->nodeNr);
+                  strcpy(value,"-4");	  
+               }
+               xmlXPathFreeObject(result);	  
+            } else {
+	      if(DEBUG>1)
+                  printf("[ getHeartbeat ] : [ WARNING ] no results found\n");
+               strcpy(value,"-5");	  	
+            }
+         } else {
+            if(DEBUG>1)
+               printf("[ getHeartbeat ] : [ WARNING ] no XML doc\n");
+            strcpy(value,"-8");	  	
+         }
+      } else {
+         printf("[ getHeartbeat ]: [ ERROR ]: couldn't find action for this record name \"%s\"!\n",pname);
+         strcpy(value,"-6");
+      }     
+   } else {
+      printf("[ getHeartbeat ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);   
+      strcpy(value, "-7");
+   }
+
+   return;
+}

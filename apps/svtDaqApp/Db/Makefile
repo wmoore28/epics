@@ -58,6 +58,14 @@ DB += dbDataDpmBurnCount.db
 DB += dbDataDtmMinTrigPeriod.db
 DB += dbDataDpmInsertedFrames.db
 DB += dbDataDpmEBEventErrorCount.db
+DB += dbFebAll.db
+DB += dbBiasAll.db
+DB += dbHybridAll.db
+DB += dbFebHeartbeat.db
+DB += dbHybSyncAll.db
+DB += dbHybCurrent.db
+DB += dbDataDpmAll.db
+DB += dbHybridCurrentAll.db
 
 #DB += dbSVTtest.db
 

@@ -1,0 +1,71 @@
+record(calc, SVT:lv:fe:all:digi:stat:calc)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:fe:0:digi:stat CPP")
+	field(INPB,"SVT:lv:fe:1:digi:stat CPP")
+	field(INPC,"SVT:lv:fe:2:digi:stat CPP")
+	field(INPD,"SVT:lv:fe:3:digi:stat CPP")
+	field(INPE,"SVT:lv:fe:4:digi:stat CPP")
+	field(INPF,"SVT:lv:fe:5:digi:stat CPP")
+	field(INPG,"SVT:lv:fe:6:digi:stat CPP")
+	field(INPH,"SVT:lv:fe:7:digi:stat CPP")
+	field(INPI,"SVT:lv:fe:8:digi:stat CPP")
+	field(INPJ,"SVT:lv:fe:9:digi:stat CPP")
+	field(CALC,"(A>0) & (B>0) & (C>0) & (D>0) & (E>0) & (F>0) & (G>0) & (H>0) & (I>0) & (J>0)")
+}
+
+record(calc, SVT:lv:fe:all:anap:stat:calc)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:fe:0:anap:stat CPP")
+	field(INPB,"SVT:lv:fe:1:anap:stat CPP")
+	field(INPC,"SVT:lv:fe:2:anap:stat CPP")
+	field(INPD,"SVT:lv:fe:3:anap:stat CPP")
+	field(INPE,"SVT:lv:fe:4:anap:stat CPP")
+	field(INPF,"SVT:lv:fe:5:anap:stat CPP")
+	field(INPG,"SVT:lv:fe:6:anap:stat CPP")
+	field(INPH,"SVT:lv:fe:7:anap:stat CPP")
+	field(INPI,"SVT:lv:fe:8:anap:stat CPP")
+	field(INPJ,"SVT:lv:fe:9:anap:stat CPP")
+	field(CALC,"(A>0) & (B>0) & (C>0) & (D>0) & (E>0) & (F>0) & (G>0) & (H>0) & (I>0) & (J>0)")
+}
+
+record(calc, SVT:lv:fe:all:anan:stat:calc)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:fe:0:anan:stat CPP")
+	field(INPB,"SVT:lv:fe:1:anan:stat CPP")
+	field(INPC,"SVT:lv:fe:2:anan:stat CPP")
+	field(INPD,"SVT:lv:fe:3:anan:stat CPP")
+	field(INPE,"SVT:lv:fe:4:anan:stat CPP")
+	field(INPF,"SVT:lv:fe:5:anan:stat CPP")
+	field(INPG,"SVT:lv:fe:6:anan:stat CPP")
+	field(INPH,"SVT:lv:fe:7:anan:stat CPP")
+	field(INPI,"SVT:lv:fe:8:anan:stat CPP")
+	field(INPJ,"SVT:lv:fe:9:anan:stat CPP")
+	field(CALC,"(A>0) & (B>0) & (C>0) & (D>0) & (E>0) & (F>0) & (G>0) & (H>0) & (I>0) & (J>0)")
+}
+
+record(calc,SVT:lv:fe:all:stat:calc)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:fe:all:digi:stat:calc CPP")
+	field(INPB,"SVT:lv:fe:all:anap:stat:calc CPP")
+	field(INPC,"SVT:lv:fe:all:anan:stat:calc CPP")
+	field(CALC,"(A>0) & (B>0) & (C>0)")
+}
+
+record(dfanout,SVT:lv:fe:all:switch_fanout)
+{
+	field(OUTA,"SVT:lv:fe:digi:switch.VAL PP")
+	field(OUTB,"SVT:lv:fe:anap:switch.VAL PP")
+	field(OUTC,"SVT:lv:fe:anan:switch.VAL PP")
+}
+
+record(bo,SVT:lv:fe:all:switch)
+{
+	field(OUT, "SVT:lv:fe:all:switch_fanout PP")
+	field(ZNAM, "Off")
+	field(ONAM, "On")
+}
+

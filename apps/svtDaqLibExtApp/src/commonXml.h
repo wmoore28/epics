@@ -81,5 +81,7 @@ void getEBEventErrorCountProcess(char* pname, xmlDoc* doc, char* value);
 
 void getHybridLVProcess(char* pname, xmlDoc* doc, char* value);
 
+void getHeartbeat(char* pname, xmlDocPtr doc, char* syncStr);
+
 #endif
 

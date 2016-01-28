@@ -18,6 +18,8 @@ int socketFD = -1;
 char host[256];
 xmlDoc* xmldoc = NULL;
 char socketPollStatusStr[256];
+long heartbeat1 = 0;
+long heartbeat2 = 0;
 
 static long subPollInit(subRecord *precord) {
   process_order++;
@@ -860,8 +862,76 @@ static long subHybridLVProcess(subRecord *precord) {
   return 0;
 }
 
+static long subExtractHeartbeatInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+  printf("[ subExtractHeartbeatInit ]: %d Record %s called subExtractHeartbeatInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
 
+static long subExtractHeartbeatProcess(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+  printf("[ subExtractHeartbeatProcess ]: %d Record %s called subExtractHeartbeatProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+  
+  char val[256];
+  int number;
+  long *a;
 
+  if (mySubDebug)
+  printf("[ subExtractHeartbeatProcess ]: get sync string from xml at %p\n", xmldoc);
+  
+  getHeartbeat(precord->name, xmldoc, val);
+
+  if (mySubDebug)
+  printf("[ subExtractHeartbeatProcess ]: got sync string \"%s\"\n", val);
+  
+  number = (int) strtol(val,NULL,0); // string rep begins with 0x so use base=0 instead of 16
+
+  if (mySubDebug)
+  printf("[ subExtractHeartbeatProcess ]: got sync number \"%d\"\n", number);
+
+  
+  a = (long*) precord->vala;
+  *a = (long) number;
+  
+  return 0;
+}
+
+static long subCheckHeartbeatInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+  printf("[ subCheckHeartbeatInit ]: %d Record %s called subCheckHeartbeatInit(%p)\n", process_order, precord->name, (void*) precord);
+  }
+  return 0;
+}
+
+static long subCheckHeartbeatProcess(subRecord *precord) {
+  process_order++;
+  int val;
+  if (mySubDebug) {
+    printf("[ subCheckHeartbeatProcess ]: %d Record %s called subCheckHeartbeatProcess(%p)\n",process_order, precord->name, (void*) precord);
+  }
+
+  heartbeat1 = precord->a;
+
+  if(heartbeat1 == heartbeat2) {
+    if (mySubDebug) {
+      printf("[ subCheckHeartbeatProcess ]: Heartbeat is dead (heartbeat1=%ld)\n", heartbeat1);
+    }    
+    val = 0;
+  } else {
+    if (mySubDebug) {
+      printf("[ subCheckHeartbeatProcess ]: Heartbeat is alive (heartbeat1=%ld) =/ (heartbeat2=%ld)\n",heartbeat2,heartbeat1);
+    }    
+    val = 1;
+  }
+  precord->val = val;
+  heartbeat2 = heartbeat1;
+  return 0;
+}
 
 /* Register these symbols for use by IOC code: */
 
@@ -912,4 +982,8 @@ epicsRegisterFunction(subEBEventErrorCountInit);
 epicsRegisterFunction(subEBEventErrorCountProcess);
 epicsRegisterFunction(subHybridLVInit);
 epicsRegisterFunction(subHybridLVProcess);
+epicsRegisterFunction(subExtractHeartbeatInit);
+epicsRegisterFunction(subExtractHeartbeatProcess);
+epicsRegisterFunction(subCheckHeartbeatInit);
+epicsRegisterFunction(subCheckHeartbeatProcess);
 
