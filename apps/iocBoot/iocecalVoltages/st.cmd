@@ -27,7 +27,7 @@ dbLoadRecords("db/ecalHV.db")
 dbLoadRecords("db/bm_01.db")
 dbLoadRecords("db/bm_02.db")
 
-asSetFilename("ecal.acf")
+#asSetFilename("ecal.acf")
 
 cd ${TOP}/iocBoot/${IOC}
 iocInit()
