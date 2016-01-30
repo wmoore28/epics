@@ -35,9 +35,19 @@ record(calc, "beam_stop_at_beam") {
         field(SCAN, ".2 second")
         field(CALC, "ABS(A-68.0)<0.1?1:0")
 }
-
-
-
+# Alarm record to notify the personnel when 
+# the beam current is high on the FCUP or 
+# the beam current is high on the BPM and stopper is out. 
+record(calc, "beam_stopper_alarm") {
+        field(INPA, "scaler_calc1")
+	field(INPB, "hallb_IPM2H01_CUR")
+	field(INPC, "beam_stop_at_beam")
+	field(INPD, "50")
+        field(SCAN, "1 second")
+	field(CALC, "A>D||(B>D&&C#1)?1:0")
+	field(HIHI, "0.5")
+	field(HHSV, "MAJOR")
+}
 
 
 
