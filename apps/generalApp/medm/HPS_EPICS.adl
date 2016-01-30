@@ -1,7 +1,7 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/general/medm/HPS_EPICS.adl"
-	version=030101
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/HPS_EPICS.adl"
+	version=030109
 }
 display {
 	object {
@@ -911,15 +911,11 @@ text {
 		height=20
 	}
 	command[0] {
-		label="ECAL DSC2 GUI"
-		name="hps_ecal_scalers -d &"
-	}
-	command[1] {
-		label="ECAL FADC GUI"
+		label="ECAL FADC Scalers"
 		name="hps_ecal_scalers &"
 	}
 	command[2] {
-		label="ECAL Diag GUI (solaris-only)"
+		label="ECAL Diag GUI"
 		name="xterm -title 'ECAL FADC Diag GUI' -e "
 		args="/usr/clas12/hps/prod/tools/ecal/runEcalDiagGui.sh &"
 	}
