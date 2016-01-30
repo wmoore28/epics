@@ -11,8 +11,16 @@ include $(TOP)/configure/CONFIG
 # Create and install (or just install)
 # databases, templates, substitutions like this
 DB += ecalHV.db
-DB += bm_01.db
-DB += bm_02.db
+
+#DB += bm_01.db
+#DB += bm_02.db
+
+DB += caenhv_group.db
+DB += caenhv_channel.db
+
+DB += bm_hvhps1.subs
+DB += bm_hvhps2.subs
+DB += bm_hvecal4.subs
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
