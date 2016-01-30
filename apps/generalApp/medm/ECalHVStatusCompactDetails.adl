@@ -1,7 +1,7 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./ECalHVStatusCompactDetails.adl"
-	version=030101
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/ECalHVStatusCompactDetails.adl"
+	version=030109
 }
 display {
 	object {
@@ -1106,18 +1106,6 @@ text {
 		clr=33
 	}
 	textix="CURRENT"
-}
-rectangle {
-	object {
-		x=6
-		y=42
-		width=120
-		height=368
-	}
-	"basic attribute" {
-		clr=9
-		fill="outline"
-	}
 }
 rectangle {
 	object {
@@ -4335,5 +4323,17 @@ oval {
 		clr="discrete"
 		vis="if zero"
 		chan="B_hv_ECal_cosm2_property.L"
+	}
+}
+rectangle {
+	object {
+		x=6
+		y=42
+		width=120
+		height=368
+	}
+	"basic attribute" {
+		clr=9
+		fill="outline"
 	}
 }
