@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v1.3.0/apps/generalApp/medm/blm.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/blm.adl"
+	version=030109
 }
 display {
 	object {
-		x=335
-		y=472
+		x=274
+		y=32
 		width=800
 		height=250
 	}
@@ -123,7 +123,7 @@ text {
 		height=20
 	}
 	control {
-		chan="B_hv_BLM1_CE"
+		chan="B_hv_BLM1_CHHV"
 		clr=15
 		bclr=0
 	}
@@ -145,7 +145,7 @@ oval {
 	"dynamic attribute" {
 		clr="discrete"
 		vis="if not zero"
-		chan="B_hv_BLM1_property.K"
+		chan="B_hv_BLM1_property.L"
 	}
 }
 "message button" {
@@ -156,7 +156,7 @@ oval {
 		height=20
 	}
 	control {
-		chan="B_hv_BLM1_CE"
+		chan="B_hv_BLM1_CHHV"
 		clr=20
 		bclr=0
 	}
@@ -284,7 +284,7 @@ text {
 		height=20
 	}
 	control {
-		chan="B_hv_BLM2_CE"
+		chan="B_hv_BLM2_CHHV"
 		clr=15
 		bclr=0
 	}
@@ -306,7 +306,7 @@ oval {
 	"dynamic attribute" {
 		clr="discrete"
 		vis="if not zero"
-		chan="B_hv_BLM2_property.K"
+		chan="B_hv_BLM2_property.L"
 	}
 }
 "message button" {
@@ -317,7 +317,7 @@ oval {
 		height=20
 	}
 	control {
-		chan="B_hv_BLM2_CE"
+		chan="B_hv_BLM2_CHHV"
 		clr=20
 		bclr=0
 	}
@@ -445,7 +445,7 @@ text {
 		height=20
 	}
 	control {
-		chan="B_hv_BLM3_CE"
+		chan="B_hv_BLM3_CHHV"
 		clr=15
 		bclr=0
 	}
@@ -467,7 +467,7 @@ oval {
 	"dynamic attribute" {
 		clr="discrete"
 		vis="if not zero"
-		chan="B_hv_BLM3_property.K"
+		chan="B_hv_BLM3_property.L"
 	}
 }
 "message button" {
@@ -478,7 +478,7 @@ oval {
 		height=20
 	}
 	control {
-		chan="B_hv_BLM3_CE"
+		chan="B_hv_BLM3_CHHV"
 		clr=20
 		bclr=0
 	}
@@ -606,7 +606,7 @@ text {
 		height=20
 	}
 	control {
-		chan="B_hv_BLM4_CE"
+		chan="B_hv_BLM4_CHHV"
 		clr=15
 		bclr=0
 	}
@@ -628,7 +628,7 @@ oval {
 	"dynamic attribute" {
 		clr="discrete"
 		vis="if not zero"
-		chan="B_hv_BLM4_property.K"
+		chan="B_hv_BLM4_property.L"
 	}
 }
 "message button" {
@@ -639,7 +639,7 @@ oval {
 		height=20
 	}
 	control {
-		chan="B_hv_BLM4_CE"
+		chan="B_hv_BLM4_CHHV"
 		clr=20
 		bclr=0
 	}
