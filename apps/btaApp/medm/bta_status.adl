@@ -1,12 +1,12 @@
 
 file {
-	name="/home/hovanes/EPICS_ALL/app/bta/medm/bta_status.adl"
-	version=020306
+	name="/usr/clas12/hps/v3.0.0/apps/btaApp/medm/./bta_status.adl"
+	version=030109
 }
 display {
 	object {
-		x=285
-		y=135
+		x=2030
+		y=185
 		width=605
 		height=340
 	}
@@ -1103,4 +1103,15 @@ text {
 		clr=39
 	}
 	textix="Master Current"
+}
+"related display" {
+	object {
+		x=205
+		y=307
+		width=130
+		height=25
+	}
+	clr=14
+	bclr=4
+	label="SET BEAM TYPE"
 }
