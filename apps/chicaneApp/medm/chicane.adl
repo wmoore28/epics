@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=196
-		y=208
+		x=895
+		y=142
 		width=442
 		height=247
 	}
@@ -133,9 +133,9 @@ rectangle {
 }
 rectangle {
 	object {
-		x=145
+		x=100
 		y=216
-		width=258
+		width=300
 		height=15
 	}
 	"basic attribute" {
@@ -197,7 +197,7 @@ bar {
 		height=14
 	}
 	monitor {
-		chan="$(P):iSetMT"
+		chan="MTSETI"
 		clr=0
 		bclr=12
 	}
@@ -217,7 +217,7 @@ bar {
 		height=14
 	}
 	monitor {
-		chan="$(P):iMonMT"
+		chan="MTIRBCK"
 		clr=0
 		bclr=12
 	}
@@ -255,7 +255,7 @@ text {
 	"basic attribute" {
 		clr=0
 	}
-	textix="Monitor"
+	textix="Measured"
 	align="horiz. centered"
 }
 "text update" {
@@ -366,9 +366,9 @@ rectangle {
 }
 "text update" {
 	object {
-		x=145
+		x=100
 		y=193
-		width=258
+		width=300
 		height=15
 	}
 	monitor {
@@ -434,7 +434,7 @@ text {
 		height=14
 	}
 	monitor {
-		chan="$(P):iSetPS"
+		chan="PSPECISET"
 		clr=0
 		bclr=12
 	}
@@ -454,7 +454,7 @@ text {
 		height=14
 	}
 	monitor {
-		chan="$(P):iMonPS"
+		chan="PSPECIRBCK"
 		clr=0
 		bclr=12
 	}
@@ -603,7 +603,6 @@ oval {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
-		precDefault=2
 	}
 }
 "text update" {
@@ -621,7 +620,6 @@ oval {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
-		precDefault=2
 	}
 }
 text {
@@ -747,9 +745,9 @@ oval {
 }
 text {
 	object {
-		x=144
+		x=99
 		y=216
-		width=258
+		width=300
 		height=15
 	}
 	"basic attribute" {
@@ -768,9 +766,9 @@ text {
 }
 text {
 	object {
-		x=145
+		x=100
 		y=216
-		width=258
+		width=300
 		height=15
 	}
 	"basic attribute" {
@@ -789,9 +787,9 @@ text {
 }
 text {
 	object {
-		x=145
+		x=100
 		y=216
-		width=258
+		width=300
 		height=15
 	}
 	"basic attribute" {
@@ -810,9 +808,9 @@ text {
 }
 text {
 	object {
-		x=145
+		x=100
 		y=216
-		width=258
+		width=300
 		height=15
 	}
 	"basic attribute" {

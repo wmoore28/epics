@@ -61,10 +61,12 @@ record (ai, "$(P):energy")
 record (ai, "$(P):tHoldMax")
 {
 }
-record (ai, "$(P):iDelta")
+record (ai, "$(P):iDeltaPS")
 {
 }
-
+record (ai, "$(P):iDeltaMT")
+{
+}
 
 record(calc,"$(P):comstatMT")
 {
@@ -143,14 +145,26 @@ record(calc,"$(P):comstatPS")
 
 
 # these will be removed when deployed:
-record (bo, "$(P):gotoMax")
-{
-}
-record (bo, "$(P):gotoSet")
-{
-}
-record (bo, "$(P):gotoZero")
-{
-}
+#record (bo, "$(P):gotoMax")
+#{
+#}
+#record (bo, "$(P):gotoSet")
+#{
+#}
+#record (bo, "$(P):gotoZero")
+#{
+#}
+#record (bo, "$(P):powerPS")
+#{
+#    field(VAL,0)
+#    field(ZNAM,"OFF")
+#    field(ONAM,"ON")
+#}
+#record (bo, "$(P):powerMT")
+#{
+#    field(VAL,0)
+#    field(ZNAM,"OFF")
+#    field(ONAM,"ON")
+#}
 
 
