@@ -1,12 +1,12 @@
 
 file {
-	name="/home/rafopar/git/epics-hps/tools/harp_fitter/generic_harp.adl"
-	version=030108
+	name="/usr/clas12/hps/prod/apps/harp_generic/medm/generic_harp.adl"
+	version=030109
 }
 display {
 	object {
-		x=21
-		y=326
+		x=1639
+		y=451
 		width=602
 		height=173
 	}
@@ -362,36 +362,6 @@ text {
 	}
 	command[0] {
 		label="Analyze Scans"
-		name="/usr/clas12/hps/prod/tools/harp_analyzer/bin/runHarpScan.sh $(motor_name) &"
-		args=" "
-	}
-	command[1] {
-		args=" "
-	}
-	clr=14
-	bclr=20
-}
-text {
-	object {
-		x=355
-		y=110
-		width=110
-		height=18
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Analyze Scan Data"
-}
-"shell command" {
-	object {
-		x=517
-		y=147
-		width=15
-		height=15
-	}
-	command[0] {
-		label="Analyze Scans"
 		name="/usr/clas12/hps/prod/tools/harp_fitter/run_fitter.pl $(motor_name) &"
 		args=" "
 	}
@@ -403,13 +373,13 @@ text {
 }
 text {
 	object {
-		x=390
-		y=145
+		x=360
+		y=110
 		width=102
 		height=18
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Analyze with ROOT"
+	textix="Analyze with ROOT Fitter"
 }
