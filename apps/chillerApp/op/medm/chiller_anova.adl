@@ -1,14 +1,14 @@
 
 file {
 	name="/usr/clas12/hps/prod/apps/chillerApp/medm/chiller_anova.adl"
-	version=030108
+	version=030109
 }
 display {
 	object {
-		x=1128
-		y=411
-		width=310
-		height=385
+		x=1119
+		y=403
+		width=316
+		height=390
 	}
 	clr=14
 	bclr=4
@@ -114,7 +114,7 @@ text {
 "text update" {
 	object {
 		x=130
-		y=86
+		y=98
 		width=120
 		height=20
 	}
@@ -131,7 +131,7 @@ text {
 text {
 	object {
 		x=25
-		y=111
+		y=123
 		width=60
 		height=16
 	}
@@ -143,7 +143,7 @@ text {
 text {
 	object {
 		x=25
-		y=176
+		y=188
 		width=60
 		height=16
 	}
@@ -155,7 +155,7 @@ text {
 text {
 	object {
 		x=25
-		y=150
+		y=162
 		width=60
 		height=16
 	}
@@ -167,7 +167,7 @@ text {
 text {
 	object {
 		x=25
-		y=358
+		y=370
 		width=60
 		height=16
 	}
@@ -179,7 +179,7 @@ text {
 "text update" {
 	object {
 		x=130
-		y=359
+		y=371
 		width=160
 		height=15
 	}
@@ -196,7 +196,7 @@ text {
 "message button" {
 	object {
 		x=130
-		y=221
+		y=233
 		width=80
 		height=20
 	}
@@ -211,7 +211,7 @@ text {
 "message button" {
 	object {
 		x=210
-		y=221
+		y=233
 		width=80
 		height=20
 	}
@@ -263,7 +263,7 @@ text {
 "message button" {
 	object {
 		x=179
-		y=281
+		y=293
 		width=110
 		height=20
 	}
@@ -278,7 +278,7 @@ text {
 "message button" {
 	object {
 		x=179
-		y=256
+		y=268
 		width=110
 		height=20
 	}
@@ -293,7 +293,7 @@ text {
 text {
 	object {
 		x=25
-		y=326
+		y=338
 		width=60
 		height=16
 	}
@@ -305,7 +305,7 @@ text {
 text {
 	object {
 		x=25
-		y=90
+		y=102
 		width=80
 		height=16
 	}
@@ -329,7 +329,7 @@ text {
 text {
 	object {
 		x=25
-		y=225
+		y=237
 		width=60
 		height=16
 	}
@@ -341,7 +341,7 @@ text {
 text {
 	object {
 		x=25
-		y=260
+		y=272
 		width=60
 		height=16
 	}
@@ -353,7 +353,7 @@ text {
 text {
 	object {
 		x=25
-		y=285
+		y=297
 		width=60
 		height=16
 	}
@@ -365,7 +365,7 @@ text {
 menu {
 	object {
 		x=130
-		y=322
+		y=334
 		width=160
 		height=20
 	}
@@ -378,7 +378,7 @@ menu {
 "text entry" {
 	object {
 		x=130
-		y=109
+		y=121
 		width=75
 		height=20
 	}
@@ -393,7 +393,7 @@ menu {
 "text update" {
 	object {
 		x=210
-		y=109
+		y=121
 		width=80
 		height=20
 	}
@@ -410,7 +410,7 @@ menu {
 "text update" {
 	object {
 		x=210
-		y=172
+		y=184
 		width=80
 		height=20
 	}
@@ -427,7 +427,7 @@ menu {
 "text entry" {
 	object {
 		x=130
-		y=172
+		y=184
 		width=75
 		height=20
 	}
@@ -442,7 +442,7 @@ menu {
 "text entry" {
 	object {
 		x=130
-		y=146
+		y=158
 		width=75
 		height=20
 	}
@@ -457,7 +457,7 @@ menu {
 "text update" {
 	object {
 		x=210
-		y=146
+		y=158
 		width=80
 		height=20
 	}
@@ -474,7 +474,7 @@ menu {
 "text update" {
 	object {
 		x=250
-		y=86
+		y=98
 		width=40
 		height=20
 	}
@@ -519,7 +519,7 @@ text {
 rectangle {
 	object {
 		x=25
-		y=205
+		y=217
 		width=265
 		height=3
 	}
@@ -545,7 +545,7 @@ rectangle {
 rectangle {
 	object {
 		x=25
-		y=312
+		y=324
 		width=265
 		height=3
 	}
@@ -556,7 +556,7 @@ rectangle {
 rectangle {
 	object {
 		x=25
-		y=348
+		y=360
 		width=265
 		height=3
 	}
@@ -575,4 +575,21 @@ text {
 		clr=30
 	}
 	textix="$(DESC)"
+}
+"text update" {
+	object {
+		x=130
+		y=69
+		width=160
+		height=15
+	}
+	monitor {
+		chan="$(P)ERROR"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
 }

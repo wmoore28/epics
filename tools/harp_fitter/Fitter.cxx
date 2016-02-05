@@ -1451,8 +1451,8 @@ void Fitter::CAPUT()
 	  system(Form("caput HB_BEAM:SCAN:tagger:a %1.5f", aa));
 	  system(Form("caput HB_BEAM:SCAN:tagger:b %1.7f", bb));
 	  
-	  system(Form("caput HB_BEAM:tagger:SCAN:unix_time %d", scan_time_in_sec));
-	  system(Form("caput HB_BEAM:tagger:SCAN:counter_num %d", counters_box->GetSelected()));
+	  system(Form("caput HB_BEAM:SCAN:tagger:unix_time %d", scan_time_in_sec));
+	  system(Form("caput HB_BEAM:SCAN:tagger:counter_num %d", counters_box->GetSelected()));
 	}
       else if( fit_2H02A )
 	{

@@ -36,6 +36,15 @@ record(stringin, "$(P)$(R)STATUS") {
     field(SCAN, "1 second")
 }
 
+# process at init to clear udf error.
+record(stringin, "$(P)$(R)ERROR") {
+    field(DTYP, "stream")
+    field(INP, "@anova.proto getError $(PORT)")
+    field(VAL, "")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+
 record(bo, "$(P)$(R)DEFAULT") {
     field(DTYP, "stream")
     field(OUT, "@anova.proto setDefault $(PORT)")
