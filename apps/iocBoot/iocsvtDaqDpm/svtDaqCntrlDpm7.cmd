@@ -33,6 +33,7 @@ dbLoadRecords "db/dbHybridAll.db"
 dbLoadRecords "db/dbHybSyncAll.db"
 dbLoadRecords "db/dbHybridCurrentAll.db"
 dbLoadRecords "db/dbDataDpmAll.db"
+dbLoadRecords "db/dbFebTempAll.db"
 dbLoadRecords("db/dbHybCurrent.db","FEB=0")
 dbLoadRecords("db/dbHybCurrent.db","FEB=1")
 dbLoadRecords("db/dbHybCurrent.db","FEB=2")

@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/HPS_EPICS.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/./generalApp/medm/HPS_EPICS.adl"
 	version=030109
 }
 display {
 	object {
 		x=118
-		y=16
+		y=21
 		width=240
 		height=835
 	}
@@ -1076,8 +1076,8 @@ text {
 		height=20
 	}
 	display[0] {
-		label="SVT Map"
-		name="svtMap.adl"
+		label="SVT Summary"
+		name="svtSummary.adl"
 	}
 	display[1] {
 		label="DPM Status"
@@ -1122,6 +1122,10 @@ text {
 	display[11] {
 		label="POSITION STATUS"
 		name="HpsSvtPosition.adl"
+	}
+	display[12] {
+		label="SVT Map"
+		name="svtMap.adl"
 	}
 	clr=14
 	bclr=50
