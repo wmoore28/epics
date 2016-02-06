@@ -34,7 +34,7 @@ cd ${TOP}/iocBoot/${IOC}
 
 < save_restore.cmd
 
-asSetFilename("ecal.acf")
+#asSetFilename("ecal.acf")
 
 iocInit();
 
