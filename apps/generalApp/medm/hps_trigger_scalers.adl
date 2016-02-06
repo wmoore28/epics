@@ -1,7 +1,7 @@
 
 file {
-	name="/usr/clas12/hps/v1.3.0/apps/medm/hps_trigger_scalers.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/hps_trigger_scalers.adl"
+	version=030109
 }
 display {
 	object {
@@ -1285,7 +1285,7 @@ rectangle {
 	command[0] {
 		label="REBOOT"
 		name="xterm"
-		args="-T NOTICE -g 50x12 -bg yellow -fg white /home/hpsrun/scripts/howToRestartScalerIOC.sh &"
+		args="-T NOTICE -g 50x12 -bg yellow -fg black /home/hpsrun/scripts/howToRestartScalerIOC.sh &"
 	}
 	clr=33
 	bclr=12
