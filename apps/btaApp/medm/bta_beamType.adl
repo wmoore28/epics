@@ -1,17 +1,17 @@
 
 file {
-	name="bta_beamType.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/medm/../btaApp/medm/bta_beamType.adl"
 	version=030109
 }
 display {
 	object {
-		x=2878
-		y=134
+		x=498
+		y=500
 		width=259
 		height=110
 	}
-	clr=14
-	bclr=4
+	clr=31
+	bclr=31
 	cmap=""
 	gridSpacing=5
 	gridOn=0
@@ -89,15 +89,15 @@ display {
 }
 "choice button" {
 	object {
-		x=101
+		x=107
 		y=14
 		width=137
 		height=80
 	}
 	control {
 		chan="HLB:bta_bm_type"
-		clr=14
-		bclr=4
+		clr=0
+		bclr=10
 	}
 }
 text {

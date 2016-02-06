@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/btaApp/medm/./bta_status.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/medm/../btaApp/medm/bta_status.adl"
 	version=030109
 }
 display {
 	object {
-		x=2030
-		y=185
+		x=300
+		y=155
 		width=605
 		height=340
 	}
@@ -1106,12 +1106,15 @@ text {
 }
 "related display" {
 	object {
-		x=205
-		y=307
+		x=192
+		y=311
 		width=130
 		height=25
 	}
-	clr=14
-	bclr=4
+	display[0] {
+		name="bta_beamType.adl"
+	}
+	clr=0
+	bclr=20
 	label="SET BEAM TYPE"
 }
