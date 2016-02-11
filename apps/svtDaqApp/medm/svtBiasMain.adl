@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/svtDaq/medm/svtBiasMain.adl"
-	version=030108
+	name="/usr/clas12/hps/prod/apps/svtDaqApp/medm/svtBiasMain.adl"
+	version=030109
 }
 display {
 	object {
 		x=151
-		y=86
+		y=21
 		width=1180
-		height=1025
+		height=950
 	}
 	clr=14
 	bclr=12
@@ -9458,7 +9458,7 @@ text {
 	}
 	command[0] {
 		label="reset"
-		name="/usr/clas12/hps/dev/apps/svtDaqApp/scripts/clear_mpod_interlock.sh"
+		name="/usr/clas12/hps/prod/apps/svtDaqApp/scripts/clear_mpod_interlock.sh"
 	}
 	clr=14
 	bclr=5
