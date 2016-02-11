@@ -6,13 +6,15 @@ class Usage(Exception):
         self.msg = msg
 
 def main(argv=None):
-    buildBiasConfig()
-    buildLVConfig()
-    buildHybLVConfig()
-    buildFlangeLVConfig()
-    buildHybTempConfig()
-    buildFebTempConfig()
-    buildDaqConfig()
+    buildSemError()
+    buildSemHeartbeat()
+    #buildBiasConfig()
+    #buildLVConfig()
+    #buildHybLVConfig()
+    #buildFlangeLVConfig()
+    #buildHybTempConfig()
+    #buildFebTempConfig()
+    #buildDaqConfig()
 
 def isValidHyb(feb, hyb):
     if (feb==2 or feb==9) and hyb > 1:
@@ -327,6 +329,63 @@ $END
         for hyb in range(0,4):
             if isValidHyb(feb,hyb):
                 f.write(s.replace("CHANNELTEMPLATE",str(feb)+":"+str(hyb)))
+
+def buildSemError():
+	
+    f = open("svtSemError.alhConfig","w")
+    head = """#===============================================================================
+# SVT DAQ SEM Alarm Config
+#===============================================================================
+
+GROUP NULL SEM_ERROR
+$GUIDANCE
+See SVT Ops manual sections relating to DAQ.
+PVs monitored by these alarms are supplied by the SVT DAQ IOCs.
+$END
+"""
+
+    s = """
+CHANNEL SEM_ERROR SVT:daq:feb:CHANNELTEMPLATE:sem_error_stat T
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:daq:feb:CHANNELTEMPLATE:sem_error_stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 45
+$GUIDANCE
+The SEM controller on this FEB has detected an error.
+Contact the SVT expert for further guidance.
+$END
+"""
+
+    f.write(head)
+    for feb in range(0,10):
+        f.write(s.replace("CHANNELTEMPLATE",str(feb)))
+
+def buildSemHeartbeat():
+	
+    f = open("svtSemHeartbeat.alhConfig","w")
+    head = """#===============================================================================
+# SVT DAQ SEM Alarm Config
+#===============================================================================
+
+GROUP NULL SEM_HEARTBEAT
+$GUIDANCE
+See SVT Ops manual sections relating to DAQ.
+PVs monitored by these alarms are supplied by the SVT DAQ IOCs.
+$END
+"""
+
+    s = """
+CHANNEL SEM_HEARTBEAT SVT:daq:feb:CHANNELTEMPLATE:sem_heartbeat_stat T
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:daq:feb:CHANNELTEMPLATE:sem_heartbeat_stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 45
+$GUIDANCE
+The SEM controller on this FEB has detected that the controller is not in a good state.
+Contact the SVT expert for further guidance.
+$END
+"""
+
+    f.write(head)
+    for feb in range(0,10):
+        f.write(s.replace("CHANNELTEMPLATE",str(feb)))
+
 
 def buildLVConfig():
 	
