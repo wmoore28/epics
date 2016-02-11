@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/./generalApp/medm/HPS_EPICS.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/HPS_EPICS.adl"
 	version=030109
 }
 display {
@@ -1126,6 +1126,10 @@ text {
 	display[12] {
 		label="SVT Map"
 		name="svtMap.adl"
+	}
+	display[13] {
+		label="SVT Sem"
+		name="svtSEM.adl"
 	}
 	clr=14
 	bclr=50
