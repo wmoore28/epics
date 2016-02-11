@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/svtDaqApp/medm/svtSEM.adl"
+	name="/usr/clas12/hps/prod/apps/svtDaq/medm/svtSEM.adl"
 	version=030109
 }
 display {
 	object {
 		x=359
 		y=49
-		width=500
-		height=700
+		width=843
+		height=408
 	}
 	clr=14
 	bclr=12
@@ -89,7 +89,7 @@ display {
 }
 text {
 	object {
-		x=70
+		x=130
 		y=15
 		width=240
 		height=35
@@ -97,52 +97,13 @@ text {
 	"basic attribute" {
 		clr=15
 	}
-	textix="FEB Temperatures"
+	textix="FEB SEM Monitoring"
 	align="horiz. centered"
 }
 text {
 	object {
-		x=140
-		y=50
-		width=50
-		height=25
-	}
-	"basic attribute" {
-		clr=50
-	}
-	textix="SemStatus"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=200
-		y=50
-		width=50
-		height=25
-	}
-	"basic attribute" {
-		clr=50
-	}
-	textix="HeartbeatCount"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=260
-		y=50
-		width=50
-		height=25
-	}
-	"basic attribute" {
-		clr=50
-	}
-	textix="Essential"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=70
-		y=73
+		x=9
+		y=68
 		width=50
 		height=25
 	}
@@ -152,64 +113,10 @@ text {
 	textix="FEB 0"
 	align="horiz. centered"
 }
-"text update" {
-	object {
-		x=140
-		y=71
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:0:semstatus"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=71
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:0:heartbeatcount"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=260
-		y=71
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:0:essential"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
 text {
 	object {
-		x=70
-		y=103
+		x=9
+		y=98
 		width=50
 		height=25
 	}
@@ -219,64 +126,10 @@ text {
 	textix="FEB 1"
 	align="horiz. centered"
 }
-"text update" {
-	object {
-		x=140
-		y=101
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:1:semstatus"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=101
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:1:heartbeatcount"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=260
-		y=101
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:1:essential"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
 text {
 	object {
-		x=70
-		y=133
+		x=9
+		y=128
 		width=50
 		height=25
 	}
@@ -286,64 +139,10 @@ text {
 	textix="FEB 2"
 	align="horiz. centered"
 }
-"text update" {
-	object {
-		x=140
-		y=131
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:2:semstatus"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=131
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:2:heartbeatcount"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=260
-		y=131
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:2:essential"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
 text {
 	object {
-		x=70
-		y=163
+		x=9
+		y=158
 		width=50
 		height=25
 	}
@@ -353,64 +152,10 @@ text {
 	textix="FEB 3"
 	align="horiz. centered"
 }
-"text update" {
-	object {
-		x=140
-		y=161
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:3:semstatus"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=161
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:3:heartbeatcount"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=260
-		y=161
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:3:essential"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
 text {
 	object {
-		x=70
-		y=193
+		x=9
+		y=188
 		width=50
 		height=25
 	}
@@ -420,64 +165,10 @@ text {
 	textix="FEB 4"
 	align="horiz. centered"
 }
-"text update" {
-	object {
-		x=140
-		y=191
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:4:semstatus"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=191
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:4:heartbeatcount"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=260
-		y=191
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:4:essential"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
 text {
 	object {
-		x=70
-		y=223
+		x=9
+		y=218
 		width=50
 		height=25
 	}
@@ -487,64 +178,10 @@ text {
 	textix="FEB 5"
 	align="horiz. centered"
 }
-"text update" {
-	object {
-		x=140
-		y=221
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:5:semstatus"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=221
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:5:heartbeatcount"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=260
-		y=221
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:5:essential"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
 text {
 	object {
-		x=70
-		y=253
+		x=9
+		y=248
 		width=50
 		height=25
 	}
@@ -554,64 +191,10 @@ text {
 	textix="FEB 6"
 	align="horiz. centered"
 }
-"text update" {
-	object {
-		x=140
-		y=251
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:6:semstatus"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=251
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:6:heartbeatcount"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=260
-		y=251
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:6:essential"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
 text {
 	object {
-		x=70
-		y=283
+		x=9
+		y=278
 		width=50
 		height=25
 	}
@@ -621,64 +204,10 @@ text {
 	textix="FEB 7"
 	align="horiz. centered"
 }
-"text update" {
-	object {
-		x=140
-		y=281
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:7:semstatus"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=281
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:7:heartbeatcount"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=260
-		y=281
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:7:essential"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
 text {
 	object {
-		x=70
-		y=313
+		x=9
+		y=308
 		width=50
 		height=25
 	}
@@ -688,64 +217,10 @@ text {
 	textix="FEB 8"
 	align="horiz. centered"
 }
-"text update" {
-	object {
-		x=140
-		y=311
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:8:semstatus"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=311
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:8:heartbeatcount"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=260
-		y=311
-		width=50
-		height=25
-	}
-	monitor {
-		chan="SVT:daq:fe:8:essential"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
 text {
 	object {
-		x=70
-		y=343
+		x=9
+		y=338
 		width=50
 		height=25
 	}
@@ -755,57 +230,1113 @@ text {
 	textix="FEB 9"
 	align="horiz. centered"
 }
+text {
+	object {
+		x=84
+		y=50
+		width=100
+		height=25
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="Status"
+	align="horiz. centered"
+}
 "text update" {
 	object {
-		x=140
-		y=341
-		width=50
+		x=84
+		y=71
+		width=100
 		height=25
 	}
 	monitor {
-		chan="SVT:daq:fe:9:semstatus"
+		chan="SVT:daq:feb:0:sem_status_rd"
 		clr=30
 		bclr=14
 	}
 	align="horiz. centered"
 	limits {
 		precSrc="default"
-		precDefault=1
 	}
 }
 "text update" {
 	object {
-		x=200
-		y=341
-		width=50
+		x=84
+		y=101
+		width=100
 		height=25
 	}
 	monitor {
-		chan="SVT:daq:fe:9:heartbeatcount"
+		chan="SVT:daq:feb:1:sem_status_rd"
 		clr=30
 		bclr=14
 	}
 	align="horiz. centered"
+	format="string"
 	limits {
 		precSrc="default"
-		precDefault=1
 	}
 }
 "text update" {
 	object {
-		x=260
+		x=84
+		y=131
+		width=100
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:2:sem_status_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=84
+		y=161
+		width=100
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:3:sem_status_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=84
+		y=191
+		width=100
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:4:sem_status_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=84
+		y=221
+		width=100
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:5:sem_status_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=84
+		y=251
+		width=100
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:6:sem_status_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=84
+		y=281
+		width=100
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:7:sem_status_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=84
+		y=311
+		width=100
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:8:sem_status_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=84
 		y=341
+		width=100
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:9:sem_status_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+		precSrc="default"
+	}
+}
+text {
+	object {
+		x=493
+		y=52
+		width=50
+		height=25
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="Essential"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=493
+		y=73
 		width=50
 		height=25
 	}
 	monitor {
-		chan="SVT:daq:fe:9:essential"
+		chan="SVT:daq:feb:0:sem_essential_rd"
 		clr=30
 		bclr=14
 	}
 	align="horiz. centered"
 	limits {
 		precSrc="default"
-		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=493
+		y=103
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:1:sem_essential_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=493
+		y=133
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:2:sem_essential_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=493
+		y=163
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:3:sem_essential_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=493
+		y=193
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:4:sem_essential_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=493
+		y=223
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:5:sem_essential_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=493
+		y=253
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:6:sem_essential_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=493
+		y=283
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:7:sem_essential_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=493
+		y=313
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:8:sem_essential_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=493
+		y=343
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:9:sem_essential_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+text {
+	object {
+		x=575
+		y=52
+		width=50
+		height=25
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="Uncorrectable"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=575
+		y=73
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:0:sem_uncorrectable_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=575
+		y=103
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:1:sem_uncorrectable_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=575
+		y=133
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:2:sem_uncorrectable_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=575
+		y=163
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:3:sem_uncorrectable_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=575
+		y=193
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:4:sem_uncorrectable_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=575
+		y=223
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:5:sem_uncorrectable_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=575
+		y=253
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:6:sem_uncorrectable_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=575
+		y=283
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:7:sem_uncorrectable_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=575
+		y=313
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:8:sem_uncorrectable_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=575
+		y=343
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:9:sem_uncorrectable_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+text {
+	object {
+		x=355
+		y=42
+		width=50
+		height=25
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="HeartbeatCount"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=267
+		y=71
+		width=100
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:0:sem_heartbeat_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=267
+		y=101
+		width=100
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:1:sem_heartbeat_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=267
+		y=131
+		width=100
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:2:sem_heartbeat_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=267
+		y=161
+		width=100
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:3:sem_heartbeat_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=267
+		y=191
+		width=100
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:4:sem_heartbeat_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=267
+		y=221
+		width=100
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:5:sem_heartbeat_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=267
+		y=251
+		width=100
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:6:sem_heartbeat_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=267
+		y=281
+		width=100
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:7:sem_heartbeat_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=267
+		y=311
+		width=100
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:8:sem_heartbeat_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=267
+		y=341
+		width=100
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:9:sem_heartbeat_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=192
+		y=70
+		width=30
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:0:sem_error_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=192
+		y=100
+		width=30
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:1:sem_error_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=192
+		y=130
+		width=30
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:2:sem_error_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=192
+		y=160
+		width=30
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:3:sem_error_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=192
+		y=190
+		width=30
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:4:sem_error_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=192
+		y=220
+		width=30
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:5:sem_error_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=192
+		y=250
+		width=30
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:6:sem_error_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=192
+		y=280
+		width=30
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:7:sem_error_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=192
+		y=310
+		width=30
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:8:sem_error_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=192
+		y=340
+		width=30
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:9:sem_error_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=391
+		y=72
+		width=40
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:0:sem_heartbeat_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=391
+		y=102
+		width=40
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:1:sem_heartbeat_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=391
+		y=132
+		width=40
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:2:sem_heartbeat_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=391
+		y=162
+		width=40
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:3:sem_heartbeat_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=391
+		y=192
+		width=40
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:4:sem_heartbeat_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=391
+		y=222
+		width=40
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:5:sem_heartbeat_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=391
+		y=252
+		width=40
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:6:sem_heartbeat_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=391
+		y=282
+		width=40
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:7:sem_heartbeat_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=391
+		y=312
+		width=40
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:8:sem_heartbeat_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=391
+		y=342
+		width=40
+		height=25
+	}
+	monitor {
+		chan="SVT:daq:feb:9:sem_heartbeat_stat"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	format="hexadecimal"
+	limits {
+		precSrc="default"
 	}
 }

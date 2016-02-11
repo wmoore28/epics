@@ -1,7 +1,7 @@
 
 record(sub,SVT:controldpm:$(DPM):$(NR):poll_xml)
 {
-    field(SCAN,"1 second")
+    field(SCAN,"$(SCANFREQ) second")
     field(INAM,"subPollInit")
     field(SNAM,"subPollProcess")
     field(FLNK,"SVT:daq:controldpm:$(DPM):$(NR):state_asub")

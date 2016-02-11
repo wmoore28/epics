@@ -1,7 +1,7 @@
 
 file {
-	name="/usr/clas12/hps/dev/apps/svtDaqApp/medm/svtDaqIOCStatus.adl"
-	version=030108
+	name="/usr/clas12/hps/prod/apps/svtDaq/medm/svtDaqIOCStatus.adl"
+	version=030109
 }
 display {
 	object {
@@ -1746,8 +1746,8 @@ composite {
 }
 text {
 	object {
-		x=7
-		y=135
+		x=6
+		y=107
 		width=100
 		height=20
 	}
@@ -1759,8 +1759,8 @@ text {
 }
 "text update" {
 	object {
-		x=149
-		y=135
+		x=148
+		y=107
 		width=30
 		height=20
 	}
@@ -1775,8 +1775,8 @@ text {
 }
 oval {
 	object {
-		x=106
-		y=135
+		x=105
+		y=107
 		width=20
 		height=20
 	}
@@ -1791,8 +1791,8 @@ oval {
 }
 oval {
 	object {
-		x=114
-		y=135
+		x=113
+		y=107
 		width=20
 		height=20
 	}
@@ -1807,8 +1807,8 @@ oval {
 }
 "text update" {
 	object {
-		x=405
-		y=135
+		x=404
+		y=107
 		width=245
 		height=20
 	}
@@ -1823,8 +1823,8 @@ oval {
 }
 "text update" {
 	object {
-		x=202
-		y=135
+		x=201
+		y=107
 		width=158
 		height=20
 	}
@@ -1839,8 +1839,8 @@ oval {
 }
 text {
 	object {
-		x=7
-		y=110
+		x=6
+		y=82
 		width=100
 		height=20
 	}
@@ -1852,8 +1852,8 @@ text {
 }
 composite {
 	object {
-		x=106
-		y=110
+		x=105
+		y=82
 		width=544
 		height=20
 	}
@@ -1861,8 +1861,8 @@ composite {
 	children {
 		"text update" {
 			object {
-				x=149
-				y=110
+				x=148
+				y=82
 				width=30
 				height=20
 			}
@@ -1877,8 +1877,8 @@ composite {
 		}
 		oval {
 			object {
-				x=106
-				y=110
+				x=105
+				y=82
 				width=20
 				height=20
 			}
@@ -1893,8 +1893,8 @@ composite {
 		}
 		oval {
 			object {
-				x=114
-				y=110
+				x=113
+				y=82
 				width=20
 				height=20
 			}
@@ -1909,8 +1909,8 @@ composite {
 		}
 		"text update" {
 			object {
-				x=405
-				y=110
+				x=404
+				y=82
 				width=245
 				height=20
 			}
@@ -1925,8 +1925,8 @@ composite {
 		}
 		"text update" {
 			object {
-				x=202
-				y=110
+				x=201
+				y=82
 				width=158
 				height=20
 			}
@@ -1939,5 +1939,98 @@ composite {
 			limits {
 			}
 		}
+	}
+}
+text {
+	object {
+		x=7
+		y=133
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="Control DPM 7_2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=149
+		y=133
+		width=30
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:controldpm:7:2:hb_check"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+oval {
+	object {
+		x=106
+		y=133
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(A=-1)&1"
+		chan="SVT:daq:controldpm:7:2:hb_check"
+	}
+}
+oval {
+	object {
+		x=114
+		y=133
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(A>0|A=0)&1"
+		chan="SVT:daq:controldpm:7:2:hb_check"
+	}
+}
+"text update" {
+	object {
+		x=405
+		y=133
+		width=245
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:controldpm:7:2:status"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=202
+		y=133
+		width=158
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:controldpm:7:2:socketstatus"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
 	}
 }

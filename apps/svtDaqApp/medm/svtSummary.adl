@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/svtDaqApp/medm/svtSummary.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/svtDaq/medm/svtSummary.adl"
 	version=030109
 }
 display {
 	object {
-		x=366
-		y=21
+		x=285
+		y=178
 		width=775
 		height=755
 	}
@@ -716,7 +716,7 @@ text {
 "related display" {
 	object {
 		x=572
-		y=152
+		y=180
 		width=130
 		height=25
 	}
@@ -786,8 +786,8 @@ text {
 }
 "related display" {
 	object {
-		x=319
-		y=668
+		x=320
+		y=642
 		width=130
 		height=25
 	}
@@ -860,7 +860,7 @@ bar {
 text {
 	object {
 		x=587
-		y=215
+		y=250
 		width=100
 		height=18
 	}
@@ -1721,7 +1721,7 @@ rectangle {
 		x=519
 		y=9
 		width=223
-		height=175
+		height=210
 	}
 	"basic attribute" {
 		clr=17
@@ -1758,7 +1758,7 @@ rectangle {
 text {
 	object {
 		x=526
-		y=260
+		y=295
 		width=85
 		height=18
 	}
@@ -1771,7 +1771,7 @@ text {
 text {
 	object {
 		x=526
-		y=283
+		y=318
 		width=85
 		height=18
 	}
@@ -1784,7 +1784,7 @@ text {
 "text entry" {
 	object {
 		x=628
-		y=260
+		y=295
 		width=90
 		height=20
 	}
@@ -1963,7 +1963,7 @@ text {
 "related display" {
 	object {
 		x=318
-		y=698
+		y=679
 		width=130
 		height=25
 	}
@@ -1978,7 +1978,7 @@ text {
 rectangle {
 	object {
 		x=519
-		y=204
+		y=239
 		width=223
 		height=150
 	}
@@ -1990,8 +1990,8 @@ rectangle {
 }
 text {
 	object {
-		x=334
-		y=628
+		x=581
+		y=406
 		width=100
 		height=18
 	}
@@ -2004,7 +2004,7 @@ text {
 "related display" {
 	object {
 		x=572
-		y=312
+		y=347
 		width=130
 		height=25
 	}
@@ -2064,7 +2064,7 @@ text {
 "text entry" {
 	object {
 		x=628
-		y=283
+		y=318
 		width=90
 		height=20
 	}
@@ -2111,7 +2111,7 @@ rectangle {
 text {
 	object {
 		x=629
-		y=235
+		y=270
 		width=89
 		height=18
 	}
@@ -2119,5 +2119,151 @@ text {
 		clr=31
 	}
 	textix="Input Temp"
+	align="horiz. centered"
+}
+"text entry" {
+	object {
+		x=628
+		y=144
+		width=90
+		height=20
+	}
+	control {
+		chan="SVT:bias:v_set"
+		clr=51
+		bclr=14
+	}
+	format="string"
+	limits {
+		hoprSrc="default"
+		hoprDefault=10
+		precDefault=1
+	}
+}
+text {
+	object {
+		x=524
+		y=144
+		width=85
+		height=18
+	}
+	"basic attribute" {
+		clr=51
+	}
+	textix="BIAS ALL V_SET"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=519
+		y=399
+		width=223
+		height=200
+	}
+	"basic attribute" {
+		clr=17
+		style="dash"
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=641
+		y=463
+		width=70
+		height=70
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="SVT:daq:feb:all:sem_error_stat"
+	}
+}
+rectangle {
+	object {
+		x=648
+		y=466
+		width=70
+		height=70
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="SVT:daq:feb:all:sem_error_stat"
+	}
+}
+"related display" {
+	object {
+		x=563
+		y=560
+		width=130
+		height=25
+	}
+	display[0] {
+		label="Sem Gui"
+		name="svtSEM.adl"
+	}
+	clr=14
+	bclr=50
+	label="Sem Gui"
+}
+rectangle {
+	object {
+		x=543
+		y=461
+		width=70
+		height=70
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="SVT:daq:feb:all:sem_heartbeat_stat"
+	}
+}
+rectangle {
+	object {
+		x=550
+		y=464
+		width=70
+		height=70
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="SVT:daq:feb:all:sem_heartbeat_stat"
+	}
+}
+text {
+	object {
+		x=539
+		y=437
+		width=85
+		height=18
+	}
+	"basic attribute" {
+		clr=51
+	}
+	textix="Heartbeat"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=633
+		y=437
+		width=85
+		height=18
+	}
+	"basic attribute" {
+		clr=51
+	}
+	textix="Error status"
 	align="horiz. centered"
 }

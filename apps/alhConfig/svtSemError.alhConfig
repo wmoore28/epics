@@ -1,0 +1,89 @@
+#===============================================================================
+# SVT DAQ SEM Alarm Config
+#===============================================================================
+
+GROUP NULL SEM_ERROR
+$GUIDANCE
+See SVT Ops manual sections relating to DAQ.
+PVs monitored by these alarms are supplied by the SVT DAQ IOCs.
+$END
+
+CHANNEL SEM_ERROR SVT:daq:feb:0:sem_error_stat T
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:daq:feb:0:sem_error_stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 45
+$GUIDANCE
+The SEM controller on this FEB has detected an error.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL SEM_ERROR SVT:daq:feb:1:sem_error_stat T
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:daq:feb:1:sem_error_stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 45
+$GUIDANCE
+The SEM controller on this FEB has detected an error.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL SEM_ERROR SVT:daq:feb:2:sem_error_stat T
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:daq:feb:2:sem_error_stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 45
+$GUIDANCE
+The SEM controller on this FEB has detected an error.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL SEM_ERROR SVT:daq:feb:3:sem_error_stat T
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:daq:feb:3:sem_error_stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 45
+$GUIDANCE
+The SEM controller on this FEB has detected an error.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL SEM_ERROR SVT:daq:feb:4:sem_error_stat T
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:daq:feb:4:sem_error_stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 45
+$GUIDANCE
+The SEM controller on this FEB has detected an error.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL SEM_ERROR SVT:daq:feb:5:sem_error_stat T
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:daq:feb:5:sem_error_stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 45
+$GUIDANCE
+The SEM controller on this FEB has detected an error.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL SEM_ERROR SVT:daq:feb:6:sem_error_stat T
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:daq:feb:6:sem_error_stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 45
+$GUIDANCE
+The SEM controller on this FEB has detected an error.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL SEM_ERROR SVT:daq:feb:7:sem_error_stat T
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:daq:feb:7:sem_error_stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 45
+$GUIDANCE
+The SEM controller on this FEB has detected an error.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL SEM_ERROR SVT:daq:feb:8:sem_error_stat T
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:daq:feb:8:sem_error_stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 45
+$GUIDANCE
+The SEM controller on this FEB has detected an error.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL SEM_ERROR SVT:daq:feb:9:sem_error_stat T
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:daq:feb:9:sem_error_stat" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 45
+$GUIDANCE
+The SEM controller on this FEB has detected an error.
+Contact the SVT expert for further guidance.
+$END

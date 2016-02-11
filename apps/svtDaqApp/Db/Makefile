@@ -67,6 +67,8 @@ DB += dbHybCurrent.db
 DB += dbDataDpmAll.db
 DB += dbHybridCurrentAll.db
 DB += dbFebTempAll.db
+DB += dbSem.db
+DB += dbSemAll.db
 
 #DB += dbSVTtest.db
 
