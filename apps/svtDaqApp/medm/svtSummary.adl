@@ -115,7 +115,7 @@ rectangle {
 }
 rectangle {
 	object {
-		x=6
+		x=10
 		y=3
 		width=755
 		height=740
@@ -745,19 +745,6 @@ text {
 }
 text {
 	object {
-		x=288
-		y=465
-		width=85
-		height=18
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="Hybrid Sync"
-	align="horiz. centered"
-}
-text {
-	object {
 		x=31
 		y=510
 		width=85
@@ -786,8 +773,8 @@ text {
 }
 "related display" {
 	object {
-		x=320
-		y=642
+		x=272
+		y=669
 		width=130
 		height=25
 	}
@@ -814,8 +801,8 @@ text {
 }
 text {
 	object {
-		x=333
-		y=443
+		x=327
+		y=429
 		width=100
 		height=18
 	}
@@ -1649,47 +1636,6 @@ composite {
 		}
 	}
 }
-composite {
-	object {
-		x=435
-		y=461
-		width=20
-		height=20
-	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=435
-				y=461
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:lv:hyb:all:sync:stat:calc"
-			}
-		}
-		rectangle {
-			object {
-				x=435
-				y=461
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="SVT:lv:hyb:all:sync:stat:calc"
-			}
-		}
-	}
-}
 rectangle {
 	object {
 		x=24
@@ -1744,10 +1690,10 @@ rectangle {
 }
 rectangle {
 	object {
-		x=264
-		y=433
+		x=266
+		y=419
 		width=232
-		height=300
+		height=200
 	}
 	"basic attribute" {
 		clr=17
@@ -1802,8 +1748,8 @@ text {
 }
 text {
 	object {
-		x=285
-		y=493
+		x=282
+		y=450
 		width=85
 		height=20
 	}
@@ -1815,8 +1761,8 @@ text {
 }
 text {
 	object {
-		x=285
-		y=518
+		x=282
+		y=475
 		width=85
 		height=20
 	}
@@ -1828,8 +1774,8 @@ text {
 }
 text {
 	object {
-		x=285
-		y=543
+		x=282
+		y=500
 		width=85
 		height=20
 	}
@@ -1841,8 +1787,8 @@ text {
 }
 text {
 	object {
-		x=285
-		y=568
+		x=282
+		y=525
 		width=85
 		height=20
 	}
@@ -1854,8 +1800,8 @@ text {
 }
 text {
 	object {
-		x=285
-		y=593
+		x=282
+		y=550
 		width=85
 		height=20
 	}
@@ -1867,8 +1813,8 @@ text {
 }
 "text entry" {
 	object {
-		x=400
-		y=492
+		x=397
+		y=449
 		width=90
 		height=20
 	}
@@ -1886,8 +1832,8 @@ text {
 }
 "text entry" {
 	object {
-		x=400
-		y=517
+		x=397
+		y=474
 		width=90
 		height=20
 	}
@@ -1905,8 +1851,8 @@ text {
 }
 "text entry" {
 	object {
-		x=400
-		y=542
+		x=397
+		y=499
 		width=90
 		height=20
 	}
@@ -1924,8 +1870,8 @@ text {
 }
 "text entry" {
 	object {
-		x=400
-		y=592
+		x=397
+		y=549
 		width=90
 		height=20
 	}
@@ -1943,8 +1889,8 @@ text {
 }
 "text entry" {
 	object {
-		x=400
-		y=567
+		x=397
+		y=524
 		width=90
 		height=20
 	}
@@ -1962,8 +1908,8 @@ text {
 }
 "related display" {
 	object {
-		x=318
-		y=679
+		x=314
+		y=576
 		width=130
 		height=25
 	}
@@ -2266,4 +2212,82 @@ text {
 	}
 	textix="Error status"
 	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=266
+		y=626
+		width=232
+		height=105
+	}
+	"basic attribute" {
+		clr=17
+		style="dash"
+		fill="outline"
+	}
+}
+text {
+	object {
+		x=327
+		y=634
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=15
+	}
+	textix="HYBRID SYNC"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=428
+		y=654
+		width=60
+		height=60
+	}
+	"composite name"=""
+	children {
+		composite {
+			object {
+				x=428
+				y=654
+				width=60
+				height=60
+			}
+			"composite name"=""
+			children {
+				rectangle {
+					object {
+						x=428
+						y=654
+						width=60
+						height=60
+					}
+					"basic attribute" {
+						clr=15
+					}
+					"dynamic attribute" {
+						vis="if not zero"
+						chan="SVT:lv:hyb:all:sync:stat:calc"
+					}
+				}
+				rectangle {
+					object {
+						x=428
+						y=654
+						width=60
+						height=60
+					}
+					"basic attribute" {
+						clr=20
+					}
+					"dynamic attribute" {
+						vis="if zero"
+						chan="SVT:lv:hyb:all:sync:stat:calc"
+					}
+				}
+			}
+		}
+	}
 }
