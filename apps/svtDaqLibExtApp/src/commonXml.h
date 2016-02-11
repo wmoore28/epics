@@ -83,5 +83,16 @@ void getHybridLVProcess(char* pname, xmlDoc* doc, char* value);
 
 void getHeartbeat(char* pname, xmlDocPtr doc, char* syncStr);
 
+void getSemProcess(char* pname, xmlDoc* doc, char* action, char* val);
+
+long getSemHeartBeat(char* pname, xmlDoc* doc);
+
+void getSemStatus(char* pname, xmlDoc* doc, char* val);
+
+long getSemEssential(char* pname, xmlDoc* doc);
+
+long getSemUncorrectable(char* pname, xmlDoc* doc);
+
+
 #endif
 

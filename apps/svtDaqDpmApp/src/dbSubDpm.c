@@ -15,11 +15,13 @@
 int mySubDebug = 0;
 int process_order = 0;
 int socketFD = -1;
-char host[256];
+char host[BUF_SIZE];
 xmlDoc* xmldoc = NULL;
-char socketPollStatusStr[256];
+char socketPollStatusStr[BUF_SIZE];
 long heartbeat1 = 0;
 long heartbeat2 = 0;
+long sem_heartbeat_count[N_FEB];
+
 
 static long subPollInit(subRecord *precord) {
   process_order++;
@@ -862,6 +864,130 @@ static long subHybridLVProcess(subRecord *precord) {
   return 0;
 }
 
+
+static long subFebSemInit(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subFebSemInit ]: %d Record %s called (%p)\n", process_order, precord->name, (void*) precord);
+  }
+  long* a;
+  a = (long*) precord->vala;
+  *a = 0;
+  int i;
+  for(i=0;i<N_FEB;++i) sem_heartbeat_count[i] = -1;
+  return 0;
+}
+
+
+static long subFebSemProcess(aSubRecord *precord) {
+  process_order++;
+  if (mySubDebug) {
+    printf("[ subFebSemProcess ]: %d Record %s called (%p)\n", process_order, precord->name, (void*) precord);
+    }
+  
+  if (mySubDebug) {
+    printf("[ subFebSemProcess ]: has vala of %ld\n", *((long*)precord->vala));
+    printf("[ subFebSemProcess ]: get info from xml at %p\n", xmldoc);
+  }
+  
+  // Only update if there is new information
+  if(xmldoc!=NULL) {
+    
+    long v;
+    int ifeb;
+    int sem_heartbeat_stat;
+    long *link_ptr;
+    char val[BUF_SIZE];
+
+    // get the feb nr from record name
+    ifeb = getIntFromEpicsName(precord->name,3);  
+    
+    // get the heartbeat
+    v = 0;
+    v = getSemHeartBeat(precord->name, xmldoc);
+    if (mySubDebug) printf("[ subFebSemProcess ]: got heartbeat value 0x%lx\n", v);
+    link_ptr = (long*) precord->vala;
+    *link_ptr = v;
+    
+
+    // check heartbeat
+    
+    if( sem_heartbeat_count[ifeb] == v ) {
+
+      //if (mySubDebug) 
+      printf("[ subFebSemProcess ]: sem heartbeat didn't update 0x%lx vs 0x%lx \n",v , sem_heartbeat_count[ifeb]);      
+
+      // set the flag : NOTE that 1 is good status
+      sem_heartbeat_stat = 1;      
+
+    } else {
+
+      //if (mySubDebug) 
+      printf("[ subFebSemProcess ]: sem heartbeat updated\n");      
+
+      // set the state
+      sem_heartbeat_stat = 0;
+
+      // update the counter for next poll
+      sem_heartbeat_count[ifeb] = v;      
+
+    }
+    
+    // set the status flag for the heartbeat
+    link_ptr = (long*) precord->vale;
+    *link_ptr = sem_heartbeat_stat;
+    
+    // Get the status string and set the record link
+    getSemStatus(precord->name, xmldoc, val);    
+    //if (mySubDebug)
+    printf("[ subFebSemProcess ]: got observation state %s\n", val);
+    strcpy(precord->valb,val);
+    
+    // Set the error status from the status string
+    if( strcmp(val,"Observation") == 0 )
+      v = 0;
+    else
+      v = 1;
+    
+    //if (mySubDebug) 
+    printf("[ subFebSemProcess ]: got error state %ld from string %s\n", v, val);
+
+    // set the actual output value
+    link_ptr = (long*) precord->valf;
+    *link_ptr = v;
+    
+    
+    // get the essential flag    
+    v = 0;
+    v = getSemEssential(precord->name, xmldoc);
+    if (mySubDebug) printf("[ subFebSemProcess ]: got essential 0x%lx\n", v);
+    link_ptr = (long*) precord->valc;
+    *link_ptr = v;
+    
+    // get the correctable flag    
+    v = 0;
+    v = getSemUncorrectable(precord->name, xmldoc);
+    if (mySubDebug) printf("[ subFebSemProcess ]: got uncorrectable 0x%lx\n", v);
+    link_ptr = (long*) precord->vald;
+    *link_ptr = v;
+    
+    
+  }
+
+  if (mySubDebug) {
+    printf("[ subFebSemProcess ]: vala is %ld\n", *((long*)precord->vala));
+    printf("[ subFebSemProcess ]: valb is %s at %p\n", (char*)precord->valb, precord->valb);
+    printf("[ subFebSemProcess ]: valc is %ld\n", *((long*)precord->valc));
+    printf("[ subFebSemProcess ]: vald is %ld\n", *((long*)precord->vald));
+    printf("[ subFebSemProcess ]: vale is %ld\n", *((long*)precord->vale));
+    printf("[ subFebSemProcess ]: valf is %ld\n", *((long*)precord->valf));
+  }
+
+  return 0;
+}
+
+
+
 static long subExtractHeartbeatInit(aSubRecord *precord) {
   process_order++;
   if (mySubDebug) {
@@ -986,4 +1112,7 @@ epicsRegisterFunction(subExtractHeartbeatInit);
 epicsRegisterFunction(subExtractHeartbeatProcess);
 epicsRegisterFunction(subCheckHeartbeatInit);
 epicsRegisterFunction(subCheckHeartbeatProcess);
+epicsRegisterFunction(subFebSemInit);
+epicsRegisterFunction(subFebSemProcess);
+
 
