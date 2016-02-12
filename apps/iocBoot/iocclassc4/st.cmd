@@ -100,8 +100,16 @@ cd startup
 iocInit "../resource.def"
 
 ## hard-coded fcup calibration, used to calculate scaler_calc1
+## dbpf "fcup_offset","200."
+## dbpf "fcup_slope","905.937"
+
 dbpf "fcup_offset","200."
-dbpf "fcup_slope","905.937"
+dbpf "fcup_slope","906.2"
+
+## Added these three line. to start counting after restarting IOC
+dbpf "scaler.CNT","1"
+dbpf "scaler_mode.VAL","1"
+dbpf "display_mode.VAL","Hertz"
 
 ## Handle autosave 'commands' contained in loaded databases.
 #makeAutosaveFiles()
