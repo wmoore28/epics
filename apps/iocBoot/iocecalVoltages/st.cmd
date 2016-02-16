@@ -16,7 +16,7 @@ Init_CAEN()
 Start_CAEN(1, "129.57.160.93")
 
 # hvhps1:
-Start_CAEN(2, "129.57.160.80")
+#Start_CAEN(2, "129.57.160.80")
 
 # hvecal4:
 #Start_CAEN(3, "129.57.167.190")
@@ -34,7 +34,7 @@ dbLoadTemplate("db/bm_hvhps2.subs")
 #dbLoadTemplate("db/bm_hvecal4.subs")
 
 # THESE ARE IN SLOT 00 of HVHPS1: 
-dbLoadTemplate("db/bm_hvhps1.subs")
+#dbLoadTemplate("db/bm_hvhps1.subs")
 
 #asSetFilename("ecal.acf")
 
