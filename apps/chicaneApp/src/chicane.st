@@ -10,6 +10,7 @@ short  onBtn;   assign onBtn   to "{P}:start";  monitor onBtn;
 short  offBtn;  assign offBtn  to "{P}:stop";   monitor offBtn;
 short  calcBtn; assign calcBtn to "{P}:calc";   monitor calcBtn;
 short  calcBtnCurr; assign calcBtnCurr to "{P}:calcCurr";   monitor calcBtnCurr;
+//short  calcAndSetBtnCurr; assign calcAndSetBtnCurr to "${P}:calcAndSetCurr";  monitor calcAndSetBtnCurr;
 
 float  tHoldMax; assign tHoldMax to "{P}:tHoldMax";
 
@@ -48,7 +49,7 @@ int tConfirm = 5; // time to give user a chance to cancel (seconds)
 float iMaxPS = 2700.0;  // saturation current to hold at (Amps)
 float iMaxMT = 3500.0;  // saturation current to hold at (Amps)
 float iZeroPS = 8;
-float iZeroMT = 5;
+float iZeroMT = 0;
 
 float iStartPS;
 float iStartMT;
@@ -181,12 +182,12 @@ ss seqChicane {
             sprintf(msg,"MCC Beam Energy Retrieved:  %.2f",energy);
             pvPut(msg);
             epicsThreadSleep(2);
+            sprintf(msg,"Currents Recalculated");
+            pvPut(msg);
             iCalcPS=getCurrentPS(energy);
             iCalcMT=getCurrentMT(energy);
             pvPut(iCalcPS);
             pvPut(iCalcMT);
-            sprintf(msg,"Currents Recalculated");
-            pvPut(msg);
             epicsThreadSleep(2);
             sprintf(msg,"OFF");
             pvPut(msg);
@@ -247,6 +248,8 @@ ss seqChicane {
             powerPS=0;
             pvPut(powerPS);
             epicsThreadSleep(5);
+            iSetPS=0;
+            pvPut(iSetPS);
 
             complete = 0;
             isOff = 1;
@@ -314,6 +317,27 @@ ss seqChicane {
             sprintf(msg,"Chicane Ready");
             pvPut(msg);
         } state ready
+
+//        when (calcAndSetBtnCurr) {
+//            calcAndSetBtnCurr=0;
+//            pvPut(calcAndSetBtnCurr);
+//            sprintf(msg,"Using Beam Energy:  %.2f",energy);
+//            pvPut(msg);
+//            epicsThreadSleep(2);
+//            iCalcPS=getCurrentPS(energy);
+//            iCalcMT=getCurrentMT(energy);
+//            pvPut(iCalcPS);
+//            pvPut(iCalcMT);
+//            iSetPS=iCalcPS;
+//            iSetMT=iCalcMT;
+//            pvPut(iSetPS);
+//            pvPut(iSetMT);
+//            sprintf(msg,"Currents Recalculated and Magnets Set");
+//            pvPut(msg);
+//            epicsThreadSleep(2);
+//            sprintf(msg,"Ready");
+//            pvPut(msg);
+//        } state ready
 
         when (!isSimilar2(iCalcPS,iSetPS,iDeltaPS,iCalcMT,iSetMT,iDeltaMT)) {
         } state external

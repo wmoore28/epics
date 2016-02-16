@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/chicaneApp/medm/./chicaneExpert.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/chicaneApp/./medm/chicaneExpert.adl"
 	version=030109
 }
 display {
 	object {
-		x=1145
-		y=79
+		x=1094
+		y=93
 		width=350
-		height=630
+		height=848
 	}
 	clr=14
 	bclr=13
@@ -90,7 +90,7 @@ display {
 rectangle {
 	object {
 		x=12
-		y=424
+		y=640
 		width=327
 		height=105
 	}
@@ -102,7 +102,7 @@ rectangle {
 text {
 	object {
 		x=78
-		y=431
+		y=647
 		width=200
 		height=14
 	}
@@ -115,7 +115,7 @@ text {
 text {
 	object {
 		x=72
-		y=455
+		y=671
 		width=202
 		height=19
 	}
@@ -128,7 +128,7 @@ text {
 "text update" {
 	object {
 		x=203
-		y=488
+		y=704
 		width=50
 		height=14
 	}
@@ -148,12 +148,12 @@ text {
 "text update" {
 	object {
 		x=203
-		y=507
+		y=723
 		width=50
 		height=14
 	}
 	monitor {
-		chan="PSPECIRBCK"
+		chan="PSPECISET"
 		clr=0
 		bclr=12
 	}
@@ -168,7 +168,7 @@ text {
 text {
 	object {
 		x=82
-		y=488
+		y=704
 		width=60
 		height=14
 	}
@@ -181,7 +181,7 @@ text {
 text {
 	object {
 		x=82
-		y=507
+		y=723
 		width=60
 		height=14
 	}
@@ -194,7 +194,7 @@ text {
 "text entry" {
 	object {
 		x=147
-		y=485
+		y=701
 		width=50
 		height=18
 	}
@@ -211,7 +211,7 @@ text {
 "text entry" {
 	object {
 		x=147
-		y=505
+		y=721
 		width=50
 		height=18
 	}
@@ -228,7 +228,7 @@ text {
 polyline {
 	object {
 		x=66
-		y=447
+		y=663
 		width=220
 		height=0
 	}
@@ -236,8 +236,8 @@ polyline {
 		clr=0
 	}
 	points {
-		(66,447)
-		(286,447)
+		(66,663)
+		(286,663)
 	}
 }
 "message button" {
@@ -493,7 +493,7 @@ text {
 text {
 	object {
 		x=43
-		y=566
+		y=800
 		width=54
 		height=15
 	}
@@ -506,7 +506,7 @@ text {
 text {
 	object {
 		x=42
-		y=587
+		y=821
 		width=54
 		height=15
 	}
@@ -519,7 +519,7 @@ text {
 "text entry" {
 	object {
 		x=100
-		y=564
+		y=798
 		width=50
 		height=18
 	}
@@ -536,7 +536,7 @@ text {
 "text entry" {
 	object {
 		x=100
-		y=586
+		y=820
 		width=50
 		height=18
 	}
@@ -553,7 +553,7 @@ text {
 "text update" {
 	object {
 		x=153
-		y=566
+		y=800
 		width=51
 		height=15
 	}
@@ -571,7 +571,7 @@ text {
 "text update" {
 	object {
 		x=153
-		y=588
+		y=822
 		width=51
 		height=15
 	}
@@ -589,7 +589,7 @@ text {
 text {
 	object {
 		x=102
-		y=549
+		y=783
 		width=100
 		height=15
 	}
@@ -602,12 +602,12 @@ text {
 "text entry" {
 	object {
 		x=211
-		y=564
+		y=798
 		width=50
 		height=18
 	}
 	control {
-		chan="$(P):iDelta"
+		chan="$(P):iDeltaMT"
 		clr=14
 		bclr=55
 	}
@@ -619,12 +619,12 @@ text {
 "text entry" {
 	object {
 		x=211
-		y=586
+		y=820
 		width=50
 		height=18
 	}
 	control {
-		chan="$(P):iDelta"
+		chan="$(P):iDeltaPS"
 		clr=14
 		bclr=55
 	}
@@ -636,12 +636,12 @@ text {
 "text update" {
 	object {
 		x=264
-		y=566
+		y=800
 		width=51
 		height=15
 	}
 	monitor {
-		chan="$(P):iDelta"
+		chan="$(P):iDeltaMT"
 		clr=0
 		bclr=12
 	}
@@ -654,12 +654,12 @@ text {
 "text update" {
 	object {
 		x=264
-		y=588
+		y=822
 		width=51
 		height=15
 	}
 	monitor {
-		chan="$(P):iDelta"
+		chan="$(P):iDeltaPS"
 		clr=0
 		bclr=12
 	}
@@ -672,7 +672,7 @@ text {
 text {
 	object {
 		x=223
-		y=549
+		y=783
 		width=80
 		height=15
 	}
@@ -685,7 +685,7 @@ text {
 rectangle {
 	object {
 		x=12
-		y=546
+		y=780
 		width=327
 		height=62
 	}
@@ -943,7 +943,7 @@ text {
 text {
 	object {
 		x=53
-		y=470
+		y=686
 		width=243
 		height=20
 	}
@@ -952,4 +952,297 @@ text {
 	}
 	textix="* These Are NOT Autosaved *"
 	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=12
+		y=425
+		width=327
+		height=180
+	}
+	"basic attribute" {
+		clr=5
+		fill="outline"
+	}
+}
+text {
+	object {
+		x=77
+		y=432
+		width=196
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Manually Scan Current Setpoints"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=154
+		y=511
+		width=49
+		height=15
+	}
+	monitor {
+		chan="$(P):energy"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=154
+		y=532
+		width=49
+		height=14
+	}
+	monitor {
+		chan="$(P):iCalcMT"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=154
+		y=551
+		width=49
+		height=14
+	}
+	monitor {
+		chan="$(P):iCalcPS"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+text {
+	object {
+		x=37
+		y=551
+		width=59
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Pair Spec"
+	align="horiz. right"
+}
+text {
+	object {
+		x=37
+		y=532
+		width=59
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Mini Torus"
+	align="horiz. right"
+}
+"message button" {
+	object {
+		x=84
+		y=574
+		width=205
+		height=20
+	}
+	control {
+		chan="$(P):calcCurr"
+		clr=0
+		bclr=12
+	}
+	label="Recalculate Currents from Energy"
+	press_msg="1"
+	clrmod="discrete"
+}
+text {
+	object {
+		x=36
+		y=513
+		width=59
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Energy"
+	align="horiz. right"
+}
+polyline {
+	object {
+		x=45
+		y=448
+		width=259
+		height=0
+	}
+	"basic attribute" {
+		clr=0
+	}
+	points {
+		(45,448)
+		(304,448)
+	}
+}
+text {
+	object {
+		x=27
+		y=472
+		width=243
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	textix="* These Are Autosaved *"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=79
+		y=456
+		width=202
+		height=19
+	}
+	"basic attribute" {
+		clr=20
+	}
+	textix="PROPOGATES TO POWER SUPPLIES IMMEDIATELY"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=206
+		y=532
+		width=50
+		height=14
+	}
+	monitor {
+		chan="MTSETI"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=206
+		y=551
+		width=50
+		height=14
+	}
+	monitor {
+		chan="PSPECISET"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=259
+		y=531
+		width=50
+		height=14
+	}
+	monitor {
+		chan="MTIRBCK"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=258
+		y=551
+		width=50
+		height=14
+	}
+	monitor {
+		chan="MTIRBCK"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+text {
+	object {
+		x=100
+		y=490
+		width=59
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Calc"
+	align="horiz. right"
+}
+"wheel switch" {
+	object {
+		x=95
+		y=506
+		width=60
+		height=30
+	}
+	control {
+		chan="$(P):energy"
+		clr=5
+		bclr=13
+	}
+	limits {
+		loprSrc="default"
+		loprDefault=2000
+		hoprSrc="default"
+		hoprDefault=2600
+		precSrc="default"
+		precDefault=2
+	}
 }

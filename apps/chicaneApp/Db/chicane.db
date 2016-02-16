@@ -12,6 +12,9 @@ record (bo, "$(P):calc")
 record (bo, "$(P):calcCurr")
 {
 }
+record (bo, "$(P):calcAndSetCurr")
+{
+}
 record (stringout, "$(P):msg")
 {
 }
@@ -145,26 +148,27 @@ record(calc,"$(P):comstatPS")
 
 
 # these will be removed when deployed:
-#record (bo, "$(P):gotoMax")
-#{
-#}
-#record (bo, "$(P):gotoSet")
-#{
-#}
-#record (bo, "$(P):gotoZero")
-#{
-#}
-#record (bo, "$(P):powerPS")
-#{
-#    field(VAL,0)
-#    field(ZNAM,"OFF")
-#    field(ONAM,"ON")
-#}
-#record (bo, "$(P):powerMT")
-#{
-#    field(VAL,0)
-#    field(ZNAM,"OFF")
-#    field(ONAM,"ON")
-#}
+record (bo, "$(P):gotoMax")
+{
+}
+record (bo, "$(P):gotoSet")
+{
+}
+record (bo, "$(P):gotoZero")
+{
+}
+
+record (bo, "$(P):powerPS")
+{
+    field(VAL,0)
+    field(ZNAM,"OFF")
+    field(ONAM,"ON")
+}
+record (bo, "$(P):powerMT")
+{
+    field(VAL,0)
+    field(ZNAM,"OFF")
+    field(ONAM,"ON")
+}
 
 
