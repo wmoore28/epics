@@ -12,5 +12,6 @@ if [ "$INPUT_STRING" != "" ]; then
 	user=$INPUT_STRING
 fi
 
-ssh $host -l $user jtabs
+#ssh $host -l $user jtabs
+ssh $host -l $user jmenu
 
