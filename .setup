@@ -30,6 +30,7 @@ setenv EPICS_EXTENSIONS $CLAS/R$EPICS_VER/extensions$RHEL_VER
 set -f path=($path:q "$EPICS_BASE/bin/$EPICS_HOST_ARCH")
 set -f path=($path:q "$EPICS_EXTENSIONS/bin/$EPICS_HOST_ARCH")
 set -f path=($path:q "/apps/root/5.34.21/$EPICS_HOST_ARCH/bin")
+set -f path=($path:q "/apps/mdautils-1.3.1/${EPICS_HOST_ARCH}")
 ## EPICS tools and utils
 set -f path=($path:q "$CLAS/hps/prod/bin")
 ## CSS, alarm tools, etc
