@@ -1,12 +1,12 @@
 
 file {
 	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/hps_trigger_scalers.adl"
-	version=030109
+	version=030101
 }
 display {
 	object {
-		x=1147
-		y=588
+		x=539
+		y=212
 		width=606
 		height=441
 	}
@@ -89,7 +89,7 @@ display {
 }
 rectangle {
 	object {
-		x=97
+		x=49
 		y=396
 		width=409
 		height=38
@@ -100,7 +100,7 @@ rectangle {
 }
 rectangle {
 	object {
-		x=97
+		x=49
 		y=395
 		width=409
 		height=38
@@ -112,7 +112,7 @@ rectangle {
 }
 rectangle {
 	object {
-		x=569
+		x=539
 		y=92
 		width=30
 		height=48
@@ -128,7 +128,7 @@ rectangle {
 	object {
 		x=5
 		y=91
-		width=527
+		width=497
 		height=300
 	}
 	plotcom {
@@ -171,7 +171,7 @@ rectangle {
 	}
 	pen[4] {
 		chan="HPSTRIGSC_4_SFRAC_PRE"
-		clr=6
+		clr=7
 		limits {
 			hoprSrc="default"
 			hoprDefault=100
@@ -220,7 +220,7 @@ text {
 }
 bar {
 	object {
-		x=570
+		x=540
 		y=161
 		width=30
 		height=229
@@ -240,7 +240,7 @@ bar {
 }
 text {
 	object {
-		x=573
+		x=543
 		y=95
 		width=24
 		height=12
@@ -255,7 +255,7 @@ text {
 }
 rectangle {
 	object {
-		x=569
+		x=539
 		y=140
 		width=30
 		height=5
@@ -266,7 +266,7 @@ rectangle {
 }
 text {
 	object {
-		x=582
+		x=552
 		y=125
 		width=24
 		height=40
@@ -281,7 +281,7 @@ text {
 }
 "text update" {
 	object {
-		x=569
+		x=539
 		y=145
 		width=30
 		height=15
@@ -297,7 +297,7 @@ text {
 }
 text {
 	object {
-		x=573
+		x=543
 		y=110
 		width=24
 		height=12
@@ -308,7 +308,8 @@ text {
 	"dynamic attribute" {
 		chan="HPSBEAMANGX"
 	}
-	textix="TIME"
+	textix="PULSE"
+	align="horiz. centered"
 }
 rectangle {
 	object {
@@ -324,7 +325,7 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=111
+		x=63
 		y=412
 		width=30
 		height=15
@@ -339,7 +340,7 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=176
+		x=128
 		y=412
 		width=30
 		height=15
@@ -354,7 +355,7 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=241
+		x=193
 		y=412
 		width=30
 		height=15
@@ -369,7 +370,7 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=306
+		x=258
 		y=412
 		width=30
 		height=15
@@ -1042,7 +1043,7 @@ text {
 }
 text {
 	object {
-		x=105
+		x=57
 		y=397
 		width=54
 		height=11
@@ -1054,7 +1055,7 @@ text {
 }
 text {
 	object {
-		x=168
+		x=120
 		y=397
 		width=54
 		height=11
@@ -1066,7 +1067,7 @@ text {
 }
 text {
 	object {
-		x=239
+		x=191
 		y=397
 		width=54
 		height=11
@@ -1078,7 +1079,7 @@ text {
 }
 text {
 	object {
-		x=304
+		x=256
 		y=397
 		width=54
 		height=11
@@ -1090,7 +1091,7 @@ text {
 }
 text {
 	object {
-		x=354
+		x=306
 		y=407
 		width=54
 		height=11
@@ -1102,7 +1103,7 @@ text {
 }
 rectangle {
 	object {
-		x=568
+		x=538
 		y=91
 		width=32
 		height=299
@@ -1158,7 +1159,7 @@ text {
 }
 rectangle {
 	object {
-		x=535
+		x=505
 		y=92
 		width=30
 		height=48
@@ -1172,7 +1173,7 @@ rectangle {
 }
 bar {
 	object {
-		x=536
+		x=506
 		y=161
 		width=30
 		height=229
@@ -1186,13 +1187,13 @@ bar {
 	limits {
 		loprSrc="default"
 		hoprSrc="default"
-		hoprDefault=60
+		hoprDefault=250
 		precSrc="default"
 	}
 }
 text {
 	object {
-		x=539
+		x=509
 		y=95
 		width=24
 		height=12
@@ -1207,7 +1208,7 @@ text {
 }
 rectangle {
 	object {
-		x=535
+		x=505
 		y=140
 		width=30
 		height=5
@@ -1218,7 +1219,7 @@ rectangle {
 }
 text {
 	object {
-		x=545
+		x=515
 		y=125
 		width=24
 		height=40
@@ -1233,7 +1234,7 @@ text {
 }
 "text update" {
 	object {
-		x=535
+		x=505
 		y=145
 		width=30
 		height=15
@@ -1250,7 +1251,7 @@ text {
 }
 text {
 	object {
-		x=539
+		x=509
 		y=110
 		width=24
 		height=12
@@ -1265,7 +1266,7 @@ text {
 }
 rectangle {
 	object {
-		x=534
+		x=504
 		y=91
 		width=32
 		height=299
@@ -1277,7 +1278,7 @@ rectangle {
 }
 "shell command" {
 	object {
-		x=525
+		x=520
 		y=408
 		width=69
 		height=19
@@ -1290,4 +1291,123 @@ rectangle {
 	clr=33
 	bclr=12
 	label="REBOOT"
+}
+rectangle {
+	object {
+		x=573
+		y=92
+		width=30
+		height=48
+	}
+	"basic attribute" {
+		clr=12
+	}
+	"dynamic attribute" {
+		chan="HPSBEAMANGX"
+	}
+}
+bar {
+	object {
+		x=574
+		y=161
+		width=30
+		height=229
+	}
+	monitor {
+		chan="hallb_livetime"
+		clr=36
+		bclr=12
+	}
+	direction="up"
+	limits {
+		loprSrc="default"
+		hoprSrc="default"
+		hoprDefault=100
+		precSrc="default"
+	}
+}
+text {
+	object {
+		x=577
+		y=95
+		width=24
+		height=12
+	}
+	"basic attribute" {
+		clr=36
+	}
+	"dynamic attribute" {
+		chan="HPSBEAMANGX"
+	}
+	textix="LIVE"
+}
+rectangle {
+	object {
+		x=573
+		y=140
+		width=30
+		height=5
+	}
+	"basic attribute" {
+		clr=36
+	}
+}
+text {
+	object {
+		x=586
+		y=125
+		width=24
+		height=40
+	}
+	"basic attribute" {
+		clr=36
+	}
+	"dynamic attribute" {
+		chan="HPSBEAMANGX"
+	}
+	textix="%"
+}
+"text update" {
+	object {
+		x=573
+		y=145
+		width=30
+		height=15
+	}
+	monitor {
+		chan="hallb_livetime"
+		clr=36
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=577
+		y=110
+		width=24
+		height=12
+	}
+	"basic attribute" {
+		clr=36
+	}
+	"dynamic attribute" {
+		chan="HPSBEAMANGX"
+	}
+	textix="TI"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=572
+		y=91
+		width=32
+		height=299
+	}
+	"basic attribute" {
+		clr=6
+		fill="outline"
+	}
 }
