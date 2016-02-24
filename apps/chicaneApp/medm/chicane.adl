@@ -1,12 +1,12 @@
 
 file {
 	name="/usr/clas12/hps/v3.0.0/apps/chicaneApp/medm/./chicane.adl"
-	version=030101
+	version=030109
 }
 display {
 	object {
-		x=895
-		y=142
+		x=1199
+		y=168
 		width=442
 		height=247
 	}
@@ -157,37 +157,6 @@ bar {
 	limits {
 		hoprSrc="default"
 	}
-}
-"message button" {
-	object {
-		x=53
-		y=38
-		width=50
-		height=20
-	}
-	control {
-		chan="$(P):start"
-		clr=0
-		bclr=19
-	}
-	label="ON"
-	press_msg="1"
-	clrmod="discrete"
-}
-"message button" {
-	object {
-		x=106
-		y=38
-		width=50
-		height=20
-	}
-	control {
-		chan="$(P):stop"
-		clr=0
-		bclr=24
-	}
-	label="OFF"
-	press_msg="1"
 }
 "text update" {
 	object {
@@ -904,4 +873,36 @@ polyline {
 	}
 	clr=0
 	bclr=11
+}
+"related display" {
+	object {
+		x=105
+		y=38
+		width=50
+		height=20
+	}
+	display[0] {
+		label="OFF"
+		name="chicaneOff.adl"
+		args="P=hps_chicane"
+	}
+	clr=0
+	bclr=21
+	label="OFF"
+}
+"related display" {
+	object {
+		x=40
+		y=38
+		width=50
+		height=20
+	}
+	display[0] {
+		label="ON"
+		name="chicaneOn.adl"
+		args="P=hps_chicane"
+	}
+	clr=0
+	bclr=16
+	label="ON"
 }
