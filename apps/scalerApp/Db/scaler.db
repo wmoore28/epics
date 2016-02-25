@@ -327,7 +327,13 @@ grecord(transform,"scaler_cts8")
 
 
 
-
+# HPS BLM FSD BTA MCC (for CLAS it used to be upstream sum):
+grecord(calc,"scaler_sum")
+{
+     field(SCAN,"1 second")
+     field(CALC,"a")
+     field(INPA,"ISD2H001ALOS2B")
+}
 
 
 
