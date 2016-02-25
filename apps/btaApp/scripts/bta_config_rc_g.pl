@@ -1,4 +1,4 @@
-#!/bin/env perl 
+#!/usr/bin/perl 
 
 use Pezca; 
 
@@ -119,7 +119,7 @@ sub init_gui
 					  -relief   => 'flat')->pack(@pl);
     my $scale1 = $RightFrame->Scale(
 				    qw/-orient horizontal -length 200 -width 10 
-				    -from 0. -to 200. -resolution 1.0 -tickinterval 50. /
+				    -from 0. -to 320. -resolution 5.0 -tickinterval 50. /
 				   ) ;
     $scale1->configure( -variable  => \$MinCurr );
     $scale1->pack(qw/-side top -expand yes -anchor w/);
@@ -135,7 +135,7 @@ sub init_gui
 					  -relief   => 'flat')->pack(@pl);
     my $scale2 = $RightFrame->Scale(
 				    qw/-orient horizontal -length 200 -width 10 
-				    -from 0. -to 220. -resolution 1.0 -tickinterval 50. /
+				    -from 0. -to 320. -resolution 5.0 -tickinterval 50. /
 				   ) ;
     $scale2->configure( -variable  => \$MaxCurr );
     $scale2->pack(qw/-side top -expand yes -anchor w/);
@@ -146,12 +146,12 @@ sub init_gui
     
     my(@pl) = qw/-side top -pady 18 -anchor w/;
     my $ChButt3 = $LeftFrame->Checkbutton(
-					  -text     => 'Max Upstream Count Sum (Hz)',
+					  -text     => 'FSD Count Sum',
 					  -variable => \$LowCountFlag,
 					  -relief   => 'flat')->pack(@pl);
     my $scale3 = $RightFrame->Scale(
 				    qw/-orient horizontal -length 200 -width 10 
-				    -from 0 -to 2000 -tickinterval 400 / 
+				    -from 0 -to 400000 -resolution 5000.0 -tickinterval 400000 / 
 				   ) ;
     $scale3->configure( -variable  => \$MaxLowCount );
     $scale3->pack(qw/-side top -expand yes -anchor w/);
