@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/medm/../btaApp/medm/bta_status.adl"
-	version=030109
+	name="/usr/clas12/hps/v3.0.0/apps/btaApp/./medm/bta_status.adl"
+	version=030101
 }
 display {
 	object {
-		x=300
-		y=155
+		x=298
+		y=139
 		width=605
 		height=340
 	}
@@ -884,93 +884,82 @@ text {
 	textix="+-"
 	align="horiz. centered"
 }
-composite {
+text {
 	object {
 		x=15
 		y=140
-		width=343
+		width=134
 		height=20
 	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=15
-				y=140
-				width=134
-				height=20
-			}
-			"basic attribute" {
-				clr=27
-			}
-			textix="Upstr. Counts"
-		}
-		oval {
-			object {
-				x=150
-				y=140
-				width=16
-				height=16
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A>B"
-				chan="HLB:bta_reg_bm.B"
-				chanB="HLB:bta_reg_bm.H"
-			}
-		}
-		oval {
-			object {
-				x=151
-				y=140
-				width=16
-				height=16
-			}
-			"basic attribute" {
-				clr=17
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="A<B"
-				chan="HLB:bta_reg_bm.B"
-				chanB="HLB:bta_reg_bm.H"
-			}
-		}
-		"text update" {
-			object {
-				x=175
-				y=140
-				width=82
-				height=20
-			}
-			monitor {
-				chan="HLB:bta_reg_bm.B"
-				clr=14
-				bclr=50
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=283
-				y=140
-				width=75
-				height=20
-			}
-			monitor {
-				chan="HLB:bta_reg_bm.INPH"
-				clr=14
-				bclr=50
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
+	"basic attribute" {
+		clr=27
+	}
+	textix="FSD Counts"
+}
+oval {
+	object {
+		x=150
+		y=140
+		width=16
+		height=16
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A>B"
+		chan="HLB:bta_reg_bm.B"
+		chanB="HLB:bta_reg_bm.H"
+	}
+}
+oval {
+	object {
+		x=151
+		y=140
+		width=16
+		height=16
+	}
+	"basic attribute" {
+		clr=17
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A<B"
+		chan="HLB:bta_reg_bm.B"
+		chanB="HLB:bta_reg_bm.H"
+	}
+}
+"text update" {
+	object {
+		x=175
+		y=140
+		width=82
+		height=20
+	}
+	monitor {
+		chan="HLB:bta_reg_bm.B"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=283
+		y=140
+		width=75
+		height=20
+	}
+	monitor {
+		chan="HLB:bta_reg_bm.INPH"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
 	}
 }
 text {

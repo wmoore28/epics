@@ -75,11 +75,11 @@ sub init_gui
     #
     #  Divide the Canvas into 4 Frames
     #
-    my @pl = qw/-side top -expand 1 -padx .5c -pady .5c/;
+    my @pl = qw/-side top -expand 1 -padx .5c -pady 0/;
     my $UpperFrame  = $MainPad->Frame->pack(@pl);
     my $LowerFrame  = $MainPad->Frame->pack(@pl);
     
-    my @pl = qw/-side left -expand 1 -padx .5c -pady .5c/;
+    my @pl = qw/-side left -expand 1 -padx .5c -pady 0/;
     my $LeftFrame  = $UpperFrame->Frame->pack(@pl);
     my $RightFrame = $UpperFrame->Frame->pack(@pl);
     
@@ -118,7 +118,7 @@ sub init_gui
 					  -variable => \$MinCurrFlag,
 					  -relief   => 'flat')->pack(@pl);
     my $scale1 = $RightFrame->Scale(
-				    qw/-orient horizontal -length 200 -width 10 
+				    qw/-orient horizontal -length 300 -width 10 
 				    -from 0. -to 320. -resolution 5.0 -tickinterval 50. /
 				   ) ;
     $scale1->configure( -variable  => \$MinCurr );
@@ -134,7 +134,7 @@ sub init_gui
 					  -variable => \$MaxCurrFlag,
 					  -relief   => 'flat')->pack(@pl);
     my $scale2 = $RightFrame->Scale(
-				    qw/-orient horizontal -length 200 -width 10 
+				    qw/-orient horizontal -length 300 -width 10 
 				    -from 0. -to 320. -resolution 5.0 -tickinterval 50. /
 				   ) ;
     $scale2->configure( -variable  => \$MaxCurr );
@@ -150,7 +150,7 @@ sub init_gui
 					  -variable => \$LowCountFlag,
 					  -relief   => 'flat')->pack(@pl);
     my $scale3 = $RightFrame->Scale(
-				    qw/-orient horizontal -length 200 -width 10 
+				    qw/-orient horizontal -length 300 -width 10 
 				    -from 0 -to 400000 -resolution 5000.0 -tickinterval 400000 / 
 				   ) ;
     $scale3->configure( -variable  => \$MaxLowCount );
@@ -166,7 +166,7 @@ sub init_gui
 					  -variable => \$SixtyHzFlag,
 					  -relief   => 'flat')->pack(@pl);
     my $scale4 = $RightFrame->Scale(
-				    qw/-orient horizontal -length 200 -width 10 
+				    qw/-orient horizontal -length 300 -width 10 
 				    -from 0 -to 40 -resolution 0.1 -tickinterval 10 /
 				   ) ;
     $scale4->configure( -variable  => \$MaxSixtyHz );
@@ -183,7 +183,7 @@ sub init_gui
 					  -variable => \$MinPolFlag,
 					  -relief   => 'flat')->pack(@pl);
     my $scale5 = $RightFrame->Scale(
-				    qw/-orient horizontal -length 200 -width 10 
+				    qw/-orient horizontal -length 300 -width 10 
 				    -from 0 -to 100 -tickinterval  20 /
 				   ) ;
     $scale5->configure( -variable  => \$MinPol );
@@ -199,7 +199,7 @@ sub init_gui
 					  -variable => \$MaxChAsymmFlag,
 					  -relief   => 'flat')->pack(@pl);
     my $scale6 = $RightFrame->Scale(
-				    qw/-orient horizontal -length 200 -width 10 
+				    qw/-orient horizontal -length 300 -width 10 
 				    -from 0. -to 1. -resolution 0.01 -tickinterval  0.25 /
 				   ) ;
     $scale6->configure( -variable  => \$MaxChAsymm );
@@ -215,7 +215,7 @@ sub init_gui
 					  -variable => \$MaxBomRateFlag,
 					  -relief   => 'flat')->pack(@pl);
     my $scale7 = $RightFrame->Scale(
-				    qw/-orient horizontal -length 200 -width 10 
+				    qw/-orient horizontal -length 300 -width 10 
 				    -from 0. -to 400. -tickinterval  100 /
 				   ) ;
     $scale7->configure( -variable  => \$MaxBomRate );
