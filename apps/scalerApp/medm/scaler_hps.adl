@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/scalerApp/medm/scaler_hps.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/scalerApp/medm/./scaler_hps.adl"
 	version=030109
 }
 display {
 	object {
-		x=110
-		y=57
+		x=105
+		y=35
 		width=1268
 		height=925
 	}
@@ -4003,6 +4003,21 @@ text {
 		bclr=4
 	}
 	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=590
+		y=5
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocchicane:TOD"
+		clr=14
+		bclr=4
+	}
 	limits {
 	}
 }
