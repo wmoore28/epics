@@ -1,12 +1,12 @@
 
 file {
 	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/hps_trigger_scalers.adl"
-	version=030101
+	version=030109
 }
 display {
 	object {
-		x=539
-		y=212
+		x=534
+		y=190
 		width=606
 		height=441
 	}
@@ -112,7 +112,7 @@ rectangle {
 }
 rectangle {
 	object {
-		x=539
+		x=568
 		y=92
 		width=30
 		height=48
@@ -128,7 +128,7 @@ rectangle {
 	object {
 		x=5
 		y=91
-		width=497
+		width=527
 		height=300
 	}
 	plotcom {
@@ -220,7 +220,7 @@ text {
 }
 bar {
 	object {
-		x=540
+		x=569
 		y=161
 		width=30
 		height=229
@@ -240,7 +240,7 @@ bar {
 }
 text {
 	object {
-		x=543
+		x=572
 		y=95
 		width=24
 		height=12
@@ -255,7 +255,7 @@ text {
 }
 rectangle {
 	object {
-		x=539
+		x=568
 		y=140
 		width=30
 		height=5
@@ -266,7 +266,7 @@ rectangle {
 }
 text {
 	object {
-		x=552
+		x=581
 		y=125
 		width=24
 		height=40
@@ -281,7 +281,7 @@ text {
 }
 "text update" {
 	object {
-		x=539
+		x=568
 		y=145
 		width=30
 		height=15
@@ -297,7 +297,7 @@ text {
 }
 text {
 	object {
-		x=543
+		x=572
 		y=110
 		width=24
 		height=12
@@ -1103,7 +1103,7 @@ text {
 }
 rectangle {
 	object {
-		x=538
+		x=567
 		y=91
 		width=32
 		height=299
@@ -1159,7 +1159,7 @@ text {
 }
 rectangle {
 	object {
-		x=505
+		x=534
 		y=92
 		width=30
 		height=48
@@ -1173,7 +1173,7 @@ rectangle {
 }
 bar {
 	object {
-		x=506
+		x=535
 		y=161
 		width=30
 		height=229
@@ -1193,7 +1193,7 @@ bar {
 }
 text {
 	object {
-		x=509
+		x=538
 		y=95
 		width=24
 		height=12
@@ -1208,7 +1208,7 @@ text {
 }
 rectangle {
 	object {
-		x=505
+		x=534
 		y=140
 		width=30
 		height=5
@@ -1219,7 +1219,7 @@ rectangle {
 }
 text {
 	object {
-		x=515
+		x=544
 		y=125
 		width=24
 		height=40
@@ -1234,7 +1234,7 @@ text {
 }
 "text update" {
 	object {
-		x=505
+		x=534
 		y=145
 		width=30
 		height=15
@@ -1251,7 +1251,7 @@ text {
 }
 text {
 	object {
-		x=509
+		x=538
 		y=110
 		width=24
 		height=12
@@ -1266,7 +1266,7 @@ text {
 }
 rectangle {
 	object {
-		x=504
+		x=533
 		y=91
 		width=32
 		height=299
@@ -1291,123 +1291,4 @@ rectangle {
 	clr=33
 	bclr=12
 	label="REBOOT"
-}
-rectangle {
-	object {
-		x=573
-		y=92
-		width=30
-		height=48
-	}
-	"basic attribute" {
-		clr=12
-	}
-	"dynamic attribute" {
-		chan="HPSBEAMANGX"
-	}
-}
-bar {
-	object {
-		x=574
-		y=161
-		width=30
-		height=229
-	}
-	monitor {
-		chan="hallb_livetime"
-		clr=36
-		bclr=12
-	}
-	direction="up"
-	limits {
-		loprSrc="default"
-		hoprSrc="default"
-		hoprDefault=100
-		precSrc="default"
-	}
-}
-text {
-	object {
-		x=577
-		y=95
-		width=24
-		height=12
-	}
-	"basic attribute" {
-		clr=36
-	}
-	"dynamic attribute" {
-		chan="HPSBEAMANGX"
-	}
-	textix="LIVE"
-}
-rectangle {
-	object {
-		x=573
-		y=140
-		width=30
-		height=5
-	}
-	"basic attribute" {
-		clr=36
-	}
-}
-text {
-	object {
-		x=586
-		y=125
-		width=24
-		height=40
-	}
-	"basic attribute" {
-		clr=36
-	}
-	"dynamic attribute" {
-		chan="HPSBEAMANGX"
-	}
-	textix="%"
-}
-"text update" {
-	object {
-		x=573
-		y=145
-		width=30
-		height=15
-	}
-	monitor {
-		chan="hallb_livetime"
-		clr=36
-		bclr=12
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=577
-		y=110
-		width=24
-		height=12
-	}
-	"basic attribute" {
-		clr=36
-	}
-	"dynamic attribute" {
-		chan="HPSBEAMANGX"
-	}
-	textix="TI"
-	align="horiz. centered"
-}
-rectangle {
-	object {
-		x=572
-		y=91
-		width=32
-		height=299
-	}
-	"basic attribute" {
-		clr=6
-		fill="outline"
-	}
 }
