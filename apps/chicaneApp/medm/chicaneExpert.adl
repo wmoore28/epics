@@ -1,14 +1,14 @@
 
 file {
-	name="chicaneExpert2.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/chicaneApp/medm/chicaneExpert.adl"
 	version=030109
 }
 display {
 	object {
-		x=381
-		y=30
-		width=400
-		height=315
+		x=1553
+		y=161
+		width=397
+		height=286
 	}
 	clr=10
 	bclr=13
@@ -90,7 +90,7 @@ display {
 rectangle {
 	object {
 		x=13
-		y=53
+		y=40
 		width=370
 		height=150
 	}
@@ -101,21 +101,21 @@ rectangle {
 }
 text {
 	object {
-		x=102
-		y=60
+		x=100
+		y=47
 		width=196
 		height=14
 	}
 	"basic attribute" {
 		clr=0
 	}
-	textix="Manually Adjust Currents"
+	textix="Manually Adjust Current Setpoints"
 	align="horiz. centered"
 }
 "text update" {
 	object {
 		x=303
-		y=108
+		y=95
 		width=50
 		height=14
 	}
@@ -135,7 +135,7 @@ text {
 "text update" {
 	object {
 		x=303
-		y=127
+		y=114
 		width=50
 		height=14
 	}
@@ -155,7 +155,7 @@ text {
 text {
 	object {
 		x=40
-		y=127
+		y=114
 		width=59
 		height=14
 	}
@@ -168,7 +168,7 @@ text {
 text {
 	object {
 		x=41
-		y=108
+		y=95
 		width=59
 		height=14
 	}
@@ -181,7 +181,7 @@ text {
 "text entry" {
 	object {
 		x=247
-		y=105
+		y=92
 		width=50
 		height=18
 	}
@@ -198,7 +198,7 @@ text {
 "text entry" {
 	object {
 		x=247
-		y=125
+		y=112
 		width=50
 		height=18
 	}
@@ -214,23 +214,23 @@ text {
 }
 polyline {
 	object {
-		x=116
-		y=76
-		width=160
+		x=98
+		y=63
+		width=200
 		height=0
 	}
 	"basic attribute" {
 		clr=0
 	}
 	points {
-		(116,76)
-		(276,76)
+		(98,63)
+		(298,63)
 	}
 }
 text {
 	object {
 		x=240
-		y=87
+		y=74
 		width=120
 		height=20
 	}
@@ -267,7 +267,7 @@ text {
 text {
 	object {
 		x=63
-		y=250
+		y=226
 		width=54
 		height=15
 	}
@@ -280,7 +280,7 @@ text {
 text {
 	object {
 		x=62
-		y=271
+		y=247
 		width=54
 		height=15
 	}
@@ -293,7 +293,7 @@ text {
 "text entry" {
 	object {
 		x=120
-		y=248
+		y=224
 		width=50
 		height=18
 	}
@@ -310,7 +310,7 @@ text {
 "text entry" {
 	object {
 		x=120
-		y=270
+		y=246
 		width=50
 		height=18
 	}
@@ -327,7 +327,7 @@ text {
 "text update" {
 	object {
 		x=173
-		y=250
+		y=226
 		width=51
 		height=15
 	}
@@ -345,7 +345,7 @@ text {
 "text update" {
 	object {
 		x=173
-		y=272
+		y=248
 		width=51
 		height=15
 	}
@@ -363,7 +363,7 @@ text {
 text {
 	object {
 		x=122
-		y=233
+		y=209
 		width=100
 		height=15
 	}
@@ -376,7 +376,7 @@ text {
 "text entry" {
 	object {
 		x=231
-		y=248
+		y=224
 		width=50
 		height=18
 	}
@@ -393,7 +393,7 @@ text {
 "text entry" {
 	object {
 		x=231
-		y=270
+		y=246
 		width=50
 		height=18
 	}
@@ -410,7 +410,7 @@ text {
 "text update" {
 	object {
 		x=284
-		y=250
+		y=226
 		width=51
 		height=15
 	}
@@ -428,7 +428,7 @@ text {
 "text update" {
 	object {
 		x=284
-		y=272
+		y=248
 		width=51
 		height=15
 	}
@@ -446,7 +446,7 @@ text {
 text {
 	object {
 		x=243
-		y=233
+		y=209
 		width=80
 		height=15
 	}
@@ -459,7 +459,7 @@ text {
 rectangle {
 	object {
 		x=32
-		y=230
+		y=206
 		width=327
 		height=62
 	}
@@ -474,7 +474,7 @@ rectangle {
 "text update" {
 	object {
 		x=175
-		y=108
+		y=95
 		width=50
 		height=14
 	}
@@ -494,7 +494,7 @@ rectangle {
 "text update" {
 	object {
 		x=175
-		y=127
+		y=114
 		width=50
 		height=14
 	}
@@ -514,7 +514,7 @@ rectangle {
 "text entry" {
 	object {
 		x=119
-		y=105
+		y=92
 		width=50
 		height=18
 	}
@@ -531,7 +531,7 @@ rectangle {
 "text entry" {
 	object {
 		x=119
-		y=125
+		y=112
 		width=50
 		height=18
 	}
@@ -548,7 +548,7 @@ rectangle {
 text {
 	object {
 		x=111
-		y=87
+		y=74
 		width=120
 		height=20
 	}
@@ -558,36 +558,10 @@ text {
 	textix="Live"
 	align="horiz. centered"
 }
-text {
-	object {
-		x=41
-		y=166
-		width=313
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	textix=""Live" propogate to the power supplies immediately."
-	align="horiz. centered"
-}
-text {
-	object {
-		x=40
-		y=184
-		width=313
-		height=20
-	}
-	"basic attribute" {
-		clr=15
-	}
-	textix=""Saved" are used the next time the chicane is turned on."
-	align="horiz. centered"
-}
 rectangle {
 	object {
 		x=114
-		y=85
+		y=72
 		width=115
 		height=62
 	}
@@ -599,7 +573,7 @@ rectangle {
 rectangle {
 	object {
 		x=242
-		y=85
+		y=72
 		width=115
 		height=62
 	}
@@ -611,7 +585,7 @@ rectangle {
 rectangle {
 	object {
 		x=33
-		y=101
+		y=88
 		width=324
 		height=46
 	}
@@ -634,4 +608,30 @@ rectangle {
 	}
 	clr=0
 	bclr=11
+}
+text {
+	object {
+		x=41
+		y=146
+		width=313
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	textix="'Live' propogates to the power supplies immediately."
+	align="horiz. centered"
+}
+text {
+	object {
+		x=40
+		y=167
+		width=313
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	textix="'Saved' is used the next time the chicane is turned on."
+	align="horiz. centered"
 }
