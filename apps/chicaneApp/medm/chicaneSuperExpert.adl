@@ -1,0 +1,1248 @@
+
+file {
+	name="/usr/clas12/hps/v3.0.0/apps/chicaneApp/medm/./chicaneExpert.adl"
+	version=030109
+}
+display {
+	object {
+		x=814
+		y=25
+		width=350
+		height=848
+	}
+	clr=14
+	bclr=13
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+rectangle {
+	object {
+		x=12
+		y=640
+		width=327
+		height=105
+	}
+	"basic attribute" {
+		clr=5
+		fill="outline"
+	}
+}
+text {
+	object {
+		x=78
+		y=647
+		width=200
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Manually Adjust Current Setpoints"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=72
+		y=671
+		width=202
+		height=19
+	}
+	"basic attribute" {
+		clr=20
+	}
+	textix="PROPOGATES TO POWER SUPPLIES IMMEDIATELY"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=203
+		y=704
+		width=50
+		height=14
+	}
+	monitor {
+		chan="MTSETI"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=203
+		y=723
+		width=50
+		height=14
+	}
+	monitor {
+		chan="PSPECISET"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+text {
+	object {
+		x=82
+		y=704
+		width=60
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Mini Torus"
+	align="horiz. right"
+}
+text {
+	object {
+		x=82
+		y=723
+		width=60
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Pair Spec"
+	align="horiz. right"
+}
+"text entry" {
+	object {
+		x=147
+		y=701
+		width=50
+		height=18
+	}
+	control {
+		chan="MTSETI"
+		clr=14
+		bclr=55
+	}
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text entry" {
+	object {
+		x=147
+		y=721
+		width=50
+		height=18
+	}
+	control {
+		chan="PSPECISET"
+		clr=14
+		bclr=55
+	}
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+polyline {
+	object {
+		x=66
+		y=663
+		width=220
+		height=0
+	}
+	"basic attribute" {
+		clr=0
+	}
+	points {
+		(66,663)
+		(286,663)
+	}
+}
+"message button" {
+	object {
+		x=51
+		y=187
+		width=259
+		height=20
+	}
+	control {
+		chan="$(P):calc"
+		clr=0
+		bclr=12
+	}
+	label="Use MCC Energy and Recalculate Currents"
+	press_msg="1"
+	clrmod="discrete"
+}
+text {
+	object {
+		x=66
+		y=124
+		width=80
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="MCC Beam Energy"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=77
+		y=141
+		width=50
+		height=14
+	}
+	monitor {
+		chan="MBSY2C_energy"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+rectangle {
+	object {
+		x=12
+		y=47
+		width=327
+		height=170
+	}
+	"basic attribute" {
+		clr=5
+		fill="outline"
+	}
+}
+"text update" {
+	object {
+		x=261
+		y=130
+		width=50
+		height=14
+	}
+	monitor {
+		chan="$(P):energy"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+text {
+	object {
+		x=189
+		y=130
+		width=60
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Beam Energy"
+	align="horiz. right"
+}
+text {
+	object {
+		x=189
+		y=113
+		width=120
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Calculated Setpoints"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=261
+		y=145
+		width=50
+		height=14
+	}
+	monitor {
+		chan="$(P):iCalcMT"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+text {
+	object {
+		x=189
+		y=145
+		width=60
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Mini Torus"
+	align="horiz. right"
+}
+text {
+	object {
+		x=189
+		y=160
+		width=60
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Pair Spec"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=261
+		y=160
+		width=50
+		height=14
+	}
+	monitor {
+		chan="$(P):iCalcPS"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+polyline {
+	object {
+		x=43
+		y=68
+		width=259
+		height=0
+	}
+	"basic attribute" {
+		clr=0
+	}
+	points {
+		(43,68)
+		(302,68)
+	}
+}
+text {
+	object {
+		x=75
+		y=52
+		width=196
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Automatically Calculate Energy/Current"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=36
+		y=75
+		width=281
+		height=19
+	}
+	"basic attribute" {
+		clr=15
+	}
+	textix="PROPOGATES TO POWER SUPPLIES DURING 'ON' PROCEDURE"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=175
+		y=109
+		width=142
+		height=71
+	}
+	"basic attribute" {
+		clr=10
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=23
+		y=10
+		width=307
+		height=18
+	}
+	"basic attribute" {
+		clr=60
+	}
+}
+text {
+	object {
+		x=117
+		y=13
+		width=120
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="HPS Chicane Controls - SUPER EXPERT"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=43
+		y=800
+		width=54
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Mini Torus"
+	align="horiz. right"
+}
+text {
+	object {
+		x=42
+		y=821
+		width=54
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Pair Spec"
+	align="horiz. right"
+}
+"text entry" {
+	object {
+		x=100
+		y=798
+		width=50
+		height=18
+	}
+	control {
+		chan="$(P):tHoldMax"
+		clr=14
+		bclr=55
+	}
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text entry" {
+	object {
+		x=100
+		y=820
+		width=50
+		height=18
+	}
+	control {
+		chan="$(P):tHoldMax"
+		clr=14
+		bclr=55
+	}
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=153
+		y=800
+		width=51
+		height=15
+	}
+	monitor {
+		chan="$(P):tHoldMax"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=153
+		y=822
+		width=51
+		height=15
+	}
+	monitor {
+		chan="$(P):tHoldMax"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+text {
+	object {
+		x=102
+		y=783
+		width=100
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Sat. Time (min)"
+	align="horiz. centered"
+}
+"text entry" {
+	object {
+		x=211
+		y=798
+		width=50
+		height=18
+	}
+	control {
+		chan="$(P):iDeltaMT"
+		clr=14
+		bclr=55
+	}
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text entry" {
+	object {
+		x=211
+		y=820
+		width=50
+		height=18
+	}
+	control {
+		chan="$(P):iDeltaPS"
+		clr=14
+		bclr=55
+	}
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=264
+		y=800
+		width=51
+		height=15
+	}
+	monitor {
+		chan="$(P):iDeltaMT"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=264
+		y=822
+		width=51
+		height=15
+	}
+	monitor {
+		chan="$(P):iDeltaPS"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+text {
+	object {
+		x=223
+		y=783
+		width=80
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Tolerance (A)"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=12
+		y=780
+		width=327
+		height=62
+	}
+	"basic attribute" {
+		clr=5
+		fill="outline"
+	}
+	"dynamic attribute" {
+		chan="MTMSTATUS"
+	}
+}
+rectangle {
+	object {
+		x=12
+		y=243
+		width=327
+		height=155
+	}
+	"basic attribute" {
+		clr=5
+		fill="outline"
+	}
+}
+text {
+	object {
+		x=77
+		y=250
+		width=196
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Manually Adjust Energy/Current Calculations"
+	align="horiz. centered"
+}
+"text entry" {
+	object {
+		x=148
+		y=307
+		width=49
+		height=18
+	}
+	control {
+		chan="$(P):energy"
+		clr=14
+		bclr=55
+	}
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=201
+		y=309
+		width=49
+		height=15
+	}
+	monitor {
+		chan="$(P):energy"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=201
+		y=330
+		width=49
+		height=14
+	}
+	monitor {
+		chan="$(P):iCalcMT"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=201
+		y=349
+		width=49
+		height=14
+	}
+	monitor {
+		chan="$(P):iCalcPS"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+text {
+	object {
+		x=84
+		y=349
+		width=59
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Pair Spec"
+	align="horiz. right"
+}
+text {
+	object {
+		x=84
+		y=330
+		width=59
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Mini Torus"
+	align="horiz. right"
+}
+"message button" {
+	object {
+		x=73
+		y=372
+		width=205
+		height=20
+	}
+	control {
+		chan="$(P):calcCurr"
+		clr=0
+		bclr=12
+	}
+	label="Recalculate Currents from Energy"
+	press_msg="1"
+	clrmod="discrete"
+}
+text {
+	object {
+		x=83
+		y=311
+		width=59
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Energy"
+	align="horiz. right"
+}
+"text entry" {
+	object {
+		x=148
+		y=327
+		width=49
+		height=18
+	}
+	control {
+		chan="$(P):iCalcMT"
+		clr=14
+		bclr=55
+	}
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text entry" {
+	object {
+		x=148
+		y=347
+		width=49
+		height=18
+	}
+	control {
+		chan="$(P):iCalcPS"
+		clr=14
+		bclr=55
+	}
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+text {
+	object {
+		x=37
+		y=274
+		width=281
+		height=19
+	}
+	"basic attribute" {
+		clr=15
+	}
+	textix="PROPOGATES TO POWER SUPPLIES DURING 'ON' PROCEDURE"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=45
+		y=266
+		width=259
+		height=0
+	}
+	"basic attribute" {
+		clr=0
+	}
+	points {
+		(45,266)
+		(304,266)
+	}
+}
+text {
+	object {
+		x=55
+		y=290
+		width=243
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	textix="* These Are Autosaved *"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=60
+		y=91
+		width=243
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	textix="* These Are Autosaved *"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=53
+		y=686
+		width=243
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	textix="* These Are NOT Autosaved *"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=12
+		y=425
+		width=327
+		height=180
+	}
+	"basic attribute" {
+		clr=5
+		fill="outline"
+	}
+}
+text {
+	object {
+		x=77
+		y=432
+		width=196
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Manually Scan Current Setpoints"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=154
+		y=511
+		width=49
+		height=15
+	}
+	monitor {
+		chan="$(P):energy"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=154
+		y=532
+		width=49
+		height=14
+	}
+	monitor {
+		chan="$(P):iCalcMT"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=154
+		y=551
+		width=49
+		height=14
+	}
+	monitor {
+		chan="$(P):iCalcPS"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+text {
+	object {
+		x=37
+		y=551
+		width=59
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Pair Spec"
+	align="horiz. right"
+}
+text {
+	object {
+		x=37
+		y=532
+		width=59
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Mini Torus"
+	align="horiz. right"
+}
+"message button" {
+	object {
+		x=84
+		y=574
+		width=205
+		height=20
+	}
+	control {
+		chan="$(P):calcCurr"
+		clr=0
+		bclr=12
+	}
+	label="Recalculate Currents from Energy"
+	press_msg="1"
+	clrmod="discrete"
+}
+text {
+	object {
+		x=36
+		y=513
+		width=59
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Energy"
+	align="horiz. right"
+}
+polyline {
+	object {
+		x=45
+		y=448
+		width=259
+		height=0
+	}
+	"basic attribute" {
+		clr=0
+	}
+	points {
+		(45,448)
+		(304,448)
+	}
+}
+text {
+	object {
+		x=27
+		y=472
+		width=243
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	textix="* These Are Autosaved *"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=79
+		y=456
+		width=202
+		height=19
+	}
+	"basic attribute" {
+		clr=20
+	}
+	textix="PROPOGATES TO POWER SUPPLIES IMMEDIATELY"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=206
+		y=532
+		width=50
+		height=14
+	}
+	monitor {
+		chan="MTSETI"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=206
+		y=551
+		width=50
+		height=14
+	}
+	monitor {
+		chan="PSPECISET"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=259
+		y=531
+		width=50
+		height=14
+	}
+	monitor {
+		chan="MTIRBCK"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=258
+		y=551
+		width=50
+		height=14
+	}
+	monitor {
+		chan="MTIRBCK"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+		hoprSrc="default"
+		hoprDefault=20
+		precSrc="default"
+		precDefault=2
+	}
+}
+text {
+	object {
+		x=100
+		y=490
+		width=59
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Calc"
+	align="horiz. right"
+}
+"wheel switch" {
+	object {
+		x=95
+		y=506
+		width=60
+		height=30
+	}
+	control {
+		chan="$(P):energy"
+		clr=5
+		bclr=13
+	}
+	limits {
+		loprSrc="default"
+		loprDefault=2000
+		hoprSrc="default"
+		hoprDefault=2600
+		precSrc="default"
+		precDefault=2
+	}
+}
