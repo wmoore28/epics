@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=105
-		y=35
+		x=578
+		y=22
 		width=1268
 		height=925
 	}
@@ -462,112 +462,103 @@ composite {
 		}
 	}
 }
-composite {
+"text update" {
+	object {
+		x=119
+		y=194
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HLB:bta_dty_fctr"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=6
+		y=196
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="scaler_dS6b.VAL"
+	}
+	textix="Duty Cycle (%)"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=119
+		y=222
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HLB:bta_60hz_rms"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=6
+		y=224
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="HLB:bta_60hz_rms"
+	}
+	textix="Max RMS (%)"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=119
+		y=170
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPSRF_1N"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=3
+	}
+}
+text {
 	object {
 		x=6
 		y=170
-		width=193
-		height=72
+		width=100
+		height=16
 	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=119
-				y=194
-				width=80
-				height=20
-			}
-			monitor {
-				chan="HLB:bta_dty_fctr"
-				clr=14
-				bclr=50
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=6
-				y=196
-				width=100
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			"dynamic attribute" {
-				chan="scaler_dS6b.VAL"
-			}
-			textix="Duty Cycle (%)"
-			align="horiz. right"
-		}
-		"text update" {
-			object {
-				x=119
-				y=222
-				width=80
-				height=20
-			}
-			monitor {
-				chan="HLB:bta_60hz_rms"
-				clr=14
-				bclr=50
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=6
-				y=224
-				width=100
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			"dynamic attribute" {
-				chan="HLB:bta_60hz_rms"
-			}
-			textix="Max RMS (%)"
-			align="horiz. right"
-		}
-		"text update" {
-			object {
-				x=119
-				y=170
-				width=80
-				height=20
-			}
-			monitor {
-				chan="frwd_scalerS15b"
-				clr=14
-				bclr=50
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=6
-				y=170
-				width=100
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			"dynamic attribute" {
-				chan="scaler_dS6b.VAL"
-			}
-			textix="RF Rate (Hz)"
-			align="horiz. right"
-		}
+	"basic attribute" {
+		clr=14
 	}
+	"dynamic attribute" {
+		chan="scaler_dS6b.VAL"
+	}
+	textix="RF Rate (MHz)"
+	align="horiz. right"
 }
 polyline {
 	object {
@@ -3595,12 +3586,15 @@ text {
 		height=12
 	}
 	monitor {
-		chan="B_HPSECALDSC_TOP_2"
+		chan="B_SCALERSHPS1_Sl14_Ch12.VAL"
 		clr=14
 		bclr=35
 	}
 	align="horiz. centered"
+	format="exponential"
 	limits {
+		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -3611,12 +3605,15 @@ text {
 		height=12
 	}
 	monitor {
-		chan="B_HPSECALDSC_TOP_3"
+		chan="B_SCALERSHPS1_Sl15_Ch4.VAL"
 		clr=14
 		bclr=35
 	}
 	align="horiz. centered"
+	format="exponential"
 	limits {
+		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -3627,12 +3624,15 @@ text {
 		height=12
 	}
 	monitor {
-		chan="B_HPSECALDSC_TOP_4"
+		chan="B_SCALERSHPS1_Sl15_Ch12.VAL"
 		clr=14
 		bclr=35
 	}
 	align="horiz. centered"
+	format="exponential"
 	limits {
+		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -3643,12 +3643,15 @@ text {
 		height=12
 	}
 	monitor {
-		chan="B_HPSECALDSC_TOP_5"
+		chan="B_SCALERSHPS1_Sl16_Ch4.VAL"
 		clr=14
 		bclr=35
 	}
 	align="horiz. centered"
+	format="exponential"
 	limits {
+		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -3659,12 +3662,15 @@ text {
 		height=12
 	}
 	monitor {
-		chan="B_HPSECALDSC_BOT_2"
+		chan="B_SCALERSHPS2_Sl14_Ch12.VAL"
 		clr=14
 		bclr=35
 	}
 	align="horiz. centered"
+	format="exponential"
 	limits {
+		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -3675,12 +3681,15 @@ text {
 		height=12
 	}
 	monitor {
-		chan="B_HPSECALDSC_BOT_4"
+		chan="B_SCALERSHPS2_Sl15_Ch12.VAL"
 		clr=14
 		bclr=35
 	}
 	align="horiz. centered"
+	format="exponential"
 	limits {
+		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -3691,12 +3700,15 @@ text {
 		height=12
 	}
 	monitor {
-		chan="B_HPSECALDSC_BOT_3"
+		chan="B_SCALERSHPS2_Sl15_Ch4.VAL"
 		clr=14
 		bclr=35
 	}
 	align="horiz. centered"
+	format="exponential"
 	limits {
+		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -3707,12 +3719,15 @@ text {
 		height=12
 	}
 	monitor {
-		chan="B_HPSECALDSC_BOT_5"
+		chan="B_SCALERSHPS2_Sl16_Ch4.VAL"
 		clr=14
 		bclr=35
 	}
 	align="horiz. centered"
+	format="exponential"
 	limits {
+		precSrc="default"
+		precDefault=1
 	}
 }
 text {
@@ -4018,6 +4033,22 @@ text {
 		clr=14
 		bclr=4
 	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=203
+		y=170
+		width=20
+		height=20
+	}
+	monitor {
+		chan="frwd_scalerS15b"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
 	limits {
 	}
 }
