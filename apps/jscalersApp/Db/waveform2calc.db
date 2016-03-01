@@ -1,111 +1,190 @@
-record(subArray, "B_HPSECALDSC_TOP_1") {
+
+record(subArray, "HPSRF_1")
+{
     field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS12_Sl14_Ch3.VAL")
+    field(INP,"B_SCALERSHPS11_Sl13_Ch0.VAL")
+    field(NELM,1)
+    field(MALM,4)
+    field(INDX,0)
+    field(FTVL,"DOUBLE")
+    field(FLNK,"HPSRF_1N")
+}
+record(subArray, "HPSRF_2")
+{
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS11_Sl13_Ch1.VAL")
+    field(NELM,1)
+    field(MALM,4)
+    field(INDX,0)
+    field(FTVL,"DOUBLE")
+    field(FLNK,"HPSRF_2N")
+}
+record(calc, "HPSRF_1N") {
+    field(INPA,"HPSRF_1")
+    field(CALC,"A/1000000*80")
+}
+record(calc, "HPSRF_2N") {
+    field(INPA,"HPSRF_2")
+    field(CALC,"A/1000000*80")
+}
+record(subArray, "HPSFCUP")
+{
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl2_Ch0.VAL")
     field(NELM,1)
     field(MALM,4)
     field(INDX,3)
     field(FTVL,"DOUBLE")
 }
-record(subArray, "B_HPSECALDSC_TOP_2") {
+record(subArray, "HPSNC1")
+{
     field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS12_Sl14_Ch12.VAL")
+    field(INP,"B_SCALERSHPS2_Sl2_Ch1.VAL")
     field(NELM,1)
     field(MALM,4)
     field(INDX,3)
     field(FTVL,"DOUBLE")
 }
-record(subArray, "B_HPSECALDSC_TOP_3") {
+record(subArray, "HPSNC2")
+{
     field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS12_Sl15_Ch4.VAL")
+    field(INP,"B_SCALERSHPS2_Sl2_Ch2.VAL")
     field(NELM,1)
     field(MALM,4)
     field(INDX,3)
     field(FTVL,"DOUBLE")
 }
-record(subArray, "B_HPSECALDSC_TOP_4") {
+record(subArray, "HPSNC3")
+{
     field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS12_Sl15_Ch12.VAL")
+    field(INP,"B_SCALERSHPS2_Sl2_Ch3.VAL")
     field(NELM,1)
     field(MALM,4)
     field(INDX,3)
     field(FTVL,"DOUBLE")
 }
-record(subArray, "B_HPSECALDSC_TOP_5") {
+record(subArray, "HPSNC4")
+{
     field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS12_Sl16_Ch4.VAL")
-    field(NELM,1)
-    field(MALM,4)
-    field(INDX,3)
-    field(FTVL,"DOUBLE")
-}
-record(subArray, "B_HPSECALDSC_TOP_6") {
-    field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS12_Sl16_Ch12.VAL")
+    field(INP,"B_SCALERSHPS2_Sl2_Ch4.VAL")
     field(NELM,1)
     field(MALM,4)
     field(INDX,3)
     field(FTVL,"DOUBLE")
 }
 
-record(subArray, "B_HPSECALDSC_BOT_1") {
+record(subArray, "B_HPSECALFADC_TOP_1") {
     field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS11_Sl14_Ch3.VAL")
+    field(INP,"B_SCALERSHPS1_Sl14_Ch3.VAL")
     field(NELM,1)
     field(MALM,4)
-    field(INDX,3)
+    field(INDX,0)
     field(FTVL,"DOUBLE")
 }
-record(subArray, "B_HPSECALDSC_BOT_2") {
+record(subArray, "B_HPSECALFADC_TOP_2") {
     field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS11_Sl14_Ch12.VAL")
+    field(INP,"B_SCALERSHPS1_Sl14_Ch12.VAL")
     field(NELM,1)
     field(MALM,4)
-    field(INDX,3)
+    field(INDX,0)
     field(FTVL,"DOUBLE")
 }
-record(subArray, "B_HPSECALDSC_BOT_3") {
+record(subArray, "B_HPSECALFADC_TOP_3") {
     field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS11_Sl15_Ch4.VAL")
+    field(INP,"B_SCALERSHPS1_Sl15_Ch4.VAL")
     field(NELM,1)
     field(MALM,4)
-    field(INDX,3)
+    field(INDX,0)
     field(FTVL,"DOUBLE")
 }
-record(subArray, "B_HPSECALDSC_BOT_4") {
+record(subArray, "B_HPSECALFADC_TOP_4") {
     field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS11_Sl15_Ch12.VAL")
+    field(INP,"B_SCALERSHPS1_Sl15_Ch12.VAL")
     field(NELM,1)
     field(MALM,4)
-    field(INDX,3)
+    field(INDX,0)
     field(FTVL,"DOUBLE")
 }
-record(subArray, "B_HPSECALDSC_BOT_5") {
+record(subArray, "B_HPSECALFADC_TOP_5") {
     field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS11_Sl16_Ch4.VAL")
+    field(INP,"B_SCALERSHPS1_Sl16_Ch4.VAL")
     field(NELM,1)
     field(MALM,4)
-    field(INDX,3)
+    field(INDX,0)
     field(FTVL,"DOUBLE")
 }
-record(subArray, "B_HPSECALDSC_BOT_6") {
+record(subArray, "B_HPSECALFADC_TOP_6") {
     field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS11_Sl16_Ch12.VAL")
+    field(INP,"B_SCALERSHPS1_Sl16_Ch12.VAL")
     field(NELM,1)
     field(MALM,4)
-    field(INDX,3)
+    field(INDX,0)
     field(FTVL,"DOUBLE")
 }
-# (-3,-2)   2     14   12        2              B_SCALERSHPS11_Sl14_Ch12
-#  (-5,-2)   2     15   4         3              B_SCALERSHPS11_Sl15_Ch4
-#   (-7,-2)   2     15   12        4              B_SCALERSHPS11_Sl15_Ch12
-#    (-9,-2)   2     16   4         5              B_SCALERSHPS11_Sl16_Ch4
-#    (-11,-1)   2     16   12        6              B_SCALERSHPS11_Sl16_Ch12
-#     (-1,+1)   1     14   3         7              B_SCALERSHPS12_Sl14_Ch3
-#      (-3,+2)   1     14   12        8              B_SCALERSHPS12_Sl14_Ch12
-#       (-5,+2)   1     15   4         9              B_SCALERSHPS12_Sl15_Ch4
-#        (-7,+2)   1     15   12        10             B_SCALERSHPS12_Sl15_Ch12
-#         (-9,+2)   1     16   4         11             B_SCALERSHPS12_Sl16_Ch4
-#         (-11,+1)   1     16   12        12             B_SCALERSHPS12_Sl16_Ch12
+
+record(subArray, "B_HPSECALFADC_BOT_1") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl14_Ch3.VAL")
+    field(NELM,1)
+    field(MALM,4)
+    field(INDX,0)
+    field(FTVL,"DOUBLE")
+}
+record(subArray, "B_HPSECALFADC_BOT_2") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl14_Ch12.VAL")
+    field(NELM,1)
+    field(MALM,4)
+    field(INDX,0)
+    field(FTVL,"DOUBLE")
+}
+record(subArray, "B_HPSECALFADC_BOT_3") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl15_Ch4.VAL")
+    field(NELM,1)
+    field(MALM,4)
+    field(INDX,0)
+    field(FTVL,"DOUBLE")
+}
+record(subArray, "B_HPSECALFADC_BOT_4") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl15_Ch12.VAL")
+    field(NELM,1)
+    field(MALM,4)
+    field(INDX,0)
+    field(FTVL,"DOUBLE")
+}
+record(subArray, "B_HPSECALFADC_BOT_5") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl16_Ch4.VAL")
+    field(NELM,1)
+    field(MALM,4)
+    field(INDX,0)
+    field(FTVL,"DOUBLE")
+}
+record(subArray, "B_HPSECALFADC_BOT_6") {
+    field(DTYP,"Soft Channel")
+    field(INP,"B_SCALERSHPS2_Sl16_Ch12.VAL")
+    field(NELM,1)
+    field(MALM,4)
+    field(INDX,0)
+    field(FTVL,"DOUBLE")
+}
+
+
+
+# (-1,-1)   1  14   3   7    B_SCALERSHPS11_Sl14_Ch3
+# (-3,-2)   2  14   12  2    B_SCALERSHPS11_Sl14_Ch12
+# (-5,-2)   2  15   4   3    B_SCALERSHPS11_Sl15_Ch4
+# (-7,-2)   2  15   12  4    B_SCALERSHPS11_Sl15_Ch12
+# (-9,-2)   2  16   4   5    B_SCALERSHPS11_Sl16_Ch4
+# (-11,-1)  2  16   12  6    B_SCALERSHPS11_Sl16_Ch12
+# (-1,+1)   1  14   3   7    B_SCALERSHPS12_Sl14_Ch3
+# (-3,+2)   1  14   12  8    B_SCALERSHPS12_Sl14_Ch12
+# (-5,+2)   1  15   4   9    B_SCALERSHPS12_Sl15_Ch4
+# (-7,+2)   1  15   12  10   B_SCALERSHPS12_Sl15_Ch12
+# (-9,+2)   1  16   4   11   B_SCALERSHPS12_Sl16_Ch4
+# (-11,+1)  1  16   12  12   B_SCALERSHPS12_Sl16_Ch12
 
 
 # MAIN INPUTS, GATED TRIGGER RATES
@@ -411,11 +490,11 @@ record(ai, "HPSTRIGPRESCALE_0") {
     field(FLNK,"HPSTRIGSC_0_PRE")
 }
 record(ai, "HPSTRIGPRESCALE_1") {
-    field(VAL,11)
+    field(VAL,0)
     field(FLNK,"HPSTRIGSC_1_PRE")
 }
 record(ai, "HPSTRIGPRESCALE_2") {
-    field(VAL,11)
+    field(VAL,7)
     field(FLNK,"HPSTRIGSC_2_PRE")
 }
 record(ai, "HPSTRIGPRESCALE_3") {
@@ -507,6 +586,13 @@ record(ai, "HPSTRIGSC_LIVETIME") {
     field(LOLO,10.0)
     field(LSV,MINOR)
     field(LLSV,MAJOR)
+    field(FLNK,HPSDAQISRUN)
+}
+record(calc,"HPSDAQISRUN")
+{
+    field(INPA,"HPSTRIGSC_LIVETIME0")
+    field(INPB,"HPSTRIGSC_TOTAL")
+    field(CALC,"A<100 & A>1 & B>0 ? 1 : 0")
 }
 
 
@@ -529,3 +615,14 @@ record(calc, "HPSBEAMANGY") {
     field(SCAN,"2 second")
 }
 
+############################################
+############################################
+############################################
+
+#Minimum value for the current
+grecord( calc,"moller_accumulate")
+{
+	field(SCAN,"Passive")	
+	field(CALC,"1")
+	field(PINI, "1")
+}
