@@ -1,19 +1,40 @@
-#!/bin/sh
+#!/bin/bash
 
-echo ; echo Rebooting hps11 ... ; roc_reboot hps11
-echo ; echo Waiting 30 seconds after rebooting hps11 ... ; sleep 30
-#echo ; echo Rebooting hps12 ... ; roc_reboot hps12
-echo ; echo Rebooting hps1 ...  ; roc_reboot hps1
-echo ; echo Rebooting hps2 ...  ; roc_reboot hps2
-echo ; echo Waiting 40 seconds before pinging ... ; sleep 45
+function rocwait
+{
+    echo
+    for xx in `seq $1 -1 1`
+    do
+        echo -ne "Waiting $xx seconds ${@:2} ... \r"
+        sleep 1
+    done
+    echo
+}
+function recrebo
+{
+    echo
+    echo Rebooting $1 ...
+    roc_reboot $1
+    echo
+}
+function rocping
+{
+    while ! ping -q -a -c1 $1
+    do
+        sleep 1
+    done
+    echo $1 is Alive.
+}
 
-while ! ping -q -a -c1 hps2  ; do sleep 5; done ; echo hps2 is Alive.
-while ! ping -q -a -c1 hps1  ; do sleep 5; done ; echo hps1 is Alive.
-while ! ping -q -a -c1 hps11 ; do sleep 5; done ; echo hps11 is Alive.
-#while ! ping -q -a -c1 hps12 ; do sleep 5; done ; echo hps12 is Alive.
-
-
-echo Waiting 10 seconds before restarting trigger IOC ...; sleep 10
+recrebo hps11
+rocwait 30 after rebooting hps11
+recrebo hps1
+recrebo hps2
+rocwait 45 before pinging
+rocping hps2
+rocping hps1
+rocping hps11
+rocwait 15 before restarting trigger IOC
 ssh clonioc3 'echo 18 | xxd -r -p | nc localhost 20016'
 
 echo
