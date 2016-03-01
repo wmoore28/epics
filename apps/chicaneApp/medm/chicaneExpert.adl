@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/chicaneApp/medm/chicaneExpert.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/chicaneApp/medm/./chicaneExpert.adl"
 	version=030109
 }
 display {
 	object {
-		x=1553
-		y=161
-		width=397
-		height=286
+		x=843
+		y=440
+		width=420
+		height=180
 	}
 	clr=10
 	bclr=13
@@ -89,10 +89,10 @@ display {
 }
 rectangle {
 	object {
-		x=13
-		y=40
-		width=370
-		height=150
+		x=10
+		y=35
+		width=400
+		height=135
 	}
 	"basic attribute" {
 		clr=5
@@ -101,8 +101,8 @@ rectangle {
 }
 text {
 	object {
-		x=100
-		y=47
+		x=116
+		y=42
 		width=196
 		height=14
 	}
@@ -114,8 +114,8 @@ text {
 }
 "text update" {
 	object {
-		x=303
-		y=95
+		x=300
+		y=90
 		width=50
 		height=14
 	}
@@ -134,8 +134,8 @@ text {
 }
 "text update" {
 	object {
-		x=303
-		y=114
+		x=300
+		y=109
 		width=50
 		height=14
 	}
@@ -154,8 +154,8 @@ text {
 }
 text {
 	object {
-		x=40
-		y=114
+		x=37
+		y=109
 		width=59
 		height=14
 	}
@@ -167,8 +167,8 @@ text {
 }
 text {
 	object {
-		x=41
-		y=95
+		x=38
+		y=90
 		width=59
 		height=14
 	}
@@ -180,8 +180,8 @@ text {
 }
 "text entry" {
 	object {
-		x=247
-		y=92
+		x=244
+		y=87
 		width=50
 		height=18
 	}
@@ -197,8 +197,8 @@ text {
 }
 "text entry" {
 	object {
-		x=247
-		y=112
+		x=244
+		y=107
 		width=50
 		height=18
 	}
@@ -214,8 +214,8 @@ text {
 }
 polyline {
 	object {
-		x=98
-		y=63
+		x=114
+		y=58
 		width=200
 		height=0
 	}
@@ -223,14 +223,14 @@ polyline {
 		clr=0
 	}
 	points {
-		(98,63)
-		(298,63)
+		(114,58)
+		(314,58)
 	}
 }
 text {
 	object {
-		x=240
-		y=74
+		x=237
+		y=69
 		width=120
 		height=20
 	}
@@ -242,19 +242,19 @@ text {
 }
 rectangle {
 	object {
-		x=47
-		y=11
-		width=307
+		x=11
+		y=9
+		width=375
 		height=18
 	}
 	"basic attribute" {
-		clr=35
+		clr=0
 	}
 }
 text {
 	object {
-		x=141
-		y=14
+		x=139
+		y=12
 		width=120
 		height=15
 	}
@@ -264,217 +264,10 @@ text {
 	textix="HPS Chicane Controls - EXPERT"
 	align="horiz. centered"
 }
-text {
-	object {
-		x=63
-		y=226
-		width=54
-		height=15
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="Mini Torus"
-	align="horiz. right"
-}
-text {
-	object {
-		x=62
-		y=247
-		width=54
-		height=15
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="Pair Spec"
-	align="horiz. right"
-}
-"text entry" {
-	object {
-		x=120
-		y=224
-		width=50
-		height=18
-	}
-	control {
-		chan="$(P):tHoldMax"
-		clr=14
-		bclr=55
-	}
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text entry" {
-	object {
-		x=120
-		y=246
-		width=50
-		height=18
-	}
-	control {
-		chan="$(P):tHoldMax"
-		clr=14
-		bclr=55
-	}
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
 "text update" {
 	object {
-		x=173
-		y=226
-		width=51
-		height=15
-	}
-	monitor {
-		chan="$(P):tHoldMax"
-		clr=0
-		bclr=12
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=173
-		y=248
-		width=51
-		height=15
-	}
-	monitor {
-		chan="$(P):tHoldMax"
-		clr=0
-		bclr=12
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-text {
-	object {
-		x=122
-		y=209
-		width=100
-		height=15
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="Sat. Time (min)"
-	align="horiz. centered"
-}
-"text entry" {
-	object {
-		x=231
-		y=224
-		width=50
-		height=18
-	}
-	control {
-		chan="$(P):iDeltaMT"
-		clr=14
-		bclr=55
-	}
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text entry" {
-	object {
-		x=231
-		y=246
-		width=50
-		height=18
-	}
-	control {
-		chan="$(P):iDeltaPS"
-		clr=14
-		bclr=55
-	}
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=284
-		y=226
-		width=51
-		height=15
-	}
-	monitor {
-		chan="$(P):iDeltaMT"
-		clr=0
-		bclr=12
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=284
-		y=248
-		width=51
-		height=15
-	}
-	monitor {
-		chan="$(P):iDeltaPS"
-		clr=0
-		bclr=12
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-text {
-	object {
-		x=243
-		y=209
-		width=80
-		height=15
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="Tolerance (A)"
-	align="horiz. centered"
-}
-rectangle {
-	object {
-		x=32
-		y=206
-		width=327
-		height=62
-	}
-	"basic attribute" {
-		clr=5
-		fill="outline"
-	}
-	"dynamic attribute" {
-		chan="MTMSTATUS"
-	}
-}
-"text update" {
-	object {
-		x=175
-		y=95
+		x=172
+		y=90
 		width=50
 		height=14
 	}
@@ -493,8 +286,8 @@ rectangle {
 }
 "text update" {
 	object {
-		x=175
-		y=114
+		x=172
+		y=109
 		width=50
 		height=14
 	}
@@ -513,8 +306,8 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=119
-		y=92
+		x=116
+		y=87
 		width=50
 		height=18
 	}
@@ -530,8 +323,8 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=119
-		y=112
+		x=116
+		y=107
 		width=50
 		height=18
 	}
@@ -547,8 +340,8 @@ rectangle {
 }
 text {
 	object {
-		x=111
-		y=74
+		x=108
+		y=69
 		width=120
 		height=20
 	}
@@ -560,8 +353,8 @@ text {
 }
 rectangle {
 	object {
-		x=114
-		y=72
+		x=111
+		y=67
 		width=115
 		height=62
 	}
@@ -572,8 +365,8 @@ rectangle {
 }
 rectangle {
 	object {
-		x=242
-		y=72
+		x=239
+		y=67
 		width=115
 		height=62
 	}
@@ -584,8 +377,8 @@ rectangle {
 }
 rectangle {
 	object {
-		x=33
-		y=88
+		x=30
+		y=83
 		width=324
 		height=46
 	}
@@ -596,8 +389,8 @@ rectangle {
 }
 "related display" {
 	object {
-		x=363
-		y=10
+		x=391
+		y=8
 		width=20
 		height=20
 	}
@@ -611,27 +404,27 @@ rectangle {
 }
 text {
 	object {
-		x=41
-		y=146
+		x=58
+		y=134
 		width=313
 		height=20
 	}
 	"basic attribute" {
 		clr=20
 	}
-	textix="'Live' propogates to the power supplies immediately."
+	textix="'Live' values propagate to the power supplies immediately."
 	align="horiz. centered"
 }
 text {
 	object {
-		x=40
-		y=167
+		x=55
+		y=150
 		width=313
 		height=20
 	}
 	"basic attribute" {
 		clr=15
 	}
-	textix="'Saved' is used the next time the chicane is turned on."
+	textix="'Saved' values take effect the next time the chicane is turned on."
 	align="horiz. centered"
 }
