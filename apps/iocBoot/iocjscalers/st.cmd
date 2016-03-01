@@ -10,7 +10,7 @@ cd ${TOP}
 Init_SCALERS()
 
 Start_SCALERS_CRATE("0",  "hps11") 
-Start_SCALERS_CRATE("1",  "hps12") 
+#Start_SCALERS_CRATE("1",  "hps12") 
 Start_SCALERS_CRATE("2",  "hps1") 
 Start_SCALERS_CRATE("3",  "hps2") 
 
