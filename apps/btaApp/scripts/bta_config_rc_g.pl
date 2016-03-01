@@ -67,7 +67,7 @@ sub init_gui
     #
     
     my $MainLabel = $MainPad -> Label(
-				      -text => 'BEAM TIME ACCOUNTING  CONFIGURATION TOOL',
+				      -text => 'BEAM TIME ACCOUNTING CONFIG TOOL',
 				      -font => 'Times 18',
 				      -foreground => 'Green4');
     $MainLabel -> pack;
