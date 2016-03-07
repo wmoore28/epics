@@ -1,4 +1,3 @@
-
 record(aSub,SVT:daq:$(FEB):heart_asub)
 {
 	field(SCAN,"1 second")
@@ -29,5 +28,5 @@ record(calc,SVT:daq:all:feb_heartcheck){
 	field(INPH,"SVT:daq:7:feb_heartcheck CPP")
 	field(INPI,"SVT:daq:8:feb_heartcheck CPP")
 	field(INPJ,"SVT:daq:9:feb_heartcheck CPP")
-	field(CALC,"(A>0) & (B>0) & (C>0) & (D>0) & (E>0) & (F>0) & (G>0) & (H>0) & (I>0) & (J>0)")
+	field(CALC,"(A>0)&&(B>0)&&(C>0)&&(D>0)&&(E>0)&&(F>0)&&(G>0)&&(H>0)&&(I>0)&&(J>0)")
 }

@@ -1,4 +1,5 @@
 import sys
+import string
 
 class Hybrid:
     def __init__(self,id,layer,side, type):
@@ -37,7 +38,7 @@ febs= [
     ]
 
 
-hybtemplimits = { 0:[-12.9,-13.4,-13.3,-13.1],1:[-14.5,-13.8,-11.8,-13.7],2:[-13.6,-12.7],3:[-13.6,-13.0,-11.1,-12.9],4:[-14.0,-13.5,-12.8,-13.9],5:[-12.3,-13.9,-13.5,-12.6],6:[-13.9,-13.0,-12.9,-12.8],7:[-13.2,-14.4,-13.6,-12.6],8:[-13.0,-13.9,-13.5,-12.5],9:[-12.8,-13.1] }
+hybtemplimits = { 0:[-12.9,-13.4,-13.3,-13.1],1:[-14.5,-13.8,-10.6,-13.7],2:[-13.6,-12.7],3:[-13.6,-13.0,-9.1,-12.9],4:[-14.0,-13.5,-11.4,-13.9],5:[-12.3,-13.9,-13.5,-12.6],6:[-13.9,-13.0,-12.9,-12.8],7:[-11.9,-14.4,-13.6,-12.6],8:[-13.0,-13.9,-13.5,-12.5],9:[-12.8,-13.1] }
                                                                                     
 def getHybridTempLimits(feb,hyb):
     if feb in hybtemplimits:
@@ -859,13 +860,13 @@ record(ai, SVT:lv:FEBID:HYBID:avdd:i_rd)
                 rec = rec.replace("NEXTFEBID",str(feb))
                 rec = rec.replace("NEXTHYBID",str(hyb+1))
             if (feb==6 and hyb==2):
-                rec = rec.replace("HHLIM",str(0.61))
-                rec = rec.replace("HILIM",str(0.59))
+                rec = rec.replace("HHLIM",str(0.65))
+                rec = rec.replace("HILIM",str(0.63))
                 rec = rec.replace("LOLIM",str(0.50))
                 rec = rec.replace("LLLIM",str(0.45))
             elif (feb==0 and hyb==1):
-                rec = rec.replace("HHLIM",str(0.45))
-                rec = rec.replace("HILIM",str(0.43))
+                rec = rec.replace("HHLIM",str(0.49))
+                rec = rec.replace("HILIM",str(0.47))
                 rec = rec.replace("LOLIM",str(0.3))
                 rec = rec.replace("LLLIM",str(0.28))
             #elif (feb==5 and hyb==2) or (feb==1 and hyb==3):
@@ -874,8 +875,8 @@ record(ai, SVT:lv:FEBID:HYBID:avdd:i_rd)
             #    rec = rec.replace("LOLIM",str(0.375))
             #    rec = rec.replace("LLLIM",str(0.365))
             else:
-                rec = rec.replace("HHLIM",str(0.47))
-                rec = rec.replace("HILIM",str(0.45))
+                rec = rec.replace("HHLIM",str(0.51))
+                rec = rec.replace("HILIM",str(0.49))
                 rec = rec.replace("LOLIM",str(0.35))
                 rec = rec.replace("LLLIM",str(0.34))
             rec = rec.replace("HYBID",str(hyb))
@@ -1267,8 +1268,8 @@ record(ai, SVT:temp:fe:FEBID:axixadc:t_rd) {
     field(PREC, "1")
     field(INP, "SVT:temp:fe:FEBID:axixadc:t_rd_sub PP")
     field(DTYP,"Soft Channel")
-    field(HIHI,"52") field(HHSV,"MAJOR")
-    field(HIGH,"50") field(HSV,"MINOR")
+    field(HIHI,"53") field(HHSV,"MAJOR")
+    field(HIGH,"51") field(HSV,"MINOR")
     field(LOW,"37") field(LSV,"MINOR")
     field(LOLO,"35") field(LLSV,"MAJOR")
 }
@@ -1286,8 +1287,8 @@ record(ai, SVT:temp:fe:FEBID:FebTemp0:t_rd) {
     field(PREC, "1")
     field(INP, "SVT:temp:fe:FEBID:FebTemp0:t_rd_sub PP")
     field(DTYP,"Soft Channel")
-    field(HIHI,"30") field(HHSV,"MAJOR")
-    field(HIGH,"28") field(HSV,"MINOR")
+    field(HIHI,"32") field(HHSV,"MAJOR")
+    field(HIGH,"30") field(HSV,"MINOR")
     field(LOW,"22") field(LSV,"MINOR")
     field(LOLO,"20") field(LLSV,"MAJOR")
 }
@@ -1305,8 +1306,8 @@ record(ai, SVT:temp:fe:FEBID:FebTemp1:t_rd) {
     field(PREC, "1")
     field(INP, "SVT:temp:fe:FEBID:FebTemp1:t_rd_sub PP")
     field(DTYP,"Soft Channel")
-    field(HIHI,"30") field(HHSV,"MAJOR")
-    field(HIGH,"28") field(HSV,"MINOR")
+    field(HIHI,"32") field(HHSV,"MAJOR")
+    field(HIGH,"30") field(HSV,"MINOR")
     field(LOW,"22") field(LSV,"MINOR")
     field(LOLO,"20") field(LLSV,"MAJOR")
 }
@@ -1509,6 +1510,140 @@ record(longin, SVT:daq:FEBID:HYBID:APVID:syncbase_rd) {
                 #print 'add rec ', rec
                 records.append(rec)
     return records
+
+
+
+
+
+def buildHybSyncDataDpmAll():
+    s = """
+record(calc,SVT:daq:FEBID:HYBID:exist)
+{
+    field(SCAN,"Passive")
+    field(INPA,"SVT:daq:dpm:FEBID:HYBID:febnum CPP")
+    field(INPB,"SVT:daq:dpm:FEBID:HYBID:hybnum CPP")
+    field(CALC,"(A>-1)&&(A<15)&&(B>-1)&&(B<4)")
+}
+
+
+record(calc,SVT:daq:FEBID:HYBID:sync_stats)
+{
+    field(SCAN,"Passive")
+    field(INPA,"SVT:daq:FEBID:HYBID:sync:sync_rd CPP")
+    field(INPB,"SVT:daq:FEBID:HYBID:exist CPP")
+    field(CALC,"((B#0)&&(A=31))||(B=0)")
+}
+
+"""
+    records = []
+    for feb in range(0,15):
+        if feb == 7:
+            continue
+        r = range(0,4)
+        for hyb in r:
+            rec = s
+            rec = rec.replace("HYBID",str(hyb))
+            rec = rec.replace("FEBID",str(feb))
+            records.append(rec)
+    
+    s = """
+record(calc,SVT:daq:FEBID:sync_stats)
+{
+    field(SCAN,"Passive")
+    field(INPA,"SVT:daq:FEBID:0:sync_stats CPP")
+    field(INPB,"SVT:daq:FEBID:1:sync_stats CPP")
+    field(INPC,"SVT:daq:FEBID:2:sync_stats CPP")
+    field(INPD,"SVT:daq:FEBID:3:sync_stats CPP")
+    field(CALC,"(A>0)&&(B>0)&&(C>0)&&(D>0)")
+}
+
+"""
+
+    for feb in range(0,15):
+        if feb == 7: 
+            continue
+        rec = s
+        rec = rec.replace("FEBID",str(feb))
+        records.append(rec)
+
+
+    s = """
+record(calc,SVT:daq:half1:sync_stat)
+{
+    field(SCAN,"Passive")
+field(INPA","SVT:daq:0:sync_stats CPP")
+field(INPB","SVT:daq:1:sync_stats CPP")
+field(INPC","SVT:daq:2:sync_stats CPP")
+field(INPD","SVT:daq:3:sync_stats CPP")
+field(INPE","SVT:daq:4:sync_stats CPP")
+field(INPF","SVT:daq:5:sync_stats CPP")
+field(INPG","SVT:daq:6:sync_stats CPP")
+
+
+    field(CALC,"(A>0)&&(B>0)&&(C>0)&&(D>0)&&(E>0)&&(F>0)&&(G>0)")
+}
+
+record(calc,SVT:daq:half2:sync_stat)
+{
+    field(SCAN,"Passive")
+field(INPA","SVT:daq:8:sync_stats CPP")
+field(INPB","SVT:daq:9:sync_stats CPP")
+field(INPC","SVT:daq:10:sync_stats CPP")
+field(INPD","SVT:daq:11:sync_stats CPP")
+field(INPE","SVT:daq:12:sync_stats CPP")
+field(INPF","SVT:daq:13:sync_stats CPP")
+field(INPG","SVT:daq:14:sync_stats CPP")
+
+
+    field(CALC,"(A>0)&&(B>0)&&(C>0)&&(D>0)&&(E>0)&&(F>0)&&(G>0)")
+}
+
+record(calc,SVT:daq:all:sync_stat)
+{
+    field(SCAN,"Passive")
+field(INPA","SVT:daq:half1:sync_stat CPP")
+field(INPB","SVT:daq:half2:sync_stat CPP")
+
+    field(CALC,"(A>0)&&(B>0)")
+}
+
+"""
+
+
+    rec = s
+    records.append(rec)
+
+
+#    inputs = ""
+#    calc_str = ""
+#    letters = string.ascii_uppercase
+#    for feb in range(0,15):
+#        if feb == 7: 
+#            continue
+#        rec = s
+#        l = letters[feb]        
+#        inputs += "field(INP" + l + "\",\"SVT:daq:" + str(feb) + ":sync_stat CPP\")\n"
+#        calc_str += "("+l+">0)&&"
+#    calc_str.rstrip("&&")
+
+
+#    s = """
+#record(calc,SVT:daq:all:sync_stat)
+#{
+#    field(SCAN,"Passive")
+#""" + inputs + """
+#    field(CALC,""" + "\"" + calc_str + "\"" + """
+#}
+
+#"""
+#    records.append(s)
+    
+    return records
+
+
+
+
+
 
 
 

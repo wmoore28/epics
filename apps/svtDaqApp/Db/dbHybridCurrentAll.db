@@ -46,7 +46,7 @@ record(calc, SVT:lv:hyb:top:stat:curr)
 	field(INPC,"SVT:lv:hyb:4t:stat:curr CPP")
 	field(INPD,"SVT:lv:hyb:5t:stat:curr CPP")
 	field(INPE,"SVT:lv:hyb:6t:stat:curr CPP")
-	field(CALC,"(A > 0) & (B > 0) & (C > 0) & (D > 0) & (E > 0)")
+	field(CALC,"(A > 0) && (B > 0) && (C > 0) && (D > 0) && (E > 0)")
 }
 
 record(calc, SVT:lv:hyb:1b:stat:curr)
@@ -97,7 +97,7 @@ record(calc, SVT:lv:hyb:bot:stat:curr)
 	field(INPC,"SVT:lv:hyb:4b:stat:curr CPP")
 	field(INPD,"SVT:lv:hyb:5b:stat:curr CPP")
 	field(INPE,"SVT:lv:hyb:6b:stat:curr CPP")
-	field(CALC,"(A > 0) & (B > 0) & (C > 0) & (D > 0) & (E > 0)")
+	field(CALC,"(A > 0) && (B > 0) && (C > 0) && (D > 0) && (E > 0)")
 }
 
 record(calc, SVT:lv:hyb:all:stat:curr)
@@ -105,5 +105,5 @@ record(calc, SVT:lv:hyb:all:stat:curr)
 	field(SCAN,"Passive")
 	field(INPA,"SVT:lv:hyb:top:stat:curr CPP")
 	field(INPB,"SVT:lv:hyb:bot:stat:curr CPP")
-	field(CALC,"(A > 0) & (B > 0)")
+	field(CALC,"(A > 0) && (B > 0)")
 }

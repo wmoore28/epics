@@ -11,7 +11,7 @@ record(calc, SVT:lv:fe:all:digi:stat:calc)
 	field(INPH,"SVT:lv:fe:7:digi:stat CPP")
 	field(INPI,"SVT:lv:fe:8:digi:stat CPP")
 	field(INPJ,"SVT:lv:fe:9:digi:stat CPP")
-	field(CALC,"(A>0) & (B>0) & (C>0) & (D>0) & (E>0) & (F>0) & (G>0) & (H>0) & (I>0) & (J>0)")
+	field(CALC,"(A>0)&&(B>0)&&(C>0)&&(D>0)&&(E>0)&&(F>0)&&(G>0)&&(H>0)&&(I>0)&&(J>0)")
 }
 
 record(calc, SVT:lv:fe:all:anap:stat:calc)
@@ -27,7 +27,7 @@ record(calc, SVT:lv:fe:all:anap:stat:calc)
 	field(INPH,"SVT:lv:fe:7:anap:stat CPP")
 	field(INPI,"SVT:lv:fe:8:anap:stat CPP")
 	field(INPJ,"SVT:lv:fe:9:anap:stat CPP")
-	field(CALC,"(A>0) & (B>0) & (C>0) & (D>0) & (E>0) & (F>0) & (G>0) & (H>0) & (I>0) & (J>0)")
+	field(CALC,"(A>0)&&(B>0)&&(C>0)&&(D>0)&&(E>0)&&(F>0)&&(G>0)&&(H>0)&&(I>0)&&(J>0)")
 }
 
 record(calc, SVT:lv:fe:all:anan:stat:calc)
@@ -43,7 +43,7 @@ record(calc, SVT:lv:fe:all:anan:stat:calc)
 	field(INPH,"SVT:lv:fe:7:anan:stat CPP")
 	field(INPI,"SVT:lv:fe:8:anan:stat CPP")
 	field(INPJ,"SVT:lv:fe:9:anan:stat CPP")
-	field(CALC,"(A>0) & (B>0) & (C>0) & (D>0) & (E>0) & (F>0) & (G>0) & (H>0) & (I>0) & (J>0)")
+	field(CALC,"(A>0)&&(B>0)&&(C>0)&&(D>0)&&(E>0)&&(F>0)&&(G>0)&&(H>0)&&(I>0)&&(J>0)")
 }
 
 record(calc,SVT:lv:fe:all:stat:calc)
@@ -52,7 +52,7 @@ record(calc,SVT:lv:fe:all:stat:calc)
 	field(INPA,"SVT:lv:fe:all:digi:stat:calc CPP")
 	field(INPB,"SVT:lv:fe:all:anap:stat:calc CPP")
 	field(INPC,"SVT:lv:fe:all:anan:stat:calc CPP")
-	field(CALC,"(A>0) & (B>0) & (C>0)")
+	field(CALC,"(A>0)&&(B>0)&&(C>0)")
 }
 
 record(dfanout,SVT:lv:fe:all:switch_fanout)

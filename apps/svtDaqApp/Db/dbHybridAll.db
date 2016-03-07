@@ -3,7 +3,7 @@ record(calc, SVT:lv:hyb:1t:stat:calc)
 	field(SCAN,"Passive")
 	field(INPA,"SVT:lv:9:0:stat CPP")
 	field(INPB,"SVT:lv:9:1:stat CPP")
-	field(CALC,"(A > 0) & (B > 0)")	
+	field(CALC,"(A > 0) && (B > 0)")	
 }
 
 record(calc, SVT:lv:hyb:23t:stat:calc)
@@ -13,7 +13,7 @@ record(calc, SVT:lv:hyb:23t:stat:calc)
 	field(INPB,"SVT:lv:6:1:stat CPP")
 	field(INPC,"SVT:lv:6:2:stat CPP")
 	field(INPD,"SVT:lv:6:3:stat CPP")
-	field(CALC,"(A > 0) & (B > 0) & (C > 0) & (D > 0)")	
+	field(CALC,"(A > 0) && (B > 0) && (C > 0) && (D > 0)")	
 }
 
 record(calc, SVT:lv:hyb:4t:stat:calc)
@@ -23,7 +23,7 @@ record(calc, SVT:lv:hyb:4t:stat:calc)
 	field(INPB,"SVT:lv:5:1:stat CPP")
 	field(INPC,"SVT:lv:5:2:stat CPP")
 	field(INPD,"SVT:lv:5:3:stat CPP")
-	field(CALC,"(A > 0) & (B > 0) & (C > 0) & (D > 0)")	
+	field(CALC,"(A > 0) && (B > 0) && (C > 0) && (D > 0)")	
 }
 
 record(calc, SVT:lv:hyb:5t:stat:calc)
@@ -33,7 +33,7 @@ record(calc, SVT:lv:hyb:5t:stat:calc)
 	field(INPB,"SVT:lv:8:1:stat CPP")
 	field(INPC,"SVT:lv:8:2:stat CPP")
 	field(INPD,"SVT:lv:8:3:stat CPP")
-	field(CALC,"(A > 0) & (B > 0) & (C > 0) & (D > 0)")	
+	field(CALC,"(A > 0) && (B > 0) && (C > 0) && (D > 0)")	
 }
 
 record(calc, SVT:lv:hyb:6t:stat:calc)
@@ -43,7 +43,7 @@ record(calc, SVT:lv:hyb:6t:stat:calc)
 	field(INPB,"SVT:lv:7:1:stat CPP")
 	field(INPC,"SVT:lv:7:2:stat CPP")
 	field(INPD,"SVT:lv:7:3:stat CPP")
-	field(CALC,"(A > 0) & (B > 0) & (C > 0) & (D > 0)")	
+	field(CALC,"(A > 0) && (B > 0) && (C > 0) && (D > 0)")	
 }
 
 record(calc, SVT:lv:hyb:top:stat:calc)
@@ -54,7 +54,7 @@ record(calc, SVT:lv:hyb:top:stat:calc)
 	field(INPC,"SVT:lv:hyb:4t:stat:calc CPP")
 	field(INPD,"SVT:lv:hyb:5t:stat:calc CPP")
 	field(INPE,"SVT:lv:hyb:6t:stat:calc CPP")
-	field(CALC,"(A > 0) & (B > 0) & (C > 0) & (D > 0) & (E > 0)")
+	field(CALC,"(A > 0) && (B > 0) && (C > 0) && (D > 0) && (E > 0)")
 }
 
 record(calc, SVT:lv:hyb:1b:stat:calc)
@@ -62,7 +62,7 @@ record(calc, SVT:lv:hyb:1b:stat:calc)
 	field(SCAN,"Passive")
 	field(INPA,"SVT:lv:2:0:stat CPP")
 	field(INPB,"SVT:lv:2:1:stat CPP")
-	field(CALC,"(A > 0) & (B > 0)")	
+	field(CALC,"(A > 0) && (B > 0)")	
 }
 
 record(calc, SVT:lv:hyb:23b:stat:calc)
@@ -72,7 +72,7 @@ record(calc, SVT:lv:hyb:23b:stat:calc)
 	field(INPB,"SVT:lv:0:1:stat CPP")
 	field(INPC,"SVT:lv:0:2:stat CPP")
 	field(INPD,"SVT:lv:0:3:stat CPP")
-	field(CALC,"(A > 0) & (B > 0) & (C > 0) & (D > 0)")	
+	field(CALC,"(A > 0) && (B > 0) && (C > 0) && (D > 0)")	
 }
 
 record(calc, SVT:lv:hyb:4b:stat:calc)
@@ -82,7 +82,7 @@ record(calc, SVT:lv:hyb:4b:stat:calc)
 	field(INPB,"SVT:lv:1:1:stat CPP")
 	field(INPC,"SVT:lv:1:2:stat CPP")
 	field(INPD,"SVT:lv:1:3:stat CPP")
-	field(CALC,"(A > 0) & (B > 0) & (C > 0) & (D > 0)")	
+	field(CALC,"(A > 0) && (B > 0) && (C > 0) && (D > 0)")	
 }
 
 record(calc, SVT:lv:hyb:5b:stat:calc)
@@ -92,7 +92,7 @@ record(calc, SVT:lv:hyb:5b:stat:calc)
 	field(INPB,"SVT:lv:4:1:stat CPP")
 	field(INPC,"SVT:lv:4:2:stat CPP")
 	field(INPD,"SVT:lv:4:3:stat CPP")
-	field(CALC,"(A > 0) & (B > 0) & (C > 0) & (D > 0)")	
+	field(CALC,"(A > 0) && (B > 0) && (C > 0) && (D > 0)")	
 }
 
 record(calc, SVT:lv:hyb:6b:stat:calc)
@@ -102,7 +102,7 @@ record(calc, SVT:lv:hyb:6b:stat:calc)
 	field(INPB,"SVT:lv:3:1:stat CPP")
 	field(INPC,"SVT:lv:3:2:stat CPP")
 	field(INPD,"SVT:lv:3:3:stat CPP")
-	field(CALC,"(A > 0) & (B > 0) & (C > 0) & (D > 0)")	
+	field(CALC,"(A > 0) && (B > 0) && (C > 0) && (D > 0)")	
 }
 
 record(calc, SVT:lv:hyb:bot:stat:calc)
@@ -113,7 +113,7 @@ record(calc, SVT:lv:hyb:bot:stat:calc)
 	field(INPC,"SVT:lv:hyb:4b:stat:calc CPP")
 	field(INPD,"SVT:lv:hyb:5b:stat:calc CPP")
 	field(INPE,"SVT:lv:hyb:6b:stat:calc CPP")
-	field(CALC,"(A > 0) & (B > 0) & (C > 0) & (D > 0) & (E > 0)")
+	field(CALC,"(A > 0) && (B > 0) && (C > 0) && (D > 0) && (E > 0)")
 }
 
 record(calc, SVT:lv:hyb:all:stat:calc)
@@ -121,5 +121,5 @@ record(calc, SVT:lv:hyb:all:stat:calc)
 	field(SCAN,"Passive")
 	field(INPA,"SVT:lv:hyb:top:stat:calc CPP")
 	field(INPB,"SVT:lv:hyb:bot:stat:calc CPP")
-	field(CALC,"(A > 0) & (B > 0)")
+	field(CALC,"(A > 0) && (B > 0)")
 }

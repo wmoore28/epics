@@ -1,7 +1,7 @@
 
 record(aSub,SVT:daq:controldpm:$(DPM):$(NR):status_asub)
 {
-    field(SCAN,"$(SCANFREQ) second")
+    field(SCAN,"1 second")
     field(INAM,"subDpmStatusInit")
     field(SNAM,"subDpmStatusProcess")
     field(OUTA,"SVT:daq:controldpm:$(DPM):$(NR):status PP")
