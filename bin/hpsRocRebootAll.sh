@@ -25,6 +25,18 @@ function rocping
     done
     echo $1 is Alive.
 }
+#function rocssh
+#{
+#}
+
+echo 'Enter clasrun password if requested:'
+ssh clasrun@clondaq3 killall rcServer rocs
+
+echo
+echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+echo @@@@@@@@@@@ KILED rcServer and roc PROCS @@@@@@@@@@@@@@
+echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+echo
 
 recrebo hps11
 rocwait 30 after rebooting hps11
@@ -34,7 +46,14 @@ rocwait 45 before pinging
 rocping hps2
 rocping hps1
 rocping hps11
-rocwait 15 before restarting trigger IOC
+
+echo
+echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+echo @@@@@@@@@@@@@@@@@@@ PINGS SUCCEEDED @@@@@@@@@@@@@@@@@@@
+echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+echo
+
+rocwait 20 before restarting trigger IOC
 ssh clonioc3 'echo 18 | xxd -r -p | nc localhost 20016'
 
 echo
@@ -43,4 +62,8 @@ echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 echo @@@@@@ ROCS REBOOTED and TRIGGER IOC RESTARTED @@@@@@@@
 echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 echo
+
+echo Press Enter to Exit
+read a
+
 
