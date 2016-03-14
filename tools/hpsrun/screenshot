@@ -13,7 +13,12 @@ echo 'Enter Title ... '
 read title
 
 file=$HOME/screenshots/$title\_`date +%Y-%m-%d_%H-%M-%S`.png
+
+# imagemagick has a bug with overlapping windows:
 import $file
+
+# this one has other usability issues:
+#gnome-screenshot -a -f $file
 
 echo 'Saved Screenshot As:'
 echo $file
