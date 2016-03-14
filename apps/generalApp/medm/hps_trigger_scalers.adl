@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/hps_trigger_scalers.adl"
-	version=030101
+	name="/usr/clas12/hps/v3.0.0/apps/./generalApp/medm/hps_trigger_scalers.adl"
+	version=030109
 }
 display {
 	object {
-		x=534
-		y=190
+		x=196
+		y=50
 		width=606
 		height=441
 	}
@@ -89,9 +89,9 @@ display {
 }
 rectangle {
 	object {
-		x=49
+		x=67
 		y=396
-		width=409
+		width=400
 		height=38
 	}
 	"basic attribute" {
@@ -100,9 +100,9 @@ rectangle {
 }
 rectangle {
 	object {
-		x=49
+		x=67
 		y=395
-		width=409
+		width=400
 		height=38
 	}
 	"basic attribute" {
@@ -325,7 +325,7 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=63
+		x=81
 		y=412
 		width=30
 		height=15
@@ -340,7 +340,7 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=128
+		x=146
 		y=412
 		width=30
 		height=15
@@ -355,7 +355,7 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=193
+		x=211
 		y=412
 		width=30
 		height=15
@@ -370,7 +370,7 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=258
+		x=276
 		y=412
 		width=30
 		height=15
@@ -1043,7 +1043,7 @@ text {
 }
 text {
 	object {
-		x=57
+		x=75
 		y=397
 		width=54
 		height=11
@@ -1055,7 +1055,7 @@ text {
 }
 text {
 	object {
-		x=120
+		x=138
 		y=397
 		width=54
 		height=11
@@ -1067,7 +1067,7 @@ text {
 }
 text {
 	object {
-		x=191
+		x=209
 		y=397
 		width=54
 		height=11
@@ -1079,7 +1079,7 @@ text {
 }
 text {
 	object {
-		x=256
+		x=274
 		y=397
 		width=54
 		height=11
@@ -1091,15 +1091,15 @@ text {
 }
 text {
 	object {
-		x=306
-		y=407
+		x=391
+		y=408
 		width=54
 		height=11
 	}
 	"basic attribute" {
 		clr=0
 	}
-	textix="PRESCALE FACTORS (2^N)"
+	textix="= 2^(N-1)+1"
 }
 rectangle {
 	object {
@@ -1278,15 +1278,48 @@ rectangle {
 }
 "related display" {
 	object {
-		x=513
-		y=409
-		width=82
+		x=536
+		y=404
+		width=60
 		height=24
 	}
 	display[0] {
+		label="Reboot Trigger IOC"
 		name="hps_trigger_scalers_REBOOT.adl"
+	}
+	display[1] {
+		label="Reboot T-DAQ"
+		name="rebootTI.adl"
+	}
+	display[2] {
+		label="Reboot SVT-DAQ"
+		name="rebootSVT.adl"
 	}
 	clr=33
 	bclr=12
 	label="REBOOT"
+}
+text {
+	object {
+		x=334
+		y=415
+		width=54
+		height=11
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="PRESCALE"
+}
+text {
+	object {
+		x=336
+		y=401
+		width=54
+		height=11
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="NONZERO"
 }
