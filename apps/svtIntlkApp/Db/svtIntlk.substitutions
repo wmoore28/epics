@@ -16,3 +16,15 @@ file "$(TOP)/db/svtIntlk_bpm.template" {
 pattern{ P,   R,        BPM1,     BPM2,     BPM3,   PREC, EGU,  CTRL, CTRL_VAL }
 { HPS_INTLK:, NO_BEAM:, IPM2C21A, IPM2C24A, IPM2H01,   3,  nA,  SVT:bias:v_set, 5 }
 }
+
+
+# FSD TRIPPED STATE (untested until we get to see another FSD)
+#
+# This should replace the previous BPM one if desire is to only
+# turn bias OFF on HPS FSD trips and not on other types of trips
+#
+#file "$(TOP)/db/svtIntlk_fsd.template" {
+#pattern{ P,   R,        FSD    PREC, CTRL,    CTRL_VAL }
+#{ HPS_INTLK:, NO_BEAM:, HPS:FSD:HALO,    3, SVT:bias:v_set, 5 }
+#}
+
