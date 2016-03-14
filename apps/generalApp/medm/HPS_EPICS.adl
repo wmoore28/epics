@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/HPS_EPICS.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/./generalApp/medm/HPS_EPICS.adl"
 	version=030109
 }
 display {
 	object {
-		x=118
-		y=21
+		x=116
+		y=5
 		width=240
 		height=835
 	}
@@ -749,7 +749,7 @@ text {
 	}
 	display[0] {
 		label="DAQ Status"
-		name="daq_status.adl"
+		name="daq.adl"
 	}
 	clr=14
 	bclr=50
@@ -1201,4 +1201,42 @@ text {
 	}
 	clr=14
 	bclr=50
+}
+"related display" {
+	object {
+		x=166
+		y=317
+		width=20
+		height=20
+	}
+	display[0] {
+		label="FSD STATUS"
+		name="HpsFsdStatus.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=192
+		y=315
+		width=30
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="FSD"
+}
+text {
+	object {
+		x=191
+		y=327
+		width=30
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="STATUS"
 }
