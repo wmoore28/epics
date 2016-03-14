@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/scalerApp/medm/./scaler_hps.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/./scalerApp/medm/scaler_hps.adl"
 	version=030109
 }
 display {
 	object {
-		x=578
-		y=22
+		x=401
+		y=144
 		width=1268
 		height=925
 	}
@@ -333,41 +333,6 @@ composite {
 				clr=14
 			}
 			textix="Beam PMTs"
-			align="horiz. centered"
-		}
-	}
-}
-composite {
-	object {
-		x=230
-		y=30
-		width=125
-		height=20
-	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=230
-				y=30
-				width=125
-				height=20
-			}
-			"basic attribute" {
-				clr=35
-			}
-		}
-		text {
-			object {
-				x=230
-				y=33
-				width=125
-				height=15
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="ECal rates"
 			align="horiz. centered"
 		}
 	}
@@ -1637,7 +1602,7 @@ composite {
 }
 composite {
 	object {
-		x=650
+		x=592
 		y=100
 		width=160
 		height=63
@@ -1646,7 +1611,7 @@ composite {
 	children {
 		"text update" {
 			object {
-				x=696
+				x=638
 				y=100
 				width=71
 				height=18
@@ -1662,7 +1627,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=739
+				x=681
 				y=121
 				width=71
 				height=18
@@ -1678,7 +1643,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=696
+				x=638
 				y=145
 				width=71
 				height=18
@@ -1694,7 +1659,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=650
+				x=592
 				y=121
 				width=71
 				height=18
@@ -3364,7 +3329,7 @@ text {
 }
 composite {
 	object {
-		x=1163
+		x=1165
 		y=85
 		width=75
 		height=89
@@ -3373,7 +3338,7 @@ composite {
 	children {
 		composite {
 			object {
-				x=1163
+				x=1165
 				y=140
 				width=75
 				height=34
@@ -3382,7 +3347,7 @@ composite {
 			children {
 				"text update" {
 					object {
-						x=1163
+						x=1165
 						y=140
 						width=75
 						height=18
@@ -3398,7 +3363,7 @@ composite {
 				}
 				text {
 					object {
-						x=1188
+						x=1190
 						y=159
 						width=30
 						height=15
@@ -3412,7 +3377,7 @@ composite {
 		}
 		composite {
 			object {
-				x=1163
+				x=1165
 				y=85
 				width=75
 				height=38
@@ -3421,7 +3386,7 @@ composite {
 			children {
 				"text update" {
 					object {
-						x=1163
+						x=1165
 						y=105
 						width=75
 						height=18
@@ -3437,7 +3402,7 @@ composite {
 				}
 				text {
 					object {
-						x=1183
+						x=1185
 						y=85
 						width=30
 						height=15
@@ -3483,7 +3448,7 @@ text {
 }
 text {
 	object {
-		x=680
+		x=616
 		y=75
 		width=120
 		height=18
@@ -3580,9 +3545,9 @@ text {
 }
 "text update" {
 	object {
-		x=960
+		x=957
 		y=109
-		width=48
+		width=50
 		height=12
 	}
 	monitor {
@@ -3599,9 +3564,9 @@ text {
 }
 "text update" {
 	object {
-		x=1010
+		x=1009
 		y=109
-		width=48
+		width=50
 		height=12
 	}
 	monitor {
@@ -3618,9 +3583,9 @@ text {
 }
 "text update" {
 	object {
-		x=1060
+		x=1061
 		y=109
-		width=48
+		width=50
 		height=12
 	}
 	monitor {
@@ -3637,9 +3602,9 @@ text {
 }
 "text update" {
 	object {
-		x=1110
+		x=1113
 		y=109
-		width=48
+		width=50
 		height=12
 	}
 	monitor {
@@ -3656,9 +3621,9 @@ text {
 }
 "text update" {
 	object {
-		x=960
+		x=957
 		y=138
-		width=48
+		width=50
 		height=12
 	}
 	monitor {
@@ -3675,9 +3640,9 @@ text {
 }
 "text update" {
 	object {
-		x=1060
+		x=1061
 		y=138
-		width=48
+		width=50
 		height=12
 	}
 	monitor {
@@ -3694,9 +3659,9 @@ text {
 }
 "text update" {
 	object {
-		x=1010
+		x=1009
 		y=138
-		width=48
+		width=50
 		height=12
 	}
 	monitor {
@@ -3713,9 +3678,9 @@ text {
 }
 "text update" {
 	object {
-		x=1110
+		x=1113
 		y=138
-		width=48
+		width=50
 		height=12
 	}
 	monitor {
@@ -4047,6 +4012,140 @@ text {
 		chan="frwd_scalerS15b"
 		clr=14
 		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+composite {
+	object {
+		x=230
+		y=47
+		width=125
+		height=20
+	}
+	"composite name"=""
+	children {
+		rectangle {
+			object {
+				x=230
+				y=47
+				width=125
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+		}
+		text {
+			object {
+				x=230
+				y=50
+				width=125
+				height=15
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Neutron Counters"
+			align="horiz. centered"
+		}
+	}
+}
+composite {
+	object {
+		x=230
+		y=26
+		width=125
+		height=20
+	}
+	"composite name"=""
+	children {
+		rectangle {
+			object {
+				x=230
+				y=26
+				width=125
+				height=20
+			}
+			"basic attribute" {
+				clr=35
+			}
+		}
+		text {
+			object {
+				x=230
+				y=29
+				width=125
+				height=15
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="ECal Rates"
+			align="horiz. centered"
+		}
+	}
+}
+"text update" {
+	object {
+		x=826
+		y=121
+		width=50
+		height=18
+	}
+	monitor {
+		chan="HPS:NC:frascati"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1005
+		y=187
+		width=50
+		height=18
+	}
+	monitor {
+		chan="HPS:NC:left"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1068
+		y=187
+		width=50
+		height=18
+	}
+	monitor {
+		chan="HPS:NC:right"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=770
+		y=121
+		width=50
+		height=18
+	}
+	monitor {
+		chan="HPS:NC:fwdcar"
+		clr=14
+		bclr=32
 	}
 	align="horiz. centered"
 	limits {
