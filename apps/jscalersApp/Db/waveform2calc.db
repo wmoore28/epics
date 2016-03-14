@@ -36,41 +36,45 @@ record(subArray, "HPSFCUP")
     field(INDX,3)
     field(FTVL,"DOUBLE")
 }
-record(subArray, "HPSNC1")
+record(subArray, "HPS:NC:1")
 {
     field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS2_Sl2_Ch1.VAL")
+    field(INP,"B_SCALERSHPS11_Sl3_Ch0.VAL")
     field(NELM,1)
     field(MALM,4)
     field(INDX,3)
     field(FTVL,"DOUBLE")
+    alias("HPS:NC:frascati")
 }
-record(subArray, "HPSNC2")
+record(subArray, "HPS:NC:2")
 {
     field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS2_Sl2_Ch2.VAL")
+    field(INP,"B_SCALERSHPS11_Sl3_Ch1.VAL")
     field(NELM,1)
     field(MALM,4)
     field(INDX,3)
     field(FTVL,"DOUBLE")
+    alias("HPS:NC:right")
 }
-record(subArray, "HPSNC3")
+record(subArray, "HPS:NC:3")
 {
     field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS2_Sl2_Ch3.VAL")
+    field(INP,"B_SCALERSHPS11_Sl3_Ch2.VAL")
     field(NELM,1)
     field(MALM,4)
     field(INDX,3)
     field(FTVL,"DOUBLE")
+    alias("HPS:NC:left")
 }
-record(subArray, "HPSNC4")
+record(subArray, "HPS:NC:4")
 {
     field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS2_Sl2_Ch4.VAL")
+    field(INP,"B_SCALERSHPS11_Sl3_Ch3.VAL")
     field(NELM,1)
     field(MALM,4)
     field(INDX,3)
     field(FTVL,"DOUBLE")
+    alias("HPS:NC:fwdcar")
 }
 
 record(subArray, "B_HPSECALFADC_TOP_1") {
@@ -330,37 +334,43 @@ record(calc, "HPSTRIGSC_5_FRAC") {
 record(calc, "HPSTRIGSC_0_PRE") {
     field(INPA,"HPSTRIGSC_0_GATED")
     field(INPB,"HPSTRIGPRESCALE_0")
-    field(CALC,"A/(2^B)")
+#field(CALC,"A/(2^B)")
+    field(CALC,"B>0 ? A/(2^(B-1)+1) : A")
     field(FLNK,"HPSTRIGSC_0_FAN_PRE")
 }
 record(calc, "HPSTRIGSC_1_PRE") {
     field(INPA,"HPSTRIGSC_1_GATED")
     field(INPB,"HPSTRIGPRESCALE_1")
-    field(CALC,"A/(2^B)")
+#field(CALC,"A/(2^B)")
+    field(CALC,"B>0 ? A/(2^(B-1)+1) : A")
     field(FLNK,"HPSTRIGSC_1_FAN_PRE")
 }
 record(calc, "HPSTRIGSC_2_PRE") {
     field(INPA,"HPSTRIGSC_2_GATED")
     field(INPB,"HPSTRIGPRESCALE_2")
-    field(CALC,"A/(2^B)")
+#field(CALC,"A/(2^B)")
+    field(CALC,"B>0 ? A/(2^(B-1)+1) : A")
     field(FLNK,"HPSTRIGSC_2_FAN_PRE")
 }
 record(calc, "HPSTRIGSC_3_PRE") {
     field(INPA,"HPSTRIGSC_3_GATED")
     field(INPB,"HPSTRIGPRESCALE_3")
-    field(CALC,"A/(2^B)")
+#field(CALC,"A/(2^B)")
+    field(CALC,"B>0 ? A/(2^(B-1)+1) : A")
     field(FLNK,"HPSTRIGSC_3_FAN_PRE")
 }
 record(calc, "HPSTRIGSC_4_PRE") {
     field(INPA,"HPSTRIGSC_4_GATED")
     field(INPB,"HPSTRIGPRESCALE_4")
-    field(CALC,"A/(2^B)")
+#field(CALC,"A/(2^B)")
+    field(CALC,"B>0 ? A/(2^(B-1)+1) : A")
     field(FLNK,"HPSTRIGSC_4_FAN_PRE")
 }
 record(calc, "HPSTRIGSC_5_PRE") {
     field(INPA,"HPSTRIGSC_5_GATED")
     field(INPB,"HPSTRIGPRESCALE_5")
-    field(CALC,"A/(2^B)")
+#field(CALC,"A/(2^B)")
+    field(CALC,"B>0 ? A/(2^(B-1)+1) : A")
     field(FLNK,"HPSTRIGSC_5_FAN_PRE")
 }
 
@@ -490,11 +500,11 @@ record(ai, "HPSTRIGPRESCALE_0") {
     field(FLNK,"HPSTRIGSC_0_PRE")
 }
 record(ai, "HPSTRIGPRESCALE_1") {
-    field(VAL,0)
+    field(VAL,1)
     field(FLNK,"HPSTRIGSC_1_PRE")
 }
 record(ai, "HPSTRIGPRESCALE_2") {
-    field(VAL,7)
+    field(VAL,6)
     field(FLNK,"HPSTRIGSC_2_PRE")
 }
 record(ai, "HPSTRIGPRESCALE_3") {
@@ -586,16 +596,58 @@ record(ai, "HPSTRIGSC_LIVETIME") {
     field(LOLO,10.0)
     field(LSV,MINOR)
     field(LLSV,MAJOR)
-    field(FLNK,HPSDAQISRUN)
+    field(FLNK,ts_status_ttl)
+#field(FLNK,HPSDAQISRUN)
 }
-record(calc,"HPSDAQISRUN")
+#record(calc,"HPSDAQISRUN")
+record(calc,"ts_status_ttl")
 {
     field(INPA,"HPSTRIGSC_LIVETIME0")
     field(INPB,"HPSTRIGSC_TOTAL")
-    field(CALC,"A<100 & A>1 & B>0 ? 1 : 0")
+    field(INPC,"HPSTRIGSC_0_FRAC_PRE")
+    field(INPD,"HPSTRIGSC_1_FRAC_PRE")
+    field(INPE,"HPSTRIGSC_2_FRAC_PRE")
+    field(INPF,"HPSTRIGSC_3_FRAC_PRE")
+    field(CALC,"(A<100 | C+D+E+F>0) & A>1 & B>0 ? 1 : 0")
 }
 
+############################################
+############################################
+############################################
 
+# THIS STILL DIDN'T WORK:
+#record(calc,"ts_status_ttl2")
+#{
+#    field(INPA,"ts_status_ttl")
+#    field(CALC,"A")
+#    field(SCAN,"2 second")
+#}
+#record(ai,"hallb_run_number2")
+#{
+#    field(SCAN,"2 second")
+#    field(DTYP,"Soft Channel")
+#    field(INP,"hallb_run_number")
+#}
+#record(calc,"hallb_run_status2")
+#{
+#    field(INPA,"hallb_run_status")
+#    field(CALC,"A")
+#    field(SCAN,"2 second")
+#}
+#record(calc,"hallb_livetime2")
+#{
+#    field(INPA,"hallb_livetime")
+#    field(CALC,"A")
+#    field(SCAN,"2 second")
+#}
+
+# JUST TO FAKE OUT BTA:
+grecord( calc,"moller_accumulate")
+{
+	field(SCAN,"Passive")	
+	field(CALC,"1")
+	field(PINI, "1")
+}
 
 
 ############################################
@@ -619,10 +671,16 @@ record(calc, "HPSBEAMANGY") {
 ############################################
 ############################################
 
-#Minimum value for the current
-grecord( calc,"moller_accumulate")
-{
-	field(SCAN,"Passive")	
-	field(CALC,"1")
-	field(PINI, "1")
-}
+#record(mbbiDirect,"HPS:FSD") {
+#       field(DTYP,"Soft Channel")
+#       field(NOBT,"16")
+#       field(SCAN,"1 second")
+#       field(INP,"ISD2H001G")
+#       field(FLNK,"HPS:FSD:HALO")
+#}
+#record(bi, "HPS:FSD:HALO") {
+#    field(INP,"HPS:FSD.BA")
+#    field(ZNAM,"FSD NOT TRIPPED")
+#    field(ONAM,"FSD TRIPPED")
+#}
+
