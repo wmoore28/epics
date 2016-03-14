@@ -1,0 +1,14 @@
+
+record(mbbiDirect,"HPS:FSD") {
+    field(DTYP,"Soft Channel")
+    field(NOBT,"16")
+    field(SCAN,"1 second")
+    field(INP,"ISD2H001G")
+    field(FLNK,"HPS:FSD:HALO")
+}
+record(bi, "HPS:FSD:HALO") {
+    field(INP,"HPS:FSD.BA")
+    field(ZNAM,"FSD NOT TRIPPED")
+    field(ONAM,"FSD TRIPPED")
+}
+
