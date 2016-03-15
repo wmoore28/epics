@@ -73,8 +73,7 @@ read a
 
 echo
 echo
-echo Enter clasrun password ....
-su -c svtDaqReboot.sh clasrun
+svtDaqReboot.sh
 echo
 echo
 
