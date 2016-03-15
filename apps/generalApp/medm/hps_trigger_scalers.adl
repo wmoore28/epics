@@ -1278,9 +1278,9 @@ rectangle {
 }
 "related display" {
 	object {
-		x=536
+		x=533
 		y=404
-		width=60
+		width=65
 		height=24
 	}
 	display[0] {
@@ -1289,15 +1289,19 @@ rectangle {
 	}
 	display[1] {
 		label="Reboot T-DAQ"
-		name="rebootTI.adl"
+		name="rebootTDAQ.adl"
 	}
 	display[2] {
 		label="Reboot SVT-DAQ"
-		name="rebootSVT.adl"
+		name="rebootSVTDAQ.adl"
+	}
+	display[3] {
+		label="Reboot FULL DAQ"
+		name="rebootFULLDAQ.adl"
 	}
 	clr=33
 	bclr=12
-	label="REBOOT"
+	label=" REBOOT"
 }
 text {
 	object {
