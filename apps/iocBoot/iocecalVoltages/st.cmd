@@ -27,14 +27,14 @@ dbLoadRecords("db/ecalHV.db")
 
 # THESE ARE IN SLOT 15 of HVHPS2:
 #dbLoadRecords("db/bm_01.db")
-dbLoadTemplate("db/bm_hvhps2.subs")
+dbLoadTemplate("db/bm_hvhps2.substitutions")
 
 # THESE ARE IN SLOT 13 of HVECAL4:
 #dbLoadRecords("db/bm_02.db") # <-- this ones' numbersing are wrong, still for SLOT 00
-#dbLoadTemplate("db/bm_hvecal4.subs")
+#dbLoadTemplate("db/bm_hvecal4.substitutions")
 
 # THESE ARE IN SLOT 00 of HVHPS1: 
-#dbLoadTemplate("db/bm_hvhps1.subs")
+#dbLoadTemplate("db/bm_hvhps1.substitutions")
 
 #asSetFilename("ecal.acf")
 
