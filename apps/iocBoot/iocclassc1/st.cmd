@@ -50,17 +50,15 @@ dbLoadRecords("db/scaler_e.db")
 #     (5)motor task polling rate (min=1Hz,max=60Hz)
 omsSetup(2, 0x8000, 180, 5, 10)
 dbLoadRecords("db/motor.db","motor_name=harp_2c21, card=0, slot=2, srev=2000, urev=2.54, direction=Neg, velo=5.0, accl=0.1")
-dbLoadRecords("db/scan.db","motor_name=harp_2c21, start_at=25, end_at=60.0, start_speed=5.0, scan_speed=0.5, acq_time=0.1")
+dbLoadRecords("db/scan.db","motor_name=harp_2c21, start_at=25, end_at=55.0, start_speed=5.0, scan_speed=0.5, acq_time=0.1")
 #
 dbLoadRecords("db/motor.db","motor_name=harp_tagger, card=0, slot=1, srev=2000, urev=2.54, direction=Neg, velo=0.5, accl=0.01")
-dbLoadRecords("db/scan.db","motor_name=harp_tagger, start_at=18, end_at=58.0, start_speed=5.0, scan_speed=0.5, acq_time=0.07")
+dbLoadRecords("db/scan.db","motor_name=harp_tagger, start_at=10, end_at=55.0, start_speed=5.0, scan_speed=0.5, acq_time=0.07")
 dbLoadRecords("db/radiators.db")
 #
 dbLoadRecords("db/motor.db","motor_name=collimator,card=0,slot=3,srev=2000,urev=0.2,direction=Pos,velo=0.2,accl=0.5")
 #dbLoadRecords("db/scan.db","motor_name=collimator,start_at=4.22,end_at=4.82,start_speed=0.2,scan_speed=0.02,acq_time=0.07")
 dbLoadRecords("db/hallb_collimator.db")
-
-
 
 
 ## IOC monitoring, etc
