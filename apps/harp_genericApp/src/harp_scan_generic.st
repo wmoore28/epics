@@ -181,7 +181,7 @@ double timeWaited = 0;
 
 /* state code  */
 ss harp_scan_snc {
-   
+
    state init {
      when () {
 
@@ -216,20 +216,16 @@ ss harp_scan_snc {
 
 /* ========================================================= */
 
-
-
-        harp_relative_move = 0.0;
-        pvPut(harp_relative_move);
-       pvGet(motor_name);
+    harp_relative_move = 0.0;
+    pvPut(harp_relative_move);
+    pvGet(motor_name);
 	for (tmp_int = 0;  (get_e_rec(tmp_int,tmp_rec)); tmp_int++) {
-	   tmp_float[tmp_int] = 0.0;
-           pvAssign(tmp_float[tmp_int], tmp_rec);
-           pvGet(tmp_float[tmp_int]);
-           tmp_f = tmp_float[tmp_int];
-        }
-       printf("harp_scan: %s initializing  state code\n", motor_name);
-     } state wait_command
-   }
+	    tmp_float[tmp_int] = 0.0;
+        pvAssign(tmp_float[tmp_int], tmp_rec);
+    }
+    printf("harp_scan: %s initializing  state code\n", motor_name);
+  } state wait_command
+}
    state wait_command {
      when (command == SCAN) {
 
@@ -304,12 +300,12 @@ ss harp_scan_snc {
         pvPut(command);
      } state wait_lls
    }
-   state wait_lls {    
+   state wait_lls { 
      when (lls == LIMIT_SWITCH_ON) {
         printf("harp_scan: %s wait_lls state low limit swithc hit\n",motor_name);
      } state start_move_to_a
    }
-   state start_move_to_a {    
+   state start_move_to_a {  
      when (delay(0.5)) {
         printf("harp_scan: %s starting move to a position\n",motor_name);
 	pvGet(speed_to_a);
@@ -326,8 +322,8 @@ ss harp_scan_snc {
       /*write magnet settings to the file*/
         printf( "Debigging\n" );
 	for (tmp_int = 0;  (get_e_rec(tmp_int,tmp_rec) && get_e_name(tmp_int,tmp_name)); tmp_int++) {
-	   retStatus = pvAssign(tmp_float[tmp_int], tmp_rec);
-	   printf( "Return from pvAssign is %d for variable number %d \n", retStatus, tmp_int );
+	   /*retStatus = pvAssign(tmp_float[tmp_int], tmp_rec);*/
+	   /*printf( "Return from pvAssign is %d for variable number %d \n", retStatus, tmp_int );*/
 
 	   timeWaited = 0.0;
 	   while( (	!pvAssigned ( tmp_float[tmp_int] ) 
