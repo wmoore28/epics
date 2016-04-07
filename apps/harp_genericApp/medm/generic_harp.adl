@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/harp_generic/medm/generic_harp.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/harp_genericApp/medm/./generic_harp.adl"
 	version=030109
 }
 display {
 	object {
-		x=1639
-		y=451
+		x=1542
+		y=424
 		width=602
 		height=173
 	}
@@ -277,8 +277,8 @@ text {
 }
 "text update" {
 	object {
-		x=148
-		y=126
+		x=139
+		y=125
 		width=50
 		height=24
 	}
@@ -293,7 +293,7 @@ text {
 }
 text {
 	object {
-		x=212
+		x=198
 		y=135
 		width=40
 		height=13
@@ -310,7 +310,7 @@ text {
 }
 text {
 	object {
-		x=212
+		x=198
 		y=125
 		width=40
 		height=13
@@ -355,10 +355,10 @@ text {
 }
 "shell command" {
 	object {
-		x=517
-		y=110
-		width=15
-		height=15
+		x=461
+		y=123
+		width=100
+		height=25
 	}
 	command[0] {
 		label="Analyze Scans"
@@ -369,17 +369,21 @@ text {
 		args=" "
 	}
 	clr=14
-	bclr=49
+	bclr=15
+	label="ANALYZE SCAN"
 }
-text {
+"message button" {
 	object {
-		x=360
-		y=110
-		width=102
-		height=18
+		x=290
+		y=123
+		width=100
+		height=25
 	}
-	"basic attribute" {
-		clr=14
+	control {
+		chan="$(motor_name):ABORT"
+		clr=0
+		bclr=20
 	}
-	textix="Analyze with ROOT Fitter"
+	label="ABORT SCAN"
+	press_msg="1"
 }
