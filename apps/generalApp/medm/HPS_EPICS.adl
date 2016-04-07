@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./HPS_EPICS.adl"
-	version=030109
+	name="/usr/clas12/hps/v3.0.0/apps/./generalApp/medm/HPS_EPICS.adl"
+	version=030101
 }
 display {
 	object {
-		x=18
-		y=4
+		x=643
+		y=31
 		width=240
 		height=835
 	}
@@ -279,7 +279,7 @@ text {
 }
 text {
 	object {
-		x=49
+		x=70
 		y=455
 		width=120
 		height=15
@@ -532,9 +532,22 @@ text {
 		width=20
 		height=20
 	}
-	display[0] {
-		label="magnet screens"
-		name="magnet_screens.adl"
+	display[1] {
+		label="Chicane"
+		name="chicane.adl"
+		args="P=hps_chicane"
+	}
+	display[2] {
+		label="Frascati Magnets"
+		name="minitorus.adl"
+	}
+	display[3] {
+		label="Analyzing Magnet"
+		name="pspec.adl"
+	}
+	display[4] {
+		label="Tagger"
+		name="tagger.adl"
 	}
 	clr=14
 	bclr=50
@@ -903,11 +916,6 @@ text {
 	command[1] {
 		label="ECAL FADC Scalers (EPICS)"
 		name="hps_ecal_scalers.py &"
-	}
-	command[2] {
-		label="ECAL Diag GUI"
-		name="xterm -title 'ECAL FADC Diag GUI' -e "
-		args="/usr/clas12/hps/prod/tools/ecal/runEcalDiagGui.sh &"
 	}
 	clr=14
 	bclr=50
