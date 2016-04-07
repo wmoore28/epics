@@ -1,0 +1,167 @@
+# Record of BPM coordinate alarm values, which will be  
+# 0, when the current on FCup or corresponding BPM
+# is smaller thean the threshold, othervise
+# they will be equal to their original PVs
+record(calc, "2H00Xpos_alarm") {
+        field(INPA, "scaler_calc1")
+#        field(INPA, "scaler_cS3b.VAL NPP MS")
+        field(INPB, "hallb_IPM2H00_XPOS")
+        field(SCAN, "1 second")
+#	field(CALC, "A>D||(B>D&&C#1&&F<E)?1:0")
+	field(CALC, "A>0.5?B:0")
+#	field(CALC, "B*Max(A-0.5, 0)/(A-0.5)")
+	field(HIGH, "0.1")
+	field(HSV,  "MINOR")
+	field(HIHI, "0.25")
+	field(HHSV, "MAJOR")
+	field(LOW, "-0.1")
+	field(LSV,  "MINOR")
+	field(LOLO, "-0.25")
+	field(LLSV, "MAJOR")
+}
+#
+record(calc, "2H00Ypos_alarm") {
+        field(INPA, "scaler_calc1")
+        field(INPB, "hallb_IPM2H00_YPOS")
+        field(SCAN, "1 second")
+#	field(CALC, "B*Max(A-0.5, 0)/(A-0.5)")
+        field(CALC, "A>0.5?B:0")
+	field(HIGH, "0.1")
+	field(HSV,  "MINOR")
+	field(HIHI, "0.25")
+	field(HHSV, "MAJOR")
+	field(LOW, "-0.1")
+	field(LSV,  "MINOR")
+	field(LOLO, "-0.25")
+	field(LLSV, "MAJOR")
+}
+#
+record(calc, "2H01Xpos_alarm") {
+        field(INPA, "scaler_calc1 NPP")
+        field(INPB, "hallb_IPM2H01_XPOS NPP")
+        field(SCAN, "1 second")
+#	field(CALC, "B*Max(A-0.5, 0)/(A-0.5)")
+	field(CALC, "A>0.5?B:0")
+	field(HIGH, "1.")
+	field(HSV,  "MINOR")
+	field(HIHI, "2.")
+	field(HHSV, "MAJOR")
+	field(LOW, "-1")
+	field(LSV,  "MINOR")
+	field(LOLO, "-2.")
+	field(LLSV, "MAJOR")
+}
+#
+record(calc, "2H01Ypos_alarm") {
+        field(INPA, "scaler_calc1")
+        field(INPB, "hallb_IPM2H01_YPOS")
+        field(SCAN, "1 second")
+#	field(CALC, "B*Max(A-0.5, 0)/(A-0.5)")
+	field(CALC, "A>0.5?B:0")
+	field(HIGH, "1.")
+	field(HSV,  "MINOR")
+	field(HIHI, "2.")
+	field(HHSV, "MAJOR")
+	field(LOW, "-1")
+	field(LSV,  "MINOR")
+	field(LOLO, "-2.")
+	field(LLSV, "MAJOR")
+}
+#
+record(calc, "2H02Xpos_alarm") {
+        field(INPA, "scaler_calc1")
+        field(INPB, "hallb_IPM2H02_XPOS")
+        field(SCAN, "1 second")
+#	field(CALC, "B*Max(A-0.5, 0)/(A-0.5)")
+        field(CALC, "A>0.5?B:-1")
+	field(HIGH, "-0.9")
+	field(HSV,  "MINOR")
+	field(HIHI, "-0.8")
+	field(HHSV, "MAJOR")
+	field(LOW, "-1.1")
+	field(LSV,  "MINOR")
+	field(LOLO, "-1.2")
+	field(LLSV, "MAJOR")
+}
+#
+record(calc, "2H02Ypos_alarm") {
+        field(INPA, "scaler_calc1 NPP")
+        field(INPB, "hallb_IPM2H02_YPOS")
+        field(SCAN, "1 second")
+#	field(CALC, "B*Max(A-0.5, 0)/(A-0.5)")
+        field(CALC, "A>0.5?B:-0.85")
+	field(HIGH, "-0.75")
+	field(HSV,  "MINOR")
+	field(HIHI, "-0.7")
+	field(HHSV, "MAJOR")
+	field(LOW, "-0.95")
+	field(LSV,  "MINOR")
+	field(LOLO, "-1")
+	field(LLSV, "MAJOR")
+}
+#
+record(calc, "2C24AXpos_alarm") {
+        field(INPA, "hallb_IPM2C24A_CUR")
+        field(INPB, "hallb_IPM2C24A_XPOS")
+        field(SCAN, "1 second")
+#	field(CALC, "B*Max(A-1., 0)/(A-1.)")
+        field(CALC, "A>1?B:0")
+	field(HIGH, "0.4")
+	field(HSV,  "MINOR")
+	field(HIHI, "0.6")
+	field(HHSV, "MAJOR")
+	field(LOW, "-0.4")
+	field(LSV,  "MINOR")
+	field(LOLO, "-0.6")
+	field(LLSV, "MAJOR")
+}
+#
+record(calc, "2C24AYpos_alarm") {
+        field(INPA, "hallb_IPM2C24A_CUR")
+        field(INPB, "hallb_IPM2C24A_YPOS")
+        field(SCAN, "1 second")
+#	field(CALC, "B*Max(A-1., 0)/(A-1.)")
+        field(CALC, "A>1?B:0")
+	field(HIGH, "0.4")
+	field(HSV,  "MINOR")
+	field(HIHI, "0.6")
+	field(HHSV, "MAJOR")
+	field(LOW, "-0.4")
+	field(LSV,  "MINOR")
+	field(LOLO, "-0.6")
+	field(LLSV, "MAJOR")
+}
+#
+record(calc, "2C21AXpos_alarm") {
+        field(INPA, "hallb_IPM2C21A_CUR")
+        field(INPB, "hallb_IPM2C21A_XPOS")
+        field(SCAN, "1 second")
+#	field(CALC, "B*Max(A-1., 0)/(A-1.)")
+        field(CALC, "A>1?B:0")
+	field(HIGH, "0.4")
+	field(HSV,  "MINOR")
+	field(HIHI, "0.6")
+	field(HHSV, "MAJOR")
+	field(LOW, "-0.4")
+	field(LSV,  "MINOR")
+	field(LOLO, "-0.6")
+	field(LLSV, "MAJOR")
+}
+#
+record(calc, "2C21AYpos_alarm") {
+        field(INPA, "hallb_IPM2C21A_CUR")
+        field(INPB, "hallb_IPM2C21A_YPOS")
+#        field(INPB, "IPM2C21.YPOS NPP MS")
+        field(SCAN, "1 second")
+#	field(CALC, "B*Max(A-1., 0)/(A-1.)")
+        field(CALC, "A>1?B:0")
+	field(HIGH, "0.4")
+	field(HSV,  "MINOR")
+	field(HIHI, "0.6")
+	field(HHSV, "MAJOR")
+	field(LOW, "-0.4")
+	field(LSV,  "MINOR")
+	field(LOLO, "-0.6")
+	field(LLSV, "MAJOR")
+}
+
