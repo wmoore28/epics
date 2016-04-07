@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/ECalHVStatusCompactDetails.adl"
-	version=030109
+	name="/usr/clas12/hps/v3.0.0/apps/medm/../generalApp/medm/ECalHVStatusCompactDetails.adl"
+	version=030101
 }
 display {
 	object {
-		x=893
-		y=221
+		x=1078
+		y=377
 		width=302
-		height=455
+		height=492
 	}
 	clr=3
 	bclr=14
@@ -4335,5 +4335,169 @@ rectangle {
 	"basic attribute" {
 		clr=9
 		fill="outline"
+	}
+}
+"text update" {
+	object {
+		x=10
+		y=468
+		width=56
+		height=12
+	}
+	monitor {
+		chan="HPSECALLV:i1mon"
+		clr=3
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=67
+		y=468
+		width=56
+		height=12
+	}
+	monitor {
+		chan="HPSECALLV:v1mon"
+		clr=3
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=180
+		y=468
+		width=56
+		height=12
+	}
+	monitor {
+		chan="HPSECALLV:i2mon"
+		clr=3
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=237
+		y=468
+		width=56
+		height=12
+	}
+	monitor {
+		chan="HPSECALLV:v2mon"
+		clr=3
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+rectangle {
+	object {
+		x=6
+		y=452
+		width=290
+		height=30
+	}
+	"basic attribute" {
+		clr=10
+		fill="outline"
+	}
+}
+text {
+	object {
+		x=129
+		y=454
+		width=44
+		height=12
+	}
+	"basic attribute" {
+		clr=2
+	}
+	textix="ECAL LV"
+}
+oval {
+	object {
+		x=127
+		y=468
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="HPSECALLV:pw1mon"
+	}
+}
+oval {
+	object {
+		x=163
+		y=468
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="HPSECALLV:pw2mon"
+	}
+}
+oval {
+	object {
+		x=127
+		y=468
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=20
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if zero"
+		chan="HPSECALLV:pw1mon"
+	}
+}
+oval {
+	object {
+		x=163
+		y=468
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=20
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if zero"
+		chan="HPSECALLV:pw2mon"
 	}
 }
