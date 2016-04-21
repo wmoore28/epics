@@ -57,7 +57,7 @@ echo
 #xterm -e svtDaqReboot.sh &
 
 
-rocwait 20 before restarting trigger IOC
+rocwait 30 before restarting trigger IOC
 ssh clonioc3 'echo 18 | xxd -r -p | nc localhost 20016'
 
 echo
