@@ -7,11 +7,14 @@ $GUIDANCE
 	Some temperature sensor on ECAL is out of specs.
 $END
 
-$SEVRCOMMAND UP_MAJOR /home/hpsrun/scripts/notify_expert_auto.pl ecal_expert ECAL tempSensor OUT OF SPEC
+$SEVRCOMMAND UP_MAJOR /home/hpsrun/scripts/notify_expert_auto.pl ecal_expert ECAL tempSensor OUT OF SPEC OR STAT
 
 #=======================================
 # Channels
 #=======================================
+
+CHANNEL TEMPS tempSensorA.STAT
+$COMMAND medm -x -attach -cmap -macro "sig=tempSensorA.STAT" aiaocalc_alarm.adl >> /dev/null
 
 CHANNEL TEMPS tempSensorA
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorA" aiaocalc_alarm.adl >> /dev/null
