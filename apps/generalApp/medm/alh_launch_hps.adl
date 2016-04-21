@@ -1,7 +1,7 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./alh_launch_hps.adl"
-	version=030109
+	name="/usr/clas12/hps/v3.0.0/apps/./generalApp/medm/alh_launch_hps.adl"
+	version=030101
 }
 display {
 	object {
@@ -209,7 +209,7 @@ text {
 	command[0] {
 		label="alh"
 		name="alh"
-		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/ecal.alhConfig &"
+		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /usr/clas12/hps/DATA/alarms /usr/clas12/hps/prod/apps/alhConfig/ecal.alhConfig &"
 	}
 	clr=30
 	bclr=22
@@ -346,7 +346,7 @@ text {
 	command[0] {
 		label="alh"
 		name="alh"
-		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/magnets.alhConfig &"
+		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /usr/clas12/hps/DATA/alarms /usr/clas12/hps/prod/apps/alhConfig/magnets.alhConfig &"
 	}
 	clr=30
 	bclr=22
