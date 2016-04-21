@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/./generalApp/medm/HPS_EPICS.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./HPS_EPICS.adl"
 	version=030101
 }
 display {
@@ -338,6 +338,11 @@ text {
 	display[9] {
 		label="SVT Soft Interlocks"
 		name="svtIntlk.adl"
+	}
+	display[10] {
+		label="Chiller (SVT2)"
+		name="chiller_anova.adl"
+		args="DESC=SVT2,P=HPS_SVT:CHILLER:"
 	}
 	clr=14
 	bclr=50
@@ -910,10 +915,6 @@ text {
 		height=20
 	}
 	command[0] {
-		label="ECAL FADC Scalers (DiagGuiServer)"
-		name="hps_ecal_scalers &"
-	}
-	command[1] {
 		label="ECAL FADC Scalers (EPICS)"
 		name="hps_ecal_scalers.py &"
 	}
@@ -930,7 +931,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="ECAL Scaler GUIs"
+	textix="ECAL FADC Scalers"
 }
 "shell command" {
 	object {
