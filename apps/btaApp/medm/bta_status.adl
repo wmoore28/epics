@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/btaApp/./medm/bta_status.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/btaApp/medm/./bta_status.adl"
 	version=030101
 }
 display {
 	object {
-		x=298
-		y=139
+		x=100
+		y=100
 		width=605
 		height=340
 	}
@@ -87,43 +87,20 @@ display {
 		1a7309,
 	}
 }
-composite {
+"shell command" {
 	object {
-		x=18
-		y=320
-		width=147
-		height=17
+		x=129
+		y=313
+		width=20
+		height=20
 	}
-	"composite name"=""
-	children {
-		"shell command" {
-			object {
-				x=18
-				y=320
-				width=40
-				height=17
-			}
-			command[0] {
-				label="BA Configurator"
-				name="$APP/bta/scripts/bta_config_rc.pl "
-				args="&"
-			}
-			clr=20
-			bclr=30
-		}
-		text {
-			object {
-				x=65
-				y=320
-				width=100
-				height=15
-			}
-			"basic attribute" {
-				clr=37
-			}
-			textix="Configure BTA"
-		}
+	command[0] {
+		label="BA Configurator"
+		name="$APP/bta/scripts/bta_config_rc.pl "
+		args="&"
 	}
+	clr=5
+	bclr=10
 }
 text {
 	object {
@@ -784,12 +761,13 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HLB:bta_reg_bm.INPG"
+		chan="HLB:bta_reg_bm.G"
 		clr=14
 		bclr=50
 	}
 	align="horiz. centered"
 	limits {
+		precSrc="default"
 	}
 }
 "text update" {
@@ -800,12 +778,13 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HLB:bta_reg_bm.INPL"
+		chan="HLB:bta_reg_bm.L"
 		clr=14
 		bclr=50
 	}
 	align="horiz. centered"
 	limits {
+		precSrc="default"
 	}
 }
 "text update" {
@@ -954,12 +933,13 @@ oval {
 		height=20
 	}
 	monitor {
-		chan="HLB:bta_reg_bm.INPH"
+		chan="HLB:bta_reg_bm.H"
 		clr=14
 		bclr=50
 	}
 	align="horiz. centered"
 	limits {
+		precSrc="default"
 	}
 }
 text {
@@ -1083,27 +1063,27 @@ text {
 }
 text {
 	object {
-		x=365
-		y=315
+		x=378
+		y=316
 		width=100
 		height=15
 	}
 	"basic attribute" {
 		clr=39
 	}
-	textix="Master Current"
+	textix="Master Current:"
 }
 "related display" {
 	object {
-		x=192
+		x=5
 		y=311
-		width=130
+		width=120
 		height=25
 	}
 	display[0] {
-		name="bta_beamType.adl"
+		name="btacfg.adl"
 	}
-	clr=0
-	bclr=20
-	label="SET BEAM TYPE"
+	clr=14
+	bclr=30
+	label="Configure BTA"
 }
