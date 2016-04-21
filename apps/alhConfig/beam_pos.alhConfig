@@ -1,61 +1,61 @@
 GROUP    NULL                         BEAM_POSITION               
-CHANNEL  BEAM_POSITION                hallb_IPM2C21A_XPOS         
-$COMMAND  medm -x -attach -cmap -macro "sig=hallb_IPM2C21A_XPOS" aiaocalc_alarm.adl >> /dev/null 
-$ALARMCOUNTFILTER  10 120
+CHANNEL  BEAM_POSITION                2C21AXpos_alarm         
+$COMMAND  medm -x -attach -cmap -macro "sig=2C21AXpos_alarm" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 25
 $GUIDANCE
               The X beam position at nA BPM 2C21A is out of spec.  Inform MCC about this.
 $END
-CHANNEL  BEAM_POSITION                hallb_IPM2C21A_YPOS         
-$COMMAND  medm -x -attach -cmap -macro "sig=hallb_IPM2C21A_YPOS" aiaocalc_alarm.adl >> /dev/null 
-$ALARMCOUNTFILTER  10 120
+CHANNEL  BEAM_POSITION                2C21AYpos_alarm         
+$COMMAND  medm -x -attach -cmap -macro "sig=2C21AYpos_alarm" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 25
 $GUIDANCE
               The Y beam position at nA BPM 2C21A is out of spec.  Inform MCC about this.
 $END
-CHANNEL  BEAM_POSITION                hallb_IPM2C24A_XPOS         
-$COMMAND  medm -x -attach -cmap -macro "sig=hallb_IPM2C24A_XPOS" aiaocalc_alarm.adl >> /dev/null 
-$ALARMCOUNTFILTER  10 120
+CHANNEL  BEAM_POSITION                2C24AXpos_alarm         
+$COMMAND  medm -x -attach -cmap -macro "sig=2C24AXpos_alarm" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 25
 $GUIDANCE
               The X beam position at nA BPM 2C24A is out of spec.  Inform MCC about this.
 $END
-CHANNEL  BEAM_POSITION                hallb_IPM2C24A_YPOS         
-$COMMAND  medm -x -attach -cmap -macro "sig=hallb_IPM2C24A_YPOS" aiaocalc_alarm.adl >> /dev/null 
-$ALARMCOUNTFILTER  10 120
+CHANNEL  BEAM_POSITION                2C24AYpos_alarm         
+$COMMAND  medm -x -attach -cmap -macro "sig=2C24AYpos_alarm" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 25
 $GUIDANCE
               The Y beam position at nA BPM 2C24A is out of spec.  Inform MCC about this.
 $END
-CHANNEL  BEAM_POSITION                hallb_IPM2H00_XPOS    
-$COMMAND  medm -x -attach -cmap -macro "sig=hallb_IPM2H00_XPOS" aiaocalc_alarm.adl >> /dev/null 
-$ALARMCOUNTFILTER  10 120
+CHANNEL  BEAM_POSITION                2H00Xpos_alarm    
+$COMMAND  medm -x -attach -cmap -macro "sig=2H00Xpos_alarm" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 25
 $GUIDANCE
               The X beam position at nA BPM 2H00 is out of spec.  Inform MCC about this. Page Beamline expert if problem persists.
 $END
-CHANNEL  BEAM_POSITION                hallb_IPM2H00_YPOS    
-$COMMAND  medm -x -attach -cmap -macro "sig=hallb_IPM2H00_YPOS" aiaocalc_alarm.adl >> /dev/null 
-$ALARMCOUNTFILTER  10 120
+CHANNEL  BEAM_POSITION                2H00Ypos_alarm   
+$COMMAND  medm -x -attach -cmap -macro "sig=2H00Ypos_alarm" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 25
 $GUIDANCE
               The Y beam position at nA BPM 2H00 is out of spec.  Inform MCC about this. Page Beamline expert if problem persists.
 $END
-CHANNEL  BEAM_POSITION                hallb_IPM2H01_XPOS    
-$COMMAND  medm -x -attach -cmap -macro "sig=hallb_IPM2H01_XPOS" aiaocalc_alarm.adl >> /dev/null 
-$ALARMCOUNTFILTER  10 120
+CHANNEL  BEAM_POSITION                2H01Xpos_alarm    
+$COMMAND  medm -x -attach -cmap -macro "sig=2H01Xpos_alarm" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 25
 $GUIDANCE
               The X beam position at nA BPM 2H01 is out of spec.  Inform MCC about this. Page Beamline expert if problem persists.
 $END
-CHANNEL  BEAM_POSITION                hallb_IPM2H01_YPOS    
-$COMMAND  medm -x -attach -cmap -macro "sig=hallb_IPM2H01_YPOS" aiaocalc_alarm.adl >> /dev/null 
-$ALARMCOUNTFILTER  10 120
+CHANNEL  BEAM_POSITION                2H01Ypos_alarm    
+$COMMAND  medm -x -attach -cmap -macro "sig=2H01Ypos_alarm" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 25
 $GUIDANCE
               The Y beam position at nA BPM 2H01 is out of spec.  Inform MCC about this. Page Beamline expert if problem persists.
 $END
-CHANNEL  BEAM_POSITION                hallb_IPM2H02_XPOS    
-$COMMAND  medm -x -attach -cmap -macro "sig=hallb_IPM2H02_XPOS" aiaocalc_alarm.adl >> /dev/null 
-$ALARMCOUNTFILTER  10 120
+CHANNEL  BEAM_POSITION                2H02Xpos_alarm    
+$COMMAND  medm -x -attach -cmap -macro "sig=2H02Xpos_alarm" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 25
 $GUIDANCE
               The X beam position at nA BPM 2H02 is out of spec.  Inform MCC about this. Page Beamline expert if problem persists.
 $END
-CHANNEL  BEAM_POSITION                hallb_IPM2H02_YPOS    
-$COMMAND  medm -x -attach -cmap -macro "sig=hallb_IPM2H02_YPOS" aiaocalc_alarm.adl >> /dev/null 
-$ALARMCOUNTFILTER  10 120
+CHANNEL  BEAM_POSITION                2H02Ypos_alarm   
+$COMMAND  medm -x -attach -cmap -macro "sig=2H02Ypos_alarm" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 25
 $GUIDANCE
               The Y beam position at nA BPM 2H02 is out of spec.  Inform MCC about this. Page Beamline expert if problem persists.
 $END
