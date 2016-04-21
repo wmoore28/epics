@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/hps_ecal_all.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./hps_ecal_all.adl"
 	version=030101
 }
 display {
 	object {
-		x=84
-		y=160
+		x=80
+		y=128
 		width=951
 		height=650
 	}
@@ -6340,6 +6340,11 @@ rectangle {
 		label="Mini V/I"
 		name="medm"
 		args="-attach -x $APP/generalApp/medm/ECalHVStatusCompactDetails.adl &"
+	}
+	command[7] {
+		label="FADC Scalers"
+		name="hps_ecal_scalers.py"
+		args="&"
 	}
 	clr=14
 	bclr=5
