@@ -167,6 +167,7 @@ ss seqChicane {
             }
             //pvGet(iSetPS);
             //pvGet(iSetMT);
+            epicsThreadSleep(1);
         } state idle
 
         // 
