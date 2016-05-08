@@ -13,7 +13,7 @@ dbLoadRecords("db/iocAdminSoft.db","IOC=${IOC}")
 dbLoadRecords("db/save_restoreStatus.db", "P=${IOC}:")
 
 # Simple record for HPS's halo-counter FSD (via mbbi->bi):
-#dbLoadRecords("db/hpsFsd.db")
+dbLoadRecords("db/hpsFsd.db")
 
 ## SVT Chiller, FE Chiller, Detector Vacuum
 dbLoadTemplate("db/svtIntlk.substitutions")
