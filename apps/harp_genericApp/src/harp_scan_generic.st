@@ -23,6 +23,7 @@ option +d;
 
 /* motor records  */
 
+// NATHAN ADDED ABORT:
 short abortButton;
 assign abortButton to "{motor_name}:ABORT";
 monitor abortButton;
@@ -311,8 +312,10 @@ ss harp_scan_snc {
    }
    state start_move_to_a {
      when (delay(0.5)) {
+        // NATHAN ADDED ABORT:
         abortButton = 0;
         pvPut(abortButton);
+        
         printf("harp_scan: %s starting move to a position\n",motor_name);
 	pvGet(speed_to_a);
 	harp_speed = speed_to_a;
@@ -324,6 +327,7 @@ ss harp_scan_snc {
      } state write_beam_conf
    }
    state write_beam_conf {
+     // NATHAN ADDED ABORT:
      when (abortButton) {
          abortButton = 0;
          pvPut(abortButton);
@@ -339,7 +343,7 @@ ss harp_scan_snc {
 
 	   timeWaited = 0.0;
 
-           // IGNORE PV CONNECTIONS (NATHAN):
+           // NATHAN IGNORES PV CONNECTIONS:
 	   //while( (	!pvAssigned ( tmp_float[tmp_int] ) 
 	   //         ||  !pvConnected( tmp_float[tmp_int] ) ) 
 	   //         && (timeWaited < 2) ) {
@@ -353,7 +357,7 @@ ss harp_scan_snc {
 /*	   taskDelay( delayTime ); */
 /*	   printf( "record name is <%s>\n",tmp_rec );  */
 
-           // TURN OFF PVGETTING, USE DUMMY INSTEAD (NATHAN):
+           // NATHAN TURNS OFF PVGETTING, USES DUMMY INSTEAD:
            //   pvGet(tmp_float[tmp_int]);
            //   tmp_f = tmp_float[tmp_int];
            tmp_f=99.999;
@@ -362,13 +366,14 @@ ss harp_scan_snc {
            fdprintf(fd,"# %50s: %24s: %f\n",tmp_name, tmp_rec,tmp_f); 
         }
 
-        // AFTER TURNING OFF THE ABOVE PVGETTING, PUT A DELAY JUST IN CASE:
+        // NATHAN PUTS A DELAY JUST IN CASE AFTER TURNING OFF PVGETTING:
         epicsThreadSleep(1.0);
 
      } state start_scan
    }
    state start_scan {
 
+     // NATHAN ADDED ABORT:
      when (abortButton) {
          abortButton = 0;
          pvPut(abortButton);
@@ -403,6 +408,7 @@ ss harp_scan_snc {
    }
    state daq_write {
 
+     // NATHAN ADDED ABORT:
      when (abortButton) {
          abortButton = 0;
          pvPut(abortButton);
@@ -455,6 +461,7 @@ ss harp_scan_snc {
      } state end_scan
    }
 
+   // NATHAN ADDED ABORT:
    state abort_scan {
        when() {
 
@@ -468,7 +475,7 @@ ss harp_scan_snc {
            harp_speed = speed_to_a;
            pvPut(harp_speed);
 
-           // This seems to be necessary only for 2c21a:
+           // NATHAN: This seems to be necessary only for 2c21a:
            epicsThreadSleep(0.5);
 
            harp_absolute_move = -100.0;
