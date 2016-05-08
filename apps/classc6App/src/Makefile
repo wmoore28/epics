@@ -15,7 +15,7 @@ DBD += classc6.dbd
 # classc6.dbd will be made up from these files:
 classc6_DBD += base.dbd
 classc6_DBD += btaSupport.dbd
-classc6_DBD += asSupport.dbd
+#classc6_DBD += asSupport.dbd
 classc6_DBD += devIocStats.dbd
 
 # classc6_registerRecordDeviceDriver.cpp derives from classc6.dbd
@@ -34,7 +34,7 @@ classc6_LIBS += SIS38XX mca
 classc6_LIBS += calc
 classc6_LIBS += busy
 classc6_LIBS += sscan
-classc6_LIBS += autosave
+#classc6_LIBS += autosave
 classc6_LIBS += std
 classc6_LIBS += devIocStats
 classc6_LIBS += vme
