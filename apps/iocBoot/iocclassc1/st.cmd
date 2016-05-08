@@ -60,6 +60,8 @@ dbLoadRecords("db/motor.db","motor_name=collimator,card=0,slot=3,srev=2000,urev=
 #dbLoadRecords("db/scan.db","motor_name=collimator,start_at=4.22,end_at=4.82,start_speed=0.2,scan_speed=0.02,acq_time=0.07")
 dbLoadRecords("db/hallb_collimator.db")
 
+#dbLoadRecords("db/motor.db","motor_name=harp_2H00, card=0, slot=4, srev=2000, urev=2.54, direction=Pos, velo=0.5, accl=0.01")
+#dbLoadRecords("db/scan.db","motor_name=harp_2H00, start_at=4.2, end_at=8.4, start_speed=0.5, scan_speed=0.04, acq_time=0.1")
 
 ## IOC monitoring, etc
 dbLoadRecords("$(DEVIOCSTATS)/db/iocAdminVxWorks.db", "IOC=iocclassc1")
@@ -98,6 +100,9 @@ seq &harp_scan_generic, "name=up_2c21_scan, motor_name=harp_2c21"
 
 seq &reset_motor, "name=h_tagger_reset, motor_name=harp_tagger"
 seq &harp_scan_generic, "name=h_tagger_scan, motor_name=harp_tagger"
+
+#seq &reset_motor, "name=h_2H00_reset, motor_name=harp_2H00"
+#seq &harp_scan_generic, "name=h_2H00_scan, motor_name=harp_2H00"
 
 seq &reset_motor, "name=h_collimator_reset, motor_name=collimator"
 #seq &harp_scan_generic, "name=h_collimator_scan, motor_name=collimator"
