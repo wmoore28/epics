@@ -96,7 +96,6 @@ ss struckDaqSequence {
         printf("done.\n");
     } state  wait
   }
-
   state wait {
     entry { printf( "struckDaq: state wait...\n"); }
     when (delay(10)) { 
@@ -106,12 +105,14 @@ ss struckDaqSequence {
 	    pvGet(struckDaq_debug);
         time_2_fill_fifo = dwel*(NFIFO+10);
         struckDaq_bin = 60.*NFIFO*dwel+0.499999;
+	printf("This is the right version \n");
         printf("struckDaq: wait done, data in  %f secs %i\n", time_2_fill_fifo, struckDaq_bin);
     } state stop
   } 
  
   state stop{
     when() { 
+/*    	     printf( "In STOP \n"); */
 /*	    stop = 1;
         pvPut(stop); 
 */
@@ -120,6 +121,7 @@ ss struckDaqSequence {
 
   state read {
     when( acqg == 0 ) { 
+ /*   	    printf( "In READ \n"); */
 	    for (i=0; i<NCHAN; i++) {
             sprintf(tmp_name,"struckDaq_%i.READ",i);
             pvAssign(tmp_short, tmp_name); 
@@ -131,6 +133,7 @@ ss struckDaqSequence {
  
   state get_fifo {
     when() {
+/*    	    printf( "In GET_FIFO \n"); */
 	    for (i_chan = 0; i_chan < NCHAN; i_chan++) {  
             pvGet(fifo_all[i_chan], ASYNC);
         }
@@ -139,6 +142,7 @@ ss struckDaqSequence {
 
   state restart_sis {
     when() { 
+/*    	printf( "In RESTART_SIS \n"); */
         erase_start = 1;
         pvPut(erase_start);
 %%      clock_gettime(CLOCK_REALTIME, &currTime );
@@ -149,7 +153,10 @@ ss struckDaqSequence {
 
   state process_data {
     when() {
+ /*   	printf( "In PROCESS_DATA \n"); */
+
         for (i_chan = 0; i_chan < NCHAN; i_chan++) { 
+/*	    printf("Still alive \n"); */
             sum = 0.0;
             for (j=0; j < NFIFO; j++) { 
 /*              if( fifo_all[i_chan][j] < 10 ) 
