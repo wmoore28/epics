@@ -58,7 +58,7 @@ public class MakeLogEntry
 	    
 	    img_path = getImgPath(winid, medm_name); // This Takes a snapshot of a control window, saves it into a file, and returns the full
 	                                             // path of that file
-	    System.out.println("Img Full path = " + img_path); 
+	    System.out.println("Img Full path = " + img_path);
 	    
 	    PV_list = PV_list + getPVs("chan"); // This add all "chan" PV values to PV_list
 	    PV_list = PV_list + getPVs("rdbk"); // This add all "rdbk" PV values to PV_list
@@ -68,7 +68,6 @@ public class MakeLogEntry
 	    elog_Title = "Snapshot of " + file_name + " : Run " + run_number;
 	    //entry.setTitle("Snapshot of " + file_name + " : Run " + run_number );
 	   
-
 	    addComments(); // Opens a window which has a Textarea (jta), and as sson user pushes a "Submit" button the text wil lbe asigned to comments_to_submit
 	    //System.out.println(comments_to_submit);
 	    
@@ -198,6 +197,8 @@ public class MakeLogEntry
 	frame.getContentPane().add(down_panel, "South");
 	//down_panel.add(rb_important);
 	down_panel.add(but_submit);
+
+
 
 	frame.pack();
 	frame.setVisible(true);
