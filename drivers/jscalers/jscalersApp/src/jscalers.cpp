@@ -161,6 +161,7 @@ void *crateThread(void *ptr) {
 #endif
 
         sleep(SCALERS_READ_INTERVAL);
+        //usleep(100000);
         //fprintf(stderr,"CrateThreadBegin1 %d\n",niter);
         pthread_mutex_lock(&(ptr_c->IOmutex));
         //fprintf(stderr,"CrateThreadBegin2 %d\n",niter);
@@ -307,27 +308,26 @@ int Fadc250ReadScalers(VmeChassis *ptr_c, map<int, JlabBoard *>::iterator &it, i
 
     if (len!=17) {
         printf("Fadc250ReadScalers:  odd length:  %d.\n",len);
-        return 1;
     }
-    if ((*buf)[16]<=0) {
+    else if ((*buf)[16]<=0) {
         printf("Fadc250ReadScalers:  odd normalization:  %.2f\n",(*buf)[16]);
-        return 1;
     }
-
-    static const double ref1=488281.25f;
-    static const double ref2=1;
-    const double ref=ref1/(*buf)[16]/ref2;
-
-    for (int ii=0; ii<len-1; ii++)
-    {
-        //printf("A%d = %d\n",ii,(*buf)[ii]);
-        //printf("BBBB = %d %d\n",ii,it->second->scalerCounts[ii].size());
-        it->second->scalerCounts[ii].clear();
-        it->second->scalerCounts[ii].push_back((*buf)[ii]);
-        it->second->scalerCountsHz[ii].clear();
-        it->second->scalerCountsHz[ii].push_back((*buf)[ii]*ref);
-        //printf("CCCC = %.2f\n",it->second->scalerCounts[ii][0]);
+    else {
+        static const double ref1=488281.25f;
+        static const double ref2=1;
+        const double ref=ref1/(*buf)[16]/ref2;
+        for (int ii=0; ii<len-1; ii++)
+        {
+            //printf("A%d = %d\n",ii,(*buf)[ii]);
+            //printf("BBBB = %d %d\n",ii,it->second->scalerCounts[ii].size());
+            it->second->scalerCounts[ii].clear();
+            it->second->scalerCounts[ii].push_back((*buf)[ii]);
+            it->second->scalerCountsHz[ii].clear();
+            it->second->scalerCountsHz[ii].push_back((*buf)[ii]*ref);
+            //printf("CCCC = %.2f\n",it->second->scalerCounts[ii][0]);
+        }
     }
+    if(*buf)delete *buf;
     return 0;
 }
 
@@ -387,7 +387,11 @@ int Dsc2ReadScalers(VmeChassis *ptr_c, map<int, JlabBoard *>::iterator &it, int 
 #endif
                 for(int j=0; j< (scaler_len-ref_num); j++){
                     int j10=j%nchannels; /// channel number in the group
-                    if(!(j/nchannels))it->second->scalerCounts[j10].clear();
+                    if(!(j/nchannels))
+                    {
+                        it->second->scalerCounts[j10].clear();
+                        it->second->scalerCountsHz[j10].clear();
+                    }
                     //double d=(double)(*buf)[i10];
                     // printf("j=%d i10=%d 0x%08x\n",j,i10, (*buf)[i10]);
 
