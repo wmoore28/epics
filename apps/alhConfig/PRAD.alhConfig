@@ -1,0 +1,18 @@
+#===============================================================================
+# HPS Top-level Alarm Config
+#===============================================================================
+
+GROUP    NULL                         PRAD
+
+$GUIDANCE
+    For info on target-related items, please contact PRAD Experts
+$END
+
+#=======================================
+# Subsystems
+#=======================================
+
+INCLUDE PRAD /usr/clas12/hps/prod/apps/alhConfig/beam.alhConfig
+#INCLUDE HPS /usr/clas12/hps/prod/apps/alhConfig/trigger.alhConfig
+#INCLUDE HPS /usr/clas12/hps/prod/apps/alhConfig/ecal.alhConfig
+#INCLUDE HPS /usr/clas12/hps/prod/apps/alhConfig/svt.alhConfig
