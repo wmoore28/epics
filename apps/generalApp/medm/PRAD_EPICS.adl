@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./PRAD_EPICS.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/PRAD_EPICS.adl"
 	version=030109
 }
 display {
 	object {
-		x=725
-		y=91
+		x=10
+		y=15
 		width=200
 		height=669
 	}
@@ -426,8 +426,20 @@ text {
 		height=20
 	}
 	display[0] {
-		label="Beam Screens"
-		name="beam_screens.adl"
+		label="BPMs"
+		name="BPMs.adl"
+	}
+	display[1] {
+		label="BTA"
+		name="bta_status.adl"
+	}
+	display[2] {
+		label="Injector"
+		name="injector.adl"
+	}
+	display[3] {
+		label="Scalers"
+		name="scaler_prad.adl"
 	}
 	clr=14
 	bclr=50
@@ -457,7 +469,7 @@ text {
 	}
 	display[1] {
 		label="   Scalers   "
-		name="t_counters.adl"
+		name="tagger_et_scalers.adl"
 	}
 	display[2] {
 		label="   Voltages   "
