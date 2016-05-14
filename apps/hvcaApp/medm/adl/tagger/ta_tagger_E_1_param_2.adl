@@ -1,0 +1,5946 @@
+
+file {
+	name="ta_tagger_E_1_param_2.adl"
+}
+display {
+	object {
+		x=10
+		y=10
+		width=1050
+		height=850
+	}
+	clr=14
+	bclr=4
+	cmap=""
+}
+"color map" {
+	ncolors=65
+	dl_color {
+		r=255
+		g=255
+		b=255
+		inten=255
+	}
+	dl_color {
+		r=236
+		g=236
+		b=236
+		inten=0
+	}
+	dl_color {
+		r=218
+		g=218
+		b=218
+		inten=0
+	}
+	dl_color {
+		r=200
+		g=200
+		b=200
+		inten=0
+	}
+	dl_color {
+		r=187
+		g=187
+		b=187
+		inten=0
+	}
+	dl_color {
+		r=174
+		g=174
+		b=174
+		inten=0
+	}
+	dl_color {
+		r=158
+		g=158
+		b=158
+		inten=0
+	}
+	dl_color {
+		r=145
+		g=145
+		b=145
+		inten=0
+	}
+	dl_color {
+		r=133
+		g=133
+		b=133
+		inten=0
+	}
+	dl_color {
+		r=120
+		g=120
+		b=120
+		inten=0
+	}
+	dl_color {
+		r=105
+		g=105
+		b=105
+		inten=0
+	}
+	dl_color {
+		r=90
+		g=90
+		b=90
+		inten=0
+	}
+	dl_color {
+		r=70
+		g=70
+		b=70
+		inten=0
+	}
+	dl_color {
+		r=45
+		g=45
+		b=45
+		inten=0
+	}
+	dl_color {
+		r=0
+		g=0
+		b=0
+		inten=0
+	}
+	dl_color {
+		r=0
+		g=216
+		b=0
+		inten=0
+	}
+	dl_color {
+		r=30
+		g=187
+		b=0
+		inten=0
+	}
+	dl_color {
+		r=51
+		g=153
+		b=0
+		inten=0
+	}
+	dl_color {
+		r=45
+		g=127
+		b=0
+		inten=0
+	}
+	dl_color {
+		r=33
+		g=108
+		b=0
+		inten=0
+	}
+	dl_color {
+		r=253
+		g=0
+		b=0
+		inten=0
+	}
+	dl_color {
+		r=222
+		g=19
+		b=9
+		inten=0
+	}
+	dl_color {
+		r=190
+		g=25
+		b=11
+		inten=0
+	}
+	dl_color {
+		r=160
+		g=18
+		b=7
+		inten=0
+	}
+	dl_color {
+		r=130
+		g=4
+		b=0
+		inten=0
+	}
+	dl_color {
+		r=88
+		g=147
+		b=255
+		inten=0
+	}
+	dl_color {
+		r=89
+		g=126
+		b=225
+		inten=0
+	}
+	dl_color {
+		r=75
+		g=110
+		b=199
+		inten=0
+	}
+	dl_color {
+		r=58
+		g=94
+		b=171
+		inten=0
+	}
+	dl_color {
+		r=39
+		g=84
+		b=141
+		inten=0
+	}
+	dl_color {
+		r=251
+		g=243
+		b=74
+		inten=0
+	}
+	dl_color {
+		r=249
+		g=218
+		b=60
+		inten=0
+	}
+	dl_color {
+		r=238
+		g=182
+		b=43
+		inten=0
+	}
+	dl_color {
+		r=225
+		g=144
+		b=21
+		inten=0
+	}
+	dl_color {
+		r=205
+		g=97
+		b=0
+		inten=0
+	}
+	dl_color {
+		r=255
+		g=176
+		b=255
+		inten=0
+	}
+	dl_color {
+		r=214
+		g=127
+		b=226
+		inten=0
+	}
+	dl_color {
+		r=174
+		g=78
+		b=188
+		inten=0
+	}
+	dl_color {
+		r=139
+		g=26
+		b=150
+		inten=0
+	}
+	dl_color {
+		r=97
+		g=10
+		b=117
+		inten=0
+	}
+	dl_color {
+		r=164
+		g=170
+		b=255
+		inten=0
+	}
+	dl_color {
+		r=135
+		g=147
+		b=226
+		inten=0
+	}
+	dl_color {
+		r=106
+		g=115
+		b=193
+		inten=0
+	}
+	dl_color {
+		r=77
+		g=82
+		b=164
+		inten=0
+	}
+	dl_color {
+		r=52
+		g=51
+		b=134
+		inten=0
+	}
+	dl_color {
+		r=199
+		g=187
+		b=109
+		inten=0
+	}
+	dl_color {
+		r=183
+		g=157
+		b=92
+		inten=0
+	}
+	dl_color {
+		r=164
+		g=126
+		b=60
+		inten=0
+	}
+	dl_color {
+		r=125
+		g=86
+		b=39
+		inten=0
+	}
+	dl_color {
+		r=88
+		g=52
+		b=15
+		inten=0
+	}
+	dl_color {
+		r=153
+		g=255
+		b=255
+		inten=0
+	}
+	dl_color {
+		r=115
+		g=223
+		b=255
+		inten=0
+	}
+	dl_color {
+		r=78
+		g=165
+		b=249
+		inten=0
+	}
+	dl_color {
+		r=42
+		g=99
+		b=228
+		inten=0
+	}
+	dl_color {
+		r=10
+		g=0
+		b=184
+		inten=0
+	}
+	dl_color {
+		r=235
+		g=241
+		b=181
+		inten=0
+	}
+	dl_color {
+		r=212
+		g=219
+		b=157
+		inten=0
+	}
+	dl_color {
+		r=187
+		g=193
+		b=135
+		inten=0
+	}
+	dl_color {
+		r=166
+		g=164
+		b=98
+		inten=0
+	}
+	dl_color {
+		r=139
+		g=130
+		b=57
+		inten=0
+	}
+	dl_color {
+		r=115
+		g=255
+		b=107
+		inten=0
+	}
+	dl_color {
+		r=82
+		g=218
+		b=59
+		inten=0
+	}
+	dl_color {
+		r=60
+		g=180
+		b=32
+		inten=0
+	}
+	dl_color {
+		r=40
+		g=147
+		b=21
+		inten=0
+	}
+	dl_color {
+		r=26
+		g=115
+		b=9
+		inten=0
+	}
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=75
+		y=20
+		width=300
+		height=35
+	}
+	textix="CONTROL PARAMETERS"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=475
+		y=15
+		width=50
+		height=20
+	}
+	textix="tagger_E_1"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=475
+		y=35
+		width=50
+		height=20
+	}
+	textix="Screen 2 of 5"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=15
+		y=75
+		width=110
+		height=18
+	}
+	textix="Channel Name"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=135
+		y=75
+		width=50
+		height=18
+	}
+	textix="Group#"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=212
+		y=75
+		width=30
+		height=18
+	}
+	textix="V Limit"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=282
+		y=75
+		width=30
+		height=18
+	}
+	textix="Trip I"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=352
+		y=75
+		width=30
+		height=18
+	}
+	textix="Input TI"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=422
+		y=75
+		width=30
+		height=18
+	}
+	textix="Ramp Up"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=488
+		y=75
+		width=40
+		height=18
+	}
+	textix="Input RU"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=558
+		y=75
+		width=40
+		height=18
+	}
+	textix="Ramp Down"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=628
+		y=75
+		width=40
+		height=18
+	}
+	textix="Input RD"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=698
+		y=75
+		width=40
+		height=18
+	}
+	textix="MVDZ"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=768
+		y=75
+		width=40
+		height=18
+	}
+	textix="Input MVDZ"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=838
+		y=75
+		width=40
+		height=18
+	}
+	textix="MCDZ"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=908
+		y=75
+		width=40
+		height=18
+	}
+	textix="Input MCDZ"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=978
+		y=75
+		width=40
+		height=18
+	}
+	textix="Status"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=100
+		width=100
+		height=20
+	}
+	textix="TA_e_25"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=100
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=100
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_25_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=100
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_25_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=100
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_25_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=100
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_25_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=100
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_25_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=100
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_25_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=100
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_25_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=100
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_25_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=100
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_25_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=100
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_25_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=100
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_25_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=100
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_25_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=130
+		width=100
+		height=20
+	}
+	textix="TA_e_26"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=130
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=130
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_26_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=130
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_26_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=130
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_26_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=130
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_26_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=130
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_26_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=130
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_26_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=130
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_26_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=130
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_26_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=130
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_26_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=130
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_26_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=130
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_26_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=130
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_26_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=160
+		width=100
+		height=20
+	}
+	textix="TA_e_27"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=160
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=160
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_27_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=160
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_27_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=160
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_27_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=160
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_27_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=160
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_27_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=160
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_27_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=160
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_27_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=160
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_27_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=160
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_27_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=160
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_27_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=160
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_27_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=160
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_27_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=190
+		width=100
+		height=20
+	}
+	textix="TA_e_28"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=190
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=190
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_28_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=190
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_28_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=190
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_28_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=190
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_28_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=190
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_28_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=190
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_28_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=190
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_28_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=190
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_28_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=190
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_28_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=190
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_28_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=190
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_28_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=190
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_28_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=220
+		width=100
+		height=20
+	}
+	textix="TA_e_29"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=220
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=220
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_29_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=220
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_29_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=220
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_29_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=220
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_29_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=220
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_29_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=220
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_29_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=220
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_29_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=220
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_29_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=220
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_29_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=220
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_29_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=220
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_29_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=220
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_29_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=250
+		width=100
+		height=20
+	}
+	textix="TA_e_30"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=250
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=250
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_30_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=250
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_30_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=250
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_30_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=250
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_30_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=250
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_30_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=250
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_30_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=250
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_30_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=250
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_30_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=250
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_30_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=250
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_30_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=250
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_30_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=250
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_30_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=280
+		width=100
+		height=20
+	}
+	textix="TA_e_31"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=280
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=280
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_31_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=280
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_31_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=280
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_31_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=280
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_31_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=280
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_31_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=280
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_31_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=280
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_31_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=280
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_31_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=280
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_31_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=280
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_31_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=280
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_31_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=280
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_31_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=310
+		width=100
+		height=20
+	}
+	textix="TA_e_32"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=310
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=310
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_32_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=310
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_32_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=310
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_32_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=310
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_32_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=310
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_32_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=310
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_32_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=310
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_32_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=310
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_32_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=310
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_32_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=310
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_32_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=310
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_32_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=310
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_32_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=340
+		width=100
+		height=20
+	}
+	textix="TA_e_33"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=340
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=340
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_33_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=340
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_33_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=340
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_33_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=340
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_33_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=340
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_33_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=340
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_33_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=340
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_33_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=340
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_33_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=340
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_33_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=340
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_33_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=340
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_33_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=340
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_33_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=370
+		width=100
+		height=20
+	}
+	textix="TA_e_34"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=370
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=370
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_34_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=370
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_34_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=370
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_34_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=370
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_34_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=370
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_34_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=370
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_34_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=370
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_34_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=370
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_34_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=370
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_34_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=370
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_34_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=370
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_34_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=370
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_34_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=400
+		width=100
+		height=20
+	}
+	textix="TA_e_35"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=400
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=400
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_35_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=400
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_35_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=400
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_35_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=400
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_35_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=400
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_35_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=400
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_35_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=400
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_35_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=400
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_35_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=400
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_35_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=400
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_35_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=400
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_35_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=400
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_35_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=430
+		width=100
+		height=20
+	}
+	textix="TA_e_36"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=430
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=430
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_36_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=430
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_36_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=430
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_36_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=430
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_36_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=430
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_36_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=430
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_36_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=430
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_36_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=430
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_36_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=430
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_36_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=430
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_36_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=430
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_36_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=430
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_36_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=460
+		width=100
+		height=20
+	}
+	textix="TA_e_37"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=460
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=460
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_37_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=460
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_37_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=460
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_37_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=460
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_37_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=460
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_37_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=460
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_37_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=460
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_37_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=460
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_37_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=460
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_37_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=460
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_37_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=460
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_37_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=460
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_37_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=490
+		width=100
+		height=20
+	}
+	textix="TA_e_38"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=490
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=490
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_38_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=490
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_38_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=490
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_38_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=490
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_38_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=490
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_38_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=490
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_38_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=490
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_38_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=490
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_38_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=490
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_38_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=490
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_38_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=490
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_38_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=490
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_38_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=520
+		width=100
+		height=20
+	}
+	textix="TA_e_39"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=520
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=520
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_39_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=520
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_39_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=520
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_39_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=520
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_39_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=520
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_39_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=520
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_39_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=520
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_39_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=520
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_39_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=520
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_39_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=520
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_39_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=520
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_39_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=520
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_39_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=550
+		width=100
+		height=20
+	}
+	textix="TA_e_40"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=550
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=550
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_40_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=550
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_40_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=550
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_40_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=550
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_40_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=550
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_40_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=550
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_40_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=550
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_40_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=550
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_40_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=550
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_40_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=550
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_40_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=550
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_40_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=550
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_40_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=580
+		width=100
+		height=20
+	}
+	textix="TA_e_41"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=580
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=580
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_41_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=580
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_41_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=580
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_41_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=580
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_41_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=580
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_41_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=580
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_41_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=580
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_41_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=580
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_41_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=580
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_41_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=580
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_41_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=580
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_41_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=580
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_41_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=610
+		width=100
+		height=20
+	}
+	textix="TA_e_42"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=610
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=610
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_42_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=610
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_42_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=610
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_42_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=610
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_42_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=610
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_42_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=610
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_42_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=610
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_42_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=610
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_42_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=610
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_42_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=610
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_42_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=610
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_42_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=610
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_42_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=640
+		width=100
+		height=20
+	}
+	textix="TA_e_43"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=640
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=640
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_43_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=640
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_43_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=640
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_43_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=640
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_43_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=640
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_43_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=640
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_43_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=640
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_43_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=640
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_43_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=640
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_43_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=640
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_43_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=640
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_43_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=640
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_43_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=670
+		width=100
+		height=20
+	}
+	textix="TA_e_44"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=670
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=670
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_44_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=670
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_44_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=670
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_44_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=670
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_44_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=670
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_44_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=670
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_44_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=670
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_44_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=670
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_44_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=670
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_44_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=670
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_44_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=670
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_44_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=670
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_44_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=700
+		width=100
+		height=20
+	}
+	textix="TA_e_45"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=700
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=700
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_45_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=700
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_45_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=700
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_45_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=700
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_45_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=700
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_45_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=700
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_45_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=700
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_45_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=700
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_45_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=700
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_45_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=700
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_45_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=700
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_45_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=700
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_45_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=730
+		width=100
+		height=20
+	}
+	textix="TA_e_46"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=730
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=730
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_46_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=730
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_46_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=730
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_46_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=730
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_46_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=730
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_46_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=730
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_46_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=730
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_46_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=730
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_46_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=730
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_46_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=730
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_46_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=730
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_46_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=730
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_46_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=760
+		width=100
+		height=20
+	}
+	textix="TA_e_47"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=760
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=760
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_47_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=760
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_47_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=760
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_47_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=760
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_47_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=760
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_47_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=760
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_47_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=760
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_47_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=760
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_47_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=760
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_47_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=760
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_47_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=760
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_47_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=760
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_47_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=790
+		width=100
+		height=20
+	}
+	textix="TA_e_48"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=790
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=200
+		y=790
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_48_property.O"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=270
+		y=790
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_48_property.J"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=340
+		y=790
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_48_TC"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=410
+		y=790
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_48_property.H"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=480
+		y=790
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_48_RUP"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=550
+		y=790
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_48_property.I"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=620
+		y=790
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_48_RDN"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=690
+		y=790
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_48_property.M"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=760
+		y=790
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_48_MVDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=830
+		y=790
+		width=50
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_48_property.N"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=900
+		y=790
+		width=50
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_48_MCDZ"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+}
+"text update" {
+	object {
+		x=970
+		y=790
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_48_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="static"
+	align="horiz. centered"
+	format="decimal"
+}

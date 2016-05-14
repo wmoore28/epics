@@ -1,0 +1,3758 @@
+
+file {
+	name="/usr/clas12/hps/v3.0.0/apps/./hvcaApp/medm/adl/bm_beam_counter_1.adl"
+	version=030109
+}
+display {
+	object {
+		x=11
+		y=14
+		width=783
+		height=920
+	}
+	clr=14
+	bclr=4
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+text {
+	object {
+		x=45
+		y=19
+		width=300
+		height=35
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="VOLTAGE/CURRENT"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=415
+		y=19
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="beam_counter"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=415
+		y=38
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Screen 1 of 1"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=15
+		y=75
+		width=110
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Channel Name"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=135
+		y=75
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Group#"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=342
+		y=75
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Measured V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=420
+		y=75
+		width=80
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Demand V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=520
+		y=75
+		width=80
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Input V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=642
+		y=75
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Measured I"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=720
+		y=75
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Status"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=20
+		y=100
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Upstream_left"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=100
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=100
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_Upstream_left_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+}
+oval {
+	object {
+		x=240
+		y=103
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_Upstream_left_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=100
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_Upstream_left_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=100
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Upstream_left_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=100
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Upstream_left_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=100
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_Upstream_left_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=100
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Upstream_left_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=100
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_Upstream_left_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=130
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="Upstream_right"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=130
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=130
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_Upstream_right_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=133
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_Upstream_right_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=130
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_Upstream_right_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=130
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Upstream_right_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=130
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Upstream_right_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=130
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_Upstream_right_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=130
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Upstream_right_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=130
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_Upstream_right_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=160
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="Tagger_left"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=160
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=160
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_Tagger_left_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=163
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_Tagger_left_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=160
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_Tagger_left_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=160
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Tagger_left_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=160
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Tagger_left_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=160
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_Tagger_left_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=160
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Tagger_left_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=160
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_Tagger_left_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=190
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="Tagger_T"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=190
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=190
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_Tagger_right_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=193
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_Tagger_right_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=190
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_Tagger_right_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=190
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Tagger_right_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=190
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Tagger_right_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=190
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_Tagger_right_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=190
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Tagger_right_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=190
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_Tagger_right_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=267
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="HPS_left"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=267
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=267
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_HPS_left_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=270
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_HPS_left_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=267
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_HPS_left_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=267
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_HPS_left_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=267
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_HPS_left_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=267
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_HPS_left_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=267
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_HPS_left_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=267
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_HPS_left_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=297
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="HPS_right"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=297
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=297
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_HPS_right_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=300
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_HPS_right_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=297
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_HPS_right_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=297
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_HPS_right_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=297
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_HPS_right_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=297
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_HPS_right_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=297
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_HPS_right_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=297
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_HPS_right_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=801
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="ECal_cosm1"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=801
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=801
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_ECal_cosm1_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=804
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_ECal_cosm1_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=801
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_ECal_cosm1_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=801
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECal_cosm1_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=801
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECal_cosm1_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=801
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_ECal_cosm1_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=801
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECal_cosm1_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=801
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECal_cosm1_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=831
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="ECal_cosm2"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=831
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=831
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_ECal_cosm2_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=834
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_ECal_cosm2_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=831
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_ECal_cosm2_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=831
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECal_cosm2_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=831
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECal_cosm2_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=831
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_ECal_cosm2_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=831
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECal_cosm2_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=831
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECal_cosm2_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=323
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="HPS_top"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=323
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=323
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_HPS_top_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=326
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_HPS_top_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=323
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_HPS_top_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=323
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_HPS_top_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=323
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_HPS_top_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=323
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_HPS_top_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=323
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_HPS_top_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=323
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_HPS_top_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=353
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="HPS_SC"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=353
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=353
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_HPS_SC_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=356
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_HPS_SC_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=353
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_HPS_SC_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=353
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_HPS_SC_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=353
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_HPS_SC_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=353
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_HPS_SC_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=353
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_HPS_SC_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=353
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_HPS_SC_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=856
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="ECal_cosm5"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=856
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=856
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_ECal_cosm5_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=859
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_ECal_cosm5_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=856
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_ECal_cosm5_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=856
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECal_cosm5_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=856
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECal_cosm5_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=856
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_ECal_cosm5_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=856
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECal_cosm5_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=856
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_ECal_cosm5_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=411
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="DS_halo_bottom"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=411
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=411
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_DS_halo_bottom_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=414
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_DS_halo_bottom_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=411
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_DS_halo_bottom_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=411
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_DS_halo_bottom_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=411
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_DS_halo_bottom_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=411
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_DS_halo_bottom_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=411
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_DS_halo_bottom_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=411
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_DS_halo_bottom_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=441
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="DS_halo_top"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=441
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=441
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_DS_halo_top_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=444
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_DS_halo_top_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=441
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_DS_halo_top_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=441
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_DS_halo_top_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=441
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_DS_halo_top_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=441
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_DS_halo_top_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=441
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_DS_halo_top_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=441
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_DS_halo_top_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=471
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="DS_halo_left"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=471
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=471
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_DS_halo_left_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=474
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_DS_halo_left_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=471
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_DS_halo_left_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=471
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_DS_halo_left_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=471
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_DS_halo_left_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=471
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_DS_halo_left_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=471
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_DS_halo_left_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=471
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_DS_halo_left_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=501
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="DS_halo_right"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=501
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=501
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_DS_halo_right_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=504
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_DS_halo_right_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=501
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_DS_halo_right_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=501
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_DS_halo_right_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=501
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_DS_halo_right_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=501
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_DS_halo_right_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=501
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_DS_halo_right_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=501
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_DS_halo_right_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=562
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="BLM1"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=562
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=562
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_BLM1_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=565
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_BLM1_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=562
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_BLM1_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=562
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_BLM1_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=562
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_BLM1_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=562
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_BLM1_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=562
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_BLM1_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=562
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_BLM1_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=592
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="BLM2"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=592
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=592
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_BLM2_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=595
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_BLM2_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=592
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_BLM2_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=592
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_BLM2_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=592
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_BLM2_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=592
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_BLM2_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=592
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_BLM2_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=592
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_BLM2_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=622
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="BLM3"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=622
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=622
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_BLM3_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=625
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_BLM3_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=622
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_BLM3_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=622
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_BLM3_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=622
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_BLM3_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=622
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_BLM3_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=622
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_BLM3_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=622
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_BLM3_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=652
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="BLM4"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=652
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=652
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_BLM4_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=655
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_BLM4_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=652
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_BLM4_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=652
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_BLM4_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=652
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_BLM4_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=652
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_BLM4_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=652
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_BLM4_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=652
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_BLM4_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=703
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="Moller Right"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=703
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=703
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_Moller_right_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=706
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_Moller_right_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=703
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_Moller_right_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=703
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Moller_right_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=703
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Moller_right_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=703
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_Moller_right_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=703
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Moller_right_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=703
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_Moller_right_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=728
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="Moller Left"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=728
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=728
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_Moller_left_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=731
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_Moller_left_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=728
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_Moller_left_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=728
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Moller_left_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=728
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Moller_left_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=728
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_Moller_left_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=728
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Moller_left_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=728
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_Moller_left_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=218
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="Tagger_T2"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=140
+		y=218
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		style="dash"
+	}
+	textix="1"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=218
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_Tagger_T2_CHHV"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	clrmod="discrete"
+}
+oval {
+	object {
+		x=240
+		y=221
+		width=14
+		height=14
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_hv_Tagger_T2_property.L"
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=218
+		width=28
+		height=20
+	}
+	control {
+		chan="B_hv_Tagger_T2_CHHV"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=218
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Tagger_T2_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=420
+		y=218
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Tagger_T2_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=520
+		y=218
+		width=80
+		height=20
+	}
+	control {
+		chan="B_hv_Tagger_T2_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=620
+		y=218
+		width=80
+		height=20
+	}
+	monitor {
+		chan="B_hv_Tagger_T2_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=720
+		y=218
+		width=40
+		height=20
+	}
+	monitor {
+		chan="B_hv_Tagger_T2_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
