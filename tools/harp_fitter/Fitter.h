@@ -43,6 +43,7 @@ private:
   bool fit_2c21;
   bool fit_tagger;
   bool fit_2H02A;
+  bool fit_2H00A;
   bool preview_mode;
   TGNumberEntry *First_peak_bgr, *First_peak_bgr_min, *First_peak_bgr_max;
   TGNumberEntry *First_peak_A, *First_peak_A_min, *First_peak_A_max;
@@ -97,6 +98,7 @@ public:
   bool Fit_2c21(TGraph *, std::string );
   bool Fit_tagger(TGraph *, std::string );
   bool Fit_2H02A(TGraph *, std::string );
+  //  bool Fit_2H00A(TGraph *, std::string );
   bool Search_2c21_peaks(TGraph *);
   bool Search_three_peaks(TGraph *);
   void Set_Fit_Pars();
