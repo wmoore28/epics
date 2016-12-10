@@ -36,6 +36,14 @@ record(stringin, "$(P)$(R)STATUS") {
     field(SCAN, "1 second")
 }
 
+record(scalcout, "$(P)$(R)STATUSBIT") {
+  field(SCAN,"Passive")
+  field(INAA,"$(P)$(R)STATUS CPP")
+  field(LOW,0)
+  field(LSV,"MAJOR")
+  field(CALC,"AA=='running' ? 1 : 0")
+}
+
 # process at init to clear udf error.
 record(stringin, "$(P)$(R)ERROR") {
     field(DTYP, "stream")
