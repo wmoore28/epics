@@ -420,8 +420,10 @@ ss harp_scan_snc {
        fdprintf(fd,"%f ", harp_position);
 
 /* ========================================== */
-
+/*
        if(  ( ! (strcmp(cmotor_name,"harp_2c21"))) ||  ( ! (strcmp(cmotor_name,"harp_tagger"))) )
+*/
+       if(  ( ! (strcmp(cmotor_name,"harp_2c21"))) ||  ( ! (strcmp(cmotor_name,"harp_tagger"))) || ( ! (strcmp(cmotor_name,"harp_2H00A"))) )
        {
 	       for (i=0;i<16;i++) {
 	          pvGet(scaler_datasc1[i]);
