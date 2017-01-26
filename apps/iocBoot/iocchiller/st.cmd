@@ -10,7 +10,7 @@ chiller_registerRecordDeviceDriver(pdbbase)
 
 epicsEnvSet("STREAM_PROTOCOL_PATH","${TOP}/proto")
 
-drvAsynIPPortConfigure("SER5", "hallb-moxa1:4005")
+drvAsynIPPortConfigure("SER5", "hallb-moxa4:4005")
 
 ## debugging...
 # ECAL - Anova A40
