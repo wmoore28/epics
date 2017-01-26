@@ -423,7 +423,11 @@ ss harp_scan_snc {
 /*
        if(  ( ! (strcmp(cmotor_name,"harp_2c21"))) ||  ( ! (strcmp(cmotor_name,"harp_tagger"))) )
 */
-       if(  ( ! (strcmp(cmotor_name,"harp_2c21"))) ||  ( ! (strcmp(cmotor_name,"harp_tagger"))) || ( ! (strcmp(cmotor_name,"harp_2H00A"))) )
+       if(  ( ! (strcmp(cmotor_name,"harp_2c21"))) ||  
+            ( ! (strcmp(cmotor_name,"harp_tagger"))) ||
+            ( ! (strcmp(cmotor_name,"harp_2H00A"))) ||
+            ( ! (strcmp(cmotor_name,"harp_2H01")))
+            )
        {
 	       for (i=0;i<16;i++) {
 	          pvGet(scaler_datasc1[i]);
