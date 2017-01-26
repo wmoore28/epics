@@ -60,12 +60,19 @@ dbLoadRecords("db/motor.db","motor_name=collimator,card=0,slot=3,srev=2000,urev=
 #dbLoadRecords("db/scan.db","motor_name=collimator,start_at=4.22,end_at=4.82,start_speed=0.2,scan_speed=0.02,acq_time=0.07")
 dbLoadRecords("db/hallb_collimator.db")
 
-dbLoadRecords("db/motor.db","motor_name=harp_2H00A, card=0, slot=0, srev=2000, urev=2.54, direction=Pos, velo=0.5, accl=0.01")
-dbLoadRecords("db/scan.db","motor_name=harp_2H00A, start_at=4.2, end_at=8.4, start_speed=0.5, scan_speed=0.04, acq_time=0.1")
+#dbLoadRecords("db/motor.db","motor_name=harp_2H01, card=0, slot=0, srev=2000, urev=2.54, direction=Pos, velo=0.5, accl=0.01")
+#dbLoadRecords("db/motor.db","motor_name=harp_2H01, card=0, slot=0, srev=10000, urev=2.54, direction=Pos, velo=0.5, accl=0.01")
+dbLoadRecords("db/motor.db","motor_name=harp_2H01, card=0, slot=0, srev=2000, urev=0.508, direction=Pos, velo=0.5, accl=0.01")
+dbLoadRecords("db/scan.db","motor_name=harp_2H01, start_at=4.2, end_at=8.4, start_speed=0.5, scan_speed=0.04, acq_time=0.1")
 
 ## IOC monitoring, etc
 dbLoadRecords("$(DEVIOCSTATS)/db/iocAdminVxWorks.db", "IOC=iocclassc1")
 #dbLoadRecords("$(AUTOSAVE)/asApp/Db/save_restoreStatus.db", "P=iocclassc1:")
+
+#KBB add Moller Motor 20160623
+#dbLoadRecords("db/motor.db","motor_name=m_target, card=1, slot=0, srev=2000, urev=2.54, direction=Neg, velo=0.5, accl=0.01")
+#dbLoadTemplate("db/moeller_target.substitutions")
+dbLoadRecords("db/moeller_target.db")
 
 cd startup
 
@@ -101,9 +108,11 @@ seq &harp_scan_generic, "name=up_2c21_scan, motor_name=harp_2c21"
 seq &reset_motor, "name=h_tagger_reset, motor_name=harp_tagger"
 seq &harp_scan_generic, "name=h_tagger_scan, motor_name=harp_tagger"
 
-seq &reset_motor, "name=h_2H00A_reset, motor_name=harp_2H00A"
-seq &harp_scan_generic, "name=h_2H00A_scan, motor_name=harp_2H00A"
+seq &reset_motor, "name=h_2H01_reset, motor_name=harp_2H01"
+seq &harp_scan_generic, "name=h_2H01_scan, motor_name=harp_2H01"
 
 seq &reset_motor, "name=h_collimator_reset, motor_name=collimator"
 #seq &harp_scan_generic, "name=h_collimator_scan, motor_name=collimator"
+
+#seq &moeller_target
 
