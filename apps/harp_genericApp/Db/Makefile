@@ -27,6 +27,8 @@ DB += scan.db
 DB += hps_target.db
 DB += viewer.db
 
+DB += moeller_target.substitutions
+
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_TEMPLATE = <templatename>
