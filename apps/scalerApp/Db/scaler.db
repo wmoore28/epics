@@ -201,7 +201,9 @@ grecord(transform,"scaler_cts4")
 
 	field(CLCH,"(a=1)?c/f:c")
 	field(CLCI,"(a=1)?d/f:d")
-	field(CLCJ,"(a=1)?e/(10*f):e")
+# found during KPP run: don't know why this 10 was here:
+#	field(CLCJ,"(a=1)?e/(10*f):e")
+	field(CLCJ,"(a=1)?e/f:e")
 
 	field(INPA,"display_mode.RVAL NPP NMS")
 	field(INPF,"scaler.T NPP NMS")
