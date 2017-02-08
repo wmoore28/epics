@@ -21,7 +21,7 @@ dbLoadDatabase "dbd/classc6.dbd"
 classc6_registerRecordDeviceDriver pdbbase
 
 ## Load record instances
-dbLoadRecords("db/bta_suppl.db","hall=B,ioc=classc6")
+#dbLoadRecords("db/bta_suppl.db","hall=B,ioc=classc6")
 
 ## Load IOC status records
 dbLoadRecords("${DEVIOCSTATS}/db/iocAdminVxWorks.db","IOC=iocclassc6")
