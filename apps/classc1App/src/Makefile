@@ -18,6 +18,7 @@ classc1_DBD += harp_genericSupport.dbd
 classc1_DBD += scaler_cSupport.dbd
 classc1_DBD += scaler_dSupport.dbd
 classc1_DBD += scaler_eSupport.dbd
+classc1_DBD += XY240Support.dbd
 
 # classc1_registerRecordDeviceDriver.cpp derives from classc1.dbd
 classc1_SRCS += classc1_registerRecordDeviceDriver.cpp
@@ -36,6 +37,7 @@ classc1_LIBS += scaler_cSupport
 classc1_LIBS += scaler_dSupport
 classc1_LIBS += scaler_eSupport 
 classc1_LIBS += SIS38XX
+classc1_LIBS += XY240Support
 classc1_LIBS += mca
 classc1_LIBS += calc
 classc1_LIBS += busy
