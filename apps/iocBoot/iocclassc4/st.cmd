@@ -103,7 +103,7 @@ iocInit "../resource.def"
 ## dbpf "fcup_offset","200."
 ## dbpf "fcup_slope","905.937"
 
-dbpf "fcup_offset","200."
+dbpf "fcup_offset","100."
 dbpf "fcup_slope","906.2"
 
 ## Added these three line. to start counting after restarting IOC
