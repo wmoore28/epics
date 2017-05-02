@@ -30,10 +30,10 @@ drvSIS3801Config("SIS38XX_0", 0x08000000, 220, 6, 16, 32)
 dbLoadRecords("$(STD)/stdApp/Db/scaler32.db", "P=bom_, S=sc, DTYP=Asyn Scaler, OUT=@asyn(SIS38XX_0), FREQ=25000000")
 dbLoadRecords("$(MCA)/db/SIS38XX.template", "P=bom_, SCALER=sc, PORT=SIS38XX_0")
 
-dbLoadRecords("db/bom_scaler.db", "scaler=bom_sc, FIFO=16, PORT=SIS38XX_0")
-dbLoadRecords("db/bom_stop_start.db",   "scaler=bom_sc")
-dbLoadRecords("db/bom_read_control.db", "scaler=bom_sc")
-dbLoadRecords("db/bom_sum.db",          "scaler=bom_sc")
+#dbLoadRecords("db/bom_scaler.db", "scaler=bom_sc, FIFO=16, PORT=SIS38XX_0")
+#dbLoadRecords("db/bom_stop_start.db",   "scaler=bom_sc")
+#dbLoadRecords("db/bom_read_control.db", "scaler=bom_sc")
+#dbLoadRecords("db/bom_sum.db",          "scaler=bom_sc")
 
 ## Joerger Scalers
 # NOTE: this function is not defined in iocsh, only vxworks shell
@@ -74,6 +74,9 @@ dbLoadRecords("$(DEVIOCSTATS)/db/iocAdminVxWorks.db", "IOC=iocclassc1")
 #dbLoadTemplate("db/moeller_target.substitutions")
 dbLoadRecords("db/moeller_target.db")
 
+dbLoadRecords("db/dynabc.db")
+dbLoadRecords("db/dynabc_setvalues.db")
+
 cd startup
 
 ## autosave setup
@@ -91,9 +94,9 @@ iocInit "../resource.def"
 ##
 
 ## Struck
-dbpf "bom_Dwell", "1.0"
-dbpf "bom_ReadAll.SCAN","Passive"
-seq &SIS38XX_SNL, "P=bom_, R=sc_, NUM_SIGNALS=32, FIELD=READ"
+#dbpf "bom_Dwell", "1.0"
+#dbpf "bom_ReadAll.SCAN","Passive"
+#seq &SIS38XX_SNL, "P=bom_, R=sc_, NUM_SIGNALS=32, FIELD=READ"
 
 ## Joerger
 ## removed for rafopar
