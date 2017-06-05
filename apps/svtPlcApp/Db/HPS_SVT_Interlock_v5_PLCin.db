@@ -363,7 +363,7 @@ record( ai, "$(IOC):Vacuum-Value" )
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Vacuum.Value" ) 
   field(PREC, "2" )
-  field(ALIAS,"hallb_VCG2H03ATr")
+  alias("hallb_VCG2H03ATr")
 } 
  
  
