@@ -74,8 +74,10 @@ dbLoadRecords("$(DEVIOCSTATS)/db/iocAdminVxWorks.db", "IOC=iocclassc1")
 #dbLoadTemplate("db/moeller_target.substitutions")
 dbLoadRecords("db/moeller_target.db")
 
-dbLoadRecords("db/dynabc.db")
-dbLoadRecords("db/dynabc_setvalues.db")
+
+# MOLLER QUADS:
+#dbLoadRecords("db/dynabc.db")
+#dbLoadRecords("db/dynabc_setvalues.db")
 
 cd startup
 
