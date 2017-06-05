@@ -2,7 +2,7 @@
 # File: .setup-hps
 #
 
-setenv CLAS /usr/clas12
+#setenv CLAS /usr/clas12
 
 ## Overrides for RHEL5/6, only solves base (ex. caget, caput, etc)
 set rhel_vers = `awk '{print substr($7,0,1)}' /etc/redhat-release`
@@ -32,9 +32,9 @@ set -f path=($path:q "$EPICS_EXTENSIONS/bin/$EPICS_HOST_ARCH")
 set -f path=($path:q "/apps/root/5.34.21/$EPICS_HOST_ARCH/bin")
 set -f path=($path:q "/apps/mdautils-1.3.1/${EPICS_HOST_ARCH}")
 ## EPICS tools and utils
-set -f path=($path:q "$CLAS/hps/prod/bin")
+set -f path=($path:q "/usr/clas12/hps/prod/bin")
 ## CSS, alarm tools, etc
-set -f path=($path:q "$CLAS/css/pro/$EPICS_HOST_ARCH/bin")
+set -f path=($path:q "/usr/clas12/hps/css/pro/$EPICS_HOST_ARCH/bin")
 ## acctools rsync'd from Cebaf (MyaViewer, etc)
 set -f path=($path:q "/usr/csite/certified/bin")
 set -f path=($path:q ".")
