@@ -45,6 +45,7 @@ DB += dbDataDtmReadCount.db
 DB += dbDataDtmAckCount.db
 DB += dbDataDtm.db
 DB += dbFebLayer.db
+DB += dbHybSyncDataDpm.db
 DB += dbHybSync.db
 DB += dbHybSyncBase.db
 DB += dbHybSyncPeak.db
@@ -69,6 +70,8 @@ DB += dbHybridCurrentAll.db
 DB += dbFebTempAll.db
 DB += dbSem.db
 DB += dbSemAll.db
+DB += dbHybSyncDataDpmAll.db
+DB += dbHybSyncDataDpmAllCom.db
 
 #DB += dbSVTtest.db
 

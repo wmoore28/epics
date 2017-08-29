@@ -46,8 +46,8 @@ caput SVT:lv:fe:8:anap:i_rd.HIHI 2.3
 
 ./allFebCaput.sh SVT:lv:fe digi:i_rd.LOLO 0.9
 ./allFebCaput.sh SVT:lv:fe digi:i_rd.LOW 1.0
-./allFebCaput.sh SVT:lv:fe digi:i_rd.HIGH 1.25
-./allFebCaput.sh SVT:lv:fe digi:i_rd.HIHI 1.35
+./allFebCaput.sh SVT:lv:fe digi:i_rd.HIGH 1.3
+./allFebCaput.sh SVT:lv:fe digi:i_rd.HIHI 1.4
 
 ./allFebCaput.sh SVT:lv:fe digi:v_sens.HIHI 5.6
 ./allFebCaput.sh SVT:lv:fe anan:v_sens.HIHI 5.6
@@ -101,8 +101,8 @@ do
 done
 done
 
-./allFebCaput.sh SVT:lv:fe digi:v_term.HIHI 7.4
-./allFebCaput.sh SVT:lv:fe digi:v_term.HIGH 7.3
+./allFebCaput.sh SVT:lv:fe digi:v_term.HIHI 7.45
+./allFebCaput.sh SVT:lv:fe digi:v_term.HIGH 7.35
 ./allFebCaput.sh SVT:lv:fe digi:v_term.LOW 6.9
 ./allFebCaput.sh SVT:lv:fe digi:v_term.LOLO 6.8
 
