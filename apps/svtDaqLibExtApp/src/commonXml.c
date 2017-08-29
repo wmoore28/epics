@@ -296,14 +296,15 @@ int getFebNumProcess(char* pname, xmlDoc* doc) {
       idpm = getIntFromEpicsName(pname,3);  
       idp = getIntFromEpicsName(pname,4);  
         
-      getStringFromEpicsName(pname,action,5,BUF_SIZE);    
+      getStringFromEpicsName(pname,action,5,BUF_SIZE);  
     
       if(DEBUG>2)  printf("[ getFebNumProcess ] : get %s from dpm xml\n", action);
+
       if(strcmp(action,"febnum_sub")==0) {
-         sprintf(tmp,"/system/status/DataDpm/RceCore/DataPath[@index=\"%d\"]/FebNum",idp);
+	sprintf(tmp,"/system/status/DataDpm/RceCore/DataPath[@index=\"%d\"]/FebNum",idp);
       } 
       else if( strcmp(action,"hybnum_sub")==0) {
-         sprintf(tmp,"/system/status/DataDpm/RceCore/DataPath[@index=\"%d\"]/HybridNum",idp);
+	sprintf(tmp,"/system/status/DataDpm/RceCore/DataPath[@index=\"%d\"]/HybridNum",idp);
       }
       else {
          strcpy(tmp,"");
@@ -1164,10 +1165,24 @@ int getDtmMinTrigPeriodProcess(char* pname, xmlDoc* doc) {
 
     getStringFromEpicsName(pname,action,4,BUF_SIZE);    
     
+    if(DEBUG>-1) 
+      printf("[ getDtmMinTrigPeriodProcess ] : got action \"%s\"\n",action);
+    
     if(strcmp(action,"mintrigperiod_sub")==0) {
        sprintf(tmp,"/system/status/TiDtm/MinTrigPeriod");
-    } else {
+       if(DEBUG>-1) 
+	 printf("[ getDtmMinTrigPeriodProcess ] : got tmp \"%s\" from acton \"%s\"\n",tmp, action);
+       
+    } 
+    else if(strcmp(action,"filterbusyrate_sub")==0) {
+       sprintf(tmp,"/system/status/TiDtm/FilterBusyRate");
+       if(DEBUG>-1) 
+	 printf("[ getDtmMinTrigPeriodProcess ] : got tmp \"%s\" from acton \"%s\"\n",tmp, action);
+    } 
+    else {
        strcpy(tmp,""); 
+       if(DEBUG>-1) 
+	 printf("[ getDtmMinTrigPeriodProcess ] : got tmp \"%s\" from acton \"%s\"\n",tmp, action);
     }
     
     if(strcmp(tmp,"")!=0) {
@@ -1182,7 +1197,12 @@ int getDtmMinTrigPeriodProcess(char* pname, xmlDoc* doc) {
           if(node!=NULL) {
              val = getIntValue(doc, node);
              //if(DEBUG>0) 
-                printf("[ getDtmMinTrigPeriodProcess ]: got val %d.\n",val);      
+	     printf("[ getDtmMinTrigPeriodProcess ]: got val %d.\n",val);      
+	     if(strcmp(action,"filterbusyrate_sub")==0) {
+	       val *= 8e-9;
+	       if(DEBUG>-1) 
+		 printf("[ getDtmMinTrigPeriodProcess ] : got tmp \"%s\" from acton \"%s\"\n",tmp, action);
+	     } 
           } else {
              printf("[ getDtmMinTrigPeriodProcess ] : [ WARNING ] no Link nodes found\n");
           }
@@ -1206,8 +1226,6 @@ int getDtmMinTrigPeriodProcess(char* pname, xmlDoc* doc) {
   }
   return val;
 }
-
-
 
 
 
@@ -1687,7 +1705,25 @@ void getSyncProcess(char* pname, xmlDoc* doc, char* value) {
    getStringFromEpicsName(pname,str1,1,BUF_SIZE);
   
    if(strcmp(str1,"daq")==0) {
+
+     
+     getStringFromEpicsName(pname,str5,4,BUF_SIZE);
     
+     // Is this a data DPM?
+     if(strcmp(str5,"sync_rd_asub")==0) {    
+       ifeb = getIntFromEpicsName(pname,2);  
+       idp = getIntFromEpicsName(pname,3);
+       if(ifeb < 8){
+       sprintf(tmp,"/system/status/DataDpm[@index=\"%d\"]/RceCore/DataPath[@index=\"%d\"]/SyncStatus", ifeb, idp); 
+       }
+       else{
+	 sprintf(tmp,"/system/status/DataDpm[@index=\"%d\"]/RceCore/DataPath[@index=\"%d\"]/SyncStatus", ifeb-1, idp);
+       }
+  
+     } 
+     // seems to be a control DPM
+     else {
+
       getStringFromEpicsName(pname,str5,5,BUF_SIZE);
     
       if(strcmp(str5,"syncbase_rd_asub")==0) {      
@@ -1703,9 +1739,10 @@ void getSyncProcess(char* pname, xmlDoc* doc, char* value) {
       } else {
          strcpy(tmp,""); 
       }
+     }
     
       if(strcmp(tmp,"")!=0) {
-         if(DEBUG>2) 
+	if(DEBUG>2) 
             printf("[ getSyncProcess ] : xpath \"%s\"\n",tmp);
 
          if(doc!=NULL) {
@@ -1713,12 +1750,15 @@ void getSyncProcess(char* pname, xmlDoc* doc, char* value) {
             result =  getnodeset(doc, (xmlChar*) tmp);
 
             if(result!=NULL) {
-               if(DEBUG>0) printf("[ getSyncProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
+	      if(DEBUG>0) 
+		printf("[ getSyncProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
                if(result->nodesetval->nodeNr==1) {
                   node = result->nodesetval->nodeTab[0];
                   if(node!=NULL) {
                      getStrValue(doc,node,value);
-                     if(DEBUG>0) printf("[ getSyncProcess ]: got val %tmp2.\n",value);      
+                     if(DEBUG>0) 
+		     //printf("[ getSyncProcess ]: got val %tmp2.\n",value);
+		     printf("[ getSyncProcess ]: got val %s.\n",value);      
                   } else {
                      printf("[ getSyncProcess ] : [ WARNING ] no Sync nodes found\n");
                      strcpy(value,"-3");
@@ -1729,12 +1769,12 @@ void getSyncProcess(char* pname, xmlDoc* doc, char* value) {
                }
                xmlXPathFreeObject(result);	  
             } else {
-               if(DEBUG>1)
+	      if(DEBUG>1)
                   printf("[ getSyncProcess ] : [ WARNING ] no results found\n");
                strcpy(value,"-5");	  	
             }
          } else {
-            if(DEBUG>1)
+	   if(DEBUG>1)
                printf("[ getSyncProcess ] : [ WARNING ] no XML doc\n");
             strcpy(value,"-8");	  	
          }
@@ -1853,7 +1893,7 @@ void getEBEventErrorCountProcess(char* pname, xmlDoc* doc, char* value) {
       }
       
       if(strcmp(tmp,"")!=0) {
-         if(DEBUG>-1) 
+         if(DEBUG>0) 
             printf("[ getEBEventErrorCountProcess ] : xpath \"%s\"\n",tmp);
 
          if(doc!=NULL) {
@@ -1861,12 +1901,12 @@ void getEBEventErrorCountProcess(char* pname, xmlDoc* doc, char* value) {
             result =  getnodeset(doc, (xmlChar*) tmp);
 
             if(result!=NULL) {
-               if(DEBUG>-1) printf("[ getEBEventErrorCountProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
+               if(DEBUG>0) printf("[ getEBEventErrorCountProcess ] : got %d nodes\n", result->nodesetval->nodeNr);
                if(result->nodesetval->nodeNr==1) {
                   node = result->nodesetval->nodeTab[0];
                   if(node!=NULL) {
                      getStrValue(doc,node,value);
-                     if(DEBUG>-1) printf("[ getEBEventErrorCountProcess ]: got val %s.\n",value);      
+                     if(DEBUG>0) printf("[ getEBEventErrorCountProcess ]: got val %s.\n",value);      
                   } else {
                      printf("[ getEBEventErrorCountProcess ] : [ WARNING ] no Sync nodes found\n");
                      strcpy(value,"-3");
@@ -1877,7 +1917,7 @@ void getEBEventErrorCountProcess(char* pname, xmlDoc* doc, char* value) {
                }
                xmlXPathFreeObject(result);	  
             } else {
-               if(DEBUG>-1)
+               if(DEBUG>0)
                   printf("[ getEBEventErrorCountProcess ] : [ WARNING ] no results found\n");
                strcpy(value,"-5");	  	
             }
@@ -2578,13 +2618,14 @@ void getHeartbeat(char* pname, xmlDoc* doc, char* value) {
             result =  getnodeset(doc, (xmlChar*) tmp);
 
             if(result!=NULL) {
-	     if(DEBUG>0) 
+	      if(DEBUG>0) 
 		 printf("[ getHeartbeat ] : got %d nodes\n", result->nodesetval->nodeNr);
                if(result->nodesetval->nodeNr==1) {
                   node = result->nodesetval->nodeTab[0];
                   if(node!=NULL) {
 		    getStrValue(doc,node, (xmlChar*) value);
-                     if(DEBUG>0) printf("[ getSyncProcess ]: got val %s\n",value);      
+		    if(DEBUG>0) 
+		    printf("[ getHeartbeat ]: got val %s\n",value);      
                   } else {
                      printf("[ getHeartbeat ] : [ WARNING ] no Sync nodes found\n");
                      strcpy(value,"-3");
@@ -2610,6 +2651,83 @@ void getHeartbeat(char* pname, xmlDoc* doc, char* value) {
       }     
    } else {
       printf("[ getHeartbeat ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);   
+      strcpy(value, "-7");
+   }
+
+   return;
+}
+
+
+void getFebDNA(char* pname, xmlDoc* doc, char* value) {
+
+  //if (DEBUG >2)
+    printf("[ getFebDNA ] : getFebDNA called for recordname %s\n",pname);
+
+   int ifeb;
+   char str1[BUF_SIZE];
+   char str4[BUF_SIZE];
+   char tmp[BUF_SIZE];
+   xmlXPathObjectPtr result;
+   xmlNodePtr node;
+   ifeb = -1;
+  
+   getStringFromEpicsName(pname,str1,1,BUF_SIZE);
+  
+   if(strcmp(str1,"daq")==0) {
+    
+      getStringFromEpicsName(pname,str4,4,BUF_SIZE);
+    
+      if(strcmp(str4,"dna_asub")==0) {      
+         ifeb = getIntFromEpicsName(pname,3);             
+	 sprintf(tmp,"/system/status/ControlDpm[@index=\"%d\"]/FebFpga[@index=\"%d\"]/AxiVersion[@index=\"%d\"]/DeviceDna",0,ifeb,0);
+
+
+      } else {
+         strcpy(tmp,""); 
+      }
+    
+      if(strcmp(tmp,"")!=0) {
+	//if(DEBUG>2) 
+            printf("[ getFebDNA ] : xpath \"%s\"\n",tmp);
+
+         if(doc!=NULL) {
+             
+            result =  getnodeset(doc, (xmlChar*) tmp);
+
+            if(result!=NULL) {
+	      //if(DEBUG>0) 
+		 printf("[ getFebDNA ] : got %d nodes\n", result->nodesetval->nodeNr);
+               if(result->nodesetval->nodeNr==1) {
+                  node = result->nodesetval->nodeTab[0];
+                  if(node!=NULL) {
+		    getStrValue(doc,node, (xmlChar*) value);
+		    //if(DEBUG>0) 
+		    printf("[ getFebDNA ]: got val %s\n",value);      
+                  } else {
+                     printf("[ getFebDNA ] : [ WARNING ] no Sync nodes found\n");
+                     strcpy(value,"-3");
+                  }
+               } else {
+                  printf("[ getFebDNA ] : [ WARNING ] %d Sync nodes found, should be exactly 1\n", result->nodesetval->nodeNr);
+                  strcpy(value,"-4");	  
+               }
+               xmlXPathFreeObject(result);	  
+            } else {
+	      if(DEBUG>1)
+                  printf("[ getFebDNA ] : [ WARNING ] no results found\n");
+               strcpy(value,"-5");	  	
+            }
+         } else {
+            if(DEBUG>1)
+               printf("[ getFebDNA ] : [ WARNING ] no XML doc\n");
+            strcpy(value,"-8");	  	
+         }
+      } else {
+         printf("[ getFebDNA ]: [ ERROR ]: couldn't find action for this record name \"%s\"!\n",pname);
+         strcpy(value,"-6");
+      }     
+   } else {
+      printf("[ getFebDNA ]: [ ERROR ]: wrong record name? \"%s\"!\n",pname);   
       strcpy(value, "-7");
    }
 
