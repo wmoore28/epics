@@ -8,6 +8,7 @@
 #include "commonXml.h"
 #include "commonDoc.h"
 #include <libxml/parser.h>
+#include <string.h>
 //#include <dbAccess.h>
 #include <cadef.h>
 
@@ -19,7 +20,7 @@ char host[BUF_SIZE];
 xmlDoc* xmldoc = NULL;
 char socketPollStatusStr[BUF_SIZE];
 long heartbeat1 = 0;
-long heartbeat2 = 0;
+long heartbeat2[N_FEB];
 long sem_heartbeat_count[N_FEB];
 
 
@@ -210,6 +211,7 @@ static long subDpmFebNumProcess(subRecord *precord) {
   int val = -1;
 
   val = getFebNumProcess(precord->name, xmldoc);
+  //if (val > 7) val = val - 1;
 
   precord->val = val;
 
@@ -471,7 +473,7 @@ static long subDtmMinTrigPeriodInit(subRecord *precord) {
 static long subDtmMinTrigPeriodProcess(subRecord *precord) {
   process_order++;
   if (mySubDebug-1) {
-    printf("[ subDtmMinTrigPeriodProcess ]: %d Record %s called subDtmMinTrigPeriodProcess(%p)\n",process_order, precord->name, (void*) precord);
+    printf("[ subDtmMinTrigPeriodProcess ]: %d Record %s called subDtmMinTrigPeriodProcess(%p) yes\n",process_order, precord->name, (void*) precord);
   }
   int val = -1;
 
@@ -482,6 +484,7 @@ static long subDtmMinTrigPeriodProcess(subRecord *precord) {
   
   return 0;
 }
+
 
 
 static long subHybridSwitchInit(aSubRecord *precord) {
@@ -610,7 +613,7 @@ static long subSyncBaseProcess(aSubRecord *precord) {
   process_order++;
   if (mySubDebug) {
     printf("[ subSyncBaseProcess ]: %d Record %s called subSyncBaseProcess(%p)\n",process_order, precord->name, (void*) precord);
-  }
+    }
   
   char val[256];
   int number;
@@ -918,7 +921,7 @@ static long subFebSemProcess(aSubRecord *precord) {
       printf("[ subFebSemProcess ]: sem heartbeat didn't update 0x%lx vs 0x%lx \n",v , sem_heartbeat_count[ifeb]);      
 
       // set the flag : NOTE that 1 is good status
-      sem_heartbeat_stat = 1;      
+      sem_heartbeat_stat = 0;      
 
     } else {
 
@@ -926,7 +929,7 @@ static long subFebSemProcess(aSubRecord *precord) {
       printf("[ subFebSemProcess ]: sem heartbeat updated\n");      
 
       // set the state
-      sem_heartbeat_stat = 0;
+      sem_heartbeat_stat = 1;
 
       // update the counter for next poll
       sem_heartbeat_count[ifeb] = v;      
@@ -1000,7 +1003,7 @@ static long subExtractHeartbeatProcess(aSubRecord *precord) {
   process_order++;
   if (mySubDebug) {
   printf("[ subExtractHeartbeatProcess ]: %d Record %s called subExtractHeartbeatProcess(%p)\n",process_order, precord->name, (void*) precord);
-  }
+   }
   
   char val[256];
   int number;
@@ -1031,31 +1034,66 @@ static long subCheckHeartbeatInit(aSubRecord *precord) {
   if (mySubDebug) {
   printf("[ subCheckHeartbeatInit ]: %d Record %s called subCheckHeartbeatInit(%p)\n", process_order, precord->name, (void*) precord);
   }
+    int i;
+  for(i=0;i<N_FEB;++i) heartbeat2[i] = -1;
   return 0;
 }
 
 static long subCheckHeartbeatProcess(subRecord *precord) {
   process_order++;
-  int val;
+  int val=0;
+  int ifeb=0;
+  ifeb = getIntFromEpicsName(precord->name,2);
   if (mySubDebug) {
     printf("[ subCheckHeartbeatProcess ]: %d Record %s called subCheckHeartbeatProcess(%p)\n",process_order, precord->name, (void*) precord);
   }
 
   heartbeat1 = precord->a;
 
-  if(heartbeat1 == heartbeat2) {
+  if(heartbeat1 == heartbeat2[ifeb]) {
     if (mySubDebug) {
       printf("[ subCheckHeartbeatProcess ]: Heartbeat is dead (heartbeat1=%ld)\n", heartbeat1);
-    }    
+      }    
     val = 0;
   } else {
     if (mySubDebug) {
-      printf("[ subCheckHeartbeatProcess ]: Heartbeat is alive (heartbeat1=%ld) =/ (heartbeat2=%ld)\n",heartbeat2,heartbeat1);
-    }    
+      printf("[ subCheckHeartbeatProcess ]: Heartbeat is alive (heartbeat1=%ld) =/ (heartbeat2=%ld)\n",heartbeat1,heartbeat2[ifeb]);
+      }    
     val = 1;
   }
   precord->val = val;
-  heartbeat2 = heartbeat1;
+  heartbeat2[ifeb] = heartbeat1;
+  return 0;
+}
+
+static long subExtractFebDNAInit(aSubRecord *precord) {
+  process_order++;
+  //if (mySubDebug) {
+  printf("[ subExtractFebDNAInit ]: %d Record %s called subExtractFebDNAInit(%p)\n", process_order, precord->name, (void*) precord);
+  //}
+  strcpy(precord->vala,"init...");
+  return 0;
+}
+
+static long subExtractFebDNAProcess(aSubRecord *precord) {
+  process_order++;
+  //if (mySubDebug) {
+  printf("[ subExtractFebDNAProcess ]: %d Record %s called subExtractFebDNAProcess(%p)\n",process_order, precord->name, (void*) precord);
+  //}
+  
+  int number;
+  char dna[256];
+
+  //if (mySubDebug)
+  printf("[ subExtractFebDNAProcess ]: get DNA string from xml at %p\n", xmldoc);
+  strcpy(precord->vala, "default");
+  getFebDNA(precord->name, xmldoc, dna);
+
+  //if (mySubDebug)
+  printf("[ subExtractFebDNAProcess ]: got DNA string \"%s\"\n", dna);
+
+  strcpy(precord->vala,dna);
+  
   return 0;
 }
 
@@ -1114,5 +1152,7 @@ epicsRegisterFunction(subCheckHeartbeatInit);
 epicsRegisterFunction(subCheckHeartbeatProcess);
 epicsRegisterFunction(subFebSemInit);
 epicsRegisterFunction(subFebSemProcess);
+epicsRegisterFunction(subExtractFebDNAInit);
+epicsRegisterFunction(subExtractFebDNAProcess);
 
 
