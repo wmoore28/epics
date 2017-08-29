@@ -31,6 +31,7 @@ dbLoadRecords ("db/dbSem.db","FEB=7")
 dbLoadRecords ("db/dbSem.db","FEB=8")
 dbLoadRecords ("db/dbSem.db","FEB=9")
 dbLoadRecords "db/dbSemAll.db"
+dbLoadRecords "db/dbHybSyncDataDpmAllCom.db"
 
 
 
