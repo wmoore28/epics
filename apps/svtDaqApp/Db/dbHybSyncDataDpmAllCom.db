@@ -1,0 +1,43 @@
+
+record(calc,SVT:daq:half1:sync_stat)
+{
+    field(SCAN,"Passive")
+    field(INPA,"SVT:daq:0:sync_stats CPP")
+    field(INPB,"SVT:daq:1:sync_stats CPP")
+    field(INPC,"SVT:daq:2:sync_stats CPP")
+    field(INPD,"SVT:daq:3:sync_stats CPP")
+    field(INPE,"SVT:daq:4:sync_stats CPP")
+    field(INPF,"SVT:daq:5:sync_stats CPP")
+    field(INPG,"SVT:daq:6:sync_stats CPP")
+    field(CALC,"(A>0)&&(B>0)&&(C>0)&&(D>0)&&(E>0)&&(F>0)&&(G>0)")
+}
+
+record(calc,SVT:daq:half2:sync_stat)
+{
+    field(SCAN,"Passive")
+    field(INPA,"SVT:daq:8:sync_stats CPP")
+    field(INPB,"SVT:daq:9:sync_stats CPP")
+    field(INPC,"SVT:daq:10:sync_stats CPP")
+    field(INPD,"SVT:daq:11:sync_stats CPP")
+    field(INPE,"SVT:daq:12:sync_stats CPP")
+    field(INPF,"SVT:daq:13:sync_stats CPP")
+    field(INPG,"SVT:daq:14:sync_stats CPP")
+    field(CALC,"(A>0)&&(B>0)&&(C>0)&&(D>0)&&(E>0)&&(F>0)&&(G>0)")
+}
+
+record(calc,SVT:daq:all:sync_stat)
+{
+    field(SCAN,"Passive")
+    field(INPA,"SVT:daq:half1:sync_stat CPP")
+    field(INPB,"SVT:daq:half2:sync_stat CPP")
+    field(CALC,"(A>0)&&(B>0)")
+}
+
+record(calc,SVT:lv:hyb:daq:all:sync_stat)
+{
+    field(SCAN,"Passive")
+    field(INPA,"SVT:daq:all:sync_stat CPP")
+    field(INPB,"SVT:lv:hyb:all:sync:stat:calc CPP")
+    field(CALC,"(A>0)&&(B>0)")
+}
+
