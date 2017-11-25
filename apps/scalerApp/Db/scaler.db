@@ -102,9 +102,9 @@ grecord(mbbo,"display_mode")
 # Faraday cup
 grecord(calc,"scaler_calc1")
 {
-	field(FLNK,"scaler_cts1.PROC PP MS")
+	field(FLNK,"scaler_calc2.PROC PP MS")
+#	field(FLNK,"scaler_cts1.PROC PP MS")
 	field(CALC,"(b/f-d)/MAX(e,1.0)")
-#	field(INPB,"scaler.S16 NPP NMS")
 	field(INPB,"scaler.S2 NPP NMS")
 	field(INPD,"fcup_offset NPP NMS")
 	field(INPE,"fcup_slope NPP NMS")
@@ -113,25 +113,25 @@ grecord(calc,"scaler_calc1")
 }
 
 # SLM
-#grecord(calc,"scaler_calc2")
-#{
-#        field(FLNK,"slm_fcup_ratio.PROC PP MS")
-#        field(CALC,"(b/f-d)/MAX(e,1.0)")
-#        field(INPB,"scaler.S12 NPP NMS")
-#        field(INPD,"slm_offset NPP NMS")
-#        field(INPE,"slm_slope NPP NMS")
-#        field(INPF,"scaler.T NPP NMS")
-#        field(PREC,"4")
-#}
-#
-#grecord(calc,"slm_fcup_ratio")
-#{
-#        field(FLNK,"scaler_sum.PROC PP MS")
-#        field(CALC,"a>0.1?b/a:1.0")
-#        field(INPA,"scaler_calc2 NPP NMS")
-#        field(INPB,"scaler_calc1 NPP NMS")
-#        field(PREC,"4")
-#}
+grecord(calc,"scaler_calc2")
+{
+        field(FLNK,"slm_fcup_ratio.PROC PP MS")
+        field(CALC,"(b/f-d)/MAX(e,1.0)")
+        field(INPB,"scaler.S16 NPP NMS")
+        field(INPD,"slm_offset NPP NMS")
+        field(INPE,"slm_slope NPP NMS")
+        field(INPF,"scaler.T NPP NMS")
+        field(PREC,"4")
+}
+
+grecord(calc,"slm_fcup_ratio")
+{
+	    field(FLNK,"scaler_cts1.PROC PP MS")
+        field(CALC,"a>0.1?b/a:1.0")
+        field(INPA,"scaler_calc2 NPP NMS")
+        field(INPB,"scaler_calc1 NPP NMS")
+        field(PREC,"4")
+}
 
 
 
