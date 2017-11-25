@@ -26,9 +26,9 @@ epicsEnvSet( "EPICS_CA_ADDR_LIST", "129.57.255.4")
 #                  int interruptLevel,
 #                  channels,
 #                  signals)
-drvSIS3801Config("SIS38XX_0", 0x08000000, 220, 6, 16, 32)
-dbLoadRecords("$(STD)/stdApp/Db/scaler32.db", "P=bom_, S=sc, DTYP=Asyn Scaler, OUT=@asyn(SIS38XX_0), FREQ=25000000")
-dbLoadRecords("$(MCA)/db/SIS38XX.template", "P=bom_, SCALER=sc, PORT=SIS38XX_0")
+#drvSIS3801Config("SIS38XX_0", 0x08000000, 220, 6, 16, 32)
+#dbLoadRecords("$(STD)/stdApp/Db/scaler32.db", "P=bom_, S=sc, DTYP=Asyn Scaler, OUT=@asyn(SIS38XX_0), FREQ=25000000")
+#dbLoadRecords("$(MCA)/db/SIS38XX.template", "P=bom_, SCALER=sc, PORT=SIS38XX_0")
 
 #dbLoadRecords("db/bom_scaler.db", "scaler=bom_sc, FIFO=16, PORT=SIS38XX_0")
 #dbLoadRecords("db/bom_stop_start.db",   "scaler=bom_sc")
