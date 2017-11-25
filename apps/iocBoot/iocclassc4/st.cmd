@@ -106,6 +106,9 @@ iocInit "../resource.def"
 dbpf "fcup_offset","100."
 dbpf "fcup_slope","906.2"
 
+dbpf "slm_offset","0.0"
+dbpf "slm_slope","1.0"
+
 ## Added these three line. to start counting after restarting IOC
 dbpf "scaler.CNT","1"
 dbpf "scaler_mode.VAL","1"
@@ -125,7 +128,9 @@ dbpf "display_c_mode.VAL","Hertz"
 ## 
 ## Start any sequence programs
 ## 
-#seq &sixtyHz
+
+seq &sixtyHz
+
 ## removed for rafopar
 #seq &scaler_restart
 #seq &frwd_scaler_restart
