@@ -1,17 +1,33 @@
+
+# new (NAB):
 grecord(mca,"asym_$(CHAN)") 
 { 
-   field(DTYP, "Struck STR7201 MCS") 
-   field(MODE, "MCS")
-   field(CHAS, "0")
+   field(DTYP, "asynMCA") 
    field(DWEL, "0")
    field(FLNK, "0")
-   field(FTVL, "6")
    field(NMAX, "$(FIFO)")
    field(PREC, "0")
    field(NUSE, "$(FIFO)")
-#   field(INP, "#C0 S$(CHAN) @")
-   field(INP, "#C0 S$(CHAN)")
+   field(INP,  "@asyn($(PORT) $(CHAN))")
+   field(MODE, "MCS")
 } 
+
+# old (NAB):
+#grecord(mca,"asym_$(CHAN)") 
+#{ 
+#   field(DTYP, "Struck STR7201 MCS") 
+#   field(MODE, "MCS")
+#   field(CHAS, "0")
+#   field(DWEL, "0")
+#   field(FLNK, "0")
+#   field(FTVL, "6")
+#   field(NMAX, "$(FIFO)")
+#   field(PREC, "0")
+#   field(NUSE, "$(FIFO)")
+##   field(INP, "#C0 S$(CHAN) @")
+#   field(INP, "#C0 S$(CHAN)")
+#} 
+
 grecord(ao,"q_asym_$(CHAN)")
 {
    field(PREC, "4")
