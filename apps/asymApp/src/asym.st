@@ -5,32 +5,30 @@ option +c;
 
 #include "asym.h"
 
+#define NOCHANNELACCESS 1
+
 %%extern int getbits(unsigned , int, int);
 %%extern int get_idx_skip( unsigned idx );
 %%extern int dumpbits(unsigned ival);
 %%extern int find_pair(int index);
 %%extern float sqrt( float );
+%%extern int get_delay( int );
+%%extern float abs( float ); 
 
-short   harp_tagger_scan_flag;
-assign  harp_tagger_scan_flag  to "harp_tagger_scan_flag.VAL";
-monitor harp_tagger_scan_flag;
-
-short   harp_2c21_scan_flag;
-assign  harp_2c21_scan_flag  to "harp_2c21_scan_flag.VAL";
-monitor harp_2c21_scan_flag;
-
-short   harp_2H02A_scan_flag;
-assign  harp_2H02A_scan_flag  to "harp_2H02A_scan_flag.VAL";
-monitor harp_2H02A_scan_flag;
+// harp status unused, commented out (NAB):
+//short   harp_tagger_scan_flag;
+//assign  harp_tagger_scan_flag  to "harp_tagger_scan_flag.VAL";
+//monitor harp_tagger_scan_flag;
+//short   harp_2c21_scan_flag;
+//assign  harp_2c21_scan_flag  to "harp_2c21_scan_flag.VAL";
+//monitor harp_2c21_scan_flag;
+//short   harp_2H02A_scan_flag;
+//assign  harp_2H02A_scan_flag  to "harp_2H02A_scan_flag.VAL";
+//monitor harp_2H02A_scan_flag;
 
 long current_cut;
 assign current_cut to "HB:Q_THRESHOLD";
 
-double  slm_offset;
-assign slm_offset to "slm_offset";
-
-double slm_slope;
-assign slm_slope to "slm_slope";
 
 int slm_minus_cnts;
 assign slm_minus_cnts to "sum_minus_3";
@@ -60,22 +58,33 @@ assign clock_fifo to "asym_0";
 unsigned int slm_fifo[NFIFO];
 assign slm_fifo to "asym_3";
 
-/* Reporting Delay in helicity cycles  */
-unsigned int hls_rptg_scheme; 
-/* assign hls_rptg_scheme to "HELG0DELAYd"; */
+unsigned int hls_rptg_scheme=4;
+double hls_stbl_time=33330;
+double hls_setl_time=500;
+double hls_flip_freq=29.5596;
+double slm_offset=0;
+double slm_slope=1;
+
+#ifndef NOCHANNELACCESS
+
+// Reporting Delay in helicity cycle
+// assign hls_rptg_scheme to "HELG0DELAYd";
 assign hls_rptg_scheme to "HELDELAYd";
 
-/* T_Stable in usec  */
-double hls_stbl_time;
+// T_Stable in usec
 assign hls_stbl_time to "HELTSTABLEd";
 
-/* T_Settle in usec  */ 
-double hls_setl_time;
+// T_Settle in usec 
 assign hls_setl_time to "HELTSETTLEd";
 
-/* Rate of possible helicty flips */ 
-double hls_flip_freq;
+// Rate of possible helicty flips
 assign hls_flip_freq to "HELFREQ";
+
+assign slm_offset to "slm_offset";
+assign slm_slope to "slm_slope";
+
+#endif
+
 
 double asym_acqg_time;
 assign asym_acqg_time to "asym_acqg_time";
@@ -88,7 +97,8 @@ double asym_fifo_depth;
 assign asym_fifo_depth to "asym_fifo_depth";
 
 double unix_stamp;
-assign unix_stamp to "classc1:unixtime";
+//assign unix_stamp to "classc1:unixtime";
+assign unix_stamp to "iocclassc6:GTIM_TIME";
 
 double asym_fdbk_stamp;
 assign asym_fdbk_stamp to "HB:Q_STAMP"; 
@@ -119,10 +129,10 @@ unsigned int raw_value;
 unsigned int raw_value_d;
 
 char  tmp_name[128];
-char  asym_name[128];
-char  d_asym_name[128];
-char  sum_plus_name[128];
-char  sum_minus_name[128];
+//char  asym_name[128];
+//char  d_asym_name[128];
+//char  sum_plus_name[128];
+//char  sum_minus_name[128];
 
 unsigned int tmp_fifo[NFIFO];
 assign tmp_fifo to "";
@@ -150,9 +160,12 @@ int i_skip;
 
 ss asym_calc {
    state init {
+        entry { printf( "asym.st:  STATE INIT\n"); }
         when () {
+#ifndef NOCHANNELACCESS
 	  pvGet( hls_setl_time );
 	  pvGet( hls_stbl_time );
+#endif
 	  for (i=0; i<NCHAN; i++) {
 	    if (asym_chan[i]) {
               sprintf(tmp_name,"asym_%i.ERAS",i);
@@ -161,13 +174,16 @@ ss asym_calc {
               pvPut(tmp_short);
 	 /* find number of delayed cycles  */ 
 	 /* for helicty signals versus real data */
+#ifndef NOCHANNELACCESS
   	      pvGet( hls_rptg_scheme ) ;
+#endif
 	      n_dly_cycle = get_delay( hls_rptg_scheme );
             }
           }
         } state  start
    }
    state start{
+    entry { printf( "asym.st:  STATE START\n"); }
 	when()  {
 	  start = 1;
           pvPut(start);
@@ -175,76 +191,102 @@ ss asym_calc {
 
    } 
    state stop{
+    entry { printf( "asym.st:  STATE STOP\n"); }
 	when(delay(asym_acqg_time))  {
 	  stop = 1;
           pvPut(stop);
           pvGet(asym_acqg_time);
 /*          nfifo_used = asym_acqg_time*60; */
-	  pvGet( hls_flip_freq ) ;
-	  nfifo_used = asym_acqg_time * hls_flip_freq * 2.0;
+#ifndef NOCHANNELACCESS
+	      pvGet( hls_flip_freq ) ;
+#endif
+          nfifo_used = asym_acqg_time * hls_flip_freq * 2.0;
           if (nfifo_used > NFIFO - LOCAL_DEPTH) {
-            nfifo_used = NFIFO - LOCAL_DEPTH;
+              nfifo_used = NFIFO - LOCAL_DEPTH;
           }
-        } state pause
+          printf(stderr,"asym.st-STOP:  T=%.1f F=%.4f NFIFOUSED=%d\n",asym_acqg_time,hls_flip_freq,nfifo_used);
+      } state pause
 
    } 
    state pause {
+         entry { printf( "asym.st:  STATE PAUSE\n"); }
          when (delay(1)) { 
          ;
          } state read
    }
    state read {
-	when(acqg == 0) {
-          sprintf(tmp_name,"asym_0.READ");
-          pvAssign(tmp_short, tmp_name);
-          tmp_short = 1;
-          pvPut(tmp_short);
+       entry { printf( "asym.st:  STATE READ\n"); }
+       when(acqg == 0) {
+           sprintf(tmp_name,"asym_0.READ");
+           pvAssign(tmp_short, tmp_name);
+           tmp_short = 1;
+           pvPut(tmp_short);
 
-          sprintf(tmp_name,"asym_3.READ");
-          pvAssign(tmp_short, tmp_name);
-          tmp_short = 1;
-          pvPut(tmp_short);
-        } state find_good_pairs
+           sprintf(tmp_name,"asym_3.READ");
+           pvAssign(tmp_short, tmp_name);
+           tmp_short = 1;
+           pvPut(tmp_short);
+       } state find_good_pairs
    }
+
    state find_good_pairs {
 	when() {
+           fprintf(stderr, "asym.st:  FIND GOOD PAIRS\n");
 
-           pvGet(current_cut);   
+           pvGet(current_cut);
+#ifndef NOCHANNELACCESS
            pvGet(slm_slope);   
-           pvGet(slm_offset);   
+           pvGet(slm_offset);
+#endif
            pvGet(slm_fifo);   
            pvGet(clock_fifo);   
 
-	   i = 0;
+           fprintf(stderr,"asym.st-FIND1:  %f %f\n",slm_slope,slm_offset);
+           //pr,slm_fifo,clock_fifo);
+           fprintf(stderr,"asym.st-FIND2:  %d %d\n",nfifo_used,LOCAL_DEPTH);
+
+           i = 0;
            n_pairs = 0;
            while (i < nfifo_used-LOCAL_DEPTH) {
-/*             printf("looking for pairs..index at: %i out of %i\n",i,nfifo_used); */
+             fprintf(stderr,"looking for pairs..index at: %i out of %i\n",i,nfifo_used);
              i = find_pair(i);
-	     if (i < nfifo_used-LOCAL_DEPTH) {
-               asym_fifo_depth = i+3;
-               pairs[n_pairs] = i;
-	       idx_skip[n_pairs] = get_idx_skip( i );
-               n_pairs++;
-               i = i + 4;
+             if (i < nfifo_used-LOCAL_DEPTH) {
+                 asym_fifo_depth = i+3;
+                 pairs[n_pairs] = i;
+                 idx_skip[n_pairs] = get_idx_skip( i );
+                 
+                 fprintf(stderr,"%d %d %d %d\n",
+                         asym_fifo_depth,n_pairs,pairs[n_pairs],idx_skip[n_pairs]);
+                 
+                 n_pairs++;
+
+
+                 i = i + 4;
              } else {
-               i++;
+                 i++;
              }
            }
+
+           fprintf(stderr,"asym.st-FIND3: %d %d\n",n_pairs,asym_fifo_depth);
+
            beam_sync_pairs = n_pairs-1;
            pvPut(beam_sync_pairs);
            pvPut(asym_fifo_depth);
         } state get_asym
    }
+
+
    state get_asym {
-	when() {
-          for (i_chan = 0; i_chan < NCHAN; i_chan++) {
-            if (asym_chan[i_chan]) {
-              sprintf(tmp_name,"asym_calc_enable_%i",i_chan);
-              pvAssign(tmp_short, tmp_name);
-              pvGet(tmp_short);
-	      asym_calc_enable[i_chan] = tmp_short;
-            }
-	  }
+       when() {
+           printf( "asym.st:  GET ASYM\n");
+           for (i_chan = 0; i_chan < NCHAN; i_chan++) {
+               if (asym_chan[i_chan]) {
+                   sprintf(tmp_name,"asym_calc_enable_%i",i_chan);
+                   pvAssign(tmp_short, tmp_name);
+                   pvGet(tmp_short);
+                   asym_calc_enable[i_chan] = tmp_short;
+               }
+           }
 
 /*
 	printf("Delayed by %d cycles \n", n_dly_cycle );
@@ -270,27 +312,27 @@ ss asym_calc {
                sum[0] = 0;
                sum[1] = 0;
                for (i_pair=0; i_pair<n_pairs-1; i_pair++) {
-		 if ( ( pairs[i_pair] + n_dly_cycle*2 ) < ( nfifo_used - LOCAL_DEPTH ) ) {
-	           i_skip =  idx_skip[i_pair];
+                   if ( ( pairs[i_pair] + n_dly_cycle*2 ) < ( nfifo_used - LOCAL_DEPTH ) ) {
+                       i_skip =  idx_skip[i_pair];
 
-                   for (i=i_skip; i<4; i=i+2) { 
-                      raw_value    = tmp_fifo[pairs[i_pair]+i];
-                      raw_value_d  = tmp_fifo[pairs[i_pair]+i + n_dly_cycle*2];
-                      sync_bit     = getbits(raw_value,31,1);   /* sync bit */ 
-                      helicity_bit = getbits(raw_value_d,30,1);  /* helicity bit */
-                      value        = getbits(raw_value,23,24);  /* value */
-	
-	              if ( i==(i_skip+0) ) hls_1 = helicity_bit ;
-		      if ( i==(i_skip+2) ) hls_2 = helicity_bit ;	
+                       for (i=i_skip; i<4; i=i+2) { 
+                           raw_value    = tmp_fifo[pairs[i_pair]+i];
+                           raw_value_d  = tmp_fifo[pairs[i_pair]+i + n_dly_cycle*2];
+                           sync_bit     = getbits(raw_value,31,1);   /* sync bit */ 
+                           helicity_bit = getbits(raw_value_d,30,1);  /* helicity bit */
+                           value        = getbits(raw_value,23,24);  /* value */
 
-                      sum[helicity_bit] = sum[helicity_bit] + value;
+                           if ( i==(i_skip+0) ) hls_1 = helicity_bit ;
+                           if ( i==(i_skip+2) ) hls_2 = helicity_bit ;	
+
+                           sum[helicity_bit] = sum[helicity_bit] + value;
+                       }
+                       if ( hls_1 == hls_2 ) {
+                           printf(" Illegal in pair #  %d , FIFO #  %d  : %d  %d \n", 
+                                   i_pair, pairs[i_pair], hls_1, hls_2 );
+                       }
+
                    }
-	   	   if ( hls_1 == hls_2 ) {
-			printf(" Illegal in pair #  %d , FIFO #  %d  : %d  %d \n", 
-			 i_pair, pairs[i_pair], hls_1, hls_2 );
-	 	   }
-
-	   	 }
                }
 
                sum_plus = sum[1];
@@ -370,87 +412,91 @@ int find_pair(int index) {
      local_index = index;
 
      while( ( ( local_index + n_dly_cycle*2 ) < ( nfifo_used - LOCAL_DEPTH ) ) && 
-	    (next_pair == -1) ) {
-       for (i1 = 0; i1 < LOCAL_DEPTH; i1++) {
-          sync[i1]  = getbits(clock_fifo[local_index+i1],31,1);  /* sync bit */
-          hls[i1]   = getbits(clock_fifo[local_index+i1+n_dly_cycle*2],30,1);  /* helicity bit */
-          clock[i1] = getbits(clock_fifo[local_index+i1],23,24);  /* 10MHz clock counts */
-          slm[i1]   = getbits(slm_fifo[local_index+i1],23,24);  /* slm counts */
-       }
+             (next_pair == -1) ) {
+         for (i1 = 0; i1 < LOCAL_DEPTH; i1++) {
+             sync[i1]  = getbits(clock_fifo[local_index+i1],31,1);  /* sync bit */
+             hls[i1]   = getbits(clock_fifo[local_index+i1+n_dly_cycle*2],30,1);  /* helicity bit */
+             clock[i1] = getbits(clock_fifo[local_index+i1],23,24);  /* 10MHz clock counts */
+             slm[i1]   = getbits(slm_fifo[local_index+i1],23,24);  /* slm counts */
+         }
 
-/*       printf("find_pair: local_index: %i slm[1]: %i\n",local_index,slm[1]); */
+         /*       printf("find_pair: local_index: %i slm[1]: %i\n",local_index,slm[1]); */
 
-       beam_on = 1;
-/* The minimum counts is normalized to 20 at 240 Hz assuming ~5nA beam*/ 
-       min_slm_count = 20. * 240. /  hls_flip_freq ; 
-/*       min_slm_count = 0.0;	*/
-       for (i1=1; i1<LOCAL_DEPTH; i1=i1+2) {
-          if (slm[i1] < min_slm_count ) {  
-              beam_on = 0;     
-          } 
-       } 
+         beam_on = 1;
+         /* The minimum counts is normalized to 20 at 240 Hz assuming ~5nA beam*/ 
+         min_slm_count = 20. * 240. /  hls_flip_freq ; 
+         /*       min_slm_count = 0.0;	*/
 
+         min_slm_count=0;
 /*
-	printf(" s: ");
-	for ( i1 = 0; i1 < LOCAL_DEPTH; i1++ )
-	  printf(" %8d ", sync[i1] );
-	printf("\n");
-
-	printf(" h: ");
-	for ( i1 = 0; i1 < LOCAL_DEPTH; i1++ )
-	  printf(" %8d ", hls[i1] );
-	printf("\n");
-     
-	printf(" c: ");
-	for ( i1 = 0; i1 < LOCAL_DEPTH; i1++ )
-	  printf(" %8d ", clock[i1] );
-	printf("\n");
-
-	printf(" m: ");
-	for ( i1 = 0; i1 < LOCAL_DEPTH; i1++ )
-	  printf(" %8d ", slm[i1] );
-	printf("\n");
+         for (i1=1; i1<LOCAL_DEPTH; i1=i1+2) {
+             if (slm[i1] < min_slm_count ) {  
+                 beam_on = 0;     
+             } 
+         } 
 */
 
-       if ( 1 && 
+         /*
+            printf(" s: ");
+            for ( i1 = 0; i1 < LOCAL_DEPTH; i1++ )
+            printf(" %8d ", sync[i1] );
+            printf("\n");
 
-           ( ( hls[1]  == hls[2]   && 
-	       hls[0]  == hls[3] ) ||
-	     ( hls[0]  == hls[1]   && 
-	       hls[2]  == hls[3] ) ) &&
-      	       hls[1] != hls[3]    && 
+            printf(" h: ");
+            for ( i1 = 0; i1 < LOCAL_DEPTH; i1++ )
+            printf(" %8d ", hls[i1] );
+            printf("\n");
 
-/*
-	   sync[0] == sync[1]  &&
-           sync[2] == sync[3]  &&
-*/
-/*
-           sync[0] == sync[3]  &&
-           sync[1] == sync[2]  &&
+            printf(" c: ");
+            for ( i1 = 0; i1 < LOCAL_DEPTH; i1++ )
+            printf(" %8d ", clock[i1] );
+            printf("\n");
 
-           ( ( hls[1]  == hls[2]   && 
-	       hls[3]  == hls[4] ) ||
-	     ( hls[0]  == hls[1]   && 
-	       hls[2]  == hls[3] ) ) &&   
-	   hls[1] != hls[3]    && 
-           sync[1] != sync[3]  && 
-*/
+            printf(" m: ");
+            for ( i1 = 0; i1 < LOCAL_DEPTH; i1++ )
+            printf(" %8d ", slm[i1] );
+            printf("\n");
+            */
 
-/* These cuts are here because time interval can vary at ~ 0.1% level */
-	   abs( clock[1] - clock[3] ) < ( 0.005 * abs( clock[1] + clock[3] ) ) && 
-	   abs( clock[0] - clock[2] ) < ( 0.005 * abs( clock[0] + clock[2] ) ) && 
+         if ( 1 && 
 
-           beam_on == 1)  {
-           next_pair = local_index;
-       } else {
-         local_index++;
-       }
+                 ( ( hls[1]  == hls[2]   && 
+                     hls[0]  == hls[3] ) ||
+                   ( hls[0]  == hls[1]   && 
+                     hls[2]  == hls[3] ) ) &&
+                 hls[1] != hls[3]    && 
+
+                 /*
+                    sync[0] == sync[1]  &&
+                    sync[2] == sync[3]  &&
+                    */
+                 /*
+                    sync[0] == sync[3]  &&
+                    sync[1] == sync[2]  &&
+
+                    ( ( hls[1]  == hls[2]   && 
+                    hls[3]  == hls[4] ) ||
+                    ( hls[0]  == hls[1]   && 
+                    hls[2]  == hls[3] ) ) &&   
+                    hls[1] != hls[3]    && 
+                    sync[1] != sync[3]  && 
+                    */
+
+             /* These cuts are here because time interval can vary at ~ 0.1% level */
+             abs( clock[1] - clock[3] ) < ( 0.005 * abs( clock[1] + clock[3] ) ) && 
+                 abs( clock[0] - clock[2] ) < ( 0.005 * abs( clock[0] + clock[2] ) ) && 
+
+                 beam_on == 1)  {
+                     next_pair = local_index;
+                 } else {
+                     local_index++;
+                 }
 
      }
      if (next_pair == -1) {
-       next_pair = NFIFO;
+         next_pair = NFIFO;
      }
-/*	printf("Next pair is : %d \n", next_pair ); */
+     /*	printf("Next pair is : %d \n", next_pair ); */
      return next_pair;
 }
 
@@ -458,17 +504,18 @@ int find_pair(int index) {
 /* Returns 0 if the long time interval is first and */ 
 /* returns 1 if the long time interval is second */
 int get_idx_skip( unsigned idx ) {
-	int i_long;
-	long clock0;
-	long clock1;
-        clock0 = getbits(clock_fifo[idx+0],23,24);  /* 10MHz on first  interval */
-        clock1 = getbits(clock_fifo[idx+1],23,24);  /* 10MHz on second interval */
-	if( clock0 > clock1 ) {
-	   i_long = 0;
-	} else {
-	   i_long = 1;
-	}
-	return i_long;
+    int i_long;
+    long clock0;
+    long clock1;
+    clock0 = getbits(clock_fifo[idx+0],23,24);  /* 10MHz on first  interval */
+    clock1 = getbits(clock_fifo[idx+1],23,24);  /* 10MHz on second interval */
+    printf("get_idx_skip: clock0/1 = %i/%i\n",clock0,clock1);
+    if( clock0 > clock1 ) {
+        i_long = 0;
+    } else {
+        i_long = 1;
+    }
+    return i_long;
 }
 
 

@@ -10,6 +10,9 @@ grecord(mca,"asym_$(CHAN)")
    field(NUSE, "$(FIFO)")
    field(INP,  "@asyn($(PORT) $(CHAN))")
    field(MODE, "MCS")
+
+#Do we need this? (NAB)
+#field(PINI, "YES")
 } 
 
 # old (NAB):

@@ -92,8 +92,8 @@ dbLoadRecords("db/stopper.db")
 dbLoadRecords("$(DEVIOCSTATS)/db/iocAdminVxWorks.db", "IOC=iocclassc4")
 #dbLoadRecords("$(AUTOSAVE)/asApp/Db/save_restoreStatus.db", "P=iocclassc4:")
 
-dbLoadRecords("db/scaler-ped.db","P=fcup_offset,VAL=scaler.S2,REF=IPM2C21A,MIN=0.1,N=10")
-dbLoadRecords("db/scaler-ped.db","P=slm_offset,VAL=scaler.S15,REF=IPM2C21A,MIN=0.1,N=10")
+dbLoadRecords("db/scaler-ped.db","P=fcup_offset,VAL=scalerS2b,REF=IPM2C21A,MIN=0.1,N=10")
+dbLoadRecords("db/scaler-ped.db","P=slm_offset,VAL=scalerS15b,REF=IPM2C21A,MIN=0.1,N=10")
 
 cd startup
 
