@@ -1,11 +1,11 @@
-/* --------------------------------------------- */
 program asym
-/* --------------------------------------------- */
 option +c;
 
 #include "asym.h"
 
 #define NOCHANNELACCESS 1
+#define IGNOREBEAM 1
+//#define FULLDEBUG 1
 
 %%extern int getbits(unsigned , int, int);
 %%extern int get_idx_skip( unsigned idx );
@@ -15,20 +15,11 @@ option +c;
 %%extern int get_delay( int );
 %%extern float abs( float ); 
 
-// harp status unused, commented out (NAB):
-//short   harp_tagger_scan_flag;
-//assign  harp_tagger_scan_flag  to "harp_tagger_scan_flag.VAL";
-//monitor harp_tagger_scan_flag;
-//short   harp_2c21_scan_flag;
-//assign  harp_2c21_scan_flag  to "harp_2c21_scan_flag.VAL";
-//monitor harp_2c21_scan_flag;
-//short   harp_2H02A_scan_flag;
-//assign  harp_2H02A_scan_flag  to "harp_2H02A_scan_flag.VAL";
-//monitor harp_2H02A_scan_flag;
+string seq_status;
+assign seq_status to "asym_seq_status";
 
 long current_cut;
 assign current_cut to "HB:Q_THRESHOLD";
-
 
 int slm_minus_cnts;
 assign slm_minus_cnts to "sum_minus_3";
@@ -58,6 +49,7 @@ assign clock_fifo to "asym_0";
 unsigned int slm_fifo[NFIFO];
 assign slm_fifo to "asym_3";
 
+// provide defaults in case of no channel access:
 unsigned int hls_rptg_scheme=4;
 double hls_stbl_time=33330;
 double hls_setl_time=500;
@@ -106,7 +98,6 @@ assign asym_fdbk_stamp to "HB:Q_STAMP";
 int asym_calc_enable[16];
 
 int i;
-
 int n_pairs;
 int i_pair;
 int i_chan;
@@ -115,10 +106,8 @@ int helicity_bit;
 int value;
 int pairs[NFIFO];
 int idx_skip[NFIFO];
-
 int hls_1;
 int hls_2;
-
 int sum[2];
 float q_asym;
 float dq_asym;
@@ -127,12 +116,8 @@ int sum_plus;
 int sum_minus;
 unsigned int raw_value;
 unsigned int raw_value_d;
-
 char  tmp_name[128];
-//char  asym_name[128];
-//char  d_asym_name[128];
-//char  sum_plus_name[128];
-//char  sum_minus_name[128];
+int i_skip;
 
 unsigned int tmp_fifo[NFIFO];
 assign tmp_fifo to "";
@@ -154,131 +139,155 @@ int n_dly_cycle;
 %%                    1, 0, 0, 0,
 %%                    0, 0, 0, 0};
 
-int i_skip;
-
-/* float complete_fifo[NFIFO,NCHAN]; */
 
 ss asym_calc {
-   state init {
-        entry { printf( "asym.st:  STATE INIT\n"); }
+    
+    state init {
+        entry {
+            printf( "asym.st:  STATE INIT\n");
+            sprintf(seq_status,"INIT");
+            pvPut(seq_status);
+        }
         when () {
 #ifndef NOCHANNELACCESS
-	  pvGet( hls_setl_time );
-	  pvGet( hls_stbl_time );
+            pvGet( hls_setl_time );
+            pvGet( hls_stbl_time );
 #endif
-	  for (i=0; i<NCHAN; i++) {
-	    if (asym_chan[i]) {
-              sprintf(tmp_name,"asym_%i.ERAS",i);
-              pvAssign(tmp_short, tmp_name);
-              tmp_short = 1;
-              pvPut(tmp_short);
-	 /* find number of delayed cycles  */ 
-	 /* for helicty signals versus real data */
+            for (i=0; i<NCHAN; i++) {
+                if (asym_chan[i]) {
+                    sprintf(tmp_name,"asym_%i.ERAS",i);
+                    pvAssign(tmp_short, tmp_name);
+                    tmp_short = 1;
+                    pvPut(tmp_short);
+                    /* find number of delayed cycles  */ 
+                    /* for helicty signals versus real data */
 #ifndef NOCHANNELACCESS
-  	      pvGet( hls_rptg_scheme ) ;
+                    pvGet( hls_rptg_scheme ) ;
 #endif
-	      n_dly_cycle = get_delay( hls_rptg_scheme );
+                    n_dly_cycle = get_delay( hls_rptg_scheme );
+                }
             }
-          }
         } state  start
-   }
-   state start{
-    entry { printf( "asym.st:  STATE START\n"); }
-	when()  {
-	  start = 1;
-          pvPut(start);
+    }
+
+    state start{
+        entry {
+            printf( "asym.st:  STATE START\n");
+            sprintf(seq_status,"SiTART");
+            pvPut(seq_status);
+        }
+        when()  {
+            start = 1;
+            pvPut(start);
         } state stop
 
-   } 
-   state stop{
-    entry { printf( "asym.st:  STATE STOP\n"); }
-	when(delay(asym_acqg_time))  {
-	  stop = 1;
-          pvPut(stop);
-          pvGet(asym_acqg_time);
-/*          nfifo_used = asym_acqg_time*60; */
+    }
+
+    state stop{
+        entry {
+            printf( "asym.st:  STATE STOP\n");
+            sprintf(seq_status,"STOP");
+            pvPut(seq_status);
+        }
+        when(delay(asym_acqg_time))  {
+            stop = 1;
+            pvPut(stop);
+            pvGet(asym_acqg_time);
+            /*          nfifo_used = asym_acqg_time*60; */
 #ifndef NOCHANNELACCESS
-	      pvGet( hls_flip_freq ) ;
+            pvGet( hls_flip_freq ) ;
 #endif
-          nfifo_used = asym_acqg_time * hls_flip_freq * 2.0;
-          if (nfifo_used > NFIFO - LOCAL_DEPTH) {
-              nfifo_used = NFIFO - LOCAL_DEPTH;
-          }
-          printf(stderr,"asym.st-STOP:  T=%.1f F=%.4f NFIFOUSED=%d\n",asym_acqg_time,hls_flip_freq,nfifo_used);
-      } state pause
+            nfifo_used = asym_acqg_time * hls_flip_freq * 2.0;
+            if (nfifo_used > NFIFO - LOCAL_DEPTH) {
+                nfifo_used = NFIFO - LOCAL_DEPTH;
+            }
+            printf(stderr,"asym.st-STOP:  T=%.1f F=%.4f NFIFOUSED=%d\n",asym_acqg_time,hls_flip_freq,nfifo_used);
+        } state pause
+    }
 
-   } 
-   state pause {
-         entry { printf( "asym.st:  STATE PAUSE\n"); }
-         when (delay(1)) { 
-         ;
-         } state read
-   }
-   state read {
-       entry { printf( "asym.st:  STATE READ\n"); }
-       when(acqg == 0) {
-           sprintf(tmp_name,"asym_0.READ");
-           pvAssign(tmp_short, tmp_name);
-           tmp_short = 1;
-           pvPut(tmp_short);
+    state pause {
+        entry {
+            printf( "asym.st:  STATE PAUSE\n");
+            sprintf(seq_status,"PAUSE");
+            pvPut(seq_status);
+        }
+        when (delay(1)) { 
+            ;
+        } state read
+    }
 
-           sprintf(tmp_name,"asym_3.READ");
-           pvAssign(tmp_short, tmp_name);
-           tmp_short = 1;
-           pvPut(tmp_short);
-       } state find_good_pairs
-   }
+    state read {
+        entry {
+            printf( "asym.st:  STATE READ\n");
+            sprintf(seq_status,"READ");
+            pvPut(seq_status);
+        }
+        when (acqg == 0) {
+            sprintf(tmp_name,"asym_0.READ");
+            pvAssign(tmp_short, tmp_name);
+            tmp_short = 1;
+            pvPut(tmp_short);
+            sprintf(tmp_name,"asym_3.READ");
+            pvAssign(tmp_short, tmp_name);
+            tmp_short = 1;
+            pvPut(tmp_short);
+        } state find_good_pairs
+    }
 
-   state find_good_pairs {
-	when() {
-           fprintf(stderr, "asym.st:  FIND GOOD PAIRS\n");
+    state find_good_pairs {
+        when() {
+            fprintf(stderr, "asym.st:  FIND GOOD PAIRS\n");
+            sprintf(seq_status,"FINDPAIRS");
+            pvPut(seq_status);
 
-           pvGet(current_cut);
+            pvGet(current_cut);
 #ifndef NOCHANNELACCESS
-           pvGet(slm_slope);   
-           pvGet(slm_offset);
+            pvGet(slm_slope);   
+            pvGet(slm_offset);
 #endif
-           pvGet(slm_fifo);   
-           pvGet(clock_fifo);   
+            pvGet(slm_fifo);   
+            pvGet(clock_fifo);   
 
-           fprintf(stderr,"asym.st-FIND1:  %f %f\n",slm_slope,slm_offset);
-           //pr,slm_fifo,clock_fifo);
-           fprintf(stderr,"asym.st-FIND2:  %d %d\n",nfifo_used,LOCAL_DEPTH);
+            fprintf(stderr,"asym.st-FIND1:  %f %f\n",slm_slope,slm_offset);
+            fprintf(stderr,"asym.st-FIND2:  %d %d\n",nfifo_used,LOCAL_DEPTH);
 
-           i = 0;
-           n_pairs = 0;
-           while (i < nfifo_used-LOCAL_DEPTH) {
-             fprintf(stderr,"looking for pairs..index at: %i out of %i\n",i,nfifo_used);
-             i = find_pair(i);
-             if (i < nfifo_used-LOCAL_DEPTH) {
-                 asym_fifo_depth = i+3;
-                 pairs[n_pairs] = i;
-                 idx_skip[n_pairs] = get_idx_skip( i );
-                 
-                 fprintf(stderr,"%d %d %d %d\n",
-                         asym_fifo_depth,n_pairs,pairs[n_pairs],idx_skip[n_pairs]);
-                 
-                 n_pairs++;
+            i = 0;
+            n_pairs = 0;
+            fprintf(stderr,"lookging for pairs ...\n");
+            while (i < nfifo_used-LOCAL_DEPTH) {
+#ifdef FULLDEBUG
+                fprintf(stderr,"looking for pairs..index at: %i out of %i\n",i,nfifo_used);
+#endif
+                i = find_pair(i);
+                if (i < nfifo_used-LOCAL_DEPTH) {
+                    asym_fifo_depth = i+3;
+                    pairs[n_pairs] = i;
+                    idx_skip[n_pairs] = get_idx_skip( i );
+#ifdef FULLDEBUG
+                    fprintf(stderr,"%d %d %d %d\n",
+                            asym_fifo_depth,n_pairs,pairs[n_pairs],idx_skip[n_pairs]);
+#endif
+                    n_pairs++;
+                    i = i + 4;
+                } else {
+                    i++;
+                }
+            }
 
+            fprintf(stderr,"asym.st-FIND3: %d %d\n",n_pairs,asym_fifo_depth);
 
-                 i = i + 4;
-             } else {
-                 i++;
-             }
-           }
-
-           fprintf(stderr,"asym.st-FIND3: %d %d\n",n_pairs,asym_fifo_depth);
-
-           beam_sync_pairs = n_pairs-1;
-           pvPut(beam_sync_pairs);
-           pvPut(asym_fifo_depth);
+            beam_sync_pairs = n_pairs-1;
+            pvPut(beam_sync_pairs);
+            pvPut(asym_fifo_depth);
         } state get_asym
-   }
+    }
 
 
    state get_asym {
        when() {
            printf( "asym.st:  GET ASYM\n");
+           sprintf(seq_status,"GETASYM");
+           pvPut(seq_status);
            for (i_chan = 0; i_chan < NCHAN; i_chan++) {
                if (asym_chan[i_chan]) {
                    sprintf(tmp_name,"asym_calc_enable_%i",i_chan);
@@ -288,14 +297,13 @@ ss asym_calc {
                }
            }
 
-/*
-	printf("Delayed by %d cycles \n", n_dly_cycle );
-	printf("Settle time is %f \n", hls_setl_time*10.0 );
-	printf("Stable time is %f \n", hls_stbl_time*10.0 );
-	printf("n_fifo_used is %d \n", nfifo_used ); 
-	printf("n_pairs is %d \n", n_pairs );
-*/
-
+#ifdef FULLDEBUG
+           printf("Delayed by %d cycles \n", n_dly_cycle );
+           printf("Settle time is %f \n", hls_setl_time*10.0 );
+           printf("Stable time is %f \n", hls_stbl_time*10.0 );
+           printf("n_fifo_used is %d \n", nfifo_used ); 
+           printf("n_pairs is %d \n", n_pairs );
+#endif
           for (i_chan = 0; i_chan < NCHAN; i_chan++) {
              if (asym_chan[i_chan] && asym_calc_enable[i_chan]) {
                if (i_chan != 0) {
@@ -338,7 +346,6 @@ ss asym_calc {
                sum_plus = sum[1];
                sum_minus = sum[0];
 
-
                tmp_float = sum_plus;
                sprintf(tmp_name,"sum_plus_%i",i_chan);
                pvAssign(tmp_float, tmp_name);
@@ -350,11 +357,11 @@ ss asym_calc {
                pvPut(tmp_float);             
 
                q_asym = 100.*(sum_plus - sum_minus)/(sum_plus + sum_minus + 0.1);
-	       dq_asym = 100. * sqrt( ( 1. - (q_asym*q_asym)/(100.*100.) ) / (sum_plus + sum_minus + 0.1) );  
+               dq_asym = 100. * sqrt( ( 1. - (q_asym*q_asym)/(100.*100.) ) / (sum_plus + sum_minus + 0.1) );  
 
-/*	       dq_asym = 100./ sqrt( (1. - q_asym*q_asym) / (sum[1]+ sum[0] +1.) ) ; */
-/*               dq_asym = 100./(sqrt(sum[1]+ sum[0] +1)); */
-/*	printf( "Asymetry for chan %d is %f +- %f \n", i_chan,  q_asym, dq_asym );  */
+               /*	       dq_asym = 100./ sqrt( (1. - q_asym*q_asym) / (sum[1]+ sum[0] +1.) ) ; */
+               /*               dq_asym = 100./(sqrt(sum[1]+ sum[0] +1)); */
+               /*	printf( "Asymetry for chan %d is %f +- %f \n", i_chan,  q_asym, dq_asym );  */
 
                tmp_float = q_asym;
                sprintf(tmp_name,"q_asym_%i",i_chan);
@@ -366,25 +373,28 @@ ss asym_calc {
                pvAssign(tmp_float, tmp_name);
                pvPut(tmp_float);             
 
-            }
+             }
           }
           pvGet(slm_minus_cnts);
           pvGet(slm_plus_cnts);
           pvGet(clk_minus_cnts);
           pvGet(clk_plus_cnts);
           if (clk_minus_cnts + clk_plus_cnts > 0 && slm_slope > 0) {
-            beam_current = (slm_minus_cnts + slm_plus_cnts)/(clk_minus_cnts + clk_plus_cnts);
-            beam_current = (beam_current - slm_offset)/slm_slope;
-            if (beam_current > current_cut) { 
-                pvGet(unix_stamp);	
-                asym_fdbk_stamp = unix_stamp;
-                pvPut(asym_fdbk_stamp);
-/*	        printf("updating values: unix_stamp %f fdbk_stamp %f\n",unix_stamp, asym_fdbk_stamp); */
-            }
+              beam_current = (slm_minus_cnts + slm_plus_cnts)/(clk_minus_cnts + clk_plus_cnts);
+              beam_current = (beam_current - slm_offset)/slm_slope;
+              if (beam_current > current_cut) { 
+                  pvGet(unix_stamp);	
+                  asym_fdbk_stamp = unix_stamp;
+                  pvPut(asym_fdbk_stamp);
+                  /* printf("updating values: unix_stamp %f fdbk_stamp %f\n",unix_stamp, asym_fdbk_stamp); */
+              }
           }
-        } state init
+       } state init
    }
 }
+
+
+
 /* end of states, what follows are C functions used by states */
 %{
 int getbits(unsigned x, int p, int n) {
@@ -396,7 +406,6 @@ int getbits(unsigned x, int p, int n) {
    index where the pair starts
    in the array */
 
-/* #define LOCAL_DEPTH (16)     	 */
 int find_pair(int index) {
      int sync[LOCAL_DEPTH];
      int clock[LOCAL_DEPTH];
@@ -406,7 +415,7 @@ int find_pair(int index) {
      int local_index;
      int next_pair;
      int beam_on;
-     float  min_slm_count;
+     float min_slm_count;
 
      next_pair = -1;
      local_index = index;
@@ -420,21 +429,20 @@ int find_pair(int index) {
              slm[i1]   = getbits(slm_fifo[local_index+i1],23,24);  /* slm counts */
          }
 
-         /*       printf("find_pair: local_index: %i slm[1]: %i\n",local_index,slm[1]); */
+         // printf("find_pair: local_index: %i slm[1]: %i\n",local_index,slm[1]);
 
          beam_on = 1;
-         /* The minimum counts is normalized to 20 at 240 Hz assuming ~5nA beam*/ 
-         min_slm_count = 20. * 240. /  hls_flip_freq ; 
-         /*       min_slm_count = 0.0;	*/
 
-         min_slm_count=0;
-/*
+#ifndef IGNOREBEAM
+         // The minimum counts is normalized to 20 at 240 Hz assuming ~5nA beam
+         min_slm_count = 20. * 240. /  hls_flip_freq ; 
          for (i1=1; i1<LOCAL_DEPTH; i1=i1+2) {
              if (slm[i1] < min_slm_count ) {  
                  beam_on = 0;     
              } 
-         } 
-*/
+         }
+#endif
+
 
          /*
             printf(" s: ");
@@ -509,7 +517,9 @@ int get_idx_skip( unsigned idx ) {
     long clock1;
     clock0 = getbits(clock_fifo[idx+0],23,24);  /* 10MHz on first  interval */
     clock1 = getbits(clock_fifo[idx+1],23,24);  /* 10MHz on second interval */
+#ifdef FULLDEBUG
     printf("get_idx_skip: clock0/1 = %i/%i\n",clock0,clock1);
+#endif
     if( clock0 > clock1 ) {
         i_long = 0;
     } else {
