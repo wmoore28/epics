@@ -63,7 +63,7 @@ dbLoadRecords("db/hallb_collimator.db")
 #dbLoadRecords("db/motor.db","motor_name=harp_2H01, card=0, slot=0, srev=2000, urev=2.54, direction=Pos, velo=0.5, accl=0.01")
 #dbLoadRecords("db/motor.db","motor_name=harp_2H01, card=0, slot=0, srev=10000, urev=2.54, direction=Pos, velo=0.5, accl=0.01")
 dbLoadRecords("db/motor.db","motor_name=harp_2H01, card=0, slot=0, srev=2000, urev=0.508, direction=Pos, velo=0.5, accl=0.01")
-dbLoadRecords("db/scan.db","motor_name=harp_2H01, start_at=4.2, end_at=8.4, start_speed=0.5, scan_speed=0.04, acq_time=0.1")
+dbLoadRecords("db/scan.db","motor_name=harp_2H01, start_at=3.0, end_at=10.5, start_speed=0.5, scan_speed=0.04, acq_time=0.1")
 
 ## IOC monitoring, etc
 dbLoadRecords("$(DEVIOCSTATS)/db/iocAdminVxWorks.db", "IOC=iocclassc1")
@@ -102,9 +102,9 @@ iocInit "../resource.def"
 
 ## Joerger
 ## removed for rafopar
-#seq &scaler_c_restart
-#seq &scaler_d_restart
-#seq &scaler_e_restart
+seq &scaler_c_restart
+seq &scaler_d_restart
+seq &scaler_e_restart
 
 ## Motors
 seq &reset_motor, "name=up_2c21_reset, motor_name=harp_2c21"
