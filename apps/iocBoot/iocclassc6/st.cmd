@@ -88,7 +88,7 @@ dbLoadRecords("db/asym_scaler_common.db")
 dbLoadRecords("db/asym_fdbk.db")
 dbLoadRecords("db/polarization.db")
 
-dbLoadRecords("moeller_coincaccid_ratio.db")
+dbLoadRecords("db/moeller_coincaccid_ratio.db")
 
 cd startup
 iocInit
