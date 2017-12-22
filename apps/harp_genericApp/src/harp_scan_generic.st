@@ -516,7 +516,7 @@ ss harp_scan_snc {
 /*close the file  and scp to mcc*/
       if ((fd > 0) && (fd != ioGlobalStdGet(1)) ) {
          close(fd);
-         scp_clon01(shortname, motor_name, 5);
+         //scp_clon01(shortname, motor_name, 5);
       }
 
      } state restore_hardware
