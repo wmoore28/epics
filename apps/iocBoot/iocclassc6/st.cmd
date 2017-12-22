@@ -44,6 +44,12 @@ dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768,CHAN=5,PORT=STRKHEL")
 dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768,CHAN=6,PORT=STRKHEL")
 dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768,CHAN=7,PORT=STRKHEL")
 dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768,CHAN=8,PORT=STRKHEL")
+
+#dbLoadRecords("db/asym_scaler_macro-swap.db","FIFO=32768,CHAN=3,PORT=STRKHEL,CHAN2=8")
+#dbLoadRecords("db/asym_scaler_macro-swap.db","FIFO=32768,CHAN=6,PORT=STRKHEL,CHAN2=7")
+#dbLoadRecords("db/asym_scaler_macro-swap.db","FIFO=32768,CHAN=7,PORT=STRKHEL,CHAN2=6")
+#dbLoadRecords("db/asym_scaler_macro-swap.db","FIFO=32768,CHAN=8,PORT=STRKHEL,CHAN2=3")
+
 dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768,CHAN=9,PORT=STRKHEL")
 dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768,CHAN=10,PORT=STRKHEL")
 dbLoadRecords("db/asym_scaler_macro.db","FIFO=32768,CHAN=11,PORT=STRKHEL")
@@ -82,6 +88,7 @@ dbLoadRecords("db/asym_scaler_common.db")
 dbLoadRecords("db/asym_fdbk.db")
 dbLoadRecords("db/polarization.db")
 
+dbLoadRecords("moeller_coincaccid_ratio.db")
 
 cd startup
 iocInit
