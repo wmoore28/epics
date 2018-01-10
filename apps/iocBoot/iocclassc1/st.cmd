@@ -121,3 +121,7 @@ seq &reset_motor, "name=h_collimator_reset, motor_name=collimator"
 
 #seq &moeller_target
 
+# for alarms:
+dbpf "iocclassc1:FD_FREE.LOLO", "7"
+dbpf "iocclassc1:FD_FREE.LOW", "9"
+
