@@ -43,7 +43,7 @@ ss scaler_e_restart
 	printf("restarting\n");
 	sc_CNT  = 1;
 	sc_mode = 1;
-	sc_display_mode = 2;  /* 1=hertz mode 2=norm mode */
+	sc_display_mode = 1;  /* 1=hertz mode 2=norm mode */
 	sc_rate = 10;
 	sc_TP = 2;
 	pvPut(sc_display_mode);
