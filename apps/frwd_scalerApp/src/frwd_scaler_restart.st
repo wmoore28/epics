@@ -4,7 +4,7 @@ option +c;
 
 #define SLEEP_TIME                 60  /* 1 minute  */
 #define SLEEP_TIME_WRONG_MODE     300  /* 5 minutes */
-#define DEFAULT_DISPLAY_MODE        2  /* 1=hertz 2=norm 0=raw */
+#define DEFAULT_DISPLAY_MODE        1  /* 1=hertz 2=norm 0=raw */
 
 
 short sc_CNT;
