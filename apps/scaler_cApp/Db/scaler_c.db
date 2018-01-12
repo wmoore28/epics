@@ -194,7 +194,8 @@ grecord(transform,"scaler_c_cts4")
 
 	field(CLCH,"(a=1)?c/f:c")
 	field(CLCI,"(a=1)?d/f:d")
-	field(CLCJ,"(a=1)?e/(10*f):e")
+#field(CLCJ,"(a=1)?e/(10*f):e")
+	field(CLCJ,"(a=1)?e/f:e")
 
 	field(INPA,"display_c_mode.RVAL NPP NMS")
 	field(INPF,"scaler_c.T NPP NMS")
