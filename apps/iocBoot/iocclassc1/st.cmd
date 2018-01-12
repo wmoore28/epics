@@ -102,9 +102,9 @@ iocInit "../resource.def"
 
 ## Joerger
 ## removed for rafopar
-seq &scaler_c_restart
-seq &scaler_d_restart
-seq &scaler_e_restart
+#seq &scaler_c_restart
+#seq &scaler_d_restart
+#seq &scaler_e_restart
 
 ## Motors
 seq &reset_motor, "name=up_2c21_reset, motor_name=harp_2c21"

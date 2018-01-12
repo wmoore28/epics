@@ -135,8 +135,8 @@ dbpf "display_c_mode.VAL","Hertz"
 seq &sixtyHz
 
 ## removed for rafopar
-seq &scaler_restart
-seq &frwd_scaler_restart
+#seq &scaler_restart
+#seq &frwd_scaler_restart
 
 ## Motors
 seq &reset_motor, "name=beam_stop_reset, motor_name=beam_stop"
