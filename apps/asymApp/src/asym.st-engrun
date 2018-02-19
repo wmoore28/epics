@@ -1,17 +1,11 @@
 program asym
 option +c;
 
-#define NFIFO 32768
-#define NCHAN 25
-#define LOCAL_DEPTH 64     	
+#include "asym.h"
 
-#define FULLDEBUG 0
-#define CHANNELACCESS 0
-#define DOSLMPEDESTAL 0
-
-// minimum SLM rate (Hz) for including in asymmetry
-//#define SLMMINIMUM (20.*240.)
-#define SLMMINIMUM 0
+#define NOCHANNELACCESS 1
+#define IGNOREBEAM 1
+//#define FULLDEBUG 1
 
 %%extern int getbits(unsigned , int, int);
 %%extern int get_idx_skip( unsigned idx );
@@ -52,7 +46,6 @@ monitor acqg;
 unsigned int clock_fifo[NFIFO];
 assign clock_fifo to "asym_0";
 
-unsigned int slm_index=3;
 unsigned int slm_fifo[NFIFO];
 assign slm_fifo to "asym_3";
 
@@ -62,11 +55,10 @@ unsigned int hls_rptg_scheme=0; // 0 windows is HELDELAYd=0
 double hls_stbl_time=33330;
 double hls_setl_time=500;
 double hls_flip_freq=29.5596;
+double slm_offset=0;
+double slm_slope=1;
 
-double slm_offset=466;
-double slm_slope=15968;
-
-#if CHANNELACCESS
+#ifndef NOCHANNELACCESS
 
 // Reporting Delay in helicity cycle
 // assign hls_rptg_scheme to "HELG0DELAYd";
@@ -85,6 +77,7 @@ assign slm_offset to "slm_offset";
 assign slm_slope to "slm_slope";
 
 #endif
+
 
 double asym_acqg_time;
 assign asym_acqg_time to "asym_acqg_time";
@@ -157,7 +150,7 @@ ss asym_calc {
             pvPut(seq_status);
         }
         when () {
-#if CHANNELACCESS
+#ifndef NOCHANNELACCESS
             pvGet( hls_setl_time );
             pvGet( hls_stbl_time );
 #endif
@@ -169,7 +162,7 @@ ss asym_calc {
                     pvPut(tmp_short);
                     /* find number of delayed cycles  */ 
                     /* for helicty signals versus real data */
-#if CHANNELACCESS
+#ifndef NOCHANNELACCESS
                     pvGet( hls_rptg_scheme ) ;
 #endif
                     n_dly_cycle = get_delay( hls_rptg_scheme );
@@ -201,15 +194,15 @@ ss asym_calc {
             stop = 1;
             pvPut(stop);
             pvGet(asym_acqg_time);
-#if CHANNELACCESS
+            /*          nfifo_used = asym_acqg_time*60; */
+#ifndef NOCHANNELACCESS
             pvGet( hls_flip_freq ) ;
 #endif
             nfifo_used = asym_acqg_time * hls_flip_freq * 2.0;
             if (nfifo_used > NFIFO - LOCAL_DEPTH) {
                 nfifo_used = NFIFO - LOCAL_DEPTH;
             }
-            printf(stderr,"asym.st-STOP:  T=%.1f F=%.4f NFIFOUSED=%d\n",
-                    asym_acqg_time,hls_flip_freq,nfifo_used);
+            printf(stderr,"asym.st-STOP:  T=%.1f F=%.4f NFIFOUSED=%d\n",asym_acqg_time,hls_flip_freq,nfifo_used);
         } state pause
     }
 
@@ -249,7 +242,7 @@ ss asym_calc {
             pvPut(seq_status);
 
             pvGet(current_cut);
-#if CHANNELACCESS
+#ifndef NOCHANNELACCESS
             pvGet(slm_slope);   
             pvGet(slm_offset);
 #endif
@@ -263,7 +256,7 @@ ss asym_calc {
             n_pairs = 0;
             fprintf(stderr,"lookging for pairs ...\n");
             while (i < nfifo_used-LOCAL_DEPTH) {
-#if FULLDEBUG
+#ifdef FULLDEBUG
                 fprintf(stderr,"looking for pairs..index at: %i out of %i\n",i,nfifo_used);
 #endif
                 i = find_pair(i);
@@ -271,7 +264,7 @@ ss asym_calc {
                     asym_fifo_depth = i+3;
                     pairs[n_pairs] = i;
                     idx_skip[n_pairs] = get_idx_skip( i );
-#if FULLDEBUG
+#ifdef FULLDEBUG
                     fprintf(stderr,"%d %d %d %d\n",
                             asym_fifo_depth,n_pairs,pairs[n_pairs],idx_skip[n_pairs]);
 #endif
@@ -305,7 +298,7 @@ ss asym_calc {
                }
            }
 
-#if FULLDEBUG
+#ifdef FULLDEBUG
            printf("Delayed by %d cycles \n", n_dly_cycle );
            printf("Settle time is %f \n", hls_setl_time*10.0 );
            printf("Stable time is %f \n", hls_stbl_time*10.0 );
@@ -331,7 +324,6 @@ ss asym_calc {
                    if ( ( pairs[i_pair] + n_dly_cycle*2 ) < ( nfifo_used - LOCAL_DEPTH ) ) {
                        i_skip =  idx_skip[i_pair];
 
-
                        for (i=i_skip; i<4; i=i+2) { 
                            raw_value    = tmp_fifo[pairs[i_pair]+i];
                            raw_value_d  = tmp_fifo[pairs[i_pair]+i + n_dly_cycle*2];
@@ -342,14 +334,7 @@ ss asym_calc {
                            if ( i==(i_skip+0) ) hls_1 = helicity_bit ;
                            if ( i==(i_skip+2) ) hls_2 = helicity_bit ;	
 
-                           sum[helicity_bit] += value;
-          
-                           // pedestal-subtraction for SLM:
-                           if (DOSLMPEDESTAL && i_chan==slm_index) {
-                               raw_value = clock_fifo[pairs[i_pair]+i];
-                               value = getbits(raw_value,23,24);
-                               sum[helicity_bit] -= slm_offset*value/1e7;
-                           }
+                           sum[helicity_bit] = sum[helicity_bit] + value;
                        }
                        if ( hls_1 == hls_2 ) {
                            printf(" Illegal in pair #  %d , FIFO #  %d  : %d  %d \n", 
@@ -375,23 +360,22 @@ ss asym_calc {
                q_asym = 100.*(sum_plus - sum_minus)/(sum_plus + sum_minus + 0.1);
                dq_asym = 100. * sqrt( ( 1. - (q_asym*q_asym)/(100.*100.) ) / (sum_plus + sum_minus + 0.1) );  
 
+               /*	       dq_asym = 100./ sqrt( (1. - q_asym*q_asym) / (sum[1]+ sum[0] +1.) ) ; */
+               /*               dq_asym = 100./(sqrt(sum[1]+ sum[0] +1)); */
+               /*	printf( "Asymetry for chan %d is %f +- %f \n", i_chan,  q_asym, dq_asym );  */
+
                tmp_float = q_asym;
                sprintf(tmp_name,"q_asym_%i",i_chan);
                pvAssign(tmp_float, tmp_name);
                pvPut(tmp_float);             
 
-               // just set error to zero if we didn't really measure anything:
-               if (q_asym>1e-8) tmp_float = dq_asym;
-               else             tmp_float = 0;
-
+               tmp_float = dq_asym;
                sprintf(tmp_name,"d_asym_%i",i_chan);
                pvAssign(tmp_float, tmp_name);
                pvPut(tmp_float);             
 
              }
           }
-
-          // update feedback timestamp if beam:
           pvGet(slm_minus_cnts);
           pvGet(slm_plus_cnts);
           pvGet(clk_minus_cnts);
@@ -403,9 +387,9 @@ ss asym_calc {
                   pvGet(unix_stamp);	
                   asym_fdbk_stamp = unix_stamp;
                   pvPut(asym_fdbk_stamp);
+                  /* printf("updating values: unix_stamp %f fdbk_stamp %f\n",unix_stamp, asym_fdbk_stamp); */
               }
           }
-
        } state init
    }
 }
@@ -446,21 +430,42 @@ int find_pair(int index) {
              slm[i1]   = getbits(slm_fifo[local_index+i1],23,24);  /* slm counts */
          }
 
+         // printf("find_pair: local_index: %i slm[1]: %i\n",local_index,slm[1]);
+
          beam_on = 1;
 
-         if (SLMMINIMUM>0) {
-             min_slm_count = (float)SLMMINIMUM /  hls_flip_freq ; 
-             for (i1=1; i1<LOCAL_DEPTH; i1=i1+2) {
-                 if (slm[i1] < min_slm_count ) {  
-                     beam_on = 0;     
-                 } 
-             }
+#ifndef IGNOREBEAM
+         // The minimum counts is normalized to 20 at 240 Hz assuming ~5nA beam
+         min_slm_count = 20. * 240. /  hls_flip_freq ; 
+         for (i1=1; i1<LOCAL_DEPTH; i1=i1+2) {
+             if (slm[i1] < min_slm_count ) {  
+                 beam_on = 0;     
+             } 
          }
+#endif
 
-         //printf(" s: "); for ( i1 = 0; i1 < LOCAL_DEPTH; i1++ ) printf(" %8d ", sync[i1] ) ; printf("\n");
-         //printf(" h: "); for ( i1 = 0; i1 < LOCAL_DEPTH; i1++ ) printf(" %8d ", hls[i1] );   printf("\n");
-         //printf(" c: "); for ( i1 = 0; i1 < LOCAL_DEPTH; i1++ ) printf(" %8d ", clock[i1] ); printf("\n");
-         //printf(" m: "); for ( i1 = 0; i1 < LOCAL_DEPTH; i1++ ) printf(" %8d ", slm[i1] );   printf("\n");
+
+         /*
+            printf(" s: ");
+            for ( i1 = 0; i1 < LOCAL_DEPTH; i1++ )
+            printf(" %8d ", sync[i1] );
+            printf("\n");
+
+            printf(" h: ");
+            for ( i1 = 0; i1 < LOCAL_DEPTH; i1++ )
+            printf(" %8d ", hls[i1] );
+            printf("\n");
+
+            printf(" c: ");
+            for ( i1 = 0; i1 < LOCAL_DEPTH; i1++ )
+            printf(" %8d ", clock[i1] );
+            printf("\n");
+
+            printf(" m: ");
+            for ( i1 = 0; i1 < LOCAL_DEPTH; i1++ )
+            printf(" %8d ", slm[i1] );
+            printf("\n");
+            */
 
          if ( 1 && 
 
@@ -488,7 +493,7 @@ int find_pair(int index) {
 
              /* These cuts are here because time interval can vary at ~ 0.1% level */
              abs( clock[1] - clock[3] ) < ( 0.005 * abs( clock[1] + clock[3] ) ) && 
-             abs( clock[0] - clock[2] ) < ( 0.005 * abs( clock[0] + clock[2] ) ) && 
+                 abs( clock[0] - clock[2] ) < ( 0.005 * abs( clock[0] + clock[2] ) ) && 
 
                  beam_on == 1)  {
                      next_pair = local_index;
@@ -497,7 +502,10 @@ int find_pair(int index) {
                  }
 
      }
-     if (next_pair == -1) next_pair = NFIFO;
+     if (next_pair == -1) {
+         next_pair = NFIFO;
+     }
+     /*	printf("Next pair is : %d \n", next_pair ); */
      return next_pair;
 }
 
@@ -513,7 +521,11 @@ int get_idx_skip( unsigned idx ) {
 #ifdef FULLDEBUG
     printf("get_idx_skip: clock0/1 = %i/%i\n",clock0,clock1);
 #endif
-    i_long = (clock0>clock1) ? 0 : 1; 
+    if( clock0 > clock1 ) {
+        i_long = 0;
+    } else {
+        i_long = 1;
+    }
     return i_long;
 }
 
