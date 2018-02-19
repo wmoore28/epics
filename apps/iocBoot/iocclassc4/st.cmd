@@ -92,8 +92,9 @@ dbLoadRecords("db/stopper.db")
 dbLoadRecords("$(DEVIOCSTATS)/db/iocAdminVxWorks.db", "IOC=iocclassc4")
 #dbLoadRecords("$(AUTOSAVE)/asApp/Db/save_restoreStatus.db", "P=iocclassc4:")
 
-dbLoadRecords("db/scaler-ped.db","P=fcup_offset,VAL=scalerS2b,REF=IPM2C21A,MIN=0.1,N=10")
-dbLoadRecords("db/scaler-ped.db","P=slm_offset,VAL=scalerS15b,REF=IPM2C21A,MIN=0.1,N=10")
+# currently running in softioc for testing:
+#dbLoadRecords("db/scaler-ped.db","P=fcup_offset,VAL=scalerS2b,REF=IPM2C21A,MIN=0.1,N=10")
+#dbLoadRecords("db/scaler-ped.db","P=slm_offset,VAL=scalerS15b,REF=IPM2C21A,MIN=0.1,N=10")
 
 cd startup
 
@@ -103,14 +104,12 @@ cd startup
 iocInit "../resource.def"
 
 ## hard-coded fcup calibration, used to calculate scaler_calc1
-## dbpf "fcup_offset","200."
-## dbpf "fcup_slope","905.937"
 
-dbpf "fcup_offset","100."
+dbpf "fcup_offset","199.9"
 dbpf "fcup_slope","906.2"
 
-dbpf "slm_offset","-4279.0"
-dbpf "slm_slope","11366.0"
+dbpf "slm_offset","-1301.0"
+dbpf "slm_slope","15968.5"
 
 ## Added these three line. to start counting after restarting IOC
 dbpf "scaler.CNT","1"

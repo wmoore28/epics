@@ -1,60 +1,123 @@
 
-# P   = pedestal PV to write
-# R   = not required
-# VAL = input raw value used to calculate pedestal
-# REF = reference PV, do not calculate pedestal unless this is small
-# MIN = minimum value for reference PV
-# N   = number of samples in pedestal calculation
- 
-# e.g.
-# P   = fcup_offset
-# VAL = scaler.S2
-# REF = IPM2C21A
-# MIN = 0.1
-# N   = 10
+# OUT    = pedestal PV to write
+# N      = number of samples to average for pedestal
+# RAW    = raw scaler counts PV for which to calculate pedestal
+# RAWMAX = maximum counts for including in pedestal calculation
+# REF    = reference PV
+# REFMAX = maximum reference allowed for pedestal calculation
 
-record(calcout,"$(P)$(R=)_calcout") {
+#######################################
+# testing only:
+#record(ai,"$(OUT)") {}
+#record(ai,"$(REF)") {
+#    field(PINI,"1")
+#    field(VAL,"99999")
+#}
+#record(ai,"$(RAW)") {}
+#######################################
+
+record(compress,"$(P)$(R=):bpm_circbuff") {
     field(SCAN,"1 second")
-    field(INPA,"$(VAL)")
+    field(INP,"$(REF)")
+    field(ALG,"Circular Buffer")
+    field(NSAM,"9")
+    field(N,"9")
+    field(FLNK,"$(P)$(R=):raw_circbuff.PROC")
+}
+record(compress,"$(P)$(R=):raw_circbuff") {
+    field(INP,"$(RAW)")
+    field(ALG,"Circular Buffer")
+    field(NSAM,"5")
+    field(N,"5")
+    field(FLNK,"$(P)$(R=):bpm_circbuff2.PROC")
+}
+record(compress,"$(P)$(R=):bpm_circbuff2") {
+    field(INP,"$(REF)")
+    field(ALG,"Circular Buffer")
+    field(NSAM,"4")
+    field(N,"4")
+    field(FLNK,"$(P)$(R=):4bpm_max.PROC")
+}
+record(compress,"$(P)$(R=):4bpm_max") {
+    field(INP,"$(P)$(R=):bpm_circbuff")
+    field(ALG,"N to 1 High Value")
+    field(NSAM,"1")
+    field(N,"4")
+    field(FLNK,"$(P)$(R=):raw.PROC")
+}
+record(compress,"$(P)$(R=):raw") {
+    field(INP,"$(P)$(R=):raw_circbuff")
+    field(ALG,"N to 1 Average")
+    field(NSAM,"1")
+    field(N,"1")
+    field(FLNK,"$(P)$(R=):4bpm_max2.PROC")
+}
+record(compress,"$(P)$(R=):4bpm_max2") {
+    field(INP,"$(P)$(R=):bpm_circbuff2")
+    field(ALG,"N to 1 High Value")
+    field(NSAM,"1")
+    field(N,"4")
+    field(FLNK,"$(P)$(R=):calcout.PROC")
+}
+record(calcout,"$(P)$(R=):calcout") {
+    field(INPA,"$(RAW)")
     field(INPB,"$(REF)")
-    field(INPC,"$(MIN)")
-    field(CALC,"B<C ? 1 : 0")
+    field(INPC,"$(REFMAX)")
+    field(INPD,"$(RAWMAX=300)")
+    field(INPE,"$(P)$(R=):4bpm_max")
+    field(INPF,"$(P)$(R=):4bpm_max2")
+    field(INPG,"$(P)$(R=):raw")
+    field(CALC,"( B<C && E<C && F<C && (D<=0 || A<D) ) ? 1 : 0")
     field(OOPT,"When Non-zero")
-    field(OCAL,"A")
+    field(OCAL,"1")
     field(DOPT,"Use OCAL")
-    field(OUT, "$(P)$(R=)_previous PP")
+    field(OUT,"$(P)$(R=):circbuff.PROC PP")
 }
-
-record(ai,"$(P)$(R=)_previous") {
-    field(FLNK,"$(P)$(R=)_circbuff.PROC PP")
-}
-
-record(compress,"$(P)$(R=)_circbuff") {
-    field(INP,"$(P)$(R=)_previous")
+record(compress,"$(P)$(R=):circbuff") {
+    field(INP,"$(P)$(R=):raw")
     field(ALG,"Circular Buffer")
     field(NSAM,"$(N)")
     field(N,"$(N)")
-    field(FLNK,"$(P)$(R=)_average.PROC PP")
+    field(FLNK,"$(P)$(R=):average.PROC PP")
 }
-
-record(compress,"$(P)$(R=)_average") {
-    field(INP,"$(P)$(R=)_circbuff")
+record(compress,"$(P)$(R=):average") {
+    field(INP,"$(P)$(R=):circbuff")
     field(ALG,"N to 1 Average")
-    field(NSAM,1)
+    field(NSAM,"1")
     field(N,"$(N)")
-    field(FLNK,"$(P)$(R=)_write PP")
+    field(FLNK,"$(P)$(R=):write PP")
+    info(autosaveFields_pass0,"VAL")
 }
-
-record(seq,"$(P)$(R=)_write") {
+record(ao,"$(P)$(R=):avg") {
+    field(OMSL,"closed_loop")
+    field(DOL,"$(P)$(R=):average CPP")
+    field(HIGH,"$(RAWMAX)")
+    field(HSV,"MAJOR")
+    info(autosaveFields_pass0,"HIGH")
+}
+record(seq,"$(P)$(R=):write") {
     field(DISV,0)
-    field(SDIS,"$(P)$(R=)_enable.VAL")
-    field(DOL1,"$(P)$(R=)_average")
-    field(LNK1,"$(P) PP")
+    field(SDIS,"$(P)$(R=):enable.VAL")
+    field(DOL1,"$(P)$(R=):average")
+    field(LNK1,"$(OUT) PP")
+    field(DOL2,"1")
+    field(LNK2,"$(P)$(R=):changed PP")
 }
-
-record(bi,"$(P)$(R=)_enable") {
+record(bo,"$(P)$(R=):changed") {
+    field(ZNAM,"Idle")
+    field(ONAM,"Active")
+    field(VAL,"0")
+    field(PINI,"0")
+    field(HIGH,"0.5")
+}
+record(bi,"$(P)$(R=):enable") {
     field(ZNAM,"Disabled")
     field(ONAM,"Enabled")
+    field(ZSV,"MAJOR")
+    field(OSV,"NO_ALARM")
     field(VAL,"0")
+    field(PINI,"1")
+    info(autosaveFields,"VAL")
 }
+
 
