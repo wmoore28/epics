@@ -87,6 +87,7 @@ dbLoadRecords("db/moller_setup.db")
 dbLoadRecords("db/asym_scaler_common.db")
 dbLoadRecords("db/asym_fdbk.db")
 dbLoadRecords("db/polarization.db")
+dbLoadRecords("db/asym_file.db")
 
 dbLoadRecords("db/moeller_coincaccid_ratio.db")
 
@@ -100,6 +101,7 @@ dbpf "asym_ReadAll.SCAN","Passive"
 dbpf "asym_InputMode","Mode 0"
 dbpf "asym_ChannelAdvance","External"
 dbpf "asym_Prescale","0"
+dbpf "asym_acqg_time.DRVL","1"
 
 seq &SIS38XX_SNL_asym, "P=asym_, R=, NUM_SIGNALS=25, FIELD=READ"
 

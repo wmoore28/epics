@@ -16,6 +16,7 @@ include $(TOP)/configure/CONFIG
 ##DB += user.substitutions
 ##DB += userHost.substitutions
 
+DB += asym_file.db
 DB += asym_fdbk.db
 DB += asym_scaler_common.db
 DB += asym_scaler.db

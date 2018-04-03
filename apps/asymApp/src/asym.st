@@ -5,9 +5,9 @@ option +c;
 #define NCHAN 25
 #define LOCAL_DEPTH 64     	
 
-#define FULLDEBUG 0
-#define CHANNELACCESS 0
-#define DOSLMPEDESTAL 0
+//#define FULLDEBUG
+//#define CHANNELACCESS
+//#define DOSLMPEDESTAL
 
 // minimum SLM rate (Hz) for including in asymmetry
 //#define SLMMINIMUM (20.*240.)
@@ -26,6 +26,11 @@ assign seq_status to "asym_seq_status";
 
 long current_cut;
 assign current_cut to "HB:Q_THRESHOLD";
+
+int coinc_minus_cnts; assign coinc_minus_cnts to "sum_minus_5";
+int coinc_plus_cnts;  assign coinc_plus_cnts to "sum_plus_5";
+int accid_minus_cnts; assign accid_minus_cnts to "sum_minus_6";
+int accid_plus_cnts;  assign accid_plus_cnts to "sum_plus_6";
 
 int slm_minus_cnts;
 assign slm_minus_cnts to "sum_minus_3";
@@ -63,10 +68,10 @@ double hls_stbl_time=33330;
 double hls_setl_time=500;
 double hls_flip_freq=29.5596;
 
-double slm_offset=466;
+double slm_offset=595;
 double slm_slope=15968;
 
-#if CHANNELACCESS
+#ifdef CHANNELACCESS
 
 // Reporting Delay in helicity cycle
 // assign hls_rptg_scheme to "HELG0DELAYd";
@@ -97,11 +102,29 @@ double asym_fifo_depth;
 assign asym_fifo_depth to "asym_fifo_depth";
 
 double unix_stamp;
-//assign unix_stamp to "classc1:unixtime";
 assign unix_stamp to "iocclassc6:GTIM_TIME";
 
 double asym_fdbk_stamp;
 assign asym_fdbk_stamp to "HB:Q_STAMP"; 
+
+
+/////////////////////////////////////////////
+// THIS IS FOR RECORDING A DATA FILE:
+string fname; assign fname to "asym_filename";
+int fd;
+int isFileOpen=0;
+char cfname[1024];
+char shortname[1024];
+int moller_reset;      assign moller_reset to "moller_reset";
+int moller_accumulate; assign moller_accumulate to "moller_accumulate";
+monitor asym_fdbk_stamp;
+monitor moller_reset;
+monitor moller_accumulate;
+evflag ev_daqReadFifo;  sync asym_fdbk_stamp   to ev_daqReadFifo;
+evflag ev_daqReset;     sync moller_reset      to ev_daqReset;
+evflag ev_daqStartStop; sync moller_accumulate to ev_daqStartStop;
+/////////////////////////////////////////////
+
 
 int asym_calc_enable[16];
 
@@ -147,6 +170,127 @@ int n_dly_cycle;
 %%                    1, 0, 0, 0,
 %%                    0, 0, 0, 0};
 
+%{
+int open_file(char *fname, char *shortname)
+{
+    int fd;
+    time_t calTime;
+    struct tm *lclTimePtr;
+    char fileDate[18];
+    char thename[150];
+
+    time( &calTime );
+    lclTimePtr = localtime( &calTime );
+    // add an hour because of DST and ioc time one hour behind
+    lclTimePtr->tm_hour++;
+
+    fileDate[0] = '\0'; 
+    thename[0] = '\0';
+    shortname[0] ='\0'; 
+    strftime(&fileDate[0], 18, "%m-%d-%y_%H:%M:%S", lclTimePtr);
+    strcpy( fname, fileDate );
+    strcpy(shortname, "moeller_");
+    strcat(shortname, fname);
+    strcat(shortname, ".txt" );
+    strcpy(thename, "/home/epics/DATA/MOELLER/");
+    strcat(thename, shortname);
+    printf("creating : %s\n",thename);
+    fd = creat(thename,0);
+    if (fd == ERROR)
+    {
+        printf("Can't open %s\n",thename);
+        fd = ioGlobalStdGet(1);
+    }
+    printf("fd = %d\n",fd);
+    return fd;
+}
+}%
+
+
+// run a separate state code just for recording data to a file
+// this works based only on listening for event updates, and
+// there may be some synchronicity issues if acquisition time
+// is small, i.e. less than few seconds
+ss asym_file {
+   
+    // start by just clearing all events:
+    state init {
+        when () {
+            efClear(ev_daqReadFifo);
+            efClear(ev_daqReset);
+            efClear(ev_daqStartStop);
+        } state listen
+    }
+
+    state listen {
+       
+        // user clicked "Reset", so close file and open a new one:
+        when (efTestAndClear(ev_daqReset) && moller_reset==1) {
+        } state closeAndOpenFile
+
+        // user clicked "Start", so close file and open a new one:
+        when (efTest(ev_daqStartStop) && moller_accumulate==0) {
+            efClear(ev_daqStartStop);
+        } state closeAndOpenFile
+        
+        // user clicked "Stop", so close file:
+        when (efTest(ev_daqStartStop) && moller_accumulate==1) {
+            efClear(ev_daqStartStop);
+        } state closeFile
+        
+        // timestamp on moller DAQ got updated, so record data to file:
+        when (efTestAndClear(ev_daqReadFifo)) {
+        } state appendFile 
+    }
+    
+    state openFile {
+        when (delay(1)) {
+            printf("asym_file:  OPENING FILE ...\n");
+            fd = open_file(&cfname,&shortname);
+            strcpy(fname,shortname);
+            pvPut(fname);
+            isFileOpen=1;
+        } state listen
+    }
+
+    state closeFile {
+        when (delay(1)) {
+            if (isFileOpen && fd>0 && fd!=ioGlobalStdGet(1)) {
+                printf("asym_file:  CLOSING FILE ...\n");
+                close(fd);
+                isFileOpen=0;
+            }
+        } state listen
+    }
+
+    state closeAndOpenFile {
+        when (delay(1)) {
+            if (isFileOpen && fd>0 && fd!=ioGlobalStdGet(1)) {
+                printf("asym_file:  CLOSING FILE ...\n");
+                close(fd);
+                isFileOpen=0;
+            }
+        } state openFile
+    }
+
+    state appendFile {
+        when () {
+            if (isFileOpen && fd>0 && fd!=ioGlobalStdGet(1)) {
+                printf("asym_file:  APPENDING FILE ...\n");
+                pvGet(coinc_minus_cnts);
+                pvGet(coinc_plus_cnts);
+                pvGet(accid_minus_cnts);
+                pvGet(accid_plus_cnts);
+                pvGet(slm_plus_cnts);
+                pvGet(slm_minus_cnts);
+                fdprintf(fd,"%d %d %d %d %d %d\n",
+                        coinc_plus_cnts,coinc_minus_cnts,
+                        accid_plus_cnts,accid_minus_cnts,
+                        slm_plus_cnts,slm_minus_cnts);
+            }
+        } state listen
+    }
+}
 
 ss asym_calc {
     
@@ -157,7 +301,7 @@ ss asym_calc {
             pvPut(seq_status);
         }
         when () {
-#if CHANNELACCESS
+#ifdef CHANNELACCESS
             pvGet( hls_setl_time );
             pvGet( hls_stbl_time );
 #endif
@@ -169,7 +313,7 @@ ss asym_calc {
                     pvPut(tmp_short);
                     /* find number of delayed cycles  */ 
                     /* for helicty signals versus real data */
-#if CHANNELACCESS
+#ifdef CHANNELACCESS
                     pvGet( hls_rptg_scheme ) ;
 #endif
                     n_dly_cycle = get_delay( hls_rptg_scheme );
@@ -181,7 +325,7 @@ ss asym_calc {
     state start{
         entry {
             printf( "asym.st:  STATE START\n");
-            sprintf(seq_status,"SiTART");
+            sprintf(seq_status,"START");
             pvPut(seq_status);
         }
         when()  {
@@ -201,7 +345,7 @@ ss asym_calc {
             stop = 1;
             pvPut(stop);
             pvGet(asym_acqg_time);
-#if CHANNELACCESS
+#ifdef CHANNELACCESS
             pvGet( hls_flip_freq ) ;
 #endif
             nfifo_used = asym_acqg_time * hls_flip_freq * 2.0;
@@ -249,7 +393,7 @@ ss asym_calc {
             pvPut(seq_status);
 
             pvGet(current_cut);
-#if CHANNELACCESS
+#ifdef CHANNELACCESS
             pvGet(slm_slope);   
             pvGet(slm_offset);
 #endif
@@ -263,7 +407,7 @@ ss asym_calc {
             n_pairs = 0;
             fprintf(stderr,"lookging for pairs ...\n");
             while (i < nfifo_used-LOCAL_DEPTH) {
-#if FULLDEBUG
+#ifdef FULLDEBUG
                 fprintf(stderr,"looking for pairs..index at: %i out of %i\n",i,nfifo_used);
 #endif
                 i = find_pair(i);
@@ -271,7 +415,7 @@ ss asym_calc {
                     asym_fifo_depth = i+3;
                     pairs[n_pairs] = i;
                     idx_skip[n_pairs] = get_idx_skip( i );
-#if FULLDEBUG
+#ifdef FULLDEBUG
                     fprintf(stderr,"%d %d %d %d\n",
                             asym_fifo_depth,n_pairs,pairs[n_pairs],idx_skip[n_pairs]);
 #endif
@@ -305,7 +449,7 @@ ss asym_calc {
                }
            }
 
-#if FULLDEBUG
+#ifdef FULLDEBUG
            printf("Delayed by %d cycles \n", n_dly_cycle );
            printf("Settle time is %f \n", hls_setl_time*10.0 );
            printf("Stable time is %f \n", hls_stbl_time*10.0 );
@@ -343,13 +487,16 @@ ss asym_calc {
                            if ( i==(i_skip+2) ) hls_2 = helicity_bit ;	
 
                            sum[helicity_bit] += value;
-          
+         
+#ifdef DOSLMPEDESTAL
                            // pedestal-subtraction for SLM:
-                           if (DOSLMPEDESTAL && i_chan==slm_index) {
+                           if (i_chan==slm_index) {
                                raw_value = clock_fifo[pairs[i_pair]+i];
                                value = getbits(raw_value,23,24);
                                sum[helicity_bit] -= slm_offset*value/1e7;
                            }
+#endif
+
                        }
                        if ( hls_1 == hls_2 ) {
                            printf(" Illegal in pair #  %d , FIFO #  %d  : %d  %d \n", 
@@ -373,6 +520,7 @@ ss asym_calc {
                pvPut(tmp_float);             
 
                q_asym = 100.*(sum_plus - sum_minus)/(sum_plus + sum_minus + 0.1);
+
                dq_asym = 100. * sqrt( ( 1. - (q_asym*q_asym)/(100.*100.) ) / (sum_plus + sum_minus + 0.1) );  
 
                tmp_float = q_asym;
@@ -381,8 +529,8 @@ ss asym_calc {
                pvPut(tmp_float);             
 
                // just set error to zero if we didn't really measure anything:
-               if (q_asym>1e-8) tmp_float = dq_asym;
-               else             tmp_float = 0;
+               if (sum_plus+sum_minus>0) tmp_float = dq_asym;
+               else                      tmp_float = 0;
 
                sprintf(tmp_name,"d_asym_%i",i_chan);
                pvAssign(tmp_float, tmp_name);
