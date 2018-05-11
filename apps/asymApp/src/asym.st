@@ -9,6 +9,8 @@ option +c;
 //#define CHANNELACCESS
 //#define DOSLMPEDESTAL
 
+#define DATAFILE
+
 // minimum SLM rate (Hz) for including in asymmetry
 //#define SLMMINIMUM (20.*240.)
 #define SLMMINIMUM 0
@@ -62,8 +64,8 @@ unsigned int slm_fifo[NFIFO];
 assign slm_fifo to "asym_3";
 
 // provide defaults in case of no channel access:
-//unsigned int hls_rptg_scheme=4; // 8 windows is HELDELAYd=4
-unsigned int hls_rptg_scheme=0; // 0 windows is HELDELAYd=0
+unsigned int hls_rptg_scheme=4; // 8 windows is HELDELAYd=4
+//unsigned int hls_rptg_scheme=0; // 0 windows is HELDELAYd=0
 double hls_stbl_time=33330;
 double hls_setl_time=500;
 double hls_flip_freq=29.5596;
@@ -108,6 +110,7 @@ double asym_fdbk_stamp;
 assign asym_fdbk_stamp to "HB:Q_STAMP"; 
 
 
+#ifdef DATAFILE
 /////////////////////////////////////////////
 // THIS IS FOR RECORDING A DATA FILE:
 string fname; assign fname to "asym_filename";
@@ -124,7 +127,7 @@ evflag ev_daqReadFifo;  sync asym_fdbk_stamp   to ev_daqReadFifo;
 evflag ev_daqReset;     sync moller_reset      to ev_daqReset;
 evflag ev_daqStartStop; sync moller_accumulate to ev_daqStartStop;
 /////////////////////////////////////////////
-
+#endif
 
 int asym_calc_enable[16];
 
@@ -207,6 +210,7 @@ int open_file(char *fname, char *shortname)
 }%
 
 
+#ifdef DATAFILE
 // run a separate state code just for recording data to a file
 // this works based only on listening for event updates, and
 // there may be some synchronicity issues if acquisition time
@@ -291,6 +295,7 @@ ss asym_file {
         } state listen
     }
 }
+#endif
 
 ss asym_calc {
     
@@ -437,7 +442,7 @@ ss asym_calc {
 
    state get_asym {
        when() {
-           printf( "asym.st:  GET ASYM\n");
+           printf( "asym.st:  GET ASYM (delay=%dwindows)\n",n_dly_cycle);
            sprintf(seq_status,"GETASYM");
            pvPut(seq_status);
            for (i_chan = 0; i_chan < NCHAN; i_chan++) {
