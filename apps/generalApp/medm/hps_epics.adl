@@ -1,14 +1,14 @@
 
 file {
-	name="/home/wmoore/workspaces/svt/apps/generalApp/medm/HPS_EPICS.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./HPS_EPICS.adl"
+	version=030101
 }
 display {
 	object {
-		x=3
-		y=84
+		x=643
+		y=31
 		width=240
-		height=805
+		height=835
 	}
 	clr=14
 	bclr=4
@@ -90,7 +90,18 @@ display {
 rectangle {
 	object {
 		x=0
-		y=765
+		y=474
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=795
 		width=240
 		height=40
 	}
@@ -101,7 +112,7 @@ rectangle {
 text {
 	object {
 		x=113
-		y=790
+		y=820
 		width=100
 		height=16
 	}
@@ -114,7 +125,7 @@ text {
 rectangle {
 	object {
 		x=0
-		y=616
+		y=659
 		width=240
 		height=20
 	}
@@ -125,7 +136,7 @@ rectangle {
 rectangle {
 	object {
 		x=0
-		y=664
+		y=706
 		width=300
 		height=25
 	}
@@ -136,7 +147,7 @@ rectangle {
 "choice button" {
 	object {
 		x=140
-		y=701
+		y=743
 		width=80
 		height=16
 	}
@@ -150,14 +161,18 @@ rectangle {
 }
 "related display" {
 	object {
-		x=41
-		y=437
+		x=20
+		y=450
 		width=20
 		height=20
 	}
 	display[0] {
 		label="IOC Health"
 		name="ioc_hps_health.adl"
+	}
+	display[1] {
+		label="IOC Health (SVT DAQ)"
+		name="ioc_hps_svt_health.adl"
 	}
 	clr=14
 	bclr=50
@@ -209,7 +224,7 @@ rectangle {
 rectangle {
 	object {
 		x=0
-		y=571
+		y=614
 		width=240
 		height=20
 	}
@@ -241,7 +256,7 @@ image {
 rectangle {
 	object {
 		x=0
-		y=521
+		y=564
 		width=240
 		height=22
 	}
@@ -252,20 +267,20 @@ rectangle {
 text {
 	object {
 		x=139
-		y=38
+		y=7
 		width=100
 		height=18
 	}
 	"basic attribute" {
 		clr=57
 	}
-	textix="Main Menu"
+	textix="HPS Main Menu"
 	align="horiz. centered"
 }
 text {
 	object {
 		x=70
-		y=442
+		y=455
 		width=120
 		height=15
 	}
@@ -277,7 +292,7 @@ text {
 "related display" {
 	object {
 		x=20
-		y=464
+		y=477
 		width=20
 		height=20
 	}
@@ -303,8 +318,8 @@ text {
 	}
 	display[5] {
 		label="Chiller (ECAL)"
-		name="chiller_thermo.adl"
-		args="DESC=ECAL"
+		name="chiller_anova.adl"
+		args="DESC=ECAL,P=HPS_ECAL:CHILLER:"
 	}
 	display[6] {
 		label="Chiller (SVT)"
@@ -314,7 +329,20 @@ text {
 	display[7] {
 		label="Chiller (FE Boards)"
 		name="chiller_anova.adl"
-		args="DESC=FE_Boards"
+		args="DESC=FE_Boards,P=HPS_FE:CHILLER:"
+	}
+	display[8] {
+		label="SVT PLC"
+		name="svt_plc.adl"
+	}
+	display[9] {
+		label="SVT Soft Interlocks"
+		name="svtIntlk.adl"
+	}
+	display[10] {
+		label="Chiller (SVT2)"
+		name="chiller_anova.adl"
+		args="DESC=SVT2,P=HPS_SVT:CHILLER:"
 	}
 	clr=14
 	bclr=50
@@ -322,7 +350,7 @@ text {
 text {
 	object {
 		x=70
-		y=469
+		y=482
 		width=120
 		height=16
 	}
@@ -334,7 +362,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=593
+		y=635
 		width=20
 		height=20
 	}
@@ -342,25 +370,30 @@ text {
 		label="StripTool"
 		name="cd $APP/generalApp/strip; StripTool &"
 	}
+	command[1] {
+		label="MyaViewer"
+		name="MyaViewer"
+		args="&"
+	}
 	clr=14
 	bclr=50
 }
 text {
 	object {
 		x=70
-		y=598
+		y=640
 		width=120
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="StripTool(s)"
+	textix="StripTool/MyaViewer"
 }
 rectangle {
 	object {
 		x=0
-		y=409
+		y=422
 		width=300
 		height=25
 	}
@@ -371,7 +404,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=414
+		y=427
 		width=150
 		height=15
 	}
@@ -421,31 +454,13 @@ text {
 "related display" {
 	object {
 		x=20
-		y=437
-		width=20
-		height=20
-	}
-	display[0] {
-		label="REBOOT IOC"
-		name="ioc_alive.adl"
-	}
-	clr=14
-	bclr=50
-}
-"related display" {
-	object {
-		x=20
-		y=524
+		y=566
 		width=20
 		height=20
 	}
 	display[0] {
 		label="alh launcher"
 		name="alh_launch_hps.adl"
-	}
-	display[1] {
-		label="(under development)"
-		name="Aalh_launch_hps.adl"
 	}
 	clr=14
 	bclr=50
@@ -522,9 +537,22 @@ text {
 		width=20
 		height=20
 	}
-	display[0] {
-		label="magnet screens"
-		name="magnet_screens.adl"
+	display[1] {
+		label="Chicane"
+		name="chicane.adl"
+		args="P=hps_chicane"
+	}
+	display[2] {
+		label="Frascati Magnets"
+		name="minitorus.adl"
+	}
+	display[3] {
+		label="Analyzing Magnet"
+		name="pspec.adl"
+	}
+	display[4] {
+		label="Tagger"
+		name="tagger.adl"
 	}
 	clr=14
 	bclr=50
@@ -537,8 +565,21 @@ text {
 		height=20
 	}
 	display[0] {
-		label="Voltages"
-		name="voltages.adl"
+		label="     ECAL HV   "
+		name="ECalHVStatusCompact.adl"
+	}
+	display[1] {
+		label="     BEAM     "
+		name="bm_beam_counter_1.adl"
+	}
+	display[2] {
+		label="     BLMs     "
+		name="blm.adl"
+	}
+	display[3] {
+		label="     ECAL LV"
+		name="hps_ecal_lv.adl"
+		args="P=HPSECALLV"
 	}
 	clr=14
 	bclr=50
@@ -546,7 +587,7 @@ text {
 text {
 	object {
 		x=70
-		y=526
+		y=568
 		width=120
 		height=16
 	}
@@ -584,7 +625,7 @@ text {
 text {
 	object {
 		x=20
-		y=703
+		y=745
 		width=100
 		height=16
 	}
@@ -596,7 +637,7 @@ text {
 "choice button" {
 	object {
 		x=140
-		y=725
+		y=767
 		width=80
 		height=16
 	}
@@ -611,7 +652,7 @@ text {
 text {
 	object {
 		x=20
-		y=725
+		y=767
 		width=100
 		height=16
 	}
@@ -624,7 +665,7 @@ text {
 "related display" {
 	object {
 		x=41
-		y=593
+		y=635
 		width=20
 		height=20
 	}
@@ -664,7 +705,7 @@ text {
 text {
 	object {
 		x=70
-		y=383
+		y=400
 		width=120
 		height=16
 	}
@@ -676,13 +717,29 @@ text {
 "related display" {
 	object {
 		x=20
-		y=379
+		y=396
 		width=20
 		height=20
 	}
 	display[0] {
-		label="misc screens"
-		name="misc_screens.adl"
+		label="VESDA    "
+		name="vesda2.adl"
+	}
+	display[1] {
+		label="Beamline Vacuum"
+		name="vacuum.adl"
+	}
+	display[2] {
+		label="Tagger Dump Lamp"
+		name="tagger_dump_lamp.adl"
+	}
+	display[3] {
+		label="Weather"
+		name="hallBenv.adl"
+	}
+	display[4] {
+		label="ECAL Temperature"
+		name="hps_ecal_temp.adl"
 	}
 	clr=14
 	bclr=50
@@ -696,7 +753,7 @@ text {
 	}
 	display[0] {
 		label="DAQ Status"
-		name="daq_status.adl"
+		name="daq.adl"
 	}
 	clr=14
 	bclr=50
@@ -721,12 +778,8 @@ text {
 		height=20
 	}
 	display[0] {
-		label="Photon Trigger"
-		name="ts_bits.adl"
-	}
-	display[1] {
-		label="DVCS Trigger"
-		name="dvcs_trigger.adl"
+		label="HPS Trigger"
+		name="hps_trigger_scalers.adl"
 	}
 	clr=14
 	bclr=50
@@ -769,7 +822,7 @@ text {
 rectangle {
 	object {
 		x=0
-		y=494
+		y=536
 		width=300
 		height=25
 	}
@@ -780,7 +833,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=499
+		y=541
 		width=150
 		height=15
 	}
@@ -792,7 +845,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=616
+		y=658
 		width=20
 		height=20
 	}
@@ -806,7 +859,7 @@ text {
 text {
 	object {
 		x=70
-		y=621
+		y=663
 		width=120
 		height=16
 	}
@@ -818,7 +871,7 @@ text {
 text {
 	object {
 		x=15
-		y=670
+		y=712
 		width=150
 		height=15
 	}
@@ -830,7 +883,7 @@ text {
 "related display" {
 	object {
 		x=216
-		y=767
+		y=797
 		width=20
 		height=18
 	}
@@ -845,34 +898,25 @@ text {
 text {
 	object {
 		x=20
-		y=779
+		y=809
 		width=130
 		height=16
 	}
 	"basic attribute" {
 		clr=0
 	}
-	textix="Release: v0.3.1"
+	textix="Release: v3.0.0"
 }
 "shell command" {
 	object {
 		x=20
-		y=547
+		y=589
 		width=20
 		height=20
 	}
 	command[0] {
-		label="ECAL DSC2 GUI"
-		name="/usr/clas12/hps/prod/tools/ecal/runEcalDSC2ScalerGui.sh &"
-	}
-	command[1] {
-		label="ECAL FADC GUI"
-		name="/usr/clas12/hps/prod/tools/ecal/runEcalFADCScalerGui.sh &"
-	}
-	command[2] {
-		label="ECAL Diag GUI (solaris-only)"
-		name="xterm -title 'ECAL FADC Diag GUI' -e "
-		args="/usr/clas12/hps/prod/tools/ecal/runEcalDiagGui.sh &"
+		label="ECAL FADC Scalers (EPICS)"
+		name="hps_ecal_scalers.py &"
 	}
 	clr=14
 	bclr=50
@@ -880,29 +924,33 @@ text {
 text {
 	object {
 		x=70
-		y=552
+		y=594
 		width=120
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="ECAL Scaler GUIs"
+	textix="ECAL FADC Scalers"
 }
 "shell command" {
 	object {
 		x=20
-		y=570
+		y=612
 		width=20
 		height=20
 	}
 	command[0] {
 		label="Take screenshot..."
-		name="xterm -title 'Take screenshot' -e screenshot &"
+		name="xterm -title 'Take screenshot' -geometry 60x10+0+0 -e screenshot &"
 	}
 	command[1] {
 		label="Open screenshots folder"
-		name="konqueror ~hpsrun/screenshots &"
+		name="nautilus ~hpsrun/screenshots &"
+	}
+	command[2] {
+		label="Screenshot --> Log Entry"
+		name="xterm -e $APP/generalApp/scripts/takeScreenshotMakeLogEntry.sh"
 	}
 	clr=14
 	bclr=50
@@ -910,7 +958,7 @@ text {
 text {
 	object {
 		x=70
-		y=575
+		y=617
 		width=120
 		height=16
 	}
@@ -922,7 +970,7 @@ text {
 "shell command" {
 	object {
 		x=216
-		y=787
+		y=817
 		width=20
 		height=18
 	}
@@ -940,7 +988,7 @@ text {
 text {
 	object {
 		x=113
-		y=769
+		y=799
 		width=100
 		height=16
 	}
@@ -953,7 +1001,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=639
+		y=681
 		width=20
 		height=20
 	}
@@ -968,7 +1016,7 @@ text {
 text {
 	object {
 		x=70
-		y=644
+		y=686
 		width=120
 		height=16
 	}
@@ -976,4 +1024,218 @@ text {
 		clr=14
 	}
 	textix="Wave2Root Reader"
+}
+"related display" {
+	object {
+		x=19
+		y=504
+		width=20
+		height=20
+	}
+	display[0] {
+		label="HB Harp (2c21)"
+		name="harpScanData.adl"
+		args="P=HB_BEAM:SCAN:2c21"
+	}
+	display[1] {
+		label="HB Harp (tagger)"
+		name="harpScanData.adl"
+		args="P=HB_BEAM:SCAN:tagger"
+	}
+	display[2] {
+		label="HB Harp (2H02A)"
+		name="harpScanData.adl"
+		args="P=HB_BEAM:SCAN:2H02A"
+	}
+	display[3] {
+		label="HPS Wire Scanner"
+		name="wireScanData.adl"
+		args="P=HPS_SVT:SCAN"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=69
+		y=509
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Mya Scan Data"
+}
+"related display" {
+	object {
+		x=20
+		y=368
+		width=20
+		height=20
+	}
+	display[0] {
+		label="SVT Summary"
+		name="svtSummary.adl"
+	}
+	display[1] {
+		label="DPM Status"
+		name="svtDpmStatus.adl"
+	}
+	display[2] {
+		label="DPM Link Status"
+		name="svtDpmLinkStatus.adl"
+	}
+	display[3] {
+		label="Temperature"
+		name="svtTemp.adl"
+	}
+	display[4] {
+		label="Hybrid"
+		name="svtHybrid.adl"
+	}
+	display[5] {
+		label="Hybrid Sync"
+		name="svtHybSync.adl"
+	}
+	display[6] {
+		label="FEB Main"
+		name="svtFebMain.adl"
+	}
+	display[7] {
+		label="Flange Main"
+		name="svtFlangeMain.adl"
+	}
+	display[8] {
+		label="Bias Main"
+		name="svtBiasMain.adl"
+	}
+	display[9] {
+		label="DAQ IOC Status"
+		name="svtDaqIOCStatus.adl"
+	}
+	display[10] {
+		label="HV STATUS"
+		name="HpsSvtHvStatus.adl"
+	}
+	display[11] {
+		label="POSITION STATUS"
+		name="HpsSvtPosition.adl"
+	}
+	display[12] {
+		label="SVT Map"
+		name="svtMap.adl"
+	}
+	display[13] {
+		label="SVT Sem"
+		name="svtSEM.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=372
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SVT"
+}
+"text update" {
+	object {
+		x=139
+		y=70
+		width=100
+		height=12
+	}
+	monitor {
+		chan="PLC_HLB"
+		clr=56
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=139
+		y=55
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=57
+	}
+	textix="Hall B Status"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=197
+		y=373
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL"
+}
+"related display" {
+	object {
+		x=167
+		y=369
+		width=20
+		height=20
+	}
+	display[0] {
+		label="ECAL SLOW CONTROLS"
+		name="hps_ecal_all.adl"
+		args="P=HPSECALLV,PC=HPS_ECAL:CHILLER:"
+	}
+	clr=14
+	bclr=50
+}
+"related display" {
+	object {
+		x=166
+		y=317
+		width=20
+		height=20
+	}
+	display[0] {
+		label="FSD STATUS"
+		name="HpsFsdStatus.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=192
+		y=315
+		width=30
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="FSD"
+}
+text {
+	object {
+		x=191
+		y=327
+		width=30
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="STATUS"
 }
