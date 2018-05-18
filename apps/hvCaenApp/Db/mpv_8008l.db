@@ -43,9 +43,10 @@ record(longin, "$(PORT):$(CH):stat")
 {
   field(DESC, "Channel Status")
   field(DTYP, "Snmp")
-  field(SCAN, "$(SCAN)")
+#  field(SCAN, "$(SCAN)")
+  field(SCAN, "Passive")
 #  field(EGU,  "")
-  field(INP,  "@$(HOST) $(COMMUNITY) %(WO)Status.u$(CH) BITS: 100")
+  field(INP,  "@$(HOST) $(COMMUNITY) %(WO)Status.u$(CH) BITS: 100 ihr")
 #  field(ADEL, "1")
 }
 
@@ -55,7 +56,7 @@ record(stringin, "$(PORT):$(CH):stat_string")
   field(DTYP, "Snmp")
   field(SCAN, "$(SCAN)")
 #  field(EGU,  "")
-  field(INP,  "@$(HOST) $(COMMUNITY) %(WO)Status.u$(CH) BITS: 100")
+  field(INP,  "@$(HOST) $(COMMUNITY) %(WO)Status.u$(CH) BITS: 100 ihr")
 #  field(ADEL, "1")
 }
 

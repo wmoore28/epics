@@ -1,0 +1,66 @@
+record(bo, "B_hv_$(P)_CE") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(ZNAM,"OFF")
+   field(DESC,"binary output record")
+   field(SCAN,"Passive")
+   field(OUT,"$(CScode) $(pwen)")
+   field(ONAM,"ON")
+   field(OMSL,"supervisory")
+}
+record(bo, "B_hv_$(P)_CHHV") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(ZNAM,"OFF")
+   field(DESC,"binary output record")
+   field(SCAN,"Passive")
+   field(OUT,"$(CScode) $(pw)")
+   field(ONAM,"ON")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_$(P)_DV") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"$(CScode) $(vset)")
+   field(PREC,"3")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_$(P)_TC") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"$(CScode) $(iset)")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_$(P)_RDN") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"$(CScode) $(rdn)")
+   field(OMSL,"supervisory")
+}
+record(ao, "B_hv_$(P)_RUP") {
+   field(DTYP,"CAEN_HV")
+   field(PRIO,"LOW")
+   field(DESC,"analog output record")
+   field(SCAN,"Passive")
+   field(OUT,"$(CScode) $(rup)")
+   field(OMSL,"supervisory")
+}
+record(bigsub, "B_hv_$(P)_property") {
+   field(PRIO,"LOW")
+   field(DESC,"big subroutine record")
+   field(SCAN,"2 second")
+   field(INPA,"$(Cr)")
+   field(SNAM,"ScanChannel")
+   field(PREC,"3")
+   field(INAM,"InitChannel")
+   field(INPB,"$(Sl)")
+   field(HIGH,"10")
+   field(INPC,"$(Ch)")
+   field(HSV,"MAJOR")
+}

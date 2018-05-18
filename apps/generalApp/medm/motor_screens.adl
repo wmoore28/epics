@@ -1,12 +1,12 @@
 
 file {
-	name="/home/hovanes/HPS/epics/latest/apps/generalApp/medm/motor_screens.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./motor_screens.adl"
+	version=030109
 }
 display {
 	object {
-		x=1655
-		y=122
+		x=0
+		y=22
 		width=180
 		height=300
 	}
@@ -121,6 +121,10 @@ display {
 	display[6] {
 		label="SVT Positioners"
 		name="svtPositions.adl"
+	}
+	display[7] {
+		label="Hall-B Collimator"
+		name="hallb_collimator.adl"
 	}
 	clr=20
 	bclr=1

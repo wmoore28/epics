@@ -1,0 +1,88 @@
+record(calc, "hps_collimator_at_home") {
+	field(INPA, "hps_collimator.RBV")
+        field(INPB, "hps_collimator_pos_home")
+	field(SCAN, ".2 second")
+	field(CALC, "ABS(A-0.0)<0.1?1:0")
+}
+record(calc, "hps_collimator_at_a") {
+	field(INPA, "hps_collimator.RBV")
+        field(INPB, "hps_collimator_a")
+	field(SCAN, ".2 second")
+	field(CALC, "ABS(A-B)<0.01?1:0")
+}
+record(calc, "hps_collimator_at_b") {
+	field(INPA, "hps_collimator.RBV")
+        field(INPB, "hps_collimator_pos_b")
+	field(SCAN, ".2 second")
+	field(CALC, "ABS(A-B)<0.01?1:0")
+}
+record(calc, "hps_collimator_at_c") {
+	field(INPA, "hps_collimator.RBV")
+        field(INPB, "hps_collimator_pos_c")
+	field(SCAN, ".2 second")
+	field(CALC, "ABS(A-B)<0.01?1:0")
+}
+record(calc, "hps_collimator_at_d") {
+	field(INPA, "hps_collimator.RBV")
+        field(INPB, "hps_collimator_pos_d")
+	field(SCAN, ".2 second")
+	field(CALC, "ABS(A-B)<0.01?1:0")
+}
+record(calc, "hps_collimator_at_e") {
+	field(INPA, "hps_collimator.RBV")
+        field(INPB, "hps_collimator_pos_e")
+	field(SCAN, ".2 second")
+	field(CALC, "ABS(A-B)<0.01?1:0")
+}
+
+record(ao, "hps_collimator_go_home") {
+    field(DOL,"hps_collimator_pos_home.VAL")
+    field(OUT,"hps_collimator.VAL")
+    field(OMSL, "closed_loop")
+}
+record(ao, "hps_collimator_go_a") {
+    field(DOL,"hps_collimator_pos_a.VAL")
+    field(OUT,"hps_collimator.VAL")
+    field(OMSL, "closed_loop")
+}
+record(ao, "hps_collimator_go_b") {
+    field(DOL,"hps_collimator_pos_b.VAL")
+    field(OUT,"hps_collimator.VAL")
+    field(OMSL, "closed_loop")
+}
+record(ao, "hps_collimator_go_c") {
+    field(DOL,"hps_collimator_pos_c.VAL")
+    field(OUT,"hps_collimator.VAL")
+    field(OMSL, "closed_loop")
+}
+record(ao, "hps_collimator_go_d") {
+    field(DOL,"hps_collimator_pos_d.VAL")
+    field(OUT,"hps_collimator.VAL")
+    field(OMSL, "closed_loop")
+}
+record(ao, "hps_collimator_go_e") {
+    field(DOL,"hps_collimator_pos_e.VAL")
+    field(OUT,"hps_collimator.VAL")
+    field(OMSL, "closed_loop")
+}
+
+
+record(ai, "hps_collimator_pos_home") {
+    field(VAL,0.0)
+}
+record(ai, "hps_collimator_pos_a") {
+    field(VAL,4.41)
+}
+record(ai, "hps_collimator_pos_b") {
+    field(VAL,5.03)
+}
+record(ai, "hps_collimator_pos_c") {
+    field(VAL,5.614)
+}
+record(ai, "hps_collimator_pos_d") {
+    field(VAL,6.198)
+}
+record(ai, "hps_collimator_pos_e") {
+    field(VAL,6.8)
+}
+

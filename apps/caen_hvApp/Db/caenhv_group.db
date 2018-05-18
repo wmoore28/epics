@@ -1,0 +1,51 @@
+record(bo, "B_HVON_SET_$(group)") {
+   field(DTYP,"CAEN_HV")
+   field(ZNAM,"HV/OFF")
+   field(DESC,"binary output record")
+   field(SCAN,"Passive")
+   field(OUT,"$(CScode) $(pw)")
+   field(ONAM,"HV/ON")
+   field(OMSL,"supervisory")
+}
+record(bi, "B_HVVALID_$(group)") {
+   field(DTYP,"CAEN_HV")
+   field(ZNAM,"NOT VALID")
+   field(DESC,"binary input record ")
+   field(ZSV,"MAJOR")
+   field(SCAN,"2 second")
+   field(OSV,"NO_ALARM")
+   field(ONAM,"VALID")
+   field(INP,"$(CScode) $(valid)")
+}
+record(bi, "B_HVALARM_$(group)") {
+   field(DTYP,"CAEN_HV")
+   field(ZNAM,"enabled")
+   field(DESC,"binary input record")
+   field(ZSV,"NO_ALARM")
+   field(SCAN,"2 second")
+   field(OSV,"MAJOR")
+   field(ONAM,"disabled")
+   field(INP,"$(CScode) $(alarm)")
+}
+record(bi, "B_HVSTATUS_$(group)") {
+   field(DTYP,"CAEN_HV")
+   field(ZNAM,"HV/OFF")
+   field(DESC,"binary input record")
+   field(SCAN,"2 second")
+   field(ONAM,"HV/ON")
+   field(INP,"$(CScode) $(status)")
+}
+record(calc, "B_HVOC_$(group)") {
+   field(LOLO,"-0.1")
+   field(CALC,"ABS(A-B)")
+   field(LLSV,"MAJOR")
+   field(HIHI,"0.1")
+   field(SCAN,"1 second")
+   field(HHSV,"MAJOR")
+   field(INPA,"B_HVSTATUS_$(group) NPP NMS")
+   field(LSV,"MAJOR")
+   field(LOW,"-0.1")
+   field(INPB,"B_HVON_SET_$(group) NPP NMS")
+   field(HIGH,"0.1")
+   field(HSV,"MAJOR")
+}

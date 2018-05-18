@@ -12,9 +12,11 @@ include $(TOP)/configure/CONFIG
 # Create and install (or just install)
 # databases, templates, substitutions like this
 
+DB  += hpsFsd.db
 DB  += svtIntlk.template
 DB  += svtIntlk_max.template
 DB  += svtIntlk_bpm.template
+DB  += svtIntlk_fsd.template
 DB  += svtIntlk.substitutions
 
 REQ += svtIntlk.req

@@ -1,12 +1,12 @@
 
 file {
-	name="/home/baltzell/scaler_hps.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/medm/../scalerApp/medm/scaler_hps.adl"
+	version=030101
 }
 display {
 	object {
-		x=124
-		y=87
+		x=163
+		y=60
 		width=1268
 		height=925
 	}
@@ -337,41 +337,6 @@ composite {
 		}
 	}
 }
-composite {
-	object {
-		x=230
-		y=30
-		width=125
-		height=20
-	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=230
-				y=30
-				width=125
-				height=20
-			}
-			"basic attribute" {
-				clr=35
-			}
-		}
-		text {
-			object {
-				x=230
-				y=33
-				width=125
-				height=15
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="ECal rates"
-			align="horiz. centered"
-		}
-	}
-}
 "text update" {
 	object {
 		x=310
@@ -462,112 +427,103 @@ composite {
 		}
 	}
 }
-composite {
+"text update" {
+	object {
+		x=119
+		y=194
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HLB:bta_dty_fctr"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=6
+		y=196
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="scaler_dS6b.VAL"
+	}
+	textix="Duty Cycle (%)"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=119
+		y=222
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HLB:bta_60hz_rms"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=6
+		y=224
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="HLB:bta_60hz_rms"
+	}
+	textix="Max RMS (%)"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=119
+		y=170
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPSRF_1N"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=3
+	}
+}
+text {
 	object {
 		x=6
 		y=170
-		width=193
-		height=72
+		width=100
+		height=16
 	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=119
-				y=194
-				width=80
-				height=20
-			}
-			monitor {
-				chan="HLB:bta_dty_fctr"
-				clr=14
-				bclr=50
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=6
-				y=196
-				width=100
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			"dynamic attribute" {
-				chan="scaler_dS6b.VAL"
-			}
-			textix="Duty Cycle (%)"
-			align="horiz. right"
-		}
-		"text update" {
-			object {
-				x=119
-				y=222
-				width=80
-				height=20
-			}
-			monitor {
-				chan="HLB:bta_60hz_rms"
-				clr=14
-				bclr=50
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=6
-				y=224
-				width=100
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			"dynamic attribute" {
-				chan="HLB:bta_60hz_rms"
-			}
-			textix="Max RMS (%)"
-			align="horiz. right"
-		}
-		"text update" {
-			object {
-				x=119
-				y=170
-				width=80
-				height=20
-			}
-			monitor {
-				chan="frwd_scalerS15b"
-				clr=14
-				bclr=50
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=6
-				y=170
-				width=100
-				height=16
-			}
-			"basic attribute" {
-				clr=14
-			}
-			"dynamic attribute" {
-				chan="scaler_dS6b.VAL"
-			}
-			textix="RF Rate (Hz)"
-			align="horiz. right"
-		}
+	"basic attribute" {
+		clr=14
 	}
+	"dynamic attribute" {
+		chan="scaler_dS6b.VAL"
+	}
+	textix="RF Rate (MHz)"
+	align="horiz. right"
 }
 polyline {
 	object {
@@ -850,8 +806,8 @@ text {
 }
 text {
 	object {
-		x=510
-		y=565
+		x=512
+		y=559
 		width=100
 		height=18
 	}
@@ -1387,8 +1343,8 @@ text {
 }
 text {
 	object {
-		x=498
-		y=419
+		x=505
+		y=410
 		width=100
 		height=18
 	}
@@ -1646,7 +1602,7 @@ composite {
 }
 composite {
 	object {
-		x=650
+		x=592
 		y=100
 		width=160
 		height=63
@@ -1655,7 +1611,7 @@ composite {
 	children {
 		"text update" {
 			object {
-				x=696
+				x=638
 				y=100
 				width=71
 				height=18
@@ -1671,7 +1627,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=739
+				x=681
 				y=121
 				width=71
 				height=18
@@ -1687,7 +1643,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=696
+				x=638
 				y=145
 				width=71
 				height=18
@@ -1703,7 +1659,7 @@ composite {
 		}
 		"text update" {
 			object {
-				x=650
+				x=592
 				y=121
 				width=71
 				height=18
@@ -2869,7 +2825,7 @@ text {
 	"dynamic attribute" {
 		chan="display1.THSV"
 	}
-	textix="3 mm/Au"
+	textix="2.25 mm"
 	align="horiz. centered"
 }
 rectangle {
@@ -2900,7 +2856,7 @@ text {
 	"dynamic attribute" {
 		chan="display1.THSV"
 	}
-	textix="3 mm"
+	textix="2.82 mm"
 	align="horiz. centered"
 }
 rectangle {
@@ -2946,7 +2902,7 @@ text {
 	"dynamic attribute" {
 		chan="display1.THSV"
 	}
-	textix="4 mm"
+	textix="3.94 mm"
 	align="horiz. centered"
 }
 "text update" {
@@ -3373,7 +3329,7 @@ text {
 }
 composite {
 	object {
-		x=1163
+		x=1165
 		y=85
 		width=75
 		height=89
@@ -3382,7 +3338,7 @@ composite {
 	children {
 		composite {
 			object {
-				x=1163
+				x=1165
 				y=140
 				width=75
 				height=34
@@ -3391,7 +3347,7 @@ composite {
 			children {
 				"text update" {
 					object {
-						x=1163
+						x=1165
 						y=140
 						width=75
 						height=18
@@ -3407,7 +3363,7 @@ composite {
 				}
 				text {
 					object {
-						x=1188
+						x=1190
 						y=159
 						width=30
 						height=15
@@ -3421,7 +3377,7 @@ composite {
 		}
 		composite {
 			object {
-				x=1163
+				x=1165
 				y=85
 				width=75
 				height=38
@@ -3430,7 +3386,7 @@ composite {
 			children {
 				"text update" {
 					object {
-						x=1163
+						x=1165
 						y=105
 						width=75
 						height=18
@@ -3446,7 +3402,7 @@ composite {
 				}
 				text {
 					object {
-						x=1183
+						x=1185
 						y=85
 						width=30
 						height=15
@@ -3492,7 +3448,7 @@ text {
 }
 text {
 	object {
-		x=680
+		x=616
 		y=75
 		width=120
 		height=18
@@ -3589,130 +3545,138 @@ text {
 }
 "text update" {
 	object {
-		x=960
+		x=957
 		y=109
-		width=48
+		width=50
 		height=12
 	}
 	monitor {
-		chan="B_HPSECALDSC_TOP_2"
+		chan="B_SCALERSHPS1_Sl14_Ch12.VAL"
 		clr=14
 		bclr=35
 	}
 	align="horiz. centered"
 	limits {
+		precSrc="default"
 	}
 }
 "text update" {
 	object {
-		x=1010
+		x=1009
 		y=109
-		width=48
+		width=50
 		height=12
 	}
 	monitor {
-		chan="B_HPSECALDSC_TOP_3"
+		chan="B_SCALERSHPS1_Sl15_Ch4.VAL"
 		clr=14
 		bclr=35
 	}
 	align="horiz. centered"
 	limits {
+		precSrc="default"
 	}
 }
 "text update" {
 	object {
-		x=1060
+		x=1061
 		y=109
-		width=48
+		width=50
 		height=12
 	}
 	monitor {
-		chan="B_HPSECALDSC_TOP_4"
+		chan="B_SCALERSHPS1_Sl15_Ch12.VAL"
 		clr=14
 		bclr=35
 	}
 	align="horiz. centered"
 	limits {
+		precSrc="default"
 	}
 }
 "text update" {
 	object {
-		x=1110
+		x=1113
 		y=109
-		width=48
+		width=50
 		height=12
 	}
 	monitor {
-		chan="B_HPSECALDSC_TOP_5"
+		chan="B_SCALERSHPS1_Sl16_Ch4.VAL"
 		clr=14
 		bclr=35
 	}
 	align="horiz. centered"
 	limits {
+		precSrc="default"
 	}
 }
 "text update" {
 	object {
-		x=960
+		x=957
 		y=138
-		width=48
+		width=50
 		height=12
 	}
 	monitor {
-		chan="B_HPSECALDSC_BOT_2"
+		chan="B_SCALERSHPS2_Sl14_Ch12.VAL"
 		clr=14
 		bclr=35
 	}
 	align="horiz. centered"
 	limits {
+		precSrc="default"
 	}
 }
 "text update" {
 	object {
-		x=1060
+		x=1061
 		y=138
-		width=48
+		width=50
 		height=12
 	}
 	monitor {
-		chan="B_HPSECALDSC_BOT_4"
+		chan="B_SCALERSHPS2_Sl15_Ch12.VAL"
 		clr=14
 		bclr=35
 	}
 	align="horiz. centered"
 	limits {
+		precSrc="default"
 	}
 }
 "text update" {
 	object {
-		x=1010
+		x=1009
 		y=138
-		width=48
+		width=50
 		height=12
 	}
 	monitor {
-		chan="B_HPSECALDSC_BOT_3"
+		chan="B_SCALERSHPS2_Sl15_Ch4.VAL"
 		clr=14
 		bclr=35
 	}
 	align="horiz. centered"
 	limits {
+		precSrc="default"
 	}
 }
 "text update" {
 	object {
-		x=1110
+		x=1113
 		y=138
-		width=48
+		width=50
 		height=12
 	}
 	monitor {
-		chan="B_HPSECALDSC_BOT_5"
+		chan="B_SCALERSHPS2_Sl16_Ch4.VAL"
 		clr=14
 		bclr=35
 	}
 	align="horiz. centered"
 	limits {
+		precSrc="default"
 	}
 }
 text {
@@ -3820,4 +3784,354 @@ text {
 		clr=14
 	}
 	textix="Beam"
+}
+text {
+	object {
+		x=454
+		y=435
+		width=105
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Hall-B Collimator"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=471
+		y=455
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=20
+		fill="outline"
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="collimator.MOVN"
+	}
+	textix="Moving"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=475
+		y=492
+		width=50
+		height=14
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="collimator_at_home"
+	}
+}
+text {
+	object {
+		x=480
+		y=492
+		width=40
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="display1.ONSV"
+	}
+	textix="OUT"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=475
+		y=527
+		width=50
+		height=17
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="collimator_at_b"
+	}
+}
+text {
+	object {
+		x=478
+		y=530
+		width=40
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="display1.THSV"
+	}
+	textix="6.4 mm"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=475
+		y=509
+		width=50
+		height=17
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="collimator_at_a"
+	}
+}
+text {
+	object {
+		x=478
+		y=510
+		width=40
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="display1.THSV"
+	}
+	textix="12.7 mm"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=475
+		y=546
+		width=50
+		height=17
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="collimator_at_c"
+	}
+}
+"text update" {
+	object {
+		x=477
+		y=550
+		width=2
+		height=2
+	}
+	monitor {
+		clr=14
+		bclr=4
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=478
+		y=547
+		width=40
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="display1.THSV"
+	}
+	textix="2.6 mm"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=527
+		y=553
+		width=2
+		height=2
+	}
+	monitor {
+		clr=14
+		bclr=4
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=590
+		y=5
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocchicane:TOD"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=203
+		y=170
+		width=20
+		height=20
+	}
+	monitor {
+		chan="frwd_scalerS15b"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+composite {
+	object {
+		x=230
+		y=47
+		width=125
+		height=20
+	}
+	"composite name"=""
+	children {
+		rectangle {
+			object {
+				x=230
+				y=47
+				width=125
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+		}
+		text {
+			object {
+				x=230
+				y=50
+				width=125
+				height=15
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Neutron Counters"
+			align="horiz. centered"
+		}
+	}
+}
+composite {
+	object {
+		x=230
+		y=26
+		width=125
+		height=20
+	}
+	"composite name"=""
+	children {
+		rectangle {
+			object {
+				x=230
+				y=26
+				width=125
+				height=20
+			}
+			"basic attribute" {
+				clr=35
+			}
+		}
+		text {
+			object {
+				x=230
+				y=29
+				width=125
+				height=15
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="ECal Rates"
+			align="horiz. centered"
+		}
+	}
+}
+"text update" {
+	object {
+		x=826
+		y=121
+		width=50
+		height=18
+	}
+	monitor {
+		chan="HPS:NC:frascati"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1005
+		y=187
+		width=50
+		height=18
+	}
+	monitor {
+		chan="HPS:NC:left"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1068
+		y=187
+		width=50
+		height=18
+	}
+	monitor {
+		chan="HPS:NC:right"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=770
+		y=121
+		width=50
+		height=18
+	}
+	monitor {
+		chan="HPS:NC:fwdcar"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
 }

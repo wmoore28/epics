@@ -1,0 +1,13 @@
+record(aSub,SVT:daq:$(DPM):$(HYB):sync_rd_asub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subSyncBaseInit")
+    field(SNAM,"subSyncBaseProcess")
+    field(OUTA,"SVT:daq:$(DPM):$(HYB):sync_rd CPP")
+    field(FTVA,"LONG")
+}
+
+record(longin,SVT:daq:$(DPM):$(HYB):sync_rd) {
+  field(SCAN, "Passive")
+  field(DTYP,"Soft Channel")
+}

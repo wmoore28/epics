@@ -1,0 +1,32 @@
+record(calc, SVT:daq:feb:all:sem_heartbeat_stat)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:daq:feb:0:sem_heartbeat_stat CPP")
+	field(INPB,"SVT:daq:feb:1:sem_heartbeat_stat CPP")
+	field(INPC,"SVT:daq:feb:2:sem_heartbeat_stat CPP")
+	field(INPD,"SVT:daq:feb:3:sem_heartbeat_stat CPP")
+	field(INPE,"SVT:daq:feb:4:sem_heartbeat_stat CPP")
+	field(INPF,"SVT:daq:feb:5:sem_heartbeat_stat CPP")
+	field(INPG,"SVT:daq:feb:6:sem_heartbeat_stat CPP")
+	field(INPH,"SVT:daq:feb:7:sem_heartbeat_stat CPP")
+	field(INPI,"SVT:daq:feb:8:sem_heartbeat_stat CPP")
+	field(INPJ,"SVT:daq:feb:9:sem_heartbeat_stat CPP")
+	field(CALC,"(A>0)&&(B>0)&&(C>0)&&(D>0)&&(E>0)&&(F>0)&&(G>0)&&(H>0)&&(I>0)&&(J>0)")
+}
+
+
+record(calc, SVT:daq:feb:all:sem_error_stat)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:daq:feb:0:sem_error_stat CPP")
+	field(INPB,"SVT:daq:feb:1:sem_error_stat CPP")
+	field(INPC,"SVT:daq:feb:2:sem_error_stat CPP")
+	field(INPD,"SVT:daq:feb:3:sem_error_stat CPP")
+	field(INPE,"SVT:daq:feb:4:sem_error_stat CPP")
+	field(INPF,"SVT:daq:feb:5:sem_error_stat CPP")
+	field(INPG,"SVT:daq:feb:6:sem_error_stat CPP")
+	field(INPH,"SVT:daq:feb:7:sem_error_stat CPP")
+	field(INPI,"SVT:daq:feb:8:sem_error_stat CPP")
+	field(INPJ,"SVT:daq:feb:9:sem_error_stat CPP")
+	field(CALC,"(A>0)||(B>0)||(C>0)||(D>0)||(E>0)||(F>0)||(G>0)||(H>0)||(I>0)||(J>0)")
+}

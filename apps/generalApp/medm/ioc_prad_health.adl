@@ -1,0 +1,2044 @@
+
+file {
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/ioc_prad_health.adl"
+	version=030109
+}
+display {
+	object {
+		x=45
+		y=15
+		width=820
+		height=500
+	}
+	clr=3
+	bclr=4
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+rectangle {
+	object {
+		x=2
+		y=423
+		width=800
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+rectangle {
+	object {
+		x=3
+		y=445
+		width=800
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+rectangle {
+	object {
+		x=115
+		y=445
+		width=137
+		height=20
+	}
+	"basic attribute" {
+		clr=27
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=0
+		width=1300
+		height=20
+	}
+	"basic attribute" {
+		clr=29
+	}
+}
+text {
+	object {
+		x=286
+		y=48
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Message"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=134
+		y=48
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Server Hostname"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=10
+		y=28
+		width=105
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="softIOCs (linux)"
+}
+text {
+	object {
+		x=316
+		y=3
+		width=200
+		height=10
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="PRAD IOC Health"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=-14
+		y=48
+		width=160
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Name"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=567
+		y=48
+		width=75
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Reboot"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=648
+		y=48
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Last Reboot"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=10
+		y=223
+		width=105
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="VME IOCs (vxWorks)"
+}
+text {
+	object {
+		x=437
+		y=48
+		width=100
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Heartbeat"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=10
+		y=68
+		width=800
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+"text update" {
+	object {
+		x=134
+		y=68
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iockeithley:HOSTNAME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=286
+		y=68
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iockeithley:UPTIME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=438
+		y=68
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iockeithley:HEARTBEAT"
+		clr=0
+		bclr=27
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=648
+		y=68
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iockeithley:STARTTOD"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=69
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iockeithley"
+}
+"related display" {
+	object {
+		x=567
+		y=68
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iockeithley"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+rectangle {
+	object {
+		x=10
+		y=91
+		width=800
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+"text update" {
+	object {
+		x=134
+		y=91
+		width=150
+		height=20
+	}
+	monitor {
+		chan="ioctempSens:HOSTNAME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=286
+		y=91
+		width=150
+		height=20
+	}
+	monitor {
+		chan="ioctempSens:UPTIME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=438
+		y=91
+		width=100
+		height=20
+	}
+	monitor {
+		chan="ioctempSens:HEARTBEAT"
+		clr=0
+		bclr=29
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=648
+		y=91
+		width=150
+		height=20
+	}
+	monitor {
+		chan="ioctempSens:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=92
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ioctempSens"
+}
+"related display" {
+	object {
+		x=567
+		y=91
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=ioctempSens"
+	}
+	clr=14
+	bclr=8
+	label="Reboot..."
+}
+text {
+	object {
+		x=262
+		y=242
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Message"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=134
+		y=242
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Hostname"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=10
+		y=259
+		width=800
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+text {
+	object {
+		x=-14
+		y=242
+		width=160
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Name"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=134
+		y=259
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocclassc1:HOSTNAME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=286
+		y=259
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocclassc1:UPTIME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=389
+		y=259
+		width=80
+		height=20
+	}
+	monitor {
+		chan="iocclassc1:HEARTBEAT"
+		clr=0
+		bclr=27
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=648
+		y=259
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocclassc1:STARTTOD"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=260
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocclassc1"
+}
+text {
+	object {
+		x=498
+		y=242
+		width=75
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Reboot"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=648
+		y=242
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Last Reboot"
+	align="horiz. centered"
+}
+"related display" {
+	object {
+		x=498
+		y=259
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocclassc1"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+text {
+	object {
+		x=381
+		y=242
+		width=100
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Heartbeat"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=10
+		y=281
+		width=800
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+"text update" {
+	object {
+		x=134
+		y=281
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocclassc4:HOSTNAME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=286
+		y=281
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocclassc4:UPTIME"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=389
+		y=281
+		width=80
+		height=20
+	}
+	monitor {
+		chan="iocclassc4:HEARTBEAT"
+		clr=0
+		bclr=27
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=648
+		y=281
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocclassc4:STARTTOD"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=282
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocclassc4"
+}
+"related display" {
+	object {
+		x=498
+		y=281
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocclassc4"
+	}
+	clr=14
+	bclr=6
+	label="Reboot..."
+}
+rectangle {
+	object {
+		x=10
+		y=303
+		width=800
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+"text update" {
+	object {
+		x=134
+		y=303
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocclassc6:HOSTNAME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=286
+		y=303
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocclassc6:UPTIME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=389
+		y=303
+		width=80
+		height=20
+	}
+	monitor {
+		chan="iocclassc6:HEARTBEAT"
+		clr=0
+		bclr=29
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=648
+		y=303
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocclassc6:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=304
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocclassc6"
+}
+"related display" {
+	object {
+		x=498
+		y=303
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocclassc6"
+	}
+	clr=14
+	bclr=8
+	label="Reboot..."
+}
+"related display" {
+	object {
+		x=542
+		y=68
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iockeithley"
+	}
+	clr=14
+	bclr=6
+}
+text {
+	object {
+		x=542
+		y=48
+		width=20
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Exp"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=473
+		y=242
+		width=20
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Exp"
+	align="horiz. centered"
+}
+"related display" {
+	object {
+		x=542
+		y=92
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=ioctempSens"
+	}
+	clr=14
+	bclr=8
+}
+"related display" {
+	object {
+		x=473
+		y=259
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_vxworks.adl"
+		args="ioc=iocclassc1"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=473
+		y=281
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_vxworks.adl"
+		args="ioc=iocclassc4"
+	}
+	clr=14
+	bclr=6
+}
+"related display" {
+	object {
+		x=473
+		y=304
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_vxworks.adl"
+		args="ioc=iocclassc6"
+	}
+	clr=14
+	bclr=8
+}
+rectangle {
+	object {
+		x=10
+		y=113
+		width=800
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+"text update" {
+	object {
+		x=134
+		y=113
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocecalVoltages:HOSTNAME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=286
+		y=113
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocecalVoltages:UPTIME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=438
+		y=113
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocecalVoltages:HEARTBEAT"
+		clr=0
+		bclr=29
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=114
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="beamVoltages"
+}
+"related display" {
+	object {
+		x=567
+		y=113
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocecalVoltages"
+	}
+	clr=14
+	bclr=8
+	label="Reboot..."
+}
+"related display" {
+	object {
+		x=542
+		y=114
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocecalVoltages"
+	}
+	clr=14
+	bclr=8
+}
+rectangle {
+	object {
+		x=5
+		y=23
+		width=190
+		height=2
+	}
+	"basic attribute" {
+		clr=29
+	}
+}
+rectangle {
+	object {
+		x=5
+		y=238
+		width=190
+		height=2
+	}
+	"basic attribute" {
+		clr=29
+	}
+}
+rectangle {
+	object {
+		x=5
+		y=218
+		width=190
+		height=2
+	}
+	"basic attribute" {
+		clr=29
+	}
+}
+rectangle {
+	object {
+		x=5
+		y=43
+		width=190
+		height=2
+	}
+	"basic attribute" {
+		clr=29
+	}
+}
+rectangle {
+	object {
+		x=10
+		y=136
+		width=800
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+"text update" {
+	object {
+		x=134
+		y=136
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocjscalers:HOSTNAME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=286
+		y=136
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocjscalers:UPTIME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=438
+		y=136
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocjscalers:HEARTBEAT"
+		clr=0
+		bclr=29
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=137
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocjscalers"
+}
+"related display" {
+	object {
+		x=567
+		y=136
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocjscalers"
+	}
+	clr=14
+	bclr=8
+	label="Reboot..."
+}
+"related display" {
+	object {
+		x=542
+		y=136
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocjscalers"
+	}
+	clr=14
+	bclr=8
+}
+"text update" {
+	object {
+		x=648
+		y=113
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocecalVoltages:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=648
+		y=136
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocjscalers:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=10
+		y=325
+		width=800
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+"text update" {
+	object {
+		x=134
+		y=325
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocclassc8:HOSTNAME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=286
+		y=325
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocclassc8:UPTIME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=389
+		y=325
+		width=80
+		height=20
+	}
+	monitor {
+		chan="iocclassc8:HEARTBEAT"
+		clr=0
+		bclr=29
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=648
+		y=325
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocclassc8:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=326
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocclassc8"
+}
+"related display" {
+	object {
+		x=498
+		y=325
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocclassc8"
+	}
+	clr=14
+	bclr=8
+	label="Reboot..."
+}
+"related display" {
+	object {
+		x=473
+		y=326
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_vxworks.adl"
+		args="ioc=iocclassc8"
+	}
+	clr=14
+	bclr=8
+}
+text {
+	object {
+		x=11
+		y=385
+		width=105
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="VME IOCs (vxWorks) - OLD EPICS"
+}
+text {
+	object {
+		x=-21
+		y=407
+		width=160
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Name"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=6
+		y=400
+		width=190
+		height=2
+	}
+	"basic attribute" {
+		clr=29
+	}
+}
+rectangle {
+	object {
+		x=6
+		y=377
+		width=190
+		height=2
+	}
+	"basic attribute" {
+		clr=29
+	}
+}
+text {
+	object {
+		x=13
+		y=448
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocclassc3"
+}
+text {
+	object {
+		x=104
+		y=405
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Hostname"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=256
+		y=402
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Date"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=399
+		y=402
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Boot Date"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=546
+		y=402
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Heartbeat"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=255
+		y=445
+		width=150
+		height=20
+	}
+	monitor {
+		chan="classc3:date"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=407
+		y=445
+		width=150
+		height=20
+	}
+	monitor {
+		chan="classc3:bootdate"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=559
+		y=445
+		width=150
+		height=20
+	}
+	monitor {
+		chan="classc3:heartbeat"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=107
+		y=448
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="classc3.jlab.org"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=716
+		y=403
+		width=20
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Exp"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=3
+		y=467
+		width=800
+		height=20
+	}
+	"basic attribute" {
+		clr=2
+	}
+}
+rectangle {
+	object {
+		x=115
+		y=467
+		width=137
+		height=20
+	}
+	"basic attribute" {
+		clr=27
+	}
+}
+text {
+	object {
+		x=13
+		y=470
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocclassc12"
+}
+"text update" {
+	object {
+		x=255
+		y=467
+		width=150
+		height=20
+	}
+	monitor {
+		chan="classc12:date"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=407
+		y=467
+		width=150
+		height=20
+	}
+	monitor {
+		chan="classc12:bootdate"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=559
+		y=467
+		width=150
+		height=20
+	}
+	monitor {
+		chan="classc12:heartbeat"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=107
+		y=470
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="classc12.jlab.org"
+	align="horiz. centered"
+}
+"related display" {
+	object {
+		x=712
+		y=467
+		width=30
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="HallSystems.adl"
+		args="ioc=classc12"
+	}
+	clr=14
+	bclr=9
+}
+"related display" {
+	object {
+		x=712
+		y=445
+		width=30
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="HallSystems.adl"
+		args="ioc=classc3"
+	}
+	clr=14
+	bclr=9
+}
+text {
+	object {
+		x=508
+		y=226
+		width=54
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Soft"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=583
+		y=226
+		width=54
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Hard"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=573
+		y=242
+		width=75
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Reboot"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=753
+		y=390
+		width=54
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Hard"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=743
+		y=406
+		width=75
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Reboot"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=10
+		y=159
+		width=800
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+"text update" {
+	object {
+		x=134
+		y=159
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocalarm:HOSTNAME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=286
+		y=159
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocalarm:UPTIME"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=438
+		y=159
+		width=100
+		height=20
+	}
+	monitor {
+		chan="iocalarm:HEARTBEAT"
+		clr=0
+		bclr=29
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=15
+		y=160
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocalarm"
+}
+"related display" {
+	object {
+		x=567
+		y=159
+		width=75
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="ioc_stats_reboot_confirm.adl"
+		args="ioc=iocalarm"
+	}
+	clr=14
+	bclr=8
+	label="Reboot..."
+}
+"related display" {
+	object {
+		x=542
+		y=159
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="ioc_stats_soft.adl"
+		args="ioc=iocalarm"
+	}
+	clr=14
+	bclr=8
+}
+"text update" {
+	object {
+		x=648
+		y=159
+		width=150
+		height=20
+	}
+	monitor {
+		chan="iocalarm:STARTTOD"
+		clr=0
+		bclr=29
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=575
+		y=259
+		width=70
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="roc_reboot_confirm.adl"
+		args="roc=classc1"
+	}
+	clr=14
+	bclr=6
+	label="Reboot!"
+}
+"related display" {
+	object {
+		x=575
+		y=282
+		width=70
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="roc_reboot_confirm.adl"
+		args="roc=classc4"
+	}
+	clr=14
+	bclr=6
+	label="Reboot!"
+}
+"related display" {
+	object {
+		x=575
+		y=304
+		width=70
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="roc_reboot_confirm.adl"
+		args="roc=classc6"
+	}
+	clr=14
+	bclr=6
+	label="Reboot!"
+}
+"related display" {
+	object {
+		x=575
+		y=325
+		width=70
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="roc_reboot_confirm.adl"
+		args="roc=classc8"
+	}
+	clr=14
+	bclr=6
+	label="Reboot!"
+}
+"related display" {
+	object {
+		x=743
+		y=444
+		width=70
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="roc_reboot_confirm.adl"
+		args="roc=classc3"
+	}
+	clr=14
+	bclr=6
+	label="Reboot!"
+}
+"related display" {
+	object {
+		x=744
+		y=466
+		width=70
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="roc_reboot_confirm.adl"
+		args="roc=classc12"
+	}
+	clr=14
+	bclr=6
+	label="Reboot!"
+}
+rectangle {
+	object {
+		x=115
+		y=423
+		width=137
+		height=20
+	}
+	"basic attribute" {
+		clr=27
+	}
+}
+text {
+	object {
+		x=12
+		y=426
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="iocclassc2"
+}
+"text update" {
+	object {
+		x=255
+		y=423
+		width=150
+		height=20
+	}
+	monitor {
+		chan="classc2:date"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=407
+		y=423
+		width=150
+		height=20
+	}
+	monitor {
+		chan="classc2:bootdate"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=559
+		y=423
+		width=150
+		height=20
+	}
+	monitor {
+		chan="classc2:heartbeat"
+		clr=0
+		bclr=27
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=106
+		y=426
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="classc2.jlab.org"
+	align="horiz. centered"
+}
+"related display" {
+	object {
+		x=712
+		y=423
+		width=30
+		height=20
+	}
+	display[0] {
+		label="IOC Stats"
+		name="HallSystems.adl"
+		args="ioc=classc2"
+	}
+	clr=14
+	bclr=9
+}
+"related display" {
+	object {
+		x=743
+		y=422
+		width=70
+		height=20
+	}
+	display[0] {
+		label="Reboot"
+		name="roc_reboot_confirm.adl"
+		args="roc=classc2"
+	}
+	clr=14
+	bclr=6
+	label="Reboot!"
+}

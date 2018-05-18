@@ -45,6 +45,7 @@ DB += dbDataDtmReadCount.db
 DB += dbDataDtmAckCount.db
 DB += dbDataDtm.db
 DB += dbFebLayer.db
+DB += dbHybSyncDataDpm.db
 DB += dbHybSync.db
 DB += dbHybSyncBase.db
 DB += dbHybSyncPeak.db
@@ -58,6 +59,19 @@ DB += dbDataDpmBurnCount.db
 DB += dbDataDtmMinTrigPeriod.db
 DB += dbDataDpmInsertedFrames.db
 DB += dbDataDpmEBEventErrorCount.db
+DB += dbFebAll.db
+DB += dbBiasAll.db
+DB += dbHybridAll.db
+DB += dbFebHeartbeat.db
+DB += dbHybSyncAll.db
+DB += dbHybCurrent.db
+DB += dbDataDpmAll.db
+DB += dbHybridCurrentAll.db
+DB += dbFebTempAll.db
+DB += dbSem.db
+DB += dbSemAll.db
+DB += dbHybSyncDataDpmAll.db
+DB += dbHybSyncDataDpmAllCom.db
 
 #DB += dbSVTtest.db
 

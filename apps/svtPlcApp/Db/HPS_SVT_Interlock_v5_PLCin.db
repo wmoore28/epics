@@ -362,7 +362,8 @@ record( ai, "$(IOC):Vacuum-Value" )
   field(DTYP, "EtherIP" ) 
   field(SCAN, "1 second" ) 
   field(INP, "@$(PLCID) Vacuum.Value" ) 
-  field(PREC, "2" ) 
+  field(PREC, "2" )
+  alias("hallb_VCG2H03ATr")
 } 
  
  

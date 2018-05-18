@@ -10,9 +10,12 @@ short  onBtn;   assign onBtn   to "{P}:start";  monitor onBtn;
 short  offBtn;  assign offBtn  to "{P}:stop";   monitor offBtn;
 short  calcBtn; assign calcBtn to "{P}:calc";   monitor calcBtn;
 short  calcBtnCurr; assign calcBtnCurr to "{P}:calcCurr";   monitor calcBtnCurr;
+//short  calcAndSetBtnCurr; assign calcAndSetBtnCurr to "${P}:calcAndSetCurr";  monitor calcAndSetBtnCurr;
 
-float  iDelta;   assign iDelta   to "{P}:iDelta"; monitor iDelta;
 float  tHoldMax; assign tHoldMax to "{P}:tHoldMax";
+
+float  iDeltaPS;   assign iDeltaPS   to "{P}:iDeltaPS"; monitor iDeltaPS;
+float  iDeltaMT;   assign iDeltaMT   to "{P}:iDeltaMT"; monitor iDeltaMT;
 
 string msg;      assign msg      to "{P}:msg";
 
@@ -26,28 +29,33 @@ short  isOff;    assign isOff    to "{P}:isOff";
 
 float energyB;   assign energyB to "MBSY2C_energy";
 
-float  iSetPS;   assign iSetPS   to "{P}:iSetPS";
-float  iMonPS;   assign iMonPS   to "{P}:iMonPS";  monitor iMonPS;
-float  iSetMT;   assign iSetMT   to "{P}:iSetMT";
-float  iMonMT;   assign iMonMT   to "{P}:iMonMT";  monitor iMonMT;
+// SIMULATOR:
+//float  iSetPS;  assign iSetPS   to "{P}:iSetPS";    monitor iSetPS;
+//float  iMonPS;  assign iMonPS   to "{P}:iMonPS";    monitor iMonPS;
+//float  iSetMT;  assign iSetMT   to "{P}:iSetMT";    monitor iSetMT;
+//float  iMonMT;  assign iMonMT   to "{P}:iMonMT";    monitor iMonMT;
+//short powerMT;  assign powerMT  to "{P}:powerMT";  monitor powerMT;
+//short powerPS;  assign powerPS  to "{P}:powerPS";  monitor powerPS;
 
-//float iSetPS;       assign iSetPS  to "PSPECISET";  monitor iSetPS;
-//float iMonPS;       assign iMonPS  to "PSPECIRBCK"; monitor iMonPS;
-//float iSetMT;       assign iSetMT  to "MTSETI";     monitor iSetMT;
-//float iMonMT;       assign iMonMT  to "MTIRBCK";    monitor iMonMT;
-
-//short powerMT;      assign powerMT to "MTPSONSET";
-//short powerPS;      assign powerPS to "PSPECC.B0";  
+// REAL MAGNETS:
+float iSetPS;   assign iSetPS  to "PSPECISET";  monitor iSetPS;
+float iMonPS;   assign iMonPS  to "PSPECIRBCK"; monitor iMonPS;
+float iSetMT;   assign iSetMT  to "MTSETI";     monitor iSetMT;
+float iMonMT;   assign iMonMT  to "MTIRBCK";    monitor iMonMT;
+short powerMT;  assign powerMT to "MTPSONSET";  monitor powerMT;
+short powerPS;  assign powerPS to "PSPECC.B0";  monitor powerPS;
 
 int tConfirm = 5; // time to give user a chance to cancel (seconds)
 float iMaxPS = 2700.0;  // saturation current to hold at (Amps)
 float iMaxMT = 3500.0;  // saturation current to hold at (Amps)
+float iZeroPS = 8;
+float iZeroMT = 0;
 
 float iStartPS;
 float iStartMT;
 int count;
 
-
+// JUST FOR SIMULATOR:
 int countDriver;
 short  gotoZeroBtn; assign gotoZeroBtn to "{P}:gotoZero"; monitor gotoZeroBtn;
 short  gotoMaxBtn;  assign gotoMaxBtn  to "{P}:gotoMax";  monitor gotoMaxBtn;
@@ -63,14 +71,19 @@ float getCurrentPS(float ee) {
 float getCurrentMT(float ee) {
     return getCurrentPS(ee) / 0.5228;
 }
-int isSimilar(float x1,float x2,float y1,float y2,float delta) {
-    return fabs(x1-x2)<delta && fabs(y1-y2)<delta;
+int isSimilar(float x1,float x2,float dx) {
+    return fabs(x1-x2)<dx;
+}
+int isSimilar2(float x1,float x2,float dx, float y1,float y2,float dy) {
+    return isSimilar(x1,x2,dx) && isSimilar(y1,y2,dy);
 }
 float minComplete(float x0,float x1,float x2,float y0,float y1,float y2) {
     const float cx = (x1-x0) / (x2-x0);
     const float cy = (y1-y0) / (y2-y0);
     return cx<cy ? cx : cy;
 }
+
+// JUST FOR SIMULATOR:
 float getRampCurrent(int step,int nstep,float i0,float i1) {
     return i0 + (float)step/nstep*(i1-i0);
 }
@@ -91,14 +104,10 @@ ss seqChicane {
             pvPut(isOff);
             pvPut(isReady);
             pvGet(energy);
-            pvGet(iSetPS);
-            pvGet(iSetMT);
+            //pvGet(iSetPS);
+            //pvGet(iSetMT);
             pvGet(iCalcPS);
             pvGet(iCalcMT);
-//            iCalcPS=getCurrentPS(energy);
-//            iCalcMT=getCurrentMT(energy);
-//            pvPut(iCalcPS);
-//            pvPut(iCalcMT);
             sprintf(msg,"Initialized");
             epicsThreadSleep(2);
             pvPut(msg);
@@ -110,8 +119,8 @@ ss seqChicane {
         option -e; // execute entry even if previous state was the same
 
         entry {
-            pvGet(iSetPS);
-            pvGet(iSetMT);
+            //pvGet(iSetPS);
+            //pvGet(iSetMT);
         }
 
         when (pvConnectCount() < pvChannelCount() ) {} state init
@@ -138,26 +147,27 @@ ss seqChicane {
 
         // Chicane ready when IOC was restarted:
         when (energy > 0 &&
-                isSimilar(iSetPS,iMonPS, iSetMT,iMonMT, iDelta) && 
-                isSimilar(iSetPS,iCalcPS,iSetMT,iCalcMT,iDelta)) {
+                isSimilar2(iSetPS,iMonPS, iDeltaPS, iSetMT,iMonMT, iDeltaMT) && 
+                isSimilar2(iSetPS,iCalcPS,iDeltaPS, iSetMT,iCalcMT,iDeltaMT)) {
         } state ready
 
-        // 
-        when (!isSimilar(iSetPS,0,iSetMT,0,iDelta) ||
-              !isSimilar(iMonPS,0,iMonMT,0,iDelta)) {
+        // Setpoints donot match zeros, must be controlled externally to this IOC: 
+        when (!isSimilar2(iSetPS,iZeroPS,iDeltaPS,iSetMT,0,iDeltaMT) ||
+              !isSimilar2(iMonPS,iZeroPS,iDeltaPS,iMonMT,0,iDeltaMT)) {
         } state external
 
         // Chicane off when IOC was restarted:
-        when (isSimilar(iMonPS,0,iMonMT,0,iDelta) &&
-              isSimilar(iSetPS,0,iSetMT,0,iDelta)) {
+        when (isSimilar2(iSetPS,iZeroPS,iDeltaPS,iSetMT,0,iDeltaMT) &&
+              isSimilar2(iMonPS,iZeroPS,iDeltaPS,iMonMT,0,iDeltaMT) ) { 
             if (!isOff) {
                 isOff=1;
                 sprintf(msg,"OFF");
                 pvPut(isOff);
                 pvPut(msg);
             }
-            pvGet(iSetPS);
-            pvGet(iSetMT);
+            //pvGet(iSetPS);
+            //pvGet(iSetMT);
+            epicsThreadSleep(1);
         } state idle
 
         // 
@@ -173,12 +183,12 @@ ss seqChicane {
             sprintf(msg,"MCC Beam Energy Retrieved:  %.2f",energy);
             pvPut(msg);
             epicsThreadSleep(2);
+            sprintf(msg,"Currents Recalculated");
+            pvPut(msg);
             iCalcPS=getCurrentPS(energy);
             iCalcMT=getCurrentMT(energy);
             pvPut(iCalcPS);
             pvPut(iCalcMT);
-            sprintf(msg,"Currents Recalculated");
-            pvPut(msg);
             epicsThreadSleep(2);
             sprintf(msg,"OFF");
             pvPut(msg);
@@ -216,7 +226,7 @@ ss seqChicane {
         
         entry {
             sprintf(msg,"Ramping to Zero");
-            iSetPS = 0;
+            iSetPS = iZeroPS;
             iSetMT = 0;
 	    complete = 0;
             pvPut(msg);
@@ -227,13 +237,27 @@ ss seqChicane {
             iStartMT=iMonMT;
         }
 
-        when (isSimilar(iMonPS,0.,iMonMT,0.,iDelta)) {
-            sprintf(msg,"OFF");
-	    complete = 0;
+        when (isSimilar2(iMonPS,iZeroPS,iDeltaPS,iMonMT,0,iDeltaMT)) {
+            sprintf(msg,"Turning MiniTorus OFF.");
+            pvPut(msg);
+            powerMT=0;
+            pvPut(powerMT);
+            epicsThreadSleep(5);
+            
+            sprintf(msg,"Turning PairSpec OFF.");
+            pvPut(msg);
+            powerPS=0;
+            pvPut(powerPS);
+            epicsThreadSleep(5);
+            iSetPS=0;
+            pvPut(iSetPS);
+
+            complete = 0;
             isOff = 1;
             pvPut(isOff);
-            pvPut(msg);
 	    pvPut(complete);
+            sprintf(msg,"OFF");
+            pvPut(msg);
         } state idle 
 
         when () {
@@ -257,8 +281,8 @@ ss seqChicane {
                 pvPut(isReady);
                 pvPut(msg);
             }
-            pvGet(iSetPS);
-            pvGet(iSetMT);
+            //pvGet(iSetPS);
+            //pvGet(iSetMT);
         }
         
         when (pvConnectCount() < pvChannelCount() ) {} state init
@@ -295,10 +319,31 @@ ss seqChicane {
             pvPut(msg);
         } state ready
 
-        when (!isSimilar(iCalcPS,iSetPS,iCalcMT,iSetMT,iDelta)) {
+//        when (calcAndSetBtnCurr) {
+//            calcAndSetBtnCurr=0;
+//            pvPut(calcAndSetBtnCurr);
+//            sprintf(msg,"Using Beam Energy:  %.2f",energy);
+//            pvPut(msg);
+//            epicsThreadSleep(2);
+//            iCalcPS=getCurrentPS(energy);
+//            iCalcMT=getCurrentMT(energy);
+//            pvPut(iCalcPS);
+//            pvPut(iCalcMT);
+//            iSetPS=iCalcPS;
+//            iSetMT=iCalcMT;
+//            pvPut(iSetPS);
+//            pvPut(iSetMT);
+//            sprintf(msg,"Currents Recalculated and Magnets Set");
+//            pvPut(msg);
+//            epicsThreadSleep(2);
+//            sprintf(msg,"Ready");
+//            pvPut(msg);
+//        } state ready
+
+        when (!isSimilar2(iCalcPS,iSetPS,iDeltaPS,iCalcMT,iSetMT,iDeltaMT)) {
         } state external
 
-	when (!isSimilar(iMonPS,iSetPS,iMonMT,iSetMT,iDelta)) {
+	when (!isSimilar2(iMonPS,iSetPS,iDeltaPS,iMonMT,iSetMT,iDeltaMT)) {
 	    sprintf(msg,"Current NOT at spec!");
 	    pvPut(msg);
             isError=1;
@@ -307,7 +352,7 @@ ss seqChicane {
             pvPut(isError);
 	} state ready
 	
-        when (isSimilar(iMonPS,iSetPS,iMonMT,iSetMT,iDelta)) {
+        when (isSimilar2(iMonPS,iSetPS,iDeltaPS,iMonMT,iSetMT,iDeltaMT)) {
 	    sprintf(msg,"Chicane Ready");
 	    pvPut(msg);
             complete=1;
@@ -340,21 +385,47 @@ ss seqChicane {
        
         when (delay(tConfirm)) {
             complete = 0;
-            iSetPS = iMaxPS;
-            iSetMT = iMaxMT;
-            pvPut(iSetPS);
-            pvPut(iSetMT);
             pvPut(complete);
-        } state rampToMax
+        } state turnSupplyOn
 
         when () {
             %% complete = (float)(count) / tConfirm;
             pvPut(complete);
-            sprintf(msg,"Ramping Up to Max in %d seconds",tConfirm-count);
+            sprintf(msg,"Initiating ON Procedure in %d seconds",tConfirm-count);
             pvPut(msg);
             epicsThreadSleep(1);
             count++;
         } state pauseBeforeRampToMax
+    }
+
+    state turnSupplyOn {
+        
+        //option -e; // execute entry even if previous state was the same
+	
+        entry {
+            sprintf(msg,"Turning power supplies ON.");
+            pvPut(msg);
+	}
+
+        when (pvConnectCount() < pvChannelCount() ) {} state init
+
+        when (powerMT==0) {
+            powerMT=1;
+            pvPut(powerMT);
+            sprintf(msg,"Turning MiniTorus ON.");
+            pvPut(msg);
+            epicsThreadSleep(5);
+        } state turnSupplyOn
+
+        when (powerPS==0) {
+            powerPS=1;
+            pvPut(powerPS);
+            sprintf(msg,"Turning PairSpec ON.");
+            pvPut(msg);
+            epicsThreadSleep(5);
+        } state turnSupplyOn
+
+        when (powerMT==1 && powerPS==1) {} state rampToMax 
     }
 
     state rampToMax {
@@ -362,10 +433,14 @@ ss seqChicane {
 	option -e; // execute entry even if previous state was the same
 
 	entry {
+            iSetPS = iMaxPS;
+            iSetMT = iMaxMT;
+            pvPut(iSetPS);
+            pvPut(iSetMT);
             isOff=0;
             pvPut(isOff);
-	    pvGet(iSetPS);
-	    pvGet(iSetMT);
+	    //pvGet(iSetPS);
+	    //pvGet(iSetMT);
             sprintf(msg,"Ramping Up to Max");
             pvPut(msg);
 	}
@@ -373,8 +448,7 @@ ss seqChicane {
         when (offBtn) {} state rampOff
         when (pvConnectCount() < pvChannelCount() ) {} state init
         
-        when ( isSimilar(iSetPS,iMonPS,iSetMT,iMonMT,iDelta) ) { 
-	} state holdAtMax
+        when ( isSimilar(iSetPS,iMonPS,iDeltaPS) ) {} state holdAtMax
 	
         when (calcBtn) {
             calcBtn=0;
@@ -395,8 +469,8 @@ ss seqChicane {
             complete = minComplete(0,iMonPS,iSetPS,0,iMonMT,iSetMT);
 	    pvPut(complete);
 	    epicsThreadSleep(1);
-	    pvGet(iSetPS);
-	    pvGet(iSetMT);
+	    //pvGet(iSetPS);
+	    //pvGet(iSetMT);
 	} state rampToMax
     }
 
@@ -408,7 +482,7 @@ ss seqChicane {
 	    count = 0;
 	    complete = 0;
 	    pvGet(tHoldMax);
-	    sprintf(msg,"Holding at Max for %.1f minutes",tHoldMax);
+	    sprintf(msg,"Saturating PairSpec for %.1f minutes",tHoldMax);
 	    pvPut(msg);
 	    pvPut(complete);
 	}
@@ -417,14 +491,13 @@ ss seqChicane {
         
         when (pvConnectCount() < pvChannelCount() ) {} state init
 
-	when (count>=60*tHoldMax && isSimilar(iMonPS,iSetPS,iMonMT,iSetMT,iDelta)) {
+	when (count>=60*tHoldMax && isSimilar2(iMonPS,iSetPS,iDeltaPS,iMonMT,iSetMT,iDeltaMT)) {
 	    complete = 0;
 	    pvPut(complete);
 	} state rampToSetpoint
 
-	when (count>=60*tHoldMax && !isSimilar(iMonPS,iSetPS,iMonMT,iSetMT,iDelta)) {
-	    complete = 0.9;
-	    pvPut(complete);
+	when (count>=60*tHoldMax && !isSimilar2(iMonPS,iSetPS,iDeltaPS,iMonMT,iSetMT,iDeltaMT)) {
+            count--;
 	    sprintf(msg,"Waiting, current NOT at Max.");
 	    pvPut(msg);
 	} state holdAtMax
@@ -481,7 +554,7 @@ ss seqChicane {
 
         when (pvConnectCount() < pvChannelCount() ) {} state init
 
-	when ( isSimilar(iSetPS,iMonPS,iSetMT,iMonMT,iDelta) ) {
+	when ( isSimilar2(iSetPS,iMonPS,iDeltaPS,iSetMT,iMonMT,iDeltaMT) ) {
             complete=1;
             pvPut(complete);
         } state ready
@@ -508,14 +581,13 @@ ss seqChicane {
         } state rampToSetpoint
 	
         when () {
-	    pvGet(iSetPS);
-	    pvGet(iSetMT);
+	    //pvGet(iSetPS);
+	    //pvGet(iSetMT);
             complete = 1-minComplete(iStartPS,iMonPS,iSetPS,iStartMT,iMonMT,iSetMT);
             pvPut(complete);
 	} state rampToSetpoint
     }
 }
-
 
 
 

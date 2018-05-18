@@ -27,8 +27,8 @@ epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES", "10000000")
 #                  channels,
 #                  signals)
 drvSIS3801Config("SIS38XX_0", 0x08000000, 220, 6, 60000, 5)
-dbLoadRecords("$(STD)/stdApp/Db/scaler32.db", "P=struckDaq_, S=scaler1, DTYP=Asyn Scaler, OUT=@asyn(SIS38XX_0), FREQ=25000000")
-dbLoadRecords("$(MCA)/db/SIS38XX.template", "P=struckDaq_, SCALER=scaler1, PORT=SIS38XX_0")
+dbLoadRecords("$(STD)/stdApp/Db/scaler32.db", "P=struck, S=Daq, DTYP=Asyn Scaler, OUT=@asyn(SIS38XX_0), FREQ=25000000")
+dbLoadRecords("$(MCA)/db/SIS38XX.template", "P=struck, SCALER=Daq, PORT=SIS38XX_0")
 
 dbLoadRecords("db/struckDaqCommon.db")
 dbLoadRecords("db/struckDaq.db", "FIFO=60000, CHAN=0, PORT=SIS38XX_0")
@@ -71,10 +71,18 @@ cd startup
 iocInit "../resource.def"
 
 ## Struck
-dbpf "struckDaq_Dwell", "0.000015"
-dbpf "struckDaq_ReadAll.SCAN","Passive"
-seq &SIS38XX_SNL, "P=struckDaq_, R=mca, NUM_SIGNALS=5, FIELD=READ"
+
+# HPS:
+#dbpf "struckDwell", "0.000015"
+# CLAS12:
+dbpf "struckDwell", "0.0003"
+
+dbpf "struckReadAll.SCAN","Passive"
+seq &SIS38XX_SNL, "P=struck, R=Daq_, NUM_SIGNALS=5, FIELD=READ"
 
 ## Start any sequence programs
+# This one is 100% cpu usage, turn it off during downtime:
 seq &struckDaq
+
 #testLoop()
+

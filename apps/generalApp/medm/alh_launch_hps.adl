@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v1.3.0/apps/generalApp/medm/alh_launch_hps.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/./generalApp/medm/alh_launch_hps.adl"
+	version=030101
 }
 display {
 	object {
-		x=243
-		y=502
+		x=241
+		y=487
 		width=200
 		height=380
 	}
@@ -155,7 +155,7 @@ text {
 	command[0] {
 		label="alh"
 		name="alh"
-		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/HPS.alhConfig &"
+		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/HPS.alhConfig &"
 	}
 	clr=30
 	bclr=22
@@ -182,7 +182,7 @@ text {
 	command[0] {
 		label="alh"
 		name="alh"
-		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/beam.alhConfig &"
+		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/beam.alhConfig &"
 	}
 	clr=30
 	bclr=22
@@ -209,7 +209,7 @@ text {
 	command[0] {
 		label="alh"
 		name="alh"
-		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/ecal.alhConfig &"
+		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /usr/clas12/hps/DATA/alarms /usr/clas12/hps/prod/apps/alhConfig/ecal.alhConfig &"
 	}
 	clr=30
 	bclr=22
@@ -236,7 +236,7 @@ text {
 	command[0] {
 		label="alh"
 		name="alh"
-		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/trigger.alhConfig &"
+		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/trigger.alhConfig &"
 	}
 	clr=30
 	bclr=22
@@ -263,12 +263,12 @@ text {
 	command[0] {
 		label="ECAL"
 		name="alh"
-		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/tempSens.alhConfig &"
+		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/tempSens.alhConfig &"
 	}
 	command[1] {
 		label="Hall Temp"
 		name="alh"
-		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/hall_temp.alhConfig &"
+		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/hall_temp.alhConfig &"
 	}
 	clr=30
 	bclr=22
@@ -295,7 +295,7 @@ text {
 	command[0] {
 		label="alh"
 		name="alh"
-		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/vacuum.alhConfig &"
+		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/vacuum.alhConfig &"
 	}
 	clr=30
 	bclr=22
@@ -346,7 +346,7 @@ text {
 	command[0] {
 		label="alh"
 		name="alh"
-		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/magnets.alhConfig &"
+		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /usr/clas12/hps/DATA/alarms /usr/clas12/hps/prod/apps/alhConfig/magnets.alhConfig &"
 	}
 	clr=30
 	bclr=22
@@ -373,7 +373,7 @@ text {
 	command[0] {
 		label="alh"
 		name="alh"
-		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/svt.alhConfig &"
+		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/svt.alhConfig &"
 	}
 	clr=30
 	bclr=22
@@ -388,7 +388,7 @@ text {
 	command[0] {
 		label="alh"
 		name="alh"
-		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/hv.alhConfig &"
+		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/hv.alhConfig &"
 	}
 	clr=30
 	bclr=22
@@ -415,7 +415,7 @@ text {
 	command[0] {
 		label="alh"
 		name="alh"
-		args="-m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/vesda.alhConfig &"
+		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/vesda.alhConfig &"
 	}
 	clr=30
 	bclr=22

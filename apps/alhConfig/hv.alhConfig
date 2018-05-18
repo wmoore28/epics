@@ -350,16 +350,6 @@ $GUIDANCE
 Use the "P" button to bring up control window for the tripped channel
 $END
 $COMMAND medm -x -attach -macro "channel_name=ECal_cosm2,group_number=1" hv_generic.adl >> /dev/null 
-CHANNEL    HV_beam_counter        B_hv_ECal_cosm3_property
-$GUIDANCE
-Use the "P" button to bring up control window for the tripped channel
-$END
-$COMMAND medm -x -attach -macro "channel_name=ECal_cosm3,group_number=1" hv_generic.adl >> /dev/null 
-CHANNEL    HV_beam_counter        B_hv_ECal_cosm4_property
-$GUIDANCE
-Use the "P" button to bring up control window for the tripped channel
-$END
-$COMMAND medm -x -attach -macro "channel_name=ECal_cosm4,group_number=1" hv_generic.adl >> /dev/null 
 CHANNEL    HV_beam_counter        B_hv_ECal_cosm5_property
 $GUIDANCE
 Use the "P" button to bring up control window for the tripped channel

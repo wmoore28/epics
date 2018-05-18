@@ -1,17 +1,26 @@
 
+
+record(aSub,SVT:daq:map:0:dna_asub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subExtractFebDNAInit")
+    field(SNAM,"subExtractFebDNAProcess")
+    field(OUTA,"SVT:daq:map:0:dna PP")
+    field(FTVA,"STRING")
+}
+
 record(stringin, SVT:daq:map:0:dna) {
   field(SCAN, "Passive") 
-  field(VAL,"0x42084072beb01400")
   field(DTYP,"Soft Channel")
 }
 
 record(stringin, SVT:daq:map:0:layer) {
   field(SCAN, "Passive") 
-  field(VAL,"L2-3b")
+  field(VAL,"L2-3t")
   field(DTYP,"Soft Channel")
 }
 
-record(stringin, SVT:daqmap:L2-3b:febid) {
+record(stringin, SVT:daqmap:L2-3t:febid) {
   field(SCAN, "Passive") 
   field(VAL,"0")
   field(DTYP,"Soft Channel")
@@ -19,9 +28,18 @@ record(stringin, SVT:daqmap:L2-3b:febid) {
 
 
 
+
+record(aSub,SVT:daq:map:1:dna_asub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subExtractFebDNAInit")
+    field(SNAM,"subExtractFebDNAProcess")
+    field(OUTA,"SVT:daq:map:1:dna PP")
+    field(FTVA,"STRING")
+}
+
 record(stringin, SVT:daq:map:1:dna) {
   field(SCAN, "Passive") 
-  field(VAL,"0x72814100a1b01c00")
   field(DTYP,"Soft Channel")
 }
 
@@ -39,9 +57,18 @@ record(stringin, SVT:daqmap:L4b:febid) {
 
 
 
+
+record(aSub,SVT:daq:map:2:dna_asub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subExtractFebDNAInit")
+    field(SNAM,"subExtractFebDNAProcess")
+    field(OUTA,"SVT:daq:map:2:dna PP")
+    field(FTVA,"STRING")
+}
+
 record(stringin, SVT:daq:map:2:dna) {
   field(SCAN, "Passive") 
-  field(VAL,"0x14084072beb01c00")
   field(DTYP,"Soft Channel")
 }
 
@@ -59,9 +86,18 @@ record(stringin, SVT:daqmap:L1b:febid) {
 
 
 
+
+record(aSub,SVT:daq:map:3:dna_asub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subExtractFebDNAInit")
+    field(SNAM,"subExtractFebDNAProcess")
+    field(OUTA,"SVT:daq:map:3:dna PP")
+    field(FTVA,"STRING")
+}
+
 record(stringin, SVT:daq:map:3:dna) {
   field(SCAN, "Passive") 
-  field(VAL,"0x70d04072beb01c00")
   field(DTYP,"Soft Channel")
 }
 
@@ -79,9 +115,18 @@ record(stringin, SVT:daqmap:L6b:febid) {
 
 
 
+
+record(aSub,SVT:daq:map:4:dna_asub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subExtractFebDNAInit")
+    field(SNAM,"subExtractFebDNAProcess")
+    field(OUTA,"SVT:daq:map:4:dna PP")
+    field(FTVA,"STRING")
+}
+
 record(stringin, SVT:daq:map:4:dna) {
   field(SCAN, "Passive") 
-  field(VAL,"0x1c084072beb01400")
   field(DTYP,"Soft Channel")
 }
 
@@ -99,9 +144,18 @@ record(stringin, SVT:daqmap:L5b:febid) {
 
 
 
+
+record(aSub,SVT:daq:map:5:dna_asub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subExtractFebDNAInit")
+    field(SNAM,"subExtractFebDNAProcess")
+    field(OUTA,"SVT:daq:map:5:dna PP")
+    field(FTVA,"STRING")
+}
+
 record(stringin, SVT:daq:map:5:dna) {
   field(SCAN, "Passive") 
-  field(VAL,"0x58d0472beb01400")
   field(DTYP,"Soft Channel")
 }
 
@@ -119,19 +173,28 @@ record(stringin, SVT:daqmap:L4t:febid) {
 
 
 
+
+record(aSub,SVT:daq:map:6:dna_asub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subExtractFebDNAInit")
+    field(SNAM,"subExtractFebDNAProcess")
+    field(OUTA,"SVT:daq:map:6:dna PP")
+    field(FTVA,"STRING")
+}
+
 record(stringin, SVT:daq:map:6:dna) {
   field(SCAN, "Passive") 
-  field(VAL,"0x02d04072beb01c00")
   field(DTYP,"Soft Channel")
 }
 
 record(stringin, SVT:daq:map:6:layer) {
   field(SCAN, "Passive") 
-  field(VAL,"L2-3t")
+  field(VAL,"L2-3b")
   field(DTYP,"Soft Channel")
 }
 
-record(stringin, SVT:daqmap:L2-3t:febid) {
+record(stringin, SVT:daqmap:L2-3b:febid) {
   field(SCAN, "Passive") 
   field(VAL,"6")
   field(DTYP,"Soft Channel")
@@ -139,9 +202,18 @@ record(stringin, SVT:daqmap:L2-3t:febid) {
 
 
 
+
+record(aSub,SVT:daq:map:7:dna_asub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subExtractFebDNAInit")
+    field(SNAM,"subExtractFebDNAProcess")
+    field(OUTA,"SVT:daq:map:7:dna PP")
+    field(FTVA,"STRING")
+}
+
 record(stringin, SVT:daq:map:7:dna) {
   field(SCAN, "Passive") 
-  field(VAL,"0x50814100a1b01c00")
   field(DTYP,"Soft Channel")
 }
 
@@ -159,9 +231,18 @@ record(stringin, SVT:daqmap:L6t:febid) {
 
 
 
+
+record(aSub,SVT:daq:map:8:dna_asub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subExtractFebDNAInit")
+    field(SNAM,"subExtractFebDNAProcess")
+    field(OUTA,"SVT:daq:map:8:dna PP")
+    field(FTVA,"STRING")
+}
+
 record(stringin, SVT:daq:map:8:dna) {
   field(SCAN, "Passive") 
-  field(VAL,"0x52814100a1b01c00")
   field(DTYP,"Soft Channel")
 }
 
@@ -179,9 +260,18 @@ record(stringin, SVT:daqmap:L5t:febid) {
 
 
 
+
+record(aSub,SVT:daq:map:9:dna_asub)
+{
+    field(SCAN,"1 second")
+    field(INAM,"subExtractFebDNAInit")
+    field(SNAM,"subExtractFebDNAProcess")
+    field(OUTA,"SVT:daq:map:9:dna PP")
+    field(FTVA,"STRING")
+}
+
 record(stringin, SVT:daq:map:9:dna) {
   field(SCAN, "Passive") 
-  field(VAL,"0x24d04072beb01c00")
   field(DTYP,"Soft Channel")
 }
 
@@ -207,13 +297,13 @@ record(stringin, SVT:daq:map:0:0:side) {
 
 record(stringin, SVT:daq:map:0:0:layer) {
   field(SCAN, "Passive") 
-  field(VAL,"L2b")
+  field(VAL,"L2t")
   field(DTYP,"Soft Channel")
 }
 
 record(stringin, SVT:daq:map:0:0:type) {
   field(SCAN, "Passive") 
-  field(VAL,"stereo")
+  field(VAL,"axial")
   field(DTYP,"Soft Channel")
 }
 
@@ -227,13 +317,13 @@ record(stringin, SVT:daq:map:0:1:side) {
 
 record(stringin, SVT:daq:map:0:1:layer) {
   field(SCAN, "Passive") 
-  field(VAL,"L2b")
+  field(VAL,"L2t")
   field(DTYP,"Soft Channel")
 }
 
 record(stringin, SVT:daq:map:0:1:type) {
   field(SCAN, "Passive") 
-  field(VAL,"axial")
+  field(VAL,"stereo")
   field(DTYP,"Soft Channel")
 }
 
@@ -247,13 +337,13 @@ record(stringin, SVT:daq:map:0:2:side) {
 
 record(stringin, SVT:daq:map:0:2:layer) {
   field(SCAN, "Passive") 
-  field(VAL,"L3b")
+  field(VAL,"L3t")
   field(DTYP,"Soft Channel")
 }
 
 record(stringin, SVT:daq:map:0:2:type) {
   field(SCAN, "Passive") 
-  field(VAL,"stereo")
+  field(VAL,"axial")
   field(DTYP,"Soft Channel")
 }
 
@@ -267,13 +357,13 @@ record(stringin, SVT:daq:map:0:3:side) {
 
 record(stringin, SVT:daq:map:0:3:layer) {
   field(SCAN, "Passive") 
-  field(VAL,"L3b")
+  field(VAL,"L3t")
   field(DTYP,"Soft Channel")
 }
 
 record(stringin, SVT:daq:map:0:3:type) {
   field(SCAN, "Passive") 
-  field(VAL,"axial")
+  field(VAL,"stereo")
   field(DTYP,"Soft Channel")
 }
 
@@ -647,13 +737,13 @@ record(stringin, SVT:daq:map:6:0:side) {
 
 record(stringin, SVT:daq:map:6:0:layer) {
   field(SCAN, "Passive") 
-  field(VAL,"L2t")
+  field(VAL,"L2b")
   field(DTYP,"Soft Channel")
 }
 
 record(stringin, SVT:daq:map:6:0:type) {
   field(SCAN, "Passive") 
-  field(VAL,"axial")
+  field(VAL,"stereo")
   field(DTYP,"Soft Channel")
 }
 
@@ -667,13 +757,13 @@ record(stringin, SVT:daq:map:6:1:side) {
 
 record(stringin, SVT:daq:map:6:1:layer) {
   field(SCAN, "Passive") 
-  field(VAL,"L2t")
+  field(VAL,"L2b")
   field(DTYP,"Soft Channel")
 }
 
 record(stringin, SVT:daq:map:6:1:type) {
   field(SCAN, "Passive") 
-  field(VAL,"stereo")
+  field(VAL,"axial")
   field(DTYP,"Soft Channel")
 }
 
@@ -687,13 +777,13 @@ record(stringin, SVT:daq:map:6:2:side) {
 
 record(stringin, SVT:daq:map:6:2:layer) {
   field(SCAN, "Passive") 
-  field(VAL,"L3t")
+  field(VAL,"L3b")
   field(DTYP,"Soft Channel")
 }
 
 record(stringin, SVT:daq:map:6:2:type) {
   field(SCAN, "Passive") 
-  field(VAL,"axial")
+  field(VAL,"stereo")
   field(DTYP,"Soft Channel")
 }
 
@@ -707,13 +797,13 @@ record(stringin, SVT:daq:map:6:3:side) {
 
 record(stringin, SVT:daq:map:6:3:layer) {
   field(SCAN, "Passive") 
-  field(VAL,"L3t")
+  field(VAL,"L3b")
   field(DTYP,"Soft Channel")
 }
 
 record(stringin, SVT:daq:map:6:3:type) {
   field(SCAN, "Passive") 
-  field(VAL,"stereo")
+  field(VAL,"axial")
   field(DTYP,"Soft Channel")
 }
 

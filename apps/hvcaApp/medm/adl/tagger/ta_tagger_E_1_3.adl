@@ -1,0 +1,4788 @@
+
+file {
+	name="ta_tagger_E_1_3.adl"
+}
+display {
+	object {
+		x=10
+		y=10
+		width=800
+		height=850
+	}
+	clr=14
+	bclr=4
+	cmap=""
+}
+"color map" {
+	ncolors=65
+	dl_color {
+		r=255
+		g=255
+		b=255
+		inten=255
+	}
+	dl_color {
+		r=236
+		g=236
+		b=236
+		inten=0
+	}
+	dl_color {
+		r=218
+		g=218
+		b=218
+		inten=0
+	}
+	dl_color {
+		r=200
+		g=200
+		b=200
+		inten=0
+	}
+	dl_color {
+		r=187
+		g=187
+		b=187
+		inten=0
+	}
+	dl_color {
+		r=174
+		g=174
+		b=174
+		inten=0
+	}
+	dl_color {
+		r=158
+		g=158
+		b=158
+		inten=0
+	}
+	dl_color {
+		r=145
+		g=145
+		b=145
+		inten=0
+	}
+	dl_color {
+		r=133
+		g=133
+		b=133
+		inten=0
+	}
+	dl_color {
+		r=120
+		g=120
+		b=120
+		inten=0
+	}
+	dl_color {
+		r=105
+		g=105
+		b=105
+		inten=0
+	}
+	dl_color {
+		r=90
+		g=90
+		b=90
+		inten=0
+	}
+	dl_color {
+		r=70
+		g=70
+		b=70
+		inten=0
+	}
+	dl_color {
+		r=45
+		g=45
+		b=45
+		inten=0
+	}
+	dl_color {
+		r=0
+		g=0
+		b=0
+		inten=0
+	}
+	dl_color {
+		r=0
+		g=216
+		b=0
+		inten=0
+	}
+	dl_color {
+		r=30
+		g=187
+		b=0
+		inten=0
+	}
+	dl_color {
+		r=51
+		g=153
+		b=0
+		inten=0
+	}
+	dl_color {
+		r=45
+		g=127
+		b=0
+		inten=0
+	}
+	dl_color {
+		r=33
+		g=108
+		b=0
+		inten=0
+	}
+	dl_color {
+		r=253
+		g=0
+		b=0
+		inten=0
+	}
+	dl_color {
+		r=222
+		g=19
+		b=9
+		inten=0
+	}
+	dl_color {
+		r=190
+		g=25
+		b=11
+		inten=0
+	}
+	dl_color {
+		r=160
+		g=18
+		b=7
+		inten=0
+	}
+	dl_color {
+		r=130
+		g=4
+		b=0
+		inten=0
+	}
+	dl_color {
+		r=88
+		g=147
+		b=255
+		inten=0
+	}
+	dl_color {
+		r=89
+		g=126
+		b=225
+		inten=0
+	}
+	dl_color {
+		r=75
+		g=110
+		b=199
+		inten=0
+	}
+	dl_color {
+		r=58
+		g=94
+		b=171
+		inten=0
+	}
+	dl_color {
+		r=39
+		g=84
+		b=141
+		inten=0
+	}
+	dl_color {
+		r=251
+		g=243
+		b=74
+		inten=0
+	}
+	dl_color {
+		r=249
+		g=218
+		b=60
+		inten=0
+	}
+	dl_color {
+		r=238
+		g=182
+		b=43
+		inten=0
+	}
+	dl_color {
+		r=225
+		g=144
+		b=21
+		inten=0
+	}
+	dl_color {
+		r=205
+		g=97
+		b=0
+		inten=0
+	}
+	dl_color {
+		r=255
+		g=176
+		b=255
+		inten=0
+	}
+	dl_color {
+		r=214
+		g=127
+		b=226
+		inten=0
+	}
+	dl_color {
+		r=174
+		g=78
+		b=188
+		inten=0
+	}
+	dl_color {
+		r=139
+		g=26
+		b=150
+		inten=0
+	}
+	dl_color {
+		r=97
+		g=10
+		b=117
+		inten=0
+	}
+	dl_color {
+		r=164
+		g=170
+		b=255
+		inten=0
+	}
+	dl_color {
+		r=135
+		g=147
+		b=226
+		inten=0
+	}
+	dl_color {
+		r=106
+		g=115
+		b=193
+		inten=0
+	}
+	dl_color {
+		r=77
+		g=82
+		b=164
+		inten=0
+	}
+	dl_color {
+		r=52
+		g=51
+		b=134
+		inten=0
+	}
+	dl_color {
+		r=199
+		g=187
+		b=109
+		inten=0
+	}
+	dl_color {
+		r=183
+		g=157
+		b=92
+		inten=0
+	}
+	dl_color {
+		r=164
+		g=126
+		b=60
+		inten=0
+	}
+	dl_color {
+		r=125
+		g=86
+		b=39
+		inten=0
+	}
+	dl_color {
+		r=88
+		g=52
+		b=15
+		inten=0
+	}
+	dl_color {
+		r=153
+		g=255
+		b=255
+		inten=0
+	}
+	dl_color {
+		r=115
+		g=223
+		b=255
+		inten=0
+	}
+	dl_color {
+		r=78
+		g=165
+		b=249
+		inten=0
+	}
+	dl_color {
+		r=42
+		g=99
+		b=228
+		inten=0
+	}
+	dl_color {
+		r=10
+		g=0
+		b=184
+		inten=0
+	}
+	dl_color {
+		r=235
+		g=241
+		b=181
+		inten=0
+	}
+	dl_color {
+		r=212
+		g=219
+		b=157
+		inten=0
+	}
+	dl_color {
+		r=187
+		g=193
+		b=135
+		inten=0
+	}
+	dl_color {
+		r=166
+		g=164
+		b=98
+		inten=0
+	}
+	dl_color {
+		r=139
+		g=130
+		b=57
+		inten=0
+	}
+	dl_color {
+		r=115
+		g=255
+		b=107
+		inten=0
+	}
+	dl_color {
+		r=82
+		g=218
+		b=59
+		inten=0
+	}
+	dl_color {
+		r=60
+		g=180
+		b=32
+		inten=0
+	}
+	dl_color {
+		r=40
+		g=147
+		b=21
+		inten=0
+	}
+	dl_color {
+		r=26
+		g=115
+		b=9
+		inten=0
+	}
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=45
+		y=20
+		width=300
+		height=35
+	}
+	textix="VOLTAGE/CURRENT"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=415
+		y=15
+		width=50
+		height=20
+	}
+	textix="tagger_E_1"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=415
+		y=35
+		width=50
+		height=20
+	}
+	textix="Screen 3 of 5"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=15
+		y=75
+		width=110
+		height=18
+	}
+	textix="Channel Name"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=135
+		y=75
+		width=50
+		height=18
+	}
+	textix="Group#"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=342
+		y=75
+		width=40
+		height=18
+	}
+	textix="Measured V"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=420
+		y=75
+		width=80
+		height=18
+	}
+	textix="Demand V"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=520
+		y=75
+		width=80
+		height=18
+	}
+	textix="Input V"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=642
+		y=75
+		width=40
+		height=18
+	}
+	textix="Measured I"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=54
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=720
+		y=75
+		width=40
+		height=18
+	}
+	textix="Status"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=100
+		width=100
+		height=20
+	}
+	textix="TA_e_49"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="solid"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=100
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=100
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_49_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="static"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_49_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=103
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=100
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_49_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=100
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_49_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=100
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_49_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=100
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_49_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=100
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_49_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=100
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_49_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=130
+		width=100
+		height=20
+	}
+	textix="TA_e_50"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=130
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=130
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_50_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_50_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=133
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=130
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_50_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=130
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_50_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=130
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_50_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=130
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_50_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=130
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_50_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=130
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_50_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=160
+		width=100
+		height=20
+	}
+	textix="TA_e_51"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=160
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=160
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_51_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_51_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=163
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=160
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_51_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=160
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_51_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=160
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_51_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=160
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_51_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=160
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_51_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=160
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_51_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=190
+		width=100
+		height=20
+	}
+	textix="TA_e_52"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=190
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=190
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_52_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_52_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=193
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=190
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_52_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=190
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_52_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=190
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_52_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=190
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_52_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=190
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_52_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=190
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_52_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=220
+		width=100
+		height=20
+	}
+	textix="TA_e_53"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=220
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=220
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_53_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_53_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=223
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=220
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_53_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=220
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_53_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=220
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_53_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=220
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_53_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=220
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_53_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=220
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_53_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=250
+		width=100
+		height=20
+	}
+	textix="TA_e_54"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=250
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=250
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_54_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_54_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=253
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=250
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_54_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=250
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_54_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=250
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_54_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=250
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_54_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=250
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_54_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=250
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_54_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=280
+		width=100
+		height=20
+	}
+	textix="TA_e_55"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=280
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=280
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_55_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_55_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=283
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=280
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_55_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=280
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_55_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=280
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_55_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=280
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_55_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=280
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_55_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=280
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_55_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=310
+		width=100
+		height=20
+	}
+	textix="TA_e_56"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=310
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=310
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_56_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_56_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=313
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=310
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_56_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=310
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_56_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=310
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_56_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=310
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_56_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=310
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_56_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=310
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_56_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=340
+		width=100
+		height=20
+	}
+	textix="TA_e_57"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=340
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=340
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_57_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_57_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=343
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=340
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_57_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=340
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_57_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=340
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_57_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=340
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_57_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=340
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_57_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=340
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_57_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=370
+		width=100
+		height=20
+	}
+	textix="TA_e_58"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=370
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=370
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_58_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_58_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=373
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=370
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_58_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=370
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_58_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=370
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_58_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=370
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_58_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=370
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_58_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=370
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_58_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=400
+		width=100
+		height=20
+	}
+	textix="TA_e_59"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=400
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=400
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_59_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_59_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=403
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=400
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_59_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=400
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_59_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=400
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_59_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=400
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_59_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=400
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_59_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=400
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_59_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=430
+		width=100
+		height=20
+	}
+	textix="TA_e_60"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=430
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=430
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_60_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_60_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=433
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=430
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_60_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=430
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_60_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=430
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_60_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=430
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_60_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=430
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_60_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=430
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_60_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=460
+		width=100
+		height=20
+	}
+	textix="TA_e_61"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=460
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=460
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_61_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_61_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=463
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=460
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_61_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=460
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_61_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=460
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_61_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=460
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_61_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=460
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_61_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=460
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_61_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=490
+		width=100
+		height=20
+	}
+	textix="TA_e_62"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=490
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=490
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_62_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_62_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=493
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=490
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_62_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=490
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_62_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=490
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_62_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=490
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_62_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=490
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_62_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=490
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_62_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=520
+		width=100
+		height=20
+	}
+	textix="TA_e_63"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=520
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=520
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_63_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_63_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=523
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=520
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_63_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=520
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_63_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=520
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_63_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=520
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_63_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=520
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_63_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=520
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_63_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=550
+		width=100
+		height=20
+	}
+	textix="TA_e_64"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=550
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=550
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_64_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_64_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=553
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=550
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_64_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=550
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_64_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=550
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_64_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=550
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_64_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=550
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_64_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=550
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_64_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=580
+		width=100
+		height=20
+	}
+	textix="TA_e_65"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=580
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=580
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_65_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_65_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=583
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=580
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_65_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=580
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_65_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=580
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_65_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=580
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_65_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=580
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_65_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=580
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_65_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=610
+		width=100
+		height=20
+	}
+	textix="TA_e_66"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=610
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=610
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_66_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_66_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=613
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=610
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_66_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=610
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_66_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=610
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_66_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=610
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_66_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=610
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_66_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=610
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_66_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=640
+		width=100
+		height=20
+	}
+	textix="TA_e_67"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=640
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=640
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_67_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_67_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=643
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=640
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_67_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=640
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_67_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=640
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_67_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=640
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_67_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=640
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_67_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=640
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_67_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=670
+		width=100
+		height=20
+	}
+	textix="TA_e_68"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=670
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=670
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_68_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_68_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=673
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=670
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_68_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=670
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_68_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=670
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_68_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=670
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_68_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=670
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_68_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=670
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_68_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=700
+		width=100
+		height=20
+	}
+	textix="TA_e_69"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=700
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=700
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_69_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_69_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=703
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=700
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_69_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=700
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_69_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=700
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_69_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=700
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_69_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=700
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_69_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=700
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_69_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=730
+		width=100
+		height=20
+	}
+	textix="TA_e_70"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=730
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=730
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_70_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_70_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=733
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=730
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_70_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=730
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_70_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=730
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_70_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=730
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_70_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=730
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_70_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=730
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_70_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=760
+		width=100
+		height=20
+	}
+	textix="TA_e_71"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=760
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=760
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_71_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_71_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=763
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=760
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_71_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=760
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_71_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=760
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_71_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=760
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_71_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=760
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_71_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=760
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_71_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=20
+		y=790
+		width=100
+		height=20
+	}
+	textix="TA_e_72"
+	align="horiz. centered"
+}
+"basic attribute" {
+	attr {
+		clr=14
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+text {
+	object {
+		x=140
+		y=790
+		width=40
+		height=20
+	}
+	textix="4"
+	align="horiz. centered"
+}
+"message button" {
+	object {
+		x=200
+		y=790
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_72_CE"
+		clr=15
+		bclr=0
+	}
+	label="Ena"
+	press_msg="1"
+	release_msg=""
+	clrmod="discrete"
+}
+"basic attribute" {
+	attr {
+		clr=15
+		style="dash"
+		fill="solid"
+		width=0
+	}
+}
+"dynamic attribute" {
+	attr {
+		mod {
+			clr="discrete"
+			vis="if not zero"
+		}
+		param {
+			chan="B_hv_TA_e_72_property.K"
+		}
+	}
+}
+oval {
+	object {
+		x=240
+		y=793
+		width=14
+		height=14
+	}
+}
+"message button" {
+	object {
+		x=272
+		y=790
+		width=28
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_72_CE"
+		clr=20
+		bclr=0
+	}
+	label="Dis"
+	press_msg="0"
+	release_msg=""
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=320
+		y=790
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_72_property.F"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=420
+		y=790
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_72_property.G"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text entry" {
+	object {
+		x=520
+		y=790
+		width=80
+		height=20
+	}
+	control {
+		ctrl="B_hv_TA_e_72_DV"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+}
+"text update" {
+	object {
+		x=620
+		y=790
+		width=80
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_72_property.E"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}
+"text update" {
+	object {
+		x=720
+		y=790
+		width=40
+		height=20
+	}
+	monitor {
+		rdbk="B_hv_TA_e_72_property.L"
+		clr=14
+		bclr=0
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	format="decimal"
+}

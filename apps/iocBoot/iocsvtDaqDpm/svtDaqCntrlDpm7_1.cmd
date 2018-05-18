@@ -18,8 +18,8 @@ dbLoadRecords("db/iocAdminSoft.db", "IOC=iocsvtDaqCntrlDpm7_1")
 
 ## Load record instances
 #dbLoadRecords("db/xxx.db","user=trackerHost")
-dbLoadRecords("db/dbControlDpm.db","DPM=7,NR=1")
-dbLoadRecords("db/dbControlDpmStatus.db","DPM=7,NR=1")
+dbLoadRecords("db/dbControlDpm.db","SCANFREQ=1,DPM=7,NR=1")
+dbLoadRecords("db/dbControlDpmStatus.db","SCANFREQ=1,DPM=7,NR=1")
 dbLoadRecords ("db/dbHybLVIrd_v125.db")
 dbLoadRecords ("db/dbHybLVIrd_avdd.db")
 dbLoadRecords ("db/dbHybLVIrd_dvdd.db")
@@ -30,6 +30,7 @@ dbLoadRecords "db/dbHybLVVn_v125.db"
 dbLoadRecords "db/dbHybLVVn_avdd.db"
 dbLoadRecords "db/dbHybLVVn_dvdd.db"
 dbLoadRecords "db/dbHybLVStat.db"
+
 
 
 

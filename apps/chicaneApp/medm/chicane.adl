@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/chicaneApp/medm/chicane.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/chicaneApp/medm/./chicane2.adl"
 	version=030109
 }
 display {
 	object {
-		x=196
-		y=208
+		x=1199
+		y=168
 		width=442
 		height=247
 	}
@@ -133,9 +133,9 @@ rectangle {
 }
 rectangle {
 	object {
-		x=145
+		x=100
 		y=216
-		width=258
+		width=300
 		height=15
 	}
 	"basic attribute" {
@@ -158,37 +158,6 @@ bar {
 		hoprSrc="default"
 	}
 }
-"message button" {
-	object {
-		x=53
-		y=38
-		width=50
-		height=20
-	}
-	control {
-		chan="$(P):start"
-		clr=0
-		bclr=19
-	}
-	label="ON"
-	press_msg="1"
-	clrmod="discrete"
-}
-"message button" {
-	object {
-		x=106
-		y=38
-		width=50
-		height=20
-	}
-	control {
-		chan="$(P):stop"
-		clr=0
-		bclr=24
-	}
-	label="OFF"
-	press_msg="1"
-}
 "text update" {
 	object {
 		x=78
@@ -197,7 +166,7 @@ bar {
 		height=14
 	}
 	monitor {
-		chan="$(P):iSetMT"
+		chan="MTSETI"
 		clr=0
 		bclr=12
 	}
@@ -217,7 +186,7 @@ bar {
 		height=14
 	}
 	monitor {
-		chan="$(P):iMonMT"
+		chan="MTIRBCK"
 		clr=0
 		bclr=12
 	}
@@ -255,7 +224,7 @@ text {
 	"basic attribute" {
 		clr=0
 	}
-	textix="Monitor"
+	textix="Measured"
 	align="horiz. centered"
 }
 "text update" {
@@ -366,9 +335,9 @@ rectangle {
 }
 "text update" {
 	object {
-		x=145
+		x=100
 		y=193
-		width=258
+		width=300
 		height=15
 	}
 	monitor {
@@ -434,7 +403,7 @@ text {
 		height=14
 	}
 	monitor {
-		chan="$(P):iSetPS"
+		chan="PSPECs"
 		clr=0
 		bclr=12
 	}
@@ -454,7 +423,7 @@ text {
 		height=14
 	}
 	monitor {
-		chan="$(P):iMonPS"
+		chan="PSPECIRBCK"
 		clr=0
 		bclr=12
 	}
@@ -520,7 +489,7 @@ oval {
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A!=1"
+		calc="A#1"
 		chan="MTPSONRBCK"
 	}
 }
@@ -555,7 +524,7 @@ oval {
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A!=0 || B!=0 || C!=0 || D!=0"
+		calc="A#0 || B#0 || C#0 || D#0"
 		chan="$(P):globalstatPS"
 		chanB="$(P):intlk1PS"
 		chanC="$(P):intlk2PS"
@@ -603,7 +572,6 @@ oval {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
-		precDefault=2
 	}
 }
 "text update" {
@@ -621,7 +589,6 @@ oval {
 	align="horiz. centered"
 	limits {
 		precSrc="default"
-		precDefault=2
 	}
 }
 text {
@@ -688,7 +655,7 @@ oval {
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A=1 & B!=1"
+		calc="A=1 & B#1"
 		chan="$(P):isReady"
 		chanB="$(P):isError"
 	}
@@ -705,7 +672,7 @@ oval {
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A!=1 && B!=1 && C==1"
+		calc="A#1 && B#1 && C=1"
 		chan="$(P):isReady"
 		chanB="$(P):isError"
 		chanC="$(P):isOff"
@@ -739,7 +706,7 @@ oval {
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A!=1 && B!=1 && C!=1"
+		calc="A#1 && B#1 && C#1"
 		chan="$(P):isError"
 		chanB="$(P):isOff"
 		chanC="$(P):isReady"
@@ -747,9 +714,9 @@ oval {
 }
 text {
 	object {
-		x=144
+		x=99
 		y=216
-		width=258
+		width=300
 		height=15
 	}
 	"basic attribute" {
@@ -768,9 +735,9 @@ text {
 }
 text {
 	object {
-		x=145
+		x=100
 		y=216
-		width=258
+		width=300
 		height=15
 	}
 	"basic attribute" {
@@ -789,9 +756,9 @@ text {
 }
 text {
 	object {
-		x=145
+		x=100
 		y=216
-		width=258
+		width=300
 		height=15
 	}
 	"basic attribute" {
@@ -810,9 +777,9 @@ text {
 }
 text {
 	object {
-		x=145
+		x=100
 		y=216
-		width=258
+		width=300
 		height=15
 	}
 	"basic attribute" {
@@ -906,4 +873,36 @@ polyline {
 	}
 	clr=0
 	bclr=11
+}
+"related display" {
+	object {
+		x=105
+		y=38
+		width=50
+		height=20
+	}
+	display[0] {
+		label="OFF"
+		name="chicaneOff.adl"
+		args="P=hps_chicane"
+	}
+	clr=0
+	bclr=21
+	label="OFF"
+}
+"related display" {
+	object {
+		x=40
+		y=38
+		width=50
+		height=20
+	}
+	display[0] {
+		label="ON"
+		name="chicaneOn.adl"
+		args="P=hps_chicane"
+	}
+	clr=0
+	bclr=16
+	label="ON"
 }

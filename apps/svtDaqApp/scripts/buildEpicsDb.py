@@ -98,7 +98,10 @@ def buildEpics():
     printRecords(recs,"dbDataDpmInsertedFrames")
     recs = utils.buildEBEventErrorCount()
     printRecords(recs,"dbDataDpmEBEventErrorCount")
-
+    recs = utils.buildHybSyncDataDpmAll()
+    printRecords(recs,"dbHybSyncDataDpmAll")
+    recs = utils.buildHybSyncDataDpmAllCom()
+    printRecords(recs,"dbHybSyncDataDpmAllCom")
 
     
 

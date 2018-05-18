@@ -13,8 +13,8 @@ dbLoadDatabase("dbd/lakeshore450.dbd")
 lakeshore450_registerRecordDeviceDriver(pdbbase)
 
 ## Setup port
-drvAsynIPPortConfigure("SER3", "hallb-moxa1:4003")
-drvAsynIPPortConfigure("SER4", "hallb-moxa1:4004")
+drvAsynIPPortConfigure("SER3", "hallb-moxa4:4003")
+drvAsynIPPortConfigure("SER4", "hallb-moxa4:4004")
 
 ## Set this to see debug messages from asyn
 #asynSetTraceMask("SER3",-1,0x09)

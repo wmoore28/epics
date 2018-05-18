@@ -1,7 +1,7 @@
 
 file {
-	name="/usr/clas12/hps/v1.3.0/apps/xpsMotorApp/medm/svtPositions.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/xpsMotorApp/medm/svtPositions.adl"
+	version=030109
 }
 display {
 	object {
@@ -206,7 +206,7 @@ text {
 	}
 	display[1] {
 		label="SVT TOP Scan GUI"
-		name="/usr/clas12/R3.14.12.3/synApps/synApps_5_7/support/sscan-2-9/sscanApp/op/adl/scan_full.adl"
+		name="svt_wire_scan.adl"
 		args="P=hps:svt_top:motor:,S=scan1,N=1"
 	}
 	clr=14
@@ -383,7 +383,7 @@ text {
 	}
 	display[1] {
 		label="SVT BOTTOM Scan GUI"
-		name="/usr/clas12/R3.14.12.3/synApps/synApps_5_7/support/sscan-2-9/sscanApp/op/adl/scan_full.adl"
+		name="svt_wire_scan.adl"
 		args="P=hps:svt_bot:motor:,S=scan1,N=1"
 	}
 	clr=14

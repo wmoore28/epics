@@ -13,9 +13,16 @@ chiller_registerRecordDeviceDriver(pdbbase)
 epicsEnvSet("STREAM_PROTOCOL_PATH","${TOP}/proto")
 
 ## ECAL, FE Boards, SVT
-#drvAsynIPPortConfigure("SER5", "hallb-moxa1:4005") 
-drvAsynIPPortConfigure("SER6", "hallb-moxa1:4006")
-drvAsynIPPortConfigure("SER7", "hallb-moxa1:4007")
+#drvAsynIPPortConfigure("SER5", "hallb-moxa4:4005") 
+
+# A20 (FE):
+drvAsynIPPortConfigure("SER6", "hallb-moxa4:4006")
+
+# PRESTO (Hybrids):
+#drvAsynIPPortConfigure("SER7", "hallb-moxa4:4007")
+
+# a40 *hYBRIDS):
+drvAsynIPPortConfigure("SER8", "hallb-moxa4:4008")
 
 ## debugging...
 # Anova
@@ -30,8 +37,14 @@ dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC_ALIAS}")
 dbLoadRecords("db/save_restoreStatus.db", "P=${IOC_ALIAS}:")
 ## ECAL, FE Boards, SVT
 #dbLoadRecords("db/thermoSci.db", "P=HPS_ECAL:,R=CHILLER:,PORT=SER5")
+
 dbLoadRecords("db/anova.db", "P=HPS_FE:,R=CHILLER:,PORT=SER6")
-dbLoadRecords("db/presto.db", "P=HPS_SVT:,R=CHILLER:,PORT=SER7")
+
+# PRESTO (Hybrids):
+#dbLoadRecords("db/presto.db", "P=HPS_SVT:,R=CHILLER:,PORT=SER7")
+
+# a40 *hYBRIDS):
+dbLoadRecords("db/anova.db", "P=HPS_SVT:,R=CHILLER:,PORT=SER8")
 
 cd ${TOP}/iocBoot/${IOC}
 

@@ -14,7 +14,7 @@ dbLoadDatabase)"dbd/keithley6221.dbd")
 keithley6221_registerRecordDeviceDriver(pdbbase)
 
 ## Setup port
-drvAsynIPPortConfigure("SER2", "hallb-moxa1:4002")
+drvAsynIPPortConfigure("SER2", "hallb-moxa4:4002")
 
 ## Set this to see messages from asyn
 #asynSetTraceMask("SER2",-1,0x09)

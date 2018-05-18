@@ -12,6 +12,8 @@ include $(TOP)/configure/CONFIG
 # databases, templates, substitutions like this
 DB += photon_ratio.db
 DB += scaler.db
+DB += scaler-ped.db
+DB += scaler_calc1b.db
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add

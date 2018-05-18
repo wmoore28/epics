@@ -98,10 +98,8 @@ image {
 	"image name"="/home/hpsrun/.svbon.gif"
 	"dynamic attribute" {
 		vis="calc"
-		calc="A=180&&B&&C>177"
-		chan="SVT:bias:v_set"
-		chanB="SVT:bias:switch"
-		chanC="SVT:bias:top:0:v_sens"
+		calc="A>178"
+		chan="SVT:bias:top:0:v_sens"
 	}
 }
 image {
@@ -109,15 +107,28 @@ image {
 		x=0
 		y=0
 		width=400
-		height=250
+		height=300
+	}
+	type="gif"
+	"image name"="/home/hpsrun/.svbramp.gif"
+	"dynamic attribute" {
+		vis="calc"
+		calc="A>10&&A<178"
+		chan="SVT:bias:top:0:v_sens"
+	}
+}
+image {
+	object {
+		x=0
+		y=0
+		width=400
+		height=300
 	}
 	type="gif"
 	"image name"="/home/hpsrun/.svboff.gif"
 	"dynamic attribute" {
 		vis="calc"
-		calc="A#180||!B||C<177"
-		chan="SVT:bias:v_set"
-		chanB="SVT:bias:switch"
-		chanC="SVT:bias:top:0:v_sens"
+		calc="A<10"
+		chan="SVT:bias:top:0:v_sens"
 	}
 }

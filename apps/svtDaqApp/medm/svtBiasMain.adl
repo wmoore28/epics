@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/svtDaq/medm/svtBiasMain.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/svtDaqApp/medm/svtBiasMain.adl"
+	version=030109
 }
 display {
 	object {
 		x=151
-		y=86
+		y=21
 		width=1180
-		height=1025
+		height=950
 	}
 	clr=14
 	bclr=12
@@ -89,9 +89,9 @@ display {
 }
 rectangle {
 	object {
-		x=258
+		x=241
 		y=7
-		width=260
+		width=310
 		height=30
 	}
 	"basic attribute" {
@@ -111,7 +111,7 @@ rectangle {
 }
 rectangle {
 	object {
-		x=550
+		x=562
 		y=7
 		width=330
 		height=30
@@ -7833,7 +7833,7 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=393
+		x=375
 		y=10
 		width=51
 		height=25
@@ -9458,7 +9458,7 @@ text {
 	}
 	command[0] {
 		label="reset"
-		name="/usr/clas12/hps/dev/apps/svtDaqApp/scripts/clear_mpod_interlock.sh"
+		name="/usr/clas12/hps/prod/apps/svtDaqApp/scripts/clear_mpod_interlock.sh"
 	}
 	clr=14
 	bclr=5
@@ -9466,7 +9466,7 @@ text {
 }
 "message button" {
 	object {
-		x=805
+		x=817
 		y=13
 		width=50
 		height=20
@@ -9481,7 +9481,7 @@ text {
 }
 "text update" {
 	object {
-		x=732
+		x=744
 		y=13
 		width=60
 		height=20
@@ -9498,7 +9498,7 @@ text {
 }
 text {
 	object {
-		x=557
+		x=569
 		y=16
 		width=84
 		height=20
@@ -9524,7 +9524,7 @@ text {
 }
 text {
 	object {
-		x=266
+		x=249
 		y=15
 		width=120
 		height=20
@@ -9537,7 +9537,7 @@ text {
 }
 "text update" {
 	object {
-		x=652
+		x=664
 		y=13
 		width=60
 		height=20
@@ -9554,7 +9554,7 @@ text {
 }
 "message button" {
 	object {
-		x=455
+		x=437
 		y=13
 		width=50
 		height=20
@@ -9566,4 +9566,19 @@ text {
 	}
 	label="180V"
 	release_msg="180"
+}
+"message button" {
+	object {
+		x=494
+		y=13
+		width=50
+		height=20
+	}
+	control {
+		chan="SVT:bias:v_set"
+		clr=14
+		bclr=4
+	}
+	label="5V"
+	release_msg="5"
 }

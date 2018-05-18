@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/release/1.0.2/epics/apps/chicaCtrlApp/./chicaDriver.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/chicaneApp/medm/chicaneDriver.adl"
 	version=030109
 }
 display {
 	object {
-		x=706
-		y=293
-		width=220
-		height=75
+		x=1374
+		y=347
+		width=253
+		height=132
 	}
 	clr=14
 	bclr=4
@@ -91,8 +91,8 @@ display {
 	object {
 		x=5
 		y=5
-		width=75
-		height=20
+		width=76
+		height=21
 	}
 	control {
 		chan="$(P):gotoMax"
@@ -239,4 +239,31 @@ text {
 		clr=14
 	}
 	textix="Monitor"
+}
+"choice button" {
+	object {
+		x=13
+		y=80
+		width=96
+		height=44
+	}
+	control {
+		chan="$(P):powerMT"
+		clr=14
+		bclr=4
+	}
+	clrmod="discrete"
+}
+"choice button" {
+	object {
+		x=115
+		y=79
+		width=96
+		height=44
+	}
+	control {
+		chan="$(P):powerPS"
+		clr=14
+		bclr=4
+	}
 }

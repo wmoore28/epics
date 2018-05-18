@@ -7,8 +7,6 @@ $GUIDANCE
 See SVT Ops manual sections relating to cooling.
 $END
 
-$SEVRCOMMAND UP_MAJOR /home/hpsrun/scripts/notify_expert_auto.pl svt_expert SVT cooling alarm
-$SEVRCOMMAND UP_MAJOR echo "SVT cooling alarm" | mailx -s "SVT cooling alarm" meeg@slac.stanford.edu
 
 INCLUDE COOLING /usr/clas12/hps/prod/apps/alhConfig/svtFebCooling.alhConfig
 INCLUDE COOLING /usr/clas12/hps/prod/apps/alhConfig/svtHybCooling.alhConfig

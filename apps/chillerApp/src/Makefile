@@ -27,6 +27,7 @@ chiller_DBD += sCalcoutRecord.dbd
 chiller_DBD += stream.dbd
 chiller_DBD += asSupport.dbd
 chiller_DBD += devIocStats.dbd
+chiller_DBD += calc.dbd
 
 # chiller_registerRecordDeviceDriver.cpp derives from chiller.dbd
 chiller_SRCS += chiller_registerRecordDeviceDriver.cpp

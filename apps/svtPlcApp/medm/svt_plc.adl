@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/develop/apps/svtPlcApp/medm/svt_plc.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/svtPlcApp/medm/svt_plc.adl"
 	version=030108
 }
 display {
 	object {
-		x=777
-		y=49
+		x=292
+		y=287
 		width=700
 		height=700
 	}
@@ -242,12 +242,13 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:EPICS_MPOD_Fault.RVAL"
+		chan="HPS_SVT:PLC:i:EPICS_MPOD_Fault"
 		clr=0
 		bclr=11
 	}
 	clrmod="alarm"
 	align="horiz. centered"
+	format="string"
 	limits {
 	}
 }
@@ -271,12 +272,13 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:MPOD_Enable.RVAL"
+		chan="HPS_SVT:PLC:i:MPOD_Enable"
 		clr=0
 		bclr=11
 	}
 	clrmod="alarm"
 	align="horiz. centered"
+	format="string"
 	limits {
 	}
 }
@@ -318,12 +320,13 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:Vacuum-Alarm.RVAL"
+		chan="HPS_SVT:PLC:i:Vacuum-Alarm"
 		clr=0
 		bclr=11
 	}
 	clrmod="alarm"
 	align="horiz. centered"
+	format="string"
 	limits {
 	}
 }
@@ -404,12 +407,13 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:EPICS_Bypass.RVAL"
+		chan="HPS_SVT:PLC:i:EPICS_Bypass"
 		clr=0
 		bclr=11
 	}
 	clrmod="alarm"
 	align="horiz. centered"
+	format="string"
 	limits {
 	}
 }
@@ -524,12 +528,13 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Alarm.RVAL"
+		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Alarm"
 		clr=0
 		bclr=11
 	}
 	clrmod="alarm"
 	align="horiz. centered"
+	format="string"
 	limits {
 	}
 }
@@ -582,12 +587,13 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Alarm.RVAL"
+		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Alarm"
 		clr=0
 		bclr=11
 	}
 	clrmod="alarm"
 	align="horiz. centered"
+	format="string"
 	limits {
 	}
 }
@@ -611,12 +617,13 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Alarm.RVAL"
+		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Alarm"
 		clr=0
 		bclr=11
 	}
 	clrmod="alarm"
 	align="horiz. centered"
+	format="string"
 	limits {
 	}
 }
@@ -686,12 +693,13 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:RTD_FE_Return-Alarm.RVAL"
+		chan="HPS_SVT:PLC:i:RTD_FE_Return-Alarm"
 		clr=0
 		bclr=11
 	}
 	clrmod="alarm"
 	align="horiz. centered"
+	format="string"
 	limits {
 	}
 }
@@ -741,7 +749,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:Power_SVT_Chiller.RVAL"
+		chan="HPS_SVT:PLC:i:Power_SVT_Chiller"
 		clr=0
 		bclr=11
 	}
@@ -770,7 +778,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:Power_FE_Chiller.RVAL"
+		chan="HPS_SVT:PLC:i:Power_FE_Chiller"
 		clr=0
 		bclr=11
 	}
@@ -799,7 +807,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:Flow_SVT-Value.RVAL"
+		chan="HPS_SVT:PLC:i:Flow_SVT-Value"
 		clr=0
 		bclr=11
 	}
@@ -816,12 +824,13 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:Flow_SVT-Alarm.RVAL"
+		chan="HPS_SVT:PLC:i:Flow_SVT-Alarm"
 		clr=0
 		bclr=11
 	}
 	clrmod="alarm"
 	align="horiz. centered"
+	format="string"
 	limits {
 	}
 }
@@ -857,7 +866,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:Flow_FE-Value.RVAL"
+		chan="HPS_SVT:PLC:i:Flow_FE-Value"
 		clr=0
 		bclr=11
 	}
@@ -874,12 +883,13 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:Flow_FE-Alarm.RVAL"
+		chan="HPS_SVT:PLC:i:Flow_FE-Alarm"
 		clr=0
 		bclr=11
 	}
 	clrmod="alarm"
 	align="horiz. centered"
+	format="string"
 	limits {
 	}
 }
@@ -927,7 +937,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:Valve_FE-Enabled.RVAL"
+		chan="HPS_SVT:PLC:i:Valve_FE-Enabled"
 		clr=0
 		bclr=11
 	}
@@ -974,7 +984,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:Valve_SVT-Enabled.RVAL"
+		chan="HPS_SVT:PLC:i:Valve_SVT-Enabled"
 		clr=0
 		bclr=11
 	}
@@ -1047,7 +1057,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Enable.RVAL"
+		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Enable"
 		clr=0
 		bclr=11
 	}
@@ -1090,7 +1100,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Enable.RVAL"
+		chan="HPS_SVT:PLC:i:RTD_FE_Supply-Enable"
 		clr=0
 		bclr=11
 	}
@@ -1295,7 +1305,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:Flow_SVT-Enable.RVAL"
+		chan="HPS_SVT:PLC:i:Flow_SVT-Enable"
 		clr=0
 		bclr=11
 	}
@@ -1324,7 +1334,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:Flow_FE-Enable.RVAL"
+		chan="HPS_SVT:PLC:i:Flow_FE-Enable"
 		clr=0
 		bclr=11
 	}
@@ -1381,7 +1391,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:Flow_SVT-Good_Value.RVAL"
+		chan="HPS_SVT:PLC:i:Flow_SVT-Good_Value"
 		clr=0
 		bclr=11
 	}
@@ -1398,7 +1408,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:Flow_FE-Good_Value.RVAL"
+		chan="HPS_SVT:PLC:i:Flow_FE-Good_Value"
 		clr=0
 		bclr=11
 	}
@@ -1453,7 +1463,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Enable.RVAL"
+		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Enable"
 		clr=0
 		bclr=11
 	}
@@ -1482,7 +1492,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:RTD_FE_Return-Enable.RVAL"
+		chan="HPS_SVT:PLC:i:RTD_FE_Return-Enable"
 		clr=0
 		bclr=11
 	}
@@ -1687,7 +1697,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:Vacuum-Enable.RVAL"
+		chan="HPS_SVT:PLC:i:Vacuum-Enable"
 		clr=0
 		bclr=11
 	}

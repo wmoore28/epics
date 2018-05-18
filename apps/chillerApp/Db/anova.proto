@@ -20,7 +20,11 @@ getVersion {
 
 getStatus {
     out "status";
-    in  "status\r%s\r\n\r";
+    in  "status\r%s\r\n\r%#*s";
+}
+
+getError {
+    in "status\r%*s\r\n\r%#s\r\n\r";
 }
 
 setDefault {

@@ -11,7 +11,7 @@ dbLoadDatabase("dbd/tempSens.dbd")
 tempSens_registerRecordDeviceDriver(pdbbase)
 
 ## Setup port
-drvAsynIPPortConfigure("SER1", "hallb-moxa1:4001")
+drvAsynIPPortConfigure("SER1", "hallb-moxa4:4001")
 asynOctetSetOutputEos("SER1", 0, "\r")
 
 ## Debugging

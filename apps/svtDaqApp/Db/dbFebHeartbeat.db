@@ -1,0 +1,32 @@
+record(aSub,SVT:daq:$(FEB):heart_asub)
+{
+	field(SCAN,"1 second")
+	field(INAM,"subExtractHeartbeatInit")
+	field(SNAM,"subExtractHeartbeatProcess")
+	field(OUTA,"SVT:daq:$(FEB):heart_sub PP")
+	field(FTVA,"LONG")
+	field(FLNK,"SVT:daq:$(FEB):feb_heartcheck")
+}
+
+record(sub,SVT:daq:$(FEB):feb_heartcheck)
+{
+	field(INAM,"subCheckHeartbeatInit")
+	field(SNAM,"subCheckHeartbeatProcess")
+	field(SCAN,"Passive")
+	field(INPA,"SVT:daq:$(FEB):heart_asub.VALA PP")
+}
+
+record(calc,SVT:daq:all:feb_heartcheck){
+	field(SCAN,"Passive")
+	field(INPA,"SVT:daq:0:feb_heartcheck CPP")
+	field(INPB,"SVT:daq:1:feb_heartcheck CPP")
+	field(INPC,"SVT:daq:2:feb_heartcheck CPP")
+	field(INPD,"SVT:daq:3:feb_heartcheck CPP")
+	field(INPE,"SVT:daq:4:feb_heartcheck CPP")
+	field(INPF,"SVT:daq:5:feb_heartcheck CPP")
+	field(INPG,"SVT:daq:6:feb_heartcheck CPP")
+	field(INPH,"SVT:daq:7:feb_heartcheck CPP")
+	field(INPI,"SVT:daq:8:feb_heartcheck CPP")
+	field(INPJ,"SVT:daq:9:feb_heartcheck CPP")
+	field(CALC,"(A>0)&&(B>0)&&(C>0)&&(D>0)&&(E>0)&&(F>0)&&(G>0)&&(H>0)&&(I>0)&&(J>0)")
+}

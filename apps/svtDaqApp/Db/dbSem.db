@@ -1,0 +1,58 @@
+
+
+record(aSub,SVT:daq:feb:$(FEB):sem_sub)
+{
+    field(SCAN,"5 second")
+    field(INAM,"subFebSemInit")
+    field(SNAM,"subFebSemProcess")
+    field(OUTA,"SVT:daq:feb:$(FEB):sem_heartbeat_rd CPP")
+    field(FTVA,"LONG")
+    field(OUTB,"SVT:daq:feb:$(FEB):sem_status_rd CPP")
+    field(FTVB,"STRING")
+    field(OUTC,"SVT:daq:feb:$(FEB):sem_essential_rd CPP")
+    field(FTVC,"LONG")
+    field(OUTD,"SVT:daq:feb:$(FEB):sem_uncorrectable_rd CPP")
+    field(FTVD,"LONG")
+    field(OUTE,"SVT:daq:feb:$(FEB):sem_heartbeat_stat CPP")
+    field(FTVE,"LONG")
+    field(OUTF,"SVT:daq:feb:$(FEB):sem_error_stat CPP")
+    field(FTVF,"LONG")
+
+}
+
+record(longin,SVT:daq:feb:$(FEB):sem_error_stat)
+{
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+record(longin,SVT:daq:feb:$(FEB):sem_heartbeat_rd)
+{
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+record(longin,SVT:daq:feb:$(FEB):sem_heartbeat_stat)
+{
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+record(stringin,SVT:daq:feb:$(FEB):sem_status_rd)
+{
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+record(longin,SVT:daq:feb:$(FEB):sem_essential_rd)
+{
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+
+record(longin,SVT:daq:feb:$(FEB):sem_uncorrectable_rd)
+{
+  field(SCAN, "Passive") 
+  field(DTYP,"Soft Channel")
+}
+

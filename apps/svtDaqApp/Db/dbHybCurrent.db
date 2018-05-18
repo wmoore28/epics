@@ -1,0 +1,26 @@
+record(calc,"SVT:lv:fe:ind:stat:calc")
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:hyb:1t:stat:curr CPP")
+	field(INPB,"SVT:lv:hyb:23t:stat:curr CPP")
+	field(INPC,"SVT:lv:hyb:4t:stat:curr CPP")
+	field(INPD,"SVT:lv:hyb:5t:stat:curr CPP")
+	field(INPE,"SVT:lv:hyb:6t:stat:curr CPP")
+	field(INPF,"SVT:lv:hyb:1b:stat:curr CPP")
+	field(INPG,"SVT:lv:hyb:23b:stat:curr CPP")
+	field(INPH,"SVT:lv:hyb:4b:stat:curr CPP")
+	field(INPI,"SVT:lv:hyb:5b:stat:curr CPP")
+	field(INPJ,"SVT:lv:hyb:6b:stat:curr CPP")
+	field(CALC,"A+B+C+D+E+F+G+H+I+J")
+	field(FLNK,"SVT:lv:fe:ind:stat")
+}
+
+record(ai, "SVT:lv:fe:ind:stat") {
+	field(SCAN,"Passive")
+    	field(INP,"SVT:lv:fe:ind:stat:calc")
+    	#field(SMOO,1)
+    	#field(LOW,"SVT:lv:fe:$(FEB):anap:i_rd.LOW")
+    	#field(LOLO,"SVT:lv:fe:$(FEB):anap:i_rd.LOLO")
+    	#field(LSV,MINOR)
+    	#field(LLSV,MAJOR)
+}

@@ -1,0 +1,87 @@
+record(calc, SVT:bias:top:half1:stat:calc)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:bias:top:0:v_sens CPP")
+	field(INPB,"SVT:bias:top:1:v_sens CPP")
+	field(INPC,"SVT:bias:top:2:v_sens CPP")
+	field(INPD,"SVT:bias:top:3:v_sens CPP")
+	field(INPE,"SVT:bias:top:4:v_sens CPP")
+	field(INPF,"SVT:bias:top:5:v_sens CPP")
+	field(INPG,"SVT:bias:top:6:v_sens CPP")
+	field(INPH,"SVT:bias:top:7:v_sens CPP")
+	field(INPI,"SVT:bias:top:8:v_sens CPP")
+	field(INPJ,"SVT:bias:top:0:v_sens.LOW CPP")
+	field(CALC,"(A>J) && (B>J) && (C>J) && (D>J) && (E>J) && (F>J) && (G>J) && (H>J) && (I>J)")
+}
+
+record(calc, SVT:bias:top:half2:stat:calc)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:bias:top:9:v_sens CPP")
+	field(INPB,"SVT:bias:top:10:v_sens CPP")
+	field(INPC,"SVT:bias:top:11:v_sens CPP")
+	field(INPD,"SVT:bias:top:12:v_sens CPP")
+	field(INPE,"SVT:bias:top:13:v_sens CPP")
+	field(INPF,"SVT:bias:top:14:v_sens CPP")
+	field(INPG,"SVT:bias:top:15:v_sens CPP")
+	field(INPH,"SVT:bias:top:16:v_sens CPP")
+	field(INPI,"SVT:bias:top:17:v_sens CPP")
+	field(INPJ,"SVT:bias:top:9:v_sens.LOW CPP")
+	field(CALC,"(A>J) && (B>J) && (C>J) && (D>J) && (E>J) && (F>J) && (G>J) && (H>J) && (I>J)")
+}
+
+record(calc, SVT:bias:top:all:stat:calc)
+{
+	field(SCAN, "Passive")
+	field(INPA,"SVT:bias:top:half1:stat:calc CPP")
+	field(INPB,"SVT:bias:top:half2:stat:calc CPP")
+	field(CALC,"(A>0) && (B>0)")
+}
+
+record(calc, SVT:bias:bot:half1:stat:calc)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:bias:bot:20:v_sens CPP")
+	field(INPB,"SVT:bias:bot:21:v_sens CPP")
+	field(INPC,"SVT:bias:bot:22:v_sens CPP")
+	field(INPD,"SVT:bias:bot:23:v_sens CPP")
+	field(INPE,"SVT:bias:bot:24:v_sens CPP")
+	field(INPF,"SVT:bias:bot:25:v_sens CPP")
+	field(INPG,"SVT:bias:bot:26:v_sens CPP")
+	field(INPH,"SVT:bias:bot:27:v_sens CPP")
+	field(INPI,"SVT:bias:bot:28:v_sens CPP")
+	field(INPJ,"SVT:bias:bot:20:v_sens.LOW CPP")
+	field(CALC,"(A>J) && (B>J) && (C>J) && (D>J) && (E>J) && (F>J) && (G>J) && (H>J) && (I>J)")
+}
+
+record(calc, SVT:bias:bot:half2:stat:calc)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:bias:bot:29:v_sens CPP")
+	field(INPB,"SVT:bias:bot:30:v_sens CPP")
+	field(INPC,"SVT:bias:bot:31:v_sens CPP")
+	field(INPD,"SVT:bias:bot:32:v_sens CPP")
+	field(INPE,"SVT:bias:bot:33:v_sens CPP")
+	field(INPF,"SVT:bias:bot:34:v_sens CPP")
+	field(INPG,"SVT:bias:bot:35:v_sens CPP")
+	field(INPH,"SVT:bias:bot:36:v_sens CPP")
+	field(INPI,"SVT:bias:bot:37:v_sens CPP")
+	field(INPJ,"SVT:bias:bot:29:v_sens.LOW CPP")
+	field(CALC,"(A>J) && (B>J) && (C>J) && (D>J) && (E>J) && (F>J) && (G>J) && (H>J) && (I>J)")
+}
+
+record(calc, SVT:bias:bot:all:stat:calc)
+{
+	field(SCAN, "Passive")
+	field(INPA,"SVT:bias:top:half1:stat:calc CPP")
+	field(INPB,"SVT:bias:top:half2:stat:calc CPP")
+	field(CALC,"(A>0) && (B>0)")
+}
+
+record(calc, SVT:bias:all:stat:calc)
+{
+	field(SCAN, "Passive")
+	field(INPA,"SVT:bias:top:all:stat:calc CPP")
+	field(INPB,"SVT:bias:bot:all:stat:calc CPP")
+	field(CALC,"(A>0) && (B>0)")
+}

@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v1.3.0/apps/medm/hps_trigger_scalers.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/./generalApp/medm/hps_trigger_scalers.adl"
+	version=030109
 }
 display {
 	object {
-		x=1147
-		y=588
+		x=196
+		y=50
 		width=606
 		height=441
 	}
@@ -89,9 +89,9 @@ display {
 }
 rectangle {
 	object {
-		x=97
+		x=67
 		y=396
-		width=409
+		width=400
 		height=38
 	}
 	"basic attribute" {
@@ -100,9 +100,9 @@ rectangle {
 }
 rectangle {
 	object {
-		x=97
+		x=67
 		y=395
-		width=409
+		width=400
 		height=38
 	}
 	"basic attribute" {
@@ -112,7 +112,7 @@ rectangle {
 }
 rectangle {
 	object {
-		x=569
+		x=568
 		y=92
 		width=30
 		height=48
@@ -171,7 +171,7 @@ rectangle {
 	}
 	pen[4] {
 		chan="HPSTRIGSC_4_SFRAC_PRE"
-		clr=6
+		clr=7
 		limits {
 			hoprSrc="default"
 			hoprDefault=100
@@ -198,7 +198,7 @@ rectangle {
 		clr=41
 		limits {
 			hoprSrc="default"
-			hoprDefault=100
+			hoprDefault=250
 		}
 	}
 }
@@ -220,7 +220,7 @@ text {
 }
 bar {
 	object {
-		x=570
+		x=569
 		y=161
 		width=30
 		height=229
@@ -240,7 +240,7 @@ bar {
 }
 text {
 	object {
-		x=573
+		x=572
 		y=95
 		width=24
 		height=12
@@ -255,7 +255,7 @@ text {
 }
 rectangle {
 	object {
-		x=569
+		x=568
 		y=140
 		width=30
 		height=5
@@ -266,7 +266,7 @@ rectangle {
 }
 text {
 	object {
-		x=582
+		x=581
 		y=125
 		width=24
 		height=40
@@ -281,7 +281,7 @@ text {
 }
 "text update" {
 	object {
-		x=569
+		x=568
 		y=145
 		width=30
 		height=15
@@ -297,7 +297,7 @@ text {
 }
 text {
 	object {
-		x=573
+		x=572
 		y=110
 		width=24
 		height=12
@@ -308,7 +308,8 @@ text {
 	"dynamic attribute" {
 		chan="HPSBEAMANGX"
 	}
-	textix="TIME"
+	textix="PULSE"
+	align="horiz. centered"
 }
 rectangle {
 	object {
@@ -324,7 +325,7 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=111
+		x=81
 		y=412
 		width=30
 		height=15
@@ -339,7 +340,7 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=176
+		x=146
 		y=412
 		width=30
 		height=15
@@ -354,7 +355,7 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=241
+		x=211
 		y=412
 		width=30
 		height=15
@@ -369,7 +370,7 @@ rectangle {
 }
 "text entry" {
 	object {
-		x=306
+		x=276
 		y=412
 		width=30
 		height=15
@@ -1042,7 +1043,7 @@ text {
 }
 text {
 	object {
-		x=105
+		x=75
 		y=397
 		width=54
 		height=11
@@ -1054,7 +1055,7 @@ text {
 }
 text {
 	object {
-		x=168
+		x=138
 		y=397
 		width=54
 		height=11
@@ -1066,7 +1067,7 @@ text {
 }
 text {
 	object {
-		x=239
+		x=209
 		y=397
 		width=54
 		height=11
@@ -1078,7 +1079,7 @@ text {
 }
 text {
 	object {
-		x=304
+		x=274
 		y=397
 		width=54
 		height=11
@@ -1090,19 +1091,19 @@ text {
 }
 text {
 	object {
-		x=354
-		y=407
+		x=391
+		y=408
 		width=54
 		height=11
 	}
 	"basic attribute" {
 		clr=0
 	}
-	textix="PRESCALE FACTORS (2^N)"
+	textix="= 2^(N-1)+1"
 }
 rectangle {
 	object {
-		x=568
+		x=567
 		y=91
 		width=32
 		height=299
@@ -1158,7 +1159,7 @@ text {
 }
 rectangle {
 	object {
-		x=535
+		x=534
 		y=92
 		width=30
 		height=48
@@ -1172,7 +1173,7 @@ rectangle {
 }
 bar {
 	object {
-		x=536
+		x=535
 		y=161
 		width=30
 		height=229
@@ -1186,13 +1187,13 @@ bar {
 	limits {
 		loprSrc="default"
 		hoprSrc="default"
-		hoprDefault=60
+		hoprDefault=250
 		precSrc="default"
 	}
 }
 text {
 	object {
-		x=539
+		x=538
 		y=95
 		width=24
 		height=12
@@ -1207,7 +1208,7 @@ text {
 }
 rectangle {
 	object {
-		x=535
+		x=534
 		y=140
 		width=30
 		height=5
@@ -1218,7 +1219,7 @@ rectangle {
 }
 text {
 	object {
-		x=545
+		x=544
 		y=125
 		width=24
 		height=40
@@ -1233,7 +1234,7 @@ text {
 }
 "text update" {
 	object {
-		x=535
+		x=534
 		y=145
 		width=30
 		height=15
@@ -1250,7 +1251,7 @@ text {
 }
 text {
 	object {
-		x=539
+		x=538
 		y=110
 		width=24
 		height=12
@@ -1265,7 +1266,7 @@ text {
 }
 rectangle {
 	object {
-		x=534
+		x=533
 		y=91
 		width=32
 		height=299
@@ -1275,19 +1276,54 @@ rectangle {
 		fill="outline"
 	}
 }
-"shell command" {
+"related display" {
 	object {
-		x=525
-		y=408
-		width=69
-		height=19
+		x=533
+		y=404
+		width=65
+		height=24
 	}
-	command[0] {
-		label="REBOOT"
-		name="xterm"
-		args="-T NOTICE -g 50x12 -bg yellow -fg white /home/hpsrun/scripts/howToRestartScalerIOC.sh &"
+	display[0] {
+		label="Reboot Trigger IOC"
+		name="hps_trigger_scalers_REBOOT.adl"
+	}
+	display[1] {
+		label="Reboot T-DAQ"
+		name="rebootTDAQ.adl"
+	}
+	display[2] {
+		label="Reboot SVT-DAQ"
+		name="rebootSVTDAQ.adl"
+	}
+	display[3] {
+		label="Reboot FULL DAQ"
+		name="rebootFULLDAQ.adl"
 	}
 	clr=33
 	bclr=12
-	label="REBOOT"
+	label=" REBOOT"
+}
+text {
+	object {
+		x=334
+		y=415
+		width=54
+		height=11
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="PRESCALE"
+}
+text {
+	object {
+		x=336
+		y=401
+		width=54
+		height=11
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="NONZERO"
 }

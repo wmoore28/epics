@@ -32,22 +32,22 @@ caput SVT:lv:fe:8:anan:i_rd.HIHI 0.305
 
 ./allFebCaput.sh SVT:lv:fe anap:i_rd.LOLO 2.9
 ./allFebCaput.sh SVT:lv:fe anap:i_rd.LOW 3.0
-./allFebCaput.sh SVT:lv:fe anap:i_rd.HIGH 3.25
-./allFebCaput.sh SVT:lv:fe anap:i_rd.HIHI 3.35
+./allFebCaput.sh SVT:lv:fe anap:i_rd.HIGH 3.35
+./allFebCaput.sh SVT:lv:fe anap:i_rd.HIHI 3.45
 
 caput SVT:lv:fe:0:anap:i_rd.LOLO 1.95
 caput SVT:lv:fe:0:anap:i_rd.LOW 2.0
-caput SVT:lv:fe:0:anap:i_rd.HIGH 2.15
-caput SVT:lv:fe:0:anap:i_rd.HIHI 2.2
+caput SVT:lv:fe:0:anap:i_rd.HIGH 2.25
+caput SVT:lv:fe:0:anap:i_rd.HIHI 2.3
 caput SVT:lv:fe:8:anap:i_rd.LOLO 1.95
 caput SVT:lv:fe:8:anap:i_rd.LOW 2.02
-caput SVT:lv:fe:8:anap:i_rd.HIGH 2.15
-caput SVT:lv:fe:8:anap:i_rd.HIHI 2.2
+caput SVT:lv:fe:8:anap:i_rd.HIGH 2.25
+caput SVT:lv:fe:8:anap:i_rd.HIHI 2.3
 
 ./allFebCaput.sh SVT:lv:fe digi:i_rd.LOLO 0.9
 ./allFebCaput.sh SVT:lv:fe digi:i_rd.LOW 1.0
-./allFebCaput.sh SVT:lv:fe digi:i_rd.HIGH 1.25
-./allFebCaput.sh SVT:lv:fe digi:i_rd.HIHI 1.35
+./allFebCaput.sh SVT:lv:fe digi:i_rd.HIGH 1.3
+./allFebCaput.sh SVT:lv:fe digi:i_rd.HIHI 1.4
 
 ./allFebCaput.sh SVT:lv:fe digi:v_sens.HIHI 5.6
 ./allFebCaput.sh SVT:lv:fe anan:v_sens.HIHI 5.6
@@ -76,17 +76,17 @@ caput SVT:lv:fe:8:anan:v_term.HIGH 6.555
 caput SVT:lv:fe:8:anan:v_term.LOW 6.30
 caput SVT:lv:fe:8:anan:v_term.LOLO 6.25
 
-./allFebCaput.sh SVT:lv:fe anap:v_term.HIHI 7.40
-./allFebCaput.sh SVT:lv:fe anap:v_term.HIGH 7.35
+./allFebCaput.sh SVT:lv:fe anap:v_term.HIHI 7.50
+./allFebCaput.sh SVT:lv:fe anap:v_term.HIGH 7.45
 ./allFebCaput.sh SVT:lv:fe anap:v_term.LOW 7.21
 ./allFebCaput.sh SVT:lv:fe anap:v_term.LOLO 7.15
 
-caput SVT:lv:fe:0:anap:v_term.HIHI 6.85
-caput SVT:lv:fe:0:anap:v_term.HIGH 6.80
+caput SVT:lv:fe:0:anap:v_term.HIHI 6.95
+caput SVT:lv:fe:0:anap:v_term.HIGH 6.90
 caput SVT:lv:fe:0:anap:v_term.LOW 6.55
 caput SVT:lv:fe:0:anap:v_term.LOLO 6.50
-caput SVT:lv:fe:8:anap:v_term.HIHI 6.85
-caput SVT:lv:fe:8:anap:v_term.HIGH 6.80
+caput SVT:lv:fe:8:anap:v_term.HIHI 6.95
+caput SVT:lv:fe:8:anap:v_term.HIGH 6.90
 caput SVT:lv:fe:8:anap:v_term.LOW 6.55
 caput SVT:lv:fe:8:anap:v_term.LOLO 6.50
 
@@ -101,8 +101,8 @@ do
 done
 done
 
-./allFebCaput.sh SVT:lv:fe digi:v_term.HIHI 7.4
-./allFebCaput.sh SVT:lv:fe digi:v_term.HIGH 7.3
+./allFebCaput.sh SVT:lv:fe digi:v_term.HIHI 7.45
+./allFebCaput.sh SVT:lv:fe digi:v_term.HIGH 7.35
 ./allFebCaput.sh SVT:lv:fe digi:v_term.LOW 6.9
 ./allFebCaput.sh SVT:lv:fe digi:v_term.LOLO 6.8
 

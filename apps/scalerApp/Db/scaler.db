@@ -102,14 +102,35 @@ grecord(mbbo,"display_mode")
 # Faraday cup
 grecord(calc,"scaler_calc1")
 {
-	field(FLNK,"scaler_cts1.PROC PP MS")
+	field(FLNK,"scaler_calc2.PROC PP MS")
+#	field(FLNK,"scaler_cts1.PROC PP MS")
 	field(CALC,"(b/f-d)/MAX(e,1.0)")
-#	field(INPB,"scaler.S16 NPP NMS")
 	field(INPB,"scaler.S2 NPP NMS")
 	field(INPD,"fcup_offset NPP NMS")
 	field(INPE,"fcup_slope NPP NMS")
 	field(INPF,"scaler.T NPP NMS")
 	field(PREC,"3")
+}
+
+# SLM
+grecord(calc,"scaler_calc2")
+{
+        field(FLNK,"slm_fcup_ratio.PROC PP MS")
+        field(CALC,"(b/f-d)/MAX(e,1.0)")
+        field(INPB,"scaler.S16 NPP NMS")
+        field(INPD,"slm_offset NPP NMS")
+        field(INPE,"slm_slope NPP NMS")
+        field(INPF,"scaler.T NPP NMS")
+        field(PREC,"4")
+}
+
+grecord(calc,"slm_fcup_ratio")
+{
+	    field(FLNK,"scaler_cts1.PROC PP MS")
+        field(CALC,"a>0.1?b/a:1.0")
+        field(INPA,"scaler_calc2 NPP NMS")
+        field(INPB,"scaler_calc1 NPP NMS")
+        field(PREC,"4")
 }
 
 
@@ -201,7 +222,9 @@ grecord(transform,"scaler_cts4")
 
 	field(CLCH,"(a=1)?c/f:c")
 	field(CLCI,"(a=1)?d/f:d")
-	field(CLCJ,"(a=1)?e/(10*f):e")
+# found during KPP run: don't know why this 10 was here:
+#	field(CLCJ,"(a=1)?e/(10*f):e")
+	field(CLCJ,"(a=1)?e/f:e")
 
 	field(INPA,"display_mode.RVAL NPP NMS")
 	field(INPF,"scaler.T NPP NMS")
@@ -327,7 +350,19 @@ grecord(transform,"scaler_cts8")
 
 
 
-
+# HPS BLM FSD BTA MCC (for CLAS it used to be upstream sum):
+grecord(calc,"scaler_sum")
+{
+     field(SCAN,"1 second")
+# this was HPS:
+#     field(CALC,"a")
+#     field(INPA,"ISD2H001ALOS2B")
+# this is CLAS12:
+     field(INPA,"ISD2H001HALORATE01")
+     field(INPB,"ISD2H001HALORATE02")
+     field(INPC,"ISD2H001HALORATE03")
+     field(CALC,"A+B+C")
+}
 
 
 

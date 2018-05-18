@@ -1,0 +1,157 @@
+
+grecord(bo,"tag_t_StartedBO") {
+	field(OUT,"tag_t_Start.VAL  PP MS")
+}
+grecord(ao,"tag_t_fifo") {
+}
+grecord(bo,"tag_t_Start") {
+     field(FLNK,"tag_t_StartFO.PROC  PP MS")
+     field(OUT,"1")
+     field(HIGH,"1")
+     field(ZNAM,"STOP")
+     field(ONAM,"START")
+}
+grecord(ao,"tag_t_high") {
+     field(FLNK,"tag_t_high_calc")
+     field(DRVL,"0.5")
+     field(DRVH,"255")
+     field(PREC,"1")
+     field(VAL,"10")
+     field(PINI,"1")
+}
+grecord(calc,"tag_t_high_calc") {
+     field(INPA,"tag_t_high")
+     field(CALC,"A+0.2")
+     field(FLNK,"tag_t_high_ao")
+}
+grecord(ao,"tag_t_high_ao") {
+     field(DOL,"tag_t_high_calc")
+     field(OMSL,"closed_loop")
+     field(OUT,"tag_t_Start.HIGH")
+}
+grecord(calc,"tag_t_busy") {
+     field(INPA,"tag_t_Start")
+     field(INPB,"tag_t_Read")
+     field(CALC,"A+B")
+     field(SCAN,".1 second")
+}
+grecord(bo,"tag_t_reStart") {
+     field(SCAN,".5 second")
+     field(SDIS,"tag_t_busy.VAL  NPP NMS")
+     field(DISV,"1")
+     field(VAL,"1")
+#     field(DOL,"1")
+#     field(OUT,"tag_t_Start.VAL  CA MS")
+     field(ZNAM,"Manual")
+     field(ONAM,"Continuous")
+}
+grecord(histogram, "tag_t_scalers") { 
+  field(NELM, "192")
+  field(LLIM, "0")
+  field(ULIM, "192")
+  field(DTYP, "Soft Channel")
+}
+
+grecord(histogram, "tag_t_left") { 
+  field(NELM, "64")
+  field(LLIM, "0")
+  field(ULIM, "64")
+  field(DTYP, "Soft Channel")
+}
+grecord(histogram, "tag_t_right") { 
+  field(NELM, "64")
+  field(LLIM, "0")
+  field(ULIM, "64")
+  field(DTYP, "Soft Channel")
+}
+grecord(histogram, "tag_t_coin") { 
+  field(NELM, "64")
+  field(LLIM, "0")
+  field(ULIM, "64")
+  field(DTYP, "Soft Channel")
+}
+
+
+
+grecord(histogram, "tag_t_relative") { 
+  field(NELM, "192")
+  field(LLIM, "0")
+  field(ULIM, "192")
+  field(DTYP, "Soft Channel")
+}
+grecord(bo,"tag_t_amorphous_rad") {
+  field(OUT,"0")
+  field(ZNAM,"NO")
+  field(ONAM,"YES")
+}
+grecord(histogram, "tag_t_amorphous") { 
+  field(NELM, "192")
+  field(LLIM, "0")
+  field(ULIM, "192")
+  field(DTYP, "Soft Channel")
+}
+grecord(histogram, "tag_t_rel2amorphous") { 
+  field(NELM, "192")
+  field(LLIM, "0")
+  field(ULIM, "192")
+  field(DTYP, "Soft Channel")
+}
+grecord(histogram, "tag_t_scalers_hz") { 
+  field(NELM, "192")
+  field(LLIM, "0")
+  field(ULIM, "192")
+  field(DTYP, "Soft Channel")
+}
+
+#grecord(fanout,"tag_t_StartFO") {
+#     field(SDIS,"tag_t_StartedBO.PACT  NPP NMS")
+#     field(LNK1,"tag_t_Eras  PP MS")
+#     field(LNK5,"tag_t_StopSeq.PROC  PP MS")
+#}
+
+grecord(seq,"tag_t_StartFO") {
+     field(SDIS,"tag_t_StartedBO.PACT  NPP NMS")
+     field(DOL1, "0")
+     field(LNK1,"tag_t_StopSeq  PP MS")
+     field(DOL2, "0")
+     field(LNK2,"tag_t_Eras  PP MS")
+
+}
+
+
+
+grecord(seq,"tag_t_Eras") {
+  field(DISV,"0")
+  field(SDIS,"tag_t_Start.VAL  NPP MS")
+  field(DOL2,"1")
+  field(LNK2,"tag_t_192.ERST PP MS")
+  field(DOL3,"1")
+  field(LNK3,"tag_t_160.ERST PP MS")
+  field(DOL4,"1")
+  field(LNK4,"tag_t_128.ERST PP MS")
+  field(DOL5,"1")
+  field(LNK5,"tag_t_96.ERST PP MS")
+  field(DOL6,"1")
+  field(LNK6,"tag_t_64.ERST PP MS")
+  field(DOL7,"1")
+  field(LNK7,"tag_t_32.ERST PP MS")
+}
+
+grecord(seq,"tag_t_StopSeq") {
+  field(SDIS,"tag_t_Start.VAL  NPP MS")
+  field(DOL2,"1")
+  field(LNK2,"tag_t_192.STOP PP MS")
+  field(DOL3,"1")
+  field(LNK3,"tag_t_160.STOP PP MS")
+  field(DOL4,"1")
+  field(LNK4,"tag_t_128.STOP PP MS")
+  field(DOL5,"1")
+  field(LNK5,"tag_t_96.STOP PP MS")
+  field(DOL6,"1")
+  field(LNK6,"tag_t_64.STOP PP MS")
+  field(DOL7,"1")
+  field(LNK7,"tag_t_32.STOP PP MS")
+  field(DOL8,"1")
+  field(LNK8,"tag_t_Read PP MS")
+}
+

@@ -1,7 +1,7 @@
 
 file {
-	name="/usr/clas12/hps/v1.3.0/apps/generalApp/medm/voltages.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./voltages.adl"
+	version=030101
 }
 display {
 	object {
@@ -103,8 +103,8 @@ display {
 		name="ECalHVStatusCompact.adl"
 	}
 	display[2] {
-		label="Beav HV"
-		name="bm.adl"
+		label="Beam HV"
+		name="bm_counter_1.adl"
 	}
 	display[3] {
 		label="BLMs"

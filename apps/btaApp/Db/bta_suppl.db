@@ -18,12 +18,15 @@ grecord( calc,"HL$(hall):bta_reg_bm")
 #
 #   Actual value records
 #
-	field(INPA,"scaler_calc1  NPP NMS")
+#field(INPA,"IPM2C21A NPP NMS")
+        field(INPA,"hallb_IPM2C21A_CUR NPP NMS")
+#	field(INPA,"scaler_calc1  NPP NMS")
         field(INPB,"scaler_sum NPP NMS")
         field(INPC,"beam_polarization NPP NMS")
         field(INPD,"")
         field(INPE,"")
-        field(INPF,"")
+#field(INPF,"")
+        field(INPF,"hallb_IPM2C21A_CUR NPP NMS")
 #
 #  Limit settings
 #
@@ -276,7 +279,8 @@ grecord( calc, "HL$(hall):bta_main_cur" )
 
 #	field(INPA,"scaler_calc2 NPP NMS") # No SLM based beam PV is available, so replacing with FCUP one temporarly. Nerses
 	field(INPA,"scaler_calc1 NPP NMS")
-	field(INPB,"IPM2C21A NPP NMS")
+#field(INPB,"IPM2C21A NPP NMS")
+	field(INPB,"hallb_IPM2C21A_CUR NPP NMS")
 	field(INPC,"scaler_calc1 NPP NMS")
 	field(INPD,"HL$(hall):bta_cur_stor NPP NMS")
 

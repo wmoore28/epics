@@ -1,0 +1,36 @@
+
+record(calc,SVT:daq:$(DPM):$(HYB):exist)
+{
+    field(SCAN,"Passive")
+    field(INPA,"SVT:daq:dpm:$(DPM):$(HYB):febnum CPP")
+    field(INPB,"SVT:daq:dpm:$(DPM):$(HYB):hybnum CPP")
+    field(CALC,"(A>-1)&&(A<15)&&(B>-1)&&(B<4)")
+}
+
+record(calc,SVT:daq:$(DPM):$(HYB):fake)
+{
+    field(SCAN,"Passive")
+    field(INPA,"SVT:daq:dpm:$(DPM):$(HYB):febnum CPP")
+    field(INPB,"SVT:daq:dpm:$(DPM):$(HYB):hybnum CPP")
+    field(CALC,"(A=2&&(B=2||B=3))||(A=9&&(B=2||B=3))")
+}
+
+record(calc,SVT:daq:$(DPM):$(HYB):sync_stats)
+{
+    field(SCAN,"Passive")
+    field(INPA,"SVT:daq:$(DPM):$(HYB):sync_rd CPP")
+    field(INPB,"SVT:daq:$(DPM):$(HYB):exist CPP")
+    field(INPC,"SVT:daq:$(DPM):$(HYB):fake CPP")
+    field(CALC,"((B#0)&&(A=31))||((B=0)&&(A#31))||(C=1)")
+}
+
+record(calc,SVT:daq:$(DPM):sync_stats)
+{
+    field(SCAN,"Passive")
+    field(INPA,"SVT:daq:$(DPM):0:sync_stats CPP")
+    field(INPB,"SVT:daq:$(DPM):1:sync_stats CPP")
+    field(INPC,"SVT:daq:$(DPM):2:sync_stats CPP")
+    field(INPD,"SVT:daq:$(DPM):3:sync_stats CPP")
+    field(CALC,"(A>0)&&(B>0)&&(C>0)&&(D>0)")
+}
+

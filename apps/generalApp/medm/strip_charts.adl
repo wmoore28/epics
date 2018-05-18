@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/generalApp/medm/strip_charts.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./strip_charts.adl"
+	version=030109
 }
 display {
 	object {
-		x=510
-		y=803
+		x=501
+		y=795
 		width=350
 		height=150
 	}
@@ -134,11 +134,16 @@ display {
 		name="StripTool"
 		args="$APP/sixty_hz/medm/power_max.stc &"
 	}
-        command[8] {
-                label="2H01-2H02 Beam Angle"
-                name="StripTool"
-                args="$APP/general/strip/hps_beam_angle.stc &"
-        }
+	command[8] {
+		label="2H01-2H02 Beam Angle"
+		name="StripTool"
+		args="$APP/general/strip/hps_beam_angle.stc &"
+	}
+	command[9] {
+		label="Beamline Counters"
+		name="StripTool"
+		args="$APP/general/strip/beamlineCounters.stc &"
+	}
 	clr=14
 	bclr=4
 }

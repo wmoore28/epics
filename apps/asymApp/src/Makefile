@@ -50,6 +50,8 @@ ifneq ($(SNCSEQ),)
     asymSupport_DBD += asymSNC.dbd
     asymSupport_SRCS += asym.st
     asym_SRCS += asym.st
+    asymSupport_SRCS += SIS38XX_SNL_asym.st
+    asym_SRCS += SIS38XX_SNL_asym.st
     asymSupport_LIBS += seq pv
 endif
 

@@ -1,12 +1,12 @@
 
 file {
 	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./HPS_EPICS.adl"
-	version=030109
+	version=030101
 }
 display {
 	object {
-		x=118
-		y=16
+		x=643
+		y=31
 		width=240
 		height=835
 	}
@@ -161,7 +161,7 @@ rectangle {
 }
 "related display" {
 	object {
-		x=41
+		x=20
 		y=450
 		width=20
 		height=20
@@ -339,6 +339,11 @@ text {
 		label="SVT Soft Interlocks"
 		name="svtIntlk.adl"
 	}
+	display[10] {
+		label="Chiller (SVT2)"
+		name="chiller_anova.adl"
+		args="DESC=SVT2,P=HPS_SVT:CHILLER:"
+	}
 	clr=14
 	bclr=50
 }
@@ -449,20 +454,6 @@ text {
 "related display" {
 	object {
 		x=20
-		y=450
-		width=20
-		height=20
-	}
-	display[0] {
-		label="REBOOT IOC"
-		name="ioc_alive.adl"
-	}
-	clr=14
-	bclr=50
-}
-"related display" {
-	object {
-		x=20
 		y=566
 		width=20
 		height=20
@@ -546,9 +537,22 @@ text {
 		width=20
 		height=20
 	}
-	display[0] {
-		label="magnet screens"
-		name="magnet_screens.adl"
+	display[1] {
+		label="Chicane"
+		name="chicane.adl"
+		args="P=hps_chicane"
+	}
+	display[2] {
+		label="Frascati Magnets"
+		name="minitorus.adl"
+	}
+	display[3] {
+		label="Analyzing Magnet"
+		name="pspec.adl"
+	}
+	display[4] {
+		label="Tagger"
+		name="tagger.adl"
 	}
 	clr=14
 	bclr=50
@@ -566,7 +570,7 @@ text {
 	}
 	display[1] {
 		label="     BEAM     "
-		name="bm.adl"
+		name="bm_beam_counter_1.adl"
 	}
 	display[2] {
 		label="     BLMs     "
@@ -749,7 +753,7 @@ text {
 	}
 	display[0] {
 		label="DAQ Status"
-		name="daq_status.adl"
+		name="daq.adl"
 	}
 	clr=14
 	bclr=50
@@ -911,17 +915,8 @@ text {
 		height=20
 	}
 	command[0] {
-		label="ECAL DSC2 GUI"
-		name="hps_ecal_scalers -d &"
-	}
-	command[1] {
-		label="ECAL FADC GUI"
-		name="hps_ecal_scalers &"
-	}
-	command[2] {
-		label="ECAL Diag GUI (solaris-only)"
-		name="xterm -title 'ECAL FADC Diag GUI' -e "
-		args="/usr/clas12/hps/prod/tools/ecal/runEcalDiagGui.sh &"
+		label="ECAL FADC Scalers (EPICS)"
+		name="hps_ecal_scalers.py &"
 	}
 	clr=14
 	bclr=50
@@ -936,7 +931,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="ECAL Scaler GUIs"
+	textix="ECAL FADC Scalers"
 }
 "shell command" {
 	object {
@@ -1080,8 +1075,8 @@ text {
 		height=20
 	}
 	display[0] {
-		label="SVT Map"
-		name="svtMap.adl"
+		label="SVT Summary"
+		name="svtSummary.adl"
 	}
 	display[1] {
 		label="DPM Status"
@@ -1126,6 +1121,14 @@ text {
 	display[11] {
 		label="POSITION STATUS"
 		name="HpsSvtPosition.adl"
+	}
+	display[12] {
+		label="SVT Map"
+		name="svtMap.adl"
+	}
+	display[13] {
+		label="SVT Sem"
+		name="svtSEM.adl"
 	}
 	clr=14
 	bclr=50
@@ -1197,4 +1200,42 @@ text {
 	}
 	clr=14
 	bclr=50
+}
+"related display" {
+	object {
+		x=166
+		y=317
+		width=20
+		height=20
+	}
+	display[0] {
+		label="FSD STATUS"
+		name="HpsFsdStatus.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=192
+		y=315
+		width=30
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="FSD"
+}
+text {
+	object {
+		x=191
+		y=327
+		width=30
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="STATUS"
 }
