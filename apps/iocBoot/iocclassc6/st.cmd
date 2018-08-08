@@ -91,6 +91,8 @@ dbLoadRecords("db/asym_file.db")
 
 dbLoadRecords("db/moeller_coincaccid_ratio.db")
 
+dbLoadTemplate("db/bca.substitutions")
+
 cd startup
 iocInit
 

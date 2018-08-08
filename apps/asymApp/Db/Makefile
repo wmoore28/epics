@@ -24,6 +24,9 @@ DB += asym_scaler_macro.db
 DB += asym_scaler_macro_sums.db
 DB += polarization.db
 
+# 2018 additions:
+DB += asymmetry-generic.db
+DB += bca.substitutions
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add

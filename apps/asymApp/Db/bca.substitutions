@@ -1,0 +1,6 @@
+file "db/asymmetry-generic.db" {
+pattern { P                  INPLUS     INMINUS     RESET        DISABLE }
+        { B_MOLLER:slm:bca   sum_plus_3 sum_minus_3 moller_reset moller_accumulate } 
+        { B_MOLLER:clock:bca sum_plus_0 sum_minus_0 moller_reset moller_accumulate } 
+}
+
