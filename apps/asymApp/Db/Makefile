@@ -25,7 +25,8 @@ DB += asym_scaler_macro_sums.db
 DB += polarization.db
 
 # 2018 additions:
-DB += asymmetry-generic.db
+DB += asy-generic.db
+DB += asy-withsums-generic.db
 DB += bca.substitutions
 
 #----------------------------------------------------
