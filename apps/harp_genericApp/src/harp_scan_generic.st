@@ -605,7 +605,7 @@ int open_file(char *fname, char *motor_name, char *shortname)
 
 /* add an hour because of DST and ioc time one hour behind */
 
-/*    lclTimePtr->tm_hour++; */
+    lclTimePtr->tm_hour++;
 
     fileDate[0] = '\0'; 
     thename[0] = '\0';
