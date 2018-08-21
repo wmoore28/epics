@@ -91,8 +91,6 @@ dbLoadRecords("db/asym_file.db")
 
 dbLoadRecords("db/moeller_coincaccid_ratio.db")
 
-dbLoadTemplate("db/bca.substitutions")
-
 cd startup
 iocInit
 
@@ -103,7 +101,6 @@ dbpf "asym_ReadAll.SCAN","Passive"
 dbpf "asym_InputMode","Mode 0"
 dbpf "asym_ChannelAdvance","External"
 dbpf "asym_Prescale","0"
-dbpf "asym_acqg_time.DRVL","1"
 
 seq &SIS38XX_SNL_asym, "P=asym_, R=, NUM_SIGNALS=25, FIELD=READ"
 

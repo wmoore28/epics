@@ -254,6 +254,7 @@ ss asym_file {
             strcpy(fname,shortname);
             pvPut(fname);
             isFileOpen=1;
+            fdprintf(fd,"coin+ coin- accid+ accid- slm+ slm-\n");
         } state listen
     }
 

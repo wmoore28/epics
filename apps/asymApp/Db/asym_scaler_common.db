@@ -2,8 +2,11 @@ grecord(ao,"asym_acqg_time")
 {
    field(ASG, "MCC")
    field(VAL, "10")
-   field(HOPR,"130")    # this is determined by FIFO size and beam sync rate
    field(PREC, "0")
+   field(DRVL,"10")
+   field(DRVH,"120")
+# NAB:  They must have wanted DRVH and not HOPR
+#   field(HOPR,"130")    # this is determined by FIFO size and beam sync rate
 }
 # these records hold the result of the asymmetry calculation
 
