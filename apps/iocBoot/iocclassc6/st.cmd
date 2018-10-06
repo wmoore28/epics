@@ -94,6 +94,12 @@ dbLoadRecords("db/moeller_coincaccid_ratio.db")
 cd startup
 iocInit
 
+# alarm limits on SLM beam charge asymmetry:
+dbpf "q_asym_3.HIGH","0.1"
+dbpf "q_asym_3.HIHI","0.2"
+dbpf "q_asym_3.HSV","MINOR"
+dbpf "q_asym_3.HHSV","MAJOR"
+
 # Struck setup for asym,
 # * with external channel advance and user inputs (Mode 0)
 # * if prescale!=0 it doesn't advance
