@@ -94,7 +94,7 @@ dbLoadRecords("$(DEVIOCSTATS)/db/iocAdminVxWorks.db", "IOC=iocclassc4")
 
 # currently running in softioc for testing:
 dbLoadRecords("db/scaler-ped.db","OUT=fcup_offset,P=fcup_offset,RAW=scalerS2b, REF=IPM2C21A,REFMAX=0.1,RAWMAX=500,N=5")
-dbLoadRecords("db/scaler-ped.db","OUT=slm_offset, P=slm_offset, RAW=scalerS16b,REF=IPM2C21A,REFMAX=0.1,RAWMAX=500,N=5")
+dbLoadRecords("db/scaler-ped.db","OUT=slm_offset, P=slm_offset, RAW=scalerS16b,REF=IPM2C21A,REFMAX=0.1,RAWMAX=800,N=5")
 dbLoadRecords("db/scaler_calc1b.db")
 
 cd startup
@@ -110,7 +110,7 @@ dbpf "fcup_offset","199.9"
 dbpf "fcup_slope","906.2"
 
 dbpf "slm_offset","-1301.0"
-dbpf "slm_slope","15968.5"
+dbpf "slm_slope","4298"
 
 ## Added these three line. to start counting after restarting IOC
 dbpf "scaler.CNT","1"
