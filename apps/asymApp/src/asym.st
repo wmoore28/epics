@@ -114,6 +114,7 @@ assign asym_fdbk_stamp to "HB:Q_STAMP";
 /////////////////////////////////////////////
 // THIS IS FOR RECORDING A DATA FILE:
 string fname; assign fname to "asym_filename";
+int filedisable; assign filedisable to "asym_file_disable";
 int fd;
 int isFileOpen=0;
 char cfname[1024];
@@ -123,6 +124,7 @@ int moller_accumulate; assign moller_accumulate to "moller_accumulate";
 monitor asym_fdbk_stamp;
 monitor moller_reset;
 monitor moller_accumulate;
+monitor filedisable;
 evflag ev_daqReadFifo;  sync asym_fdbk_stamp   to ev_daqReadFifo;
 evflag ev_daqReset;     sync moller_reset      to ev_daqReset;
 evflag ev_daqStartStop; sync moller_accumulate to ev_daqStartStop;
@@ -249,12 +251,18 @@ ss asym_file {
     
     state openFile {
         when (delay(1)) {
-            printf("asym_file:  OPENING FILE ...\n");
-            fd = open_file(&cfname,&shortname);
-            strcpy(fname,shortname);
-            pvPut(fname);
-            isFileOpen=1;
-            fdprintf(fd,"coin+ coin- accid+ accid- slm+ slm-\n");
+            if (filedisable) {
+                strcpy(fname,"Data File Disabled");
+                pvPut(fname);
+            }
+            else {
+                printf("asym_file:  OPENING FILE ...\n");
+                fd = open_file(&cfname,&shortname);
+                strcpy(fname,shortname);
+                pvPut(fname);
+                isFileOpen=1;
+                fdprintf(fd,"coin+ coin- accid+ accid- slm+ slm-\n");
+            }
         } state listen
     }
 

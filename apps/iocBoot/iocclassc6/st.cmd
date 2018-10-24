@@ -95,8 +95,8 @@ cd startup
 iocInit
 
 # alarm limits on SLM beam charge asymmetry:
-dbpf "q_asym_3.HIGH","0.1"
-dbpf "q_asym_3.HIHI","0.2"
+dbpf "q_asym_3.HIGH","0.2"
+dbpf "q_asym_3.HIHI","0.4"
 dbpf "q_asym_3.HSV","MINOR"
 dbpf "q_asym_3.HHSV","MAJOR"
 
@@ -110,8 +110,10 @@ dbpf "asym_Prescale","0"
 
 seq &SIS38XX_SNL_asym, "P=asym_, R=, NUM_SIGNALS=25, FIELD=READ"
 
-dbpf "moller_accumulate","1"
 seq &asym
+
+epicsThreadSleep(1)
+dbpf "moller_accumulate","0"
 
 ## update these after 2017 engineering run:
 #seq &kepco_seq
