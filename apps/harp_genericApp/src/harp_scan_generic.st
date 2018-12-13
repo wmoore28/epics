@@ -516,6 +516,7 @@ ss harp_scan_snc {
 /*close the file  and scp to mcc*/
       if ((fd > 0) && (fd != ioGlobalStdGet(1)) ) {
          close(fd);
+// This is proven unreliable and a bad idea.  Changed to a cronjob in 2018.
          //scp_clon01(shortname, motor_name, 5);
       }
 
