@@ -10,8 +10,8 @@ dbLoadDatabase("dbd/flasher.dbd")
 flasher_registerRecordDeviceDriver(pdbbase)
 
 ## Configure devices
-drvAsynIPPortConfigure("L1","B_HPS_FLASHER1:9764",0,0,0)
-drvAsynIPPortConfigure("L2","B_HPS_FLASHER2:9764",0,0,0)
+drvAsynIPPortConfigure("L1","B-HPS-FLASHER1:9764",0,0,0)
+drvAsynIPPortConfigure("L2","B-HPS-FLASHER2:9764",0,0,0)
 
 ## Comment these for verbose output - for debugging purposes.
 #asynSetTraceMask("L1", 0, 4)
