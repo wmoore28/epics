@@ -27,6 +27,7 @@ asynOctetSetInputEos("L0",0,"\n")
 dbLoadRecords("db/A6621.db","P=HPSECALLV,PORT=L0")
 dbLoadRecords("db/asynRecord.db","P=HPSECALLV,R=:ASYN,PORT=L0,ADDR=1,IMAX=2000,OMAX=2000")
 
+dbLoadRecords("db/ecalLV-onoff.db")
 
 dbLoadRecords("db/save_restoreStatus.db", "P=${IOC}:")
 
