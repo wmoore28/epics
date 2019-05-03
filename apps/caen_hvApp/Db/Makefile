@@ -11,6 +11,7 @@ include $(TOP)/configure/CONFIG
 # Create and install (or just install)
 # databases, templates, substitutions like this
 DB += ecalHV.db
+DB += ecalHV-onoff.db
 
 #DB += bm_01.db
 #DB += bm_02.db
