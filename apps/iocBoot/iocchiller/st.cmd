@@ -22,6 +22,11 @@ dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC}")
 dbLoadRecords("db/save_restoreStatus.db", "P=${IOC}:")
 dbLoadRecords("db/anova.db", "P=HPS_ECAL:,R=CHILLER:,PORT=SER5")
 
+dbLoadRecords("db/ecalInterlock.template","P=HPSECAL:,R=INTLK_LV1,PV=tempSensorA,LOW=60,HIGH=75,CTRL=HPSECALLV:OFF,CTRLVAL=1")
+dbLoadRecords("db/ecalInterlock.template","P=HPSECAL:,R=INTLK_LV2,PV=tempSensorI,LOW=60,HIGH=75,CTRL=HPSECALLV:OFF,CTRLVAL=1")
+dbLoadRecords("db/ecalInterlock.template","P=HPSECAL:,R=INTLK_HV1,PV=tempSensorA,LOW=60,HIGH=75,CTRL=B_hv_ECAL:OFF,CTRLVAL=1")
+dbLoadRecords("db/ecalInterlock.template","P=HPSECAL:,R=INTLK_HV2,PV=tempSensorI,LOW=60,HIGH=75,CTRL=B_hv_ECAL:OFF,CTRLVAL=1")
+
 cd ${TOP}/iocBoot/${IOC}
 
 ## autosave setup

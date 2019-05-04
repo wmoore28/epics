@@ -22,6 +22,8 @@ DB    += presto.db
 PROTO += presto.proto
 REQ   += presto_settings.req
 
+DB    += ecalInterlock.template
+
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_TEMPLATE = <templatename>
