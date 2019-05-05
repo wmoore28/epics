@@ -15,8 +15,8 @@ record(calcout, "$(P)$(R):first_check") {
   field(PREC, "1")
   field(CALC, "(C<=A||A<B)&(D#1)?1:0")
   field(INPA, "$(PV)")
-  field(INPB, "$(LOW)")
-  field(INPC, "$(HIGH)")
+  field(INPB, "$(P)$(R):low_limit")
+  field(INPC, "$(P)$(R):high_limit")
   field(INPD, "$(P)$(R):bypass")
   field(OUT, "$(P)$(R):second_check PP")
   field(OOPT, "When Non-zero")
@@ -35,8 +35,8 @@ record(calcout, "$(P)$(R):second_check") {
   field(PREC, "1")
   field(CALC, "(C<=A||A<B)&(D#1)?1:0")
   field(INPA, "$(PV)")
-  field(INPB, "$(LOW)")
-  field(INPC, "$(HIGH)")
+  field(INPB, "$(P)$(R):low_liimt")
+  field(INPC, "$(P)$(R):high_limit")
   field(INPD, "$(P)$(R):bypass")
   field(OUT, "$(P)$(R):status.VAL PP")
   field(OOPT, "When Non-zero")
@@ -46,6 +46,18 @@ record(calcout, "$(P)$(R):second_check") {
   field(HSV,  "MAJOR")
   field(TPRO, "1")
 }
+
+record(ai, "$(P)$(R):low_limit") {
+    field(VAL,"60")
+    field(PREC,"1")
+    field(PINI,"1")
+}
+record(ai, "$(P)$(R):high_limit") {
+    field(VAL,"75")
+    field(PREC,"1")
+    field(PINI,"1")
+}
+
 
 # Record to reset the interlock
 record(bo, "$(P)$(R):reset") {

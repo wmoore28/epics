@@ -10,3 +10,9 @@ record(seq,"HPSECALLV:OFF") {
     field(DO1,"0")
     field(DO2,"0")
 }
+record(seq,"HPSECAL:OFF") {
+    field(LNK1,"HPSECALLV:OFF CPP")
+    field(LNK2,"B_hv_ECAL:OFF CPP")
+    field(DO1,"1")
+    field(DO2,"1")
+}

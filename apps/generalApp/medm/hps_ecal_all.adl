@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./hps_ecal_all.adl"
-	version=030101
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/hps_ecal_all.adl"
+	version=030109
 }
 display {
 	object {
-		x=80
-		y=128
+		x=76
+		y=98
 		width=951
 		height=650
 	}
@@ -2045,6 +2045,10 @@ rectangle {
 	display[0] {
 		label="ECal Expert Map"
 		name="ECalHVStatus.adl"
+	}
+	display[1] {
+		label="Interlocks"
+		name="ecalInterlock.adl"
 	}
 	clr=14
 	bclr=5
@@ -6349,4 +6353,55 @@ rectangle {
 	clr=14
 	bclr=5
 	label="Monitors"
+}
+text {
+	object {
+		x=580
+		y=187
+		width=25
+		height=18
+	}
+	"basic attribute" {
+		clr=5
+	}
+	textix="Interlock Status:"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=654
+		y=186
+		width=50
+		height=16
+	}
+	monitor {
+		chan="HPSECAL:INTLK1:status"
+		clr=0
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=716
+		y=186
+		width=50
+		height=16
+	}
+	monitor {
+		chan="HPSECAL:INTLK2:status"
+		clr=0
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
 }
