@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=697
-		y=15
-		width=680
-		height=880
+		x=0
+		y=0
+		width=699
+		height=747
 	}
 	clr=14
 	bclr=3
@@ -90,9 +90,9 @@ display {
 rectangle {
 	object {
 		x=13
-		y=11
-		width=640
-		height=28
+		y=10
+		width=660
+		height=30
 	}
 	"basic attribute" {
 		clr=51
@@ -100,10 +100,10 @@ rectangle {
 }
 text {
 	object {
-		x=45
-		y=19
-		width=600
-		height=35
+		x=48
+		y=18
+		width=618
+		height=34
 	}
 	"basic attribute" {
 		clr=14
@@ -113,9 +113,9 @@ text {
 }
 text {
 	object {
-		x=15
-		y=51
-		width=110
+		x=16
+		y=53
+		width=113
 		height=18
 	}
 	"basic attribute" {
@@ -126,9 +126,9 @@ text {
 }
 text {
 	object {
-		x=260
-		y=51
-		width=40
+		x=428
+		y=53
+		width=42
 		height=18
 	}
 	"basic attribute" {
@@ -139,9 +139,9 @@ text {
 }
 text {
 	object {
-		x=326
-		y=51
-		width=80
+		x=495
+		y=53
+		width=81
 		height=18
 	}
 	"basic attribute" {
@@ -152,9 +152,9 @@ text {
 }
 text {
 	object {
-		x=413
-		y=51
-		width=80
+		x=586
+		y=53
+		width=81
 		height=18
 	}
 	"basic attribute" {
@@ -165,9 +165,9 @@ text {
 }
 text {
 	object {
-		x=523
-		y=51
-		width=40
+		x=335
+		y=53
+		width=42
 		height=18
 	}
 	"basic attribute" {
@@ -178,9 +178,9 @@ text {
 }
 text {
 	object {
-		x=590
-		y=51
-		width=40
+		x=243
+		y=53
+		width=42
 		height=18
 	}
 	"basic attribute" {
@@ -192,9 +192,9 @@ text {
 text {
 	object {
 		x=20
-		y=83
-		width=100
-		height=20
+		y=82
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -204,10 +204,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
-		y=83
-		width=28
-		height=20
+		x=146
+		y=82
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_UpstreamLeft:pwonoff"
@@ -219,10 +219,10 @@ text {
 }
 oval {
 	object {
-		x=174
+		x=181
 		y=87
-		width=14
-		height=14
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -236,10 +236,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
-		y=83
-		width=28
-		height=20
+		x=202
+		y=82
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_UpstreamLeft:pwonoff"
@@ -252,10 +252,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
-		y=83
-		width=80
-		height=20
+		x=403
+		y=82
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_UpstreamLeft:vmon"
@@ -269,10 +269,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
-		y=83
-		width=80
-		height=20
+		x=495
+		y=82
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_UpstreamLeft:vsetrbk"
@@ -286,10 +286,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
-		y=83
-		width=80
-		height=20
+		x=586
+		y=82
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_UpstreamLeft:vset"
@@ -302,10 +302,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
-		y=83
-		width=80
-		height=20
+		x=312
+		y=82
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_UpstreamLeft:imon"
@@ -319,10 +319,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
-		y=83
-		width=60
-		height=20
+		x=243
+		y=82
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_UpstreamLeft:hwstatmaxbit"
@@ -338,8 +338,8 @@ text {
 	object {
 		x=20
 		y=113
-		width=100
-		height=20
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -350,10 +350,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
+		x=146
 		y=113
-		width=28
-		height=20
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_UpstreamRight:pwonoff"
@@ -366,10 +366,10 @@ text {
 }
 oval {
 	object {
-		x=174
-		y=116
-		width=14
-		height=14
+		x=181
+		y=115
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -383,10 +383,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
+		x=202
 		y=113
-		width=28
-		height=20
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_UpstreamRight:pwonoff"
@@ -399,10 +399,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
+		x=403
 		y=113
-		width=80
-		height=20
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_UpstreamRight:vmon"
@@ -416,10 +416,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
+		x=495
 		y=113
-		width=80
-		height=20
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_UpstreamRight:vsetrbk"
@@ -433,10 +433,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
+		x=586
 		y=113
-		width=80
-		height=20
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_UpstreamRight:vset"
@@ -449,10 +449,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
+		x=312
 		y=113
-		width=80
-		height=20
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_UpstreamRight:imon"
@@ -466,10 +466,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
+		x=243
 		y=113
-		width=60
-		height=20
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_UpstreamRight:hwstatmaxbit"
@@ -484,9 +484,9 @@ oval {
 text {
 	object {
 		x=20
-		y=223
-		width=100
-		height=20
+		y=222
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -497,10 +497,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
-		y=223
-		width=28
-		height=20
+		x=146
+		y=222
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_TaggerLeft:pwonoff"
@@ -513,10 +513,10 @@ text {
 }
 oval {
 	object {
-		x=174
+		x=181
 		y=226
-		width=14
-		height=14
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -530,10 +530,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
-		y=223
-		width=28
-		height=20
+		x=202
+		y=222
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_TaggerLeft:pwonoff"
@@ -546,10 +546,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
-		y=223
-		width=80
-		height=20
+		x=403
+		y=222
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_TaggerLeft:vmon"
@@ -563,10 +563,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
-		y=223
-		width=80
-		height=20
+		x=495
+		y=222
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_TaggerLeft:vsetrbk"
@@ -580,10 +580,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
-		y=223
-		width=80
-		height=20
+		x=586
+		y=222
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_TaggerLeft:vset"
@@ -596,10 +596,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
-		y=223
-		width=80
-		height=20
+		x=312
+		y=222
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_TaggerLeft:imon"
@@ -613,10 +613,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
-		y=223
-		width=60
-		height=20
+		x=243
+		y=222
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_TaggerLeft:hwstatmaxbit"
@@ -631,9 +631,9 @@ oval {
 text {
 	object {
 		x=20
-		y=253
-		width=100
-		height=20
+		y=252
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -644,10 +644,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
-		y=253
-		width=28
-		height=20
+		x=146
+		y=252
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_TaggerRight:pwonoff"
@@ -660,10 +660,10 @@ text {
 }
 oval {
 	object {
-		x=174
-		y=256
-		width=14
-		height=14
+		x=181
+		y=254
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -677,10 +677,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
-		y=253
-		width=28
-		height=20
+		x=202
+		y=252
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_TaggerRight:pwonoff"
@@ -693,10 +693,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
-		y=253
-		width=80
-		height=20
+		x=403
+		y=252
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_TaggerRight:vmon"
@@ -710,10 +710,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
-		y=253
-		width=80
-		height=20
+		x=495
+		y=252
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_TaggerRight:vsetrbk"
@@ -727,10 +727,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
-		y=253
-		width=80
-		height=20
+		x=586
+		y=252
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_TaggerRight:vset"
@@ -743,10 +743,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
-		y=253
-		width=80
-		height=20
+		x=312
+		y=252
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_TaggerRight:imon"
@@ -760,10 +760,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
-		y=253
-		width=60
-		height=20
+		x=243
+		y=252
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_TaggerRight:hwstatmaxbit"
@@ -778,9 +778,9 @@ oval {
 text {
 	object {
 		x=20
-		y=457
-		width=100
-		height=20
+		y=455
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -791,10 +791,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
-		y=457
-		width=28
-		height=20
+		x=146
+		y=455
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_HaloLeft:pwonoff"
@@ -807,10 +807,10 @@ text {
 }
 oval {
 	object {
-		x=174
-		y=460
-		width=14
-		height=14
+		x=181
+		y=459
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -824,10 +824,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
-		y=457
-		width=28
-		height=20
+		x=202
+		y=455
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_HaloLeft:pwonoff"
@@ -840,10 +840,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
-		y=457
-		width=80
-		height=20
+		x=403
+		y=455
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HaloLeft:vmon"
@@ -857,10 +857,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
-		y=457
-		width=80
-		height=20
+		x=495
+		y=455
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HaloLeft:vsetrbk"
@@ -874,10 +874,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
-		y=457
-		width=80
-		height=20
+		x=586
+		y=455
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_HaloLeft:vset"
@@ -890,10 +890,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
-		y=457
-		width=80
-		height=20
+		x=312
+		y=455
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HaloLeft:imon"
@@ -907,10 +907,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
-		y=457
-		width=60
-		height=20
+		x=243
+		y=455
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HaloLeft:hwstatmaxbit"
@@ -925,9 +925,9 @@ oval {
 text {
 	object {
 		x=20
-		y=487
-		width=100
-		height=20
+		y=486
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -938,10 +938,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
-		y=487
-		width=28
-		height=20
+		x=146
+		y=486
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_HaloRight:pwonoff"
@@ -954,10 +954,10 @@ text {
 }
 oval {
 	object {
-		x=174
-		y=490
-		width=14
-		height=14
+		x=181
+		y=487
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -971,10 +971,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
-		y=487
-		width=28
-		height=20
+		x=202
+		y=486
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_HaloRight:pwonoff"
@@ -987,10 +987,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
-		y=487
-		width=80
-		height=20
+		x=403
+		y=486
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HaloRight:vmon"
@@ -1004,10 +1004,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
-		y=487
-		width=80
-		height=20
+		x=495
+		y=486
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HaloRight:vsetrbk"
@@ -1021,10 +1021,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
-		y=487
-		width=80
-		height=20
+		x=586
+		y=486
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_HaloRight:vset"
@@ -1037,10 +1037,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
-		y=487
-		width=80
-		height=20
+		x=312
+		y=486
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HaloRight:imon"
@@ -1054,10 +1054,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
-		y=487
-		width=60
-		height=20
+		x=243
+		y=486
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HaloRight:hwstatmaxbit"
@@ -1072,9 +1072,9 @@ oval {
 text {
 	object {
 		x=20
-		y=731
-		width=100
-		height=20
+		y=595
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -1085,10 +1085,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
-		y=729
-		width=28
-		height=20
+		x=146
+		y=593
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_Cosmic1:pwonoff"
@@ -1101,10 +1101,10 @@ text {
 }
 oval {
 	object {
-		x=174
-		y=732
-		width=14
-		height=14
+		x=181
+		y=596
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -1118,10 +1118,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
-		y=729
-		width=28
-		height=20
+		x=202
+		y=593
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_Cosmic1:pwonoff"
@@ -1134,10 +1134,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
-		y=729
-		width=80
-		height=20
+		x=403
+		y=593
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_Cosmic1:vmon"
@@ -1151,10 +1151,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
-		y=729
-		width=80
-		height=20
+		x=495
+		y=593
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_Cosmic1:vsetrbk"
@@ -1168,10 +1168,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
-		y=729
-		width=80
-		height=20
+		x=586
+		y=593
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_Cosmic1:vset"
@@ -1184,10 +1184,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
-		y=729
-		width=80
-		height=20
+		x=312
+		y=593
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_Cosmic1:imon"
@@ -1201,10 +1201,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
-		y=729
-		width=60
-		height=20
+		x=243
+		y=593
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_Cosmic1:hwstatmaxbit"
@@ -1219,9 +1219,9 @@ oval {
 text {
 	object {
 		x=20
-		y=761
-		width=100
-		height=20
+		y=623
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -1232,10 +1232,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
-		y=759
-		width=28
-		height=20
+		x=146
+		y=622
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_Cosmic2:pwonoff"
@@ -1248,10 +1248,10 @@ text {
 }
 oval {
 	object {
-		x=174
-		y=762
-		width=14
-		height=14
+		x=181
+		y=624
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -1265,10 +1265,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
-		y=759
-		width=28
-		height=20
+		x=202
+		y=622
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_Cosmic2:pwonoff"
@@ -1281,10 +1281,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
-		y=759
-		width=80
-		height=20
+		x=403
+		y=622
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_Cosmic2:vmon"
@@ -1298,10 +1298,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
-		y=759
-		width=80
-		height=20
+		x=495
+		y=622
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_Cosmic2:vsetrbk"
@@ -1315,10 +1315,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
-		y=759
-		width=80
-		height=20
+		x=586
+		y=622
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_Cosmic2:vset"
@@ -1331,10 +1331,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
-		y=759
-		width=80
-		height=20
+		x=312
+		y=622
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_Cosmic2:imon"
@@ -1348,10 +1348,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
-		y=759
-		width=60
-		height=20
+		x=243
+		y=622
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_Cosmic2:hwstatmaxbit"
@@ -1366,9 +1366,9 @@ oval {
 text {
 	object {
 		x=20
-		y=513
-		width=100
-		height=20
+		y=511
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -1379,10 +1379,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
-		y=513
-		width=28
-		height=20
+		x=146
+		y=511
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_HaloTop:pwonoff"
@@ -1395,10 +1395,10 @@ text {
 }
 oval {
 	object {
-		x=174
-		y=516
-		width=14
-		height=14
+		x=181
+		y=514
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -1412,10 +1412,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
-		y=513
-		width=28
-		height=20
+		x=202
+		y=511
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_HaloTop:pwonoff"
@@ -1428,10 +1428,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
-		y=513
-		width=80
-		height=20
+		x=403
+		y=511
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HaloTop:vmon"
@@ -1445,10 +1445,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
-		y=513
-		width=80
-		height=20
+		x=495
+		y=511
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HaloTop:vsetrbk"
@@ -1462,10 +1462,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
-		y=513
-		width=80
-		height=20
+		x=586
+		y=511
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_HaloTop:vset"
@@ -1478,10 +1478,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
-		y=513
-		width=80
-		height=20
+		x=312
+		y=511
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HaloTop:imon"
@@ -1495,10 +1495,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
-		y=513
-		width=60
-		height=20
+		x=243
+		y=511
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HaloTop:hwstatmaxbit"
@@ -1513,9 +1513,9 @@ oval {
 text {
 	object {
 		x=20
-		y=543
-		width=100
-		height=20
+		y=540
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -1526,10 +1526,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
-		y=543
-		width=28
-		height=20
+		x=146
+		y=540
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_HaloSC:pwonoff"
@@ -1542,10 +1542,10 @@ text {
 }
 oval {
 	object {
-		x=174
-		y=546
-		width=14
-		height=14
+		x=181
+		y=543
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -1559,10 +1559,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
-		y=543
-		width=28
-		height=20
+		x=202
+		y=540
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_HaloSC:pwonoff"
@@ -1575,10 +1575,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
-		y=543
-		width=80
-		height=20
+		x=403
+		y=540
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HaloSC:vmon"
@@ -1592,10 +1592,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
-		y=543
-		width=80
-		height=20
+		x=495
+		y=540
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HaloSC:vsetrbk"
@@ -1609,10 +1609,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
-		y=543
-		width=80
-		height=20
+		x=586
+		y=540
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_HaloSC:vset"
@@ -1625,10 +1625,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
-		y=543
-		width=80
-		height=20
+		x=312
+		y=540
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HaloSC:imon"
@@ -1642,10 +1642,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
-		y=543
-		width=60
-		height=20
+		x=243
+		y=540
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HaloSC:hwstatmaxbit"
@@ -1661,8 +1661,8 @@ text {
 	object {
 		x=20
 		y=324
-		width=100
-		height=20
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -1673,10 +1673,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
+		x=146
 		y=324
-		width=28
-		height=20
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_DownstreamBottom:pwonoff"
@@ -1689,10 +1689,10 @@ text {
 }
 oval {
 	object {
-		x=174
-		y=327
-		width=14
-		height=14
+		x=181
+		y=326
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -1706,10 +1706,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
+		x=202
 		y=324
-		width=28
-		height=20
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_DownstreamBottom:pwonoff"
@@ -1722,10 +1722,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
+		x=403
 		y=324
-		width=80
-		height=20
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_DownstreamBottom:vmon"
@@ -1739,10 +1739,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
+		x=495
 		y=324
-		width=80
-		height=20
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_DownstreamBottom:vsetrbk"
@@ -1756,10 +1756,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
+		x=586
 		y=324
-		width=80
-		height=20
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_DownstreamBottom:vset"
@@ -1772,10 +1772,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
+		x=312
 		y=324
-		width=80
-		height=20
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_DownstreamBottom:imon"
@@ -1789,10 +1789,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
+		x=243
 		y=324
-		width=60
-		height=20
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_DownstreamBottom:hwstatmaxbit"
@@ -1807,9 +1807,9 @@ oval {
 text {
 	object {
 		x=20
-		y=354
-		width=100
-		height=20
+		y=353
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -1820,10 +1820,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
-		y=354
-		width=28
-		height=20
+		x=146
+		y=353
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_DownstreamTop:pwonoff"
@@ -1836,10 +1836,10 @@ text {
 }
 oval {
 	object {
-		x=174
-		y=357
-		width=14
-		height=14
+		x=181
+		y=356
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -1853,10 +1853,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
-		y=354
-		width=28
-		height=20
+		x=202
+		y=353
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_DownstreamTop:pwonoff"
@@ -1869,10 +1869,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
-		y=354
-		width=80
-		height=20
+		x=403
+		y=353
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_DownstreamTop:vmon"
@@ -1886,10 +1886,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
-		y=354
-		width=80
-		height=20
+		x=495
+		y=353
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_DownstreamTop:vsetrbk"
@@ -1903,10 +1903,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
-		y=354
-		width=80
-		height=20
+		x=586
+		y=353
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_DownstreamTop:vset"
@@ -1919,10 +1919,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
-		y=354
-		width=80
-		height=20
+		x=312
+		y=353
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_DownstreamTop:imon"
@@ -1936,10 +1936,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
-		y=354
-		width=60
-		height=20
+		x=243
+		y=353
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_DownstreamTop:hwstatmaxbit"
@@ -1954,9 +1954,9 @@ oval {
 text {
 	object {
 		x=20
-		y=384
-		width=100
-		height=20
+		y=383
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -1967,10 +1967,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
-		y=384
-		width=28
-		height=20
+		x=146
+		y=383
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_DownstreamLeft:pwonoff"
@@ -1983,10 +1983,10 @@ text {
 }
 oval {
 	object {
-		x=174
-		y=387
-		width=14
-		height=14
+		x=181
+		y=386
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -2000,10 +2000,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
-		y=384
-		width=28
-		height=20
+		x=202
+		y=383
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_DownstreamLeft:pwonoff"
@@ -2016,10 +2016,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
-		y=384
-		width=80
-		height=20
+		x=403
+		y=383
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_DownstreamLeft:vmon"
@@ -2033,10 +2033,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
-		y=384
-		width=80
-		height=20
+		x=495
+		y=383
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_DownstreamLeft:vsetrbk"
@@ -2050,10 +2050,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
-		y=384
-		width=80
-		height=20
+		x=586
+		y=383
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_DownstreamLeft:vset"
@@ -2066,10 +2066,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
-		y=384
-		width=80
-		height=20
+		x=312
+		y=383
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_DownstreamLeft:imon"
@@ -2083,10 +2083,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
-		y=384
-		width=60
-		height=20
+		x=243
+		y=383
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_DownstreamLeft:hwstatmaxbit"
@@ -2101,9 +2101,9 @@ oval {
 text {
 	object {
 		x=20
-		y=414
-		width=100
-		height=20
+		y=412
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -2114,10 +2114,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
-		y=414
-		width=28
-		height=20
+		x=146
+		y=412
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_DownstreamRight:pwonoff"
@@ -2130,10 +2130,10 @@ text {
 }
 oval {
 	object {
-		x=174
-		y=417
-		width=14
-		height=14
+		x=181
+		y=415
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -2147,10 +2147,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
-		y=414
-		width=28
-		height=20
+		x=202
+		y=412
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_DownstreamRight:pwonoff"
@@ -2163,10 +2163,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
-		y=414
-		width=80
-		height=20
+		x=403
+		y=412
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_DownstreamRight:vmon"
@@ -2180,10 +2180,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
-		y=414
-		width=80
-		height=20
+		x=495
+		y=412
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_DownstreamRight:vsetrbk"
@@ -2197,10 +2197,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
-		y=414
-		width=80
-		height=20
+		x=586
+		y=412
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_DownstreamRight:vset"
@@ -2213,10 +2213,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
-		y=414
-		width=80
-		height=20
+		x=312
+		y=412
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_DownstreamRight:imon"
@@ -2230,10 +2230,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
-		y=414
-		width=60
-		height=20
+		x=243
+		y=412
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_DownstreamRight:hwstatmaxbit"
@@ -2248,597 +2248,9 @@ oval {
 text {
 	object {
 		x=20
-		y=590
-		width=100
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-		style="dash"
-	}
-	textix="HPS BLM 1"
-	align="horiz. centered"
-}
-"message button" {
-	object {
-		x=141
-		y=590
-		width=28
-		height=20
-	}
-	control {
-		chan="B_DET_BLINE_HV_BLM1:pwonoff"
-		clr=15
-		bclr=5
-	}
-	label="Ena"
-	press_msg="1"
-	clrmod="discrete"
-}
-oval {
-	object {
-		x=174
-		y=593
-		width=14
-		height=14
-	}
-	"basic attribute" {
-		clr=15
-		style="dash"
-	}
-	"dynamic attribute" {
-		clr="discrete"
-		vis="if not zero"
-		chan="B_DET_BLINE_HV_BLM1:hwstatmaxbit"
-	}
-}
-"message button" {
-	object {
-		x=196
-		y=590
-		width=28
-		height=20
-	}
-	control {
-		chan="B_DET_BLINE_HV_BLM1:pwonoff"
-		clr=20
-		bclr=5
-	}
-	label="Dis"
-	press_msg="0"
-	clrmod="discrete"
-}
-"text update" {
-	object {
-		x=238
-		y=590
-		width=80
-		height=20
-	}
-	monitor {
-		chan="B_DET_BLINE_HV_BLM1:vmon"
-		clr=14
-		bclr=1
-	}
-	clrmod="discrete"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=326
-		y=590
-		width=80
-		height=20
-	}
-	monitor {
-		chan="B_DET_BLINE_HV_BLM1:vsetrbk"
-		clr=14
-		bclr=1
-	}
-	clrmod="discrete"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=413
-		y=590
-		width=80
-		height=20
-	}
-	control {
-		chan="B_DET_BLINE_HV_BLM1:vset"
-		clr=14
-		bclr=55
-	}
-	clrmod="discrete"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=501
-		y=590
-		width=80
-		height=20
-	}
-	monitor {
-		chan="B_DET_BLINE_HV_BLM1:imon"
-		clr=14
-		bclr=1
-	}
-	clrmod="discrete"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=590
-		y=590
-		width=60
-		height=20
-	}
-	monitor {
-		chan="B_DET_BLINE_HV_BLM1:hwstatmaxbit"
-		clr=14
-		bclr=1
-	}
-	clrmod="discrete"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=20
-		y=620
-		width=100
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-		style="dash"
-	}
-	textix="BLM HPS 2"
-	align="horiz. centered"
-}
-"message button" {
-	object {
-		x=141
-		y=620
-		width=28
-		height=20
-	}
-	control {
-		chan="B_DET_BLINE_HV_BLM2:pwonoff"
-		clr=15
-		bclr=5
-	}
-	label="Ena"
-	press_msg="1"
-	clrmod="discrete"
-}
-oval {
-	object {
-		x=174
-		y=623
-		width=14
-		height=14
-	}
-	"basic attribute" {
-		clr=15
-		style="dash"
-	}
-	"dynamic attribute" {
-		clr="discrete"
-		vis="if not zero"
-		chan="B_DET_BLINE_HV_BLM2:stat"
-	}
-}
-"message button" {
-	object {
-		x=196
-		y=620
-		width=28
-		height=20
-	}
-	control {
-		chan="B_DET_BLINE_HV_BLM2:pwonoff"
-		clr=20
-		bclr=5
-	}
-	label="Dis"
-	press_msg="0"
-	clrmod="discrete"
-}
-"text update" {
-	object {
-		x=238
-		y=620
-		width=80
-		height=20
-	}
-	monitor {
-		chan="B_DET_BLINE_HV_BLM2:vmon"
-		clr=14
-		bclr=1
-	}
-	clrmod="discrete"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=326
-		y=620
-		width=80
-		height=20
-	}
-	monitor {
-		chan="B_DET_BLINE_HV_BLM2:vsetrbk"
-		clr=14
-		bclr=1
-	}
-	clrmod="discrete"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=413
-		y=620
-		width=80
-		height=20
-	}
-	control {
-		chan="B_DET_BLINE_HV_BLM2:vset"
-		clr=14
-		bclr=55
-	}
-	clrmod="discrete"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=501
-		y=620
-		width=80
-		height=20
-	}
-	monitor {
-		chan="B_DET_BLINE_HV_BLM2:imon"
-		clr=14
-		bclr=1
-	}
-	clrmod="discrete"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=590
-		y=620
-		width=60
-		height=20
-	}
-	monitor {
-		chan="B_DET_BLINE_HV_BLM2:hwstatmaxbit"
-		clr=14
-		bclr=1
-	}
-	clrmod="discrete"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=20
-		y=650
-		width=100
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-		style="dash"
-	}
-	textix="HPS BLM 3"
-	align="horiz. centered"
-}
-"message button" {
-	object {
-		x=141
-		y=650
-		width=28
-		height=20
-	}
-	control {
-		chan="B_DET_BLINE_HV_BLM3:pwonoff"
-		clr=15
-		bclr=5
-	}
-	label="Ena"
-	press_msg="1"
-	clrmod="discrete"
-}
-oval {
-	object {
-		x=174
-		y=653
-		width=14
-		height=14
-	}
-	"basic attribute" {
-		clr=15
-		style="dash"
-	}
-	"dynamic attribute" {
-		clr="discrete"
-		vis="if not zero"
-		chan="B_DET_BLINE_HV_BLM3:stat"
-	}
-}
-"message button" {
-	object {
-		x=196
-		y=650
-		width=28
-		height=20
-	}
-	control {
-		chan="B_DET_BLINE_HV_BLM3:pwonoff"
-		clr=20
-		bclr=5
-	}
-	label="Dis"
-	press_msg="0"
-	clrmod="discrete"
-}
-"text update" {
-	object {
-		x=238
-		y=650
-		width=80
-		height=20
-	}
-	monitor {
-		chan="B_DET_BLINE_HV_BLM3:vmon"
-		clr=14
-		bclr=1
-	}
-	clrmod="discrete"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=326
-		y=650
-		width=80
-		height=20
-	}
-	monitor {
-		chan="B_DET_BLINE_HV_BLM3:vsetrbk"
-		clr=14
-		bclr=1
-	}
-	clrmod="discrete"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=413
-		y=650
-		width=80
-		height=20
-	}
-	control {
-		chan="B_DET_BLINE_HV_BLM3:vset"
-		clr=14
-		bclr=55
-	}
-	clrmod="discrete"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=501
-		y=650
-		width=80
-		height=20
-	}
-	monitor {
-		chan="B_DET_BLINE_HV_BLM3:imon"
-		clr=14
-		bclr=1
-	}
-	clrmod="discrete"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=590
-		y=650
-		width=60
-		height=20
-	}
-	monitor {
-		chan="B_DET_BLINE_HV_BLM3:hwstatmaxbit"
-		clr=14
-		bclr=1
-	}
-	clrmod="discrete"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=20
-		y=680
-		width=100
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-		style="dash"
-	}
-	textix="HPS BLM 4"
-	align="horiz. centered"
-}
-"message button" {
-	object {
-		x=141
-		y=680
-		width=28
-		height=20
-	}
-	control {
-		chan="B_DET_BLINE_HV_BLM4:pwonoff"
-		clr=15
-		bclr=5
-	}
-	label="Ena"
-	press_msg="1"
-	clrmod="discrete"
-}
-oval {
-	object {
-		x=174
-		y=683
-		width=14
-		height=14
-	}
-	"basic attribute" {
-		clr=15
-		style="dash"
-	}
-	"dynamic attribute" {
-		clr="discrete"
-		vis="if not zero"
-		chan="B_DET_BLINE_HV_BLM4:stat"
-	}
-}
-"message button" {
-	object {
-		x=196
-		y=680
-		width=28
-		height=20
-	}
-	control {
-		chan="B_DET_BLINE_HV_BLM4:pwonoff"
-		clr=20
-		bclr=5
-	}
-	label="Dis"
-	press_msg="0"
-	clrmod="discrete"
-}
-"text update" {
-	object {
-		x=238
-		y=680
-		width=80
-		height=20
-	}
-	monitor {
-		chan="B_DET_BLINE_HV_BLM4:vmon"
-		clr=14
-		bclr=1
-	}
-	clrmod="discrete"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=326
-		y=680
-		width=80
-		height=20
-	}
-	monitor {
-		chan="B_DET_BLINE_HV_BLM4:vsetrbk"
-		clr=14
-		bclr=1
-	}
-	clrmod="discrete"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=413
-		y=680
-		width=80
-		height=20
-	}
-	control {
-		chan="B_DET_BLINE_HV_BLM4:vset"
-		clr=14
-		bclr=55
-	}
-	clrmod="discrete"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=501
-		y=680
-		width=80
-		height=20
-	}
-	monitor {
-		chan="B_DET_BLINE_HV_BLM4:imon"
-		clr=14
-		bclr=1
-	}
-	clrmod="discrete"
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=590
-		y=680
-		width=60
-		height=20
-	}
-	monitor {
-		chan="B_DET_BLINE_HV_BLM4:hwstatmaxbit"
-		clr=14
-		bclr=1
-	}
-	clrmod="discrete"
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=20
 		y=154
-		width=100
-		height=20
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -2849,10 +2261,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
+		x=146
 		y=154
-		width=28
-		height=20
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_MollerRight:pwonoff"
@@ -2865,10 +2277,10 @@ text {
 }
 oval {
 	object {
-		x=174
+		x=181
 		y=157
-		width=14
-		height=14
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -2882,10 +2294,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
+		x=202
 		y=154
-		width=28
-		height=20
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_MollerRight:pwonoff"
@@ -2898,10 +2310,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
+		x=403
 		y=154
-		width=80
-		height=20
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_MollerRight:vmon"
@@ -2915,10 +2327,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
+		x=495
 		y=154
-		width=80
-		height=20
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_MollerRight:vsetrbk"
@@ -2932,10 +2344,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
+		x=586
 		y=154
-		width=80
-		height=20
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_MollerRight:vset"
@@ -2948,10 +2360,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
+		x=312
 		y=154
-		width=80
-		height=20
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_MollerRight:imon"
@@ -2965,10 +2377,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
+		x=243
 		y=154
-		width=60
-		height=20
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_MollerRight:hwstatmaxbit"
@@ -2983,9 +2395,9 @@ oval {
 text {
 	object {
 		x=20
-		y=179
-		width=100
-		height=20
+		y=178
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -2996,10 +2408,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
-		y=179
-		width=28
-		height=20
+		x=146
+		y=178
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_MollerLeft:pwonoff"
@@ -3012,10 +2424,10 @@ text {
 }
 oval {
 	object {
-		x=174
-		y=182
-		width=14
-		height=14
+		x=181
+		y=179
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -3029,10 +2441,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
-		y=179
-		width=28
-		height=20
+		x=202
+		y=178
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_MollerLeft:pwonoff"
@@ -3045,10 +2457,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
-		y=179
-		width=80
-		height=20
+		x=403
+		y=178
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_MollerLeft:vmon"
@@ -3062,10 +2474,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
-		y=179
-		width=80
-		height=20
+		x=495
+		y=178
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_MollerLeft:vsetrbk"
@@ -3079,10 +2491,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
-		y=179
-		width=80
-		height=20
+		x=586
+		y=178
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_MollerLeft:vset"
@@ -3095,10 +2507,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
-		y=179
-		width=80
-		height=20
+		x=312
+		y=178
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_MollerLeft:imon"
@@ -3112,10 +2524,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
-		y=179
-		width=60
-		height=20
+		x=243
+		y=178
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_MollerLeft:hwstatmaxbit"
@@ -3130,9 +2542,9 @@ oval {
 text {
 	object {
 		x=20
-		y=281
-		width=100
-		height=20
+		y=280
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -3143,10 +2555,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
-		y=281
-		width=28
-		height=20
+		x=146
+		y=280
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_TaggerTop:pwonoff"
@@ -3159,10 +2571,10 @@ text {
 }
 oval {
 	object {
-		x=174
-		y=284
-		width=14
-		height=14
+		x=181
+		y=283
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -3176,10 +2588,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
-		y=281
-		width=28
-		height=20
+		x=202
+		y=280
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_TaggerTop:pwonoff"
@@ -3192,10 +2604,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
-		y=281
-		width=80
-		height=20
+		x=403
+		y=280
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_TaggerTop:vmon"
@@ -3209,10 +2621,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
-		y=281
-		width=80
-		height=20
+		x=495
+		y=280
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_TaggerTop:vsetrbk"
@@ -3226,10 +2638,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
-		y=281
-		width=80
-		height=20
+		x=586
+		y=280
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_BLINE_HV_TaggerTop:vset"
@@ -3242,10 +2654,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
-		y=281
-		width=80
-		height=20
+		x=312
+		y=280
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_TaggerTop:imon"
@@ -3259,10 +2671,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
-		y=281
-		width=60
-		height=20
+		x=243
+		y=280
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_BLINE_HV_TaggerTop:hwstatmaxbit"
@@ -3276,9 +2688,9 @@ oval {
 }
 text {
 	object {
-		x=189
-		y=51
-		width=40
+		x=195
+		y=53
+		width=42
 		height=18
 	}
 	"basic attribute" {
@@ -3289,9 +2701,9 @@ text {
 }
 text {
 	object {
-		x=136
-		y=51
-		width=40
+		x=141
+		y=53
+		width=42
 		height=18
 	}
 	"basic attribute" {
@@ -3303,129 +2715,114 @@ text {
 polyline {
 	object {
 		x=36
-		y=713
-		width=614
+		y=575
+		width=633
 		height=0
 	}
 	"basic attribute" {
 		clr=14
 	}
 	points {
-		(36,713)
-		(650,713)
+		(36,575)
+		(669,575)
 	}
 }
 polyline {
 	object {
 		x=36
-		y=576
-		width=614
+		y=442
+		width=633
 		height=0
 	}
 	"basic attribute" {
 		clr=14
 	}
 	points {
-		(36,576)
-		(650,576)
+		(36,442)
+		(669,442)
 	}
 }
 polyline {
 	object {
 		x=36
-		y=444
-		width=614
+		y=312
+		width=633
 		height=0
 	}
 	"basic attribute" {
 		clr=14
 	}
 	points {
-		(36,444)
-		(650,444)
+		(36,312)
+		(669,312)
 	}
 }
 polyline {
 	object {
 		x=36
-		y=313
-		width=614
+		y=210
+		width=633
 		height=0
 	}
 	"basic attribute" {
 		clr=14
 	}
 	points {
-		(36,313)
-		(650,313)
+		(36,210)
+		(669,210)
 	}
 }
 polyline {
 	object {
 		x=36
-		y=211
-		width=614
+		y=142
+		width=633
 		height=0
 	}
 	"basic attribute" {
 		clr=14
 	}
 	points {
-		(36,211)
-		(650,211)
+		(36,142)
+		(669,142)
 	}
 }
 polyline {
 	object {
 		x=36
-		y=143
-		width=614
+		y=72
+		width=633
 		height=0
 	}
 	"basic attribute" {
 		clr=14
 	}
 	points {
-		(36,143)
-		(650,143)
+		(36,72)
+		(669,72)
 	}
 }
 polyline {
 	object {
 		x=36
-		y=73
-		width=614
+		y=657
+		width=633
 		height=0
 	}
 	"basic attribute" {
 		clr=14
 	}
 	points {
-		(36,73)
-		(650,73)
-	}
-}
-polyline {
-	object {
-		x=36
-		y=793
-		width=614
-		height=0
-	}
-	"basic attribute" {
-		clr=14
-	}
-	points {
-		(36,793)
-		(650,793)
+		(36,657)
+		(669,657)
 	}
 }
 text {
 	object {
 		x=20
-		y=806
-		width=100
-		height=20
+		y=669
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -3436,10 +2833,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
-		y=804
-		width=28
-		height=20
+		x=146
+		y=666
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_HodoTop:pwonoff"
@@ -3452,10 +2849,10 @@ text {
 }
 oval {
 	object {
-		x=174
-		y=807
-		width=14
-		height=14
+		x=181
+		y=669
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -3469,10 +2866,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
-		y=804
-		width=28
-		height=20
+		x=202
+		y=666
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_HodoTop:pwonoff"
@@ -3485,10 +2882,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
-		y=804
-		width=80
-		height=20
+		x=403
+		y=666
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HodoTop:vmon"
@@ -3502,10 +2899,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
-		y=804
-		width=80
-		height=20
+		x=495
+		y=666
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HodoTop:vsetrbk"
@@ -3519,10 +2916,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
-		y=804
-		width=80
-		height=20
+		x=586
+		y=666
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_HodoTop:vset"
@@ -3535,10 +2932,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
-		y=804
-		width=80
-		height=20
+		x=312
+		y=666
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HodoTop:imon"
@@ -3552,10 +2949,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
-		y=804
-		width=60
-		height=20
+		x=243
+		y=666
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HodoTop:hwstatmaxbit"
@@ -3570,9 +2967,9 @@ oval {
 text {
 	object {
 		x=20
-		y=832
-		width=100
-		height=20
+		y=696
+		width=105
+		height=19
 	}
 	"basic attribute" {
 		clr=14
@@ -3583,10 +2980,10 @@ text {
 }
 "message button" {
 	object {
-		x=141
-		y=830
-		width=28
-		height=20
+		x=146
+		y=692
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_HodoBottom:pwonoff"
@@ -3599,10 +2996,10 @@ text {
 }
 oval {
 	object {
-		x=174
-		y=833
-		width=14
-		height=14
+		x=181
+		y=696
+		width=15
+		height=13
 	}
 	"basic attribute" {
 		clr=15
@@ -3616,10 +3013,10 @@ oval {
 }
 "message button" {
 	object {
-		x=196
-		y=830
-		width=28
-		height=20
+		x=202
+		y=692
+		width=29
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_HodoBottom:pwonoff"
@@ -3632,10 +3029,10 @@ oval {
 }
 "text update" {
 	object {
-		x=238
-		y=830
-		width=80
-		height=20
+		x=403
+		y=692
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HodoBottom:vmon"
@@ -3649,10 +3046,10 @@ oval {
 }
 "text update" {
 	object {
-		x=326
-		y=830
-		width=80
-		height=20
+		x=495
+		y=692
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HodoBottom:vsetrbk"
@@ -3666,10 +3063,10 @@ oval {
 }
 "text entry" {
 	object {
-		x=413
-		y=830
-		width=80
-		height=20
+		x=586
+		y=692
+		width=81
+		height=19
 	}
 	control {
 		chan="B_DET_HPS_HV_HodoBottom:vset"
@@ -3682,10 +3079,10 @@ oval {
 }
 "text update" {
 	object {
-		x=501
-		y=830
-		width=80
-		height=20
+		x=312
+		y=692
+		width=81
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HodoBottom:imon"
@@ -3699,10 +3096,10 @@ oval {
 }
 "text update" {
 	object {
-		x=590
-		y=830
-		width=60
-		height=20
+		x=243
+		y=692
+		width=62
+		height=19
 	}
 	monitor {
 		chan="B_DET_HPS_HV_HodoBottom:hwstatmaxbit"
