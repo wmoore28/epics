@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=76
-		y=98
+		x=675
+		y=545
 		width=951
-		height=650
+		height=665
 	}
 	clr=0
 	bclr=13
@@ -89,8 +89,83 @@ display {
 }
 rectangle {
 	object {
+		x=677
+		y=19
+		width=260
+		height=25
+	}
+	"basic attribute" {
+		clr=49
+	}
+}
+rectangle {
+	object {
+		x=849
+		y=22
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A#1"
+		chan="B_DET_HPS_HV_HodoBottom.L"
+	}
+}
+rectangle {
+	object {
+		x=791
+		y=22
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A#1"
+		chan="B_DET_HPS_HV_HodoTop.L"
+	}
+}
+rectangle {
+	object {
+		x=849
+		y=22
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=1"
+		chan="B_DET_HPS_HV_HodoBottom.L"
+	}
+}
+rectangle {
+	object {
+		x=791
+		y=22
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=1"
+		chan="B_DET_HPS_HV_HodoTop.L"
+	}
+}
+rectangle {
+	object {
 		x=9
-		y=329
+		y=346
 		width=290
 		height=310
 	}
@@ -101,7 +176,7 @@ rectangle {
 rectangle {
 	object {
 		x=9
-		y=328
+		y=345
 		width=290
 		height=310
 	}
@@ -113,7 +188,7 @@ rectangle {
 rectangle {
 	object {
 		x=180
-		y=374
+		y=391
 		width=112
 		height=176
 	}
@@ -125,7 +200,7 @@ rectangle {
 rectangle {
 	object {
 		x=64
-		y=374
+		y=391
 		width=112
 		height=176
 	}
@@ -137,7 +212,7 @@ rectangle {
 rectangle {
 	object {
 		x=9
-		y=43
+		y=60
 		width=932
 		height=273
 	}
@@ -147,19 +222,19 @@ rectangle {
 }
 rectangle {
 	object {
-		x=274
-		y=8
-		width=400
+		x=12
+		y=18
+		width=500
 		height=24
 	}
 	"basic attribute" {
-		clr=12
+		clr=14
 	}
 }
 rectangle {
 	object {
 		x=9
-		y=43
+		y=60
 		width=932
 		height=273
 	}
@@ -171,7 +246,7 @@ rectangle {
 rectangle {
 	object {
 		x=315
-		y=329
+		y=346
 		width=338
 		height=310
 	}
@@ -182,7 +257,7 @@ rectangle {
 rectangle {
 	object {
 		x=667
-		y=329
+		y=346
 		width=274
 		height=310
 	}
@@ -193,7 +268,7 @@ rectangle {
 rectangle {
 	object {
 		x=256
-		y=209
+		y=226
 		width=18
 		height=21
 	}
@@ -209,7 +284,7 @@ rectangle {
 rectangle {
 	object {
 		x=256
-		y=209
+		y=226
 		width=18
 		height=21
 	}
@@ -225,7 +300,7 @@ rectangle {
 rectangle {
 	object {
 		x=256
-		y=157
+		y=174
 		width=18
 		height=21
 	}
@@ -241,7 +316,7 @@ rectangle {
 rectangle {
 	object {
 		x=256
-		y=157
+		y=174
 		width=18
 		height=21
 	}
@@ -257,7 +332,7 @@ rectangle {
 rectangle {
 	object {
 		x=416
-		y=251
+		y=268
 		width=58
 		height=58
 	}
@@ -273,7 +348,7 @@ rectangle {
 "related display" {
 	object {
 		x=365
-		y=167
+		y=184
 		width=80
 		height=25
 	}
@@ -296,7 +371,7 @@ rectangle {
 rectangle {
 	object {
 		x=336
-		y=269
+		y=286
 		width=78
 		height=40
 	}
@@ -312,7 +387,7 @@ rectangle {
 rectangle {
 	object {
 		x=336
-		y=118
+		y=135
 		width=78
 		height=40
 	}
@@ -328,7 +403,7 @@ rectangle {
 rectangle {
 	object {
 		x=296
-		y=78
+		y=95
 		width=38
 		height=80
 	}
@@ -344,7 +419,7 @@ rectangle {
 rectangle {
 	object {
 		x=256
-		y=78
+		y=95
 		width=38
 		height=80
 	}
@@ -360,7 +435,7 @@ rectangle {
 rectangle {
 	object {
 		x=96
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -376,7 +451,7 @@ rectangle {
 rectangle {
 	object {
 		x=136
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -392,7 +467,7 @@ rectangle {
 rectangle {
 	object {
 		x=176
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -408,7 +483,7 @@ rectangle {
 rectangle {
 	object {
 		x=216
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -424,7 +499,7 @@ rectangle {
 rectangle {
 	object {
 		x=16
-		y=78
+		y=95
 		width=18
 		height=38
 	}
@@ -440,7 +515,7 @@ rectangle {
 rectangle {
 	object {
 		x=16
-		y=118
+		y=135
 		width=18
 		height=60
 	}
@@ -456,7 +531,7 @@ rectangle {
 rectangle {
 	object {
 		x=36
-		y=78
+		y=95
 		width=58
 		height=58
 	}
@@ -472,7 +547,7 @@ rectangle {
 rectangle {
 	object {
 		x=36
-		y=138
+		y=155
 		width=58
 		height=40
 	}
@@ -488,7 +563,7 @@ rectangle {
 rectangle {
 	object {
 		x=476
-		y=78
+		y=95
 		width=18
 		height=100
 	}
@@ -504,7 +579,7 @@ rectangle {
 rectangle {
 	object {
 		x=496
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -520,7 +595,7 @@ rectangle {
 rectangle {
 	object {
 		x=536
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -536,7 +611,7 @@ rectangle {
 rectangle {
 	object {
 		x=576
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -552,7 +627,7 @@ rectangle {
 rectangle {
 	object {
 		x=616
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -568,7 +643,7 @@ rectangle {
 rectangle {
 	object {
 		x=656
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -584,7 +659,7 @@ rectangle {
 rectangle {
 	object {
 		x=696
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -600,7 +675,7 @@ rectangle {
 rectangle {
 	object {
 		x=336
-		y=78
+		y=95
 		width=78
 		height=38
 	}
@@ -616,7 +691,7 @@ rectangle {
 rectangle {
 	object {
 		x=416
-		y=78
+		y=95
 		width=58
 		height=58
 	}
@@ -632,7 +707,7 @@ rectangle {
 rectangle {
 	object {
 		x=416
-		y=138
+		y=155
 		width=58
 		height=20
 	}
@@ -648,7 +723,7 @@ rectangle {
 rectangle {
 	object {
 		x=456
-		y=157
+		y=174
 		width=18
 		height=21
 	}
@@ -664,7 +739,7 @@ rectangle {
 rectangle {
 	object {
 		x=736
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -680,7 +755,7 @@ rectangle {
 rectangle {
 	object {
 		x=776
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -696,7 +771,7 @@ rectangle {
 rectangle {
 	object {
 		x=816
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -712,7 +787,7 @@ rectangle {
 rectangle {
 	object {
 		x=856
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -728,7 +803,7 @@ rectangle {
 rectangle {
 	object {
 		x=896
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -744,7 +819,7 @@ rectangle {
 rectangle {
 	object {
 		x=296
-		y=229
+		y=246
 		width=38
 		height=80
 	}
@@ -760,7 +835,7 @@ rectangle {
 rectangle {
 	object {
 		x=256
-		y=229
+		y=246
 		width=38
 		height=80
 	}
@@ -776,7 +851,7 @@ rectangle {
 rectangle {
 	object {
 		x=96
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -792,7 +867,7 @@ rectangle {
 rectangle {
 	object {
 		x=136
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -808,7 +883,7 @@ rectangle {
 rectangle {
 	object {
 		x=176
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -824,7 +899,7 @@ rectangle {
 rectangle {
 	object {
 		x=216
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -840,7 +915,7 @@ rectangle {
 rectangle {
 	object {
 		x=16
-		y=269
+		y=286
 		width=18
 		height=40
 	}
@@ -856,7 +931,7 @@ rectangle {
 rectangle {
 	object {
 		x=16
-		y=209
+		y=226
 		width=18
 		height=58
 	}
@@ -872,7 +947,7 @@ rectangle {
 rectangle {
 	object {
 		x=36
-		y=249
+		y=266
 		width=58
 		height=60
 	}
@@ -888,7 +963,7 @@ rectangle {
 rectangle {
 	object {
 		x=36
-		y=209
+		y=226
 		width=58
 		height=38
 	}
@@ -904,7 +979,7 @@ rectangle {
 rectangle {
 	object {
 		x=476
-		y=209
+		y=226
 		width=18
 		height=100
 	}
@@ -920,7 +995,7 @@ rectangle {
 rectangle {
 	object {
 		x=496
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -936,7 +1011,7 @@ rectangle {
 rectangle {
 	object {
 		x=536
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -952,7 +1027,7 @@ rectangle {
 rectangle {
 	object {
 		x=576
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -968,7 +1043,7 @@ rectangle {
 rectangle {
 	object {
 		x=616
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -984,7 +1059,7 @@ rectangle {
 rectangle {
 	object {
 		x=656
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1000,7 +1075,7 @@ rectangle {
 rectangle {
 	object {
 		x=696
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1016,7 +1091,7 @@ rectangle {
 rectangle {
 	object {
 		x=336
-		y=229
+		y=246
 		width=78
 		height=38
 	}
@@ -1032,7 +1107,7 @@ rectangle {
 rectangle {
 	object {
 		x=416
-		y=229
+		y=246
 		width=58
 		height=20
 	}
@@ -1048,7 +1123,7 @@ rectangle {
 rectangle {
 	object {
 		x=456
-		y=209
+		y=226
 		width=18
 		height=21
 	}
@@ -1064,7 +1139,7 @@ rectangle {
 rectangle {
 	object {
 		x=736
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1080,7 +1155,7 @@ rectangle {
 rectangle {
 	object {
 		x=776
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1096,7 +1171,7 @@ rectangle {
 rectangle {
 	object {
 		x=816
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1112,7 +1187,7 @@ rectangle {
 rectangle {
 	object {
 		x=856
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1128,7 +1203,7 @@ rectangle {
 rectangle {
 	object {
 		x=896
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1144,7 +1219,7 @@ rectangle {
 rectangle {
 	object {
 		x=296
-		y=78
+		y=95
 		width=38
 		height=80
 	}
@@ -1160,7 +1235,7 @@ rectangle {
 rectangle {
 	object {
 		x=256
-		y=78
+		y=95
 		width=38
 		height=80
 	}
@@ -1176,7 +1251,7 @@ rectangle {
 rectangle {
 	object {
 		x=96
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -1192,7 +1267,7 @@ rectangle {
 rectangle {
 	object {
 		x=136
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -1208,7 +1283,7 @@ rectangle {
 rectangle {
 	object {
 		x=176
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -1224,7 +1299,7 @@ rectangle {
 rectangle {
 	object {
 		x=216
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -1240,7 +1315,7 @@ rectangle {
 rectangle {
 	object {
 		x=16
-		y=78
+		y=95
 		width=18
 		height=38
 	}
@@ -1256,7 +1331,7 @@ rectangle {
 rectangle {
 	object {
 		x=16
-		y=118
+		y=135
 		width=18
 		height=60
 	}
@@ -1272,7 +1347,7 @@ rectangle {
 rectangle {
 	object {
 		x=36
-		y=78
+		y=95
 		width=58
 		height=58
 	}
@@ -1288,7 +1363,7 @@ rectangle {
 rectangle {
 	object {
 		x=36
-		y=138
+		y=155
 		width=58
 		height=40
 	}
@@ -1304,7 +1379,7 @@ rectangle {
 rectangle {
 	object {
 		x=476
-		y=78
+		y=95
 		width=18
 		height=100
 	}
@@ -1320,7 +1395,7 @@ rectangle {
 rectangle {
 	object {
 		x=496
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -1336,7 +1411,7 @@ rectangle {
 rectangle {
 	object {
 		x=536
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -1352,7 +1427,7 @@ rectangle {
 rectangle {
 	object {
 		x=576
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -1368,7 +1443,7 @@ rectangle {
 rectangle {
 	object {
 		x=616
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -1384,7 +1459,7 @@ rectangle {
 rectangle {
 	object {
 		x=656
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -1400,7 +1475,7 @@ rectangle {
 rectangle {
 	object {
 		x=696
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -1416,7 +1491,7 @@ rectangle {
 rectangle {
 	object {
 		x=336
-		y=78
+		y=95
 		width=78
 		height=38
 	}
@@ -1432,7 +1507,7 @@ rectangle {
 rectangle {
 	object {
 		x=336
-		y=118
+		y=135
 		width=78
 		height=40
 	}
@@ -1448,7 +1523,7 @@ rectangle {
 rectangle {
 	object {
 		x=416
-		y=78
+		y=95
 		width=58
 		height=58
 	}
@@ -1464,7 +1539,7 @@ rectangle {
 rectangle {
 	object {
 		x=736
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -1480,7 +1555,7 @@ rectangle {
 rectangle {
 	object {
 		x=776
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -1496,7 +1571,7 @@ rectangle {
 rectangle {
 	object {
 		x=816
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -1512,7 +1587,7 @@ rectangle {
 rectangle {
 	object {
 		x=856
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -1528,7 +1603,7 @@ rectangle {
 rectangle {
 	object {
 		x=896
-		y=78
+		y=95
 		width=38
 		height=100
 	}
@@ -1544,7 +1619,7 @@ rectangle {
 rectangle {
 	object {
 		x=296
-		y=229
+		y=246
 		width=38
 		height=80
 	}
@@ -1560,7 +1635,7 @@ rectangle {
 rectangle {
 	object {
 		x=256
-		y=229
+		y=246
 		width=38
 		height=80
 	}
@@ -1576,7 +1651,7 @@ rectangle {
 rectangle {
 	object {
 		x=96
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1592,7 +1667,7 @@ rectangle {
 rectangle {
 	object {
 		x=136
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1608,7 +1683,7 @@ rectangle {
 rectangle {
 	object {
 		x=176
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1624,7 +1699,7 @@ rectangle {
 rectangle {
 	object {
 		x=216
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1640,7 +1715,7 @@ rectangle {
 rectangle {
 	object {
 		x=16
-		y=269
+		y=286
 		width=18
 		height=40
 	}
@@ -1656,7 +1731,7 @@ rectangle {
 rectangle {
 	object {
 		x=16
-		y=209
+		y=226
 		width=18
 		height=58
 	}
@@ -1672,7 +1747,7 @@ rectangle {
 rectangle {
 	object {
 		x=36
-		y=249
+		y=266
 		width=58
 		height=60
 	}
@@ -1688,7 +1763,7 @@ rectangle {
 rectangle {
 	object {
 		x=36
-		y=209
+		y=226
 		width=58
 		height=38
 	}
@@ -1704,7 +1779,7 @@ rectangle {
 rectangle {
 	object {
 		x=476
-		y=209
+		y=226
 		width=18
 		height=100
 	}
@@ -1720,7 +1795,7 @@ rectangle {
 rectangle {
 	object {
 		x=496
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1736,7 +1811,7 @@ rectangle {
 rectangle {
 	object {
 		x=536
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1752,7 +1827,7 @@ rectangle {
 rectangle {
 	object {
 		x=576
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1768,7 +1843,7 @@ rectangle {
 rectangle {
 	object {
 		x=616
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1784,7 +1859,7 @@ rectangle {
 rectangle {
 	object {
 		x=656
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1800,7 +1875,7 @@ rectangle {
 rectangle {
 	object {
 		x=696
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1816,7 +1891,7 @@ rectangle {
 rectangle {
 	object {
 		x=336
-		y=269
+		y=286
 		width=78
 		height=40
 	}
@@ -1832,7 +1907,7 @@ rectangle {
 rectangle {
 	object {
 		x=336
-		y=229
+		y=246
 		width=78
 		height=38
 	}
@@ -1848,7 +1923,7 @@ rectangle {
 rectangle {
 	object {
 		x=416
-		y=251
+		y=268
 		width=58
 		height=58
 	}
@@ -1864,7 +1939,7 @@ rectangle {
 rectangle {
 	object {
 		x=736
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1880,7 +1955,7 @@ rectangle {
 rectangle {
 	object {
 		x=776
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1896,7 +1971,7 @@ rectangle {
 rectangle {
 	object {
 		x=816
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1912,7 +1987,7 @@ rectangle {
 rectangle {
 	object {
 		x=856
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1928,7 +2003,7 @@ rectangle {
 rectangle {
 	object {
 		x=896
-		y=209
+		y=226
 		width=38
 		height=100
 	}
@@ -1944,7 +2019,7 @@ rectangle {
 rectangle {
 	object {
 		x=416
-		y=138
+		y=155
 		width=58
 		height=20
 	}
@@ -1960,7 +2035,7 @@ rectangle {
 rectangle {
 	object {
 		x=456
-		y=157
+		y=174
 		width=18
 		height=21
 	}
@@ -1976,7 +2051,7 @@ rectangle {
 rectangle {
 	object {
 		x=456
-		y=209
+		y=226
 		width=18
 		height=21
 	}
@@ -1992,7 +2067,7 @@ rectangle {
 rectangle {
 	object {
 		x=416
-		y=229
+		y=246
 		width=58
 		height=20
 	}
@@ -2008,7 +2083,7 @@ rectangle {
 "shell command" {
 	object {
 		x=287
-		y=167
+		y=184
 		width=70
 		height=25
 	}
@@ -2023,7 +2098,7 @@ rectangle {
 "shell command" {
 	object {
 		x=287
-		y=196
+		y=213
 		width=70
 		height=25
 	}
@@ -2038,7 +2113,7 @@ rectangle {
 "related display" {
 	object {
 		x=913
-		y=50
+		y=66
 		width=20
 		height=20
 	}
@@ -2056,7 +2131,7 @@ rectangle {
 text {
 	object {
 		x=482
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2073,7 +2148,7 @@ text {
 text {
 	object {
 		x=511
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2090,7 +2165,7 @@ text {
 text {
 	object {
 		x=552
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2107,7 +2182,7 @@ text {
 text {
 	object {
 		x=591
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2124,7 +2199,7 @@ text {
 text {
 	object {
 		x=631
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2141,7 +2216,7 @@ text {
 text {
 	object {
 		x=670
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2158,7 +2233,7 @@ text {
 text {
 	object {
 		x=712
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2175,7 +2250,7 @@ text {
 text {
 	object {
 		x=751
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2192,7 +2267,7 @@ text {
 text {
 	object {
 		x=792
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2209,7 +2284,7 @@ text {
 text {
 	object {
 		x=829
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2226,7 +2301,7 @@ text {
 text {
 	object {
 		x=868
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2243,7 +2318,7 @@ text {
 text {
 	object {
 		x=909
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2260,7 +2335,7 @@ text {
 text {
 	object {
 		x=19
-		y=91
+		y=108
 		width=6
 		height=15
 	}
@@ -2277,7 +2352,7 @@ text {
 text {
 	object {
 		x=19
-		y=142
+		y=159
 		width=6
 		height=15
 	}
@@ -2294,7 +2369,7 @@ text {
 text {
 	object {
 		x=59
-		y=100
+		y=117
 		width=6
 		height=15
 	}
@@ -2311,7 +2386,7 @@ text {
 text {
 	object {
 		x=58
-		y=151
+		y=168
 		width=6
 		height=15
 	}
@@ -2328,7 +2403,7 @@ text {
 text {
 	object {
 		x=109
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2345,7 +2420,7 @@ text {
 text {
 	object {
 		x=148
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2362,7 +2437,7 @@ text {
 text {
 	object {
 		x=188
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2379,7 +2454,7 @@ text {
 text {
 	object {
 		x=228
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2396,7 +2471,7 @@ text {
 text {
 	object {
 		x=270
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2413,7 +2488,7 @@ text {
 text {
 	object {
 		x=309
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2430,7 +2505,7 @@ text {
 text {
 	object {
 		x=367
-		y=92
+		y=109
 		width=6
 		height=15
 	}
@@ -2447,7 +2522,7 @@ text {
 text {
 	object {
 		x=367
-		y=130
+		y=147
 		width=6
 		height=15
 	}
@@ -2464,7 +2539,7 @@ text {
 text {
 	object {
 		x=439
-		y=100
+		y=117
 		width=6
 		height=15
 	}
@@ -2481,7 +2556,7 @@ text {
 text {
 	object {
 		x=439
-		y=141
+		y=158
 		width=6
 		height=15
 	}
@@ -2498,7 +2573,7 @@ text {
 text {
 	object {
 		x=482
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -2515,7 +2590,7 @@ text {
 text {
 	object {
 		x=511
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -2532,7 +2607,7 @@ text {
 text {
 	object {
 		x=552
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -2549,7 +2624,7 @@ text {
 text {
 	object {
 		x=591
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -2566,7 +2641,7 @@ text {
 text {
 	object {
 		x=631
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -2583,7 +2658,7 @@ text {
 text {
 	object {
 		x=670
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -2600,7 +2675,7 @@ text {
 text {
 	object {
 		x=712
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -2617,7 +2692,7 @@ text {
 text {
 	object {
 		x=751
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -2634,7 +2709,7 @@ text {
 text {
 	object {
 		x=792
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -2651,7 +2726,7 @@ text {
 text {
 	object {
 		x=829
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -2668,7 +2743,7 @@ text {
 text {
 	object {
 		x=868
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -2685,7 +2760,7 @@ text {
 text {
 	object {
 		x=909
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -2702,7 +2777,7 @@ text {
 text {
 	object {
 		x=19
-		y=282
+		y=299
 		width=6
 		height=15
 	}
@@ -2719,7 +2794,7 @@ text {
 text {
 	object {
 		x=19
-		y=231
+		y=248
 		width=6
 		height=15
 	}
@@ -2736,7 +2811,7 @@ text {
 text {
 	object {
 		x=59
-		y=273
+		y=290
 		width=6
 		height=15
 	}
@@ -2753,7 +2828,7 @@ text {
 text {
 	object {
 		x=58
-		y=221
+		y=238
 		width=6
 		height=15
 	}
@@ -2770,7 +2845,7 @@ text {
 text {
 	object {
 		x=109
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -2787,7 +2862,7 @@ text {
 text {
 	object {
 		x=148
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -2804,7 +2879,7 @@ text {
 text {
 	object {
 		x=188
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -2821,7 +2896,7 @@ text {
 text {
 	object {
 		x=228
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -2838,7 +2913,7 @@ text {
 text {
 	object {
 		x=270
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -2855,7 +2930,7 @@ text {
 text {
 	object {
 		x=309
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -2872,7 +2947,7 @@ text {
 text {
 	object {
 		x=367
-		y=283
+		y=300
 		width=6
 		height=15
 	}
@@ -2889,7 +2964,7 @@ text {
 text {
 	object {
 		x=367
-		y=243
+		y=260
 		width=6
 		height=15
 	}
@@ -2906,7 +2981,7 @@ text {
 text {
 	object {
 		x=439
-		y=273
+		y=290
 		width=6
 		height=15
 	}
@@ -2923,7 +2998,7 @@ text {
 text {
 	object {
 		x=439
-		y=233
+		y=250
 		width=6
 		height=15
 	}
@@ -2940,7 +3015,7 @@ text {
 text {
 	object {
 		x=482
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2957,7 +3032,7 @@ text {
 text {
 	object {
 		x=511
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2974,7 +3049,7 @@ text {
 text {
 	object {
 		x=552
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -2991,7 +3066,7 @@ text {
 text {
 	object {
 		x=591
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -3008,7 +3083,7 @@ text {
 text {
 	object {
 		x=631
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -3025,7 +3100,7 @@ text {
 text {
 	object {
 		x=670
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -3042,7 +3117,7 @@ text {
 text {
 	object {
 		x=712
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -3059,7 +3134,7 @@ text {
 text {
 	object {
 		x=751
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -3076,7 +3151,7 @@ text {
 text {
 	object {
 		x=792
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -3093,7 +3168,7 @@ text {
 text {
 	object {
 		x=829
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -3110,7 +3185,7 @@ text {
 text {
 	object {
 		x=868
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -3127,7 +3202,7 @@ text {
 text {
 	object {
 		x=909
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -3144,7 +3219,7 @@ text {
 text {
 	object {
 		x=19
-		y=91
+		y=108
 		width=6
 		height=15
 	}
@@ -3161,7 +3236,7 @@ text {
 text {
 	object {
 		x=19
-		y=142
+		y=159
 		width=6
 		height=15
 	}
@@ -3178,7 +3253,7 @@ text {
 text {
 	object {
 		x=59
-		y=100
+		y=117
 		width=6
 		height=15
 	}
@@ -3195,7 +3270,7 @@ text {
 text {
 	object {
 		x=58
-		y=151
+		y=168
 		width=6
 		height=15
 	}
@@ -3212,7 +3287,7 @@ text {
 text {
 	object {
 		x=109
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -3229,7 +3304,7 @@ text {
 text {
 	object {
 		x=148
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -3246,7 +3321,7 @@ text {
 text {
 	object {
 		x=188
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -3263,7 +3338,7 @@ text {
 text {
 	object {
 		x=228
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -3280,7 +3355,7 @@ text {
 text {
 	object {
 		x=309
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -3297,7 +3372,7 @@ text {
 text {
 	object {
 		x=367
-		y=92
+		y=109
 		width=6
 		height=15
 	}
@@ -3314,7 +3389,7 @@ text {
 text {
 	object {
 		x=367
-		y=130
+		y=147
 		width=6
 		height=15
 	}
@@ -3331,7 +3406,7 @@ text {
 text {
 	object {
 		x=439
-		y=100
+		y=117
 		width=6
 		height=15
 	}
@@ -3348,7 +3423,7 @@ text {
 text {
 	object {
 		x=439
-		y=141
+		y=158
 		width=6
 		height=15
 	}
@@ -3365,7 +3440,7 @@ text {
 text {
 	object {
 		x=482
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -3382,7 +3457,7 @@ text {
 text {
 	object {
 		x=511
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -3399,7 +3474,7 @@ text {
 text {
 	object {
 		x=552
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -3416,7 +3491,7 @@ text {
 text {
 	object {
 		x=591
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -3433,7 +3508,7 @@ text {
 text {
 	object {
 		x=631
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -3450,7 +3525,7 @@ text {
 text {
 	object {
 		x=670
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -3467,7 +3542,7 @@ text {
 text {
 	object {
 		x=712
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -3484,7 +3559,7 @@ text {
 text {
 	object {
 		x=751
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -3501,7 +3576,7 @@ text {
 text {
 	object {
 		x=792
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -3518,7 +3593,7 @@ text {
 text {
 	object {
 		x=829
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -3535,7 +3610,7 @@ text {
 text {
 	object {
 		x=868
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -3552,7 +3627,7 @@ text {
 text {
 	object {
 		x=909
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -3569,7 +3644,7 @@ text {
 text {
 	object {
 		x=19
-		y=282
+		y=299
 		width=6
 		height=15
 	}
@@ -3586,7 +3661,7 @@ text {
 text {
 	object {
 		x=19
-		y=231
+		y=248
 		width=6
 		height=15
 	}
@@ -3603,7 +3678,7 @@ text {
 text {
 	object {
 		x=59
-		y=273
+		y=290
 		width=6
 		height=15
 	}
@@ -3620,7 +3695,7 @@ text {
 text {
 	object {
 		x=58
-		y=221
+		y=238
 		width=6
 		height=15
 	}
@@ -3637,7 +3712,7 @@ text {
 text {
 	object {
 		x=109
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -3654,7 +3729,7 @@ text {
 text {
 	object {
 		x=148
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -3671,7 +3746,7 @@ text {
 text {
 	object {
 		x=188
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -3688,7 +3763,7 @@ text {
 text {
 	object {
 		x=228
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -3705,7 +3780,7 @@ text {
 text {
 	object {
 		x=309
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -3722,7 +3797,7 @@ text {
 text {
 	object {
 		x=367
-		y=283
+		y=300
 		width=6
 		height=15
 	}
@@ -3739,7 +3814,7 @@ text {
 text {
 	object {
 		x=367
-		y=243
+		y=260
 		width=6
 		height=15
 	}
@@ -3756,7 +3831,7 @@ text {
 text {
 	object {
 		x=439
-		y=273
+		y=290
 		width=6
 		height=15
 	}
@@ -3773,7 +3848,7 @@ text {
 text {
 	object {
 		x=439
-		y=233
+		y=250
 		width=6
 		height=15
 	}
@@ -3790,7 +3865,7 @@ text {
 text {
 	object {
 		x=270
-		y=121
+		y=138
 		width=6
 		height=15
 	}
@@ -3807,7 +3882,7 @@ text {
 text {
 	object {
 		x=270
-		y=253
+		y=270
 		width=6
 		height=15
 	}
@@ -3824,7 +3899,7 @@ text {
 polyline {
 	object {
 		x=13
-		y=75
+		y=92
 		width=923
 		height=0
 	}
@@ -3832,14 +3907,14 @@ polyline {
 		clr=5
 	}
 	points {
-		(13,75)
-		(936,75)
+		(13,92)
+		(936,92)
 	}
 }
 polyline {
 	object {
 		x=13
-		y=311
+		y=328
 		width=923
 		height=0
 	}
@@ -3847,14 +3922,14 @@ polyline {
 		clr=5
 	}
 	points {
-		(13,311)
-		(936,311)
+		(13,328)
+		(936,328)
 	}
 }
 polyline {
 	object {
 		x=936
-		y=75
+		y=92
 		width=0
 		height=105
 	}
@@ -3862,14 +3937,14 @@ polyline {
 		clr=5
 	}
 	points {
-		(936,75)
-		(936,180)
+		(936,92)
+		(936,197)
 	}
 }
 polyline {
 	object {
 		x=936
-		y=206
+		y=223
 		width=0
 		height=105
 	}
@@ -3877,14 +3952,14 @@ polyline {
 		clr=5
 	}
 	points {
-		(936,206)
-		(936,311)
+		(936,223)
+		(936,328)
 	}
 }
 polyline {
 	object {
 		x=13
-		y=206
+		y=223
 		width=0
 		height=105
 	}
@@ -3892,14 +3967,14 @@ polyline {
 		clr=5
 	}
 	points {
-		(13,206)
-		(13,311)
+		(13,223)
+		(13,328)
 	}
 }
 polyline {
 	object {
 		x=13
-		y=75
+		y=92
 		width=0
 		height=105
 	}
@@ -3907,14 +3982,14 @@ polyline {
 		clr=5
 	}
 	points {
-		(13,75)
-		(13,180)
+		(13,92)
+		(13,197)
 	}
 }
 polyline {
 	object {
 		x=13
-		y=180
+		y=197
 		width=262
 		height=0
 	}
@@ -3922,14 +3997,14 @@ polyline {
 		clr=5
 	}
 	points {
-		(13,180)
-		(275,180)
+		(13,197)
+		(275,197)
 	}
 }
 polyline {
 	object {
 		x=14
-		y=206
+		y=223
 		width=262
 		height=0
 	}
@@ -3937,14 +4012,14 @@ polyline {
 		clr=5
 	}
 	points {
-		(14,206)
-		(276,206)
+		(14,223)
+		(276,223)
 	}
 }
 polyline {
 	object {
 		x=454
-		y=180
+		y=197
 		width=482
 		height=0
 	}
@@ -3952,14 +4027,14 @@ polyline {
 		clr=5
 	}
 	points {
-		(454,180)
-		(936,180)
+		(454,197)
+		(936,197)
 	}
 }
 polyline {
 	object {
 		x=454
-		y=206
+		y=223
 		width=482
 		height=0
 	}
@@ -3967,14 +4042,14 @@ polyline {
 		clr=5
 	}
 	points {
-		(454,206)
-		(936,206)
+		(454,223)
+		(936,223)
 	}
 }
 polyline {
 	object {
 		x=276
-		y=160
+		y=177
 		width=177
 		height=0
 	}
@@ -3982,14 +4057,14 @@ polyline {
 		clr=5
 	}
 	points {
-		(276,160)
-		(453,160)
+		(276,177)
+		(453,177)
 	}
 }
 polyline {
 	object {
 		x=276
-		y=226
+		y=243
 		width=177
 		height=0
 	}
@@ -3997,14 +4072,14 @@ polyline {
 		clr=5
 	}
 	points {
-		(276,226)
-		(453,226)
+		(276,243)
+		(453,243)
 	}
 }
 polyline {
 	object {
 		x=276
-		y=160
+		y=177
 		width=0
 		height=20
 	}
@@ -4012,14 +4087,14 @@ polyline {
 		clr=5
 	}
 	points {
-		(276,160)
-		(276,180)
+		(276,177)
+		(276,197)
 	}
 }
 polyline {
 	object {
 		x=276
-		y=206
+		y=223
 		width=0
 		height=20
 	}
@@ -4027,14 +4102,14 @@ polyline {
 		clr=5
 	}
 	points {
-		(276,206)
-		(276,226)
+		(276,223)
+		(276,243)
 	}
 }
 polyline {
 	object {
 		x=453
-		y=206
+		y=223
 		width=0
 		height=20
 	}
@@ -4042,14 +4117,14 @@ polyline {
 		clr=5
 	}
 	points {
-		(453,206)
-		(453,226)
+		(453,223)
+		(453,243)
 	}
 }
 polyline {
 	object {
 		x=453
-		y=160
+		y=177
 		width=0
 		height=20
 	}
@@ -4057,14 +4132,14 @@ polyline {
 		clr=5
 	}
 	points {
-		(453,160)
-		(453,180)
+		(453,177)
+		(453,197)
 	}
 }
 "text update" {
 	object {
 		x=68
-		y=510
+		y=527
 		width=50
 		height=15
 	}
@@ -4084,7 +4159,7 @@ polyline {
 "text update" {
 	object {
 		x=123
-		y=510
+		y=527
 		width=50
 		height=15
 	}
@@ -4104,7 +4179,7 @@ polyline {
 "text update" {
 	object {
 		x=68
-		y=528
+		y=545
 		width=50
 		height=15
 	}
@@ -4124,7 +4199,7 @@ polyline {
 "text update" {
 	object {
 		x=123
-		y=528
+		y=545
 		width=50
 		height=15
 	}
@@ -4144,7 +4219,7 @@ polyline {
 text {
 	object {
 		x=127
-		y=493
+		y=510
 		width=42
 		height=12
 	}
@@ -4156,7 +4231,7 @@ text {
 text {
 	object {
 		x=71
-		y=493
+		y=510
 		width=42
 		height=12
 	}
@@ -4168,7 +4243,7 @@ text {
 text {
 	object {
 		x=14
-		y=510
+		y=527
 		width=42
 		height=12
 	}
@@ -4180,7 +4255,7 @@ text {
 text {
 	object {
 		x=14
-		y=528
+		y=545
 		width=42
 		height=12
 	}
@@ -4192,7 +4267,7 @@ text {
 text {
 	object {
 		x=84
-		y=379
+		y=396
 		width=66
 		height=20
 	}
@@ -4205,7 +4280,7 @@ text {
 oval {
 	object {
 		x=87
-		y=411
+		y=428
 		width=10
 		height=10
 	}
@@ -4221,7 +4296,7 @@ oval {
 oval {
 	object {
 		x=87
-		y=411
+		y=428
 		width=10
 		height=10
 	}
@@ -4237,7 +4312,7 @@ oval {
 text {
 	object {
 		x=105
-		y=410
+		y=427
 		width=40
 		height=17
 	}
@@ -4254,7 +4329,7 @@ text {
 text {
 	object {
 		x=105
-		y=410
+		y=427
 		width=40
 		height=12
 	}
@@ -4271,7 +4346,7 @@ text {
 oval {
 	object {
 		x=87
-		y=432
+		y=449
 		width=10
 		height=10
 	}
@@ -4287,7 +4362,7 @@ oval {
 oval {
 	object {
 		x=87
-		y=432
+		y=449
 		width=10
 		height=10
 	}
@@ -4303,7 +4378,7 @@ oval {
 text {
 	object {
 		x=105
-		y=431
+		y=448
 		width=40
 		height=12
 	}
@@ -4320,7 +4395,7 @@ text {
 text {
 	object {
 		x=105
-		y=431
+		y=448
 		width=40
 		height=12
 	}
@@ -4337,7 +4412,7 @@ text {
 oval {
 	object {
 		x=116
-		y=455
+		y=472
 		width=14
 		height=14
 	}
@@ -4353,7 +4428,7 @@ oval {
 oval {
 	object {
 		x=116
-		y=455
+		y=472
 		width=14
 		height=14
 	}
@@ -4369,7 +4444,7 @@ oval {
 text {
 	object {
 		x=97
-		y=456
+		y=473
 		width=15
 		height=12
 	}
@@ -4386,7 +4461,7 @@ text {
 text {
 	object {
 		x=97
-		y=456
+		y=473
 		width=30
 		height=12
 	}
@@ -4403,7 +4478,7 @@ text {
 "text update" {
 	object {
 		x=183
-		y=510
+		y=527
 		width=50
 		height=15
 	}
@@ -4423,7 +4498,7 @@ text {
 "text update" {
 	object {
 		x=238
-		y=510
+		y=527
 		width=50
 		height=15
 	}
@@ -4443,7 +4518,7 @@ text {
 "text update" {
 	object {
 		x=183
-		y=528
+		y=545
 		width=50
 		height=15
 	}
@@ -4463,7 +4538,7 @@ text {
 "text update" {
 	object {
 		x=238
-		y=528
+		y=545
 		width=50
 		height=15
 	}
@@ -4483,7 +4558,7 @@ text {
 text {
 	object {
 		x=241
-		y=493
+		y=510
 		width=42
 		height=12
 	}
@@ -4495,7 +4570,7 @@ text {
 text {
 	object {
 		x=187
-		y=493
+		y=510
 		width=42
 		height=12
 	}
@@ -4507,7 +4582,7 @@ text {
 text {
 	object {
 		x=200
-		y=379
+		y=396
 		width=66
 		height=20
 	}
@@ -4520,7 +4595,7 @@ text {
 polyline {
 	object {
 		x=203
-		y=395
+		y=412
 		width=60
 		height=0
 	}
@@ -4531,14 +4606,14 @@ polyline {
 		chan="LV:DC:S$(S):L$(L):SET_ONOFF"
 	}
 	points {
-		(203,395)
-		(263,395)
+		(203,412)
+		(263,412)
 	}
 }
 oval {
 	object {
 		x=203
-		y=411
+		y=428
 		width=10
 		height=10
 	}
@@ -4554,7 +4629,7 @@ oval {
 oval {
 	object {
 		x=203
-		y=411
+		y=428
 		width=10
 		height=10
 	}
@@ -4570,7 +4645,7 @@ oval {
 text {
 	object {
 		x=221
-		y=410
+		y=427
 		width=40
 		height=17
 	}
@@ -4587,7 +4662,7 @@ text {
 text {
 	object {
 		x=221
-		y=410
+		y=427
 		width=40
 		height=12
 	}
@@ -4604,7 +4679,7 @@ text {
 oval {
 	object {
 		x=203
-		y=432
+		y=449
 		width=10
 		height=10
 	}
@@ -4620,7 +4695,7 @@ oval {
 oval {
 	object {
 		x=203
-		y=432
+		y=449
 		width=10
 		height=10
 	}
@@ -4636,7 +4711,7 @@ oval {
 text {
 	object {
 		x=221
-		y=431
+		y=448
 		width=40
 		height=12
 	}
@@ -4653,7 +4728,7 @@ text {
 text {
 	object {
 		x=221
-		y=431
+		y=448
 		width=40
 		height=12
 	}
@@ -4670,7 +4745,7 @@ text {
 oval {
 	object {
 		x=227
-		y=457
+		y=474
 		width=14
 		height=14
 	}
@@ -4686,7 +4761,7 @@ oval {
 oval {
 	object {
 		x=227
-		y=457
+		y=474
 		width=14
 		height=14
 	}
@@ -4702,7 +4777,7 @@ oval {
 text {
 	object {
 		x=208
-		y=458
+		y=475
 		width=15
 		height=12
 	}
@@ -4719,7 +4794,7 @@ text {
 text {
 	object {
 		x=208
-		y=458
+		y=475
 		width=30
 		height=12
 	}
@@ -4736,7 +4811,7 @@ text {
 polyline {
 	object {
 		x=86
-		y=395
+		y=412
 		width=60
 		height=0
 	}
@@ -4747,14 +4822,14 @@ polyline {
 		chan="LV:DC:S$(S):L$(L):SET_ONOFF"
 	}
 	points {
-		(86,395)
-		(146,395)
+		(86,412)
+		(146,412)
 	}
 }
 "text update" {
 	object {
 		x=467
-		y=611
+		y=628
 		width=100
 		height=16
 	}
@@ -4772,7 +4847,7 @@ polyline {
 text {
 	object {
 		x=487
-		y=367
+		y=384
 		width=25
 		height=18
 	}
@@ -4785,7 +4860,7 @@ text {
 text {
 	object {
 		x=459
-		y=390
+		y=407
 		width=97
 		height=20
 	}
@@ -4798,7 +4873,7 @@ text {
 text {
 	object {
 		x=459
-		y=417
+		y=434
 		width=97
 		height=20
 	}
@@ -4812,7 +4887,7 @@ text {
 text {
 	object {
 		x=459
-		y=444
+		y=461
 		width=97
 		height=20
 	}
@@ -4826,7 +4901,7 @@ text {
 text {
 	object {
 		x=459
-		y=471
+		y=488
 		width=97
 		height=20
 	}
@@ -4840,7 +4915,7 @@ text {
 text {
 	object {
 		x=459
-		y=498
+		y=515
 		width=97
 		height=20
 	}
@@ -4854,7 +4929,7 @@ text {
 text {
 	object {
 		x=459
-		y=525
+		y=542
 		width=97
 		height=20
 	}
@@ -4868,7 +4943,7 @@ text {
 text {
 	object {
 		x=459
-		y=552
+		y=569
 		width=97
 		height=20
 	}
@@ -4882,7 +4957,7 @@ text {
 text {
 	object {
 		x=459
-		y=579
+		y=596
 		width=97
 		height=20
 	}
@@ -4896,7 +4971,7 @@ text {
 text {
 	object {
 		x=586
-		y=367
+		y=384
 		width=77
 		height=18
 	}
@@ -4909,7 +4984,7 @@ text {
 "text update" {
 	object {
 		x=599
-		y=390
+		y=407
 		width=50
 		height=20
 	}
@@ -4928,7 +5003,7 @@ text {
 "text update" {
 	object {
 		x=599
-		y=417
+		y=434
 		width=50
 		height=20
 	}
@@ -4947,7 +5022,7 @@ text {
 "text update" {
 	object {
 		x=599
-		y=444
+		y=461
 		width=50
 		height=20
 	}
@@ -4966,7 +5041,7 @@ text {
 "text update" {
 	object {
 		x=599
-		y=471
+		y=488
 		width=50
 		height=20
 	}
@@ -4985,7 +5060,7 @@ text {
 "text update" {
 	object {
 		x=599
-		y=498
+		y=515
 		width=50
 		height=20
 	}
@@ -5004,7 +5079,7 @@ text {
 "text update" {
 	object {
 		x=599
-		y=525
+		y=542
 		width=50
 		height=20
 	}
@@ -5023,7 +5098,7 @@ text {
 "text update" {
 	object {
 		x=599
-		y=552
+		y=569
 		width=50
 		height=20
 	}
@@ -5042,7 +5117,7 @@ text {
 "text update" {
 	object {
 		x=599
-		y=579
+		y=596
 		width=50
 		height=20
 	}
@@ -5061,7 +5136,7 @@ text {
 text {
 	object {
 		x=523
-		y=367
+		y=384
 		width=77
 		height=18
 	}
@@ -5074,7 +5149,7 @@ text {
 "text update" {
 	object {
 		x=532
-		y=390
+		y=407
 		width=50
 		height=20
 	}
@@ -5093,7 +5168,7 @@ text {
 "text update" {
 	object {
 		x=532
-		y=417
+		y=434
 		width=50
 		height=20
 	}
@@ -5112,7 +5187,7 @@ text {
 "text update" {
 	object {
 		x=532
-		y=444
+		y=461
 		width=50
 		height=20
 	}
@@ -5131,7 +5206,7 @@ text {
 "text update" {
 	object {
 		x=532
-		y=471
+		y=488
 		width=50
 		height=20
 	}
@@ -5150,7 +5225,7 @@ text {
 "text update" {
 	object {
 		x=532
-		y=498
+		y=515
 		width=50
 		height=20
 	}
@@ -5169,7 +5244,7 @@ text {
 "text update" {
 	object {
 		x=532
-		y=525
+		y=542
 		width=50
 		height=20
 	}
@@ -5188,7 +5263,7 @@ text {
 "text update" {
 	object {
 		x=532
-		y=552
+		y=569
 		width=50
 		height=20
 	}
@@ -5207,7 +5282,7 @@ text {
 "text update" {
 	object {
 		x=532
-		y=579
+		y=596
 		width=50
 		height=20
 	}
@@ -5226,7 +5301,7 @@ text {
 "shell command" {
 	object {
 		x=338
-		y=551
+		y=568
 		width=140
 		height=20
 	}
@@ -5242,7 +5317,7 @@ text {
 "shell command" {
 	object {
 		x=338
-		y=572
+		y=589
 		width=140
 		height=20
 	}
@@ -5258,7 +5333,7 @@ text {
 polygon {
 	object {
 		x=321
-		y=472
+		y=489
 		width=176
 		height=56
 	}
@@ -5266,23 +5341,23 @@ polygon {
 		clr=30
 	}
 	points {
-		(321,528)
-		(321,528)
-		(322,494)
-		(321,472)
-		(497,472)
-		(497,528)
-		(447,528)
-		(447,519)
-		(415,519)
-		(415,528)
-		(321,528)
+		(321,545)
+		(321,545)
+		(322,511)
+		(321,489)
+		(497,489)
+		(497,545)
+		(447,545)
+		(447,536)
+		(415,536)
+		(415,545)
+		(321,545)
 	}
 }
 text {
 	object {
 		x=428
-		y=505
+		y=522
 		width=6
 		height=15
 	}
@@ -5294,7 +5369,7 @@ text {
 text {
 	object {
 		x=362
-		y=513
+		y=530
 		width=6
 		height=15
 	}
@@ -5306,7 +5381,7 @@ text {
 text {
 	object {
 		x=324
-		y=490
+		y=507
 		width=6
 		height=15
 	}
@@ -5318,7 +5393,7 @@ text {
 text {
 	object {
 		x=467
-		y=512
+		y=529
 		width=6
 		height=15
 	}
@@ -5330,7 +5405,7 @@ text {
 text {
 	object {
 		x=487
-		y=486
+		y=503
 		width=6
 		height=15
 	}
@@ -5342,7 +5417,7 @@ text {
 text {
 	object {
 		x=355
-		y=473
+		y=490
 		width=6
 		height=15
 	}
@@ -5354,7 +5429,7 @@ text {
 text {
 	object {
 		x=465
-		y=473
+		y=490
 		width=6
 		height=15
 	}
@@ -5366,7 +5441,7 @@ text {
 polyline {
 	object {
 		x=321
-		y=467
+		y=484
 		width=175
 		height=0
 	}
@@ -5374,14 +5449,14 @@ polyline {
 		clr=20
 	}
 	points {
-		(321,467)
-		(496,467)
+		(321,484)
+		(496,484)
 	}
 }
 text {
 	object {
 		x=360
-		y=458
+		y=475
 		width=6
 		height=15
 	}
@@ -5393,7 +5468,7 @@ text {
 rectangle {
 	object {
 		x=323
-		y=399
+		y=416
 		width=170
 		height=50
 	}
@@ -5404,7 +5479,7 @@ rectangle {
 polyline {
 	object {
 		x=320
-		y=392
+		y=409
 		width=175
 		height=0
 	}
@@ -5412,14 +5487,14 @@ polyline {
 		clr=20
 	}
 	points {
-		(320,392)
-		(495,392)
+		(320,409)
+		(495,409)
 	}
 }
 text {
 	object {
 		x=362
-		y=383
+		y=400
 		width=6
 		height=15
 	}
@@ -5431,7 +5506,7 @@ text {
 text {
 	object {
 		x=361
-		y=423
+		y=440
 		width=6
 		height=15
 	}
@@ -5443,7 +5518,7 @@ text {
 text {
 	object {
 		x=324
-		y=411
+		y=428
 		width=6
 		height=15
 	}
@@ -5455,7 +5530,7 @@ text {
 text {
 	object {
 		x=372
-		y=424
+		y=441
 		width=6
 		height=15
 	}
@@ -5467,7 +5542,7 @@ text {
 text {
 	object {
 		x=425
-		y=412
+		y=429
 		width=6
 		height=15
 	}
@@ -5479,7 +5554,7 @@ text {
 text {
 	object {
 		x=465
-		y=399
+		y=416
 		width=6
 		height=15
 	}
@@ -5491,7 +5566,7 @@ text {
 text {
 	object {
 		x=455
-		y=399
+		y=416
 		width=6
 		height=15
 	}
@@ -5503,7 +5578,7 @@ text {
 text {
 	object {
 		x=484
-		y=411
+		y=428
 		width=6
 		height=15
 	}
@@ -5515,7 +5590,7 @@ text {
 polyline {
 	object {
 		x=408
-		y=400
+		y=417
 		width=7
 		height=48
 	}
@@ -5524,14 +5599,14 @@ polyline {
 		style="dash"
 	}
 	points {
-		(408,400)
-		(415,448)
+		(408,417)
+		(415,465)
 	}
 }
 polyline {
 	object {
 		x=432
-		y=398
+		y=415
 		width=8
 		height=50
 	}
@@ -5540,14 +5615,14 @@ polyline {
 		style="dash"
 	}
 	points {
-		(440,398)
-		(432,448)
+		(440,415)
+		(432,465)
 	}
 }
 "text update" {
 	object {
 		x=561
-		y=608
+		y=625
 		width=50
 		height=20
 	}
@@ -5566,7 +5641,7 @@ polyline {
 rectangle {
 	object {
 		x=526
-		y=390
+		y=407
 		width=5
 		height=20
 	}
@@ -5581,7 +5656,7 @@ rectangle {
 text {
 	object {
 		x=519
-		y=367
+		y=384
 		width=25
 		height=18
 	}
@@ -5594,7 +5669,7 @@ text {
 rectangle {
 	object {
 		x=526
-		y=417
+		y=434
 		width=5
 		height=20
 	}
@@ -5609,7 +5684,7 @@ rectangle {
 rectangle {
 	object {
 		x=526
-		y=444
+		y=461
 		width=5
 		height=20
 	}
@@ -5624,7 +5699,7 @@ rectangle {
 rectangle {
 	object {
 		x=526
-		y=471
+		y=488
 		width=5
 		height=20
 	}
@@ -5639,7 +5714,7 @@ rectangle {
 rectangle {
 	object {
 		x=526
-		y=498
+		y=515
 		width=5
 		height=20
 	}
@@ -5654,7 +5729,7 @@ rectangle {
 rectangle {
 	object {
 		x=526
-		y=525
+		y=542
 		width=5
 		height=20
 	}
@@ -5669,7 +5744,7 @@ rectangle {
 rectangle {
 	object {
 		x=526
-		y=552
+		y=569
 		width=5
 		height=20
 	}
@@ -5684,7 +5759,7 @@ rectangle {
 rectangle {
 	object {
 		x=526
-		y=579
+		y=596
 		width=5
 		height=20
 	}
@@ -5699,7 +5774,7 @@ rectangle {
 rectangle {
 	object {
 		x=593
-		y=390
+		y=407
 		width=5
 		height=20
 	}
@@ -5714,7 +5789,7 @@ rectangle {
 rectangle {
 	object {
 		x=593
-		y=417
+		y=434
 		width=5
 		height=20
 	}
@@ -5729,7 +5804,7 @@ rectangle {
 rectangle {
 	object {
 		x=593
-		y=444
+		y=461
 		width=5
 		height=20
 	}
@@ -5744,7 +5819,7 @@ rectangle {
 rectangle {
 	object {
 		x=593
-		y=471
+		y=488
 		width=5
 		height=20
 	}
@@ -5759,7 +5834,7 @@ rectangle {
 rectangle {
 	object {
 		x=593
-		y=498
+		y=515
 		width=5
 		height=20
 	}
@@ -5774,7 +5849,7 @@ rectangle {
 rectangle {
 	object {
 		x=593
-		y=525
+		y=542
 		width=5
 		height=20
 	}
@@ -5789,7 +5864,7 @@ rectangle {
 rectangle {
 	object {
 		x=593
-		y=552
+		y=569
 		width=5
 		height=20
 	}
@@ -5804,7 +5879,7 @@ rectangle {
 rectangle {
 	object {
 		x=593
-		y=579
+		y=596
 		width=5
 		height=20
 	}
@@ -5819,7 +5894,7 @@ rectangle {
 rectangle {
 	object {
 		x=561
-		y=608
+		y=625
 		width=5
 		height=20
 	}
@@ -5834,7 +5909,7 @@ rectangle {
 "related display" {
 	object {
 		x=623
-		y=335
+		y=352
 		width=20
 		height=20
 	}
@@ -5848,7 +5923,7 @@ rectangle {
 rectangle {
 	object {
 		x=672
-		y=332
+		y=349
 		width=265
 		height=25
 	}
@@ -5859,7 +5934,7 @@ rectangle {
 text {
 	object {
 		x=752
-		y=338
+		y=355
 		width=100
 		height=16
 	}
@@ -5872,7 +5947,7 @@ text {
 "text update" {
 	object {
 		x=777
-		y=446
+		y=463
 		width=120
 		height=20
 	}
@@ -5889,7 +5964,7 @@ text {
 text {
 	object {
 		x=674
-		y=509
+		y=526
 		width=60
 		height=16
 	}
@@ -5901,7 +5976,7 @@ text {
 text {
 	object {
 		x=674
-		y=553
+		y=570
 		width=60
 		height=16
 	}
@@ -5913,7 +5988,7 @@ text {
 text {
 	object {
 		x=674
-		y=529
+		y=546
 		width=60
 		height=16
 	}
@@ -5925,7 +6000,7 @@ text {
 text {
 	object {
 		x=674
-		y=600
+		y=617
 		width=60
 		height=16
 	}
@@ -5937,7 +6012,7 @@ text {
 "text update" {
 	object {
 		x=777
-		y=600
+		y=617
 		width=160
 		height=15
 	}
@@ -5954,7 +6029,7 @@ text {
 "text update" {
 	object {
 		x=777
-		y=388
+		y=405
 		width=160
 		height=15
 	}
@@ -5971,7 +6046,7 @@ text {
 text {
 	object {
 		x=674
-		y=450
+		y=467
 		width=80
 		height=16
 	}
@@ -5983,7 +6058,7 @@ text {
 text {
 	object {
 		x=674
-		y=388
+		y=405
 		width=80
 		height=16
 	}
@@ -5995,7 +6070,7 @@ text {
 "text update" {
 	object {
 		x=857
-		y=505
+		y=522
 		width=80
 		height=20
 	}
@@ -6012,7 +6087,7 @@ text {
 "text update" {
 	object {
 		x=857
-		y=553
+		y=570
 		width=80
 		height=20
 	}
@@ -6029,7 +6104,7 @@ text {
 "text update" {
 	object {
 		x=857
-		y=529
+		y=546
 		width=80
 		height=20
 	}
@@ -6046,7 +6121,7 @@ text {
 "text update" {
 	object {
 		x=897
-		y=446
+		y=463
 		width=40
 		height=20
 	}
@@ -6062,7 +6137,7 @@ text {
 text {
 	object {
 		x=674
-		y=366
+		y=383
 		width=80
 		height=16
 	}
@@ -6074,7 +6149,7 @@ text {
 "text update" {
 	object {
 		x=777
-		y=366
+		y=383
 		width=160
 		height=15
 	}
@@ -6091,7 +6166,7 @@ text {
 rectangle {
 	object {
 		x=674
-		y=493
+		y=510
 		width=265
 		height=3
 	}
@@ -6102,7 +6177,7 @@ rectangle {
 "related display" {
 	object {
 		x=913
-		y=335
+		y=352
 		width=20
 		height=20
 	}
@@ -6117,7 +6192,7 @@ rectangle {
 rectangle {
 	object {
 		x=674
-		y=578
+		y=595
 		width=265
 		height=3
 	}
@@ -6128,7 +6203,7 @@ rectangle {
 rectangle {
 	object {
 		x=320
-		y=332
+		y=349
 		width=328
 		height=25
 	}
@@ -6139,7 +6214,7 @@ rectangle {
 text {
 	object {
 		x=384
-		y=338
+		y=355
 		width=200
 		height=20
 	}
@@ -6152,7 +6227,7 @@ text {
 rectangle {
 	object {
 		x=14
-		y=332
+		y=349
 		width=280
 		height=25
 	}
@@ -6163,7 +6238,7 @@ rectangle {
 text {
 	object {
 		x=117
-		y=338
+		y=355
 		width=66
 		height=15
 	}
@@ -6176,7 +6251,7 @@ text {
 rectangle {
 	object {
 		x=14
-		y=47
+		y=64
 		width=923
 		height=25
 	}
@@ -6187,7 +6262,7 @@ rectangle {
 text {
 	object {
 		x=445
-		y=53
+		y=69
 		width=66
 		height=15
 	}
@@ -6199,22 +6274,22 @@ text {
 }
 text {
 	object {
-		x=374
-		y=14
+		x=153
+		y=21
 		width=200
 		height=20
 	}
 	"basic attribute" {
 		clr=0
 	}
-	textix="HPS ECAL SLOW CONTROLS"
+	textix="HPS ECAL & HODO SLOW CONTROLS"
 	align="horiz. centered"
 }
 rectangle {
 	object {
-		x=273
-		y=8
-		width=400
+		x=12
+		y=15
+		width=500
 		height=25
 	}
 	"basic attribute" {
@@ -6225,7 +6300,7 @@ rectangle {
 rectangle {
 	object {
 		x=314
-		y=328
+		y=345
 		width=338
 		height=310
 	}
@@ -6237,7 +6312,7 @@ rectangle {
 rectangle {
 	object {
 		x=667
-		y=328
+		y=345
 		width=274
 		height=310
 	}
@@ -6249,7 +6324,7 @@ rectangle {
 "related display" {
 	object {
 		x=269
-		y=335
+		y=352
 		width=20
 		height=20
 	}
@@ -6264,7 +6339,7 @@ rectangle {
 "text update" {
 	object {
 		x=95
-		y=583
+		y=600
 		width=154
 		height=15
 	}
@@ -6280,7 +6355,7 @@ rectangle {
 text {
 	object {
 		x=52
-		y=583
+		y=600
 		width=36
 		height=19
 	}
@@ -6295,7 +6370,7 @@ text {
 rectangle {
 	object {
 		x=674
-		y=418
+		y=435
 		width=265
 		height=3
 	}
@@ -6306,7 +6381,7 @@ rectangle {
 "shell command" {
 	object {
 		x=365
-		y=196
+		y=213
 		width=80
 		height=25
 	}
@@ -6357,7 +6432,7 @@ rectangle {
 text {
 	object {
 		x=580
-		y=187
+		y=204
 		width=25
 		height=18
 	}
@@ -6370,7 +6445,7 @@ text {
 "text update" {
 	object {
 		x=654
-		y=186
+		y=203
 		width=50
 		height=16
 	}
@@ -6389,7 +6464,7 @@ text {
 "text update" {
 	object {
 		x=716
-		y=186
+		y=203
 		width=50
 		height=16
 	}
@@ -6404,4 +6479,119 @@ text {
 		precSrc="default"
 		precDefault=1
 	}
+}
+text {
+	object {
+		x=681
+		y=24
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Hodoscope HV"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=673
+		y=15
+		width=268
+		height=32
+	}
+	"basic attribute" {
+		clr=0
+		fill="outline"
+	}
+}
+"related display" {
+	object {
+		x=910
+		y=21
+		width=20
+		height=20
+	}
+	display[0] {
+		label="ECal Expert Map"
+		name="ECalHVStatus.adl"
+	}
+	display[1] {
+		label="Interlocks"
+		name="ecalInterlock.adl"
+	}
+	clr=14
+	bclr=5
+}
+text {
+	object {
+		x=791
+		y=25
+		width=50
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A#1"
+		chan="B_hv_ECAL_TOP_10_property.L"
+	}
+	textix="Top"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=791
+		y=25
+		width=50
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=1"
+		chan="B_hv_ECAL_TOP_10_property.L"
+	}
+	textix="Top"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=850
+		y=25
+		width=50
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=1"
+		chan="B_hv_ECAL_TOP_10_property.L"
+	}
+	textix="Bottom"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=850
+		y=25
+		width=50
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A#1"
+		chan="B_hv_ECAL_TOP_10_property.L"
+	}
+	textix="Bottom"
+	align="horiz. centered"
 }

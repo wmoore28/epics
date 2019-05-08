@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./HPS_EPICS.adl"
-	version=030101
+	name="/usr/clas12/hps/v3.0.0/apps/medm/HPS_EPICS.adl"
+	version=030109
 }
 display {
 	object {
-		x=643
-		y=31
+		x=12
+		y=51
 		width=240
 		height=835
 	}
@@ -569,8 +569,8 @@ text {
 		name="ECalHVStatusCompact.adl"
 	}
 	display[1] {
-		label="     BEAM     "
-		name="bm_beam_counter_1.adl"
+		label="     BEAMLINE"
+		name="bm_beam_counter_2.adl"
 	}
 	display[2] {
 		label="     BLMs     "
@@ -1176,7 +1176,7 @@ text {
 }
 text {
 	object {
-		x=197
+		x=174
 		y=373
 		width=120
 		height=16
@@ -1184,11 +1184,11 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="ECAL"
+	textix="ECAL/HODO"
 }
 "related display" {
 	object {
-		x=167
+		x=148
 		y=369
 		width=20
 		height=20
