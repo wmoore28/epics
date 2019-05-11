@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=0
-		y=0
+		x=10
+		y=15
 		width=690
 		height=112
 	}
@@ -121,8 +121,8 @@ text {
 	}
 	control {
 		chan="B_DET_HPS_HV_HodoTop:pwonoff"
-		clr=15
-		bclr=5
+		clr=14
+		bclr=15
 	}
 	label="Ena"
 	press_msg="1"
@@ -154,8 +154,8 @@ oval {
 	}
 	control {
 		chan="B_DET_HPS_HV_HodoTop:pwonoff"
-		clr=20
-		bclr=5
+		clr=0
+		bclr=20
 	}
 	label="Dis"
 	press_msg="0"
@@ -268,8 +268,8 @@ text {
 	}
 	control {
 		chan="B_DET_HPS_HV_HodoBottom:pwonoff"
-		clr=15
-		bclr=5
+		clr=14
+		bclr=15
 	}
 	label="Ena"
 	press_msg="1"
@@ -301,8 +301,8 @@ oval {
 	}
 	control {
 		chan="B_DET_HPS_HV_HodoBottom:pwonoff"
-		clr=20
-		bclr=5
+		clr=0
+		bclr=20
 	}
 	label="Dis"
 	press_msg="0"
