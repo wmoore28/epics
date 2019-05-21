@@ -32,4 +32,20 @@ alias("B_HW_HPS2_FADC_Sl10_Ch12:c","B_DET_HPSHODO_FADC_Bottom_L2_3_R:c")
 alias("B_HW_HPS2_FADC_Sl10_Ch13:c","B_DET_HPSHODO_FADC_Bottom_L2_3_L:c")
 alias("B_HW_HPS2_FADC_Sl10_Ch14:c","B_DET_HPSHODO_FADC_Bottom_L2_4_R:c")
 alias("B_HW_HPS2_FADC_Sl10_Ch15:c","B_DET_HPSHODO_FADC_Bottom_L2_4_L:c")
-        
+
+record(compress,"B_DET_HPSHODO_FADC_TopAvg:c") {
+    field(INP,"B_HW_HPS1_FADC_Sl10:c CPP")
+    field(ALG,"N to 1 Average")
+    field(NSAM,1)
+    field(N,16)
+    field(PREC,1)
+}
+
+record(compress,"B_DET_HPSHODO_FADC_BottomAvg:c") {
+    field(INP,"B_HW_HPS2_FADC_Sl10:c CPP")
+    field(ALG,"N to 1 Average")
+    field(NSAM,1)
+    field(N,16)
+    field(PREC,1)
+}
+
