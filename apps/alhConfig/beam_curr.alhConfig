@@ -17,8 +17,8 @@ $END
 ### $GUIDANCE
 ###               The beam current  measured at nA BPM 2H01 is out of spec.  Inform MCC about this.
 ### $END
-CHANNEL  BEAM_CURRENT                 scaler_calc1                
-$COMMAND  medm -x -attach -cmap -macro "sig=scaler_calc1" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL  BEAM_CURRENT                 scaler_calc1b                
+$COMMAND  medm -x -attach -cmap -macro "sig=scaler_calc1b" aiaocalc_alarm.adl >> /dev/null 
 $ALARMCOUNTFILTER  10 120
 $GUIDANCE
               The beam current  measured by the Faraday Cup is out of spec.  Inform MCC about this.
