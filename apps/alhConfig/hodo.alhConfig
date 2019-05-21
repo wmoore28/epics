@@ -1,0 +1,16 @@
+GROUP   NULL  HODOSCOPE
+
+GROUP   HODOSCOPE HV
+$GUIDANCE
+Click on group name (on left) to change channel listings on right half.  Track down RED/tripped channels and enable them
+$END
+CHANNEL    HV        B_DET_HPS_HV_HodoTop
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_HPS_HV_HodoTop" hv_generic_clas12.adl >> /dev/null 
+CHANNEL    HV        B_DET_HPS_HV_HodoBottom
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_HPS_HV_HodoBottom" hv_generic_clas12adl >> /dev/null 

@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/./generalApp/medm/alh_launch_hps.adl"
-	version=030101
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/alh_launch_hps.adl"
+	version=030109
 }
 display {
 	object {
-		x=241
-		y=487
+		x=539
+		y=220
 		width=200
-		height=380
+		height=330
 	}
 	clr=14
 	bclr=4
@@ -85,17 +85,6 @@ display {
 		3cb420,
 		289315,
 		1a7309,
-	}
-}
-rectangle {
-	object {
-		x=0
-		y=196
-		width=200
-		height=24
-	}
-	"basic attribute" {
-		clr=11
 	}
 }
 rectangle {
@@ -276,7 +265,7 @@ text {
 text {
 	object {
 		x=25
-		y=323
+		y=263
 		width=70
 		height=18
 	}
@@ -288,7 +277,7 @@ text {
 "shell command" {
 	object {
 		x=160
-		y=320
+		y=260
 		width=20
 		height=20
 	}
@@ -299,18 +288,6 @@ text {
 	}
 	clr=30
 	bclr=22
-}
-text {
-	object {
-		x=15
-		y=201
-		width=70
-		height=18
-	}
-	"basic attribute" {
-		clr=1
-	}
-	textix="Subsystems"
 }
 text {
 	object {
@@ -327,7 +304,7 @@ text {
 text {
 	object {
 		x=25
-		y=263
+		y=199
 		width=70
 		height=18
 	}
@@ -339,7 +316,7 @@ text {
 "shell command" {
 	object {
 		x=160
-		y=260
+		y=196
 		width=20
 		height=20
 	}
@@ -389,33 +366,6 @@ text {
 		label="alh"
 		name="alh"
 		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/hv.alhConfig &"
-	}
-	clr=30
-	bclr=22
-}
-text {
-	object {
-		x=25
-		y=353
-		width=70
-		height=18
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Vesda"
-}
-"shell command" {
-	object {
-		x=160
-		y=350
-		width=20
-		height=20
-	}
-	command[0] {
-		label="alh"
-		name="alh"
-		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /home/epics/log/ /usr/clas12/hps/prod/apps/alhConfig/vesda.alhConfig &"
 	}
 	clr=30
 	bclr=22
