@@ -41,6 +41,17 @@ dbLoadRecords("db/array-to-scalar-16.template","P=B_HW_HPS1_FADC_,R=Sl10_Ch,S=:c
 dbLoadRecords("db/array-to-scalar-16.template","P=B_HW_HPS2_FADC_,R=Sl10_Ch,S=:c,INP=B_HW_HPS2_FADC_Sl10:c")
 dbLoadRecords("db/hps-hodo-fadc-aliases.db")
 
+dbLoadRecords("db/amqIntArray.db",   "P=B_DAQ_HPS:VTP:prescale,K=hps1vtp_VTPHPS_PRESCALES,N=32,TH=10,THH=30,HSV=NO_ALARM,HHSV=NO_ALARM")
+dbLoadRecords("db/amqDoubleArray.db","P=B_DAQ_HPS:VTP:rate,K=hps1vtp_VTPHPS_TRIGGERBITS,N=32,TH=10,THH=30,HSV=NO_ALARM,HHSV=NO_ALARM")
+dbLoadRecords("db/amqDoubleArray.db","P=B_DAQ_HPS:TSGTP:rate,K=HPS11_TSGTPSLOT21,N=32,TH=10,THH=30,HSV=NO_ALARM,HHSV=NO_ALARM")
+dbLoadRecords("db/amqDoubleArray.db","P=B_DAQ_HPS:TSFP:rate,K=HPS11_TSFPSLOT21,N=32,TH=10,THH=30,HSV=NO_ALARM,HHSV=NO_ALARM")
+dbLoadRecords("db/amqDouble.db",     "P=B_DAQ_HPS:TS:livetime,K=HPS11_TSLIVETIMESLOT21,TH=10,THH=30,HSV=NO_ALARM,HHSV=NO_ALARM")
+
+dbLoadRecords("db/array-to-scalar-32.template","P=B_DAQ_HPS:VTP:prescale:,INP=B_DAQ_HPS:VTP:prescale")
+dbLoadRecords("db/array-to-scalar-32.template","P=B_DAQ_HPS:VTP:rate:,INP=B_DAQ_HPS:VTP:rate")
+dbLoadRecords("db/array-to-scalar-32.template","P=B_DAQ_HPS:TSGTP:rate:,INP=B_DAQ_HPS:TSGTP:rate")
+dbLoadRecords("db/array-to-scalar-32.template","P=B_DAQ_HPS:TSFP:rate:,INP=B_DAQ_HPS:TSFP:rate")
+
 cd ${TOP}/iocBoot/${IOC}
 
 iocInit
