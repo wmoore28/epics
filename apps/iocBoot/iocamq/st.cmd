@@ -56,6 +56,15 @@ cd ${TOP}/iocBoot/${IOC}
 
 iocInit
 
+epicsEnvSet("PREFIX","B_DAQ_HPS:VTP:prescale:")
+< trigbit-descriptions.cmd
+epicsEnvSet("PREFIX","B_DAQ_HPS:VTP:rate:")
+< trigbit-descriptions.cmd
+epicsEnvSet("PREFIX","B_DAQ_HPS:TSGTP:rate:")
+< trigbit-descriptions.cmd
+epicsEnvSet("PREFIX","B_DAQ_HPS:TSFP:rate:")
+< trigbit-descriptions.cmd
+
 #Need this to start responding to messages after all records are defined
 StartMQ()
 
