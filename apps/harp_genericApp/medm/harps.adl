@@ -1,14 +1,14 @@
 
 file {
-	name="/u/home/bruhwel/epics/app/harp_generic/medm/harps.adl"
-	version=020306
+	name="/usr/clas12/hps/v3.0.0/apps/harp_genericApp/medm/harps.adl"
+	version=030109
 }
 display {
 	object {
-		x=200
-		y=572
+		x=50
+		y=100
 		width=210
-		height=250
+		height=300
 	}
 	clr=14
 	bclr=4
@@ -90,9 +90,9 @@ display {
 "related display" {
 	object {
 		x=7
-		y=33
+		y=31
 		width=200
-		height=80
+		height=110
 	}
 	display[0] {
 		label="2c21 harp scan"
@@ -105,20 +105,25 @@ display {
 		args="motor_name=harp_tagger"
 	}
 	display[2] {
+		label="2H01 harp scan"
+		name="generic_harp.adl"
+		args="motor_name=harp_2H01"
+	}
+	display[3] {
 		label="2H02A harp scan"
 		name="generic_harp.adl"
 		args="motor_name=harp_2H02A"
 	}
-	clr=19
+	clr=14
 	bclr=60
 	visual="a column of buttons"
 }
 "related display" {
 	object {
 		x=5
-		y=146
+		y=177
 		width=200
-		height=80
+		height=110
 	}
 	display[0] {
 		label="2c21 harp expert"
@@ -131,10 +136,13 @@ display {
 		args="motor_name=harp_tagger"
 	}
 	display[2] {
-#		label="2h00 harp expert"
+		label="2H01 harp expert"
+		name="motor_expert.adl"
+		args="motor_name=harp_2H01"
+	}
+	display[3] {
 		label="2H02A harp expert"
 		name="motor_expert.adl"
-#		args="motor_name=harp_2H02A"
 		args="motor_name=harp_2H02A"
 	}
 	clr=14
@@ -144,7 +152,7 @@ display {
 text {
 	object {
 		x=13
-		y=7
+		y=9
 		width=188
 		height=22
 	}
@@ -157,7 +165,7 @@ text {
 text {
 	object {
 		x=10
-		y=121
+		y=156
 		width=188
 		height=22
 	}
