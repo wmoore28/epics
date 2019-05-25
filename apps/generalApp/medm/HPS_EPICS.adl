@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/medm/HPS_EPICS.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/HPS_EPICS.adl"
 	version=030109
 }
 display {
 	object {
-		x=12
-		y=51
+		x=10
+		y=36
 		width=240
 		height=835
 	}
@@ -778,8 +778,16 @@ text {
 		height=20
 	}
 	display[0] {
-		label="HPS Trigger"
+		label="HPS Trigger (OLD)"
 		name="hps_trigger_scalers.adl"
+	}
+	display[1] {
+		label="HPS Trigger Expert"
+		name="hps_trigger_expert.adl"
+	}
+	display[2] {
+		label="HPS Trigger Overview"
+		name="hps_trigger_overview.adl"
 	}
 	clr=14
 	bclr=50
