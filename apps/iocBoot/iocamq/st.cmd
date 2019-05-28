@@ -8,8 +8,7 @@ cd ${TOP}
 dbLoadDatabase "dbd/amq.dbd"
 amq_registerRecordDeviceDriver pdbbase
 
-#
-ConnectMQ("tcp://clon00:61616","clasrun.clasprod.scalers.fadc")
+ConnectMQ("tcp://clon00:61616","clasrun.clasprod.daq.HallB_DAQ")
 
 ## Load record instances
 
@@ -62,8 +61,8 @@ epicsEnvSet("PREFIX","B_DAQ_HPS:VTP:rate:")
 < trigbit-descriptions.cmd
 epicsEnvSet("PREFIX","B_DAQ_HPS:TSGTP:rate:")
 < trigbit-descriptions.cmd
-dbpf("B_DAQ_HPS:TSFP:rate:00.DESC","FCup")
-dbpf("B_DAQ_HPS:TSFP:rate:01.DESC","Pulser")
+dbpf("B_DAQ_HPS:TSFP:rate:00.DESC","Faraday Cup")
+dbpf("B_DAQ_HPS:TSFP:rate:01.DESC","N/A")
 
 #Need this to start responding to messages after all records are defined
 StartMQ()
