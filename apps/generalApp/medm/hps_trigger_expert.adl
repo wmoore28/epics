@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=193
-		y=139
-		width=802
-		height=480
+		x=945
+		y=96
+		width=640
+		height=525
 	}
 	clr=14
 	bclr=13
@@ -89,20 +89,31 @@ display {
 }
 rectangle {
 	object {
-		x=676
-		y=77
-		width=102
-		height=22
+		x=25
+		y=474
+		width=587
+		height=33
 	}
 	"basic attribute" {
-		clr=10
+		clr=11
 	}
 }
 rectangle {
 	object {
-		x=513
+		x=26
+		y=475
+		width=585
+		height=31
+	}
+	"basic attribute" {
+		clr=13
+	}
+}
+rectangle {
+	object {
+		x=514
 		y=77
-		width=162
+		width=102
 		height=22
 	}
 	"basic attribute" {
@@ -146,7 +157,7 @@ rectangle {
 	object {
 		x=24
 		y=11
-		width=754
+		width=592
 		height=31
 	}
 	"basic attribute" {
@@ -155,7 +166,7 @@ rectangle {
 }
 rectangle {
 	object {
-		x=677
+		x=515
 		y=78
 		width=100
 		height=20
@@ -179,7 +190,7 @@ composite {
 	object {
 		x=25
 		y=102
-		width=752
+		width=589
 		height=18
 	}
 	"composite name"=""
@@ -189,7 +200,7 @@ composite {
 	object {
 		x=25
 		y=123
-		width=752
+		width=589
 		height=18
 	}
 	"composite name"=""
@@ -199,7 +210,7 @@ composite {
 	object {
 		x=25
 		y=144
-		width=752
+		width=589
 		height=18
 	}
 	"composite name"=""
@@ -209,7 +220,7 @@ composite {
 	object {
 		x=25
 		y=165
-		width=752
+		width=589
 		height=18
 	}
 	"composite name"=""
@@ -219,7 +230,7 @@ composite {
 	object {
 		x=25
 		y=186
-		width=752
+		width=589
 		height=18
 	}
 	"composite name"=""
@@ -229,7 +240,7 @@ composite {
 	object {
 		x=25
 		y=207
-		width=752
+		width=589
 		height=18
 	}
 	"composite name"=""
@@ -239,7 +250,7 @@ composite {
 	object {
 		x=25
 		y=228
-		width=752
+		width=589
 		height=18
 	}
 	"composite name"=""
@@ -249,7 +260,7 @@ composite {
 	object {
 		x=25
 		y=249
-		width=752
+		width=589
 		height=18
 	}
 	"composite name"=""
@@ -259,7 +270,7 @@ composite {
 	object {
 		x=25
 		y=270
-		width=752
+		width=589
 		height=18
 	}
 	"composite name"=""
@@ -269,7 +280,7 @@ composite {
 	object {
 		x=25
 		y=291
-		width=752
+		width=589
 		height=18
 	}
 	"composite name"=""
@@ -279,7 +290,7 @@ composite {
 	object {
 		x=25
 		y=312
-		width=752
+		width=589
 		height=18
 	}
 	"composite name"=""
@@ -289,7 +300,7 @@ composite {
 	object {
 		x=25
 		y=333
-		width=752
+		width=589
 		height=18
 	}
 	"composite name"=""
@@ -299,7 +310,7 @@ composite {
 	object {
 		x=25
 		y=354
-		width=752
+		width=589
 		height=18
 	}
 	"composite name"=""
@@ -309,7 +320,7 @@ composite {
 	object {
 		x=25
 		y=375
-		width=752
+		width=589
 		height=18
 	}
 	"composite name"=""
@@ -319,7 +330,7 @@ composite {
 	object {
 		x=25
 		y=396
-		width=752
+		width=589
 		height=18
 	}
 	"composite name"=""
@@ -329,7 +340,7 @@ composite {
 	object {
 		x=25
 		y=417
-		width=752
+		width=589
 		height=18
 	}
 	"composite name"=""
@@ -339,7 +350,7 @@ composite {
 	object {
 		x=25
 		y=438
-		width=752
+		width=589
 		height=18
 	}
 	"composite name"=""
@@ -360,7 +371,7 @@ text {
 }
 text {
 	object {
-		x=677
+		x=515
 		y=81
 		width=100
 		height=16
@@ -385,17 +396,6 @@ rectangle {
 rectangle {
 	object {
 		x=351
-		y=78
-		width=160
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-}
-rectangle {
-	object {
-		x=514
 		y=78
 		width=160
 		height=20
@@ -434,7 +434,7 @@ rectangle {
 	object {
 		x=25
 		y=12
-		width=752
+		width=590
 		height=29
 	}
 	"basic attribute" {
@@ -443,9 +443,9 @@ rectangle {
 }
 text {
 	object {
-		x=171
+		x=200
 		y=19
-		width=491
+		width=200
 		height=28
 	}
 	"basic attribute" {
@@ -456,7 +456,7 @@ text {
 }
 "text update" {
 	object {
-		x=602
+		x=438
 		y=19
 		width=168
 		height=19
@@ -473,7 +473,7 @@ text {
 }
 text {
 	object {
-		x=582
+		x=420
 		y=53
 		width=134
 		height=20
@@ -486,7 +486,7 @@ text {
 }
 "text update" {
 	object {
-		x=697
+		x=535
 		y=51
 		width=80
 		height=18
@@ -551,16 +551,82 @@ text {
 		precDefault=2
 	}
 }
+"text update" {
+	object {
+		x=250
+		y=481
+		width=100
+		height=18
+	}
+	monitor {
+		chan="B_DAQ_HPS:TSFP:rate:00"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=505
+		y=481
+		width=100
+		height=18
+	}
+	monitor {
+		chan="B_DAQ_HPS:TSFP:rate:01"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
 text {
 	object {
-		x=515
-		y=81
-		width=158
-		height=16
+		x=8
+		y=482
+		width=134
+		height=20
 	}
 	"basic attribute" {
 		clr=0
 	}
-	textix="TS-FP"
+	textix="Front Panel:"
 	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=144
+		y=481
+		width=100
+		height=18
+	}
+	monitor {
+		chan="B_DAQ_HPS:TSFP:rate:00.DESC"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=398
+		y=481
+		width=100
+		height=18
+	}
+	monitor {
+		chan="B_DAQ_HPS:TSFP:rate:01.DESC"
+		clr=0
+		bclr=12
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+	}
 }

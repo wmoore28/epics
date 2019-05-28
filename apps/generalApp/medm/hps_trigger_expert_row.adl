@@ -5,9 +5,9 @@ file {
 }
 display {
 	object {
-		x=236
-		y=635
-		width=800
+		x=234
+		y=620
+		width=600
 		height=30
 	}
 	clr=14
@@ -139,27 +139,11 @@ display {
 	object {
 		x=490
 		y=1
-		width=160
-		height=18
-	}
-	monitor {
-		chan="$(P)TSFP:rate:$(I)"
-		clr=0
-		bclr=12
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=653
-		y=1
 		width=100
 		height=18
 	}
 	monitor {
-		chan="$(P)TSFP:rate:$(I)"
+		chan="$(P)VTP:prescale:$(I)"
 		clr=0
 		bclr=12
 	}
