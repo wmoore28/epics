@@ -51,6 +51,8 @@ dbLoadRecords("db/array-to-scalar-32.template","P=B_DAQ_HPS:VTP:rate:,INP=B_DAQ_
 dbLoadRecords("db/array-to-scalar-32.template","P=B_DAQ_HPS:TSGTP:rate:,INP=B_DAQ_HPS:TSGTP:rate")
 dbLoadRecords("db/array-to-scalar-32.template","P=B_DAQ_HPS:TSFP:rate:,INP=B_DAQ_HPS:TSFP:rate")
 
+dbLoadTemplate("db/hps-trigger-fractions.substitutions")
+
 cd ${TOP}/iocBoot/${IOC}
 
 iocInit
