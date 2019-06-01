@@ -34,12 +34,6 @@ ConnectMQ("tcp://clon00:61616","clasrun.clasprod.daq.HallB_DAQ")
 
 #dbLoadRecords("db/amqStringArray.db","P=B_DAQ:RAWMSG,K=RAWMSG,N=1000,TH=0,THH=0,HSV=NO_ALARM,HHSV=NO_ALARM")
 
-dbLoadRecords("db/amqDoubleArray.db","P=B_HW_HPS1_FADC_Sl10:c,K=HPS1_FADC250SLOT10,N=16,TH=0,THH=30,HSV=NO_ALARM,HHSV=MAJOR")
-dbLoadRecords("db/amqDoubleArray.db","P=B_HW_HPS2_FADC_Sl10:c,K=HPS2_FADC250SLOT10,N=16,TH=0,THH=30,HSV=NO_ALARM,HHSV=MAJOR")
-dbLoadRecords("db/array-to-scalar-16.template","P=B_HW_HPS1_FADC_,R=Sl10_Ch,S=:c,INP=B_HW_HPS1_FADC_Sl10:c")
-dbLoadRecords("db/array-to-scalar-16.template","P=B_HW_HPS2_FADC_,R=Sl10_Ch,S=:c,INP=B_HW_HPS2_FADC_Sl10:c")
-dbLoadRecords("db/hps-hodo-fadc-aliases.db")
-
 dbLoadRecords("db/amqIntArray.db",   "P=B_DAQ_HPS:VTP:prescale,K=hps1vtp_VTPHPS_PRESCALES,N=32,TH=10,THH=30,HSV=NO_ALARM,HHSV=NO_ALARM")
 dbLoadRecords("db/amqDoubleArray.db","P=B_DAQ_HPS:VTP:rate,K=hps1vtp_VTPHPS_TRIGGERBITS,N=32,TH=10,THH=30,HSV=NO_ALARM,HHSV=NO_ALARM")
 dbLoadRecords("db/amqDoubleArray.db","P=B_DAQ_HPS:TSGTP:rate,K=HPS11_TSGTPSLOT21,N=32,TH=10,THH=30,HSV=NO_ALARM,HHSV=NO_ALARM")
