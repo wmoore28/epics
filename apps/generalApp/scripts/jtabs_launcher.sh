@@ -7,9 +7,11 @@ host=hlbl00
 user=hbops
 
 echo "Running JTabs from $host..."
-read -p "Enter your username [$user]: " INPUT_STRING
-if [ "$INPUT_STRING" != "" ]; then
-	user=$INPUT_STRING
+if [ "$USER" != "hpsrun" ] && [ "$USER" != "clasrun" ]; then
+  read -p "Enter your username [$user]: " INPUT_STRING
+  if [ "$INPUT_STRING" != "" ]; then
+  	user=$INPUT_STRING
+  fi
 fi
 
 #ssh $host -l $user jtabs
