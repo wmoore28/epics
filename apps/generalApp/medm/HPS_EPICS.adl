@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=10
-		y=36
+		x=0
+		y=82
 		width=240
 		height=835
 	}
@@ -371,8 +371,13 @@ text {
 		name="cd $APP/generalApp/strip; StripTool &"
 	}
 	command[1] {
-		label="MyaViewer"
-		name="MyaViewer"
+		label="livePlot"
+		name="livePlot"
+		args="&"
+	}
+	command[2] {
+		label="myaPlot"
+		name="myaPlot"
 		args="&"
 	}
 	clr=14
@@ -949,16 +954,8 @@ text {
 		height=20
 	}
 	command[0] {
-		label="Take screenshot..."
-		name="xterm -title 'Take screenshot' -geometry 60x10+0+0 -e screenshot &"
-	}
-	command[1] {
-		label="Open screenshots folder"
-		name="nautilus ~hpsrun/screenshots &"
-	}
-	command[2] {
-		label="Screenshot --> Log Entry"
-		name="xterm -e $APP/generalApp/scripts/takeScreenshotMakeLogEntry.sh"
+		label="Screenshot + Logbook Entry"
+		name="logbookEntry.sh"
 	}
 	clr=14
 	bclr=50
@@ -1246,4 +1243,46 @@ text {
 		clr=14
 	}
 	textix="STATUS"
+}
+"related display" {
+	object {
+		x=42
+		y=178
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Overview"
+		name="scaler_hps_mod19.adl"
+	}
+	display[1] {
+		label="Asymmetry"
+		name="asym_ia.adl"
+	}
+	display[2] {
+		label="BPMs"
+		name="BPMs.adl"
+	}
+	display[3] {
+		label="BPM Alarm Settings"
+		name="bpm-alarms.adl"
+	}
+	display[4] {
+		label="Injector"
+		name="injector.adl"
+	}
+	display[5] {
+		label="SixtyHz"
+		name="sixtyHz_scaler.adl"
+	}
+	display[6] {
+		label="Waveform Writer"
+		name="wave2root.adl"
+	}
+	display[7] {
+		label="Overview (old)"
+		name="scaler_hps.adl"
+	}
+	clr=14
+	bclr=50
 }
