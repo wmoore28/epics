@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=0
-		y=82
+		x=10
+		y=65
 		width=240
 		height=835
 	}
@@ -509,20 +509,6 @@ text {
 	}
 	textix="Voltages"
 }
-"related display" {
-	object {
-		x=20
-		y=178
-		width=20
-		height=20
-	}
-	display[0] {
-		label="Beam Screens"
-		name="beam_screens.adl"
-	}
-	clr=14
-	bclr=50
-}
 text {
 	object {
 		x=70
@@ -970,7 +956,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Screenshots"
+	textix="Screenshots & Logbook Entry"
 }
 "shell command" {
 	object {
@@ -1246,14 +1232,14 @@ text {
 }
 "related display" {
 	object {
-		x=42
+		x=20
 		y=178
 		width=20
 		height=20
 	}
 	display[0] {
 		label="Overview"
-		name="scaler_hps_mod19.adl"
+		name="scaler_hps.adl"
 	}
 	display[1] {
 		label="Asymmetry"
@@ -1278,10 +1264,6 @@ text {
 	display[6] {
 		label="Waveform Writer"
 		name="wave2root.adl"
-	}
-	display[7] {
-		label="Overview (old)"
-		name="scaler_hps.adl"
 	}
 	clr=14
 	bclr=50
