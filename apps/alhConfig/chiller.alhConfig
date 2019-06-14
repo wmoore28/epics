@@ -4,7 +4,7 @@
 
 GROUP NULL CHILLER
 $GUIDANCE
-	Problem with ECal Chiller
+	Problem with ECAL Chiller.  Contact ECAL expert.
 $END
 
 $SEVRCOMMAND UP_MAJOR /home/hpsrun/scripts/notify_expert_auto.pl ecal_expert ECAL chiller OUT OF SPEC
@@ -19,5 +19,13 @@ $ALARMCOUNTFILTER 2 30
 
 CHANNEL CHILLER HPS_ECAL:CHILLER:TEMP.STAT
 $COMMAND medm -x -attach -cmap -macro "sig=HPS_ECAL:CHILLER:TEMP.STAT" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 2 30
+
+CHANNEL CHILLER HPSECAL:INTLK1:status
+$COMMAND medm -x -attach -cmap -macro "sig=HPSECAL:INTLK1:status" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 2 30
+
+CHANNEL CHILLER HPSECAL:INTLK2:status
+$COMMAND medm -x -attach -cmap -macro "sig=HPSECAL:INTLK2:status" aiaocalc_alarm.adl >> /dev/null
 $ALARMCOUNTFILTER 2 30
 
