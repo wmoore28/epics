@@ -1,71 +1,71 @@
 GROUP    NULL                         VACUUM                      
-CHANNEL  VACUUM                       VCG2C21Tr               
-$COMMAND  medm -x -attach -cmap -macro "sig=VCG2C21Tr" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL  VACUUM                       hallb_VCG2C21Tr               
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_VCG2C21Tr" aiaocalc_alarm.adl >> /dev/null 
 $ALARMCOUNTFILTER  99 60
 $GUIDANCE
                 The cold cathode gauge at the moller region is out of spec.  
                 This means the vacuum between the shield wall and the tagger
-                magnet has degraded.  Use the MYA Viewer and monitor the VCG2C21Tr
+                magnet has degraded.  Use the MYA Viewer and monitor the hallb_VCG2C21Tr
                 to check for trends in the past few hours.  If the vacuum is degrading (values increasing on 
                 the plots) then contact engineering on call.   Also contact MCC and inform them about the
                 problem, they might want to shut off the beam and close some valves to isolate the problem.
                 If the vacuum spiked and recovered, continue taking
                 data.
 $END
-CHANNEL  VACUUM                       VCG2C21ATr
-$COMMAND  medm -x -attach -cmap -macro "sig=VCG2C21ATr" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL  VACUUM                       hallb_VCG2C21ATr
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_VCG2C21ATr" aiaocalc_alarm.adl >> /dev/null 
 $ALARMCOUNTFILTER  99 60
 $GUIDANCE
                 The cold cathode gauge at the moller region is out of spec.  
                 This means the vacuum between the shield wall and the tagger
-                magnet has degraded.  Use the MYA Viewer and monitor the VCG2C21ATr
+                magnet has degraded.  Use the MYA Viewer and monitor the hallb_VCG2C21ATr
                 to check for trends in the past few hours.  If the vacuum is degrading (values increasing on 
                 the plots) then contact engineering on call.   Also contact MCC and inform them about the
                 problem, they might want to shut off the beam and close some valves to isolate the problem.
                 If the vacuum spiked and recovered, continue taking
                 data.
 $END
-CHANNEL  VACUUM                       VCG2C24ATr
-$COMMAND  medm -x -attach -cmap -macro "sig=VCG2C24ATr" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL  VACUUM                       hallb_VCG2C24ATr
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_VCG2C24ATr" aiaocalc_alarm.adl >> /dev/null 
 $ALARMCOUNTFILTER  99 60
 $GUIDANCE
                 The tagger turbo speed is below operating range...it may have tripped off.
-                Use the MYA Viewer and monitor VCG2C24ATr
+                Use the MYA Viewer and monitor hallb_VCG2C24ATr
                 to check for trends in the past few hours.  If the vacuum is degrading (values increasing on 
                 the plots) then contact engineering on call.   Also contact MCC and inform them about the
                 problem, they might want to shut off the beam and close some valves to isolate the problem.
                 If the vacuum spiked and recovered, continue taking
                 data.
 $END
-CHANNEL  VACUUM                       VCG2H00ATr             
-$COMMAND  medm -x -attach -cmap -macro "sig=VCG2H00ATr" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL  VACUUM                       hallb_VCG2H00ATr             
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_VCG2H00ATr" aiaocalc_alarm.adl >> /dev/null 
 $ALARMCOUNTFILTER  99 60
 $GUIDANCE
                 The cold cathode gauge at 2H00 is out of spec.  This means the vacuum between the tagger magnet
-                and target has degraded. Use the MYA Viewer and monitor VCG2H00ATr
+                and target has degraded. Use the MYA Viewer and monitor hallb_VCG2H00ATr
                 to check for trends in the past few hours.  If the vacuum is degrading (values increasing on 
                 the plots) then contact engineering on call.   Also contact MCC and inform them about the
                 problem, they might want to shut off the beam and close some valves to isolate the problem.
                 If the vacuum spiked and recovered, continue taking
                 data.
 $END
-CHANNEL  VACUUM                       VCG2H01ATr              
-$COMMAND  medm -x -attach -cmap -macro "sig=VCG2H01ATr" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL  VACUUM                       hallb_VCG2H01ATr              
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_VCG2H01ATr" aiaocalc_alarm.adl >> /dev/null 
 $ALARMCOUNTFILTER  99 60
 $GUIDANCE
                 The cold cathode gauge at 2H01A is out of spec.  This means the vacuum between the tagger
-                and target has degraded. Use the MYA Viewer and monitor VCG2H01ATr 
+                and target has degraded. Use the MYA Viewer and monitor hallb_VCG2H01ATr 
                 to check for trends in the past few hours.  If the vacuum is degrading (values increasing on 
                 the plots) then contact engineering on call.   Also contact MCC and inform them about the
                 problem, they might want to shut off the beam and close some valves to isolate the problem.
                 If the vacuum spiked and recovered, continue taking
                 data.
 $END
-CHANNEL  VACUUM                       VCG2H02ATr             
-$COMMAND  medm -x -attach -cmap -macro "sig=VCG2H02ATr" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL  VACUUM                       hallb_VCG2H02ATr             
+$COMMAND  medm -x -attach -cmap -macro "sig=hallb_VCG2H02ATr" aiaocalc_alarm.adl >> /dev/null 
 $ALARMCOUNTFILTER  99 60
 $GUIDANCE
-                The cold cathode gauge at 2H02A is out of spec. Use the MYA Viewer and monitor VCG2H02ATr
+                The cold cathode gauge at 2H02A is out of spec. Use the MYA Viewer and monitor hallb_VCG2H02ATr
                 to check for trends in the past few hours.  If the vacuum is degrading (values increasing on 
                 the plots) then contact engineering on call.   Also contact MCC and inform them about the
                 problem, they might want to shut off the beam and close some valves to isolate the problem.
