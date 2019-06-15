@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=30
-		y=30
+		x=200
+		y=200
 		width=825
-		height=569
+		height=620
 	}
 	clr=14
 	bclr=13
@@ -89,6 +89,30 @@ display {
 }
 rectangle {
 	object {
+		x=461
+		y=65
+		width=325
+		height=40
+	}
+	"basic attribute" {
+		clr=9
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=205
+		y=65
+		width=252
+		height=40
+	}
+	"basic attribute" {
+		clr=9
+		fill="outline"
+	}
+}
+rectangle {
+	object {
 		x=12
 		y=8
 		width=800
@@ -101,7 +125,7 @@ rectangle {
 composite {
 	object {
 		x=12
-		y=86
+		y=105
 		width=800
 		height=30
 	}
@@ -111,7 +135,7 @@ composite {
 composite {
 	object {
 		x=12
-		y=120
+		y=139
 		width=800
 		height=30
 	}
@@ -121,7 +145,7 @@ composite {
 composite {
 	object {
 		x=12
-		y=154
+		y=173
 		width=800
 		height=30
 	}
@@ -131,7 +155,7 @@ composite {
 composite {
 	object {
 		x=12
-		y=188
+		y=207
 		width=800
 		height=30
 	}
@@ -141,7 +165,7 @@ composite {
 composite {
 	object {
 		x=89
-		y=260
+		y=318
 		width=642
 		height=30
 	}
@@ -151,7 +175,7 @@ composite {
 composite {
 	object {
 		x=89
-		y=296
+		y=354
 		width=642
 		height=30
 	}
@@ -161,7 +185,7 @@ composite {
 composite {
 	object {
 		x=89
-		y=332
+		y=390
 		width=642
 		height=30
 	}
@@ -171,7 +195,7 @@ composite {
 composite {
 	object {
 		x=89
-		y=369
+		y=427
 		width=642
 		height=30
 	}
@@ -181,7 +205,7 @@ composite {
 composite {
 	object {
 		x=89
-		y=404
+		y=462
 		width=642
 		height=30
 	}
@@ -191,7 +215,7 @@ composite {
 composite {
 	object {
 		x=89
-		y=439
+		y=497
 		width=642
 		height=30
 	}
@@ -201,7 +225,7 @@ composite {
 composite {
 	object {
 		x=89
-		y=473
+		y=531
 		width=642
 		height=30
 	}
@@ -211,7 +235,7 @@ composite {
 composite {
 	object {
 		x=89
-		y=507
+		y=565
 		width=642
 		height=30
 	}
@@ -232,25 +256,338 @@ text {
 }
 text {
 	object {
-		x=376
-		y=64
-		width=310
+		x=20
+		y=89
+		width=100
 		height=20
 	}
 	"basic attribute" {
 		clr=0
 	}
-	textix="Beam Current"
+	textix="Beam Currents"
+	align="horiz. centered"
 }
 text {
 	object {
-		x=372
-		y=238
-		width=310
+		x=100
+		y=301
+		width=80
 		height=20
 	}
 	"basic attribute" {
 		clr=0
 	}
-	textix="Beam Position"
+	textix="Beam Positions"
+}
+text {
+	object {
+		x=124
+		y=89
+		width=80
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Live"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=210
+		y=89
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="LOLO"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=267
+		y=89
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="LOW"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=331
+		y=89
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="HIGH"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=398
+		y=89
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="HIHI"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=470
+		y=89
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="LLSV"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=545
+		y=89
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="LSV"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=631
+		y=89
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="HSV"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=717
+		y=89
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="HHSV"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=579
+		y=68
+		width=80
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Severities"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=295
+		y=68
+		width=80
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Limits"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=198
+		y=301
+		width=80
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Live"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=283
+		y=286
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Minimum"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=283
+		y=301
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Current"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=347
+		y=286
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Mean"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=347
+		y=301
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Position"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=410
+		y=286
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Minor"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=410
+		y=301
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Delta"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=473
+		y=286
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Major"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=473
+		y=301
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Delta"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=627
+		y=286
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Major"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=627
+		y=301
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Severity"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=543
+		y=286
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Minor"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=543
+		y=301
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Severity"
+	align="horiz. centered"
 }
