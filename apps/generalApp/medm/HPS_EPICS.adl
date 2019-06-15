@@ -6,7 +6,7 @@ file {
 display {
 	object {
 		x=10
-		y=65
+		y=80
 		width=240
 		height=835
 	}
@@ -169,10 +169,6 @@ rectangle {
 	display[0] {
 		label="IOC Health"
 		name="ioc_hps_health.adl"
-	}
-	display[1] {
-		label="IOC Health (SVT DAQ)"
-		name="ioc_hps_svt_health.adl"
 	}
 	clr=14
 	bclr=50
@@ -769,16 +765,8 @@ text {
 		height=20
 	}
 	display[0] {
-		label="HPS Trigger (OLD)"
-		name="hps_trigger_scalers.adl"
-	}
-	display[1] {
-		label="HPS Trigger Expert"
+		label="HPS Trigger"
 		name="hps_trigger_expert.adl"
-	}
-	display[2] {
-		label="HPS Trigger Overview"
-		name="hps_trigger_overview.adl"
 	}
 	clr=14
 	bclr=50
