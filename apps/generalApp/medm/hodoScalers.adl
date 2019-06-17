@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=363
-		y=410
+		x=338
+		y=687
 		width=592
 		height=370
 	}
@@ -181,4 +181,46 @@ text {
 		clr=0
 	}
 	textix="Hodoscope Scalers"
+}
+"text update" {
+	object {
+		x=437
+		y=15
+		width=130
+		height=22
+	}
+	monitor {
+		chan="iocchicane:TOD"
+		clr=5
+		bclr=14
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=25
+		y=16
+		width=30
+		height=18
+	}
+	monitor {
+		chan="IPM2C21A"
+		clr=5
+		bclr=14
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=62
+		y=17
+		width=32
+		height=19
+	}
+	"basic attribute" {
+		clr=5
+	}
+	textix="nA"
 }

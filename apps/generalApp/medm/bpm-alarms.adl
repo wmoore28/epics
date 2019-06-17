@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=200
-		y=200
+		x=195
+		y=178
 		width=825
-		height=620
+		height=700
 	}
 	clr=14
 	bclr=13
@@ -590,4 +590,24 @@ text {
 	}
 	textix="Severity"
 	align="horiz. centered"
+}
+composite {
+	object {
+		x=89
+		y=599
+		width=642
+		height=30
+	}
+	"composite name"=""
+	"composite file"="alarm-deltas.adl;L=2H02_X,P=hallb_IPM2H02_XPOS"
+}
+composite {
+	object {
+		x=89
+		y=633
+		width=642
+		height=30
+	}
+	"composite name"=""
+	"composite file"="alarm-deltas.adl;L=2H02_Y,P=hallb_IPM2H02_YPOS"
 }
