@@ -21,7 +21,7 @@ record(calc, "hps_collimator_at_c") {
 record(calc, "hps_collimator_at_d") {
 	field(INPA, "hps_collimator.RBV")
 	field(SCAN, ".2 second")
-	field(CALC, "ABS(A-6.212)<0.01?1:0")
+	field(CALC, "ABS(A-6.312)<0.01?1:0")
 }
 record(calc, "hps_collimator_at_e") {
 	field(INPA, "hps_collimator.RBV")
