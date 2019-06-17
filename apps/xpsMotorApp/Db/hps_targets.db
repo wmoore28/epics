@@ -32,7 +32,8 @@ record(calc, "$(pref)hps:target_at_home") {
 }
 record(ao,"$(pref)hps:target:a"){
   field(DTYP,"Soft Channel")
-  field(VAL,"14.8455")
+#field(VAL,"14.8455")
+  field(VAL,"20.264")
   field(PINI, "YES")
   field(SCAN, "Passive")
   field(PREC, "3")
@@ -54,7 +55,8 @@ record(calc, "$(pref)hps:target_at_a") {
 }
 record(ao,"$(pref)hps:target:b"){
   field(DTYP,"Soft Channel")
-  field(VAL,"24.764")
+#field(VAL,"24.764")
+  field(VAL,"30.264")
   field(PINI, "YES")
   field(SCAN, "Passive")
   field(PREC, "3")
