@@ -474,7 +474,7 @@ double* GetTopPos(double stage)
 {
   double *top_pos = new double[2];
   //top_pos[0]  = -0.391*stage + 7.472; // dtstance of Top Si. from the beam;
-  top_pos[0]  = -0.4059*stage + 8.6242; // dtstance of Top Si. from the beam;
+  top_pos[0]  = -0.4509*stage + 8.6242; // dtstance of Top Si. from the beam;
 
   //top_pos[1] = -0.482*stage + 1.305; // distance of the top horizontal wire from the beam
   top_pos[1] = -0.4816*stage + 1.0516; // distance of the top horizontal wire from the beam, These are Revised numbers
