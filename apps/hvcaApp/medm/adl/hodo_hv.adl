@@ -6,9 +6,9 @@ file {
 display {
 	object {
 		x=10
-		y=15
+		y=16
 		width=690
-		height=112
+		height=130
 	}
 	clr=14
 	bclr=4
@@ -101,7 +101,7 @@ rectangle {
 text {
 	object {
 		x=16
-		y=53
+		y=69
 		width=105
 		height=19
 	}
@@ -115,7 +115,7 @@ text {
 "message button" {
 	object {
 		x=142
-		y=50
+		y=66
 		width=29
 		height=19
 	}
@@ -131,7 +131,7 @@ text {
 oval {
 	object {
 		x=177
-		y=53
+		y=69
 		width=15
 		height=13
 	}
@@ -148,7 +148,7 @@ oval {
 "message button" {
 	object {
 		x=198
-		y=50
+		y=66
 		width=29
 		height=19
 	}
@@ -164,7 +164,7 @@ oval {
 "text update" {
 	object {
 		x=399
-		y=50
+		y=66
 		width=81
 		height=19
 	}
@@ -181,7 +181,7 @@ oval {
 "text update" {
 	object {
 		x=491
-		y=50
+		y=66
 		width=81
 		height=19
 	}
@@ -198,7 +198,7 @@ oval {
 "text entry" {
 	object {
 		x=582
-		y=50
+		y=66
 		width=81
 		height=19
 	}
@@ -214,7 +214,7 @@ oval {
 "text update" {
 	object {
 		x=308
-		y=50
+		y=66
 		width=81
 		height=19
 	}
@@ -231,7 +231,7 @@ oval {
 "text update" {
 	object {
 		x=239
-		y=50
+		y=66
 		width=62
 		height=19
 	}
@@ -248,7 +248,7 @@ oval {
 text {
 	object {
 		x=16
-		y=80
+		y=96
 		width=105
 		height=19
 	}
@@ -262,7 +262,7 @@ text {
 "message button" {
 	object {
 		x=142
-		y=76
+		y=92
 		width=29
 		height=19
 	}
@@ -278,7 +278,7 @@ text {
 oval {
 	object {
 		x=177
-		y=80
+		y=96
 		width=15
 		height=13
 	}
@@ -295,7 +295,7 @@ oval {
 "message button" {
 	object {
 		x=198
-		y=76
+		y=92
 		width=29
 		height=19
 	}
@@ -311,7 +311,7 @@ oval {
 "text update" {
 	object {
 		x=399
-		y=76
+		y=92
 		width=81
 		height=19
 	}
@@ -328,7 +328,7 @@ oval {
 "text update" {
 	object {
 		x=491
-		y=76
+		y=92
 		width=81
 		height=19
 	}
@@ -345,7 +345,7 @@ oval {
 "text entry" {
 	object {
 		x=582
-		y=76
+		y=92
 		width=81
 		height=19
 	}
@@ -361,7 +361,7 @@ oval {
 "text update" {
 	object {
 		x=308
-		y=76
+		y=92
 		width=81
 		height=19
 	}
@@ -378,7 +378,7 @@ oval {
 "text update" {
 	object {
 		x=239
-		y=76
+		y=92
 		width=62
 		height=19
 	}
@@ -403,4 +403,56 @@ text {
 		clr=0
 	}
 	textix="HPS Hodoscope High Voltage"
+}
+text {
+	object {
+		x=238
+		y=50
+		width=66
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Status"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=311
+		y=50
+		width=66
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Current"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=405
+		y=50
+		width=66
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Voltage"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=544
+		y=50
+		width=66
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Demand Voltage"
+	align="horiz. centered"
 }
