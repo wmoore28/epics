@@ -473,17 +473,22 @@ TH1D *Graph2Hist(TGraph * gr)
 double* GetTopPos(double stage)
 {
   double *top_pos = new double[2];
-  top_pos[0]  = -0.391*stage + 7.472; // dtstance of Top Si. from the beam;
+  //top_pos[0]  = -0.391*stage + 7.472; // dtstance of Top Si. from the beam;
+  top_pos[0]  = -0.4059*stage + 8.6242; // dtstance of Top Si. from the beam;
+
   //top_pos[1] = -0.482*stage + 1.305; // distance of the top horizontal wire from the beam
-  top_pos[1] = -0.482*stage + 1.218; // distance of the top horizontal wire from the beam, These are Revised numbers
+  top_pos[1] = -0.4816*stage + 1.0516; // distance of the top horizontal wire from the beam, These are Revised numbers
   return top_pos;
 }
 
 double* GetBotPos(double stage)
 {
   double *bot_pos = new double[2];
-  bot_pos[0]  = +0.363*stage - 6.815; // dtstance of Top Si. from the beam;
-  bot_pos[1] = +0.463*stage - 0.684; // distance of the top horizontal wire from the beam
+  //bot_pos[0]  = +0.363*stage - 6.815; // dtstance of Top Si. from the beam;
+  bot_pos[0]  = +0.4227*stage - 8.215; // dtstance of Top Si. from the beam;
+
+  //  bot_pos[1] = +0.463*stage - 0.684; // distance of the top horizontal wire from the beam
+  bot_pos[1] = +0.4648*stage - 1.073; // distance of the top horizontal wire from the beam
   return bot_pos;
 }
 
