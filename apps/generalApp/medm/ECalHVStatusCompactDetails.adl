@@ -4611,7 +4611,7 @@ oval {
 	"dynamic attribute" {
 		clr="discrete"
 		vis="if not zero"
-		chan="HPSECALLV:pw1mon"
+		chan="B_DET_HPS_HV_HodoTop:stat"
 	}
 }
 oval {
@@ -4628,7 +4628,7 @@ oval {
 	"dynamic attribute" {
 		clr="discrete"
 		vis="if not zero"
-		chan="HPSECALLV:pw2mon"
+		chan="B_DET_HPS_HV_HodoBottom:stat"
 	}
 }
 oval {
@@ -4662,6 +4662,6 @@ oval {
 	"dynamic attribute" {
 		clr="discrete"
 		vis="if zero"
-		chan="B_DET_HPS_HV_HodoBottom:vmon"
+		chan="B_DET_HPS_HV_HodoBottom:stat"
 	}
 }
