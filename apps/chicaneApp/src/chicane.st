@@ -41,7 +41,7 @@ float energyB;   assign energyB to "MBSY2C_energy";
 float iSetPS;   assign iSetPS  to "PSPECISET";  monitor iSetPS;
 float iMonPS;   assign iMonPS  to "PSPECIRBCK"; monitor iMonPS;
 float iSetMT;   assign iSetMT  to "MTSETI";     monitor iSetMT;
-float iMonMT;   assign iMonMT  to "MTIRBCK";    monitor iMonMT;
+float iMonMT;   assign iMonMT  to "MTDACRBCK";  monitor iMonMT;
 short powerMT;  assign powerMT to "MTPSONSET";  monitor powerMT;
 short powerPS;  assign powerPS to "PSPECC.B0";  monitor powerPS;
 

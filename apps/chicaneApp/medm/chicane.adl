@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/chicaneApp/medm/./chicane2.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/chicaneApp/medm/chicane.adl"
 	version=030109
 }
 display {
@@ -186,7 +186,7 @@ bar {
 		height=14
 	}
 	monitor {
-		chan="MTIRBCK"
+		chan="MTDACRBCK"
 		clr=0
 		bclr=12
 	}
