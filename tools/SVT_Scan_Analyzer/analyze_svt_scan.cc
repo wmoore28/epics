@@ -191,20 +191,20 @@ int main(int argc, char **argv)
   if( n_peaks2 == 2 )
     {
       if( mean_vals[0] < mean_vals[1] )
-	{
-	  stage1_[2] = mean_vals[0];
-	  stage2_[2] = mean_vals[1];
-	  stage1_truncated_[2] = mean_vals_truncated[0];
-	  stage2_truncated_[2] = mean_vals_truncated[1];
-	}
+    {
+      stage1_[2] = mean_vals[0];
+      stage2_[2] = mean_vals[1];
+      stage1_truncated_[2] = mean_vals_truncated[0];
+      stage2_truncated_[2] = mean_vals_truncated[1];
+    }
       else
-	{
-	  stage1_[2] = mean_vals[1];
-	  stage2_[2] = mean_vals[0];
-	  stage1_truncated_[2] = mean_vals_truncated[1];
-	  stage2_truncated_[2] = mean_vals_truncated[0];
+    {
+      stage1_[2] = mean_vals[1];
+      stage2_[2] = mean_vals[0];
+      stage1_truncated_[2] = mean_vals_truncated[1];
+      stage2_truncated_[2] = mean_vals_truncated[0];
 
-	}
+    }
     }
 
   delete mean_vals;
@@ -250,19 +250,19 @@ int main(int argc, char **argv)
   if( n_peaks3 == 2 )
     {
       if( mean_vals[0] < mean_vals[1] )
-	{
-	  stage1_[3] = mean_vals[0];
-	  stage2_[3] = mean_vals[1];
-	  stage1_truncated_[3] = mean_vals_truncated[0];
-	  stage2_truncated_[3] = mean_vals_truncated[1];
-	}
+    {
+      stage1_[3] = mean_vals[0];
+      stage2_[3] = mean_vals[1];
+      stage1_truncated_[3] = mean_vals_truncated[0];
+      stage2_truncated_[3] = mean_vals_truncated[1];
+    }
       else
-	{
-	  stage1_[3] = mean_vals[1];
-	  stage2_[3] = mean_vals[0];
-	  stage1_truncated_[3] = mean_vals_truncated[1];
-	  stage2_truncated_[3] = mean_vals_truncated[0];
-	}
+    {
+      stage1_[3] = mean_vals[1];
+      stage2_[3] = mean_vals[0];
+      stage1_truncated_[3] = mean_vals_truncated[1];
+      stage2_truncated_[3] = mean_vals_truncated[0];
+    }
     }
   //=======================================================================================================================
   
@@ -279,23 +279,23 @@ int main(int argc, char **argv)
       SVTwirePosition svt_wire_pos(file_name);
 
       if( top_scan )
-	{
-	  positions_ = GetTopPos(stage1_[2]);
-	  positions2_ = GetTopPos(stage2_[2]);
-	  positions_truncated_ = GetTopPos(stage1_truncated_[2]);
-	  positions2_truncated_ = GetTopPos(stage2_truncated_[2]);
-	  sigma_[2] = 0.482*sigma_[2];
-	  sigma_truncated_[2] = 0.482*sigma_truncated_[2];
-	}
+    {
+      positions_ = GetTopPos(stage1_[2]);
+      positions2_ = GetTopPos(stage2_[2]);
+      positions_truncated_ = GetTopPos(stage1_truncated_[2]);
+      positions2_truncated_ = GetTopPos(stage2_truncated_[2]);
+      sigma_[2] = 0.482*sigma_[2];
+      sigma_truncated_[2] = 0.482*sigma_truncated_[2];
+    }
       else if( bot_scan)
-	{
-	  positions_ = GetBotPos(stage1_[2]);
-	  positions2_ = GetBotPos(stage2_[2]);
-	  positions_truncated_ = GetBotPos(stage1_truncated_[2]);
-	  positions2_truncated_ = GetBotPos(stage2_truncated_[2]);
-	  sigma_[2] = 0.463*sigma_[2];
-	  sigma_truncated_[2] = 0.463*sigma_truncated_[2];
-	}
+    {
+      positions_ = GetBotPos(stage1_[2]);
+      positions2_ = GetBotPos(stage2_[2]);
+      positions_truncated_ = GetBotPos(stage1_truncated_[2]);
+      positions2_truncated_ = GetBotPos(stage2_truncated_[2]);
+      sigma_[2] = 0.463*sigma_[2];
+      sigma_truncated_[2] = 0.463*sigma_truncated_[2];
+    }
       sigma_[2] = sigma_[2]/Arnes_Corr(sigma_[2], wd);
       sigma_truncated_[2] = sigma_truncated_[2]/Arnes_Corr(sigma_truncated_[2], wd);
       si_pos_[2] = positions_[0];
@@ -340,23 +340,23 @@ int main(int argc, char **argv)
       SVTwirePosition svt_wire_pos(file_name);
 
       if( top_scan )
-	{
-	  positions_ = GetTopPos(stage1_[3]);
-	  positions2_ = GetTopPos(stage2_[3]);
-	  positions_truncated_ = GetTopPos(stage1_truncated_[3]);
-	  positions2_truncated_ = GetTopPos(stage2_truncated_[3]);
-	  sigma_[3] = 0.482*sigma_[3];
-	  sigma_truncated_[3] = 0.482*sigma_truncated_[3];
-	}
+    {
+      positions_ = GetTopPos(stage1_[3]);
+      positions2_ = GetTopPos(stage2_[3]);
+      positions_truncated_ = GetTopPos(stage1_truncated_[3]);
+      positions2_truncated_ = GetTopPos(stage2_truncated_[3]);
+      sigma_[3] = 0.482*sigma_[3];
+      sigma_truncated_[3] = 0.482*sigma_truncated_[3];
+    }
       else if( bot_scan)
-	{
-	  positions_ = GetBotPos(stage1_[3]);
-	  positions2_ = GetBotPos(stage2_[3]);
-	  positions_truncated_ = GetBotPos(stage1_truncated_[3]);
-	  positions2_truncated_ = GetBotPos(stage2_truncated_[3]);
-	  sigma_[3] = 0.463*sigma_[3];
-	  sigma_truncated_[3] = 0.463*sigma_truncated_[3];
-	}
+    {
+      positions_ = GetBotPos(stage1_[3]);
+      positions2_ = GetBotPos(stage2_[3]);
+      positions_truncated_ = GetBotPos(stage1_truncated_[3]);
+      positions2_truncated_ = GetBotPos(stage2_truncated_[3]);
+      sigma_[3] = 0.463*sigma_[3];
+      sigma_truncated_[3] = 0.463*sigma_truncated_[3];
+    }
       sigma_[3] = sigma_[3]/Arnes_Corr(sigma_[3], wd);
       sigma_truncated_[3] = sigma_truncated_[3]/Arnes_Corr(sigma_truncated_[3], wd);
       si_pos_[3] = positions_[0];
@@ -389,20 +389,20 @@ int main(int argc, char **argv)
       lat1->DrawLatex(0.1, 0.06, Form("%s_beam_#sigma_{Y} = %1.4f mm", which_scan.c_str(), sigma_truncated_[3]));
 
       if( make_log )
-	{
-	  system(Form("caput HPS_SVT:SCAN:x_offset %1.4f", beam_x));
-	  system(Form("caput HPS_SVT:SCAN:y_offset %1.4f", horiz_wire_pos_[3]));
-	  system(Form("caput HPS_SVT:SCAN:x_offset_locfit %1.4f", beam_x_truncated));
-	  system(Form("caput HPS_SVT:SCAN:y_offset_locfit %1.4f", horiz_wire_pos_truncated_[3]));
-	  if( n_peaks3 == 2 )
-	    {
-	      system(Form("caput HPS_SVT:SCAN:sigma_y %1.4f", sigma_truncated_[3]));
-	    }
-	  else if( n_peaks2 == 2 )
-	    {
-	      system(Form("caput HPS_SVT:SCAN:sigma_y %1.4f", sigma_truncated_[2]));
-	    }
-	}
+    {
+      system(Form("caput HPS_SVT:SCAN:x_offset %1.4f", beam_x));
+      system(Form("caput HPS_SVT:SCAN:y_offset %1.4f", horiz_wire_pos_[3]));
+      system(Form("caput HPS_SVT:SCAN:x_offset_locfit %1.4f", beam_x_truncated));
+      system(Form("caput HPS_SVT:SCAN:y_offset_locfit %1.4f", horiz_wire_pos_truncated_[3]));
+      if( n_peaks3 == 2 )
+        {
+          system(Form("caput HPS_SVT:SCAN:sigma_y %1.4f", sigma_truncated_[3]));
+        }
+      else if( n_peaks2 == 2 )
+        {
+          system(Form("caput HPS_SVT:SCAN:sigma_y %1.4f", sigma_truncated_[2]));
+        }
+    }
     }
   
   string img_path = Form("/home/hpsrun/screenshots/Analyze_%s.gif", file_name.c_str());
@@ -412,10 +412,10 @@ int main(int argc, char **argv)
     {
       c2->Print(Form("%s", img_path.c_str()));
       if( n_peaks2 == 2 || n_peaks3 == 2 )
-	{
-	  system(Form("/site/ace/certified/apps/bin/logentry -l HBLOG -t \"Analyse of %s \" -a %s ", file_name.c_str(), img_path.c_str()));
-	  //system(Form("/site/ace/certified/apps/bin/logentry -l HBLOG -t \"Analyse of %s \" -a %s ", file_name.c_str(), img_path.c_str()));
-	}
+    {
+      system(Form("/site/ace/certified/apps/bin/logentry -l HBLOG -t \"Analyse of %s \" -a %s ", file_name.c_str(), img_path.c_str()));
+      //system(Form("/site/ace/certified/apps/bin/logentry -l HBLOG -t \"Analyse of %s \" -a %s ", file_name.c_str(), img_path.c_str()));
+    }
     }
   app1->Run();
 }
@@ -446,9 +446,9 @@ TH1D *Graph2Hist(TGraph * gr)
       //cout<<"x_varbins ["<<i<<"] = "<<x_varbins_[i]<<endl;
       
       if( x_varbins_[i] <= x_varbins_[i - 1] )
-	{
-	  cout<<"               ================= Hop ============== x is decreasing ====== "<<endl;
-	}
+    {
+      cout<<"               ================= Hop ============== x is decreasing ====== "<<endl;
+    }
     }
   std::cerr<<"aaaaaaaaa   "<<gr<<std::endl;
 
@@ -473,17 +473,22 @@ TH1D *Graph2Hist(TGraph * gr)
 double* GetTopPos(double stage)
 {
   double *top_pos = new double[2];
-  top_pos[0]  = -0.391*stage + 7.472; // dtstance of Top Si. from the beam;
+  //top_pos[0]  = -0.391*stage + 7.472; // dtstance of Top Si. from the beam;
+  top_pos[0]  = -0.4509*stage + 8.6242; // dtstance of Top Si. from the beam;
+
   //top_pos[1] = -0.482*stage + 1.305; // distance of the top horizontal wire from the beam
-  top_pos[1] = -0.482*stage + 1.218; // distance of the top horizontal wire from the beam, These are Revised numbers
+  top_pos[1] = -0.4816*stage + 1.0516; // distance of the top horizontal wire from the beam, These are Revised numbers
   return top_pos;
 }
 
 double* GetBotPos(double stage)
 {
   double *bot_pos = new double[2];
-  bot_pos[0]  = +0.363*stage - 6.815; // dtstance of Top Si. from the beam;
-  bot_pos[1] = +0.463*stage - 0.684; // distance of the top horizontal wire from the beam
+  //bot_pos[0]  = +0.363*stage - 6.815; // dtstance of Top Si. from the beam;
+  bot_pos[0]  = +0.4227*stage - 8.215; // dtstance of Top Si. from the beam;
+
+  //  bot_pos[1] = +0.463*stage - 0.684; // distance of the top horizontal wire from the beam
+  bot_pos[1] = +0.4648*stage - 1.073; // distance of the top horizontal wire from the beam
   return bot_pos;
 }
 
