@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=283
-		y=206
+		x=346
+		y=192
 		width=200
-		height=375
+		height=400
 	}
 	clr=14
 	bclr=4
@@ -396,4 +396,31 @@ text {
 	}
 	clr=30
 	bclr=22
+}
+"shell command" {
+	object {
+		x=159
+		y=359
+		width=20
+		height=20
+	}
+	command[0] {
+		label="IOCs"
+		name="alh"
+		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /usr/clas12/hps/DATA/alarms/ /usr/clas12/hps/prod/apps/alhConfig/iocs.alhConfig &"
+	}
+	clr=30
+	bclr=22
+}
+text {
+	object {
+		x=24
+		y=362
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="IOCs"
 }
