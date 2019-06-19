@@ -191,12 +191,12 @@ void Fitter::InitData(string fname) {
     } else if (file_name.find("2H02A") > 2 && file_name.find("2H02A") < 50) {
         fit_2H02A = true;
         harp_name = "harp_2H02A";
-        scale_Xaxis = 10.;
-        min_1st_hist = 30.;
-        max_1st_hist = 35.;
-        min_2nd_hist = 41.;
-        max_2nd_hist = 47.;
-        min_3rd_hist = 78.;
+        scale_Xaxis = 1.;
+        min_1st_hist = 33.;
+        max_1st_hist = 36.;
+        min_2nd_hist = 43.;
+        max_2nd_hist = 50.;
+        min_3rd_hist = 80.;
         max_3rd_hist = 85.;
     } else if (file_name.find("2H00A") > 2 && file_name.find("2H00A") < 50) {
         fit_2H00A = true;
@@ -807,9 +807,9 @@ bool Fitter::Search_three_peaks(TGraph *gr) {
 
     TH1D *h_gr;
 
-    if (fit_tagger) {
+    if (fit_tagger || fit_2H02A ) {
         h_gr = (TH1D*) Graph2Hist(gr, 1.); // 1 No need to convert to mm, motor position of 2c21 is already in mm
-    } else if (fit_2H02A || fit_2H00A || fit_2H01) {
+    } else if (fit_2H00A || fit_2H01) {
         h_gr = (TH1D*) Graph2Hist(gr, 10.); // 10 is because 2H02A has motor position in cm, it should be converted into mm
     }
 
@@ -1402,15 +1402,15 @@ bool Fitter::Fit_2H02A(TGraph *gr, string counter_name) {
     TCanvas *c1 = fEcanvas->GetCanvas();
     c1->Clear();
 
-    h_1st_peak = (TH1D*) (Graph2Hist(gr, 10. / sqrt2))->Clone("h_1st_peak"); // Here 10 is cm to mm conversion
+    h_1st_peak = (TH1D*) (Graph2Hist(gr, 1/ sqrt2))->Clone("h_1st_peak"); // Here 10 is cm to mm conversion
     h_1st_peak->SetTitle("; Wire Y [mm]");
     h_1st_peak->Sumw2();
 
-    h_2nd_peak = (TH1D*) (Graph2Hist(gr, 10. / sqrt2))->Clone("h_2nd_peak"); // Here 10 is cm to mm conversion
+    h_2nd_peak = (TH1D*) (Graph2Hist(gr, 1/ sqrt2))->Clone("h_2nd_peak"); // Here 10 is cm to mm conversion
     h_2nd_peak->SetTitle("; Wire X [mm]");
     h_2nd_peak->Sumw2();
 
-    h_3rd_peak = (TH1D*) (Graph2Hist(gr, 10.))->Clone("h_3rd_peak");
+    h_3rd_peak = (TH1D*) (Graph2Hist(gr, 1))->Clone("h_3rd_peak");
     ; // 1 No need to convert to mm, motor position of tagger harp is already in mm
     h_3rd_peak->SetTitle("; 45^{#circ} wire coordinate [mm]");
     h_3rd_peak->Sumw2();
