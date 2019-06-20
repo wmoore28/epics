@@ -1,22 +1,22 @@
 record(compress,"B_DAQ_HPS:VTP:avg") {
     field(INP,"B_DAQ_HPS:VTP:rate CPP")
     field(ALG,"N to 1 Average")
-    field(N,17)
+    field(N,20)
     field(FLNK,"B_DAQ_HPS:VTP:sum.PROC")
 }
 record(calc,"B_DAQ_HPS:VTP:sum") {
     field(INPA,"B_DAQ_HPS:VTP:avg")
-    field(CALC,"A*17")
+    field(CALC,"A*20")
 }
 record(compress,"B_DAQ_HPS:TSGTP:avg") {
     field(INP,"B_DAQ_HPS:TSGTP:rate CPP")
     field(ALG,"N to 1 Average")
-    field(N,17)
+    field(N,20)
     field(FLNK,"B_DAQ_HPS:TSGTP:sum.PROC")
 }
 record(calc,"B_DAQ_HPS:TSGTP:sum") {
     field(INPA,"B_DAQ_HPS:TSGTP:avg")
-    field(CALC,"A*17")
+    field(CALC,"A*20")
 }
 record(calc,"B_DAQ_HPS:TSGTP:frac:$(N)") {
     field(INPA,"B_DAQ_HPS:TSGTP:rate:$(N)")
