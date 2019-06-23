@@ -10,11 +10,11 @@ Red: Faraday cup does not see beam.
 Alarm will sound on transitions between states.
 $END
 
-CHANNEL TRIGGER HPSTRIGSC_LIVETIME
-$COMMAND  medm -x -attach -cmap -macro "sig=HPSTRIGSC_LIVETIME" aiaocalc_alarm.adl >> /dev/null 
+CHANNEL TRIGGER B_DAQ_HPS:TS:livetime 
+$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:TS:livetime" aiaocalc_alarm.adl >> /dev/null 
 $ALARMCOUNTFILTER -1 10
 $GUIDANCE
 DAQ livetime out of normal range.
 Ignore this alarm during DAQ state transitions.
-If livetime drops to 0 during a run, end the run; a DAQ teardown and ROC reboots may be necessary.
+If livetime drops very low during a run, end the run; a DAQ teardown and ROC reboots may be necessary.
 $END
