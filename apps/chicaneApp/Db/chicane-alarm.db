@@ -1,10 +1,23 @@
 
-record(calc,"$(P):access:alarm") {
+record(calc,"$(P):MT:access:alarm") {
     field(SCAN,"2 second")
     field(INPA,"PLC_HLB")
     field(INPB,"HPS:LS450_1:FIELD")
-    field(INPC,"HPS:LS450_2:FIELD")
-    field(CALC,"A<5 && (ABS(B)>200 || ABS(C)>200)")
+    field(INPC,"MTDACRBCK")
+    field(CALC,"A<5&&(ABS(B)>200||ABS(C)>200)")
+}
+record(calc,"$(P):PSPEC:access:alarm") {
+    field(SCAN,"2 second")
+    field(INPA,"PLC_HLB")
+    field(INPB,"HPS:LS450_2:FIELD")
+    field(INPC,"PSPECIRBCK")
+    field(CALC,"A<5&&(ABS(B)>200||ABS(C)>200)")
+}
+record(calc,"$(P):access:alarm") {
+    field(SCAN,"2 second")
+    field(INPA,"$(P):MT:access:alarm")
+    field(INPB,"$(P):PSPEC:access:alarm")
+    field(CALC,"A>0.5 || B>0.5")
     field(HIGH,"1")
     field(HSV,"MAJOR")
 }
