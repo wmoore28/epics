@@ -19,6 +19,7 @@ float  tHoldMax; assign tHoldMax to "{P}:tHoldMax";
 float  iDeltaPS;   assign iDeltaPS   to "{P}:iDeltaPS"; monitor iDeltaPS;
 float  iDeltaMT;   assign iDeltaMT   to "{P}:iDeltaMT"; monitor iDeltaMT;
 
+string stmp;
 string msg;      assign msg      to "{P}:msg";
 
 float  iCalcPS;  assign iCalcPS  to "{P}:iCalcPS";
@@ -134,7 +135,13 @@ ss seqChicane {
         } state rampOff
 
         when (onBtn && hallAccessState<5) {
-            sprintf(msg,"Beam Permit required for Energizing Chicane");
+            sprintf(stmp,msg);
+            sprintf(msg,"Beam Permit Required!");
+            pvPut(msg);
+            onBtn = 0;
+            pvPut(onBtn);
+            epicsThreadSleep(5);
+            sprintf(msg,stmp);
             pvPut(msg);
         } state idle
 
