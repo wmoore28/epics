@@ -6,6 +6,8 @@ program seqChicane ("P=a")
 option -c;  // donot wait on pv connections
 option -r;  // donot allow multiple instances
 
+short hallAccessState; assign hallAccessState to "PLC_HLB";
+
 short  onBtn;   assign onBtn   to "{P}:start";  monitor onBtn;
 short  offBtn;  assign offBtn  to "{P}:stop";   monitor offBtn;
 short  calcBtn; assign calcBtn to "{P}:calc";   monitor calcBtn;
@@ -119,6 +121,7 @@ ss seqChicane {
         option -e; // execute entry even if previous state was the same
 
         entry {
+            pvGet(hallAccessState);
             //pvGet(iSetPS);
             //pvGet(iSetMT);
         }
@@ -129,6 +132,11 @@ ss seqChicane {
             offBtn = 0;
             pvPut(offBtn);
         } state rampOff
+
+        when (onBtn && hallAccessState<5) {
+            sprintf(msg,"Beam Permit required for Energizing Chicane");
+            pvPut(msg);
+        } state idle
 
         when (onBtn) {
             onBtn = 0;

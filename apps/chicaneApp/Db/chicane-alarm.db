@@ -1,0 +1,11 @@
+
+record(calc,"$(P):access:alarm") {
+    field(SCAN,"2 second")
+    field(INPA,"PLC_HLB")
+    field(INPB,"HPS:LS450_1:FIELD")
+    field(INPC,"HPS:LS450_2:FIELD")
+    field(CALC,"A<5 && (ABS(B)>200 || ABS(C)>200)")
+    field(HIGH,"1")
+    field(HSV,"MAJOR")
+}
+
