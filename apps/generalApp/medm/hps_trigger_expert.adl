@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=925
-		y=55
+		x=220
+		y=33
 		width=736
 		height=620
 	}
@@ -85,6 +85,18 @@ display {
 		3cb420,
 		289315,
 		1a7309,
+	}
+}
+rectangle {
+	object {
+		x=25
+		y=46
+		width=372
+		height=26
+	}
+	"basic attribute" {
+		clr=9
+		fill="outline"
 	}
 }
 rectangle {
@@ -504,22 +516,22 @@ text {
 }
 text {
 	object {
-		x=15
-		y=52
+		x=23
+		y=53
 		width=134
 		height=20
 	}
 	"basic attribute" {
 		clr=0
 	}
-	textix="Beam Current (nA):"
+	textix="Beam Currents (nA)"
 	align="horiz. centered"
 }
 "text update" {
 	object {
-		x=143
-		y=50
-		width=80
+		x=196
+		y=51
+		width=60
 		height=18
 	}
 	monitor {
@@ -535,9 +547,9 @@ text {
 }
 "text update" {
 	object {
-		x=226
-		y=50
-		width=80
+		x=317
+		y=51
+		width=60
 		height=18
 	}
 	monitor {
@@ -806,4 +818,28 @@ composite {
 	}
 	"composite name"=""
 	"composite file"="hps_trigger_expert_row.adl;P=B_DAQ_HPS:,I=19"
+}
+text {
+	object {
+		x=165
+		y=53
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="2C21:"
+}
+text {
+	object {
+		x=287
+		y=53
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="FCup:"
 }
