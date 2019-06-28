@@ -40,6 +40,11 @@ dbLoadRecords("db/amqDoubleArray.db","P=B_DAQ_HPS:TSGTP:rate,K=HPS11_TSGTPSLOT21
 dbLoadRecords("db/amqDoubleArray.db","P=B_DAQ_HPS:TSFP:rate,K=HPS11_TSFPSLOT21,N=32,TH=10,THH=30,HSV=NO_ALARM,HHSV=NO_ALARM")
 dbLoadRecords("db/amqDouble.db",     "P=B_DAQ_HPS:TS:livetime,K=HPS11_TSLIVETIMESLOT21,TH=10,THH=30,HSV=NO_ALARM,HHSV=NO_ALARM")
 
+dbLoadRecords("db/amqFloatArray.db", "P=B_DAQ:STA:hps1,K=STA:hps1,N=4,TH=20,THH=60,HSV=MINOR,HHSV=NO_ALARM")
+dbLoadRecords("db/amqFloatArray.db", "P=B_DAQ:STA:hps2,K=STA:hps2,N=4,TH=20,THH=60,HSV=MINOR,HHSV=NO_ALARM")
+dbLoadRecords("db/amqRocsRate.db",   "R=hps1,DESC=hps1")
+dbLoadRecords("db/amqRocsRate.db",   "R=hps2,DESC=hps2")
+
 dbLoadRecords("db/array-to-scalar-32.template","P=B_DAQ_HPS:VTP:prescale:,INP=B_DAQ_HPS:VTP:prescale")
 dbLoadRecords("db/array-to-scalar-32.template","P=B_DAQ_HPS:VTP:rate:,INP=B_DAQ_HPS:VTP:rate")
 dbLoadRecords("db/array-to-scalar-32.template","P=B_DAQ_HPS:TSGTP:rate:,INP=B_DAQ_HPS:TSGTP:rate")
