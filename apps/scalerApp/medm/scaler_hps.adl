@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/scalerApp/Db/../medm/scaler_hps.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/scalerApp/medm/scaler_hps.adl"
 	version=030109
 }
 display {
 	object {
-		x=138
-		y=70
+		x=285
+		y=100
 		width=1268
 		height=880
 	}
@@ -673,9 +673,10 @@ oval {
 	}
 	monitor {
 		chan="TMIRBCK"
-		clr=1
-		bclr=53
+		clr=54
+		bclr=0
 	}
+	align="horiz. right"
 	limits {
 	}
 }
@@ -852,11 +853,13 @@ composite {
 	}
 	monitor {
 		chan="Hac_TGR_LS450:FLD_DATA"
-		clr=0
-		bclr=26
+		clr=54
+		bclr=0
 	}
 	align="horiz. right"
 	limits {
+		precSrc="default"
+		precDefault=1
 	}
 }
 text {
@@ -1073,8 +1076,8 @@ polyline {
 	}
 	monitor {
 		chan="MTIRBCK"
-		clr=1
-		bclr=53
+		clr=54
+		bclr=0
 	}
 	align="horiz. right"
 	limits {
@@ -1116,10 +1119,13 @@ text {
 	}
 	monitor {
 		chan="HPS:LS450_1:FIELD"
-		clr=1
-		bclr=53
+		clr=54
+		bclr=0
 	}
+	align="horiz. right"
 	limits {
+		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
@@ -1131,8 +1137,8 @@ text {
 	}
 	monitor {
 		chan="PSPECIRBCK"
-		clr=0
-		bclr=53
+		clr=54
+		bclr=0
 	}
 	align="horiz. right"
 	limits {
@@ -1159,11 +1165,13 @@ text {
 	}
 	monitor {
 		chan="HPS:LS450_2:FIELD"
-		clr=0
-		bclr=26
+		clr=54
+		bclr=0
 	}
 	align="horiz. right"
 	limits {
+		precSrc="default"
+		precDefault=1
 	}
 }
 text {
@@ -1761,44 +1769,33 @@ text {
 	}
 	textix="In Beam"
 }
-composite {
+"text update" {
 	object {
 		x=1030
-		y=602
-		width=205
+		y=603
+		width=100
 		height=18
 	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=1030
-				y=602
-				width=100
-				height=18
-			}
-			monitor {
-				chan="MTDACRBCK"
-				clr=1
-				bclr=53
-			}
-			align="horiz. right"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=1134
-				y=605
-				width=101
-				height=15
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="A (DAC readback)"
-		}
+	monitor {
+		chan="MTDACRBCK"
+		clr=54
+		bclr=0
 	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=1134
+		y=606
+		width=101
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="A (DAC readback)"
 }
 composite {
 	object {
@@ -4735,9 +4732,10 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A&(1<<3) || B=0 || C=1"
+		calc="A&(1<<3) || B=0 || C&(1<<2)"
 		chan="ISD2H001HALOMASKr"
 		chanB="B_FSD_ISDDEST"
+		chanC="ISD2H001MASKr"
 	}
 }
 rectangle {
@@ -4779,9 +4777,10 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A&(1<<1) || B=0 || C=1"
+		calc="A&(1<<1) || B=0 || C&(1<<2)"
 		chan="ISD2H001HALOMASKr"
 		chanB="B_FSD_ISDDEST"
+		chanC="ISD2H001MASKr"
 	}
 }
 rectangle {
@@ -4823,9 +4822,10 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A&(1<<2) || B=0 || C=1"
+		calc="A&(1<<2) || B=0 || C&(1<<2)"
 		chan="ISD2H001HALOMASKr"
 		chanB="B_FSD_ISDDEST"
+		chanC="ISD2H001MASKr"
 	}
 }
 rectangle {
@@ -4867,9 +4867,10 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A&(1<<5) || B=0 || C=1"
+		calc="A&(1<<5) || B=0 || C&(1<<2)"
 		chan="ISD2H001HALOMASKr"
 		chanB="B_FSD_ISDDEST"
+		chanC="ISD2H001MASKr"
 	}
 }
 rectangle {
@@ -5091,9 +5092,10 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A&(1<<6) || B=0 || C=1"
+		calc="A&(1<<6) || B=0 || C&(1<<2)"
 		chan="ISD2H001HALOMASKr"
 		chanB="B_FSD_ISDDEST"
+		chanC="ISD2H001MASKr"
 	}
 }
 rectangle {
