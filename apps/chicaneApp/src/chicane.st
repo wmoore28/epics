@@ -48,6 +48,9 @@ float iMonMT;   assign iMonMT  to "MTDACRBCK";  monitor iMonMT;
 short powerMT;  assign powerMT to "MTPSONSET";  monitor powerMT;
 short powerPS;  assign powerPS to "PSPECC.B0";  monitor powerPS;
 
+float iSetRbkPS; assign iSetRbkPS to "PSPECs"; monitor iSetRbkPS;
+float iSetRbkMT; assign iSetRbkMT to "MTISETRBCK"; monitor iSetRbkMT;
+
 int tConfirm = 5; // time to give user a chance to cancel (seconds)
 float iMaxPS = 2700.0;  // saturation current to hold at (Amps)
 float iMaxMT = 3500.0;  // saturation current to hold at (Amps)
@@ -302,7 +305,10 @@ ss seqChicane {
         
         when (pvConnectCount() < pvChannelCount() ) {} state init
 
-        when (offBtn) {} state rampOff
+        when (offBtn) {
+            offBtn=0;
+            pvPut(offBtn);
+        } state rampOff
 
         when (calcBtn) {
             calcBtn=0;
@@ -396,7 +402,10 @@ ss seqChicane {
             pvPut(msg);
         }
 
-        when (offBtn) {} state rampOff
+        when (offBtn) {
+            offBtn=0;
+            pvPut(offBtn);
+        } state rampOff
 
         when (delay(tConfirm)) {
             complete = 0;
@@ -450,8 +459,12 @@ ss seqChicane {
         entry {
             iSetPS = iMaxPS;
             iSetMT = iMaxMT;
-            pvPut(iSetPS);
-            pvPut(iSetMT);
+            if (iSetRbkPS != iSetPS) {
+                pvPut(iSetPS);
+            }
+            if (iSetRbkMT != iSetMT) {
+                pvPut(iSetMT);
+            }
             isOff=0;
             pvPut(isOff);
             //pvGet(iSetPS);
@@ -460,7 +473,10 @@ ss seqChicane {
             pvPut(msg);
         }
 
-        when (offBtn) {} state rampOff
+        when (offBtn) {
+            offBtn=0;
+            pvPut(offBtn);
+        } state rampOff
         when (pvConnectCount() < pvChannelCount() ) {} state init
         
         when ( isSimilar(iSetPS,iMonPS,iDeltaPS) ) {} state holdAtMax
@@ -503,7 +519,10 @@ ss seqChicane {
             pvPut(complete);
         }
 
-        when (offBtn) {} state rampOff
+        when (offBtn) {
+            offBtn=0;
+            pvPut(offBtn);
+        } state rampOff
         
         when (pvConnectCount() < pvChannelCount() ) {} state init
 
@@ -567,7 +586,10 @@ ss seqChicane {
             pvPut(complete);
         }
         
-        when (offBtn) {} state rampOff
+        when (offBtn) {
+            offBtn=0;
+            pvPut(offBtn);
+        } state rampOff
 
         when (pvConnectCount() < pvChannelCount() ) {} state init
 
