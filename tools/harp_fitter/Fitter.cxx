@@ -26,6 +26,7 @@
 using namespace std;
 
 const string Fitter::all_harps_dir = "/home/epics/DATA/HARP_SCANS/";
+const double Fitter::chi2NDF_Max = 20.;
 
 double* Calc_abalpha(double, double, double);
 double Arnes_Corr(double, double);
@@ -48,11 +49,11 @@ Fitter::Fitter(const TGWindow *p, UInt_t w, UInt_t h, string fname) {
     counter_names_[11] = "HPS Right";
     counter_names_[12] = "HPS T";
     counter_names_[13] = "HPS SC";
-//    counter_names_[10] = "Mid Stream Left";
-//    counter_names_[11] = "Mid Stream Right";
-//    counter_names_[12] = "Mid Stream Top";
-//    counter_names_[13] = "Mid Stream Bottom";
-    
+    //    counter_names_[10] = "Mid Stream Left";
+    //    counter_names_[11] = "Mid Stream Right";
+    //    counter_names_[12] = "Mid Stream Top";
+    //    counter_names_[13] = "Mid Stream Bottom";
+
     counter_names_[14] = "Empty";
 
     // For now counter names are commented, but I guess the reight way is for it to read from some database
@@ -426,10 +427,10 @@ void Fitter::FitData(bool manual_fit, bool preview) {
                 Fit_2c21(gr_[counter_ind], counter_names_[counter_ind]);
             } else if (fit_tagger) {
                 Fit_tagger(gr_[counter_ind], counter_names_[counter_ind]);
-            } else if (fit_2H00A || fit_2H01 ) // Note: not a very good way, but 2H01 and 2H00A harps are the same harp, therefore it will fit the same method
+            } else if (fit_2H00A || fit_2H01) // Note: not a very good way, but 2H01 and 2H00A harps are the same harp, therefore it will fit the same method
             {
                 Fit_2H01(gr_[counter_ind], counter_names_[counter_ind]);
-            } else if( fit_2H02A ){
+            } else if (fit_2H02A) {
                 Fit_2H02A(gr_[counter_ind], counter_names_[counter_ind]);
             }
 
@@ -807,7 +808,7 @@ bool Fitter::Search_three_peaks(TGraph *gr) {
 
     TH1D *h_gr;
 
-    if (fit_tagger || fit_2H02A ) {
+    if (fit_tagger || fit_2H02A) {
         h_gr = (TH1D*) Graph2Hist(gr, 1.); // 1 No need to convert to mm, motor position of 2c21 is already in mm
     } else if (fit_2H00A || fit_2H01) {
         h_gr = (TH1D*) Graph2Hist(gr, 10.); // 10 is because 2H02A has motor position in cm, it should be converted into mm
@@ -968,6 +969,12 @@ bool Fitter::Fit_2c21(TGraph *gr, string counter_name) {
         string wire_names_[2] = {"x", "y"};
         double mean_[n_peaks];
         double sigm_[n_peaks];
+        double mean_err_[n_peaks];
+        double sigm_err_[n_peaks];
+        double chi2_[n_peaks];
+        double NDF_[n_peaks];
+
+
         double bgr_[n_peaks];
         double peak_val_[n_peaks];
 
@@ -986,14 +993,26 @@ bool Fitter::Fit_2c21(TGraph *gr, string counter_name) {
             sigm_[0] = f_1st_peak->GetParameter(2);
             sigm_[0] = sigm_[0] / Arnes_Corr(sigm_[0], 0.025);
 
+            mean_err_[0] = f_1st_peak->GetParError(1);
+            sigm_err_[0] = f_1st_peak->GetParError(2);
+
+            chi2_[0] = f_1st_peak->GetChisquare();
+            NDF_[0] = f_1st_peak->GetNDF();
+
             bgr_[0] = f_1st_peak->GetParameter(3);
             peak_val_[0] = f_1st_peak->GetParameter(0);
 
             lat1->DrawLatex(0.15, 0.91, Form("Harp: 2c21   Counter: %s %s profile", counter_name.c_str(), wire_names_[0].c_str()));
-            lat1->DrawLatex(0.12, 0.85, Form("#mu = %1.4f mm", mean_[0]));
-            lat1->DrawLatex(0.12, 0.80, Form("#sigma = %1.4f mm", sigm_[0]));
-            lat1->DrawLatex(0.12, 0.75, Form("peak_val = %1.0f", peak_val_[0]));
-            lat1->DrawLatex(0.12, 0.70, Form("bgr/peak = %1.1e", bgr_[0] / peak_val_[0]));
+            lat1->DrawLatex(0.12, 0.84, Form("#mu = %1.4f mm #pm %1.5f mm", mean_[0], mean_err_[0]));
+            lat1->DrawLatex(0.12, 0.78, Form("#sigma = %1.4f mm #pm %1.5f mm", sigm_[0], sigm_err_[0]));
+            lat1->DrawLatex(0.12, 0.72, Form("peak_val = %1.0f", peak_val_[0]));
+            lat1->DrawLatex(0.12, 0.66, Form("bgr/peak = %1.1e", bgr_[0] / peak_val_[0]));
+            if (chi2_[0] / NDF_[0] > chi2NDF_Max) {
+                lat1->SetTextColor(2);
+            }
+            lat1->DrawLatex(0.12, 0.60, Form("#chi^{2}/NDF = %1.3f", chi2_[0] / NDF_[0]));
+            lat1->SetTextColor(1);
+
         }
 
 
@@ -1012,14 +1031,28 @@ bool Fitter::Fit_2c21(TGraph *gr, string counter_name) {
             // sigm_[1] = f_2nd_peak->GetParameter(2)/sqrt(2.);
             sigm_[1] = sigm_[1] / Arnes_Corr(sigm_[1], 0.025);
 
+            mean_err_[1] = f_2nd_peak->GetParError(1);
+            sigm_err_[1] = f_2nd_peak->GetParError(2);
+            sigm_err_[1] = sigm_err_[1] / Arnes_Corr(sigm_[1], 0.025);
+
+            chi2_[1] = f_2nd_peak->GetChisquare();
+            NDF_[1] = f_2nd_peak->GetNDF();
+
+
             bgr_[1] = f_2nd_peak->GetParameter(3);
             peak_val_[1] = f_2nd_peak->GetParameter(0);
 
             lat1->DrawLatex(0.15, 0.91, Form("Harp: 2c21   Counter: %s %s profile", counter_name.c_str(), wire_names_[1].c_str()));
-            lat1->DrawLatex(0.12, 0.85, Form("#mu = %1.4f mm", mean_[1]));
-            lat1->DrawLatex(0.12, 0.80, Form("#sigma = %1.4f mm", sigm_[1]));
-            lat1->DrawLatex(0.12, 0.75, Form("peak_val = %1.0f", peak_val_[1]));
-            lat1->DrawLatex(0.12, 0.70, Form("bgr/peak = %1.1e", bgr_[1] / peak_val_[1]));
+            lat1->DrawLatex(0.12, 0.84, Form("#mu = %1.4f mm #pm %1.5f", mean_[1], mean_err_[1]));
+            lat1->DrawLatex(0.12, 0.78, Form("#sigma = %1.4f mm #pm %1.5f", sigm_[1], sigm_err_[1]));
+            lat1->DrawLatex(0.12, 0.72, Form("peak_val = %1.0f", peak_val_[1]));
+            lat1->DrawLatex(0.12, 0.66, Form("bgr/peak = %1.1e", bgr_[1] / peak_val_[1]));
+            if (chi2_[1] / NDF_[1] > chi2NDF_Max) {
+                lat1->SetTextColor(2);
+            }
+            lat1->DrawLatex(0.12, 0.60, Form("#chi^{2}/NDF = %1.2f", chi2_[1] / NDF_[1]));
+            lat1->SetTextColor(1);
+
         }
 
         //f_GPol0_[i]->DrawCopy("Same");
@@ -1124,6 +1157,11 @@ bool Fitter::Fit_tagger(TGraph *gr, string counter_name) {
         string wire_names_[3] = {"45", "y", "x"};
         double mean_[n_peaks];
         double sigm_[n_peaks];
+        double mean_err_[n_peaks];
+        double sigm_err_[n_peaks];
+        double chi2_[n_peaks];
+        double NDF_[n_peaks];
+
         double bgr_[n_peaks];
         double peak_val_[n_peaks];
 
@@ -1140,14 +1178,26 @@ bool Fitter::Fit_tagger(TGraph *gr, string counter_name) {
             sigm_[0] = f_1st_peak->GetParameter(2);
             sigm_[0] = sigm_[0] / Arnes_Corr(sigm_[0], 0.025);
 
+            mean_err_[0] = f_1st_peak->GetParError(1);
+            sigm_err_[0] = f_1st_peak->GetParError(2);
+            sigm_err_[0] = sigm_err_[0] / Arnes_Corr(sigm_[0], 0.025);
+
+            chi2_[0] = f_1st_peak->GetChisquare();
+            NDF_[0] = f_1st_peak->GetNDF();
+
             bgr_[0] = f_1st_peak->GetParameter(3);
             peak_val_[0] = f_1st_peak->GetParameter(0);
 
             lat1->DrawLatex(0.15, 0.91, Form("Harp: tagger   Counter: %s %s profile", counter_name.c_str(), wire_names_[0].c_str()));
-            lat1->DrawLatex(0.12, 0.85, Form("#mu = %1.4f mm", mean_[0]));
-            lat1->DrawLatex(0.12, 0.80, Form("#sigma = %1.4f mm", sigm_[0]));
-            lat1->DrawLatex(0.12, 0.75, Form("peak_val = %1.0f", peak_val_[0]));
-            lat1->DrawLatex(0.12, 0.70, Form("bgr/peak = %1.1e", bgr_[0] / peak_val_[0]));
+            lat1->DrawLatex(0.12, 0.84, Form("#mu = %1.4f #pm %1.5f mm", mean_[0], mean_err_[0]));
+            lat1->DrawLatex(0.12, 0.78, Form("#sigma = %1.4f #pm %1.5f mm", sigm_[0], sigm_err_[0]));
+            lat1->DrawLatex(0.12, 0.72, Form("peak_val = %1.0f", peak_val_[0]));
+            lat1->DrawLatex(0.12, 0.66, Form("bgr/peak = %1.1e", bgr_[0] / peak_val_[0]));
+            if (chi2_[0] / NDF_[0] > chi2NDF_Max) {
+                lat1->SetTextColor(2);
+            }
+            lat1->DrawLatex(0.12, 0.60, Form("#chi^{2}/NDF = %1.3f", chi2_[0] / NDF_[0]));
+            lat1->SetTextColor(1);
         }
 
 
@@ -1170,14 +1220,29 @@ bool Fitter::Fit_tagger(TGraph *gr, string counter_name) {
             sigm_[1] = f_2nd_peak->GetParameter(2);
             sigm_[1] = sigm_[1] / Arnes_Corr(sigm_[1], 0.025);
 
+            mean_err_[1] = f_2nd_peak->GetParError(1);
+            sigm_err_[1] = f_2nd_peak->GetParError(2);
+            sigm_err_[1] = sigm_err_[1] / Arnes_Corr(sigm_[1], 0.025);
+
+            chi2_[1] = f_2nd_peak->GetChisquare();
+            NDF_[1] = f_2nd_peak->GetNDF();
+
+
+
             bgr_[1] = f_2nd_peak->GetParameter(3);
             peak_val_[1] = f_2nd_peak->GetParameter(0);
 
             lat1->DrawLatex(0.15, 0.91, Form("Harp: tagger   Counter: %s %s profile", counter_name.c_str(), wire_names_[1].c_str()));
-            lat1->DrawLatex(0.12, 0.85, Form("#mu = %1.4f mm", mean_[1]));
-            lat1->DrawLatex(0.12, 0.80, Form("#sigma = %1.4f mm", sigm_[1]));
-            lat1->DrawLatex(0.12, 0.75, Form("peak_val = %1.0f", peak_val_[1]));
-            lat1->DrawLatex(0.12, 0.70, Form("bgr/peak = %1.1e", bgr_[1] / peak_val_[1]));
+            lat1->DrawLatex(0.12, 0.84, Form("#mu = %1.4f #pm %1.5f mm", mean_[1], mean_err_[1]));
+            lat1->DrawLatex(0.12, 0.78, Form("#sigma = %1.4f #pm, %1.5f mm", sigm_[1], sigm_err_[1]));
+            lat1->DrawLatex(0.12, 0.72, Form("peak_val = %1.0f", peak_val_[1]));
+            lat1->DrawLatex(0.12, 0.66, Form("bgr/peak = %1.1e", bgr_[1] / peak_val_[1]));
+            if (chi2_[1] / NDF_[1] > chi2NDF_Max) {
+                lat1->SetTextColor(2);
+            }
+            lat1->DrawLatex(0.12, 0.60, Form("#chi^{2}/NDF = %1.3f", chi2_[1] / NDF_[1]));
+            lat1->SetTextColor(1);
+
         }
 
 
@@ -1197,14 +1262,28 @@ bool Fitter::Fit_tagger(TGraph *gr, string counter_name) {
             sigm_[2] = f_3rd_peak->GetParameter(2);
             sigm_[2] = sigm_[2] / Arnes_Corr(sigm_[2], 0.025);
 
+            mean_err_[2] = f_3rd_peak->GetParError(1);
+            sigm_err_[2] = f_3rd_peak->GetParError(2);
+            sigm_err_[2] = sigm_err_[2] / Arnes_Corr(sigm_[2], 0.025);
+
+            chi2_[2] = f_3rd_peak->GetChisquare();
+            NDF_[2] = f_3rd_peak->GetNDF();
+
+
             bgr_[2] = f_3rd_peak->GetParameter(3);
             peak_val_[2] = f_3rd_peak->GetParameter(0);
 
             lat1->DrawLatex(0.15, 0.91, Form("Harp: tagger   Counter: %s %s profile", counter_name.c_str(), wire_names_[2].c_str()));
-            lat1->DrawLatex(0.12, 0.85, Form("#mu = %1.4f mm", mean_[2]));
-            lat1->DrawLatex(0.12, 0.80, Form("#sigma = %1.4f mm", sigm_[2]));
-            lat1->DrawLatex(0.12, 0.75, Form("peak_val = %1.0f", peak_val_[2]));
-            lat1->DrawLatex(0.12, 0.70, Form("bgr/peak = %1.1e", bgr_[2] / peak_val_[2]));
+            lat1->DrawLatex(0.12, 0.84, Form("#mu = %1.4f #pm %1.5f mm", mean_[2], mean_err_[2]));
+            lat1->DrawLatex(0.12, 0.78, Form("#sigma = %1.4f #pm %1.5f mm", sigm_[2], sigm_err_[2]));
+            lat1->DrawLatex(0.12, 0.72, Form("peak_val = %1.0f", peak_val_[2]));
+            lat1->DrawLatex(0.12, 0.66, Form("bgr/peak = %1.1e", bgr_[2] / peak_val_[2]));
+            if (chi2_[2] / NDF_[2] > chi2NDF_Max) {
+                lat1->SetTextColor(2);
+            }
+            lat1->DrawLatex(0.12, 0.60, Form("#chi^{2}/NDF = %1.3f", chi2_[2] / NDF_[2]));
+            lat1->SetTextColor(1);
+
         }
 
         double *alpha_a_b = Calc_abalpha(sigm_[0], sigm_[2] * TMath::Sqrt(2.), sigm_[1] * TMath::Sqrt(2.));
@@ -1295,6 +1374,10 @@ bool Fitter::Fit_2H01(TGraph *gr, string counter_name) {
         double sigm_[n_peaks];
         double bgr_[n_peaks];
         double peak_val_[n_peaks];
+        double mean_err_[n_peaks];
+        double sigm_err_[n_peaks];
+        double chi2_[n_peaks];
+        double NDF_[n_peaks];
 
         c1->cd(1)->SetLogy();
 
@@ -1311,14 +1394,27 @@ bool Fitter::Fit_2H01(TGraph *gr, string counter_name) {
             sigm_[0] = f_1st_peak->GetParameter(2);
             sigm_[0] = sigm_[0] / Arnes_Corr(sigm_[0], 0.025);
 
+            mean_err_[0] = f_1st_peak->GetParError(1);
+            sigm_err_[0] = f_1st_peak->GetParError(2);
+            sigm_err_[0] = sigm_err_[0] / Arnes_Corr(sigm_[0], 0.025);
+
+            chi2_[0] = f_1st_peak->GetChisquare();
+            NDF_[0] = f_1st_peak->GetNDF();
+
+
             bgr_[0] = f_1st_peak->GetParameter(3);
             peak_val_[0] = f_1st_peak->GetParameter(0);
 
             lat1->DrawLatex(0.15, 0.91, Form("%s   Counter: %s %s profile", harp_name.c_str(), counter_name.c_str(), wire_names_[0].c_str()));
-            lat1->DrawLatex(0.12, 0.85, Form("#mu = %1.4f mm", mean_[0]));
-            lat1->DrawLatex(0.12, 0.80, Form("#sigma = %1.4f mm", sigm_[0]));
-            lat1->DrawLatex(0.12, 0.75, Form("peak_val = %1.0f", peak_val_[0]));
-            lat1->DrawLatex(0.12, 0.70, Form("bgr/peak = %1.1e", bgr_[0] / peak_val_[0]));
+            lat1->DrawLatex(0.12, 0.84, Form("#mu = %1.4f #pm %1.5f mm", mean_[0], mean_err_[0]));
+            lat1->DrawLatex(0.12, 0.78, Form("#sigma = %1.4f #pm %1.5f mm", sigm_[0], sigm_err_[0]));
+            lat1->DrawLatex(0.12, 0.72, Form("peak_val = %1.0f", peak_val_[0]));
+            lat1->DrawLatex(0.12, 0.66, Form("bgr/peak = %1.1e", bgr_[0] / peak_val_[0]));
+            if (chi2_[0] / NDF_[0] > chi2NDF_Max) {
+                lat1->SetTextColor(2);
+            }
+            lat1->DrawLatex(0.12, 0.60, Form("#chi^{2}/NDF = %1.3f", chi2_[0] / NDF_[0]));
+            lat1->SetTextColor(1);
         }
 
 
@@ -1337,14 +1433,26 @@ bool Fitter::Fit_2H01(TGraph *gr, string counter_name) {
             sigm_[1] = f_2nd_peak->GetParameter(2);
             sigm_[1] = sigm_[1] / Arnes_Corr(sigm_[1], 0.025);
 
+            mean_err_[1] = f_2nd_peak->GetParError(1);
+            sigm_err_[1] = f_2nd_peak->GetParError(2);
+            sigm_err_[1] = sigm_err_[1] / Arnes_Corr(sigm_[1], 0.025);
+
+            chi2_[1] = f_2nd_peak->GetChisquare();
+            NDF_[1] = f_2nd_peak->GetNDF();
+
             bgr_[1] = f_2nd_peak->GetParameter(3);
             peak_val_[1] = f_2nd_peak->GetParameter(0);
 
             lat1->DrawLatex(0.15, 0.91, Form("%s  Counter: %s %s profile", harp_name.c_str(), counter_name.c_str(), wire_names_[1].c_str()));
-            lat1->DrawLatex(0.12, 0.85, Form("#mu = %1.4f mm", mean_[1]));
-            lat1->DrawLatex(0.12, 0.80, Form("#sigma = %1.4f mm", sigm_[1]));
-            lat1->DrawLatex(0.12, 0.75, Form("peak_val = %1.0f", peak_val_[1]));
-            lat1->DrawLatex(0.12, 0.70, Form("bgr/peak = %1.1e", bgr_[1] / peak_val_[1]));
+            lat1->DrawLatex(0.12, 0.84, Form("#mu = %1.4f #pm %1.5f mm", mean_[1], mean_err_[1]));
+            lat1->DrawLatex(0.12, 0.78, Form("#sigma = %1.4f #pm %1.5f mm", sigm_[1], sigm_err_[1]));
+            lat1->DrawLatex(0.12, 0.72, Form("peak_val = %1.0f", peak_val_[1]));
+            lat1->DrawLatex(0.12, 0.66, Form("bgr/peak = %1.1e", bgr_[1] / peak_val_[1]));
+            if (chi2_[1] / NDF_[1] > chi2NDF_Max) {
+                lat1->SetTextColor(2);
+            }
+            lat1->DrawLatex(0.12, 0.60, Form("#chi^{2}/NDF = %1.3f", chi2_[1] / NDF_[1]));
+            lat1->SetTextColor(1);
         }
 
 
@@ -1361,14 +1469,28 @@ bool Fitter::Fit_2H01(TGraph *gr, string counter_name) {
             sigm_[2] = f_3rd_peak->GetParameter(2);
             sigm_[2] = sigm_[2] / Arnes_Corr(sigm_[2], 0.025);
 
+            mean_err_[2] = f_3rd_peak->GetParError(1);
+            sigm_err_[2] = f_3rd_peak->GetParError(2);
+            sigm_err_[2] = sigm_err_[2] / Arnes_Corr(sigm_[2], 0.025);
+
+            chi2_[2] = f_3rd_peak->GetChisquare();
+            NDF_[2] = f_3rd_peak->GetNDF();
+
+
             bgr_[2] = f_3rd_peak->GetParameter(3);
             peak_val_[2] = f_3rd_peak->GetParameter(0);
 
             lat1->DrawLatex(0.15, 0.91, Form("%s  Counter: %s %s profile", harp_name.c_str(), counter_name.c_str(), wire_names_[2].c_str()));
-            lat1->DrawLatex(0.12, 0.85, Form("#mu = %1.4f mm", mean_[2]));
-            lat1->DrawLatex(0.12, 0.80, Form("#sigma = %1.4f mm", sigm_[2]));
-            lat1->DrawLatex(0.12, 0.75, Form("peak_val = %1.0f", peak_val_[2]));
-            lat1->DrawLatex(0.12, 0.70, Form("bgr/peak = %1.1e", bgr_[2] / peak_val_[2]));
+            lat1->DrawLatex(0.12, 0.84, Form("#mu = %1.4f #pm %1.5f mm", mean_[2], mean_err_[2]));
+            lat1->DrawLatex(0.12, 0.78, Form("#sigma = %1.4f #pm %1.5f mm", sigm_[2], sigm_err_[2]));
+            lat1->DrawLatex(0.12, 0.72, Form("peak_val = %1.0f", peak_val_[2]));
+            lat1->DrawLatex(0.12, 0.66, Form("bgr/peak = %1.1e", bgr_[2] / peak_val_[2]));
+            if (chi2_[2] / NDF_[2] > chi2NDF_Max) {
+                lat1->SetTextColor(2);
+            }
+            lat1->DrawLatex(0.12, 0.60, Form("#chi^{2}/NDF = %1.3f", chi2_[2] / NDF_[2]));
+            lat1->SetTextColor(1);
+
         }
 
 
@@ -1393,8 +1515,6 @@ bool Fitter::Fit_2H01(TGraph *gr, string counter_name) {
 
 }
 
-
-
 bool Fitter::Fit_2H02A(TGraph *gr, string counter_name) {
     TLatex *lat1 = new TLatex();
     lat1->SetNDC();
@@ -1402,11 +1522,11 @@ bool Fitter::Fit_2H02A(TGraph *gr, string counter_name) {
     TCanvas *c1 = fEcanvas->GetCanvas();
     c1->Clear();
 
-    h_1st_peak = (TH1D*) (Graph2Hist(gr, 1/ sqrt2))->Clone("h_1st_peak"); // Here 10 is cm to mm conversion
+    h_1st_peak = (TH1D*) (Graph2Hist(gr, 1 / sqrt2))->Clone("h_1st_peak"); // Here 10 is cm to mm conversion
     h_1st_peak->SetTitle("; Wire Y [mm]");
     h_1st_peak->Sumw2();
 
-    h_2nd_peak = (TH1D*) (Graph2Hist(gr, 1/ sqrt2))->Clone("h_2nd_peak"); // Here 10 is cm to mm conversion
+    h_2nd_peak = (TH1D*) (Graph2Hist(gr, 1 / sqrt2))->Clone("h_2nd_peak"); // Here 10 is cm to mm conversion
     h_2nd_peak->SetTitle("; Wire X [mm]");
     h_2nd_peak->Sumw2();
 
@@ -1450,6 +1570,11 @@ bool Fitter::Fit_2H02A(TGraph *gr, string counter_name) {
         double sigm_[n_peaks];
         double bgr_[n_peaks];
         double peak_val_[n_peaks];
+        double mean_err_[n_peaks];
+        double sigm_err_[n_peaks];
+        double chi2_[n_peaks];
+        double NDF_[n_peaks];
+
 
         c1->cd(1)->SetLogy();
 
@@ -1466,14 +1591,28 @@ bool Fitter::Fit_2H02A(TGraph *gr, string counter_name) {
             sigm_[0] = f_1st_peak->GetParameter(2);
             sigm_[0] = sigm_[0] / Arnes_Corr(sigm_[0], 0.025);
 
+            mean_err_[0] = f_1st_peak->GetParError(1);
+            sigm_err_[0] = f_1st_peak->GetParError(2);
+            sigm_err_[0] = sigm_err_[0] / Arnes_Corr(sigm_[0], 0.025);
+
+            chi2_[0] = f_1st_peak->GetChisquare();
+            NDF_[0] = f_1st_peak->GetNDF();
+
+
             bgr_[0] = f_1st_peak->GetParameter(3);
             peak_val_[0] = f_1st_peak->GetParameter(0);
 
             lat1->DrawLatex(0.15, 0.91, Form("%s   Counter: %s %s profile", harp_name.c_str(), counter_name.c_str(), wire_names_[0].c_str()));
-            lat1->DrawLatex(0.12, 0.85, Form("#mu = %1.4f mm", mean_[0]));
-            lat1->DrawLatex(0.12, 0.80, Form("#sigma = %1.4f mm", sigm_[0]));
-            lat1->DrawLatex(0.12, 0.75, Form("peak_val = %1.0f", peak_val_[0]));
-            lat1->DrawLatex(0.12, 0.70, Form("bgr/peak = %1.1e", bgr_[0] / peak_val_[0]));
+            lat1->DrawLatex(0.12, 0.84, Form("#mu = %1.4f #pm %1.5f  mm", mean_[0], mean_err_[0]));
+            lat1->DrawLatex(0.12, 0.78, Form("#sigma = %1.4f #pm %1.5f mm", sigm_[0], sigm_err_[0]));
+            lat1->DrawLatex(0.12, 0.72, Form("peak_val = %1.0f", peak_val_[0]));
+            lat1->DrawLatex(0.12, 0.66, Form("bgr/peak = %1.1e", bgr_[0] / peak_val_[0]));
+            if (chi2_[0] / NDF_[0] > chi2NDF_Max) {
+                lat1->SetTextColor(2);
+            }
+            lat1->DrawLatex(0.12, 0.60, Form("#chi^{2}/NDF = %1.3f", chi2_[0] / NDF_[0]));
+            lat1->SetTextColor(1);
+
         }
 
 
@@ -1492,14 +1631,28 @@ bool Fitter::Fit_2H02A(TGraph *gr, string counter_name) {
             sigm_[1] = f_2nd_peak->GetParameter(2);
             sigm_[1] = sigm_[1] / Arnes_Corr(sigm_[1], 0.025);
 
+            mean_err_[1] = f_2nd_peak->GetParError(1);
+            sigm_err_[1] = f_2nd_peak->GetParError(2);
+            sigm_err_[1] = sigm_err_[1] / Arnes_Corr(sigm_[1], 0.025);
+
+            chi2_[1] = f_2nd_peak->GetChisquare();
+            NDF_[1] = f_2nd_peak->GetNDF();
+
+
             bgr_[1] = f_2nd_peak->GetParameter(3);
             peak_val_[1] = f_2nd_peak->GetParameter(0);
 
             lat1->DrawLatex(0.15, 0.91, Form("%s  Counter: %s %s profile", harp_name.c_str(), counter_name.c_str(), wire_names_[1].c_str()));
-            lat1->DrawLatex(0.12, 0.85, Form("#mu = %1.4f mm", mean_[1]));
-            lat1->DrawLatex(0.12, 0.80, Form("#sigma = %1.4f mm", sigm_[1]));
-            lat1->DrawLatex(0.12, 0.75, Form("peak_val = %1.0f", peak_val_[1]));
-            lat1->DrawLatex(0.12, 0.70, Form("bgr/peak = %1.1e", bgr_[1] / peak_val_[1]));
+            lat1->DrawLatex(0.12, 0.84, Form("#mu = %1.4f #pm %1.5f mm", mean_[1], mean_err_[1]));
+            lat1->DrawLatex(0.12, 0.78, Form("#sigma = %1.4f #pm %1.5f mm", sigm_[1], sigm_err_[1]));
+            lat1->DrawLatex(0.12, 0.72, Form("peak_val = %1.0f", peak_val_[1]));
+            lat1->DrawLatex(0.12, 0.66, Form("bgr/peak = %1.1e", bgr_[1] / peak_val_[1]));
+            if (chi2_[1] / NDF_[1] > chi2NDF_Max) {
+                lat1->SetTextColor(2);
+            }
+            lat1->DrawLatex(0.12, 0.60, Form("#chi^{2}/NDF = %1.3f", chi2_[1] / NDF_[1]));
+            lat1->SetTextColor(1);
+
         }
 
 
@@ -1516,14 +1669,27 @@ bool Fitter::Fit_2H02A(TGraph *gr, string counter_name) {
             sigm_[2] = f_3rd_peak->GetParameter(2);
             sigm_[2] = sigm_[2] / Arnes_Corr(sigm_[2], 0.025);
 
+            mean_err_[2] = f_3rd_peak->GetParError(1);
+            sigm_err_[2] = f_3rd_peak->GetParError(2);
+            sigm_err_[2] = sigm_err_[2] / Arnes_Corr(sigm_[2], 0.025);
+
+            chi2_[2] = f_3rd_peak->GetChisquare();
+            NDF_[2] = f_3rd_peak->GetNDF();
+
             bgr_[2] = f_3rd_peak->GetParameter(3);
             peak_val_[2] = f_3rd_peak->GetParameter(0);
 
             lat1->DrawLatex(0.15, 0.91, Form("%s  Counter: %s %s profile", harp_name.c_str(), counter_name.c_str(), wire_names_[2].c_str()));
-            lat1->DrawLatex(0.12, 0.85, Form("#mu = %1.4f mm", mean_[2]));
-            lat1->DrawLatex(0.12, 0.80, Form("#sigma = %1.4f mm", sigm_[2]));
-            lat1->DrawLatex(0.12, 0.75, Form("peak_val = %1.0f", peak_val_[2]));
-            lat1->DrawLatex(0.12, 0.70, Form("bgr/peak = %1.1e", bgr_[2] / peak_val_[2]));
+            lat1->DrawLatex(0.12, 0.84, Form("#mu = %1.4f #pm %1.5f mm", mean_[2], mean_err_[2]));
+            lat1->DrawLatex(0.12, 0.78, Form("#sigma = %1.4f #pm %1.5f mm", sigm_[2], sigm_err_[2]));
+            lat1->DrawLatex(0.12, 0.72, Form("peak_val = %1.0f", peak_val_[2]));
+            lat1->DrawLatex(0.12, 0.66, Form("bgr/peak = %1.1e", bgr_[2] / peak_val_[2]));
+            if (chi2_[2] / NDF_[2] > chi2NDF_Max) {
+                lat1->SetTextColor(2);
+            }
+            lat1->DrawLatex(0.12, 0.60, Form("#chi^{2}/NDF = %1.3f", chi2_[2] / NDF_[2]));
+            lat1->SetTextColor(1);
+
         }
 
 
@@ -1547,8 +1713,6 @@ bool Fitter::Fit_2H02A(TGraph *gr, string counter_name) {
     }
 
 }
-
-
 
 TH1D* Fitter::Graph2Hist(TGraph * gr, double scale) {
     gr->Sort();

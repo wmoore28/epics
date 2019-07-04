@@ -28,6 +28,7 @@ private:
     static const int n_counters = 15;
     static const std::string all_harps_dir;
     static const double sqrt2 = 1.41421356237309515;
+    static const double chi2NDF_Max;
     void InitData(std::string);
     TGraph *gr_[n_counters];
     std::string counter_names_[n_counters];
