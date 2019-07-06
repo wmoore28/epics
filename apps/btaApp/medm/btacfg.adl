@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/btaApp/medm/./btacfg.adl"
-	version=030101
+	name="/usr/clas12/hps/v3.0.0/apps/btaApp/medm/btacfg.adl"
+	version=030109
 }
 display {
 	object {
-		x=196
-		y=168
-		width=281
-		height=163
+		x=513
+		y=492
+		width=287
+		height=274
 	}
 	clr=14
 	bclr=32
@@ -162,7 +162,7 @@ text {
 "text update" {
 	object {
 		x=112
-		y=133
+		y=171
 		width=70
 		height=19
 	}
@@ -211,7 +211,7 @@ text {
 "text entry" {
 	object {
 		x=191
-		y=132
+		y=170
 		width=70
 		height=19
 	}
@@ -252,8 +252,8 @@ text {
 }
 text {
 	object {
-		x=18
-		y=134
+		x=100
+		y=149
 		width=88
 		height=16
 	}
@@ -275,4 +275,109 @@ text {
 	}
 	textix="HPS BTA CONFIG"
 	align="horiz. centered"
+}
+text {
+	object {
+		x=15
+		y=173
+		width=88
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UPSTREAM:"
+	align="horiz. right"
+}
+text {
+	object {
+		x=14
+		y=199
+		width=88
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="MIDSTREAM:"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=111
+		y=197
+		width=70
+		height=19
+	}
+	monitor {
+		chan="HLB:bta_reg_bm.I"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text entry" {
+	object {
+		x=190
+		y=196
+		width=70
+		height=19
+	}
+	control {
+		chan="HLB:bta_reg_bm.I"
+		clr=14
+		bclr=2
+	}
+	limits {
+		precSrc="default"
+	}
+}
+text {
+	object {
+		x=13
+		y=225
+		width=88
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="DOWNSTREAM:"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=110
+		y=223
+		width=70
+		height=19
+	}
+	monitor {
+		chan="HLB:bta_reg_bm.J"
+		clr=14
+		bclr=0
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text entry" {
+	object {
+		x=189
+		y=222
+		width=70
+		height=19
+	}
+	control {
+		chan="HLB:bta_reg_bm.J"
+		clr=14
+		bclr=2
+	}
+	limits {
+		precSrc="default"
+	}
 }
