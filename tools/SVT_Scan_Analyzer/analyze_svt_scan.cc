@@ -18,6 +18,7 @@ TH1D *Graph2Hist(TGraph *);
 double* GetTopPos(double);
 double* GetBotPos(double);
 double Arnes_Corr(double, double);
+double Arnes_CorrError(double, double, double); // This function propagates perrors properly
 
 int main(int argc, char **argv) {
     if (argc < 2) {
@@ -372,11 +373,23 @@ int main(int argc, char **argv) {
             sigma_truncated_[2] = svt_wire_pos.bot_stage2mm * sigma_truncated_[2];
             sigma_truncated_err_[2] = svt_wire_pos.bot_stage2mm * sigma_truncated_err_[2];
         }
+        
+        double sigma_M = sigma_[2];
+        double dsigm_M = sigma_err_[2];
+        
         sigma_[2] = sigma_[2] / Arnes_Corr(sigma_[2], wd);
-        sigma_err_[2] = sigma_err_[2] / Arnes_Corr(sigma_[2], wd);
+        //sigma_err_[2] = sigma_err_[2] / Arnes_Corr(sigma_[2], wd);
+        sigma_err_[2] = Arnes_CorrError(sigma_M, wd, dsigm_M); // This function propagates errors properly
+        
+        double sigma_truncated_M = sigma_truncated_[2];
+        double dsigm_truncated_M = sigma_truncated_err_[2];
+        
         sigma_truncated_[2] = sigma_truncated_[2] / Arnes_Corr(sigma_truncated_[2], wd);
-        sigma_truncated_err_[2] = sigma_truncated_err_[2] / Arnes_Corr(sigma_truncated_[2], wd);
+        //sigma_truncated_err_[2] = sigma_truncated_err_[2] / Arnes_Corr(sigma_truncated_[2], wd);
+        sigma_truncated_err_[2] = Arnes_CorrError(sigma_truncated_M, wd, dsigm_truncated_M); // This function propagates errors properly;
         si_pos_[2] = positions_[0];
+        
+                
         horiz_wire_pos_[2] = positions_[1];
         stereo_wire_pos_[2] = positions2_[1];
 
@@ -464,10 +477,20 @@ int main(int argc, char **argv) {
             sigma_truncated_[3] = svt_wire_pos.bot_stage2mm * sigma_truncated_[3];
             sigma_truncated_err_[3] = svt_wire_pos.bot_stage2mm * sigma_truncated_err_[3];
         }
+        double sigma_M = sigma_[3];
+        double dsigm_M = sigma_err_[3];
+        
         sigma_[3] = sigma_[3] / Arnes_Corr(sigma_[3], wd);
-        sigma_err_[3] = sigma_err_[3] / Arnes_Corr(sigma_[3], wd);
+        sigma_err_[3] = Arnes_CorrError(sigma_M, wd, dsigm_M);
+        //sigma_err_[3] = sigma_err_[3] / Arnes_Corr(sigma_[3], wd);
+        
+        double sigma_truncated_M = sigma_truncated_[2];
+        double dsigm_truncated_M = sigma_truncated_err_[2];        
+        
         sigma_truncated_[3] = sigma_truncated_[3] / Arnes_Corr(sigma_truncated_[3], wd);
-        sigma_truncated_err_[3] = sigma_truncated_err_[3] / Arnes_Corr(sigma_truncated_[3], wd);
+//        sigma_truncated_err_[3] = sigma_truncated_err_[3] / Arnes_Corr(sigma_truncated_[3], wd);        
+        sigma_truncated_err_[3] = Arnes_CorrError(sigma_truncated_M, wd, dsigm_truncated_M); // This function propagates errors properly;       
+         
         si_pos_[3] = positions_[0];
         horiz_wire_pos_[3] = positions_[1];
         stereo_wire_pos_[3] = positions2_[1];
@@ -606,4 +629,11 @@ double* GetBotPos(double stage) {
 double Arnes_Corr(double sigm, double wd) {
     double corr = 1 + 0.025 / TMath::Power(sigm / wd, 2.826);
     return corr;
+}
+
+double Arnes_CorrError(double sigmM, double wd, double dSigmM){
+
+    double a = 0.025*TMath::Power(wd, 2.826);
+    return dSigmM*TMath::Power( (1 + a*TMath::Power(sigmM, 2.826)), -1 ) + sigmM*( a*2.826*TMath::Power( (1 + a*TMath::Power(sigmM, -2.826) ), -2 )*
+            TMath::Power(sigmM, -3.826) );
 }
