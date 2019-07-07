@@ -14,3 +14,17 @@ $GUIDANCE
               Too many connections to iocclassc4.  Contact the Slow Controls expert.
 $END
 
+CHANNEL  IOCS                 classc3:heartbeat
+$COMMAND  medm -x -attach -cmap ioc_hps_health.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 120
+$GUIDANCE
+              Contact the Slow Controls expert.
+$END
+
+CHANNEL  IOCS                 classc12:heartbeat
+$COMMAND  medm -x -attach -cmap ioc_hps_health.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 120
+$GUIDANCE
+              Contact the Slow Controls expert.
+$END
+
