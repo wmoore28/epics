@@ -113,4 +113,9 @@ public:
     void Load_Fit_Pars();
     void CAPUT();
 
+    static const double wd_2c21;    // wire diameter of 2c21 harp
+    static const double wd_tagger;  // wire diameter of the tagger harp
+    static const double wd_2h01;    // wire diameter of 2h01 harp
+    static const double wd_2h02a;   // wire diameter of 2h02a harp    
+
 };

@@ -28,8 +28,14 @@ using namespace std;
 const string Fitter::all_harps_dir = "/home/epics/DATA/HARP_SCANS/";
 const double Fitter::chi2NDF_Max = 20.;
 
+const double Fitter::wd_2c21 = 0.025;
+const double Fitter::wd_tagger = 0.025;
+const double Fitter::wd_2h01 = 0.025;
+const double Fitter::wd_2h02a = 0.025;
+
 double* Calc_abalpha(double, double, double);
 double Arnes_Corr(double, double);
+double Arnes_CorrError(double, double, double);
 
 Fitter::Fitter(const TGWindow *p, UInt_t w, UInt_t h, string fname) {
     p_wind = p;
@@ -213,12 +219,12 @@ void Fitter::InitData(string fname) {
         fit_2H01 = true;
         harp_name = "harp_2H01";
         scale_Xaxis = 10.;
-        min_1st_hist = 30.;
-        max_1st_hist = 35.;
-        min_2nd_hist = 41.;
-        max_2nd_hist = 47.;
-        min_3rd_hist = 78.;
-        max_3rd_hist = 85.;
+        min_1st_hist = 40.;
+        max_1st_hist = 50.;
+        min_2nd_hist = 50.;
+        max_2nd_hist = 60.;
+        min_3rd_hist = 90.;
+        max_3rd_hist = 102.;
     }
 
     //cout<<"fit_tagger = "<<fit_tagger<<endl;
@@ -990,11 +996,14 @@ bool Fitter::Fit_2c21(TGraph *gr, string counter_name) {
             // mean_[0] = f_1st_peak->GetParameter(1)/sqrt(2.);
             // sigm_[0] = f_1st_peak->GetParameter(2)/sqrt(2.);
             mean_[0] = f_1st_peak->GetParameter(1);
-            sigm_[0] = f_1st_peak->GetParameter(2);
-            sigm_[0] = sigm_[0] / Arnes_Corr(sigm_[0], 0.025);
+            double sigmM = f_1st_peak->GetParameter(2);
+
+            sigm_[0] = sigmM / Arnes_Corr(sigmM, Fitter::wd_2c21);
 
             mean_err_[0] = f_1st_peak->GetParError(1);
-            sigm_err_[0] = f_1st_peak->GetParError(2);
+            double dsigmM = f_1st_peak->GetParError(2);
+
+            sigm_err_[0] = Arnes_CorrError(sigmM, Fitter::wd_2c21, dsigmM);
 
             chi2_[0] = f_1st_peak->GetChisquare();
             NDF_[0] = f_1st_peak->GetNDF();
@@ -1026,14 +1035,13 @@ bool Fitter::Fit_2c21(TGraph *gr, string counter_name) {
             h_2nd_peak->Fit(f_2nd_peak, "+MeV", "", range_2nd_peak[0] / sqrt2, range_2nd_peak[1] / sqrt2);
 
             mean_[1] = f_2nd_peak->GetParameter(1);
-            sigm_[1] = f_2nd_peak->GetParameter(2);
-            // mean_[1] = f_2nd_peak->GetParameter(1)/sqrt(2.);
-            // sigm_[1] = f_2nd_peak->GetParameter(2)/sqrt(2.);
-            sigm_[1] = sigm_[1] / Arnes_Corr(sigm_[1], 0.025);
+            double sigmM = f_2nd_peak->GetParameter(2);
+            sigm_[1] = sigmM / Arnes_Corr(sigmM, Fitter::wd_2c21);
 
             mean_err_[1] = f_2nd_peak->GetParError(1);
-            sigm_err_[1] = f_2nd_peak->GetParError(2);
-            sigm_err_[1] = sigm_err_[1] / Arnes_Corr(sigm_[1], 0.025);
+            
+            double dsigmM = f_1st_peak->GetParError(2);
+            sigm_err_[1] = Arnes_CorrError(sigmM, Fitter::wd_2c21, dsigmM);
 
             chi2_[1] = f_2nd_peak->GetChisquare();
             NDF_[1] = f_2nd_peak->GetNDF();
@@ -1175,12 +1183,13 @@ bool Fitter::Fit_tagger(TGraph *gr, string counter_name) {
             h_1st_peak->Fit(f_1st_peak, "+MeV", "", range_1st_peak[0], range_1st_peak[1]);
 
             mean_[0] = f_1st_peak->GetParameter(1);
-            sigm_[0] = f_1st_peak->GetParameter(2);
-            sigm_[0] = sigm_[0] / Arnes_Corr(sigm_[0], 0.025);
+            double sigmM = f_1st_peak->GetParameter(2);
+            sigm_[0] = sigmM / Arnes_Corr(sigmM, Fitter::wd_tagger);
 
             mean_err_[0] = f_1st_peak->GetParError(1);
-            sigm_err_[0] = f_1st_peak->GetParError(2);
-            sigm_err_[0] = sigm_err_[0] / Arnes_Corr(sigm_[0], 0.025);
+            
+            double dsigmM = f_1st_peak->GetParError(2);
+            sigm_err_[0] = Arnes_CorrError(sigmM, Fitter::wd_tagger, dsigmM);
 
             chi2_[0] = f_1st_peak->GetChisquare();
             NDF_[0] = f_1st_peak->GetNDF();
@@ -1217,12 +1226,12 @@ bool Fitter::Fit_tagger(TGraph *gr, string counter_name) {
             // mean_[1] = f_2nd_peak->GetParameter(1)/sqrt(2.);
             // sigm_[1] = f_2nd_peak->GetParameter(2)/sqrt(2.);
             mean_[1] = f_2nd_peak->GetParameter(1);
-            sigm_[1] = f_2nd_peak->GetParameter(2);
-            sigm_[1] = sigm_[1] / Arnes_Corr(sigm_[1], 0.025);
+            double sigmM = f_2nd_peak->GetParameter(2);
+            sigm_[1] = sigmM / Arnes_Corr(sigmM, Fitter::wd_tagger);
 
             mean_err_[1] = f_2nd_peak->GetParError(1);
-            sigm_err_[1] = f_2nd_peak->GetParError(2);
-            sigm_err_[1] = sigm_err_[1] / Arnes_Corr(sigm_[1], 0.025);
+            double dsigmM = f_2nd_peak->GetParError(2);
+            sigm_err_[1] = Arnes_CorrError(sigmM, Fitter::wd_tagger, dsigmM);
 
             chi2_[1] = f_2nd_peak->GetChisquare();
             NDF_[1] = f_2nd_peak->GetNDF();
@@ -1259,12 +1268,12 @@ bool Fitter::Fit_tagger(TGraph *gr, string counter_name) {
             // mean_[2] = f_3rd_peak->GetParameter(1)/sqrt(2.);
             // sigm_[2] = f_3rd_peak->GetParameter(2)/sqrt(2.);
             mean_[2] = f_3rd_peak->GetParameter(1);
-            sigm_[2] = f_3rd_peak->GetParameter(2);
-            sigm_[2] = sigm_[2] / Arnes_Corr(sigm_[2], 0.025);
+            double sigmM = f_3rd_peak->GetParameter(2);
+            sigm_[2] = sigmM / Arnes_Corr(sigmM, Fitter::wd_tagger);
 
             mean_err_[2] = f_3rd_peak->GetParError(1);
-            sigm_err_[2] = f_3rd_peak->GetParError(2);
-            sigm_err_[2] = sigm_err_[2] / Arnes_Corr(sigm_[2], 0.025);
+            double dsigmM = f_3rd_peak->GetParError(2);
+            sigm_err_[2] =  Arnes_CorrError(sigmM, Fitter::wd_tagger, dsigmM);
 
             chi2_[2] = f_3rd_peak->GetChisquare();
             NDF_[2] = f_3rd_peak->GetNDF();
@@ -1391,12 +1400,12 @@ bool Fitter::Fit_2H01(TGraph *gr, string counter_name) {
             // mean_[0] = f_1st_peak->GetParameter(1)/sqrt(2.);
             // sigm_[0] = f_1st_peak->GetParameter(2)/sqrt(2.);
             mean_[0] = f_1st_peak->GetParameter(1);
-            sigm_[0] = f_1st_peak->GetParameter(2);
-            sigm_[0] = sigm_[0] / Arnes_Corr(sigm_[0], 0.025);
+            double sigmM = f_1st_peak->GetParameter(2);
+            sigm_[0] = sigmM / Arnes_Corr(sigmM, Fitter::wd_2h01);
 
             mean_err_[0] = f_1st_peak->GetParError(1);
-            sigm_err_[0] = f_1st_peak->GetParError(2);
-            sigm_err_[0] = sigm_err_[0] / Arnes_Corr(sigm_[0], 0.025);
+            double dsigmM = f_1st_peak->GetParError(2);
+            sigm_err_[0] = Arnes_CorrError(sigmM, Fitter::wd_2h01, dsigmM);
 
             chi2_[0] = f_1st_peak->GetChisquare();
             NDF_[0] = f_1st_peak->GetNDF();
@@ -1430,12 +1439,12 @@ bool Fitter::Fit_2H01(TGraph *gr, string counter_name) {
             // mean_[1] = f_2nd_peak->GetParameter(1)/sqrt(2.);
             // sigm_[1] = f_2nd_peak->GetParameter(2)/sqrt(2.);
             mean_[1] = f_2nd_peak->GetParameter(1);
-            sigm_[1] = f_2nd_peak->GetParameter(2);
-            sigm_[1] = sigm_[1] / Arnes_Corr(sigm_[1], 0.025);
+            double sigmM = f_2nd_peak->GetParameter(2);
+            sigm_[1] = sigmM / Arnes_Corr(sigmM, Fitter::wd_2h01);
 
             mean_err_[1] = f_2nd_peak->GetParError(1);
-            sigm_err_[1] = f_2nd_peak->GetParError(2);
-            sigm_err_[1] = sigm_err_[1] / Arnes_Corr(sigm_[1], 0.025);
+            double dsigmM = f_2nd_peak->GetParError(2);
+            sigm_err_[1] = Arnes_CorrError(sigmM, Fitter::wd_2h01, dsigmM);
 
             chi2_[1] = f_2nd_peak->GetChisquare();
             NDF_[1] = f_2nd_peak->GetNDF();
@@ -1466,12 +1475,12 @@ bool Fitter::Fit_2H01(TGraph *gr, string counter_name) {
             h_3rd_peak->Fit(f_3rd_peak, "+MeV", "", range_3rd_peak[0], range_3rd_peak[1]);
 
             mean_[2] = f_3rd_peak->GetParameter(1);
-            sigm_[2] = f_3rd_peak->GetParameter(2);
-            sigm_[2] = sigm_[2] / Arnes_Corr(sigm_[2], 0.025);
+            double sigmM = f_3rd_peak->GetParameter(2);
+            sigm_[2] = sigmM/ Arnes_Corr(sigmM, Fitter::wd_2h01);
 
             mean_err_[2] = f_3rd_peak->GetParError(1);
-            sigm_err_[2] = f_3rd_peak->GetParError(2);
-            sigm_err_[2] = sigm_err_[2] / Arnes_Corr(sigm_[2], 0.025);
+            double dsigmM = f_3rd_peak->GetParError(2);
+            sigm_err_[2] = Arnes_CorrError(sigmM, Fitter::wd_2h01, dsigmM);
 
             chi2_[2] = f_3rd_peak->GetChisquare();
             NDF_[2] = f_3rd_peak->GetNDF();
@@ -1588,12 +1597,12 @@ bool Fitter::Fit_2H02A(TGraph *gr, string counter_name) {
             // mean_[0] = f_1st_peak->GetParameter(1)/sqrt(2.);
             // sigm_[0] = f_1st_peak->GetParameter(2)/sqrt(2.);
             mean_[0] = f_1st_peak->GetParameter(1);
-            sigm_[0] = f_1st_peak->GetParameter(2);
-            sigm_[0] = sigm_[0] / Arnes_Corr(sigm_[0], 0.025);
+            double sigmM = f_1st_peak->GetParameter(2);
+            sigm_[0] = sigmM / Arnes_Corr(sigmM, wd_2h02a);
 
             mean_err_[0] = f_1st_peak->GetParError(1);
-            sigm_err_[0] = f_1st_peak->GetParError(2);
-            sigm_err_[0] = sigm_err_[0] / Arnes_Corr(sigm_[0], 0.025);
+            double dsigmM = f_1st_peak->GetParError(2);
+            sigm_err_[0] = Arnes_CorrError(sigmM, Fitter::wd_2h02a, dsigmM);
 
             chi2_[0] = f_1st_peak->GetChisquare();
             NDF_[0] = f_1st_peak->GetNDF();
@@ -1628,12 +1637,12 @@ bool Fitter::Fit_2H02A(TGraph *gr, string counter_name) {
             // mean_[1] = f_2nd_peak->GetParameter(1)/sqrt(2.);
             // sigm_[1] = f_2nd_peak->GetParameter(2)/sqrt(2.);
             mean_[1] = f_2nd_peak->GetParameter(1);
-            sigm_[1] = f_2nd_peak->GetParameter(2);
-            sigm_[1] = sigm_[1] / Arnes_Corr(sigm_[1], 0.025);
+            double sigmM  = f_2nd_peak->GetParameter(2);
+            sigm_[1] = sigmM / Arnes_Corr(sigmM, Fitter::wd_2h02a);
 
             mean_err_[1] = f_2nd_peak->GetParError(1);
-            sigm_err_[1] = f_2nd_peak->GetParError(2);
-            sigm_err_[1] = sigm_err_[1] / Arnes_Corr(sigm_[1], 0.025);
+            double dsigmM = f_2nd_peak->GetParError(2);
+            sigm_err_[1] = Arnes_CorrError(sigmM, Fitter::wd_2h02a, dsigmM);
 
             chi2_[1] = f_2nd_peak->GetChisquare();
             NDF_[1] = f_2nd_peak->GetNDF();
@@ -1666,12 +1675,12 @@ bool Fitter::Fit_2H02A(TGraph *gr, string counter_name) {
             h_3rd_peak->Fit(f_3rd_peak, "+MeV", "", range_3rd_peak[0], range_3rd_peak[1]);
 
             mean_[2] = f_3rd_peak->GetParameter(1);
-            sigm_[2] = f_3rd_peak->GetParameter(2);
-            sigm_[2] = sigm_[2] / Arnes_Corr(sigm_[2], 0.025);
+            double sigmM = f_3rd_peak->GetParameter(2);
+            sigm_[2] = sigmM / Arnes_Corr(sigmM, Fitter::wd_2h02a);
 
             mean_err_[2] = f_3rd_peak->GetParError(1);
-            sigm_err_[2] = f_3rd_peak->GetParError(2);
-            sigm_err_[2] = sigm_err_[2] / Arnes_Corr(sigm_[2], 0.025);
+            double dsigmM = f_3rd_peak->GetParError(2);
+            sigm_err_[2] = Arnes_CorrError(sigmM, Fitter::wd_2h02a, dsigmM);
 
             chi2_[2] = f_3rd_peak->GetChisquare();
             NDF_[2] = f_3rd_peak->GetNDF();
@@ -1938,4 +1947,11 @@ double* Calc_abalpha(double sigm45, double sigm_x, double sigm_y) {
 double Arnes_Corr(double sigm, double wd) {
     double corr = 1 + 0.025 / TMath::Power(sigm / wd, 2.826);
     return corr;
+}
+
+double Arnes_CorrError(double sigmM, double wd, double dSigmM) {
+
+    double a = 0.025 * TMath::Power(wd, 2.826);
+    return dSigmM * TMath::Power((1 + a * TMath::Power(sigmM, 2.826)), -1) + sigmM * (a * 2.826 * TMath::Power((1 + a * TMath::Power(sigmM, -2.826)), -2) *
+            TMath::Power(sigmM, -3.826));
 }
