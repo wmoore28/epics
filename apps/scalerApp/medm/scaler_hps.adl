@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=-152
-		y=66
+		x=148
+		y=167
 		width=1268
 		height=880
 	}
@@ -118,7 +118,7 @@ rectangle {
 		height=22
 	}
 	"basic attribute" {
-		clr=6
+		clr=5
 	}
 }
 arc {
@@ -902,7 +902,7 @@ text {
 }
 text {
 	object {
-		x=610
+		x=573
 		y=705
 		width=50
 		height=16
@@ -914,7 +914,7 @@ text {
 }
 text {
 	object {
-		x=500
+		x=463
 		y=706
 		width=50
 		height=16
@@ -926,7 +926,7 @@ text {
 }
 text {
 	object {
-		x=515
+		x=478
 		y=726
 		width=50
 		height=16
@@ -938,7 +938,7 @@ text {
 }
 text {
 	object {
-		x=635
+		x=598
 		y=724
 		width=50
 		height=16
@@ -950,7 +950,7 @@ text {
 }
 "text update" {
 	object {
-		x=543
+		x=506
 		y=702
 		width=61
 		height=18
@@ -967,7 +967,7 @@ text {
 }
 "text update" {
 	object {
-		x=565
+		x=528
 		y=725
 		width=61
 		height=18
@@ -984,7 +984,7 @@ text {
 }
 "text update" {
 	object {
-		x=642
+		x=605
 		y=702
 		width=61
 		height=18
@@ -1001,7 +1001,7 @@ text {
 }
 "text update" {
 	object {
-		x=665
+		x=628
 		y=727
 		width=61
 		height=18
@@ -4746,7 +4746,7 @@ rectangle {
 		height=22
 	}
 	"basic attribute" {
-		clr=6
+		clr=5
 	}
 }
 rectangle {
@@ -4791,7 +4791,7 @@ rectangle {
 		height=22
 	}
 	"basic attribute" {
-		clr=6
+		clr=5
 	}
 }
 rectangle {
@@ -4836,7 +4836,7 @@ rectangle {
 		height=22
 	}
 	"basic attribute" {
-		clr=6
+		clr=5
 	}
 }
 rectangle {
@@ -5061,7 +5061,7 @@ rectangle {
 		height=22
 	}
 	"basic attribute" {
-		clr=6
+		clr=5
 	}
 }
 rectangle {
@@ -5254,7 +5254,7 @@ rectangle {
 		height=22
 	}
 	"basic attribute" {
-		clr=6
+		clr=5
 	}
 }
 rectangle {
@@ -5269,8 +5269,8 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A & (1<<7)"
-		chan="ISD2H001HALOG"
+		calc="A & (1<<6)"
+		chan="ISD2H002G"
 	}
 }
 rectangle {
@@ -5285,10 +5285,8 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A&(1<<7) || B=0 || C&(1<<2)"
-		chan="ISD2H001HALOMASKr"
-		chanB="B_FSD_ISDDEST"
-		chanC="ISD2H001MASKr"
+		calc="A&(1<<5)"
+		chan="ISD2H002MASKr"
 	}
 }
 text {
@@ -5303,4 +5301,33 @@ text {
 	}
 	textix="HPS"
 	align="horiz. centered"
+}
+text {
+	object {
+		x=680
+		y=705
+		width=50
+		height=16
+	}
+	"basic attribute" {
+		clr=34
+	}
+	textix="MQB2H01"
+}
+"text update" {
+	object {
+		x=723
+		y=701
+		width=61
+		height=18
+	}
+	monitor {
+		chan="MQB2H01.BDL"
+		clr=34
+		bclr=0
+	}
+	align="horiz. centered"
+	format="truncated"
+	limits {
+	}
 }
