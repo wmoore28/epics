@@ -214,10 +214,13 @@ int main(int argc, char **argv) {
 
         cout << "pos2_[" << i_peak << "]  = " << pos_2[i_peak] << endl;
         f_GPol0->SetParameters(peak_val_2[i_peak], pos_2[i_peak], 0.2);
+        f_GPol0->SetParLimits(2, 0., 4.5);
         h_gr_2->Fit(f_GPol0, "eN", "", pos_2[i_peak] - 1.9, pos_2[i_peak] + 1.9);
         f_fit_func2_[i_peak] = (TF1*) f_GPol0->Clone(Form("f_fit_func2_%d", i_peak));
         f_fit_func2_[i_peak]->SetLineColor(2 + 2 * i_peak);
+        cout<<"CheckPoint1"<<endl;
         double sigma = f_fit_func2_[i_peak]->GetParameter(2);
+        cout<<"CheckPoint2:    sigma = "<<sigma<<endl;
         f_fit_func2_[i_peak]->SetRange(pos_2[i_peak] - 9 * sigma, pos_2[i_peak] + 9 * sigma);
 
         sigma_[2] = sigma;
@@ -225,6 +228,7 @@ int main(int argc, char **argv) {
         mean_vals[i_peak] = f_fit_func2_[i_peak]->GetParameter(1);
         mean_vals_err[i_peak] = f_fit_func2_[i_peak]->GetParError(1);
         f_Gaus->SetParameters(h_gr_2->GetBinContent(mean_bin), pos_2[i_peak], 0.07);
+        f_Gaus->SetParLimits(2, 0., 3.5);
         h_gr_2->Fit(f_Gaus, "+MeV", "", fit_left_lim, fit_right_lim);
         mean_vals_truncated[i_peak] = f_Gaus->GetParameter(1);
         mean_vals_truncated_err[i_peak] = f_Gaus->GetParError(1);
@@ -286,6 +290,7 @@ int main(int argc, char **argv) {
 
         cout << "pos3_[" << i_peak << "]  = " << pos_3[i_peak] << endl;
         f_GPol0->SetParameters(peak_val_3[i_peak], pos_3[i_peak], 0.2);
+        f_GPol0->SetParLimits(2, 0., 4.5);
         h_gr_3->Fit(f_GPol0, "eN", "", pos_3[i_peak] - 1.9, pos_3[i_peak] + 1.9);
         f_fit_func3_[i_peak] = (TF1*) f_GPol0->Clone(Form("f_fit_func3_%d", i_peak));
         f_fit_func3_[i_peak]->SetLineColor(2 + 2 * i_peak);
