@@ -69,3 +69,17 @@ record(bo,SVT:lv:fe:all:switch)
 	field(ONAM, "On")
 }
 
+record(calc,SVT:feb:linkstatus){
+	field(SCAN,"Passive")
+	field(INPA,"SVT:feb:0:linkstatus CPP")
+	field(INPB,"SVT:feb:1:linkstatus CPP")
+	field(INPC,"SVT:feb:2:linkstatus CPP")
+	field(INPD,"SVT:feb:3:linkstatus CPP")
+	field(INPE,"SVT:feb:4:linkstatus CPP")
+	field(INPF,"SVT:feb:5:linkstatus CPP")
+	field(INPG,"SVT:feb:6:linkstatus CPP")
+	field(INPH,"SVT:feb:7:linkstatus CPP")
+	field(INPI,"SVT:feb:8:linkstatus CPP")
+	field(INPJ,"SVT:feb:9:linkstatus CPP")
+	field(CALC,"A&&B&&C&&D&&E&&F&&G&&H&&I&&J")
+}

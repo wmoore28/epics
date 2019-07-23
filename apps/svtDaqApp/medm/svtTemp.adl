@@ -1,17 +1,17 @@
 
 file {
-	name="/usr/clas12/hps/svt-devel/apps/svtDaqApp/medm/svtTemp.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/svtDaqApp/medm/svtTemp.adl"
+	version=030109
 }
 display {
 	object {
-		x=359
-		y=49
+		x=2414
+		y=326
 		width=400
-		height=700
+		height=691
 	}
 	clr=14
-	bclr=12
+	bclr=13
 	cmap=""
 	gridSpacing=5
 	gridOn=1
@@ -89,749 +89,712 @@ display {
 }
 text {
 	object {
-		x=70
-		y=15
-		width=240
-		height=35
+		x=140
+		y=50
+		width=50
+		height=25
 	}
 	"basic attribute" {
-		clr=15
+		clr=50
 	}
-	textix="FEB Temperatures"
+	textix="FPGA"
 	align="horiz. centered"
 }
-composite {
+text {
+	object {
+		x=200
+		y=50
+		width=50
+		height=25
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="FebTemp0"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=260
+		y=50
+		width=50
+		height=25
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="FebTemp1"
+	align="horiz. centered"
+}
+text {
 	object {
 		x=70
-		y=50
-		width=240
-		height=318
+		y=73
+		width=50
+		height=25
 	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=140
-				y=50
-				width=50
-				height=25
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="FPGA"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=200
-				y=50
-				width=50
-				height=25
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="FebTemp0"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=260
-				y=50
-				width=50
-				height=25
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="FebTemp1"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=70
-				y=73
-				width=50
-				height=25
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="FEB 0"
-			align="horiz. centered"
-		}
-		"text update" {
-			object {
-				x=140
-				y=71
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:0:axixadc:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=200
-				y=71
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:0:FebTemp0:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=260
-				y=71
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:0:FebTemp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		text {
-			object {
-				x=70
-				y=103
-				width=50
-				height=25
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="FEB 1"
-			align="horiz. centered"
-		}
-		"text update" {
-			object {
-				x=140
-				y=101
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:1:axixadc:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=200
-				y=101
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:1:FebTemp0:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=260
-				y=101
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:1:FebTemp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		text {
-			object {
-				x=70
-				y=133
-				width=50
-				height=25
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="FEB 2"
-			align="horiz. centered"
-		}
-		"text update" {
-			object {
-				x=140
-				y=131
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:2:axixadc:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=200
-				y=131
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:2:FebTemp0:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=260
-				y=131
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:2:FebTemp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		text {
-			object {
-				x=70
-				y=163
-				width=50
-				height=25
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="FEB 3"
-			align="horiz. centered"
-		}
-		"text update" {
-			object {
-				x=140
-				y=161
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:3:axixadc:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=200
-				y=161
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:3:FebTemp0:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=260
-				y=161
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:3:FebTemp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		text {
-			object {
-				x=70
-				y=193
-				width=50
-				height=25
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="FEB 4"
-			align="horiz. centered"
-		}
-		"text update" {
-			object {
-				x=140
-				y=191
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:4:axixadc:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=200
-				y=191
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:4:FebTemp0:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=260
-				y=191
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:4:FebTemp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		text {
-			object {
-				x=70
-				y=223
-				width=50
-				height=25
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="FEB 5"
-			align="horiz. centered"
-		}
-		"text update" {
-			object {
-				x=140
-				y=221
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:5:axixadc:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=200
-				y=221
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:5:FebTemp0:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=260
-				y=221
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:5:FebTemp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		text {
-			object {
-				x=70
-				y=253
-				width=50
-				height=25
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="FEB 6"
-			align="horiz. centered"
-		}
-		"text update" {
-			object {
-				x=140
-				y=251
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:6:axixadc:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=200
-				y=251
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:6:FebTemp0:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=260
-				y=251
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:6:FebTemp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		text {
-			object {
-				x=70
-				y=283
-				width=50
-				height=25
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="FEB 7"
-			align="horiz. centered"
-		}
-		"text update" {
-			object {
-				x=140
-				y=281
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:7:axixadc:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=200
-				y=281
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:7:FebTemp0:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=260
-				y=281
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:7:FebTemp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		text {
-			object {
-				x=70
-				y=313
-				width=50
-				height=25
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="FEB 8"
-			align="horiz. centered"
-		}
-		"text update" {
-			object {
-				x=140
-				y=311
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:8:axixadc:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=200
-				y=311
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:8:FebTemp0:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=260
-				y=311
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:8:FebTemp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		text {
-			object {
-				x=70
-				y=343
-				width=50
-				height=25
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="FEB 9"
-			align="horiz. centered"
-		}
-		"text update" {
-			object {
-				x=140
-				y=341
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:9:axixadc:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=200
-				y=341
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:9:FebTemp0:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
-		"text update" {
-			object {
-				x=260
-				y=341
-				width=50
-				height=25
-			}
-			monitor {
-				chan="SVT:temp:fe:9:FebTemp1:t_rd"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-				precSrc="default"
-				precDefault=1
-			}
-		}
+	"basic attribute" {
+		clr=50
+	}
+	textix="FEB 0"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=140
+		y=71
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:0:axixadc:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=71
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:0:FebTemp0:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=71
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:0:FebTemp1:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
 	}
 }
 text {
 	object {
-		x=125
-		y=390
-		width=150
-		height=20
+		x=70
+		y=103
+		width=50
+		height=25
 	}
 	"basic attribute" {
-		clr=61
+		clr=50
 	}
-	textix="Vacuum Chamber Temperatures"
+	textix="FEB 1"
 	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=140
+		y=101
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:1:axixadc:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=101
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:1:FebTemp0:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=101
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:1:FebTemp1:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+text {
+	object {
+		x=70
+		y=133
+		width=50
+		height=25
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="FEB 2"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=140
+		y=131
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:2:axixadc:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=131
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:2:FebTemp0:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=131
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:2:FebTemp1:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+text {
+	object {
+		x=70
+		y=163
+		width=50
+		height=25
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="FEB 3"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=140
+		y=161
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:3:axixadc:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=161
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:3:FebTemp0:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=161
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:3:FebTemp1:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+text {
+	object {
+		x=70
+		y=193
+		width=50
+		height=25
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="FEB 4"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=140
+		y=191
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:4:axixadc:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=191
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:4:FebTemp0:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=191
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:4:FebTemp1:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+text {
+	object {
+		x=70
+		y=223
+		width=50
+		height=25
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="FEB 5"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=140
+		y=221
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:5:axixadc:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=221
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:5:FebTemp0:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=221
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:5:FebTemp1:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+text {
+	object {
+		x=70
+		y=253
+		width=50
+		height=25
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="FEB 6"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=140
+		y=251
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:6:axixadc:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=251
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:6:FebTemp0:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=251
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:6:FebTemp1:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+text {
+	object {
+		x=70
+		y=283
+		width=50
+		height=25
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="FEB 7"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=140
+		y=281
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:7:axixadc:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=281
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:7:FebTemp0:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=281
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:7:FebTemp1:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+text {
+	object {
+		x=70
+		y=313
+		width=50
+		height=25
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="FEB 8"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=140
+		y=311
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:8:axixadc:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=311
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:8:FebTemp0:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=311
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:8:FebTemp1:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+text {
+	object {
+		x=70
+		y=343
+		width=50
+		height=25
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="FEB 9"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=140
+		y=341
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:9:axixadc:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=341
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:9:FebTemp0:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=341
+		width=50
+		height=25
+	}
+	monitor {
+		chan="SVT:temp:fe:9:FebTemp1:t_rd"
+		clr=30
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
 }
 text {
 	object {
@@ -913,7 +876,7 @@ text {
 		height=17
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Value"
+		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Value"
 		clr=30
 		bclr=14
 	}
@@ -929,7 +892,7 @@ text {
 		height=17
 	}
 	monitor {
-		chan="HPS_SVT:PLC:i:RTD_SVT_Return-Value"
+		chan="HPS_SVT:PLC:i:RTD_SVT_Supply-Value"
 		clr=30
 		bclr=14
 	}
@@ -981,20 +944,7 @@ text {
 }
 text {
 	object {
-		x=70
-		y=550
-		width=240
-		height=20
-	}
-	"basic attribute" {
-		clr=61
-	}
-	textix="Chiller Status"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=70
+		x=49
 		y=618
 		width=50
 		height=20
@@ -1006,7 +956,7 @@ text {
 }
 text {
 	object {
-		x=70
+		x=49
 		y=648
 		width=50
 		height=20
@@ -1018,7 +968,7 @@ text {
 }
 "text update" {
 	object {
-		x=98
+		x=77
 		y=620
 		width=45
 		height=17
@@ -1034,7 +984,7 @@ text {
 }
 text {
 	object {
-		x=98
+		x=77
 		y=596
 		width=45
 		height=20
@@ -1047,7 +997,7 @@ text {
 }
 "text update" {
 	object {
-		x=160
+		x=139
 		y=650
 		width=45
 		height=17
@@ -1063,7 +1013,7 @@ text {
 }
 "text update" {
 	object {
-		x=160
+		x=139
 		y=620
 		width=45
 		height=17
@@ -1079,7 +1029,7 @@ text {
 }
 text {
 	object {
-		x=160
+		x=139
 		y=596
 		width=45
 		height=20
@@ -1092,7 +1042,7 @@ text {
 }
 "text update" {
 	object {
-		x=216
+		x=195
 		y=650
 		width=45
 		height=17
@@ -1108,7 +1058,7 @@ text {
 }
 "text update" {
 	object {
-		x=216
+		x=195
 		y=620
 		width=45
 		height=17
@@ -1124,7 +1074,7 @@ text {
 }
 text {
 	object {
-		x=216
+		x=195
 		y=594
 		width=45
 		height=20
@@ -1137,7 +1087,7 @@ text {
 }
 "text update" {
 	object {
-		x=274
+		x=253
 		y=620
 		width=45
 		height=17
@@ -1153,7 +1103,7 @@ text {
 }
 text {
 	object {
-		x=274
+		x=253
 		y=595
 		width=45
 		height=20
@@ -1166,7 +1116,7 @@ text {
 }
 "text update" {
 	object {
-		x=323
+		x=302
 		y=620
 		width=45
 		height=17
@@ -1182,7 +1132,7 @@ text {
 }
 text {
 	object {
-		x=323
+		x=302
 		y=595
 		width=45
 		height=20
@@ -1195,8 +1145,8 @@ text {
 }
 text {
 	object {
-		x=323
-		y=575
+		x=302
+		y=582
 		width=45
 		height=20
 	}
@@ -1204,5 +1154,77 @@ text {
 		clr=50
 	}
 	textix="Pump"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=0
+		y=0
+		width=400
+		height=30
+	}
+	"basic attribute" {
+		clr=19
+	}
+}
+text {
+	object {
+		x=0
+		y=5
+		width=400
+		height=25
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="FEB Temperatures"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=0
+		y=382
+		width=400
+		height=30
+	}
+	"basic attribute" {
+		clr=19
+	}
+}
+text {
+	object {
+		x=0
+		y=390
+		width=400
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="RTD Chiller Temperatures"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=0
+		y=538
+		width=400
+		height=30
+	}
+	"basic attribute" {
+		clr=19
+	}
+}
+text {
+	object {
+		x=0
+		y=545
+		width=400
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Chiller Status"
 	align="horiz. centered"
 }

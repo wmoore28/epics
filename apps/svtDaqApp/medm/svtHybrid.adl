@@ -1,20 +1,20 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/svtDaq/medm/svtHybrid.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/svtDaqApp/medm/svtHybrid.adl"
+	version=030109
 }
 display {
 	object {
-		x=2112
-		y=135
-		width=1390
-		height=712
+		x=387
+		y=277
+		width=1405
+		height=660
 	}
 	clr=14
-	bclr=12
+	bclr=13
 	cmap=""
 	gridSpacing=5
-	gridOn=1
+	gridOn=0
 	snapToGrid=0
 }
 "color map" {
@@ -87,129 +87,54 @@ display {
 		1a7309,
 	}
 }
-"text update" {
+rectangle {
 	object {
-		x=19
-		y=198
-		width=45
-		height=20
+		x=0
+		y=0
+		width=1405
+		height=35
 	}
-	monitor {
-		chan="SVT:daq:map:1:layer"
-		clr=30
-		bclr=14
+	"basic attribute" {
+		clr=19
 	}
-	align="horiz. centered"
-	limits {
+	"dynamic attribute" {
+		chan="SVT:lv:all:switch"
 	}
 }
-"text update" {
+rectangle {
 	object {
-		x=19
-		y=307
-		width=45
-		height=20
+		x=6
+		y=46
+		width=170
+		height=30
 	}
-	monitor {
-		chan="SVT:daq:map:2:layer"
-		clr=30
-		bclr=14
+	"basic attribute" {
+		clr=25
+		style="dash"
+		fill="outline"
 	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=19
-		y=414
-		width=45
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:3:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=19
-		y=523
-		width=45
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:4:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=19
-		y=91
-		width=45
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:0:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
+	"dynamic attribute" {
+		chan="SVT:lv:all:switch"
 	}
 }
 "choice button" {
 	object {
-		x=127
-		y=650
+		x=122
+		y=51
 		width=50
 		height=20
 	}
 	control {
-		chan="SVT:lv:hyb:all:switch"
+		chan="SVT:lv:all:switch"
 		clr=55
 		bclr=12
 	}
 	stacking="column"
 }
-text {
-	object {
-		x=100
-		y=630
-		width=103
-		height=29
-	}
-	"basic attribute" {
-		clr=50
-	}
-	textix="All hybrids ON/OFF"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=300
-		y=610
-		width=133
-		height=20
-	}
-	"basic attribute" {
-		clr=50
-	}
-	textix="Control IOC Status"
-}
 "choice button" {
 	object {
 		x=1070
-		y=54
+		y=110
 		width=49
 		height=20
 	}
@@ -223,7 +148,7 @@ text {
 "choice button" {
 	object {
 		x=1070
-		y=79
+		y=135
 		width=49
 		height=20
 	}
@@ -237,7 +162,7 @@ text {
 "choice button" {
 	object {
 		x=1070
-		y=104
+		y=160
 		width=49
 		height=20
 	}
@@ -251,7 +176,7 @@ text {
 "choice button" {
 	object {
 		x=1070
-		y=129
+		y=186
 		width=49
 		height=20
 	}
@@ -265,7 +190,7 @@ text {
 rectangle {
 	object {
 		x=1127
-		y=54
+		y=110
 		width=20
 		height=20
 	}
@@ -273,14 +198,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:5:0:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:5:0:avdd:stat"
+		chanB="SVT:lv:5:0:dvdd:stat"
+		chanC="SVT:lv:5:0:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=79
+		y=135
 		width=20
 		height=20
 	}
@@ -288,14 +216,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:5:1:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:5:1:avdd:stat"
+		chanB="SVT:lv:5:1:dvdd:stat"
+		chanC="SVT:lv:5:1:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=104
+		y=160
 		width=20
 		height=20
 	}
@@ -303,14 +234,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:5:2:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:5:2:avdd:stat"
+		chanB="SVT:lv:5:2:dvdd:stat"
+		chanC="SVT:lv:5:2:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=129
+		y=186
 		width=20
 		height=20
 	}
@@ -318,14 +252,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:5:3:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:5:3:avdd:stat"
+		chanB="SVT:lv:5:3:dvdd:stat"
+		chanC="SVT:lv:5:3:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=54
+		y=110
 		width=20
 		height=20
 	}
@@ -333,15 +270,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:5:0:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:5:0:avdd:stat"
+		chanB="SVT:lv:5:0:dvdd:stat"
+		chanC="SVT:lv:5:0:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=79
+		y=135
 		width=20
 		height=20
 	}
@@ -349,15 +288,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:5:1:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:5:1:avdd:stat"
+		chanB="SVT:lv:5:1:dvdd:stat"
+		chanC="SVT:lv:5:1:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=104
+		y=160
 		width=20
 		height=20
 	}
@@ -365,15 +306,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:5:2:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:5:2:avdd:stat"
+		chanB="SVT:lv:5:2:dvdd:stat"
+		chanC="SVT:lv:5:2:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=129
+		y=186
 		width=20
 		height=20
 	}
@@ -381,15 +324,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:5:3:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:5:3:avdd:stat"
+		chanB="SVT:lv:5:3:dvdd:stat"
+		chanC="SVT:lv:5:3:v125:stat"
 	}
 }
 "text update" {
 	object {
 		x=1159
-		y=54
+		y=110
 		width=45
 		height=20
 	}
@@ -399,13 +344,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1208
-		y=54
+		y=110
 		width=45
 		height=20
 	}
@@ -415,13 +361,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1257
-		y=54
+		y=110
 		width=45
 		height=20
 	}
@@ -431,13 +378,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1159
-		y=79
+		y=135
 		width=45
 		height=20
 	}
@@ -447,13 +395,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1208
-		y=79
+		y=135
 		width=45
 		height=20
 	}
@@ -463,13 +412,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1257
-		y=79
+		y=135
 		width=45
 		height=20
 	}
@@ -479,13 +429,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1159
-		y=104
+		y=160
 		width=45
 		height=20
 	}
@@ -495,13 +446,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1208
-		y=104
+		y=160
 		width=45
 		height=20
 	}
@@ -511,13 +463,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1257
-		y=104
+		y=160
 		width=45
 		height=20
 	}
@@ -527,13 +480,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1159
-		y=129
+		y=186
 		width=45
 		height=20
 	}
@@ -543,13 +497,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1208
-		y=129
+		y=186
 		width=45
 		height=20
 	}
@@ -559,13 +514,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1257
-		y=129
+		y=186
 		width=45
 		height=20
 	}
@@ -575,13 +531,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "choice button" {
 	object {
 		x=1070
-		y=161
+		y=218
 		width=49
 		height=20
 	}
@@ -595,7 +552,7 @@ rectangle {
 "choice button" {
 	object {
 		x=1070
-		y=186
+		y=243
 		width=49
 		height=20
 	}
@@ -609,7 +566,7 @@ rectangle {
 "choice button" {
 	object {
 		x=1070
-		y=211
+		y=268
 		width=49
 		height=20
 	}
@@ -623,7 +580,7 @@ rectangle {
 "choice button" {
 	object {
 		x=1070
-		y=236
+		y=293
 		width=49
 		height=20
 	}
@@ -637,7 +594,7 @@ rectangle {
 rectangle {
 	object {
 		x=1127
-		y=161
+		y=218
 		width=20
 		height=20
 	}
@@ -645,14 +602,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:6:0:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:6:0:avdd:stat"
+		chanB="SVT:lv:6:0:dvdd:stat"
+		chanC="SVT:lv:6:0:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=186
+		y=243
 		width=20
 		height=20
 	}
@@ -660,14 +620,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:6:1:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:6:1:avdd:stat"
+		chanB="SVT:lv:6:1:dvdd:stat"
+		chanC="SVT:lv:6:1:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=211
+		y=268
 		width=20
 		height=20
 	}
@@ -675,14 +638,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:6:2:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:6:2:avdd:stat"
+		chanB="SVT:lv:6:2:dvdd:stat"
+		chanC="SVT:lv:6:2:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=236
+		y=293
 		width=20
 		height=20
 	}
@@ -690,14 +656,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:6:3:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:6:3:avdd:stat"
+		chanB="SVT:lv:6:3:dvdd:stat"
+		chanC="SVT:lv:6:3:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=161
+		y=218
 		width=20
 		height=20
 	}
@@ -705,15 +674,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:6:0:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:6:0:avdd:stat"
+		chanB="SVT:lv:6:0:dvdd:stat"
+		chanC="SVT:lv:6:0:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=186
+		y=243
 		width=20
 		height=20
 	}
@@ -721,15 +692,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:6:1:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:6:1:avdd:stat"
+		chanB="SVT:lv:6:1:dvdd:stat"
+		chanC="SVT:lv:6:1:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=211
+		y=268
 		width=20
 		height=20
 	}
@@ -737,15 +710,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:6:2:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:6:2:avdd:stat"
+		chanB="SVT:lv:6:2:dvdd:stat"
+		chanC="SVT:lv:6:2:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=236
+		y=293
 		width=20
 		height=20
 	}
@@ -753,15 +728,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:6:3:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:6:3:avdd:stat"
+		chanB="SVT:lv:6:3:dvdd:stat"
+		chanC="SVT:lv:6:3:v125:stat"
 	}
 }
 "text update" {
 	object {
 		x=1159
-		y=161
+		y=218
 		width=45
 		height=20
 	}
@@ -771,13 +748,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1208
-		y=161
+		y=218
 		width=45
 		height=20
 	}
@@ -787,13 +765,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1257
-		y=161
+		y=218
 		width=45
 		height=20
 	}
@@ -803,13 +782,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1159
-		y=186
+		y=243
 		width=45
 		height=20
 	}
@@ -819,13 +799,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1208
-		y=186
+		y=243
 		width=45
 		height=20
 	}
@@ -835,13 +816,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1257
-		y=186
+		y=243
 		width=45
 		height=20
 	}
@@ -851,13 +833,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1159
-		y=211
+		y=268
 		width=45
 		height=20
 	}
@@ -867,13 +850,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1208
-		y=211
+		y=268
 		width=45
 		height=20
 	}
@@ -883,13 +867,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1257
-		y=211
+		y=268
 		width=45
 		height=20
 	}
@@ -899,13 +884,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1159
-		y=236
+		y=293
 		width=45
 		height=20
 	}
@@ -915,13 +901,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1208
-		y=236
+		y=293
 		width=45
 		height=20
 	}
@@ -931,13 +918,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1257
-		y=236
+		y=293
 		width=45
 		height=20
 	}
@@ -947,13 +935,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 text {
 	object {
-		x=1127
-		y=32
+		x=1076
+		y=86
 		width=35
 		height=20
 	}
@@ -966,7 +955,7 @@ text {
 text {
 	object {
 		x=1161
-		y=30
+		y=86
 		width=35
 		height=20
 	}
@@ -979,7 +968,7 @@ text {
 text {
 	object {
 		x=1210
-		y=30
+		y=86
 		width=35
 		height=20
 	}
@@ -992,7 +981,7 @@ text {
 text {
 	object {
 		x=1259
-		y=30
+		y=86
 		width=35
 		height=20
 	}
@@ -1005,7 +994,7 @@ text {
 text {
 	object {
 		x=1184
-		y=9
+		y=65
 		width=101
 		height=20
 	}
@@ -1018,7 +1007,7 @@ text {
 "choice button" {
 	object {
 		x=1072
-		y=270
+		y=327
 		width=49
 		height=20
 	}
@@ -1032,7 +1021,7 @@ text {
 "choice button" {
 	object {
 		x=1072
-		y=295
+		y=352
 		width=49
 		height=20
 	}
@@ -1046,7 +1035,7 @@ text {
 "choice button" {
 	object {
 		x=1072
-		y=320
+		y=377
 		width=49
 		height=20
 	}
@@ -1060,7 +1049,7 @@ text {
 "choice button" {
 	object {
 		x=1072
-		y=345
+		y=402
 		width=49
 		height=20
 	}
@@ -1074,7 +1063,7 @@ text {
 rectangle {
 	object {
 		x=1127
-		y=270
+		y=327
 		width=20
 		height=20
 	}
@@ -1082,14 +1071,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:7:0:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:7:0:avdd:stat"
+		chanB="SVT:lv:7:0:dvdd:stat"
+		chanC="SVT:lv:7:0:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=295
+		y=352
 		width=20
 		height=20
 	}
@@ -1097,14 +1089,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:7:1:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:7:1:avdd:stat"
+		chanB="SVT:lv:7:1:dvdd:stat"
+		chanC="SVT:lv:7:1:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=320
+		y=377
 		width=20
 		height=20
 	}
@@ -1112,14 +1107,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:7:2:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:7:2:avdd:stat"
+		chanB="SVT:lv:7:2:dvdd:stat"
+		chanC="SVT:lv:7:2:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=345
+		y=402
 		width=20
 		height=20
 	}
@@ -1127,14 +1125,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:7:3:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:7:3:avdd:stat"
+		chanB="SVT:lv:7:3:dvdd:stat"
+		chanC="SVT:lv:7:3:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=270
+		y=327
 		width=20
 		height=20
 	}
@@ -1142,15 +1143,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:7:0:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:7:0:avdd:stat"
+		chanB="SVT:lv:7:0:dvdd:stat"
+		chanC="SVT:lv:7:0:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=295
+		y=352
 		width=20
 		height=20
 	}
@@ -1158,15 +1161,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:7:1:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:7:1:avdd:stat"
+		chanB="SVT:lv:7:1:dvdd:stat"
+		chanC="SVT:lv:7:1:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=320
+		y=377
 		width=20
 		height=20
 	}
@@ -1174,15 +1179,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:7:2:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:7:2:avdd:stat"
+		chanB="SVT:lv:7:2:dvdd:stat"
+		chanC="SVT:lv:7:2:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=345
+		y=402
 		width=20
 		height=20
 	}
@@ -1190,15 +1197,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:7:3:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:7:3:avdd:stat"
+		chanB="SVT:lv:7:3:dvdd:stat"
+		chanC="SVT:lv:7:3:v125:stat"
 	}
 }
 "text update" {
 	object {
 		x=1161
-		y=270
+		y=327
 		width=45
 		height=20
 	}
@@ -1208,13 +1217,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1210
-		y=270
+		y=327
 		width=45
 		height=20
 	}
@@ -1224,13 +1234,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1259
-		y=270
+		y=327
 		width=45
 		height=20
 	}
@@ -1240,13 +1251,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1161
-		y=295
+		y=352
 		width=45
 		height=20
 	}
@@ -1256,13 +1268,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1210
-		y=295
+		y=352
 		width=45
 		height=20
 	}
@@ -1272,13 +1285,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1259
-		y=295
+		y=352
 		width=45
 		height=20
 	}
@@ -1288,13 +1302,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1161
-		y=320
+		y=377
 		width=45
 		height=20
 	}
@@ -1304,13 +1319,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1210
-		y=320
+		y=377
 		width=45
 		height=20
 	}
@@ -1320,13 +1336,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1259
-		y=320
+		y=377
 		width=45
 		height=20
 	}
@@ -1336,13 +1353,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1161
-		y=345
+		y=402
 		width=45
 		height=20
 	}
@@ -1352,13 +1370,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1210
-		y=345
+		y=402
 		width=45
 		height=20
 	}
@@ -1368,13 +1387,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1259
-		y=345
+		y=402
 		width=45
 		height=20
 	}
@@ -1384,13 +1404,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "choice button" {
 	object {
 		x=1074
-		y=379
+		y=436
 		width=49
 		height=20
 	}
@@ -1404,7 +1425,7 @@ rectangle {
 "choice button" {
 	object {
 		x=1074
-		y=404
+		y=461
 		width=49
 		height=20
 	}
@@ -1418,7 +1439,7 @@ rectangle {
 "choice button" {
 	object {
 		x=1074
-		y=429
+		y=487
 		width=49
 		height=20
 	}
@@ -1432,7 +1453,7 @@ rectangle {
 "choice button" {
 	object {
 		x=1074
-		y=454
+		y=512
 		width=49
 		height=20
 	}
@@ -1446,7 +1467,7 @@ rectangle {
 rectangle {
 	object {
 		x=1127
-		y=379
+		y=436
 		width=20
 		height=20
 	}
@@ -1454,15 +1475,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		calc="A"
-		chan="SVT:lv:8:0:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:8:0:avdd:stat"
+		chanB="SVT:lv:8:0:dvdd:stat"
+		chanC="SVT:lv:8:0:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=404
+		y=461
 		width=20
 		height=20
 	}
@@ -1472,13 +1495,15 @@ rectangle {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A>0"
-		chan="SVT:lv:8:1:stat"
+		chan="SVT:lv:8:1:avdd:stat"
+		chanB="SVT:lv:8:1:dvdd:stat"
+		chanC="SVT:lv:8:1:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=429
+		y=487
 		width=20
 		height=20
 	}
@@ -1486,14 +1511,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:8:2:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:8:2:avdd:stat"
+		chanB="SVT:lv:8:2:dvdd:stat"
+		chanC="SVT:lv:8:2:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=454
+		y=512
 		width=20
 		height=20
 	}
@@ -1501,14 +1529,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:8:3:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:8:3:avdd:stat"
+		chanB="SVT:lv:8:3:dvdd:stat"
+		chanC="SVT:lv:8:3:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=379
+		y=436
 		width=20
 		height=20
 	}
@@ -1516,15 +1547,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:8:0:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:8:0:avdd:stat"
+		chanB="SVT:lv:8:0:dvdd:stat"
+		chanC="SVT:lv:8:0:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=404
+		y=461
 		width=20
 		height=20
 	}
@@ -1532,15 +1565,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:8:1:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:8:1:avdd:stat"
+		chanB="SVT:lv:8:1:dvdd:stat"
+		chanC="SVT:lv:8:1:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=429
+		y=487
 		width=20
 		height=20
 	}
@@ -1548,15 +1583,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:8:2:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:8:2:avdd:stat"
+		chanB="SVT:lv:8:2:dvdd:stat"
+		chanC="SVT:lv:8:2:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=454
+		y=512
 		width=20
 		height=20
 	}
@@ -1564,15 +1601,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:8:3:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:8:3:avdd:stat"
+		chanB="SVT:lv:8:3:dvdd:stat"
+		chanC="SVT:lv:8:3:v125:stat"
 	}
 }
 "text update" {
 	object {
 		x=1163
-		y=379
+		y=436
 		width=45
 		height=20
 	}
@@ -1582,13 +1621,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1212
-		y=379
+		y=436
 		width=45
 		height=20
 	}
@@ -1598,13 +1638,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1261
-		y=379
+		y=436
 		width=45
 		height=20
 	}
@@ -1614,13 +1655,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1163
-		y=404
+		y=461
 		width=45
 		height=20
 	}
@@ -1630,13 +1672,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1212
-		y=404
+		y=461
 		width=45
 		height=20
 	}
@@ -1646,13 +1689,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1261
-		y=404
+		y=461
 		width=45
 		height=20
 	}
@@ -1662,13 +1706,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1163
-		y=429
+		y=487
 		width=45
 		height=20
 	}
@@ -1678,13 +1723,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1212
-		y=429
+		y=487
 		width=45
 		height=20
 	}
@@ -1694,13 +1740,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1261
-		y=429
+		y=487
 		width=45
 		height=20
 	}
@@ -1710,13 +1757,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1163
-		y=454
+		y=512
 		width=45
 		height=20
 	}
@@ -1726,13 +1774,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1212
-		y=454
+		y=512
 		width=45
 		height=20
 	}
@@ -1742,13 +1791,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1261
-		y=454
+		y=512
 		width=45
 		height=20
 	}
@@ -1758,13 +1808,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 text {
 	object {
 		x=1338
-		y=10
+		y=84
 		width=45
 		height=20
 	}
@@ -1777,7 +1828,7 @@ text {
 "text update" {
 	object {
 		x=1338
-		y=54
+		y=110
 		width=45
 		height=20
 	}
@@ -1787,13 +1838,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1337
-		y=79
+		y=135
 		width=45
 		height=20
 	}
@@ -1803,13 +1855,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1337
-		y=104
+		y=160
 		width=45
 		height=20
 	}
@@ -1819,13 +1872,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1336
-		y=129
+		y=186
 		width=45
 		height=20
 	}
@@ -1835,13 +1889,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1335
-		y=162
+		y=219
 		width=45
 		height=20
 	}
@@ -1851,13 +1906,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1335
-		y=187
+		y=244
 		width=45
 		height=20
 	}
@@ -1867,13 +1923,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1335
-		y=212
+		y=269
 		width=45
 		height=20
 	}
@@ -1883,13 +1940,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1334
-		y=237
+		y=294
 		width=45
 		height=20
 	}
@@ -1899,13 +1957,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1335
-		y=271
+		y=328
 		width=45
 		height=20
 	}
@@ -1915,13 +1974,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1334
-		y=296
+		y=353
 		width=45
 		height=20
 	}
@@ -1931,13 +1991,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1334
-		y=321
+		y=378
 		width=45
 		height=20
 	}
@@ -1947,13 +2008,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1333
-		y=346
+		y=403
 		width=45
 		height=20
 	}
@@ -1963,13 +2025,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1335
-		y=378
+		y=435
 		width=45
 		height=20
 	}
@@ -1979,13 +2042,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1335
-		y=403
+		y=460
 		width=45
 		height=20
 	}
@@ -1995,13 +2059,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1335
-		y=428
+		y=485
 		width=45
 		height=20
 	}
@@ -2011,13 +2076,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1334
-		y=453
+		y=511
 		width=45
 		height=20
 	}
@@ -2027,13 +2093,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 text {
 	object {
 		x=800
-		y=91
+		y=146
 		width=19
 		height=20
 	}
@@ -2046,7 +2113,7 @@ text {
 text {
 	object {
 		x=800
-		y=198
+		y=246
 		width=19
 		height=20
 	}
@@ -2059,7 +2126,7 @@ text {
 text {
 	object {
 		x=802
-		y=307
+		y=360
 		width=19
 		height=20
 	}
@@ -2072,7 +2139,7 @@ text {
 text {
 	object {
 		x=804
-		y=416
+		y=470
 		width=19
 		height=20
 	}
@@ -2085,7 +2152,7 @@ text {
 text {
 	object {
 		x=805
-		y=523
+		y=576
 		width=19
 		height=20
 	}
@@ -2098,7 +2165,7 @@ text {
 "choice button" {
 	object {
 		x=830
-		y=91
+		y=146
 		width=49
 		height=20
 	}
@@ -2112,7 +2179,7 @@ text {
 "choice button" {
 	object {
 		x=830
-		y=198
+		y=246
 		width=49
 		height=20
 	}
@@ -2126,7 +2193,7 @@ text {
 "choice button" {
 	object {
 		x=830
-		y=304
+		y=360
 		width=49
 		height=20
 	}
@@ -2140,7 +2207,7 @@ text {
 "choice button" {
 	object {
 		x=830
-		y=406
+		y=470
 		width=49
 		height=20
 	}
@@ -2154,7 +2221,7 @@ text {
 "choice button" {
 	object {
 		x=830
-		y=517
+		y=576
 		width=49
 		height=20
 	}
@@ -2165,91 +2232,11 @@ text {
 	}
 	stacking="column"
 }
-"text update" {
-	object {
-		x=750
-		y=91
-		width=42
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:5:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=750
-		y=198
-		width=42
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:6:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=751
-		y=307
-		width=42
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:7:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=753
-		y=416
-		width=42
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:8:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=753
-		y=523
-		width=42
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:9:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
 text {
 	object {
-		x=926
-		y=9
-		width=101
+		x=887
+		y=86
+		width=50
 		height=20
 	}
 	"basic attribute" {
@@ -2260,21 +2247,8 @@ text {
 }
 text {
 	object {
-		x=880
-		y=32
-		width=50
-		height=20
-	}
-	"basic attribute" {
-		clr=50
-	}
-	textix="Layer"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=1005
-		y=30
+		x=928
+		y=86
 		width=50
 		height=20
 	}
@@ -2286,8 +2260,8 @@ text {
 }
 text {
 	object {
-		x=750
-		y=32
+		x=734
+		y=86
 		width=48
 		height=20
 	}
@@ -2299,8 +2273,8 @@ text {
 }
 text {
 	object {
-		x=740
-		y=9
+		x=758
+		y=86
 		width=101
 		height=20
 	}
@@ -2312,533 +2286,8 @@ text {
 }
 text {
 	object {
-		x=770
-		y=32
-		width=101
-		height=20
-	}
-	"basic attribute" {
-		clr=50
-	}
-	textix="Channel"
-	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=888
-		y=53
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:5:0:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=888
-		y=78
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:5:1:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=888
-		y=103
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:5:2:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=888
-		y=128
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:5:3:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=888
-		y=161
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:6:0:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=888
-		y=186
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:6:1:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=888
-		y=211
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:6:2:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=888
-		y=236
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:6:3:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=888
-		y=270
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:7:0:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=888
-		y=295
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:7:1:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=888
-		y=320
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:7:2:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=888
-		y=345
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:7:3:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=888
-		y=380
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:8:0:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=888
-		y=405
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:8:1:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=888
-		y=430
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:8:2:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=888
-		y=455
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:8:3:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=1001
-		y=53
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:5:0:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=1001
-		y=78
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:5:1:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=1001
-		y=103
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:5:2:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=1001
-		y=128
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:5:3:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=1001
-		y=161
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:6:0:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=1001
-		y=186
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:6:1:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=1001
-		y=211
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:6:2:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=1001
-		y=236
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:6:3:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=1001
-		y=270
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:7:0:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=1001
-		y=295
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:7:1:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=1001
-		y=320
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:7:2:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=1001
-		y=345
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:7:3:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=1001
-		y=380
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:8:0:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=1001
-		y=405
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:8:1:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=1001
-		y=430
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:8:2:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=1001
-		y=455
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:8:3:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=934
-		y=32
+		x=989
+		y=86
 		width=50
 		height=20
 	}
@@ -2848,266 +2297,10 @@ text {
 	textix="Side"
 	align="horiz. centered"
 }
-"text update" {
-	object {
-		x=934
-		y=53
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:5:0:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=934
-		y=78
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:5:1:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=934
-		y=103
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:5:2:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=934
-		y=128
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:5:3:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=934
-		y=161
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:6:0:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=934
-		y=186
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:6:1:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=934
-		y=211
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:6:2:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=934
-		y=236
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:6:3:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=934
-		y=270
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:7:0:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=934
-		y=295
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:7:1:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=934
-		y=320
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:7:2:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=934
-		y=345
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:7:3:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=934
-		y=380
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:8:0:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=934
-		y=405
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:8:1:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=934
-		y=430
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:8:2:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=934
-		y=455
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:8:3:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
 text {
 	object {
 		x=70
-		y=198
+		y=253
 		width=19
 		height=20
 	}
@@ -3120,7 +2313,7 @@ text {
 text {
 	object {
 		x=70
-		y=307
+		y=361
 		width=19
 		height=20
 	}
@@ -3133,7 +2326,7 @@ text {
 text {
 	object {
 		x=70
-		y=414
+		y=467
 		width=19
 		height=20
 	}
@@ -3146,7 +2339,7 @@ text {
 text {
 	object {
 		x=70
-		y=523
+		y=578
 		width=19
 		height=20
 	}
@@ -3159,7 +2352,7 @@ text {
 text {
 	object {
 		x=70
-		y=91
+		y=145
 		width=19
 		height=20
 	}
@@ -3172,7 +2365,7 @@ text {
 "choice button" {
 	object {
 		x=102
-		y=89
+		y=145
 		width=49
 		height=20
 	}
@@ -3186,7 +2379,7 @@ text {
 "choice button" {
 	object {
 		x=101
-		y=191
+		y=255
 		width=49
 		height=20
 	}
@@ -3200,7 +2393,7 @@ text {
 "choice button" {
 	object {
 		x=100
-		y=302
+		y=361
 		width=49
 		height=20
 	}
@@ -3214,7 +2407,7 @@ text {
 "choice button" {
 	object {
 		x=99
-		y=404
+		y=467
 		width=49
 		height=20
 	}
@@ -3228,7 +2421,7 @@ text {
 "choice button" {
 	object {
 		x=97
-		y=515
+		y=578
 		width=49
 		height=20
 	}
@@ -3239,60 +2432,36 @@ text {
 	}
 	stacking="column"
 }
-composite {
+text {
+	object {
+		x=11
+		y=86
+		width=48
+		height=20
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="Layer"
+	align="horiz. centered"
+}
+text {
 	object {
 		x=30
-		y=9
-		width=131
-		height=43
+		y=86
+		width=101
+		height=20
 	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=40
-				y=32
-				width=48
-				height=20
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="Layer"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=30
-				y=9
-				width=101
-				height=20
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="FEB"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=60
-				y=32
-				width=101
-				height=20
-			}
-			"basic attribute" {
-				clr=50
-			}
-			textix="Channel"
-			align="horiz. centered"
-		}
+	"basic attribute" {
+		clr=50
 	}
+	textix="FEB"
+	align="horiz. centered"
 }
 "choice button" {
 	object {
 		x=350
-		y=161
+		y=218
 		width=49
 		height=20
 	}
@@ -3306,7 +2475,7 @@ composite {
 "choice button" {
 	object {
 		x=350
-		y=186
+		y=243
 		width=49
 		height=20
 	}
@@ -3320,7 +2489,7 @@ composite {
 "choice button" {
 	object {
 		x=350
-		y=211
+		y=268
 		width=49
 		height=20
 	}
@@ -3334,7 +2503,7 @@ composite {
 "choice button" {
 	object {
 		x=350
-		y=236
+		y=293
 		width=49
 		height=20
 	}
@@ -3348,7 +2517,7 @@ composite {
 rectangle {
 	object {
 		x=407
-		y=161
+		y=218
 		width=20
 		height=20
 	}
@@ -3356,14 +2525,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:1:0:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:1:0:avdd:stat"
+		chanB="SVT:lv:1:0:dvdd:stat"
+		chanC="SVT:lv:1:0:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=186
+		y=243
 		width=20
 		height=20
 	}
@@ -3371,14 +2543,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:1:1:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:1:1:avdd:stat"
+		chanB="SVT:lv:1:1:dvdd:stat"
+		chanC="SVT:lv:1:1:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=211
+		y=268
 		width=20
 		height=20
 	}
@@ -3386,14 +2561,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:1:2:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:1:2:avdd:stat"
+		chanB="SVT:lv:1:2:dvdd:stat"
+		chanC="SVT:lv:1:2:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=236
+		y=293
 		width=20
 		height=20
 	}
@@ -3401,14 +2579,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:1:3:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:1:3:avdd:stat"
+		chanB="SVT:lv:1:3:dvdd:stat"
+		chanC="SVT:lv:1:3:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=161
+		y=218
 		width=20
 		height=20
 	}
@@ -3416,15 +2597,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:1:0:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:1:0:avdd:stat"
+		chanB="SVT:lv:1:0:dvdd:stat"
+		chanC="SVT:lv:1:0:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=186
+		y=243
 		width=20
 		height=20
 	}
@@ -3432,15 +2615,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:1:1:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:1:1:avdd:stat"
+		chanB="SVT:lv:1:1:dvdd:stat"
+		chanC="SVT:lv:1:1:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=211
+		y=268
 		width=20
 		height=20
 	}
@@ -3448,15 +2633,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:1:2:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:1:2:avdd:stat"
+		chanB="SVT:lv:1:2:dvdd:stat"
+		chanC="SVT:lv:1:2:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=236
+		y=293
 		width=20
 		height=20
 	}
@@ -3464,15 +2651,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:1:3:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:1:3:avdd:stat"
+		chanB="SVT:lv:1:3:dvdd:stat"
+		chanC="SVT:lv:1:3:v125:stat"
 	}
 }
 "text update" {
 	object {
 		x=438
-		y=161
+		y=218
 		width=45
 		height=20
 	}
@@ -3482,13 +2671,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=487
-		y=161
+		y=218
 		width=45
 		height=20
 	}
@@ -3498,13 +2688,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=536
-		y=161
+		y=218
 		width=45
 		height=20
 	}
@@ -3514,13 +2705,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=438
-		y=186
+		y=243
 		width=45
 		height=20
 	}
@@ -3530,13 +2722,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=487
-		y=186
+		y=243
 		width=45
 		height=20
 	}
@@ -3546,13 +2739,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=536
-		y=186
+		y=243
 		width=45
 		height=20
 	}
@@ -3562,13 +2756,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=438
-		y=211
+		y=268
 		width=45
 		height=20
 	}
@@ -3578,13 +2773,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=487
-		y=211
+		y=268
 		width=45
 		height=20
 	}
@@ -3594,13 +2790,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=536
-		y=211
+		y=268
 		width=45
 		height=20
 	}
@@ -3610,13 +2807,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=438
-		y=236
+		y=293
 		width=45
 		height=20
 	}
@@ -3626,13 +2824,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=487
-		y=236
+		y=293
 		width=45
 		height=20
 	}
@@ -3642,13 +2841,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=536
-		y=236
+		y=293
 		width=45
 		height=20
 	}
@@ -3658,13 +2858,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "choice button" {
 	object {
 		x=350
-		y=377
+		y=434
 		width=49
 		height=20
 	}
@@ -3678,7 +2879,7 @@ rectangle {
 "choice button" {
 	object {
 		x=350
-		y=402
+		y=459
 		width=49
 		height=20
 	}
@@ -3692,7 +2893,7 @@ rectangle {
 "choice button" {
 	object {
 		x=350
-		y=427
+		y=484
 		width=49
 		height=20
 	}
@@ -3706,7 +2907,7 @@ rectangle {
 "choice button" {
 	object {
 		x=350
-		y=452
+		y=510
 		width=49
 		height=20
 	}
@@ -3720,7 +2921,7 @@ rectangle {
 rectangle {
 	object {
 		x=407
-		y=377
+		y=434
 		width=20
 		height=20
 	}
@@ -3728,14 +2929,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:3:0:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:3:0:avdd:stat"
+		chanB="SVT:lv:3:0:dvdd:stat"
+		chanC="SVT:lv:3:0:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=402
+		y=459
 		width=20
 		height=20
 	}
@@ -3743,14 +2947,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:3:1:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:3:1:avdd:stat"
+		chanB="SVT:lv:3:1:dvdd:stat"
+		chanC="SVT:lv:3:1:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=427
+		y=484
 		width=20
 		height=20
 	}
@@ -3758,14 +2965,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:3:2:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:3:2:avdd:stat"
+		chanB="SVT:lv:3:2:dvdd:stat"
+		chanC="SVT:lv:3:2:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=452
+		y=510
 		width=20
 		height=20
 	}
@@ -3773,14 +2983,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:3:3:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:3:3:avdd:stat"
+		chanB="SVT:lv:3:3:dvdd:stat"
+		chanC="SVT:lv:3:3:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=377
+		y=434
 		width=20
 		height=20
 	}
@@ -3788,15 +3001,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:3:0:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:3:0:avdd:stat"
+		chanB="SVT:lv:3:0:dvdd:stat"
+		chanC="SVT:lv:3:0:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=402
+		y=459
 		width=20
 		height=20
 	}
@@ -3804,15 +3019,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:3:1:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:3:1:avdd:stat"
+		chanB="SVT:lv:3:1:dvdd:stat"
+		chanC="SVT:lv:3:1:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=427
+		y=484
 		width=20
 		height=20
 	}
@@ -3820,15 +3037,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:3:2:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:3:2:avdd:stat"
+		chanB="SVT:lv:3:2:dvdd:stat"
+		chanC="SVT:lv:3:2:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=452
+		y=510
 		width=20
 		height=20
 	}
@@ -3836,15 +3055,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:3:3:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:3:3:avdd:stat"
+		chanB="SVT:lv:3:3:dvdd:stat"
+		chanC="SVT:lv:3:3:v125:stat"
 	}
 }
 "text update" {
 	object {
 		x=438
-		y=377
+		y=434
 		width=45
 		height=20
 	}
@@ -3854,13 +3075,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=487
-		y=377
+		y=434
 		width=45
 		height=20
 	}
@@ -3870,13 +3092,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=536
-		y=377
+		y=434
 		width=45
 		height=20
 	}
@@ -3886,13 +3109,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=438
-		y=402
+		y=459
 		width=45
 		height=20
 	}
@@ -3902,13 +3126,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=487
-		y=402
+		y=459
 		width=45
 		height=20
 	}
@@ -3918,13 +3143,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=536
-		y=402
+		y=459
 		width=45
 		height=20
 	}
@@ -3934,13 +3160,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=438
-		y=427
+		y=484
 		width=45
 		height=20
 	}
@@ -3950,13 +3177,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=487
-		y=427
+		y=484
 		width=45
 		height=20
 	}
@@ -3966,13 +3194,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=536
-		y=427
+		y=484
 		width=45
 		height=20
 	}
@@ -3982,13 +3211,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=438
-		y=452
+		y=510
 		width=45
 		height=20
 	}
@@ -3998,13 +3228,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=487
-		y=452
+		y=510
 		width=45
 		height=20
 	}
@@ -4014,13 +3245,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=536
-		y=452
+		y=510
 		width=45
 		height=20
 	}
@@ -4030,13 +3262,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "choice button" {
 	object {
 		x=350
-		y=486
+		y=544
 		width=49
 		height=20
 	}
@@ -4050,7 +3283,7 @@ rectangle {
 "choice button" {
 	object {
 		x=350
-		y=511
+		y=569
 		width=49
 		height=20
 	}
@@ -4064,7 +3297,7 @@ rectangle {
 "choice button" {
 	object {
 		x=350
-		y=536
+		y=594
 		width=49
 		height=20
 	}
@@ -4078,7 +3311,7 @@ rectangle {
 "choice button" {
 	object {
 		x=350
-		y=561
+		y=619
 		width=49
 		height=20
 	}
@@ -4092,7 +3325,7 @@ rectangle {
 rectangle {
 	object {
 		x=407
-		y=486
+		y=544
 		width=20
 		height=20
 	}
@@ -4100,14 +3333,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:4:0:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:4:0:avdd:stat"
+		chanB="SVT:lv:4:0:dvdd:stat"
+		chanC="SVT:lv:4:0:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=511
+		y=569
 		width=20
 		height=20
 	}
@@ -4115,14 +3351,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:4:1:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:4:1:avdd:stat"
+		chanB="SVT:lv:4:1:dvdd:stat"
+		chanC="SVT:lv:4:1:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=536
+		y=594
 		width=20
 		height=20
 	}
@@ -4130,14 +3369,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:4:2:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:4:2:avdd:stat"
+		chanB="SVT:lv:4:2:dvdd:stat"
+		chanC="SVT:lv:4:2:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=561
+		y=619
 		width=20
 		height=20
 	}
@@ -4145,14 +3387,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:4:3:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:4:3:avdd:stat"
+		chanB="SVT:lv:4:3:dvdd:stat"
+		chanC="SVT:lv:4:3:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=486
+		y=544
 		width=20
 		height=20
 	}
@@ -4160,15 +3405,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:4:0:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:4:0:avdd:stat"
+		chanB="SVT:lv:4:0:dvdd:stat"
+		chanC="SVT:lv:4:0:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=511
+		y=569
 		width=20
 		height=20
 	}
@@ -4176,15 +3423,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:4:1:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:4:1:avdd:stat"
+		chanB="SVT:lv:4:1:dvdd:stat"
+		chanC="SVT:lv:4:1:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=536
+		y=594
 		width=20
 		height=20
 	}
@@ -4192,15 +3441,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:4:2:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:4:2:avdd:stat"
+		chanB="SVT:lv:4:2:dvdd:stat"
+		chanC="SVT:lv:4:2:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=561
+		y=619
 		width=20
 		height=20
 	}
@@ -4208,15 +3459,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:4:3:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:4:3:avdd:stat"
+		chanB="SVT:lv:4:3:dvdd:stat"
+		chanC="SVT:lv:4:3:v125:stat"
 	}
 }
 "text update" {
 	object {
 		x=438
-		y=486
+		y=544
 		width=45
 		height=20
 	}
@@ -4226,13 +3479,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=487
-		y=486
+		y=544
 		width=45
 		height=20
 	}
@@ -4242,13 +3496,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=536
-		y=486
+		y=544
 		width=45
 		height=20
 	}
@@ -4258,13 +3513,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=438
-		y=511
+		y=569
 		width=45
 		height=20
 	}
@@ -4274,13 +3530,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=487
-		y=511
+		y=569
 		width=45
 		height=20
 	}
@@ -4290,13 +3547,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=536
-		y=511
+		y=569
 		width=45
 		height=20
 	}
@@ -4306,13 +3564,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=438
-		y=536
+		y=594
 		width=45
 		height=20
 	}
@@ -4322,13 +3581,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=487
-		y=536
+		y=594
 		width=45
 		height=20
 	}
@@ -4338,13 +3598,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=536
-		y=536
+		y=594
 		width=45
 		height=20
 	}
@@ -4354,13 +3615,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=438
-		y=561
+		y=619
 		width=45
 		height=20
 	}
@@ -4370,13 +3632,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=487
-		y=561
+		y=619
 		width=45
 		height=20
 	}
@@ -4386,13 +3649,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=536
-		y=561
+		y=619
 		width=45
 		height=20
 	}
@@ -4402,13 +3666,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "choice button" {
 	object {
 		x=350
-		y=54
+		y=110
 		width=49
 		height=20
 	}
@@ -4422,7 +3687,7 @@ rectangle {
 "choice button" {
 	object {
 		x=350
-		y=79
+		y=135
 		width=49
 		height=20
 	}
@@ -4436,7 +3701,7 @@ rectangle {
 "choice button" {
 	object {
 		x=350
-		y=104
+		y=160
 		width=49
 		height=20
 	}
@@ -4450,7 +3715,7 @@ rectangle {
 "choice button" {
 	object {
 		x=350
-		y=129
+		y=186
 		width=49
 		height=20
 	}
@@ -4464,7 +3729,7 @@ rectangle {
 rectangle {
 	object {
 		x=407
-		y=54
+		y=110
 		width=20
 		height=20
 	}
@@ -4472,14 +3737,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:0:0:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:0:0:avdd:stat"
+		chanB="SVT:lv:0:0:dvdd:stat"
+		chanC="SVT:lv:0:0:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=79
+		y=135
 		width=20
 		height=20
 	}
@@ -4487,14 +3755,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:0:1:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:0:1:avdd:stat"
+		chanB="SVT:lv:0:1:dvdd:stat"
+		chanC="SVT:lv:0:1:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=104
+		y=160
 		width=20
 		height=20
 	}
@@ -4502,14 +3773,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:0:2:stat"
+		vis="calc"
+		calc="B && C"
+		chan="SVT:lv:0:2:avdd:stat"
+		chanB="SVT:lv:0:2:dvdd:stat"
+		chanC="SVT:lv:0:2:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=129
+		y=186
 		width=20
 		height=20
 	}
@@ -4517,14 +3791,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:0:3:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:0:3:avdd:stat"
+		chanB="SVT:lv:0:3:dvdd:stat"
+		chanC="SVT:lv:0:3:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=54
+		y=110
 		width=20
 		height=20
 	}
@@ -4532,15 +3809,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:0:0:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:0:0:avdd:stat"
+		chanB="SVT:lv:0:0:dvdd:stat"
+		chanC="SVT:lv:0:0:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=79
+		y=135
 		width=20
 		height=20
 	}
@@ -4548,15 +3827,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:0:1:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:0:1:avdd:stat"
+		chanB="SVT:lv:0:1:dvdd:stat"
+		chanC="SVT:lv:0:1:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=104
+		y=160
 		width=20
 		height=20
 	}
@@ -4564,15 +3845,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:0:2:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:0:2:avdd:stat"
+		chanB="SVT:lv:0:2:dvdd:stat"
+		chanC="SVT:lv:0:2:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=407
-		y=129
+		y=186
 		width=20
 		height=20
 	}
@@ -4580,15 +3863,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:0:3:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:0:3:avdd:stat"
+		chanB="SVT:lv:0:3:dvdd:stat"
+		chanC="SVT:lv:0:3:v125:stat"
 	}
 }
 "text update" {
 	object {
 		x=438
-		y=54
+		y=110
 		width=45
 		height=20
 	}
@@ -4598,13 +3883,16 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
+		precSrc="default"
+		precDefault=3
 	}
 }
 "text update" {
 	object {
 		x=487
-		y=54
+		y=110
 		width=45
 		height=20
 	}
@@ -4614,13 +3902,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=536
-		y=54
+		y=110
 		width=45
 		height=20
 	}
@@ -4630,13 +3919,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=438
-		y=79
+		y=135
 		width=45
 		height=20
 	}
@@ -4646,13 +3936,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=487
-		y=79
+		y=135
 		width=45
 		height=20
 	}
@@ -4662,13 +3953,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=536
-		y=79
+		y=135
 		width=45
 		height=20
 	}
@@ -4678,13 +3970,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=438
-		y=104
+		y=160
 		width=45
 		height=20
 	}
@@ -4694,13 +3987,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=487
-		y=104
+		y=160
 		width=45
 		height=20
 	}
@@ -4710,13 +4004,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=536
-		y=104
+		y=160
 		width=45
 		height=20
 	}
@@ -4726,13 +4021,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=438
-		y=129
+		y=186
 		width=45
 		height=20
 	}
@@ -4742,13 +4038,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=487
-		y=129
+		y=186
 		width=45
 		height=20
 	}
@@ -4758,13 +4055,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=536
-		y=129
+		y=186
 		width=45
 		height=20
 	}
@@ -4774,13 +4072,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 text {
 	object {
 		x=385
-		y=33
+		y=86
 		width=35
 		height=20
 	}
@@ -4793,7 +4092,7 @@ text {
 text {
 	object {
 		x=443
-		y=31
+		y=86
 		width=35
 		height=20
 	}
@@ -4806,7 +4105,7 @@ text {
 text {
 	object {
 		x=492
-		y=31
+		y=86
 		width=35
 		height=20
 	}
@@ -4819,7 +4118,7 @@ text {
 text {
 	object {
 		x=541
-		y=31
+		y=86
 		width=35
 		height=20
 	}
@@ -4832,7 +4131,7 @@ text {
 text {
 	object {
 		x=466
-		y=10
+		y=66
 		width=101
 		height=20
 	}
@@ -4845,7 +4144,7 @@ text {
 text {
 	object {
 		x=614
-		y=10
+		y=85
 		width=45
 		height=20
 	}
@@ -4858,7 +4157,7 @@ text {
 "text update" {
 	object {
 		x=614
-		y=54
+		y=110
 		width=45
 		height=20
 	}
@@ -4868,13 +4167,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=613
-		y=79
+		y=135
 		width=45
 		height=20
 	}
@@ -4884,13 +4184,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=613
-		y=104
+		y=160
 		width=45
 		height=20
 	}
@@ -4900,13 +4201,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=612
-		y=129
+		y=186
 		width=45
 		height=20
 	}
@@ -4916,13 +4218,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=611
-		y=162
+		y=219
 		width=45
 		height=20
 	}
@@ -4932,13 +4235,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=611
-		y=187
+		y=244
 		width=45
 		height=20
 	}
@@ -4948,13 +4252,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=611
-		y=212
+		y=269
 		width=45
 		height=20
 	}
@@ -4964,13 +4269,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=610
-		y=237
+		y=294
 		width=45
 		height=20
 	}
@@ -4980,13 +4286,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=611
-		y=378
+		y=435
 		width=45
 		height=20
 	}
@@ -4996,13 +4303,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=611
-		y=403
+		y=460
 		width=45
 		height=20
 	}
@@ -5012,13 +4320,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=611
-		y=428
+		y=485
 		width=45
 		height=20
 	}
@@ -5028,38 +4337,7 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=610
-		y=453
-		width=45
-		height=20
-	}
-	monitor {
-		chan="SVT:temp:hyb:3:3:temp0:t_rd"
-		clr=30
-		bclr=14
-	}
-	clrmod="alarm"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=611
-		y=486
-		width=45
-		height=20
-	}
-	monitor {
-		chan="SVT:temp:hyb:4:0:temp0:t_rd"
-		clr=30
-		bclr=14
-	}
-	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
@@ -5071,18 +4349,53 @@ text {
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:hyb:4:1:temp0:t_rd"
+		chan="SVT:temp:hyb:3:3:temp0:t_rd"
 		clr=30
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=611
+		y=544
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:temp:hyb:4:0:temp0:t_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=610
-		y=536
+		y=569
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:temp:hyb:4:1:temp0:t_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=610
+		y=594
 		width=45
 		height=20
 	}
@@ -5092,13 +4405,14 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=609
-		y=561
+		y=619
 		width=45
 		height=20
 	}
@@ -5108,14 +4422,15 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 text {
 	object {
-		x=206
-		y=9
-		width=101
+		x=166
+		y=86
+		width=50
 		height=20
 	}
 	"basic attribute" {
@@ -5126,21 +4441,8 @@ text {
 }
 text {
 	object {
-		x=160
-		y=32
-		width=50
-		height=20
-	}
-	"basic attribute" {
-		clr=50
-	}
-	textix="Layer"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=285
-		y=30
+		x=206
+		y=86
 		width=50
 		height=20
 	}
@@ -5152,8 +4454,8 @@ text {
 }
 text {
 	object {
-		x=214
-		y=32
+		x=266
+		y=86
 		width=50
 		height=20
 	}
@@ -5163,932 +4465,10 @@ text {
 	textix="Side"
 	align="horiz. centered"
 }
-"text update" {
-	object {
-		x=168
-		y=53
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:0:0:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=168
-		y=78
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:0:1:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=168
-		y=103
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:0:2:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=168
-		y=128
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:0:3:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=168
-		y=161
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:1:0:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=168
-		y=186
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:1:1:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=168
-		y=211
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:1:2:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=168
-		y=236
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:1:3:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=168
-		y=380
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:3:0:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=168
-		y=405
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:3:1:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=168
-		y=430
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:3:2:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=168
-		y=455
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:3:3:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=168
-		y=486
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:4:0:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=168
-		y=511
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:4:1:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=168
-		y=536
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:4:2:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=168
-		y=561
-		width=35
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:4:3:layer"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=281
-		y=53
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:0:0:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=281
-		y=78
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:0:1:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=281
-		y=103
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:0:2:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=281
-		y=128
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:0:3:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=281
-		y=161
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:1:0:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=281
-		y=186
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:1:1:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=281
-		y=211
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:1:2:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=281
-		y=236
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:1:3:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=281
-		y=380
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:3:0:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=281
-		y=405
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:3:1:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=281
-		y=430
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:3:2:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=281
-		y=455
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:3:3:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=281
-		y=486
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:4:0:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=281
-		y=511
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:4:1:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=281
-		y=536
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:4:2:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=281
-		y=561
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:4:3:type"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=214
-		y=53
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:0:0:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=214
-		y=78
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:0:1:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=214
-		y=103
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:0:2:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=214
-		y=128
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:0:3:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=214
-		y=161
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:1:0:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=214
-		y=186
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:1:1:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=214
-		y=211
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:1:2:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=214
-		y=236
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:1:3:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=214
-		y=380
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:3:0:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=214
-		y=405
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:3:1:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=214
-		y=430
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:3:2:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=214
-		y=455
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:3:3:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=214
-		y=486
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:4:0:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=214
-		y=511
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:4:1:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=214
-		y=536
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:4:2:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=214
-		y=561
-		width=59
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:4:3:side"
-		clr=30
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-oval {
-	object {
-		x=303
-		y=630
-		width=19
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="(A>0|A=0)&1"
-		chan="SVT:daq:dpm:7:hb_check"
-	}
-}
-oval {
-	object {
-		x=300
-		y=630
-		width=19
-		height=20
-	}
-	"basic attribute" {
-		clr=61
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="(A<0)&1"
-		chan="SVT:daq:dpm:7:hb_check"
-	}
-}
-composite {
-	object {
-		x=300
-		y=651
-		width=22
-		height=20
-	}
-	"composite name"=""
-	children {
-		oval {
-			object {
-				x=303
-				y=651
-				width=19
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="(A>0|A=0)&1"
-				chan="SVT:daq:controldpm:7:0:hb_check"
-			}
-		}
-		oval {
-			object {
-				x=300
-				y=651
-				width=19
-				height=20
-			}
-			"basic attribute" {
-				clr=61
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="(A<0)&1"
-				chan="SVT:daq:controldpm:7:0:hb_check"
-			}
-		}
-	}
-}
-composite {
-	object {
-		x=300
-		y=671
-		width=22
-		height=20
-	}
-	"composite name"=""
-	children {
-		oval {
-			object {
-				x=303
-				y=671
-				width=19
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="(A>0|A=0)&1"
-				chan="SVT:daq:controldpm:7:1:hb_check"
-			}
-		}
-		oval {
-			object {
-				x=300
-				y=671
-				width=19
-				height=20
-			}
-			"basic attribute" {
-				clr=61
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="(A<0)&1"
-				chan="SVT:daq:controldpm:7:1:hb_check"
-			}
-		}
-	}
-}
-text {
-	object {
-		x=330
-		y=630
-		width=50
-		height=20
-	}
-	"basic attribute" {
-		clr=30
-	}
-	textix="DPM 7"
-}
-text {
-	object {
-		x=330
-		y=650
-		width=100
-		height=20
-	}
-	"basic attribute" {
-		clr=30
-	}
-	textix="Control DPM 7_0"
-}
-text {
-	object {
-		x=330
-		y=671
-		width=100
-		height=20
-	}
-	"basic attribute" {
-		clr=30
-	}
-	textix="Control DPM 7_1"
-}
 "choice button" {
 	object {
 		x=1075
-		y=505
+		y=543
 		width=49
 		height=20
 	}
@@ -6102,7 +4482,7 @@ text {
 "choice button" {
 	object {
 		x=1075
-		y=530
+		y=568
 		width=49
 		height=20
 	}
@@ -6116,7 +4496,7 @@ text {
 rectangle {
 	object {
 		x=1127
-		y=505
+		y=543
 		width=20
 		height=20
 	}
@@ -6124,14 +4504,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:9:0:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:9:0:avdd:stat"
+		chanB="SVT:lv:9:0:dvdd:stat"
+		chanC="SVT:lv:9:0:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=530
+		y=568
 		width=20
 		height=20
 	}
@@ -6139,14 +4522,17 @@ rectangle {
 		clr=15
 	}
 	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:lv:9:1:stat"
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:9:1:avdd:stat"
+		chanB="SVT:lv:9:1:dvdd:stat"
+		chanC="SVT:lv:9:1:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=505
+		y=543
 		width=20
 		height=20
 	}
@@ -6154,15 +4540,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:9:0:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:9:0:avdd:stat"
+		chanB="SVT:lv:9:0:dvdd:stat"
+		chanC="SVT:lv:9:0:v125:stat"
 	}
 }
 rectangle {
 	object {
 		x=1127
-		y=530
+		y=568
 		width=20
 		height=20
 	}
@@ -6170,15 +4558,17 @@ rectangle {
 		clr=20
 	}
 	"dynamic attribute" {
-		vis="if zero"
-		calc="A"
-		chan="SVT:lv:9:1:stat"
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:9:1:avdd:stat"
+		chanB="SVT:lv:9:1:dvdd:stat"
+		chanC="SVT:lv:9:1:v125:stat"
 	}
 }
 "text update" {
 	object {
 		x=1164
-		y=505
+		y=543
 		width=45
 		height=20
 	}
@@ -6188,13 +4578,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1213
-		y=505
+		y=543
 		width=45
 		height=20
 	}
@@ -6204,13 +4595,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1261
-		y=505
+		y=543
 		width=45
 		height=20
 	}
@@ -6220,13 +4612,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1164
-		y=530
+		y=568
 		width=45
 		height=20
 	}
@@ -6236,13 +4629,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1213
-		y=530
+		y=568
 		width=45
 		height=20
 	}
@@ -6252,13 +4646,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1261
-		y=530
+		y=568
 		width=45
 		height=20
 	}
@@ -6268,13 +4663,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1335
-		y=505
+		y=543
 		width=45
 		height=20
 	}
@@ -6284,13 +4680,14 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=1334
-		y=530
+		y=568
 		width=45
 		height=20
 	}
@@ -6300,427 +4697,1520 @@ rectangle {
 		bclr=14
 	}
 	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=350
+		y=323
+		width=49
+		height=20
+	}
+	control {
+		chan="SVT:lv:2:0:all:switch"
+		clr=55
+		bclr=12
+	}
+	stacking="column"
+}
+"choice button" {
+	object {
+		x=350
+		y=348
+		width=49
+		height=20
+	}
+	control {
+		chan="SVT:lv:2:1:all:switch"
+		clr=55
+		bclr=12
+	}
+	stacking="column"
+}
+rectangle {
+	object {
+		x=407
+		y=323
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:2:0:avdd:stat"
+		chanB="SVT:lv:2:0:dvdd:stat"
+		chanC="SVT:lv:2:0:v125:stat"
+	}
+}
+rectangle {
+	object {
+		x=407
+		y=348
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:2:1:avdd:stat"
+		chanB="SVT:lv:2:1:dvdd:stat"
+		chanC="SVT:lv:2:1:v125:stat"
+	}
+}
+rectangle {
+	object {
+		x=407
+		y=323
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:2:0:avdd:stat"
+		chanB="SVT:lv:2:0:dvdd:stat"
+		chanC="SVT:lv:2:0:v125:stat"
+	}
+}
+rectangle {
+	object {
+		x=407
+		y=348
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:2:1:avdd:stat"
+		chanB="SVT:lv:2:1:dvdd:stat"
+		chanC="SVT:lv:2:1:v125:stat"
+	}
+}
+"text update" {
+	object {
+		x=438
+		y=323
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:2:0:dvdd:i_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=888
-		y=505
-		width=35
+		x=487
+		y=323
+		width=45
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:map:9:0:layer"
+		chan="SVT:lv:2:0:avdd:i_rd"
 		clr=30
 		bclr=14
 	}
-	align="horiz. centered"
+	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=888
-		y=530
-		width=35
+		x=536
+		y=323
+		width=45
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:map:9:1:layer"
+		chan="SVT:lv:2:0:v125:i_rd"
 		clr=30
 		bclr=14
 	}
-	align="horiz. centered"
+	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=1001
-		y=505
-		width=59
+		x=438
+		y=348
+		width=45
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:map:9:0:type"
+		chan="SVT:lv:2:1:dvdd:i_rd"
 		clr=30
 		bclr=14
 	}
-	align="horiz. centered"
+	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=1001
-		y=530
-		width=59
+		x=487
+		y=348
+		width=45
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:map:9:1:type"
+		chan="SVT:lv:2:1:avdd:i_rd"
 		clr=30
 		bclr=14
 	}
-	align="horiz. centered"
+	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=934
-		y=505
-		width=59
+		x=536
+		y=348
+		width=45
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:map:9:0:side"
+		chan="SVT:lv:2:1:v125:i_rd"
 		clr=30
 		bclr=14
 	}
-	align="horiz. centered"
+	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=934
-		y=530
-		width=59
+		x=611
+		y=324
+		width=45
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:map:9:1:side"
+		chan="SVT:temp:hyb:2:0:temp0:t_rd"
 		clr=30
 		bclr=14
 	}
-	align="horiz. centered"
+	clrmod="alarm"
+	format="string"
 	limits {
 	}
 }
-composite {
+"text update" {
 	object {
-		x=168
-		y=289
-		width=488
-		height=46
+		x=610
+		y=349
+		width=45
+		height=20
 	}
-	"composite name"=""
-	children {
-		"choice button" {
-			object {
-				x=350
-				y=289
-				width=49
-				height=20
-			}
-			control {
-				chan="SVT:lv:2:0:all:switch"
-				clr=55
-				bclr=12
-			}
-			stacking="column"
-		}
-		"choice button" {
-			object {
-				x=350
-				y=314
-				width=49
-				height=20
-			}
-			control {
-				chan="SVT:lv:2:1:all:switch"
-				clr=55
-				bclr=12
-			}
-			stacking="column"
-		}
-		rectangle {
-			object {
-				x=407
-				y=289
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:lv:2:0:stat"
-			}
-		}
-		rectangle {
-			object {
-				x=407
-				y=314
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:lv:2:1:stat"
-			}
-		}
-		rectangle {
-			object {
-				x=407
-				y=289
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				calc="A"
-				chan="SVT:lv:2:0:stat"
-			}
-		}
-		rectangle {
-			object {
-				x=407
-				y=314
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				calc="A"
-				chan="SVT:lv:2:1:stat"
-			}
-		}
-		"text update" {
-			object {
-				x=438
-				y=289
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:lv:2:0:dvdd:i_rd"
-				clr=30
-				bclr=14
-			}
-			clrmod="alarm"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=487
-				y=289
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:lv:2:0:avdd:i_rd"
-				clr=30
-				bclr=14
-			}
-			clrmod="alarm"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=536
-				y=289
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:lv:2:0:v125:i_rd"
-				clr=30
-				bclr=14
-			}
-			clrmod="alarm"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=438
-				y=314
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:lv:2:1:dvdd:i_rd"
-				clr=30
-				bclr=14
-			}
-			clrmod="alarm"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=487
-				y=314
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:lv:2:1:avdd:i_rd"
-				clr=30
-				bclr=14
-			}
-			clrmod="alarm"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=536
-				y=314
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:lv:2:1:v125:i_rd"
-				clr=30
-				bclr=14
-			}
-			clrmod="alarm"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=611
-				y=290
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:2:0:temp0:t_rd"
-				clr=30
-				bclr=14
-			}
-			clrmod="alarm"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=610
-				y=315
-				width=45
-				height=20
-			}
-			monitor {
-				chan="SVT:temp:hyb:2:1:temp0:t_rd"
-				clr=30
-				bclr=14
-			}
-			clrmod="alarm"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=168
-				y=289
-				width=35
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:map:2:0:layer"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=168
-				y=314
-				width=35
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:map:2:1:layer"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=281
-				y=289
-				width=59
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:map:2:0:type"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=281
-				y=314
-				width=59
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:map:2:1:type"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=214
-				y=289
-				width=59
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:map:2:0:side"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=214
-				y=314
-				width=59
-				height=20
-			}
-			monitor {
-				chan="SVT:daq:map:2:1:side"
-				clr=30
-				bclr=14
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
+	monitor {
+		chan="SVT:temp:hyb:2:1:temp0:t_rd"
+		clr=30
+		bclr=14
 	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=1075
+		y=593
+		width=49
+		height=20
+	}
+	control {
+		chan="SVT:lv:9:2:all:switch"
+		clr=55
+		bclr=12
+	}
+	stacking="column"
+}
+"choice button" {
+	object {
+		x=1075
+		y=618
+		width=49
+		height=20
+	}
+	control {
+		chan="SVT:lv:9:3:all:switch"
+		clr=55
+		bclr=12
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=1164
+		y=593
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:9:2:dvdd:i_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1164
+		y=617
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:9:3:dvdd:i_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1213
+		y=593
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:9:2:avdd:i_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1213
+		y=617
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:9:3:avdd:i_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1261
+		y=593
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:9:2:v125:i_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1261
+		y=617
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:9:3:v125:i_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1334
+		y=592
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:temp:hyb:9:2:temp0:t_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1334
+		y=618
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:temp:hyb:9:3:temp0:t_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=1127
+		y=594
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:9:2:avdd:stat"
+		chanB="SVT:lv:9:2:dvdd:stat"
+		chanC="SVT:lv:9:2:v125:stat"
+	}
+}
+rectangle {
+	object {
+		x=1127
+		y=619
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:9:3:avdd:stat"
+		chanB="SVT:lv:9:3:dvdd:stat"
+		chanC="SVT:lv:9:3:v125:stat"
+	}
+}
+"choice button" {
+	object {
+		x=350
+		y=373
+		width=49
+		height=20
+	}
+	control {
+		chan="SVT:lv:2:2:all:switch"
+		clr=55
+		bclr=12
+	}
+	stacking="column"
+}
+"choice button" {
+	object {
+		x=350
+		y=398
+		width=49
+		height=20
+	}
+	control {
+		chan="SVT:lv:2:3:all:switch"
+		clr=55
+		bclr=12
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=438
+		y=373
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:2:2:dvdd:i_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=438
+		y=398
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:2:3:dvdd:i_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=487
+		y=373
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:2:2:avdd:i_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=487
+		y=398
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:2:3:avdd:i_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=536
+		y=373
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:2:2:v125:i_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=536
+		y=398
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:2:3:v125:i_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=610
+		y=372
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:temp:hyb:2:2:temp0:t_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=610
+		y=398
+		width=45
+		height=20
+	}
+	monitor {
+		chan="SVT:temp:hyb:2:3:temp0:t_rd"
+		clr=30
+		bclr=14
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=407
+		y=373
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:2:2:avdd:stat"
+		chanB="SVT:lv:2:2:dvdd:stat"
+		chanC="SVT:lv:2:2:v125:stat"
+	}
+}
+rectangle {
+	object {
+		x=407
+		y=399
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A && B && C"
+		chan="SVT:lv:2:3:avdd:stat"
+		chanB="SVT:lv:2:3:dvdd:stat"
+		chanC="SVT:lv:2:3:v125:stat"
+	}
+}
+rectangle {
+	object {
+		x=407
+		y=373
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:2:2:avdd:stat"
+		chanB="SVT:lv:2:3:dvdd:stat"
+		chanC="SVT:lv:2:3:v125:stat"
+	}
+}
+rectangle {
+	object {
+		x=407
+		y=399
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:2:3:avdd:stat"
+		chanB="SVT:lv:2:3:dvdd:stat"
+		chanC="SVT:lv:2:3:v125:stat"
+	}
+}
+rectangle {
+	object {
+		x=1127
+		y=594
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:9:2:avdd:stat"
+		chanB="SVT:lv:9:2:dvdd:stat"
+		chanC="SVT:lv:9:2:v125:stat"
+	}
+}
+rectangle {
+	object {
+		x=1127
+		y=619
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="!A || !B || !C"
+		chan="SVT:lv:9:3:avdd:stat"
+		chanB="SVT:lv:9:3:dvdd:stat"
+		chanC="SVT:lv:9:3:v125:stat"
+	}
+}
+text {
+	object {
+		x=28
+		y=145
+		width=19
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="L0-1t"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=28
+		y=253
+		width=19
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="L0-1b"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=28
+		y=361
+		width=19
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="L2-3t"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=28
+		y=467
+		width=19
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="L2-3b"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=28
+		y=578
+		width=19
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="L4t"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=753
+		y=146
+		width=19
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="L4b"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=753
+		y=246
+		width=19
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="L5t"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=753
+		y=360
+		width=19
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="L5b"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=753
+		y=470
+		width=19
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="L6t"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=753
+		y=576
+		width=19
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="L6b"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=326
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 0     Axial   Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=350
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 1    Stereo   Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=376
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 2    Axial    Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=401
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 3    Stereo   Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=112
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 0    Axial    Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=136
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 1    Stereo   Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=163
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 2    Axial    Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=188
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 3    Stereo   Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=220
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 0    Stereo   Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=244
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 1    Axial    Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=270
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 2    Stereo   Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=295
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 3    Axial    Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=434
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 0    Stereo   Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=458
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 1    Axial    Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=484
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 2    Stereo   Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=510
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 3    Axial    Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=548
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 0    Axial    Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=572
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 1    Axial    Positron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=598
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 2    Stereo   Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=176
+		y=623
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 3    Stereo   Positron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=112
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 0    Stereo   Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=136
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 1    Stereo   Positron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=163
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 2    Axial    Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=188
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 3    Axial    Positron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=217
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 0    Axial    Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=241
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 1    Axial    Positron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=267
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 2    Stereo   Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=292
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 3    Stereo   Positron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=329
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 0    Stereo   Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=353
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 1    Stereo   Positron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=379
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 2    Axial    Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=404
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 3    Axial    Positron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=439
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 0    Axial    Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=463
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 1    Axial    Positron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=490
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 2    Stereo   Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=515
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 3    Stereo   Positron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=545
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 0    Stereo   Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=569
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 1    Stereo   Positron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=595
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 2    Axial    Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=900
+		y=620
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix=" 3    Axial    Positron"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=6
+		y=106
+		width=657
+		height=100
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=6
+		y=214
+		width=657
+		height=100
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=6
+		y=321
+		width=657
+		height=100
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=6
+		y=431
+		width=657
+		height=100
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=6
+		y=541
+		width=657
+		height=100
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=726
+		y=106
+		width=657
+		height=100
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=726
+		y=214
+		width=657
+		height=100
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=726
+		y=321
+		width=657
+		height=100
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=726
+		y=431
+		width=657
+		height=100
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=726
+		y=541
+		width=657
+		height=100
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+		fill="outline"
+	}
+}
+text {
+	object {
+		x=9
+		y=54
+		width=150
+		height=25
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="ALL HYBRIDS ON/OFF"
+}
+text {
+	object {
+		x=0
+		y=15
+		width=1405
+		height=30
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Hybrid Power"
+	align="horiz. centered"
 }

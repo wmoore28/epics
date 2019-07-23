@@ -5,13 +5,13 @@ file {
 }
 display {
 	object {
-		x=168
-		y=214
-		width=780
-		height=756
+		x=399
+		y=252
+		width=705
+		height=593
 	}
 	clr=14
-	bclr=12
+	bclr=13
 	cmap=""
 	gridSpacing=5
 	gridOn=0
@@ -87,411 +87,241 @@ display {
 		1a7309,
 	}
 }
-text {
+rectangle {
 	object {
-		x=90
-		y=190
+		x=357
+		y=299
 		width=100
-		height=18
+		height=25
 	}
 	"basic attribute" {
-		clr=15
+		clr=19
 	}
-	textix="ALL FEB CONTROL"
-	align="horiz. centered"
 }
 rectangle {
 	object {
-		x=264
+		x=464
 		y=9
-		width=232
-		height=406
+		width=230
+		height=25
 	}
 	"basic attribute" {
-		clr=17
-		style="dash"
+		clr=19
+	}
+}
+rectangle {
+	object {
+		x=7
+		y=150
+		width=180
+		height=25
+	}
+	"basic attribute" {
+		clr=19
+	}
+}
+rectangle {
+	object {
+		x=195
+		y=9
+		width=155
+		height=443
+	}
+	"basic attribute" {
+		clr=19
 		fill="outline"
 	}
 }
 rectangle {
 	object {
-		x=10
-		y=3
-		width=755
-		height=740
+		x=195
+		y=9
+		width=156
+		height=25
 	}
 	"basic attribute" {
-		clr=17
-		fill="outline"
-	}
-}
-text {
-	object {
-		x=169
-		y=219
-		width=89
-		height=18
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="On/Off"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=51
-		y=247
-		width=41
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="FEB DIGI"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=51
-		y=297
-		width=41
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="FEB ANAN"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=51
-		y=272
-		width=41
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="FEB ANAP"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=51
-		y=327
-		width=41
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="FEB ALL"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=90
-		y=19
-		width=100
-		height=18
-	}
-	"basic attribute" {
-		clr=15
-	}
-	textix="ALL FLANGE CONTROL"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=166
-		y=56
-		width=89
-		height=18
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="On/Off"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=29
-		y=94
-		width=85
-		height=18
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="ALL SVT FLANGE"
-	align="horiz. centered"
-}
-"choice button" {
-	object {
-		x=190
-		y=247
-		width=41
-		height=20
-	}
-	control {
-		chan="SVT:lv:fe:digi:switch"
-		clr=55
-		bclr=12
-	}
-	stacking="column"
-}
-"choice button" {
-	object {
-		x=190
-		y=272
-		width=41
-		height=20
-	}
-	control {
-		chan="SVT:lv:fe:anap:switch"
-		clr=55
-		bclr=12
-	}
-	stacking="column"
-}
-"choice button" {
-	object {
-		x=190
-		y=297
-		width=41
-		height=20
-	}
-	control {
-		chan="SVT:lv:fe:anan:switch"
-		clr=55
-		bclr=12
-	}
-	stacking="column"
-}
-"choice button" {
-	object {
-		x=185
-		y=322
-		width=50
-		height=30
-	}
-	control {
-		chan="SVT:lv:fe:all:switch"
-		clr=55
-		bclr=12
-	}
-	stacking="column"
-}
-"choice button" {
-	object {
-		x=190
-		y=93
-		width=41
-		height=20
-	}
-	control {
-		chan="SVT:lv:fl:switch"
-		clr=55
-		bclr=12
-	}
-	stacking="column"
-}
-text {
-	object {
-		x=587
-		y=19
-		width=100
-		height=18
-	}
-	"basic attribute" {
-		clr=15
-	}
-	textix="ALL HV CONTROL"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=661
-		y=56
-		width=89
-		height=18
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="On/Off"
-	align="horiz. centered"
-}
-"choice button" {
-	object {
-		x=685
-		y=97
-		width=41
-		height=20
-	}
-	control {
-		chan="SVT:bias:switch"
-		clr=55
-		bclr=12
-	}
-	stacking="column"
-}
-text {
-	object {
-		x=524
-		y=98
-		width=85
-		height=18
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="ALL SVT BIAS"
-	align="horiz. centered"
-}
-composite {
-	object {
-		x=96
-		y=212
-		width=89
-		height=33
-	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=96
-				y=212
-				width=89
-				height=18
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="FEB"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=96
-				y=227
-				width=89
-				height=18
-			}
-			"basic attribute" {
-				clr=31
-			}
-			textix="Status"
-			align="horiz. centered"
-		}
+		clr=19
 	}
 }
 composite {
 	object {
-		x=96
-		y=49
-		width=89
-		height=33
+		x=250
+		y=80
+		width=30
+		height=284
 	}
 	"composite name"=""
 	children {
-		text {
+		rectangle {
 			object {
-				x=96
-				y=49
-				width=89
-				height=18
+				x=250
+				y=80
+				width=30
+				height=30
 			}
 			"basic attribute" {
-				clr=31
+				clr=20
 			}
-			textix="Flange"
-			align="horiz. centered"
+			"dynamic attribute" {
+				vis="if zero"
+				chan="SVT:lv:hyb:all:stat:curr"
+			}
 		}
-		text {
+		rectangle {
 			object {
-				x=96
-				y=64
-				width=89
-				height=18
+				x=254
+				y=119
+				width=20
+				height=20
 			}
 			"basic attribute" {
-				clr=31
+				clr=20
 			}
-			textix="Status"
-			align="horiz. centered"
+			"dynamic attribute" {
+				vis="if zero"
+				chan="SVT:lv:hyb:1t:stat:curr"
+			}
 		}
-	}
-}
-composite {
-	object {
-		x=593
-		y=49
-		width=89
-		height=32
-	}
-	"composite name"=""
-	children {
-		text {
+		rectangle {
 			object {
-				x=593
-				y=49
-				width=89
-				height=18
+				x=254
+				y=144
+				width=20
+				height=20
 			}
 			"basic attribute" {
-				clr=31
+				clr=20
 			}
-			textix="HV"
-			align="horiz. centered"
+			"dynamic attribute" {
+				vis="if zero"
+				chan="SVT:lv:hyb:23t:stat:curr"
+			}
 		}
-		text {
+		rectangle {
 			object {
-				x=593
-				y=63
-				width=89
-				height=18
+				x=254
+				y=169
+				width=20
+				height=20
 			}
 			"basic attribute" {
-				clr=31
+				clr=20
 			}
-			textix="Status"
-			align="horiz. centered"
+			"dynamic attribute" {
+				vis="if zero"
+				chan="SVT:lv:hyb:4t:stat:curr"
+			}
+		}
+		rectangle {
+			object {
+				x=254
+				y=194
+				width=20
+				height=20
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if zero"
+				chan="SVT:lv:hyb:5t:stat:curr"
+			}
+		}
+		rectangle {
+			object {
+				x=254
+				y=219
+				width=20
+				height=20
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if zero"
+				chan="SVT:lv:hyb:6t:stat:curr"
+			}
+		}
+		rectangle {
+			object {
+				x=254
+				y=244
+				width=20
+				height=20
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if zero"
+				chan="SVT:lv:hyb:1b:stat:curr"
+			}
+		}
+		rectangle {
+			object {
+				x=254
+				y=269
+				width=20
+				height=20
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if zero"
+				chan="SVT:lv:hyb:23b:stat:curr"
+			}
+		}
+		rectangle {
+			object {
+				x=254
+				y=294
+				width=20
+				height=20
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if zero"
+				chan="SVT:lv:hyb:4b:stat:curr"
+			}
+		}
+		rectangle {
+			object {
+				x=254
+				y=319
+				width=20
+				height=20
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if zero"
+				chan="SVT:lv:hyb:5b:stat:curr"
+			}
+		}
+		rectangle {
+			object {
+				x=254
+				y=344
+				width=20
+				height=20
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if zero"
+				chan="SVT:lv:hyb:6b:stat:curr"
+			}
 		}
 	}
 }
 text {
 	object {
-		x=333
-		y=19
-		width=100
-		height=18
-	}
-	"basic attribute" {
-		clr=15
-	}
-	textix="ALL HYBRID CONTROL"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=264
-		y=89
-		width=85
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="ALL HYBRIDS"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=413
+		x=271
 		y=56
 		width=89
 		height=18
@@ -504,7 +334,7 @@ text {
 }
 composite {
 	object {
-		x=339
+		x=220
 		y=49
 		width=89
 		height=33
@@ -513,7 +343,7 @@ composite {
 	children {
 		text {
 			object {
-				x=339
+				x=220
 				y=64
 				width=89
 				height=18
@@ -526,7 +356,7 @@ composite {
 		}
 		text {
 			object {
-				x=339
+				x=220
 				y=49
 				width=89
 				height=18
@@ -541,196 +371,21 @@ composite {
 }
 "choice button" {
 	object {
-		x=432
-		y=84
+		x=290
+		y=80
 		width=50
 		height=30
 	}
 	control {
-		chan="SVT:lv:hyb:all:switch"
+		chan="SVT:lv:all:switch"
 		clr=55
 		bclr=12
 	}
 	stacking="column"
 }
-text {
-	object {
-		x=264
-		y=219
-		width=85
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="L2-3t"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=264
-		y=144
-		width=85
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="L4t"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=264
-		y=119
-		width=85
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="L1t"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=264
-		y=169
-		width=85
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="L5t"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=264
-		y=194
-		width=85
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="L6t"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=264
-		y=319
-		width=85
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="L1b"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=264
-		y=344
-		width=85
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="L2-3b"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=264
-		y=269
-		width=85
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="L4b"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=264
-		y=244
-		width=85
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="L5b"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=264
-		y=294
-		width=85
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="L6b"
-	align="horiz. centered"
-}
 "related display" {
 	object {
-		x=75
-		y=425
-		width=130
-		height=25
-	}
-	display[0] {
-		label="FEB Expert Gui"
-		name="svtFebMain.adl"
-	}
-	clr=14
-	bclr=50
-	label="FEB Expert Gui"
-}
-"related display" {
-	object {
-		x=75
-		y=133
-		width=130
-		height=25
-	}
-	display[0] {
-		label="Flange Expert Gui"
-		name="svtFlangeMain.adl"
-	}
-	clr=14
-	bclr=50
-	label="Flange Expert Gui"
-}
-"related display" {
-	object {
-		x=570
-		y=200
-		width=130
-		height=25
-	}
-	display[0] {
-		label="HV Bias Expert Gui"
-		name="svtBiasMain.adl"
-	}
-	clr=14
-	bclr=50
-	label="HV Bias Expert Gui"
-}
-"related display" {
-	object {
-		x=318
+		x=211
 		y=377
 		width=130
 		height=25
@@ -740,94 +395,12 @@ text {
 		name="svtHybrid.adl"
 	}
 	clr=14
-	bclr=50
+	bclr=5
 	label="Hybrid Expert Gui"
-}
-text {
-	object {
-		x=31
-		y=510
-		width=85
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="ALL IOCs"
-	align="horiz. centered"
-}
-"related display" {
-	object {
-		x=73
-		y=538
-		width=130
-		height=25
-	}
-	display[0] {
-		label="DPM IOC Status Gui"
-		name="svtDaqIOCStatus.adl"
-	}
-	clr=14
-	bclr=50
-	label="DPM IOC Status Gui"
-}
-"related display" {
-	object {
-		x=272
-		y=669
-		width=130
-		height=25
-	}
-	display[0] {
-		label="Hybrid Sync Gui"
-		name="svtHybSync.adl"
-	}
-	clr=14
-	bclr=50
-	label="Hybrid Sync Gui"
-}
-text {
-	object {
-		x=29
-		y=384
-		width=85
-		height=18
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="FEB HEARTBEAT"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=327
-		y=429
-		width=100
-		height=18
-	}
-	"basic attribute" {
-		clr=15
-	}
-	textix="SVT DAQ STATUS"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=90
-		y=490
-		width=100
-		height=18
-	}
-	"basic attribute" {
-		clr=15
-	}
-	textix="IOC Status"
-	align="horiz. centered"
 }
 bar {
 	object {
-		x=440
+		x=298
 		y=119
 		width=35
 		height=245
@@ -844,474 +417,750 @@ bar {
 		precDefault=1
 	}
 }
-text {
+rectangle {
 	object {
-		x=588
-		y=267
-		width=100
-		height=18
-	}
-	"basic attribute" {
-		clr=15
-	}
-	textix="Temperature Status"
-	align="horiz. centered"
-}
-composite {
-	object {
-		x=373
-		y=119
-		width=20
-		height=20
-	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=373
-				y=119
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="SVT:lv:hyb:1t:stat:curr"
-			}
-		}
-		rectangle {
-			object {
-				x=373
-				y=119
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:lv:hyb:1t:stat:curr"
-			}
-		}
-	}
-}
-composite {
-	object {
-		x=365
+		x=250
 		y=80
 		width=30
 		height=30
 	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=365
-				y=80
-				width=30
-				height=30
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:lv:hyb:all:stat:curr"
-			}
-		}
-		rectangle {
-			object {
-				x=365
-				y=80
-				width=30
-				height=30
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="SVT:lv:hyb:all:stat:curr"
-			}
-		}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="SVT:lv:hyb:all:stat:curr"
 	}
 }
-composite {
+rectangle {
 	object {
-		x=373
-		y=219
+		x=254
+		y=119
 		width=20
 		height=20
 	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=373
-				y=219
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="SVT:lv:hyb:23t:stat:curr"
-			}
-		}
-		rectangle {
-			object {
-				x=373
-				y=219
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:lv:hyb:23t:stat:curr"
-			}
-		}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="SVT:lv:hyb:1t:stat:curr"
 	}
 }
-composite {
+rectangle {
 	object {
-		x=373
+		x=254
 		y=144
 		width=20
 		height=20
 	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=373
-				y=144
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="SVT:lv:hyb:4t:stat:curr"
-			}
-		}
-		rectangle {
-			object {
-				x=373
-				y=144
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:lv:hyb:4t:stat:curr"
-			}
-		}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="SVT:lv:hyb:23t:stat:curr"
 	}
 }
-composite {
+rectangle {
 	object {
-		x=373
+		x=254
 		y=169
 		width=20
 		height=20
 	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=373
-				y=169
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="SVT:lv:hyb:5t:stat:curr"
-			}
-		}
-		rectangle {
-			object {
-				x=373
-				y=169
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:lv:hyb:5t:stat:curr"
-			}
-		}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="SVT:lv:hyb:4t:stat:curr"
 	}
 }
-composite {
+rectangle {
 	object {
-		x=373
+		x=254
 		y=194
 		width=20
 		height=20
 	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=373
-				y=194
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="SVT:lv:hyb:6t:stat:curr"
-			}
-		}
-		rectangle {
-			object {
-				x=373
-				y=194
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:lv:hyb:6t:stat:curr"
-			}
-		}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="SVT:lv:hyb:5t:stat:curr"
 	}
 }
-composite {
+rectangle {
 	object {
-		x=373
-		y=319
+		x=254
+		y=219
 		width=20
 		height=20
 	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=373
-				y=319
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="SVT:lv:hyb:1b:stat:curr"
-			}
-		}
-		rectangle {
-			object {
-				x=373
-				y=319
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:lv:hyb:1b:stat:curr"
-			}
-		}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="SVT:lv:hyb:6t:stat:curr"
 	}
 }
-composite {
+rectangle {
 	object {
-		x=373
-		y=344
-		width=20
-		height=20
-	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=373
-				y=344
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="SVT:lv:hyb:23b:stat:curr"
-			}
-		}
-		rectangle {
-			object {
-				x=373
-				y=344
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:lv:hyb:23b:stat:curr"
-			}
-		}
-	}
-}
-composite {
-	object {
-		x=373
-		y=269
-		width=20
-		height=20
-	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=373
-				y=269
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="SVT:lv:hyb:4b:stat:curr"
-			}
-		}
-		rectangle {
-			object {
-				x=373
-				y=269
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:lv:hyb:4b:stat:curr"
-			}
-		}
-	}
-}
-composite {
-	object {
-		x=373
+		x=254
 		y=244
 		width=20
 		height=20
 	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=373
-				y=244
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="SVT:lv:hyb:5b:stat:curr"
-			}
-		}
-		rectangle {
-			object {
-				x=373
-				y=244
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:lv:hyb:5b:stat:curr"
-			}
-		}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="SVT:lv:hyb:1b:stat:curr"
 	}
 }
-composite {
+rectangle {
 	object {
-		x=373
+		x=254
+		y=269
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="SVT:lv:hyb:23b:stat:curr"
+	}
+}
+rectangle {
+	object {
+		x=254
 		y=294
 		width=20
 		height=20
 	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="SVT:lv:hyb:4b:stat:curr"
+	}
+}
+rectangle {
+	object {
+		x=254
+		y=319
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="SVT:lv:hyb:5b:stat:curr"
+	}
+}
+rectangle {
+	object {
+		x=254
+		y=344
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="SVT:lv:hyb:6b:stat:curr"
+	}
+}
+text {
+	object {
+		x=224
+		y=15
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Hybrid Control "
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=183
+		y=89
+		width=85
+		height=275
+	}
 	"composite name"=""
 	children {
-		rectangle {
+		text {
 			object {
-				x=373
-				y=294
-				width=20
+				x=183
+				y=89
+				width=85
 				height=20
 			}
 			"basic attribute" {
-				clr=20
+				clr=52
 			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="SVT:lv:hyb:6b:stat:curr"
-			}
+			textix="Layer"
+			align="horiz. centered"
 		}
-		rectangle {
+		text {
 			object {
-				x=373
-				y=294
-				width=20
+				x=183
+				y=119
+				width=85
 				height=20
 			}
 			"basic attribute" {
-				clr=15
+				clr=52
 			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:lv:hyb:6b:stat:curr"
+			textix="0-1t"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=183
+				y=144
+				width=85
+				height=20
 			}
+			"basic attribute" {
+				clr=52
+			}
+			textix="2-3t"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=183
+				y=169
+				width=85
+				height=20
+			}
+			"basic attribute" {
+				clr=52
+			}
+			textix="4t"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=183
+				y=194
+				width=85
+				height=20
+			}
+			"basic attribute" {
+				clr=52
+			}
+			textix="5t"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=183
+				y=219
+				width=85
+				height=20
+			}
+			"basic attribute" {
+				clr=52
+			}
+			textix="6t"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=183
+				y=244
+				width=85
+				height=20
+			}
+			"basic attribute" {
+				clr=52
+			}
+			textix="0-1b"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=183
+				y=269
+				width=85
+				height=20
+			}
+			"basic attribute" {
+				clr=52
+			}
+			textix="2-3b"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=183
+				y=294
+				width=85
+				height=20
+			}
+			"basic attribute" {
+				clr=52
+			}
+			textix="4b"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=183
+				y=319
+				width=85
+				height=20
+			}
+			"basic attribute" {
+				clr=52
+			}
+			textix="5b"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=183
+				y=344
+				width=85
+				height=20
+			}
+			"basic attribute" {
+				clr=52
+			}
+			textix="6b"
+			align="horiz. centered"
+		}
+	}
+}
+rectangle {
+	object {
+		x=7
+		y=9
+		width=180
+		height=135
+	}
+	"basic attribute" {
+		clr=19
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=7
+		y=9
+		width=180
+		height=25
+	}
+	"basic attribute" {
+		clr=19
+	}
+}
+text {
+	object {
+		x=47
+		y=156
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="ALL FEB CONTROL"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=109
+		y=195
+		width=89
+		height=18
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="On/Off"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=8
+		y=15
+		width=180
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="SVT Flange Control "
+	align="horiz. centered"
+}
+text {
+	object {
+		x=91
+		y=43
+		width=89
+		height=18
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="On/Off"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=3
+		y=75
+		width=85
+		height=18
+	}
+	"basic attribute" {
+		clr=52
+	}
+	textix="Flange"
+	align="horiz. centered"
+}
+"choice button" {
+	object {
+		x=133
+		y=212
+		width=41
+		height=20
+	}
+	control {
+		chan="SVT:lv:fe:digi:switch"
+		clr=55
+		bclr=12
+	}
+	stacking="column"
+}
+"choice button" {
+	object {
+		x=133
+		y=237
+		width=41
+		height=20
+	}
+	control {
+		chan="SVT:lv:fe:anap:switch"
+		clr=55
+		bclr=12
+	}
+	stacking="column"
+}
+"choice button" {
+	object {
+		x=133
+		y=262
+		width=41
+		height=20
+	}
+	control {
+		chan="SVT:lv:fe:anan:switch"
+		clr=55
+		bclr=12
+	}
+	stacking="column"
+}
+"choice button" {
+	object {
+		x=124
+		y=287
+		width=50
+		height=30
+	}
+	control {
+		chan="SVT:lv:fe:all:switch"
+		clr=55
+		bclr=12
+	}
+	stacking="column"
+}
+"choice button" {
+	object {
+		x=115
+		y=74
+		width=41
+		height=20
+	}
+	control {
+		chan="SVT:lv:fl:switch"
+		clr=55
+		bclr=12
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=463
+		y=12
+		width=230
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="HV Control "
+	align="horiz. centered"
+}
+text {
+	object {
+		x=601
+		y=56
+		width=89
+		height=18
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="On/Off"
+	align="horiz. centered"
+}
+"choice button" {
+	object {
+		x=625
+		y=97
+		width=41
+		height=20
+	}
+	control {
+		chan="SVT:bias:switch"
+		clr=55
+		bclr=12
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=464
+		y=98
+		width=85
+		height=18
+	}
+	"basic attribute" {
+		clr=52
+	}
+	textix="All SVT Bias"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=53
+		y=180
+		width=89
+		height=33
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=53
+				y=180
+				width=89
+				height=18
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="FEB"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=53
+				y=195
+				width=89
+				height=18
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="Status"
+			align="horiz. centered"
 		}
 	}
 }
 composite {
 	object {
-		x=130
-		y=247
+		x=45
+		y=36
+		width=89
+		height=33
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=45
+				y=36
+				width=89
+				height=18
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="Flange"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=45
+				y=51
+				width=89
+				height=18
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="Status"
+			align="horiz. centered"
+		}
+	}
+}
+composite {
+	object {
+		x=530
+		y=49
+		width=89
+		height=32
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=530
+				y=49
+				width=89
+				height=18
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="HV"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=530
+				y=63
+				width=89
+				height=18
+			}
+			"basic attribute" {
+				clr=31
+			}
+			textix="Status"
+			align="horiz. centered"
+		}
+	}
+}
+"related display" {
+	object {
+		x=32
+		y=409
+		width=130
+		height=25
+	}
+	display[0] {
+		label="FEB Expert Gui"
+		name="svtFebMain.adl"
+	}
+	clr=14
+	bclr=5
+	label="FEB Expert Gui"
+}
+"related display" {
+	object {
+		x=34
+		y=110
+		width=130
+		height=25
+	}
+	display[0] {
+		label="Flange Expert Gui"
+		name="svtFlangeMain.adl"
+	}
+	clr=14
+	bclr=5
+	label="Flange Expert Gui"
+}
+"related display" {
+	object {
+		x=510
+		y=200
+		width=130
+		height=25
+	}
+	display[0] {
+		label="HV Bias Expert Gui"
+		name="svtBiasMain.adl"
+	}
+	clr=14
+	bclr=5
+	label="HV Bias Expert Gui"
+}
+"related display" {
+	object {
+		x=364
+		y=151
+		width=85
+		height=25
+	}
+	display[0] {
+		label="Hybrid Sync Gui"
+		name="svtHybSync.adl"
+	}
+	clr=14
+	bclr=5
+	label="Sync Gui"
+}
+text {
+	object {
+		x=55
+		y=330
+		width=85
+		height=18
+	}
+	"basic attribute" {
+		clr=52
+	}
+	textix="FEB Link Status"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=-5
+		y=490
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=30
+	}
+	textix="svtDaqRogue"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=87
+		y=212
 		width=20
 		height=20
 	}
@@ -1319,8 +1168,8 @@ composite {
 	children {
 		rectangle {
 			object {
-				x=130
-				y=247
+				x=87
+				y=212
 				width=20
 				height=20
 			}
@@ -1334,8 +1183,8 @@ composite {
 		}
 		rectangle {
 			object {
-				x=130
-				y=247
+				x=87
+				y=212
 				width=20
 				height=20
 			}
@@ -1351,8 +1200,8 @@ composite {
 }
 composite {
 	object {
-		x=130
-		y=272
+		x=87
+		y=237
 		width=20
 		height=20
 	}
@@ -1360,8 +1209,8 @@ composite {
 	children {
 		rectangle {
 			object {
-				x=130
-				y=272
+				x=87
+				y=237
 				width=20
 				height=20
 			}
@@ -1375,8 +1224,8 @@ composite {
 		}
 		rectangle {
 			object {
-				x=130
-				y=272
+				x=87
+				y=237
 				width=20
 				height=20
 			}
@@ -1392,8 +1241,8 @@ composite {
 }
 composite {
 	object {
-		x=130
-		y=297
+		x=87
+		y=262
 		width=20
 		height=20
 	}
@@ -1401,8 +1250,8 @@ composite {
 	children {
 		rectangle {
 			object {
-				x=130
-				y=297
+				x=87
+				y=262
 				width=20
 				height=20
 			}
@@ -1416,8 +1265,8 @@ composite {
 		}
 		rectangle {
 			object {
-				x=130
-				y=297
+				x=87
+				y=262
 				width=20
 				height=20
 			}
@@ -1433,8 +1282,8 @@ composite {
 }
 composite {
 	object {
-		x=125
-		y=322
+		x=82
+		y=287
 		width=30
 		height=30
 	}
@@ -1442,8 +1291,8 @@ composite {
 	children {
 		rectangle {
 			object {
-				x=125
-				y=322
+				x=82
+				y=287
 				width=30
 				height=30
 			}
@@ -1457,8 +1306,8 @@ composite {
 		}
 		rectangle {
 			object {
-				x=125
-				y=322
+				x=82
+				y=287
 				width=30
 				height=30
 			}
@@ -1474,8 +1323,8 @@ composite {
 }
 composite {
 	object {
-		x=125
-		y=88
+		x=74
+		y=69
 		width=30
 		height=30
 	}
@@ -1483,8 +1332,8 @@ composite {
 	children {
 		rectangle {
 			object {
-				x=125
-				y=88
+				x=74
+				y=69
 				width=30
 				height=30
 			}
@@ -1498,8 +1347,8 @@ composite {
 		}
 		rectangle {
 			object {
-				x=125
-				y=88
+				x=74
+				y=69
 				width=30
 				height=30
 			}
@@ -1513,224 +1362,136 @@ composite {
 		}
 	}
 }
-composite {
+rectangle {
 	object {
-		x=620
+		x=557
 		y=85
 		width=37
 		height=37
 	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=620
-				y=85
-				width=37
-				height=37
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="SVT:bias:all:stat:calc"
-			}
-		}
-		rectangle {
-			object {
-				x=620
-				y=85
-				width=37
-				height=37
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:bias:all:stat:calc"
-			}
-		}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="SVT:bias:all:stat:calc"
 	}
 }
-composite {
+rectangle {
 	object {
-		x=120
-		y=373
+		x=557
+		y=85
+		width=37
+		height=37
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="SVT:bias:all:stat:calc"
+	}
+}
+rectangle {
+	object {
+		x=77
+		y=354
 		width=40
 		height=40
 	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=120
-				y=373
-				width=40
-				height=40
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:daq:all:feb_heartcheck"
-			}
-		}
-		rectangle {
-			object {
-				x=120
-				y=373
-				width=40
-				height=40
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="SVT:daq:all:feb_heartcheck"
-			}
-		}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="SVT:feb:linkstatus"
 	}
 }
-composite {
+rectangle {
 	object {
-		x=132
+		x=77
+		y=354
+		width=40
+		height=40
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="SVT:feb:linkstatus"
+	}
+}
+rectangle {
+	object {
+		x=23
 		y=510
-		width=20
-		height=20
+		width=40
+		height=40
 	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=132
-				y=510
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:daq:dpm:dtm:all:hb_check"
-			}
-		}
-		rectangle {
-			object {
-				x=132
-				y=510
-				width=20
-				height=20
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="SVT:daq:dpm:dtm:all:hb_check"
-			}
-		}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="iocsvtDaqRogue:HEARTBEAT"
 	}
 }
 rectangle {
 	object {
-		x=24
-		y=178
-		width=223
-		height=285
+		x=23
+		y=510
+		width=40
+		height=40
 	}
 	"basic attribute" {
-		clr=17
-		style="dash"
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="iocsvtDaqRogue:HEARTBEAT"
+	}
+}
+rectangle {
+	object {
+		x=7
+		y=150
+		width=180
+		height=302
+	}
+	"basic attribute" {
+		clr=19
 		fill="outline"
 	}
 }
 rectangle {
 	object {
-		x=24
-		y=9
-		width=223
-		height=155
-	}
-	"basic attribute" {
-		clr=17
-		style="dash"
-		fill="outline"
-	}
-}
-rectangle {
-	object {
-		x=519
+		x=463
 		y=9
 		width=230
 		height=229
 	}
 	"basic attribute" {
-		clr=17
-		style="dash"
+		clr=19
 		fill="outline"
 	}
 }
 rectangle {
 	object {
-		x=24
-		y=598
-		width=223
-		height=135
-	}
-	"basic attribute" {
-		clr=17
-		style="dash"
-		fill="outline"
-	}
-}
-rectangle {
-	object {
-		x=266
-		y=419
+		x=464
+		y=246
 		width=232
-		height=200
+		height=206
 	}
 	"basic attribute" {
-		clr=17
-		style="dash"
+		clr=19
 		fill="outline"
 	}
-}
-text {
-	object {
-		x=520
-		y=311
-		width=60
-		height=18
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="SVT TEMP"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=520
-		y=336
-		width=60
-		height=18
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="FEB TEMP"
-	align="horiz. centered"
 }
 "text update" {
 	object {
-		x=583
-		y=311
+		x=379
+		y=240
 		width=50
 		height=20
 	}
@@ -1740,7 +1501,7 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
-	align="horiz. right"
+	align="horiz. centered"
 	format="string"
 	limits {
 		hoprSrc="default"
@@ -1750,78 +1511,78 @@ text {
 }
 text {
 	object {
-		x=290
-		y=451
+		x=478
+		y=277
 		width=85
 		height=20
 	}
 	"basic attribute" {
-		clr=51
+		clr=52
 	}
-	textix="DPM(0) RUNSTATE"
+	textix="DPM(0) Event Count"
 	align="horiz. centered"
 }
 text {
 	object {
-		x=290
-		y=476
+		x=484
+		y=302
 		width=85
 		height=20
 	}
 	"basic attribute" {
-		clr=51
+		clr=52
 	}
-	textix="DPM(0) SYSTEMSTATUS"
+	textix="DPM(0) System Status"
 	align="horiz. centered"
 }
 text {
 	object {
-		x=290
-		y=501
+		x=484
+		y=327
 		width=85
 		height=20
 	}
 	"basic attribute" {
-		clr=51
+		clr=52
 	}
-	textix="DPM(0) TRIGGERCOUNT"
+	textix="DPM(0) Max Occupancy"
 	align="horiz. centered"
 }
 text {
 	object {
-		x=290
-		y=526
+		x=475
+		y=352
 		width=85
 		height=20
 	}
 	"basic attribute" {
-		clr=51
+		clr=52
 	}
-	textix="DTM(0) RUNSTATE"
+	textix="DTM(0) CODA State"
 	align="horiz. centered"
 }
 text {
 	object {
-		x=290
-		y=551
+		x=484
+		y=377
 		width=85
 		height=20
 	}
 	"basic attribute" {
-		clr=51
+		clr=52
 	}
-	textix="DTM(0) TRIG1COUNT"
+	textix="DTM(0) Trigger Count"
 	align="horiz. centered"
 }
 "text update" {
 	object {
-		x=405
-		y=450
-		width=80
+		x=589
+		y=276
+		width=105
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:dpm:0:state"
+		chan="SVT:daq:dpm:0:eventcount"
 		clr=51
 		bclr=14
 	}
@@ -1835,13 +1596,13 @@ text {
 }
 "text update" {
 	object {
-		x=405
-		y=475
-		width=80
+		x=589
+		y=301
+		width=105
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:dpm:0:systemstate"
+		chan="SVT:daq:dpm:0:eventstate"
 		clr=51
 		bclr=14
 	}
@@ -1855,17 +1616,17 @@ text {
 }
 "text update" {
 	object {
-		x=405
-		y=500
-		width=80
+		x=589
+		y=326
+		width=105
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:dpm:0:trigcount"
+		chan="SVT:daq:dpm:0:peakoccupancy"
 		clr=51
 		bclr=14
 	}
-	align="horiz. right"
+	align="horiz. centered"
 	format="string"
 	limits {
 		hoprSrc="default"
@@ -1875,9 +1636,9 @@ text {
 }
 "text update" {
 	object {
-		x=405
-		y=550
-		width=80
+		x=589
+		y=376
+		width=105
 		height=20
 	}
 	monitor {
@@ -1885,7 +1646,7 @@ text {
 		clr=51
 		bclr=14
 	}
-	align="horiz. right"
+	align="horiz. centered"
 	format="string"
 	limits {
 		hoprSrc="default"
@@ -1895,9 +1656,9 @@ text {
 }
 "text update" {
 	object {
-		x=405
-		y=525
-		width=80
+		x=589
+		y=351
+		width=105
 		height=20
 	}
 	monitor {
@@ -1915,8 +1676,8 @@ text {
 }
 "related display" {
 	object {
-		x=314
-		y=576
+		x=517
+		y=402
 		width=130
 		height=25
 	}
@@ -1925,40 +1686,26 @@ text {
 		name="svtDpmStatus.adl"
 	}
 	clr=14
-	bclr=50
+	bclr=5
 	label="DPM Status Gui"
 }
 rectangle {
 	object {
-		x=520
-		y=256
-		width=230
-		height=150
+		x=356
+		y=192
+		width=100
+		height=260
 	}
 	"basic attribute" {
-		clr=17
-		style="dash"
+		clr=19
 		fill="outline"
 	}
 }
-text {
-	object {
-		x=582
-		y=423
-		width=100
-		height=18
-	}
-	"basic attribute" {
-		clr=15
-	}
-	textix="Single Event Upset Monitor"
-	align="horiz. centered"
-}
 "related display" {
 	object {
-		x=573
-		y=364
-		width=130
+		x=365
+		y=422
+		width=85
 		height=25
 	}
 	display[0] {
@@ -1966,58 +1713,28 @@ text {
 		name="svtTemp.adl"
 	}
 	clr=14
-	bclr=50
-	label="SVT Temp Gui"
+	bclr=5
+	label="Temp Gui"
 }
 "shell command" {
 	object {
-		x=73
-		y=645
+		x=550
+		y=467
 		width=130
 		height=25
 	}
 	command[0] {
 		label="Reboot SVT DAQ"
-		name="/usr/clas12/release/1.3.0/slac_svt/svtdaq/daq/rceScripts/svt_expert/svtDaqReboot_xterm.sh"
+		name="/usr/clas12/release/1.4.0/slac_svt/heavy-photon-daq/software/scripts/SvtDaqRebootXterm.sh"
 	}
-	clr=14
+	clr=0
 	bclr=20
 	label="SVT DAQ REBOOT"
 }
-"shell command" {
-	object {
-		x=73
-		y=673
-		width=130
-		height=25
-	}
-	command[0] {
-		label="Config SVT DAQ"
-		name="/usr/clas12/release/1.3.0/slac_svt/svtdaq/daq/rceScripts/svt_expert/load_default_config_xterm.sh"
-	}
-	clr=14
-	bclr=20
-	label="SVT DAQ CONFIG"
-}
-"shell command" {
-	object {
-		x=73
-		y=701
-		width=130
-		height=25
-	}
-	command[0] {
-		label="SVT DAQ APV Reset"
-		name="/usr/clas12/release/1.3.0/slac_svt/svtdaq/daq/rceScripts/svt_expert/send_apv_reset_xterm.sh"
-	}
-	clr=14
-	bclr=20
-	label="SVT DAQ APV Reset"
-}
 "text update" {
 	object {
-		x=583
-		y=334
+		x=380
+		y=348
 		width=50
 		height=20
 	}
@@ -2027,7 +1744,7 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
-	align="horiz. right"
+	align="horiz. centered"
 	format="string"
 	limits {
 		hoprSrc="default"
@@ -2037,36 +1754,20 @@ text {
 }
 rectangle {
 	object {
-		x=24
-		y=480
-		width=223
-		height=100
+		x=7
+		y=461
+		width=75
+		height=125
 	}
 	"basic attribute" {
-		clr=17
-		style="dash"
+		clr=19
 		fill="outline"
 	}
 }
-"shell command" {
-	object {
-		x=73
-		y=606
-		width=130
-		height=25
-	}
-	command[0] {
-		label="Reboot SVT DAQ rce servers"
-		name="/usr/clas12/release/1.3.0/slac_svt/svtdaq/daq/rceScripts/svt_expert/rem_restart_xterm.sh"
-	}
-	clr=14
-	bclr=20
-	label="REM RESTART"
-}
 text {
 	object {
-		x=570
-		y=291
+		x=372
+		y=222
 		width=70
 		height=18
 	}
@@ -2076,207 +1777,25 @@ text {
 	textix="Supply Temp"
 	align="horiz. centered"
 }
-"text entry" {
-	object {
-		x=610
-		y=140
-		width=50
-		height=20
-	}
-	control {
-		chan="SVT:bias:v_set"
-		clr=14
-		bclr=0
-	}
-	format="string"
-	limits {
-		hoprSrc="default"
-		hoprDefault=10
-		precDefault=1
-	}
-}
-text {
-	object {
-		x=522
-		y=140
-		width=85
-		height=18
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="BIAS ALL V_SET"
-	align="horiz. centered"
-}
-rectangle {
-	object {
-		x=520
-		y=416
-		width=230
-		height=200
-	}
-	"basic attribute" {
-		clr=17
-		style="dash"
-		fill="outline"
-	}
-}
-"related display" {
-	object {
-		x=564
-		y=577
-		width=130
-		height=25
-	}
-	display[0] {
-		label="Sem Gui"
-		name="svtSEM.adl"
-	}
-	clr=14
-	bclr=50
-	label="Sem Gui"
-}
-text {
-	object {
-		x=540
-		y=454
-		width=85
-		height=18
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="Heartbeat"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=634
-		y=454
-		width=85
-		height=18
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="Error status"
-	align="horiz. centered"
-}
-rectangle {
-	object {
-		x=266
-		y=626
-		width=484
-		height=105
-	}
-	"basic attribute" {
-		clr=17
-		style="dash"
-		fill="outline"
-	}
-}
-text {
-	object {
-		x=327
-		y=634
-		width=100
-		height=18
-	}
-	"basic attribute" {
-		clr=15
-	}
-	textix="HYBRID SYNC"
-	align="horiz. centered"
-}
 "message button" {
 	object {
-		x=664
+		x=475
 		y=140
-		width=40
+		width=200
 		height=20
 	}
 	control {
-		chan="SVT:bias:v_set"
+		chan="SVT:bias:nominal:v_set"
 		clr=14
-		bclr=4
+		bclr=15
 	}
-	label="180V"
+	label="SET BIAS TO NOMINAL"
 	release_msg="180"
 }
-"message button" {
-	object {
-		x=695
-		y=170
-		width=40
-		height=20
-	}
-	control {
-		chan="HPS_INTLK:NO_BEAM:intlk_reset.PROC"
-		clr=14
-		bclr=4
-	}
-	label="RESET"
-	release_msg="1"
-}
 "text update" {
 	object {
-		x=605
-		y=170
-		width=40
-		height=20
-	}
-	monitor {
-		chan="HPS_INTLK:NO_BEAM:intlk_bypass"
-		clr=0
-		bclr=14
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	format="string"
-	limits {
-		hoprSrc="default"
-		hoprDefault=10
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=650
-		y=170
-		width=40
-		height=20
-	}
-	monitor {
-		chan="HPS_INTLK:NO_BEAM:intlk_status"
-		clr=0
-		bclr=14
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	format="string"
-	limits {
-		hoprSrc="default"
-		hoprDefault=10
-		precDefault=1
-	}
-}
-text {
-	object {
-		x=520
-		y=170
-		width=84
-		height=18
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="BEAM INTERLOCK"
-	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=668
-		y=311
+		x=379
+		y=276
 		width=50
 		height=20
 	}
@@ -2286,7 +1805,7 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
-	align="horiz. right"
+	align="horiz. centered"
 	format="string"
 	limits {
 		hoprSrc="default"
@@ -2296,8 +1815,8 @@ text {
 }
 "text update" {
 	object {
-		x=668
-		y=334
+		x=379
+		y=387
 		width=50
 		height=20
 	}
@@ -2307,7 +1826,7 @@ text {
 		bclr=14
 	}
 	clrmod="alarm"
-	align="horiz. right"
+	align="horiz. centered"
 	format="string"
 	limits {
 		hoprSrc="default"
@@ -2317,8 +1836,8 @@ text {
 }
 text {
 	object {
-		x=655
-		y=291
+		x=372
+		y=259
 		width=70
 		height=18
 	}
@@ -2328,107 +1847,23 @@ text {
 	textix="Return Temp"
 	align="horiz. centered"
 }
-composite {
+text {
 	object {
-		x=544
-		y=478
-		width=70
-		height=70
-	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=544
-				y=478
-				width=70
-				height=70
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="SVT:daq:feb:all:sem_heartbeat_stat"
-			}
-		}
-		rectangle {
-			object {
-				x=544
-				y=478
-				width=70
-				height=70
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:daq:feb:all:sem_heartbeat_stat"
-			}
-		}
-	}
-}
-composite {
-	object {
-		x=642
-		y=478
-		width=70
-		height=70
-	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=642
-				y=478
-				width=70
-				height=70
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:daq:feb:all:sem_error_stat"
-			}
-		}
-		rectangle {
-			object {
-				x=642
-				y=478
-				width=70
-				height=70
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="SVT:daq:feb:all:sem_error_stat"
-			}
-		}
-	}
-}
-rectangle {
-	object {
-		x=675
-		y=647
-		width=60
-		height=60
+		x=364
+		y=57
+		width=85
+		height=20
 	}
 	"basic attribute" {
-		clr=15
+		clr=30
 	}
-	"dynamic attribute" {
-		vis="if not zero"
-		chan="SVT:daq:all:sync_stat"
-	}
+	textix="Hybrid Sync"
+	align="horiz. centered"
 }
 rectangle {
 	object {
-		x=675
-		y=647
+		x=376
+		y=78
 		width=60
 		height=60
 	}
@@ -2437,88 +1872,292 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="if zero"
-		chan="SVT:daq:all:sync_stat"
+		chan="SVT:lv:hyb:all:sync:stat:calc"
+	}
+}
+rectangle {
+	object {
+		x=376
+		y=78
+		width=60
+		height=60
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="SVT:lv:hyb:all:sync:stat:calc"
+	}
+}
+text {
+	object {
+		x=466
+		y=170
+		width=84
+		height=18
+	}
+	"basic attribute" {
+		clr=52
+	}
+	textix="Beam Interlock"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=551
+		y=170
+		width=40
+		height=20
+	}
+	monitor {
+		chan="HPS_INTLK:NO_BEAM:intlk_bypass"
+		clr=51
+		bclr=14
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	format="string"
+	limits {
+		hoprSrc="default"
+		hoprDefault=10
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=596
+		y=170
+		width=40
+		height=20
+	}
+	monitor {
+		chan="HPS_INTLK:NO_BEAM:intlk_status"
+		clr=51
+		bclr=14
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	format="string"
+	limits {
+		hoprSrc="default"
+		hoprDefault=10
+		precDefault=1
 	}
 }
 "message button" {
 	object {
-		x=707
-		y=140
+		x=641
+		y=169
 		width=40
 		height=20
 	}
 	control {
-		chan="SVT:bias:v_set"
-		clr=14
-		bclr=4
+		chan="HPS_INTLK:NO_BEAM:intlk_reset.PROC"
+		clr=0
+		bclr=20
 	}
-	label="5V"
-	release_msg="5"
+	label="RESET"
+	release_msg="1"
 }
 text {
 	object {
-		x=410
-		y=674
-		width=85
+		x=25
+		y=210
+		width=41
 		height=20
 	}
 	"basic attribute" {
-		clr=51
+		clr=52
 	}
-	textix="HYBRID SYNC"
+	textix="FEB DIGI"
 	align="horiz. centered"
 }
 text {
 	object {
-		x=585
-		y=674
+		x=25
+		y=235
+		width=41
+		height=20
+	}
+	"basic attribute" {
+		clr=52
+	}
+	textix="FEB ANAP"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=25
+		y=260
+		width=41
+		height=20
+	}
+	"basic attribute" {
+		clr=52
+	}
+	textix="FEB ANAN"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=25
+		y=290
+		width=41
+		height=20
+	}
+	"basic attribute" {
+		clr=52
+	}
+	textix="FEB All"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=356
+		y=9
+		width=100
+		height=175
+	}
+	"basic attribute" {
+		clr=19
+		fill="outline"
+	}
+}
+rectangle {
+	object {
+		x=356
+		y=9
+		width=100
+		height=25
+	}
+	"basic attribute" {
+		clr=19
+	}
+}
+text {
+	object {
+		x=371
+		y=13
+		width=70
+		height=25
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Hybrid Sync"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=356
+		y=192
+		width=100
+		height=30
+	}
+	"basic attribute" {
+		clr=19
+	}
+}
+text {
+	object {
+		x=356
+		y=197
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="SVT Temperatures"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=370
+		y=329
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="Supply Temp"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=371
+		y=369
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="Return Temp"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=7
+		y=461
+		width=75
+		height=25
+	}
+	"basic attribute" {
+		clr=19
+	}
+}
+text {
+	object {
+		x=4
+		y=468
 		width=85
 		height=20
 	}
 	"basic attribute" {
-		clr=51
+		clr=0
 	}
-	textix="DATA DPM SYNC"
+	textix="IOC Status"
 	align="horiz. centered"
 }
-composite {
+"related display" {
 	object {
-		x=490
-		y=647
-		width=60
-		height=60
+		x=13
+		y=557
+		width=65
+		height=25
 	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=490
-				y=647
-				width=60
-				height=60
-			}
-			"basic attribute" {
-				clr=20
-			}
-			"dynamic attribute" {
-				vis="if zero"
-				chan="SVT:lv:hyb:all:sync:stat:calc"
-			}
-		}
-		rectangle {
-			object {
-				x=490
-				y=647
-				width=60
-				height=60
-			}
-			"basic attribute" {
-				clr=15
-			}
-			"dynamic attribute" {
-				vis="if not zero"
-				chan="SVT:lv:hyb:all:sync:stat:calc"
-			}
-		}
+	display[0] {
+		label="IOC Health GUI"
+		name="ioc_hps_health.adl"
 	}
+	clr=14
+	bclr=5
+	label="IOC Gui"
+}
+rectangle {
+	object {
+		x=464
+		y=244
+		width=233
+		height=25
+	}
+	"basic attribute" {
+		clr=19
+	}
+}
+text {
+	object {
+		x=530
+		y=248
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="SVT DAQ Status"
+	align="horiz. centered"
 }

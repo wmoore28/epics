@@ -1,7 +1,7 @@
 
 file {
-	name="/home/hpsrun/./biggreenbox2.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/HpsSvtHvStatus.adl"
+	version=030109
 }
 display {
 	object {
@@ -98,8 +98,9 @@ image {
 	"image name"="/home/hpsrun/.svbon.gif"
 	"dynamic attribute" {
 		vis="calc"
-		calc="A>178"
+		calc="A>58&&B>178"
 		chan="SVT:bias:top:0:v_sens"
+		chanB="SVT:bias:top:4:v_sens"
 	}
 }
 image {
@@ -113,8 +114,9 @@ image {
 	"image name"="/home/hpsrun/.svbramp.gif"
 	"dynamic attribute" {
 		vis="calc"
-		calc="A>10&&A<178"
+		calc="A>10&&A<58&&B>10&&B<178"
 		chan="SVT:bias:top:0:v_sens"
+		chanB="SVT:bias:top:4:v_sens"
 	}
 }
 image {
@@ -128,7 +130,8 @@ image {
 	"image name"="/home/hpsrun/.svboff.gif"
 	"dynamic attribute" {
 		vis="calc"
-		calc="A<10"
+		calc="A<10&&B<10"
 		chan="SVT:bias:top:0:v_sens"
+		chanB="SVT:bias:top:4:v_sens"
 	}
 }

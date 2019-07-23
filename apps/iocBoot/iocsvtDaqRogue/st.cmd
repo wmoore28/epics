@@ -3,7 +3,7 @@
 < envPaths
 
 # rogue runs on clonfarm2/clonfarm3:
-epicsEnvSet("EPICS_CA_ADDR_LIST","129.57.167.90 129.57.167.103")
+epicsEnvSet("EPICS_CA_ADDR_LIST","129.57.167.90 129.57.167.103 129.57.163.255")
 
 cd ${TOP}
 

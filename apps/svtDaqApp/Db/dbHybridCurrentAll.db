@@ -1,41 +1,187 @@
 record(calc, SVT:lv:hyb:1t:stat:curr)
 {
 	field(SCAN,"Passive")
-	field(INPA,"SVT:lv:fe:9:anap:i_rd CPP")
-	field(INPB,"SVT:lv:fe:9:anap:i_rd.LOW CPP")
-	field(CALC,"(A > B)")	
+	field(INPA,"SVT:lv:0:0:dvdd:i_rd CPP")
+	field(INPB,"SVT:lv:0:0:avdd:i_rd CPP")
+	field(INPC,"SVT:lv:0:0:v125:i_rd CPP")
+	field(INPD,"SVT:lv:0:1:dvdd:i_rd CPP")
+	field(INPE,"SVT:lv:0:1:avdd:i_rd CPP")
+	field(INPF,"SVT:lv:0:1:v125:i_rd CPP")
+	field(INPG,"SVT:lv:0:2:dvdd:i_rd CPP")
+	field(INPH,"SVT:lv:0:2:avdd:i_rd CPP")
+	field(INPI,"SVT:lv:0:2:v125:i_rd CPP")
+	field(INPJ,"SVT:lv:0:3:dvdd:i_rd CPP")
+	field(INPK,"SVT:lv:0:3:avdd:i_rd CPP")
+	field(INPL,"SVT:lv:0:3:v125:i_rd CPP")
+	field(CALC,"A>.1&&B>.1&&C>.1&&D>.1&&E>.1&&F>.1&&G>.1&&H>.1&&I>.1&&J>.1&&K>.1&&L>.1")	
 }
+
+record(calc, SVT:lv:hyb:1b:stat:curr)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:1:0:dvdd:i_rd CPP")
+	field(INPB,"SVT:lv:1:0:avdd:i_rd CPP")
+	field(INPC,"SVT:lv:1:0:v125:i_rd CPP")
+	field(INPD,"SVT:lv:1:1:dvdd:i_rd CPP")
+	field(INPE,"SVT:lv:1:1:avdd:i_rd CPP")
+	field(INPF,"SVT:lv:1:1:v125:i_rd CPP")
+	field(INPG,"SVT:lv:1:2:dvdd:i_rd CPP")
+	field(INPH,"SVT:lv:1:2:avdd:i_rd CPP")
+	field(INPI,"SVT:lv:1:2:v125:i_rd CPP")
+	field(INPJ,"SVT:lv:1:3:dvdd:i_rd CPP")
+	field(INPK,"SVT:lv:1:3:avdd:i_rd CPP")
+	field(INPL,"SVT:lv:1:3:v125:i_rd CPP")
+	field(CALC,"A>.1&&B>.1&&C>.1&&D>.1&&E>.1&&F>.1&&G>.1&&H>.1&&I>.1&&J>.1&&K>.1&&L>.1")	
+}
+
 
 record(calc, SVT:lv:hyb:23t:stat:curr)
 {
 	field(SCAN,"Passive")
-	field(INPA,"SVT:lv:fe:6:anap:i_rd CPP")
-	field(INPB,"SVT:lv:fe:6:anap:i_rd.LOW CPP")
-	field(CALC,"(A > B)")	
+	field(INPA,"SVT:lv:2:0:dvdd:i_rd CPP")
+	field(INPB,"SVT:lv:2:0:avdd:i_rd CPP")
+	field(INPC,"SVT:lv:2:0:v125:i_rd CPP")
+	field(INPD,"SVT:lv:2:1:dvdd:i_rd CPP")
+	field(INPE,"SVT:lv:2:1:avdd:i_rd CPP")
+	field(INPF,"SVT:lv:2:1:v125:i_rd CPP")
+	field(INPG,"SVT:lv:2:2:dvdd:i_rd CPP")
+	field(INPH,"SVT:lv:2:2:avdd:i_rd CPP")
+	field(INPI,"SVT:lv:2:2:v125:i_rd CPP")
+	field(INPJ,"SVT:lv:2:3:dvdd:i_rd CPP")
+	field(INPK,"SVT:lv:2:3:avdd:i_rd CPP")
+	field(INPL,"SVT:lv:2:3:v125:i_rd CPP")
+	field(CALC,"A>.1&&B>.1&&C>.1&&D>.1&&E>.1&&F>.1&&G>.1&&H>.1&&I>.1&&J>.1&&K>.1&&L>.1")	
+}
+
+
+record(calc, SVT:lv:hyb:23b:stat:curr)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:3:0:dvdd:i_rd CPP")
+	field(INPB,"SVT:lv:3:0:avdd:i_rd CPP")
+	field(INPC,"SVT:lv:3:0:v125:i_rd CPP")
+	field(INPD,"SVT:lv:3:1:dvdd:i_rd CPP")
+	field(INPE,"SVT:lv:3:1:avdd:i_rd CPP")
+	field(INPF,"SVT:lv:3:1:v125:i_rd CPP")
+	field(INPG,"SVT:lv:3:2:dvdd:i_rd CPP")
+	field(INPH,"SVT:lv:3:2:avdd:i_rd CPP")
+	field(INPI,"SVT:lv:3:2:v125:i_rd CPP")
+	field(INPJ,"SVT:lv:3:3:dvdd:i_rd CPP")
+	field(INPK,"SVT:lv:3:3:avdd:i_rd CPP")
+	field(INPL,"SVT:lv:3:3:v125:i_rd CPP")
+	field(CALC,"A>.1&&B>.1&&C>.1&&D>.1&&E>.1&&F>.1&&G>.1&&H>.1&&I>.1&&J>.1&&K>.1&&L>.1")	
 }
 
 record(calc, SVT:lv:hyb:4t:stat:curr)
 {
 	field(SCAN,"Passive")
-	field(INPA,"SVT:lv:fe:5:anap:i_rd CPP")
-	field(INPB,"SVT:lv:fe:5:anap:i_rd.LOW CPP")
-	field(CALC,"(A > B)")	
+	field(INPA,"SVT:lv:4:0:dvdd:i_rd CPP")
+	field(INPB,"SVT:lv:4:0:avdd:i_rd CPP")
+	field(INPC,"SVT:lv:4:0:v125:i_rd CPP")
+	field(INPD,"SVT:lv:4:1:dvdd:i_rd CPP")
+	field(INPE,"SVT:lv:4:1:avdd:i_rd CPP")
+	field(INPF,"SVT:lv:4:1:v125:i_rd CPP")
+	field(INPG,"SVT:lv:4:2:dvdd:i_rd CPP")
+	field(INPH,"SVT:lv:4:2:avdd:i_rd CPP")
+	field(INPI,"SVT:lv:4:2:v125:i_rd CPP")
+	field(INPJ,"SVT:lv:4:3:dvdd:i_rd CPP")
+	field(INPK,"SVT:lv:4:3:avdd:i_rd CPP")
+	field(INPL,"SVT:lv:4:3:v125:i_rd CPP")
+	field(CALC,"A>.1&&B>.1&&C>.1&&D>.1&&E>.1&&F>.1&&G>.1&&H>.1&&I>.1&&J>.1&&K>.1&&L>.1")	
 }
+
+record(calc, SVT:lv:hyb:4b:stat:curr)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:5:0:dvdd:i_rd CPP")
+	field(INPB,"SVT:lv:5:0:avdd:i_rd CPP")
+	field(INPC,"SVT:lv:5:0:v125:i_rd CPP")
+	field(INPD,"SVT:lv:5:1:dvdd:i_rd CPP")
+	field(INPE,"SVT:lv:5:1:avdd:i_rd CPP")
+	field(INPF,"SVT:lv:5:1:v125:i_rd CPP")
+	field(INPG,"SVT:lv:5:2:dvdd:i_rd CPP")
+	field(INPH,"SVT:lv:5:2:avdd:i_rd CPP")
+	field(INPI,"SVT:lv:5:2:v125:i_rd CPP")
+	field(INPJ,"SVT:lv:5:3:dvdd:i_rd CPP")
+	field(INPK,"SVT:lv:5:3:avdd:i_rd CPP")
+	field(INPL,"SVT:lv:5:3:v125:i_rd CPP")
+	field(CALC,"A>.1&&B>.1&&C>.1&&D>.1&&E>.1&&F>.1&&G>.1&&H>.1&&I>.1&&J>.1&&K>.1&&L>.1")	
+}
+
 
 record(calc, SVT:lv:hyb:5t:stat:curr)
 {
+
 	field(SCAN,"Passive")
-	field(INPA,"SVT:lv:fe:8:anap:i_rd CPP")
-	field(INPB,"SVT:lv:fe:8:anap:i_rd.LOW CPP")
-	field(CALC,"(A > B)")	
+	field(INPA,"SVT:lv:6:0:dvdd:i_rd CPP")
+	field(INPB,"SVT:lv:6:0:avdd:i_rd CPP")
+	field(INPC,"SVT:lv:6:0:v125:i_rd CPP")
+	field(INPD,"SVT:lv:6:1:dvdd:i_rd CPP")
+	field(INPE,"SVT:lv:6:1:avdd:i_rd CPP")
+	field(INPF,"SVT:lv:6:1:v125:i_rd CPP")
+	field(INPG,"SVT:lv:6:2:dvdd:i_rd CPP")
+	field(INPH,"SVT:lv:6:2:avdd:i_rd CPP")
+	field(INPI,"SVT:lv:6:2:v125:i_rd CPP")
+	field(INPJ,"SVT:lv:6:3:dvdd:i_rd CPP")
+	field(INPK,"SVT:lv:6:3:avdd:i_rd CPP")
+	field(INPL,"SVT:lv:6:3:v125:i_rd CPP")
+	field(CALC,"A>.1&&B>.1&&C>.1&&D>.1&&E>.1&&F>.1&&G>.1&&H>.1&&I>.1&&J>.1&&K>.1&&L>.1")	
+}
+
+record(calc, SVT:lv:hyb:5b:stat:curr)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:7:0:dvdd:i_rd CPP")
+	field(INPB,"SVT:lv:7:0:avdd:i_rd CPP")
+	field(INPC,"SVT:lv:7:0:v125:i_rd CPP")
+	field(INPD,"SVT:lv:7:1:dvdd:i_rd CPP")
+	field(INPE,"SVT:lv:7:1:avdd:i_rd CPP")
+	field(INPF,"SVT:lv:7:1:v125:i_rd CPP")
+	field(INPG,"SVT:lv:7:2:dvdd:i_rd CPP")
+	field(INPH,"SVT:lv:7:2:avdd:i_rd CPP")
+	field(INPI,"SVT:lv:7:2:v125:i_rd CPP")
+	field(INPJ,"SVT:lv:7:3:dvdd:i_rd CPP")
+	field(INPK,"SVT:lv:7:3:avdd:i_rd CPP")
+	field(INPL,"SVT:lv:7:3:v125:i_rd CPP")
+	field(CALC,"A>.1&&B>.1&&C>.1&&D>.1&&E>.1&&F>.1&&G>.1&&H>.1&&I>.1&&J>.1&&K>.1&&L>.1")	
 }
 
 record(calc, SVT:lv:hyb:6t:stat:curr)
 {
 	field(SCAN,"Passive")
-	field(INPA,"SVT:lv:fe:7:anap:i_rd CPP")
-	field(INPB,"SVT:lv:fe:7:anap:i_rd.LOW CPP")
-	field(CALC,"(A > B)")		
+	field(INPA,"SVT:lv:8:0:dvdd:i_rd CPP")
+	field(INPB,"SVT:lv:8:0:avdd:i_rd CPP")
+	field(INPC,"SVT:lv:8:0:v125:i_rd CPP")
+	field(INPD,"SVT:lv:8:1:dvdd:i_rd CPP")
+	field(INPE,"SVT:lv:8:1:avdd:i_rd CPP")
+	field(INPF,"SVT:lv:8:1:v125:i_rd CPP")
+	field(INPG,"SVT:lv:8:2:dvdd:i_rd CPP")
+	field(INPH,"SVT:lv:8:2:avdd:i_rd CPP")
+	field(INPI,"SVT:lv:8:2:v125:i_rd CPP")
+	field(INPJ,"SVT:lv:8:3:dvdd:i_rd CPP")
+	field(INPK,"SVT:lv:8:3:avdd:i_rd CPP")
+	field(INPL,"SVT:lv:8:3:v125:i_rd CPP")
+	field(CALC,"A>.1&&B>.1&&C>.1&&D>.1&&E>.1&&F>.1&&G>.1&&H>.1&&I>.1&&J>.1&&K>.1&&L>.1")	
+}
+
+record(calc, SVT:lv:hyb:6b:stat:curr)
+{
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:9:0:dvdd:i_rd CPP")
+	field(INPB,"SVT:lv:9:0:avdd:i_rd CPP")
+	field(INPC,"SVT:lv:9:0:v125:i_rd CPP")
+	field(INPD,"SVT:lv:9:1:dvdd:i_rd CPP")
+	field(INPE,"SVT:lv:9:1:avdd:i_rd CPP")
+	field(INPF,"SVT:lv:9:1:v125:i_rd CPP")
+	field(INPG,"SVT:lv:9:2:dvdd:i_rd CPP")
+	field(INPH,"SVT:lv:9:2:avdd:i_rd CPP")
+	field(INPI,"SVT:lv:9:2:v125:i_rd CPP")
+	field(INPJ,"SVT:lv:9:3:dvdd:i_rd CPP")
+	field(INPK,"SVT:lv:9:3:avdd:i_rd CPP")
+	field(INPL,"SVT:lv:9:3:v125:i_rd CPP")
+	#field(CALC,"A>.1&&B>.1&&C>.1&&D>.1&&E>.1&&F>.1&&G>.1&&H>.1&&I>.1&&J>.1&&K>.1&&L>.1")	
+	field(CALC,"A>.1&&B>.1&&C>.1&&D>.1&&E>.1&&F>.1&&G>.1&&H>.1")
+    #&&I>.1&&J>.1&&K>.1&&L>.1")	
 }
 
 record(calc, SVT:lv:hyb:top:stat:curr)
@@ -47,46 +193,6 @@ record(calc, SVT:lv:hyb:top:stat:curr)
 	field(INPD,"SVT:lv:hyb:5t:stat:curr CPP")
 	field(INPE,"SVT:lv:hyb:6t:stat:curr CPP")
 	field(CALC,"(A > 0) && (B > 0) && (C > 0) && (D > 0) && (E > 0)")
-}
-
-record(calc, SVT:lv:hyb:1b:stat:curr)
-{
-	field(SCAN,"Passive")
-	field(INPA,"SVT:lv:fe:2:anap:i_rd CPP")
-	field(INPB,"SVT:lv:fe:2:anap:i_rd.LOW CPP")
-	field(CALC,"(A > B)")	
-}
-
-record(calc, SVT:lv:hyb:23b:stat:curr)
-{
-	field(SCAN,"Passive")
-	field(INPA,"SVT:lv:fe:0:anap:i_rd CPP")
-	field(INPB,"SVT:lv:fe:0:anap:i_rd.LOW CPP")
-	field(CALC,"(A > B)")	
-}
-
-record(calc, SVT:lv:hyb:4b:stat:curr)
-{
-	field(SCAN,"Passive")
-	field(INPA,"SVT:lv:fe:1:anap:i_rd CPP")
-	field(INPB,"SVT:lv:fe:1:anap:i_rd.LOW CPP")
-	field(CALC,"(A > B)")	
-}
-
-record(calc, SVT:lv:hyb:5b:stat:curr)
-{
-	field(SCAN,"Passive")
-	field(INPA,"SVT:lv:fe:4:anap:i_rd CPP")
-	field(INPB,"SVT:lv:fe:4:anap:i_rd.LOW CPP")
-	field(CALC,"(A > B)")	
-}
-
-record(calc, SVT:lv:hyb:6b:stat:curr)
-{
-	field(SCAN,"Passive")
-	field(INPA,"SVT:lv:fe:3:anap:i_rd CPP")
-	field(INPB,"SVT:lv:fe:3:anap:i_rd.LOW CPP")
-	field(CALC,"(A > B)")	
 }
 
 record(calc, SVT:lv:hyb:bot:stat:curr)
