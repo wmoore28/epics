@@ -10,6 +10,9 @@
 
 using namespace std;
 
+//const double SVTwirePosition::top_stage2mm = 0.4816;
+//const double SVTwirePosition::bot_stage2mm = 0.4648;
+
 SVTwirePosition::SVTwirePosition() {
 }
 
