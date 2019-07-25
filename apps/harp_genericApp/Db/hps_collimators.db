@@ -11,12 +11,14 @@ record(calc, "hps_collimator_at_a") {
 record(calc, "hps_collimator_at_b") {
 	field(INPA, "hps_collimator.RBV")
 	field(SCAN, ".2 second")
-	field(CALC, "ABS(A-4.9765)<0.01?1:0")
+#field(CALC, "ABS(A-4.9765)<0.01?1:0")
+	field(CALC, "ABS(A-4.9705)<0.01?1:0")
 }
 record(calc, "hps_collimator_at_c") {
 	field(INPA, "hps_collimator.RBV")
 	field(SCAN, ".2 second")
-	field(CALC, "ABS(A-5.5690)<0.002?1:0")
+#field(CALC, "ABS(A-5.5690)<0.002?1:0")
+	field(CALC, "ABS(A-5.563)<0.002?1:0")
 }
 record(calc, "hps_collimator_at_d") {
 	field(INPA, "hps_collimator.RBV")
