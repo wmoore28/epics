@@ -60,11 +60,11 @@ Contact the SVT expert if this alarm was not expected as part of a procedure.
 $END
 
 # This is for the ANNOVA (and should be commented out when swapping back to the Presto):
-CHANNEL HYBRID_COOLING HPS_SVT:CHILLER:STATUSBIT
-$COMMAND  medm -x -attach -cmap -macro "sig=HPS_SVT:CHILLER:STATUSBIT" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-The downtime Anova SVT chiller is not running.
-Contact the SVT expert if this alarm was not expected as part of a procedure.
-$END
+#CHANNEL HYBRID_COOLING HPS_SVT:CHILLER:STATUSBIT
+#$COMMAND  medm -x -attach -cmap -macro "sig=HPS_SVT:CHILLER:STATUSBIT" aiaocalc_alarm.adl >> /dev/null 
+#$GUIDANCE
+#The downtime Anova SVT chiller is not running.
+#Contact the SVT expert if this alarm was not expected as part of a procedure.
+#$END
 
 
