@@ -3,13 +3,6 @@ $GUIDANCE
 Optional wake up calls.
 $END
 
-CHANNEL TRIGGER scaler_calc1
-$GUIDANCE
-Yellow: Faraday cup sees beam.
-Red: Faraday cup does not see beam.
-Alarm will sound on transitions between states.
-$END
-
 CHANNEL TRIGGER B_DAQ_HPS:TS:livetime 
 $COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:TS:livetime" aiaocalc_alarm.adl >> /dev/null 
 $ALARMCOUNTFILTER -1 10
@@ -18,3 +11,18 @@ DAQ livetime out of normal range.
 Ignore this alarm during DAQ state transitions.
 If livetime drops very low during a run, end the run; a DAQ teardown and ROC reboots may be necessary.
 $END
+
+CHANNEL TRIGGER B_DAQ_HPS:VTP:rate:02
+$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:VTP:rate:02" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 10
+$GUIDANCE
+Trigger #02 (Single-2 Top) has abnormally low rate.
+$END
+
+CHANNEL TRIGGER B_DAQ_HPS:VTP:rate:06
+$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:VTP:rate:06" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 10
+$GUIDANCE
+Trigger #02 (Single-2 Top) has abnormally low rate.
+$END
+
