@@ -21,8 +21,11 @@ drvAsynIPPortConfigure("SER6", "hallb-moxa4:4006")
 # PRESTO (Hybrids):
 drvAsynIPPortConfigure("SER7", "hallb-moxa4:4007")
 
-# a40 *hYBRIDS):
+# A40 (Hybrids):
 #drvAsynIPPortConfigure("SER8", "hallb-moxa4:4008")
+
+# LaudaXT (Hybrids):
+#drvAsynIPPortConfigure("SER9", "hallb-moxa4:4009")
 
 ## debugging...
 # Anova
