@@ -5,13 +5,13 @@ file {
 }
 display {
 	object {
-		x=326
-		y=299
-		width=1404
-		height=441
+		x=206
+		y=236
+		width=1121
+		height=381
 	}
 	clr=14
-	bclr=10
+	bclr=12
 	cmap=""
 	gridSpacing=5
 	gridOn=0
@@ -245,7 +245,7 @@ text {
 	object {
 		x=0
 		y=6
-		width=1404
+		width=1121
 		height=25
 	}
 	"basic attribute" {
@@ -256,13 +256,13 @@ text {
 }
 "text update" {
 	object {
-		x=70
-		y=67
+		x=130
+		y=68
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:0:d2p5vaux:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -271,13 +271,13 @@ text {
 }
 "text update" {
 	object {
-		x=70
-		y=97
+		x=130
+		y=98
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:1:d1p0vin:v_rd"
+		chan="SVT:power:fe:1:d2p5vaux:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -286,13 +286,13 @@ text {
 }
 "text update" {
 	object {
-		x=70
-		y=127
+		x=130
+		y=128
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:2:d1p0vin:v_rd"
+		chan="SVT:power:fe:2:d2p5vaux:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -301,13 +301,13 @@ text {
 }
 "text update" {
 	object {
-		x=70
-		y=157
+		x=130
+		y=158
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:3:d1p0vin:v_rd"
+		chan="SVT:power:fe:3:d2p5vaux:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -316,13 +316,13 @@ text {
 }
 "text update" {
 	object {
-		x=70
-		y=187
+		x=130
+		y=188
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:4:d1p0vin:v_rd"
+		chan="SVT:power:fe:4:d2p5vaux:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -331,13 +331,13 @@ text {
 }
 "text update" {
 	object {
-		x=70
-		y=217
+		x=130
+		y=218
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:5:d1p0vin:v_rd"
+		chan="SVT:power:fe:5:d2p5vaux:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -346,13 +346,13 @@ text {
 }
 "text update" {
 	object {
-		x=70
-		y=247
+		x=130
+		y=248
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:6:d1p0vin:v_rd"
+		chan="SVT:power:fe:6:d2p5vaux:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -361,13 +361,13 @@ text {
 }
 "text update" {
 	object {
-		x=70
-		y=277
+		x=130
+		y=278
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:7:d1p0vin:v_rd"
+		chan="SVT:power:fe:7:d2p5vaux:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -376,13 +376,13 @@ text {
 }
 "text update" {
 	object {
-		x=70
-		y=307
+		x=130
+		y=308
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:8:d1p0vin:v_rd"
+		chan="SVT:power:fe:8:d2p5vaux:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -391,13 +391,13 @@ text {
 }
 "text update" {
 	object {
-		x=70
-		y=337
+		x=130
+		y=338
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:9:d1p0vin:v_rd"
+		chan="SVT:power:fe:9:d2p5vaux:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -406,13 +406,13 @@ text {
 }
 "text update" {
 	object {
-		x=150
-		y=67
+		x=195
+		y=68
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d2p5vaux:v_rd"
+		chan="SVT:power:fe:0:a6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -421,13 +421,13 @@ text {
 }
 "text update" {
 	object {
-		x=150
-		y=97
+		x=195
+		y=98
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:1:a6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -436,13 +436,13 @@ text {
 }
 "text update" {
 	object {
-		x=150
-		y=127
+		x=195
+		y=128
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:2:a6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -451,13 +451,13 @@ text {
 }
 "text update" {
 	object {
-		x=150
-		y=157
+		x=195
+		y=158
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:3:a6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -466,13 +466,13 @@ text {
 }
 "text update" {
 	object {
-		x=150
-		y=187
+		x=195
+		y=188
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:4:a6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -481,13 +481,13 @@ text {
 }
 "text update" {
 	object {
-		x=150
-		y=217
+		x=195
+		y=218
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:5:a6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -496,13 +496,13 @@ text {
 }
 "text update" {
 	object {
-		x=150
-		y=247
+		x=195
+		y=248
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:6:a6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -511,13 +511,13 @@ text {
 }
 "text update" {
 	object {
-		x=150
-		y=277
+		x=195
+		y=278
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:7:a6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -526,13 +526,13 @@ text {
 }
 "text update" {
 	object {
-		x=150
-		y=307
+		x=195
+		y=308
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:8:a6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -541,13 +541,13 @@ text {
 }
 "text update" {
 	object {
-		x=150
-		y=337
+		x=195
+		y=338
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:9:a6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -556,13 +556,13 @@ text {
 }
 "text update" {
 	object {
-		x=230
-		y=67
+		x=260
+		y=68
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:a6v:v_rd"
+		chan="SVT:power:fe:0:a5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -571,13 +571,13 @@ text {
 }
 "text update" {
 	object {
-		x=230
-		y=97
+		x=260
+		y=98
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:1:a5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -586,13 +586,13 @@ text {
 }
 "text update" {
 	object {
-		x=230
-		y=127
+		x=260
+		y=128
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:2:a5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -601,13 +601,13 @@ text {
 }
 "text update" {
 	object {
-		x=230
-		y=157
+		x=260
+		y=158
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:3:a5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -616,13 +616,13 @@ text {
 }
 "text update" {
 	object {
-		x=230
-		y=187
+		x=260
+		y=188
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:4:a5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -631,13 +631,13 @@ text {
 }
 "text update" {
 	object {
-		x=230
-		y=217
+		x=260
+		y=218
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:5:a5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -646,13 +646,13 @@ text {
 }
 "text update" {
 	object {
-		x=230
-		y=247
+		x=260
+		y=248
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:6:a5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -661,13 +661,13 @@ text {
 }
 "text update" {
 	object {
-		x=230
-		y=277
+		x=260
+		y=278
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:7:a5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -676,13 +676,13 @@ text {
 }
 "text update" {
 	object {
-		x=230
-		y=307
+		x=260
+		y=308
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:8:a5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -691,13 +691,13 @@ text {
 }
 "text update" {
 	object {
-		x=230
-		y=337
+		x=260
+		y=338
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:9:a5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -706,13 +706,13 @@ text {
 }
 "text update" {
 	object {
-		x=310
-		y=67
+		x=325
+		y=68
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:a5p0v:v_rd"
+		chan="SVT:power:fe:0:d3p3v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -721,13 +721,13 @@ text {
 }
 "text update" {
 	object {
-		x=310
-		y=97
+		x=325
+		y=98
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:1:d3p3v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -736,13 +736,13 @@ text {
 }
 "text update" {
 	object {
-		x=310
-		y=127
+		x=325
+		y=128
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:2:d3p3v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -751,13 +751,13 @@ text {
 }
 "text update" {
 	object {
-		x=310
-		y=157
+		x=325
+		y=158
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:3:d3p3v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -766,13 +766,13 @@ text {
 }
 "text update" {
 	object {
-		x=310
-		y=187
+		x=325
+		y=188
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:4:d3p3v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -781,13 +781,13 @@ text {
 }
 "text update" {
 	object {
-		x=310
-		y=217
+		x=325
+		y=218
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:5:d3p3v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -796,13 +796,13 @@ text {
 }
 "text update" {
 	object {
-		x=310
-		y=247
+		x=325
+		y=248
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:6:d3p3v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -811,13 +811,13 @@ text {
 }
 "text update" {
 	object {
-		x=310
-		y=277
+		x=325
+		y=278
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:7:d3p3v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -826,13 +826,13 @@ text {
 }
 "text update" {
 	object {
-		x=310
-		y=307
+		x=325
+		y=308
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:8:d3p3v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -841,28 +841,13 @@ text {
 }
 "text update" {
 	object {
-		x=310
-		y=337
+		x=325
+		y=338
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
-		clr=14
-		bclr=0
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=390
-		y=67
-		width=60
-		height=20
-	}
-	monitor {
-		chan="SVT:temp:fe:0:d3p3v:v_rd"
+		chan="SVT:power:fe:9:d3p3v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -872,12 +857,12 @@ text {
 "text update" {
 	object {
 		x=390
-		y=97
+		y=68
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:0:a2p2v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -887,12 +872,12 @@ text {
 "text update" {
 	object {
 		x=390
-		y=127
+		y=98
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:1:a2p2v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -902,12 +887,12 @@ text {
 "text update" {
 	object {
 		x=390
-		y=157
+		y=128
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:2:a2p2v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -917,12 +902,12 @@ text {
 "text update" {
 	object {
 		x=390
-		y=187
+		y=158
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:3:a2p2v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -932,12 +917,12 @@ text {
 "text update" {
 	object {
 		x=390
-		y=217
+		y=188
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:4:a2p2v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -947,12 +932,12 @@ text {
 "text update" {
 	object {
 		x=390
-		y=247
+		y=218
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:5:a2p2v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -962,12 +947,12 @@ text {
 "text update" {
 	object {
 		x=390
-		y=277
+		y=248
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:6:a2p2v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -977,12 +962,12 @@ text {
 "text update" {
 	object {
 		x=390
-		y=307
+		y=278
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:7:a2p2v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -992,12 +977,12 @@ text {
 "text update" {
 	object {
 		x=390
-		y=337
+		y=308
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:8:a2p2v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1006,13 +991,13 @@ text {
 }
 "text update" {
 	object {
-		x=470
-		y=67
+		x=390
+		y=338
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:a2p2v:v_rd"
+		chan="SVT:power:fe:9:a2p2v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1021,13 +1006,13 @@ text {
 }
 "text update" {
 	object {
-		x=470
-		y=97
+		x=455
+		y=68
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:0:a2p9va:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1036,13 +1021,13 @@ text {
 }
 "text update" {
 	object {
-		x=470
-		y=127
+		x=455
+		y=98
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:1:a2p9va:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1051,13 +1036,13 @@ text {
 }
 "text update" {
 	object {
-		x=470
-		y=157
+		x=455
+		y=128
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:2:a2p9va:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1066,13 +1051,13 @@ text {
 }
 "text update" {
 	object {
-		x=470
-		y=187
+		x=455
+		y=158
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:3:a2p9va:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1081,13 +1066,13 @@ text {
 }
 "text update" {
 	object {
-		x=470
-		y=217
+		x=455
+		y=188
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:4:a2p9va:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1096,13 +1081,13 @@ text {
 }
 "text update" {
 	object {
-		x=470
-		y=247
+		x=455
+		y=218
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:5:a2p9va:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1111,13 +1096,13 @@ text {
 }
 "text update" {
 	object {
-		x=470
-		y=277
+		x=455
+		y=248
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:6:a2p9va:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1126,13 +1111,13 @@ text {
 }
 "text update" {
 	object {
-		x=470
-		y=307
+		x=455
+		y=278
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:7:a2p9va:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1141,13 +1126,13 @@ text {
 }
 "text update" {
 	object {
-		x=470
-		y=337
+		x=455
+		y=308
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:8:a2p9va:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1156,13 +1141,13 @@ text {
 }
 "text update" {
 	object {
-		x=550
-		y=67
+		x=455
+		y=338
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:a2p9va:v_rd"
+		chan="SVT:power:fe:9:a2p9va:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1171,13 +1156,13 @@ text {
 }
 "text update" {
 	object {
-		x=550
-		y=97
+		x=520
+		y=68
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:0:a2p9vd:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1186,13 +1171,13 @@ text {
 }
 "text update" {
 	object {
-		x=550
-		y=127
+		x=520
+		y=98
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:1:a2p9vd:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1201,13 +1186,13 @@ text {
 }
 "text update" {
 	object {
-		x=550
-		y=157
+		x=520
+		y=128
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:2:a2p9vd:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1216,13 +1201,13 @@ text {
 }
 "text update" {
 	object {
-		x=550
-		y=187
+		x=520
+		y=158
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:3:a2p9vd:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1231,13 +1216,13 @@ text {
 }
 "text update" {
 	object {
-		x=550
-		y=217
+		x=520
+		y=188
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:4:a2p9vd:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1246,13 +1231,13 @@ text {
 }
 "text update" {
 	object {
-		x=550
-		y=247
+		x=520
+		y=218
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:5:a2p9vd:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1261,13 +1246,13 @@ text {
 }
 "text update" {
 	object {
-		x=550
-		y=277
+		x=520
+		y=248
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:6:a2p9vd:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1276,13 +1261,13 @@ text {
 }
 "text update" {
 	object {
-		x=550
-		y=307
+		x=520
+		y=278
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:7:a2p9vd:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1291,13 +1276,13 @@ text {
 }
 "text update" {
 	object {
-		x=550
-		y=337
+		x=520
+		y=308
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:8:a2p9vd:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1306,13 +1291,13 @@ text {
 }
 "text update" {
 	object {
-		x=630
-		y=67
+		x=520
+		y=338
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:a2p9vd:v_rd"
+		chan="SVT:power:fe:9:a2p9vd:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1321,13 +1306,13 @@ text {
 }
 "text update" {
 	object {
-		x=630
-		y=97
+		x=585
+		y=68
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:0:a1p6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1336,13 +1321,13 @@ text {
 }
 "text update" {
 	object {
-		x=630
-		y=127
+		x=585
+		y=98
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:1:a1p6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1351,13 +1336,13 @@ text {
 }
 "text update" {
 	object {
-		x=630
-		y=157
+		x=585
+		y=128
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:2:a1p6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1366,13 +1351,13 @@ text {
 }
 "text update" {
 	object {
-		x=630
-		y=187
+		x=585
+		y=158
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:3:a1p6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1381,13 +1366,13 @@ text {
 }
 "text update" {
 	object {
-		x=630
-		y=217
+		x=585
+		y=188
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:4:a1p6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1396,13 +1381,13 @@ text {
 }
 "text update" {
 	object {
-		x=630
-		y=247
+		x=585
+		y=218
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:5:a1p6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1411,13 +1396,13 @@ text {
 }
 "text update" {
 	object {
-		x=630
-		y=277
+		x=585
+		y=248
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:6:a1p6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1426,13 +1411,13 @@ text {
 }
 "text update" {
 	object {
-		x=630
-		y=307
+		x=585
+		y=278
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:7:a1p6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1441,13 +1426,13 @@ text {
 }
 "text update" {
 	object {
-		x=630
-		y=337
+		x=585
+		y=308
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:8:a1p6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1456,13 +1441,13 @@ text {
 }
 "text update" {
 	object {
-		x=710
-		y=67
+		x=585
+		y=338
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:a2p9v:v_rd"
+		chan="SVT:power:fe:9:a1p6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1471,13 +1456,13 @@ text {
 }
 "text update" {
 	object {
-		x=710
-		y=97
+		x=650
+		y=68
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:0:d6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1486,13 +1471,13 @@ text {
 }
 "text update" {
 	object {
-		x=710
-		y=127
+		x=650
+		y=98
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:1:d6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1501,13 +1486,13 @@ text {
 }
 "text update" {
 	object {
-		x=710
-		y=157
+		x=650
+		y=128
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:2:d6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1516,13 +1501,13 @@ text {
 }
 "text update" {
 	object {
-		x=710
-		y=187
+		x=650
+		y=158
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:3:d6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1531,13 +1516,13 @@ text {
 }
 "text update" {
 	object {
-		x=710
-		y=217
+		x=650
+		y=188
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:4:d6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1546,13 +1531,13 @@ text {
 }
 "text update" {
 	object {
-		x=710
-		y=247
+		x=650
+		y=218
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:5:d6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1561,13 +1546,13 @@ text {
 }
 "text update" {
 	object {
-		x=710
-		y=277
+		x=650
+		y=248
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:6:d6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1576,13 +1561,13 @@ text {
 }
 "text update" {
 	object {
-		x=710
-		y=307
+		x=650
+		y=278
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:7:d6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1591,13 +1576,13 @@ text {
 }
 "text update" {
 	object {
-		x=710
-		y=337
+		x=650
+		y=308
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:8:d6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1606,13 +1591,13 @@ text {
 }
 "text update" {
 	object {
-		x=790
-		y=67
+		x=650
+		y=338
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d6v:v_rd"
+		chan="SVT:power:fe:9:d6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1621,13 +1606,13 @@ text {
 }
 "text update" {
 	object {
-		x=790
-		y=97
+		x=845
+		y=68
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:0:d1p0vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1636,13 +1621,13 @@ text {
 }
 "text update" {
 	object {
-		x=790
-		y=127
+		x=845
+		y=98
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:1:d1p0vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1651,13 +1636,13 @@ text {
 }
 "text update" {
 	object {
-		x=790
-		y=157
+		x=845
+		y=128
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:2:d1p0vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1666,13 +1651,13 @@ text {
 }
 "text update" {
 	object {
-		x=790
-		y=187
+		x=845
+		y=158
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:3:d1p0vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1681,13 +1666,13 @@ text {
 }
 "text update" {
 	object {
-		x=790
-		y=217
+		x=845
+		y=188
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:4:d1p0vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1696,13 +1681,13 @@ text {
 }
 "text update" {
 	object {
-		x=790
-		y=247
+		x=845
+		y=218
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:5:d1p0vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1711,13 +1696,13 @@ text {
 }
 "text update" {
 	object {
-		x=790
-		y=277
+		x=845
+		y=248
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:6:d1p0vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1726,13 +1711,13 @@ text {
 }
 "text update" {
 	object {
-		x=790
-		y=307
+		x=845
+		y=278
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:7:d1p0vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1741,13 +1726,13 @@ text {
 }
 "text update" {
 	object {
-		x=790
-		y=337
+		x=845
+		y=308
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:8:d1p0vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1756,13 +1741,13 @@ text {
 }
 "text update" {
 	object {
-		x=870
-		y=67
+		x=845
+		y=338
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d2p5v:v_rd"
+		chan="SVT:power:fe:9:d1p0vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1771,13 +1756,13 @@ text {
 }
 "text update" {
 	object {
-		x=870
-		y=97
+		x=910
+		y=68
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:0:a1p8v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1786,13 +1771,13 @@ text {
 }
 "text update" {
 	object {
-		x=870
-		y=127
+		x=910
+		y=98
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:1:a1p8v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1801,13 +1786,13 @@ text {
 }
 "text update" {
 	object {
-		x=870
-		y=157
+		x=910
+		y=128
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:2:a1p8v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1816,13 +1801,13 @@ text {
 }
 "text update" {
 	object {
-		x=870
-		y=187
+		x=910
+		y=158
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:3:a1p8v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1831,13 +1816,13 @@ text {
 }
 "text update" {
 	object {
-		x=870
-		y=217
+		x=910
+		y=188
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:4:a1p8v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1846,13 +1831,13 @@ text {
 }
 "text update" {
 	object {
-		x=870
-		y=247
+		x=910
+		y=218
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:5:a1p8v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1861,13 +1846,13 @@ text {
 }
 "text update" {
 	object {
-		x=870
-		y=277
+		x=910
+		y=248
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:6:a1p8v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1876,13 +1861,13 @@ text {
 }
 "text update" {
 	object {
-		x=870
-		y=307
+		x=910
+		y=278
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:7:a1p8v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1891,13 +1876,13 @@ text {
 }
 "text update" {
 	object {
-		x=870
-		y=337
+		x=910
+		y=308
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:8:a1p8v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1906,13 +1891,13 @@ text {
 }
 "text update" {
 	object {
-		x=950
-		y=67
+		x=910
+		y=338
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p2vmgt:v_rd"
+		chan="SVT:power:fe:9:a1p8v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1921,13 +1906,13 @@ text {
 }
 "text update" {
 	object {
-		x=950
-		y=97
+		x=715
+		y=68
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:0:d2p5v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1936,13 +1921,13 @@ text {
 }
 "text update" {
 	object {
-		x=950
-		y=127
+		x=715
+		y=98
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:1:d2p5v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1951,13 +1936,13 @@ text {
 }
 "text update" {
 	object {
-		x=950
-		y=157
+		x=715
+		y=128
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:2:d2p5v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1966,13 +1951,13 @@ text {
 }
 "text update" {
 	object {
-		x=950
-		y=187
+		x=715
+		y=158
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:3:d2p5v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1981,13 +1966,13 @@ text {
 }
 "text update" {
 	object {
-		x=950
-		y=217
+		x=715
+		y=188
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:4:d2p5v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -1996,13 +1981,13 @@ text {
 }
 "text update" {
 	object {
-		x=950
-		y=247
+		x=715
+		y=218
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:5:d2p5v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2011,13 +1996,13 @@ text {
 }
 "text update" {
 	object {
-		x=950
-		y=277
+		x=715
+		y=248
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:6:d2p5v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2026,13 +2011,13 @@ text {
 }
 "text update" {
 	object {
-		x=950
-		y=307
+		x=715
+		y=278
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:7:d2p5v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2041,13 +2026,13 @@ text {
 }
 "text update" {
 	object {
-		x=950
-		y=337
+		x=715
+		y=308
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:8:d2p5v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2056,13 +2041,13 @@ text {
 }
 "text update" {
 	object {
-		x=1030
-		y=67
+		x=715
+		y=338
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vmgt:v_rd"
+		chan="SVT:power:fe:9:d2p5v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2071,13 +2056,13 @@ text {
 }
 "text update" {
 	object {
-		x=1030
-		y=97
+		x=780
+		y=68
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:0:d1p2vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2086,13 +2071,13 @@ text {
 }
 "text update" {
 	object {
-		x=1030
-		y=127
+		x=780
+		y=98
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:1:d1p2vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2101,13 +2086,13 @@ text {
 }
 "text update" {
 	object {
-		x=1030
-		y=157
+		x=780
+		y=128
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:2:d1p2vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2116,13 +2101,13 @@ text {
 }
 "text update" {
 	object {
-		x=1030
-		y=187
+		x=780
+		y=158
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:3:d1p2vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2131,13 +2116,13 @@ text {
 }
 "text update" {
 	object {
-		x=1030
-		y=217
+		x=780
+		y=188
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:4:d1p2vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2146,13 +2131,13 @@ text {
 }
 "text update" {
 	object {
-		x=1030
-		y=247
+		x=780
+		y=218
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:5:d1p2vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2161,13 +2146,13 @@ text {
 }
 "text update" {
 	object {
-		x=1030
-		y=277
+		x=780
+		y=248
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:6:d1p2vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2176,13 +2161,13 @@ text {
 }
 "text update" {
 	object {
-		x=1030
-		y=307
+		x=780
+		y=278
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:7:d1p2vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2191,13 +2176,13 @@ text {
 }
 "text update" {
 	object {
-		x=1030
-		y=337
+		x=780
+		y=308
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:8:d1p2vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2206,13 +2191,13 @@ text {
 }
 "text update" {
 	object {
-		x=1110
-		y=67
+		x=780
+		y=338
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:a1p8v:v_rd"
+		chan="SVT:power:fe:9:d1p2vmgt:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2221,13 +2206,13 @@ text {
 }
 "text update" {
 	object {
-		x=1110
-		y=97
+		x=975
+		y=68
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:0:an6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2236,13 +2221,13 @@ text {
 }
 "text update" {
 	object {
-		x=1110
-		y=127
+		x=975
+		y=98
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:1:an6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2251,13 +2236,13 @@ text {
 }
 "text update" {
 	object {
-		x=1110
-		y=157
+		x=975
+		y=128
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:2:an6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2266,13 +2251,13 @@ text {
 }
 "text update" {
 	object {
-		x=1110
-		y=187
+		x=975
+		y=158
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:3:an6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2281,13 +2266,13 @@ text {
 }
 "text update" {
 	object {
-		x=1110
-		y=217
+		x=975
+		y=188
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:4:an6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2296,13 +2281,13 @@ text {
 }
 "text update" {
 	object {
-		x=1110
-		y=247
+		x=975
+		y=218
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:5:an6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2311,13 +2296,13 @@ text {
 }
 "text update" {
 	object {
-		x=1110
-		y=277
+		x=975
+		y=248
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:6:an6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2326,13 +2311,13 @@ text {
 }
 "text update" {
 	object {
-		x=1110
-		y=307
+		x=975
+		y=278
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:7:an6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2341,13 +2326,13 @@ text {
 }
 "text update" {
 	object {
-		x=1110
-		y=337
+		x=975
+		y=308
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:8:an6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2356,13 +2341,13 @@ text {
 }
 "text update" {
 	object {
-		x=1190
-		y=67
+		x=975
+		y=338
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:an6v:v_rd"
+		chan="SVT:power:fe:9:an6v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2371,13 +2356,13 @@ text {
 }
 "text update" {
 	object {
-		x=1190
-		y=97
+		x=1040
+		y=68
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:0:an5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2386,13 +2371,13 @@ text {
 }
 "text update" {
 	object {
-		x=1190
-		y=127
+		x=1040
+		y=98
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:1:an5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2401,13 +2386,13 @@ text {
 }
 "text update" {
 	object {
-		x=1190
-		y=157
+		x=1040
+		y=128
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:2:an5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2416,13 +2401,13 @@ text {
 }
 "text update" {
 	object {
-		x=1190
-		y=187
+		x=1040
+		y=158
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:3:an5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2431,13 +2416,13 @@ text {
 }
 "text update" {
 	object {
-		x=1190
-		y=217
+		x=1040
+		y=188
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:4:an5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2446,13 +2431,13 @@ text {
 }
 "text update" {
 	object {
-		x=1190
-		y=247
+		x=1040
+		y=218
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:5:an5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2461,13 +2446,13 @@ text {
 }
 "text update" {
 	object {
-		x=1190
-		y=277
+		x=1040
+		y=248
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:6:an5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2476,13 +2461,13 @@ text {
 }
 "text update" {
 	object {
-		x=1190
-		y=307
+		x=1040
+		y=278
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:7:an5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2491,13 +2476,13 @@ text {
 }
 "text update" {
 	object {
-		x=1190
-		y=337
+		x=1040
+		y=308
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
+		chan="SVT:power:fe:8:an5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
@@ -2506,151 +2491,398 @@ text {
 }
 "text update" {
 	object {
-		x=1270
-		y=67
+		x=1040
+		y=338
 		width=60
 		height=20
 	}
 	monitor {
-		chan="SVT:temp:fe:0:an5p0v:v_rd"
+		chan="SVT:power:fe:9:an5p0v:v_rd"
 		clr=14
 		bclr=0
 	}
 	limits {
 	}
 }
-"text update" {
+composite {
 	object {
-		x=1270
-		y=97
+		x=65
+		y=68
 		width=60
-		height=20
+		height=290
 	}
-	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
-		clr=14
-		bclr=0
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=65
+				y=68
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:0:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=65
+				y=98
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:1:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=65
+				y=128
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:2:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=65
+				y=158
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:3:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=65
+				y=188
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:4:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=65
+				y=218
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:5:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=65
+				y=248
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:6:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=65
+				y=278
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:7:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=65
+				y=338
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:9:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=65
+				y=308
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:8:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
 	}
-	limits {
+}
+text {
+	object {
+		x=1135
+		y=51
+		width=67
+		height=13
 	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="AN5V"
+	align="horiz. centered"
 }
-"text update" {
+text {
 	object {
-		x=1270
-		y=127
+		x=66
+		y=51
 		width=60
-		height=20
+		height=13
 	}
-	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
-		clr=14
-		bclr=0
+	"basic attribute" {
+		clr=0
 	}
-	limits {
+	textix="Vcc Int"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=131
+		y=51
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=0
 	}
+	textix="Vcc Aux"
+	align="horiz. centered"
 }
-"text update" {
+text {
 	object {
-		x=1270
-		y=157
+		x=196
+		y=51
 		width=60
-		height=20
+		height=13
 	}
-	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
-		clr=14
-		bclr=0
+	"basic attribute" {
+		clr=0
 	}
-	limits {
+	textix="A 6V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=261
+		y=51
+		width=60
+		height=13
 	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="A 5V"
+	align="horiz. centered"
 }
-"text update" {
+text {
 	object {
-		x=1270
-		y=187
+		x=326
+		y=51
 		width=60
-		height=20
+		height=13
 	}
-	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
-		clr=14
-		bclr=0
+	"basic attribute" {
+		clr=0
 	}
-	limits {
+	textix="D 3.3V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=391
+		y=51
+		width=60
+		height=13
 	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="A 2.2V"
+	align="horiz. centered"
 }
-"text update" {
+text {
 	object {
-		x=1270
-		y=217
+		x=456
+		y=51
 		width=60
-		height=20
+		height=13
 	}
-	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
-		clr=14
-		bclr=0
+	"basic attribute" {
+		clr=0
 	}
-	limits {
+	textix="A 2.9VA"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=521
+		y=51
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=0
 	}
+	textix="A 2.9VD"
+	align="horiz. centered"
 }
-"text update" {
+text {
 	object {
-		x=1270
-		y=247
+		x=586
+		y=51
 		width=60
-		height=20
+		height=13
 	}
-	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
-		clr=14
-		bclr=0
+	"basic attribute" {
+		clr=0
 	}
-	limits {
+	textix="A 1.6V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=651
+		y=51
+		width=60
+		height=13
 	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="D 6V"
+	align="horiz. centered"
 }
-"text update" {
+text {
 	object {
-		x=1270
-		y=277
+		x=716
+		y=51
 		width=60
-		height=20
+		height=13
 	}
-	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
-		clr=14
-		bclr=0
+	"basic attribute" {
+		clr=0
 	}
-	limits {
+	textix="D 2.5V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=781
+		y=51
+		width=60
+		height=13
 	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="D 1.2V MGT"
+	align="horiz. centered"
 }
-"text update" {
+text {
 	object {
-		x=1270
-		y=307
+		x=846
+		y=51
 		width=60
-		height=20
+		height=13
 	}
-	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
-		clr=14
-		bclr=0
+	"basic attribute" {
+		clr=0
 	}
-	limits {
+	textix="D 1.0V MGT"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=911
+		y=51
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=0
 	}
+	textix="A 1.8V"
+	align="horiz. centered"
 }
-"text update" {
+text {
 	object {
-		x=1270
-		y=337
+		x=976
+		y=51
 		width=60
-		height=20
+		height=13
 	}
-	monitor {
-		chan="SVT:temp:fe:0:d1p0vin:v_rd"
-		clr=14
-		bclr=0
+	"basic attribute" {
+		clr=0
 	}
-	limits {
+	textix="AN 6V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=1036
+		y=50
+		width=67
+		height=13
+	}
+	"basic attribute" {
+		clr=0
 	}
+	textix="AN5V"
+	align="horiz. centered"
 }

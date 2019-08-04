@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/HPS_EPICS.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/svtDaqApp/medm/../../generalApp/medm/HPS_EPICS.adl"
 	version=030109
 }
 display {
@@ -1090,8 +1090,8 @@ text {
 		name="svtBiasMain.adl"
 	}
 	display[9] {
-		label="DAQ IOC Status"
-		name="svtDaqIOCStatus.adl"
+		label="FEB Voltages"
+		name="svtFebVoltages.adl"
 	}
 	display[10] {
 		label="HV STATUS"
