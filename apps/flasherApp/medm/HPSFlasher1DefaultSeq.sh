@@ -3,7 +3,7 @@ caput ${1}:SET_N_SEQUENCE_REPETITIONS 0
 sleep 0.2 
 caput ${1}:SET_N_SEQUENCE_STEPS 56
 sleep 0.2 
-caput ${1}:SET_SEQUENCE_STEP 0 4 10 2 56 112 168
+caput ${1}:SET_SEQUENCE_STEP 0 4 20 2 56 112 168
 sleep 0.2 
 caput ${1}:SET_SEQUENCE_STEP 1 4 10 3 57 113 169
 sleep 0.2 
