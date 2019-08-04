@@ -5,9 +5,9 @@ file {
 }
 display {
 	object {
-		x=513
-		y=492
-		width=287
+		x=112
+		y=135
+		width=407
 		height=274
 	}
 	clr=14
@@ -379,5 +379,101 @@ text {
 	}
 	limits {
 		precSrc="default"
+	}
+}
+text {
+	object {
+		x=305
+		y=45
+		width=78
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Live Values"
+}
+"text update" {
+	object {
+		x=301
+		y=91
+		width=70
+		height=19
+	}
+	monitor {
+		chan="IPM2C21A"
+		clr=60
+		bclr=10
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=299
+		y=169
+		width=70
+		height=19
+	}
+	monitor {
+		chan="ISD2H001HALORATE03"
+		clr=60
+		bclr=10
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=298
+		y=197
+		width=70
+		height=19
+	}
+	monitor {
+		chan="ISD2H001HALORATE01"
+		clr=60
+		bclr=10
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=298
+		y=222
+		width=70
+		height=19
+	}
+	monitor {
+		chan="ISD2H001HALORATE02"
+		clr=60
+		bclr=10
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+rectangle {
+	object {
+		x=292
+		y=39
+		width=85
+		height=209
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
 	}
 }
