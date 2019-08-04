@@ -8,6 +8,13 @@ See SVT Ops manual sections relating to voltages.
 PVs monitored by these alarms are supplied by the SVT DAQ IOCs.
 $END
 
+CHANNEL HYBRID_LV SVT:lv:hyb:all:sync:stat:calc T
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:hyb:all:sync:stat:calc" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 15
+$GUIDANCE
+One of the SVT hybrids has gone out of sync.  Contact the SVT expert.
+$END
+
 CHANNEL HYBRID_LV SVT:lv:0:0:avdd:i_rd T
 $COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:0:0:avdd:i_rd" aiaocalc_alarm.adl >> /dev/null 
 $ALARMCOUNTFILTER -1 45
