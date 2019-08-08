@@ -206,7 +206,9 @@ int main(int argc, char **argv) {
     double *mean_vals_truncated_err = new double[n_peaks2];
 
     double *sigmas = new double[n_peaks2];
+    double *sigmas_err = new double[n_peaks2];
     double *sigmas_truncated = new double[n_peaks2];
+    double *sigmas_truncated_err = new double[n_peaks2];
     for (int i_peak = 0; i_peak < n_peaks2; i_peak++) {
         int mean_bin = h_gr_2->FindBin(pos_2[i_peak]);
         double fit_left_lim = h_gr_2->GetBinCenter(mean_bin - 3);
@@ -221,8 +223,8 @@ int main(int argc, char **argv) {
         double sigma = f_fit_func2_[i_peak]->GetParameter(2);
         f_fit_func2_[i_peak]->SetRange(pos_2[i_peak] - 9 * sigma, pos_2[i_peak] + 9 * sigma);
 
-        sigma_[2] = sigma;
-        sigma_err_[2] = f_fit_func2_[i_peak]->GetParError(2);
+        sigmas[i_peak] = f_fit_func2_[i_peak]->GetParameter(2);
+        sigmas_err[i_peak] = f_fit_func2_[i_peak]->GetParError(2);
         mean_vals[i_peak] = f_fit_func2_[i_peak]->GetParameter(1);
         mean_vals_err[i_peak] = f_fit_func2_[i_peak]->GetParError(1);
         f_Gaus->SetParameters(h_gr_2->GetBinContent(mean_bin), pos_2[i_peak], 0.07);
@@ -230,8 +232,10 @@ int main(int argc, char **argv) {
         h_gr_2->Fit(f_Gaus, "+MeV", "", fit_left_lim, fit_right_lim);
         mean_vals_truncated[i_peak] = f_Gaus->GetParameter(1);
         mean_vals_truncated_err[i_peak] = f_Gaus->GetParError(1);
-        sigma_truncated_[2] = f_Gaus->GetParameter(2);
-        sigma_truncated_err_[2] = f_Gaus->GetParError(2);
+
+        sigmas_truncated[i_peak] = f_Gaus->GetParameter(2);
+        sigmas_truncated_err[i_peak] = f_Gaus->GetParError(2);
+        
     }
     h_gr_2->Draw("E1");
     for (int i_peak = 0; i_peak < n_peaks2; i_peak++) {
@@ -248,6 +252,12 @@ int main(int argc, char **argv) {
             stage2_truncated_[2] = mean_vals_truncated[1];
             stage1_truncated_err_[2] = mean_vals_truncated_err[0];
             stage2_truncated_err_[2] = mean_vals_truncated_err[1];
+            sigma_[2] = sigmas[0];
+            sigma_err_[2] = sigmas_err[0];
+            sigma_truncated_[2] = sigmas_truncated[0];
+            sigma_truncated_err_[2] = sigmas_truncated_err[0];
+            f_fit_func2_[0]->SetLineColor(4);
+            f_fit_func2_[1]->SetLineColor(2);            
         } else {
             stage1_[2] = mean_vals[1];
             stage2_[2] = mean_vals[0];
@@ -257,6 +267,12 @@ int main(int argc, char **argv) {
             stage2_truncated_[2] = mean_vals_truncated[0];
             stage1_truncated_err_[2] = mean_vals_truncated_err[1];
             stage2_truncated_err_[2] = mean_vals_truncated_err[0];
+            sigma_[2] = sigmas[1];
+            sigma_err_[2] = sigmas_err[1];
+            sigma_truncated_[2] = sigmas_truncated[1];
+            sigma_truncated_err_[2] = sigmas_truncated_err[1];
+            f_fit_func2_[0]->SetLineColor(2);
+            f_fit_func2_[1]->SetLineColor(4);
         }
     }
 
@@ -279,6 +295,8 @@ int main(int argc, char **argv) {
     
     sigmas = new double[n_peaks3];
     sigmas_truncated = new double[n_peaks3];
+    sigmas_err = new double[n_peaks3];    
+    sigmas_truncated_err = new double[n_peaks3];
 
     
     for (int i_peak = 0; i_peak < n_peaks3; i_peak++) {
@@ -293,9 +311,11 @@ int main(int argc, char **argv) {
         f_fit_func3_[i_peak] = (TF1*) f_GPol0->Clone(Form("f_fit_func3_%d", i_peak));
         f_fit_func3_[i_peak]->SetLineColor(2 + 2 * i_peak);
         double sigma = f_fit_func3_[i_peak]->GetParameter(2);
-        sigma_[3] = sigma;
-        sigma_err_[3] = f_fit_func3_[i_peak]->GetParError(2);
         f_fit_func3_[i_peak]->SetRange(pos_3[i_peak] - 9 * sigma, pos_3[i_peak] + 9 * sigma);
+        
+        sigmas[i_peak] = f_fit_func3_[i_peak]->GetParameter(2);
+        sigmas_err[i_peak] = f_fit_func3_[i_peak]->GetParError(2);
+        
         mean_vals[i_peak] = f_fit_func3_[i_peak]->GetParameter(1);
         mean_vals_err[i_peak] = f_fit_func3_[i_peak]->GetParError(1);
         f_Gaus->SetParameters(h_gr_3->GetBinContent(mean_bin), pos_3[i_peak], 0.07);
@@ -303,8 +323,9 @@ int main(int argc, char **argv) {
         h_gr_3->Fit(f_Gaus, "+MeV", "", fit_left_lim, fit_right_lim);
         mean_vals_truncated[i_peak] = f_Gaus->GetParameter(1);
         mean_vals_truncated_err[i_peak] = f_Gaus->GetParError(1);        
-        sigma_truncated_[3] = f_Gaus->GetParameter(2);
-        sigma_truncated_err_[3] = f_Gaus->GetParError(2);
+        
+        sigmas_truncated[i_peak] = f_Gaus->GetParameter(2);
+        sigmas_truncated_err[i_peak] = f_Gaus->GetParError(2);        
     }
     h_gr_3->Draw("E1");
     for (int i_peak = 0; i_peak < n_peaks3; i_peak++) {
@@ -321,7 +342,12 @@ int main(int argc, char **argv) {
             stage2_truncated_[3] = mean_vals_truncated[1];
             stage1_truncated_err_[3] = mean_vals_truncated_err[0];
             stage2_truncated_err_[3] = mean_vals_truncated_err[1];
-
+            sigma_[3] = sigmas[0];
+            sigma_err_[3] = sigmas_err[0];
+            sigma_truncated_[3] = sigmas_truncated[0];
+            sigma_truncated_err_[3] = sigmas_truncated_err[0];
+            f_fit_func3_[0]->SetLineColor(4);
+            f_fit_func3_[1]->SetLineColor(2);
         } else {
             stage1_[3] = mean_vals[1];
             stage2_[3] = mean_vals[0];
@@ -331,6 +357,12 @@ int main(int argc, char **argv) {
             stage2_truncated_[3] = mean_vals_truncated[0];
             stage1_truncated_err_[3] = mean_vals_truncated_err[1];
             stage2_truncated_err_[3] = mean_vals_truncated_err[0];
+            sigma_[3] = sigmas[1];
+            sigma_err_[3] = sigmas_err[1];
+            sigma_truncated_[3] = sigmas_truncated[1];
+            sigma_truncated_err_[3] = sigmas_truncated_err[1];
+            f_fit_func3_[0]->SetLineColor(2);
+            f_fit_func3_[1]->SetLineColor(4);            
         }
     }
     //=======================================================================================================================
