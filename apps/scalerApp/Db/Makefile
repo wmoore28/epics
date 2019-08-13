@@ -13,6 +13,7 @@ include $(TOP)/configure/CONFIG
 DB += photon_ratio.db
 DB += scaler.db
 DB += scaler-ped.db
+DB += scaler-ped.substitutions
 DB += scaler_calc1b.db
 
 #----------------------------------------------------
