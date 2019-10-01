@@ -131,10 +131,10 @@ text {
 }
 "related display" {
 	object {
-		x=140
-		y=158
+		x=5
+		y=270
 		width=130
-		height=36
+		height=37
 	}
 	display[0] {
 		name="rebootTDAQ.adl"
@@ -146,7 +146,7 @@ text {
 "related display" {
 	object {
 		x=140
-		y=201
+		y=270
 		width=130
 		height=37
 	}
@@ -159,8 +159,8 @@ text {
 }
 "related display" {
 	object {
-		x=140
-		y=245
+		x=273
+		y=270
 		width=130
 		height=37
 	}
@@ -208,34 +208,6 @@ text {
 	}
 	monitor {
 		chan="B_DAQ_HPS:run_number"
-		clr=0
-		bclr=9
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=17
-		y=103
-		width=60
-		height=15
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="Trigger Rate (Hz)"
-}
-"text update" {
-	object {
-		x=124
-		y=103
-		width=100
-		height=15
-	}
-	monitor {
-		chan="B_DAQ_HPS:TSGTP:sum"
 		clr=0
 		bclr=9
 	}
@@ -296,4 +268,88 @@ text {
 	}
 	textix="HPS DAQ Status"
 	align="horiz. centered"
+}
+text {
+	object {
+		x=18
+		y=156
+		width=60
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="clondaq5 Disk Free (TB)"
+}
+"text update" {
+	object {
+		x=171
+		y=156
+		width=100
+		height=15
+	}
+	monitor {
+		chan="B_DAQ:disk_free:clondaq5"
+		clr=0
+		bclr=9
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=18
+		y=179
+		width=60
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="clondaq6 Disk Free (TB)"
+}
+"text update" {
+	object {
+		x=171
+		y=179
+		width=100
+		height=15
+	}
+	monitor {
+		chan="B_DAQ:disk_free:clondaq6"
+		clr=0
+		bclr=9
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=17
+		y=202
+		width=60
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="clondaq7 Disk Free (TB)"
+}
+"text update" {
+	object {
+		x=168
+		y=201
+		width=100
+		height=15
+	}
+	monitor {
+		chan="B_DAQ:disk_free:clondaq7"
+		clr=0
+		bclr=9
+	}
+	align="horiz. centered"
+	limits {
+	}
 }
