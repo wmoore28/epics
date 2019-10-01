@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=215
-		y=11
+		x=121
+		y=31
 		width=736
 		height=660
 	}
@@ -938,5 +938,50 @@ text {
 		clr=0
 	}
 	textix="hps2"
+	align="horiz. centered"
+}
+"related display" {
+	object {
+		x=440
+		y=18
+		width=75
+		height=17
+	}
+	display[0] {
+		label="Latency"
+		name="hps-serdes.adl"
+	}
+	clr=0
+	bclr=13
+	label="Latency"
+}
+"text update" {
+	object {
+		x=200
+		y=20
+		width=60
+		height=19
+	}
+	monitor {
+		chan="hps:target:type"
+		clr=5
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+text {
+	object {
+		x=160
+		y=20
+		width=26
+		height=20
+	}
+	"basic attribute" {
+		clr=5
+	}
+	textix="Target:"
 	align="horiz. centered"
 }
