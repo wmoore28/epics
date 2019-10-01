@@ -7,9 +7,9 @@ import epics,time,datetime,subprocess,os,re
 
 prefix='B_DAQ_HPS'
 
-os.putenv('MYSQL_HOST','clondb1')
-os.putenv('EXPID','hpsrun')
-os.putenv('SESSION','clashps')
+os.environ['MYSQL_HOST']='clondb1'
+os.environ['EXPID']='hpsrun'
+os.environ['SESSION']='clashps'
 
 #'B_DAQ:livetime':     {'ini':-1,   'cmd':['tcpClient','trig1','tsBusy']},
 CFG={
@@ -52,7 +52,7 @@ while True:
         continue
 
       # run the command, collect its output:
-      xx=subprocess.check_output(CFG[pvName]['cmd']).strip()
+      xx=subprocess.check_output(CFG[pvName]['cmd'],env=os.environ).strip()
       yy=xx
 
       # if it's a number, strip all non-numbers:
