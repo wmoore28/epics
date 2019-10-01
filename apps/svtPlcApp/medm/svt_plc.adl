@@ -1,14 +1,14 @@
 
 file {
 	name="/usr/clas12/hps/v3.0.0/apps/svtPlcApp/medm/svt_plc.adl"
-	version=030108
+	version=030109
 }
 display {
 	object {
-		x=292
-		y=287
+		x=299
+		y=129
 		width=700
-		height=700
+		height=800
 	}
 	clr=14
 	bclr=4
@@ -202,7 +202,7 @@ rectangle {
 text {
 	object {
 		x=25
-		y=533
+		y=707
 		width=200
 		height=16
 	}
@@ -214,7 +214,7 @@ text {
 rectangle {
 	object {
 		x=25
-		y=528
+		y=702
 		width=305
 		height=3
 	}
@@ -225,7 +225,7 @@ rectangle {
 text {
 	object {
 		x=25
-		y=592
+		y=766
 		width=80
 		height=16
 	}
@@ -237,7 +237,7 @@ text {
 "text update" {
 	object {
 		x=251
-		y=588
+		y=762
 		width=80
 		height=20
 	}
@@ -255,7 +255,7 @@ text {
 text {
 	object {
 		x=25
-		y=567
+		y=741
 		width=80
 		height=16
 	}
@@ -267,7 +267,7 @@ text {
 "text update" {
 	object {
 		x=251
-		y=563
+		y=737
 		width=80
 		height=20
 	}
@@ -310,7 +310,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Vacuum"
+	textix="Vacuum - Cold Cathode Gauge"
 }
 "text update" {
 	object {
@@ -344,7 +344,7 @@ text {
 }
 text {
 	object {
-		x=375
+		x=25
 		y=533
 		width=200
 		height=16
@@ -356,8 +356,19 @@ text {
 }
 rectangle {
 	object {
-		x=375
+		x=25
 		y=528
+		width=655
+		height=3
+	}
+	"basic attribute" {
+		clr=24
+	}
+}
+rectangle {
+	object {
+		x=25
+		y=725
 		width=305
 		height=3
 	}
@@ -369,18 +380,7 @@ rectangle {
 	object {
 		x=25
 		y=551
-		width=305
-		height=3
-	}
-	"basic attribute" {
-		clr=24
-	}
-}
-rectangle {
-	object {
-		x=375
-		y=551
-		width=305
+		width=655
 		height=3
 	}
 	"basic attribute" {
@@ -389,8 +389,8 @@ rectangle {
 }
 text {
 	object {
-		x=25
-		y=667
+		x=375
+		y=744
 		width=80
 		height=16
 	}
@@ -401,8 +401,8 @@ text {
 }
 "text update" {
 	object {
-		x=251
-		y=663
+		x=601
+		y=740
 		width=80
 		height=20
 	}
@@ -419,8 +419,8 @@ text {
 }
 rectangle {
 	object {
-		x=25
-		y=623
+		x=375
+		y=700
 		width=305
 		height=3
 	}
@@ -430,8 +430,8 @@ rectangle {
 }
 text {
 	object {
-		x=25
-		y=629
+		x=375
+		y=706
 		width=200
 		height=16
 	}
@@ -442,8 +442,8 @@ text {
 }
 rectangle {
 	object {
-		x=25
-		y=647
+		x=375
+		y=724
 		width=305
 		height=3
 	}
@@ -454,7 +454,7 @@ rectangle {
 "choice button" {
 	object {
 		x=146
-		y=588
+		y=762
 		width=100
 		height=20
 	}
@@ -467,8 +467,8 @@ rectangle {
 }
 "choice button" {
 	object {
-		x=146
-		y=663
+		x=496
+		y=740
 		width=100
 		height=20
 	}
@@ -1896,4 +1896,199 @@ text {
 		clr=0
 	}
 	textix="COMM:"
+}
+"text update" {
+	object {
+		x=251
+		y=563
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Vacuum2-Value"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	format="exponential"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=567
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Vacuum - Convectron Gauge"
+}
+"text update" {
+	object {
+		x=251
+		y=663
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Vacuum2-Alarm"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	format="string"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=667
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Vacuum Alarm Status"
+}
+text {
+	object {
+		x=25
+		y=642
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Vacuum Intlck Enable"
+}
+"text update" {
+	object {
+		x=251
+		y=638
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Vacuum2-Enable"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=592
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Vacuum Low Lim"
+}
+"text update" {
+	object {
+		x=251
+		y=588
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Vacuum2-Limit_LOW"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	format="exponential"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=617
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Vacuum High Lim"
+}
+"text update" {
+	object {
+		x=251
+		y=613
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPS_SVT:PLC:i:Vacuum2-Limit_HIGH"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	format="exponential"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=171
+		y=588
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:Vacuum2-Limit_LOW"
+		clr=14
+		bclr=2
+	}
+	format="exponential"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=171
+		y=613
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:Vacuum2-Limit_HIGH"
+		clr=14
+		bclr=2
+	}
+	format="exponential"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=171
+		y=638
+		width=75
+		height=20
+	}
+	control {
+		chan="HPS_SVT:PLC:o:Vacuum2-Enable"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
 }

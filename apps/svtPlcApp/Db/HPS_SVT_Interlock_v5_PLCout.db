@@ -407,6 +407,56 @@ record( bo, "$(IOC):Vacuum-Alarm" )
   field(OUT, "@$(PLCID) Vacuum.Alarm S 1" ) 
 } 
  
+# record for PLC tag <Vacuum2.Value> of type <REAL>
+record( ao, "$(IOC):Vacuum2-Value" ) 
+{ 
+  field(DTYP, "EtherIP" ) 
+  field(SCAN, "Passive" ) 
+  field(PREC, "2" ) 
+  field(OUT, "@$(PLCID) Vacuum2.Value S 1" ) 
+} 
+ 
+ 
+# record for PLC tag <Vacuum2.Enable> of type <BOOL>
+record( bo, "$(IOC):Vacuum2-Enable" ) 
+{ 
+  field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
+  field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
+  field(OUT, "@$(PLCID) Vacuum2.Enable S 1" ) 
+} 
+ 
+ 
+# record for PLC tag <Vacuum2.Limit_LOW> of type <REAL>
+record( ao, "$(IOC):Vacuum2-Limit_LOW" ) 
+{ 
+  field(DTYP, "EtherIP" ) 
+  field(SCAN, "Passive" ) 
+  field(PREC, "2" ) 
+  field(OUT, "@$(PLCID) Vacuum2.Limit_LOW S 1" ) 
+} 
+ 
+ 
+# record for PLC tag <Vacuum2.Limit_HIGH> of type <REAL>
+record( ao, "$(IOC):Vacuum2-Limit_HIGH" ) 
+{ 
+  field(DTYP, "EtherIP" ) 
+  field(SCAN, "Passive" ) 
+  field(PREC, "2" ) 
+  field(OUT, "@$(PLCID) Vacuum2.Limit_HIGH S 1" ) 
+} 
+ 
+ 
+# record for PLC tag <Vacuum2.Alarm> of type <BOOL>
+record( bo, "$(IOC):Vacuum2-Alarm" ) 
+{ 
+  field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
+  field(SCAN, "Passive" ) 
+  field(ONAM, "1" ) 
+  field(OUT, "@$(PLCID) Vacuum2.Alarm S 1" ) 
+} 
  
 # record for PLC tag <Valve_FE.Enabled> of type <BOOL>
 record( bo, "$(IOC):Valve_FE-Enabled" ) 
