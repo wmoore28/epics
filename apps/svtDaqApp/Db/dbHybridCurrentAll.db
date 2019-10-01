@@ -105,7 +105,8 @@ record(calc, SVT:lv:hyb:4b:stat:curr)
 	field(INPJ,"SVT:lv:5:3:dvdd:i_rd CPP")
 	field(INPK,"SVT:lv:5:3:avdd:i_rd CPP")
 	field(INPL,"SVT:lv:5:3:v125:i_rd CPP")
-	field(CALC,"A>.1&&B>.1&&C>.1&&D>.1&&E>.1&&F>.1&&G>.1&&H>.1&&I>.1&&J>.1&&K>.1&&L>.1")	
+	#field(CALC,"A>.1&&B>.1&&C>.1&&D>.1&&E>.1&&F>.1&&G>.1&&H>.1&&I>.1&&J>.1&&K>.1&&L>.1")	
+	field(CALC,"A>.1&&B>.1&&C>.1&&D>.1&&E>.1&&F>.1")	
 }
 
 
@@ -179,8 +180,8 @@ record(calc, SVT:lv:hyb:6b:stat:curr)
 	field(INPJ,"SVT:lv:9:3:dvdd:i_rd CPP")
 	field(INPK,"SVT:lv:9:3:avdd:i_rd CPP")
 	field(INPL,"SVT:lv:9:3:v125:i_rd CPP")
-	#field(CALC,"A>.1&&B>.1&&C>.1&&D>.1&&E>.1&&F>.1&&G>.1&&H>.1&&I>.1&&J>.1&&K>.1&&L>.1")	
-	field(CALC,"A>.1&&B>.1&&C>.1&&D>.1&&E>.1&&F>.1&&G>.1&&H>.1")
+	#field(CALC,"A>.1&&B>.1&&C>.1&&D>.1&&E>.1&&F>.1&&J>.1&&K>.1&&L>.1")	
+	field(CALC,"A>.1&&B>.1&&C>.1&&D>.1&&E>.1&&F>.1&&J>.1&&K>.1&&L>.1")
     #&&I>.1&&J>.1&&K>.1&&L>.1")	
 }
 
@@ -192,7 +193,8 @@ record(calc, SVT:lv:hyb:top:stat:curr)
 	field(INPC,"SVT:lv:hyb:4t:stat:curr CPP")
 	field(INPD,"SVT:lv:hyb:5t:stat:curr CPP")
 	field(INPE,"SVT:lv:hyb:6t:stat:curr CPP")
-	field(CALC,"(A > 0) && (B > 0) && (C > 0) && (D > 0) && (E > 0)")
+	#field(CALC,"(A > 0) && (B > 0) && (C > 0) && (D > 0) && (E > 0)")
+	field(CALC,"(A > 0) && (B > 0) && (C > 0) && (D > 0)")
 }
 
 record(calc, SVT:lv:hyb:bot:stat:curr)

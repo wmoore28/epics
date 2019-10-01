@@ -295,3 +295,12 @@ $GUIDANCE
 One or more readout chips on this SVT hybrid have gone out of sync.
 Contact the SVT expert for further guidance.
 $END
+
+CHANNEL SYNC SVT:daq:dpm:all:syncerror T
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:daq:dpm:all:syncerror" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 45
+$GUIDANCE
+There is a sync error.
+Contact the SVT expert for further guidance.
+$END
+

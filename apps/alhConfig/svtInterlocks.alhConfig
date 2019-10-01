@@ -11,7 +11,7 @@ $END
 CHANNEL INTERLOCKS HPS_SVT:PLC:i:Vacuum-Value
 $COMMAND  medm -x -attach -cmap -macro "sig=HPS_SVT:PLC:i:Vacuum-Value" aiaocalc_alarm.adl >> /dev/null 
 $SEVRCOMMAND UP_MAJOR /home/hpsrun/scripts/notify_expert_auto.pl hpssvt_expert SVT vacuum alarm
-$SEVRCOMMAND UP_MAJOR echo "vacuum alarm" | mailx -s "SVT cooling alarm" meeg@slac.stanford.edu tknelson@slac.stanford.edu mrsolt@slac.stanford.edu
+$SEVRCOMMAND UP_MAJOR echo "vacuum alarm" | mailx -s "SVT cooling alarm" meeg@slac.stanford.edu tknelson@slac.stanford.edu mrsolt@slac.stanford.edu bravo@slac.stanford.edu
 $GUIDANCE
 The vacuum at the downstream end of the PS vacuum chamber is bad. This may indicate a leak in the SVT/FEB cooling system.
 Further increase in this value will trip the software interlock, stopping both chillers and closing both chiller valves.

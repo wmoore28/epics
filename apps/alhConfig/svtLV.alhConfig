@@ -245,83 +245,83 @@ Contact the SVT expert for further guidance.
 $END
 
 
-CHANNEL FEB_LV SVT:lv:fe:3:anan:i_rd
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:3:anan:i_rd" aiaocalc_alarm.adl >> /dev/null
-$ALARMCOUNTFILTER -1 10
-$GUIDANCE
-The current supplied by this FEB low voltage channel has deviated from its normal value.
-This usually indicates the channel is overloaded or disconnected, or that the hybrids have not yet been turned on.
-Contact the SVT expert for further guidance.
-$END
-
-CHANNEL FEB_LV SVT:lv:fe:3:anap:i_rd
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:3:anap:i_rd" aiaocalc_alarm.adl >> /dev/null
-$ALARMCOUNTFILTER -1 10
-$GUIDANCE
-The current supplied by this FEB low voltage channel has deviated from its normal value.
-This usually indicates the channel is overloaded or disconnected, or that the hybrids have not yet been turned on.
-Contact the SVT expert for further guidance.
-$END
-
-CHANNEL FEB_LV SVT:lv:fe:3:digi:i_rd
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:3:digi:i_rd" aiaocalc_alarm.adl >> /dev/null
-$ALARMCOUNTFILTER -1 10
-$GUIDANCE
-The current supplied by this FEB low voltage channel has deviated from its normal value.
-This usually indicates the channel is overloaded or disconnected, or that the hybrids have not yet been turned on.
-Contact the SVT expert for further guidance.
-$END
-
-CHANNEL FEB_LV SVT:lv:fe:3:anan:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:3:anan:v_term" aiaocalc_alarm.adl >> /dev/null 
-$ALARMCOUNTFILTER -1 10
-$GUIDANCE
-The terminal voltage for this FEB low voltage channel has deviated from its normal value.
-This usually indicates the channel is overloaded or disconnected.
-Contact the SVT expert for further guidance.
-$END
-
-CHANNEL FEB_LV SVT:lv:fe:3:anap:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:3:anap:v_term" aiaocalc_alarm.adl >> /dev/null 
-$ALARMCOUNTFILTER -1 10
-$GUIDANCE
-The terminal voltage for this FEB low voltage channel has deviated from its normal value.
-This usually indicates the channel is overloaded or disconnected.
-Contact the SVT expert for further guidance.
-$END
-
-CHANNEL FEB_LV SVT:lv:fe:3:digi:v_term
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:3:digi:v_term" aiaocalc_alarm.adl >> /dev/null 
-$ALARMCOUNTFILTER -1 10
-$GUIDANCE
-The terminal voltage for this FEB low voltage channel has deviated from its normal value.
-This usually indicates the channel is overloaded or disconnected.
-Contact the SVT expert for further guidance.
-$END
-
-CHANNEL FEB_LV SVT:lv:fe:3:anan:v_sens
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:3:anan:v_sens" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-The sense terminal voltage for this FEB low voltage channel has deviated from its nominal value of 5.5 V.
-This usually indicates the channel is overloaded or disconnected.
-Contact the SVT expert for further guidance.
-$END
-
-CHANNEL FEB_LV SVT:lv:fe:3:anap:v_sens
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:3:anap:v_sens" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-The sense terminal voltage for this FEB low voltage channel has deviated from its nominal value of 5.5 V.
-This usually indicates the channel is overloaded or disconnected.
-Contact the SVT expert for further guidance.
-$END
-
-CHANNEL FEB_LV SVT:lv:fe:3:digi:v_sens
-$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:3:digi:v_sens" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-The sense terminal voltage for this FEB low voltage channel has deviated from its nominal value of 5.5 V.
-This usually indicates the channel is overloaded or disconnected.
-Contact the SVT expert for further guidance.
-$END
+#CHANNEL FEB_LV SVT:lv:fe:3:anan:i_rd
+#$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:3:anan:i_rd" aiaocalc_alarm.adl >> /dev/null
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#The current supplied by this FEB low voltage channel has deviated from its normal value.
+#This usually indicates the channel is overloaded or disconnected, or that the hybrids have not yet been turned on.
+#Contact the SVT expert for further guidance.
+#$END
+#
+#CHANNEL FEB_LV SVT:lv:fe:3:anap:i_rd
+#$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:3:anap:i_rd" aiaocalc_alarm.adl >> /dev/null
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#The current supplied by this FEB low voltage channel has deviated from its normal value.
+#This usually indicates the channel is overloaded or disconnected, or that the hybrids have not yet been turned on.
+#Contact the SVT expert for further guidance.
+#$END
+#
+#CHANNEL FEB_LV SVT:lv:fe:3:digi:i_rd
+#$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:3:digi:i_rd" aiaocalc_alarm.adl >> /dev/null
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#The current supplied by this FEB low voltage channel has deviated from its normal value.
+#This usually indicates the channel is overloaded or disconnected, or that the hybrids have not yet been turned on.
+#Contact the SVT expert for further guidance.
+#$END
+#
+#CHANNEL FEB_LV SVT:lv:fe:3:anan:v_term
+#$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:3:anan:v_term" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#The terminal voltage for this FEB low voltage channel has deviated from its normal value.
+#This usually indicates the channel is overloaded or disconnected.
+#Contact the SVT expert for further guidance.
+#$END
+#
+#CHANNEL FEB_LV SVT:lv:fe:3:anap:v_term
+#$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:3:anap:v_term" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#The terminal voltage for this FEB low voltage channel has deviated from its normal value.
+#This usually indicates the channel is overloaded or disconnected.
+#Contact the SVT expert for further guidance.
+#$END
+#
+#CHANNEL FEB_LV SVT:lv:fe:3:digi:v_term
+#$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:3:digi:v_term" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#The terminal voltage for this FEB low voltage channel has deviated from its normal value.
+#This usually indicates the channel is overloaded or disconnected.
+#Contact the SVT expert for further guidance.
+#$END
+#
+#CHANNEL FEB_LV SVT:lv:fe:3:anan:v_sens
+#$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:3:anan:v_sens" aiaocalc_alarm.adl >> /dev/null 
+#$GUIDANCE
+#The sense terminal voltage for this FEB low voltage channel has deviated from its nominal value of 5.5 V.
+#This usually indicates the channel is overloaded or disconnected.
+#Contact the SVT expert for further guidance.
+#$END
+#
+#CHANNEL FEB_LV SVT:lv:fe:3:anap:v_sens
+#$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:3:anap:v_sens" aiaocalc_alarm.adl >> /dev/null 
+#$GUIDANCE
+#The sense terminal voltage for this FEB low voltage channel has deviated from its nominal value of 5.5 V.
+#This usually indicates the channel is overloaded or disconnected.
+#Contact the SVT expert for further guidance.
+#$END
+#
+#CHANNEL FEB_LV SVT:lv:fe:3:digi:v_sens
+#$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:fe:3:digi:v_sens" aiaocalc_alarm.adl >> /dev/null 
+#$GUIDANCE
+#The sense terminal voltage for this FEB low voltage channel has deviated from its nominal value of 5.5 V.
+#This usually indicates the channel is overloaded or disconnected.
+#Contact the SVT expert for further guidance.
+#$END
 
 
 CHANNEL FEB_LV SVT:lv:fe:4:anan:i_rd

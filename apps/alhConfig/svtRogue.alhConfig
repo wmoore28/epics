@@ -1,0 +1,25 @@
+#===============================================================================
+# SVT DAQ Rogue Alarm Config
+#===============================================================================
+
+#GROUP NULL SYNC
+#$GUIDANCE
+#See SVT Ops manual sections relating to DAQ.
+#PVs monitored by these alarms are supplied by the SVT Rogue DAQ via iocsvtDaqRogue.
+#$END
+
+CHANNEL DAQ SVT:daq:dpm:all:syncerror T
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:daq:dpm:all:syncerror" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 45
+$GUIDANCE
+There is a sync error.
+Contact the SVT expert for further guidance.
+$END
+
+CHANNEL DAQ SVT:lv:hyb:all:sync:stat:calc T
+$COMMAND  medm -x -attach -cmap -macro "sig=SVT:lv:hyb:all:sync:stat:calc" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 15
+$GUIDANCE
+One of the SVT hybrids has gone out of sync.  Contact the SVT expert.
+$END
+

@@ -29,7 +29,7 @@ record(longin,SVT:daq:feb:$(FEB):sem_error_stat)
 record(longin,SVT:daq:feb:$(FEB):sem_heartbeat_rd)
 {
   field(SCAN, "Passive") 
-  field(DTYP,"Soft Channel")
+1  field(DTYP,"Soft Channel")
 }
 
 record(longin,SVT:daq:feb:$(FEB):sem_heartbeat_stat)
@@ -56,3 +56,89 @@ record(longin,SVT:daq:feb:$(FEB):sem_uncorrectable_rd)
   field(DTYP,"Soft Channel")
 }
 
+record(calc,SVT:feb:0:powerstatus){
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:fe:0:digi:i_rd CPP")
+	field(INPB,"SVT:lv:fe:0:digi:i_rd.LOW CPP")
+	field(INPC,"SVT:lv:fe:0:digi:i_rd.HIGH CPP")
+	field(CALC,"A>B&&A<C")
+}
+
+record(calc,SVT:feb:1:powerstatus){
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:fe:1:digi:i_rd CPP")
+	field(INPB,"SVT:lv:fe:1:digi:i_rd.LOW CPP")
+	field(INPC,"SVT:lv:fe:1:digi:i_rd.HIGH CPP")
+	field(CALC,"A>B&&A<C")
+}
+
+record(calc,SVT:feb:2:powerstatus){
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:fe:2:digi:i_rd CPP")
+	field(INPB,"SVT:lv:fe:2:digi:i_rd.LOW CPP")
+	field(INPC,"SVT:lv:fe:2:digi:i_rd.HIGH CPP")
+	field(CALC,"A>B&&A<C")
+}
+
+record(calc,SVT:feb:3:powerstatus){
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:fe:3:digi:i_rd CPP")
+	field(INPB,"SVT:lv:fe:3:digi:i_rd.LOW CPP")
+	field(INPC,"SVT:lv:fe:3:digi:i_rd.HIGH CPP")
+	field(CALC,"A>B&&A<C")
+}
+
+record(calc,SVT:feb:4:powerstatus){
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:fe:4:digi:i_rd CPP")
+	field(INPB,"SVT:lv:fe:4:digi:i_rd.LOW CPP")
+	field(INPC,"SVT:lv:fe:4:digi:i_rd.HIGH CPP")
+	field(CALC,"A>B&&A<C")
+}
+
+record(calc,SVT:feb:5:powerstatus){
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:fe:5:digi:i_rd CPP")
+	field(INPB,"SVT:lv:fe:5:digi:i_rd.LOW CPP")
+	field(INPC,"SVT:lv:fe:5:digi:i_rd.HIGH CPP")
+	field(CALC,"A>B&&A<C")
+}
+
+record(calc,SVT:feb:6:powerstatus){
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:fe:6:digi:i_rd CPP")
+	field(INPB,"SVT:lv:fe:6:digi:i_rd.LOW CPP")
+	field(INPC,"SVT:lv:fe:6:digi:i_rd.HIGH CPP")
+	field(CALC,"A>B&&A<C")
+}
+
+record(calc,SVT:feb:7:powerstatus){
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:fe:7:digi:i_rd CPP")
+	field(INPB,"SVT:lv:fe:7:digi:i_rd.LOW CPP")
+	field(INPC,"SVT:lv:fe:7:digi:i_rd.HIGH CPP")
+	field(CALC,"A>B&&A<C")
+}
+
+record(calc,SVT:feb:8:powerstatus){
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:fe:8:digi:i_rd CPP")
+	field(INPB,"SVT:lv:fe:8:digi:i_rd.LOW CPP")
+	field(INPC,"SVT:lv:fe:8:digi:i_rd.HIGH CPP")
+	field(CALC,"A>B&&A<C")
+}
+
+record(calc,SVT:feb:9:powerstatus){
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:fe:9:digi:i_rd CPP")
+	field(INPB,"SVT:lv:fe:9:digi:i_rd.LOW CPP")
+	field(INPC,"SVT:lv:fe:9:digi:i_rd.HIGH CPP")
+	field(CALC,"A>B&&A<C")
+}
+
+record(calc,SVT:feb:0:hyb:3:powerstatus){
+	field(SCAN,"Passive")
+	field(INPA,"SVT:lv:fe:0:anan:i_rd CPP")
+	field(INPB,"SVT:lv:fe:0:anan:i_rd.LOW CPP"
+	field(CALC,"A>B")
+}
