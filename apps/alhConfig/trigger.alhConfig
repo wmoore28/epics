@@ -5,7 +5,7 @@ $END
 
 CHANNEL TRIGGER B_DAQ_HPS:TS:livetime 
 $COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:TS:livetime" aiaocalc_alarm.adl >> /dev/null 
-$ALARMCOUNTFILTER -1 10
+$ALARMCOUNTFILTER -1 20
 $GUIDANCE
 DAQ livetime out of normal range.
 Ignore this alarm during DAQ state transitions.
@@ -26,3 +26,237 @@ $GUIDANCE
 Trigger #02 (Single-2 Top) has abnormally low rate.
 $END
 
+CHANNEL TRIGGER B_DAQ:disk_free:clondaq5
+$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ:disk_free:clondaq5" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 10
+$GUIDANCE
+Disk space on clondaq6:/data is dangerously low.  Contact DAQ expert.
+$END
+
+CHANNEL TRIGGER B_DAQ:disk_free:clondaq6
+$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ:disk_free:clondaq6" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 10
+$GUIDANCE
+Disk space on clondaq6:/data is dangerously low.  Contact DAQ expert.
+$END
+
+CHANNEL TRIGGER B_DAQ:disk_free:clondaq7
+$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ:disk_free:clondaq7" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER -1 10
+$GUIDANCE
+Disk space on clondaq6:/data is dangerously low.  Contact DAQ expert.
+$END
+
+#GROUP TRIGGER LATENCY
+#CHANNEL LATENCY B_DAQ_HPS:HPS1:serdes:slot03:latency:rx
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot03:latency:rx" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Latency is bad on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL LATENCY B_DAQ_HPS:HPS1:serdes:slot04:latency:rx
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot04:latency:rx" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Latency is bad on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL LATENCY B_DAQ_HPS:HPS1:serdes:slot05:latency:rx
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot05:latency:rx" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Latency is bad on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL LATENCY B_DAQ_HPS:HPS1:serdes:slot06:latency:rx
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot06:latency:rx" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Latency is bad on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL LATENCY B_DAQ_HPS:HPS1:serdes:slot07:latency:rx
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot07:latency:rx" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Latency is bad on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL LATENCY B_DAQ_HPS:HPS1:serdes:slot08:latency:rx
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot08:latency:rx" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Latency is bad on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL LATENCY B_DAQ_HPS:HPS1:serdes:slot09:latency:rx
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot09:latency:rx" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Latency is bad on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL LATENCY B_DAQ_HPS:HPS1:serdes:slot10:latency:rx
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot10:latency:rx" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Latency is bad on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL LATENCY B_DAQ_HPS:HPS1:serdes:slot14:latency:rx
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot14:latency:rx" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Latency is bad on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL LATENCY B_DAQ_HPS:HPS1:serdes:slot15:latency:rx
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot15:latency:rx" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Latency is bad on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL LATENCY B_DAQ_HPS:HPS1:serdes:slot16:latency:rx
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot16:latency:rx" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Latency is bad on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL LATENCY B_DAQ_HPS:HPS1:serdes:slot17:latency:rx
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot17:latency:rx" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Latency is bad on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL LATENCY B_DAQ_HPS:HPS1:serdes:slot18:latency:rx
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot18:latency:rx" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Latency is bad on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL LATENCY B_DAQ_HPS:HPS1:serdes:slot19:latency:rx
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot19:latency:rx" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Latency is bad on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL LATENCY B_DAQ_HPS:HPS1:serdes:slot20:latency:rx
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot20:latency:rx" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Latency is bad on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#
+#GROUP TRIGGER ERRORS
+#CHANNEL ERRORS B_DAQ_HPS:HPS1:serdes:slot03:errorcount
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot03:errorcount" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Error count is high on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL ERRORS B_DAQ_HPS:HPS1:serdes:slot04:errorcount
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot04:errorcount" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Error count is high on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL ERRORS B_DAQ_HPS:HPS1:serdes:slot05:errorcount
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot05:errorcount" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Error count is high on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL ERRORS B_DAQ_HPS:HPS1:serdes:slot06:errorcount
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot06:errorcount" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Error count is high on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL ERRORS B_DAQ_HPS:HPS1:serdes:slot07:errorcount
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot07:errorcount" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Error count is high on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL ERRORS B_DAQ_HPS:HPS1:serdes:slot08:errorcount
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot08:errorcount" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Error count is high on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL ERRORS B_DAQ_HPS:HPS1:serdes:slot09:errorcount
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot09:errorcount" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Error count is high on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL ERRORS B_DAQ_HPS:HPS1:serdes:slot10:errorcount
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot10:errorcount" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Error count is high on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL ERRORS B_DAQ_HPS:HPS1:serdes:slot14:errorcount
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot14:errorcount" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Error count is high on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL ERRORS B_DAQ_HPS:HPS1:serdes:slot15:errorcount
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot15:errorcount" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Error count is high on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL ERRORS B_DAQ_HPS:HPS1:serdes:slot16:errorcount
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot16:errorcount" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Error count is high on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL ERRORS B_DAQ_HPS:HPS1:serdes:slot17:errorcount
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot17:errorcount" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Error count is high on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL ERRORS B_DAQ_HPS:HPS1:serdes:slot18:errorcount
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot18:errorcount" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Error count is high on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL ERRORS B_DAQ_HPS:HPS1:serdes:slot19:errorcount
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot19:errorcount" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Error count is high on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
+#CHANNEL ERRORS B_DAQ_HPS:HPS1:serdes:slot20:errorcount
+#$COMMAND  medm -x -attach -cmap -macro "sig=B_DAQ_HPS:HPS1:serdes:slot20:errorcount" aiaocalc_alarm.adl >> /dev/null 
+#$ALARMCOUNTFILTER -1 10
+#$GUIDANCE
+#Error count is high on one of the HPS VTP fibers.  Try to restart the run, and, if the problem persists, contact DAQ expert.
+#$END
+#
