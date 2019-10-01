@@ -255,6 +255,12 @@ ss seqChicane {
             iStartMT=iMonMT;
         }
 
+        // allow user to override
+        //when (onBtn) {
+        //    onBtn=0;
+        //    pvPut(onBtn);
+        //} state pauseBeforeRampToMax
+
         when (isSimilar2(iMonPS,iZeroPS,iDeltaPS,iMonMT,0,iDeltaMT)) {
             sprintf(msg,"Turning MiniTorus OFF.");
             pvPut(msg);
