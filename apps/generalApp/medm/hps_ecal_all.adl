@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/hps_ecal_all.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/medm/../generalApp/medm/hps_ecal_all.adl"
 	version=030109
 }
 display {
 	object {
-		x=100
-		y=100
+		x=98
+		y=85
 		width=951
 		height=665
 	}
@@ -6594,4 +6594,20 @@ text {
 	}
 	textix="Bottom"
 	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=522
+		y=23
+		width=141
+		height=19
+	}
+	monitor {
+		chan="iocchiller:TOD"
+		clr=4
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+	}
 }
