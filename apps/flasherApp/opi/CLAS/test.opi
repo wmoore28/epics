@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <macros>
+    <include_parent_macros>true</include_parent_macros>
+  </macros>
+  <wuid>-1a830ef0:145fa320156:7bc4</wuid>
+  <boy_version>3.2.0.201307181301</boy_version>
+  <scripts />
+  <show_ruler>true</show_ruler>
+  <height>600</height>
+  <name></name>
+  <snap_to_geometry>true</snap_to_geometry>
+  <show_grid>true</show_grid>
+  <background_color>
+    <color red="240" green="240" blue="240" />
+  </background_color>
+  <foreground_color>
+    <color red="192" green="192" blue="192" />
+  </foreground_color>
+  <widget_type>Display</widget_type>
+  <show_close_button>true</show_close_button>
+  <width>800</width>
+  <rules />
+  <show_edit_range>true</show_edit_range>
+  <grid_space>6</grid_space>
+  <auto_scale_widgets>
+    <auto_scale_widgets>false</auto_scale_widgets>
+    <min_width>-1</min_width>
+    <min_height>-1</min_height>
+  </auto_scale_widgets>
+  <actions hook="false" hook_all="false" />
+  <y>-1</y>
+  <x>-1</x>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <ElementScale>10</ElementScale>
+    </macros>
+    <visible>true</visible>
+    <wuid>-1a830ef0:145fa320156:7c78</wuid>
+    <scripts>
+      <path pathString="scripts/test.js" checkConnect="true" sfe="false" seoe="false">
+        <pv trig="true">B_FT_FLASHER:SCALER_1</pv>
+      </path>
+    </scripts>
+    <height>307</height>
+    <name>Grouping Container</name>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <transparent>false</transparent>
+    <show_scrollbar>true</show_scrollbar>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <enabled>true</enabled>
+    <widget_type>Grouping Container</widget_type>
+    <font>
+      <opifont.name fontName="Cantarell" height="11" style="0">Default</opifont.name>
+    </font>
+    <width>361</width>
+    <border_style>0</border_style>
+    <rules />
+    <fc>false</fc>
+    <lock_children>false</lock_children>
+    <border_width>1</border_width>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <y>156</y>
+    <actions hook="false" hook_all="false" />
+    <x>234</x>
+    <tooltip></tooltip>
+    <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
+      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <visible>true</visible>
+      <wuid>-1a830ef0:145fa320156:7ccc</wuid>
+      <scripts />
+      <square_led>false</square_led>
+      <on_color>
+        <color red="0" green="255" blue="0" />
+      </on_color>
+      <height>20</height>
+      <data_type>0</data_type>
+      <name>LED</name>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <show_boolean_label>false</show_boolean_label>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>true</keep_wh_ratio>
+      </scale_options>
+      <off_color>
+        <color red="0" green="100" blue="0" />
+      </off_color>
+      <pv_name></pv_name>
+      <background_color>
+        <color red="240" green="240" blue="240" />
+      </background_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192" />
+      </foreground_color>
+      <off_label>OFF</off_label>
+      <widget_type>LED</widget_type>
+      <enabled>true</enabled>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <font>
+        <opifont.name fontName="Cantarell" height="11" style="0">Default</opifont.name>
+      </font>
+      <width>20</width>
+      <border_style>0</border_style>
+      <effect_3d>true</effect_3d>
+      <rules />
+      <pv_value />
+      <bit>-1</bit>
+      <border_width>1</border_width>
+      <on_label>ON</on_label>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <actions hook="false" hook_all="false">
+        <action type="EXECUTE_JAVASCRIPT">
+          <path></path>
+          <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
+]]></scriptText>
+          <embedded>false</embedded>
+          <description></description>
+        </action>
+      </actions>
+      <y>23</y>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <x>24</x>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
+      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <visible>true</visible>
+      <wuid>-1a830ef0:145fa320156:7d0d</wuid>
+      <scripts />
+      <square_led>false</square_led>
+      <on_color>
+        <color red="0" green="255" blue="0" />
+      </on_color>
+      <height>20</height>
+      <data_type>0</data_type>
+      <name>LED_1</name>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <show_boolean_label>false</show_boolean_label>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>true</keep_wh_ratio>
+      </scale_options>
+      <off_color>
+        <color red="0" green="100" blue="0" />
+      </off_color>
+      <pv_name></pv_name>
+      <background_color>
+        <color red="240" green="240" blue="240" />
+      </background_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192" />
+      </foreground_color>
+      <off_label>OFF</off_label>
+      <widget_type>LED</widget_type>
+      <enabled>true</enabled>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <font>
+        <opifont.name fontName="Cantarell" height="11" style="0">Default</opifont.name>
+      </font>
+      <width>20</width>
+      <border_style>0</border_style>
+      <effect_3d>true</effect_3d>
+      <rules />
+      <pv_value />
+      <bit>-1</bit>
+      <border_width>1</border_width>
+      <on_label>ON</on_label>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <actions hook="false" hook_all="false" />
+      <y>60</y>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <x>24</x>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <visible>true</visible>
+    <multiline_input>false</multiline_input>
+    <auto_size>false</auto_size>
+    <scripts />
+    <height>31</height>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <precision_from_pv>true</precision_from_pv>
+    <background_color>
+      <color red="255" green="255" blue="255" />
+    </background_color>
+    <enabled>true</enabled>
+    <widget_type>Text Input</widget_type>
+    <text></text>
+    <font>
+      <opifont.name fontName="Cantarell" height="11" style="0">Default</opifont.name>
+    </font>
+    <width>121</width>
+    <border_style>3</border_style>
+    <pv_value />
+    <maximum>Infinity</maximum>
+    <border_width>1</border_width>
+    <minimum>-Infinity</minimum>
+    <show_units>true</show_units>
+    <wuid>4977827b:146195227b3:-47ca</wuid>
+    <rotation_angle>0.0</rotation_angle>
+    <style>0</style>
+    <name>Text Input</name>
+    <format_type>0</format_type>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <selector_type>0</selector_type>
+    <transparent>false</transparent>
+    <pv_name></pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <precision>0</precision>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <confirm_message></confirm_message>
+    <rules />
+    <limits_from_pv>false</limits_from_pv>
+    <horizontal_alignment>0</horizontal_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <y>498</y>
+    <actions hook="false" hook_all="false" />
+    <x>402</x>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+</display>

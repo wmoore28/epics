@@ -1,0 +1,1256 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00d18776, pid=8136, tid=3085985472
+#
+# JRE version: Java(TM) SE Runtime Environment (7.0_51-b13) (build 1.7.0_51-b13)
+# Java VM: Java HotSpot(TM) Client VM (24.51-b03 mixed mode linux-x86 )
+# Problematic frame:
+# C  [libgobject-2.0.so.0+0x24776]  g_type_check_instance_cast+0x46
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0972c400):  JavaThread "main" [_thread_in_native, id=8136, stack(0xbfea2000,0xbfef2000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x2027296b
+
+Registers:
+EAX=0x20272965, EBX=0x00d32674, ECX=0x0a47ce58, EDX=0x0a47ce58
+ESP=0xbfeec580, EBP=0xbfeec5b8, ESI=0x20272964, EDI=0x0972c400
+EIP=0x00d18776, EFLAGS=0x00010202, CR2=0x2027296b
+
+Top of Stack: (sp=0xbfeec580)
+0xbfeec580:   00631e64 0a427588 bfeec5b8 0049cd0b
+0xbfeec590:   00000001 835008b0 834fcca8 003eb95e
+0xbfeec5a0:   834fcca8 834fcca8 00eeca50 00c6243c
+0xbfeec5b0:   bfeec5f4 0972c400 bfeec5d8 00c3b58b
+0xbfeec5c0:   0a47ce58 097fed20 00000000 00000001
+0xbfeec5d0:   834fcca8 834fcca8 bfeec608 b601bf22
+0xbfeec5e0:   0972c530 bfeec5f4 0a47ce58 831d7e38
+0xbfeec5f0:   00000001 835008b0 00000000 00000001 
+
+Instructions: (pc=0x00d18776)
+0x00d18756:   0f 84 56 01 00 00 8b 00 3d fc 03 00 00 0f 86 a7
+0x00d18766:   00 00 00 89 c6 83 e6 fc 85 f6 c6 45 f3 00 74 08
+0x00d18776:   f6 46 07 40 0f 95 45 f3 81 7d 0c fc 03 00 00 0f
+0x00d18786:   86 95 00 00 00 8b 7d 0c 83 e7 fc 85 ff 74 2b 80 
+
+Register to memory mapping:
+
+EAX=0x20272965 is an unknown value
+EBX=0x00d32674: <offset 0x3e674> in /lib/libgobject-2.0.so.0 at 0x00cf4000
+ECX=0x0a47ce58 is an unknown value
+EDX=0x0a47ce58 is an unknown value
+ESP=0xbfeec580 is pointing into the stack for thread: 0x0972c400
+EBP=0xbfeec5b8 is pointing into the stack for thread: 0x0972c400
+ESI=0x20272964 is an unknown value
+EDI=0x0972c400 is a thread
+
+
+Stack: [0xbfea2000,0xbfef2000],  sp=0xbfeec580,  free space=297k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libgobject-2.0.so.0+0x24776]  g_type_check_instance_cast+0x46
+C  [libswt-pi-gtk-3740.so+0x3458b]  Java_org_eclipse_swt_internal_gtk_OS__1GTK_1WIDGET_1FLAGS+0x24
+J  org.eclipse.swt.internal.gtk.OS._GTK_WIDGET_FLAGS(I)I
+J  org.eclipse.swt.widgets.Shell.setToolTipText(IILjava/lang/String;)V
+j  org.eclipse.jface.bindings.BindingManager.recomputeBindings()V+239
+j  org.eclipse.jface.bindings.BindingManager.contextManagerChanged(Lorg/eclipse/core/commands/contexts/ContextManagerEvent;)V+8
+j  org.eclipse.core.commands.contexts.ContextManager.fireContextManagerChanged(Lorg/eclipse/core/commands/contexts/ContextManagerEvent;)V+33
+j  org.eclipse.core.commands.contexts.ContextManager.removeActiveContext(Ljava/lang/String;)V+76
+j  org.eclipse.ui.internal.contexts.ContextAuthority.updateContext(Ljava/lang/String;Z)V+20
+j  org.eclipse.ui.internal.contexts.ContextAuthority.deactivateContext(Lorg/eclipse/ui/contexts/IContextActivation;)V+144
+j  org.eclipse.ui.internal.contexts.ContextService.deactivateContext(Lorg/eclipse/ui/contexts/IContextActivation;)V+15
+j  org.eclipse.ui.internal.contexts.ContextService.deactivateContexts(Ljava/util/Collection;)V+22
+j  org.eclipse.ui.internal.contexts.SlaveContextService.dispose()V+8
+j  org.eclipse.ui.internal.services.ServiceLocator.dispose()V+45
+j  org.eclipse.ui.internal.WorkbenchWindow.hardClose()Z+446
+j  org.eclipse.ui.internal.WorkbenchWindow.busyClose()Z+41
+j  org.eclipse.ui.internal.WorkbenchWindow.access$0(Lorg/eclipse/ui/internal/WorkbenchWindow;)Z+1
+j  org.eclipse.ui.internal.WorkbenchWindow$6.run()V+9
+j  org.eclipse.swt.custom.BusyIndicator.showWhile(Lorg/eclipse/swt/widgets/Display;Ljava/lang/Runnable;)V+116
+j  org.eclipse.ui.internal.WorkbenchWindow.close()Z+14
+j  org.eclipse.jface.window.Window.handleShellCloseEvent()V+6
+j  org.eclipse.jface.window.Window$3.shellClosed(Lorg/eclipse/swt/events/ShellEvent;)V+19
+J  org.eclipse.swt.widgets.TypedListener.handleEvent(Lorg/eclipse/swt/widgets/Event;)V
+j  org.eclipse.swt.widgets.Shell.gtk_delete_event(II)I+8
+J  org.eclipse.swt.widgets.Widget.windowProc(III)I
+V  [libjvm.so+0x2a7845]  JavaCalls::call_helper(JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0x315
+V  [libjvm.so+0x3fabb9]  os::os_exception_wrapper(void (*)(JavaValue*, methodHandle*, JavaCallArguments*, Thread*), JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0x19
+V  [libjvm.so+0x2a64bf]  JavaCalls::call(JavaValue*, methodHandle, JavaCallArguments*, Thread*)+0x2f
+V  [libjvm.so+0x2e3685]  jni_invoke_nonstatic(JNIEnv_*, JavaValue*, _jobject*, JNICallType, _jmethodID*, JNI_ArgumentPusher*, Thread*)+0x2a5
+V  [libjvm.so+0x2e9f1c]  jni_CallIntMethodV+0xbc
+C  [libswt-gtk-3740.so+0x23f8]  callback+0x22c
+C  0x0069a2d5
+C  [libgtk-x11-2.0.so.0+0x130160]  g_param_spec_object+0x130160
+C  [libgobject-2.0.so.0+0x8e98]  g_closure_invoke+0x128
+C  [libgobject-2.0.so.0+0x19dab]  g_free+0x19dab
+C  [libgobject-2.0.so.0+0x1b0af]  g_signal_emit_valist+0x68f
+C  [libgobject-2.0.so.0+0x1b4a9]  g_signal_emit+0x29
+C  [libgtk-x11-2.0.so.0+0x2446a8]  g_param_spec_object+0x2446a8
+C  [libgtk-x11-2.0.so.0+0x12a9d6]  gtk_main_do_event+0x4e6
+C  [libswt-pi-gtk-3740.so+0x411ba]  Java_org_eclipse_swt_internal_gtk_OS__1gtk_1main_1do_1event+0x1b
+J  org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(I)V
+J  org.eclipse.swt.widgets.Display.eventProc(II)I
+V  [libjvm.so+0x2a7845]  JavaCalls::call_helper(JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0x315
+V  [libjvm.so+0x3fabb9]  os::os_exception_wrapper(void (*)(JavaValue*, methodHandle*, JavaCallArguments*, Thread*), JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0x19
+V  [libjvm.so+0x2a64bf]  JavaCalls::call(JavaValue*, methodHandle, JavaCallArguments*, Thread*)+0x2f
+V  [libjvm.so+0x2e3685]  jni_invoke_nonstatic(JNIEnv_*, JavaValue*, _jobject*, JNICallType, _jmethodID*, JNI_ArgumentPusher*, Thread*)+0x2a5
+V  [libjvm.so+0x2e9f1c]  jni_CallIntMethodV+0xbc
+C  [libswt-gtk-3740.so+0x23f8]  callback+0x22c
+C  0x0069a192
+C  [libgdk-x11-2.0.so.0+0x4129a]  g_param_spec_object+0x4129a
+C  [libglib-2.0.so.0+0x2b372]  g_main_context_dispatch+0x182
+C  [libglib-2.0.so.0+0x2e366]  fputs+0x2e366
+C  [libglib-2.0.so.0+0x2e8be]  g_main_context_iteration+0x6e
+C  [libswt-pi-gtk-3740.so+0x37871]  Java_org_eclipse_swt_internal_gtk_OS__1g_1main_1context_1iteration+0x20
+J  org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(IZ)Z
+J  org.eclipse.swt.widgets.Display.readAndDispatch()Z
+j  org.eclipse.ui.internal.Workbench.runUI()I+555
+j  org.eclipse.ui.internal.Workbench.access$4(Lorg/eclipse/ui/internal/Workbench;)I+1
+j  org.eclipse.ui.internal.Workbench$7.run()V+73
+j  org.eclipse.core.databinding.observable.Realm.runWithDefault(Lorg/eclipse/core/databinding/observable/Realm;Ljava/lang/Runnable;)V+12
+j  org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I+18
+j  org.eclipse.ui.PlatformUI.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I+2
+j  org.csstudio.utility.product.Workbench.runWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/equinox/app/IApplicationContext;Ljava/util/Map;)Ljava/lang/Object;+54
+j  org.csstudio.startup.application.Application.startApplication(Lorg/eclipse/equinox/app/IApplicationContext;Lorg/eclipse/swt/widgets/Display;Lorg/csstudio/startup/application/OpenDocumentEventProcessor;)Ljava/lang/Object;+162
+j  org.csstudio.startup.application.Application.start(Lorg/eclipse/equinox/app/IApplicationContext;)Ljava/lang/Object;+220
+j  org.eclipse.equinox.internal.app.EclipseAppHandle.run(Ljava/lang/Object;)Ljava/lang/Object;+135
+j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(Ljava/lang/Object;)Ljava/lang/Object;+103
+j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Ljava/lang/Object;)Ljava/lang/Object;+29
+j  org.eclipse.core.runtime.adaptor.EclipseStarter.run(Ljava/lang/Object;)Ljava/lang/Object;+149
+j  org.eclipse.core.runtime.adaptor.EclipseStarter.run([Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Object;+183
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x2a7845]  JavaCalls::call_helper(JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0x315
+V  [libjvm.so+0x3fabb9]  os::os_exception_wrapper(void (*)(JavaValue*, methodHandle*, JavaCallArguments*, Thread*), JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0x19
+V  [libjvm.so+0x2a64bf]  JavaCalls::call(JavaValue*, methodHandle, JavaCallArguments*, Thread*)+0x2f
+V  [libjvm.so+0x44036e]  Reflection::invoke(instanceKlassHandle, methodHandle, Handle, bool, objArrayHandle, BasicType, objArrayHandle, bool, Thread*)+0x3fe
+V  [libjvm.so+0x440e2a]  Reflection::invoke_method(oopDesc*, Handle, objArrayHandle, Thread*)+0x15a
+V  [libjvm.so+0x329359]  JVM_InvokeMethod+0x209
+C  [libjava.so+0x15232]  Java_sun_reflect_NativeMethodAccessorImpl_invoke0+0x32
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+57
+j  org.eclipse.equinox.launcher.Main.invokeFramework([Ljava/lang/String;[Ljava/net/URL;)V+211
+j  org.eclipse.equinox.launcher.Main.basicRun([Ljava/lang/String;)V+126
+j  org.eclipse.equinox.launcher.Main.run([Ljava/lang/String;)I+4
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x2a7845]  JavaCalls::call_helper(JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0x315
+V  [libjvm.so+0x3fabb9]  os::os_exception_wrapper(void (*)(JavaValue*, methodHandle*, JavaCallArguments*, Thread*), JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0x19
+V  [libjvm.so+0x2a64bf]  JavaCalls::call(JavaValue*, methodHandle, JavaCallArguments*, Thread*)+0x2f
+V  [libjvm.so+0x2e3685]  jni_invoke_nonstatic(JNIEnv_*, JavaValue*, _jobject*, JNICallType, _jmethodID*, JNI_ArgumentPusher*, Thread*)+0x2a5
+V  [libjvm.so+0x2ea0cc]  jni_CallIntMethod+0xbc
+C  [eclipse_1407.so+0x83d9]  startJavaJNI+0x418
+C  [eclipse_1407.so+0x9878]  startJavaVM+0x24
+C  [eclipse_1407.so+0x314b]  run+0x59d
+C  [css+0x10ee]  strchr@@GLIBC_2.0+0x10ee
+C  [libc.so.6+0x15ebc]  __libc_start_main+0xdc
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J  org.eclipse.swt.internal.gtk.OS._GTK_WIDGET_FLAGS(I)I
+J  org.eclipse.swt.widgets.Shell.setToolTipText(IILjava/lang/String;)V
+J  org.eclipse.jface.action.ActionContributionItem.update(Ljava/lang/String;)V
+J  org.eclipse.jface.action.ActionContributionItem$1.propertyChange(Lorg/eclipse/jface/util/PropertyChangeEvent;)V
+J  org.eclipse.jface.action.ExternalActionManager$CommandCallback.bindingManagerChanged(Lorg/eclipse/jface/bindings/BindingManagerEvent;)V
+J  org.eclipse.jface.bindings.BindingManager.fireBindingManagerChanged(Lorg/eclipse/jface/bindings/BindingManagerEvent;)V
+j  org.eclipse.jface.bindings.BindingManager.setActiveBindings(Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)V+44
+j  org.eclipse.jface.bindings.BindingManager.recomputeBindings()V+239
+j  org.eclipse.jface.bindings.BindingManager.contextManagerChanged(Lorg/eclipse/core/commands/contexts/ContextManagerEvent;)V+8
+j  org.eclipse.core.commands.contexts.ContextManager.fireContextManagerChanged(Lorg/eclipse/core/commands/contexts/ContextManagerEvent;)V+33
+j  org.eclipse.core.commands.contexts.ContextManager.removeActiveContext(Ljava/lang/String;)V+76
+j  org.eclipse.ui.internal.contexts.ContextAuthority.updateContext(Ljava/lang/String;Z)V+20
+j  org.eclipse.ui.internal.contexts.ContextAuthority.deactivateContext(Lorg/eclipse/ui/contexts/IContextActivation;)V+144
+j  org.eclipse.ui.internal.contexts.ContextService.deactivateContext(Lorg/eclipse/ui/contexts/IContextActivation;)V+15
+j  org.eclipse.ui.internal.contexts.ContextService.deactivateContexts(Ljava/util/Collection;)V+22
+j  org.eclipse.ui.internal.contexts.SlaveContextService.dispose()V+8
+j  org.eclipse.ui.internal.services.ServiceLocator.dispose()V+45
+j  org.eclipse.ui.internal.WorkbenchWindow.hardClose()Z+446
+j  org.eclipse.ui.internal.WorkbenchWindow.busyClose()Z+41
+j  org.eclipse.ui.internal.WorkbenchWindow.access$0(Lorg/eclipse/ui/internal/WorkbenchWindow;)Z+1
+j  org.eclipse.ui.internal.WorkbenchWindow$6.run()V+9
+j  org.eclipse.swt.custom.BusyIndicator.showWhile(Lorg/eclipse/swt/widgets/Display;Ljava/lang/Runnable;)V+116
+j  org.eclipse.ui.internal.WorkbenchWindow.close()Z+14
+j  org.eclipse.jface.window.Window.handleShellCloseEvent()V+6
+j  org.eclipse.jface.window.Window$3.shellClosed(Lorg/eclipse/swt/events/ShellEvent;)V+19
+J  org.eclipse.swt.widgets.TypedListener.handleEvent(Lorg/eclipse/swt/widgets/Event;)V
+J  org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V
+J  org.eclipse.swt.widgets.Widget.sendEvent(ILorg/eclipse/swt/widgets/Event;Z)V
+J  org.eclipse.swt.widgets.Widget.sendEvent(ILorg/eclipse/swt/widgets/Event;)V
+j  org.eclipse.swt.widgets.Shell.closeWidget()V+12
+j  org.eclipse.swt.widgets.Shell.gtk_delete_event(II)I+8
+J  org.eclipse.swt.widgets.Widget.windowProc(III)I
+J  org.eclipse.swt.widgets.Control.windowProc(III)I
+J  org.eclipse.swt.widgets.Display.windowProc(III)I
+v  ~StubRoutines::call_stub
+J  org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(I)V
+J  org.eclipse.swt.widgets.Display.eventProc(II)I
+v  ~StubRoutines::call_stub
+J  org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(IZ)Z
+J  org.eclipse.swt.widgets.Display.readAndDispatch()Z
+j  org.eclipse.ui.internal.Workbench.runEventLoop(Lorg/eclipse/jface/window/Window$IExceptionHandler;Lorg/eclipse/swt/widgets/Display;)V+9
+j  org.eclipse.ui.internal.Workbench.runUI()I+555
+j  org.eclipse.ui.internal.Workbench.access$4(Lorg/eclipse/ui/internal/Workbench;)I+1
+j  org.eclipse.ui.internal.Workbench$7.run()V+73
+j  org.eclipse.core.databinding.observable.Realm.runWithDefault(Lorg/eclipse/core/databinding/observable/Realm;Ljava/lang/Runnable;)V+12
+j  org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I+18
+j  org.eclipse.ui.PlatformUI.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I+2
+j  org.csstudio.utility.product.Workbench.runWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/equinox/app/IApplicationContext;Ljava/util/Map;)Ljava/lang/Object;+54
+j  org.csstudio.startup.application.Application.startApplication(Lorg/eclipse/equinox/app/IApplicationContext;Lorg/eclipse/swt/widgets/Display;Lorg/csstudio/startup/application/OpenDocumentEventProcessor;)Ljava/lang/Object;+162
+j  org.csstudio.startup.application.Application.start(Lorg/eclipse/equinox/app/IApplicationContext;)Ljava/lang/Object;+220
+j  org.eclipse.equinox.internal.app.EclipseAppHandle.run(Ljava/lang/Object;)Ljava/lang/Object;+135
+j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(Ljava/lang/Object;)Ljava/lang/Object;+103
+j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Ljava/lang/Object;)Ljava/lang/Object;+29
+j  org.eclipse.core.runtime.adaptor.EclipseStarter.run(Ljava/lang/Object;)Ljava/lang/Object;+149
+j  org.eclipse.core.runtime.adaptor.EclipseStarter.run([Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Object;+183
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+57
+j  org.eclipse.equinox.launcher.Main.invokeFramework([Ljava/lang/String;[Ljava/net/URL;)V+211
+j  org.eclipse.equinox.launcher.Main.basicRun([Ljava/lang/String;)V+126
+j  org.eclipse.equinox.launcher.Main.run([Ljava/lang/String;)I+4
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0a7b1000 JavaThread "Worker-7" [_thread_blocked, id=8665, stack(0x6c9a4000,0x6c9f5000)]
+  0x0a55ac00 JavaThread "Provisioning Event Dispatcher" daemon [_thread_blocked, id=8205, stack(0x6c7af000,0x6c800000)]
+  0x0a206c00 JavaThread "Worker-6" [_thread_blocked, id=8203, stack(0x6a91a000,0x6a96b000)]
+  0x0a0f3400 JavaThread "PVMgr Worker 6" daemon [_thread_blocked, id=8199, stack(0x6a96b000,0x6a9bc000)]
+  0x0a0f1c00 JavaThread "PVMgr Worker 7" daemon [_thread_blocked, id=8198, stack(0x6a9bc000,0x6aa0d000)]
+  0x0a0f0400 JavaThread "PVMgr Worker 5" daemon [_thread_blocked, id=8197, stack(0x6aa0d000,0x6aa5e000)]
+  0x6b233400 JavaThread "PVMgr Worker 4" daemon [_thread_blocked, id=8196, stack(0x6aa5e000,0x6aaaf000)]
+  0x0a0ee400 JavaThread "PVMgr Worker 3" daemon [_thread_blocked, id=8195, stack(0x6aaaf000,0x6ab00000)]
+  0x6ab00c00 JavaThread "com.cosylab.epics.caj.util.Timer" daemon [_thread_blocked, id=8194, stack(0x6ac34000,0x6ac85000)]
+  0x6b239000 JavaThread "PVMgr Worker 2" daemon [_thread_blocked, id=8193, stack(0x6ac85000,0x6acd6000)]
+  0x0a0cb800 JavaThread "pool-4-thread-5" [_thread_blocked, id=8192, stack(0x6acd6000,0x6ad27000)]
+  0x0a0c9400 JavaThread "pool-4-thread-4" [_thread_blocked, id=8191, stack(0x6ad27000,0x6ad78000)]
+  0x0a0c8000 JavaThread "pool-4-thread-3" [_thread_blocked, id=8190, stack(0x6ad78000,0x6adc9000)]
+  0x0a0c6400 JavaThread "pool-4-thread-2" [_thread_blocked, id=8189, stack(0x6adc9000,0x6ae1a000)]
+  0x0a0c4c00 JavaThread "pool-4-thread-1" [_thread_in_native, id=8188, stack(0x6ae1a000,0x6ae6b000)]
+  0x6b216400 JavaThread "PVMgr Worker 1" daemon [_thread_blocked, id=8187, stack(0x6ae6b000,0x6aebc000)]
+  0x0a0bf400 JavaThread "PVMgr DataSource Worker 1" daemon [_thread_blocked, id=8186, stack(0x6aebc000,0x6af0d000)]
+  0x6b20ec00 JavaThread "pool-3-thread-1" [_thread_blocked, id=8185, stack(0x6af0d000,0x6af5e000)]
+  0x6c4d0c00 JavaThread "pvAccess immediate-search" [_thread_blocked, id=8184, stack(0x6af5e000,0x6afaf000)]
+  0x6c4cf000 JavaThread "UDP-receive 0.0.0.0/0.0.0.0:0" [_thread_in_native, id=8183, stack(0x6afaf000,0x6b000000)]
+  0x6c4cb800 JavaThread "UDP-receive 0.0.0.0/0.0.0.0:5076" [_thread_in_native, id=8182, stack(0x6b10d000,0x6b15e000)]
+  0x6c4cd400 JavaThread "pvAccess-client timer" [_thread_blocked, id=8181, stack(0x6b15e000,0x6b1af000)]
+  0x6c483800 JavaThread "OPI GUI Refresh Thread" [_thread_blocked, id=8180, stack(0x6b1af000,0x6b200000)]
+  0x09fd0000 JavaThread "Worker-5" [_thread_blocked, id=8179, stack(0x6b34f000,0x6b3a0000)]
+  0x6c462400 JavaThread "com.cosylab.epics.caj.util.Timer" [_thread_blocked, id=8178, stack(0x6b3d2000,0x6b423000)]
+  0x09f10000 JavaThread "pool-2-thread-5" [_thread_blocked, id=8177, stack(0x6b423000,0x6b474000)]
+  0x09f1e800 JavaThread "pool-2-thread-4" [_thread_blocked, id=8176, stack(0x6b474000,0x6b4c5000)]
+  0x09f1d000 JavaThread "pool-2-thread-3" [_thread_blocked, id=8175, stack(0x6b4c5000,0x6b516000)]
+  0x09f12400 JavaThread "pool-2-thread-2" [_thread_blocked, id=8174, stack(0x6b516000,0x6b567000)]
+  0x09f1b800 JavaThread "pool-2-thread-1" [_thread_in_native, id=8173, stack(0x6b567000,0x6b5b8000)]
+  0x6c452400 JavaThread "Bundle File Closer" daemon [_thread_blocked, id=8172, stack(0x6b5c6000,0x6b617000)]
+  0x6c8a2c00 JavaThread "pool-1-thread-1" [_thread_blocked, id=8171, stack(0x6c35e000,0x6c3af000)]
+  0x6c8f4400 JavaThread "OPI GUI Refresh Thread" [_thread_blocked, id=8170, stack(0x6c3af000,0x6c400000)]
+  0x09eca400 JavaThread "Worker-4" [_thread_blocked, id=8169, stack(0x6c50d000,0x6c55e000)]
+  0x6cbe7800 JavaThread "Worker-3" [_thread_blocked, id=8168, stack(0x6c55e000,0x6c5af000)]
+  0x09e76400 JavaThread "Worker-2" [_thread_blocked, id=8167, stack(0x6c5af000,0x6c600000)]
+  0x09921800 JavaThread "Worker-1" [_thread_blocked, id=8164, stack(0x6c9f5000,0x6ca46000)]
+  0x097d5800 JavaThread "Worker-0" [_thread_blocked, id=8163, stack(0x6ca46000,0x6ca97000)]
+  0x6d061000 JavaThread "[ThreadPool Manager] - Idle Thread" daemon [_thread_blocked, id=8160, stack(0x6cebc000,0x6cf0d000)]
+  0x6d093400 JavaThread "Worker-JM" [_thread_blocked, id=8159, stack(0x6ce1a000,0x6ce6b000)]
+  0x098e9800 JavaThread "[Timer] - Main Queue Handler" daemon [_thread_blocked, id=8158, stack(0x6ce6b000,0x6cebc000)]
+  0x6d02dc00 JavaThread "Framework Event Dispatcher" daemon [_thread_blocked, id=8156, stack(0x6cf0d000,0x6cf5e000)]
+  0x6d02bc00 JavaThread "Start Level Event Dispatcher" daemon [_thread_blocked, id=8155, stack(0x6cf5e000,0x6cfaf000)]
+  0x6d017c00 JavaThread "State Data Manager" daemon [_thread_blocked, id=8154, stack(0x6cfaf000,0x6d000000)]
+  0x6d2f9000 JavaThread "Framework Active Thread" [_thread_blocked, id=8153, stack(0x6d148000,0x6d199000)]
+  0x09797800 JavaThread "Service Thread" daemon [_thread_blocked, id=8148, stack(0x6d3af000,0x6d400000)]
+  0x09795000 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=8147, stack(0x6d400000,0x6d481000)]
+  0x09793800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=8146, stack(0x6d481000,0x6d4d2000)]
+  0x09780800 JavaThread "Finalizer" daemon [_thread_blocked, id=8145, stack(0x6d4d2000,0x6d523000)]
+  0x0977e000 JavaThread "Reference Handler" daemon [_thread_blocked, id=8144, stack(0x6d523000,0x6d574000)]
+=>0x0972c400 JavaThread "main" [_thread_in_native, id=8136, stack(0xbfea2000,0xbfef2000)]
+
+Other Threads:
+  0x0977c400 VMThread [stack: 0x6d574000,0x6d5f5000] [id=8143]
+  0x6d201400 WatcherThread [stack: 0x6d32e000,0x6d3af000] [id=8149]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 52032K, used 21064K [0x6dc30000, 0x714a0000, 0x83180000)
+  eden space 46272K,  41% used [0x6dc30000, 0x6ef16698, 0x70960000)
+  from space 5760K,  29% used [0x70960000, 0x70b0bb40, 0x70f00000)
+  to   space 5760K,   0% used [0x70f00000, 0x70f00000, 0x714a0000)
+ tenured generation   total 115240K, used 92432K [0x83180000, 0x8a20a000, 0xadc30000)
+   the space 115240K,  80% used [0x83180000, 0x88bc43d8, 0x88bc4400, 0x8a20a000)
+ compacting perm gen  total 32512K, used 32264K [0xadc30000, 0xafbf0000, 0xb5c30000)
+   the space 32512K,  99% used [0xadc30000, 0xafbb22a8, 0xafbb2400, 0xafbf0000)
+No shared spaces configured.
+
+Card table byte_map: [0x6d9ef000,0x6dc30000] byte_map_base: 0x6d680e80
+
+Polling page: 0xb7cc4000
+
+Code Cache  [0xb5cbb000, 0xb648b000, 0xb7cbb000)
+ total_blobs=3938 nmethods=3719 adapters=153 free_code_cache=24785Kb largest_free_block=25378304
+
+Compilation events (10 events):
+Event: 97.406 Thread 0x09795000 3745             java.util.HashMap::entrySet0 (28 bytes)
+Event: 97.406 Thread 0x09795000 nmethod 3745 0xb6483688 code [0xb6483780, 0xb6483870]
+Event: 97.406 Thread 0x09795000 3746             java.util.HashMap::newEntryIterator (10 bytes)
+Event: 97.406 Thread 0x09795000 nmethod 3746 0xb64838c8 code [0xb64839d0, 0xb6483acc]
+Event: 97.434 Thread 0x09795000 3747             org.eclipse.ui.internal.services.EvaluationAuthority::removeEvaluationListener (139 bytes)
+Event: 97.436 Thread 0x09795000 nmethod 3747 0xb6483b88 code [0xb6483d70, 0xb6484290]
+Event: 97.587 Thread 0x09795000 3748   !         org.eclipse.ui.menus.CommandContributionItem::updateToolItem (195 bytes)
+Event: 97.589 Thread 0x09795000 nmethod 3748 0xb64848c8 code [0xb6484c60, 0xb6485bcc]
+Event: 97.589 Thread 0x09795000 3749             org.eclipse.ui.menus.CommandContributionItem::getToolTipText (81 bytes)
+Event: 97.590 Thread 0x09795000 nmethod 3749 0xb6486b88 code [0xb6486ce0, 0xb6486f30]
+
+GC Heap History (10 events):
+Event: 74.857 GC heap before
+{Heap before GC invocations=42 (full 7):
+ def new generation   total 52032K, used 47904K [0x6dc30000, 0x714a0000, 0x83180000)
+  eden space 46272K, 100% used [0x6dc30000, 0x70960000, 0x70960000)
+  from space 5760K,  28% used [0x70f00000, 0x71098178, 0x714a0000)
+  to   space 5760K,   0% used [0x70960000, 0x70960000, 0x70f00000)
+ tenured generation   total 115240K, used 92432K [0x83180000, 0x8a20a000, 0xadc30000)
+   the space 115240K,  80% used [0x83180000, 0x88bc43d8, 0x88bc4400, 0x8a20a000)
+ compacting perm gen  total 32256K, used 32251K [0xadc30000, 0xafbb0000, 0xb5c30000)
+   the space 32256K,  99% used [0xadc30000, 0xafbaee38, 0xafbaf000, 0xafbb0000)
+No shared spaces configured.
+Event: 74.863 GC heap after
+Heap after GC invocations=43 (full 7):
+ def new generation   total 52032K, used 1646K [0x6dc30000, 0x714a0000, 0x83180000)
+  eden space 46272K,   0% used [0x6dc30000, 0x6dc30000, 0x70960000)
+  from space 5760K,  28% used [0x70960000, 0x70afbb38, 0x70f00000)
+  to   space 5760K,   0% used [0x70f00000, 0x70f00000, 0x714a0000)
+ tenured generation   total 115240K, used 92432K [0x83180000, 0x8a20a000, 0xadc30000)
+   the space 115240K,  80% used [0x83180000, 0x88bc43d8, 0x88bc4400, 0x8a20a000)
+ compacting perm gen  total 32256K, used 32251K [0xadc30000, 0xafbb0000, 0xb5c30000)
+   the space 32256K,  99% used [0xadc30000, 0xafbaee38, 0xafbaf000, 0xafbb0000)
+No shared spaces configured.
+}
+Event: 79.071 GC heap before
+{Heap before GC invocations=43 (full 7):
+ def new generation   total 52032K, used 47918K [0x6dc30000, 0x714a0000, 0x83180000)
+  eden space 46272K, 100% used [0x6dc30000, 0x70960000, 0x70960000)
+  from space 5760K,  28% used [0x70960000, 0x70afbb38, 0x70f00000)
+  to   space 5760K,   0% used [0x70f00000, 0x70f00000, 0x714a0000)
+ tenured generation   total 115240K, used 92432K [0x83180000, 0x8a20a000, 0xadc30000)
+   the space 115240K,  80% used [0x83180000, 0x88bc43d8, 0x88bc4400, 0x8a20a000)
+ compacting perm gen  total 32256K, used 32253K [0xadc30000, 0xafbb0000, 0xb5c30000)
+   the space 32256K,  99% used [0xadc30000, 0xafbaf720, 0xafbaf800, 0xafbb0000)
+No shared spaces configured.
+Event: 79.078 GC heap after
+Heap after GC invocations=44 (full 7):
+ def new generation   total 52032K, used 1643K [0x6dc30000, 0x714a0000, 0x83180000)
+  eden space 46272K,   0% used [0x6dc30000, 0x6dc30000, 0x70960000)
+  from space 5760K,  28% used [0x70f00000, 0x7109afa0, 0x714a0000)
+  to   space 5760K,   0% used [0x70960000, 0x70960000, 0x70f00000)
+ tenured generation   total 115240K, used 92432K [0x83180000, 0x8a20a000, 0xadc30000)
+   the space 115240K,  80% used [0x83180000, 0x88bc43d8, 0x88bc4400, 0x8a20a000)
+ compacting perm gen  total 32256K, used 32253K [0xadc30000, 0xafbb0000, 0xb5c30000)
+   the space 32256K,  99% used [0xadc30000, 0xafbaf720, 0xafbaf800, 0xafbb0000)
+No shared spaces configured.
+}
+Event: 87.897 GC heap before
+{Heap before GC invocations=44 (full 7):
+ def new generation   total 52032K, used 47915K [0x6dc30000, 0x714a0000, 0x83180000)
+  eden space 46272K, 100% used [0x6dc30000, 0x70960000, 0x70960000)
+  from space 5760K,  28% used [0x70f00000, 0x7109afa0, 0x714a0000)
+  to   space 5760K,   0% used [0x70960000, 0x70960000, 0x70f00000)
+ tenured generation   total 115240K, used 92432K [0x83180000, 0x8a20a000, 0xadc30000)
+   the space 115240K,  80% used [0x83180000, 0x88bc43d8, 0x88bc4400, 0x8a20a000)
+ compacting perm gen  total 32512K, used 32262K [0xadc30000, 0xafbf0000, 0xb5c30000)
+   the space 32512K,  99% used [0xadc30000, 0xafbb1b20, 0xafbb1c00, 0xafbf0000)
+No shared spaces configured.
+Event: 87.906 GC heap after
+Heap after GC invocations=45 (full 7):
+ def new generation   total 52032K, used 1751K [0x6dc30000, 0x714a0000, 0x83180000)
+  eden space 46272K,   0% used [0x6dc30000, 0x6dc30000, 0x70960000)
+  from space 5760K,  30% used [0x70960000, 0x70b15ee8, 0x70f00000)
+  to   space 5760K,   0% used [0x70f00000, 0x70f00000, 0x714a0000)
+ tenured generation   total 115240K, used 92432K [0x83180000, 0x8a20a000, 0xadc30000)
+   the space 115240K,  80% used [0x83180000, 0x88bc43d8, 0x88bc4400, 0x8a20a000)
+ compacting perm gen  total 32512K, used 32262K [0xadc30000, 0xafbf0000, 0xb5c30000)
+   the space 32512K,  99% used [0xadc30000, 0xafbb1b20, 0xafbb1c00, 0xafbf0000)
+No shared spaces configured.
+}
+Event: 91.476 GC heap before
+{Heap before GC invocations=45 (full 7):
+ def new generation   total 52032K, used 47994K [0x6dc30000, 0x714a0000, 0x83180000)
+  eden space 46272K,  99% used [0x6dc30000, 0x70958b90, 0x70960000)
+  from space 5760K,  30% used [0x70960000, 0x70b15ee8, 0x70f00000)
+  to   space 5760K,   0% used [0x70f00000, 0x70f00000, 0x714a0000)
+ tenured generation   total 115240K, used 92432K [0x83180000, 0x8a20a000, 0xadc30000)
+   the space 115240K,  80% used [0x83180000, 0x88bc43d8, 0x88bc4400, 0x8a20a000)
+ compacting perm gen  total 32512K, used 32262K [0xadc30000, 0xafbf0000, 0xb5c30000)
+   the space 32512K,  99% used [0xadc30000, 0xafbb1b30, 0xafbb1c00, 0xafbf0000)
+No shared spaces configured.
+Event: 91.482 GC heap after
+Heap after GC invocations=46 (full 7):
+ def new generation   total 52032K, used 1744K [0x6dc30000, 0x714a0000, 0x83180000)
+  eden space 46272K,   0% used [0x6dc30000, 0x6dc30000, 0x70960000)
+  from space 5760K,  30% used [0x70f00000, 0x710b4268, 0x714a0000)
+  to   space 5760K,   0% used [0x70960000, 0x70960000, 0x70f00000)
+ tenured generation   total 115240K, used 92432K [0x83180000, 0x8a20a000, 0xadc30000)
+   the space 115240K,  80% used [0x83180000, 0x88bc43d8, 0x88bc4400, 0x8a20a000)
+ compacting perm gen  total 32512K, used 32262K [0xadc30000, 0xafbf0000, 0xb5c30000)
+   the space 32512K,  99% used [0xadc30000, 0xafbb1b30, 0xafbb1c00, 0xafbf0000)
+No shared spaces configured.
+}
+Event: 96.364 GC heap before
+{Heap before GC invocations=46 (full 7):
+ def new generation   total 52032K, used 48016K [0x6dc30000, 0x714a0000, 0x83180000)
+  eden space 46272K, 100% used [0x6dc30000, 0x70960000, 0x70960000)
+  from space 5760K,  30% used [0x70f00000, 0x710b4268, 0x714a0000)
+  to   space 5760K,   0% used [0x70960000, 0x70960000, 0x70f00000)
+ tenured generation   total 115240K, used 92432K [0x83180000, 0x8a20a000, 0xadc30000)
+   the space 115240K,  80% used [0x83180000, 0x88bc43d8, 0x88bc4400, 0x8a20a000)
+ compacting perm gen  total 32512K, used 32263K [0xadc30000, 0xafbf0000, 0xb5c30000)
+   the space 32512K,  99% used [0xadc30000, 0xafbb1c80, 0xafbb1e00, 0xafbf0000)
+No shared spaces configured.
+Event: 96.372 GC heap after
+Heap after GC invocations=47 (full 7):
+ def new generation   total 52032K, used 1710K [0x6dc30000, 0x714a0000, 0x83180000)
+  eden space 46272K,   0% used [0x6dc30000, 0x6dc30000, 0x70960000)
+  from space 5760K,  29% used [0x70960000, 0x70b0bb40, 0x70f00000)
+  to   space 5760K,   0% used [0x70f00000, 0x70f00000, 0x714a0000)
+ tenured generation   total 115240K, used 92432K [0x83180000, 0x8a20a000, 0xadc30000)
+   the space 115240K,  80% used [0x83180000, 0x88bc43d8, 0x88bc4400, 0x8a20a000)
+ compacting perm gen  total 32512K, used 32263K [0xadc30000, 0xafbf0000, 0xb5c30000)
+   the space 32512K,  99% used [0xadc30000, 0xafbb1c80, 0xafbb1e00, 0xafbf0000)
+No shared spaces configured.
+}
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 96.944 Thread 0x0972c400 Threw 0x6e35b408 at /HUDSON/workspace/7u-2-build-linux-i586/jdk7u51/527/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+Event: 96.946 Thread 0x0972c400 Threw 0x6e39e138 at /HUDSON/workspace/7u-2-build-linux-i586/jdk7u51/527/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+Event: 96.947 Thread 0x0972c400 Threw 0x6e3e1c90 at /HUDSON/workspace/7u-2-build-linux-i586/jdk7u51/527/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+Event: 96.948 Thread 0x0972c400 Threw 0x6e4249c0 at /HUDSON/workspace/7u-2-build-linux-i586/jdk7u51/527/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+Event: 96.950 Thread 0x0972c400 Threw 0x6e468410 at /HUDSON/workspace/7u-2-build-linux-i586/jdk7u51/527/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+Event: 96.951 Thread 0x0972c400 Threw 0x6e4ab140 at /HUDSON/workspace/7u-2-build-linux-i586/jdk7u51/527/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+Event: 97.043 Thread 0x0972c400 Threw 0x6e61eab8 at /HUDSON/workspace/7u-2-build-linux-i586/jdk7u51/527/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+Event: 97.044 Thread 0x0972c400 Threw 0x6e6617e8 at /HUDSON/workspace/7u-2-build-linux-i586/jdk7u51/527/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+Event: 97.046 Thread 0x0972c400 Threw 0x6e6b9388 at /HUDSON/workspace/7u-2-build-linux-i586/jdk7u51/527/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+Event: 97.047 Thread 0x0972c400 Threw 0x6e6fc0b8 at /HUDSON/workspace/7u-2-build-linux-i586/jdk7u51/527/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+
+Events (10 events):
+Event: 79.071 Executing VM operation: GenCollectForAllocation
+Event: 79.078 Executing VM operation: GenCollectForAllocation done
+Event: 82.712 Executing VM operation: RevokeBias
+Event: 82.713 Executing VM operation: RevokeBias done
+Event: 87.897 Executing VM operation: GenCollectForAllocation
+Event: 87.906 Executing VM operation: GenCollectForAllocation done
+Event: 91.476 Executing VM operation: GenCollectForAllocation
+Event: 91.482 Executing VM operation: GenCollectForAllocation done
+Event: 96.363 Executing VM operation: GenCollectForAllocation
+Event: 96.372 Executing VM operation: GenCollectForAllocation done
+
+
+Dynamic libraries:
+00101000-0016d000 r-xp 00000000 08:02 14778696   /usr/lib/libcairo.so.2.9.2
+0016d000-0016f000 rw-p 0006b000 08:02 14778696   /usr/lib/libcairo.so.2.9.2
+00171000-001fb000 r-xp 00000000 08:02 14778704   /usr/lib/libgdk-x11-2.0.so.0.1000.4
+001fb000-001fe000 rw-p 0008a000 08:02 14778704   /usr/lib/libgdk-x11-2.0.so.0.1000.4
+001fe000-00225000 r-xp 00000000 08:02 8491208    /lib/libm-2.5.so
+00225000-00226000 r--p 00026000 08:02 8491208    /lib/libm-2.5.so
+00226000-00227000 rw-p 00027000 08:02 8491208    /lib/libm-2.5.so
+00227000-0023d000 r-xp 00000000 08:02 6081259    /usr/lib/libgdk_pixbuf-2.0.so.0.1000.4
+0023d000-0023e000 rw-p 00016000 08:02 6081259    /usr/lib/libgdk_pixbuf-2.0.so.0.1000.4
+0023e000-00258000 r-xp 00000000 08:02 6080639    /usr/lib/libatk-1.0.so.0.1212.0
+00258000-0025a000 rw-p 0001a000 08:02 6080639    /usr/lib/libatk-1.0.so.0.1212.0
+0025a000-00264000 r-xp 00000000 08:02 8491181    /lib/libnss_files-2.5.so
+00264000-00265000 r--p 00009000 08:02 8491181    /lib/libnss_files-2.5.so
+00265000-00266000 rw-p 0000a000 08:02 8491181    /lib/libnss_files-2.5.so
+00266000-0026e000 r-xp 00000000 08:02 14778697   /usr/lib/libpangocairo-1.0.so.0.1400.9
+0026e000-0026f000 rw-p 00007000 08:02 14778697   /usr/lib/libpangocairo-1.0.so.0.1400.9
+0026f000-0029b000 r-xp 00000000 08:02 14778633   /usr/lib/libpangoft2-1.0.so.0.1400.9
+0029b000-0029c000 rw-p 0002c000 08:02 14778633   /usr/lib/libpangoft2-1.0.so.0.1400.9
+0029c000-0062e000 r-xp 00000000 08:02 14778705   /usr/lib/libgtk-x11-2.0.so.0.1000.4
+0062e000-00634000 rw-p 00391000 08:02 14778705   /usr/lib/libgtk-x11-2.0.so.0.1000.4
+00634000-00635000 rw-p 00634000 00:00 0 
+00635000-00636000 r-xp 00000000 08:02 6160883    /usr/lib/gconv/ISO8859-1.so
+00636000-00638000 rw-p 00000000 08:02 6160883    /usr/lib/gconv/ISO8859-1.so
+00638000-00643000 r-xp 00000000 08:02 7536807    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/libverify.so
+00643000-00644000 rw-p 0000b000 08:02 7536807    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/libverify.so
+00644000-0065b000 r-xp 00000000 08:02 7536808    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/libzip.so
+0065b000-0065c000 rw-p 00017000 08:02 7536808    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/libzip.so
+0065c000-00666000 r-xp 00000000 08:02 6526466    /usr/lib/gtk-2.0/2.10.0/engines/libmist.so
+00666000-00667000 rw-p 00009000 08:02 6526466    /usr/lib/gtk-2.0/2.10.0/engines/libmist.so
+00667000-0066a000 r-xp 00000000 08:02 6525758    /usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-bmp.so
+0066a000-0066b000 rw-p 00002000 08:02 6525758    /usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-bmp.so
+0066b000-00680000 r-xp 00000000 08:02 7536797    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/libnet.so
+00680000-00681000 rw-p 00014000 08:02 7536797    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/libnet.so
+00681000-0068f000 r-xp 00000000 08:02 7536798    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/libnio.so
+0068f000-00690000 rw-p 0000e000 08:02 7536798    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/libnio.so
+00690000-00693000 r-xp 00000000 00:1b 6514943    /misc/clas12/epics/CSS_3.2.16/configuration/org.eclipse.osgi/bundles/236/1/.cp/libswt-gtk-3740.so
+00693000-00694000 rw-p 00002000 00:1b 6514943    /misc/clas12/epics/CSS_3.2.16/configuration/org.eclipse.osgi/bundles/236/1/.cp/libswt-gtk-3740.so
+00694000-00695000 rw-p 00694000 00:00 0 
+00695000-00699000 r-xp 00000000 08:02 8486988    /lib/libgthread-2.0.so.0.1200.3
+00699000-0069a000 rw-p 00003000 08:02 8486988    /lib/libgthread-2.0.so.0.1200.3
+0069a000-0069e000 rwxp 0069a000 00:00 0 
+0069e000-006a2000 r-xp 00000000 08:02 6525764    /usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-png.so
+006a2000-006a3000 rw-p 00003000 08:02 6525764    /usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-png.so
+006a3000-006c6000 r-xp 00000000 08:02 7536784    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/libjava.so
+006c6000-006c7000 rw-p 00022000 08:02 7536784    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/libjava.so
+006c7000-006c9000 r-xp 00000000 08:02 6360839    /usr/lib/pango/1.5.0/modules/pango-basic-fc.so
+006c9000-006ca000 rw-p 00001000 08:02 6360839    /usr/lib/pango/1.5.0/modules/pango-basic-fc.so
+006ca000-006cf000 r-xp 00000000 08:02 6525760    /usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-gif.so
+006cf000-006d0000 rw-p 00005000 08:02 6525760    /usr/lib/gtk-2.0/2.10.0/loaders/libpixbufloader-gif.so
+006d0000-006d2000 r-xp 00000000 00:1b 1649555    /misc/clas12/epics/CSS_3.2.16/configuration/org.eclipse.osgi/bundles/150/1/.cp/os/linux/x86/libunixfile_1_0_0.so
+006d2000-006d3000 rw-p 00001000 00:1b 1649555    /misc/clas12/epics/CSS_3.2.16/configuration/org.eclipse.osgi/bundles/150/1/.cp/os/linux/x86/libunixfile_1_0_0.so
+006d3000-006d4000 r-xp 00000000 08:02 7536783    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/libjaas_unix.so
+006d4000-006d5000 rw-p 00000000 08:02 7536783    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/libjaas_unix.so
+006d7000-006f2000 r-xp 00000000 08:02 8487256    /lib/ld-2.5.so
+006f2000-006f3000 r--p 0001a000 08:02 8487256    /lib/ld-2.5.so
+006f3000-006f4000 rw-p 0001b000 08:02 8487256    /lib/ld-2.5.so
+006f6000-0084d000 r-xp 00000000 08:02 8491201    /lib/libc-2.5.so
+0084d000-0084f000 r--p 00157000 08:02 8491201    /lib/libc-2.5.so
+0084f000-00850000 rw-p 00159000 08:02 8491201    /lib/libc-2.5.so
+00850000-00853000 rw-p 00850000 00:00 0 
+00853000-0085c000 r-xp 00000000 00:1b 6514954    /misc/clas12/epics/CSS_3.2.16/configuration/org.eclipse.osgi/bundles/236/1/.cp/libswt-atk-gtk-3740.so
+0085c000-0085d000 rw-p 00009000 00:1b 6514954    /misc/clas12/epics/CSS_3.2.16/configuration/org.eclipse.osgi/bundles/236/1/.cp/libswt-atk-gtk-3740.so
+0085d000-00867000 r-xp 00000000 00:1b 1626492    /misc/clas12/epics/CSS_3.2.16/configuration/org.eclipse.osgi/bundles/236/1/.cp/libswt-cairo-gtk-3740.so
+00867000-00868000 rw-p 00009000 00:1b 1626492    /misc/clas12/epics/CSS_3.2.16/configuration/org.eclipse.osgi/bundles/236/1/.cp/libswt-cairo-gtk-3740.so
+00868000-0086b000 r-xp 00000000 00:1b 1626497    /misc/clas12/epics/CSS_3.2.16/configuration/org.eclipse.osgi/bundles/236/1/.cp/libswt-gnome-gtk-3740.so
+0086b000-0086c000 rw-p 00002000 00:1b 1626497    /misc/clas12/epics/CSS_3.2.16/configuration/org.eclipse.osgi/bundles/236/1/.cp/libswt-gnome-gtk-3740.so
+0086c000-0086e000 r-xp 00000000 08:02 14778723   /usr/lib/libavahi-glib.so.1.0.1
+0086e000-0086f000 rw-p 00002000 08:02 14778723   /usr/lib/libavahi-glib.so.1.0.1
+00871000-00872000 r-xp 00871000 00:00 0          [vdso]
+00872000-00879000 r-xp 00000000 08:02 14778677   /usr/lib/libpopt.so.0.0.0
+00879000-0087a000 rw-p 00006000 08:02 14778677   /usr/lib/libpopt.so.0.0.0
+0087a000-0087d000 r-xp 00000000 08:02 8491222    /lib/libcap.so.1.10
+0087d000-0087e000 rw-p 00002000 08:02 8491222    /lib/libcap.so.1.10
+00880000-00883000 r-xp 00000000 08:02 8491206    /lib/libdl-2.5.so
+00883000-00884000 r--p 00002000 08:02 8491206    /lib/libdl-2.5.so
+00884000-00885000 rw-p 00003000 08:02 8491206    /lib/libdl-2.5.so
+00887000-00899000 r-xp 00000000 08:02 8491210    /lib/libz.so.1.2.3
+00899000-0089a000 rw-p 00011000 08:02 8491210    /lib/libz.so.1.2.3
+0089c000-008b2000 r-xp 00000000 08:02 8491202    /lib/libpthread-2.5.so
+008b2000-008b3000 r--p 00015000 08:02 8491202    /lib/libpthread-2.5.so
+008b3000-008b4000 rw-p 00016000 08:02 8491202    /lib/libpthread-2.5.so
+008b4000-008b6000 rw-p 008b4000 00:00 0 
+008b8000-008ba000 r-xp 00000000 08:02 14778689   /usr/lib/libXau.so.6.0.0
+008ba000-008bb000 rw-p 00001000 08:02 14778689   /usr/lib/libXau.so.6.0.0
+008bd000-009bc000 r-xp 00000000 08:02 14778691   /usr/lib/libX11.so.6.2.0
+009bc000-009c0000 rw-p 000ff000 08:02 14778691   /usr/lib/libX11.so.6.2.0
+009c2000-009c7000 r-xp 00000000 08:02 14778690   /usr/lib/libXdmcp.so.6.0.0
+009c7000-009c8000 rw-p 00004000 08:02 14778690   /usr/lib/libXdmcp.so.6.0.0
+009ca000-009d9000 r-xp 00000000 08:02 14778698   /usr/lib/libXext.so.6.4.0
+009d9000-009da000 rw-p 0000e000 08:02 14778698   /usr/lib/libXext.so.6.4.0
+009dc000-00a59000 r-xp 00000000 08:02 6094325    /usr/lib/libfreetype.so.6.3.10
+00a59000-00a5c000 rw-p 0007d000 08:02 6094325    /usr/lib/libfreetype.so.6.3.10
+00a5e000-00a85000 r-xp 00000000 08:02 14778632   /usr/lib/libfontconfig.so.1.1.0
+00a85000-00a8d000 rw-p 00027000 08:02 14778632   /usr/lib/libfontconfig.so.1.1.0
+00a8f000-00aae000 r-xp 00000000 08:02 8491209    /lib/libexpat.so.0.5.0
+00aae000-00ab0000 rw-p 0001f000 08:02 8491209    /lib/libexpat.so.0.5.0
+00ab2000-00ad7000 r-xp 00000000 08:02 6080641    /usr/lib/libpng12.so.0.10.0
+00ad7000-00ad8000 rw-p 00024000 08:02 6080641    /usr/lib/libpng12.so.0.10.0
+00ada000-00ae2000 r-xp 00000000 08:02 14778692   /usr/lib/libXrender.so.1.3.0
+00ae2000-00ae3000 rw-p 00007000 08:02 14778692   /usr/lib/libXrender.so.1.3.0
+00ae5000-00aee000 r-xp 00000000 08:02 14778703   /usr/lib/libXcursor.so.1.0.2
+00aee000-00aef000 rw-p 00008000 08:02 14778703   /usr/lib/libXcursor.so.1.0.2
+00af1000-00af3000 r-xp 00000000 08:02 14778699   /usr/lib/libXinerama.so.1.0.0
+00af3000-00af4000 rw-p 00001000 08:02 14778699   /usr/lib/libXinerama.so.1.0.0
+00af6000-00afa000 r-xp 00000000 08:02 14778702   /usr/lib/libXfixes.so.3.1.0
+00afa000-00afb000 rw-p 00003000 08:02 14778702   /usr/lib/libXfixes.so.3.1.0
+00afd000-00b00000 r-xp 00000000 08:02 14778701   /usr/lib/libXrandr.so.2.0.0
+00b00000-00b01000 rw-p 00002000 08:02 14778701   /usr/lib/libXrandr.so.2.0.0
+00b03000-00b0a000 r-xp 00000000 08:02 8491203    /lib/librt-2.5.so
+00b0a000-00b0b000 r--p 00007000 08:02 8491203    /lib/librt-2.5.so
+00b0b000-00b0c000 rw-p 00008000 08:02 8491203    /lib/librt-2.5.so
+00b0c000-00b29000 r-xp 00000000 08:02 14778721   /usr/lib/libdbus-glib-1.so.2.1.0
+00b29000-00b2a000 rw-p 0001d000 08:02 14778721   /usr/lib/libdbus-glib-1.so.2.1.0
+00b2a000-00b4b000 r-xp 00000000 08:02 6081268    /usr/lib/libjpeg.so.62.0.0
+00b4b000-00b4c000 rw-p 00020000 08:02 6081268    /usr/lib/libjpeg.so.62.0.0
+00b4c000-00b54000 r-xp 00000000 08:02 14778711   /usr/lib/libSM.so.6.0.0
+00b54000-00b55000 rw-p 00007000 08:02 14778711   /usr/lib/libSM.so.6.0.0
+00b55000-00b57000 r-xp 00000000 08:02 8491217    /lib/libcom_err.so.2.1
+00b57000-00b58000 rw-p 00001000 08:02 8491217    /lib/libcom_err.so.2.1
+00b58000-00b5a000 r-xp 00000000 08:02 8491213    /lib/libkeyutils-1.2.so
+00b5a000-00b5b000 rw-p 00001000 08:02 8491213    /lib/libkeyutils-1.2.so
+00b5c000-00bf9000 r-xp 00000000 08:02 8491204    /lib/libglib-2.0.so.0.1200.3
+00bf9000-00bfa000 rw-p 0009c000 08:02 8491204    /lib/libglib-2.0.so.0.1200.3
+00bfa000-00c06000 r-xp 00000000 00:1b 2750691    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_1.1.100.v20110505/eclipse_1407.so
+00c06000-00c07000 rw-p 0000c000 00:1b 2750691    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_1.1.100.v20110505/eclipse_1407.so
+00c07000-00c62000 r-xp 00000000 00:1b 6514944    /misc/clas12/epics/CSS_3.2.16/configuration/org.eclipse.osgi/bundles/236/1/.cp/libswt-pi-gtk-3740.so
+00c62000-00c64000 rw-p 0005a000 00:1b 6514944    /misc/clas12/epics/CSS_3.2.16/configuration/org.eclipse.osgi/bundles/236/1/.cp/libswt-pi-gtk-3740.so
+00c64000-00c65000 rw-p 00c64000 00:00 0 
+00c65000-00cab000 r-xp 00000000 08:02 8488115    /lib/libssl.so.0.9.8e
+00cab000-00caf000 rw-p 00045000 08:02 8488115    /lib/libssl.so.0.9.8e
+00caf000-00cc6000 r-xp 00000000 08:02 6073750    /usr/lib/libICE.so.6.3.0
+00cc6000-00cc7000 rw-p 00016000 08:02 6073750    /usr/lib/libICE.so.6.3.0
+00cc7000-00cc9000 rw-p 00cc7000 00:00 0 
+00cc9000-00cde000 r-xp 00000000 08:02 8487253    /lib/libnsl-2.5.so
+00cde000-00cdf000 r--p 00014000 08:02 8487253    /lib/libnsl-2.5.so
+00cdf000-00ce0000 rw-p 00015000 08:02 8487253    /lib/libnsl-2.5.so
+00ce0000-00ce2000 rw-p 00ce0000 00:00 0 
+00ce2000-00ce6000 r-xp 00000000 08:02 14778726   /usr/lib/libORBitCosNaming-2.so.0.1.0
+00ce6000-00ce7000 rw-p 00004000 08:02 14778726   /usr/lib/libORBitCosNaming-2.so.0.1.0
+00ce7000-00ced000 r-xp 00000000 08:02 8491221    /lib/libacl.so.1.1.0
+00ced000-00cee000 rw-p 00005000 08:02 8491221    /lib/libacl.so.1.1.0
+00cee000-00cf2000 r-xp 00000000 08:02 8491180    /lib/libnss_dns-2.5.so
+00cf2000-00cf3000 r--p 00003000 08:02 8491180    /lib/libnss_dns-2.5.so
+00cf3000-00cf4000 rw-p 00004000 08:02 8491180    /lib/libnss_dns-2.5.so
+00cf4000-00d32000 r-xp 00000000 08:02 8491205    /lib/libgobject-2.0.so.0.1200.3
+00d32000-00d33000 rw-p 0003e000 08:02 8491205    /lib/libgobject-2.0.so.0.1200.3
+00d35000-00d37000 r-xp 00000000 08:02 8491207    /lib/libgmodule-2.0.so.0.1200.3
+00d37000-00d38000 rw-p 00002000 08:02 8491207    /lib/libgmodule-2.0.so.0.1200.3
+00d3a000-00d50000 r-xp 00000000 08:02 6072470    /usr/lib/libart_lgpl_2.so.2.3.17
+00d50000-00d51000 rw-p 00016000 08:02 6072470    /usr/lib/libart_lgpl_2.so.2.3.17
+00d53000-00d69000 r-xp 00000000 08:02 8491216    /lib/libselinux.so.1
+00d69000-00d6b000 rw-p 00015000 08:02 8491216    /lib/libselinux.so.1
+00d6d000-00da8000 r-xp 00000000 08:02 8491215    /lib/libsepol.so.1
+00da8000-00da9000 rw-p 0003b000 08:02 8491215    /lib/libsepol.so.1
+00da9000-00db3000 rw-p 00da9000 00:00 0 
+00db5000-00dbc000 r-xp 00000000 08:02 14778700   /usr/lib/libXi.so.6.0.0
+00dbc000-00dbd000 rw-p 00006000 08:02 14778700   /usr/lib/libXi.so.6.0.0
+00dbf000-00dfc000 r-xp 00000000 08:02 6079215    /usr/lib/libpango-1.0.so.0.1400.9
+00dfc000-00dfe000 rw-p 0003c000 08:02 6079215    /usr/lib/libpango-1.0.so.0.1400.9
+00dfe000-01384000 r-xp 00000000 08:02 7536766    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/client/libjvm.so
+01384000-013a5000 rw-p 00586000 08:02 7536766    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/client/libjvm.so
+013a5000-017c5000 rw-p 013a5000 00:00 0 
+02000000-0204e000 r-xp 00000000 08:02 14778718   /usr/lib/libORBit-2.so.0.1.0
+0204e000-02058000 rw-p 0004d000 08:02 14778718   /usr/lib/libORBit-2.so.0.1.0
+0205a000-0208d000 r-xp 00000000 08:02 14778719   /usr/lib/libgconf-2.so.4.1.0
+0208d000-02090000 rw-p 00032000 08:02 14778719   /usr/lib/libgconf-2.so.4.1.0
+02092000-020ec000 r-xp 00000000 08:02 14778613   /usr/lib/libbonobo-2.so.0.0.0
+020ec000-020f6000 rw-p 0005a000 08:02 14778613   /usr/lib/libbonobo-2.so.0.0.0
+02161000-0216d000 r-xp 00000000 08:02 6088998    /usr/lib/libgnome-keyring.so.0.0.1
+0216d000-0216e000 rw-p 0000b000 08:02 6088998    /usr/lib/libgnome-keyring.so.0.0.1
+021dd000-02209000 r-xp 00000000 08:02 6090902    /usr/lib/libgnomecanvas-2.so.0.1400.0
+02209000-0220a000 rw-p 0002b000 08:02 6090902    /usr/lib/libgnomecanvas-2.so.0.1400.0
+023a1000-02427000 r-xp 00000000 08:02 7536773    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/libawt.so
+02427000-0242e000 rw-p 00086000 08:02 7536773    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/libawt.so
+0242e000-02452000 rw-p 0242e000 00:00 0 
+02878000-028a5000 r-xp 00000000 08:02 14778709   /usr/lib/libgssapi_krb5.so.2.2
+028a5000-028a6000 rw-p 0002d000 08:02 14778709   /usr/lib/libgssapi_krb5.so.2.2
+028a8000-028ce000 r-xp 00000000 08:02 14778707   /usr/lib/libk5crypto.so.3.1
+028ce000-028cf000 rw-p 00025000 08:02 14778707   /usr/lib/libk5crypto.so.3.1
+028d1000-029fe000 r-xp 00000000 08:02 14778720   /usr/lib/libxml2.so.2.6.26
+029fe000-02a03000 rw-p 0012d000 08:02 14778720   /usr/lib/libxml2.so.2.6.26
+02a03000-02a04000 rw-p 02a03000 00:00 0 
+02d42000-02d7f000 r-xp 00000000 08:02 8491223    /lib/libdbus-1.so.3.4.0
+02d7f000-02d81000 rw-p 0003d000 08:02 8491223    /lib/libdbus-1.so.3.4.0
+02d83000-02e5d000 r-xp 00000000 08:02 8491225    /lib/libasound.so.2.0.0
+02e5d000-02e62000 rw-p 000d9000 08:02 8491225    /lib/libasound.so.2.0.0
+031fe000-03203000 r-xp 00000000 08:02 6091495    /usr/lib/libXtst.so.6.1.0
+03203000-03204000 rw-p 00004000 08:02 6091495    /usr/lib/libXtst.so.6.1.0
+03232000-0325a000 r-xp 00000000 08:02 14778614   /usr/lib/libaudiofile.so.0.0.2
+0325a000-0325d000 rw-p 00027000 08:02 14778614   /usr/lib/libaudiofile.so.0.0.2
+0325f000-03261000 r-xp 00000000 08:02 8491224    /lib/libutil-2.5.so
+03261000-03262000 r--p 00001000 08:02 8491224    /lib/libutil-2.5.so
+03262000-03263000 rw-p 00002000 08:02 8491224    /lib/libutil-2.5.so
+03265000-03270000 r-xp 00000000 08:02 14778722   /usr/lib/libavahi-common.so.3.4.3
+03270000-03271000 rw-p 0000a000 08:02 14778722   /usr/lib/libavahi-common.so.3.4.3
+03273000-03282000 r-xp 00000000 08:02 14778724   /usr/lib/libavahi-client.so.3.2.1
+03282000-03283000 rw-p 0000e000 08:02 14778724   /usr/lib/libavahi-client.so.3.2.1
+03285000-0328e000 r-xp 00000000 08:02 14778727   /usr/lib/libesd.so.0.2.36
+0328e000-0328f000 rw-p 00009000 08:02 14778727   /usr/lib/libesd.so.0.2.36
+03291000-03297000 r-xp 00000000 08:02 6082287    /usr/lib/libfam.so.0.0.0
+03297000-03298000 rw-p 00006000 08:02 6082287    /usr/lib/libfam.so.0.0.0
+04adb000-04ae2000 r-xp 00000000 08:02 7536795    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/libmanagement.so
+04ae2000-04ae3000 rw-p 00006000 08:02 7536795    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/libmanagement.so
+059f7000-05a05000 r-xp 00000000 08:02 7049533    /usr/lib/gnome-vfs-2.0/modules/libfile.so
+05a05000-05a06000 rw-p 0000d000 08:02 7049533    /usr/lib/gnome-vfs-2.0/modules/libfile.so
+07a35000-07b5f000 r-xp 00000000 08:02 8486935    /lib/libcrypto.so.0.9.8e
+07b5f000-07b73000 rw-p 00129000 08:02 8486935    /lib/libcrypto.so.0.9.8e
+07b73000-07b76000 rw-p 07b73000 00:00 0 
+07b78000-07bd8000 r-xp 00000000 08:02 6078671    /usr/lib/libgnomevfs-2.so.0.1600.2
+07bd8000-07bdb000 rw-p 0005f000 08:02 6078671    /usr/lib/libgnomevfs-2.so.0.1600.2
+07bdd000-07bf2000 r-xp 00000000 08:02 14778611   /usr/lib/libgnome-2.so.0.1600.0
+07bf2000-07bf3000 rw-p 00014000 08:02 14778611   /usr/lib/libgnome-2.so.0.1600.0
+07bf5000-07c85000 r-xp 00000000 08:02 14778452   /usr/lib/libgnomeui-2.so.0.1600.0
+07c85000-07c88000 rw-p 0008f000 08:02 14778452   /usr/lib/libgnomeui-2.so.0.1600.0
+07c88000-07c89000 rw-p 07c88000 00:00 0 
+07c8b000-07cef000 r-xp 00000000 08:02 6075240    /usr/lib/libbonoboui-2.so.0.0.0
+07cef000-07cf2000 rw-p 00063000 08:02 6075240    /usr/lib/libbonoboui-2.so.0.0.0
+07dce000-07ddf000 r-xp 00000000 08:02 8491214    /lib/libresolv-2.5.so
+07ddf000-07de0000 r--p 00010000 08:02 8491214    /lib/libresolv-2.5.so
+07de0000-07de1000 rw-p 00011000 08:02 8491214    /lib/libresolv-2.5.so
+07de1000-07de3000 rw-p 07de1000 00:00 0 
+07de5000-07df9000 r-xp 00000000 08:02 14778600   /usr/lib/libbonobo-activation.so.4.0.0
+07df9000-07dfb000 rw-p 00014000 08:02 14778600   /usr/lib/libbonobo-activation.so.4.0.0
+07e18000-07e1c000 r-xp 00000000 08:02 8491220    /lib/libattr.so.1.1.0
+07e1c000-07e1d000 rw-p 00003000 08:02 8491220    /lib/libattr.so.1.1.0
+07f5b000-07fef000 r-xp 00000000 08:02 14778708   /usr/lib/libkrb5.so.3.3
+07fef000-07ff2000 rw-p 00093000 08:02 14778708   /usr/lib/libkrb5.so.3.3
+07ff4000-07ffc000 r-xp 00000000 08:02 6073049    /usr/lib/libkrb5support.so.0.1
+07ffc000-07ffd000 rw-p 00007000 08:02 6073049    /usr/lib/libkrb5support.so.0.1
+08048000-0804c000 r-xp 00000000 00:1b 5702840    /misc/clas12/epics/CSS_3.2.16/css
+0804c000-0804d000 rw-p 00003000 00:1b 5702840    /misc/clas12/epics/CSS_3.2.16/css
+0927f000-092c8000 r-xp 00000000 08:02 7569413    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/xawt/libmawt.so
+092c8000-092ca000 rw-p 00049000 08:02 7569413    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/xawt/libmawt.so
+092ca000-092cb000 rw-p 092ca000 00:00 0 
+096ff000-0a83a000 rw-p 096ff000 00:00 0          [heap]
+6a24b000-6a333000 rw-p 6a24b000 00:00 0 
+6a333000-6a35f000 r--p 00000000 08:02 6719702    /usr/share/fonts/dejavu-lgc/DejaVuLGCSansMono-BoldOblique.ttf
+6a35f000-6a38d000 r--p 00000000 08:02 6719703    /usr/share/fonts/dejavu-lgc/DejaVuLGCSansMono-Oblique.ttf
+6a38d000-6a3c6000 r--p 00000000 08:02 6719701    /usr/share/fonts/dejavu-lgc/DejaVuLGCSansMono-Bold.ttf
+6a3c6000-6a400000 r--p 00000000 08:02 6719704    /usr/share/fonts/dejavu-lgc/DejaVuLGCSansMono.ttf
+6a400000-6a4b0000 rw-p 6a400000 00:00 0 
+6a4b0000-6a500000 ---p 6a4b0000 00:00 0 
+6a52f000-6a599000 r--p 00000000 08:02 6719693    /usr/share/fonts/dejavu-lgc/DejaVuLGCSans-BoldOblique.ttf
+6a599000-6a600000 r--p 00000000 08:02 6719695    /usr/share/fonts/dejavu-lgc/DejaVuLGCSans-Oblique.ttf
+6a600000-6a6fe000 rw-p 6a600000 00:00 0 
+6a6fe000-6a700000 ---p 6a6fe000 00:00 0 
+6a700000-6a7ff000 rw-p 6a700000 00:00 0 
+6a7ff000-6a800000 ---p 6a7ff000 00:00 0 
+6a800000-6a834000 rw-p 6a800000 00:00 0 
+6a834000-6a900000 ---p 6a834000 00:00 0 
+6a91a000-6a91d000 ---p 6a91a000 00:00 0 
+6a91d000-6a96b000 rw-p 6a91d000 00:00 0 
+6a96b000-6a96e000 ---p 6a96b000 00:00 0 
+6a96e000-6a9bc000 rw-p 6a96e000 00:00 0 
+6a9bc000-6a9bf000 ---p 6a9bc000 00:00 0 
+6a9bf000-6aa0d000 rw-p 6a9bf000 00:00 0 
+6aa0d000-6aa10000 ---p 6aa0d000 00:00 0 
+6aa10000-6aa5e000 rw-p 6aa10000 00:00 0 
+6aa5e000-6aa61000 ---p 6aa5e000 00:00 0 
+6aa61000-6aaaf000 rw-p 6aa61000 00:00 0 
+6aaaf000-6aab2000 ---p 6aaaf000 00:00 0 
+6aab2000-6abfc000 rw-p 6aab2000 00:00 0 
+6abfc000-6ac00000 ---p 6abfc000 00:00 0 
+6ac34000-6ac37000 ---p 6ac34000 00:00 0 
+6ac37000-6ac85000 rw-p 6ac37000 00:00 0 
+6ac85000-6ac88000 ---p 6ac85000 00:00 0 
+6ac88000-6acd6000 rw-p 6ac88000 00:00 0 
+6acd6000-6acd9000 ---p 6acd6000 00:00 0 
+6acd9000-6ad27000 rw-p 6acd9000 00:00 0 
+6ad27000-6ad2a000 ---p 6ad27000 00:00 0 
+6ad2a000-6ad78000 rw-p 6ad2a000 00:00 0 
+6ad78000-6ad7b000 ---p 6ad78000 00:00 0 
+6ad7b000-6adc9000 rw-p 6ad7b000 00:00 0 
+6adc9000-6adcc000 ---p 6adc9000 00:00 0 
+6adcc000-6ae1a000 rw-p 6adcc000 00:00 0 
+6ae1a000-6ae1d000 ---p 6ae1a000 00:00 0 
+6ae1d000-6ae6b000 rw-p 6ae1d000 00:00 0 
+6ae6b000-6ae6e000 ---p 6ae6b000 00:00 0 
+6ae6e000-6aebc000 rw-p 6ae6e000 00:00 0 
+6aebc000-6aebf000 ---p 6aebc000 00:00 0 
+6aebf000-6af0d000 rw-p 6aebf000 00:00 0 
+6af0d000-6af10000 ---p 6af0d000 00:00 0 
+6af10000-6af5e000 rw-p 6af10000 00:00 0 
+6af5e000-6af61000 ---p 6af5e000 00:00 0 
+6af61000-6afaf000 rw-p 6af61000 00:00 0 
+6afaf000-6afb2000 ---p 6afaf000 00:00 0 
+6afb2000-6b100000 rw-p 6afb2000 00:00 0 
+6b10d000-6b110000 ---p 6b10d000 00:00 0 
+6b110000-6b15e000 rw-p 6b110000 00:00 0 
+6b15e000-6b161000 ---p 6b15e000 00:00 0 
+6b161000-6b1af000 rw-p 6b161000 00:00 0 
+6b1af000-6b1b2000 ---p 6b1af000 00:00 0 
+6b1b2000-6b300000 rw-p 6b1b2000 00:00 0 
+6b314000-6b327000 r--s 000dd000 00:1b 6990190    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.jface.text_3.7.2.v20111213-1208.jar
+6b327000-6b333000 r--s 00083000 00:1b 1236697    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.ui.workbench.texteditor_3.7.0.v20110928-1504.jar
+6b333000-6b337000 r--s 00025000 00:1b 2415071    /misc/clas12/epics/CSS_3.2.16/plugins/org.antlr.runtime_3.4.0.jar
+6b337000-6b33a000 r--s 00012000 00:1b 1236706    /misc/clas12/epics/CSS_3.2.16/plugins/org.epics.util_0.3.0.20140409.jar
+6b33a000-6b33f000 r--s 00027000 00:1b 9532683    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.utility.pvmanager.extra_3.2.0.20140409.jar
+6b33f000-6b346000 r--s 000ba000 00:1b 9512733    /misc/clas12/epics/CSS_3.2.16/configuration/org.eclipse.osgi/bundles/83/1/.cp/libs/mysql-connector-java-5.1.18-bin.jar
+6b346000-6b34f000 r--s 0005e000 00:1b 3382258    /misc/clas12/epics/CSS_3.2.16/configuration/org.eclipse.osgi/bundles/264/1/.cp/lib/pvAccessJava-3.0.5.jar
+6b34f000-6b352000 ---p 6b34f000 00:00 0 
+6b352000-6b3a0000 rw-p 6b352000 00:00 0 
+6b3a0000-6b3aa000 r--s 00069000 00:1b 6990200    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.search_3.7.0.v20110928-1504.jar
+6b3aa000-6b3d2000 r--p 00000000 08:02 6460609    /usr/share/fonts/liberation/LiberationSans-Bold.ttf
+6b3d2000-6b3d5000 ---p 6b3d2000 00:00 0 
+6b3d5000-6b423000 rw-p 6b3d5000 00:00 0 
+6b423000-6b426000 ---p 6b423000 00:00 0 
+6b426000-6b474000 rw-p 6b426000 00:00 0 
+6b474000-6b477000 ---p 6b474000 00:00 0 
+6b477000-6b4c5000 rw-p 6b477000 00:00 0 
+6b4c5000-6b4c8000 ---p 6b4c5000 00:00 0 
+6b4c8000-6b516000 rw-p 6b4c8000 00:00 0 
+6b516000-6b519000 ---p 6b516000 00:00 0 
+6b519000-6b567000 rw-p 6b519000 00:00 0 
+6b567000-6b56a000 ---p 6b567000 00:00 0 
+6b56a000-6b5b8000 rw-p 6b56a000 00:00 0 
+6b5b8000-6b5be000 r--s 00037000 00:1b 3947744    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.platform.libs.epics_3.2.0.20140409/lib/jca-2.3.6.jar
+6b5be000-6b5c3000 r--s 00038000 00:1b 3947742    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.platform.libs.epics_3.2.0.20140409/lib/caj-1.1.14.jar
+6b5c6000-6b5c9000 ---p 6b5c6000 00:00 0 
+6b5c9000-6b617000 rw-p 6b5c9000 00:00 0 
+6b626000-6b636000 rw-p 6b626000 00:00 0 
+6b636000-6b650000 r--s 0016d000 00:1b 6990192    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.jgit_1.3.0.201202151440-r.jar
+6b650000-6bd6d000 r--p 00000000 08:02 6460373    /usr/share/icons/hicolor/icon-theme.cache
+6bd6d000-6c35e000 r--p 00000000 08:02 6626665    /usr/share/icons/gnome/icon-theme.cache
+6c35e000-6c361000 ---p 6c35e000 00:00 0 
+6c361000-6c3af000 rw-p 6c361000 00:00 0 
+6c3af000-6c3b2000 ---p 6c3af000 00:00 0 
+6c3b2000-6c4fc000 rw-p 6c3b2000 00:00 0 
+6c4fc000-6c500000 ---p 6c4fc000 00:00 0 
+6c500000-6c506000 r--s 00067000 00:1b 4563181    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.swt.xygraph_2.0.3.20140409.jar
+6c506000-6c508000 r--s 00017000 00:1b 9091737    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.p2.publisher_1.2.0.v20110815-1419.jar
+6c508000-6c50d000 r--s 00044000 00:1b 7105908    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.egit.core_1.3.0.201202151440-r.jar
+6c50d000-6c510000 ---p 6c50d000 00:00 0 
+6c510000-6c55e000 rw-p 6c510000 00:00 0 
+6c55e000-6c561000 ---p 6c55e000 00:00 0 
+6c561000-6c5af000 rw-p 6c561000 00:00 0 
+6c5af000-6c5b2000 ---p 6c5af000 00:00 0 
+6c5b2000-6c6ff000 rw-p 6c5b2000 00:00 0 
+6c6ff000-6c700000 ---p 6c6ff000 00:00 0 
+6c700000-6c703000 r--s 0001e000 00:1b 2750699    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.p2.artifact.repository_1.1.101.v20110815-1419.jar
+6c703000-6c70f000 r--s 00081000 00:1b 10987877   /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.ui.editors_3.7.0.v20110928-1504.jar
+6c70f000-6c713000 r--s 00024000 00:1b 10987876   /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.ui.console_3.5.100.v20111007_r372.jar
+6c714000-6c716000 r--s 00007000 00:1b 9091719    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.p2.extensionlocation_1.2.100.v20110815-1419.jar
+6c716000-6c71d000 r--s 0004c000 00:1b 9091723    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.p2.metadata_2.1.0.v20110815-1419.jar
+6c71d000-6c71f000 r--s 00003000 00:1b 2587838    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.simplepv_1.0.0.20140409.jar
+6c71f000-6c728000 r--s 0006a000 00:1b 4563179    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.swt.widgets_2.0.2.20140409.jar
+6c728000-6c72b000 r--s 00011000 00:1b 1236707    /misc/clas12/epics/CSS_3.2.16/plugins/org.epics.vtype_2.5.0.20140409.jar
+6c72b000-6c743000 r--s 00127000 00:1b 906165     /misc/clas12/epics/CSS_3.2.16/plugins/org.apache.xerces_2.9.0.v201101211617.jar
+6c744000-6c747000 r--s 0000f000 00:1b 2750701    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.p2.core_2.1.1.v20120113-1346.jar
+6c747000-6c74b000 r--s 0002a000 00:1b 2750705    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.p2.engine_2.1.1.R37x_v20111003.jar
+6c74b000-6c74d000 r--s 0000c000 00:1b 9091724    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.p2.operations_2.1.1.R37x_v20111111.jar
+6c74d000-6c74f000 r--s 0000d000 00:1b 6971187    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.p2.ui.sdk.scheduler_1.0.100.v20110815-1419.jar
+6c74f000-6c754000 r--s 00038000 00:1b 10987873   /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.text_3.5.101.v20110928-1504.jar
+6c754000-6c769000 r--s 000c6000 00:1b 3947734    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.opibuilder.widgets_3.2.16.20140409.jar
+6c76b000-6c76e000 r--s 00014000 00:1b 5241972    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.core.jobs_3.5.101.v20120113-1953.jar
+6c76e000-6c76f000 r--s 00006000 00:1b 3947730    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.opibuilder.rcp_3.2.0.20140409.jar
+6c773000-6c77b000 r--s 000a6000 00:1b 3000571    /misc/clas12/epics/CSS_3.2.16/configuration/org.eclipse.osgi/bundles/70/1/.cp/lib/rhino/js.jar
+6c77b000-6c785000 r--s 00080000 00:1b 7105899    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.draw2d_3.7.2.v20111017-2020.jar
+6c785000-6c796000 r--s 000bc000 00:1b 6971199    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.gef_3.7.2.v20111106-2020.jar
+6c79b000-6c7a7000 r--s 00125000 00:1b 4563184    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.trends.databrowser2_3.2.17.20140409.jar
+6c7a7000-6c7a9000 r--s 00004000 00:1b 9532696    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.utility.sysmon_3.0.0.20140409.jar
+6c7a9000-6c7ab000 r--s 00004000 00:1b 4563194    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.utility.eliza_3.0.0.20140409.jar
+6c7ab000-6c7af000 r--s 00056000 00:1b 4896140    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.logbook.ui_3.0.0.20140409.jar
+6c7af000-6c7b2000 ---p 6c7af000 00:00 0 
+6c7b2000-6c8fb000 rw-p 6c7b2000 00:00 0 
+6c8fb000-6c900000 ---p 6c8fb000 00:00 0 
+6c900000-6c901000 r--s 0000b000 00:1b 4563193    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.utility.clock_3.0.0.20140409.jar
+6c901000-6c903000 r--s 00001000 00:1b 4896137    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.examples_1.0.0.20140409.jar
+6c903000-6c905000 r--s 00010000 00:1b 9532689    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.utility.pvmanager.ui.toolbox_3.2.0.20140409.jar
+6c905000-6c907000 r--s 00006000 00:1b 4896131    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.diag.rack_3.0.0.20140409.jar
+6c907000-6c909000 r--s 00007000 00:1b 4896129    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.diag.pvutil_3.0.0.20140409.jar
+6c909000-6c90b000 r--s 00022000 00:1b 3463486    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.diag.pvmanager.probe_2.0.0.20140409.jar
+6c90b000-6c90e000 r--s 0001e000 00:1b 3463485    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.diag.pvfields_3.2.1.20140409.jar
+6c90e000-6c910000 r--s 0002b000 00:1b 3463482    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.diag.epics.pvtree_3.3.0.20140409.jar
+6c910000-6c913000 r--s 0006e000 00:1b 2587839    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.sns.mpsbypasses_3.2.1.20140409.jar
+6c913000-6c915000 r--s 00020000 00:1b 4896133    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.display.pvtable_3.2.1.20140409.jar
+6c915000-6c917000 r--s 00000000 00:1b 4563190    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.ui.preferences_3.2.0.20140409.jar
+6c917000-6c935000 r--s 005f2000 00:1b 3947735    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.opibuilder_3.2.16.20140409.jar
+6c936000-6c939000 r--s 00013000 00:1b 5241968    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.core.expressions_3.4.300.v20110228.jar
+6c939000-6c93a000 r--s 00004000 00:1b 4563186    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.ui.menu.app_3.0.0.20140409.jar
+6c93a000-6c93c000 r--s 00005000 00:1b 2587834    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.security.ui_1.0.0.20140409.jar
+6c93d000-6c965000 r--s 00214000 00:1b 10987879   /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.ui.ide_3.7.0.v20110928-1505.jar
+6c966000-6c97d000 r--s 0042b000 00:1b 9512731    /misc/clas12/epics/CSS_3.2.16/configuration/org.eclipse.osgi/bundles/83/1/.cp/libs/ojdbc6_g.jar
+6c97d000-6c9a4000 r--s 001dd000 00:1b 7105909    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.egit.ui_1.3.0.201202151440-r.jar
+6c9a4000-6c9a7000 ---p 6c9a4000 00:00 0 
+6c9a7000-6c9f5000 rw-p 6c9a7000 00:00 0 
+6c9f5000-6c9f8000 ---p 6c9f5000 00:00 0 
+6c9f8000-6ca46000 rw-p 6c9f8000 00:00 0 
+6ca46000-6ca49000 ---p 6ca46000 00:00 0 
+6ca49000-6ca97000 rw-p 6ca49000 00:00 0 
+6ca97000-6cb00000 r--p 00000000 08:02 6719692    /usr/share/fonts/dejavu-lgc/DejaVuLGCSans-Bold.ttf
+6cb00000-6cc00000 rw-p 6cb00000 00:00 0 
+6cc01000-6cc05000 r--s 000f7000 08:02 7536756    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/ext/localedata.jar
+6cc05000-6cc0c000 r--s 00087000 00:1b 9512732    /misc/clas12/epics/CSS_3.2.16/configuration/org.eclipse.osgi/bundles/83/1/.cp/libs/postgresql-9.2-1001.jdbc4.jar
+6cc0c000-6cc0f000 r--s 00017000 00:1b 6971195    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.security_1.1.1.R37x_v20110822-1018.jar
+6cc0f000-6cc11000 r--s 00013000 00:1b 7105910    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.app_1.3.100.v20110321.jar
+6cc11000-6cc18000 r--s 0003b000 00:1b 10906647   /misc/clas12/epics/CSS_3.2.16/configuration/org.eclipse.osgi/bundles/265/1/.cp/lib/pvDataJava-3.0.3.jar
+6cc18000-6cc19000 r--s 00003000 00:1b 9532695    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.utility.singlesource_1.0.0.20140409.jar
+6cc19000-6cc1b000 r--s 00005000 00:1b 9091720    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.p2.garbagecollector_1.0.200.v20110815-1419.jar
+6cc1b000-6cc1e000 r--s 00015000 00:1b 2750703    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.p2.director_2.1.1.v20111126-0211.jar
+6cc1e000-6cc21000 r--s 0001c000 00:1b 6971183    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.p2.touchpoint.eclipse_2.1.1.v20110815-1419.jar
+6cc21000-6cc24000 r--s 0001a000 00:1b 9091722    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.p2.metadata.repository_1.2.0.v20110815-1419.jar
+6cc24000-6cc27000 r--s 0001c000 00:1b 9532686    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.utility.pvmanager.pva_3.2.0.20140409.jar
+6cc2c000-6cc31000 rw-p 6cc2c000 00:00 0 
+6cc31000-6cc33000 r--s 00001000 00:1b 9532694    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.utility.singlesource.rcp_1.0.0.20140409.jar
+6cc33000-6cca0000 r--p 00000000 08:02 6719696    /usr/share/fonts/dejavu-lgc/DejaVuLGCSans.ttf
+6cca0000-6cca2000 r--s 00000000 08:02 9109969    /var/cache/fontconfig/87f5e051180a7a75f16eb6fe7dbd3749-x86.cache-2
+6cca2000-6cca8000 r--s 00000000 08:02 9109963    /var/cache/fontconfig/b79f3aaa7d385a141ab53ec885cc22a8-x86.cache-2
+6cca8000-6ccab000 r--s 00000000 08:02 9109589    /var/cache/fontconfig/b67b32625a2bb51b023d3814a918f351-x86.cache-2
+6ccab000-6ccb1000 r--s 00000000 08:02 9109609    /var/cache/fontconfig/7ddba6133ef499da58de5e8c586d3b75-x86.cache-2
+6ccb1000-6ccb3000 r--s 00000000 08:02 9109557    /var/cache/fontconfig/e3ead4b767b8819993a6fa3ae306afa9-x86.cache-2
+6ccb3000-6ccbb000 r--s 00000000 08:02 9109588    /var/cache/fontconfig/e19de935dec46bbf3ed114ee4965548a-x86.cache-2
+6ccbb000-6ccc0000 r--s 00000000 08:02 9109968    /var/cache/fontconfig/beeeeb3dfe132a8a0633a017c99ce0c0-x86.cache-2
+6ccc0000-6ccc2000 r--s 00014000 00:1b 1319325    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.ui.intro.universal_3.2.500.v20110510/universal.jar
+6ccc2000-6ccc4000 r--s 00003000 00:1b 6971190    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.p2.updatechecker_1.1.200.v20110815-1419.jar
+6ccc4000-6cd00000 r--s 00629000 00:1b 2415065    /misc/clas12/epics/CSS_3.2.16/plugins/com.ibm.icu_4.4.2.v20110823.jar
+6cd00000-6cdfe000 rw-p 6cd00000 00:00 0 
+6cdfe000-6ce00000 ---p 6cdfe000 00:00 0 
+6ce00000-6ce02000 r--s 00007000 00:1b 2587835    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.security_1.0.0.20140409.jar
+6ce02000-6ce06000 r--s 0001c000 00:1b 6971182    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.p2.repository_2.1.1.v20120113-1346.jar
+6ce06000-6ce1a000 r--s 0021f000 00:1b 6990201    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.swt.gtk.linux.x86_3.7.2.v3740f.jar
+6ce1a000-6ce1d000 ---p 6ce1a000 00:00 0 
+6ce1d000-6ce6b000 rw-p 6ce1d000 00:00 0 
+6ce6b000-6ce6e000 ---p 6ce6b000 00:00 0 
+6ce6e000-6cebc000 rw-p 6ce6e000 00:00 0 
+6cebc000-6cebf000 ---p 6cebc000 00:00 0 
+6cebf000-6cf0d000 rw-p 6cebf000 00:00 0 
+6cf0d000-6cf10000 ---p 6cf0d000 00:00 0 
+6cf10000-6cf5e000 rw-p 6cf10000 00:00 0 
+6cf5e000-6cf61000 ---p 6cf5e000 00:00 0 
+6cf61000-6cfaf000 rw-p 6cf61000 00:00 0 
+6cfaf000-6cfb2000 ---p 6cfaf000 00:00 0 
+6cfb2000-6d100000 rw-p 6cfb2000 00:00 0 
+6d100000-6d101000 r--s 00643000 00:1b 2587830    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.platform.libs.jdbc_1.3.0.20140409.jar
+6d101000-6d148000 r--s 003b3000 00:1b 1236698    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.ui.workbench_3.7.1.v20120104-1859.jar
+6d148000-6d14b000 ---p 6d148000 00:00 0 
+6d14b000-6d199000 rw-p 6d14b000 00:00 0 
+6d199000-6d1ad000 r--s 0013a000 00:1b 6990198    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.osgi_3.7.2.v20120110-1415.jar
+6d1ad000-6d2fc000 rw-p 6d1ad000 00:00 0 
+6d2fc000-6d300000 ---p 6d2fc000 00:00 0 
+6d300000-6d305000 r--s 00021000 00:1b 1236699    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.ui_3.7.0.v20110928-1505.jar
+6d305000-6d306000 r--s 00004000 00:1b 6990202    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.swt_3.7.2.v3740f.jar
+6d306000-6d31a000 r--s 000f3000 00:1b 6990191    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.jface_3.7.0.v20110928-1505.jar
+6d31a000-6d31c000 r--s 00001000 00:1b 9532681    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.utility.pv_3.1.0.20140409.jar
+6d31c000-6d326000 r--s 00250000 08:02 7476667    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/resources.jar
+6d326000-6d327000 r--s 00004000 00:1b 9532684    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.utility.pvmanager.jdbc_3.2.0.20140409.jar
+6d327000-6d329000 r--s 00005000 00:1b 9532691    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.utility.pvmanager.vtype_2.5.0.20140409.jar
+6d329000-6d32e000 r--s 00027000 00:1b 9532693    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.utility.pvmanager_3.2.0.20140409.jar
+6d32e000-6d32f000 ---p 6d32e000 00:00 0 
+6d32f000-6d3af000 rw-p 6d32f000 00:00 0 
+6d3af000-6d3b2000 ---p 6d3af000 00:00 0 
+6d3b2000-6d400000 rw-p 6d3b2000 00:00 0 
+6d400000-6d403000 ---p 6d400000 00:00 0 
+6d403000-6d481000 rw-p 6d403000 00:00 0 
+6d481000-6d484000 ---p 6d481000 00:00 0 
+6d484000-6d4d2000 rw-p 6d484000 00:00 0 
+6d4d2000-6d4d5000 ---p 6d4d2000 00:00 0 
+6d4d5000-6d523000 rw-p 6d4d5000 00:00 0 
+6d523000-6d526000 ---p 6d523000 00:00 0 
+6d526000-6d574000 rw-p 6d526000 00:00 0 
+6d574000-6d575000 ---p 6d574000 00:00 0 
+6d575000-6d640000 rw-p 6d575000 00:00 0 
+6d640000-6d7fd000 r--s 039bf000 08:02 7476668    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/rt.jar
+6d7fd000-6d868000 rw-p 6d7fd000 00:00 0 
+6d868000-6d899000 rw-p 6d868000 00:00 0 
+6d899000-6d8d2000 rw-p 6d899000 00:00 0 
+6d8d2000-6d9ef000 rw-p 6d8d2000 00:00 0 
+6d9ef000-6da0c000 rw-p 6d9ef000 00:00 0 
+6da0c000-6da99000 rw-p 6da0c000 00:00 0 
+6da99000-6dad2000 rw-p 6da99000 00:00 0 
+6dad2000-6dbef000 rw-p 6dad2000 00:00 0 
+6dbef000-6dbff000 rw-p 6dbef000 00:00 0 
+6dbff000-6dc2f000 rw-p 6dbff000 00:00 0 
+6dc2f000-714a0000 rw-p 6dc2f000 00:00 0 
+714a0000-83180000 rw-p 714a0000 00:00 0 
+83180000-8a20a000 rw-p 83180000 00:00 0 
+8a20a000-adc30000 rw-p 8a20a000 00:00 0 
+adc30000-afbf0000 rw-p adc30000 00:00 0 
+afbf0000-b5c30000 rw-p afbf0000 00:00 0 
+b5c30000-b5c31000 r--s 00007000 00:1b 3947732    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.opibuilder.widgets.rcp_3.1.3.20140409.jar
+b5c31000-b5c32000 r--s 00002000 00:1b 4896142    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.logging.ui_3.2.1.20140409.jar
+b5c32000-b5c34000 r--s 0000e000 00:1b 9532682    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.utility.pvmanager.epics_3.2.0.20140409.jar
+b5c34000-b5c37000 r--s 00019000 00:1b 6971192    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.preferences_3.4.2.v20120111-2020.jar
+b5c37000-b5c38000 r--s 00003000 00:1b 9532688    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.utility.pvmanager.sys_3.2.0.20140409.jar
+b5c38000-b5c39000 r--s 0000c000 00:1b 9532687    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.utility.pvmanager.sim_3.2.0.20140409.jar
+b5c39000-b5c3b000 r--s 00066000 00:1b 1236705    /misc/clas12/epics/CSS_3.2.16/plugins/org.epics.pvdata_3.1.1.20140409.jar
+b5c3b000-b5c5b000 rw-p b5c3b000 00:00 0 
+b5c5b000-b5cbb000 rw-p b5c5b000 00:00 0 
+b5cbb000-b648b000 rwxp b5cbb000 00:00 0 
+b648b000-b7cbb000 rw-p b648b000 00:00 0 
+b7cbb000-b7cc3000 rw-s 00000000 08:02 7734655    /tmp/hsperfdata_hpsrun/8136
+b7cc3000-b7cc4000 rw-p b7cc3000 00:00 0 
+b7cc4000-b7cc5000 r--p b7cc4000 00:00 0 
+b7cc5000-b7ccc000 r--s 00000000 08:02 6160957    /usr/lib/gconv/gconv-modules.cache
+b7ccc000-b7ccd000 r--p 03592000 08:02 14909464   /usr/lib/locale/locale-archive
+b7ccd000-b7d06000 r--p 01215000 08:02 14909464   /usr/lib/locale/locale-archive
+b7d06000-b7f06000 r--p 00000000 08:02 14909464   /usr/lib/locale/locale-archive
+b7f06000-b7f08000 rw-p b7f06000 00:00 0 
+b7f08000-b7f09000 r--s 00002000 00:1b 9294755    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.core.runtime.compatibility.registry_3.5.0.v20110505/runtime_registry_compatibility.jar
+b7f09000-b7f0d000 r--s 00029000 00:1b 6971193    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.registry_3.5.101.R37x_v20110810-1611.jar
+b7f0d000-b7f0e000 r--s 00001000 00:1b 4896145    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.openfile_3.2.0.20140409.jar
+b7f0e000-b7f0f000 r--s 00007000 00:1b 2750704    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.p2.directorywatcher_1.0.300.v20110815-1419.jar
+b7f0f000-b7f10000 r--s 000a0000 00:1b 1236704    /misc/clas12/epics/CSS_3.2.16/plugins/org.epics.pvaccess_3.1.1.20140409.jar
+b7f10000-b7f12000 r--s 0000d000 00:1b 906169     /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.apputil_3.0.2.20140409.jar
+b7f12000-b7f13000 r--s 00002000 00:1b 9532685    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.utility.pvmanager.loc_3.2.0.20140409.jar
+b7f13000-b7f14000 r--s 00003000 00:1b 2587836    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.simplepv.pvmanager_1.0.0.20140409.jar
+b7f14000-b7f15000 r--s 00002000 00:1b 4896136    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.email_1.2.0.20140409.jar
+b7f15000-b7f16000 r--s 00006000 00:1b 4896139    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.logbook.sns_3.2.1.20140409.jar
+b7f16000-b7f17000 r--s 00005000 00:1b 4896141    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.logbook_3.1.0.20140409.jar
+b7f17000-b7f19000 r--s 00018000 00:1b 7105911    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.common_3.6.0.v20110523.jar
+b7f19000-b7f1b000 r--s 00005000 00:1b 4563176    /misc/clas12/epics/CSS_3.2.16/plugins/org.csstudio.startup_3.2.0.20140409.jar
+b7f1b000-b7f1d000 r--s 00019000 08:02 7476656    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/jce.jar
+b7f1d000-b7f21000 r--s 0008a000 08:02 7476659    /usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/jsse.jar
+b7f21000-b7f22000 r--s 0000b000 00:1b 2750698    /misc/clas12/epics/CSS_3.2.16/plugins/org.eclipse.equinox.launcher_1.2.0.v20110502.jar
+b7f22000-b7f23000 rw-p b7f22000 00:00 0 
+bfea2000-bfea5000 ---p bfea2000 00:00 0 
+bfea6000-bfef2000 rw-p bffb2000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -Xmx1024m -XX:MaxPermSize=128M -Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.SimpleLog -Dorg.apache.commons.logging.simplelog.defaultlog=fatal -Dpython.cachedir.skip=true -Declipse.p2.unsignedPolicy=allow 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+CLASSPATH=/usr/local/clas12/release/0.1/clon/common/jar/alarm.jar:/usr/local/clas12/release/0.1/clon/common/jar/clonutil.jar:/usr/local/clas12/release/0.1/clon/common/jar/dbutil.jar:/usr/local/clas12/release/0.1/clon/common/jar/ipc.jar:/usr/local/clas12/release/0.1/clon/common/jar/level2.jar:/usr/local/clas12/release/0.1/jar/klg.jar:/usr/local/clas12/release/0.1/jar/jas.jar:/usr/local/clas12/release/0.1/jar/jcchart362Jvc.jar:/usr/local/clas12/release/0.1/jar/jctable362Jvc.jar:/usr/local/clas12/release/0.1/jar/jh.jar:/usr/local/clas12/release/0.1/jar/mysql.jar:/usr/local/clas12/release/0.1/jar/ss.jar:/usr/local/clas12/release/0.1/jar/swingall.jar:/usr/local/clas12/release/0.1/jar/symbeans.jar:/usr/local/clas12/release/0.1/jar/imaginary.jar
+PATH=/apps/Trolltech/qt-creator-2.7.1-src/bin:/apps/Trolltech/Qt/bin:/apps/root/5.34.08/bin:/apps/cernlib/2005/bin:/apps/Xilinx/SDK/2013.2/gnu/arm/lin/bin:/usr/local/clas12/release/0.1/epics/bin/linux-x86:/usr/lib/qt-3.3/bin:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/clas12/release/0.1/R3.14.12.3/base/bin/linux-x86:/usr/local/clas12/release/0.1/R3.14.12.3/extensions/bin/linux-x86:/apps/dim/linux:/apps/smixx/linux:/usr/local/clas12/release/0.1/coda/Linux_i686/bin:/usr/local/clas12/release/0.1/coda/common/scripts:/usr/local/clas12/release/0.1/coda/src/CDEV/bin/Linux:/usr/local/clas12/release/0.1/clon/Linux_i686/bin:/usr/local/clas12/release/0.1/clon/common/scripts:/usr/local/clas12/release/0.1/clon/bin:/usr/local/clas/offline/clas/builds/PRODUCTION/bin/SunOS:/apps/VxWorks55/ppc/host/x86-linux/bin:.
+LD_LIBRARY_PATH=/usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386/client:/usr/lib/jvm/java-1.7.0-oracle-1.7.0.51.i386/jre/lib/i386:/apps/Trolltech/qt-creator-2.7.1-src/lib:/apps/Trolltech/Qt/lib:/apps/root/5.34.08/lib:/usr/local/clas12/release/0.1/epics/qt/epicsqt_v1/ca_framework/plugins:/usr/local/clas12/release/0.1/epics/qt/epicsqt_v1/ca_framework/qwt-5.2.1/lib:/usr/local/lib:/apps/dim/linux:/apps/smixx/linux:/usr/local/clas12/release/0.1/R3.14.12.3/base/lib/linux-x86:/usr/local/clas12/release/0.1/R3.14.12.3/extensions/lib/linux-x86:/usr/local/clas12/release/0.1/coda/Linux_i686/lib:/usr/local/clas12/release/0.1/coda/src/CDEV/lib/Linux:/usr/local/clas12/release/0.1/coda/src/CDEV/lib/Linux:/usr/local/clas12/release/0.1/clon/Linux_i686/lib:/usr/local/clas12/release/0.1/clon/lib
+SHELL=/bin/tcsh
+DISPLAY=localhost:28.0
+HOSTTYPE=i386-linux
+OSTYPE=Linux
+MACHTYPE=i386
+OS=Linux
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x5047e0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x5047e0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x3fc850], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: SIG_IGN, sa_mask[0]=0x00001000, sa_flags=0x10000000
+SIGXFSZ: [libjvm.so+0x3fc850], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x3fc850], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x3fdd40], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x3fee90], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x3fee90], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x3fee90], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x3fee90], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Red Hat Enterprise Linux Client release 5.10 (Tikanga)
+
+uname:Linux 2.6.18-371.6.1.el5PAE #1 SMP Tue Feb 18 11:48:31 EST 2014 i686
+libc:glibc 2.5 NPTL 2.5 
+rlimit: STACK 10240k, CORE 0k, NPROC 64760, NOFILE 1024, AS infinity
+load average:1.18 0.42 0.14
+
+/proc/meminfo:
+MemTotal:      4147480 kB
+MemFree:        928788 kB
+Buffers:        239032 kB
+Cached:        1766056 kB
+SwapCached:          0 kB
+Active:        1761052 kB
+Inactive:      1108192 kB
+HighTotal:     3274792 kB
+HighFree:       638360 kB
+LowTotal:       872688 kB
+LowFree:        290428 kB
+SwapTotal:    16418420 kB
+SwapFree:     16418296 kB
+Dirty:             292 kB
+Writeback:           0 kB
+AnonPages:      864056 kB
+Mapped:          73296 kB
+Slab:           314560 kB
+PageTables:      14160 kB
+NFS_Unstable:        0 kB
+Bounce:              0 kB
+CommitLimit:  18492160 kB
+Committed_AS:  5393124 kB
+VmallocTotal:   116728 kB
+VmallocUsed:     12636 kB
+VmallocChunk:   103632 kB
+HugePages_Total:     0
+HugePages_Free:      0
+HugePages_Rsvd:      0
+Hugepagesize:     2048 kB
+
+
+CPU:total 8 (4 cores per cpu, 1 threads per core) family 6 model 23 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, tsc
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Xeon(R) CPU           E5405  @ 2.00GHz
+stepping	: 10
+cpu MHz		: 1995.017
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc pni monitor ds_cpl vmx tm2 ssse3 cx16 xtpr sse4_1 lahf_lm
+bogomips	: 3990.03
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Xeon(R) CPU           E5405  @ 2.00GHz
+stepping	: 10
+cpu MHz		: 1995.017
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 4
+apicid		: 1
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc pni monitor ds_cpl vmx tm2 ssse3 cx16 xtpr sse4_1 lahf_lm
+bogomips	: 3989.99
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Xeon(R) CPU           E5405  @ 2.00GHz
+stepping	: 10
+cpu MHz		: 1995.017
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 2
+cpu cores	: 4
+apicid		: 2
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc pni monitor ds_cpl vmx tm2 ssse3 cx16 xtpr sse4_1 lahf_lm
+bogomips	: 3990.00
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Xeon(R) CPU           E5405  @ 2.00GHz
+stepping	: 10
+cpu MHz		: 1995.017
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 3
+cpu cores	: 4
+apicid		: 3
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc pni monitor ds_cpl vmx tm2 ssse3 cx16 xtpr sse4_1 lahf_lm
+bogomips	: 3990.00
+
+processor	: 4
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Xeon(R) CPU           E5405  @ 2.00GHz
+stepping	: 10
+cpu MHz		: 1995.017
+cache size	: 6144 KB
+physical id	: 1
+siblings	: 4
+core id		: 0
+cpu cores	: 4
+apicid		: 4
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc pni monitor ds_cpl vmx tm2 ssse3 cx16 xtpr sse4_1 lahf_lm
+bogomips	: 3990.02
+
+processor	: 5
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Xeon(R) CPU           E5405  @ 2.00GHz
+stepping	: 10
+cpu MHz		: 1995.017
+cache size	: 6144 KB
+physical id	: 1
+siblings	: 4
+core id		: 1
+cpu cores	: 4
+apicid		: 5
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc pni monitor ds_cpl vmx tm2 ssse3 cx16 xtpr sse4_1 lahf_lm
+bogomips	: 3990.02
+
+processor	: 6
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Xeon(R) CPU           E5405  @ 2.00GHz
+stepping	: 10
+cpu MHz		: 1995.017
+cache size	: 6144 KB
+physical id	: 1
+siblings	: 4
+core id		: 2
+cpu cores	: 4
+apicid		: 6
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc pni monitor ds_cpl vmx tm2 ssse3 cx16 xtpr sse4_1 lahf_lm
+bogomips	: 3990.01
+
+processor	: 7
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Xeon(R) CPU           E5405  @ 2.00GHz
+stepping	: 10
+cpu MHz		: 1995.017
+cache size	: 6144 KB
+physical id	: 1
+siblings	: 4
+core id		: 3
+cpu cores	: 4
+apicid		: 7
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc pni monitor ds_cpl vmx tm2 ssse3 cx16 xtpr sse4_1 lahf_lm
+bogomips	: 3990.01
+
+
+
+Memory: 4k page, physical 4147480k(928664k free), swap 16418420k(16418296k free)
+
+vm_info: Java HotSpot(TM) Client VM (24.51-b03) for linux-x86 JRE (1.7.0_51-b13), built on Dec 18 2013 18:49:34 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Mon Oct 13 04:00:59 2014
+elapsed time: 99 seconds
+
