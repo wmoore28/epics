@@ -1,0 +1,628 @@
+
+file {
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/beamMod-config.adl"
+	version=030109
+}
+display {
+	object {
+		x=74
+		y=92
+		width=1027
+		height=428
+	}
+	clr=14
+	bclr=13
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=0
+		width=981
+		height=32
+	}
+	"basic attribute" {
+		clr=39
+	}
+}
+"text update" {
+	object {
+		x=825
+		y=5
+		width=140
+		height=22
+	}
+	monitor {
+		chan="iocbeamMod:TOD"
+		clr=0
+		bclr=39
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=136
+		y=5
+		width=80
+		height=22
+	}
+	monitor {
+		chan="scaler_calc1b"
+		clr=0
+		bclr=39
+	}
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+text {
+	object {
+		x=14
+		y=5
+		width=118
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Beam Current (nA):"
+}
+text {
+	object {
+		x=255
+		y=5
+		width=400
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Beam Time Structure - Config"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=103
+		y=41
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="DAQ Status"
+}
+text {
+	object {
+		x=9
+		y=68
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Sequence:"
+	align="horiz. right"
+}
+text {
+	object {
+		x=6
+		y=92
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Read:"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=77
+		y=68
+		width=90
+		height=18
+	}
+	monitor {
+		chan="beamMod:status"
+		clr=0
+		bclr=13
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=78
+		y=92
+		width=30
+		height=18
+	}
+	monitor {
+		chan="beamMod:errors"
+		clr=0
+		bclr=13
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+byte {
+	object {
+		x=113
+		y=88
+		width=80
+		height=20
+	}
+	monitor {
+		chan="beamMod:complete"
+		clr=15
+		bclr=13
+	}
+	sbit=3
+}
+"choice button" {
+	object {
+		x=203
+		y=67
+		width=71
+		height=39
+	}
+	control {
+		chan="beamMod:enable"
+		clr=0
+		bclr=10
+	}
+	clrmod="discrete"
+}
+rectangle {
+	object {
+		x=6
+		y=60
+		width=280
+		height=54
+	}
+	"basic attribute" {
+		clr=9
+		fill="outline"
+	}
+}
+text {
+	object {
+		x=880
+		y=34
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Pulser (kHz)"
+}
+rectangle {
+	object {
+		x=820
+		y=60
+		width=190
+		height=54
+	}
+	"basic attribute" {
+		clr=9
+		fill="outline"
+	}
+}
+"choice button" {
+	object {
+		x=830
+		y=65
+		width=160
+		height=20
+	}
+	control {
+		chan="beamMod:pulser:enable"
+		clr=0
+		bclr=10
+	}
+	clrmod="discrete"
+	stacking="column"
+}
+"text entry" {
+	object {
+		x=834
+		y=87
+		width=155
+		height=19
+	}
+	control {
+		chan="beamMod:pulser:freq"
+		clr=0
+		bclr=10
+	}
+	format="exponential"
+	limits {
+		precSrc="default"
+		precDefault=8
+	}
+}
+text {
+	object {
+		x=385
+		y=39
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Histogram Config"
+}
+text {
+	object {
+		x=647
+		y=36
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Readout Config"
+}
+text {
+	object {
+		x=323
+		y=68
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Tics Per Bin:"
+	align="horiz. right"
+}
+text {
+	object {
+		x=323
+		y=92
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Bin Size (ps):"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=388
+		y=92
+		width=90
+		height=18
+	}
+	monitor {
+		chan="beamMod:binsize:ps"
+		clr=0
+		bclr=13
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=388
+		y=65
+		width=96
+		height=22
+	}
+	control {
+		chan="beamMod:ticsperbin"
+		clr=0
+		bclr=10
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=488
+		y=68
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Min:"
+	align="horiz. right"
+}
+text {
+	object {
+		x=488
+		y=92
+		width=40
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Max:"
+	align="horiz. right"
+}
+rectangle {
+	object {
+		x=292
+		y=60
+		width=320
+		height=54
+	}
+	"basic attribute" {
+		clr=9
+		fill="outline"
+	}
+}
+text {
+	object {
+		x=626
+		y=68
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Dwell (s):"
+	align="horiz. right"
+}
+text {
+	object {
+		x=630
+		y=92
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Prescale:"
+	align="horiz. right"
+}
+"text entry" {
+	object {
+		x=693
+		y=64
+		width=55
+		height=22
+	}
+	control {
+		chan="beamMod:dwell"
+		clr=0
+		bclr=10
+	}
+	limits {
+		precSrc="default"
+	}
+}
+"text entry" {
+	object {
+		x=693
+		y=87
+		width=70
+		height=22
+	}
+	control {
+		chan="beamMod:prescale"
+		clr=0
+		bclr=10
+	}
+	limits {
+		precSrc="default"
+	}
+}
+"text entry" {
+	object {
+		x=532
+		y=64
+		width=70
+		height=22
+	}
+	control {
+		chan="beamMod:tmin"
+		clr=0
+		bclr=10
+	}
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text entry" {
+	object {
+		x=531
+		y=87
+		width=70
+		height=22
+	}
+	control {
+		chan="beamMod:tmax"
+		clr=0
+		bclr=10
+	}
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=756
+		y=68
+		width=50
+		height=18
+	}
+	monitor {
+		chan="beamMod:timer"
+		clr=0
+		bclr=13
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=621
+		y=59
+		width=190
+		height=54
+	}
+	"basic attribute" {
+		clr=9
+		fill="outline"
+	}
+}
+"cartesian plot" {
+	object {
+		x=7
+		y=125
+		width=1004
+		height=268
+	}
+	plotcom {
+		xlabel="Time between hits (TDC)"
+		ylabel="Counts"
+		clr=0
+		bclr=13
+	}
+	count="100"
+	trace[0] {
+		xdata="$(P):xaxis"
+		ydata="$(P):wf:$(C)"
+		data_clr=37
+		yaxis=0
+	}
+	x_axis {
+		rangeStyle="auto-scale"
+	}
+	y1_axis {
+		rangeStyle="auto-scale"
+	}
+	countPvName="100"
+}
+"related display" {
+	object {
+		x=662
+		y=6
+		width=82
+		height=20
+	}
+	display[0] {
+		label="Channel 0"
+		name="beamMod-config.adl"
+		args="P=B_beamMod,C=0"
+	}
+	display[1] {
+		label="Channel 1"
+		name="beamMod-config.adl"
+		args="P=B_beamMod,C=1"
+	}
+	display[2] {
+		label="Channel 2"
+		name="beamMod-config.adl"
+		args="P=B_beamMod,C=2"
+	}
+	display[3] {
+		label="Channel 3"
+		name="beamMod-config.adl"
+		args="P=B_beamMod,C=3"
+	}
+	display[4] {
+		label="Channel Sum"
+		name="beamMod-config.adl"
+		args="P=B_beamMod,C=sum"
+	}
+	clr=0
+	bclr=10
+	label="Menu"
+}

@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/HPS_EPICS.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/HPS_EPICS_remote.adl"
 	version=030109
 }
 display {
 	object {
-		x=10
-		y=80
+		x=0
+		y=37
 		width=240
-		height=835
+		height=690
 	}
 	clr=14
 	bclr=4
@@ -90,7 +90,7 @@ display {
 rectangle {
 	object {
 		x=0
-		y=474
+		y=448
 		width=240
 		height=26
 	}
@@ -101,31 +101,18 @@ rectangle {
 rectangle {
 	object {
 		x=0
-		y=795
+		y=673
 		width=240
-		height=40
+		height=20
 	}
 	"basic attribute" {
 		clr=11
 	}
 }
-text {
-	object {
-		x=113
-		y=820
-		width=100
-		height=16
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="Versions >"
-	align="horiz. right"
-}
 rectangle {
 	object {
 		x=0
-		y=659
+		y=625
 		width=240
 		height=20
 	}
@@ -133,36 +120,10 @@ rectangle {
 		clr=3
 	}
 }
-rectangle {
-	object {
-		x=0
-		y=706
-		width=300
-		height=25
-	}
-	"basic attribute" {
-		clr=11
-	}
-}
-"choice button" {
-	object {
-		x=140
-		y=743
-		width=80
-		height=16
-	}
-	control {
-		chan="hallb_access"
-		clr=14
-		bclr=50
-	}
-	clrmod="discrete"
-	stacking="column"
-}
 "related display" {
 	object {
 		x=20
-		y=450
+		y=425
 		width=20
 		height=20
 	}
@@ -220,7 +181,7 @@ rectangle {
 rectangle {
 	object {
 		x=0
-		y=614
+		y=580
 		width=240
 		height=20
 	}
@@ -252,7 +213,7 @@ image {
 rectangle {
 	object {
 		x=0
-		y=564
+		y=530
 		width=240
 		height=22
 	}
@@ -276,7 +237,7 @@ text {
 text {
 	object {
 		x=70
-		y=455
+		y=429
 		width=120
 		height=15
 	}
@@ -288,7 +249,7 @@ text {
 "related display" {
 	object {
 		x=20
-		y=477
+		y=451
 		width=20
 		height=20
 	}
@@ -303,10 +264,6 @@ text {
 	display[2] {
 		label="Keithley 6221"
 		name="keithley6221.adl"
-	}
-	display[3] {
-		label="Harps"
-		name="harps.adl"
 	}
 	display[4] {
 		label="Flasher"
@@ -335,28 +292,13 @@ text {
 		label="SVT Soft Interlocks"
 		name="svtIntlk.adl"
 	}
-	display[10] {
-		label="Chiller (SVT2)"
-		name="chiller_anova.adl"
-		args="DESC=SVT2,P=HPS_SVT:CHILLER:"
-	}
-	display[11] {
-		label="Chiller (EEL-A20)"
-		name="chiller_anova.adl"
-		args="DESC=EEL-A20,P=HPS_EELA20:CHILLER:"
-	}
-	display[12] {
-		label="Chiller (EEL-A40)"
-		name="chiller_anova.adl"
-		args="DESC=EEL-A40,P=HPS_EELA40:CHILLER:"
-	}
 	clr=14
 	bclr=50
 }
 text {
 	object {
 		x=70
-		y=482
+		y=456
 		width=120
 		height=16
 	}
@@ -368,7 +310,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=635
+		y=601
 		width=20
 		height=20
 	}
@@ -392,7 +334,7 @@ text {
 text {
 	object {
 		x=70
-		y=640
+		y=606
 		width=120
 		height=16
 	}
@@ -404,7 +346,7 @@ text {
 rectangle {
 	object {
 		x=0
-		y=422
+		y=396
 		width=300
 		height=25
 	}
@@ -415,7 +357,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=427
+		y=401
 		width=150
 		height=15
 	}
@@ -423,32 +365,6 @@ text {
 		clr=0
 	}
 	textix="Diagnostics"
-}
-"related display" {
-	object {
-		x=20
-		y=233
-		width=20
-		height=20
-	}
-	display[0] {
-		label="Harps"
-		name="harps.adl"
-	}
-	clr=14
-	bclr=50
-}
-text {
-	object {
-		x=70
-		y=238
-		width=120
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Harps"
 }
 text {
 	object {
@@ -465,7 +381,7 @@ text {
 "related display" {
 	object {
 		x=20
-		y=566
+		y=532
 		width=20
 		height=20
 	}
@@ -506,7 +422,7 @@ text {
 text {
 	object {
 		x=70
-		y=293
+		y=238
 		width=120
 		height=16
 	}
@@ -515,49 +431,10 @@ text {
 	}
 	textix="Voltages"
 }
-text {
-	object {
-		x=70
-		y=265
-		width=120
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Magnets"
-}
 "related display" {
 	object {
 		x=20
-		y=261
-		width=20
-		height=20
-	}
-	display[1] {
-		label="Chicane"
-		name="chicane.adl"
-		args="P=hps_chicane"
-	}
-	display[2] {
-		label="Frascati Magnets"
-		name="minitorus.adl"
-	}
-	display[3] {
-		label="Analyzing Magnet"
-		name="pspec.adl"
-	}
-	display[4] {
-		label="Tagger"
-		name="tagger.adl"
-	}
-	clr=14
-	bclr=50
-}
-"related display" {
-	object {
-		x=20
-		y=289
+		y=234
 		width=20
 		height=20
 	}
@@ -584,7 +461,7 @@ text {
 text {
 	object {
 		x=70
-		y=568
+		y=534
 		width=120
 		height=16
 	}
@@ -619,50 +496,10 @@ text {
 	}
 	textix="Page Experts"
 }
-text {
-	object {
-		x=20
-		y=745
-		width=100
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="IOC access"
-}
-"choice button" {
-	object {
-		x=140
-		y=767
-		width=80
-		height=16
-	}
-	control {
-		chan="mcc_harp_access"
-		clr=14
-		bclr=50
-	}
-	clrmod="discrete"
-	stacking="column"
-}
-text {
-	object {
-		x=20
-		y=767
-		width=100
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="MCC Harp Control"
-	align="horiz. centered"
-}
 "related display" {
 	object {
 		x=41
-		y=635
+		y=601
 		width=20
 		height=20
 	}
@@ -676,33 +513,7 @@ text {
 text {
 	object {
 		x=70
-		y=320
-		width=120
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Motors"
-}
-"related display" {
-	object {
-		x=20
-		y=316
-		width=20
-		height=20
-	}
-	display[0] {
-		label="motor screens"
-		name="motor_screens.adl"
-	}
-	clr=14
-	bclr=50
-}
-text {
-	object {
-		x=70
-		y=400
+		y=347
 		width=120
 		height=16
 	}
@@ -714,7 +525,7 @@ text {
 "related display" {
 	object {
 		x=20
-		y=396
+		y=343
 		width=20
 		height=20
 	}
@@ -758,7 +569,7 @@ text {
 text {
 	object {
 		x=70
-		y=347
+		y=265
 		width=120
 		height=16
 	}
@@ -770,7 +581,7 @@ text {
 "related display" {
 	object {
 		x=20
-		y=343
+		y=261
 		width=20
 		height=20
 	}
@@ -819,7 +630,7 @@ text {
 rectangle {
 	object {
 		x=0
-		y=536
+		y=503
 		width=300
 		height=25
 	}
@@ -830,7 +641,7 @@ rectangle {
 text {
 	object {
 		x=15
-		y=541
+		y=508
 		width=150
 		height=15
 	}
@@ -842,7 +653,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=658
+		y=624
 		width=20
 		height=20
 	}
@@ -856,7 +667,7 @@ text {
 text {
 	object {
 		x=70
-		y=663
+		y=629
 		width=120
 		height=16
 	}
@@ -865,49 +676,10 @@ text {
 	}
 	textix="Probe"
 }
-text {
-	object {
-		x=15
-		y=712
-		width=150
-		height=15
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="Access Controls"
-}
-"related display" {
-	object {
-		x=216
-		y=797
-		width=20
-		height=18
-	}
-	display[0] {
-		label="Production (refresh)"
-		name="HPS_EPICS_refresh.adl"
-		policy="replace display"
-	}
-	clr=14
-	bclr=50
-}
-text {
-	object {
-		x=20
-		y=809
-		width=130
-		height=16
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="Release: v3.0.0"
-}
 "shell command" {
 	object {
 		x=20
-		y=589
+		y=555
 		width=20
 		height=20
 	}
@@ -921,7 +693,7 @@ text {
 text {
 	object {
 		x=70
-		y=594
+		y=560
 		width=120
 		height=16
 	}
@@ -933,7 +705,7 @@ text {
 "shell command" {
 	object {
 		x=20
-		y=612
+		y=578
 		width=20
 		height=20
 	}
@@ -947,7 +719,7 @@ text {
 text {
 	object {
 		x=70
-		y=617
+		y=583
 		width=120
 		height=16
 	}
@@ -958,39 +730,8 @@ text {
 }
 "shell command" {
 	object {
-		x=216
-		y=817
-		width=20
-		height=18
-	}
-	command[1] {
-		label="Development"
-		name="hps_epics dev &"
-	}
-	command[2] {
-		label="Rollback"
-		name="hps_epics rollback &"
-	}
-	clr=14
-	bclr=50
-}
-text {
-	object {
-		x=113
-		y=799
-		width=100
-		height=16
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="Refresh >"
-	align="horiz. right"
-}
-"shell command" {
-	object {
 		x=20
-		y=681
+		y=647
 		width=20
 		height=20
 	}
@@ -1005,7 +746,7 @@ text {
 text {
 	object {
 		x=70
-		y=686
+		y=652
 		width=120
 		height=16
 	}
@@ -1017,7 +758,7 @@ text {
 "related display" {
 	object {
 		x=19
-		y=504
+		y=478
 		width=20
 		height=20
 	}
@@ -1047,7 +788,7 @@ text {
 text {
 	object {
 		x=69
-		y=509
+		y=481
 		width=120
 		height=16
 	}
@@ -1059,7 +800,7 @@ text {
 "related display" {
 	object {
 		x=20
-		y=368
+		y=289
 		width=20
 		height=20
 	}
@@ -1125,7 +866,7 @@ text {
 text {
 	object {
 		x=70
-		y=372
+		y=292
 		width=120
 		height=16
 	}
@@ -1165,8 +906,8 @@ text {
 }
 text {
 	object {
-		x=174
-		y=373
+		x=69
+		y=320
 		width=120
 		height=16
 	}
@@ -1177,8 +918,8 @@ text {
 }
 "related display" {
 	object {
-		x=148
-		y=369
+		x=21
+		y=316
 		width=20
 		height=20
 	}
@@ -1192,8 +933,8 @@ text {
 }
 "related display" {
 	object {
-		x=166
-		y=317
+		x=20
+		y=370
 		width=20
 		height=20
 	}
@@ -1206,27 +947,15 @@ text {
 }
 text {
 	object {
-		x=192
-		y=315
+		x=69
+		y=375
 		width=30
 		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="FSD"
-}
-text {
-	object {
-		x=191
-		y=327
-		width=30
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="STATUS"
+	textix="FSD Status"
 }
 "related display" {
 	object {
