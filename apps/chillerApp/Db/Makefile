@@ -25,6 +25,9 @@ REQ   += presto_settings.req
 DB    += Lauda_XT.db
 PROTO += Lauda_XT.proto
 
+DB    += Lauda_ECO.db
+PROTO += Lauda_ECO.proto
+
 DB    += ecalInterlock.template
 
 #----------------------------------------------------
