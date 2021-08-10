@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/medm/../generalApp/medm/hps_ecal_all.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/hps_ecal_all.adl"
 	version=030109
 }
 display {
 	object {
-		x=98
-		y=85
+		x=88
+		y=77
 		width=951
 		height=665
 	}
@@ -5997,35 +5997,6 @@ text {
 	}
 	textix="Low Limit (C)"
 }
-text {
-	object {
-		x=674
-		y=617
-		width=60
-		height=16
-	}
-	"basic attribute" {
-		clr=2
-	}
-	textix="Firmware Version"
-}
-"text update" {
-	object {
-		x=777
-		y=617
-		width=160
-		height=15
-	}
-	monitor {
-		chan="$(PC)VERSION"
-		clr=0
-		bclr=13
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-	}
-}
 "text update" {
 	object {
 		x=777
@@ -6185,6 +6156,11 @@ rectangle {
 		label="Comm (asyn)"
 		name="chiller_anova.adl"
 		args="P=$(PC),R=ASYN,DESC=HPS-ECAL"
+	}
+	display[1] {
+		label="Expert"
+		name="LaudaECO.adl"
+		args="P=$(PC),DESC=HPS ECAL"
 	}
 	clr=14
 	bclr=4

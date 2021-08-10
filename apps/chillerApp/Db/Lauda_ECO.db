@@ -6,7 +6,7 @@ record(ai,"$(P):STATUS") {
 }
 record(ai,"$(P):GetSP05") {
 	field(DESC,"Read outflow temp limit TiL")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(SP,05) $(PORT)")
@@ -14,7 +14,7 @@ record(ai,"$(P):GetSP05") {
 }
 record(ai,"$(P):GetSP04") {
 	field(DESC,"Read outflow temp limit TiH")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(SP,04) $(PORT)")
@@ -22,21 +22,27 @@ record(ai,"$(P):GetSP04") {
 }
 record(ai,"$(P):GetSP03") {
 	field(DESC,"Read overtemp switch-off point")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(SP,03) $(PORT)")
 }
-record(ai,"$(P):GetSP02") {
+record(mbbi,"$(P):GetSP02") {
 	field(DESC,"Read cooling mode")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
-	field(INP,"@Lauda_ECO.proto getEcoValue(SP,02) $(PORT)")
+	field(INP,"@Lauda_ECO.proto getEcoInt(SP,02) $(PORT)")
+    field(ZRVL,0)
+    field(ONVL,1)
+    field(TWVL,2)
+    field(ZRST,"OFF")
+    field(ONST,"ON")
+    field(TWST,"AUTO")
 }
 record(ai,"$(P):GetSP01") {
 	field(DESC,"Read pump power level")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(FLNK,"$(P):PUMPLEVEL")
@@ -44,7 +50,7 @@ record(ai,"$(P):GetSP01") {
 }
 record(ai,"$(P):GetSP00") {
 	field(DESC,"Read temp set value")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(SP,00) $(PORT)")
@@ -52,21 +58,21 @@ record(ai,"$(P):GetSP00") {
 }
 record(ai,"$(P):GetPV10") {
 	field(DESC,"Read external temp in 0.0001 deg C")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(PV,10) $(PORT)")
 	field(PREC,"4")
 }
 record(ai,"$(P):GetPV01") {
 	field(DESC,"Read controlled temp")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(PV,01) $(PORT)")
 	field(PREC,"3")
 }
 record(ai,"$(P):GetPV00") {
 	field(DESC,"Read external temp")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(PV,00) $(PORT)")
 	field(PREC,"3")
@@ -82,7 +88,7 @@ record(ai,"$(P):GetPV00") {
 }
 record(ai,"$(P):GetPAR14") {
 	field(DESC,"Read setpoint offset")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(PAR,14) $(PORT)")
@@ -90,7 +96,7 @@ record(ai,"$(P):GetPAR14") {
 }
 record(ai,"$(P):GetPAR10") {
 	field(DESC,"Read the control parameter XpF")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(PAR,10) $(PORT)")
@@ -98,7 +104,7 @@ record(ai,"$(P):GetPAR10") {
 }
 record(ai,"$(P):GetPAR09") {
 	field(DESC,"Read the max. outflow temp limit")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(PAR,09) $(PORT)")
@@ -106,7 +112,7 @@ record(ai,"$(P):GetPAR09") {
 }
 record(ai,"$(P):GetPAR07") {
 	field(DESC,"Read the control parameter TdE")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(PAR,07) $(PORT)")
@@ -114,7 +120,7 @@ record(ai,"$(P):GetPAR07") {
 }
 record(ai,"$(P):GetPAR06") {
 	field(DESC,"Read the control parameter TvE")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(PAR,06) $(PORT)")
@@ -122,7 +128,7 @@ record(ai,"$(P):GetPAR06") {
 }
 record(ai,"$(P):GetPAR05") {
 	field(DESC,"Read the control parameter TnE")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(PAR,05) $(PORT)")
@@ -130,7 +136,7 @@ record(ai,"$(P):GetPAR05") {
 }
 record(ai,"$(P):GetPAR04") {
 	field(DESC,"Read the control parameter KpE")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(PAR,04) $(PORT)")
@@ -138,7 +144,7 @@ record(ai,"$(P):GetPAR04") {
 }
 record(ai,"$(P):GetPAR03") {
 	field(DESC,"Read the control parameter Td")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(PAR,03) $(PORT)")
@@ -146,14 +152,14 @@ record(ai,"$(P):GetPAR03") {
 }
 record(ai,"$(P):GetPAR02") {
 	field(DESC,"Read the control parameter Tv")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(PAR,02) $(PORT)")
 }
 record(ai,"$(P):GetPAR01") {
 	field(DESC,"Read the control parameter Tn")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(PAR,01) $(PORT)")
@@ -161,7 +167,7 @@ record(ai,"$(P):GetPAR01") {
 }
 record(ai,"$(P):GetPAR00") {
 	field(DESC,"Read the control parameter Xp")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(PAR,00) $(PORT)")
@@ -169,28 +175,28 @@ record(ai,"$(P):GetPAR00") {
 }
 record(ai,"$(P):GetMODE04") {
 	field(DESC,"Setpoint offset source")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(MODE,04) $(PORT)")
 }
 record(ai,"$(P):GetMODE02") {
 	field(DESC,"Standby operation")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(MODE,02) $(PORT)")
 }
 record(ai,"$(P):GetMODE01") {
 	field(DESC,"Control ")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(MODE,01) $(PORT)")
 }
 record(ai,"$(P):GetMODE00") {
 	field(DESC,"Keypad: 0 = released, 1 = locked. ")
-	field(SCAN,"2 second")
+	field(SCAN,"$(SCAN=2 second)")
 	field(PINI,"YES")
 	field(DTYP,"stream")
 	field(INP,"@Lauda_ECO.proto getEcoValue(MODE,00) $(PORT)")
@@ -207,17 +213,21 @@ record(ao,"$(P):SetSP04") {
 	field(OUT,"@Lauda_ECO.proto setEcoValue(SP,04) $(PORT)")
 	field(PREC,"1")
 }
-record(ao,"$(P):SetSP02") {
+record(mbbo,"$(P):SetSP02") {
 	field(DESC,"Cooling op mode:0=OFF 1=ON 2=AUTO")
 	field(DTYP,"stream")
-	field(OUT,"@Lauda_ECO.proto setEcoValue(SP,02) $(PORT)")
+	field(OUT,"@Lauda_ECO.proto setEcoInt(SP,02) $(PORT)")
+    field(ZRVL,0)
+    field(ONVL,1)
+    field(TWVL,2)
+    field(ZRST,"OFF")
+    field(ONST,"ON")
+    field(TWST,"AUTO")
 }
 record(ao,"$(P):SetSP01") {
 	field(DESC,"Pump power level 1 to 6")
 	field(DTYP,"stream")
 	field(OUT,"@Lauda_ECO.proto setEcoValue(SP,01) $(PORT)")
-	field(DOL,"$(P):SetPL.RVAL NPP NMS")
-	field(OMSL,"closed_loop")
 	field(PREC,"0")
 }
 record(ao,"$(P):SetSP00") {
@@ -226,11 +236,11 @@ record(ao,"$(P):SetSP00") {
 	field(OUT,"@Lauda_ECO.proto setEcoValue(SP,00) $(PORT)")
 	field(PREC,"1")
 }
-record(ao,"$(P):SetPV05") {
-	field(DESC,"Set ext temp via interface")
-	field(DTYP,"stream")
-	field(OUT,"@Lauda_ECO.proto setEcoValue(PV,05) $(PORT)")
-}
+#record(ao,"$(P):SetPV05") {
+#	field(DESC,"Set ext temp via interface")
+#	field(DTYP,"stream")
+#	field(OUT,"@Lauda_ECO.proto setEcoValue(PV,05) $(PORT)")
+#}
 record(ao,"$(P):SetPAR14") {
 	field(DESC,"Write setpoint offset")
 	field(DTYP,"stream")
@@ -385,12 +395,12 @@ record(mbbi,"$(P):PUMPLEVEL") {
 	field(FRVL,"4")
 	field(FVVL,"5")
 	field(SXVL,"6")
-	field(ONST,"LEVEL 1")
-	field(TWST,"LEVEL 2")
-	field(THST,"LEVEL 3")
-	field(FRST,"LEVEL 4")
-	field(FVST,"LEVEL 5")
-	field(SXST,"LEVEL 6")
+	field(ONST,"1")
+	field(TWST,"2")
+	field(THST,"3")
+	field(FRST,"4")
+	field(FVST,"5")
+	field(SXST,"6")
 }
 record(mbbiDirect,"$(P):STAT") {
 	field(DTYP,"Soft Channel")
@@ -430,20 +440,21 @@ record(mbbi,"$(P)_STATUS") {
 }
 
 record(mbbo,"$(P):SetPL") {
-	field(DTYP,"Soft Channel")
-	field(FLNK,"$(P):SetSP01")
 	field(ZRVL,"1")
 	field(ONVL,"2")
 	field(TWVL,"3")
 	field(THVL,"4")
 	field(FRVL,"5")
 	field(FVVL,"6")
-	field(ZRST,"PUMP LEVEL 1")
-	field(ONST,"PUMP LEVEL 2")
-	field(TWST,"PUMP LEVEL 3")
-	field(THST,"PUMP LEVEL 4")
-	field(FRST,"PUMP LEVEL 5")
-	field(FVST,"PUMP LEVEL 6")
+	field(ZRST,"1")
+	field(ONST,"2")
+	field(TWST,"3")
+	field(THST,"4")
+	field(FRST,"5")
+	field(FVST,"6")
+	field(DESC,"Pump power level 1 to 6")
+	field(DTYP,"stream")
+	field(OUT,"@Lauda_ECO.proto setEcoInt(SP,01) $(PORT)")
 }
 record(stringin,"$(P):ReadResponse") {
 	field(DESC,"Read Response")

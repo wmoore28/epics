@@ -15,7 +15,10 @@ setEcoValue {
 }
 
 getEcoInt {out "IN_\$1_\$2"; in "%d";}
-setEcoInt {out "OUT_\$1_\$2_%d"; in "%*s";}
+setEcoInt {
+    out "OUT_\$1_\$2_%d"; in "%*s";
+    @init { out "IN_\$1_\$2"; in "%d"; }
+}
 
 getEcoBinary {out "IN_\$1_\$2"; in "%{0|1}";};
 setEcoBinary {out "OUT_\$1_\$2_%{0|1}"; in "%s";};
