@@ -1,5 +1,6 @@
 record(calc, SVT:daq:feb:all:sem_heartbeat_stat)
 {
+    field(PINI,1)
 	field(SCAN,"Passive")
 	field(INPA,"SVT:daq:feb:0:sem_heartbeat_stat CPP")
 	field(INPB,"SVT:daq:feb:1:sem_heartbeat_stat CPP")
@@ -17,6 +18,7 @@ record(calc, SVT:daq:feb:all:sem_heartbeat_stat)
 
 record(calc, SVT:daq:feb:all:sem_error_stat)
 {
+    field(PINI,1)
 	field(SCAN,"Passive")
 	field(INPA,"SVT:daq:feb:0:sem_error_stat CPP")
 	field(INPB,"SVT:daq:feb:1:sem_error_stat CPP")
@@ -29,4 +31,62 @@ record(calc, SVT:daq:feb:all:sem_error_stat)
 	field(INPI,"SVT:daq:feb:8:sem_error_stat CPP")
 	field(INPJ,"SVT:daq:feb:9:sem_error_stat CPP")
 	field(CALC,"(A>0)||(B>0)||(C>0)||(D>0)||(E>0)||(F>0)||(G>0)||(H>0)||(I>0)||(J>0)")
+}
+
+record(calc, SVT:daq:feb:all:sem_error)
+{
+    field(PINI,1)
+	field(SCAN,"Passive")
+	field(INPA,"SVT:daq:fe:0:seu_stuck CPP")
+	field(INPB,"SVT:daq:fe:1:seu_stuck CPP")
+	field(INPC,"SVT:daq:fe:2:seu_stuck CPP")
+	field(INPD,"SVT:daq:fe:3:seu_stuck CPP")
+	field(INPE,"SVT:daq:fe:4:seu_stuck CPP")
+	field(INPF,"SVT:daq:fe:5:seu_stuck CPP")
+	field(INPG,"SVT:daq:fe:6:seu_stuck CPP")
+	field(INPH,"SVT:daq:fe:7:seu_stuck CPP")
+	field(INPI,"SVT:daq:fe:8:seu_stuck CPP")
+	field(INPJ,"SVT:daq:fe:9:seu_stuck CPP")
+	field(CALC,"A||B||C||D||E||F||G||H||I||J")
+}
+
+record(calc, SVT:daq:dpm:half1:syncerrorcount)
+{
+    field(PINI,1)
+	field(SCAN,"Passive")
+	field(INPA,"SVT:daq:dpm:0:syncerrorcount CPP")
+	field(INPB,"SVT:daq:dpm:1:syncerrorcount CPP")
+	field(INPC,"SVT:daq:dpm:2:syncerrorcount CPP")
+	field(INPD,"SVT:daq:dpm:3:syncerrorcount CPP")
+	field(INPE,"SVT:daq:dpm:4:syncerrorcount CPP")
+	field(INPF,"SVT:daq:dpm:5:syncerrorcount CPP")
+	field(INPG,"SVT:daq:dpm:6:syncerrorcount CPP")
+	field(CALC,"A+B+C+D+E+F+G")
+}
+
+record(calc, SVT:daq:dpm:half2:syncerrorcount)
+{
+    field(PINI,1)
+	field(SCAN,"Passive")
+	field(INPA,"SVT:daq:dpm:7:syncerrorcount CPP")
+	field(INPB,"SVT:daq:dpm:8:syncerrorcount CPP")
+	field(INPC,"SVT:daq:dpm:9:syncerrorcount CPP")
+	field(INPD,"SVT:daq:dpm:10:syncerrorcount CPP")
+	field(INPE,"SVT:daq:dpm:11:syncerrorcount CPP")
+	field(INPF,"SVT:daq:dpm:12:syncerrorcount CPP")
+	field(INPG,"SVT:daq:dpm:13:syncerrorcount CPP")
+	field(CALC,"A+B+C+D+E+F+G")
+}
+
+record(calc, SVT:daq:dpm:all:syncerror)
+{
+    field(PINI,1)
+	field(SCAN,"Passive")
+	field(INPA,"SVT:daq:dpm:half1:syncerrorcount CPP")
+	field(INPB,"SVT:daq:dpm:half2:syncerrorcount CPP")
+	field(CALC,"A+B")
+    field(HIGH,"0.001")
+    field(LOW,"-0.001")
+    field(HSV,"MAJOR")
+    field(LSV,"MAJOR")
 }

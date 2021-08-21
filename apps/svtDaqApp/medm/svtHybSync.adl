@@ -1,17 +1,17 @@
 
 file {
-	name="/usr/clas12/hps/dev/apps/svtDaqApp/medm/svtHybSync.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/svtDaqApp/medm/svtHybSync.adl"
+	version=030109
 }
 display {
 	object {
-		x=2194
-		y=30
-		width=1000
-		height=1100
+		x=528
+		y=64
+		width=842
+		height=1088
 	}
 	clr=14
-	bclr=12
+	bclr=13
 	cmap=""
 	gridSpacing=5
 	gridOn=0
@@ -87,349 +87,47 @@ display {
 		1a7309,
 	}
 }
-text {
+rectangle {
 	object {
-		x=4
-		y=43
-		width=50
-		height=20
+		x=0
+		y=0
+		width=842
+		height=25
 	}
 	"basic attribute" {
-		clr=31
+		clr=19
 	}
-	textix="FEB"
-	align="horiz. centered"
 }
 text {
 	object {
-		x=74
-		y=43
+		x=59
+		y=60
 		width=50
 		height=20
 	}
 	"basic attribute" {
-		clr=31
+		clr=25
 	}
 	textix="Physical Layer"
 	align="horiz. centered"
 }
 text {
 	object {
-		x=521
-		y=5
+		x=371
+		y=3
 		width=100
 		height=18
 	}
 	"basic attribute" {
-		clr=15
+		clr=0
 	}
-	textix="FEB Channel Sync"
+	textix="Hybrid Sync"
 	align="horiz. centered"
 }
 text {
 	object {
-		x=16
-		y=95
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="0"
-	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=87
-		y=95
-		width=45
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:0:layer"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	format="string"
-	limits {
-	}
-}
-text {
-	object {
-		x=16
-		y=196
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="1"
-	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=87
-		y=196
-		width=45
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:1:layer"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	format="string"
-	limits {
-	}
-}
-text {
-	object {
-		x=16
-		y=297
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="2"
-	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=87
-		y=297
-		width=45
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:2:layer"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	format="string"
-	limits {
-	}
-}
-text {
-	object {
-		x=16
-		y=398
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="3"
-	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=87
-		y=398
-		width=45
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:3:layer"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	format="string"
-	limits {
-	}
-}
-text {
-	object {
-		x=16
-		y=499
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="4"
-	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=87
-		y=499
-		width=45
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:4:layer"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	format="string"
-	limits {
-	}
-}
-text {
-	object {
-		x=16
-		y=600
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="5"
-	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=87
-		y=600
-		width=45
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:5:layer"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	format="string"
-	limits {
-	}
-}
-text {
-	object {
-		x=16
-		y=701
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="6"
-	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=87
-		y=701
-		width=45
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:6:layer"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	format="string"
-	limits {
-	}
-}
-text {
-	object {
-		x=16
-		y=802
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="7"
-	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=87
-		y=802
-		width=45
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:7:layer"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	format="string"
-	limits {
-	}
-}
-text {
-	object {
-		x=16
-		y=903
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="8"
-	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=87
-		y=903
-		width=45
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:8:layer"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	format="string"
-	limits {
-	}
-}
-text {
-	object {
-		x=16
-		y=1004
-		width=46
-		height=20
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="9"
-	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=87
-		y=1004
-		width=45
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:map:9:layer"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	format="string"
-	limits {
-	}
-}
-text {
-	object {
-		x=264
-		y=43
+		x=215
+		y=60
 		width=40
 		height=20
 	}
@@ -441,195 +139,26 @@ text {
 }
 text {
 	object {
-		x=337
-		y=43
+		x=134
+		y=59
 		width=40
 		height=20
 	}
 	"basic attribute" {
-		clr=51
+		clr=32
 	}
-	textix="Base"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=439
-		y=43
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="Base"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=493
-		y=43
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="Peak"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=549
-		y=43
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="Base"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=659
-		y=43
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="Base"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=356
-		y=25
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="APV0"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=466
-		y=25
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="APV1"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=576
-		y=25
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="APV2"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=686
-		y=25
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="APV3"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=796
-		y=25
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="APV4"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=391
-		y=43
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="Peak"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=603
-		y=43
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="Peak"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=713
-		y=43
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="Peak"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=823
-		y=43
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="Peak"
+	textix="Hybrid"
 	align="horiz. centered"
 }
 "text update" {
 	object {
-		x=332
-		y=212
+		x=214
+		y=79
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:1:2:0:syncbase_rd"
+		chan="SVT:lv:0:0:sync:sync_rd"
 		clr=31
 		bclr=14
 	}
@@ -639,13 +168,13 @@ text {
 }
 "text update" {
 	object {
-		x=332
-		y=162
+		x=215
+		y=104
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:1:0:0:syncbase_rd"
+		chan="SVT:lv:0:1:sync:sync_rd"
 		clr=31
 		bclr=14
 	}
@@ -655,13 +184,13 @@ text {
 }
 "text update" {
 	object {
-		x=332
-		y=187
+		x=215
+		y=129
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:1:1:0:syncbase_rd"
+		chan="SVT:lv:0:2:sync:sync_rd"
 		clr=31
 		bclr=14
 	}
@@ -671,13 +200,13 @@ text {
 }
 "text update" {
 	object {
-		x=332
-		y=237
+		x=215
+		y=154
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:1:3:0:syncbase_rd"
+		chan="SVT:lv:0:3:sync:sync_rd"
 		clr=31
 		bclr=14
 	}
@@ -687,4469 +216,8 @@ text {
 }
 "text update" {
 	object {
-		x=444
-		y=212
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:2:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=162
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:0:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=187
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:1:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=237
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:3:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=212
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:2:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=162
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:0:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=187
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:1:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=237
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:3:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=212
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:2:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=162
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:0:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=187
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:1:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=237
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:3:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=212
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:2:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=162
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:0:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=187
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:1:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=237
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:3:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=212
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:2:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=162
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:0:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=187
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:1:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=237
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:3:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=212
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:2:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=162
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:0:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=187
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:1:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=237
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:3:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=212
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:2:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=162
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:0:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=187
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:1:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=237
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:3:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=212
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:2:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=162
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:0:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=187
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:1:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=237
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:3:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=212
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:2:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=162
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:0:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=187
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:1:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=237
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:1:3:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=412
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:2:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=362
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:0:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=387
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:1:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=437
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:3:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=412
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:2:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=362
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:0:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=387
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:1:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=437
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:3:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=412
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:2:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=362
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:0:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=387
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:1:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=437
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:3:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=412
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:2:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=362
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:0:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=387
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:1:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=437
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:3:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=412
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:2:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=362
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:0:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=387
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:1:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=437
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:3:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=412
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:2:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=362
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:0:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=387
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:1:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=437
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:3:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=412
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:2:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=362
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:0:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=387
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:1:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=437
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:3:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=412
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:2:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=362
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:0:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=387
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:1:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=437
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:3:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=412
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:2:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=362
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:0:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=387
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:1:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=437
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:3:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=412
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:2:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=362
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:0:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=387
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:1:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=437
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:3:3:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=512
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:2:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=462
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:0:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=487
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:1:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=537
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:3:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=512
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:2:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=462
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:0:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=487
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:1:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=537
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:3:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=512
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:2:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=462
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:0:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=487
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:1:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=537
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:3:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=512
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:2:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=462
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:0:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=487
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:1:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=537
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:3:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=512
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:2:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=462
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:0:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=487
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:1:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=537
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:3:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=512
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:2:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=462
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:0:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=487
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:1:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=537
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:3:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=512
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:2:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=462
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:0:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=487
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:1:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=537
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:3:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=512
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:2:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=462
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:0:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=487
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:1:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=537
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:3:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=512
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:2:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=462
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:0:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=487
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:1:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=537
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:3:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=512
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:2:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=462
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:0:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=487
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:1:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=537
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:4:3:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=612
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:2:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=562
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:0:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=587
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:1:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=637
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:3:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=612
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:2:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=562
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:0:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=587
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:1:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=637
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:3:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=612
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:2:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=562
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:0:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=587
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:1:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=637
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:3:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=612
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:2:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=562
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:0:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=587
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:1:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=637
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:3:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=612
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:2:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=562
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:0:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=587
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:1:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=637
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:3:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=612
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:2:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=562
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:0:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=587
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:1:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=637
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:3:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=612
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:2:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=562
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:0:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=587
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:1:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=637
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:3:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=612
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:2:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=562
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:0:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=587
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:1:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=637
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:3:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=612
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:2:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=562
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:0:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=587
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:1:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=637
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:3:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=612
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:2:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=562
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:0:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=587
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:1:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=637
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:5:3:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=712
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:2:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=662
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:0:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=687
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:1:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=737
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:3:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=712
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:2:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=662
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:0:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=687
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:1:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=737
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:3:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=712
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:2:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=662
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:0:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=687
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:1:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=737
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:3:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=712
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:2:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=662
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:0:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=687
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:1:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=737
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:3:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=712
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:2:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=662
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:0:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=687
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:1:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=737
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:3:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=712
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:2:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=662
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:0:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=687
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:1:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=737
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:3:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=712
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:2:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=662
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:0:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=687
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:1:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=737
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:3:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=712
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:2:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=662
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:0:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=687
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:1:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=737
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:3:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=712
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:2:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=662
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:0:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=687
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:1:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=737
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:3:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=712
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:2:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=662
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:0:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=687
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:1:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=737
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:6:3:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=812
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:2:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=762
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:0:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=787
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:1:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=837
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:3:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=812
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:2:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=762
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:0:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=787
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:1:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=837
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:3:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=812
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:2:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=762
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:0:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=787
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:1:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=837
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:3:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=812
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:2:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=762
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:0:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=787
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:1:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=837
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:3:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=812
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:2:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=762
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:0:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=787
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:1:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=837
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:3:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=812
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:2:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=762
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:0:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=787
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:1:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=837
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:3:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=812
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:2:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=762
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:0:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=787
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:1:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=837
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:3:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=812
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:2:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=762
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:0:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=787
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:1:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=837
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:3:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=812
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:2:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=762
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:0:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=787
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:1:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=837
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:3:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=812
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:2:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=762
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:0:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=787
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:1:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=837
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:7:3:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=912
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:2:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=862
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:0:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=887
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:1:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=937
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:3:0:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=912
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:2:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=862
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:0:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=887
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:1:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=444
-		y=937
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:3:1:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=912
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:2:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=862
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:0:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=887
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:1:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=937
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:3:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=912
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:2:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=862
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:0:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=887
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:1:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=937
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:3:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=912
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:2:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=862
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:0:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=887
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:1:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=937
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:3:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=912
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:2:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=862
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:0:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=887
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:1:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=937
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:3:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=912
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:2:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=862
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:0:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=887
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:1:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=937
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:3:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=912
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:2:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=862
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:0:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=887
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:1:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=937
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:3:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=912
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:2:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=862
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:0:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=887
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:1:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=937
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:3:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=912
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:2:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=862
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:0:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=887
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:1:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=937
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:8:3:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-text {
-	object {
-		x=779
-		y=43
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=51
-	}
-	textix="Base"
-	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=264
-		y=937
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:8:3:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=212
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:1:2:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=162
+		x=215
+		y=179
 		width=51
 		height=20
 	}
@@ -5164,8 +232,8 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=187
+		x=215
+		y=204
 		width=51
 		height=20
 	}
@@ -5180,8 +248,24 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=237
+		x=215
+		y=229
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:1:2:sync:sync_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=254
 		width=51
 		height=20
 	}
@@ -5196,13 +280,13 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=412
+		x=215
+		y=279
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:lv:3:2:sync:sync_rd"
+		chan="SVT:lv:2:0:sync:sync_rd"
 		clr=31
 		bclr=14
 	}
@@ -5212,8 +296,56 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=362
+		x=215
+		y=304
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:2:1:sync:sync_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=329
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:2:2:sync:sync_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=354
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:2:3:sync:sync_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=379
 		width=51
 		height=20
 	}
@@ -5228,8 +360,8 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=387
+		x=215
+		y=404
 		width=51
 		height=20
 	}
@@ -5244,8 +376,24 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=437
+		x=215
+		y=429
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:3:2:sync:sync_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=454
 		width=51
 		height=20
 	}
@@ -5260,24 +408,8 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=512
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:4:2:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=462
+		x=215
+		y=479
 		width=51
 		height=20
 	}
@@ -5292,8 +424,8 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=487
+		x=215
+		y=504
 		width=51
 		height=20
 	}
@@ -5308,8 +440,24 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=537
+		x=215
+		y=529
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:4:2:sync:sync_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=554
 		width=51
 		height=20
 	}
@@ -5324,24 +472,8 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=612
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:5:2:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=562
+		x=215
+		y=579
 		width=51
 		height=20
 	}
@@ -5356,8 +488,8 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=587
+		x=215
+		y=604
 		width=51
 		height=20
 	}
@@ -5372,8 +504,24 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=637
+		x=215
+		y=629
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:5:2:sync:sync_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=654
 		width=51
 		height=20
 	}
@@ -5388,24 +536,8 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=712
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:6:2:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=662
+		x=215
+		y=679
 		width=51
 		height=20
 	}
@@ -5420,8 +552,8 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=687
+		x=215
+		y=704
 		width=51
 		height=20
 	}
@@ -5436,8 +568,24 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=737
+		x=215
+		y=729
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:6:2:sync:sync_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=754
 		width=51
 		height=20
 	}
@@ -5452,24 +600,8 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=812
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:7:2:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=762
+		x=215
+		y=779
 		width=51
 		height=20
 	}
@@ -5484,8 +616,8 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=787
+		x=215
+		y=803
 		width=51
 		height=20
 	}
@@ -5500,8 +632,24 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=837
+		x=215
+		y=829
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:7:2:sync:sync_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=854
 		width=51
 		height=20
 	}
@@ -5516,24 +664,8 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=912
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:8:2:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=862
+		x=215
+		y=879
 		width=51
 		height=20
 	}
@@ -5548,8 +680,8 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=887
+		x=215
+		y=904
 		width=51
 		height=20
 	}
@@ -5564,13 +696,13 @@ text {
 }
 "text update" {
 	object {
-		x=332
-		y=112
+		x=215
+		y=929
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:0:2:0:syncbase_rd"
+		chan="SVT:lv:8:2:sync:sync_rd"
 		clr=31
 		bclr=14
 	}
@@ -5580,8 +712,88 @@ text {
 }
 "text update" {
 	object {
-		x=332
-		y=62
+		x=215
+		y=954
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:8:3:sync:sync_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=979
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:9:0:sync:sync_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=1004
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:9:1:sync:sync_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=1029
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:9:2:sync:sync_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=215
+		y=1054
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:lv:9:3:sync:sync_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=283
+		y=79
 		width=51
 		height=20
 	}
@@ -5596,8 +808,8 @@ text {
 }
 "text update" {
 	object {
-		x=332
-		y=87
+		x=283
+		y=104
 		width=51
 		height=20
 	}
@@ -5612,8 +824,24 @@ text {
 }
 "text update" {
 	object {
-		x=332
-		y=137
+		x=283
+		y=129
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:2:0:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=283
+		y=154
 		width=51
 		height=20
 	}
@@ -5628,13 +856,13 @@ text {
 }
 "text update" {
 	object {
-		x=444
-		y=112
+		x=283
+		y=179
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:0:2:1:syncbase_rd"
+		chan="SVT:daq:1:0:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -5644,13 +872,13 @@ text {
 }
 "text update" {
 	object {
-		x=444
-		y=62
+		x=283
+		y=204
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:0:0:1:syncbase_rd"
+		chan="SVT:daq:1:1:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -5660,13 +888,13 @@ text {
 }
 "text update" {
 	object {
-		x=444
-		y=87
+		x=283
+		y=229
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:0:1:1:syncbase_rd"
+		chan="SVT:daq:1:2:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -5676,13 +904,13 @@ text {
 }
 "text update" {
 	object {
-		x=444
-		y=137
+		x=283
+		y=254
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:0:3:1:syncbase_rd"
+		chan="SVT:daq:1:3:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -5692,584 +920,8 @@ text {
 }
 "text update" {
 	object {
-		x=554
-		y=112
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:2:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=62
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:0:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=87
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:1:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=554
-		y=137
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:3:2:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=112
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:2:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=62
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:0:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=87
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:1:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=664
-		y=137
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:3:3:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=112
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:2:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=62
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:0:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=87
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:1:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=774
-		y=137
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:3:4:syncbase_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=112
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:2:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=62
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:0:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=87
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:1:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=386
-		y=137
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:3:0:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=112
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:2:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=62
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:0:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=87
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:1:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=498
-		y=137
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:3:1:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=112
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:2:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=62
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:0:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=87
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:1:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=608
-		y=137
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:3:2:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=112
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:2:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=62
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:0:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=87
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:1:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=718
-		y=137
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:3:3:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=112
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:2:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=62
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:0:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=87
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:1:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=828
-		y=137
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:daq:0:3:4:syncpeak_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=112
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:0:2:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=62
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:0:0:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=87
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:0:1:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=264
-		y=137
-		width=51
-		height=20
-	}
-	monitor {
-		chan="SVT:lv:0:3:sync:sync_rd"
-		clr=31
-		bclr=14
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=332
-		y=283
+		x=283
+		y=279
 		width=51
 		height=20
 	}
@@ -6284,8 +936,8 @@ text {
 }
 "text update" {
 	object {
-		x=332
-		y=308
+		x=283
+		y=304
 		width=51
 		height=20
 	}
@@ -6300,13 +952,13 @@ text {
 }
 "text update" {
 	object {
-		x=444
-		y=283
+		x=283
+		y=329
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:2:0:1:syncbase_rd"
+		chan="SVT:daq:2:2:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6316,13 +968,13 @@ text {
 }
 "text update" {
 	object {
-		x=444
-		y=308
+		x=283
+		y=354
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:2:1:1:syncbase_rd"
+		chan="SVT:daq:2:3:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6332,13 +984,13 @@ text {
 }
 "text update" {
 	object {
-		x=554
-		y=283
+		x=283
+		y=379
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:2:0:2:syncbase_rd"
+		chan="SVT:daq:3:0:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6348,13 +1000,13 @@ text {
 }
 "text update" {
 	object {
-		x=554
-		y=308
+		x=283
+		y=404
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:2:1:2:syncbase_rd"
+		chan="SVT:daq:3:1:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6364,13 +1016,13 @@ text {
 }
 "text update" {
 	object {
-		x=664
-		y=283
+		x=283
+		y=429
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:2:0:3:syncbase_rd"
+		chan="SVT:daq:3:2:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6380,13 +1032,13 @@ text {
 }
 "text update" {
 	object {
-		x=664
-		y=308
+		x=283
+		y=454
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:2:1:3:syncbase_rd"
+		chan="SVT:daq:3:3:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6396,13 +1048,13 @@ text {
 }
 "text update" {
 	object {
-		x=774
-		y=283
+		x=283
+		y=479
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:2:0:4:syncbase_rd"
+		chan="SVT:daq:4:0:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6412,13 +1064,13 @@ text {
 }
 "text update" {
 	object {
-		x=774
-		y=308
+		x=283
+		y=504
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:2:1:4:syncbase_rd"
+		chan="SVT:daq:4:1:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6428,13 +1080,13 @@ text {
 }
 "text update" {
 	object {
-		x=386
-		y=283
+		x=283
+		y=529
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:2:0:0:syncpeak_rd"
+		chan="SVT:daq:4:2:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6444,13 +1096,13 @@ text {
 }
 "text update" {
 	object {
-		x=386
-		y=308
+		x=283
+		y=554
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:2:1:0:syncpeak_rd"
+		chan="SVT:daq:4:3:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6460,13 +1112,13 @@ text {
 }
 "text update" {
 	object {
-		x=498
-		y=283
+		x=283
+		y=579
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:2:0:1:syncpeak_rd"
+		chan="SVT:daq:5:0:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6476,13 +1128,13 @@ text {
 }
 "text update" {
 	object {
-		x=498
-		y=308
+		x=283
+		y=604
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:2:1:1:syncpeak_rd"
+		chan="SVT:daq:5:1:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6492,13 +1144,13 @@ text {
 }
 "text update" {
 	object {
-		x=608
-		y=283
+		x=283
+		y=629
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:2:0:2:syncpeak_rd"
+		chan="SVT:daq:5:2:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6508,13 +1160,13 @@ text {
 }
 "text update" {
 	object {
-		x=608
-		y=308
+		x=283
+		y=654
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:2:1:2:syncpeak_rd"
+		chan="SVT:daq:5:3:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6524,13 +1176,13 @@ text {
 }
 "text update" {
 	object {
-		x=718
-		y=283
+		x=283
+		y=679
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:2:0:3:syncpeak_rd"
+		chan="SVT:daq:6:0:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6540,13 +1192,13 @@ text {
 }
 "text update" {
 	object {
-		x=718
-		y=308
+		x=283
+		y=704
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:2:1:3:syncpeak_rd"
+		chan="SVT:daq:6:1:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6556,13 +1208,13 @@ text {
 }
 "text update" {
 	object {
-		x=828
-		y=283
+		x=283
+		y=729
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:2:0:4:syncpeak_rd"
+		chan="SVT:daq:6:2:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6572,13 +1224,13 @@ text {
 }
 "text update" {
 	object {
-		x=828
-		y=308
+		x=283
+		y=754
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:2:1:4:syncpeak_rd"
+		chan="SVT:daq:6:3:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6588,13 +1240,13 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=283
+		x=283
+		y=779
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:lv:2:0:sync:sync_rd"
+		chan="SVT:daq:7:0:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6604,13 +1256,13 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=308
+		x=283
+		y=804
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:lv:2:1:sync:sync_rd"
+		chan="SVT:daq:7:1:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6620,8 +1272,104 @@ text {
 }
 "text update" {
 	object {
-		x=332
-		y=992
+		x=283
+		y=829
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:2:0:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=283
+		y=854
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:3:0:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=283
+		y=879
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:0:0:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=283
+		y=904
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:1:0:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=283
+		y=929
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:2:0:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=283
+		y=954
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:3:0:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=283
+		y=979
 		width=51
 		height=20
 	}
@@ -6636,8 +1384,8 @@ text {
 }
 "text update" {
 	object {
-		x=332
-		y=1017
+		x=283
+		y=1004
 		width=51
 		height=20
 	}
@@ -6652,13 +1400,13 @@ text {
 }
 "text update" {
 	object {
-		x=444
-		y=992
+		x=283
+		y=1029
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:9:0:1:syncbase_rd"
+		chan="SVT:daq:9:2:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6668,13 +1416,13 @@ text {
 }
 "text update" {
 	object {
-		x=444
-		y=1017
+		x=283
+		y=1054
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:9:1:1:syncbase_rd"
+		chan="SVT:daq:9:3:0:syncbase_rd"
 		clr=31
 		bclr=14
 	}
@@ -6684,13 +1432,13 @@ text {
 }
 "text update" {
 	object {
-		x=554
-		y=992
+		x=339
+		y=79
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:9:0:2:syncbase_rd"
+		chan="SVT:daq:0:0:0:syncpeak_rd"
 		clr=31
 		bclr=14
 	}
@@ -6700,13 +1448,13 @@ text {
 }
 "text update" {
 	object {
-		x=554
-		y=1017
+		x=339
+		y=104
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:9:1:2:syncbase_rd"
+		chan="SVT:daq:0:1:0:syncpeak_rd"
 		clr=31
 		bclr=14
 	}
@@ -6716,13 +1464,13 @@ text {
 }
 "text update" {
 	object {
-		x=664
-		y=992
+		x=339
+		y=129
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:9:0:3:syncbase_rd"
+		chan="SVT:daq:0:2:0:syncpeak_rd"
 		clr=31
 		bclr=14
 	}
@@ -6732,13 +1480,13 @@ text {
 }
 "text update" {
 	object {
-		x=664
-		y=1017
+		x=339
+		y=154
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:9:1:3:syncbase_rd"
+		chan="SVT:daq:0:3:0:syncpeak_rd"
 		clr=31
 		bclr=14
 	}
@@ -6748,13 +1496,13 @@ text {
 }
 "text update" {
 	object {
-		x=774
-		y=992
+		x=339
+		y=179
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:9:0:4:syncbase_rd"
+		chan="SVT:daq:1:0:0:syncpeak_rd"
 		clr=31
 		bclr=14
 	}
@@ -6764,13 +1512,13 @@ text {
 }
 "text update" {
 	object {
-		x=774
-		y=1017
+		x=339
+		y=204
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:daq:9:1:4:syncbase_rd"
+		chan="SVT:daq:1:1:0:syncpeak_rd"
 		clr=31
 		bclr=14
 	}
@@ -6780,8 +1528,488 @@ text {
 }
 "text update" {
 	object {
-		x=386
-		y=992
+		x=339
+		y=229
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:2:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=254
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:3:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=304
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:1:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=279
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:0:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=329
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:2:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=354
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:3:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=379
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:0:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=404
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:1:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=429
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:2:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=454
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:3:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=479
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:0:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=504
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:1:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=529
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:2:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=554
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:3:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=579
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:0:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=604
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:1:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=629
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:2:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=654
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:3:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=679
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:0:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=704
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:1:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=729
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:2:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=754
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:3:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=779
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:0:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=804
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:1:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=829
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:2:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=854
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:3:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=879
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:0:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=904
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:1:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=929
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:2:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=954
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:3:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=979
 		width=51
 		height=20
 	}
@@ -6796,8 +2024,8 @@ text {
 }
 "text update" {
 	object {
-		x=386
-		y=1017
+		x=339
+		y=1004
 		width=51
 		height=20
 	}
@@ -6812,8 +2040,1256 @@ text {
 }
 "text update" {
 	object {
-		x=498
-		y=992
+		x=339
+		y=1054
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:3:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=1029
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:2:0:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=79
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:0:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=104
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:1:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=129
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:2:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=179
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:0:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=154
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:3:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=204
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:1:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=229
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:2:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=254
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:3:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=279
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:0:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=304
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:1:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=329
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:2:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=354
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:3:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=379
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:0:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=404
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:1:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=429
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:2:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=454
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:3:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=479
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:0:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=504
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:1:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=529
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:2:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=554
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:3:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=579
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:0:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=604
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:1:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=629
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:2:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=654
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:3:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=679
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:0:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=704
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:1:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=729
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:2:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=754
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:3:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=779
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:0:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=804
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:1:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=829
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:2:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=854
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:3:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=879
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:0:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=904
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:1:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=929
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:2:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=954
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:3:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=979
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:0:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=1004
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:1:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=1029
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:2:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=395
+		y=1054
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:3:1:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=451
+		y=80
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:0:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=104
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:1:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=129
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:2:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=154
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:3:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=179
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:0:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=204
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:1:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=229
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:2:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=254
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:3:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=279
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:0:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=304
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:1:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=329
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:2:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=354
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:3:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=379
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:0:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=404
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:1:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=429
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:2:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=454
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:3:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=479
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:0:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=504
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:1:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=554
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:3:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=529
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:2:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=579
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:0:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=604
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:1:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=629
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:2:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=654
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:3:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=679
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:0:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=704
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:1:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=729
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:2:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=754
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:3:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=779
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:0:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=804
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:1:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=829
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:2:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=854
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:3:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=879
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:0:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=904
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:1:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=929
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:2:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=954
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:3:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=979
 		width=51
 		height=20
 	}
@@ -6828,8 +3304,8 @@ text {
 }
 "text update" {
 	object {
-		x=498
-		y=1017
+		x=450
+		y=1004
 		width=51
 		height=20
 	}
@@ -6844,8 +3320,1256 @@ text {
 }
 "text update" {
 	object {
-		x=608
-		y=992
+		x=450
+		y=1029
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:2:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=1054
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:3:1:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=79
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:0:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=104
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:1:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=129
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:2:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=154
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:3:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=179
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:0:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=204
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:1:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=229
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:2:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=254
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:3:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=279
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:0:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=304
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:1:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=329
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:2:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=354
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:3:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=379
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:0:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=404
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:1:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=429
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:2:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=454
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:3:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=479
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:0:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=504
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:1:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=529
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:2:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=554
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:3:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=579
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:0:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=604
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:1:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=629
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:2:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=654
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:3:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=679
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:0:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=704
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:1:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=729
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:2:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=754
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:3:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=779
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:0:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=804
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:1:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=829
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:2:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=854
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:3:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=879
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:0:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=904
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:1:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=929
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:2:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=954
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:3:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=979
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:0:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=1004
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:1:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=1029
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:2:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=506
+		y=1054
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:3:2:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=79
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:0:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=104
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:1:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=129
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:2:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=154
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:3:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=179
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:0:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=204
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:1:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=229
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:2:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=254
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:3:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=279
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:0:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=304
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:1:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=329
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:2:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=354
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:3:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=379
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:0:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=404
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:1:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=429
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:2:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=454
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:3:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=479
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:0:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=504
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:1:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=529
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:2:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=554
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:3:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=579
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:0:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=604
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:1:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=629
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:2:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=654
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:3:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=679
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:0:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=704
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:1:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=729
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:2:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=754
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:3:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=779
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:0:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=804
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:1:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=829
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:2:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=854
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:3:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=879
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:0:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=904
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:1:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=929
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:2:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=954
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:3:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=979
 		width=51
 		height=20
 	}
@@ -6860,8 +4584,8 @@ text {
 }
 "text update" {
 	object {
-		x=608
-		y=1017
+		x=561
+		y=1004
 		width=51
 		height=20
 	}
@@ -6876,8 +4600,1256 @@ text {
 }
 "text update" {
 	object {
-		x=718
-		y=992
+		x=561
+		y=1029
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:2:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=561
+		y=1054
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:3:2:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=79
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:0:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=104
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:1:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=129
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:2:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=154
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:3:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=179
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:0:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=204
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:1:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=229
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:2:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=254
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:3:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=279
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:0:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=304
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:1:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=329
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:2:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=354
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:3:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=379
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:0:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=404
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:1:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=429
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:2:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=454
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:3:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=479
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:0:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=504
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:1:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=529
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:2:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=554
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:3:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=579
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:0:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=604
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:1:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=629
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:2:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=654
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:3:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=679
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:0:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=704
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:1:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=729
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:2:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=754
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:3:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=779
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:0:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=804
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:1:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=829
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:2:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=854
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:3:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=879
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:0:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=904
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:1:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=929
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:2:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=954
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:3:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=979
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:0:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=1004
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:1:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=1029
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:2:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=616
+		y=1054
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:3:3:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=79
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:0:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=104
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:1:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=129
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:2:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=154
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:0:3:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=179
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:0:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=204
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:1:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=229
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:2:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=254
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:1:3:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=279
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:0:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=304
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:1:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=329
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:2:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=354
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:3:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=379
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:0:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=404
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:1:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=429
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:2:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=454
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:3:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=479
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:0:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=504
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:1:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=529
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:2:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=554
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:3:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=579
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:0:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=604
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:1:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=629
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:2:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=654
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:3:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=679
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:0:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=704
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:1:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=729
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:2:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=754
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:3:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=779
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:0:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=804
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:1:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=829
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:2:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=854
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:3:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=879
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:0:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=904
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:1:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=929
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:2:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=954
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:3:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=979
 		width=51
 		height=20
 	}
@@ -6892,8 +5864,8 @@ text {
 }
 "text update" {
 	object {
-		x=718
-		y=1017
+		x=670
+		y=1004
 		width=51
 		height=20
 	}
@@ -6908,8 +5880,1000 @@ text {
 }
 "text update" {
 	object {
-		x=828
-		y=992
+		x=670
+		y=1029
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:2:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=670
+		y=1054
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:3:3:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=279
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:0:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=304
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:1:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=329
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:2:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=354
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:3:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=379
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:0:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=404
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:1:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=429
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:2:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=454
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:3:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=479
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:0:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=504
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:1:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=529
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:2:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=554
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:3:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=579
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:0:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=604
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:1:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=629
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:2:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=654
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:3:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=679
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:0:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=704
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:1:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=729
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:2:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=754
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:3:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=779
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:0:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=804
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:1:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=829
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:2:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=854
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:3:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=879
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:0:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=904
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:1:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=929
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:2:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=954
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:3:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=979
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:0:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=1004
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:1:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=1054
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:3:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=725
+		y=1029
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:9:2:4:syncbase_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=279
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:0:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=304
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:1:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=329
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:2:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=354
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:2:3:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=379
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:0:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=404
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:1:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=429
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:2:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=454
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:3:3:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=479
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:0:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=504
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:1:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=529
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:2:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=554
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:4:3:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=579
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:0:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=604
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:1:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=629
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:2:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=654
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:5:3:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=679
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:0:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=704
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:1:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=729
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:2:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=754
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:6:3:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=779
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:0:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=804
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:1:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=829
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:2:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=854
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:7:3:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=879
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:0:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=904
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:1:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=929
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:2:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=954
+		width=51
+		height=20
+	}
+	monitor {
+		chan="SVT:daq:8:3:4:syncpeak_rd"
+		clr=31
+		bclr=14
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=779
+		y=979
 		width=51
 		height=20
 	}
@@ -6924,8 +6888,8 @@ text {
 }
 "text update" {
 	object {
-		x=828
-		y=1017
+		x=779
+		y=1004
 		width=51
 		height=20
 	}
@@ -6940,13 +6904,13 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=992
+		x=779
+		y=1029
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:lv:9:0:sync:sync_rd"
+		chan="SVT:daq:9:2:4:syncpeak_rd"
 		clr=31
 		bclr=14
 	}
@@ -6956,13 +6920,13 @@ text {
 }
 "text update" {
 	object {
-		x=264
-		y=1017
+		x=779
+		y=1054
 		width=51
 		height=20
 	}
 	monitor {
-		chan="SVT:lv:9:1:sync:sync_rd"
+		chan="SVT:daq:9:3:4:syncpeak_rd"
 		clr=31
 		bclr=14
 	}
@@ -6972,282 +6936,138 @@ text {
 }
 oval {
 	object {
-		x=196
-		y=62
-		width=20
-		height=20
+		x=174
+		y=82
+		width=15
+		height=15
 	}
 	"basic attribute" {
-		clr=20
+		clr=15
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A=!21"
+		calc="A=15"
 		chan="SVT:lv:0:0:sync:sync_rd"
 	}
 }
 oval {
 	object {
-		x=196
-		y=62
-		width=20
-		height=20
+		x=174
+		y=107
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A=31"
-		chan="SVT:lv:0:0:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=87
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
+		calc="A=15"
 		chan="SVT:lv:0:1:sync:sync_rd"
 	}
 }
 oval {
 	object {
-		x=196
-		y=87
-		width=20
-		height=20
+		x=174
+		y=132
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A=31"
-		chan="SVT:lv:0:1:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=112
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
+		calc="A=15"
 		chan="SVT:lv:0:2:sync:sync_rd"
 	}
 }
 oval {
 	object {
-		x=196
-		y=112
-		width=20
-		height=20
+		x=174
+		y=157
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A=31"
-		chan="SVT:lv:0:2:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=137
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
+		calc="A=15"
 		chan="SVT:lv:0:3:sync:sync_rd"
 	}
 }
 oval {
 	object {
-		x=196
-		y=137
-		width=20
-		height=20
+		x=174
+		y=182
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A=31"
-		chan="SVT:lv:0:3:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=162
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
+		calc="A=15"
 		chan="SVT:lv:1:0:sync:sync_rd"
 	}
 }
 oval {
 	object {
-		x=196
-		y=162
-		width=20
-		height=20
+		x=174
+		y=207
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A=31"
-		chan="SVT:lv:1:0:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=187
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
+		calc="A=15"
 		chan="SVT:lv:1:1:sync:sync_rd"
 	}
 }
 oval {
 	object {
-		x=196
-		y=187
-		width=20
-		height=20
+		x=174
+		y=232
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A=31"
-		chan="SVT:lv:1:1:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=212
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
+		calc="A=15"
 		chan="SVT:lv:1:2:sync:sync_rd"
 	}
 }
 oval {
 	object {
-		x=196
-		y=212
-		width=20
-		height=20
+		x=174
+		y=257
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A=31"
-		chan="SVT:lv:1:2:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=237
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
+		calc="A=15"
 		chan="SVT:lv:1:3:sync:sync_rd"
 	}
 }
 oval {
 	object {
-		x=196
-		y=237
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=15
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=31"
-		chan="SVT:lv:1:3:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=283
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:2:0:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=283
-		width=20
-		height=20
+		x=174
+		y=282
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7260,26 +7080,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=308
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:2:1:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=308
-		width=20
-		height=20
+		x=174
+		y=307
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7292,26 +7096,42 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=362
-		width=20
-		height=20
+		x=174
+		y=332
+		width=15
+		height=15
 	}
 	"basic attribute" {
-		clr=20
+		clr=15
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:3:0:sync:sync_rd"
+		calc="A=31"
+		chan="SVT:lv:2:2:sync:sync_rd"
 	}
 }
 oval {
 	object {
-		x=196
-		y=362
-		width=20
-		height=20
+		x=174
+		y=357
+		width=15
+		height=15
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=31"
+		chan="SVT:lv:2:3:sync:sync_rd"
+	}
+}
+oval {
+	object {
+		x=174
+		y=382
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7324,26 +7144,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=387
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:3:1:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=387
-		width=20
-		height=20
+		x=174
+		y=407
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7356,26 +7160,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=412
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:3:2:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=412
-		width=20
-		height=20
+		x=174
+		y=432
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7388,26 +7176,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=437
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:3:3:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=437
-		width=20
-		height=20
+		x=174
+		y=457
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7420,26 +7192,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=462
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:4:0:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=462
-		width=20
-		height=20
+		x=174
+		y=482
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7452,26 +7208,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=487
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:4:1:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=487
-		width=20
-		height=20
+		x=174
+		y=507
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7484,26 +7224,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=512
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:4:2:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=512
-		width=20
-		height=20
+		x=174
+		y=532
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7516,26 +7240,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=537
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:4:3:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=537
-		width=20
-		height=20
+		x=174
+		y=557
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7548,26 +7256,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=562
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:5:0:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=562
-		width=20
-		height=20
+		x=174
+		y=582
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7580,26 +7272,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=587
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:5:1:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=587
-		width=20
-		height=20
+		x=174
+		y=607
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7612,26 +7288,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=612
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:5:2:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=612
-		width=20
-		height=20
+		x=174
+		y=632
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7644,26 +7304,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=637
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:5:3:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=637
-		width=20
-		height=20
+		x=174
+		y=657
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7676,26 +7320,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=662
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:6:0:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=662
-		width=20
-		height=20
+		x=174
+		y=682
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7708,26 +7336,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=687
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:6:1:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=687
-		width=20
-		height=20
+		x=174
+		y=707
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7740,26 +7352,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=712
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:6:2:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=712
-		width=20
-		height=20
+		x=174
+		y=732
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7772,26 +7368,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=737
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:6:3:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=737
-		width=20
-		height=20
+		x=174
+		y=757
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7804,26 +7384,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=762
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:7:0:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=762
-		width=20
-		height=20
+		x=174
+		y=782
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7836,26 +7400,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=787
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:7:1:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=787
-		width=20
-		height=20
+		x=174
+		y=806
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7868,26 +7416,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=812
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:7:2:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=812
-		width=20
-		height=20
+		x=174
+		y=832
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7900,26 +7432,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=837
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:7:3:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=837
-		width=20
-		height=20
+		x=174
+		y=857
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7932,26 +7448,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=862
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:8:0:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=862
-		width=20
-		height=20
+		x=174
+		y=882
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7964,26 +7464,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=887
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:8:1:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=887
-		width=20
-		height=20
+		x=174
+		y=907
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -7996,26 +7480,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=912
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:8:2:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=912
-		width=20
-		height=20
+		x=174
+		y=932
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -8028,26 +7496,10 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=937
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:8:3:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=937
-		width=20
-		height=20
+		x=174
+		y=959
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -8060,26 +7512,42 @@ oval {
 }
 oval {
 	object {
-		x=196
-		y=992
-		width=20
-		height=20
+		x=174
+		y=982
+		width=15
+		height=15
 	}
 	"basic attribute" {
-		clr=20
+		clr=15
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A=!21"
+		calc="A=30"
 		chan="SVT:lv:9:0:sync:sync_rd"
 	}
 }
 oval {
 	object {
-		x=196
-		y=992
-		width=20
-		height=20
+		x=174
+		y=1007
+		width=15
+		height=15
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=25"
+		chan="SVT:lv:9:1:sync:sync_rd"
+	}
+}
+oval {
+	object {
+		x=174
+		y=1032
+		width=15
+		height=15
 	}
 	"basic attribute" {
 		clr=15
@@ -8087,529 +7555,1993 @@ oval {
 	"dynamic attribute" {
 		vis="calc"
 		calc="A=31"
-		chan="SVT:lv:9:0:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=1017
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=!21"
-		chan="SVT:lv:9:1:sync:sync_rd"
-	}
-}
-oval {
-	object {
-		x=196
-		y=1017
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=15
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=31"
-		chan="SVT:lv:9:1:sync:sync_rd"
+		chan="SVT:lv:9:2:sync:sync_rd"
 	}
 }
 composite {
 	object {
-		x=160
-		y=43
-		width=40
-		height=994
+		x=174
+		y=1057
+		width=15
+		height=15
+	}
+	"composite name"=""
+	children {
+		oval {
+			object {
+				x=174
+				y=1057
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=15
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=31"
+				chan="SVT:lv:9:3:sync:sync_rd"
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=174
+		y=82
+		width=15
+		height=990
+	}
+	"composite name"=""
+	children {
+		oval {
+			object {
+				x=174
+				y=307
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:2:1:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=282
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:2:0:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=257
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:1:3:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=232
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:1:2:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=207
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:1:1:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=182
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:1:0:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=157
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:0:3:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=132
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:0:2:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=107
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:0:1:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=82
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:0:0:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=332
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:2:2:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=357
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:2:3:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=382
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:3:0:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=407
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:3:1:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=432
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:3:2:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=457
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:3:3:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=482
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:4:0:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=507
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:4:1:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=532
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:4:2:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=557
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:4:3:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=582
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:5:0:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=607
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:5:1:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=632
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:5:2:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=657
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:5:3:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=682
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:6:0:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=707
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:6:1:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=732
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:6:2:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=757
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:6:3:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=782
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:7:0:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=806
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:7:1:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=832
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:7:2:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=857
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:7:3:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=882
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:8:0:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=907
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:8:1:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=932
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:8:2:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=959
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:8:3:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=982
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:9:0:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=1007
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:9:1:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=1032
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:9:2:sync:sync_rd"
+			}
+		}
+		oval {
+			object {
+				x=174
+				y=1057
+				width=15
+				height=15
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="calc"
+				calc="A=!21"
+				chan="SVT:lv:9:3:sync:sync_rd"
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=725
+		y=79
+		width=105
+		height=195
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=779
+				y=254
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:1:3:4:syncpeak_rd"
+				clr=13
+				bclr=13
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=725
+				y=254
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:1:3:4:syncbase_rd"
+				clr=13
+				bclr=13
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=725
+				y=229
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:1:2:4:syncbase_rd"
+				clr=13
+				bclr=13
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=779
+				y=229
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:1:2:4:syncpeak_rd"
+				clr=13
+				bclr=13
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=779
+				y=204
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:1:1:4:syncpeak_rd"
+				clr=13
+				bclr=13
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=725
+				y=204
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:1:1:4:syncbase_rd"
+				clr=13
+				bclr=13
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=725
+				y=179
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:1:0:4:syncbase_rd"
+				clr=13
+				bclr=13
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=779
+				y=179
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:1:0:4:syncpeak_rd"
+				clr=13
+				bclr=13
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=779
+				y=154
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:0:3:4:syncpeak_rd"
+				clr=13
+				bclr=13
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=725
+				y=129
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:0:2:4:syncbase_rd"
+				clr=13
+				bclr=13
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=779
+				y=129
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:0:2:4:syncpeak_rd"
+				clr=13
+				bclr=13
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=725
+				y=154
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:0:3:4:syncbase_rd"
+				clr=13
+				bclr=13
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=725
+				y=104
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:0:1:4:syncbase_rd"
+				clr=13
+				bclr=13
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=779
+				y=104
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:0:1:4:syncpeak_rd"
+				clr=13
+				bclr=13
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=725
+				y=79
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:0:0:4:syncbase_rd"
+				clr=13
+				bclr=13
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=779
+				y=79
+				width=51
+				height=20
+			}
+			monitor {
+				chan="SVT:daq:0:0:4:syncpeak_rd"
+				clr=13
+				bclr=13
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=131
+		y=83
+		width=46
+		height=995
 	}
 	"composite name"=""
 	children {
 		text {
 			object {
-				x=160
+				x=134
+				y=83
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="0"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=108
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="1"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=133
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="2"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=158
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="3"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=183
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="0"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=208
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="1"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=233
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="2"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=258
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="3"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
 				y=283
 				width=40
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=32
 			}
 			textix="0"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
+				x=134
 				y=308
 				width=40
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=32
 			}
 			textix="1"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
+				x=131
+				y=333
+				width=46
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="2"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=131
+				y=358
+				width=46
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="3"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=383
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="0"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=408
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="1"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=433
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="2"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=458
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="3"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=483
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="0"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=508
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="1"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=533
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="2"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=558
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="3"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=583
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="0"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=608
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="1"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=633
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="2"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=658
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="3"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=683
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="0"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=708
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="1"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=733
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="2"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=758
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="3"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=783
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="0"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=808
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="1"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=833
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="2"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=858
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="3"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=883
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="0"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=908
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="1"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=933
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="2"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=958
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="3"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=983
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="0"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=134
+				y=1008
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="1"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=131
+				y=1033
+				width=46
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="2"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=131
+				y=1058
+				width=46
+				height=20
+			}
+			"basic attribute" {
+				clr=32
+			}
+			textix="3"
+			align="horiz. centered"
+		}
+	}
+}
+composite {
+	object {
+		x=315
+		y=43
+		width=483
+		height=20
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=428
 				y=43
 				width=40
 				height=20
 			}
 			"basic attribute" {
-				clr=31
+				clr=0
 			}
-			textix="Hybrid"
+			textix="APV1"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
+				x=315
+				y=43
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=0
+			}
+			textix="APV0"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=539
+				y=43
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=0
+			}
+			textix="APV2"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=649
+				y=43
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=0
+			}
+			textix="APV3"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=758
+				y=43
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=0
+			}
+			textix="APV4"
+			align="horiz. centered"
+		}
+	}
+}
+composite {
+	object {
+		x=288
+		y=62
+		width=536
+		height=20
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=288
 				y=62
 				width=40
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=51
+			}
+			textix="Base"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=344
+				y=62
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Peak"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=400
+				y=62
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Base"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=456
+				y=62
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Peak"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=511
+				y=62
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Base"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=566
+				y=62
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Peak"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=621
+				y=62
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Base"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=675
+				y=62
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Peak"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=730
+				y=62
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Base"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=784
+				y=62
+				width=40
+				height=20
+			}
+			"basic attribute" {
+				clr=51
+			}
+			textix="Peak"
+			align="horiz. centered"
+		}
+	}
+}
+composite {
+	object {
+		x=-2
+		y=121
+		width=46
+		height=921
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=-2
+				y=121
+				width=46
+				height=20
+			}
+			"basic attribute" {
+				clr=15
 			}
 			textix="0"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
-				y=87
-				width=40
+				x=-2
+				y=222
+				width=46
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=15
 			}
 			textix="1"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
-				y=112
-				width=40
+				x=-2
+				y=321
+				width=46
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=15
 			}
 			textix="2"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
-				y=137
-				width=40
+				x=-2
+				y=421
+				width=46
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=15
 			}
 			textix="3"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
-				y=162
-				width=40
+				x=-2
+				y=521
+				width=46
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=15
 			}
-			textix="0"
+			textix="4"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
-				y=187
-				width=40
+				x=-2
+				y=621
+				width=46
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=15
 			}
-			textix="1"
+			textix="5"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
-				y=212
-				width=40
+				x=-2
+				y=721
+				width=46
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=15
 			}
-			textix="2"
+			textix="6"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
-				y=237
-				width=40
+				x=-2
+				y=821
+				width=46
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=15
 			}
-			textix="3"
+			textix="7"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
-				y=362
-				width=40
+				x=-2
+				y=921
+				width=46
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=15
 			}
-			textix="0"
+			textix="8"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
-				y=387
-				width=40
+				x=-2
+				y=1022
+				width=46
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=15
 			}
-			textix="1"
+			textix="9"
+			align="horiz. centered"
+		}
+	}
+}
+text {
+	object {
+		x=-4
+		y=60
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	textix="FEB"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=62
+		y=121
+		width=45
+		height=921
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=62
+				y=222
+				width=45
+				height=20
+			}
+			"basic attribute" {
+				clr=25
+			}
+			textix="L0-1b"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
-				y=412
-				width=40
+				x=62
+				y=121
+				width=45
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=25
 			}
-			textix="2"
+			textix="L0-1t"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
-				y=437
-				width=40
+				x=62
+				y=321
+				width=45
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=25
 			}
-			textix="3"
+			textix="L2-3t"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
-				y=462
-				width=40
+				x=62
+				y=421
+				width=45
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=25
 			}
-			textix="0"
+			textix="L2-3b"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
-				y=487
-				width=40
+				x=62
+				y=521
+				width=45
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=25
 			}
-			textix="1"
+			textix="L4t"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
-				y=512
-				width=40
+				x=62
+				y=621
+				width=45
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=25
 			}
-			textix="2"
+			textix="L4b"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
-				y=537
-				width=40
+				x=62
+				y=721
+				width=45
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=25
 			}
-			textix="3"
+			textix="L5t"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
-				y=562
-				width=40
+				x=62
+				y=821
+				width=45
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=25
 			}
-			textix="0"
+			textix="L5b"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
-				y=587
-				width=40
+				x=62
+				y=921
+				width=45
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=25
 			}
-			textix="1"
+			textix="L6t"
 			align="horiz. centered"
 		}
 		text {
 			object {
-				x=160
-				y=612
-				width=40
+				x=62
+				y=1022
+				width=45
 				height=20
 			}
 			"basic attribute" {
-				clr=30
+				clr=25
 			}
-			textix="2"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=160
-				y=637
-				width=40
-				height=20
-			}
-			"basic attribute" {
-				clr=30
-			}
-			textix="3"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=160
-				y=662
-				width=40
-				height=20
-			}
-			"basic attribute" {
-				clr=30
-			}
-			textix="0"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=160
-				y=687
-				width=40
-				height=20
-			}
-			"basic attribute" {
-				clr=30
-			}
-			textix="1"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=160
-				y=712
-				width=40
-				height=20
-			}
-			"basic attribute" {
-				clr=30
-			}
-			textix="2"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=160
-				y=737
-				width=40
-				height=20
-			}
-			"basic attribute" {
-				clr=30
-			}
-			textix="3"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=160
-				y=762
-				width=40
-				height=20
-			}
-			"basic attribute" {
-				clr=30
-			}
-			textix="0"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=160
-				y=787
-				width=40
-				height=20
-			}
-			"basic attribute" {
-				clr=30
-			}
-			textix="1"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=160
-				y=812
-				width=40
-				height=20
-			}
-			"basic attribute" {
-				clr=30
-			}
-			textix="2"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=160
-				y=837
-				width=40
-				height=20
-			}
-			"basic attribute" {
-				clr=30
-			}
-			textix="3"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=160
-				y=862
-				width=40
-				height=20
-			}
-			"basic attribute" {
-				clr=30
-			}
-			textix="0"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=160
-				y=887
-				width=40
-				height=20
-			}
-			"basic attribute" {
-				clr=30
-			}
-			textix="1"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=160
-				y=912
-				width=40
-				height=20
-			}
-			"basic attribute" {
-				clr=30
-			}
-			textix="2"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=160
-				y=937
-				width=40
-				height=20
-			}
-			"basic attribute" {
-				clr=30
-			}
-			textix="3"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=160
-				y=992
-				width=40
-				height=20
-			}
-			"basic attribute" {
-				clr=30
-			}
-			textix="0"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=160
-				y=1017
-				width=40
-				height=20
-			}
-			"basic attribute" {
-				clr=30
-			}
-			textix="1"
+			textix="L6b"
 			align="horiz. centered"
 		}
 	}

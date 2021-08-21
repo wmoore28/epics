@@ -1,0 +1,15 @@
+file pic32.template
+{
+	pattern {P, R, PORT}
+	{"B_FT_FLASHER", ":asyn", "L0"}
+}	
+file pic32chan.template
+{
+	pattern {P, PORT, CH, X, Y}
+	{"B_FT_FLASHER", "L0", "0", "3" ,"213"}
+	{"B_FT_FLASHER", "L0", "1", "4" ,"214"}
+	{"B_FT_FLASHER", "L0", "2", "5" ,"215"}
+	{"B_FT_FLASHER", "L0", "3", "6" ,"216"}
+	{"B_FT_FLASHER", "L0", "4", "7" ,"217"}
+	{"B_FT_FLASHER", "L0", "5", "8" ,"218"}
+}	

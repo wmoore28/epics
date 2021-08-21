@@ -13,6 +13,7 @@ DB_INSTALLS += $(AUTOSAVE)/asApp/Db/save_restoreStatus.db
 # Create and install (or just install)
 # databases, templates, substitutions like this
 DB += chicane.db
+DB += chicane-alarm.db
 
 REQ += chicane_settings.req
 

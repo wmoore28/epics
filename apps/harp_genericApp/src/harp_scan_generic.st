@@ -516,6 +516,7 @@ ss harp_scan_snc {
 /*close the file  and scp to mcc*/
       if ((fd > 0) && (fd != ioGlobalStdGet(1)) ) {
          close(fd);
+// This is proven unreliable and a bad idea.  Changed to a cronjob in 2018.
          //scp_clon01(shortname, motor_name, 5);
       }
 
@@ -605,7 +606,7 @@ int open_file(char *fname, char *motor_name, char *shortname)
 
 /* add an hour because of DST and ioc time one hour behind */
 
-/*    lclTimePtr->tm_hour++; */
+    lclTimePtr->tm_hour++;
 
     fileDate[0] = '\0'; 
     thename[0] = '\0';

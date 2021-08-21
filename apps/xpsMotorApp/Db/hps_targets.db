@@ -32,7 +32,9 @@ record(calc, "$(pref)hps:target_at_home") {
 }
 record(ao,"$(pref)hps:target:a"){
   field(DTYP,"Soft Channel")
-  field(VAL,"14.8455")
+#field(VAL,"14.8455")
+#field(VAL,"20.264")
+  field(VAL,"16.264")
   field(PINI, "YES")
   field(SCAN, "Passive")
   field(PREC, "3")
@@ -54,7 +56,9 @@ record(calc, "$(pref)hps:target_at_a") {
 }
 record(ao,"$(pref)hps:target:b"){
   field(DTYP,"Soft Channel")
-  field(VAL,"24.764")
+#field(VAL,"24.764")
+#field(VAL,"30.264")
+  field(VAL,"26.2658")
   field(PINI, "YES")
   field(SCAN, "Passive")
   field(PREC, "3")
@@ -118,5 +122,32 @@ record(calc, "$(pref)hps:target_at_d") {
   field(INPE, "$(pref)hps:target:motionCondit")
   field(SCAN, ".2 second")
   field(CALC, "(ABS(A-B)<E)&&(C=1)?1:0")
+}
+
+record(calcout,"$(pref)hps:target:calc") {
+    field(SCAN,"5 second")
+    field(INPA,"$(pref)hps:target_at_home")
+    field(INPB,"$(pref)hps:target_at_a")
+    field(INPC,"$(pref)hps:target_at_b")
+    field(INPD,"$(pref)hps:target_at_c")
+    field(INPE,"$(pref)hps:target_at_d")
+    field(CALC,"A=1?0:(B=1?1:(C=1?2:(D=1?3:E=1?4:5)))")
+    field(OUT,"$(pref)hps:target:type PP")
+    field(OOPT,"Every Time")
+    field(DOPT,"Use CALC")
+}
+record(mbbi,"$(pref)hps:target:type") {
+    field(ZRVL,"0")
+    field(ONVL,"1")
+    field(TWVL,"2")
+    field(THVL,"3")
+    field(FRVL,"4")
+    field(FVVL,"5")
+    field(ZRST,"Empty")
+    field(ONST,"8 um W")
+    field(TWST,"20 um W")
+    field(THST,"12C")
+    field(FRST,"15 um W")
+    field(FVST,"Unknown")
 }
 

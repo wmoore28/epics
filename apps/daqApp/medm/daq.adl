@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/./daqApp/medm/daq.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/daqApp/medm/daq.adl"
 	version=030109
 }
 display {
 	object {
-		x=280
-		y=245
-		width=168
-		height=203
+		x=98
+		y=48
+		width=420
+		height=320
 	}
 	clr=14
 	bclr=12
@@ -87,21 +87,10 @@ display {
 		1a7309,
 	}
 }
-rectangle {
-	object {
-		x=16
-		y=27
-		width=75
-		height=15
-	}
-	"basic attribute" {
-		clr=9
-	}
-}
 text {
 	object {
-		x=23
-		y=11
+		x=17
+		y=61
 		width=60
 		height=15
 	}
@@ -112,74 +101,40 @@ text {
 }
 text {
 	object {
-		x=20
-		y=27
+		x=264
+		y=61
 		width=60
 		height=15
 	}
 	"basic attribute" {
 		clr=0
 	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=1"
-		chan="ts_status_ttl"
-	}
-	textix="Running"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=19
-		y=27
-		width=70
-		height=15
-	}
-	"basic attribute" {
-		clr=0
-	}
-	"dynamic attribute" {
-		vis="calc"
-		calc="A=0"
-		chan="ts_status_ttl"
-	}
-	textix="Not Running"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=103
-		y=11
-		width=60
-		height=15
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="Livetime"
+	textix="Livetime (%)"
 }
 "text update" {
 	object {
-		x=101
-		y=27
+		x=343
+		y=61
 		width=50
 		height=15
 	}
 	monitor {
-		chan="HPSTRIGSC_LIVETIME"
+		chan="B_DAQ_HPS:TS:livetime"
 		clr=0
 		bclr=9
 	}
 	align="horiz. centered"
 	limits {
+		precSrc="default"
+		precDefault=2
 	}
 }
 "related display" {
 	object {
-		x=18
-		y=54
+		x=5
+		y=270
 		width=130
-		height=36
+		height=37
 	}
 	display[0] {
 		name="rebootTDAQ.adl"
@@ -190,8 +145,8 @@ text {
 }
 "related display" {
 	object {
-		x=18
-		y=97
+		x=140
+		y=270
 		width=130
 		height=37
 	}
@@ -204,8 +159,8 @@ text {
 }
 "related display" {
 	object {
-		x=17
-		y=141
+		x=273
+		y=270
 		width=130
 		height=37
 	}
@@ -215,4 +170,186 @@ text {
 	clr=0
 	bclr=10
 	label="Reboot FULL DAQ"
+}
+"text update" {
+	object {
+		x=124
+		y=61
+		width=100
+		height=15
+	}
+	monitor {
+		chan="B_DAQ_HPS:coda_status"
+		clr=0
+		bclr=9
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=17
+		y=82
+		width=60
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Run #"
+}
+"text update" {
+	object {
+		x=124
+		y=82
+		width=100
+		height=15
+	}
+	monitor {
+		chan="B_DAQ_HPS:run_number"
+		clr=0
+		bclr=9
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=236
+		y=80
+		width=60
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Beam Current (nA)"
+}
+"text update" {
+	object {
+		x=343
+		y=80
+		width=50
+		height=15
+	}
+	monitor {
+		chan="IPM2C21A"
+		clr=0
+		bclr=9
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+rectangle {
+	object {
+		x=8
+		y=8
+		width=403
+		height=31
+	}
+	"basic attribute" {
+		clr=14
+	}
+}
+text {
+	object {
+		x=26
+		y=16
+		width=378
+		height=19
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="HPS DAQ Status"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=18
+		y=156
+		width=60
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="clondaq5 Disk Free (TB)"
+}
+"text update" {
+	object {
+		x=171
+		y=156
+		width=100
+		height=15
+	}
+	monitor {
+		chan="B_DAQ:disk_free:clondaq5"
+		clr=0
+		bclr=9
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=18
+		y=179
+		width=60
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="clondaq6 Disk Free (TB)"
+}
+"text update" {
+	object {
+		x=171
+		y=179
+		width=100
+		height=15
+	}
+	monitor {
+		chan="B_DAQ:disk_free:clondaq6"
+		clr=0
+		bclr=9
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=17
+		y=202
+		width=60
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="clondaq7 Disk Free (TB)"
+}
+"text update" {
+	object {
+		x=168
+		y=201
+		width=100
+		height=15
+	}
+	monitor {
+		chan="B_DAQ:disk_free:clondaq7"
+		clr=0
+		bclr=9
+	}
+	align="horiz. centered"
+	limits {
+	}
 }

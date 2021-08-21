@@ -75,7 +75,8 @@ dbLoadRecords("db/frwd_scaler.db")
 #     (5)motor task polling rate (min=1Hz,max=60Hz)
 omsSetup(2, 0x8000, 180, 5, 10)
 dbLoadRecords("db/motor.db","motor_name=harp_2H02A,card=0,slot=2,srev=2000,urev=2.54,direction=Pos,velo=0.5,accl=0.01")
-dbLoadRecords("db/scan.db","motor_name=harp_2H02A,start_at=4.2,end_at=8.4,start_speed=0.5,scan_speed=0.04,acq_time=0.1")
+#dbLoadRecords("db/scan.db","motor_name=harp_2H02A,start_at=4.2,end_at=8.4,start_speed=0.5,scan_speed=0.04,acq_time=0.1")
+dbLoadRecords("db/scan.db","motor_name=harp_2H02A,start_at=37.5,end_at=85.0,start_speed=1.5,scan_speed=0.4,acq_time=0.07")
 
 dbLoadRecords("db/motor.db", "motor_name=viewer,card=0,slot=1,srev=2000,urev=2.54,direction=Neg,velo=0.03,accl=0.01")
 dbLoadRecords("db/viewer.db")
@@ -93,9 +94,11 @@ dbLoadRecords("$(DEVIOCSTATS)/db/iocAdminVxWorks.db", "IOC=iocclassc4")
 #dbLoadRecords("$(AUTOSAVE)/asApp/Db/save_restoreStatus.db", "P=iocclassc4:")
 
 # currently running in softioc for testing:
-dbLoadRecords("db/scaler-ped.db","OUT=fcup_offset,P=fcup_offset,RAW=scalerS2b, REF=IPM2C21A,REFMAX=0.1,RAWMAX=500,N=5")
-dbLoadRecords("db/scaler-ped.db","OUT=slm_offset, P=slm_offset, RAW=scalerS16b,REF=IPM2C21A,REFMAX=0.1,RAWMAX=500,N=5")
+dbLoadTemplate("db/scaler-ped.substitutions")
+#dbLoadRecords("db/scaler-ped.db","OUT=fcup_offset,P=fcup_offset,RAW=scalerS2b, REF=IPM2C21A,REFMAX=0.1,RAWMAX=9999,N=5")
+#dbLoadRecords("db/scaler-ped.db","OUT=slm_offset, P=slm_offset, RAW=scalerS16b,REF=IPM2C21A,REFMAX=0.1,RAWMAX=800,N=5")
 dbLoadRecords("db/scaler_calc1b.db")
+
 
 cd startup
 
@@ -110,7 +113,7 @@ dbpf "fcup_offset","199.9"
 dbpf "fcup_slope","906.2"
 
 dbpf "slm_offset","-1301.0"
-dbpf "slm_slope","15968.5"
+dbpf "slm_slope","4298"
 
 ## Added these three line. to start counting after restarting IOC
 dbpf "scaler.CNT","1"

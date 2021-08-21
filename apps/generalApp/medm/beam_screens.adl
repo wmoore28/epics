@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=500
-		y=100
+		x=498
+		y=85
 		width=200
 		height=300
 	}
@@ -92,7 +92,7 @@ display {
 		x=14
 		y=55
 		width=180
-		height=200
+		height=220
 	}
 	display[0] {
 		label="Asymmetry"
@@ -125,6 +125,10 @@ display {
 	display[7] {
 		label="Waveform Writer"
 		name="wave2root.adl"
+	}
+	display[8] {
+		label="BPM Alarm Settings"
+		name="bpm-alarms.adl"
 	}
 	clr=14
 	bclr=35

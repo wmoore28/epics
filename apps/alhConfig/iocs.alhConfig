@@ -1,0 +1,30 @@
+GROUP    NULL                         IOCS                
+
+CHANNEL  IOCS                 iocclassc1:FD_FREE
+$COMMAND  medm -x -attach -cmap -macro "sig=iocclassc1:FD_FREE" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 120
+$GUIDANCE
+              Too many connections to iocclassc1.  Contact the Slow Controls expert.
+$END
+
+CHANNEL  IOCS                 iocclassc4:FD_FREE
+$COMMAND  medm -x -attach -cmap -macro "sig=iocclassc4:FD_FREE" aiaocalc_alarm.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 120
+$GUIDANCE
+              Too many connections to iocclassc4.  Contact the Slow Controls expert.
+$END
+
+CHANNEL  IOCS                 classc3:heartbeat
+$COMMAND  medm -x -attach -cmap ioc_hps_health.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 120
+$GUIDANCE
+              Contact the Slow Controls expert.
+$END
+
+CHANNEL  IOCS                 classc12:heartbeat
+$COMMAND  medm -x -attach -cmap ioc_hps_health.adl >> /dev/null 
+$ALARMCOUNTFILTER  10 120
+$GUIDANCE
+              Contact the Slow Controls expert.
+$END
+

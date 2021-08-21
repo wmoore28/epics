@@ -1,0 +1,2888 @@
+
+file {
+	name="/usr/clas12/hps/v3.0.0/apps/svtDaqApp/medm/svtFebVoltages.adl"
+	version=030109
+}
+display {
+	object {
+		x=206
+		y=236
+		width=1121
+		height=381
+	}
+	clr=14
+	bclr=12
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+text {
+	object {
+		x=3
+		y=40
+		width=84
+		height=25
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="FEB"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=2
+		y=70
+		width=84
+		height=25
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="0"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=2
+		y=100
+		width=84
+		height=25
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="1"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=2
+		y=130
+		width=84
+		height=25
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="2"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=2
+		y=160
+		width=84
+		height=25
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="3"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=2
+		y=190
+		width=84
+		height=25
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="4"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=2
+		y=220
+		width=84
+		height=25
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="5"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=2
+		y=250
+		width=84
+		height=25
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="6"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=2
+		y=280
+		width=84
+		height=25
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="7"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=2
+		y=310
+		width=84
+		height=25
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="8"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=2
+		y=340
+		width=84
+		height=25
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="9"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=0
+		y=0
+		width=1404
+		height=25
+	}
+	"basic attribute" {
+		clr=19
+	}
+}
+text {
+	object {
+		x=0
+		y=6
+		width=1121
+		height=25
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="FEB Voltage"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=130
+		y=68
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:0:d2p5vaux:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=130
+		y=98
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:1:d2p5vaux:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=130
+		y=128
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:2:d2p5vaux:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=130
+		y=158
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:3:d2p5vaux:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=130
+		y=188
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:4:d2p5vaux:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=130
+		y=218
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:5:d2p5vaux:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=130
+		y=248
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:6:d2p5vaux:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=130
+		y=278
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:7:d2p5vaux:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=130
+		y=308
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:8:d2p5vaux:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=130
+		y=338
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:9:d2p5vaux:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=195
+		y=68
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:0:a6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=195
+		y=98
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:1:a6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=195
+		y=128
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:2:a6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=195
+		y=158
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:3:a6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=195
+		y=188
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:4:a6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=195
+		y=218
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:5:a6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=195
+		y=248
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:6:a6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=195
+		y=278
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:7:a6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=195
+		y=308
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:8:a6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=195
+		y=338
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:9:a6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=68
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:0:a5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=98
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:1:a5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=128
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:2:a5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=158
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:3:a5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=188
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:4:a5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=218
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:5:a5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=248
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:6:a5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=278
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:7:a5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=308
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:8:a5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=338
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:9:a5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=325
+		y=68
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:0:d3p3v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=325
+		y=98
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:1:d3p3v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=325
+		y=128
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:2:d3p3v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=325
+		y=158
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:3:d3p3v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=325
+		y=188
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:4:d3p3v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=325
+		y=218
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:5:d3p3v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=325
+		y=248
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:6:d3p3v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=325
+		y=278
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:7:d3p3v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=325
+		y=308
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:8:d3p3v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=325
+		y=338
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:9:d3p3v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=390
+		y=68
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:0:a2p2v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=390
+		y=98
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:1:a2p2v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=390
+		y=128
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:2:a2p2v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=390
+		y=158
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:3:a2p2v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=390
+		y=188
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:4:a2p2v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=390
+		y=218
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:5:a2p2v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=390
+		y=248
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:6:a2p2v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=390
+		y=278
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:7:a2p2v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=390
+		y=308
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:8:a2p2v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=390
+		y=338
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:9:a2p2v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=455
+		y=68
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:0:a2p9va:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=455
+		y=98
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:1:a2p9va:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=455
+		y=128
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:2:a2p9va:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=455
+		y=158
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:3:a2p9va:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=455
+		y=188
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:4:a2p9va:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=455
+		y=218
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:5:a2p9va:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=455
+		y=248
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:6:a2p9va:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=455
+		y=278
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:7:a2p9va:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=455
+		y=308
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:8:a2p9va:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=455
+		y=338
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:9:a2p9va:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=520
+		y=68
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:0:a2p9vd:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=520
+		y=98
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:1:a2p9vd:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=520
+		y=128
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:2:a2p9vd:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=520
+		y=158
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:3:a2p9vd:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=520
+		y=188
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:4:a2p9vd:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=520
+		y=218
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:5:a2p9vd:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=520
+		y=248
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:6:a2p9vd:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=520
+		y=278
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:7:a2p9vd:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=520
+		y=308
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:8:a2p9vd:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=520
+		y=338
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:9:a2p9vd:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=585
+		y=68
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:0:a1p6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=585
+		y=98
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:1:a1p6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=585
+		y=128
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:2:a1p6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=585
+		y=158
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:3:a1p6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=585
+		y=188
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:4:a1p6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=585
+		y=218
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:5:a1p6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=585
+		y=248
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:6:a1p6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=585
+		y=278
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:7:a1p6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=585
+		y=308
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:8:a1p6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=585
+		y=338
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:9:a1p6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=650
+		y=68
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:0:d6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=650
+		y=98
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:1:d6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=650
+		y=128
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:2:d6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=650
+		y=158
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:3:d6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=650
+		y=188
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:4:d6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=650
+		y=218
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:5:d6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=650
+		y=248
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:6:d6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=650
+		y=278
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:7:d6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=650
+		y=308
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:8:d6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=650
+		y=338
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:9:d6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=845
+		y=68
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:0:d1p0vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=845
+		y=98
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:1:d1p0vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=845
+		y=128
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:2:d1p0vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=845
+		y=158
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:3:d1p0vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=845
+		y=188
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:4:d1p0vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=845
+		y=218
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:5:d1p0vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=845
+		y=248
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:6:d1p0vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=845
+		y=278
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:7:d1p0vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=845
+		y=308
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:8:d1p0vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=845
+		y=338
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:9:d1p0vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=910
+		y=68
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:0:a1p8v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=910
+		y=98
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:1:a1p8v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=910
+		y=128
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:2:a1p8v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=910
+		y=158
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:3:a1p8v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=910
+		y=188
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:4:a1p8v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=910
+		y=218
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:5:a1p8v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=910
+		y=248
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:6:a1p8v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=910
+		y=278
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:7:a1p8v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=910
+		y=308
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:8:a1p8v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=910
+		y=338
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:9:a1p8v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=715
+		y=68
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:0:d2p5v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=715
+		y=98
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:1:d2p5v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=715
+		y=128
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:2:d2p5v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=715
+		y=158
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:3:d2p5v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=715
+		y=188
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:4:d2p5v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=715
+		y=218
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:5:d2p5v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=715
+		y=248
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:6:d2p5v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=715
+		y=278
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:7:d2p5v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=715
+		y=308
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:8:d2p5v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=715
+		y=338
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:9:d2p5v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=780
+		y=68
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:0:d1p2vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=780
+		y=98
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:1:d1p2vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=780
+		y=128
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:2:d1p2vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=780
+		y=158
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:3:d1p2vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=780
+		y=188
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:4:d1p2vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=780
+		y=218
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:5:d1p2vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=780
+		y=248
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:6:d1p2vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=780
+		y=278
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:7:d1p2vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=780
+		y=308
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:8:d1p2vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=780
+		y=338
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:9:d1p2vmgt:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=975
+		y=68
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:0:an6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=975
+		y=98
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:1:an6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=975
+		y=128
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:2:an6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=975
+		y=158
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:3:an6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=975
+		y=188
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:4:an6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=975
+		y=218
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:5:an6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=975
+		y=248
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:6:an6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=975
+		y=278
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:7:an6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=975
+		y=308
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:8:an6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=975
+		y=338
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:9:an6v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1040
+		y=68
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:0:an5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1040
+		y=98
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:1:an5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1040
+		y=128
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:2:an5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1040
+		y=158
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:3:an5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1040
+		y=188
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:4:an5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1040
+		y=218
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:5:an5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1040
+		y=248
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:6:an5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1040
+		y=278
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:7:an5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1040
+		y=308
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:8:an5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1040
+		y=338
+		width=60
+		height=20
+	}
+	monitor {
+		chan="SVT:power:fe:9:an5p0v:v_rd"
+		clr=14
+		bclr=0
+	}
+	limits {
+	}
+}
+composite {
+	object {
+		x=65
+		y=68
+		width=60
+		height=290
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=65
+				y=68
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:0:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=65
+				y=98
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:1:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=65
+				y=128
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:2:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=65
+				y=158
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:3:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=65
+				y=188
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:4:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=65
+				y=218
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:5:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=65
+				y=248
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:6:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=65
+				y=278
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:7:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=65
+				y=338
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:9:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=65
+				y=308
+				width=60
+				height=20
+			}
+			monitor {
+				chan="SVT:power:fe:8:d1p0vint:v_rd"
+				clr=14
+				bclr=0
+			}
+			limits {
+			}
+		}
+	}
+}
+text {
+	object {
+		x=1135
+		y=51
+		width=67
+		height=13
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="AN5V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=66
+		y=51
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Vcc Int"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=131
+		y=51
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Vcc Aux"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=196
+		y=51
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="A 6V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=261
+		y=51
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="A 5V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=326
+		y=51
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="D 3.3V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=391
+		y=51
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="A 2.2V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=456
+		y=51
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="A 2.9VA"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=521
+		y=51
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="A 2.9VD"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=586
+		y=51
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="A 1.6V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=651
+		y=51
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="D 6V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=716
+		y=51
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="D 2.5V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=781
+		y=51
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="D 1.2V MGT"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=846
+		y=51
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="D 1.0V MGT"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=911
+		y=51
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="A 1.8V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=976
+		y=51
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="AN 6V"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=1036
+		y=50
+		width=67
+		height=13
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="AN5V"
+	align="horiz. centered"
+}

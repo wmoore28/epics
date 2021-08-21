@@ -1,0 +1,1006 @@
+
+file {
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/HPS_EPICS_remote.adl"
+	version=030109
+}
+display {
+	object {
+		x=0
+		y=37
+		width=240
+		height=690
+	}
+	clr=14
+	bclr=4
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=448
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=673
+		width=240
+		height=20
+	}
+	"basic attribute" {
+		clr=11
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=625
+		width=240
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+"related display" {
+	object {
+		x=20
+		y=425
+		width=20
+		height=20
+	}
+	display[0] {
+		label="IOC Health"
+		name="ioc_hps_health.adl"
+	}
+	clr=14
+	bclr=50
+}
+rectangle {
+	object {
+		x=0
+		y=340
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=286
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=230
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=175
+		width=240
+		height=26
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=580
+		width=240
+		height=20
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=0
+		width=240
+		height=85
+	}
+	"basic attribute" {
+		clr=14
+	}
+}
+image {
+	object {
+		x=0
+		y=0
+		width=200
+		height=85
+	}
+	type="gif"
+	"image name"="HPS_logo.gif"
+}
+rectangle {
+	object {
+		x=0
+		y=530
+		width=240
+		height=22
+	}
+	"basic attribute" {
+		clr=3
+	}
+}
+text {
+	object {
+		x=139
+		y=7
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=57
+	}
+	textix="HPS Main Menu"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=70
+		y=429
+		width=120
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="IOCs"
+}
+"related display" {
+	object {
+		x=20
+		y=451
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Omegabus D5000s"
+		name="tempSensors.adl"
+	}
+	display[1] {
+		label="Lakeshore 450 (Gaussmeters)"
+		name="lakeshore450_menu.adl"
+	}
+	display[2] {
+		label="Keithley 6221"
+		name="keithley6221.adl"
+	}
+	display[4] {
+		label="Flasher"
+		name="Flasher.adl"
+	}
+	display[5] {
+		label="Chiller (ECAL)"
+		name="chiller_anova.adl"
+		args="DESC=ECAL,P=HPS_ECAL:CHILLER:"
+	}
+	display[6] {
+		label="Chiller (SVT)"
+		name="chiller_presto.adl"
+		args="DESC=SVT"
+	}
+	display[7] {
+		label="Chiller (FE Boards)"
+		name="chiller_anova.adl"
+		args="DESC=FE_Boards,P=HPS_FE:CHILLER:"
+	}
+	display[8] {
+		label="SVT PLC"
+		name="svt_plc.adl"
+	}
+	display[9] {
+		label="SVT Soft Interlocks"
+		name="svtIntlk.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=456
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Devices"
+}
+"shell command" {
+	object {
+		x=20
+		y=601
+		width=20
+		height=20
+	}
+	command[0] {
+		label="StripTool"
+		name="cd $APP/generalApp/strip; StripTool &"
+	}
+	command[1] {
+		label="livePlot"
+		name="livePlot"
+		args="&"
+	}
+	command[2] {
+		label="myaPlot"
+		name="myaPlot"
+		args="&"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=606
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="StripTool/MyaViewer"
+}
+rectangle {
+	object {
+		x=0
+		y=396
+		width=300
+		height=25
+	}
+	"basic attribute" {
+		clr=11
+	}
+}
+text {
+	object {
+		x=15
+		y=401
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Diagnostics"
+}
+text {
+	object {
+		x=70
+		y=182
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Beam"
+}
+"related display" {
+	object {
+		x=20
+		y=532
+		width=20
+		height=20
+	}
+	display[0] {
+		label="alh launcher"
+		name="alh_launch_hps.adl"
+	}
+	clr=14
+	bclr=50
+}
+"shell command" {
+	object {
+		x=20
+		y=117
+		width=20
+		height=20
+	}
+	command[0] {
+		label="Launch JTABS"
+		name="xterm -title JTabs -e"
+		args="$APP/generalApp/scripts/jtabs_launcher.sh &"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=119
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ACC Screens (JTabs)"
+}
+text {
+	object {
+		x=70
+		y=238
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Voltages"
+}
+"related display" {
+	object {
+		x=20
+		y=234
+		width=20
+		height=20
+	}
+	display[0] {
+		label="     ECAL HV   "
+		name="ECalHVStatusCompact.adl"
+	}
+	display[1] {
+		label="     BEAMLINE"
+		name="bm_beam_counter_2.adl"
+	}
+	display[2] {
+		label="     BLMs     "
+		name="blm.adl"
+	}
+	display[3] {
+		label="     ECAL LV"
+		name="hps_ecal_lv.adl"
+		args="P=HPSECALLV"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=534
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Alarm Handlers"
+}
+"related display" {
+	object {
+		x=20
+		y=91
+		width=20
+		height=20
+	}
+	display[0] {
+		label="PAGE EXPERT"
+		name="notify_expert.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=93
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Page Experts"
+}
+"related display" {
+	object {
+		x=41
+		y=601
+		width=20
+		height=20
+	}
+	display[0] {
+		label="adsfasd"
+		name="strip_charts.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=347
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Miscellaneous"
+}
+"related display" {
+	object {
+		x=20
+		y=343
+		width=20
+		height=20
+	}
+	display[0] {
+		label="VESDA    "
+		name="vesda2.adl"
+	}
+	display[1] {
+		label="Beamline Vacuum"
+		name="vacuum.adl"
+	}
+	display[2] {
+		label="Tagger Dump Lamp"
+		name="tagger_dump_lamp.adl"
+	}
+	display[3] {
+		label="Weather"
+		name="hallBenv.adl"
+	}
+	display[4] {
+		label="ECAL Temperature"
+		name="hps_ecal_temp.adl"
+	}
+	clr=14
+	bclr=50
+}
+"related display" {
+	object {
+		x=20
+		y=205
+		width=20
+		height=20
+	}
+	display[0] {
+		label="DAQ Status"
+		name="daq.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=265
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Trigger"
+}
+"related display" {
+	object {
+		x=20
+		y=261
+		width=20
+		height=20
+	}
+	display[0] {
+		label="HPS Trigger"
+		name="hps_trigger_expert.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=208
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="DAQ Status"
+}
+rectangle {
+	object {
+		x=0
+		y=148
+		width=300
+		height=25
+	}
+	"basic attribute" {
+		clr=11
+	}
+}
+text {
+	object {
+		x=15
+		y=153
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Subsystems"
+}
+rectangle {
+	object {
+		x=0
+		y=503
+		width=300
+		height=25
+	}
+	"basic attribute" {
+		clr=11
+	}
+}
+text {
+	object {
+		x=15
+		y=508
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Tools"
+}
+"shell command" {
+	object {
+		x=20
+		y=624
+		width=20
+		height=20
+	}
+	command[0] {
+		label="Probe"
+		name="probe &"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=629
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Probe"
+}
+"shell command" {
+	object {
+		x=20
+		y=555
+		width=20
+		height=20
+	}
+	command[0] {
+		label="ECAL FADC Scalers (EPICS)"
+		name="hps_ecal_scalers.py &"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=560
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL FADC Scalers"
+}
+"shell command" {
+	object {
+		x=20
+		y=578
+		width=20
+		height=20
+	}
+	command[0] {
+		label="Screenshot + Logbook Entry"
+		name="logbookEntry.sh"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=583
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Screenshots & Logbook Entry"
+}
+"shell command" {
+	object {
+		x=20
+		y=647
+		width=20
+		height=20
+	}
+	command[0] {
+		label="Wave2Root Reader"
+		name="xterm -title 'Wave2Root Reader' -geometry 80x70 -e"
+		args="/usr/clas12/hps/prod/apps/medm/wave2rootReader.sh"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=652
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Wave2Root Reader"
+}
+"related display" {
+	object {
+		x=19
+		y=478
+		width=20
+		height=20
+	}
+	display[0] {
+		label="HB Harp (2c21)"
+		name="harpScanData.adl"
+		args="P=HB_BEAM:SCAN:2c21"
+	}
+	display[1] {
+		label="HB Harp (tagger)"
+		name="harpScanData.adl"
+		args="P=HB_BEAM:SCAN:tagger"
+	}
+	display[2] {
+		label="HB Harp (2H02A)"
+		name="harpScanData.adl"
+		args="P=HB_BEAM:SCAN:2H02A"
+	}
+	display[3] {
+		label="HPS Wire Scanner"
+		name="wireScanData.adl"
+		args="P=HPS_SVT:SCAN"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=69
+		y=481
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Mya Scan Data"
+}
+"related display" {
+	object {
+		x=20
+		y=289
+		width=20
+		height=20
+	}
+	display[0] {
+		label="SVT Summary"
+		name="svtSummary.adl"
+	}
+	display[1] {
+		label="DPM Status"
+		name="svtDpmStatus.adl"
+	}
+	display[2] {
+		label="DPM Link Status"
+		name="svtDpmLinkStatus.adl"
+	}
+	display[3] {
+		label="Temperature"
+		name="svtTemp.adl"
+	}
+	display[4] {
+		label="Hybrid"
+		name="svtHybrid.adl"
+	}
+	display[5] {
+		label="Hybrid Sync"
+		name="svtHybSync.adl"
+	}
+	display[6] {
+		label="FEB Main"
+		name="svtFebMain.adl"
+	}
+	display[7] {
+		label="Flange Main"
+		name="svtFlangeMain.adl"
+	}
+	display[8] {
+		label="Bias Main"
+		name="svtBiasMain.adl"
+	}
+	display[9] {
+		label="FEB Voltages"
+		name="svtFebVoltages.adl"
+	}
+	display[10] {
+		label="HV STATUS"
+		name="HpsSvtHvStatus.adl"
+	}
+	display[11] {
+		label="POSITION STATUS"
+		name="HpsSvtPosition.adl"
+	}
+	display[12] {
+		label="SVT Map"
+		name="svtMap.adl"
+	}
+	display[13] {
+		label="SVT Sem"
+		name="svtSEM.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=70
+		y=292
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SVT"
+}
+"text update" {
+	object {
+		x=139
+		y=70
+		width=100
+		height=12
+	}
+	monitor {
+		chan="PLC_HLB"
+		clr=56
+		bclr=14
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=139
+		y=55
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=57
+	}
+	textix="Hall B Status"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=69
+		y=320
+		width=120
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECAL/HODO"
+}
+"related display" {
+	object {
+		x=21
+		y=316
+		width=20
+		height=20
+	}
+	display[0] {
+		label="ECAL SLOW CONTROLS"
+		name="hps_ecal_all.adl"
+		args="P=HPSECALLV,PC=HPS_ECAL:CHILLER:"
+	}
+	clr=14
+	bclr=50
+}
+"related display" {
+	object {
+		x=20
+		y=370
+		width=20
+		height=20
+	}
+	display[0] {
+		label="FSD STATUS"
+		name="HpsFsdStatus.adl"
+	}
+	clr=14
+	bclr=50
+}
+text {
+	object {
+		x=69
+		y=375
+		width=30
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="FSD Status"
+}
+"related display" {
+	object {
+		x=20
+		y=178
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Overview"
+		name="scaler_hps.adl"
+	}
+	display[1] {
+		label="Asymmetry"
+		name="asym_ia.adl"
+	}
+	display[2] {
+		label="BPMs"
+		name="BPMs.adl"
+	}
+	display[3] {
+		label="BPM Alarm Settings"
+		name="bpm-alarms.adl"
+	}
+	display[4] {
+		label="Injector"
+		name="injector.adl"
+	}
+	display[5] {
+		label="SixtyHz"
+		name="sixtyHz_scaler.adl"
+	}
+	display[6] {
+		label="Waveform Writer"
+		name="wave2root.adl"
+	}
+	display[7] {
+		label="Beam Time Accounting"
+		name="bta_status.adl"
+	}
+	display[8] {
+		label="Beam Time Structure"
+		name="beamMod.adl"
+		args="P=B_beamMod,C=sum"
+	}
+	clr=14
+	bclr=50
+}

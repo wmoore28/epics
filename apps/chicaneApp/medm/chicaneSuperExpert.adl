@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/chicaneApp/medm/./chicaneExpert.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/chicaneApp/medm/chicaneSuperExpert.adl"
 	version=030109
 }
 display {
 	object {
-		x=814
-		y=25
+		x=809
+		y=3
 		width=350
 		height=848
 	}
@@ -1180,7 +1180,7 @@ text {
 		height=14
 	}
 	monitor {
-		chan="MTIRBCK"
+		chan="MTDACRBCK"
 		clr=0
 		bclr=12
 	}
@@ -1200,7 +1200,7 @@ text {
 		height=14
 	}
 	monitor {
-		chan="MTIRBCK"
+		chan="PSPECIRBCK"
 		clr=0
 		bclr=12
 	}

@@ -1,0 +1,1 @@
+../apps/iocBoot/dqm/restart.sh

@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/medm/../scalerApp/medm/scaler_hps.adl"
-	version=030101
+	name="/usr/clas12/hps/v3.0.0/apps/scalerApp/medm/scaler_hps.adl"
+	version=030109
 }
 display {
 	object {
-		x=163
-		y=60
+		x=143
+		y=145
 		width=1268
-		height=925
+		height=880
 	}
 	clr=14
 	bclr=4
@@ -89,198 +89,42 @@ display {
 }
 rectangle {
 	object {
-		x=165
-		y=475
-		width=50
-		height=14
+		x=475
+		y=2
+		width=620
+		height=104
 	}
 	"basic attribute" {
-		clr=60
-	}
-	"dynamic attribute" {
-		vis="if zero"
-		calc="ABS(A<0.1)"
-		chan="harp_2c21.RBV"
+		clr=3
+		fill="outline"
 	}
 }
 rectangle {
 	object {
-		x=320
-		y=475
-		width=50
-		height=14
-	}
-	"basic attribute" {
-		clr=60
-	}
-	"dynamic attribute" {
-		vis="if not zero"
-		calc="ABS(A<0.1)"
-		chan="rad_at_home"
-	}
-}
-rectangle {
-	object {
-		x=880
-		y=472
-		width=50
-		height=14
-	}
-	"basic attribute" {
-		clr=60
-	}
-	"dynamic attribute" {
-		vis="if zero"
-		calc="ABS(A<0.1)"
-		chan="harp_2H02A.RBV"
-	}
-}
-rectangle {
-	object {
-		x=0
-		y=675
-		width=120
-		height=24
-	}
-	"basic attribute" {
-		clr=55
-	}
-}
-arc {
-	object {
-		x=168
-		y=129
-		width=400
-		height=250
-	}
-	"basic attribute" {
-		clr=14
-		fill="outline"
-		width=3
-	}
-	begin=0
-	path=5760
-}
-polyline {
-	object {
-		x=191
-		y=129
-		width=1021
-		height=3
-	}
-	"basic attribute" {
-		clr=14
-		width=3
-	}
-	points {
-		(192,130)
-		(1210,130)
-	}
-}
-arc {
-	object {
-		x=165
-		y=306
-		width=397
-		height=230
-	}
-	"basic attribute" {
-		clr=14
-		fill="outline"
-		width=3
-	}
-	begin=0
-	path=5760
-}
-arc {
-	object {
-		x=168
-		y=686
-		width=400
-		height=230
-	}
-	"basic attribute" {
-		clr=14
-		fill="outline"
-		width=3
-	}
-	begin=0
-	path=5760
-}
-"related display" {
-	object {
-		x=1190
-		y=880
-		width=72
-		height=25
-	}
-	display[0] {
-		label="JOERGER SETUP"
-		name="scaler_control.adl"
-	}
-	display[1] {
-		label="BOM SETUP"
-		name="bom_scaler_setup.adl"
-	}
-	display[2] {
-		label="ST SETUP"
-		name="st_scaler_setup.adl"
-	}
-	clr=14
-	bclr=30
-	label="Setup"
-}
-text {
-	object {
-		x=1100
-		y=880
-		width=80
-		height=15
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Scaler Setup"
-}
-composite {
-	object {
-		x=870
-		y=870
+		x=13
+		y=817
 		width=200
-		height=38
+		height=45
 	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=870
-				y=890
-				width=200
-				height=18
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Menu Execute -> Make Log Entry"
-		}
-		text {
-			object {
-				x=870
-				y=870
-				width=200
-				height=18
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="To make a log entry right click:"
-		}
+	"basic attribute" {
+		clr=5
+	}
+}
+rectangle {
+	object {
+		x=602
+		y=79
+		width=48
+		height=22
+	}
+	"basic attribute" {
+		clr=5
 	}
 }
 arc {
 	object {
 		x=168
-		y=451
+		y=720
 		width=400
 		height=230
 	}
@@ -302,45 +146,379 @@ image {
 	type="gif"
 	"image name"="heavy_photon_logo.gif"
 }
-composite {
+rectangle {
 	object {
-		x=230
-		y=5
-		width=125
-		height=20
+		x=214
+		y=24
+		width=80
+		height=15
 	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=230
-				y=5
-				width=125
-				height=20
-			}
-			"basic attribute" {
-				clr=50
-			}
-		}
-		text {
-			object {
-				x=230
-				y=8
-				width=125
-				height=15
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Beam PMTs"
-			align="horiz. centered"
-		}
+	"basic attribute" {
+		clr=50
+	}
+}
+text {
+	object {
+		x=217
+		y=25
+		width=80
+		height=9
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Beam PMTs"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=584
+		y=58
+		width=85
+		height=18
+	}
+	monitor {
+		chan="ISD2H001HALOTSET03r"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
 	}
 }
 "text update" {
 	object {
+		x=584
+		y=39
+		width=85
+		height=18
+	}
+	monitor {
+		chan="ISD2H001HALOPTHDHZ03r"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=584
+		y=20
+		width=85
+		height=18
+	}
+	monitor {
+		chan="ISD2H001HALORATE03"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=596
+		y=5
+		width=34
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Upstream"
+}
+"text update" {
+	object {
+		x=674
+		y=58
+		width=85
+		height=18
+	}
+	monitor {
+		chan="ISD2H001HALOTSET01r"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=674
+		y=39
+		width=85
+		height=18
+	}
+	monitor {
+		chan="ISD2H001HALOPTHDHZ01r"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=674
+		y=20
+		width=85
+		height=18
+	}
+	monitor {
+		chan="ISD2H001HALORATE01"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=686
+		y=5
+		width=34
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Midstream"
+}
+"text update" {
+	object {
+		x=764
+		y=58
+		width=85
+		height=18
+	}
+	monitor {
+		chan="ISD2H001HALOTSET02r"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=764
+		y=39
+		width=85
+		height=18
+	}
+	monitor {
+		chan="ISD2H001HALOPTHDHZ02r"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=764
+		y=20
+		width=85
+		height=18
+	}
+	monitor {
+		chan="ISD2H001HALORATE02"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=776
+		y=5
+		width=34
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Downstream"
+}
+"text update" {
+	object {
+		x=854
+		y=58
+		width=85
+		height=18
+	}
+	monitor {
+		chan="ISD2H001HALOTSET05r"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=854
+		y=39
+		width=85
+		height=18
+	}
+	monitor {
+		chan="ISD2H001HALOPTHDHZ05r"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=854
+		y=20
+		width=85
+		height=18
+	}
+	monitor {
+		chan="ISD2H001HALORATE05"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=878
+		y=5
+		width=34
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="HPS Up"
+}
+rectangle {
+	object {
+		x=119
+		y=182
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=0"
+		chan="HLB:bta_bm_present"
+	}
+}
+rectangle {
+	object {
+		x=165
+		y=518
+		width=50
+		height=14
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		calc="ABS(A<0.1)"
+		chan="harp_2c21.RBV"
+	}
+}
+rectangle {
+	object {
+		x=320
+		y=518
+		width=50
+		height=14
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		calc="ABS(A<0.1)"
+		chan="rad_at_home"
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=710
+		width=120
+		height=24
+	}
+	"basic attribute" {
+		clr=55
+	}
+}
+polyline {
+	object {
+		x=192
+		y=171
+		width=1021
+		height=3
+	}
+	"basic attribute" {
+		clr=14
+		width=3
+	}
+	points {
+		(193,172)
+		(1211,172)
+	}
+}
+arc {
+	object {
+		x=165
+		y=339
+		width=397
+		height=230
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=3
+	}
+	begin=0
+	path=5760
+}
+arc {
+	object {
+		x=168
+		y=493
+		width=400
+		height=230
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=3
+	}
+	begin=0
+	path=5760
+}
+"text update" {
+	object {
 		x=310
-		y=105
+		y=148
 		width=85
 		height=18
 	}
@@ -355,20 +533,20 @@ composite {
 }
 text {
 	object {
-		x=335
-		y=80
+		x=399
+		y=149
 		width=30
 		height=15
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="UPS-L"
+	textix="Left"
 }
 "text update" {
 	object {
 		x=310
-		y=135
+		y=178
 		width=85
 		height=18
 	}
@@ -383,20 +561,20 @@ text {
 }
 text {
 	object {
-		x=330
-		y=159
+		x=399
+		y=181
 		width=30
 		height=15
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="UPS-R"
+	textix="Right"
 }
 composite {
 	object {
 		x=77
-		y=125
+		y=160
 		width=53
 		height=22
 	}
@@ -405,7 +583,7 @@ composite {
 		rectangle {
 			object {
 				x=77
-				y=125
+				y=160
 				width=50
 				height=15
 			}
@@ -416,7 +594,7 @@ composite {
 		text {
 			object {
 				x=80
-				y=125
+				y=160
 				width=50
 				height=22
 			}
@@ -427,108 +605,10 @@ composite {
 		}
 	}
 }
-"text update" {
-	object {
-		x=119
-		y=194
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HLB:bta_dty_fctr"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=6
-		y=196
-		width=100
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	"dynamic attribute" {
-		chan="scaler_dS6b.VAL"
-	}
-	textix="Duty Cycle (%)"
-	align="horiz. right"
-}
-"text update" {
-	object {
-		x=119
-		y=222
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HLB:bta_60hz_rms"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=6
-		y=224
-		width=100
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	"dynamic attribute" {
-		chan="HLB:bta_60hz_rms"
-	}
-	textix="Max RMS (%)"
-	align="horiz. right"
-}
-"text update" {
-	object {
-		x=119
-		y=170
-		width=80
-		height=20
-	}
-	monitor {
-		chan="HPSRF_1N"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=3
-	}
-}
-text {
-	object {
-		x=6
-		y=170
-		width=100
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-	}
-	"dynamic attribute" {
-		chan="scaler_dS6b.VAL"
-	}
-	textix="RF Rate (MHz)"
-	align="horiz. right"
-}
 polyline {
 	object {
-		x=145
-		y=687
+		x=146
+		y=721
 		width=1049
 		height=3
 	}
@@ -537,14 +617,14 @@ polyline {
 		width=3
 	}
 	points {
-		(146,688)
-		(1192,688)
+		(147,722)
+		(1193,722)
 	}
 }
 text {
 	object {
 		x=370
-		y=662
+		y=697
 		width=75
 		height=18
 	}
@@ -557,7 +637,7 @@ text {
 oval {
 	object {
 		x=382
-		y=701
+		y=736
 		width=16
 		height=15
 	}
@@ -572,7 +652,7 @@ oval {
 oval {
 	object {
 		x=382
-		y=701
+		y=736
 		width=16
 		height=15
 	}
@@ -587,22 +667,23 @@ oval {
 "text update" {
 	object {
 		x=379
-		y=728
+		y=763
 		width=80
 		height=18
 	}
 	monitor {
 		chan="TMIRBCK"
-		clr=1
-		bclr=53
+		clr=54
+		bclr=0
 	}
+	align="horiz. right"
 	limits {
 	}
 }
 text {
 	object {
 		x=471
-		y=730
+		y=765
 		width=11
 		height=15
 	}
@@ -614,7 +695,7 @@ text {
 text {
 	object {
 		x=8
-		y=678
+		y=713
 		width=100
 		height=20
 	}
@@ -626,7 +707,7 @@ text {
 text {
 	object {
 		x=209
-		y=752
+		y=787
 		width=75
 		height=16
 	}
@@ -639,7 +720,7 @@ text {
 "text update" {
 	object {
 		x=145
-		y=698
+		y=733
 		width=61
 		height=18
 	}
@@ -656,7 +737,7 @@ text {
 "text update" {
 	object {
 		x=145
-		y=723
+		y=758
 		width=61
 		height=18
 	}
@@ -673,7 +754,7 @@ text {
 "text update" {
 	object {
 		x=230
-		y=697
+		y=732
 		width=61
 		height=18
 	}
@@ -690,7 +771,7 @@ text {
 "text update" {
 	object {
 		x=255
-		y=720
+		y=755
 		width=61
 		height=18
 	}
@@ -707,7 +788,7 @@ text {
 composite {
 	object {
 		x=147
-		y=647
+		y=682
 		width=159
 		height=37
 	}
@@ -716,7 +797,7 @@ composite {
 		text {
 			object {
 				x=229
-				y=647
+				y=682
 				width=50
 				height=16
 			}
@@ -728,7 +809,7 @@ composite {
 		text {
 			object {
 				x=149
-				y=648
+				y=683
 				width=50
 				height=16
 			}
@@ -740,7 +821,7 @@ composite {
 		text {
 			object {
 				x=147
-				y=668
+				y=703
 				width=50
 				height=16
 			}
@@ -752,7 +833,7 @@ composite {
 		text {
 			object {
 				x=256
-				y=666
+				y=701
 				width=50
 				height=16
 			}
@@ -766,23 +847,25 @@ composite {
 "text update" {
 	object {
 		x=380
-		y=752
+		y=787
 		width=80
 		height=20
 	}
 	monitor {
 		chan="Hac_TGR_LS450:FLD_DATA"
-		clr=0
-		bclr=26
+		clr=54
+		bclr=0
 	}
 	align="horiz. right"
 	limits {
+		precSrc="default"
+		precDefault=1
 	}
 }
 text {
 	object {
 		x=470
-		y=752
+		y=787
 		width=11
 		height=15
 	}
@@ -793,8 +876,8 @@ text {
 }
 text {
 	object {
-		x=574
-		y=830
+		x=511
+		y=831
 		width=100
 		height=18
 	}
@@ -807,7 +890,7 @@ text {
 text {
 	object {
 		x=512
-		y=559
+		y=604
 		width=100
 		height=18
 	}
@@ -819,8 +902,8 @@ text {
 }
 text {
 	object {
-		x=610
-		y=670
+		x=573
+		y=705
 		width=50
 		height=16
 	}
@@ -831,8 +914,8 @@ text {
 }
 text {
 	object {
-		x=500
-		y=671
+		x=463
+		y=706
 		width=50
 		height=16
 	}
@@ -843,8 +926,8 @@ text {
 }
 text {
 	object {
-		x=515
-		y=691
+		x=478
+		y=726
 		width=50
 		height=16
 	}
@@ -855,8 +938,8 @@ text {
 }
 text {
 	object {
-		x=635
-		y=689
+		x=598
+		y=724
 		width=50
 		height=16
 	}
@@ -867,8 +950,8 @@ text {
 }
 "text update" {
 	object {
-		x=543
-		y=667
+		x=506
+		y=702
 		width=61
 		height=18
 	}
@@ -884,8 +967,8 @@ text {
 }
 "text update" {
 	object {
-		x=565
-		y=690
+		x=528
+		y=725
 		width=61
 		height=18
 	}
@@ -901,8 +984,8 @@ text {
 }
 "text update" {
 	object {
-		x=642
-		y=667
+		x=605
+		y=702
 		width=61
 		height=18
 	}
@@ -918,8 +1001,8 @@ text {
 }
 "text update" {
 	object {
-		x=665
-		y=692
+		x=628
+		y=727
 		width=61
 		height=18
 	}
@@ -936,7 +1019,7 @@ text {
 image {
 	object {
 		x=905
-		y=623
+		y=658
 		width=325
 		height=120
 	}
@@ -946,7 +1029,7 @@ image {
 oval {
 	object {
 		x=1010
-		y=594
+		y=629
 		width=16
 		height=15
 	}
@@ -957,7 +1040,7 @@ oval {
 polyline {
 	object {
 		x=945
-		y=608
+		y=643
 		width=57
 		height=78
 	}
@@ -965,14 +1048,14 @@ polyline {
 		clr=14
 	}
 	points {
-		(945,686)
-		(1002,608)
+		(945,721)
+		(1002,643)
 	}
 }
 polyline {
 	object {
 		x=1137
-		y=600
+		y=635
 		width=40
 		height=45
 	}
@@ -980,21 +1063,21 @@ polyline {
 		clr=14
 	}
 	points {
-		(1177,645)
-		(1137,600)
+		(1177,680)
+		(1137,635)
 	}
 }
 "text update" {
 	object {
 		x=1030
-		y=588
+		y=623
 		width=100
 		height=18
 	}
 	monitor {
 		chan="MTIRBCK"
-		clr=1
-		bclr=53
+		clr=54
+		bclr=0
 	}
 	align="horiz. right"
 	limits {
@@ -1003,7 +1086,7 @@ polyline {
 oval {
 	object {
 		x=1010
-		y=594
+		y=629
 		width=16
 		height=15
 	}
@@ -1018,7 +1101,7 @@ oval {
 text {
 	object {
 		x=1134
-		y=590
+		y=625
 		width=11
 		height=15
 	}
@@ -1030,29 +1113,32 @@ text {
 "text update" {
 	object {
 		x=1030
-		y=608
+		y=643
 		width=100
 		height=18
 	}
 	monitor {
 		chan="HPS:LS450_1:FIELD"
-		clr=1
-		bclr=53
+		clr=54
+		bclr=0
 	}
+	align="horiz. right"
 	limits {
+		precSrc="default"
+		precDefault=1
 	}
 }
 "text update" {
 	object {
 		x=1030
-		y=750
+		y=785
 		width=100
 		height=20
 	}
 	monitor {
 		chan="PSPECIRBCK"
-		clr=0
-		bclr=53
+		clr=54
+		bclr=0
 	}
 	align="horiz. right"
 	limits {
@@ -1061,7 +1147,7 @@ text {
 text {
 	object {
 		x=1137
-		y=753
+		y=788
 		width=11
 		height=15
 	}
@@ -1073,23 +1159,25 @@ text {
 "text update" {
 	object {
 		x=1040
-		y=775
+		y=810
 		width=80
 		height=20
 	}
 	monitor {
 		chan="HPS:LS450_2:FIELD"
-		clr=0
-		bclr=26
+		clr=54
+		bclr=0
 	}
 	align="horiz. right"
 	limits {
+		precSrc="default"
+		precDefault=1
 	}
 }
 text {
 	object {
 		x=1025
-		y=813
+		y=848
 		width=120
 		height=16
 	}
@@ -1105,7 +1193,7 @@ text {
 text {
 	object {
 		x=1035
-		y=798
+		y=833
 		width=100
 		height=14
 	}
@@ -1121,7 +1209,7 @@ text {
 text {
 	object {
 		x=1025
-		y=813
+		y=848
 		width=120
 		height=16
 	}
@@ -1137,7 +1225,7 @@ text {
 text {
 	object {
 		x=1035
-		y=798
+		y=833
 		width=100
 		height=14
 	}
@@ -1150,79 +1238,10 @@ text {
 	}
 	textix="Main Power Off"
 }
-composite {
-	object {
-		x=770
-		y=667
-		width=116
-		height=43
-	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=770
-				y=670
-				width=50
-				height=16
-			}
-			"basic attribute" {
-				clr=34
-			}
-			textix="2H02H"
-		}
-		text {
-			object {
-				x=795
-				y=689
-				width=50
-				height=16
-			}
-			"basic attribute" {
-				clr=34
-			}
-			textix="2H02V"
-		}
-		"text update" {
-			object {
-				x=802
-				y=667
-				width=61
-				height=18
-			}
-			monitor {
-				chan="MBD2H02H.BDL"
-				clr=34
-				bclr=0
-			}
-			align="horiz. centered"
-			format="truncated"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=825
-				y=692
-				width=61
-				height=18
-			}
-			monitor {
-				chan="MBD2H02V.BDL"
-				clr=34
-				bclr=0
-			}
-			align="horiz. centered"
-			format="truncated"
-			limits {
-			}
-		}
-	}
-}
 "text update" {
 	object {
 		x=1125
-		y=778
+		y=813
 		width=110
 		height=20
 	}
@@ -1238,7 +1257,7 @@ composite {
 "text update" {
 	object {
 		x=1135
-		y=610
+		y=645
 		width=110
 		height=20
 	}
@@ -1251,23 +1270,10 @@ composite {
 	limits {
 	}
 }
-text {
-	object {
-		x=491
-		y=250
-		width=100
-		height=18
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Tagger Dump"
-	align="horiz. centered"
-}
 polyline {
 	object {
-		x=147
-		y=306
+		x=148
+		y=340
 		width=1004
 		height=3
 	}
@@ -1276,14 +1282,14 @@ polyline {
 		width=3
 	}
 	points {
-		(148,307)
-		(1149,307)
+		(149,341)
+		(1150,341)
 	}
 }
 "text update" {
 	object {
 		x=139
-		y=314
+		y=349
 		width=75
 		height=18
 	}
@@ -1299,7 +1305,7 @@ polyline {
 "text update" {
 	object {
 		x=139
-		y=334
+		y=369
 		width=75
 		height=18
 	}
@@ -1315,7 +1321,7 @@ polyline {
 text {
 	object {
 		x=160
-		y=289
+		y=324
 		width=40
 		height=18
 	}
@@ -1328,7 +1334,7 @@ text {
 "text update" {
 	object {
 		x=139
-		y=355
+		y=390
 		width=75
 		height=18
 	}
@@ -1344,7 +1350,7 @@ text {
 text {
 	object {
 		x=505
-		y=410
+		y=447
 		width=100
 		height=18
 	}
@@ -1356,8 +1362,8 @@ text {
 }
 "text update" {
 	object {
-		x=420
-		y=200
+		x=521
+		y=178
 		width=75
 		height=18
 	}
@@ -1370,53 +1376,9 @@ text {
 	limits {
 	}
 }
-"text update" {
-	object {
-		x=550
-		y=200
-		width=75
-		height=18
-	}
-	monitor {
-		chan="scaler_cS7b.VAL"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=480
-		y=170
-		width=75
-		height=18
-	}
-	monitor {
-		chan="scaler_cS6b.VAL"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
 text {
 	object {
-		x=500
-		y=150
-		width=30
-		height=15
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="TAG-T"
-}
-text {
-	object {
-		x=435
+		x=600
 		y=180
 		width=30
 		height=15
@@ -1424,24 +1386,12 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="TAG-L"
-}
-text {
-	object {
-		x=575
-		y=180
-		width=34
-		height=15
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="TAG-T2"
+	textix="Bottom"
 }
 "text update" {
 	object {
 		x=571
-		y=310
+		y=345
 		width=75
 		height=18
 	}
@@ -1457,7 +1407,7 @@ text {
 text {
 	object {
 		x=582
-		y=285
+		y=320
 		width=45
 		height=18
 	}
@@ -1470,7 +1420,7 @@ text {
 "text update" {
 	object {
 		x=480
-		y=330
+		y=365
 		width=75
 		height=18
 	}
@@ -1486,7 +1436,7 @@ text {
 text {
 	object {
 		x=492
-		y=285
+		y=320
 		width=45
 		height=18
 	}
@@ -1499,7 +1449,7 @@ text {
 "text update" {
 	object {
 		x=480
-		y=351
+		y=386
 		width=75
 		height=18
 	}
@@ -1515,7 +1465,7 @@ text {
 "text update" {
 	object {
 		x=570
-		y=330
+		y=365
 		width=75
 		height=18
 	}
@@ -1531,7 +1481,7 @@ text {
 "text update" {
 	object {
 		x=570
-		y=351
+		y=386
 		width=75
 		height=18
 	}
@@ -1547,7 +1497,7 @@ text {
 composite {
 	object {
 		x=770
-		y=290
+		y=325
 		width=75
 		height=85
 	}
@@ -1556,7 +1506,7 @@ composite {
 		text {
 			object {
 				x=781
-				y=290
+				y=325
 				width=45
 				height=18
 			}
@@ -1569,7 +1519,7 @@ composite {
 		"text update" {
 			object {
 				x=770
-				y=335
+				y=370
 				width=75
 				height=18
 			}
@@ -1585,7 +1535,7 @@ composite {
 		"text update" {
 			object {
 				x=770
-				y=357
+				y=392
 				width=75
 				height=18
 			}
@@ -1600,85 +1550,74 @@ composite {
 		}
 	}
 }
-composite {
+"text update" {
 	object {
-		x=592
-		y=100
-		width=160
-		height=63
+		x=745
+		y=143
+		width=71
+		height=18
 	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=638
-				y=100
-				width=71
-				height=18
-			}
-			monitor {
-				chan="scalerS8b.VAL"
-				clr=14
-				bclr=50
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=681
-				y=121
-				width=71
-				height=18
-			}
-			monitor {
-				chan="scalerS11b.VAL"
-				clr=14
-				bclr=50
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=638
-				y=145
-				width=71
-				height=18
-			}
-			monitor {
-				chan="scalerS10b.VAL"
-				clr=14
-				bclr=50
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
-		"text update" {
-			object {
-				x=592
-				y=121
-				width=71
-				height=18
-			}
-			monitor {
-				chan="scalerS9b.VAL"
-				clr=14
-				bclr=50
-			}
-			align="horiz. centered"
-			limits {
-			}
-		}
+	monitor {
+		chan="scalerS10b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=788
+		y=164
+		width=71
+		height=18
+	}
+	monitor {
+		chan="scalerS9b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=745
+		y=188
+		width=71
+		height=18
+	}
+	monitor {
+		chan="scalerS11b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=699
+		y=164
+		width=71
+		height=18
+	}
+	monitor {
+		chan="scalerS8b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
 	}
 }
 oval {
 	object {
-		x=652
-		y=440
+		x=700
+		y=483
 		width=35
 		height=32
 	}
@@ -1691,8 +1630,8 @@ oval {
 }
 polyline {
 	object {
-		x=137
-		y=452
+		x=138
+		y=494
 		width=1049
 		height=3
 	}
@@ -1701,14 +1640,14 @@ polyline {
 		width=3
 	}
 	points {
-		(138,453)
-		(1184,453)
+		(139,495)
+		(1185,495)
 	}
 }
 text {
 	object {
 		x=312
-		y=432
+		y=475
 		width=110
 		height=18
 	}
@@ -1720,7 +1659,7 @@ text {
 text {
 	object {
 		x=330
-		y=460
+		y=503
 		width=40
 		height=13
 	}
@@ -1737,7 +1676,7 @@ text {
 text {
 	object {
 		x=330
-		y=475
+		y=518
 		width=40
 		height=14
 	}
@@ -1754,7 +1693,7 @@ text {
 text {
 	object {
 		x=330
-		y=490
+		y=533
 		width=60
 		height=14
 	}
@@ -1770,7 +1709,7 @@ text {
 text {
 	object {
 		x=175
-		y=432
+		y=475
 		width=70
 		height=18
 	}
@@ -1782,7 +1721,7 @@ text {
 text {
 	object {
 		x=178
-		y=460
+		y=503
 		width=40
 		height=13
 	}
@@ -1799,7 +1738,7 @@ text {
 text {
 	object {
 		x=178
-		y=475
+		y=518
 		width=40
 		height=14
 	}
@@ -1816,7 +1755,7 @@ text {
 text {
 	object {
 		x=178
-		y=490
+		y=533
 		width=60
 		height=14
 	}
@@ -1830,49 +1769,38 @@ text {
 	}
 	textix="In Beam"
 }
-composite {
+"text update" {
 	object {
 		x=1030
-		y=567
-		width=205
+		y=603
+		width=100
 		height=18
 	}
-	"composite name"=""
-	children {
-		"text update" {
-			object {
-				x=1030
-				y=567
-				width=100
-				height=18
-			}
-			monitor {
-				chan="MTDACRBCK"
-				clr=1
-				bclr=53
-			}
-			align="horiz. right"
-			limits {
-			}
-		}
-		text {
-			object {
-				x=1134
-				y=570
-				width=101
-				height=15
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="A (DAC readback)"
-		}
+	monitor {
+		chan="MTDACRBCK"
+		clr=54
+		bclr=0
 	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=1134
+		y=606
+		width=101
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="A (DAC readback)"
 }
 composite {
 	object {
 		x=0
-		y=293
+		y=328
 		width=140
 		height=82
 	}
@@ -1881,7 +1809,7 @@ composite {
 		composite {
 			object {
 				x=0
-				y=293
+				y=328
 				width=140
 				height=20
 			}
@@ -1890,7 +1818,7 @@ composite {
 				rectangle {
 					object {
 						x=0
-						y=293
+						y=328
 						width=140
 						height=20
 					}
@@ -1901,7 +1829,7 @@ composite {
 				text {
 					object {
 						x=5
-						y=295
+						y=330
 						width=127
 						height=18
 					}
@@ -1915,7 +1843,7 @@ composite {
 		text {
 			object {
 				x=10
-				y=337
+				y=372
 				width=110
 				height=18
 			}
@@ -1927,7 +1855,7 @@ composite {
 		text {
 			object {
 				x=10
-				y=357
+				y=392
 				width=110
 				height=18
 			}
@@ -1939,7 +1867,7 @@ composite {
 		text {
 			object {
 				x=10
-				y=317
+				y=352
 				width=114
 				height=18
 			}
@@ -1956,7 +1884,7 @@ composite {
 composite {
 	object {
 		x=5
-		y=440
+		y=483
 		width=120
 		height=26
 	}
@@ -1965,7 +1893,7 @@ composite {
 		rectangle {
 			object {
 				x=5
-				y=440
+				y=483
 				width=120
 				height=24
 			}
@@ -1976,7 +1904,7 @@ composite {
 		text {
 			object {
 				x=11
-				y=444
+				y=487
 				width=100
 				height=22
 			}
@@ -1990,7 +1918,7 @@ composite {
 composite {
 	object {
 		x=275
-		y=289
+		y=324
 		width=76
 		height=84
 	}
@@ -1999,7 +1927,7 @@ composite {
 		"text update" {
 			object {
 				x=276
-				y=314
+				y=349
 				width=75
 				height=18
 			}
@@ -2015,7 +1943,7 @@ composite {
 		"text update" {
 			object {
 				x=275
-				y=334
+				y=369
 				width=75
 				height=18
 			}
@@ -2031,7 +1959,7 @@ composite {
 		text {
 			object {
 				x=287
-				y=289
+				y=324
 				width=40
 				height=18
 			}
@@ -2044,7 +1972,7 @@ composite {
 		"text update" {
 			object {
 				x=275
-				y=355
+				y=390
 				width=75
 				height=18
 			}
@@ -2059,56 +1987,10 @@ composite {
 		}
 	}
 }
-text {
-	object {
-		x=890
-		y=456
-		width=40
-		height=13
-	}
-	"basic attribute" {
-		clr=20
-		fill="outline"
-	}
-	"dynamic attribute" {
-		vis="if not zero"
-		chan="harp_2H02A.MOVN"
-	}
-	textix="Moving"
-}
-text {
-	object {
-		x=895
-		y=473
-		width=24
-		height=14
-	}
-	"basic attribute" {
-		clr=14
-	}
-	"dynamic attribute" {
-		vis="if zero"
-		calc="ABS(A<0.1)"
-		chan="harp_2H02A.RBV"
-	}
-	textix="OUT"
-}
-text {
-	object {
-		x=875
-		y=435
-		width=70
-		height=18
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Harp 2H02A"
-}
 composite {
 	object {
 		x=880
-		y=85
+		y=128
 		width=76
 		height=89
 	}
@@ -2117,7 +1999,7 @@ composite {
 		text {
 			object {
 				x=905
-				y=85
+				y=128
 				width=30
 				height=15
 			}
@@ -2129,7 +2011,7 @@ composite {
 		"text update" {
 			object {
 				x=880
-				y=140
+				y=183
 				width=75
 				height=18
 			}
@@ -2145,7 +2027,7 @@ composite {
 		"text update" {
 			object {
 				x=881
-				y=103
+				y=146
 				width=75
 				height=18
 			}
@@ -2161,7 +2043,7 @@ composite {
 		text {
 			object {
 				x=905
-				y=159
+				y=202
 				width=30
 				height=15
 			}
@@ -2175,7 +2057,7 @@ composite {
 text {
 	object {
 		x=935
-		y=435
+		y=478
 		width=80
 		height=18
 	}
@@ -2188,7 +2070,7 @@ text {
 text {
 	object {
 		x=948
-		y=456
+		y=499
 		width=60
 		height=13
 	}
@@ -2206,7 +2088,7 @@ text {
 rectangle {
 	object {
 		x=950
-		y=471
+		y=514
 		width=55
 		height=14
 	}
@@ -2221,7 +2103,7 @@ rectangle {
 text {
 	object {
 		x=960
-		y=471
+		y=514
 		width=40
 		height=14
 	}
@@ -2237,7 +2119,7 @@ text {
 "text update" {
 	object {
 		x=998
-		y=497
+		y=540
 		width=2
 		height=2
 	}
@@ -2252,7 +2134,7 @@ text {
 rectangle {
 	object {
 		x=950
-		y=486
+		y=529
 		width=55
 		height=16
 	}
@@ -2267,7 +2149,7 @@ rectangle {
 text {
 	object {
 		x=958
-		y=486
+		y=529
 		width=40
 		height=14
 	}
@@ -2277,45 +2159,13 @@ text {
 	"dynamic attribute" {
 		chan="display1.THSV"
 	}
-	textix="4 um W"
+	textix="8um W"
 	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=943
-		y=495
-		width=2
-		height=2
-	}
-	monitor {
-		chan="display1.THSV"
-		clr=60
-		bclr=4
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=943
-		y=495
-		width=2
-		height=2
-	}
-	monitor {
-		chan="display1.THSV"
-		clr=60
-		bclr=4
-	}
-	align="horiz. centered"
-	limits {
-	}
 }
 rectangle {
 	object {
 		x=950
-		y=504
+		y=547
 		width=55
 		height=17
 	}
@@ -2330,7 +2180,7 @@ rectangle {
 text {
 	object {
 		x=958
-		y=505
+		y=548
 		width=40
 		height=14
 	}
@@ -2340,13 +2190,13 @@ text {
 	"dynamic attribute" {
 		chan="display1.THSV"
 	}
-	textix="8 um W"
+	textix="20um W"
 	align="horiz. centered"
 }
 rectangle {
 	object {
 		x=950
-		y=523
+		y=566
 		width=55
 		height=17
 	}
@@ -2361,7 +2211,7 @@ rectangle {
 text {
 	object {
 		x=955
-		y=525
+		y=568
 		width=40
 		height=14
 	}
@@ -2377,7 +2227,7 @@ text {
 rectangle {
 	object {
 		x=950
-		y=542
+		y=585
 		width=55
 		height=17
 	}
@@ -2392,7 +2242,7 @@ rectangle {
 text {
 	object {
 		x=955
-		y=544
+		y=587
 		width=40
 		height=14
 	}
@@ -2402,13 +2252,13 @@ text {
 	"dynamic attribute" {
 		chan="display1.THSV"
 	}
-	textix="CH2"
+	textix="15um W"
 	align="horiz. centered"
 }
 composite {
 	object {
 		x=1160
-		y=420
+		y=461
 		width=110
 		height=54
 	}
@@ -2417,7 +2267,7 @@ composite {
 		"text update" {
 			object {
 				x=1170
-				y=456
+				y=497
 				width=75
 				height=18
 			}
@@ -2433,7 +2283,7 @@ composite {
 		"text update" {
 			object {
 				x=1170
-				y=435
+				y=476
 				width=75
 				height=18
 			}
@@ -2449,7 +2299,7 @@ composite {
 		text {
 			object {
 				x=1160
-				y=420
+				y=461
 				width=110
 				height=18
 			}
@@ -2463,19 +2313,19 @@ composite {
 text {
 	object {
 		x=1090
-		y=435
+		y=478
 		width=70
 		height=18
 	}
 	"basic attribute" {
-		clr=19
+		clr=14
 	}
 	textix="Beam blocker"
 }
 text {
 	object {
 		x=1110
-		y=456
+		y=499
 		width=40
 		height=13
 	}
@@ -2492,7 +2342,7 @@ text {
 rectangle {
 	object {
 		x=1115
-		y=474
+		y=517
 		width=27
 		height=16
 	}
@@ -2508,7 +2358,7 @@ rectangle {
 text {
 	object {
 		x=1120
-		y=475
+		y=518
 		width=24
 		height=14
 	}
@@ -2523,7 +2373,7 @@ text {
 rectangle {
 	object {
 		x=1115
-		y=495
+		y=538
 		width=27
 		height=16
 	}
@@ -2539,7 +2389,7 @@ rectangle {
 text {
 	object {
 		x=1120
-		y=496
+		y=539
 		width=24
 		height=14
 	}
@@ -2554,113 +2404,91 @@ text {
 }
 composite {
 	object {
-		x=1090
-		y=274
-		width=180
-		height=58
+		x=1160
+		y=309
+		width=110
+		height=54
 	}
 	"composite name"=""
 	children {
-		composite {
+		"text update" {
 			object {
-				x=1160
-				y=274
-				width=110
-				height=54
+				x=1170
+				y=345
+				width=75
+				height=18
 			}
-			"composite name"=""
-			children {
-				"text update" {
-					object {
-						x=1170
-						y=310
-						width=75
-						height=18
-					}
-					monitor {
-						chan="tempSensorV"
-						clr=0
-						bclr=25
-					}
-					align="horiz. centered"
-					limits {
-					}
-				}
-				"text update" {
-					object {
-						x=1170
-						y=289
-						width=75
-						height=18
-					}
-					monitor {
-						chan="tempSensorU"
-						clr=0
-						bclr=25
-					}
-					align="horiz. centered"
-					limits {
-					}
-				}
-				text {
-					object {
-						x=1160
-						y=274
-						width=110
-						height=18
-					}
-					"basic attribute" {
-						clr=14
-					}
-					textix="FC Tempratures (F)"
-				}
+			monitor {
+				chan="tempSensorV"
+				clr=0
+				bclr=25
+			}
+			align="horiz. centered"
+			limits {
 			}
 		}
-		composite {
+		"text update" {
 			object {
-				x=1090
-				y=289
-				width=80
-				height=43
+				x=1170
+				y=324
+				width=75
+				height=18
 			}
-			"composite name"=""
-			children {
-				text {
-					object {
-						x=1090
-						y=289
-						width=80
-						height=18
-					}
-					"basic attribute" {
-						clr=14
-					}
-					textix="Faraday Cup"
-				}
-				"text update" {
-					object {
-						x=1090
-						y=314
-						width=75
-						height=18
-					}
-					monitor {
-						chan="scaler_calc1"
-						clr=0
-						bclr=25
-					}
-					align="horiz. centered"
-					limits {
-					}
-				}
+			monitor {
+				chan="tempSensorU"
+				clr=0
+				bclr=25
 			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=1160
+				y=309
+				width=110
+				height=18
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="FC Tempratures (F)"
 		}
 	}
 }
 text {
 	object {
+		x=1090
+		y=324
+		width=80
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Faraday Cup"
+}
+"text update" {
+	object {
+		x=1090
+		y=349
+		width=75
+		height=18
+	}
+	monitor {
+		chan="scaler_calc1b"
+		clr=0
+		bclr=25
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
 		x=770
-		y=435
+		y=478
 		width=90
 		height=18
 	}
@@ -2673,7 +2501,7 @@ text {
 text {
 	object {
 		x=791
-		y=455
+		y=498
 		width=60
 		height=13
 	}
@@ -2691,7 +2519,7 @@ text {
 rectangle {
 	object {
 		x=795
-		y=469
+		y=512
 		width=50
 		height=14
 	}
@@ -2706,7 +2534,7 @@ rectangle {
 text {
 	object {
 		x=800
-		y=469
+		y=512
 		width=40
 		height=14
 	}
@@ -2722,7 +2550,7 @@ text {
 "text update" {
 	object {
 		x=838
-		y=495
+		y=538
 		width=2
 		height=2
 	}
@@ -2737,7 +2565,7 @@ text {
 rectangle {
 	object {
 		x=795
-		y=484
+		y=527
 		width=50
 		height=16
 	}
@@ -2752,7 +2580,7 @@ rectangle {
 text {
 	object {
 		x=798
-		y=484
+		y=527
 		width=40
 		height=14
 	}
@@ -2768,7 +2596,7 @@ text {
 "text update" {
 	object {
 		x=783
-		y=493
+		y=536
 		width=2
 		height=2
 	}
@@ -2784,7 +2612,7 @@ text {
 "text update" {
 	object {
 		x=783
-		y=493
+		y=536
 		width=2
 		height=2
 	}
@@ -2800,7 +2628,7 @@ text {
 rectangle {
 	object {
 		x=795
-		y=520
+		y=563
 		width=50
 		height=17
 	}
@@ -2815,7 +2643,7 @@ rectangle {
 text {
 	object {
 		x=798
-		y=523
+		y=566
 		width=40
 		height=14
 	}
@@ -2831,7 +2659,7 @@ text {
 rectangle {
 	object {
 		x=795
-		y=502
+		y=545
 		width=50
 		height=17
 	}
@@ -2846,7 +2674,7 @@ rectangle {
 text {
 	object {
 		x=798
-		y=503
+		y=546
 		width=40
 		height=14
 	}
@@ -2862,7 +2690,7 @@ text {
 rectangle {
 	object {
 		x=795
-		y=539
+		y=582
 		width=50
 		height=17
 	}
@@ -2877,7 +2705,7 @@ rectangle {
 "text update" {
 	object {
 		x=797
-		y=543
+		y=586
 		width=2
 		height=2
 	}
@@ -2892,7 +2720,7 @@ rectangle {
 text {
 	object {
 		x=798
-		y=540
+		y=583
 		width=40
 		height=14
 	}
@@ -2908,7 +2736,7 @@ text {
 "text update" {
 	object {
 		x=845
-		y=552
+		y=595
 		width=2
 		height=2
 	}
@@ -2923,7 +2751,7 @@ text {
 rectangle {
 	object {
 		x=795
-		y=558
+		y=601
 		width=50
 		height=17
 	}
@@ -2938,7 +2766,7 @@ rectangle {
 text {
 	object {
 		x=798
-		y=558
+		y=601
 		width=40
 		height=14
 	}
@@ -2954,7 +2782,7 @@ text {
 "text update" {
 	object {
 		x=846
-		y=572
+		y=615
 		width=2
 		height=2
 	}
@@ -2966,168 +2794,146 @@ text {
 	limits {
 	}
 }
-composite {
+text {
+	object {
+		x=900
+		y=295
+		width=75
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Position (mm)"
+}
+text {
+	object {
+		x=900
+		y=373
+		width=75
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Position (mm)"
+}
+text {
 	object {
 		x=865
-		y=239
-		width=190
-		height=135
+		y=320
+		width=115
+		height=18
 	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=900
-				y=260
-				width=75
-				height=18
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Position (mm)"
-		}
-		text {
-			object {
-				x=900
-				y=338
-				width=75
-				height=18
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Position (mm)"
-		}
-		text {
-			object {
-				x=865
-				y=285
-				width=115
-				height=18
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Dist from beam (mm)"
-		}
-		text {
-			object {
-				x=865
-				y=310
-				width=115
-				height=18
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Dist from beam (mm)"
-		}
-		composite {
-			object {
-				x=980
-				y=239
-				width=75
-				height=135
-			}
-			"composite name"=""
-			children {
-				"text update" {
-					object {
-						x=980
-						y=285
-						width=75
-						height=18
-					}
-					monitor {
-						chan="hps:svt:top:si"
-						clr=14
-						bclr=50
-					}
-					align="horiz. centered"
-					limits {
-					}
-				}
-				"text update" {
-					object {
-						x=980
-						y=260
-						width=75
-						height=18
-					}
-					monitor {
-						chan="hps:svt_top:motor.RBV"
-						clr=14
-						bclr=50
-					}
-					align="horiz. centered"
-					limits {
-					}
-				}
-				text {
-					object {
-						x=995
-						y=239
-						width=45
-						height=18
-					}
-					"basic attribute" {
-						clr=14
-					}
-					textix="TOP SVT"
-				}
-				"text update" {
-					object {
-						x=980
-						y=336
-						width=75
-						height=18
-					}
-					monitor {
-						chan="hps:svt_bot:motor.RBV"
-						clr=14
-						bclr=50
-					}
-					align="horiz. centered"
-					limits {
-					}
-				}
-				"text update" {
-					object {
-						x=980
-						y=311
-						width=75
-						height=18
-					}
-					monitor {
-						chan="hps:svt:bot:si"
-						clr=14
-						bclr=50
-					}
-					align="horiz. centered"
-					limits {
-					}
-				}
-				text {
-					object {
-						x=995
-						y=356
-						width=45
-						height=18
-					}
-					"basic attribute" {
-						clr=14
-					}
-					textix="BOT SVT"
-				}
-			}
-		}
+	"basic attribute" {
+		clr=14
 	}
+	textix="Dist from beam (mm)"
+}
+text {
+	object {
+		x=865
+		y=345
+		width=115
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Dist from beam (mm)"
+}
+"text update" {
+	object {
+		x=980
+		y=320
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hps:svt:top:si"
+		clr=14
+		bclr=60
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=980
+		y=295
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hps:svt_top:motor.RBV"
+		clr=14
+		bclr=60
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=995
+		y=274
+		width=45
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="TOP SVT"
+}
+"text update" {
+	object {
+		x=980
+		y=371
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hps:svt_bot:motor.RBV"
+		clr=14
+		bclr=60
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=980
+		y=346
+		width=75
+		height=18
+	}
+	monitor {
+		chan="hps:svt:bot:si"
+		clr=14
+		bclr=60
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=995
+		y=391
+		width=45
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="BOT SVT"
 }
 rectangle {
 	object {
 		x=0
-		y=605
+		y=640
 		width=120
 		height=24
 	}
@@ -3138,7 +2944,7 @@ rectangle {
 text {
 	object {
 		x=8
-		y=608
+		y=643
 		width=100
 		height=20
 	}
@@ -3150,7 +2956,7 @@ text {
 "text update" {
 	object {
 		x=130
-		y=612
+		y=647
 		width=75
 		height=18
 	}
@@ -3167,7 +2973,7 @@ text {
 "text update" {
 	object {
 		x=220
-		y=612
+		y=647
 		width=75
 		height=18
 	}
@@ -3184,7 +2990,7 @@ text {
 "text update" {
 	object {
 		x=310
-		y=612
+		y=647
 		width=75
 		height=18
 	}
@@ -3201,7 +3007,7 @@ text {
 "text update" {
 	object {
 		x=410
-		y=612
+		y=647
 		width=75
 		height=18
 	}
@@ -3218,7 +3024,7 @@ text {
 text {
 	object {
 		x=145
-		y=592
+		y=632
 		width=40
 		height=18
 	}
@@ -3231,7 +3037,7 @@ text {
 text {
 	object {
 		x=235
-		y=592
+		y=632
 		width=40
 		height=18
 	}
@@ -3244,7 +3050,7 @@ text {
 text {
 	object {
 		x=325
-		y=592
+		y=632
 		width=40
 		height=18
 	}
@@ -3257,7 +3063,7 @@ text {
 text {
 	object {
 		x=425
-		y=592
+		y=632
 		width=40
 		height=18
 	}
@@ -3270,7 +3076,7 @@ text {
 "text update" {
 	object {
 		x=660
-		y=612
+		y=647
 		width=75
 		height=18
 	}
@@ -3287,7 +3093,7 @@ text {
 text {
 	object {
 		x=675
-		y=592
+		y=632
 		width=40
 		height=18
 	}
@@ -3300,7 +3106,7 @@ text {
 "text update" {
 	object {
 		x=825
-		y=612
+		y=647
 		width=75
 		height=18
 	}
@@ -3317,7 +3123,7 @@ text {
 text {
 	object {
 		x=840
-		y=592
+		y=632
 		width=40
 		height=18
 	}
@@ -3330,7 +3136,7 @@ text {
 composite {
 	object {
 		x=1165
-		y=85
+		y=128
 		width=75
 		height=89
 	}
@@ -3339,7 +3145,7 @@ composite {
 		composite {
 			object {
 				x=1165
-				y=140
+				y=183
 				width=75
 				height=34
 			}
@@ -3348,7 +3154,7 @@ composite {
 				"text update" {
 					object {
 						x=1165
-						y=140
+						y=183
 						width=75
 						height=18
 					}
@@ -3364,7 +3170,7 @@ composite {
 				text {
 					object {
 						x=1190
-						y=159
+						y=202
 						width=30
 						height=15
 					}
@@ -3378,7 +3184,7 @@ composite {
 		composite {
 			object {
 				x=1165
-				y=85
+				y=128
 				width=75
 				height=38
 			}
@@ -3387,7 +3193,7 @@ composite {
 				"text update" {
 					object {
 						x=1165
-						y=105
+						y=148
 						width=75
 						height=18
 					}
@@ -3403,7 +3209,7 @@ composite {
 				text {
 					object {
 						x=1185
-						y=85
+						y=128
 						width=30
 						height=15
 					}
@@ -3419,7 +3225,7 @@ composite {
 "text update" {
 	object {
 		x=910
-		y=600
+		y=647
 		width=75
 		height=18
 	}
@@ -3436,7 +3242,7 @@ composite {
 text {
 	object {
 		x=925
-		y=580
+		y=632
 		width=40
 		height=18
 	}
@@ -3448,21 +3254,21 @@ text {
 }
 text {
 	object {
-		x=616
-		y=75
+		x=723
+		y=126
 		width=120
 		height=18
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Downstream Counters"
+	textix="Downstream"
 	align="horiz. centered"
 }
 text {
 	object {
-		x=645
-		y=415
+		x=695
+		y=468
 		width=50
 		height=18
 	}
@@ -3472,86 +3278,15 @@ text {
 	textix="Torus"
 	align="horiz. centered"
 }
-text {
-	object {
-		x=979
-		y=39
-		width=160
-		height=18
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Halo counters FSD signal"
-	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=1011
-		y=55
-		width=85
-		height=18
-	}
-	monitor {
-		chan="ISD2H001ALOS2B"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=745
-		y=740
-		width=61
-		height=18
-	}
-	monitor {
-		chan="MQB2H01.BDL"
-		clr=0
-		bclr=53
-	}
-	align="horiz. centered"
-	format="truncated"
-	limits {
-	}
-}
-text {
-	object {
-		x=745
-		y=765
-		width=60
-		height=18
-	}
-	"basic attribute" {
-		clr=54
-	}
-	textix="Skew Quad"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=750
-		y=725
-		width=50
-		height=16
-	}
-	"basic attribute" {
-		clr=54
-	}
-	textix="MQB2H01"
-}
 "text update" {
 	object {
 		x=957
-		y=109
+		y=152
 		width=50
 		height=12
 	}
 	monitor {
-		chan="B_SCALERSHPS1_Sl14_Ch12.VAL"
+		chan="B_HW_HPS1_FADC_Sl14_Ch08:c"
 		clr=14
 		bclr=35
 	}
@@ -3563,12 +3298,12 @@ text {
 "text update" {
 	object {
 		x=1009
-		y=109
+		y=152
 		width=50
 		height=12
 	}
 	monitor {
-		chan="B_SCALERSHPS1_Sl15_Ch4.VAL"
+		chan="B_HW_HPS1_FADC_Sl15_Ch00:c"
 		clr=14
 		bclr=35
 	}
@@ -3580,12 +3315,12 @@ text {
 "text update" {
 	object {
 		x=1061
-		y=109
+		y=152
 		width=50
 		height=12
 	}
 	monitor {
-		chan="B_SCALERSHPS1_Sl15_Ch12.VAL"
+		chan="B_HW_HPS1_FADC_Sl16_Ch00:c"
 		clr=14
 		bclr=35
 	}
@@ -3597,12 +3332,12 @@ text {
 "text update" {
 	object {
 		x=1113
-		y=109
+		y=152
 		width=50
 		height=12
 	}
 	monitor {
-		chan="B_SCALERSHPS1_Sl16_Ch4.VAL"
+		chan="B_HW_HPS1_FADC_Sl16_Ch08:c"
 		clr=14
 		bclr=35
 	}
@@ -3614,12 +3349,12 @@ text {
 "text update" {
 	object {
 		x=957
-		y=138
+		y=181
 		width=50
 		height=12
 	}
 	monitor {
-		chan="B_SCALERSHPS2_Sl14_Ch12.VAL"
+		chan="B_HW_HPS2_FADC_Sl14_Ch08:c"
 		clr=14
 		bclr=35
 	}
@@ -3631,12 +3366,12 @@ text {
 "text update" {
 	object {
 		x=1061
-		y=138
+		y=181
 		width=50
 		height=12
 	}
 	monitor {
-		chan="B_SCALERSHPS2_Sl15_Ch12.VAL"
+		chan="B_HW_HPS2_FADC_Sl16_Ch00:c"
 		clr=14
 		bclr=35
 	}
@@ -3648,12 +3383,12 @@ text {
 "text update" {
 	object {
 		x=1009
-		y=138
+		y=181
 		width=50
 		height=12
 	}
 	monitor {
-		chan="B_SCALERSHPS2_Sl15_Ch4.VAL"
+		chan="B_HW_HPS2_FADC_Sl15_Ch00:c"
 		clr=14
 		bclr=35
 	}
@@ -3665,12 +3400,12 @@ text {
 "text update" {
 	object {
 		x=1113
-		y=138
+		y=181
 		width=50
 		height=12
 	}
 	monitor {
-		chan="B_SCALERSHPS2_Sl16_Ch4.VAL"
+		chan="B_HW_HPS2_FADC_Sl16_Ch08:c"
 		clr=14
 		bclr=35
 	}
@@ -3682,7 +3417,7 @@ text {
 text {
 	object {
 		x=1047
-		y=156
+		y=199
 		width=24
 		height=10
 	}
@@ -3695,7 +3430,7 @@ text {
 text {
 	object {
 		x=1047
-		y=92
+		y=135
 		width=24
 		height=10
 	}
@@ -3708,7 +3443,7 @@ text {
 text {
 	object {
 		x=977
-		y=165
+		y=208
 		width=24
 		height=10
 	}
@@ -3721,7 +3456,7 @@ text {
 text {
 	object {
 		x=1120
-		y=165
+		y=208
 		width=24
 		height=10
 	}
@@ -3734,7 +3469,7 @@ text {
 polyline {
 	object {
 		x=1005
-		y=163
+		y=206
 		width=30
 		height=0
 	}
@@ -3742,14 +3477,14 @@ polyline {
 		clr=14
 	}
 	points {
-		(1005,163)
-		(1035,163)
+		(1005,206)
+		(1035,206)
 	}
 }
 polyline {
 	object {
 		x=1081
-		y=164
+		y=207
 		width=30
 		height=0
 	}
@@ -3757,14 +3492,14 @@ polyline {
 		clr=14
 	}
 	points {
-		(1081,164)
-		(1111,164)
+		(1081,207)
+		(1111,207)
 	}
 }
 text {
 	object {
 		x=976
-		y=152
+		y=195
 		width=24
 		height=10
 	}
@@ -3776,7 +3511,7 @@ text {
 text {
 	object {
 		x=1118
-		y=152
+		y=195
 		width=24
 		height=10
 	}
@@ -3788,7 +3523,7 @@ text {
 text {
 	object {
 		x=454
-		y=435
+		y=478
 		width=105
 		height=20
 	}
@@ -3801,7 +3536,7 @@ text {
 text {
 	object {
 		x=471
-		y=455
+		y=498
 		width=60
 		height=13
 	}
@@ -3819,7 +3554,7 @@ text {
 rectangle {
 	object {
 		x=475
-		y=492
+		y=535
 		width=50
 		height=14
 	}
@@ -3834,7 +3569,7 @@ rectangle {
 text {
 	object {
 		x=480
-		y=492
+		y=535
 		width=40
 		height=14
 	}
@@ -3850,7 +3585,7 @@ text {
 rectangle {
 	object {
 		x=475
-		y=527
+		y=570
 		width=50
 		height=17
 	}
@@ -3865,7 +3600,7 @@ rectangle {
 text {
 	object {
 		x=478
-		y=530
+		y=573
 		width=40
 		height=14
 	}
@@ -3875,13 +3610,13 @@ text {
 	"dynamic attribute" {
 		chan="display1.THSV"
 	}
-	textix="6.4 mm"
+	textix="Blank"
 	align="horiz. centered"
 }
 rectangle {
 	object {
 		x=475
-		y=509
+		y=552
 		width=50
 		height=17
 	}
@@ -3896,7 +3631,7 @@ rectangle {
 text {
 	object {
 		x=478
-		y=510
+		y=553
 		width=40
 		height=14
 	}
@@ -3906,13 +3641,13 @@ text {
 	"dynamic attribute" {
 		chan="display1.THSV"
 	}
-	textix="12.7 mm"
+	textix="20 mm"
 	align="horiz. centered"
 }
 rectangle {
 	object {
 		x=475
-		y=546
+		y=589
 		width=50
 		height=17
 	}
@@ -3927,7 +3662,7 @@ rectangle {
 "text update" {
 	object {
 		x=477
-		y=550
+		y=593
 		width=2
 		height=2
 	}
@@ -3942,7 +3677,7 @@ rectangle {
 text {
 	object {
 		x=478
-		y=547
+		y=590
 		width=40
 		height=14
 	}
@@ -3952,13 +3687,13 @@ text {
 	"dynamic attribute" {
 		chan="display1.THSV"
 	}
-	textix="2.6 mm"
+	textix="12 mm"
 	align="horiz. centered"
 }
 "text update" {
 	object {
 		x=527
-		y=553
+		y=596
 		width=2
 		height=2
 	}
@@ -3972,28 +3707,13 @@ text {
 }
 "text update" {
 	object {
-		x=590
-		y=5
-		width=150
-		height=20
+		x=480
+		y=148
+		width=75
+		height=18
 	}
 	monitor {
-		chan="iocchicane:TOD"
-		clr=14
-		bclr=4
-	}
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=203
-		y=170
-		width=20
-		height=20
-	}
-	monitor {
-		chan="frwd_scalerS15b"
+		chan="scaler_cS7b.VAL"
 		clr=14
 		bclr=50
 	}
@@ -4001,137 +3721,1613 @@ text {
 	limits {
 	}
 }
-composite {
+text {
 	object {
-		x=230
+		x=542
+		y=130
+		width=34
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Tagger"
+}
+rectangle {
+	object {
+		x=880
+		y=515
+		width=50
+		height=14
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		calc="ABS(A<0.1)"
+		chan="harp_2H02A.RBV"
+	}
+}
+text {
+	object {
+		x=890
+		y=499
+		width=40
+		height=13
+	}
+	"basic attribute" {
+		clr=20
+		fill="outline"
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="harp_2H02A.MOVN"
+	}
+	textix="Moving"
+}
+text {
+	object {
+		x=895
+		y=516
+		width=24
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		calc="ABS(A<0.1)"
+		chan="harp_2H02A.RBV"
+	}
+	textix="OUT"
+}
+text {
+	object {
+		x=875
+		y=478
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Harp 2H02A"
+}
+"text update" {
+	object {
+		x=943
+		y=538
+		width=2
+		height=2
+	}
+	monitor {
+		chan="display1.THSV"
+		clr=60
+		bclr=4
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=943
+		y=538
+		width=2
+		height=2
+	}
+	monitor {
+		chan="display1.THSV"
+		clr=60
+		bclr=4
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=605
+		y=516
+		width=50
+		height=14
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		calc="ABS(A<0.1)"
+		chan="harp_2H01.RBV"
+	}
+}
+text {
+	object {
+		x=615
+		y=499
+		width=40
+		height=13
+	}
+	"basic attribute" {
+		clr=20
+		fill="outline"
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="harp_2H01.MOVN"
+	}
+	textix="Moving"
+}
+text {
+	object {
+		x=620
+		y=516
+		width=24
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		calc="ABS(A<0.1)"
+		chan="harp_2H01.RBV"
+	}
+	textix="OUT"
+}
+text {
+	object {
+		x=600
+		y=478
+		width=70
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Harp 2H01A"
+}
+"text update" {
+	object {
+		x=668
+		y=533
+		width=2
+		height=2
+	}
+	monitor {
+		chan="display1.THSV"
+		clr=60
+		bclr=4
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=668
+		y=533
+		width=2
+		height=2
+	}
+	monitor {
+		chan="display1.THSV"
+		clr=60
+		bclr=4
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1140
+		y=405
+		width=75
+		height=18
+	}
+	monitor {
+		chan="slm_fcup_ratio"
+		clr=0
+		bclr=25
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1140
+		y=385
+		width=75
+		height=18
+	}
+	monitor {
+		chan="B_FCUP_OVER_2C21"
+		clr=0
+		bclr=25
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+text {
+	object {
+		x=1085
+		y=407
+		width=80
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="FCup/SLM"
+}
+text {
+	object {
+		x=1085
+		y=386
+		width=80
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="FCup/2C21"
+}
+text {
+	object {
+		x=6
+		y=202
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="DAQ Status"
+	align="horiz. right"
+}
+text {
+	object {
+		x=6
+		y=182
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Beam Availibility"
+	align="horiz. right"
+}
+text {
+	object {
+		x=6
+		y=242
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Beam Destination"
+	align="horiz. right"
+}
+text {
+	object {
+		x=6
+		y=222
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Beam Type"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=119
+		y=282
+		width=150
+		height=18
+	}
+	monitor {
+		chan="HLB:bta_60hz_rms"
+		clr=14
+		bclr=5
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=6
+		y=282
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Max RMS (%)"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=119
+		y=262
+		width=150
+		height=18
+	}
+	monitor {
+		chan="MBSY2C_energy"
+		clr=14
+		bclr=5
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=3
+	}
+}
+text {
+	object {
+		x=6
+		y=262
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="BSY Energy (MeV)"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=119
+		y=302
+		width=150
+		height=18
+	}
+	monitor {
+		chan="pgunFreqDiv:B:frequency"
+		clr=14
+		bclr=5
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=6
+		y=302
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Bunch Frequency"
+	align="horiz. right"
+}
+text {
+	object {
+		x=119
+		y=202
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=0"
+		chan="HLB:bta_daq_used"
+	}
+	textix="Not In Use"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=1010
+		y=478
+		width=80
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Beam Viewer"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=1023
+		y=499
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=20
+		fill="outline"
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="viewer.MOVN"
+	}
+	textix="Moving"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=1025
+		y=533
+		width=55
+		height=16
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="viewer_at_c"
+	}
+}
+text {
+	object {
+		x=1035
+		y=535
+		width=40
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="display1.ONSV"
+	}
+	textix="Chromax"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=1073
+		y=562
+		width=2
+		height=2
+	}
+	monitor {
+		clr=14
+		bclr=4
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=1025
+		y=551
+		width=55
+		height=16
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="viewer_at_b"
+	}
+}
+text {
+	object {
+		x=1033
+		y=551
+		width=40
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="display1.THSV"
+	}
+	textix="BNNT"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=1025
+		y=569
+		width=55
+		height=17
+	}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="viewer_at_a"
+	}
+}
+text {
+	object {
+		x=1033
+		y=570
+		width=40
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="display1.THSV"
+	}
+	textix="OTR"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=1018
+		y=560
+		width=2
+		height=2
+	}
+	monitor {
+		chan="display1.THSV"
+		clr=60
+		bclr=4
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1018
+		y=560
+		width=2
+		height=2
+	}
+	monitor {
+		chan="display1.THSV"
+		clr=60
+		bclr=4
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=119
+		y=202
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=1"
+		chan="HLB:bta_daq_used"
+	}
+	textix="In Use"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=119
+		y=202
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=5
+	}
+}
+text {
+	object {
+		x=119
+		y=182
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=1"
+		chan="HLB:bta_bm_present"
+	}
+	textix="Available"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=119
+		y=182
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=0"
+		chan="HLB:bta_bm_present"
+	}
+	textix="Not Available"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=119
+		y=182
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=5
+	}
+}
+text {
+	object {
+		x=119
+		y=222
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=0"
+		chan="HLB:bta_bm_type"
+	}
+	textix="Electron"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=119
+		y=222
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=1"
+		chan="HLB:bta_bm_type"
+	}
+	textix="Photon"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=119
+		y=222
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=5
+	}
+}
+text {
+	object {
+		x=119
+		y=242
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=0"
+		chan="TMSUGGESTISET.B"
+	}
+	textix="Faraday Cup"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=119
+		y=242
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=5
+	}
+}
+text {
+	object {
+		x=117
+		y=242
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=1"
+		chan="TMSUGGESTISET.B"
+	}
+	textix="Dipole Yoke"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=116
+		y=242
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A=2"
+		chan="TMSUGGESTISET.B"
+	}
+	textix="Tagger Dump"
+	align="horiz. centered"
+}
+"related display" {
+	object {
+		x=250
+		y=835
+		width=120
+		height=25
+	}
+	display[0] {
+		label="JOERGER SETUP"
+		name="scaler_control.adl"
+	}
+	display[1] {
+		label="BOM SETUP"
+		name="bom_scaler_setup.adl"
+	}
+	display[2] {
+		label="ST SETUP"
+		name="st_scaler_setup.adl"
+	}
+	display[3] {
+		label="FCUP OFFSET"
+		name="autoped.adl"
+	}
+	clr=14
+	bclr=30
+	label="Scaler Setup"
+}
+text {
+	object {
+		x=23
+		y=842
+		width=200
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Menu Execute -> Make Log Entry"
+}
+text {
+	object {
+		x=18
+		y=822
+		width=200
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="To make a log entry right click:"
+}
+text {
+	object {
+		x=542
+		y=22
+		width=34
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Counts"
+}
+text {
+	object {
+		x=524
+		y=41
+		width=34
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Threshold"
+}
+text {
+	object {
+		x=489
+		y=60
+		width=34
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Dwell Time (ms)"
+}
+text {
+	object {
+		x=481
+		y=80
+		width=34
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Masked / Tripped"
+}
+"text update" {
+	object {
+		x=1035
+		y=118
+		width=50
+		height=12
+	}
+	monitor {
+		chan="B_DET_HPSHODO_FADC_TopAvg:c"
+		clr=14
+		bclr=35
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=1035
+		y=223
+		width=50
+		height=12
+	}
+	monitor {
+		chan="B_DET_HPSHODO_FADC_BottomAvg:c"
+		clr=14
+		bclr=35
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+text {
+	object {
+		x=1010
+		y=118
+		width=24
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Hodo"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=1010
+		y=223
+		width=24
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Hodo"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=1121
+		y=5
+		width=120
+		height=18
+	}
+	monitor {
+		chan="iocchicane:TOD"
+		clr=14
+		bclr=4
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1130
+		y=25
+		width=100
+		height=18
+	}
+	monitor {
+		chan="PLC_HLB"
+		clr=14
+		bclr=40
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=1130
 		y=47
-		width=125
+		width=100
+		height=18
+	}
+	monitor {
+		chan="MMSHLBPASS"
+		clr=14
+		bclr=40
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=629
+		y=82
+		width=18
+		height=16
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A & (1<<3)"
+		chan="ISD2H001HALOG"
+	}
+}
+rectangle {
+	object {
+		x=606
+		y=82
+		width=18
+		height=16
+	}
+	"basic attribute" {
+		clr=33
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A&(1<<3) || B=0 || C&(1<<2)"
+		chan="ISD2H001HALOMASKr"
+		chanB="B_FSD_ISDDEST"
+		chanC="ISD2H001MASKr"
+	}
+}
+rectangle {
+	object {
+		x=693
+		y=79
+		width=48
+		height=22
+	}
+	"basic attribute" {
+		clr=5
+	}
+}
+rectangle {
+	object {
+		x=720
+		y=82
+		width=18
+		height=16
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A & (1<<1)"
+		chan="ISD2H001HALOG"
+	}
+}
+rectangle {
+	object {
+		x=697
+		y=82
+		width=18
+		height=16
+	}
+	"basic attribute" {
+		clr=33
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A&(1<<1) || B=0 || C&(1<<2)"
+		chan="ISD2H001HALOMASKr"
+		chanB="B_FSD_ISDDEST"
+		chanC="ISD2H001MASKr"
+	}
+}
+rectangle {
+	object {
+		x=784
+		y=79
+		width=48
+		height=22
+	}
+	"basic attribute" {
+		clr=5
+	}
+}
+rectangle {
+	object {
+		x=811
+		y=82
+		width=18
+		height=16
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A & (1<<2)"
+		chan="ISD2H001HALOG"
+	}
+}
+rectangle {
+	object {
+		x=788
+		y=82
+		width=18
+		height=16
+	}
+	"basic attribute" {
+		clr=33
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A&(1<<2) || B=0 || C&(1<<2)"
+		chan="ISD2H001HALOMASKr"
+		chanB="B_FSD_ISDDEST"
+		chanC="ISD2H001MASKr"
+	}
+}
+rectangle {
+	object {
+		x=869
+		y=79
+		width=48
+		height=22
+	}
+	"basic attribute" {
+		clr=5
+	}
+}
+rectangle {
+	object {
+		x=896
+		y=82
+		width=18
+		height=16
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A & (1<<5)"
+		chan="ISD2H001HALOG"
+	}
+}
+rectangle {
+	object {
+		x=873
+		y=82
+		width=18
+		height=16
+	}
+	"basic attribute" {
+		clr=33
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A&(1<<5) || B=0 || C&(1<<2)"
+		chan="ISD2H001HALOMASKr"
+		chanB="B_FSD_ISDDEST"
+		chanC="ISD2H001MASKr"
+	}
+}
+rectangle {
+	object {
+		x=214
+		y=39
+		width=80
+		height=15
+	}
+	"basic attribute" {
+		clr=35
+	}
+}
+text {
+	object {
+		x=215
+		y=40
+		width=80
+		height=9
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ECal Rates"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=214
+		y=54
+		width=80
+		height=15
+	}
+	"basic attribute" {
+		clr=54
+	}
+}
+text {
+	object {
+		x=214
+		y=55
+		width=80
+		height=12
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="BPMs"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=214
+		y=69
+		width=80
+		height=15
+	}
+	"basic attribute" {
+		clr=60
+	}
+}
+text {
+	object {
+		x=214
+		y=70
+		width=80
+		height=9
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Motors"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=214
+		y=84
+		width=80
+		height=15
+	}
+	"basic attribute" {
+		clr=19
+	}
+}
+text {
+	object {
+		x=214
+		y=85
+		width=80
+		height=12
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Vacuum"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=214
+		y=99
+		width=80
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+}
+text {
+	object {
+		x=215
+		y=100
+		width=80
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Magnets"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=944
+		y=58
+		width=85
+		height=18
+	}
+	monitor {
+		chan="ISD2H001HALOTSET06r"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=944
+		y=39
+		width=85
+		height=18
+	}
+	monitor {
+		chan="ISD2H001HALOPTHDHZ06r"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=944
+		y=20
+		width=85
+		height=18
+	}
+	monitor {
+		chan="ISD2H001HALORATE06"
+		clr=14
+		bclr=32
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=968
+		y=5
+		width=34
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="HPS Down"
+}
+rectangle {
+	object {
+		x=959
+		y=79
+		width=48
+		height=22
+	}
+	"basic attribute" {
+		clr=5
+	}
+}
+rectangle {
+	object {
+		x=986
+		y=82
+		width=18
+		height=16
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A & (1<<6)"
+		chan="ISD2H001HALOG"
+	}
+}
+rectangle {
+	object {
+		x=963
+		y=82
+		width=18
+		height=16
+	}
+	"basic attribute" {
+		clr=33
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A&(1<<6) || B=0 || C&(1<<2)"
+		chan="ISD2H001HALOMASKr"
+		chanB="B_FSD_ISDDEST"
+		chanC="ISD2H001MASKr"
+	}
+}
+rectangle {
+	object {
+		x=215
+		y=9
+		width=80
+		height=15
+	}
+	"basic attribute" {
+		clr=32
+	}
+}
+text {
+	object {
+		x=218
+		y=10
+		width=80
+		height=9
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="FSD"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=560
+		y=148
+		width=75
+		height=18
+	}
+	monitor {
+		chan="scaler_cS6b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=326
+		y=130
+		width=30
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Upstream"
+}
+text {
+	object {
+		x=458
+		y=150
+		width=30
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Top"
+}
+text {
+	object {
+		x=640
+		y=150
+		width=30
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Right"
+}
+text {
+	object {
+		x=328
+		y=15
+		width=110
 		height=20
 	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=230
-				y=47
-				width=125
-				height=20
-			}
-			"basic attribute" {
-				clr=32
-			}
-		}
-		text {
-			object {
-				x=230
-				y=50
-				width=125
-				height=15
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Neutron Counters"
-			align="horiz. centered"
-		}
+	"basic attribute" {
+		clr=14
 	}
+	textix="Orbit Locks"
+	align="horiz. centered"
 }
-composite {
+"text update" {
 	object {
-		x=230
-		y=26
-		width=125
+		x=303
+		y=35
+		width=165
 		height=20
 	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=230
-				y=26
-				width=125
-				height=20
-			}
-			"basic attribute" {
-				clr=35
-			}
-		}
-		text {
-			object {
-				x=230
-				y=29
-				width=125
-				height=15
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="ECal Rates"
-			align="horiz. centered"
-		}
-	}
-}
-"text update" {
-	object {
-		x=826
-		y=121
-		width=50
-		height=18
-	}
 	monitor {
-		chan="HPS:NC:frascati"
+		chan="HallBHPSOrb:StringStat"
 		clr=14
-		bclr=32
+		bclr=5
 	}
 	align="horiz. centered"
 	limits {
 	}
 }
-"text update" {
+rectangle {
 	object {
-		x=1005
-		y=187
-		width=50
-		height=18
+		x=1025
+		y=515
+		width=55
+		height=17
 	}
-	monitor {
-		chan="HPS:NC:left"
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="viewer_at_home"
+	}
+}
+text {
+	object {
+		x=1033
+		y=516
+		width=40
+		height=14
+	}
+	"basic attribute" {
 		clr=14
-		bclr=32
 	}
+	"dynamic attribute" {
+		chan="display1.THSV"
+	}
+	textix="OUT"
 	align="horiz. centered"
-	limits {
+}
+text {
+	object {
+		x=1043
+		y=62
+		width=34
+		height=15
 	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Chicane"
+}
+rectangle {
+	object {
+		x=1038
+		y=79
+		width=48
+		height=22
+	}
+	"basic attribute" {
+		clr=5
+	}
+}
+rectangle {
+	object {
+		x=1065
+		y=82
+		width=18
+		height=16
+	}
+	"basic attribute" {
+		clr=20
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A & (1<<6)"
+		chan="ISD2H002G"
+	}
+}
+rectangle {
+	object {
+		x=1042
+		y=82
+		width=18
+		height=16
+	}
+	"basic attribute" {
+		clr=33
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="A&(1<<5)"
+		chan="ISD2H002MASKr"
+	}
+}
+text {
+	object {
+		x=1045
+		y=48
+		width=34
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="HPS"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=680
+		y=705
+		width=50
+		height=16
+	}
+	"basic attribute" {
+		clr=34
+	}
+	textix="MQB2H01"
 }
 "text update" {
 	object {
-		x=1068
-		y=187
-		width=50
+		x=723
+		y=701
+		width=61
 		height=18
 	}
 	monitor {
-		chan="HPS:NC:right"
-		clr=14
-		bclr=32
+		chan="MQB2H01.BDL"
+		clr=34
+		bclr=0
 	}
 	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=770
-		y=121
-		width=50
-		height=18
-	}
-	monitor {
-		chan="HPS:NC:fwdcar"
-		clr=14
-		bclr=32
-	}
-	align="horiz. centered"
+	format="truncated"
 	limits {
 	}
 }

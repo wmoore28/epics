@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/harp_genericApp/./medm/hallb_collimator.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/harp_genericApp/medm/hallb_collimator.adl"
 	version=030109
 }
 display {
 	object {
-		x=635
-		y=235
+		x=29
+		y=50
 		width=455
 		height=110
 	}
@@ -99,8 +99,8 @@ display {
 		clr=14
 		bclr=4
 	}
-	label="12.7 mm"
-	press_msg="3.0349"
+	label="20 mm"
+	press_msg="2.550"
 	clrmod="discrete"
 }
 "message button" {
@@ -115,8 +115,8 @@ display {
 		clr=14
 		bclr=4
 	}
-	label="6.4 mm"
-	press_msg="7.1280"
+	label="Blank (0 mm)"
+	press_msg="7.0837"
 }
 "message button" {
 	object {
@@ -202,7 +202,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="3.0349"
+	textix="2.550"
 	align="horiz. centered"
 }
 "text update" {
@@ -260,7 +260,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="7.1280"
+	textix="7.0837"
 	align="horiz. centered"
 }
 "message button" {
@@ -275,8 +275,8 @@ text {
 		clr=14
 		bclr=4
 	}
-	label="2.6 mm"
-	press_msg="11.2308"
+	label="12.8 mm"
+	press_msg="11.1848"
 }
 rectangle {
 	object {
@@ -303,7 +303,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="11.2308"
+	textix="11.1848"
 	align="horiz. centered"
 }
 text {

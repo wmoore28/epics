@@ -1,0 +1,44 @@
+
+****************************************************************
+
+setenv JAVA_HOME /usr/clas12/third-party-libs/jdk/1.8.0_31
+setenv PATH ${JAVA_HOME}/bin:${PATH}
+
+export JAVA_HOME=/usr/clas12/third-party-libs/jdk/1.8.0_31
+export PATH=${JAVA_HOME}/bin:${PATH}
+
+****************************************************************
+
+One-time server setup notes:
+
+1. `yum install tomcat tomcat-admin-webapps`
+2. configure tomcat to allow admin access to web manager, in /etc/tomcat/tomcat-users.xml
+3. conditions database sqlite is required in hps-recon-env.sh, remove it and just use default mysql database
+4. procServ uses ksh, clonfarm2 didn't have it, installed it via `yum install ksh`
+5. clonfarm2 didn't have telnet, installed it via `yum install telnet`
+
+****************************************************************
+
+Usage:
+
+The server-side components are running in procServ from /usr/clas12/hps/v3.0.0/apps/iocBoot/dqm.  This means they are interactively accessible from any clon machine.
+
+To connect to one, use softioc_console:
+* softioc_console dqm_server
+* softioc_console dqm_console
+* softioc_console dqm_aggregator
+
+During "offline" testing, without the normal DAQ providing data via ET, there's also two more:
+* softioc_console dqm_et
+* softioc_console dqm_evio2et
+
+When you connect, it prints the basic escape commands, e.g. ctrl-X kills/starts the process and ctlr-T toggles auto-restart.  During development/testing, the normal mode would be to disable auto-restart and use ctrl-X manually.
+
+Currently, during development/testing, the "dqm_server" doesn't do anything by default except start itself, and "dqm_console" is used to interact with it and deal with stations, e.g. `create #`, `start`, `stop`, `remove`.
+
+The "dqm_aggregator" process needs to be restarted any time the server/station/server configuration is changed/restarted.  But not until after the recon stations have (succesfully) connected to the ET-ring, since it appears they are not ready to respond to the aggregator until then.
+
+Currently, the aggregator doesn't fully exit if it fails to connect, which does seem to happen inexplicably sometimes and also if the recon stations aren't ready, in which case it must be killed manually (i.e. ctrl-X in it's procServ session).
+
+The aggregator.sh script contains the number of recon stations to expect;  the aggregator cannot currently figure that number out on its own.  So, that script should be modified, and the aggreator subsequently restarted, if the number of stations changes. 
+

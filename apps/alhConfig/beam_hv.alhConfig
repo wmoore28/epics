@@ -1,0 +1,137 @@
+GROUP   NULL  HV
+
+
+CHANNEL    HV        B_DET_BLINE_HV_UpstreamLeft
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_BLINE_HV_UpstreamLeft" hv_generic_clas12.adl >> /dev/null 
+CHANNEL    HV        B_DET_BLINE_HV_UpstreamRight
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_BLINE_HV_UpstreamRight" hv_generic_clas12.adl >> /dev/null 
+
+
+
+CHANNEL    HV        B_DET_BLINE_HV_TaggerLeft
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_BLINE_HV_TaggerLeft" hv_generic_clas12.adl >> /dev/null 
+CHANNEL    HV        B_DET_BLINE_HV_TaggerRight
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_BLINE_HV_TaggerRight" hv_generic_clas12.adl >> /dev/null 
+CHANNEL    HV        B_DET_BLINE_HV_TaggerTop
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_BLINE_HV_TaggerTop" hv_generic_clas12.adl >> /dev/null 
+
+
+
+CHANNEL    HV        B_DET_BLINE_HV_MidstreamBottom
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_BLINE_HV_MidstreamBottom" hv_generic_clas12.adl >> /dev/null 
+CHANNEL    HV        B_DET_BLINE_HV_MidstreamTop
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_BLINE_HV_MidstreamTop" hv_generic_clas12.adl >> /dev/null 
+CHANNEL    HV        B_DET_BLINE_HV_MidstreamLeft
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_BLINE_HV_MidstreamLeft" hv_generic_clas12.adl >> /dev/null 
+CHANNEL    HV        B_DET_BLINE_HV_MidstreamRight
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_BLINE_HV_MidstreamRight" hv_generic_clas12.adl >> /dev/null 
+
+
+
+CHANNEL    HV        B_DET_BLINE_HV_DownstreamBottom
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_BLINE_HV_DownstreamBottom" hv_generic_clas12.adl >> /dev/null 
+CHANNEL    HV        B_DET_BLINE_HV_DownstreamTop
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_BLINE_HV_DownstreamTop" hv_generic_clas12.adl >> /dev/null 
+CHANNEL    HV        B_DET_BLINE_HV_DownstreamLeft
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_BLINE_HV_DownstreamLeft" hv_generic_clas12.adl >> /dev/null 
+CHANNEL    HV        B_DET_BLINE_HV_DownstreamRight
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_BLINE_HV_DownstreamRight" hv_generic_clas12.adl >> /dev/null 
+
+
+
+CHANNEL    HV        B_DET_HPS_HV_HaloLeft
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_HPS_HV_HaloLeft" hv_generic_clas12.adl >> /dev/null 
+CHANNEL    HV        B_DET_HPS_HV_HaloRight
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_HPS_HV_HaloRight" hv_generic_clas12.adl >> /dev/null 
+CHANNEL    HV        B_DET_HPS_HV_HaloTop
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_HPS_HV_HaloTop" hv_generic_clas12.adl >> /dev/null 
+CHANNEL    HV        B_DET_HPS_HV_HaloSC
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_HPS_HV_HaloSC" hv_generic_clas12.adl >> /dev/null 
+
+
+
+CHANNEL    HV        B_DET_HPS_HV_Cosmic1
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_HPS_HV_Cosmic1" hv_generic_clas12.adl >> /dev/null 
+CHANNEL    HV        B_DET_HPS_HV_Cosmic2
+$GUIDANCE
+Use the "P" button to bring up control window for the tripped channel
+$END
+$COMMAND medm -x -attach -macro "P=B_DET_HPS_HV_Cosmic2" hv_generic_clas12.adl >> /dev/null 
+
+
+
+
+#CHANNEL    HV        B_DET_BLINE_HV_BLM1_property
+#$GUIDANCE
+#Use the "P" button to bring up control window for the tripped channel
+#$END
+#$COMMAND medm -x -attach -macro "P=B_DET_BLINE_HV_BLM1" hv_generic_clas12.adl >> /dev/null 
+#CHANNEL    HV        B_DET_BLINE_HV_BLM2_property
+#$GUIDANCE
+#Use the "P" button to bring up control window for the tripped channel
+#$END
+#$COMMAND medm -x -attach -macro "P=B_DET_BLINE_HV_BLM2" hv_generic_clas12.adl >> /dev/null 
+#CHANNEL    HV        B_DET_BLINE_HV_BLM3_property
+#$GUIDANCE
+#Use the "P" button to bring up control window for the tripped channel
+#$END
+#$COMMAND medm -x -attach -macro "P=B_DET_BLINE_HV_BLM3" hv_generic_clas12.adl >> /dev/null 
+#CHANNEL    HV        B_DET_BLINE_HV_BLM4_property
+#$GUIDANCE
+#Use the "P" button to bring up control window for the tripped channel
+#$END
+#$COMMAND medm -x -attach -macro "P=B_DET_BLINE_HV_BLM4" hv_generic_clas12.adl >> /dev/null 

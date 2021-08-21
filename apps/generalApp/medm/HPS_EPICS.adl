@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./HPS_EPICS.adl"
-	version=030101
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/HPS_EPICS.adl"
+	version=030109
 }
 display {
 	object {
-		x=643
-		y=31
+		x=10
+		y=80
 		width=240
 		height=835
 	}
@@ -170,10 +170,6 @@ rectangle {
 		label="IOC Health"
 		name="ioc_hps_health.adl"
 	}
-	display[1] {
-		label="IOC Health (SVT DAQ)"
-		name="ioc_hps_svt_health.adl"
-	}
 	clr=14
 	bclr=50
 }
@@ -318,7 +314,7 @@ text {
 	}
 	display[5] {
 		label="Chiller (ECAL)"
-		name="chiller_anova.adl"
+		name="LaudaECO.adl"
 		args="DESC=ECAL,P=HPS_ECAL:CHILLER:"
 	}
 	display[6] {
@@ -343,6 +339,16 @@ text {
 		label="Chiller (SVT2)"
 		name="chiller_anova.adl"
 		args="DESC=SVT2,P=HPS_SVT:CHILLER:"
+	}
+	display[11] {
+		label="Chiller (EEL-A20)"
+		name="chiller_anova.adl"
+		args="DESC=EEL-A20,P=HPS_EELA20:CHILLER:"
+	}
+	display[12] {
+		label="Chiller (EEL-A40)"
+		name="chiller_anova.adl"
+		args="DESC=EEL-A40,P=HPS_EELA40:CHILLER:"
 	}
 	clr=14
 	bclr=50
@@ -371,8 +377,13 @@ text {
 		name="cd $APP/generalApp/strip; StripTool &"
 	}
 	command[1] {
-		label="MyaViewer"
-		name="MyaViewer"
+		label="livePlot"
+		name="livePlot"
+		args="&"
+	}
+	command[2] {
+		label="myaPlot"
+		name="myaPlot"
 		args="&"
 	}
 	clr=14
@@ -504,20 +515,6 @@ text {
 	}
 	textix="Voltages"
 }
-"related display" {
-	object {
-		x=20
-		y=178
-		width=20
-		height=20
-	}
-	display[0] {
-		label="Beam Screens"
-		name="beam_screens.adl"
-	}
-	clr=14
-	bclr=50
-}
 text {
 	object {
 		x=70
@@ -569,8 +566,8 @@ text {
 		name="ECalHVStatusCompact.adl"
 	}
 	display[1] {
-		label="     BEAM     "
-		name="bm_beam_counter_1.adl"
+		label="     BEAMLINE"
+		name="bm_beam_counter_2.adl"
 	}
 	display[2] {
 		label="     BLMs     "
@@ -779,7 +776,7 @@ text {
 	}
 	display[0] {
 		label="HPS Trigger"
-		name="hps_trigger_scalers.adl"
+		name="hps_trigger_expert.adl"
 	}
 	clr=14
 	bclr=50
@@ -941,16 +938,8 @@ text {
 		height=20
 	}
 	command[0] {
-		label="Take screenshot..."
-		name="xterm -title 'Take screenshot' -geometry 60x10+0+0 -e screenshot &"
-	}
-	command[1] {
-		label="Open screenshots folder"
-		name="nautilus ~hpsrun/screenshots &"
-	}
-	command[2] {
-		label="Screenshot --> Log Entry"
-		name="xterm -e $APP/generalApp/scripts/takeScreenshotMakeLogEntry.sh"
+		label="Screenshot + Logbook Entry"
+		name="logbookEntry.sh"
 	}
 	clr=14
 	bclr=50
@@ -965,7 +954,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Screenshots"
+	textix="Screenshots & Logbook Entry"
 }
 "shell command" {
 	object {
@@ -1111,8 +1100,8 @@ text {
 		name="svtBiasMain.adl"
 	}
 	display[9] {
-		label="DAQ IOC Status"
-		name="svtDaqIOCStatus.adl"
+		label="FEB Voltages"
+		name="svtFebVoltages.adl"
 	}
 	display[10] {
 		label="HV STATUS"
@@ -1176,7 +1165,7 @@ text {
 }
 text {
 	object {
-		x=197
+		x=174
 		y=373
 		width=120
 		height=16
@@ -1184,11 +1173,11 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="ECAL"
+	textix="ECAL/HODO"
 }
 "related display" {
 	object {
-		x=167
+		x=148
 		y=369
 		width=20
 		height=20
@@ -1238,4 +1227,51 @@ text {
 		clr=14
 	}
 	textix="STATUS"
+}
+"related display" {
+	object {
+		x=20
+		y=178
+		width=20
+		height=20
+	}
+	display[0] {
+		label="Overview"
+		name="scaler_hps.adl"
+	}
+	display[1] {
+		label="Asymmetry"
+		name="asym_ia.adl"
+	}
+	display[2] {
+		label="BPMs"
+		name="BPMs.adl"
+	}
+	display[3] {
+		label="BPM Alarm Settings"
+		name="bpm-alarms.adl"
+	}
+	display[4] {
+		label="Injector"
+		name="injector.adl"
+	}
+	display[5] {
+		label="SixtyHz"
+		name="sixtyHz_scaler.adl"
+	}
+	display[6] {
+		label="Waveform Writer"
+		name="wave2root.adl"
+	}
+	display[7] {
+		label="Beam Time Accounting"
+		name="bta_status.adl"
+	}
+	display[8] {
+		label="Beam Time Structure"
+		name="beamMod.adl"
+		args="P=B_beamMod,C=sum"
+	}
+	clr=14
+	bclr=50
 }

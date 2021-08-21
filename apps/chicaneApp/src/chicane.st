@@ -6,6 +6,8 @@ program seqChicane ("P=a")
 option -c;  // donot wait on pv connections
 option -r;  // donot allow multiple instances
 
+short hallAccessState; assign hallAccessState to "PLC_HLB";
+
 short  onBtn;   assign onBtn   to "{P}:start";  monitor onBtn;
 short  offBtn;  assign offBtn  to "{P}:stop";   monitor offBtn;
 short  calcBtn; assign calcBtn to "{P}:calc";   monitor calcBtn;
@@ -17,6 +19,7 @@ float  tHoldMax; assign tHoldMax to "{P}:tHoldMax";
 float  iDeltaPS;   assign iDeltaPS   to "{P}:iDeltaPS"; monitor iDeltaPS;
 float  iDeltaMT;   assign iDeltaMT   to "{P}:iDeltaMT"; monitor iDeltaMT;
 
+string stmp;
 string msg;      assign msg      to "{P}:msg";
 
 float  iCalcPS;  assign iCalcPS  to "{P}:iCalcPS";
@@ -41,9 +44,12 @@ float energyB;   assign energyB to "MBSY2C_energy";
 float iSetPS;   assign iSetPS  to "PSPECISET";  monitor iSetPS;
 float iMonPS;   assign iMonPS  to "PSPECIRBCK"; monitor iMonPS;
 float iSetMT;   assign iSetMT  to "MTSETI";     monitor iSetMT;
-float iMonMT;   assign iMonMT  to "MTIRBCK";    monitor iMonMT;
+float iMonMT;   assign iMonMT  to "MTDACRBCK";  monitor iMonMT;
 short powerMT;  assign powerMT to "MTPSONSET";  monitor powerMT;
 short powerPS;  assign powerPS to "PSPECC.B0";  monitor powerPS;
+
+float iSetRbkPS; assign iSetRbkPS to "PSPECs"; monitor iSetRbkPS;
+float iSetRbkMT; assign iSetRbkMT to "MTISETRBCK"; monitor iSetRbkMT;
 
 int tConfirm = 5; // time to give user a chance to cancel (seconds)
 float iMaxPS = 2700.0;  // saturation current to hold at (Amps)
@@ -93,10 +99,10 @@ ss seqChicane {
 
     state init {
 
-	when (pvConnectCount() < pvChannelCount()) {
+     	when (pvConnectCount() < pvChannelCount()) {
             sprintf(msg,"Waiting for PVs (%d/%d)",pvConnectCount(),pvChannelCount());
             pvPut(msg);
-	} state init
+        } state init
         
         when () {
             isOff=0;
@@ -119,6 +125,7 @@ ss seqChicane {
         option -e; // execute entry even if previous state was the same
 
         entry {
+            pvGet(hallAccessState);
             //pvGet(iSetPS);
             //pvGet(iSetMT);
         }
@@ -129,6 +136,17 @@ ss seqChicane {
             offBtn = 0;
             pvPut(offBtn);
         } state rampOff
+
+        when (onBtn && hallAccessState<5) {
+            sprintf(stmp,msg);
+            sprintf(msg,"Beam Permit Required!");
+            pvPut(msg);
+            onBtn = 0;
+            pvPut(onBtn);
+            epicsThreadSleep(5);
+            sprintf(msg,stmp);
+            pvPut(msg);
+        } state idle
 
         when (onBtn) {
             onBtn = 0;
@@ -228,14 +246,20 @@ ss seqChicane {
             sprintf(msg,"Ramping to Zero");
             iSetPS = iZeroPS;
             iSetMT = 0;
-	    complete = 0;
+            complete = 0;
             pvPut(msg);
             pvPut(iSetPS);
             pvPut(iSetMT);
-	    pvPut(complete);
+            pvPut(complete);
             iStartPS=iMonPS;
             iStartMT=iMonMT;
         }
+
+        // allow user to override
+        //when (onBtn) {
+        //    onBtn=0;
+        //    pvPut(onBtn);
+        //} state pauseBeforeRampToMax
 
         when (isSimilar2(iMonPS,iZeroPS,iDeltaPS,iMonMT,0,iDeltaMT)) {
             sprintf(msg,"Turning MiniTorus OFF.");
@@ -255,7 +279,7 @@ ss seqChicane {
             complete = 0;
             isOff = 1;
             pvPut(isOff);
-	    pvPut(complete);
+            pvPut(complete);
             sprintf(msg,"OFF");
             pvPut(msg);
         } state idle 
@@ -287,7 +311,10 @@ ss seqChicane {
         
         when (pvConnectCount() < pvChannelCount() ) {} state init
 
-        when (offBtn) {} state rampOff
+        when (offBtn) {
+            offBtn=0;
+            pvPut(offBtn);
+        } state rampOff
 
         when (calcBtn) {
             calcBtn=0;
@@ -343,23 +370,23 @@ ss seqChicane {
         when (!isSimilar2(iCalcPS,iSetPS,iDeltaPS,iCalcMT,iSetMT,iDeltaMT)) {
         } state external
 
-	when (!isSimilar2(iMonPS,iSetPS,iDeltaPS,iMonMT,iSetMT,iDeltaMT)) {
-	    sprintf(msg,"Current NOT at spec!");
-	    pvPut(msg);
+        when (!isSimilar2(iMonPS,iSetPS,iDeltaPS,iMonMT,iSetMT,iDeltaMT)) {
+            sprintf(msg,"Current NOT at spec!");
+            pvPut(msg);
             isError=1;
             complete=0;
             pvPut(complete);
             pvPut(isError);
-	} state ready
+        } state ready
 	
         when (isSimilar2(iMonPS,iSetPS,iDeltaPS,iMonMT,iSetMT,iDeltaMT)) {
-	    sprintf(msg,"Chicane Ready");
-	    pvPut(msg);
+            sprintf(msg,"Chicane Ready");
+            pvPut(msg);
             complete=1;
             isError=0;
             pvPut(complete);
             pvPut(isError);
-	} state ready
+        } state ready
 
         exit {
             complete=0;
@@ -381,8 +408,11 @@ ss seqChicane {
             pvPut(msg);
         }
 
-	when (offBtn) {} state rampOff
-       
+        when (offBtn) {
+            offBtn=0;
+            pvPut(offBtn);
+        } state rampOff
+
         when (delay(tConfirm)) {
             complete = 0;
             pvPut(complete);
@@ -405,7 +435,7 @@ ss seqChicane {
         entry {
             sprintf(msg,"Turning power supplies ON.");
             pvPut(msg);
-	}
+        }
 
         when (pvConnectCount() < pvChannelCount() ) {} state init
 
@@ -432,20 +462,27 @@ ss seqChicane {
 
 	option -e; // execute entry even if previous state was the same
 
-	entry {
+        entry {
             iSetPS = iMaxPS;
             iSetMT = iMaxMT;
-            pvPut(iSetPS);
-            pvPut(iSetMT);
+            if (iSetRbkPS != iSetPS) {
+                pvPut(iSetPS);
+            }
+            if (iSetRbkMT != iSetMT) {
+                pvPut(iSetMT);
+            }
             isOff=0;
             pvPut(isOff);
-	    //pvGet(iSetPS);
-	    //pvGet(iSetMT);
+            //pvGet(iSetPS);
+            //pvGet(iSetMT);
             sprintf(msg,"Ramping Up to Max");
             pvPut(msg);
-	}
+        }
 
-        when (offBtn) {} state rampOff
+        when (offBtn) {
+            offBtn=0;
+            pvPut(offBtn);
+        } state rampOff
         when (pvConnectCount() < pvChannelCount() ) {} state init
         
         when ( isSimilar(iSetPS,iMonPS,iDeltaPS) ) {} state holdAtMax
@@ -457,6 +494,7 @@ ss seqChicane {
             pvPut(msg);
             epicsThreadSleep(1);
         } state rampToMax
+
         when (calcBtnCurr) {
             calcBtnCurr=0;
             pvPut(calcBtnCurr);
@@ -467,76 +505,80 @@ ss seqChicane {
 	
         when () {
             complete = minComplete(0,iMonPS,iSetPS,0,iMonMT,iSetMT);
-	    pvPut(complete);
-	    epicsThreadSleep(1);
-	    //pvGet(iSetPS);
-	    //pvGet(iSetMT);
-	} state rampToMax
+            pvPut(complete);
+            epicsThreadSleep(1);
+            //pvGet(iSetPS);
+            //pvGet(iSetMT);
+        } state rampToMax
     }
 
     state holdAtMax {
 
 	//option -t; // only reset delay timer if previous state was a different state
 	
-	entry {
-	    count = 0;
-	    complete = 0;
-	    pvGet(tHoldMax);
-	    sprintf(msg,"Saturating PairSpec for %.1f minutes",tHoldMax);
-	    pvPut(msg);
-	    pvPut(complete);
-	}
+        entry {
+            count = 0;
+            complete = 0;
+            pvGet(tHoldMax);
+            sprintf(msg,"Saturating PairSpec for %.1f minutes",tHoldMax);
+            pvPut(msg);
+            pvPut(complete);
+        }
 
-        when (offBtn) {} state rampOff
+        when (offBtn) {
+            offBtn=0;
+            pvPut(offBtn);
+        } state rampOff
         
         when (pvConnectCount() < pvChannelCount() ) {} state init
 
-	when (count>=60*tHoldMax && isSimilar2(iMonPS,iSetPS,iDeltaPS,iMonMT,iSetMT,iDeltaMT)) {
-	    complete = 0;
-	    pvPut(complete);
-	} state rampToSetpoint
+        when (count>=60*tHoldMax && isSimilar2(iMonPS,iSetPS,iDeltaPS,iMonMT,iSetMT,iDeltaMT)) {
+            complete = 0;
+            pvPut(complete);
+        } state rampToSetpoint
 
-	when (count>=60*tHoldMax && !isSimilar2(iMonPS,iSetPS,iDeltaPS,iMonMT,iSetMT,iDeltaMT)) {
+        when (count>=60*tHoldMax && !isSimilar2(iMonPS,iSetPS,iDeltaPS,iMonMT,iSetMT,iDeltaMT)) {
             count--;
-	    sprintf(msg,"Waiting, current NOT at Max.");
-	    pvPut(msg);
-	} state holdAtMax
-        
+            sprintf(msg,"Waiting, current NOT at Max.");
+            pvPut(msg);
+        } state holdAtMax
+
         when (calcBtn) {
             calcBtn=0;
             pvPut(calcBtn);
             sprintf(msg,"Must turn OFF to Recalculate");
             pvPut(msg);
             epicsThreadSleep(1);
-	    sprintf(msg,"Holding at Max for %ds",(int)(60*tHoldMax-count));
-	    pvPut(msg);
+            sprintf(msg,"Holding at Max for %ds",(int)(60*tHoldMax-count));
+            pvPut(msg);
             count++;
         } state holdAtMax
+        
         when (calcBtnCurr) {
             calcBtnCurr=0;
             pvPut(calcBtnCurr);
             sprintf(msg,"Must turn OFF to Recalculate");
             pvPut(msg);
             epicsThreadSleep(1);
-	    sprintf(msg,"Holding at Max for %ds",(int)(60*tHoldMax-count));
-	    pvPut(msg);
+            sprintf(msg,"Holding at Max for %ds",(int)(60*tHoldMax-count));
+            pvPut(msg);
             count++;
         } state holdAtMax
 	
         when (delay(1.0)) {
-	    %% complete = (float)(count) / (60*tHoldMax);
-	    pvPut(complete);
-	    sprintf(msg,"Holding at Max for %ds",(int)(60*tHoldMax-count));
-	    pvPut(msg);
-	    count++;
-	} state holdAtMax
+            %% complete = (float)(count) / (60*tHoldMax);
+            pvPut(complete);
+            sprintf(msg,"Holding at Max for %ds",(int)(60*tHoldMax-count));
+            pvPut(msg);
+            count++;
+        } state holdAtMax
     }
 
     state rampToSetpoint {
 
         entry {
             complete = 1;
-	    pvGet(energy);
+            pvGet(energy);
             iStartPS = iMonPS;
             iStartMT = iMonMT;
             pvGet(iCalcPS);
@@ -550,11 +592,14 @@ ss seqChicane {
             pvPut(complete);
         }
         
-	when (offBtn) {} state rampOff
+        when (offBtn) {
+            offBtn=0;
+            pvPut(offBtn);
+        } state rampOff
 
         when (pvConnectCount() < pvChannelCount() ) {} state init
 
-	when ( isSimilar2(iSetPS,iMonPS,iDeltaPS,iSetMT,iMonMT,iDeltaMT) ) {
+        when ( isSimilar2(iSetPS,iMonPS,iDeltaPS,iSetMT,iMonMT,iDeltaMT) ) {
             complete=1;
             pvPut(complete);
         } state ready
@@ -565,27 +610,28 @@ ss seqChicane {
             sprintf(msg,"Must turn OFF to Recalculate");
             pvPut(msg);
             epicsThreadSleep(1);
-	    sprintf(msg,"Ramping Down to Setpoint");
-	    pvPut(msg);
+            sprintf(msg,"Ramping Down to Setpoint");
+            pvPut(msg);
             count++;
         } state rampToSetpoint
+
         when (calcBtnCurr) {
             calcBtnCurr=0;
             pvPut(calcBtnCurr);
             sprintf(msg,"Must turn OFF to Recalculate");
             pvPut(msg);
             epicsThreadSleep(1);
-	    sprintf(msg,"Ramping Down to Setpoint");
-	    pvPut(msg);
+            sprintf(msg,"Ramping Down to Setpoint");
+            pvPut(msg);
             count++;
         } state rampToSetpoint
 	
         when () {
-	    //pvGet(iSetPS);
-	    //pvGet(iSetMT);
+            //pvGet(iSetPS);
+            //pvGet(iSetMT);
             complete = 1-minComplete(iStartPS,iMonPS,iSetPS,iStartMT,iMonMT,iSetMT);
             pvPut(complete);
-	} state rampToSetpoint
+        } state rampToSetpoint
     }
 }
 

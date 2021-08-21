@@ -11,7 +11,7 @@ record(calc, SVT:bias:top:half1:stat:calc)
 	field(INPH,"SVT:bias:top:7:v_sens CPP")
 	field(INPI,"SVT:bias:top:8:v_sens CPP")
 	field(INPJ,"SVT:bias:top:0:v_sens.LOW CPP")
-	field(CALC,"(A>J) && (B>J) && (C>J) && (D>J) && (E>J) && (F>J) && (G>J) && (H>J) && (I>J)")
+	field(CALC,"A>J&&B>J&&C>J&&D>J&&E>J&&F>J&&G>J&&H>J&&I>J")
 }
 
 record(calc, SVT:bias:top:half2:stat:calc)
@@ -26,8 +26,8 @@ record(calc, SVT:bias:top:half2:stat:calc)
 	field(INPG,"SVT:bias:top:15:v_sens CPP")
 	field(INPH,"SVT:bias:top:16:v_sens CPP")
 	field(INPI,"SVT:bias:top:17:v_sens CPP")
-	field(INPJ,"SVT:bias:top:9:v_sens.LOW CPP")
-	field(CALC,"(A>J) && (B>J) && (C>J) && (D>J) && (E>J) && (F>J) && (G>J) && (H>J) && (I>J)")
+	field(INPJ,"SVT:bias:top:12:v_sens.LOW CPP")
+	field(CALC,"A>J&&B>J&&C>J&&D>J&&E>J&&F>J&&G>J&&H>J&&I>J")
 }
 
 record(calc, SVT:bias:top:all:stat:calc)
@@ -51,7 +51,7 @@ record(calc, SVT:bias:bot:half1:stat:calc)
 	field(INPH,"SVT:bias:bot:27:v_sens CPP")
 	field(INPI,"SVT:bias:bot:28:v_sens CPP")
 	field(INPJ,"SVT:bias:bot:20:v_sens.LOW CPP")
-	field(CALC,"(A>J) && (B>J) && (C>J) && (D>J) && (E>J) && (F>J) && (G>J) && (H>J) && (I>J)")
+	field(CALC,"A>J&&B>J&&C>J&&D>J&&E>J&&F>J&&G>J&&H>J&&I>J")
 }
 
 record(calc, SVT:bias:bot:half2:stat:calc)
@@ -67,7 +67,7 @@ record(calc, SVT:bias:bot:half2:stat:calc)
 	field(INPH,"SVT:bias:bot:36:v_sens CPP")
 	field(INPI,"SVT:bias:bot:37:v_sens CPP")
 	field(INPJ,"SVT:bias:bot:29:v_sens.LOW CPP")
-	field(CALC,"(A>J) && (B>J) && (C>J) && (D>J) && (E>J) && (F>J) && (G>J) && (H>J) && (I>J)")
+	field(CALC,"A>J&&B>J&&C>J&&D>J&&E>J&&F>J&&G>J&&H>J&&I>J")
 }
 
 record(calc, SVT:bias:bot:all:stat:calc)

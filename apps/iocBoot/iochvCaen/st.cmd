@@ -33,7 +33,7 @@ devSnmpSetParam(DebugLevel, 1)
 #devSnmpSetParam(SetSkipReadbackMSec, 50000000)
 
 #detConfigureCrate "Detector", "URI"
-detConfigureCrate "SVT", "sqlite://${TOP}/hvCaenApp/src/svt_voltages.db"
+detConfigureCrate "SVT", "sqlite://${TOP}/hvCaenApp/src/svt_voltages.db.hbmpod1"
 
 # Automatically generate EPICS DB for CAEN HV Chassis
 detDbLoadRecords
@@ -62,3 +62,6 @@ makeAutosaveFiles()
 create_monitor_set("info_positions.req", 5, "P=${IOC}:")
 create_monitor_set("info_settings.req", 30, "P=${IOC}:")
 create_monitor_set("hvCaen_alarms.req", 30)
+
+< iset-prec.cmd
+

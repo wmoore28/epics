@@ -15,7 +15,7 @@ DB_INSTALLS += $(AUTOSAVE)/asApp/Db/save_restoreStatus.db
 
 DB += A6621.db
 PROTO += A6621.proto
-
+DB += ecalLV-onoff.db
 REQ += A6621_settings.req
 
 #----------------------------------------------------

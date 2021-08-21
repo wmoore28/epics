@@ -7,8 +7,8 @@ $GUIDANCE
 See SVT Ops manual sections relating to cooling.
 PVs monitored by these alarms are supplied by the PLC IOC (svtPlc) or the svt chiller IOC (svtChiller).
 $END
-$SEVRCOMMAND UP_MAJOR /home/hpsrun/scripts/notify_expert_auto.pl svt_expert SVT hybrid cooling alarm
-$SEVRCOMMAND UP_MAJOR echo "hybrid cooling alarm" | mailx -s "SVT cooling alarm" meeg@slac.stanford.edu tknelson@slac.stanford.edu mrsolt@slac.stanford.edu
+$SEVRCOMMAND UP_MAJOR /home/hpsrun/scripts/notify_expert_auto.pl hpssvt_expert SVT hybrid cooling alarm
+$SEVRCOMMAND UP_MAJOR echo "hybrid cooling alarm" | mailx -s "SVT cooling alarm" cbravo135@gmail.com tknelson@slac.stanford.edu mrsolt@slac.stanford.edu bravo@slac.stanford.edu baltzell@jlab.org
 
 CHANNEL HYBRID_COOLING HPS_SVT:PLC:i:RTD_SVT_Supply-Value
 $COMMAND  medm -x -attach -cmap -macro "sig=HPS_SVT:PLC:i:RTD_SVT_Supply-Value" aiaocalc_alarm.adl >> /dev/null 
@@ -60,11 +60,11 @@ Contact the SVT expert if this alarm was not expected as part of a procedure.
 $END
 
 # This is for the ANNOVA (and should be commented out when swapping back to the Presto):
-CHANNEL HYBRID_COOLING HPS_SVT:CHILLER:STATUSBIT
-$COMMAND  medm -x -attach -cmap -macro "sig=HPS_SVT:CHILLER:STATUSBIT" aiaocalc_alarm.adl >> /dev/null 
-$GUIDANCE
-The downtime Anova SVT chiller is not running.
-Contact the SVT expert if this alarm was not expected as part of a procedure.
-$END
+#CHANNEL HYBRID_COOLING HPS_SVT:CHILLER:STATUSBIT
+#$COMMAND  medm -x -attach -cmap -macro "sig=HPS_SVT:CHILLER:STATUSBIT" aiaocalc_alarm.adl >> /dev/null 
+#$GUIDANCE
+#The downtime Anova SVT chiller is not running.
+#Contact the SVT expert if this alarm was not expected as part of a procedure.
+#$END
 
 

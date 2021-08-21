@@ -22,6 +22,14 @@ DB    += presto.db
 PROTO += presto.proto
 REQ   += presto_settings.req
 
+DB    += Lauda_XT.db
+PROTO += Lauda_XT.proto
+
+DB    += Lauda_ECO.db
+PROTO += Lauda_ECO.proto
+
+DB    += ecalInterlock.template
+
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_TEMPLATE = <templatename>

@@ -9,9 +9,10 @@ PVs monitored by these alarms are supplied by the SVT DAQ IOCs.
 Alarms on these channels are normal during CODA run transitions (prestart, go)
 $END
 
-INCLUDE DAQ /usr/clas12/hps/prod/apps/alhConfig/svtFebTemp.alhConfig
-INCLUDE DAQ /usr/clas12/hps/prod/apps/alhConfig/svtHybTemp.alhConfig
-INCLUDE DAQ /usr/clas12/hps/prod/apps/alhConfig/svtSync.alhConfig
-INCLUDE DAQ /usr/clas12/hps/prod/apps/alhConfig/svtHybLV.alhConfig
-INCLUDE DAQ /usr/clas12/hps/prod/apps/alhConfig/svtSemError.alhConfig
-INCLUDE DAQ /usr/clas12/hps/prod/apps/alhConfig/svtSemHeartbeat.alhConfig
+INCLUDE DAQ /usr/clas12/hps/prod/apps/alhConfig/svtRogue.alhConfig
+#INCLUDE DAQ /usr/clas12/hps/prod/apps/alhConfig/svtFebTemp.alhConfig
+#INCLUDE DAQ /usr/clas12/hps/prod/apps/alhConfig/svtHybTemp.alhConfig
+#INCLUDE DAQ /usr/clas12/hps/prod/apps/alhConfig/svtSync.alhConfig
+#INCLUDE DAQ /usr/clas12/hps/prod/apps/alhConfig/svtHybLV.alhConfig
+#INCLUDE DAQ /usr/clas12/hps/prod/apps/alhConfig/svtSemError.alhConfig
+#INCLUDE DAQ /usr/clas12/hps/prod/apps/alhConfig/svtSemHeartbeat.alhConfig

@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/./ECalHVCosmicPMTs.adl"
-	version=030101
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/ECalHVCosmicPMTs.adl"
+	version=030109
 }
 display {
 	object {
-		x=930
-		y=123
+		x=30
+		y=30
 		width=561
 		height=108
 	}
@@ -110,8 +110,8 @@ text {
 	}
 	control {
 		chan="B_hv_ECal_cosm1_CHHV"
-		clr=15
-		bclr=8
+		clr=14
+		bclr=15
 	}
 	label="Ena"
 	press_msg="1"
@@ -143,8 +143,8 @@ oval {
 	}
 	control {
 		chan="B_hv_ECal_cosm1_CHHV"
-		clr=20
-		bclr=7
+		clr=0
+		bclr=20
 	}
 	label="Dis"
 	press_msg="0"
@@ -257,8 +257,8 @@ text {
 	}
 	control {
 		chan="B_hv_ECal_cosm2_CHHV"
-		clr=15
-		bclr=8
+		clr=14
+		bclr=15
 	}
 	label="Ena"
 	press_msg="1"
@@ -290,8 +290,8 @@ oval {
 	}
 	control {
 		chan="B_hv_ECal_cosm2_CHHV"
-		clr=20
-		bclr=7
+		clr=0
+		bclr=20
 	}
 	label="Dis"
 	press_msg="0"

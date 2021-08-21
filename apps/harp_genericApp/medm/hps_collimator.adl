@@ -1,13 +1,13 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/harp_genericApp/medm/hps_collimator.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/harp_genericApp/medm/hps_collimator-NEW.adl"
 	version=030109
 }
 display {
 	object {
-		x=742
-		y=179
-		width=670
+		x=195
+		y=122
+		width=619
 		height=110
 	}
 	clr=14
@@ -89,54 +89,53 @@ display {
 }
 "message button" {
 	object {
-		x=133
+		x=168
 		y=5
 		width=92
 		height=24
 	}
 	control {
-		chan="hps_collimator.VAL"
+		chan="hps_collimator_go_a"
 		clr=14
 		bclr=4
 	}
 	label="Wire"
-	press_msg="4.41"
+	press_msg="1"
 	clrmod="discrete"
 }
 "message button" {
 	object {
-		x=238
+		x=273
 		y=5
 		width=92
 		height=24
 	}
 	control {
-		chan="hps_collimator.VAL"
+		chan="hps_collimator_go_b"
 		clr=14
 		bclr=4
 	}
-	label="2.82 mm"
-	press_msg="5.034"
+	label="8.052 mm"
+	press_msg="1"
 }
 "message button" {
 	object {
-		x=10
+		x=18
 		y=5
 		width=92
 		height=24
 	}
 	control {
-		chan="hps_collimator.VAL"
+		chan="hps_collimator_go_home"
 		clr=14
 		bclr=4
 	}
 	label="Retract"
-	press_msg="-2"
-	release_msg="-2"
+	press_msg="1"
 }
 rectangle {
 	object {
-		x=5
+		x=13
 		y=1
 		width=107
 		height=34
@@ -151,7 +150,7 @@ rectangle {
 }
 rectangle {
 	object {
-		x=123
+		x=158
 		y=1
 		width=107
 		height=34
@@ -166,7 +165,7 @@ rectangle {
 }
 rectangle {
 	object {
-		x=231
+		x=266
 		y=1
 		width=107
 		height=34
@@ -178,32 +177,6 @@ rectangle {
 		vis="if not zero"
 		chan="hps_collimator_at_b"
 	}
-}
-text {
-	object {
-		x=27
-		y=37
-		width=35
-		height=12
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="0.0"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=149
-		y=37
-		width=56
-		height=12
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="4.41"
-	align="horiz. centered"
 }
 "text update" {
 	object {
@@ -219,6 +192,8 @@ text {
 	}
 	align="horiz. centered"
 	limits {
+		precSrc="default"
+		precDefault=4
 	}
 }
 text {
@@ -250,37 +225,24 @@ text {
 	label="expert"
 	visual="a column of buttons"
 }
-text {
-	object {
-		x=251
-		y=37
-		width=56
-		height=12
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="5.034"
-	align="horiz. centered"
-}
 "message button" {
 	object {
-		x=347
+		x=382
 		y=5
 		width=92
 		height=24
 	}
 	control {
-		chan="hps_collimator.VAL"
+		chan="hps_collimator_go_c"
 		clr=14
 		bclr=4
 	}
-	label="2.25 mm"
-	press_msg="5.624"
+	label="3.937 mm"
+	press_msg="1"
 }
 rectangle {
 	object {
-		x=341
+		x=376
 		y=1
 		width=107
 		height=34
@@ -292,19 +254,6 @@ rectangle {
 		vis="if not zero"
 		chan="hps_collimator_at_c"
 	}
-}
-text {
-	object {
-		x=364
-		y=36
-		width=56
-		height=12
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="5.624"
-	align="horiz. centered"
 }
 text {
 	object {
@@ -324,22 +273,22 @@ text {
 }
 "message button" {
 	object {
-		x=457
+		x=492
 		y=5
 		width=92
 		height=24
 	}
 	control {
-		chan="hps_collimator.VAL"
+		chan="hps_collimator_go_d"
 		clr=14
 		bclr=4
 	}
-	label="3.94 mm"
-	press_msg="6.212"
+	label="2.235 mm"
+	press_msg="1"
 }
 rectangle {
 	object {
-		x=451
+		x=486
 		y=1
 		width=107
 		height=34
@@ -351,62 +300,6 @@ rectangle {
 		vis="if not zero"
 		chan="hps_collimator_at_d"
 	}
-}
-text {
-	object {
-		x=474
-		y=36
-		width=56
-		height=12
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="6.212"
-	align="horiz. centered"
-}
-"message button" {
-	object {
-		x=566
-		y=5
-		width=92
-		height=24
-	}
-	control {
-		chan="hps_collimator.VAL"
-		clr=14
-		bclr=4
-	}
-	label="Au"
-	press_msg="6.8"
-}
-rectangle {
-	object {
-		x=560
-		y=1
-		width=107
-		height=34
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		vis="if not zero"
-		chan="hps_collimator_at_e"
-	}
-}
-text {
-	object {
-		x=583
-		y=36
-		width=56
-		height=12
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="6.8"
-	align="horiz. centered"
 }
 "related display" {
 	object {
@@ -424,4 +317,92 @@ text {
 	bclr=60
 	label="Wire scan"
 	visual="a column of buttons"
+}
+"text update" {
+	object {
+		x=26
+		y=37
+		width=83
+		height=19
+	}
+	monitor {
+		chan="hps_collimator_pos_home"
+		clr=14
+		bclr=55
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=173
+		y=37
+		width=83
+		height=19
+	}
+	monitor {
+		chan="hps_collimator_pos_a"
+		clr=14
+		bclr=55
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=4
+	}
+}
+"text update" {
+	object {
+		x=279
+		y=37
+		width=83
+		height=19
+	}
+	monitor {
+		chan="hps_collimator_pos_b"
+		clr=14
+		bclr=55
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=4
+	}
+}
+"text update" {
+	object {
+		x=389
+		y=37
+		width=83
+		height=19
+	}
+	monitor {
+		chan="hps_collimator_pos_c"
+		clr=14
+		bclr=55
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=4
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=37
+		width=83
+		height=19
+	}
+	monitor {
+		chan="hps_collimator_pos_d"
+		clr=14
+		bclr=55
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=4
+	}
 }

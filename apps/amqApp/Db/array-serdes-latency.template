@@ -1,0 +1,184 @@
+record(subArray,"$(P)$(R=)00:sa") {
+    field(DESC,"$(DESC=)")
+    field(INP,"$(INP) CPP")
+    field(FTVL,"$(FTVL=LONG)")
+    field(MALM,16)
+    field(NELM,1)
+    field(INDX,0)
+    field(FLNK,"$(P)$(R=)01:sa.PROC")
+}
+record(subArray,"$(P)$(R=)01:sa") {
+    field(DESC,"$(DESC=)")
+    field(INP,"$(INP)")
+    field(FTVL,"$(FTVL=LONG)")
+    field(MALM,16)
+    field(NELM,1)
+    field(INDX,1)
+    field(FLNK,"$(P)$(R=)02:sa.PROC")
+}
+record(subArray,"$(P)$(R=)02:sa") {
+    field(DESC,"$(DESC=)")
+    field(INP,"$(INP)")
+    field(FTVL,"$(FTVL=LONG)")
+    field(MALM,16)
+    field(NELM,1)
+    field(INDX,2)
+    field(FLNK,"$(P)$(R=)03:sa.PROC")
+}
+record(subArray,"$(P)$(R=)03:sa") {
+    field(DESC,"$(DESC=)")
+    field(INP,"$(INP)")
+    field(FTVL,"$(FTVL=LONG)")
+    field(MALM,16)
+    field(NELM,1)
+    field(INDX,3)
+    field(FLNK,"$(P)$(R=)04:sa.PROC")
+}
+record(subArray,"$(P)$(R=)04:sa") {
+    field(DESC,"$(DESC=)")
+    field(INP,"$(INP)")
+    field(FTVL,"$(FTVL=LONG)")
+    field(MALM,16)
+    field(NELM,1)
+    field(INDX,4)
+    field(FLNK,"$(P)$(R=)05:sa.PROC")
+}
+record(subArray,"$(P)$(R=)05:sa") {
+    field(DESC,"$(DESC=)")
+    field(INP,"$(INP)")
+    field(FTVL,"$(FTVL=LONG)")
+    field(MALM,16)
+    field(NELM,1)
+    field(INDX,5)
+    field(FLNK,"$(P)$(R=)06:sa.PROC")
+}
+record(subArray,"$(P)$(R=)06:sa") {
+    field(DESC,"$(DESC=)")
+    field(INP,"$(INP)")
+    field(FTVL,"$(FTVL=LONG)")
+    field(MALM,16)
+    field(NELM,1)
+    field(INDX,6)
+    field(FLNK,"$(P)$(R=)07:sa.PROC")
+}
+record(subArray,"$(P)$(R=)07:sa") {
+    field(DESC,"$(DESC=)")
+    field(INP,"$(INP)")
+    field(FTVL,"$(FTVL=LONG)")
+    field(MALM,16)
+    field(NELM,1)
+    field(INDX,7)
+    field(FLNK,"$(P)$(R=)08:sa.PROC")
+}
+record(subArray,"$(P)$(R=)08:sa") {
+    field(DESC,"$(DESC=)")
+    field(INP,"$(INP)")
+    field(FTVL,"$(FTVL=LONG)")
+    field(MALM,16)
+    field(NELM,1)
+    field(INDX,8)
+    field(FLNK,"$(P)$(R=)09:sa.PROC")
+}
+record(subArray,"$(P)$(R=)09:sa") {
+    field(DESC,"$(DESC=)")
+    field(INP,"$(INP)")
+    field(FTVL,"$(FTVL=LONG)")
+    field(MALM,16)
+    field(NELM,1)
+    field(INDX,9)
+    field(FLNK,"$(P)$(R=)path.PROC")
+}
+
+
+
+record(ai,"$(P)$(R=)path") {
+    field(DTYP,"Raw Soft Channel")
+    field(ASLO,"$(SCALE=1)")
+    field(PREC,"0")
+    field(EGU,"$(EGU=)")
+    field(INP,"$(P)$(R=)00:sa")
+    field(FLNK,"$(P)$(R=)lane0.PROC")
+    info(autosaveFields_pass0,"LOLO LOW HIGH HIHI LLSV LSV HSV HHSV")
+}
+record(ai,"$(P)$(R=)lane0") {
+    field(DTYP,"Raw Soft Channel")
+    field(ASLO,"$(SCALE=1)")
+    field(PREC,"0")
+    field(EGU,"$(EGU=)")
+    field(INP,"$(P)$(R=)01:sa")
+    field(FLNK,"$(P)$(R=)lane1.PROC")
+    info(autosaveFields_pass0,"LOLO LOW HIGH HIHI LLSV LSV HSV HHSV")
+}
+record(ai,"$(P)$(R=)lane1") {
+    field(DTYP,"Raw Soft Channel")
+    field(ASLO,"$(SCALE=1)")
+    field(PREC,"0")
+    field(EGU,"$(EGU=)")
+    field(INP,"$(P)$(R=)02:sa")
+    field(FLNK,"$(P)$(R=)lane2.PROC")
+    info(autosaveFields_pass0,"LOLO LOW HIGH HIHI LLSV LSV HSV HHSV")
+}
+record(ai,"$(P)$(R=)lane2") {
+    field(DTYP,"Raw Soft Channel")
+    field(ASLO,"$(SCALE=1)")
+    field(PREC,"0")
+    field(EGU,"$(EGU=)")
+    field(INP,"$(P)$(R=)03:sa")
+    field(FLNK,"$(P)$(R=)lane3.PROC")
+    info(autosaveFields_pass0,"LOLO LOW HIGH HIHI LLSV LSV HSV HHSV")
+}
+record(ai,"$(P)$(R=)lane3") {
+    field(DTYP,"Raw Soft Channel")
+    field(ASLO,"$(SCALE=1)")
+    field(PREC,"0")
+    field(EGU,"$(EGU=)")
+    field(INP,"$(P)$(R=)04:sa")
+    field(FLNK,"$(P)$(R=)errorcount.PROC")
+    info(autosaveFields_pass0,"LOLO LOW HIGH HIHI LLSV LSV HSV HHSV")
+}
+record(ai,"$(P)$(R=)errorcount") {
+    field(DTYP,"Raw Soft Channel")
+    field(ASLO,"$(SCALE=1)")
+    field(PREC,"0")
+    field(EGU,"$(EGU=)")
+    field(INP,"$(P)$(R=)05:sa")
+    field(FLNK,"$(P)$(R=)linkreset.PROC")
+    info(autosaveFields_pass0,"LOLO LOW HIGH HIHI LLSV LSV HSV HHSV")
+}
+record(ai,"$(P)$(R=)linkreset") {
+    field(DTYP,"Raw Soft Channel")
+    field(ASLO,"$(SCALE=1)")
+    field(PREC,"0")
+    field(EGU,"$(EGU=)")
+    field(INP,"$(P)$(R=)06:sa")
+    field(FLNK,"$(P)$(R=)enable.PROC")
+    info(autosaveFields_pass0,"LOLO LOW HIGH HIHI LLSV LSV HSV HHSV")
+}
+record(ai,"$(P)$(R=)enable") {
+    field(DTYP,"Raw Soft Channel")
+    field(ASLO,"$(SCALE=1)")
+    field(PREC,"0")
+    field(EGU,"$(EGU=)")
+    field(INP,"$(P)$(R=)07:sa")
+    field(FLNK,"$(P)$(R=)latency:rx.PROC")
+    info(autosaveFields_pass0,"LOLO LOW HIGH HIHI LLSV LSV HSV HHSV")
+}
+record(ai,"$(P)$(R=)latency:rx") {
+    field(DTYP,"Raw Soft Channel")
+    field(ASLO,"$(SCALE=1)")
+    field(PREC,"0")
+    field(EGU,"$(EGU=)")
+    field(INP,"$(P)$(R=)08:sa")
+    field(FLNK,"$(P)$(R=)latency:tx.PROC")
+    info(autosaveFields_pass0,"LOLO LOW HIGH HIHI LLSV LSV HSV HHSV")
+}
+record(ai,"$(P)$(R=)latency:tx") {
+    field(DTYP,"Raw Soft Channel")
+    field(ASLO,"$(SCALE=1)")
+    field(PREC,"0")
+    field(EGU,"$(EGU=)")
+    field(INP,"$(P)$(R=)09:sa")
+    info(autosaveFields_pass0,"LOLO LOW HIGH HIHI LLSV LSV HSV HHSV")
+}
+
+

@@ -19,10 +19,13 @@ epicsEnvSet("STREAM_PROTOCOL_PATH","${TOP}/proto")
 drvAsynIPPortConfigure("SER6", "hallb-moxa4:4006")
 
 # PRESTO (Hybrids):
-#drvAsynIPPortConfigure("SER7", "hallb-moxa4:4007")
+drvAsynIPPortConfigure("SER7", "hallb-moxa4:4007")
 
-# a40 *hYBRIDS):
-drvAsynIPPortConfigure("SER8", "hallb-moxa4:4008")
+# A40 (Hybrids):
+#drvAsynIPPortConfigure("SER8", "hallb-moxa4:4008")
+
+# LaudaXT (Hybrids):
+#drvAsynIPPortConfigure("SER9", "hallb-moxa4:4009")
 
 ## debugging...
 # Anova
@@ -41,15 +44,15 @@ dbLoadRecords("db/save_restoreStatus.db", "P=${IOC_ALIAS}:")
 dbLoadRecords("db/anova.db", "P=HPS_FE:,R=CHILLER:,PORT=SER6")
 
 # PRESTO (Hybrids):
-#dbLoadRecords("db/presto.db", "P=HPS_SVT:,R=CHILLER:,PORT=SER7")
+dbLoadRecords("db/presto.db", "P=HPS_SVT:,R=CHILLER:,PORT=SER7")
 
 # a40 *hYBRIDS):
-dbLoadRecords("db/anova.db", "P=HPS_SVT:,R=CHILLER:,PORT=SER8")
+#dbLoadRecords("db/anova.db", "P=HPS_SVT:,R=CHILLER:,PORT=SER8")
 
 cd ${TOP}/iocBoot/${IOC}
 
 ## autosave setup
-< save_restore_svt.cmd
+#< save_restore_svt.cmd
 
 dbl > pv.list
 iocInit

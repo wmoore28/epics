@@ -302,7 +302,7 @@ public class MakeLogEntry
 	try{
 	    BufferedReader stdInput;
 	    //Connection conn = DriverManager.getConnection("jdbc:mysql://clondb1:3306/daq_clasdev", "clasrun", "");
-	    Connection conn = DriverManager.getConnection("jdbc:mysql://clondb1:3306/daq_clasrun", "clasrun", "");
+	    Connection conn = DriverManager.getConnection("jdbc:mysql://clondb1:3306/daq_hpsrun", "clasrun", "");
 	    Statement stmt = conn.createStatement();
  	    String query = "select runnumber from sessions where name=\"clashps\" ;" ;
 	    

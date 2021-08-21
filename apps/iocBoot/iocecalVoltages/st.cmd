@@ -24,6 +24,10 @@ Start_CAEN(1, "129.57.160.93")
 ## Load record instances
 dbLoadRecords("${DEVIOCSTATS}/db/iocAdminSoft.db", "IOC=iocecalVoltages")
 dbLoadRecords("db/ecalHV.db")
+dbLoadRecords("db/ecalHV-onoff.db","SIDE=TOP,ONOFF=ON,VAL=1")
+dbLoadRecords("db/ecalHV-onoff.db","SIDE=TOP,ONOFF=OFF,VAL=0")
+dbLoadRecords("db/ecalHV-onoff.db","SIDE=BOT,ONOFF=ON,VAL=1")
+dbLoadRecords("db/ecalHV-onoff.db","SIDE=BOT,ONOFF=OFF,VAL=0")
 
 # THESE ARE IN SLOT 15 of HVHPS2:
 #dbLoadRecords("db/bm_01.db")

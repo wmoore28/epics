@@ -1,17 +1,17 @@
 
 file {
-	name="/usr/clas12/hps/prod/apps/svtDaq/medm/svtFebMain.adl"
-	version=030108
+	name="/usr/clas12/hps/v3.0.0/apps/svtDaqApp/medm/svtFebMain.adl"
+	version=030109
 }
 display {
 	object {
-		x=2109
-		y=80
+		x=299
+		y=37
 		width=1235
-		height=1053
+		height=1043
 	}
 	clr=14
-	bclr=12
+	bclr=13
 	cmap=""
 	gridSpacing=5
 	gridOn=0
@@ -10320,33 +10320,6 @@ rectangle {
 }
 text {
 	object {
-		x=442
-		y=61
-		width=89
-		height=18
-	}
-	"basic attribute" {
-		clr=31
-	}
-	textix="RELOAD ALL FPGAs"
-	align="horiz. centered"
-}
-"choice button" {
-	object {
-		x=548
-		y=57
-		width=41
-		height=20
-	}
-	control {
-		chan="SVT:lv:fe:fpga:switch"
-		clr=55
-		bclr=12
-	}
-	stacking="column"
-}
-text {
-	object {
 		x=122
 		y=152
 		width=41
@@ -10796,22 +10769,6 @@ text {
 	textix="FEB"
 	align="horiz. centered"
 }
-"text update" {
-	object {
-		x=41
-		y=193
-		width=41
-		height=20
-	}
-	monitor {
-		chan="SVT:daqmap:L1t:febid"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
 composite {
 	object {
 		x=81
@@ -10840,7 +10797,7 @@ composite {
 					"basic attribute" {
 						clr=31
 					}
-					textix="L1t"
+					textix="L0-1t"
 					align="horiz. centered"
 				}
 				text {
@@ -10892,7 +10849,7 @@ composite {
 					"basic attribute" {
 						clr=31
 					}
-					textix="L4t"
+					textix="L4b"
 					align="horiz. centered"
 				}
 				text {
@@ -10905,7 +10862,7 @@ composite {
 					"basic attribute" {
 						clr=31
 					}
-					textix="L4b"
+					textix="L4t"
 					align="horiz. centered"
 				}
 				text {
@@ -10944,7 +10901,7 @@ composite {
 					"basic attribute" {
 						clr=31
 					}
-					textix="L1b"
+					textix="L0-1b"
 					align="horiz. centered"
 				}
 				text {
@@ -10990,147 +10947,133 @@ composite {
 		}
 	}
 }
-"text update" {
+text {
 	object {
 		x=41
-		y=281
-		width=41
+		y=194
+		width=40
 		height=20
 	}
-	monitor {
-		chan="SVT:daqmap:L2-3t:febid"
+	"basic attribute" {
 		clr=31
-		bclr=14
 	}
+	textix="0"
 	align="horiz. centered"
-	limits {
-	}
 }
-"text update" {
+text {
+	object {
+		x=42
+		y=283
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="2"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=44
+		y=367
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="6"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=44
+		y=456
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="8"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=45
+		y=546
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="5"
+	align="horiz. centered"
+}
+text {
 	object {
 		x=41
-		y=454
-		width=41
+		y=635
+		width=40
 		height=20
 	}
-	monitor {
-		chan="SVT:daqmap:L6t:febid"
+	"basic attribute" {
 		clr=31
-		bclr=14
 	}
+	textix="4"
 	align="horiz. centered"
-	limits {
-	}
 }
-"text update" {
+text {
 	object {
-		x=41
-		y=366
-		width=41
+		x=43
+		y=720
+		width=40
 		height=20
 	}
-	monitor {
-		chan="SVT:daqmap:L5t:febid"
+	"basic attribute" {
 		clr=31
-		bclr=14
 	}
+	textix="7"
 	align="horiz. centered"
-	limits {
-	}
 }
-"text update" {
-	object {
-		x=41
-		y=632
-		width=41
-		height=20
-	}
-	monitor {
-		chan="SVT:daqmap:L4b:febid"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=41
-		y=544
-		width=41
-		height=20
-	}
-	monitor {
-		chan="SVT:daqmap:L4t:febid"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
+text {
 	object {
 		x=41
 		y=806
-		width=41
+		width=40
 		height=20
 	}
-	monitor {
-		chan="SVT:daqmap:L6b:febid"
+	"basic attribute" {
 		clr=31
-		bclr=14
 	}
+	textix="9"
 	align="horiz. centered"
-	limits {
-	}
 }
-"text update" {
+text {
 	object {
-		x=41
-		y=718
-		width=41
-		height=20
-	}
-	monitor {
-		chan="SVT:daqmap:L5b:febid"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=41
-		y=984
-		width=41
-		height=20
-	}
-	monitor {
-		chan="SVT:daqmap:L2-3b:febid"
-		clr=31
-		bclr=14
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=41
+		x=42
 		y=896
-		width=41
+		width=40
 		height=20
 	}
-	monitor {
-		chan="SVT:daqmap:L1b:febid"
+	"basic attribute" {
 		clr=31
-		bclr=14
 	}
+	textix="1"
 	align="horiz. centered"
-	limits {
+}
+text {
+	object {
+		x=40
+		y=982
+		width=40
+		height=20
 	}
+	"basic attribute" {
+		clr=31
+	}
+	textix="3"
+	align="horiz. centered"
 }

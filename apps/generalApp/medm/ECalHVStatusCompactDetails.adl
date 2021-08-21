@@ -1,14 +1,14 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/medm/../generalApp/medm/ECalHVStatusCompactDetails.adl"
-	version=030101
+	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/ECalHVStatusCompactDetails.adl"
+	version=030109
 }
 display {
 	object {
-		x=1078
-		y=377
+		x=100
+		y=100
 		width=302
-		height=492
+		height=530
 	}
 	clr=3
 	bclr=14
@@ -4499,5 +4499,169 @@ oval {
 		clr="discrete"
 		vis="if zero"
 		chan="HPSECALLV:pw2mon"
+	}
+}
+"text update" {
+	object {
+		x=10
+		y=507
+		width=56
+		height=12
+	}
+	monitor {
+		chan="B_DET_HPS_HV_HodoTop:imon"
+		clr=3
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=67
+		y=507
+		width=56
+		height=12
+	}
+	monitor {
+		chan="B_DET_HPS_HV_HodoTop:vmon"
+		clr=3
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=180
+		y=507
+		width=56
+		height=12
+	}
+	monitor {
+		chan="B_DET_HPS_HV_HodoBottom:imon"
+		clr=3
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+"text update" {
+	object {
+		x=237
+		y=507
+		width=56
+		height=12
+	}
+	monitor {
+		chan="B_DET_HPS_HV_HodoBottom:vmon"
+		clr=3
+		bclr=13
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=2
+	}
+}
+rectangle {
+	object {
+		x=6
+		y=491
+		width=290
+		height=30
+	}
+	"basic attribute" {
+		clr=10
+		fill="outline"
+	}
+}
+text {
+	object {
+		x=129
+		y=493
+		width=44
+		height=12
+	}
+	"basic attribute" {
+		clr=2
+	}
+	textix="HODO HV"
+}
+oval {
+	object {
+		x=127
+		y=507
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_DET_HPS_HV_HodoTop:stat"
+	}
+}
+oval {
+	object {
+		x=163
+		y=507
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=15
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if not zero"
+		chan="B_DET_HPS_HV_HodoBottom:stat"
+	}
+}
+oval {
+	object {
+		x=127
+		y=507
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=20
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if zero"
+		chan="B_DET_HPS_HV_HodoTop:stat"
+	}
+}
+oval {
+	object {
+		x=163
+		y=507
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=20
+		style="dash"
+	}
+	"dynamic attribute" {
+		clr="discrete"
+		vis="if zero"
+		chan="B_DET_HPS_HV_HodoBottom:stat"
 	}
 }

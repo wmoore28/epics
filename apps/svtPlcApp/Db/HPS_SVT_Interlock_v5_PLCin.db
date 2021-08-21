@@ -408,6 +408,57 @@ record( bi, "$(IOC):Vacuum-Alarm" )
   field(ONAM, "1" ) 
 } 
  
+# record for PLC tag <Vacuum2.Value> of type <REAL>
+record( ai, "$(IOC):Vacuum2-Value" ) 
+{ 
+  field(DTYP, "EtherIP" ) 
+  field(SCAN, "1 second" ) 
+  field(INP, "@$(PLCID) Vacuum2.Value" ) 
+  field(PREC, "2" )
+#  alias("hallb_VCG2H03ATr")
+} 
+ 
+ 
+# record for PLC tag <Vacuum2.Enable> of type <BOOL>
+record( bi, "$(IOC):Vacuum2-Enable" ) 
+{ 
+  field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
+  field(SCAN, "1 second" ) 
+  field(INP, "@$(PLCID) Vacuum2.Enable" ) 
+  field(ONAM, "1" ) 
+} 
+ 
+ 
+# record for PLC tag <Vacuum2.Limit_LOW> of type <REAL>
+record( ai, "$(IOC):Vacuum2-Limit_LOW" ) 
+{ 
+  field(DTYP, "EtherIP" ) 
+  field(SCAN, "1 second" ) 
+  field(INP, "@$(PLCID) Vacuum2.Limit_LOW" ) 
+  field(PREC, "2" ) 
+} 
+ 
+ 
+# record for PLC tag <Vacuum2.Limit_HIGH> of type <REAL>
+record( ai, "$(IOC):Vacuum2-Limit_HIGH" ) 
+{ 
+  field(DTYP, "EtherIP" ) 
+  field(SCAN, "1 second" ) 
+  field(INP, "@$(PLCID) Vacuum2.Limit_HIGH" ) 
+  field(PREC, "2" ) 
+} 
+ 
+ 
+# record for PLC tag <Vacuum2.Alarm> of type <BOOL>
+record( bi, "$(IOC):Vacuum2-Alarm" ) 
+{ 
+  field(DTYP, "EtherIP" ) 
+  field(ZNAM, "0" ) 
+  field(SCAN, "1 second" ) 
+  field(INP, "@$(PLCID) Vacuum2.Alarm" ) 
+  field(ONAM, "1" ) 
+} 
  
 # record for PLC tag <Valve_FE.Enabled> of type <BOOL>
 record( bi, "$(IOC):Valve_FE-Enabled" ) 

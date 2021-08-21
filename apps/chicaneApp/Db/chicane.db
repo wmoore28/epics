@@ -140,7 +140,8 @@ record(calc,"$(P):comstatPS")
     field(INPH,"PSPECr.BA")    # Setpoint Error
     field(INPI,"PSPECr.BD")    # Polarity Stuck
     field(INPJ,"PSPECr.BE")    # Polarity Change in Progress
-    field(CALC,"A+B+C+D+E+F+G+H+I+J")
+#field(CALC,"A+B+C+D+E+F+G+H+I+J")
+    field(CALC,"B+C+D+F+G+H+I+J")
     field(SCAN,"2 second")
 }
 
