@@ -52,4 +52,5 @@ endif
 if (! $?PYTHONPATH) setenv PYTHONPATH
 setenv PYTHONPATH "$PYTHONPATH":/usr/clas12/third-party-libs/pyepics-RHEL7:/apps/root/5.34.21_epics/lib
 
+setenv EPICS_CA_MAX_ARRAY_BYTES 10000000
 
