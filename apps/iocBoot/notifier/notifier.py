@@ -12,7 +12,9 @@ svt['pvnames']=[
 'HPS_SVT:PLC:i:RTD_SVT_Supply-Value',
 'HPS_SVT:PLC:i:RTD_SVT_Return-Value',
 'HPS_SVT:PLC:i:Flow_SVT-Value',
-'HPS_SVT:PLC:i:Valve_SVT-Shutdown'
+'HPS_SVT:PLC:i:Valve_SVT-Shutdown',
+'HPS_SVT:PLC:i:Vacuum2-Value',
+'HPS_INTLK:DET_VAC:intlk_status'
 ]
 notifiers['svt']=svt
 
