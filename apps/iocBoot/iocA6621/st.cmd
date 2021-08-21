@@ -16,8 +16,8 @@ epicsEnvSet("STREAM_PROTOCOL_PATH","${TOP}/proto")
 ## Configure devices
 drvAsynIPPortConfigure("L0",129.57.160.95:1234,0,0,0)
 
-asynSetTraceMask("L0",-1,0x09)
-asynSetTraceIOMask("L0",-1,0x02)
+#asynSetTraceMask("L0",-1,0x09)
+#asynSetTraceIOMask("L0",-1,0x02)
 asynOctetSetOutputEos("L0",0,"\r\n")
 asynOctetSetInputEos("L0",0,"\n")
 
