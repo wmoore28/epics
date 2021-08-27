@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/HPS_EPICS.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/medm/HPS_EPICS.adl"
 	version=030109
 }
 display {
@@ -314,7 +314,7 @@ text {
 	}
 	display[5] {
 		label="Chiller (ECAL)"
-		name="LaudaECO.adl"
+		name="chiller_anova.adl"
 		args="DESC=ECAL,P=HPS_ECAL:CHILLER:"
 	}
 	display[6] {
@@ -373,8 +373,8 @@ text {
 		height=20
 	}
 	command[0] {
-		label="StripTool"
-		name="cd $APP/generalApp/strip; StripTool &"
+		label="2021 Beamline"
+		name="livePlot -load /home/hpsrun/.myaPlot/BPMsandScalers2"
 	}
 	command[1] {
 		label="livePlot"
@@ -385,6 +385,10 @@ text {
 		label="myaPlot"
 		name="myaPlot"
 		args="&"
+	}
+	command[3] {
+		label="StripTool"
+		name="cd $APP/generalApp/strip; StripTool &"
 	}
 	clr=14
 	bclr=50
@@ -399,7 +403,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="StripTool/MyaViewer"
+	textix="Strip Charts"
 }
 rectangle {
 	object {

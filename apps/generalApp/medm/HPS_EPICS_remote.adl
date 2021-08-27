@@ -1,12 +1,12 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/generalApp/medm/HPS_EPICS_remote.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/medm/HPS_EPICS_remote.adl"
 	version=030109
 }
 display {
 	object {
-		x=0
-		y=37
+		x=305
+		y=136
 		width=240
 		height=690
 	}
@@ -315,8 +315,8 @@ text {
 		height=20
 	}
 	command[0] {
-		label="StripTool"
-		name="cd $APP/generalApp/strip; StripTool &"
+		label="2021 Beamline"
+		name="livePlot -load /home/hpsrun/.myaPlot/BPMsandScalers2"
 	}
 	command[1] {
 		label="livePlot"
@@ -327,6 +327,10 @@ text {
 		label="myaPlot"
 		name="myaPlot"
 		args="&"
+	}
+	command[3] {
+		label="StripTool"
+		name="cd $APP/generalApp/strip; StripTool &"
 	}
 	clr=14
 	bclr=50
@@ -341,7 +345,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="StripTool/MyaViewer"
+	textix="Strip Charts"
 }
 rectangle {
 	object {
