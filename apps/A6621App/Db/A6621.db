@@ -1,13 +1,3 @@
-#asyn is useful for debugging the communication
-record(asyn,"$(P):ASYN")
-{
-    field(DTYP,"asynRecordDevice")
-    field(PORT,"$(PORT)")
-    field(ADDR,"$(ADDR)")
-    field(OMAX,"$(OMAX)")
-    field(IMAX,"$(IMAX)")
-}
-
 record (ai, "$(P):v1mon")
 {
     field (DESC, "Get voltage #1")

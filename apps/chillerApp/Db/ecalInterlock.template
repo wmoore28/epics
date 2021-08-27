@@ -48,12 +48,12 @@ record(calcout, "$(P)$(R):second_check") {
 }
 
 record(ai, "$(P)$(R):low_limit") {
-    field(VAL,"60")
+    field(VAL,"$(LOW)")
     field(PREC,"1")
     field(PINI,"1")
 }
 record(ai, "$(P)$(R):high_limit") {
-    field(VAL,"75")
+    field(VAL,"$(HIGH)")
     field(PREC,"1")
     field(PINI,"1")
 }

@@ -26,6 +26,8 @@ dbLoadRecords("db/asynRecord.db","P=DOGGY, R=:ASYN,PORT=SER5,ADDR=1,IMAX=2000,OM
 
 dbLoadRecords("db/ecalInterlock.template","P=HPSECAL:,R=INTLK1,PV=tempSensorA,LOW=60,HIGH=75,CTRL=HPSECAL:OFF,CTRLVAL=1")
 dbLoadRecords("db/ecalInterlock.template","P=HPSECAL:,R=INTLK2,PV=tempSensorI,LOW=60,HIGH=75,CTRL=HPSECAL:OFF,CTRLVAL=1")
+dbLoadRecords("db/ecalInterlock.template","P=HPSECAL:,R=INTLK3,PV=HPSECALLV:i1mon,LOW=3.5,HIGH=4.5,CTRL=HPSECAL:OFF,CTRLVAL=1")
+dbLoadRecords("db/ecalInterlock.template","P=HPSECAL:,R=INTLK4,PV=HPSECALLV:i2mon,LOW=3.5,HIGH=4.5,CTRL=HPSECAL:OFF,CTRLVAL=1")
 
 cd ${TOP}/iocBoot/${IOC}
 

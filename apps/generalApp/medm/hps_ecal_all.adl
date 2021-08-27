@@ -6587,3 +6587,41 @@ text {
 	limits {
 	}
 }
+"text update" {
+	object {
+		x=776
+		y=203
+		width=50
+		height=16
+	}
+	monitor {
+		chan="HPSECAL:INTLK3:status"
+		clr=0
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}
+"text update" {
+	object {
+		x=838
+		y=203
+		width=50
+		height=16
+	}
+	monitor {
+		chan="HPSECAL:INTLK4:status"
+		clr=0
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+		precDefault=1
+	}
+}

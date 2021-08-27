@@ -8,7 +8,7 @@ display {
 		x=283
 		y=185
 		width=681
-		height=250
+		height=471
 	}
 	clr=14
 	bclr=4
@@ -663,4 +663,572 @@ text {
 		clr=14
 	}
 	textix="Output"
+}
+"text update" {
+	object {
+		x=14
+		y=261
+		width=200
+		height=20
+	}
+	monitor {
+		chan="HPSECAL:INTLK3:first_check.INPA"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=240
+		y=261
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPSECAL:INTLK3:first_check.A"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=240
+		y=374
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPSECAL:INTLK3:first_check"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+text {
+	object {
+		x=14
+		y=378
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="First Check Status"
+}
+"text update" {
+	object {
+		x=240
+		y=400
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPSECAL:INTLK3:status"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=14
+		y=404
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Interlock Reset/Status"
+}
+text {
+	object {
+		x=14
+		y=328
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="High Limit"
+}
+"text entry" {
+	object {
+		x=155
+		y=324
+		width=80
+		height=20
+	}
+	control {
+		chan="HPSECAL:INTLK3:high_limit"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=240
+		y=324
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPSECAL:INTLK3:high_limit"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=14
+		y=353
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Interlock Bypass"
+}
+"text update" {
+	object {
+		x=240
+		y=349
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPSECAL:INTLK3:bypass"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=155
+		y=349
+		width=80
+		height=20
+	}
+	control {
+		chan="HPSECAL:INTLK3:bypass"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
+}
+"message button" {
+	object {
+		x=155
+		y=400
+		width=80
+		height=20
+	}
+	control {
+		chan="HPSECAL:INTLK3:reset.PROC"
+		clr=14
+		bclr=2
+	}
+	label="Reset"
+	release_msg="1"
+}
+text {
+	object {
+		x=14
+		y=302
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Low Limit"
+}
+"text update" {
+	object {
+		x=240
+		y=299
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPSECAL:INTLK3:low_limit"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=155
+		y=299
+		width=80
+		height=20
+	}
+	control {
+		chan="HPSECAL:INTLK3:low_limit"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=361
+		y=262
+		width=200
+		height=20
+	}
+	monitor {
+		chan="HPSECAL:INTLK4:first_check.INPA"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=587
+		y=262
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPSECAL:INTLK4:first_check.A"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=587
+		y=375
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPSECAL:INTLK4:first_check"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+text {
+	object {
+		x=361
+		y=379
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="First Check Status"
+}
+"text update" {
+	object {
+		x=587
+		y=401
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPSECAL:INTLK4:status"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=361
+		y=405
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Interlock Reset/Status"
+}
+text {
+	object {
+		x=361
+		y=329
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="High Limit"
+}
+"text entry" {
+	object {
+		x=502
+		y=325
+		width=80
+		height=20
+	}
+	control {
+		chan="HPSECAL:INTLK4:high_limit"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=587
+		y=325
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPSECAL:INTLK4:high_limit"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=361
+		y=354
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Interlock Bypass"
+}
+"text update" {
+	object {
+		x=587
+		y=350
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPSECAL:INTLK4:bypass"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=502
+		y=350
+		width=80
+		height=20
+	}
+	control {
+		chan="HPSECAL:INTLK4:bypass"
+		clr=14
+		bclr=2
+	}
+	stacking="column"
+}
+"message button" {
+	object {
+		x=502
+		y=401
+		width=80
+		height=20
+	}
+	control {
+		chan="HPSECAL:INTLK4:reset.PROC"
+		clr=14
+		bclr=2
+	}
+	label="Reset"
+	release_msg="1"
+}
+text {
+	object {
+		x=361
+		y=303
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Low Limit"
+}
+"text update" {
+	object {
+		x=587
+		y=300
+		width=80
+		height=20
+	}
+	monitor {
+		chan="HPSECAL:INTLK4:low_limit"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=502
+		y=300
+		width=80
+		height=20
+	}
+	control {
+		chan="HPSECAL:INTLK4:low_limit"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+polyline {
+	object {
+		x=339
+		y=258
+		width=0
+		height=190
+	}
+	"basic attribute" {
+		clr=14
+	}
+	points {
+		(339,258)
+		(339,448)
+	}
+}
+"text update" {
+	object {
+		x=160
+		y=429
+		width=160
+		height=20
+	}
+	monitor {
+		chan="HPSECAL:INTLK3:force_val.OUT"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=13
+		y=429
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Output"
+}
+"text update" {
+	object {
+		x=507
+		y=429
+		width=160
+		height=20
+	}
+	monitor {
+		chan="HPSECAL:INTLK4:force_val.OUT"
+		clr=0
+		bclr=11
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=360
+		y=429
+		width=80
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Output"
+}
+polyline {
+	object {
+		x=13
+		y=247
+		width=647
+		height=0
+	}
+	"basic attribute" {
+		clr=14
+	}
+	points {
+		(13,247)
+		(660,247)
+	}
 }
