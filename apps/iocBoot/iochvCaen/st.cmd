@@ -33,7 +33,7 @@ devSnmpSetParam(DebugLevel, 1)
 #devSnmpSetParam(SetSkipReadbackMSec, 50000000)
 
 #detConfigureCrate "Detector", "URI"
-detConfigureCrate "SVT", "sqlite://${TOP}/hvCaenApp/src/svt_voltages.db.hbmpod1"
+detConfigureCrate "SVT", "sqlite://${TOP}/hvCaenApp/src/svt_voltages.db"
 
 # Automatically generate EPICS DB for CAEN HV Chassis
 detDbLoadRecords
