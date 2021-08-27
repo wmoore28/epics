@@ -116,7 +116,12 @@ dbLoadRecords("db/array-to-scalar-32.template","P=B_DAQ_HPS:TSFP:rate:,INP=B_DAQ
 
 dbLoadTemplate("db/hps-trigger-fractions.substitutions")
 
+dbLoadRecords("db/amqDoubleArray.db","P=B_HW_HPS11_DSC2_Slot6:c,K=HPS11_DSC2SLOT6_TDC_UNGATED,N=16,TH=0,THH=30,HSV=NO_ALARM,HHSV=MAJOR")
+dbLoadRecords("db/array-to-scalar-16.template","P=B_HW_HPS11_DSC2_Slot6:,INP=B_HW_HPS11_DSC2_Slot6:c")
+
 cd ${TOP}/iocBoot/${IOC}
+
+dbLoadRecords("hps-neutron.alias")
 
 < save_restore.cmd
 

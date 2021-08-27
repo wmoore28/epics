@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=143
-		y=145
+		x=86
+		y=174
 		width=1268
 		height=880
 	}
@@ -5329,5 +5329,39 @@ text {
 	align="horiz. centered"
 	format="truncated"
 	limits {
+	}
+}
+"text update" {
+	object {
+		x=1170
+		y=95
+		width=50
+		height=12
+	}
+	monitor {
+		chan="HPS:NC:left"
+		clr=0
+		bclr=10
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
+	}
+}
+"text update" {
+	object {
+		x=1170
+		y=235
+		width=50
+		height=12
+	}
+	monitor {
+		chan="HPS:NC:right"
+		clr=0
+		bclr=10
+	}
+	align="horiz. centered"
+	limits {
+		precSrc="default"
 	}
 }

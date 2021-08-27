@@ -36,46 +36,46 @@ record(subArray, "HPSFCUP")
     field(INDX,3)
     field(FTVL,"DOUBLE")
 }
-record(subArray, "HPS:NC:1")
-{
-    field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS11_Sl3_Ch0.VAL")
-    field(NELM,1)
-    field(MALM,4)
-    field(INDX,3)
-    field(FTVL,"DOUBLE")
-    alias("HPS:NC:frascati")
-}
-record(subArray, "HPS:NC:2")
-{
-    field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS11_Sl3_Ch1.VAL")
-    field(NELM,1)
-    field(MALM,4)
-    field(INDX,3)
-    field(FTVL,"DOUBLE")
-    alias("HPS:NC:right")
-}
-record(subArray, "HPS:NC:3")
-{
-    field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS11_Sl3_Ch2.VAL")
-    field(NELM,1)
-    field(MALM,4)
-    field(INDX,3)
-    field(FTVL,"DOUBLE")
-    alias("HPS:NC:left")
-}
-record(subArray, "HPS:NC:4")
-{
-    field(DTYP,"Soft Channel")
-    field(INP,"B_SCALERSHPS11_Sl3_Ch3.VAL")
-    field(NELM,1)
-    field(MALM,4)
-    field(INDX,3)
-    field(FTVL,"DOUBLE")
-    alias("HPS:NC:fwdcar")
-}
+#record(subArray, "HPS:NC:1")
+#{
+#    field(DTYP,"Soft Channel")
+#    field(INP,"B_SCALERSHPS11_Sl3_Ch0.VAL")
+#    field(NELM,1)
+#    field(MALM,4)
+#    field(INDX,3)
+#    field(FTVL,"DOUBLE")
+#    alias("HPS:NC:frascati")
+#}
+#record(subArray, "HPS:NC:2")
+#{
+#    field(DTYP,"Soft Channel")
+#    field(INP,"B_SCALERSHPS11_Sl3_Ch1.VAL")
+#    field(NELM,1)
+#    field(MALM,4)
+#    field(INDX,3)
+#    field(FTVL,"DOUBLE")
+#    alias("HPS:NC:right")
+#}
+#record(subArray, "HPS:NC:3")
+#{
+#    field(DTYP,"Soft Channel")
+#    field(INP,"B_SCALERSHPS11_Sl3_Ch2.VAL")
+#    field(NELM,1)
+#    field(MALM,4)
+#    field(INDX,3)
+#    field(FTVL,"DOUBLE")
+#    alias("HPS:NC:left")
+#}
+#record(subArray, "HPS:NC:4")
+#{
+#    field(DTYP,"Soft Channel")
+#    field(INP,"B_SCALERSHPS11_Sl3_Ch3.VAL")
+#    field(NELM,1)
+#    field(MALM,4)
+#    field(INDX,3)
+#    field(FTVL,"DOUBLE")
+#    alias("HPS:NC:fwdcar")
+#}
 
 record(subArray, "B_HPSECALFADC_TOP_1") {
     field(DTYP,"Soft Channel")
