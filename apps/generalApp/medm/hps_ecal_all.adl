@@ -4929,20 +4929,6 @@ text {
 text {
 	object {
 		x=459
-		y=542
-		width=97
-		height=20
-	}
-	"basic attribute" {
-		clr=50
-		style="dash"
-	}
-	textix="6"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=459
 		y=569
 		width=97
 		height=20
@@ -5231,25 +5217,6 @@ text {
 	}
 	monitor {
 		chan="tempSensorE"
-		clr=0
-		bclr=13
-	}
-	clrmod="alarm"
-	align="horiz. centered"
-	limits {
-		precSrc="default"
-		precDefault=1
-	}
-}
-"text update" {
-	object {
-		x=532
-		y=542
-		width=50
-		height=20
-	}
-	monitor {
-		chan="tempSensorF"
 		clr=0
 		bclr=13
 	}
@@ -5724,21 +5691,6 @@ rectangle {
 	"dynamic attribute" {
 		clr="alarm"
 		chan="tempSensorE:RAW.STAT"
-	}
-}
-rectangle {
-	object {
-		x=526
-		y=542
-		width=5
-		height=20
-	}
-	"basic attribute" {
-		clr=20
-	}
-	"dynamic attribute" {
-		clr="alarm"
-		chan="tempSensorF:RAW.STAT"
 	}
 }
 rectangle {
