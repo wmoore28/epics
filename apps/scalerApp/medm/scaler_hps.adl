@@ -3133,94 +3133,61 @@ text {
 	textix="2H02"
 	align="horiz. centered"
 }
-composite {
+"text update" {
 	object {
 		x=1165
-		y=128
+		y=183
 		width=75
-		height=89
+		height=18
 	}
-	"composite name"=""
-	children {
-		composite {
-			object {
-				x=1165
-				y=183
-				width=75
-				height=34
-			}
-			"composite name"=""
-			children {
-				"text update" {
-					object {
-						x=1165
-						y=183
-						width=75
-						height=18
-					}
-					monitor {
-						chan="scalerS15b.VAL"
-						clr=14
-						bclr=50
-					}
-					align="horiz. centered"
-					limits {
-					}
-				}
-				text {
-					object {
-						x=1190
-						y=202
-						width=30
-						height=15
-					}
-					"basic attribute" {
-						clr=14
-					}
-					textix="HPS-SC"
-				}
-			}
-		}
-		composite {
-			object {
-				x=1165
-				y=128
-				width=75
-				height=38
-			}
-			"composite name"=""
-			children {
-				"text update" {
-					object {
-						x=1165
-						y=148
-						width=75
-						height=18
-					}
-					monitor {
-						chan="scalerS14b.VAL"
-						clr=14
-						bclr=50
-					}
-					align="horiz. centered"
-					limits {
-					}
-				}
-				text {
-					object {
-						x=1185
-						y=128
-						width=30
-						height=15
-					}
-					"basic attribute" {
-						clr=14
-					}
-					textix="HPS-T"
-				}
-			}
-		}
+	monitor {
+		chan="scalerS15b.VAL"
+		clr=14
+		bclr=50
 	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=1183
+		y=204
+		width=30
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="HPS-SC"
+}
+"text update" {
+	object {
+		x=1165
+		y=148
+		width=75
+		height=18
+	}
+	monitor {
+		chan="scalerS14b.VAL"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=1185
+		y=133
+		width=30
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="HPS-T"
 }
 "text update" {
 	object {
@@ -4586,8 +4553,8 @@ text {
 }
 text {
 	object {
-		x=481
-		y=80
+		x=482
+		y=84
 		width=34
 		height=15
 	}
@@ -5285,8 +5252,9 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="calc"
-		calc="A&(1<<5)"
+		calc="A&(1<<5) || B=0"
 		chan="ISD2H002MASKr"
+		chanB="B_FSD_ISDDEST"
 	}
 }
 text {
@@ -5333,8 +5301,8 @@ text {
 }
 "text update" {
 	object {
-		x=1170
-		y=95
+		x=1174
+		y=105
 		width=50
 		height=12
 	}
@@ -5350,8 +5318,8 @@ text {
 }
 "text update" {
 	object {
-		x=1170
-		y=235
+		x=1174
+		y=234
 		width=50
 		height=12
 	}
@@ -5364,4 +5332,30 @@ text {
 	limits {
 		precSrc="default"
 	}
+}
+text {
+	object {
+		x=1186
+		y=91
+		width=24
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Neutron-L"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=1187
+		y=245
+		width=24
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Neutron-R"
+	align="horiz. centered"
 }
