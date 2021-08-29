@@ -1,1 +1,1 @@
-/home/hpsrun/online_recon/bin/hps-recon-client -i client.cmd
+/home/hpsrun/online_recon/bin/online-recon-client -i client.cmd

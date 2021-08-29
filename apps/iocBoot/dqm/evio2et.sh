@@ -1,10 +1,7 @@
-
-/home/hpsrun/online_recon/bin/hps-recon-producer \
+/home/hpsrun/online_recon/bin/evio-producer \
     -p 11111 \
     -h localhost \
     -e 100 \
     -f /tmp/ETBuffer \
-    -l ./evio_files.txt \
-    -s 20000 \
-    -d 10
-
+    -l /home/hpsrun/online_recon/evio_files_2019.txt \
+    -s 80000 -d 1

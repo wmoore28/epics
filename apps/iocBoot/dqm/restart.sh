@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo Disabling tomcat ...
-ssh clonfarm2 sudo systemctl stop tomcat
+ssh clonfarm11 sudo systemctl stop tomcat
 
 echo Restarting et ...
 softioc_console -R dqm_et >& /dev/null
@@ -21,5 +21,5 @@ softioc_console -R dqm_client >& /dev/null
 sleep 2
 
 echo Restarting tomcat ...
-ssh clonfarm2 sudo systemctl start tomcat
+ssh clonfarm11 sudo systemctl start tomcat
 
