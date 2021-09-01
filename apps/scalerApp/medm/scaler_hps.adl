@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=86
-		y=174
+		x=1635
+		y=219
 		width=1268
 		height=880
 	}
@@ -2653,7 +2653,7 @@ text {
 	"dynamic attribute" {
 		chan="display1.THSV"
 	}
-	textix="2.25 mm"
+	textix="2.82 mm"
 	align="horiz. centered"
 }
 rectangle {
@@ -2684,7 +2684,7 @@ text {
 	"dynamic attribute" {
 		chan="display1.THSV"
 	}
-	textix="2.82 mm"
+	textix="8 mm"
 	align="horiz. centered"
 }
 rectangle {
@@ -2730,7 +2730,7 @@ text {
 	"dynamic attribute" {
 		chan="display1.THSV"
 	}
-	textix="3.94 mm"
+	textix="2.25 mm"
 	align="horiz. centered"
 }
 "text update" {
@@ -2747,37 +2747,6 @@ text {
 	align="horiz. centered"
 	limits {
 	}
-}
-rectangle {
-	object {
-		x=795
-		y=601
-		width=50
-		height=17
-	}
-	"basic attribute" {
-		clr=60
-	}
-	"dynamic attribute" {
-		vis="if not zero"
-		chan="hps_collimator_at_e"
-	}
-}
-text {
-	object {
-		x=798
-		y=601
-		width=40
-		height=14
-	}
-	"basic attribute" {
-		clr=14
-	}
-	"dynamic attribute" {
-		chan="display1.THSV"
-	}
-	textix="Au"
-	align="horiz. centered"
 }
 "text update" {
 	object {
