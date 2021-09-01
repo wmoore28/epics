@@ -3,9 +3,8 @@ TOP=../..
 include $(TOP)/configure/CONFIG
 
 # Build the IOC application
-PROD_IOC = chicane
-#PROD_IOC_LINUX = chicane
-#PROD_IOC_Linux = chicane
+#PROD_IOC = chicane
+PROD_IOC_Linux = chicane
 
 # chicane.dbd will be created and installed
 DBD += chicane.dbd
