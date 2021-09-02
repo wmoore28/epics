@@ -1,13 +1,13 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/alhConfig/../hvcaApp/medm/adl/hodo_hv.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/hvcaApp/medm/adl/hodo_hv.adl"
 	version=030109
 }
 display {
 	object {
-		x=10
-		y=56
-		width=690
+		x=273
+		y=364
+		width=855
 		height=130
 	}
 	clr=14
@@ -91,7 +91,7 @@ rectangle {
 	object {
 		x=17
 		y=6
-		width=650
+		width=820
 		height=30
 	}
 	"basic attribute" {
@@ -197,7 +197,7 @@ oval {
 }
 "text entry" {
 	object {
-		x=582
+		x=577
 		y=66
 		width=81
 		height=19
@@ -344,7 +344,7 @@ oval {
 }
 "text entry" {
 	object {
-		x=582
+		x=577
 		y=92
 		width=81
 		height=19
@@ -455,4 +455,83 @@ text {
 	}
 	textix="Demand Voltage"
 	align="horiz. centered"
+}
+text {
+	object {
+		x=722
+		y=50
+		width=66
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Trip Current"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=669
+		y=66
+		width=81
+		height=19
+	}
+	monitor {
+		chan="B_DET_HPS_HV_HodoTop:isetrbk"
+		clr=14
+		bclr=1
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=755
+		y=66
+		width=81
+		height=19
+	}
+	control {
+		chan="B_DET_HPS_HV_HodoTop:iset"
+		clr=14
+		bclr=55
+	}
+	clrmod="discrete"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=669
+		y=92
+		width=81
+		height=19
+	}
+	monitor {
+		chan="B_DET_HPS_HV_HodoBottom:isetrbk"
+		clr=14
+		bclr=1
+	}
+	clrmod="discrete"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=754
+		y=92
+		width=81
+		height=19
+	}
+	control {
+		chan="B_DET_HPS_HV_HodoBottom:iset"
+		clr=14
+		bclr=55
+	}
+	clrmod="discrete"
+	limits {
+	}
 }
