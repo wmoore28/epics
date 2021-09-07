@@ -15,54 +15,72 @@ $SEVRCOMMAND UP_MAJOR /home/hpsrun/scripts/notify_expert_auto.pl ecal_expert ECA
 
 CHANNEL TEMPS tempSensorA.STAT
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorA.STAT" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 
 CHANNEL TEMPS tempSensorA
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorA" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 
 CHANNEL TEMPS tempSensorB
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorB" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 
 CHANNEL TEMPS tempSensorC
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorC" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 
 CHANNEL TEMPS tempSensorD
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorD" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 
 CHANNEL TEMPS tempSensorE
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorE" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 
 CHANNEL TEMPS tempSensorF
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorF" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 
 CHANNEL TEMPS tempSensorG
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorG" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 
 CHANNEL TEMPS tempSensorH
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorH" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 
 CHANNEL TEMPS tempSensorI
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorI" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 
 CHANNEL TEMPS tempSensorJ
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorJ" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 
 CHANNEL TEMPS tempSensorK
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorK" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 
 CHANNEL TEMPS tempSensorL
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorL" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 
 CHANNEL TEMPS tempSensorM
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorM" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 
 CHANNEL TEMPS tempSensorN
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorN" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 
 CHANNEL TEMPS tempSensorO
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorO" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 
 CHANNEL TEMPS tempSensorP
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorP" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
 
 CHANNEL TEMPS tempSensorT
 $COMMAND medm -x -attach -cmap -macro "sig=tempSensorT" aiaocalc_alarm.adl >> /dev/null
+$ALARMCOUNTFILTER 0 10
