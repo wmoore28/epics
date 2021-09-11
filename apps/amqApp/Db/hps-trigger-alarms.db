@@ -1,0 +1,12 @@
+
+record(calc,"$(RATE):alarm") {
+    field(SCAN,"1 second")
+    field(INPA,"$(RATE)")
+    field(INPB,"$(MINRATE)")
+    field(INPC,"scaler_calc1b")
+    field(INPD,"B_DAQ_HPS:coda_status")
+    field(CALC,"D>0 && C>$(MINCURRENT) & A<B")
+    field(HIGH,"0.5")
+    field(HSV,"MAJOR")
+}
+

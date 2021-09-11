@@ -1,0 +1,10 @@
+
+file "db/hps-trigger-alarms.db" {
+    pattern { RATE, MINRATE, MINCURRENT }
+            { B_DAQ_HPS:VTP:rate:02, 500, 4 }
+            { B_DAQ_HPS:VTP:rate:03, 500, 4 }
+            { B_DAQ_HPS:VTP:rate:06, 500, 4 }
+            { B_DAQ_HPS:VTP:rate:07, 500, 4 }
+            { B_DAQ_HPS:TS:livetime, 60,  4 }
+}
+
