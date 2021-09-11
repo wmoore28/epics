@@ -588,8 +588,8 @@ int main(int argc, char **argv) {
     if (make_log) {
         c2->Print(Form("%s", img_path.c_str()));
         if (n_peaks2 == 2 || n_peaks3 == 2) {
-            system(Form("/site/ace/certified/apps/bin/logentry -l HBLOG -t \"Analyse of %s \" -a %s ", file_name.c_str(), img_path.c_str()));
-            //system(Form("/site/ace/certified/apps/bin/logentry -l HBLOG -t \"Analyse of %s \" -a %s ", file_name.c_str(), img_path.c_str()));
+            system(Form("/site/ace/certified/apps/bin/logentry -l HBLOG -l ELOG -t \"Analyse of %s \" -a %s ", file_name.c_str(), img_path.c_str()));
+            //system(Form("/site/ace/certified/apps/bin/logentry -l HBLOG -l ELOG -t \"Analyse of %s \" -a %s ", file_name.c_str(), img_path.c_str()));
         }
     }
     app1->Run();
@@ -663,7 +663,8 @@ double* GetBotPos(double stage) {
     //  bot_pos[1] = +0.463*stage - 0.684; // distance of the top horizontal wire from the beam
     // bot_pos[1] = +0.4648 * stage - 1.073; // distance of the top horizontal wire from the beam // 2019
     // bot_pos[1] = +0.4648 * stage - 0.1562; // distance of the top horizontal wire from the beam  // 2021
-    bot_pos[1] = +0.4648 * stage + 0.1562; // distance of the top horizontal wire from the beam  // Revised 2021, sign got changed
+    // bot_pos[1] = +0.4648 * stage + 0.1562; // distance of the top horizontal wire from the beam  // Revised 2021, sign got changed
+    bot_pos[1] = +0.4648 * stage + 0.1521; // distance of the top horizontal wire from the beam  // Revised 2021, 0.1562->0.1521
     return bot_pos;
 }
 
