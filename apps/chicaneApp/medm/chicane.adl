@@ -645,7 +645,7 @@ text {
 }
 oval {
 	object {
-		x=171
+		x=199
 		y=37
 		width=53
 		height=20
@@ -662,7 +662,7 @@ oval {
 }
 oval {
 	object {
-		x=171
+		x=199
 		y=37
 		width=53
 		height=20
@@ -680,7 +680,7 @@ oval {
 }
 oval {
 	object {
-		x=171
+		x=199
 		y=37
 		width=53
 		height=20
@@ -696,7 +696,7 @@ oval {
 }
 oval {
 	object {
-		x=171
+		x=199
 		y=37
 		width=53
 		height=20
@@ -876,7 +876,7 @@ polyline {
 }
 "related display" {
 	object {
-		x=105
+		x=78
 		y=38
 		width=50
 		height=20
@@ -892,7 +892,7 @@ polyline {
 }
 "related display" {
 	object {
-		x=40
+		x=23
 		y=38
 		width=50
 		height=20
@@ -905,4 +905,19 @@ polyline {
 	clr=0
 	bclr=16
 	label="ON"
+}
+"message button" {
+	object {
+		x=136
+		y=38
+		width=50
+		height=20
+	}
+	control {
+		chan="$(P):abort"
+		clr=0
+		bclr=34
+	}
+	label="Abort"
+	press_msg="1"
 }

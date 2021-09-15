@@ -8,6 +8,7 @@ option -r;  // donot allow multiple instances
 
 short hallAccessState; assign hallAccessState to "PLC_HLB";
 
+short  abtBtn;  assign abtBtn  to "{P}:abort";  monitor abtBtn;
 short  onBtn;   assign onBtn   to "{P}:start";  monitor onBtn;
 short  offBtn;  assign offBtn  to "{P}:stop";   monitor offBtn;
 short  calcBtn; assign calcBtn to "{P}:calc";   monitor calcBtn;
@@ -105,6 +106,12 @@ ss seqChicane {
         } state init
         
         when () {
+            abtBtn=0;
+            offBtn=0;
+            onBtn=0;
+            pvPut(abtBtn);
+            pvPut(offBtn);
+            pvPut(onBtn);
             isOff=0;
             isReady=0;
             pvPut(isOff);
@@ -146,6 +153,11 @@ ss seqChicane {
             epicsThreadSleep(5);
             sprintf(msg,stmp);
             pvPut(msg);
+        } state idle
+
+        when (abtBtn) {
+            abtBtn=0;
+            pvPut(abtBtn);
         } state idle
 
         when (onBtn) {
@@ -255,11 +267,11 @@ ss seqChicane {
             iStartMT=iMonMT;
         }
 
-        // allow user to override
-        //when (onBtn) {
-        //    onBtn=0;
-        //    pvPut(onBtn);
-        //} state pauseBeforeRampToMax
+        when (abtBtn) {
+            sprintf(msg,"Sequence Aborted");
+            pvPut(msg);
+            epicsThreadSleep(5);
+        } state idle
 
         when (isSimilar2(iMonPS,iZeroPS,iDeltaPS,iMonMT,0,iDeltaMT)) {
             sprintf(msg,"Turning MiniTorus OFF.");
@@ -305,11 +317,15 @@ ss seqChicane {
                 pvPut(isReady);
                 pvPut(msg);
             }
-            //pvGet(iSetPS);
-            //pvGet(iSetMT);
         }
         
         when (pvConnectCount() < pvChannelCount() ) {} state init
+
+        when (abtBtn) {
+            sprintf(msg,"Sequence Aborted");
+            pvPut(msg);
+            epicsThreadSleep(5);
+        } state idle
 
         when (offBtn) {
             offBtn=0;
@@ -411,7 +427,16 @@ ss seqChicane {
         when (offBtn) {
             offBtn=0;
             pvPut(offBtn);
-        } state rampOff
+            sprintf(msg,"Sequence Aborted");
+            pvPut(msg);
+            epicsThreadSleep(5);
+        } state idle
+
+        when (abtBtn) {
+            sprintf(msg,"Sequence Aborted");
+            pvPut(msg);
+            epicsThreadSleep(5);
+        } state idle
 
         when (delay(tConfirm)) {
             complete = 0;
@@ -430,14 +455,18 @@ ss seqChicane {
 
     state turnSupplyOn {
         
-        //option -e; // execute entry even if previous state was the same
-	
         entry {
             sprintf(msg,"Turning power supplies ON.");
             pvPut(msg);
         }
 
         when (pvConnectCount() < pvChannelCount() ) {} state init
+
+        when (abtBtn) {
+            sprintf(msg,"Sequence Aborted");
+            pvPut(msg);
+            epicsThreadSleep(5);
+        } state idle
 
         when (powerMT==0) {
             powerMT=1;
@@ -460,8 +489,6 @@ ss seqChicane {
 
     state rampToMax {
 
-	option -e; // execute entry even if previous state was the same
-
         entry {
             iSetPS = iMaxPS;
             iSetMT = iMaxMT;
@@ -473,16 +500,22 @@ ss seqChicane {
             }
             isOff=0;
             pvPut(isOff);
-            //pvGet(iSetPS);
-            //pvGet(iSetMT);
             sprintf(msg,"Ramping Up to Max");
             pvPut(msg);
+            count=0;
         }
 
         when (offBtn) {
             offBtn=0;
             pvPut(offBtn);
         } state rampOff
+
+        when (abtBtn) {
+            sprintf(msg,"Sequence Aborted");
+            pvPut(msg);
+            epicsThreadSleep(5);
+        } state idle
+
         when (pvConnectCount() < pvChannelCount() ) {} state init
         
         when ( isSimilar(iSetPS,iMonPS,iDeltaPS) ) {} state holdAtMax
@@ -502,10 +535,36 @@ ss seqChicane {
             pvPut(msg);
             epicsThreadSleep(1);
         } state rampToMax
-	
+
+        when (count > 20) {
+            isError=1;
+            pvPut(isError);
+            sprintf(msg,"Failed to set PS/MT current.  Aborting ...");
+            pvPut(msg);
+            epicsThreadSleep(5);
+        } state idle
+
+        when (iSetRbkPS != iSetRbkPS) {
+            sprintf(msg,"Failed to set PS current.  Retrying ...");
+            pvPut(iSetPS);
+            pvPut(msg);
+            epicsThreadSleep(3);
+            count++;
+        } state rampToMax
+
+        when (iSetRbkMT != iSetMT) {
+            sprintf(msg,"Failed to set MT current.  Retrying ...");
+            pvPut(iSetMT);
+            pvPut(msg);
+            epicsThreadSleep(3);
+            count++;
+        } state rampToMax
+
         when () {
             complete = minComplete(0,iMonPS,iSetPS,0,iMonMT,iSetMT);
             pvPut(complete);
+            sprintf(msg,"Ramping Up to Max");
+            pvPut(msg);
             epicsThreadSleep(1);
             //pvGet(iSetPS);
             //pvGet(iSetMT);
@@ -530,6 +589,12 @@ ss seqChicane {
             pvPut(offBtn);
         } state rampOff
         
+        when (abtBtn) {
+            sprintf(msg,"Sequence Aborted");
+            pvPut(msg);
+            epicsThreadSleep(5);
+        } state idle
+
         when (pvConnectCount() < pvChannelCount() ) {} state init
 
         when (count>=60*tHoldMax && isSimilar2(iMonPS,iSetPS,iDeltaPS,iMonMT,iSetMT,iDeltaMT)) {
@@ -596,6 +661,12 @@ ss seqChicane {
             offBtn=0;
             pvPut(offBtn);
         } state rampOff
+
+        when (abtBtn) {
+            sprintf(msg,"Sequence Aborted");
+            pvPut(msg);
+            epicsThreadSleep(5);
+        } state idle
 
         when (pvConnectCount() < pvChannelCount() ) {} state init
 
