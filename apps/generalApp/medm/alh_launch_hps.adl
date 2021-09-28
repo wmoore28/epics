@@ -8,7 +8,7 @@ display {
 		x=346
 		y=192
 		width=200
-		height=368
+		height=306
 	}
 	clr=14
 	bclr=4
@@ -232,47 +232,8 @@ text {
 }
 text {
 	object {
-		x=25
-		y=299
-		width=70
-		height=18
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Vacuum"
-}
-"shell command" {
-	object {
-		x=160
-		y=296
-		width=20
-		height=20
-	}
-	command[0] {
-		label="alh"
-		name="alh"
-		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /usr/clas12/hps/DATA/alarms/ /usr/clas12/hps/prod/apps/alhConfig/vacuum.alhConfig &"
-	}
-	clr=30
-	bclr=22
-}
-text {
-	object {
-		x=25
-		y=269
-		width=70
-		height=18
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="HV"
-}
-text {
-	object {
-		x=25
-		y=235
+		x=24
+		y=254
 		width=70
 		height=18
 	}
@@ -283,8 +244,8 @@ text {
 }
 "shell command" {
 	object {
-		x=160
-		y=232
+		x=159
+		y=251
 		width=20
 		height=20
 	}
@@ -323,21 +284,6 @@ text {
 	clr=30
 	bclr=22
 }
-"shell command" {
-	object {
-		x=160
-		y=266
-		width=20
-		height=20
-	}
-	command[0] {
-		label="alh"
-		name="alh"
-		args="-p /usr/share/sounds/speech-dispatcher/test.wav -m 200000 -l /usr/clas12/hps/DATA/alarms/ /usr/clas12/hps/prod/apps/alhConfig/hv.alhConfig &"
-	}
-	clr=30
-	bclr=22
-}
 text {
 	object {
 		x=25
@@ -368,9 +314,9 @@ text {
 "shell command" {
 	object {
 		x=159
-		y=330
+		y=223
 		width=20
-		height=20
+		height=17
 	}
 	command[0] {
 		label="IOCs"
@@ -383,9 +329,9 @@ text {
 text {
 	object {
 		x=24
-		y=333
+		y=225
 		width=70
-		height=18
+		height=15
 	}
 	"basic attribute" {
 		clr=14
