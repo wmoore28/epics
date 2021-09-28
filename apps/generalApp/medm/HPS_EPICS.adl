@@ -314,7 +314,7 @@ text {
 	}
 	display[5] {
 		label="Chiller (ECAL)"
-		name="chiller_anova.adl"
+		name="LaudaECO.adl"
 		args="DESC=ECAL,P=HPS_ECAL:CHILLER:"
 	}
 	display[6] {
@@ -375,6 +375,7 @@ text {
 	command[0] {
 		label="2021 Beamline"
 		name="livePlot -load /home/hpsrun/.myaPlot/BPMsandScalers2"
+		args="&"
 	}
 	command[1] {
 		label="livePlot"
@@ -917,7 +918,8 @@ text {
 	}
 	command[0] {
 		label="ECAL FADC Scalers (EPICS)"
-		name="hps_ecal_scalers.py &"
+		name="hps_ecal_scalers.py"
+		args="&"
 	}
 	clr=14
 	bclr=50
