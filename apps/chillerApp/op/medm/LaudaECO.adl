@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/chillerApp/./medm/LaudaECO.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/chillerApp/op/medm/LaudaECO.adl"
 	version=030109
 }
 display {
@@ -177,7 +177,7 @@ text {
 		height=18
 	}
 	monitor {
-		chan="$(P)STATUS"
+		chan="$(P)GetStatus"
 		clr=15
 		bclr=12
 	}
