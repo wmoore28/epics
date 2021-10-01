@@ -13,6 +13,7 @@ record(stringin,"$(P):run_status") {
     field(FLNK,"$(P):run_status:calc.PROC")
 }
 record(stringin,"$(P):run_config") {}
+record(stringin,"$(P):daq_config") {}
 record(ai,"$(P):run_time") {
     field(EGU,"seconds")
 }

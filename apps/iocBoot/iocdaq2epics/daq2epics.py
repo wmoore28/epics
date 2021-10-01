@@ -15,6 +15,7 @@ os.environ['SESSION']='clashps'
 CFG={
 prefix+':run_status':   {'ini':'UDF','cmd':['run_status']},
 prefix+':run_config':   {'ini':'UDF','cmd':['run_config']},
+prefix+':daq_config':   {'ini':'UDF','cmd':['daq_config']},
 prefix+':run_number':   {'ini':-1,   'cmd':['run_number']},
 }
 
@@ -68,6 +69,10 @@ while True:
         else:
           CFG[pvName]['pv'].put(CFG[pvName]['ini'])
 
+      elif pvName=='B_DAQ_HPS:daq_config':
+        yy=yy.split('/').pop()
+        CFG[pvName]['pv'].put(yy)
+
       # treat everything else uniformly:
       else:
         if 'scale' in CFG[pvName]:
@@ -77,7 +82,7 @@ while True:
 
     except:
       success=False
-      print now+' :  Error on '+pvName
+      print(now+' :  Error on '+pvName+' '+xx)
 
   if success:
     NPOLLS+=1

@@ -121,6 +121,8 @@ dbLoadRecords("db/array-to-scalar-16.template","P=B_HW_HPS11_DSC2_Slot6:,INP=B_H
 
 dbLoadTemplate("db/hps-trigger-alarms.substitutions")
 
+dbLoadRecords("db/amqFloatArray.db","P=B_HPS_DAQ:data_rates,K=STA:EB77,N=4,TH=10,THH=20,HSV=MINOR,HHSV=MAJOR")
+dbLoadRecords("db/array-to-scalar-4.template","INP=B_HPS_DAQ:data_rates,P=B_HPS_DAQ:data_rates:,FTVL=FLOAT")
 cd ${TOP}/iocBoot/${IOC}
 
 dbLoadRecords("hps-neutron.alias")
