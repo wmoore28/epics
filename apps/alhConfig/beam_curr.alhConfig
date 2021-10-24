@@ -34,7 +34,7 @@ $END
 
 CHANNEL  BEAM_CURRENT   beam_stopper_alarm                              
 $COMMAND  medm -x -attach -cmap -macro "sig=beam_stopper_alarm" aiaocalc_alarm.adl >> /dev/null 
-$ALARMCOUNTFILTER  2 10
+$ALARMCOUNTFILTER  -1 60
 $GUIDANCE
               The beam stopper position and the beam current do not match. Beam stopper is supposed to be in the beam at high beam current reaching FCUP. Notify the BEAM EXPERT. 
 $END
