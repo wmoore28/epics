@@ -46,14 +46,15 @@ float energyB;   assign energyB to "MBSY2C_energy";
 float iMonPS;   assign iMonPS  to "PSPECIRBCK"; monitor iMonPS;
 float iMonMT;   assign iMonMT  to "MTDACRBCK";  monitor iMonMT;
 
+float iSetRbkPS; assign iSetRbkPS to "PSPECs"; monitor iSetRbkPS;
+float iSetRbkMT; assign iSetRbkMT to "MTISETRBCK"; monitor iSetRbkMT;
+
 float iSetPS;   assign iSetPS  to "PSPECISET";
 float iSetMT;   assign iSetMT  to "MTSETI";
 
-short powerMT;  assign powerMT to "MTPSONSET";  monitor powerMT;
-short powerPS;  assign powerPS to "PSPECC.B0";  monitor powerPS;
-
-float iSetRbkPS; assign iSetRbkPS to "PSPECs"; monitor iSetRbkPS;
-float iSetRbkMT; assign iSetRbkMT to "MTISETRBCK"; monitor iSetRbkMT;
+short resetMT;  assign resetMT to "MTRESET";
+short powerMT;  assign powerMT to "MTPSONSET";
+short powerPS;  assign powerPS to "PSPECC.B0";
 
 int tConfirm = 5; // time to give user a chance to cancel (seconds)
 float iMaxPS = 2700.0;  // saturation current to hold at (Amps)
@@ -274,19 +275,29 @@ ss seqChicane {
         } state idle
 
         when (isSimilar2(iMonPS,iZeroPS,iDeltaPS,iMonMT,0,iDeltaMT)) {
-            sprintf(msg,"Turning MiniTorus OFF.");
+            sprintf(msg,"Turning MiniTorus OF.");
             pvPut(msg);
             powerMT=0;
             pvPut(powerMT);
             epicsThreadSleep(5);
-            
-            sprintf(msg,"Turning PairSpec OFF.");
+            sprintf(msg,"Resetting MiniTorus");
+            pvPut(msg);
+            resetMT=1;
+            pvPut(resetMT);
+            epicsThreadSleep(5);
+
+            sprintf(msg,"Turning PairSpec OFF");
             pvPut(msg);
             powerPS=0;
             pvPut(powerPS);
             epicsThreadSleep(5);
+            sprintf(msg,"Resetting PairSpec");
+            pvPut(msg);
+            // do it again to issue a reset:
+            pvPut(powerPS);
             iSetPS=0;
             pvPut(iSetPS);
+            epicsThreadSleep(5);
 
             complete = 0;
             isOff = 1;
@@ -301,7 +312,7 @@ ss seqChicane {
             pvPut(complete);
         } state rampOff
     }
-    
+
     state ready {
 
         option -e; // execute entry even if previous state was the same
@@ -433,10 +444,14 @@ ss seqChicane {
     }
 
     state turnSupplyOn {
-        
+       
+        option -e;
+
         entry {
             sprintf(msg,"Turning power supplies ON.");
             pvPut(msg);
+            pvGet(powerMT);
+            pvGet(powerPS);
         }
 
         when (pvConnectCount() < pvChannelCount() ) {} state init
@@ -514,13 +529,13 @@ ss seqChicane {
         when (count > 20) {
             isError=1;
             pvPut(isError);
-            sprintf(msg,"Failed to set PS/MT current.  Aborting ...");
+            sprintf(msg,"Failed to set current.  Aborting");
             pvPut(msg);
             epicsThreadSleep(5);
         } state idle
 
         when (!isSimilar(iSetRbkPS,iSetPS,1.0)) {
-            sprintf(msg,"Failed to set PS current.  Retrying ...");
+            sprintf(msg,"Failed to set PS current.  Retrying");
             pvPut(iSetPS);
             pvPut(msg);
             epicsThreadSleep(3);
@@ -528,7 +543,7 @@ ss seqChicane {
         } state rampToMax
 
         when (!isSimilar(iSetRbkMT,iSetMT,1.0)) {
-            sprintf(msg,"Failed to set MT current.  Retrying ...");
+            sprintf(msg,"Failed to set MT current.  Retrying");
             pvPut(iSetMT);
             pvPut(msg);
             epicsThreadSleep(3);
