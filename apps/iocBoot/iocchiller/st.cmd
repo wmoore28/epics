@@ -18,9 +18,9 @@ drvAsynIPPortConfigure("SER5", "hallb-moxa4:4005")
 #asynSetTraceIOMask("SER5",-1,0x02)
 
 dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC}")#dbLoadRecords("db/save_restoreStatus.db", "P=${IOC}:")
-#dbLoadRecords("db/anova.db", "P=HPS_ECAL:,R=CHILLER:,PORT=SER5")
+dbLoadRecords("db/anova.db", "P=HPS_ECAL:,R=CHILLER:,PORT=SER5")
 
-dbLoadRecords("db/Lauda_ECO.db","P=HPS_ECAL:CHILLER,PORT=SER5,SCAN=5 second")
+#dbLoadRecords("db/Lauda_ECO.db","P=HPS_ECAL:CHILLER,PORT=SER5,SCAN=5 second")
 
 dbLoadRecords("db/asynRecord.db","P=DOGGY, R=:ASYN,PORT=SER5,ADDR=1,IMAX=2000,OMAX=2000")
 
@@ -31,7 +31,7 @@ dbLoadRecords("db/ecalInterlock.template","P=HPSECAL:,R=INTLK4,PV=HPSECALLV:i2mo
 
 cd ${TOP}/iocBoot/${IOC}
 
-dbLoadRecords("hps-ecal-chiller.alias")
+#dbLoadRecords("hps-ecal-chiller.alias")
 
 ## autosave setup
 < save_restore.cmd
