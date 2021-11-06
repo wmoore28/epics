@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=98
-		y=48
+		x=263
+		y=236
 		width=420
-		height=320
+		height=240
 	}
 	clr=14
 	bclr=12
@@ -128,48 +128,6 @@ text {
 		precSrc="default"
 		precDefault=2
 	}
-}
-"related display" {
-	object {
-		x=5
-		y=270
-		width=130
-		height=37
-	}
-	display[0] {
-		name="rebootTDAQ.adl"
-	}
-	clr=0
-	bclr=10
-	label="Reboot T-DAQ"
-}
-"related display" {
-	object {
-		x=140
-		y=270
-		width=130
-		height=37
-	}
-	display[0] {
-		name="rebootSVTDAQ.adl"
-	}
-	clr=0
-	bclr=10
-	label="Reboot SVT DAQ"
-}
-"related display" {
-	object {
-		x=273
-		y=270
-		width=130
-		height=37
-	}
-	display[0] {
-		name="rebootFULLDAQ.adl"
-	}
-	clr=0
-	bclr=10
-	label="Reboot FULL DAQ"
 }
 "text update" {
 	object {
@@ -351,5 +309,66 @@ text {
 	}
 	align="horiz. centered"
 	limits {
+	}
+}
+"related display" {
+	object {
+		x=290
+		y=155
+		width=120
+		height=25
+	}
+	display[0] {
+		label="Pause triggers"
+		name="ConfirmTrgPause.adl"
+	}
+	clr=0
+	bclr=34
+	label="Pause Triggers"
+}
+"related display" {
+	object {
+		x=290
+		y=190
+		width=120
+		height=25
+	}
+	display[0] {
+		label="Resume Triggers"
+		name="ConfirmTrgResume.adl"
+	}
+	clr=0
+	bclr=19
+	label="Resume Triggers"
+}
+text {
+	object {
+		x=17
+		y=103
+		width=60
+		height=15
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="# Events"
+}
+"text update" {
+	object {
+		x=124
+		y=103
+		width=100
+		height=15
+	}
+	monitor {
+		chan="B_HPS_DAQ:data_rates:00"
+		clr=0
+		bclr=9
+	}
+	align="horiz. centered"
+	format="exponential"
+	limits {
+		precSrc="default"
+		precDefault=3
 	}
 }

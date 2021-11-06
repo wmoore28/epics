@@ -1,6 +1,6 @@
 
 file {
-	name="/usr/clas12/hps/v3.0.0/apps/scalerApp/medm/scaler_hps.adl"
+	name="/usr/clas12/hps/v3.0.0/apps/medm/../scalerApp/medm/scaler_hps.adl"
 	version=030109
 }
 display {
@@ -667,7 +667,7 @@ oval {
 "text update" {
 	object {
 		x=379
-		y=763
+		y=760
 		width=80
 		height=18
 	}
@@ -678,12 +678,14 @@ oval {
 	}
 	align="horiz. right"
 	limits {
+		precSrc="default"
+		precDefault=3
 	}
 }
 text {
 	object {
 		x=471
-		y=765
+		y=762
 		width=11
 		height=15
 	}
@@ -846,8 +848,8 @@ composite {
 }
 "text update" {
 	object {
-		x=380
-		y=787
+		x=379
+		y=804
 		width=80
 		height=20
 	}
@@ -859,13 +861,13 @@ composite {
 	align="horiz. right"
 	limits {
 		precSrc="default"
-		precDefault=1
+		precDefault=3
 	}
 }
 text {
 	object {
 		x=470
-		y=787
+		y=804
 		width=11
 		height=15
 	}
@@ -5327,4 +5329,34 @@ text {
 	}
 	textix="Neutron-R"
 	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=379
+		y=782
+		width=80
+		height=18
+	}
+	monitor {
+		chan="TMISETRBCK"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	limits {
+		precSrc="default"
+		precDefault=3
+	}
+}
+text {
+	object {
+		x=471
+		y=784
+		width=11
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="A (setpoint)"
 }
