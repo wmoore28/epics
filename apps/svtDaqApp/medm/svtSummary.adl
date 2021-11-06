@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=399
-		y=252
+		x=389
+		y=244
 		width=705
 		height=593
 	}
@@ -930,15 +930,15 @@ text {
 	"basic attribute" {
 		clr=31
 	}
-	textix="On/Off"
+	textix="Off / On"
 	align="horiz. centered"
 }
 "choice button" {
 	object {
-		x=625
-		y=97
-		width=41
-		height=20
+		x=604
+		y=85
+		width=80
+		height=40
 	}
 	control {
 		chan="SVT:bias:switch"
@@ -1776,21 +1776,6 @@ text {
 	}
 	textix="Supply Temp"
 	align="horiz. centered"
-}
-"message button" {
-	object {
-		x=475
-		y=140
-		width=200
-		height=20
-	}
-	control {
-		chan="SVT:bias:nominal:v_set"
-		clr=14
-		bclr=15
-	}
-	label="SET BIAS TO NOMINAL"
-	release_msg="180"
 }
 "text update" {
 	object {

@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=90
-		y=55
+		x=131
+		y=48
 		width=1084
 		height=1096
 	}
@@ -89,10 +89,21 @@ display {
 }
 rectangle {
 	object {
+		x=13
+		y=10
+		width=214
+		height=46
+	}
+	"basic attribute" {
+		clr=15
+	}
+}
+rectangle {
+	object {
 		x=8
 		y=7
 		width=220
-		height=30
+		height=50
 	}
 	"basic attribute" {
 		clr=25
@@ -702,8 +713,8 @@ text {
 }
 "choice button" {
 	object {
-		x=140
-		y=10
+		x=142
+		y=20
 		width=80
 		height=25
 	}
@@ -1025,30 +1036,17 @@ rectangle {
 	bclr=20
 	label="RESET MPOD INTERLOCKS (EXPERT ONLY)"
 }
-text {
-	object {
-		x=16
-		y=15
-		width=120
-		height=20
-	}
-	"basic attribute" {
-		clr=0
-	}
-	textix="SVT BIAS ALL ON/OFF"
-	align="horiz. centered"
-}
 "message button" {
 	object {
-		x=17
-		y=50
-		width=200
+		x=471
+		y=42
+		width=225
 		height=20
 	}
 	control {
 		chan="SVT:bias:nominal:v_set"
 		clr=14
-		bclr=15
+		bclr=30
 	}
 	label="SET BIAS TO NOMINAL"
 	release_msg="180"
@@ -1161,19 +1159,6 @@ rectangle {
 		x=700
 		y=7
 		width=375
-		height=30
-	}
-	"basic attribute" {
-		clr=25
-		style="dash"
-		fill="outline"
-	}
-}
-rectangle {
-	object {
-		x=8
-		y=45
-		width=220
 		height=30
 	}
 	"basic attribute" {
@@ -9431,4 +9416,17 @@ composite {
 			}
 		}
 	}
+}
+text {
+	object {
+		x=17
+		y=25
+		width=120
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SVT BIAS ALL ON/OFF"
+	align="horiz. centered"
 }
