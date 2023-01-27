@@ -9,13 +9,16 @@ svt={}
 svt['name']='HPS SVT'
 svt['emails']=['cbravo135@gmail.com','tknelson@slac.stanford.edu','email@omarmoreno.net','stepanya@jlab.org','baltzell@jlab.org','rafopar@jlab.org']
 svt['pvnames']=[
-'HPS_SVT:PLC:i:RTD_SVT_Supply-Value',
-'HPS_SVT:PLC:i:RTD_SVT_Return-Value',
-'HPS_SVT:PLC:i:Flow_SVT-Value',
-'HPS_SVT:PLC:i:Valve_SVT-Shutdown',
-'HPS_SVT:PLC:i:Vacuum2-Value',
-'HPS_INTLK:DET_VAC:intlk_status'
+'B_HPS_FREEZER_T1',
+'B_HPS_FREEZER_HEARTBEAT_STAT'
 ]
+#'HPS_SVT:PLC:i:RTD_SVT_Supply-Value',
+#'HPS_SVT:PLC:i:RTD_SVT_Return-Value',
+#'HPS_SVT:PLC:i:Flow_SVT-Value',
+#'HPS_SVT:PLC:i:Valve_SVT-Shutdown',
+#'HPS_SVT:PLC:i:Vacuum2-Value',
+#'HPS_INTLK:DET_VAC:intlk_status',
+#]
 notifiers['svt']=svt
 
 #ecal={}
