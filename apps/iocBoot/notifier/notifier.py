@@ -41,7 +41,7 @@ def getURL():
 
 def sendEmail(pvname,group):
   print 'Sending email ...',pvname,group['emails']
-  msg=MIMEText(pvname+' entered MAJOR alarm state\n\nEmails disabled for this PV for the next '+str(minTimeDelta)+' seconds\n\n'+getURL())
+  msg=MIMEText(pvname+' entered MAJOR alarm state\n\nEmails disabled for this PV for the next '+str(minTimeDelta)+' seconds\n\n'+getURL()+'\n\nhttps://hallbopi.jlab.org/webopi3.3/w?opi=detectors/HPS/freezer.opi')
   msg['Subject']=group['name']+' Alarm: '+pvname
   msg['From']='hps-alarm-notifier@jlab.org'
   msg['To']=', '.join(group['emails'])
